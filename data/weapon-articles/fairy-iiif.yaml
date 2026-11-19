@@ -1,0 +1,132 @@
+# ============================================================================
+# 武器正文 —— Fairey IIIF
+#
+# 与 flycatcher 同一段时期、同一批材料。独有的两条具体事实：
+#  1) 1929–1933 年间本舰搭载 1 架；
+#  2) 1931-06-26 在本舰起飞时损失一架（Weymouth）。
+# 撤装月份未获取；机型参数无来源，不写。
+# ============================================================================
+weapon: fairy-iiif
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Fairey IIIF 是一型舰载侦察与校射机，在胡德号上属于 1929 到 1933 年这一段：
+      本舰当时搭载 1 架。
+      它在本舰上留下一条具体到日期的记录：1931 年 6 月 26 日，
+      一架 IIIF 在本舰起飞时损失于 Weymouth。
+      具体的撤装月份本站未获取；机型参数本站无来源，不写。
+    en: >-
+      The Fairey IIIF was a carrier-borne reconnaissance and spotting aircraft, and aboard
+      Hood it belongs to the 1929-1933 period, when one was carried. It left one record
+      precise to the day: on 26 June 1931 a IIIF was lost on take-off from the ship at
+      Weymouth. The month of its removal has not been obtained, and airframe figures have
+      no source in this project, so none are written.
+
+  paragraphs:
+    - heading: 它是弹射器时代的那一型
+      text:
+        zh: >-
+          与 Flycatcher 用炮塔顶起飞平台不同，IIIF 在本舰上对应的是弹射器阶段。
+          协会的材料记：1929 到 1931 年的改装中，舰尾甲板上装了一台
+          可旋转、可折叠的弹射器，并配一台吊车来回收水上飞机；
+          而 IIIF 的服役窗口正好从这段改装之后开始。
+          不过这层关系要写得谨慎：材料把机型列成「1-2 Fairey Flycatchers
+          (up to 1933) and/or 1 Fairey IIIF (1929-1933)」，
+          用的是 and/or——也就是说它没有明确说 IIIF 只从弹射器起飞。
+          本站照此保留这层不确定，不补成确定结论。
+        en: >-
+          Where the Flycatcher used turret-top platforms, the IIIF belongs to the catapult
+          phase aboard this ship. The association records that the 1929-1931 refit
+          installed a rotating, folding catapult on the quarterdeck with a crane to recover
+          a seaplane, and the IIIF's window opens just after that work. The relation should
+          still be stated cautiously: the material lists the types as "1-2 Fairey
+          Flycatchers (up to 1933) and/or 1 Fairey IIIF (1929-1933)", using "and/or", so
+          it does not say the IIIF flew only from the catapult. That uncertainty is kept
+          rather than resolved here.
+      src: [hmshood-association]
+
+    - heading: 1931 年 6 月 26 日那次损失
+      text:
+        zh: >-
+          这是本页唯一一条精确到日的事件，两份材料吻合：
+          协会的生涯年表记「Loses Fairey IIIF plane on takeoff at Weymouth」，
+          本舰的技术整理也把它列为损失记录。
+          需要说明的是「on takeoff」——事故发生在起飞过程中，
+          而当时本舰的起飞方式正处于从炮塔平台向弹射器过渡的阶段；
+          材料没有说明这一次用的是哪一种，本站不推。
+          这一条的另一个用处是它给了本舰航空活动的一个真实成本：
+          水上飞机在舰上作业本身就是有风险的动作。
+        en: >-
+          This is the page's only event precise to the day, and two sources agree on it:
+          the association's career chronology records "Loses Fairey IIIF plane on takeoff at
+          Weymouth", and the ship's technical compilation carries it as a loss record. Note
+          "on takeoff": the accident happened during launch, at a time when the ship's
+          launch method was moving from turret platforms to catapult. The material does not
+          say which was used on this occasion and this article does not guess. The entry
+          also has a second use, recording a real cost of aviation aboard: operating
+          floatplanes from a ship was itself a hazardous business.
+      src: [hmshood-timeline, hmshood-association]
+
+    - heading: 与 Flycatcher 分列两条的理由
+      text:
+        zh: >-
+          同一批材料把这两种机型写在一起，用 and/or 连接；本站却把它们拆成两个实体。
+          理由只有一个：它们的装舰记录不一样——Flycatcher 是 1 到 2 架、
+          IIIF 是 1 架，且 IIIF 有一条精确日期的损失记录而 Flycatcher 没有。
+          拆开之后各自的正文都能保持「只写这一型」的边界。
+          至于 1933 年之后本舰还有没有别的机型，材料只提到
+          Sopwith 1½ Strutter 也曾见于舰上，本站不据此另行立实体。
+        en: >-
+          The same body of material writes the two types together with "and/or", yet this
+          site splits them into two entities for one reason only: their fitting records
+          differ. The Flycatcher was carried one or two at a time, the IIIF one, and the
+          IIIF has a precisely dated loss the Flycatcher lacks. Kept apart, each article
+          can hold to the boundary of writing about one type. As for other types after
+          1933, the material mentions only that a Sopwith 1 1/2 Strutter was also seen
+          aboard, and no separate entity is created on that basis.
+      src: [hmshood-association]
+
+history:
+  - id: service
+    title: { zh: 装舰记录, en: Fitting record }
+    range: { from: 1931-03, to: 1933-12 }
+    lead:
+      zh: >-
+        一条起点、一条事故、一条终点，终点只到年份。
+      en: >-
+        One start, one accident, one end - and the end is only a year.
+    events:
+      - date: 1931-03-10
+        text:
+          zh: >-
+            数据层采用的有效窗口起点，对应本舰 1929–1931 年改装后的状态。
+            材料记 1929–1933 年间本舰搭载 1 架 IIIF。
+          en: >-
+            The opening of the validity window used in the data layer, corresponding to the
+            ship's post-1929-1931-refit state. The material records one IIIF carried between
+            1929 and 1933.
+        src: [hmshood-association, navypedia-hood]
+      - date: 1931-06-26
+        text:
+          zh: >-
+            一架 IIIF 在本舰起飞时损失于 Weymouth。
+            生涯年表与技术整理两处吻合；材料未说明当次用的是哪一种起飞方式。
+          en: >-
+            A IIIF was lost on takeoff from the ship at Weymouth. The career chronology and
+            the technical compilation agree; the material does not state which launch
+            method was in use on that occasion.
+        src: [hmshood-timeline, hmshood-association]
+      - date: 1933-12
+        text:
+          zh: >-
+            全部航空设备在本月前拆完（弹射器与吊车已于 1932 年中拆除）。
+            这一型的具体撤装月份未获取，数据层因此以 1933 年末为界，
+            属年份界写法而非精确日期。
+          en: >-
+            All aircraft gear had been removed by this month, the catapult and crane having
+            gone in mid-1932. The month this type specifically left has not been obtained,
+            so the data layer ends at the end of 1933, a year boundary rather than a precise
+            date.
+        src: [hmshood-association, navypedia-hood]

@@ -1,0 +1,413 @@
+# ============================================================================
+# 约克城（USS Yorktown, CV-5）—— 约克城级首舰
+#
+# 2026-11-19 入库。数据来自 work/raw/yorktown-hornet-tech.md（922 行）。
+#
+# 与另两艘同级舰的硬差异：
+#   1. 5"/38 炮架型号：约克城与企业号同为 Mk 21 Mod 16；
+#      **大黄蜂是 Mk 24 Mod 2**（后改 Mod 6）——这是三舰最硬的装备差异。
+#   2. 射击指挥仪：约克城与企业号 Mk 33；**大黄蜂 Mk 37**。
+#   3. 雷达：约克城与企业号有 CXAM-1；**大黄蜂中途岛时只有 SC**，
+#      CXAM 是 1942-06-20～28 才从加利福尼亚号拆来装上的。
+#
+# 中途岛时的特殊状态：
+#   - 刚从珊瑚海重伤抢修回来（5-08 受损 → 5-27 抵港 → 5-28 进坞 → 5-30 出港）
+#   - 5"/38 实为 7 座可用（#2 炮哑火后弹丸卡膛退出战斗）
+#   - **超热器锅炉未动，限制了最高航速**——这直接影响它能否跟上 TF 16
+# ============================================================================
+
+id: yorktown
+name:
+  zh: 约克城号
+  en: Yorktown
+class: yorktown
+note: >-
+  约克城级首舰。中途岛战役中第 17 特混舰队旗舰（弗莱彻）。
+  珊瑚海重伤后 48-72 小时抢修出战，6-07 被伊-168 击沉。
+
+open_ended_note: >-
+  本舰参数有效期自 1937-09-30 服役至 1942-06-07 沉没。
+  与同级舰共用的舰体、动力、机库等数据写在 classes/yorktown.yaml。
+
+facts:
+  # ============================================================
+  # 身份
+  # ============================================================
+  - field: identity.name_original
+    value: Yorktown
+    src: [nhhc-danfs-yorktown]
+    valid: { from: 1936-04-04 }
+    confidence: B
+
+  - field: identity.name_zh
+    value: 约克城号
+    src: [nhhc-danfs-yorktown]
+    valid: { from: 1936-04-04 }
+    confidence: B
+
+  - field: identity.name_en
+    value: USS Yorktown
+    src: [nhhc-danfs-yorktown]
+    valid: { from: 1936-04-04 }
+    confidence: B
+
+  - field: identity.pennant_number
+    value: CV-5
+    src: [nhhc-danfs-yorktown]
+    valid: { from: 1937-09-30 }
+    confidence: B
+
+  - field: identity.namesake
+    value: 纪念 1781 年约克城围城战——美国独立战争的终局之战
+    src: [nhhc-danfs-yorktown]
+    valid: { from: 1936-04-04 }
+    confidence: B
+
+  - field: identity.ship_type
+    value: aircraft_carrier
+    src: [nhhc-danfs-yorktown]
+    valid: { from: 1937-09-30 }
+    confidence: B
+
+  - field: identity.nation
+    value: united_states
+    src: [nhhc-danfs-yorktown]
+    valid: { from: 1937-09-30 }
+    confidence: B
+
+  - field: identity.operator
+    value: United States Navy
+    src: [nhhc-danfs-yorktown]
+    valid: { from: 1937-09-30 }
+    confidence: B
+
+  - field: identity.era
+    value: ww2
+    src: [nhhc-danfs-yorktown]
+    valid: { from: 1937-09-30 }
+    confidence: B
+
+  - field: identity.building_program
+    value: 1933-06-16 国会法案（National Industrial Recovery Act）授权；Carrier No. 5
+    src: [nhhc-danfs-yorktown]
+    valid: { from: 1933-06-16 }
+    confidence: B
+
+  # ============================================================
+  # 建造
+  # ============================================================
+  - field: construction.builder
+    value: Newport News Shipbuilding & Dry Dock Co.
+    src: [nhhc-danfs-yorktown]
+    valid: { from: 1934-05-21 }
+    confidence: B
+    note: 与另两艘同级舰同一建造厂——**三舰的差异只在船台号（359 / 360 / 385）**。
+
+  - field: construction.builder_location
+    value: Newport News, Virginia
+    src: [nhhc-danfs-yorktown]
+    valid: { from: 1934-05-21 }
+    confidence: B
+
+  - field: construction.yard_number
+    value: "359"
+    src: [navypedia-yorktown-class]
+    valid: { from: 1934-05-21 }
+    confidence: C
+
+  - field: construction.laid_down
+    value: 1934-05-21
+    unit: date
+    src: [nhhc-danfs-yorktown]
+    valid: { from: 1934-05-21 }
+    confidence: B
+
+  - field: construction.launched
+    value: 1936-04-04
+    unit: date
+    src: [nhhc-danfs-yorktown]
+    valid: { from: 1936-04-04 }
+    confidence: B
+
+  - field: construction.commissioned
+    value: 1937-09-30
+    unit: date
+    src: [nhhc-danfs-yorktown]
+    valid: { from: 1937-09-30 }
+    confidence: B
+
+  - field: construction.fate_date
+    value: 1942-06-07
+    unit: date
+    src: [combinedfleet-i168]
+    valid: { from: 1942-06-07 }
+    confidence: C
+    note: >-
+      被日本潜艇伊-168 击沉。**注意不是 6-04 被炸当天沉的**——
+      6-04 下午被飞龙两波攻击重创、6-05 弃舰，6-06 由拖船尝试拖带，
+      6-07 伊-168 命中 2 条鱼雷后沉没（一说 0458）。
+      它一直漂在水上，美军甚至以为能救回来。
+
+  - field: construction.fate_type
+    value: sunk_by_enemy
+    src: [combinedfleet-i168]
+    valid: { from: 1942-06-07 }
+    confidence: C
+
+  # ============================================================
+  # 武备（本舰特有）
+  # ============================================================
+  - field: armament.mount.summary
+    value: >-
+      1942-06 中途岛时：5"/38 单装 8 座（实为 7 座可用）+
+      1.1"/75 四联装 4 座（16 管）+ 20mm 厄利孔若干
+    src: [nhhc-yorktown-coral-sea-report]
+    valid: { from: 1942-05-30, to: 1942-06-07 }
+    confidence: A
+    note: >-
+      **#2 号 5"/38 在战斗中哑火、弹丸卡膛，退出战斗**，实际只有 7 座可用。
+      40mm Bofors 此时为 0 座（全美首装四联 40mm 是 1942-06-22 怀俄明号训练舰，
+      比中途岛晚 18 天）。
+
+  - field: armament.aa_40mm.count
+    value: 0
+    unit: count
+    src: [navweaps-5in38-mk24]
+    valid: { from: 1937-09-30, to: 1942-06-07 }
+    confidence: B
+    note: >-
+      这是「0」。中途岛时美军航母装的仍是 1.1"/75 四联装。
+      40mm 全美首装四联是 1942-06-22 的怀俄明号训练舰——比中途岛晚 18 天。
+
+  - field: armament.torpedo.tubes
+    value: 0
+    unit: count
+    src: [nhhc-danfs-yorktown]
+    valid: { from: 1937-09-30, to: 1942-06-07 }
+    confidence: B
+
+  # ============================================================
+  # 雷达与火控
+  # ============================================================
+  - field: sensors.radar.installed
+    value: CXAM-1 对空搜索雷达
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1940-08-01, to: 1942-06-07 }
+    confidence: B
+    note: >-
+      CXAM 首批装舰舰之一（1940-05 至 08 月间装加利福尼亚、约克城、芝加哥、
+      北安普敦、彭萨科拉，随后企业号）。
+      值得注意：中途岛时约克城与**企业号**都有 CXAM，**大黄蜂只有 SC**。
+
+  - field: sensors.director.type
+    value: Mk 33
+    src: [navweaps-5in38-mk24]
+    valid: { from: 1937-09-30, to: 1942-06-07 }
+    confidence: C
+    note: >-
+      与三舰的差异链：约克城与企业号 Mk 33；**大黄蜂 Mk 37**。
+      本舰的指挥仪座数未获取——不按企业号类推。
+
+  # ============================================================
+  # 编制
+  # ============================================================
+  - field: service.complement.standard
+    value: 2217
+    unit: persons
+    src: [nhhc-danfs-yorktown]
+    valid: { from: 1941-01-01, to: 1942-06-07 }
+    confidence: C
+    note: 与同级舰同（2,217 名 1941 年编制）。中途岛时实载人数未获取。
+
+  - field: service.casualties
+    value: 141
+    unit: persons
+    src: [nhhc-danfs-yorktown]
+    valid: { from: 1942-06-07 }
+    confidence: C
+    note: >-
+      中途岛战役期间阵亡约 141 名（含飞行人员与舰员）。
+      各来源口径不同，此处取 DANFS 的概数。
+
+  - about: weapon:5in38-mk12
+    field: weapon.designation
+    value: "5\"/38 Mark 12"
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+  - about: weapon:5in38-mk12
+    field: weapon.category
+    value: naval_gun
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+  - about: weapon:5in38-mk12
+    field: weapon.nation
+    value: united_states
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+  - about: weapon:5in38-mk12
+    field: weapon.bore
+    value: 127
+    unit: mm
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+  - about: weapon:5in38-mk12
+    field: weapon.in_service_from
+    value: 1942-06-04
+    unit: date
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+    note: "单装 8 座（Mk 21 Mod 16），但中途岛时仅 7 座可用——#2 炮哑火卡膛退出战斗"
+
+  - about: weapon:11in75-mk1
+    field: weapon.designation
+    value: "1.1\"/75 Mark 1"
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+  - about: weapon:11in75-mk1
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+  - about: weapon:11in75-mk1
+    field: weapon.nation
+    value: united_states
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+  - about: weapon:11in75-mk1
+    field: weapon.bore
+    value: 28
+    unit: mm
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+  - about: weapon:11in75-mk1
+    field: weapon.in_service_from
+    value: 1942-06-04
+    unit: date
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+    note: 四联装 4 座 16 管
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.designation
+    value: 20mm 厄利孔
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+  - about: weapon:20mm-oerlikon
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+  - about: weapon:20mm-oerlikon
+    field: weapon.nation
+    value: united_states
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+  - about: weapon:20mm-oerlikon
+    field: weapon.bore
+    value: 20
+    unit: mm
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+  - about: weapon:20mm-oerlikon
+    field: weapon.in_service_from
+    value: 1942-06-04
+    unit: date
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+    note: 中途岛时数量未获取
+
+  - about: weapon:f4f-wildcat
+    field: weapon.designation
+    value: F4F-4 野猫
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+  - about: weapon:f4f-wildcat
+    field: weapon.category
+    value: aircraft
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+  - about: weapon:f4f-wildcat
+    field: weapon.nation
+    value: united_states
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+  - about: weapon:f4f-wildcat
+    field: weapon.in_service_from
+    value: 1942-06-04
+    unit: date
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+    note: VF-3
+
+  - about: weapon:sbd-dauntless
+    field: weapon.designation
+    value: SBD-3 无畏
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+  - about: weapon:sbd-dauntless
+    field: weapon.category
+    value: aircraft
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+  - about: weapon:sbd-dauntless
+    field: weapon.nation
+    value: united_states
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+  - about: weapon:sbd-dauntless
+    field: weapon.in_service_from
+    value: 1942-06-04
+    unit: date
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+    note: VB-3 的 13 架打沉了苍龙
+
+  - about: weapon:tbd-devastator
+    field: weapon.designation
+    value: TBD-1 蹂躏者
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+  - about: weapon:tbd-devastator
+    field: weapon.category
+    value: aircraft
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+  - about: weapon:tbd-devastator
+    field: weapon.nation
+    value: united_states
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+  - about: weapon:tbd-devastator
+    field: weapon.in_service_from
+    value: 1942-06-04
+    unit: date
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-07 }
+    confidence: C
+    note: VT-3

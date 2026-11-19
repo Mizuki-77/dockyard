@@ -1,0 +1,674 @@
+# ============================================================================
+# 飞龙（ひりゅう / Hiryū）—— 苍龙的改进型，日本海军唯一另一艘左舷舰岛航母
+#
+# 2026-11-19 入库。数据来自 work/raw/soryu-hiryu-tech.md（覆盖 87.1%）。
+#
+# **识别特征（最要紧的一条）：舰岛在左舷中央。**
+# 日造航母中只有两艘用左舷舰岛——赤城与飞龙。
+# 原文（Kojinsha Vol.6 p.91）：「The main difference in comparison with SORYU
+# was the port amidships location of the island」。
+# 英文维基：「one of only two carriers ever built whose island was on the
+# port side (Akagi was the other)」。
+#
+# **「飞龙的舰岛与赤城设计互换」这个说法查不到任何依据。**
+# 实际情况：1935 年航空本部同一份通達要求「舰桥与烟囱分置两舷、舰桥置于舰体中央附近」，
+# 赤城先做木模型验证、飞龙因已接近完工来不及改，所以两舰都成了左舷。
+# 不是互换，是同一指令并行 + 时间差。
+# ============================================================================
+
+id: hiryu
+name:
+  zh: 飞龙
+  en: Hiryū
+class: soryu
+note: >-
+  苍龙的改进型（基本计划番号 G10），按两型处理。
+  舰岛在左舷中央——日造航母中仅赤城与本舰如此。
+
+open_ended_note: >-
+  本舰参数有效期自 1939-07-05 服役至 1942-06-05 沉没。
+  与苍龙共用的动力、机库、拦阻索等数据写在 classes/soryu.yaml。
+
+facts:
+  # ============================================================
+  # 身份
+  # ============================================================
+  - field: identity.name_original
+    value: 飛龍（ひりゅう / ひりう）
+    src: [japanese-warship-soryu]
+    valid: { from: 1935-11-22 }
+    confidence: C
+
+  - field: identity.name_zh
+    value: 飞龙
+    src: [japanese-warship-soryu]
+    valid: { from: 1935-11-22 }
+    confidence: C
+
+  - field: identity.name_en
+    value: Hiryū
+    src: [combinedfleet-hiryu]
+    valid: { from: 1935-11-22 }
+    confidence: C
+
+  - field: identity.name_note
+    value: 「飛龍」意为高飞之龙。1935-11-22 正式命名。
+    src: [japanese-warship-soryu]
+    valid: { from: 1935-11-22 }
+    confidence: C
+
+  - field: identity.ship_type
+    value: aircraft_carrier
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05 }
+    confidence: C
+    note: 原文「中型空母」。
+
+  - field: identity.nation
+    value: japan
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05 }
+    confidence: C
+
+  - field: identity.operator
+    value: 大日本帝国海軍（Imperial Japanese Navy）
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05 }
+    confidence: C
+
+  - field: identity.era
+    value: ww2
+    src: [combinedfleet-hiryu]
+    valid: { from: 1939-07-05 }
+    confidence: C
+
+  - field: identity.building_program
+    value: 昭和 9 年度（1934 年）②計画；基本计划番号 G10；名义为「蒼龍型二番艦」
+    src: [japanese-warship-soryu]
+    valid: { from: 1934 }
+    confidence: C
+    note: >-
+      原文「当初は蒼龍の同型艦として計画・建造されていた。だが軍縮条約破棄により
+      設計の自由度が増したため、飛行甲板幅を1m広げ艦幅を若干太くし、
+      さらに第四艦隊事件による船体構造溶接化の破棄、凌波性向上のため
+      艦首1m・艦尾40cm乾舷を高めるなど蒼龍とは違う図面で建造された空母となった。」
+      即：条约废除后设计自由度增大 + 第四舰队事件后放弃焊接船体 + 提高干舷，
+      所以两舰用的是**不同的图纸**。
+
+  # ============================================================
+  # 建造
+  # ============================================================
+  - field: construction.builder
+    value: 横須賀海軍工廠（Yokosuka Naval Arsenal）
+    src: [japanese-warship-soryu]
+    valid: { from: 1936-07-08 }
+    confidence: C
+
+  - field: construction.builder_location
+    value: 神奈川県横須賀（Yokosuka, Kanagawa）
+    src: [japanese-warship-soryu]
+    valid: { from: 1936-07-08 }
+    confidence: C
+
+  - field: construction.laid_down
+    value: 1936-07-08
+    unit: date
+    src: [japanese-warship-soryu]
+    valid: { from: 1936-07-08 }
+    confidence: C
+
+  - field: construction.launched
+    value: 1937-11-16
+    unit: date
+    src: [japanese-warship-soryu]
+    valid: { from: 1937-11-16 }
+    confidence: C
+
+  - field: construction.commissioned
+    value: 1939-07-05
+    unit: date
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05 }
+    confidence: C
+    note: 伏见宫博恭王临席竣工。
+
+  - field: construction.fate_date
+    value: 1942-06-05
+    unit: date
+    src: [combinedfleet-hiryu]
+    valid: { from: 1942-06-05 }
+    confidence: C
+    note: >-
+      **中途岛当地时间 6/5 09:12**，舰首下沉、翻覆沉没。
+      此前 05:10 由驱逐舰巻雲发射 1 条鱼雷处置（另一条未命中）。
+      日本时间记 6/6 06:06–06:15，是同一时刻的另一种写法。
+      注意：日文维基与 Tully 关于沉没时刻的换算互不兼容，此取 Tully（当地时）。
+
+  - field: construction.fate_type
+    value: scuttled
+    src: [combinedfleet-hiryu]
+    valid: { from: 1942-06-05 }
+    confidence: C
+    note: >-
+      己方驱逐舰雷击处分。原句「at 0510 scuttled by MAKIGUMO with one torpedo
+      in the starboard side opposite the bridge」。
+      另一条鱼雷未命中（"One torpedo missed and the other struck near the bow
+      without the typical plume of water"）。
+
+  # ============================================================
+  # 主尺度（与苍龙不同）
+  # ============================================================
+  - field: dimensions.length.oa
+    value: 227.35
+    unit: m
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: 苍龙 227.500 m，飞龙 227.35 m——飞龙短 0.15 m。
+
+  - field: dimensions.length.wl
+    value: 222.00
+    unit: m
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: 另一本《軍艦基本計画資料》记 222.930 m。
+
+  - field: dimensions.length.pp
+    value: 209.52
+    unit: m
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: 苍龙 206.52 m，飞龙 209.52 m——长 3.00 m。
+
+  - field: dimensions.beam.wl
+    value: 22.00
+    unit: m
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      苍龙 21.30 m，飞龙 22.00 m——宽 0.70 m。
+      另有 22.32 / 22.324 m 一说（《海軍造船技術概要》同书前后页不一致）。
+
+  - field: dimensions.draught.mean
+    value: 7.84
+    unit: m
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: 公试平均吃水。苍龙 7.475 m。
+
+  - field: dimensions.draught.max
+    value: 8.21
+    unit: m
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: 满载平均吃水。苍龙 8.03 m。
+
+  # ============================================================
+  # 排水量（比苍龙大）
+  # ============================================================
+  - field: displacement.standard
+    value: 17300
+    unit: t
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: 原文「基準排水量 17,300英トン」。苍龙 15,900 英吨——飞龙重 1,400。
+
+  - field: displacement.full
+    value: 20250
+    unit: t
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: 公试排水量计划 20,250 t（或 20,165 t）。
+
+  - field: displacement.maximum
+    value: 21887.30
+    unit: t
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: 満載排水量计划 21,887.30 t；1937-07 实测 21,882.6 t。navypedia 记 21,900。
+
+  # ============================================================
+  # 动力（与苍龙略有差异）
+  # ============================================================
+  - field: propulsion.power.design
+    value: 152000
+    unit: hp
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: 终末全力 153,000 shp。
+
+  - field: propulsion.power.trial
+    value: 152733
+    unit: hp
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: 公试全力 152,733 shp（326 rpm，排水量 20,346 t）。苍龙 152,483 hp。
+
+  - field: propulsion.speed.design
+    value: 34.3
+    unit: kn
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: 苍龙 34.5 节——飞龙设计航速反而略低（因为它更重）。
+
+  - field: propulsion.speed.trial
+    value: 34.28
+    unit: kn
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: 公试全力（20,346 t）。终末全力 34.59 节（20,165 t）。
+
+  - field: propulsion.range.max
+    value: 7670
+    unit: nmi
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: 计划 7,670 海里。公试成绩 10,250 海里（18.142 节）——差异极大，可能是计划值与实测值口径不同。
+
+  - field: propulsion.range.at_speed
+    value: 18
+    unit: kn
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: 7,670 海里 / 18 节。
+
+  - field: propulsion.fuel.capacity
+    value: 3750
+    unit: t
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: 重油 3,750 t。苍龙 3,400 t。
+
+  - field: propulsion.rudder.count
+    value: 1
+    unit: count
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      **半平衡式单舵。苍龙是全平衡式双舵。**
+      原句「In contrast with SORYU's fully balanced twin rudder,
+      HIRYU featured a semi-balanced single rudder.」
+
+  # ============================================================
+  # 防护（比苍龙加强）
+  # ============================================================
+  - field: protection.scheme
+    value: other
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      机舱段舷侧加强、弹药库段加厚，但**飞行甲板完全不设防**。
+      原文「機関室と舵取機室は駆逐艦の5インチ砲にガソリンタンクと弾薬庫は
+      巡洋艦の8インチ砲に耐える装甲を施しているが、飛行甲板の防御は考慮されていない」。
+
+  - field: protection.armor.thickness
+    value: 150
+    unit: mm
+    src: [navypedia-hiryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    qual: { part: belt, region: main }
+    note: >-
+      弹药库与航空汽油库段舷侧最大 150 mm；机舱段减至 90 mm（英文维基）。
+      navypedia 记 48 mm（弹药库处 150 mm）；日文维基记机舱部舷侧 25 mm CNC。
+      三说差异极大，不裁决。
+
+  - field: protection.armor.thickness
+    value: 25
+    unit: mm
+    src: [navypedia-hiryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    qual: { part: deck, region: main }
+    note: 机舱上方 25 mm，弹药库/汽油库上方 55 mm。日文维基另记 140〜50 mm NVNC。
+
+  - field: protection.underwater.depth
+    value: 0
+    unit: m
+    src: [navypedia-hiryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: 未获取总纵深。已知有 45 mm 纵向防雷纵壁，与苍龙相同。
+
+  # ============================================================
+  # 航空设施（本舰数值）
+  # ============================================================
+  - field: aviation.deck.width
+    value: 27.0
+    unit: m
+    src: [navypedia-hiryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      飞行甲板宽 27.0 m（苍龙 26.0 m——飞龙宽 1 m）。
+      日文维基信息框另记 27.4 m。甲板高 12.57 m（苍龙 12.8 m）。
+
+  - field: aviation.elevator.dimensions
+    value: 前 16 × 13 m；中 13 × 12 m；后 11.8 × 13.0 m；载重 5,000 kg
+    src: [navypedia-hiryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      三部升降机比苍龙的更大。Kojinsha 记前 16×13、中 12×13、后 13×11.8 m；
+      日文维基记前 16×12、中 12×11.5、后 10×11.8 m。三说并存。
+
+  - field: aviation.aircraft.capacity
+    value: 64
+    unit: count
+    src: [combinedfleet-hiryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: 机库容量约 64 架（另有 73 架含甲板系留的说法）。比苍龙的 57 架多。
+
+  - field: aviation.aircraft.types
+    value: 零式舰战（A6M2）、九九式舰爆（D3A1）、九七式舰攻（B5N2）
+    src: [combinedfleet-hiryu]
+    valid: { from: 1941-11-26, to: 1942-06-05 }
+    confidence: C
+
+  # ============================================================
+  # 武备
+  # ============================================================
+  - field: armament.aa_25mm.count
+    value: 31
+    unit: count
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      九六式 25mm **三联装 7 基（21 挺）+ 双联装 5 基（10 挺）= 31 挺**。
+      苍龙是 14 基双联 = 28 挺。
+      飞龙管数多 3 挺，且有三联装——这是两舰防空火力最直观的差别之一。
+      其中 2 基三联装设在飞行甲板前端下方平台。
+
+  - field: armament.depth_charge.count
+    value: 6
+    unit: count
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: 九一式爆雷 6 个。苍龙未记此项。
+
+  # ============================================================
+  # 编制
+  # ============================================================
+  - field: service.complement.standard
+    value: 1416
+    unit: persons
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      定员 1,416 名：准士官以上（军官）95、下士官兵 1,315、傭人 6。
+      另加第二航空战队司令部员 23 名。
+      注意：这个数字比苍龙的 1,101 大得多——但两舰排水量只差 1,400 吨，
+      可能统计口径不同（是否含航空队）。
+
+  # ============================================================
+  # 涂装与外形
+  # ============================================================
+  - field: appearance.island_position
+    value: port
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      **左舷中央——这是飞龙最要紧的识别特征。**
+      日造航母中只有两艘用左舷舰岛：赤城与飞龙。
+      Kojinsha Vol.6 p.91 原句：「The main difference in comparison with SORYU
+      was the port amidships location of the island, proposed by Koku Hombu to
+      simplify the supervision of flight operations.」
+      英文维基：「Hiryū was one of only two carriers ever built whose island was
+      on the port side of the ship (Akagi was the other). It was also positioned
+      further to the rear and encroached on the width of the flight deck, unlike
+      Sōryū.」
+      舰岛比苍龙多一层（4 层 5 甲板），前后长度也更长，能设作战室。
+      **注意「与赤城设计互换」的说法查不到依据**：实际是 1935 年航空本部
+      同一份通達要求舰桥与烟囱分置两舷、舰桥置于舰体中央附近；
+      赤城先做木模型验证、飞龙因接近完工来不及改，两舰才都成了左舷。
+
+  - field: appearance.marking
+    value: 飞行甲板后端片假名「ヒ」
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      原句「飛行甲板後端には、上空からの識別のために片仮名で「ヒ」の文字が記入された」。
+      中途岛海战的空拍照片上能辨认出来。
+      与苍龙不同——苍龙的「サ」至今存疑、中途岛照片上根本没看到。
+
+  - field: appearance.scheme
+    value: 未获取
+    src: [japanese-warship-soryu]
+    valid: { from: 1939-07-05, to: 1942-06-05 }
+    confidence: C
+    note: 未获取涂装方案与色号。
+
+  - about: weapon:127cm-89
+    field: weapon.designation
+    value: 12.7cm/40 八九式
+    src: [navweaps-127cm-89]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:127cm-89
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-127cm-89]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:127cm-89
+    field: weapon.nation
+    value: japan
+    src: [navweaps-127cm-89]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:127cm-89
+    field: weapon.bore
+    value: 127
+    unit: mm
+    src: [navweaps-127cm-89]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:127cm-89
+    field: weapon.in_service_from
+    value: 1941-12-07
+    unit: date
+    src: [navweaps-127cm-89]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+    note: 连装 6 基 12 门；前部右舷 2、左舷 2，后部右舷 1、左舷 1（与苍龙布置不同）
+
+  - about: weapon:25mm-96
+    field: weapon.designation
+    value: 25mm 九六式
+    src: [navweaps-25mm-96]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:25mm-96
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-25mm-96]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:25mm-96
+    field: weapon.nation
+    value: japan
+    src: [navweaps-25mm-96]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:25mm-96
+    field: weapon.bore
+    value: 25
+    unit: mm
+    src: [navweaps-25mm-96]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:25mm-96
+    field: weapon.in_service_from
+    value: 1941-12-07
+    unit: date
+    src: [navweaps-25mm-96]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+    note: 三联装 7 基（21 挺）+ 双联装 5 基（10 挺）= 31 挺，比苍龙多
+
+  - about: weapon:a6m2
+    field: weapon.designation
+    value: 零式舰战 21 型
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:a6m2
+    field: weapon.category
+    value: aircraft
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:a6m2
+    field: weapon.nation
+    value: japan
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:a6m2
+    field: weapon.in_service_from
+    value: 1941-12-07
+    unit: date
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+    note: 中途岛时舰载战斗机
+
+  - about: weapon:d3a1
+    field: weapon.designation
+    value: 九九式舰爆 11 型
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:d3a1
+    field: weapon.category
+    value: aircraft
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:d3a1
+    field: weapon.nation
+    value: japan
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:d3a1
+    field: weapon.in_service_from
+    value: 1941-12-07
+    unit: date
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+    note: 中途岛时舰载俯冲轰炸机
+
+  - about: weapon:b5n2
+    field: weapon.designation
+    value: 九七式舰攻 12 型
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:b5n2
+    field: weapon.category
+    value: aircraft
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:b5n2
+    field: weapon.nation
+    value: japan
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:b5n2
+    field: weapon.in_service_from
+    value: 1941-12-07
+    unit: date
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+    note: 中途岛时舰载鱼雷机
+
+  - about: weapon:127cm-89
+    field: weapon.caliber_length
+    value: 40
+    unit: ratio
+    src: [navweaps-127cm-89]
+    valid: { from: 1932 }
+    confidence: C
+    note: L/40
+
+  - about: weapon:127cm-89
+    field: weapon.weight
+    value: 3100
+    unit: kg
+    src: [navweaps-127cm-89]
+    valid: { from: 1932 }
+    confidence: C
+    note: 3.05 吨（3.1 mt）
+
+  - about: weapon:127cm-89
+    field: weapon.muzzle_velocity
+    value: 725
+    qual: { shell_type: he }
+    unit: mps
+    src: [navweaps-127cm-89]
+    valid: { from: 1932 }
+    confidence: C
+    note: 通常弹/三式弹 700-725 mps；照明弹 720；对潜弹 250
+
+  - about: weapon:127cm-89
+    field: weapon.range.max
+    value: 14800
+    unit: m
+    src: [navweaps-127cm-89]
+    valid: { from: 1932 }
+    confidence: C
+    note: 三式弹 45° 仰角。注意：通常弹的射程数据未获取
+
+  - about: weapon:127cm-89
+    field: weapon.range.max_elevation
+    value: 45
+    unit: deg
+    src: [navweaps-127cm-89]
+    valid: { from: 1932 }
+    confidence: C
+
+  - about: weapon:127cm-89
+    field: weapon.range.aa_max
+    value: 9400
+    unit: m
+    src: [navweaps-127cm-89]
+    valid: { from: 1932 }
+    confidence: C
+    note: 75° 仰角时的最大射高
+
+  - about: weapon:127cm-89
+    field: weapon.rate_of_fire
+    value: 14
+    unit: rpm
+    src: [navweaps-127cm-89]
+    valid: { from: 1932 }
+    confidence: C
+    note: 初期 14 发/分；持续 8 发/分

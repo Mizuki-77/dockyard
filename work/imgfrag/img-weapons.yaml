@@ -1,0 +1,326 @@
+# 武器配图分片（img-weapons 产出，合并进 data/images.yaml）
+# 全部逐张核对 Commons imageinfo.extmetadata；width/height 为 Pillow 实测站内文件像素。
+images:
+- id: 37mm-sk-c30-gdynia-museum
+  file: /img/weapons/37mm-sk-c30-gdynia-museum.jpg
+  subject: weapon:37mm-sk-c30
+  title:
+    zh: 3.7 cm SK C/30 高炮（格丁尼亚海军博物馆藏，U-艇打捞件）
+    en: 3.7 cm SK C/30 AA gun, recovered from a U-boat, Gdynia Naval Museum
+  part: other
+  view: detail
+  date: '2017-09-08'
+  license: cc_by_sa
+  license_tier: B
+  license_raw: CC BY-SA 4.0
+  author: Zala
+  credit: 波兰格丁尼亚海军博物馆（Muzeum Marynarki Wojennej w Gdyni）
+  source_url: https://commons.wikimedia.org/wiki/File:37_mm_U-Boot_Gdynia_2.jpg
+  width: 1280
+  height: 719
+  primary: true
+  note: 炮身、摇架、俯仰手轮与方向机全在同一画面内，是这批图里最能看清 C/30 单装炮座机械结构的一张。炮管被前景栏杆略微遮挡一段，看炮口段请参另一张双联 LC/30。该炮为 1945 年在格丁尼亚港内沉没的 U-艇所载，博物馆藏品。授权：CC BY-SA 4.0，作者 Zala，条款 https://creativecommons.org/licenses/by-sa/4.0/deed.zh；本站仅按站内统一宽度缩放到 1280 px，未裁剪、未改色、未合成，无改作。
+- id: 37mm-sk-c30-drache-twin-mount
+  file: /img/weapons/37mm-sk-c30-drache-twin-mount.jpg
+  subject: weapon:37mm-sk-c30
+  title:
+    zh: 训练舰 Drache 上的 3.7 cm SK C/30 双联 LC/30 炮座（1940-02）
+    en: 3.7 cm SK C/30 twin LC/30 mounting on the training ship Drache, February 1940
+  part: other
+  view: detail
+  date: 1940-02
+  license: cc_by_sa
+  license_tier: B
+  license_raw: CC BY-SA 3.0 de
+  author: Winkelmann
+  credit: 德国联邦档案馆（Bundesarchiv） · Bild 101II-MN-0945-08
+  source_url: https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101II-MN-0945-08,_Schulboot_%22Drache%22,_Doppelflak.jpg
+  width: 800
+  height: 501
+  primary: false
+  note: 舰上实拍的双联 LC/30 炮座，两根炮管同时可见，炮手站位与半开放式防盾轮廓清楚，适合核对双联炮管的中心距与摇架宽度。Drache 是鱼雷回收训练舰，该炮座与俾斯麦号上的同型。授权：CC BY-SA 3.0 de，作者 Winkelmann，条款 https://creativecommons.org/licenses/by-sa/3.0/de/deed.zh；本站仅按站内统一宽度缩放到 800 px（源图即 800 px），未裁剪、未改作。Commons 要求的署名形式：Bundesarchiv, Bild 101II-MN-0945-08 / Winkelmann / CC-BY-SA 3.0。
+- id: 20mm-c30-u995-single-mount
+  file: /img/weapons/20mm-c30-u995-single-mount.jpg
+  subject: weapon:20mm-c30
+  title:
+    zh: U-995 指挥塔「冬季花园」上的两门 2 cm 单装高炮
+    en: Two 2 cm single AA mountings on U-995's conning tower 'Wintergarten'
+  part: other
+  view: detail
+  date: 2002-04
+  license: cc_by_sa
+  license_tier: B
+  license_raw: CC BY-SA 3.0 de
+  author: Noop1958（德语维基）
+  credit: 拉博海军纪念馆（Laboe），VII C 型 U-995
+  source_url: https://commons.wikimedia.org/wiki/File:VII_C_U-Boot_Flak.jpg
+  width: 1280
+  height: 853
+  primary: true
+  note: 重要：Commons 上找不到任何标注为 2 cm MG C/30 的舰载照片（分类 Category:2 cm MG C/30 与全库 insource 检索均为 0 命中），此图拍的是 U-995 冬季花园栏杆上的 2 cm 单装高炮，型号为 2 cm Flak 38，与 MG C/30 同属 2 cm 系列但并非同一型号——C/30 为长后坐、射速约 280 发/分，Flak 38 为短后坐、约 420 发/分，炮口制退器与炮架形状亦有差别。此图仅作「VII C 型 U 艇 2 cm 单装炮位在指挥塔上的安装方式与比例」之参考，切勿当作 MG C/30 的准确外形依据。授权：CC BY-SA 3.0 de，作者 Noop1958，条款 https://creativecommons.org/licenses/by-sa/3.0/de/deed.zh；本站仅缩小到 1280 px，未裁剪、未改作。
+- id: 14in-45-mk7-kgv-y-turret
+  file: /img/weapons/14in-45-mk7-kgv-y-turret.jpg
+  subject: weapon:14in-45-mk7
+  title:
+    zh: 英王乔治五世号 Y 炮塔四门 14 in 炮（仰视）
+    en: Looking up at the four 14-inch guns of HMS King George V's 'Y' turret
+  part: turret
+  view: detail
+  date: 1939-1945
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: Hudson, F A（Lt），皇家海军官方摄影师
+  credit: Imperial War Museums, A 16493
+  source_url: https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A16493.jpg
+  width: 606
+  height: 799
+  primary: true
+  note: 四根炮管并排、炮塔正面装甲板与炮室顶盖一次入镜，是 Mk VII 四联炮塔外形的最佳单张。画面里站在甲板上的是离任的本土舰队司令 John C Tovey 上将，在向舰上人员告别。原件藏帝国战争博物馆（IWM A 16493），战时皇家海军官方摄影，Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站上的副本另有非商业条款，本站归档的是 Commons 的公有领域版本。未裁剪、未改作。
+- id: 14in-45-mk7-elswick-quad-mounting
+  file: /img/weapons/14in-45-mk7-elswick-quad-mounting.jpg
+  subject: weapon:14in-45-mk7
+  title:
+    zh: Elswick 工厂装配中的 14 in 四联炮塔（1940-04-30，第 3 号炮吊出）
+    en: 14-inch quadruple mounting under assembly at Elswick Works, 30 April 1940
+  part: turret
+  view: detail
+  date: '1940-04-30'
+  license: pd
+  license_tier: A
+  license_raw: No known copyright restrictions
+  author: Tyne & Wear Archives & Museums
+  credit: Tyne & Wear Archives & Museums · TWAM ref. DS.VA/9/PH/5/2
+  source_url: https://commons.wikimedia.org/wiki/File:Quadruple_gun_mounting_in_24_Shop,_Elswick_Works_(26345255273).jpg
+  width: 999
+  height: 755
+  primary: false
+  note: 唯一一张能看到炮塔内部结构的图：吊出第 3 号炮后，炮室隔舱、炮架座圈、各炮独立摇架的布置全露，对模型制作者判断四联炮塔的体积分配极有用。这是 Elswick 工厂 24 号车间，英国 14 in 四联炮塔的生产现场。权属：Commons 的 LicenseShortName 为「No restrictions」，UsageTerms 为「No known copyright restrictions」，属公有领域，按 A 档归档。未裁剪、未改作。
+- id: 525in-50-mk1-pow-port-turrets
+  file: /img/weapons/525in-50-mk1-pow-port-turrets.jpg
+  subject: weapon:525in-50-mk1
+  title:
+    zh: 威尔士亲王号左舷三座 5.25 in 双联炮塔
+    en: HMS Prince of Wales' three port twin 5.25-inch mountings
+  part: turret
+  view: detail
+  date: 1939-1945
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: Coote, R G G（Lt），皇家海军官方摄影师
+  credit: Imperial War Museums, A 3917
+  source_url: https://commons.wikimedia.org/wiki/File:The_three_port_twin_5.25_inch_guns_of_the_battleship_HMS_PRINCE_OF_WALES.jpg
+  width: 1280
+  height: 954
+  primary: true
+  note: 一座完整的 Mk I 双联炮塔由近及远排开，炮塔外形、防盾折线、炮管俯仰角与炮塔之间的间距关系一目了然，最适合核对 Mk I 炮塔的三维比例。原件藏帝国战争博物馆（IWM A 3917），Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站归档的是 Commons 的公有领域版本。未裁剪、未改作。
+- id: 525in-50-mk1-kgv-secondary-turret
+  file: /img/weapons/525in-50-mk1-kgv-secondary-turret.jpg
+  subject: weapon:525in-50-mk1
+  title:
+    zh: 英王乔治五世号 5.25 in 副炮塔特写（1945 年）
+    en: HMS King George V's 5.25-inch secondary turret, 1945
+  part: turret
+  view: detail
+  date: '1945'
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: Allan C. Green
+  credit: State Library of Victoria（SLV）
+  source_url: https://commons.wikimedia.org/wiki/File:HMS_King_George_V_secondary_turret_SLV_Green.jpg
+  width: 1280
+  height: 937
+  primary: false
+  note: 近距离特写，双管水平状态，炮塔侧面铆接排布、观察窗、防盾边缘与顶部排气口都清楚；甲板上的水兵可作人体比例参照。原件藏维多利亚州立图书馆，作者 Allan C. Green，公有领域。注意此照摄于 1945 年，炮塔上可能已有后期加装的雷达天线座，做早期状态时需剔除。
+- id: 2pdr-mk8-hmas-napier-octuple
+  file: /img/weapons/2pdr-mk8-hmas-napier-octuple.jpg
+  subject: weapon:2pdr-mk8
+  title:
+    zh: HMAS Napier 上的八联 2-pdr pom-pom 炮组（约 1943–44）
+    en: Octuple 2-pdr pom-pom crew on HMAS Napier, c. 1943–44
+  part: other
+  view: detail
+  date: 1943-1944
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: 未署名（not stated）
+  credit: State Library of Victoria（SLV）
+  source_url: https://commons.wikimedia.org/wiki/File:Multiple_pom-poms_on_HMAS_Napier_WWII-2.jpeg
+  width: 1000
+  height: 720
+  primary: true
+  note: 正面视角，八根炮管呈上下两排四根排布，炮手戴防破片面罩立在炮座后方，炮座底板、供弹槽口与摇架外形都在画面内。八联 pom-pom 最容易被误画成八管同排，此图可直接否掉这种画法。原件藏维多利亚州立图书馆，公有领域。未裁剪、未改作。
+- id: 2pdr-mk8-hms-rodney-in-action
+  file: /img/weapons/2pdr-mk8-hms-rodney-in-action.jpg
+  subject: weapon:2pdr-mk8
+  title:
+    zh: 罗德尼号左舷八联 pom-pom 对空射击（1940-10）
+    en: HMS Rodney's port octuple pom-pom in anti-aircraft practice, October 1940
+  part: other
+  view: detail
+  date: 1940-10
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: Reginald George Guy Coote（Lt），皇家海军官方摄影师
+  credit: Imperial War Museums, A 1408
+  source_url: https://commons.wikimedia.org/wiki/File:The_port_eight_barrelled_Vickers_two_pounder_Mk_VIII_%27pom-pom%27_gun_in_action_during_anti-aircraft_practice_on_board_HMS_RODNEY,_October_1940._A1408.jpg
+  width: 1280
+  height: 963
+  primary: false
+  note: 射击瞬间，炮口焰与抛壳、供弹槽的走向可见，能看出八管是分两排交错而非一字排列。舰上实拍，背景是海上，没有博物馆展品那种支架干扰。原件藏帝国战争博物馆（IWM A 1408），Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站归档的是 Commons 的公有领域版本。未裁剪、未改作。
+- id: 40mm-bofors-belfast-twin-side
+  file: /img/weapons/40mm-bofors-belfast-twin-side.jpg
+  subject: weapon:40mm-bofors
+  title:
+    zh: 贝尔法斯特号双联 40 mm Bofors（侧视）
+    en: Twin 40 mm Bofors on HMS Belfast, side view
+  part: turret
+  view: detail
+  date: '2007-11-29'
+  license: cc_by_sa
+  license_tier: B
+  license_raw: CC BY-SA 3.0
+  author: Rémi Kaupp（User:Korrigan）
+  credit: 贝尔法斯特号博物馆舰（HMS Belfast, Imperial War Museums）
+  source_url: https://commons.wikimedia.org/wiki/File:HMS_Belfast_-_Bofors_40_mm_gun_side_view.jpg
+  width: 1280
+  height: 853
+  primary: true
+  note: Commons 描述明确为「40mm QF Guns Mk XI in twin mounting RP50 Mk V, six of them on the ship」，即英制双联 RP50 Mk V 动力炮座，不是美制 Mk II 四联。炮座外形、防盾、供弹口与瞄准具侧面清楚。注意本站 40mm-bofors 实体同时涵盖美制四联 Mk II 与英制单装/双联，此图为英制双联型。授权：CC BY-SA 3.0，作者 Rémi Kaupp，条款 https://creativecommons.org/licenses/by-sa/3.0/deed.zh；本站仅按站内统一宽度缩放到 1280 px，未裁剪、未改作。
+- id: 40mm-bofors-belfast-twin-top
+  file: /img/weapons/40mm-bofors-belfast-twin-top.jpg
+  subject: weapon:40mm-bofors
+  title:
+    zh: 贝尔法斯特号双联 40 mm Bofors（俯视）
+    en: Twin 40 mm Bofors on HMS Belfast, top view
+  part: turret
+  view: overhead
+  date: '2007-11-29'
+  license: cc_by_sa
+  license_tier: B
+  license_raw: CC BY-SA 3.0
+  author: Rémi Kaupp（User:Korrigan）
+  credit: 贝尔法斯特号博物馆舰（HMS Belfast, Imperial War Museums）
+  source_url: https://commons.wikimedia.org/wiki/File:HMS_Belfast_-_Bofors_40_mm_gun_top_view_1.jpg
+  width: 1280
+  height: 853
+  primary: false
+  note: 俯视，可见炮座的回转平台、座圈直径、两门炮的中心距与摇架布置，是做炮座底盘与回转结构时的直接依据。与侧视图同一座同型炮。授权：CC BY-SA 3.0，作者 Rémi Kaupp，条款 https://creativecommons.org/licenses/by-sa/3.0/deed.zh；本站仅缩小到 1280 px，未裁剪、未改作。
+- id: 20mm-oerlikon-hms-rodney-training
+  file: /img/weapons/20mm-oerlikon-hms-rodney-training.jpg
+  subject: weapon:20mm-oerlikon
+  title:
+    zh: 罗德尼号上军官学习操作 20 mm Oerlikon
+    en: Officers receiving instruction on a 20 mm Oerlikon aboard HMS Rodney
+  part: other
+  view: detail
+  date: 1939-1945
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: Marshall（Lt），皇家海军官方摄影师
+  credit: Imperial War Museums, A 6264
+  source_url: https://commons.wikimedia.org/wiki/File:20mm_Oerlikon_training_on_HMS_Rodney_WWII_IWM_A_6264.jpg
+  width: 800
+  height: 596
+  primary: true
+  note: 舰上实拍的 Mk IIIA 单装炮座：肩托、环形瞄具、弹鼓位置与立柱底座全在画面内，炮手站位与人体比例可直接换算。背景还带一座八联 pom-pom，可顺带核对两种炮的体量差。原件藏帝国战争博物馆（IWM A 6264），Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站归档的是 Commons 的公有领域版本。未裁剪、未改作。
+- id: 20mm-oerlikon-wellington-museum
+  file: /img/weapons/20mm-oerlikon-wellington-museum.jpg
+  subject: weapon:20mm-oerlikon
+  title:
+    zh: 惠灵顿博物馆藏 20 mm Oerlikon 单装炮座（带防盾）
+    en: 20 mm Oerlikon single mount with shield, Wellington Museum
+  part: other
+  view: detail
+  date: '2024-10-12'
+  license: cc0
+  license_tier: A
+  license_raw: CC0
+  author: Daderot
+  credit: 新西兰惠灵顿博物馆（Wellington Museum），原装于 HMNZS Olphert（1943）
+  source_url: https://commons.wikimedia.org/wiki/File:20mm_Oerlikon_mounted_cannon,_HMNZS_Olphert,_1943_-_Wellington_Museum_-_Wellington,_NZ_DSC00021.jpg
+  width: 1280
+  height: 1920
+  primary: false
+  note: HMNZS Olphert 上的原装炮位，带防盾与柱状底座，肩托与俯仰手轮从侧面完全露出。竖构图（1280×1920），比实照更适合看清防盾形状与炮座与甲板的连接方式。CC0 公有领域贡献，无署名义务，此处署名是礼貌。未裁剪、未改作。
+- id: 4_5in-qf-mk3-implacable-twin
+  file: /img/weapons/4_5in-qf-mk3-implacable-twin.jpg
+  subject: weapon:4_5in-qf-mk3
+  title:
+    zh: 光辉级／不倦级航母上的 4.5 in Mk III 双联炮塔
+    en: 4.5-inch Mk III twin mountings on an Implacable-class carrier
+  part: turret
+  view: detail
+  date: 1939-1945
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: 皇家海军（Commons 的 Artist 栏记作 RN）
+  credit: Imperial War Museums（底片编号未确认）
+  source_url: https://commons.wikimedia.org/wiki/File:4.5_inch_guns_on_Implacable_class_aircraft_carrier.jpg
+  width: 444
+  height: 245
+  primary: true
+  note: 题材最对位的一张：Commons 描述为不倦级（Implacable 或 Indefatigable）上的 4.5 in Mk III 双联 RP10 Mk II BD 炮座，正是光辉级同款。两组炮管上扬、炮塔轮廓与防盾弧线可辨。缺点：源图仅 444×245，是本站分辨率最低的一张，只宜看轮廓比例，不宜放大看铆接与细节——细节请用另一张 Explosion 博物馆的 Mk 5 双联照（型号不同，已在条目中说明）。公有领域，原件应藏帝国战争博物馆但编号未在 Commons 记录。
+- id: 4_5in-qf-mk3-mk5-twin-mk6-mounting
+  file: /img/weapons/4_5in-qf-mk3-mk5-twin-mk6-mounting.jpg
+  subject: weapon:4_5in-qf-mk3
+  title:
+    zh: 爆炸海军火器博物馆藏 4.5 in Mk 5 双联 Mk 6 炮座
+    en: QF 4.5-inch Mark 5 gun on twin Mark 6 mounting, Explosion Museum of Naval Firepower
+  part: turret
+  view: detail
+  date: '2023-04-22'
+  license: cc_by_sa
+  license_tier: B
+  license_raw: CC BY-SA 4.0
+  author: The wub
+  credit: 爆炸海军火器博物馆（Explosion Museum of Naval Firepower, Gosport）
+  source_url: https://commons.wikimedia.org/wiki/File:QF_4.5-inch_Mark_5_gun_on_twin_Mark_6_mounting_at_Explosion_Museum.jpg
+  width: 1280
+  height: 853
+  primary: false
+  note: 重要：这是陆上博物馆的 Mk 5 双联 Mk 6 炮座，与光辉级上的 Mk III／RP10 Mk II BD 不是同一对型号。但炮塔外形、防盾折角、铆接排布、炮口帆布罩与炮管锥度在这一代 4.5 in 炮上高度相似，且是本站能拿到的最高清（1280×853）4.5 in 炮塔实照，看外壳细节仍可用；判断炮塔内部与装填机构时不要以此为准。授权：CC BY-SA 4.0，作者 The wub，条款 https://creativecommons.org/licenses/by-sa/4.0/deed.zh；本站仅缩小到 1280 px，未裁剪、未改作。
+- id: up-rocket-kgv-quarterdeck-mount
+  file: /img/weapons/up-rocket-kgv-quarterdeck-mount.jpg
+  subject: weapon:up-rocket
+  title:
+    zh: 英王乔治五世号舰尾 UP 发射器的操作舱（约 1940–41）
+    en: The UP launcher's crew cabin on HMS King George V's quarterdeck, c. 1940–41
+  part: other
+  view: detail
+  date: 1940-1941
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: Beadell, S J（Lt），皇家海军官方摄影师
+  credit: Imperial War Museums, A 9385（collection no. 4700-01）
+  source_url: https://commons.wikimedia.org/wiki/File:UP_mount_HMS_King_George_V_IWM_A_9385.jpg
+  width: 588
+  height: 777
+  primary: true
+  note: Commons 描述：「gunner in cabin of 7-inch Unrotated Projectile (i.e. rocket) mounting on quarterdeck of HMS King George V」。舱门打开正对镜头，可见炮手与操作舱内部，上方是倾斜安装的二十管发射箱底缘。二十管 UP 发射器几乎没有清晰实照，这张是少数能看出「发射箱 + 操作舱」整体关系的图。拍摄时该舰在 Rosyth 干船坞。原件藏帝国战争博物馆（IWM A 9385），Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站归档的是 Commons 的公有领域版本。未裁剪、未改作。
+- id: up-rocket-hms-nelson-launchers
+  file: /img/weapons/up-rocket-hms-nelson-launchers.jpg
+  subject: weapon:up-rocket
+  title:
+    zh: 纳尔逊号 B 炮塔两侧的 UP 发射箱（1940 年）
+    en: UP launcher batteries beside HMS Nelson's 'B' turret, 1940
+  part: other
+  view: bow
+  date: '1940'
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: Coote, R G G（Lt）
+  credit: Imperial War Museums, A 1995
+  source_url: https://commons.wikimedia.org/wiki/File:16_inch_gun_turrets_and_Unrotated_Projectile_launchers_on_HMS_Nelson_1940_IWM_A_1995.jpg
+  width: 800
+  height: 606
+  primary: false
+  note: 舰首俯视，B 炮塔顶两侧各一组 UP 发射箱（每组装二十管），可看出安装位置、与 16 in 炮塔的相对尺寸以及发射箱的仰角。IWM 原说明写着「the UP's...」（拼版剪掉了后半句）。原件藏帝国战争博物馆（IWM A 1995），Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站归档的是 Commons 的公有领域版本。未裁剪、未改作。

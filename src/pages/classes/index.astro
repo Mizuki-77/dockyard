@@ -1,0 +1,113 @@
+---
+import Base from '../../layouts/Base.astro';
+import SideNav from '../../components/SideNav.astro';
+import { getClasses, getShips } from '../../lib/data';
+
+const classes = getClasses();
+const ships = getShips();
+const byClass = new Map<string, typeof ships>();
+for (const s of ships) {
+  if (!s.class) continue;
+  const arr = byClass.get(s.class) ?? [];
+  arr.push(s);
+  byClass.set(s.class, arr);
+}
+---
+
+<Base title="舰级档案">
+  <SideNav
+    slot="sidenav"
+    kicker="Classes"
+    title="舰级档案"
+    items={[
+      { href: '/ships', label: '全部战舰' },
+      { href: '/classes', label: '舰级档案' },
+      { href: '/sources', label: '资料来源' },
+    ]}
+    note="同级舰的公共参数写在舰级层，单舰文件只写差异。这样新增一艘同级舰不必重抄一遍数据。"
+  />
+
+  <div class="pagehead">
+    <div class="pagehead__kicker">Classes</div>
+    <h1 class="pagehead__title">舰级档案</h1>
+    <p class="pagehead__sub">
+      共 {classes.length} 个舰级。舰级层存放同级舰共有的设计参数；
+      单舰页只补充「这一艘和级里不一样」的部分。解析顺序是单舰优先，舰级兜底。
+    </p>
+  </div>
+
+  {
+    classes.length === 0 ? (
+      <div class="empty">
+        <div class="empty__title">还没有舰级档案</div>
+        <div class="empty__text">把 YAML 放进 data/classes/ 即可出现在这里。</div>
+      </div>
+    ) : (
+      <div class="stack">
+        {classes.map((c) => {
+          const members = byClass.get(c.id) ?? [];
+          return (
+            <a class="card card--pad classrow" href={`/classes/${c.id}`}>
+              <div class="classrow__main">
+                <div class="classrow__name">
+                  {c.name.zh}
+                  <span class="classrow__en">{c.name.en ?? ''}</span>
+                </div>
+                <div class="classrow__meta">
+                  <span class="tag tag--ghost">{(c.facts ?? []).length} 条舰级参数</span>
+                  {members.length > 0 && (
+                    <span class="tag tag--ghost">
+                      已收录 {members.map((m) => m.name.zh).join('、')}
+                    </span>
+                  )}
+                </div>
+              </div>
+              <span class="classrow__go">查看舰级 →</span>
+            </a>
+          );
+        })}
+      </div>
+    )
+  }
+</Base>
+
+<style>
+  .classrow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.14s ease, transform 0.14s ease;
+  }
+  .classrow:hover {
+    text-decoration: none;
+    border-color: var(--blue-300);
+    transform: translateY(-1px);
+  }
+  .classrow__name {
+    font-size: 17px;
+    font-weight: 680;
+    color: var(--ink-900);
+  }
+  .classrow__en {
+    margin-left: 9px;
+    font-size: 12px;
+    color: var(--ink-300);
+    font-family: var(--font-mono);
+    letter-spacing: 0.04em;
+  }
+  .classrow__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .classrow__go {
+    flex-shrink: 0;
+    font-size: 12.5px;
+    color: var(--blue-600);
+    font-weight: 600;
+  }
+</style>

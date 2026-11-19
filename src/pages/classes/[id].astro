@@ -1,0 +1,279 @@
+---
+import Base from '../../layouts/Base.astro';
+import SideNav from '../../components/SideNav.astro';
+import {
+  getClasses,
+  getClass,
+  getShips,
+  getField,
+  getGroups,
+  getEntities,
+  formatFact,
+  deps,
+  pickPrimary,
+  isDisputed,
+  type ResolvedFact,
+} from '../../lib/data';
+
+export function getStaticPaths() {
+  return getClasses().map((c) => ({ params: { id: c.id } }));
+}
+
+const { id } = Astro.params;
+const cls = getClass(id!)!;
+const allShips = getShips();
+const members = allShips.filter((s) => s.class === cls.id);
+const entities = getEntities(cls);
+const groups = getGroups();
+
+// 舰级层：每个字段只取一条（多条不同值 = 舰级层内部就有分歧）
+const rows = new Map<string, ResolvedFact[]>();
+for (const f of cls.facts ?? []) {
+  if (f.about) continue; // weapon / mount 实体单独渲染
+  const arr = rows.get(f.field) ?? [];
+  arr.push({
+    ...f,
+    from: typeof f.valid?.from === 'string' ? f.valid.from : undefined,
+    to: typeof f.valid?.to === 'string' ? f.valid.to : undefined,
+    src: f.src ?? [],
+    origin: 'class' as const,
+  });
+  rows.set(f.field, arr);
+}
+
+const navItems = [
+  { href: '/classes', label: '全部舰级' },
+  ...members.map((m) => ({ href: `/ships/${m.id}`, label: `${m.name.zh}号` })),
+  { href: '/sources', label: '资料来源' },
+];
+---
+
+<Base title={cls.name.zh}>
+  <SideNav
+    slot="sidenav"
+    kicker="Class"
+    title={cls.name.zh}
+    items={navItems}
+    note="舰级层参数对所有同级舰成立。单舰页只写与舰级不同的部分。"
+  />
+
+  <nav class="crumbs">
+    <a href="/">主页</a>
+    <span class="sep">/</span>
+    <a href="/classes">舰级档案</a>
+    <span class="sep">/</span>
+    <span>{cls.name.zh}</span>
+  </nav>
+
+  <div class="pagehead">
+    <div class="pagehead__kicker">Class record · {cls.name.en}</div>
+    <h1 class="pagehead__title">{cls.name.zh}</h1>
+    <div class="pagehead__meta">
+      <span class="tag tag--dark">{(cls.facts ?? []).length} 条舰级参数</span>
+      {members.length > 0 && (
+        <span class="tag tag--ghost">已收录 {members.map((m) => m.name.zh).join('、')}</span>
+      )}
+    </div>
+  </div>
+
+  {
+    cls.note && (
+      <div class="callout">
+        <div class="callout__title">关于这个舰级</div>
+        <p>{cls.note}</p>
+      </div>
+    )
+  }
+
+  {
+    members.length > 0 && (
+      <section class="section">
+        <div class="section__head">
+          <h2 class="section__title">同级舰</h2>
+          <span class="section__en">In this class</span>
+        </div>
+        <div class="modules">
+          {members.map((m) => (
+            <a class="module" href={`/ships/${m.id}`}>
+              <div class="module__kicker">Ship</div>
+              <div class="module__title">{m.name.zh}</div>
+              <div class="module__desc">
+                {m.name.en ?? ''} · {(m.facts ?? []).length} 条单舰记录
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <section class="section">
+    <div class="section__head">
+      <h2 class="section__title">舰级参数</h2>
+      <span class="section__en">Class characteristics</span>
+    </div>
+    <p class="section__sub">
+      这些数值对同级所有舰成立。单舰若与这里不同，会在该舰页面上标出来，不算矛盾。
+    </p>
+
+    {
+      groups.map((g) => {
+        const items = [...rows.entries()].filter(([field]) => getField(field)?.group === g.id);
+        if (items.length === 0) return null;
+        items.sort((a, b) => {
+          const fa = getField(a[0]);
+          const fb = getField(b[0]);
+          return (fa?.label.zh ?? '').localeCompare(fb?.label.zh ?? '');
+        });
+        return (
+          <div class="group-block">
+            <div class="group-block__title">
+              {g.label.zh}
+              <span>{g.label.en}</span>
+            </div>
+            {items.map(([field, fs]) => {
+              const def = getField(field)!;
+              const primary = pickPrimary(fs, deps)!;
+              const disp = isDisputed(fs);
+              const text = formatFact(primary);
+              return (
+                <div class="datarow">
+                  <div class="datarow__k">{def.label.zh}</div>
+                  <div class:list={['datarow__v', { 'datarow__v--long': text.length > 42 }]}>
+                    <span class={disp ? 'is-disputed' : ''}>{text}</span>
+                    {disp && <span class="tag tag--warn tiny">存在争议</span>}
+                  </div>
+                  <div class="datarow__meta">
+                    {primary.confidence && (
+                      <span class={`conf conf--${primary.confidence}`}>{primary.confidence}</span>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        );
+      })
+    }
+  </section>
+
+  {
+    entities.weapons.length > 0 && (
+      <section class="section">
+        <div class="section__head">
+          <h2 class="section__title">武备系统</h2>
+          <span class="section__en">Armament</span>
+        </div>
+        <p class="section__sub">
+          武器本体（炮、炮塔）作为独立实体登记，多艘舰共用一份参数，不重复录入。
+        </p>
+        <div class="stack">
+          {entities.weapons.map((w) => (
+            <div class="card">
+              <div class="card__head">
+                <h3 class="card__title">{w.label}</h3>
+                <span class="tag tag--ghost">{w.facts.length} 条参数</span>
+              </div>
+              <div class="card__body">
+                {w.facts.map((f) => {
+                  const def = getField(f.field);
+                  if (!def) return null;
+                  const text = formatFact(f);
+                  return (
+                    <div class="datarow">
+                      <div class="datarow__k">{def.label.zh}</div>
+                      <div class:list={['datarow__v', { 'datarow__v--long': text.length > 42 }]}>
+                        {text}
+                      </div>
+                      <div class="datarow__meta">
+                        {f.confidence && (
+                          <span class={`conf conf--${f.confidence}`}>{f.confidence}</span>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+                {w.mounts.length > 0 && (
+                  <div class="mount-list">
+                    <div class="mount-list__title">炮位实例</div>
+                    {w.mounts.map((m) => (
+                      <div class="mount-list__item">
+                        <span class="mount-list__name">{m.label}</span>
+                        <span class="mount-list__meta">{m.facts.length} 条记录</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    )
+  }
+</Base>
+
+<style>
+  .section__sub {
+    font-size: 12.5px;
+    color: var(--ink-400);
+    margin: -6px 0 14px;
+    line-height: 1.7;
+  }
+  .group-block {
+    margin-bottom: 22px;
+  }
+  .group-block__title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blue-600);
+    padding-bottom: 7px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid var(--line-soft);
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+  }
+  .group-block__title span {
+    font-size: 10px;
+    color: var(--ink-300);
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    text-transform: none;
+  }
+  .is-disputed {
+    color: var(--warn);
+    font-weight: 620;
+  }
+  .mount-list {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--line);
+  }
+  .mount-list__title {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ink-400);
+    margin-bottom: 8px;
+  }
+  .mount-list__item {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 6px 0;
+    font-size: 12.5px;
+  }
+  .mount-list__name {
+    color: var(--ink-900);
+    font-weight: 580;
+  }
+  .mount-list__meta {
+    color: var(--ink-300);
+    font-family: var(--font-mono);
+    font-size: 11px;
+  }
+</style>

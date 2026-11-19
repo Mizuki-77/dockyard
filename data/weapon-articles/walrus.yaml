@@ -1,0 +1,143 @@
+# ============================================================================
+# 武器正文 —— Supermarine Walrus
+#
+# 这一型在本舰上的看点：2 架、部分装 ASV 雷达、以及它被同一份年表称为
+# 「第一型装雷达的海军一线飞机」——这句是那一家网站的断语，须如实标注。
+# 马力/极速/翼展无来源，不写。
+# ============================================================================
+weapon: walrus
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Supermarine Walrus 是一型舰载两栖侦察机，在英王乔治五世号上承担的是
+      弹射起飞、水面降落、吊车回收的侦察与校射任务，战争后期还兼做海空救援。
+      本舰 1941 年初实载 2 架，其中部分装了 ASV 型对海搜索雷达；
+      编制表另给 2 到 4 架，两个数字口径不同。
+      1944 年本舰拆除弹射器后，这一型不再搭载。
+    en: >-
+      The Supermarine Walrus was a carrier-borne amphibian used for catapult-launched,
+      water-landed, crane-recovered reconnaissance and spotting, and in the later war for
+      air-sea rescue as well. Aboard HMS King George V two were carried in early 1941,
+      some of them fitted with ASV surface-search radar, while the establishment table
+      gives two to four, a different measure. When the ship's catapult was removed in
+      1944, the type went with it.
+
+  paragraphs:
+    - heading: 它在本舰上的三个数字，口径各不相同
+      text:
+        zh: >-
+          这里的差异不是矛盾，是三种不同的计数方法，必须分开写。
+          第一条是实载：本舰 1941 年初实载 2 架，其中部分装了 ASV 雷达。
+          第二条是编制：编制表给 2 到 4 架——这是「允许装多少」而不是「实际装了几架」。
+          第三条是同一份技术记录的注记：本舰的弹射器是 1 座 D-III-H 双向弹射器，
+          配 2 架水上飞机。三种说法分别对应「当时在舰上的」「编制允许的」
+          「弹射器配套的」，本站不把它们合成一个数字。
+        en: >-
+          The differences here are not contradictions but three different ways of counting,
+          and they have to be kept apart. The first is what was actually carried: two
+          aircraft in early 1941, some fitted with ASV radar. The second is the
+          establishment: two to four, which says what was allowed rather than what was
+          aboard. The third is the technical record's own note that the ship had one
+          D-III-H twin catapult with two seaplanes. The three correspond to "aboard at the
+          time", "permitted by the establishment" and "matched to the catapult", and this
+          article does not collapse them into one figure.
+      src: [navypedia-kgv, naval-history-kgv]
+
+    - heading: 「第一型装雷达的海军一线飞机」是那一家网站的断语
+      text:
+        zh: >-
+          这一点必须标明出处与性质。本舰的服役年表在记 1941 年在 Scapa 期间
+          「embarked two Walrus amphibians equipped with ASV 11N radar」之后，
+          紧接着写了一句「These were the first naval front line aircraft to be fitted
+          with radar」。这句话是该页作者的判断，本站如实转录并标明「该页称」，
+          不把它升格为本站的结论——因为要证实「第一」需要比一份服役年表更强的证据。
+          能确证的部分是具体的：本舰 1941 年确实载有装 ASV 11N 的 Walrus。
+        en: >-
+          The provenance and the status of this claim both need marking. Recording that the
+          ship "embarked two Walrus amphibians equipped with ASV 11N radar" while at Scapa
+          in 1941, the service chronology goes straight on to say: "These were the first
+          naval front line aircraft to be fitted with radar." That sentence is the page
+          author's judgement; it is transcribed here with the attribution made explicit and
+          is not promoted to this site's own conclusion, since establishing a "first"
+          requires stronger evidence than one service chronology. What can be stated firmly
+          is the concrete part: in 1941 the ship did carry Walruses fitted with ASV 11N.
+      src: [naval-history-kgv]
+
+    - heading: 它在舰队里的角色：从校射到救援
+      text:
+        zh: >-
+          这一型的用法从记录里看得很清楚。本舰 1941 年 4 月从护航队脱离后北上冰岛，
+          起飞 Walrus，任务是把飞机送到冰岛、等诺福克号（HMS Norfolk）来接收——
+          也就是水上飞机被当作可以「转场」的装备使用。
+          战争后期它的角色变了：1945 年几份航母机群清单里都列有
+          「Ship's flight: 2 Walrus ASR」，ASR 即海空救援。
+          同一型飞机，从侦察校射转到捞人，这是战争后期舰队航空兵分工变化的一部分。
+        en: >-
+          The type's use is clear from the record. After detaching from a convoy in April
+          1941 the ship sailed north for Iceland and launched her Walruses, the task being
+          to deliver the aircraft to Iceland to be embarked by HMS Norfolk - the amphibian
+          used as equipment that could be ferried onward. Later in the war the role
+          changed: several 1945 carrier air-group lists carry "Ship's flight: 2 Walrus
+          ASR", ASR being air-sea rescue. The same aircraft moved from spotting to picking
+          up survivors, part of the wider shift in Fleet Air Arm duties late in the war.
+      src: [naval-history-kgv, ac-design]
+
+history:
+  - id: service
+    title: { zh: 装舰记录, en: Fitting record }
+    range: { from: 1940-10, to: 1944 }
+    lead:
+      zh: >-
+        从服役时的 2 架，到 1944 年随弹射器一起撤走。
+      en: >-
+        From two aircraft at commissioning to removal with the catapult in 1944.
+    events:
+      - date: 1940-10-01
+        text:
+          zh: >-
+            本舰服役。装备记录为 1 座 D-III-H 双向弹射器、2 架水上飞机；
+            同级各舰的清单把候选机型列为 Walrus、Swordfish、Seafox 三型。
+            机型清单一栏是「可用的型号」而不是「同时搭载的型号」。
+          en: >-
+            The ship came into service with one D-III-H twin catapult and two seaplanes;
+            the class lists name Walrus, Swordfish and Seafox as candidate types. That
+            column is a roster of types available, not a manifest of what was carried at
+            once.
+        src: [navypedia-kgv]
+      - date: 1941-01
+        text:
+          zh: >-
+            本舰实载 2 架，部分装 ASV 型对海搜索雷达。
+            在 Scapa 期间所载的两架装的是 ASV 11N；
+            服役年表就这两架写下了「第一型装雷达的海军一线飞机」的断语。
+          en: >-
+            Two were carried, some fitted with ASV surface-search radar. The pair embarked
+            while at Scapa carried ASV 11N, and the service chronology attaches to them the
+            statement that they were the first naval front line aircraft to be fitted with
+            radar.
+        src: [navypedia-kgv, naval-history-kgv]
+      - date: 1941-04
+        text:
+          zh: >-
+            本舰从 HX 115 护航队脱离后北上冰岛，起飞 Walrus，
+            飞机在冰岛等待由诺福克号（HMS Norfolk）接收。
+          en: >-
+            Having detached from convoy HX 115, the ship sailed north for Iceland and
+            launched her Walruses, which were to wait there to be embarked by HMS Norfolk.
+        src: [naval-history-kgv]
+      - date: 1944-07
+        text:
+          zh: >-
+            1944 年改装中本舰拆除弹射器与水上飞机装备，此后不再搭载这一型。
+            同一批改装里减掉的是 type 273 与 type 279 等电子设备，
+            换上 type 277、type 279B、type 293 等——
+            也就是说「航空装备退场」与「雷达换代」是同一个改装包里的两件事。
+          en: >-
+            The 1944 refit removed the catapult and the seaplane equipment, and the type
+            was not carried afterwards. The same refit took off electronic equipment
+            including the type 273 and type 279 and put on the type 277, type 279B and
+            type 293 - so the aviation gear leaving and the radar change were two parts of
+            one package.
+        src: [navypedia-kgv]

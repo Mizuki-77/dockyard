@@ -1,0 +1,149 @@
+---
+// ============================================================================
+// 战舰信息索引页（左树右文）—— 三个入口共用这一份，只有主维度不同
+//
+// 版式来自用户手绘草图：
+//   左侧  「战舰信息索引」+ 可折叠层级树
+//   右侧  当前舰的「大图 + 简介 + 历史摘要」
+//
+// 为什么右侧要有内容而不是一张卡片墙：
+//   索引页如果只有列表，读者从这里看不到任何一艘船长什么样，也没法判断
+//   值不值得点。草图的意思就是「左边定位、右边预览」。
+//
+// 「当前舰」的取法：URL 上的 ?ship=xxx。
+//   构建期读不到 searchParams，所以把每艘舰的预览片段都预渲染进页面（hidden），
+//   点击时原地切换，不发起请求也不闪屏。收录量上千时改成独立 JSON 渲染。
+// ============================================================================
+import Base from '../layouts/Base.astro';
+import ShipIndex from './ShipIndex.astro';
+import ShipPreview from './ShipPreview.astro';
+import ShipTree from './ShipTree.astro';
+import { getShips, getClasses, type TreeMode } from '../lib/data';
+
+interface Props {
+  mode: TreeMode;
+  title: string;
+  kicker: string;
+  blurb: string;
+}
+
+const { mode, title, kicker, blurb } = Astro.props;
+
+const ships = getShips();
+const classes = getClasses();
+const first = ships[0]?.id ?? '';
+const heads = `收录 ${ships.length} 艘 · ${classes.length} 个舰级。`;
+---
+
+<Base title={title} variant="tree">
+  <ShipIndex
+    slot="sidenav"
+    mode={mode}
+    current={first ? `ship:${first}` : ''}
+    preview={true}
+  />
+
+  <div class="pagehead pagehead--tight">
+    <div class="pagehead__kicker">{kicker}</div>
+    <h1 class="pagehead__title">{title}</h1>
+    <p class="pagehead__sub">{heads}{blurb}</p>
+  </div>
+
+  <div id="preview-root">
+    {
+      ships.map((s) => (
+        <div class="previewslot" data-ship={s.id} hidden={s.id !== first}>
+          <ShipPreview shipId={s.id} />
+        </div>
+      ))
+    }
+  </div>
+
+  <details class="indexall">
+    <summary class="indexall__sum">
+      按列表总览全部战舰（{ships.length} 艘）
+      <span class="indexall__hint">展开后可按关键词筛选</span>
+    </summary>
+    <div class="indexall__body">
+      <ShipTree mode={mode} />
+    </div>
+  </details>
+
+  <script>
+    // 切换右侧预览。索引树里的舰名链接带 ?ship=<id>，
+    // 这里拦下点击原地换内容 —— 不整页跳转，左侧展开状态也就不会丢。
+    const root = document.getElementById('preview-root');
+    if (root) {
+      const slots = Array.from(root.querySelectorAll<HTMLElement>('.previewslot'));
+
+      function show(id: string) {
+        let hit = false;
+        slots.forEach((el) => {
+          const on = el.dataset.ship === id;
+          el.hidden = !on;
+          if (on) hit = true;
+        });
+        // id 不认识就退回第一艘，避免右侧整块空白
+        if (!hit && slots.length > 0) slots[0].hidden = false;
+
+        document
+          .querySelectorAll<HTMLElement>('.sidx a[data-preview]')
+          .forEach((a) => a.classList.remove('sidx__row--on'));
+        document
+          .querySelectorAll<HTMLElement>(`.sidx a[data-preview="${id}"]`)
+          .forEach((a) => a.classList.add('sidx__row--on'));
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      document.addEventListener('click', (e) => {
+        const a = (e.target as HTMLElement).closest<HTMLAnchorElement>('a[data-preview]');
+        if (!a) return;
+        const id = a.dataset.preview ?? '';
+        if (!id) return;
+        e.preventDefault();
+        show(id);
+        const url = new URL(location.href);
+        url.searchParams.set('ship', id);
+        history.replaceState(null, '', url);
+      });
+
+      const initial = new URLSearchParams(location.search).get('ship');
+      if (initial) show(initial);
+    }
+  </script>
+</Base>
+
+<style>
+  .previewslot[hidden] {
+    display: none;
+  }
+
+  .indexall {
+    margin-top: 40px;
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+  }
+  .indexall__sum {
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 650;
+    color: var(--ink-500);
+    list-style: none;
+  }
+  .indexall__sum::-webkit-details-marker {
+    display: none;
+  }
+  .indexall__sum:hover {
+    color: var(--blue-700);
+  }
+  .indexall__hint {
+    margin-left: 8px;
+    font-size: 11.5px;
+    font-weight: 400;
+    color: var(--ink-300);
+  }
+  .indexall__body {
+    margin-top: 20px;
+  }
+</style>

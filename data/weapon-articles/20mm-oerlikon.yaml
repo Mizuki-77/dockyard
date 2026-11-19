@@ -1,0 +1,232 @@
+# ============================================================================
+# 武器正文 —— 20 mm Oerlikon
+#
+# 这一型最好写的不是参数，是三条工程/组织的转折：
+#  1) 英国人 1938 年给出的接受条件（提高初速 + 非专业人员能用）就是它的设计指标；
+#  2) 法国沦陷切断了供货，逼出英国自产线；
+#  3) 美国海军 1935 年否掉它，差点把公司搞破产，日本买许可救了它。
+# ============================================================================
+weapon: 20mm-oerlikon
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      20 mm Oerlikon 是二战中产量可能最高的防空武器，
+      由瑞士欧瑞康公司设计，盟军各国广泛使用。
+      它进入英国服役的过程很有代表性：1938 年海军部开出两个条件——
+      提高初速、并证明渔民与商船船员这类非专业人员也能使用维护——
+      欧瑞康照办，于是有了 1939 年末交付的 Mark I。
+      美国则先否掉它、后在 1940 年 11 月转而采纳，最终造了 124,735 门。
+    en: >-
+      The 20 mm Oerlikon was probably the most produced anti-aircraft weapon of the
+      Second World War, designed by the Swiss firm Oerlikon and used by every Allied
+      nation. Its entry into British service is characteristic: in 1938 the Admiralty
+      set two conditions - raise the muzzle velocity and demonstrate that non-specialist
+      personnel such as fishermen and merchant seamen could operate and maintain it -
+      and Oerlikon complied, producing the Mark I delivered late in 1939. The US Navy
+      rejected it first, then adopted it in November 1940 and built 124,735.
+
+  paragraphs:
+    - heading: 一条被写进设计指标的用户要求
+      text:
+        zh: >-
+          1937 年，英国海军部开始试验一种能给商船和小型舰艇用来对付近距空袭的武器，
+          当时否决了欧瑞康的 Model 1934。1938 年，海军部反过来告诉欧瑞康：
+          如果能把初速提上去，并且证明这武器能被渔民、商船船员这样的非专业人员
+          使用与维护，那就接受。欧瑞康按要求改了，新设计的首批原型 1939 年末交付，
+          立即以 20 mm Mark I 进入服役，英国向欧瑞康大量订货并取得生产许可。
+          这一条值得单独写：它是一门按"外行能不能用"来设计的炮。
+        en: >-
+          In 1937 the British Admiralty began trials to find a weapon suitable for arming
+          merchant ships and minor warships against close-range air attack, and rejected
+          the Oerlikon Model 1934. In 1938 the Admiralty came back with a proposition: if
+          Oerlikon could raise the muzzle velocity and show the weapon could be used and
+          maintained by non-specialists such as fishermen and merchant seamen, it would
+          be acceptable. Oerlikon made the changes, the first prototypes of the new
+          design arrived late in 1939, and it entered service at once as the 20 mm Mark
+          I, with large British orders and a manufacturing licence. This is worth
+          stating plainly: the gun was designed to a requirement about whether amateurs
+          could use it.
+      src: [navweaps-20mm-oerlikon]
+
+    - heading: 法国沦陷切断了供货，逼出英国自产线
+      text:
+        zh: >-
+          法国沦陷前，英国只多收到了少量炮，供货通道随即被切断——这就是战争前期
+          英国舰上 Oerlikon 极少的原因。美国海军军械局（BuOrd）的史料说，
+          1940 年 11 月皇家海军在海上只有 100 门 Oerlikon。
+          为了自救，英国在法国陷落前不久利用生产许可拿到了一整套生产图纸，
+          由曾任驻苏黎世欧瑞康工厂海军军械合同检查员的 Stewart Mitchell 带回。
+          Mitchell 与军械专家 Charles Goodeve、以及当时在海军部参谋部任职、
+          后来写成《The War at Sea》的 Roskill 中校一起，在 Ruislip 建厂生产。
+          克服了「相当大的」设备与人力困难之后，英国版的 20 mm Mark II
+          于 1941 年秋开始交付。
+        en: >-
+          Only a few additional guns arrived before the fall of France cut the supply
+          route, which is why so few British ships had Oerlikons early in the war - the
+          US Navy's BuOrd history puts the Royal Navy's seagoing total at 100 in November
+          1940. Britain's answer was to use its manufacturing licence to obtain a full
+          set of production drawings shortly before France fell; Stewart Mitchell, who
+          had been Inspector of Naval Ordnance Contracts at the Oerlikon factory in
+          Zurich, brought them back. With the ordnance expert Charles Goodeve and
+          Commander S.W. Roskill - then in the Admiralty Staff Division and later author
+          of "The War at Sea" - he set up a factory at Ruislip. After "considerable
+          difficulties" with equipment and labour, deliveries of the British 20 mm Mark
+          II began in the autumn of 1941.
+      src: [navweaps-20mm-oerlikon]
+
+    - heading: 美国先否掉它，差点把公司搞破产
+      text:
+        zh: >-
+          1935 年美国海军买了两门欧瑞康 Model 1934 用于评估，以初速低、
+          射速不理想（循环射速 265 发/分）为由否决。navweaps 在这里加了一句
+          带点讽刺的注：欧瑞康因为美国海军的否决几乎破产，
+          最后是日本海军购买了生产许可，才让公司活下来并继续改进，
+          而改进出来的正是盟军二战中大量使用的那个型号。
+          美方最终采纳是 1940 年 11 月 9 日正式批准（由 BuOrd 防空类型助理
+          Blandy 上校建议），美国造的第一门炮 1941 年 6 月 8 日试射，
+          到 1941 年 12 月 7 日已生产 379 门。
+        en: >-
+          In 1935 the US Navy bought two Oerlikon Model 1934 guns for evaluation and
+          rejected that model for low muzzle velocity and an unsatisfactory cyclic rate
+          of 265 rounds per minute. NavWeaps adds a note of historical irony: Oerlikon
+          nearly went bankrupt after the US rejection, and it was the Imperial Japanese
+          Navy's purchase of licence rights that kept the company alive and funded the
+          development which produced the far more successful version the Allies used.
+          American adoption came with official approval on 9 November 1940, on the
+          recommendation of Captain W.H.P. Blandy, and the first US-built gun was test
+          fired on 8 June 1941; by 7 December 1941, 379 had been produced.
+      src: [navweaps-20mm-oerlikon]
+
+    - heading: 它在舰队里的位置
+      text:
+        zh: >-
+          美国海军 1945 年停产前一共造了 124,735 门。它在美军里以优于一对一的比例
+          替换了无效的 0.50 英寸机枪，并在 1943 年 40 mm Bofors 大量到位之前
+          一直是美国海军的主力高炮。英国与英联邦这边，1945 年 9 月的
+          炮座配赋清单显示在役约 55,000 门（这个数字可能包含美国租借的
+          及在美改装舰上装的那些）。有些英国辅助舰一直装到 2006 年。
+        en: >-
+          The United States built 124,735 guns before production ended in 1945. The
+          weapon replaced the ineffective 0.50-inch machine gun on US ships at better
+          than one-for-one and remained the US Navy's primary anti-aircraft gun until
+          40 mm Bofors became available in large numbers during 1943. In British and
+          Commonwealth service the Mounting Appropriation Lists of September 1945 show
+          about 55,000 in service, a total that probably includes Lend-Lease guns and
+          weapons fitted during refits in US yards. Some British auxiliary ships still
+          carried them as late as 2006.
+      src: [navweaps-20mm-oerlikon]
+
+    - heading: 一处必须说清的混淆
+      text:
+        zh: >-
+          本站另有一条德国 2 cm C/30 与 C/38 的条目。那两型是莱茵金属从索罗通
+          ST-5 发展来的，和这一门 Oerlikon 不是同一种武器，虽然口径都是 20 mm。
+          英国人在 1937 年试验时否决的正是欧瑞康 Model 1934，
+          而德国人用的是另一条技术路线。两者唯一的共同点是口径数字。
+        en: >-
+          This site also carries an entry for the German 2 cm C/30 and C/38. Those were
+          Rheinmetall developments from the Solothurn ST-5 and are not the same weapon
+          as this Oerlikon, despite sharing a 20 mm bore. What the British rejected in
+          1937 was the Oerlikon Model 1934; the Germans were on a different technical
+          line. The only thing the two share is the calibre figure.
+      src: [navweaps-20mm-oerlikon, navweaps-20mm-c30]
+
+history:
+  - id: design
+    title: { zh: 设计与定型, en: Design }
+    range: { from: 1937, to: 1939 }
+    lead:
+      zh: >-
+        它的设计指标不是军方内部的性能表，而是海军部写给厂商的一封信。
+      en: >-
+        Its specification was not an internal staff requirement but a letter from the
+        Admiralty to a manufacturer.
+    events:
+      - date: 1937
+        text:
+          zh: >-
+            英国海军部启动试验，寻找一种能武装商船与小舰、对付近距空袭的武器。
+            欧瑞康 Model 1934 被否决。
+          en: >-
+            The British Admiralty began trials for a weapon to arm merchant ships and
+            minor warships against close-range air attack. The Oerlikon Model 1934 was
+            rejected.
+        src: [navweaps-20mm-oerlikon]
+      - date: 1938
+        text:
+          zh: >-
+            海军部告知欧瑞康：提高初速、并证明非专业人员（渔民、商船船员）
+            能使用维护，就接受。欧瑞康按要求修改。
+          en: >-
+            The Admiralty told Oerlikon that a higher muzzle velocity plus proof the
+            weapon could be used and maintained by non-specialists such as fishermen and
+            merchant seamen would make it acceptable. Oerlikon made the changes.
+        src: [navweaps-20mm-oerlikon]
+      - date: 1939
+        text:
+          zh: >-
+            新设计的首批原型年末交付，立即以 20 mm Mark I 服役。
+            法国沦陷前英国只多收到少量炮。
+          en: >-
+            The first prototypes of the new design were delivered late in the year and
+            accepted at once as the 20 mm Mark I. Only a few more guns reached Britain
+            before France fell.
+        src: [navweaps-20mm-oerlikon]
+
+  - id: service
+    title: { zh: 战时使用与自产, en: Wartime service and local production }
+    range: { from: 1940-11, to: 1945-09 }
+    lead:
+      zh: >-
+        这一节的主线是产能：从 100 门到五万门。
+      en: >-
+        This section is about numbers: from one hundred guns to fifty thousand.
+    events:
+      - date: 1940-11
+        text:
+          zh: >-
+            美国海军 BuOrd 史料记载，此时皇家海军在海上只有 100 门 Oerlikon；
+            同月 9 日美方正式批准采用该炮。
+          en: >-
+            The US Navy's BuOrd history records that the Royal Navy then had only 100
+            Oerlikons at sea; on 9 November the US formally approved adoption.
+        src: [navweaps-20mm-oerlikon]
+      - date: 1941-06-08
+        text:
+          zh: >-
+            美国造的第一门炮试射。到 1941 年 12 月 7 日，美国已生产 379 门。
+          en: >-
+            The first US-built gun was test fired. By 7 December 1941, 379 had been
+            produced.
+        src: [navweaps-20mm-oerlikon]
+      - date: 1941-11
+        text:
+          zh: >-
+            约克公爵号服役时带 6 门 Oerlikon；navweaps 认为它是第一艘
+            「建成即装」英国产 Oerlikon 的军舰。英国版 Mark II 于 1941 年秋开始交付。
+          en: >-
+            Duke of York commissioned with six Oerlikons; NavWeaps believes she was the
+            first warship to carry British-produced Oerlikon guns "as completed". The
+            British Mark II had begun delivering in the autumn of 1941.
+        src: [navweaps-20mm-oerlikon]
+      - date: 1944-07
+        text:
+          zh: >-
+            英王乔治五世号此时装 26 门单装加 6 门双联 20 mm。1945 年 9 月为
+            24 门单装加 6 门双联，合计 36 门。
+          en: >-
+            King George V then carried 26 single and 6 twin 20 mm mounts; by September
+            1945 that was 24 single and 6 twin, thirty-six guns in all.
+        src: [rmg-kgv-guide]
+      - date: 1945-09
+        text:
+          zh: >-
+            炮座配赋清单显示英联邦海军在役约 55,000 门。美国到 1945 年停产前
+            共造 124,735 门。
+          en: >-
+            Mounting Appropriation Lists show about 55,000 guns in British and
+            Commonwealth service. The United States built 124,735 before production
+            ended in 1945.
+        src: [navweaps-20mm-oerlikon]

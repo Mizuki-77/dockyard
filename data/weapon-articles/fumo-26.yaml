@@ -1,0 +1,128 @@
+# ============================================================================
+# 武器正文 —— FuMO 26 海上搜索雷达
+#
+# 关键：装舰判断依据是天线尺寸变化（3 m × 6 m 加大床垫天线），
+# 而 navweaps 原文用的是 probably。正文必须照录这层不确定性，
+# 但不能用「据说／有人认为」这类词——写成「原文用 probably」即可。
+# ============================================================================
+weapon: fumo-26
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      FuMO 26 是德国海军的海上搜索雷达，属 Seetakt 系列，
+      特征是比 23 型更大的「床垫」天线。
+      在提尔皮茨号上它出现在 1944 年的装备记录里，共三台，
+      是这一型在战争后期的主力搜索雷达。
+      这一型在提尔皮茨号上的判定依据不是型号铭牌，而是天线尺寸：
+      1944 年春夏换上约 3 米 × 6 米的大天线，专题站据此判为 FuMO 26。
+    en: >-
+      The FuMO 26 was a German naval surface-search radar of the Seetakt series,
+      distinguished by a larger "mattress" antenna than the 23. Aboard Tirpitz it
+      appears in the 1944 equipment record, three sets, as the main search radar of the
+      late war. Its identification in this ship rests not on a nameplate but on antenna
+      size: a large antenna of about 3 m by 6 m went on in spring or summer 1944, and
+      the specialist article reads that as a FuMO 26.
+
+  paragraphs:
+    - heading: 判型靠的是天线尺寸，而原文用的是 probably
+      text:
+        zh: >-
+          这一点必须原样写出来。专题站的德国雷达专文在描述提尔皮茨号
+          1944 年春夏的换装时，用的是「probably for FuMO 26」这种措辞——
+          即作者本人是从照片上看到天线变大了，据此判断型号，
+          而不是拿到了设备的型号记录。同理，另一处描述
+          「The upper antenna is probably for FuMO 26 or 27（2m x 6m）」
+          也把 26 与 27 并列成两种可能。
+          本站的处理方式：正文如实写出这一层判定依据与原文的保留语气，
+          但不替作者把「probably」升格成结论，也不用模糊归属的方式回避这一点。
+        en: >-
+          This needs to be set down as it stands. Describing Tirpitz's spring-summer 1944
+          change, the specialist article on German radar writes "probably for FuMO 26" -
+          the author is reading a larger antenna off photographs and inferring the mark,
+          not working from an equipment record. In the same way another passage reads
+          "The upper antenna is probably for FuMO 26 or 27 (2m x 6m)", putting 26 and 27
+          side by side as two possibilities. The treatment here is to state the basis of
+          identification and the source's own caution, without promoting the "probably"
+          into a conclusion.
+      src: [navweaps-radar]
+
+    - heading: 3 米 × 6 米这副天线在提尔皮茨号上的位置
+      text:
+        zh: >-
+          同一个段落记录了两次天线变化，都发生在前桅测距仪塔上。
+          先是把一个 2×4 米的 FuMO 27 天线装到加高的雷达塔上，
+          后来这个位置换成了那只 3×6 米的大天线；
+          再往后，前桅塔这一处被描述为「foretop tower and radar hut supporting
+          the large FuMO 26 antenna」。
+          也就是说这一型在这个位置上是后来者，替掉的是 27 型。
+          需要说明：本舰前桅塔在 1944 年之后是否再有变动，
+          现有材料只到 1944-11-12 舰沉为止。
+        en: >-
+          The same passage records two antenna changes, both on the foretop rangefinder
+          tower. First a 2 x 4 m FuMO 27 antenna was mounted on the raised radar tower;
+          later that position took the large 3 x 6 m antenna; still later the foretop
+          tower is described as the radar hut supporting the large FuMO 26 antenna. The
+          26 is therefore the later set in that position, replacing the 27. Whether the
+          tower changed again after 1944, the material does not say: it runs only to the
+          sinking on 12 November 1944.
+      src: [navweaps-radar, kbismarck-tirpitz]
+
+    - heading: 本舰 1944 年的整套雷达，26 只是其中一型
+      text:
+        zh: >-
+          把这一年的记录连起来看：3 台 FuMO 26、一台 FuMO "Hohentwiel"、
+          一台 FuMO 213 "Würzburg-D"。三种设备分工不同——
+          26 管海面搜索，213 是装在对空指挥仪上的炮瞄雷达。
+          专题站对这一时期的总结是：提尔皮茨号拥有德国各大型水面舰只中
+          最复杂的雷达装备。这句话给的是相对评价，不含数字，本站照录。
+        en: >-
+          Taken together, the record for that year reads three FuMO 26 sets, a FuMO
+          "Hohentwiel" and a FuMO 213 "Würzburg-D". The three had different jobs: the 26
+          for surface search, the 213 as an anti-aircraft gunnery radar on the AA
+          director. The specialist article's summary of this period is that Tirpitz had
+          the most sophisticated radar equipment of all the larger German surface units.
+          That is a relative judgement with no figures in it, and it is quoted as such.
+      src: [kbismarck-tirpitz, navweaps-radar]
+
+history:
+  - id: service
+    title: { zh: 装舰与演进, en: Fitting and evolution }
+    range: { from: 1941-07, to: 1944-11 }
+    lead:
+      zh: >-
+        26 型不是一开始就在舰上的：它接的是 27 型在前桅塔上的位置。
+      en: >-
+        The 26 was not aboard from the start: it inherits the 27's position on the
+        foretop tower.
+    events:
+      - date: 1941-07
+        text:
+          zh: >-
+            本舰后部测距仪塔装 FuMO 27 天线（2×4 米）。
+            前桅楼上另加一座雷达塔，装 27 型，该处时点原文记作 1942 年 1 月前后。
+          en: >-
+            The after rangefinder tower received a FuMO 27 antenna, 2 x 4 m. A radar
+            tower was added atop the foretop carrying a 27, dated by the source to about
+            January 1942.
+        src: [navweaps-radar, kbismarck-tirpitz]
+      - date: 1944-01
+        text:
+          zh: >-
+            本舰此年的雷达记录为 3 台 FuMO 26 加 FuMO "Hohentwiel" 与
+            FuMO 213 "Würzburg-D"。26 型成为海面搜索主力。
+          en: >-
+            The ship's radar record for this year reads three FuMO 26 sets plus a FuMO
+            "Hohentwiel" and a FuMO 213 "Würzburg-D"; the 26 is now the main surface
+            search set.
+        src: [kbismarck-tirpitz]
+      - date: 1944-11-12
+        text:
+          zh: >-
+            提尔皮茨号在 Tromsø 附近被击沉，舰上的 FuMO 26 随之损失。
+            这一天是本型在本舰上可追到的最后时点。
+          en: >-
+            Tirpitz was sunk near Tromso and her FuMO 26 sets were lost with her. That
+            date is the last traceable point for the type in this ship.
+        src: [kbismarck-tirpitz]

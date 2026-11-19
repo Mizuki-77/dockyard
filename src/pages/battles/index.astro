@@ -1,0 +1,195 @@
+---
+// ============================================================================
+// 海战历史 —— 左树三层（海区 → 年份 → 战斗），右侧按海区分块、块内按年排
+// ----------------------------------------------------------------------------
+// 为什么第一层是海区而不是年份：
+//   读者来找「俾斯麦最后那几天」时，记得的是「北大西洋」，不是「1941 年」。
+// 为什么年份还要单独成层（而不是把年份写进叶子名里）：
+//   同一片海里一年可能有七八场护航战，年份能单独折叠才收得住；
+//   年份写在叶子名前（「1941 · 丹麦海峡海战」）在两层树时够用，
+//   但一旦有了三层，年份就成了重复信息——中间层已经说了。
+//
+// 一场战斗可能跨年，归年规则是「按 date.from 归，只出现一次」。
+// 在两年下各出现一次会让「1942 年有几场」变成假数字，
+// 而年份计数正是读者判断「这块要不要展开」的依据，不能虚高。
+//
+// 装配逻辑在 src/lib/tree.ts 的 buildBattleTree()，详情页共用同一份。
+// ============================================================================
+import Base from '../../layouts/Base.astro';
+import CatalogTree from '../../components/CatalogTree.astro';
+import BattleCard from '../../components/BattleCard.astro';
+import { getBattles, getOperations, operationOf } from '../../lib/data';
+import { buildBattleTree } from '../../lib/tree';
+import type { BattleFile } from '../../lib/types';
+
+const battles = getBattles();
+const ops = getOperations();
+
+/** 这一场的上级行动（如果有），左树里当一行 meta 用。 */
+function opNameOf(b: BattleFile): string | undefined {
+  const op = operationOf(b.id);
+  return op?.name.zh;
+}
+
+// 海区 → 年份 → 战斗，三层。装配逻辑在 src/lib/tree.ts，
+// 列表页与详情页共用同一份，避免加层时改一处漏一处。
+const tree = buildBattleTree(battles, opNameOf);
+
+const branches = tree.map((t) => ({
+  key: t.key,
+  label: t.label,
+  en: t.en,
+  count: t.count,
+  groups: t.years.map((y) => ({
+    key: y.key,
+    label: y.label,
+    count: y.count,
+    leaves: y.battles.map((b) => ({
+      label: b.label,
+      href: b.href,
+      // 年份已经在中间层，叶子只放行动名，省得一行里出现「1941 · 1941」
+      meta: b.meta ?? '',
+    })),
+  })),
+}));
+
+const total = battles.length;
+const loose = battles.filter((b) => !operationOf(b.id));
+---
+
+<Base title="海战历史" variant="tree">
+  <CatalogTree
+    slot="sidenav"
+    kicker="Battles"
+    title="海战历史"
+    branches={branches}
+    currentHref={Astro.url.pathname}
+    footLink={{ href: '/operations', label: `按行动看（${ops.length} 场行动）` }}
+    note="索引按海区与年份排列。同一场行动里的几场战斗，可以从战斗页顶部回到行动全程。"
+  />
+
+  <div class="pagehead">
+    <div class="pagehead__kicker">Battles</div>
+    <h1 class="pagehead__title">海战历史</h1>
+    <p class="pagehead__sub">
+      收录 {total} 场战斗，分布在 {branches.length} 个海区。
+      每场战斗都记到「分钟级事件 + 每一发命中 + 每一份来源」，
+      有争议的说法并列保留。
+    </p>
+  </div>
+
+  {
+    total === 0 ? (
+      <div class="empty">
+        <div class="empty__title">还没有收录战役</div>
+        <div class="empty__text">data/battles/ 下放一份 yaml 就会出现。</div>
+      </div>
+    ) : (
+      <div class="stack">
+        {tree.map((th) => (
+          <section class="thgroup">
+            <div class="thgroup__head">
+              <h2 class="thgroup__title">{th.label}</h2>
+              <span class="thgroup__en">{th.en}</span>
+              <span class="thgroup__n">
+                {th.count} 场 · {th.years.length} 个年份
+              </span>
+            </div>
+            {th.years.map((yr) => (
+              <div class="yrrow">
+                <div class="yrrow__year mono">{yr.label}</div>
+                <div class="yrrow__battles">
+                  {yr.battles.map((leaf) => {
+                    const bb = battles.find((x) => x.id === leaf.href.replace('/battles/', ''))!;
+                    return <BattleCard battle={bb} compact />;
+                  })}
+                </div>
+              </div>
+            ))}
+          </section>
+        ))}
+
+        {loose.length > 0 && ops.length > 0 && (
+          <p class="note">
+            有 {loose.length} 场战斗还没有归入任何行动序列。它们是独立发生的交战，
+            还是暂时没整理出上层行动，可以从各自的战斗页看出来。
+          </p>
+        )}
+      </div>
+    )
+  }
+</Base>
+
+<style>
+  .thgroup {
+    padding: 20px 22px 22px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--paper);
+  }
+  .thgroup__head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-bottom: 14px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid var(--line);
+  }
+  .thgroup__title {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--ink-900);
+  }
+  .thgroup__en {
+    font-size: 11px;
+    color: var(--ink-300);
+    letter-spacing: 0.05em;
+  }
+  .thgroup__n {
+    margin-left: auto;
+    font-size: 10.5px;
+    font-family: var(--font-mono);
+    color: var(--ink-400);
+  }
+
+  .yrrow {
+    display: grid;
+    grid-template-columns: 54px minmax(0, 1fr);
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .yrrow:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .yrrow__year {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blue-700);
+    padding-top: 12px;
+  }
+  .yrrow__battles {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  @media (max-width: 720px) {
+    .thgroup {
+      padding: 16px 14px 18px;
+    }
+    .yrrow {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 8px;
+    }
+    .yrrow__year {
+      padding-top: 0;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+    }
+  }
+</style>

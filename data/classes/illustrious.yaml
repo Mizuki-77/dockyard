@@ -1,0 +1,1431 @@
+# ============================================================================
+# 舰级：Illustrious class（光辉级装甲航空母舰）
+# ----------------------------------------------------------------------------
+# 本级在皇家海军航母谱系里的位置很特殊：它是世界上第一级把「装甲飞行甲板
+# 同时当作强度甲板」的设计，也是把「载机量」明确拿去换「抗弹能力」的第一级。
+#
+# 本级建成 4 艘：Illustrious / Formidable / Victorious / Indomitable。
+# 但 Indomitable 是改型（加了一层 14 ft 矮机库），前三艘才是单层机库、三轴。
+# 所以本文件的「本级」参数以前三艘为准，凡 Indomitable 不同的地方逐条注明。
+#
+# 解析顺序（docs/00-framework.md §3.6）：单舰 fact → 舰级 fact → 未记载。
+# 单舰命中即覆盖舰级，**不算分歧**。
+#
+# 本文件只写「这一级本来长什么样」——设计值、图纸值、1936 年参谋要求。
+# 逐舰的建造日期、战损、雷达与防空改装节奏，写 data/ships/illustrious.yaml；
+# 各时段的状态分组写 data/slices/illustrious.yaml。
+#
+# 数据口径提醒：本级的 1940 年状态与 1945 年状态差别很大（三次大改装），
+# 凡「建成时」参数均以 1940-05 完工状态为准，改装后的值另立时间窗。
+# ============================================================================
+
+id: illustrious
+name:
+  zh: 光辉级航空母舰
+  en: Illustrious-class aircraft carrier
+class_of: [illustrious]
+
+open_ended_note: >
+  舰级设计参数的有效期到本级各舰退役（1953–1968）为止，多数条目不写 to。
+  但请注意这些数字的「时间底色」：它们主要是 1936-07-08 参谋要求与 1940 年
+  完工状态，不是「这艘船任何时刻的参数」。本级在 1941、1943、1944–46 年
+  各做过一次大改装，排水量、载机量、防空配置、雷达都在变——
+  那些变化写在单舰文件与状态切片里，不在本文件。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: Illustrious class
+    src: [navypedia-illustrious]
+    valid: { from: 1936-07-08 }
+    confidence: A
+
+  - field: identity.name_zh
+    value: 光辉级航空母舰
+    src: [navypedia-illustrious]
+    valid: { from: 1936-07-08 }
+    confidence: B
+    note: 中文通行译名。另有「卓越级」「杰出级」等旧译，本站取「光辉级」。
+
+  - field: identity.name_en
+    value: Illustrious-class fleet aircraft carrier
+    src: [navypedia-illustrious]
+    valid: { from: 1936-07-08 }
+    confidence: A
+
+  - field: identity.name_note
+    value: >-
+      本级建成 4 艘：Illustrious（87）、Formidable（67）、Victorious（38）、
+      Indomitable（92）。前三艘是单层机库、三轴的原型；Indomitable 是加装
+      一层 14 ft 矮机库的改型，载机量更大、机库总高不同。
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      navypedia 原文把六艘（含 Implacable 级两艘）都算进「Illustrious class」，
+      分成三组，并写明「First three ships had one level hangar and 3 shafts」。
+      本站按前三艘立级，Implacable 级不算本级——这是分类判断，不是来源原话。
+
+  - field: identity.ship_type
+    value: aircraft_carrier
+    src: [navypedia-illustrious]
+    valid: { from: 1936-07-08 }
+    confidence: A
+    note: 皇家海军官方分类是 fleet aircraft carrier（舰队航母），不是护航航母。
+
+  - field: identity.nation
+    value: united_kingdom
+    src: [navypedia-illustrious]
+    valid: { from: 1936-07-08 }
+    confidence: A
+
+  - field: identity.operator
+    value: Royal Navy
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: A
+
+  - field: identity.era
+    value: ww2
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      按服役期定位：1940-05 完工，1955 年退役、1957 年拆解。
+      设计始于 1936 年，但本级全部实战记录都在二战。
+
+  - field: identity.building_program
+    value: 1936 年海军计划；参谋要求（Staff Requirements）1936-07-08 定稿
+    src: [ac-staff-requirements]
+    valid: { from: 1936-07-08 }
+    confidence: A
+    note: >-
+      参谋要求原件是理解本级一切取舍的起点：标准排水量被 1936 年伦敦会议
+      限定在 23,000 ts；飞行甲板「as large an area as possible」不小于 3 in NC；
+      机库侧壁 4.5 in C 装甲；载机 36 架；弹射器一部。
+
+  # ============================================================ 主尺度
+  - field: dimensions.length.oa
+    unit: m
+    value: 229.6
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: C
+    comparable: false
+    note: >-
+      **这是全级尺寸数据里最需要小心的一处。** navypedia 把 229.6 m 填进
+      「Length, m … oa」栏，但同一页在 Aircraft facilities 段又写
+      「Later useful length of flight deck was increased to 229.6m」——
+      229.6 m 极可能是飞行甲板长度，船体全长另有一说 740 ft（225.6 m）。
+      两说口径不同，并列保留，不裁决。引用时务必注明是哪一种长度。
+      【2026-11-18】标 comparable: false —— 这个数很可能是甲板长而非船体全长，
+      与其他舰的全长排高低会得出「光辉级比 KGV 长」的错误印象。
+
+  - field: dimensions.length.pp
+    unit: m
+    value: 205.1
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: 垂线间长。另有水线长 710 ft（216.4 m）一说，与 pp 不是同一基线，不可互换。
+
+  - field: dimensions.beam.wl
+    unit: m
+    value: 29.2
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+
+  - field: dimensions.beam.max
+    unit: m
+    value: 32.5
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      navypedia 原文「Breadth, m 29.2 w 32.5 oa」。32.5 m 应含 4.5 in
+      炮座舷台（sponson）的突出部；另一说 95 ft 9 in（29.2 m）把 32.5 m
+      当作混入飞行甲板宽的数值。两说并列。
+
+  - field: dimensions.draught.mean
+    unit: m
+    value: 8.69
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      navypedia 标「8.69 normal」。深载吃水另有 28 ft 10 in（8.79 m）一说，
+      定义不同、数值只差 0.1 m，并列保留。
+
+  - field: dimensions.freeboard
+    unit: m
+    value: 11.6
+    src: [ac-design, navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      到飞行甲板的干舷 11.6 m（38 ft）。两源一致。对照：同期的 Ark Royal
+      是 17.1 m（60 ft）——本级为了装甲盒与稳定性牺牲了 5.5 m 干舷，
+      这是它外观上「矮」的直接原因，也是它在大西洋海况下飞行作业吃力的原因。
+
+  # ============================================================ 排水量
+  - field: displacement.standard
+    unit: t
+    value: 23000
+    src: [navypedia-illustrious, ac-staff-requirements]
+    valid: { from: 1940-05-25 }
+    confidence: A
+    note: >-
+      条约上限。参谋要求原文「Standard displacement was limited by 23 000ts
+      as resolved by the London conference of 1936」。
+      注意 navypedia 的 23,000 t 是公吨口径，与「23,000 long tons」不是同一个数，
+      但本级文献普遍混用，差异在 2% 量级。
+
+  - field: displacement.full
+    unit: t
+    value: 28620
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      navypedia 原文「28620 (29110 - 29240 service)」：28,620 t 是建成设计值，
+      29,110–29,240 t 是服役期实测。两个数不是矛盾，是不同状态；本站取设计值，
+      服役实测值写在这里。改装后的排水量数值（1945–46）**未获取**。
+
+  # ============================================================ 动力
+  - field: propulsion.plant_type
+    value: steam_turbine
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: A
+
+  - field: propulsion.boiler.count
+    unit: count
+    value: 6
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: A
+    note: >-
+      Admiralty 三鼓锅炉 6 座。另一说「Six boilers were placed in three groups
+      of three」——数目自相矛盾（6 座分三组、每组三台 = 9 台），
+      疑为「three groups of two」的笔误。照录，不据此改数。
+
+  - field: propulsion.boiler.type
+    value: Admiralty 三鼓锅炉（Admiralty 3-drum）
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: 锅炉工作压力与蒸汽温度：**未获取**。
+
+  - field: propulsion.turbine.count
+    unit: count
+    value: 3
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: A
+
+  - field: propulsion.turbine.type
+    value: Parsons 齿轮传动汽轮机
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: A
+
+  - field: propulsion.turbine.manufacturer
+    value: Parsons
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: 具体制造厂区（Newcastle / Wallsend 等）：**未获取**。
+
+  - field: propulsion.shafts
+    unit: count
+    value: 3
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: A
+    note: 三轴是本级前三艘的识别特征之一；Indomitable 同为三轴，Implacable 级才改四轴。
+
+  - field: propulsion.power.design
+    unit: hp
+    value: 111000
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: A
+
+  - field: propulsion.speed.design
+    unit: kn
+    value: 30.5
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      参谋要求的口径是「emergency 30 kts at deep load、operational 29 kts」；
+      navypedia 的 30.5 kt 是建成后的最大值。两者不是矛盾，是不同条件下的值。
+
+  - field: propulsion.speed.max
+    unit: kn
+    value: 30.5
+    src: [ac-design]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      ACDES 原文「All three ships achieved maximum speeds under operational
+      conditions of 30.5kts」——这是作战条件下的实测最大值。
+      试航时因放扫雷具（paravanes）未记录精确航速，另有「about 31 knots」
+      的推算一说（线索级，未并列成 fact）。平均最高速超过 28 kt。
+
+  - field: propulsion.range.max
+    unit: nmi
+    value: 9250
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      navypedia「Endurance, nm(kts) 9250(14)」。另一说 10,700 nm @10 kt /
+      10,400 nm @16 kt / 6,300 nm @25 kt，与 9,250 差约 1,450 nm；
+      两说可能对应不同油量与不同年份，并列保留，**未取得单一权威值**。
+
+  - field: propulsion.range.at_speed
+    unit: kn
+    value: 14
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+
+  - field: propulsion.fuel.capacity
+    unit: t
+    value: 4840
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: 4,840 t 燃油；另一说 4,850 long tons（≈4,929 t），两值实质接近。
+
+  # ============================================================ 防护（本级全部争论的核心）
+  - field: protection.scheme
+    value: other
+    src: [ac-design]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      装甲盒（armoured box）体系，注册表枚举里没有对应项，故记 other。
+      机制：把机库做成一个四面有装甲的盒子，盒顶即飞行甲板、同时充当强度甲板；
+      盒壁 4.5 in C 装甲，盒底（机库甲板）3 in NC。不是 all-or-nothing，
+      也不是传统的 incremental——装甲只包住机库这一段，首尾与非装甲区仍按
+      普通船体结构处理。
+
+  - field: protection.armor.thickness
+    unit: mm
+    value: 76
+    qual: { part: flight_deck, region: main }
+    src: [navypedia-illustrious, ac-design]
+    valid: { from: 1940-05-25 }
+    confidence: A
+    note: >-
+      3 in NC 装甲飞行甲板，覆盖飞行甲板 62% 的面积、重约 1,500 t。
+      这是本级的立级之本：第一级把装甲飞行甲板当强度甲板用的航母。
+      甲板本身不是整块 76 mm——两端升降机附近只有 1.5 in（38 mm），
+      见下面的分区条目。
+
+  - field: protection.armor.thickness
+    unit: mm
+    value: 38
+    qual: { part: flight_deck, region: fore }
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      首部升降机附近 38 mm（1.5 in）。ACDES 原文指出这一处「rated as
+      1.5in armour – for strength reasons, not as protection」——
+      是为了承受升降机与甲板载荷，不是抗弹设计。
+
+  - field: protection.armor.thickness
+    unit: mm
+    value: 38
+    qual: { part: flight_deck, region: aft }
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: 尾部升降机附近同为首部口径的 38 mm；1941-01-10 的三枚炸弹正落在后升降机井。
+
+  - field: protection.armor.thickness
+    unit: mm
+    value: 114
+    qual: { part: hangar_side, region: main }
+    src: [navypedia-illustrious, ac-design]
+    valid: { from: 1940-05-25 }
+    confidence: A
+    note: >-
+      4.5 in（114 mm）C grade 表面硬化钢，全机库长度都有防护。
+      这是本级装甲重量的大头：Green 的算法把 2,860 t（其称占装甲总重 50%）
+      归给机库侧壁与水线以上舷侧，并指出 4.5 in 表面硬化钢是用来对付
+      舰炮炮弹、不是航空炸弹的——与「装甲航母是防空设计」的通俗叙事相反。
+      该说与 5,000 t 总重、1,500 t 甲板的说法并存，见装甲总重条目。
+
+  - field: protection.armor.thickness
+    unit: mm
+    value: 114
+    qual: { part: belt, region: main }
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      主装甲带 114 mm，只覆盖约 30% 的水线长度。舯部段上延至机库甲板，
+      右舷舰岛附近上延至飞行甲板；两端各 9 m 只到上甲板。
+      另有「1.5 in 侧装甲」的争议说法，见下一条。
+
+  - field: protection.armor.thickness
+    unit: mm
+    value: 38
+    qual: { part: belt, region: upper }
+    src: [ac-techdata]
+    valid: { from: 1940-05-25 }
+    confidence: C
+    note: >-
+      与 114 mm 主带并存的**争议说法**：ACTECH 注脚原文
+      「There is some argument that 1.5in side armour was fitted」——
+      即有人认为水线以上侧板是 1.5 in（38 mm）装甲而非纯结构钢。
+      与 4.5 in 机库侧壁不冲突（部位不同：这一条说的是舰体侧板），
+      但本站没有取得能证实或否证它的图样，故并列保留、标 C 档，不作结论。
+
+  - field: protection.armor.thickness
+    unit: mm
+    value: 64
+    qual: { part: hangar_deck, region: main }
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: C
+    note: >-
+      机库甲板厚度是**全篇最严重的一处分歧**：
+      ACDES 说「3in NC grade」(=76 mm)；navypedia 说舷侧段 76–64 mm、
+      舰体内部 25 mm；WIKI 说 2.5 in（64 mm）并延伸到全舰宽以接舷侧装甲带顶。
+      三者不是互相否定，而是同一块甲板不同区域的厚度，但 ACDES 的表述
+      容易被读成整块 76 mm。分区并列，不裁决。
+
+  - field: protection.armor.thickness
+    unit: mm
+    value: 76
+    qual: { part: hangar_deck, region: main }
+    src: [ac-design]
+    valid: { from: 1940-05-25 }
+    confidence: C
+    note: >-
+      与 64 mm 并存。ACDES 原文「the hangar deck was 3in NC grade plate」；
+      navypedia 的对应表述是「76 - 64mm thickness between ship sides and
+      hangar sides and 25mm inside citadel」。取 76 mm 为舷侧段上限，
+      64 mm 为内侧段，25 mm 为舰体内部——**目前无法裁决整块甲板的确切厚度**。
+
+  - field: protection.armor.thickness
+    unit: mm
+    value: 25
+    qual: { part: hangar_deck, region: lower }
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: C
+    note: 舰体内部（inside citadel）段 25 mm；舰尾下甲板 76 mm。
+
+  - field: protection.armor.thickness
+    unit: mm
+    value: 114
+    qual: { part: bulkhead, region: main }
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: C
+    note: 横舱壁 114–64 mm，取上限值单列；下限 64 mm 见同一来源。
+
+  - field: protection.armor.material
+    value: NC（Non-Cemented，均质非渗碳装甲）
+    qual: { part: flight_deck, region: main }
+    src: [ac-design]
+    valid: { from: 1940-05-25 }
+    confidence: A
+    note: >-
+      参谋要求原文「not less than 3-inch NC armour」。均质钢对炸弹的
+      抗弹效率与表面硬化钢不同，这是本级「顶用 NC、壁用 C」的技术要点。
+
+  - field: protection.armor.material
+    value: C grade（表面硬化装甲）
+    qual: { part: hangar_side, region: main }
+    src: [ac-design]
+    valid: { from: 1940-05-25 }
+    confidence: A
+    note: 4.5 in C grade (face hardened)。用于机库侧壁——按 Green 的读法，这一层是对付炮弹的。
+
+  - field: protection.underwater.depth
+    unit: m
+    value: 4.1
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      navypedia「4.1m deep underwater protection can resist exploding of
+      340kg TNT」，与参谋要求「750-lb underwater charge in contact with
+      the side」实质一致（750 lb ≈ 340 kg）。构造为舷侧空舱 + 燃油翼舱，
+      另有 38 mm 防鱼雷纵舱壁。
+
+  - field: protection.armor.weight
+    unit: t
+    value: 5000
+    src: [ac-design]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      ACDES「Of the 23,000 tons the Illustrious Class displaced, 5000 tons
+      was armour. 1500 tons of this was on a 458ft stretch of the flight deck.」
+      按 23,000 t 标准排水量折算约 21.7%（此百分比为本报告换算，非来源原句）。
+      Green 的另一算法给出侧壁+舷侧 2,860 t、并称其为装甲总重的 50%——
+      若按 50% 反推则总装甲约 5,720 t，与 5,000 t 不符。两说并列，不裁决。
+
+  # ============================================================ 航空设施
+  - field: aviation.deck.length
+    unit: m
+    value: 229.6
+    src: [navypedia-illustrious]
+    valid: { from: 1943-11-01 }
+    confidence: B
+    note: >-
+      飞行甲板可用长度。建成时只有 190 m（620 ft），round-down 把有效长度
+      压掉了约 40 m；1941 年削平尾部 round-down 后约 204.2 m（该值仅见于
+      线索级来源，未取得非百科源）；1943-11 改装后到 225.7–229.6 m。
+      甲板全长另有 753 ft（229.5 m）一说，与 229.6 m 实质相同。
+
+  - field: aviation.deck.width
+    unit: m
+    value: 29.0
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: A
+
+  - field: aviation.hangar.length
+    unit: m
+    value: 139.6
+    src: [navypedia-illustrious, ac-design]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      458 ft（139.6 m）。另一说 456 ft（139.0 m），差 2 ft，两说并列。
+      机库分 A / B / C 三段，中间用钢制防火帘隔开。
+
+  - field: aviation.hangar.width
+    unit: m
+    value: 18.9
+    src: [navypedia-illustrious, ac-design]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      62 ft（18.9 m）。宽度受限的原因不是船宽，而是装甲盒四周承力结构
+      要撑住 1,500 t 的装甲甲板——ACDES 原文明确说机库宽度被这个需求压缩。
+
+  - field: aviation.hangar.height
+    unit: m
+    value: 4.9
+    src: [navypedia-illustrious, ac-design]
+    valid: { from: 1940-05-25 }
+    confidence: A
+    note: >-
+      16 ft（4.9 m），当时英国航母的标准机库高度，但本级只有一层。
+      这一条是本级被批评最狠的地方：Corsair 要切翼尖才能入库；
+      战后喷气机根本装不进去。对照：Lexington 20 ft、Yorktown 17 ft 3 in、
+      Essex 17 ft 6 in。Indomitable 及 Implacable 级的**上层**机库低至 14 ft。
+
+  - field: aviation.hangar.count
+    unit: count
+    value: 1
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: A
+    note: 本级前三艘单层机库；Indomitable 为两层（上层 14 ft），不计入本级原型。
+
+  - field: aviation.elevator.count
+    unit: count
+    value: 2
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: A
+    note: 首尾各一部，中线布置，均无装甲——这是装甲盒结构的薄弱环。
+
+  - field: aviation.elevator.dimensions
+    value: 13.7 × 6.7 m（45 × 22 ft）
+    src: [navypedia-illustrious, ac-design]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      载重 6.4 t（navypedia）/ 13,440 lb（ACDES，30 秒循环），
+      战时升级到 15,000 lb。两种载重口径并列：6.4 t = 14,110 lb。
+
+  - field: aviation.catapult.count
+    unit: count
+    value: 1
+    src: [ac-staff-requirements, navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: A
+    note: >-
+      **建成即装，不是后期加装。** 1936 年参谋要求原文「One accelerator is
+      required」。早期设计有两部，但两部间距太近、无法同时作业，故只装一部。
+      所以「英国航母早期没弹射器」这个说法对本级不成立。
+
+  - field: aviation.catapult.type
+    value: BH-III 液压弹射器（前部）
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      设计能力 11,000 lb / 66 kt，改进后 14,500 lb / 66 kt。
+      navypedia 另记「5.4t plane was launched at 122 km/h」，与 11,900 lb / 66 kt
+      基本吻合。1946 年中换装更强力的弹射器，型号**未获取**。
+
+  - field: aviation.arrestor.count
+    unit: count
+    value: 6
+    src: [ac-design, ac-staff-requirements]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      6 道拦阻索，装于舰尾与舯部。位置比美舰更靠前；战时改装在尾部升降机
+      之后再加两道（那是后来的状态，不在建成值里）。Illustrious 本舰是
+      同级唯一没有在舰桥前方装两道应急拦阻索的，见单舰文件。
+
+  - field: aviation.aircraft.capacity
+    unit: count
+    value: 36
+    src: [ac-staff-requirements]
+    valid: { from: 1936-07-08, to: 1940-05-24 }
+    confidence: A
+    note: 参谋要求原文「Number of Aircraft to be carried 36 aircraft of present T.S.R. dimensions」——设计指标。
+
+  - field: aviation.aircraft.capacity
+    unit: count
+    value: 33
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      实际系留位 33 个（A 库 12 + C 库 12 + B 库 9），来自原始系留布置图。
+      设计指标 36 与系留位 33 不是矛盾，是「设计」与「实际布置」的差别；
+      很多资料还写 32，一并列此。甲板系留可临时增加。
+
+  - field: aviation.fuel.volume
+    unit: dm3
+    value: 230000
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      230,000 L（约 50,650 英制加仑），参谋要求 50,000 加仑。
+      航空汽油用海水填充的 coffer dam 悬在水线下装甲之下，用海水压力
+      把油压进管路、同时防止爆炸性油气空间形成。代价是占空间——
+      同级 Victorious 只带 40,500 加仑。
+
+  - field: aviation.armament.stowage
+    value: >-
+      总容量约 180 t 航空弹药；鱼雷 45 具 18 in 推进体（战雷头分存于装甲护罩下）；
+      建成时定额 250 × 500 lb SAP、400 × 250 lb SAP、250 × 250 lb "B"、
+      100 × 100 lb AS、600 × 20 lb
+    src: [ac-design]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: 机库在皇家海军的管理逻辑里「与弹药库同级」——这是双爆门厅与高压海水喷淋系统的由来。
+
+  # ============================================================ 编制
+  - field: service.complement.standard
+    unit: persons
+    value: 1265
+    src: [ac-staff-requirements]
+    valid: { from: 1936-07-08, to: 1940-05-24 }
+    confidence: B
+    note: >-
+      设计估算：航空人员 78 名军官 + 347 名士兵（425 人），舰员 840 人，
+      合计约 1,265 人。参谋要求把这两类人员**分列**，不是合成一个编制数。
+
+  - field: service.complement.standard
+    unit: persons
+    value: 1229
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      建成时 1,229 人，战时最多到 1,997 人。另一说建成时 1,299 人，差 70 人，
+      并列保留。**这些 complement 数字是否含航空人员，各源均未明示——未获取。**
+
+  # ============================================================ 武备概览
+  - field: armament.mount.summary
+    value: >-
+      8 × 2 - 114 mm/45 QF Mk III（Mark II BD 双联座，两舷舷台）+
+      6 × 8 - 40 mm/39 2-pdr QF Mk VIII（八联 pom-pom）+ 33 架舰载机
+    src: [navypedia-illustrious, navweaps-45in-45-mk1]
+    valid: { from: 1940-05-25 }
+    confidence: A
+    note: >-
+      建成状态。本级**没有**鱼雷发射管——航空鱼雷是舰载机弹药，不是舰载武器。
+      4.5 in 是主副两用炮：对海 18,200 m、对空射高 12,500 m，布置在两舷
+      舷台里、炮塔顶与飞行甲板齐平，以减少对飞行作业的影响。
+
+  # ============================================================ 4.5 in 双联两用炮
+  - about: weapon:4_5in-qf-mk3
+    field: weapon.designation
+    value: QF 4.5 in Mk III（114 mm/45）
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: A
+
+  - about: weapon:4_5in-qf-mk3
+    field: weapon.nation
+    value: united_kingdom
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: A
+
+  - about: weapon:4_5in-qf-mk3
+    field: weapon.category
+    value: naval_gun
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: B
+    note: 注册表没有「双用途炮」这个类目，按 naval_gun 记；它的对空性能见 elevation.max 与 range.aa_max 两条。
+
+  - about: weapon:4_5in-qf-mk3
+    field: weapon.bore
+    unit: mm
+    value: 114
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: A
+
+  - about: weapon:4_5in-qf-mk3
+    field: weapon.caliber_length
+    unit: ratio
+    value: 45
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: A
+    note: 按英国口径标法 L/45。
+
+  - about: weapon:4_5in-qf-mk3
+    field: weapon.weight
+    unit: kg
+    value: 2859
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: A
+    note: 炮身 6,304 lb（2,859 kg），Marks I 与 III 同重。
+
+  - about: weapon:4_5in-qf-mk3
+    field: weapon.projectile_weight
+    unit: kg
+    value: 39.5
+    qual: { shell_type: he }
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: B
+    note: HE 弹 87 lb（39.5 kg）；SAP 弹 91.75 lb（41.6 kg），另列一条。
+
+  - about: weapon:4_5in-qf-mk3
+    field: weapon.projectile_weight
+    unit: kg
+    value: 41.6
+    qual: { shell_type: sap }
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: B
+
+  - about: weapon:4_5in-qf-mk3
+    field: weapon.range.max
+    unit: m
+    value: 18970
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: A
+    note: 45° 仰角 20,750 码（18,970 m）；43° 时 19,900 码（18,200 m）。
+
+  - about: weapon:4_5in-qf-mk3
+    field: weapon.range.max_elevation
+    unit: deg
+    value: 45
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: A
+
+  - about: weapon:4_5in-qf-mk3
+    field: weapon.range.aa_max
+    unit: m
+    value: 12500
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: A
+    note: 80° 仰角时对空射高 41,000 ft（12,500 m）；50° 时 29,910 ft（9,120 m）。
+
+  - about: weapon:4_5in-qf-mk3
+    field: weapon.elevation.max
+    unit: deg
+    value: 80
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: A
+
+  - about: weapon:4_5in-qf-mk3
+    field: weapon.rate_of_fire
+    unit: rpm
+    value: 12
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: B
+    note: >-
+      12 发/分/门是标称值。**实战评价存在一组必须并列的说法**：
+      NavWeaps 说固定式整装弹太重、持续射击时射速会迅速下降；
+      但本舰 1941-01-10 的炮术报告（ADM 3363/0197）记 8 门炮约 30 分钟
+      打出约 3,000 发、平均 12 发/分，评价为 remarkable。短时高强度与
+      长时持续退化不是同一件事，两说并列。
+
+  - about: weapon:4_5in-qf-mk3
+    field: weapon.in_service_from
+    unit: date
+    value: 1938
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: B
+    note: 设计约 1935 年，1938 年服役。
+
+  - about: mount:illustrious-45in-twin
+    field: mount.label_name
+    value: 4.5 in 双联两用炮座
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1940-05-25 }
+    confidence: A
+
+  - about: mount:illustrious-45in-twin
+    field: mount.weapon
+    value: weapon:4_5in-qf-mk3
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1940-05-25 }
+    confidence: A
+
+  - about: mount:illustrious-45in-twin
+    field: mount.turret_designation
+    value: Mark II BD
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1940-05-25 }
+    confidence: A
+
+  - about: mount:illustrious-45in-twin
+    field: mount.type
+    value: twin_turret
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1940-05-25 }
+    confidence: A
+
+  - about: mount:illustrious-45in-twin
+    field: mount.barrels
+    unit: count
+    value: 2
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1940-05-25 }
+    confidence: A
+
+  - about: mount:illustrious-45in-twin
+    field: mount.count
+    unit: count
+    value: 8
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: A
+    note: 两舷各四座，沉入舷台（countersunk into sponsons），炮塔顶与飞行甲板齐平。
+
+  - about: mount:illustrious-45in-twin
+    field: mount.position
+    value: wing
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: 注册表 position 枚举没有「两舷舷台」，按 wing（舷侧）记；实际每舷四座、前后成对。
+
+  - about: mount:illustrious-45in-twin
+    field: mount.weight
+    unit: kg
+    value: 38560
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1940-05-25 }
+    confidence: A
+    note: 37.95 长吨（38.56 mt）。
+
+  - about: mount:illustrious-45in-twin
+    field: mount.elevation.max
+    unit: deg
+    value: 80
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1940-05-25 }
+    confidence: A
+    note: 仰角 -5° / +80°，俯仰速率 10°/s。
+
+  - about: mount:illustrious-45in-twin
+    field: mount.installed
+    unit: date
+    value: 1940-05-25
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+
+  # ============================================================ 2-pdr 八联 pom-pom
+  - about: weapon:2pdr-mk8
+    field: weapon.designation
+    value: QF 2-pdr Mk VIII（40 mm/39）
+    src: [navweaps-2pdr-mk8-octuple]
+    valid: { from: 1930 }
+    confidence: A
+
+  - about: weapon:2pdr-mk8
+    field: weapon.nation
+    value: united_kingdom
+    src: [navweaps-2pdr-mk8-octuple]
+    valid: { from: 1930 }
+    confidence: A
+
+  - about: weapon:2pdr-mk8
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-2pdr-mk8-octuple]
+    valid: { from: 1930 }
+    confidence: A
+
+  - about: weapon:2pdr-mk8
+    field: weapon.bore
+    unit: mm
+    value: 40
+    src: [navweaps-2pdr-mk8-octuple]
+    valid: { from: 1930 }
+    confidence: A
+
+  - about: weapon:2pdr-mk8
+    field: weapon.caliber_length
+    unit: ratio
+    value: 39
+    src: [navweaps-2pdr-mk8-octuple]
+    valid: { from: 1930 }
+    confidence: A
+
+  - about: weapon:2pdr-mk8
+    field: weapon.weight
+    unit: kg
+    value: 385.6
+    src: [navweaps-2pdr-mk8-octuple]
+    valid: { from: 1930 }
+    confidence: B
+    note: HV 炮身 850 lb（385.6 kg）；LV 为 572 lb（259.5 kg）。
+
+  - about: weapon:2pdr-mk8
+    field: weapon.range.max
+    unit: m
+    value: 4572
+    src: [navweaps-2pdr-mk8-octuple]
+    valid: { from: 1930 }
+    confidence: B
+    note: HV 弹 5,000 码（4,572 m）；LV 弹 3,800 码（3,475 m）。有效射程仅约 1,700 码。
+
+  - about: weapon:2pdr-mk8
+    field: weapon.range.aa_max
+    unit: m
+    value: 3960
+    src: [navweaps-2pdr-mk8-octuple]
+    valid: { from: 1930 }
+    confidence: B
+    note: HV 弹对空射高 13,300 ft（3,960 m）。
+
+  - about: weapon:2pdr-mk8
+    field: weapon.elevation.max
+    unit: deg
+    value: 80
+    src: [navweaps-2pdr-mk8-octuple]
+    valid: { from: 1930 }
+    confidence: A
+    note: 仰角 -10° / +80°。
+
+  - about: weapon:2pdr-mk8
+    field: weapon.rate_of_fire
+    unit: rpm
+    value: 115
+    src: [navweaps-2pdr-mk8-octuple]
+    valid: { from: 1930 }
+    confidence: B
+    note: 自动射击机构 115 发/分；控制射击机构 96–98 发/分。每门备弹约 1,800 发。
+
+  - about: weapon:2pdr-mk8
+    field: weapon.in_service_from
+    unit: date
+    value: 1930
+    src: [navweaps-2pdr-mk8-octuple]
+    valid: { from: 1930 }
+    confidence: B
+    note: 设计年份 1923；八联座 1930 年服役。
+
+  - about: mount:illustrious-2pdr-octuple
+    field: mount.label_name
+    value: 八联 2-pdr pom-pom（Mark VIA）
+    src: [navweaps-2pdr-mk8-octuple]
+    valid: { from: 1940-05-25 }
+    confidence: A
+
+  - about: mount:illustrious-2pdr-octuple
+    field: mount.weapon
+    value: weapon:2pdr-mk8
+    src: [navweaps-2pdr-mk8-octuple]
+    valid: { from: 1940-05-25 }
+    confidence: A
+
+  - about: mount:illustrious-2pdr-octuple
+    field: mount.type
+    value: other
+    src: [navweaps-2pdr-mk8-octuple]
+    valid: { from: 1940-05-25 }
+    confidence: A
+    note: 注册表没有「八联座」这个枚举，按 other 记；座型 Mark VIA。
+
+  - about: mount:illustrious-2pdr-octuple
+    field: mount.barrels
+    unit: count
+    value: 8
+    src: [navweaps-2pdr-mk8-octuple]
+    valid: { from: 1940-05-25 }
+    confidence: A
+
+  - about: mount:illustrious-2pdr-octuple
+    field: mount.count
+    unit: count
+    value: 6
+    src: [navypedia-illustrious, ac-design]
+    valid: { from: 1940-05-25 }
+    confidence: A
+    note: >-
+      6 座共 48 门。布置：舰岛前后各两座、左舷舰体舷台两座。
+      S1/S2 座周围的大型圆形围屏主要是为飞行甲板气流，兼有防爆片作用。
+      navweaps 旁证：「fleet carriers carried up to six octuple mountings」。
+
+  - about: mount:illustrious-2pdr-octuple
+    field: mount.position
+    value: wing
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: C
+    note: 舰岛前后与两舷舷台分散布置，不是单一位置，按 wing 记。
+
+  - about: mount:illustrious-2pdr-octuple
+    field: mount.weight
+    unit: kg
+    value: 15900
+    src: [navweaps-2pdr-mk8-octuple]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: Mark VIA 15.68 长吨（15.9 mt）；Mark V 为 16 t。
+
+  - about: mount:illustrious-2pdr-octuple
+    field: mount.elevation.max
+    unit: deg
+    value: 80
+    src: [navweaps-2pdr-mk8-octuple]
+    valid: { from: 1940-05-25 }
+    confidence: A
+
+  - about: mount:illustrious-2pdr-octuple
+    field: mount.installed
+    unit: date
+    value: 1940-05-25
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+
+  # ── 40 mm Bofors（1944 年 10 月东方舰队编制起在舰） ──────────────────────
+
+  - about: weapon:40mm-bofors
+    field: weapon.designation
+    value: 40 mm/56.3 OQF Bofors（英制）
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1944-10-01 }
+    confidence: A
+    note: >-
+      NavWeaps 原文「UK: 40 mm/56.3 (1.57") OQF Marks I, III, IV, VIII, IX, X,
+      XI, NI and NI/I」。本舰 1946 年清单把它记作 40/60 Mk III（倍径标法按
+      60 计），56.3 与 60 两说并列，不裁决。
+
+  - about: weapon:40mm-bofors
+    field: weapon.nation
+    value: united_kingdom
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1944-10-01 }
+    confidence: B
+    note: Bofors 是瑞典设计，英国取得许可生产（OQF）；本舰装的是英制炮，故记 united_kingdom。
+
+  - about: weapon:40mm-bofors
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1944-10-01 }
+    confidence: A
+
+  - about: weapon:40mm-bofors
+    field: weapon.bore
+    unit: mm
+    value: 40
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1944-10-01 }
+    confidence: A
+
+  - about: weapon:40mm-bofors
+    field: weapon.caliber_length
+    unit: ratio
+    value: 56.3
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1944-10-01 }
+    confidence: B
+    note: NavWeaps 标 56.3 倍径（炮管长 88.578 in / 2.250 m）；英方部分文献按 60 倍径记。
+
+  - about: weapon:40mm-bofors
+    field: weapon.projectile_weight
+    unit: kg
+    value: 0.894
+    qual: { shell_type: he }
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1944-10-01 }
+    confidence: A
+    note: NavWeaps「UK HE - 1.970 lbs. (0.894 kg)」；英制 SAP 与 AP 同为 1.970 lb。
+
+  - about: weapon:40mm-bofors
+    field: weapon.muzzle_velocity
+    unit: mps
+    value: 853
+    qual: { shell_type: he }
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1944-10-01 }
+    confidence: A
+    note: >-
+      NavWeaps「UK HE - 2,800 fps (853 mps) with Cordite W」；同一页面另给
+      「UK HE - 2,890 fps (881 mps) with FNH/PO22」，差别在发射药，两说并列。
+
+  - about: weapon:40mm-bofors
+    field: weapon.rate_of_fire
+    unit: rpm
+    value: 120
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1944-10-01 }
+    confidence: A
+    note: >-
+      NavWeaps「Cyclic: 120 rounds per minute per barrel nominal」；
+      实用射速 80-90 发/分。
+
+  - about: weapon:40mm-bofors
+    field: weapon.range.max
+    unit: m
+    value: 9830
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1944-10-01 }
+    confidence: B
+    note: 英制 HE、初速 2,800 fps 时 45° 射程 10,750 码（9,830 m）。对空的有效射程另见 range.aa_max。
+
+  - about: weapon:40mm-bofors
+    field: weapon.range.max_elevation
+    unit: deg
+    value: 45
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1944-10-01 }
+    confidence: B
+    note: 射程表取 45° 最大射程点，不是火炮仰角上限。
+
+  - about: weapon:40mm-bofors
+    field: weapon.range.aa_max
+    unit: m
+    value: 7160
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1944-10-01 }
+    confidence: B
+    note: NavWeaps「AA Ceiling | 23,500 feet (7,160 m)」，是射高不是斜距。
+
+  - about: weapon:40mm-bofors
+    field: weapon.in_service_from
+    unit: date
+    value: 1941
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1944-10-01 }
+    confidence: B
+    note: 英制 Bofors 1941 年（Bofors 产）服役；英国本土产品 1942 年起服役。
+
+  - about: mount:illustrious-40mm-bofors
+    field: mount.label_name
+    value: 40 mm Bofors 单装
+    src: [navypedia-illustrious]
+    valid: { from: 1944-10-01 }
+    confidence: B
+
+  - about: mount:illustrious-40mm-bofors
+    field: mount.weapon
+    value: weapon:40mm-bofors
+    src: [navypedia-illustrious]
+    valid: { from: 1944-10-01 }
+    confidence: A
+
+  - about: mount:illustrious-40mm-bofors
+    field: mount.type
+    value: single_turret
+    src: [navypedia-illustrious]
+    valid: { from: 1944-10-01 }
+    confidence: B
+    note: 单装（无炮塔，带防盾），注册表按 single_turret 记。
+
+  - about: mount:illustrious-40mm-bofors
+    field: mount.barrels
+    unit: count
+    value: 1
+    src: [navypedia-illustrious]
+    valid: { from: 1944-10-01 }
+    confidence: A
+
+  - about: mount:illustrious-40mm-bofors
+    field: mount.count
+    unit: count
+    value: 3
+    src: [navypedia-illustrious]
+    valid: { from: 1944-10-01 }
+    confidence: B
+    note: 1944 年 10 月东方舰队编制起为 3 座单装；此前无 Bofors。
+
+  - about: mount:illustrious-40mm-bofors
+    field: mount.installed
+    unit: date
+    value: 1944-10-01
+    src: [navypedia-illustrious]
+    valid: { from: 1944-10-01 }
+    confidence: B
+    note: 1944 年 1-10 月东方舰队改装期内加装（07-30 赴 Durban 续改至 10-10）。
+
+  - about: mount:illustrious-40mm-bofors
+    field: mount.elevation.max
+    unit: deg
+    value: 90
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1944-10-01 }
+    confidence: B
+    note: >-
+      NavWeaps 论英制单装座「Elevation limits for the Mark III were -5 to +90
+      degrees.」按 Mark III 单装座记；本舰 1946 年清单的「40/60 Mk III」与此座对应。
+
+  - about: mount:illustrious-40mm-bofors
+    field: mount.weight
+    unit: kg
+    value: 1220
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1944-10-01 }
+    confidence: B
+    note: >-
+      NavWeaps「Mounting weight for the LS Mark III including the gun was 1.2 tons
+      (1.22 mt).」含炮身；是陆用 Mark III 座数据，海军化 Mark III CN 未单独给重。
+
+  # ── 20 mm Oerlikon（1941 年 5 月首次加装，1943 年起双联大量上舰） ──────────
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.designation
+    value: 20 mm/70 Oerlikon Mk III / Mk V（英制）
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941-05-12 }
+    confidence: B
+    note: >-
+      NavWeaps 原文「Britain: 20 mm/70 (0.79") Mark I and Mark II」；本舰 1946 年
+      清单记 Mk III 单装与 Mk V 双联，同族不同 Mark，并列保留。
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.nation
+    value: united_kingdom
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941-05-12 }
+    confidence: B
+    note: 瑞士 Oerlikon 设计，英国许可生产；本舰装英制炮，故记 united_kingdom。
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941-05-12 }
+    confidence: A
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.bore
+    unit: mm
+    value: 20
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941-05-12 }
+    confidence: A
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.caliber_length
+    unit: ratio
+    value: 70
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941-05-12 }
+    confidence: B
+    note: >-
+      NavWeaps 脚注「Some references describe the British weapons as 65 calibers
+      long, but gun data sheets show them to be the same length as USN weapons,
+      70 calibers.」65 与 70 两说并列，取炮表值。
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.projectile_weight
+    unit: kg
+    value: 0.123
+    qual: { shell_type: he }
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941-05-12 }
+    confidence: A
+    note: >-
+      NavWeaps「Britain HE: 0.272 lbs. (0.123 kg)」；美制 HE Mark 3 为
+      0.271 lb（0.123 kg），同值。
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.muzzle_velocity
+    unit: mps
+    value: 844
+    qual: { shell_type: he }
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941-05-12 }
+    confidence: A
+    note: >-
+      NavWeaps「New Gun: 2,770 fps (844 mps)」；同页另给
+      「Average Gun: 2,725 fps (835 mps)」。
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.rate_of_fire
+    unit: rpm
+    value: 450
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941-05-12 }
+    confidence: A
+    note: >-
+      NavWeaps「Cyclic: 450 rounds per minute」；实用 250-320 发/分。
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.range.max
+    unit: m
+    value: 4389
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941-05-12 }
+    confidence: B
+    note: 初速 2,725 fps 时 45° 射程 4,800 码（4,389 m）。
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.range.max_elevation
+    unit: deg
+    value: 45
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941-05-12 }
+    confidence: B
+    note: 射程表取 45° 最大射程点。
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.range.aa_max
+    unit: m
+    value: 3048
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941-05-12 }
+    confidence: B
+    note: >-
+      NavWeaps 表 90° 时 10,000 ft（3,048 m）；脚注提醒这是弹道值，实战手动瞄准
+      对空有效射程少见超过 1,000 码（910 m）。
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.in_service_from
+    unit: date
+    value: 1939
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941-05-12 }
+    confidence: B
+    note: 英制 Mark I 1939 年服役，Mark II 1941 年服役。
+
+  - about: mount:illustrious-20mm-oerlikon-single
+    field: mount.label_name
+    value: 20 mm Oerlikon 单装（Mk III）
+    src: [navypedia-illustrious]
+    valid: { from: 1941-05-12 }
+    confidence: B
+
+  - about: mount:illustrious-20mm-oerlikon-single
+    field: mount.weapon
+    value: weapon:20mm-oerlikon
+    src: [navypedia-illustrious]
+    valid: { from: 1941-05-12 }
+    confidence: A
+
+  - about: mount:illustrious-20mm-oerlikon-single
+    field: mount.type
+    value: single_turret
+    src: [navypedia-illustrious]
+    valid: { from: 1941-05-12 }
+    confidence: B
+    note: 无炮塔单装（手操），注册表按 single_turret 记。
+
+  - about: mount:illustrious-20mm-oerlikon-single
+    field: mount.barrels
+    unit: count
+    value: 1
+    src: [navypedia-illustrious]
+    valid: { from: 1941-05-12 }
+    confidence: A
+
+  - about: mount:illustrious-20mm-oerlikon-single
+    field: mount.count
+    unit: count
+    value: 14
+    src: [navypedia-illustrious]
+    valid: { from: 1941-05-12 }
+    confidence: B
+    note: >-
+      座数取 1946 年 1 月定案清单的 14 座；1941-05-12 诺福克大修后首批 10 门，
+      此后随历次改装增减，逐期数字见 data/slices/illustrious.yaml。
+
+  - about: mount:illustrious-20mm-oerlikon-single
+    field: mount.installed
+    unit: date
+    value: 1941-05-12
+    src: [navypedia-illustrious]
+    valid: { from: 1941-05-12 }
+    confidence: B
+
+  - about: mount:illustrious-20mm-oerlikon-twin
+    field: mount.label_name
+    value: 20 mm Oerlikon 双联（Mk V）
+    src: [navypedia-illustrious]
+    valid: { from: 1943-01-13 }
+    confidence: B
+
+  - about: mount:illustrious-20mm-oerlikon-twin
+    field: mount.weapon
+    value: weapon:20mm-oerlikon
+    src: [navypedia-illustrious]
+    valid: { from: 1943-01-13 }
+    confidence: A
+
+  - about: mount:illustrious-20mm-oerlikon-twin
+    field: mount.type
+    value: twin_turret
+    src: [navypedia-illustrious]
+    valid: { from: 1943-01-13 }
+    confidence: B
+    note: 无炮塔双联手操座，注册表按 twin_turret 记。
+
+  - about: mount:illustrious-20mm-oerlikon-twin
+    field: mount.barrels
+    unit: count
+    value: 2
+    src: [navypedia-illustrious]
+    valid: { from: 1943-01-13 }
+    confidence: A
+
+  - about: mount:illustrious-20mm-oerlikon-twin
+    field: mount.count
+    unit: count
+    value: 19
+    src: [navypedia-illustrious]
+    valid: { from: 1943-01-13 }
+    confidence: B
+    note: 座数取 1946 年 1 月定案清单的 19 座（38 门）；1943 年本土改装起双联大量上舰。
+
+  - about: mount:illustrious-20mm-oerlikon-twin
+    field: mount.installed
+    unit: date
+    value: 1943-01-13
+    src: [navypedia-illustrious]
+    valid: { from: 1943-01-13 }
+    confidence: C
+    note: 1943-01 本土改装期内开始加装双联；确切逐座日期无一手记录，按改装完成日记。

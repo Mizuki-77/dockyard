@@ -1,0 +1,981 @@
+---
+import Base from '../../layouts/Base.astro';
+import CatalogTree from '../../components/CatalogTree.astro';
+import { getBattles, getBattle, getSource, getImagesFor, primaryImage, imageCredit, operationOf } from '../../lib/data';
+import { buildBattleTree } from '../../lib/tree';
+
+export function getStaticPaths() {
+  return getBattles().map((b) => ({ params: { id: b.id } }));
+}
+
+const { id } = Astro.params;
+const b = getBattle(id!)!;
+const sides = b.belligerents ?? [];
+const hero = primaryImage(`battle:${b.id}`);
+const gallery = getImagesFor(`battle:${b.id}`).filter((i) => i.id !== hero?.id);
+/* 上级行动：给读者一条回上游的路。没有上层行动的战斗返回 undefined。 */
+const op = operationOf(b.id);
+/* 同一行动里的其他战斗——一场行动往往有几场，读者会想横向对照。 */
+const siblings = op
+  ? (op.phases ?? [])
+      .filter((p) => p.battle && p.battle !== b.id)
+      .map((p) => ({ phase: p, battle: getBattle(p.battle!) }))
+      .filter((x): x is { phase: typeof x.phase; battle: NonNullable<typeof x.battle> } => Boolean(x.battle))
+  : [];
+
+/* ---- 左树：与「海战历史」列表页同构的三层树（海区 → 年份 → 战斗），
+        选中当前这场。战斗页上保留完整索引，是为了让读者
+        横向跳到同一片海里的另一场仗，而不用先退回列表。
+        装配逻辑在 src/lib/tree.ts，两页共用。 ---- */
+const allBattles = getBattles();
+const battleTree = buildBattleTree(allBattles, (x) => operationOf(x.id)?.name.zh);
+
+const branches = battleTree.map((t) => ({
+  key: t.key,
+  label: t.label,
+  en: t.en,
+  count: t.count,
+  groups: t.years.map((y) => ({
+    key: y.key,
+    label: y.label,
+    count: y.count,
+    leaves: y.battles.map((x) => ({
+      label: x.label,
+      href: x.href,
+      meta: x.meta ?? '',
+    })),
+  })),
+}));
+
+/**
+ * 战斗时间轴不是等间隔的：先把时刻换算成分钟，再按跨度给比例。
+ *
+ * 支持两种写法：
+ *   '05:52'        —— 单日战斗（如丹麦海峡），只有时刻
+ *   '05-26 20:47'  —— 跨日战斗（如最终战），带 MM-DD
+ * 跨日时把日号乘进分钟里，否则「23:58 之后接 01:22」会被算成倒流。
+ */
+function tmin(s?: string): number | null {
+  if (!s) return null;
+  const str = String(s);
+  const withDay = str.match(/^(\d{1,2})-(\d{1,2})\s+(\d{1,2}):(\d{2})(?::(\d{2}))?$/);
+  if (withDay) {
+    return (
+      Number(withDay[1]) * 1440 +
+      Number(withDay[2]) * 60 +
+      Number(withDay[3]) * 60 +
+      Number(withDay[4]) +
+      Number(withDay[5] ?? 0) / 60
+    );
+  }
+  const m = str.match(/^(\d{1,2}):(\d{2})(?::(\d{2}))?$/);
+  if (!m) return null;
+  return Number(m[1]) * 60 + Number(m[2]) + Number(m[3] ?? 0) / 60;
+}
+
+/** 把 '05-26 20:47' 拆成「日期 / 时刻」两段显示；只有时刻时 date 为空。 */
+function tsplit(s?: string): { date: string; time: string } {
+  const str = String(s ?? '');
+  const withDay = str.match(/^(\d{1,2})-(\d{1,2})\s+(\d{1,2}:\d{2}(?::\d{2})?)$/);
+  if (withDay) return { date: `${withDay[1]}.${withDay[2]}`, time: withDay[3] };
+  return { date: '', time: str };
+}
+const first = tmin(b.timeline[0]?.time);
+const last = tmin(b.timeline[b.timeline.length - 1]?.time);
+const span = first !== null && last !== null && last > first ? last - first : 1;
+
+// 概览密度只显示标了 major 的条目。
+// 没标任何 major 时（现存的 denmark-strait / last-battle 都还没标），
+// 不显示切换按钮，退化成原来的「全部显示」——不给读者一个点了没反应的控件。
+const majorCount = (b.timeline ?? []).filter((ev) => ev.major).length;
+
+const srcIds = new Set<string>();
+for (const ev of [...(b.timeline ?? []), ...(b.hits_received ?? []), ...(b.consequences ?? [])]) {
+  for (const s of ev.src ?? []) srcIds.add(s);
+}
+const usedSources = [...srcIds].map((s) => getSource(s)).filter(Boolean);
+---
+
+<Base title={b.name.zh} variant="tree">
+  <CatalogTree
+    slot="sidenav"
+    kicker="Battles"
+    title="海战历史"
+    branches={branches}
+    currentHref={`/battles/${b.id}`}
+    footLink={{ href: '/operations', label: '按行动看' }}
+    note="索引按海区与年份排列。同一场行动里的几场战斗，可以从战斗页顶部回到行动全程。"
+  />
+
+  <div class="crumbs">
+    <a href="/battles">海战历史</a>
+    <span aria-hidden="true">/</span>
+    {op && (
+      <>
+        <a href={`/operations/${op.id}`}>{op.name.zh}</a>
+        <span aria-hidden="true">/</span>
+      </>
+    )}
+    <span>{b.name.zh}</span>
+  </div>
+
+  {
+    op && (
+      <a class="opbar" href={`/operations/${op.id}`}>
+        <span class="opbar__k">本场战斗属于</span>
+        <span class="opbar__t">{op.name.zh}</span>
+        {op.codename && <span class="opbar__c mono">{op.codename}</span>}
+        <span class="opbar__arrow" aria-hidden="true">
+          ↑ 回到整场行动
+        </span>
+      </a>
+    )
+  }
+
+  <div class="pagehead">
+    <div class="pagehead__kicker">
+      Battle · {b.date.from}
+      {b.date.to && b.date.to !== b.date.from ? `–${b.date.to}` : ''}
+    </div>
+    <h1 class="pagehead__title">{b.name.zh}</h1>
+    <p class="pagehead__en">{b.name.en}</p>
+    <div class="pagehead__meta">
+      {b.period && <span class="tag">{b.period.zh}</span>}
+      {b.location && <span class="tag tag--ghost">{b.location.zh}</span>}
+      <span class="tag tag--ghost">{b.timeline.length} 个事件</span>
+      {b.coordinates && <span class="tag tag--ghost mono">{b.coordinates}</span>}
+    </div>
+  </div>
+
+  {b.summary && <p class="lead">{b.summary.zh}</p>}
+
+  {
+    hero && hero.file && (
+      <figure class="btlhero">
+        <img src={hero.file} alt={hero.title.zh} loading="eager" />
+        <figcaption>
+          <span class="btlhero__t">{hero.title.zh}</span>
+          <span class="btlhero__c">
+            {imageCredit(hero)}
+            <span class={`tag tag--lic-${hero.license_tier} tiny`}>{hero.license_tier} 档</span>
+            {hero.source_url && (
+              <a href={hero.source_url} target="_blank" rel="noopener noreferrer">
+                原始页面
+              </a>
+            )}
+          </span>
+          {hero.note && <span class="btlhero__n">{hero.note}</span>}
+        </figcaption>
+      </figure>
+    )
+  }
+
+  <!-- 参战方 -->
+  <section class="section" id="sides">
+    <div class="section__head">
+      <h2 class="section__title">参战方</h2>
+      <span class="section__en">Order of battle</span>
+    </div>
+    <div class="sides">
+      {
+        sides.map((s) => (
+          <div class={`side side--${s.side}`}>
+            <div class="side__head">
+              <span class={`side__flag side__flag--${s.side}`} aria-hidden="true" />
+              <span class="side__label">{s.label.zh}</span>
+            </div>
+            <div class="side__ships">
+              {(s.ships ?? []).map((x) => (
+                <div class="side__ship">
+                  {x.ship_id ? (
+                    <a class="side__name" href={`/ships/${x.ship_id}`}>
+                      {x.name}
+                    </a>
+                  ) : (
+                    <span class="side__name side__name--plain">{x.name}</span>
+                  )}
+                  {x.role && <span class="side__role">{x.role.zh}</span>}
+                </div>
+              ))}
+            </div>
+            {(b.forces ?? [])
+              .filter((f) => f.side === s.side)
+              .map((f) => (
+                <p class="side__guns">{f.guns?.zh}</p>
+              ))}
+          </div>
+        ))
+      }
+    </div>
+    <p class="note">
+      参战舰只只列实际参战的舰。同型舰未参战的不列——这样「这场战斗有哪些船」才是可查的，
+      而不是靠读者自己从舰级表里排除。
+    </p>
+  </section>
+
+  <!-- 事件流 -->
+  <section class="section" id="timeline">
+    <div class="section__head">
+      <h2 class="section__title">事件流</h2>
+      <span class="section__en">Minute by minute</span>
+      {
+        majorCount > 0 && (
+          <div class="density" role="group" aria-label="事件流详略">
+            <button type="button" class="density__btn is-on" data-density="major">
+              概览 <span class="density__n">{majorCount}</span>
+            </button>
+            <button type="button" class="density__btn" data-density="all">
+              逐条 <span class="density__n">{b.timeline.length}</span>
+            </button>
+          </div>
+        )
+      }
+    </div>
+    {majorCount === 0 && b.timeline.length > 8 && (
+      <p class="section__sub">
+        这场战斗的事件还没有标出关键节点，所以只能逐条看。
+        标了 <code>major: true</code> 的条目会出现在「概览」里。
+      </p>
+    )}
+    <div class="btl">
+      <div class="btl__rail" aria-hidden="true">
+        <span class="btl__rail-line" />
+      </div>
+      <ol class="btl__list">
+        {
+          b.timeline.map((ev) => {
+            const t = tmin(ev.time);
+            const pct = t !== null && first !== null ? ((t - first) / span) * 100 : 0;
+            const ts = tsplit(ev.time);
+            return (
+              <li class:list={['btl__item', ev.major ? 'is-major' : 'is-minor']}>
+                <span class="btl__dot" style={`--p:${pct.toFixed(2)}%`} aria-hidden="true" />
+                <time class="btl__time mono">
+                  {ts.date && <em class="btl__day">{ts.date}</em>}
+                  {ts.time}
+                </time>
+                <div class="btl__text">
+                  {ev.text.zh}
+                  <span class="btl__src">{ev.src.join(' · ')}</span>
+                </div>
+              </li>
+            );
+          })
+        }
+      </ol>
+    </div>
+  </section>
+
+  <!-- 命中记录 -->
+  {
+    (b.hits_received ?? []).length > 0 && (
+      <section class="section" id="hits">
+        <div class="section__head">
+          <h2 class="section__title">命中记录</h2>
+          <span class="section__en">Hits received</span>
+        </div>
+        <p class="section__sub">
+          这一战里被命中的每一发都单独记。命中数不是从「发射数 × 命中率」推出来的，
+          是从射击报告和损伤记录里点出来的——所以它能和别的来源对不上，那也是数据。
+        </p>
+        <ol class="hits">
+          {(b.hits_received ?? []).map((h, i) => (
+            <li class="hit">
+              <span class="hit__n mono">{String(i + 1).padStart(2, '0')}</span>
+              <div class="hit__body">
+                <p class="hit__text">{h.text.zh}</p>
+                <span class="hit__src">{h.src.join(' · ')}</span>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )
+  }
+
+  <!-- 后果 -->
+  {
+    (b.consequences ?? []).length > 0 && (
+      <section class="section">
+        <div class="section__head">
+          <h2 class="section__title">战术后果</h2>
+          <span class="section__en">Consequences</span>
+        </div>
+        <ul class="plainlist">
+          {(b.consequences ?? []).map((c) => (
+            <li>
+              {c.text.zh}
+              <span class="btl__src">{c.src.join(' · ')}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  <!-- 伤亡与结局 -->
+  <section class="section" id="losses">
+    <div class="section__head">
+      <h2 class="section__title">伤亡与结局</h2>
+      <span class="section__en">Losses & outcome</span>
+    </div>
+    <div class="lossgrid">
+      {
+        (b.losses ?? []).map((l) => (
+          <div class="losscard">
+            <div class="losscard__side">{l.side === 'allies' ? '英方' : l.side === 'axis' ? '德方' : l.side}</div>
+            {l.ships_lost && <div class="losscard__ship">{l.ships_lost.zh}</div>}
+            <div class="losscard__nums">
+              {typeof l.killed === 'number' && (
+                <span>
+                  <strong>{l.killed.toLocaleString('en-US')}</strong> 阵亡
+                </span>
+              )}
+              {typeof l.survivors === 'number' && (
+                <span>
+                  <strong>{l.survivors}</strong> 生还
+                </span>
+              )}
+            </div>
+            {l.note && <p class="losscard__note">{l.note.zh}</p>}
+          </div>
+        ))
+      }
+    </div>
+    {b.outcome && (
+      <div class="callout">
+        <div class="callout__title">结局怎么评</div>
+        <p>{b.outcome.zh}</p>
+      </div>
+    )}
+  </section>
+
+  <!-- 图集 -->
+  {
+    gallery.length > 0 && (
+      <section class="section" id="gallery">
+        <div class="section__head">
+          <h2 class="section__title">影像</h2>
+          <span class="section__en">{gallery.length} 张</span>
+        </div>
+        <div class="btlgallery">
+          {gallery.map((g) => (
+            <figure class="btlgallery__item">
+              <img src={g.file} alt={g.title.zh} loading="lazy" />
+              <figcaption>
+                <span class="btlgallery__t">{g.title.zh}</span>
+                <span class="btlgallery__c">
+                  {imageCredit(g)}
+                  <span class={`tag tag--lic-${g.license_tier} tiny`}>{g.license_tier} 档</span>
+                </span>
+                {g.note && <span class="btlgallery__n">{g.note}</span>}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <!-- 同一行动里的其他战斗 -->
+  {
+    siblings.length > 0 && op && (
+      <section class="section" id="siblings">
+        <div class="section__head">
+          <h2 class="section__title">同一行动里的其他战斗</h2>
+          <span class="section__en">Elsewhere in {op.codename ?? op.name.en}</span>
+        </div>
+        <div class="siblist">
+          {siblings.map((s) => (
+            <a class="sibrow" href={`/battles/${s.battle.id}`}>
+              <span class="sibrow__date mono">
+                {String(s.phase.date.from).slice(5).replace('-', '.')}
+              </span>
+              <span class="sibrow__body">
+                <span class="sibrow__t">{s.battle.name.zh}</span>
+                <span class="sibrow__en">{s.battle.name.en}</span>
+              </span>
+              <span class="sibrow__n mono">{s.battle.timeline.length} 事件</span>
+              <span class="sibrow__arrow" aria-hidden="true">→</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <!-- 来源 -->
+  <section class="section" id="sources">
+    <div class="section__head">
+      <h2 class="section__title">本页来源</h2>
+      <span class="section__en">Sources</span>
+    </div>
+    <ul class="plainlist plainlist--tight">
+      {
+        usedSources.map((s) => (
+          <li>
+            <span class={`conf conf--${s!.tier}`}>{s!.tier}</span>{' '}
+            <a href={s!.url} target="_blank" rel="noopener noreferrer">
+              {s!.title}
+            </a>
+            <span class="mono tiny muted"> {s!.id}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  {
+    majorCount > 0 && (
+      <script>
+        // 事件流详略切换。默认「概览」——读者先要骨架，需要细节再展开。
+        // 纯前端，无需重渲染：靠父容器上的 data-density 属性控制 CSS 显隐。
+        (function () {
+          const wrap = document.querySelector('.btl');
+          const btns = document.querySelectorAll('.density__btn');
+          if (!wrap || !btns.length) return;
+          function apply(mode) {
+            wrap.dataset.density = mode;
+            btns.forEach((b) => {
+              const on = b.dataset.density === mode;
+              b.classList.toggle('is-on', on);
+              b.setAttribute('aria-pressed', String(on));
+            });
+            try {
+              localStorage.setItem('dockyard-btl-density', mode);
+            } catch (e) {
+              /* 隐私模式禁用存储，忽略即可 */
+            }
+          }
+          btns.forEach((b) => {
+            b.addEventListener('click', () => apply(b.dataset.density));
+          });
+          // 记住上次选择，跨战斗页生效——读者偏好是稳定的。
+          let saved = null;
+          try {
+            saved = localStorage.getItem('dockyard-btl-density');
+          } catch (e) {}
+          apply(saved === 'all' ? 'all' : 'major');
+        })();
+      </script>
+    )
+  }
+</Base>
+
+<style>
+  /* ---------------------------------------------------- 事件流详略切换 */
+  .density {
+    margin-left: auto;
+    display: inline-flex;
+    border: 1px solid var(--line-300);
+    border-radius: 7px;
+    overflow: hidden;
+  }
+  .density__btn {
+    font: inherit;
+    font-size: 11.5px;
+    padding: 5px 11px;
+    border: 0;
+    background: #fff;
+    color: var(--ink-600);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .density__btn + .density__btn {
+    border-left: 1px solid var(--line-300);
+  }
+  .density__btn:hover {
+    background: var(--paper-100, #f5f7fa);
+  }
+  .density__btn.is-on {
+    background: var(--navy-800);
+    color: #fff;
+  }
+  .density__n {
+    opacity: 0.65;
+    font-size: 10px;
+    margin-left: 3px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* 概览模式：藏掉次要条目，并把保留条目的左竖线加重，
+     让「骨架」在视觉上站得住，而不是变成稀疏的空列表。 */
+  .btl[data-density='major'] .btl__item.is-minor {
+    display: none;
+  }
+  .btl[data-density='major'] .btl__item.is-major .btl__dot {
+    box-shadow: 0 0 0 3px rgba(37, 99, 168, 0.16);
+  }
+  .btl[data-density='major'] .btl__item.is-major .btl__text {
+    font-weight: 500;
+  }
+
+  .pagehead__en {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: var(--ink-300);
+    letter-spacing: 0.02em;
+  }
+
+  /* 上级行动条：战斗页顶部给一条回上游的路。
+     放在 crumbs 之后、标题之前——读者先知道自己站在哪一段历史里，再看这场仗本身。 */
+  .opbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 9px 15px;
+    margin-bottom: 14px;
+    border: 1px solid var(--blue-200);
+    border-left: 3px solid var(--blue-500);
+    border-radius: 3px;
+    background: var(--blue-50);
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.16s ease, border-color 0.16s ease;
+  }
+  .opbar:hover {
+    background: var(--blue-100);
+    border-color: var(--blue-400);
+  }
+  .opbar__k {
+    font-size: 10.5px;
+    color: var(--ink-400);
+    letter-spacing: 0.04em;
+  }
+  .opbar__t {
+    font-size: 13.5px;
+    font-weight: 680;
+    color: var(--blue-700);
+  }
+  .opbar__c {
+    font-size: 10.5px;
+    color: var(--ink-400);
+  }
+  .opbar__arrow {
+    margin-left: auto;
+    font-size: 11.5px;
+    color: var(--blue-600);
+    white-space: nowrap;
+  }
+
+  /* 同行动的其他战斗 */
+  .siblist {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .sibrow {
+    display: grid;
+    grid-template-columns: 62px minmax(0, 1fr) auto 18px;
+    gap: 14px;
+    align-items: center;
+    padding: 12px 16px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--white);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.16s ease, background 0.16s ease;
+  }
+  .sibrow:hover {
+    border-color: var(--blue-300);
+    background: var(--blue-50);
+  }
+  .sibrow__date {
+    font-size: 12px;
+    color: var(--blue-700);
+  }
+  .sibrow__body {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  .sibrow__t {
+    font-size: 14px;
+    font-weight: 620;
+    color: var(--ink-900);
+  }
+  .sibrow__en {
+    font-size: 11px;
+    color: var(--ink-300);
+  }
+  .sibrow__n {
+    font-size: 10.5px;
+    color: var(--ink-400);
+    white-space: nowrap;
+  }
+  .sibrow__arrow {
+    color: var(--blue-400);
+    font-size: 13px;
+    transition: transform 0.16s ease;
+  }
+  .sibrow:hover .sibrow__arrow {
+    transform: translateX(3px);
+  }
+  @media (max-width: 720px) {
+    .sibrow {
+      grid-template-columns: 52px minmax(0, 1fr) 16px;
+      gap: 10px;
+    }
+    .sibrow__n {
+      display: none;
+    }
+    .opbar__arrow {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+
+  /* 主图与图集 */  .btlhero {
+    margin: 0 0 4px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--navy-900);
+  }
+  .btlhero img {
+    display: block;
+    width: 100%;
+    max-height: 440px;
+    object-fit: cover;
+    object-position: center 40%;
+  }
+  .btlhero figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 11px 16px 14px;
+  }
+  .btlhero__t {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: rgba(226, 240, 250, 0.95);
+  }
+  .btlhero__c {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex-wrap: wrap;
+    font-size: 11px;
+    color: rgba(179, 215, 236, 0.72);
+  }
+  .btlhero__c a {
+    color: var(--blue-300);
+  }
+  .btlhero__n {
+    font-size: 11.5px;
+    line-height: 1.75;
+    color: rgba(200, 224, 240, 0.7);
+  }
+  .btlgallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .btlgallery__item {
+    margin: 0;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--white);
+  }
+  .btlgallery__item img {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    background: var(--blue-50);
+  }
+  .btlgallery__item figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 9px 12px 12px;
+  }
+  .btlgallery__t {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--ink-900);
+    line-height: 1.45;
+  }
+  .btlgallery__c {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-wrap: wrap;
+    font-size: 10.5px;
+    color: var(--ink-400);
+  }
+  .btlgallery__n {
+    margin-top: 2px;
+    font-size: 11px;
+    line-height: 1.7;
+    color: var(--ink-500);
+  }
+
+  /* 参战方 */
+  .sides {
+    display: grid;
+    /* 两侧舰数常常悬殊（最终战是 1 对 12），等宽会让少的一侧空出一大片。
+       列宽不等 + align-items: start，短的那张卡就只占自己内容的高度。 */
+    grid-template-columns: minmax(190px, 0.72fr) minmax(0, 1.28fr);
+    align-items: start;
+    gap: 14px;
+  }
+  .side {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white);
+    padding: 16px 18px;
+  }
+  .side--axis {
+    border-top: 3px solid var(--ink-500);
+  }
+  .side--allies {
+    border-top: 3px solid var(--blue-500);
+  }
+  .side__head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .side__flag {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    flex: none;
+  }
+  .side__flag--axis {
+    background: linear-gradient(160deg, var(--ink-700), var(--ink-500));
+  }
+  .side__flag--allies {
+    background: linear-gradient(160deg, var(--blue-600), var(--blue-400));
+  }
+  .side__label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink-900);
+  }
+  .side__ships {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .side__ship {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+  .side__name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--blue-700);
+    text-decoration: none;
+  }
+  .side__name:hover {
+    text-decoration: underline;
+  }
+  .side__name--plain {
+    color: var(--ink-700);
+  }
+  .side__role {
+    font-size: 11.5px;
+    color: var(--ink-400);
+  }
+  .side__guns {
+    margin: 11px 0 0;
+    padding-top: 10px;
+    border-top: 1px dashed var(--line);
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--ink-500);
+  }
+
+  /* 事件流 */
+  .btl {
+    display: grid;
+    grid-template-columns: 1px minmax(0, 1fr);
+    gap: 0 22px;
+  }
+  .btl__rail {
+    position: relative;
+  }
+  .btl__rail-line {
+    position: absolute;
+    inset: 8px 0;
+    width: 1px;
+    background: linear-gradient(var(--blue-300), var(--line));
+  }
+  .btl__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .btl__item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 62px minmax(0, 1fr);
+    gap: 14px;
+    padding: 9px 0;
+  }
+  .btl__dot {
+    position: absolute;
+    left: -25px;
+    top: 14px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--blue-500);
+    box-shadow: 0 0 0 3px var(--white);
+  }
+  .btl__item:first-child .btl__dot {
+    background: var(--navy-700);
+    width: 9px;
+    height: 9px;
+    left: -26px;
+  }
+  .btl__time {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--blue-700);
+    padding-top: 1px;
+    line-height: 1.35;
+  }
+  /* 跨日战斗：日期单独一行，比时刻小一号更低对比 —— 读者扫的是时刻，日期只是定位 */
+  .btl__day {
+    display: block;
+    font-style: normal;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--ink-400);
+  }
+  .btl__text {
+    font-size: 13.5px;
+    line-height: 1.78;
+    color: var(--ink-700);
+  }
+  .btl__src {
+    display: block;
+    margin-top: 3px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--ink-300);
+    letter-spacing: 0.01em;
+  }
+
+  /* 命中 */
+  .hits {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hit {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 12px;
+    padding: 13px 16px;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--warn-line);
+    border-radius: var(--radius-sm);
+    background: var(--warn-bg);
+  }
+  .hit__n {
+    font-size: 11px;
+    color: var(--warn);
+    padding-top: 2px;
+  }
+  .hit__text {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.75;
+    color: var(--ink-700);
+  }
+  .hit__src {
+    display: block;
+    margin-top: 4px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--ink-300);
+  }
+
+  /* 伤亡 */
+  .lossgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+  }
+  .losscard {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white);
+    padding: 15px 17px;
+  }
+  .losscard__side {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-400);
+  }
+  .losscard__ship {
+    margin-top: 5px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--ink-900);
+  }
+  .losscard__nums {
+    display: flex;
+    gap: 16px;
+    margin-top: 9px;
+    font-size: 12px;
+    color: var(--ink-500);
+  }
+  .losscard__nums strong {
+    font-family: var(--font-mono);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy-700);
+    margin-right: 2px;
+  }
+  .losscard__note {
+    margin: 8px 0 0;
+    font-size: 11.5px;
+    line-height: 1.6;
+    color: var(--ink-400);
+  }
+
+  .plainlist {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 13.5px;
+    line-height: 1.8;
+    color: var(--ink-700);
+  }
+  .plainlist li + li {
+    margin-top: 8px;
+  }
+  .plainlist--tight {
+    font-size: 12.5px;
+    line-height: 1.9;
+  }
+
+  @media (max-width: 760px) {
+    .sides {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .btl {
+      gap: 0 14px;
+    }
+    .btl__item {
+      grid-template-columns: 52px minmax(0, 1fr);
+      gap: 10px;
+    }
+  }
+</style>

@@ -1,0 +1,1281 @@
+# ============================================================================
+# 企业号（USS Enterprise, CV-6）—— 约克城级二号舰
+#
+# 2026-11-19 入库。数据来自 work/raw/enterprise-tech.md（508 行调研，85.6% 覆盖）。
+#
+# 三处必须记住的事：
+#   1. 5"/38 是 8 座单装（Mark 21 Mod 16 开放式基座炮架），不是双联装。
+#   2. 中途岛时 40mm 为 0 座——当时装的是 1.1"/75 四联装 4 座。
+#      40mm 是 1942 年 9-10 月才换装的。
+#   3. 结局：1958-07-01 出售、08-21 拖走，拆完是 1960 年 2 月。
+#      fate_date 取「拆解完成」这个节点，与 danmark-strait 那批「沉没日」口径一致。
+# ============================================================================
+
+id: enterprise
+name:
+  zh: 企业号
+  en: Enterprise
+class: yorktown
+note: >-
+  约克城级二号舰，舷号 CV-6。二战中获战斗之星最多的美军军舰之一。
+  中途岛时为第 16 特混舰队旗舰（斯普鲁恩斯）。
+  绰号 The Big E / Lucky E / The Grey Ghost / The Galloping Ghost。
+
+open_ended_note: >-
+  本舰战时多次改装（1942-03、1942-07、1943-10 等），
+  武备与雷达随改装变化，用不同时间窗区分；未变的舰体参数 valid.to 留空。
+
+facts:
+  # ============================================================
+  # 身份
+  # ============================================================
+  - field: identity.name_original
+    value: Enterprise
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1936-10-03 }
+    confidence: B
+    note: 第七艘沿用此名的美国军舰。
+
+  - field: identity.name_zh
+    value: 企业号
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1936-10-03 }
+    confidence: B
+
+  - field: identity.name_en
+    value: USS Enterprise
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1936-10-03 }
+    confidence: B
+
+  - field: identity.name_note
+    value: 亦译「进取号」。原名含义为「实务中的果敢、活力与创造力」（boldness, energy, and invention in practical affairs）。
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1936-10-03 }
+    confidence: B
+
+  - field: identity.ship_type
+    value: aircraft_carrier
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: B
+
+  - field: identity.nation
+    value: united_states
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: B
+
+  - field: identity.operator
+    value: United States Navy
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: B
+
+  - field: identity.pennant_number
+    value: CV-6（1952-10-01 改 CVA-6，1953-08-08 改 CVS-6）
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: B
+    note: 注意与日本海军不同，美军确实有舷号制度。
+
+  - field: identity.era
+    value: ww2
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: B
+
+  - field: identity.namesake
+    value: 纪念此前六艘同名舰；该名自独立战争起沿用
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1936-10-03 }
+    confidence: B
+    note: 海军少将 King 1933-08-11 的建议原文提及该名在法国革命战争、的黎波里战争中的传统。
+
+  - field: identity.building_program
+    value: 1933-06-16 国会法案（National Industrial Recovery Act）授权
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1933-06-16 }
+    confidence: B
+    note: 授权（1933-06-16）与下单（1933-08-03）是两个节点，不矛盾。
+
+  # ============================================================
+  # 建造
+  # ============================================================
+  - field: construction.builder
+    value: Newport News Shipbuilding & Dry Dock Co.
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1934-07-16 }
+    confidence: B
+
+  - field: construction.builder_location
+    value: Newport News, Virginia
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1934-07-16 }
+    confidence: B
+
+  - field: construction.yard_number
+    value: '360'
+    src: [navypedia-yorktown-class]
+    valid: { from: 1934-07-16 }
+    confidence: C
+
+  - field: construction.order_date
+    value: 1933-08-03
+    unit: date
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1933-08-03 }
+    confidence: B
+
+  - field: construction.laid_down
+    value: 1934-07-16
+    unit: date
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1934-07-16 }
+    confidence: B
+
+  - field: construction.launched
+    value: 1936-10-03
+    unit: date
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1936-10-03 }
+    confidence: B
+    note: 掷瓶人为海军部长 Claude A. Swanson 夫人 Lulie H. Swanson。
+
+  - field: construction.commissioned
+    value: 1938-05-12
+    unit: date
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: B
+    note: 首任舰长 Newton H. White。
+
+  - field: construction.fate_date
+    value: 1960-02
+    unit: date
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1960-02 }
+    confidence: B
+    note: >-
+      拆解完成日期。链路上有四个节点：1947-02-17 退役 / 1956-10-02 除籍 /
+      1958-07-01 以 $561,333 售予 Lipsett Corp. / 1958-08-21 拖往 Kearny, N.J.，
+      拆完是 1960 年 2 月（原句 "the breakers cut her up by February 1960"）。
+      本字段取「拆完」这个节点，与其他舰的「结局日期」口径一致。
+
+  - field: construction.fate_type
+    value: scrapped
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1960-02 }
+    confidence: B
+
+  # ============================================================
+  # 主尺度（建成时 1938）
+  # ============================================================
+  - field: dimensions.length.oa
+    value: 246.7
+    unit: m
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12, to: 1943-07-19 }
+    confidence: B
+    note: >-
+      船体全长 809 ft 6 in = 246.7 m。
+      另有 824 ft 9 in（251.4 m）一说，那是「含飞行甲板最大长度」，
+      不是船体全长——两个概念不能混。
+
+  - field: dimensions.length.wl
+    value: 234.7
+    unit: m
+    src: [navypedia-yorktown-class]
+    valid: { from: 1938-05-12, to: 1943-07-19 }
+    confidence: C
+
+  - field: dimensions.beam.wl
+    value: 25.3
+    unit: m
+    src: [navypedia-yorktown-class]
+    valid: { from: 1938-05-12, to: 1943-07-19 }
+    confidence: C
+
+  - field: dimensions.beam.max
+    value: 33.4
+    unit: m
+    src: [navypedia-yorktown-class]
+    valid: { from: 1938-05-12, to: 1943-07-19 }
+    confidence: C
+    note: 飞行甲板最大宽度 109 ft 6 in。
+
+  - field: dimensions.draught.mean
+    value: 7.42
+    unit: m
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12, to: 1943-07-19 }
+    confidence: B
+    note: 设计吃水 24 ft 4 in。满载吃水另有 28 ft（8.5 m）一说。
+
+  # ============================================================
+  # 主尺度（1943-10 改装后）
+  # ============================================================
+  - field: dimensions.length.oa
+    value: 252.2
+    unit: m
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1943-10-31, to: 1947-02-17 }
+    confidence: B
+    note: 827 ft 5 in。
+
+  - field: dimensions.beam.wl
+    value: 29.1
+    unit: m
+    src: [navypedia-yorktown-class]
+    valid: { from: 1943-10-31, to: 1947-02-17 }
+    confidence: C
+    note: 1943 年 7-9 月加装防雷突出部（blisters，frames 36-150）使水线宽由 25.3 增至 29.1 m。
+
+  - field: dimensions.beam.max
+    value: 34.8
+    unit: m
+    src: [navypedia-yorktown-class]
+    valid: { from: 1943-10-31, to: 1947-02-17 }
+    confidence: C
+
+  # ============================================================
+  # 排水量
+  # ============================================================
+  - field: displacement.standard
+    value: 19800
+    unit: t
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12, to: 1943-07-19 }
+    confidence: B
+    note: >-
+      19,800 长吨 = 20,100 公吨。存储层统一公制，此处写长吨原值并在此说明。
+      navypedia 记 19,875 t（已换算）。
+
+  - field: displacement.full
+    value: 25500
+    unit: t
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12, to: 1943-07-19 }
+    confidence: B
+    note: 25,500 长吨 = 25,900 公吨。navypedia 记 25,484 t。
+
+  - field: displacement.standard
+    value: 21000
+    unit: t
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1943-10-31, to: 1947-02-17 }
+    confidence: C
+    note: >-
+      1943 年改装后。分歧：navypedia 记 24,128 t，与 21,000 差 3,128 t。
+      不裁决。
+
+  - field: displacement.full
+    value: 32060
+    unit: t
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1943-10-31, to: 1947-02-17 }
+    confidence: C
+    note: >-
+      1943 年改装后满载。navypedia 记 29,882 t。
+      两说的大小关系甚至相反（一说满载更高、一说标准更高），无法用换算解释，不裁决。
+
+  # ============================================================
+  # 动力
+  # ============================================================
+  - field: propulsion.plant_type
+    value: steam_turbine
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: B
+
+  - field: propulsion.shafts
+    value: 4
+    unit: count
+    src: [navypedia-yorktown-class]
+    valid: { from: 1938-05-12 }
+    confidence: C
+
+  - field: propulsion.boiler.count
+    value: 9
+    unit: count
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: B
+    note: Babcock & Wilcox，400 psi / 648 °F。
+
+  - field: propulsion.boiler.type
+    value: Babcock & Wilcox
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: B
+
+  - field: propulsion.turbine.count
+    value: 4
+    unit: count
+    src: [navypedia-yorktown-class]
+    valid: { from: 1938-05-12 }
+    confidence: C
+
+  - field: propulsion.turbine.type
+    value: Parsons 齿轮传动蒸汽轮机
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: C
+    note: 分歧：navypedia 记 Westinghouse。两说并存，不裁决。
+
+  - field: propulsion.power.design
+    value: 120000
+    unit: hp
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: B
+    note: 120,000 shp。
+
+  - field: propulsion.power.trial
+    value: 120500
+    unit: hp
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-04-01, to: 1938-05-11 }
+    confidence: B
+    note: 试航实测 120,500 shp（89,900 kW）。
+
+  - field: propulsion.speed.design
+    value: 32.5
+    unit: kn
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: B
+
+  - field: propulsion.speed.trial
+    value: 33.85
+    unit: kn
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-04-01, to: 1938-05-11 }
+    confidence: B
+    note: 试航实测。另 DANFS 正文记 "speed 33 knots"，为概略值。
+
+  - field: propulsion.range.max
+    value: 12500
+    unit: nmi
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: C
+    note: 分歧：navypedia 与（部分）DANFS 记 12,000 海里。两说并存。
+
+  - field: propulsion.range.at_speed
+    value: 15
+    unit: kn
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: C
+    note: 12,500 海里 / 15 节。
+
+  - field: propulsion.fuel.capacity
+    value: 4280
+    unit: t
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: B
+    note: 设计载油 4,280 长吨。navypedia 记 2,754-4,360 t 区间。
+
+  # ============================================================
+  # 防护
+  # ============================================================
+  - field: protection.scheme
+    value: other
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: B
+    note: >-
+      所谓「受保护箱体」（protected box）：顶部防护甲板 + 双层底 +
+      舷侧装甲带 + 横向装甲舱壁，只包住弹药库、锅炉、机舱与通信中枢。
+      原句「Protection came mainly from a protected box」。
+      注册表枚举无对应值，用 other 并在本条说明。
+
+  - field: protection.armor.thickness
+    value: 102
+    unit: mm
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: B
+    qual: { part: belt, region: main }
+    note: >-
+      舷侧装甲带 2.5-4 in（64-102 mm），贴于 30 磅（19 mm）STS 背板上，
+      位于舰体外侧。102 mm 为最厚处。
+
+  - field: protection.armor.thickness
+    value: 38
+    unit: mm
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: B
+    qual: { part: deck, region: main }
+    note: >-
+      防护甲板（第 4 甲板）60 磅 STS = 1.5 in = 38 mm，位于水线上约 3 ft。
+      这是箱体的核心。
+      注意：飞行甲板与机库甲板均无装甲。
+
+  - field: protection.armor.thickness
+    value: 0
+    unit: mm
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: B
+    qual: { part: flight_deck, region: main }
+    note: >-
+      这是「0」，有原句：「The flight and hangar decks of the ships were unarmored.」
+      这是约克城级与英国装甲航母（光辉级）的核心区别：
+      约克城级选择不装甲甲板、带尽可能多的飞机。
+
+  - field: protection.underwater.depth
+    value: 0
+    unit: m
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: C
+    note: >-
+      未获取准确纵深（来源只给舱壁间距 3.0-4.5 ft 与抗 180 kg TNT 指标）。
+      此处不填猜测值。设计指标：抗 180 kg TNT 鱼雷战斗部
+      （同期战列舰为 320 kg）。
+
+  # ============================================================
+  # 航空设施
+  # ============================================================
+  - field: aviation.deck.length
+    value: 244.4
+    unit: m
+    src: [navsource-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: C
+    note: 802 ft。分歧：navypedia 记 814 ft（248 m）。两说并存。
+
+  - field: aviation.deck.width
+    value: 26.2
+    unit: m
+    src: [navsource-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: C
+    note: 86 ft。navypedia 记 29.9 m（98 ft），可能含舷侧突出部。
+
+  - field: aviation.hangar.count
+    value: 1
+    unit: count
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: C
+    note: 单层大机库。与光辉级的双层窄机库是两种哲学。
+
+  - field: aviation.hangar.length
+    value: 166.4
+    unit: m
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: C
+
+  - field: aviation.hangar.width
+    value: 19.2
+    unit: m
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: C
+
+  - field: aviation.hangar.height
+    value: 5.25
+    unit: m
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: C
+    note: 净高 17 ft 3 in（自甲板到飞甲板下缘的桁材底）。
+
+  - field: aviation.elevator.count
+    value: 3
+    unit: count
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: B
+    note: >-
+      三部升降机。位置分歧：naval-encyclopedia 说中间那部偏置靠舰岛，
+      其余来源说三部皆在中线。不裁决。
+
+  - field: aviation.elevator.dimensions
+    value: 48 × 44 ft（14.6 × 13.4 m），载重 17,000 lb（7,711 kg）
+    src: [navsource-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: C
+
+  - field: aviation.catapult.count
+    value: 3
+    unit: count
+    src: [navypedia-yorktown-class]
+    valid: { from: 1938-05-12, to: 1942-07-31 }
+    confidence: C
+    note: >-
+      H II 液压弹射器：飞行甲板 2 座 + 机库横向 1 座。
+      中途岛时 3 座在位，战后（1942-07）才拆。
+      型号的 A/B 级确认未获取，只有 navypedia（D 级）给型号代号。
+
+  - field: aviation.catapult.count
+    value: 2
+    unit: count
+    src: [navypedia-yorktown-class]
+    valid: { from: 1942-08-01, to: 1943-07-19 }
+    confidence: C
+    note: >-
+      1942-07 珍珠港短修拆除弹射器。拆了几座有分歧：
+      战损报告说拆主甲板 2 座、naval-encyclopedia 说拆机库那 1 座、
+      navypedia 说拆「第三座」。1943-10 改装又换了两座前部飞甲弹射器，
+      说明飞甲那 2 座当时仍在。此处取「剩 2 座」。
+
+  - field: aviation.arrestor.count
+    value: 9
+    unit: count
+    src: [nhhc-enterprise-warshist]
+    valid: { from: 1938-05-12 }
+    confidence: A
+    note: >-
+      Mark IV Mod 3A，可在 85 mph 拦停 16,000 lb 飞机。
+      精确总数未获取——战损报告只证明编号到 No. 9（No. 2/7/8/9 都出现过），
+      故记「至少 9 组」。
+
+  - field: aviation.aircraft.capacity
+    value: 73
+    unit: count
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-05-28, to: 1942-06-13 }
+    confidence: B
+    note: >-
+      中途岛出击时航空队 73 架（VF-6 27 + VB-6 15 + VS-6 17 + VT-6 14）。
+      分歧：navypedia 记 SBD 共 37 架（NHHC 战斗序列为 15+17=32）。
+      两者差 5 架，可能是备用机/在编 vs 可用。
+
+  - field: aviation.aircraft.types
+    value: F4F-4 野猫（战斗机）、SBD-2/SBD-3 无畏（轰炸/侦察）、TBD-1 蹂躏者（鱼雷机）
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-05-28, to: 1942-06-13 }
+    confidence: B
+
+  - field: aviation.fuel.volume
+    value: 670000
+    unit: dm3
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: B
+    note: 设计 178,000 美制加仑 = 670,000 L。navypedia 记 673,900 L。
+
+  # ============================================================
+  # 武备
+  # ============================================================
+  - field: armament.mount.summary
+    value: >-
+      1942-06 中途岛时：5"/38 单装 8 座 + 1.1"/75 四联装 4 座（16 管）+
+      20mm 厄利孔 30 门 + 残余 .50 机枪若干
+    src: [nhhc-danfs-enterprise, navweaps-5in38-mk12]
+    valid: { from: 1942-03-01, to: 1942-08-31 }
+    confidence: A
+    note: 40mm Bofors 此时为 0 座。
+
+  - field: armament.aa_20mm.count
+    value: 30
+    unit: count
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1942-03-31, to: 1942-09-09 }
+    confidence: A
+    note: >-
+      1942-03 珍珠港改装时加装 30 门（原句「the installation of thirty 20mm guns」）。
+      1942-10 起增至 42 门。
+
+  - field: armament.aa_20mm.count
+    value: 42
+    unit: count
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1942-10-07, to: 1943-10-30 }
+    confidence: A
+    note: 1942-09-10 至 10-07 抢修期间加装 12 门。
+
+  - field: armament.aa_40mm.count
+    value: 0
+    unit: count
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12, to: 1942-09-09 }
+    confidence: A
+    note: >-
+      这是「0」，有一手战损报告支撑。中途岛时企业号装的是
+      1.1"/75 四联装 4 座，40mm 是 1942 年 9-10 月才换装的。
+      原句「replacement of four 1.1-inch mounts with four 40mm quadruple mounts」。
+
+  - field: armament.aa_40mm.count
+    value: 16
+    unit: count
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1942-10-07, to: 1943-10-30 }
+    confidence: A
+    note: 4 座四联装 = 16 管。
+
+  - field: armament.aa_40mm.count
+    value: 40
+    unit: count
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1943-10-31, to: 1945-06-11 }
+    confidence: C
+    note: 8 座双联 + 6 座四联 = 16 + 24 = 40 管。
+
+  - field: armament.torpedo.tubes
+    value: 0
+    unit: count
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: C
+    note: 作为航母无鱼雷发射管。舰载机携带航空鱼雷，那是飞机武器。
+
+  # ============================================================
+  # 雷达与火控
+  # ============================================================
+  - field: sensors.radar.installed
+    value: CXAM-1 对空搜索雷达
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1940-08-01, to: 1943-10-30 }
+    confidence: B
+    note: >-
+      装机时间有分歧：DANFS 与 navypedia 说 1940 年已在装、
+      中途岛时在用（DANFS 原句「a number of the U.S. ships including
+      Enterprise operated their CXAM-1 radar」）；
+      英文维基的舰级页却说「In June 1942, following the battle of Midway …
+      had new CXAM radar installed」。两者不可同时成立，不裁决。
+      性能（FTP 217）：天线 130 ft 时对大型机 50 mi、对大型舰 25,000 yd，
+      测距精度 ±200 yd、方位 ±3°。天线 15' × 15'8"，装在桅顶。
+
+  - field: sensors.radar.installed
+    value: SC / SC-2 对空搜索雷达
+    src: [navypedia-yorktown-class]
+    valid: { from: 1942-08-01, to: 1945-06-11 }
+    confidence: C
+    note: 1942-08 加 SC-2。原 SC 位置在装 CXAM 后移至主桅。
+
+  - field: sensors.radar.installed
+    value: SK 对空搜索 + SM 火控雷达
+    src: [navypedia-yorktown-class]
+    valid: { from: 1943-10-31, to: 1945-06-11 }
+    confidence: C
+
+  - field: sensors.director.type
+    value: Mk 33（中途岛时）→ 1943 年改装换 Mk 37（带 Mk 4 雷达天线）
+    src: [navsource-enterprise]
+    valid: { from: 1938-05-12 }
+    confidence: C
+    note: 座数未获取。图注原句「her old Mk.33 directors had been replaced by Mk.37's with Mk.4 radar」。
+
+  # ============================================================
+  # 编制
+  # ============================================================
+  - field: service.complement.standard
+    value: 2217
+    unit: persons
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1941-01-01, to: 1941-12-31 }
+    confidence: B
+    note: 1941 年编制 2,217 名军官与士兵（含航空队）。navypedia 记 1942 年 2,175。
+
+  - field: service.complement.wartime
+    value: 2919
+    unit: persons
+    src: [nhhc-danfs-enterprise]
+    valid: { from: 1944-01-01, to: 1945-08-15 }
+    confidence: C
+    note: 后期编制 2,919。具体年份未明。
+
+  - field: service.casualties
+    value: 0
+    unit: persons
+    src: [nhhc-enterprise-midway-report]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: A
+    note: >-
+      中途岛战役期间本舰无人员阵亡、无损伤。
+      原句「The ship, although subjected to threat of air attack on several occasions
+      experienced no actual attack and suffered no damage during actions on June 4-5-6.」
+      但舰载机机组损失惨重：3 日合计损失飞机 31 架。
+
+  # ============================================================
+  # 涂装与外形
+  # ============================================================
+  - field: appearance.scheme
+    value: Measure One（深灰），飞行甲板本色木
+    src: [navsource-enterprise]
+    valid: { from: 1938-05-12, to: 1941-06-30 }
+    confidence: B
+    note: 1941 年 7 月飞行甲板才染蓝。
+
+  - field: appearance.scheme
+    value: MS 11 或 MS 21（两说并存）
+    src: [shipcamouflage-usn-cv]
+    valid: { from: 1942-01-01, to: 1942-12-31 }
+    confidence: C
+    note: >-
+      **中途岛当日（1942-06-04）的确切涂装属推断禁区，本站不填。**
+      shipcamouflage 的 1942 年一栏同时记 MS 11 与 MS 21，该源自己未定月份。
+
+  - field: appearance.scheme
+    value: Measure 21（垂直 Navy Blue 5-N，水平 Deck Blue 20-B）
+    src: [navsource-enterprise]
+    valid: { from: 1943-10-31, to: 1944-07-31 }
+    confidence: C
+    note: 1943-12 照片说明确证。
+
+  - field: appearance.scheme
+    value: Measure 33 / Design 4Ab 迷彩
+    src: [navsource-enterprise]
+    valid: { from: 1944-08-01, to: 1945-08-15 }
+    confidence: C
+
+  - field: appearance.color.deck
+    value: Deck Blue 20-B（1941-07 后）
+    src: [shipcamouflage-usn-cv]
+    valid: { from: 1941-07-01 }
+    confidence: C
+
+  - field: appearance.island_position
+    value: starboard
+    src: [navypedia-yorktown-class]
+    valid: { from: 1938-05-12 }
+    confidence: C
+    note: >-
+      弱证据警告：调研未找到 A/B/C 级来源直接写「starboard-side island」，
+      只有 AI 生成的 Grokipedia（E 级）有此句。此处按同级舰通行知识填 starboard，
+      但可信度标 C，等一手图纸补证。
+      间接佐证：战损报告提到「the port side of the island structure」与
+      「the port wing of the navigating bridge」——与右舷舰岛相容但不构成证明。
+
+  - field: appearance.marking
+    value: 1943 年改装后飞行甲板首尾各漆白色大「6」
+    src: [navsource-enterprise]
+    valid: { from: 1943-10-31, to: 1947-02-17 }
+    confidence: C
+    note: 中途岛时期应是舰岛上的「6」，甲板大字是 1943 年才有。
+
+  - about: weapon:5in38-mk12
+    field: weapon.designation
+    value: "5\"/38 Mark 12"
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:5in38-mk12
+    field: weapon.category
+    value: naval_gun
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:5in38-mk12
+    field: weapon.nation
+    value: united_states
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:5in38-mk12
+    field: weapon.bore
+    value: 127
+    unit: mm
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:5in38-mk12
+    field: weapon.in_service_from
+    value: 1942-06-04
+    unit: date
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+    note: 单装 8 座（Mk 21 Mod 16 开放式基座炮架）
+
+  - about: weapon:11in75-mk1
+    field: weapon.designation
+    value: "1.1\"/75 Mark 1"
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:11in75-mk1
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:11in75-mk1
+    field: weapon.nation
+    value: united_states
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:11in75-mk1
+    field: weapon.bore
+    value: 28
+    unit: mm
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:11in75-mk1
+    field: weapon.in_service_from
+    value: 1942-06-04
+    unit: date
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+    note: 四联装 4 座 16 管——中途岛时美军航母的中程防空主力，40mm 尚未装舰
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.designation
+    value: 20mm 厄利孔
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:20mm-oerlikon
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:20mm-oerlikon
+    field: weapon.nation
+    value: united_states
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:20mm-oerlikon
+    field: weapon.bore
+    value: 20
+    unit: mm
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:20mm-oerlikon
+    field: weapon.in_service_from
+    value: 1942-06-04
+    unit: date
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+    note: 30 门（1942-03 改装后）
+
+  - about: weapon:f4f-wildcat
+    field: weapon.designation
+    value: F4F-4 野猫
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:f4f-wildcat
+    field: weapon.category
+    value: aircraft
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:f4f-wildcat
+    field: weapon.nation
+    value: united_states
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:f4f-wildcat
+    field: weapon.in_service_from
+    value: 1942-06-04
+    unit: date
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+    note: VF-6 27 架
+
+  - about: weapon:sbd-dauntless
+    field: weapon.designation
+    value: SBD-3 无畏
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:sbd-dauntless
+    field: weapon.category
+    value: aircraft
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:sbd-dauntless
+    field: weapon.nation
+    value: united_states
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:sbd-dauntless
+    field: weapon.in_service_from
+    value: 1942-06-04
+    unit: date
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+    note: VB-6 15 架 + VS-6 17 架
+
+  - about: weapon:tbd-devastator
+    field: weapon.designation
+    value: TBD-1 蹂躏者
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:tbd-devastator
+    field: weapon.category
+    value: aircraft
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:tbd-devastator
+    field: weapon.nation
+    value: united_states
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:tbd-devastator
+    field: weapon.in_service_from
+    value: 1942-06-04
+    unit: date
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+    note: VT-6 14 架，中途岛损失 10 架
+
+  - about: weapon:5in38-mk12
+    field: weapon.caliber_length
+    value: 38
+    unit: ratio
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: C
+    note: L/38
+
+  - about: weapon:5in38-mk12
+    field: weapon.weight
+    value: 1810
+    unit: kg
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: C
+    note: 3,990 lbs，不含炮闩
+
+  - about: weapon:5in38-mk12
+    field: weapon.muzzle_velocity
+    value: 792
+    qual: { shell_type: he }
+    unit: mps
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: C
+    note: 常用弹种约 792 mps（2,600 fps）
+
+  - about: weapon:5in38-mk12
+    field: weapon.range.max
+    value: 16642
+    unit: m
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: C
+    note: 43.3° 仰角，18,200 yards
+
+  - about: weapon:5in38-mk12
+    field: weapon.range.max_elevation
+    value: 43.3
+    unit: deg
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: C
+
+  - about: weapon:5in38-mk12
+    field: weapon.range.aa_max
+    value: 11339
+    unit: m
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: C
+    note: 85° 仰角时的最大弹道高（maximum ordinate）
+
+  - about: weapon:5in38-mk12
+    field: weapon.rate_of_fire
+    value: 15
+    unit: rpm
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: C
+    note: 典型射速；可持续 12 发/分
+
+  - about: weapon:5in38-mk12
+    field: weapon.elevation.min
+    value: -15
+    unit: deg
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: C
+    note: 单装炮座通则
+
+  - about: weapon:5in38-mk12
+    field: weapon.elevation.max
+    value: 85
+    unit: deg
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: C
+
+  - about: weapon:5in38-mk12
+    field: weapon.ammo_outfit
+    value: 450
+    unit: count
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: C
+    note: "每门。**NavWeaps 此处把舰号写错了**：原句「Yorktown (CV-6)」，但 CV-6 是企业号、CV-5 才是约克城号；同一页炮架表又正确写成 Yorktown + Enterprise。原文照抄，不裁决"
+
+  - about: weapon:11in75-mk1
+    field: weapon.caliber_length
+    value: 75
+    unit: ratio
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1937 }
+    confidence: C
+    note: 实际膛长 74.55 倍
+
+  - about: weapon:11in75-mk1
+    field: weapon.weight
+    value: 252
+    unit: kg
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1937 }
+    confidence: C
+    note: 556 lbs，不含炮闩
+
+  - about: weapon:11in75-mk1
+    field: weapon.muzzle_velocity
+    value: 823
+    qual: { shell_type: he }
+    unit: mps
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1937 }
+    confidence: C
+    note: 新炮 823 mps；平均 792 mps
+
+  - about: weapon:11in75-mk1
+    field: weapon.range.max
+    value: 6767
+    unit: m
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1937 }
+    confidence: C
+    note: 40.88° 仰角，7,400 yards
+
+  - about: weapon:11in75-mk1
+    field: weapon.range.max_elevation
+    value: 40.88
+    unit: deg
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1937 }
+    confidence: C
+
+  - about: weapon:11in75-mk1
+    field: weapon.range.aa_max
+    value: 5791
+    unit: m
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1937 }
+    confidence: C
+    note: 90° 仰角时的最大弹道高
+
+  - about: weapon:11in75-mk1
+    field: weapon.elevation.min
+    value: -15
+    unit: deg
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1937 }
+    confidence: C
+
+  - about: weapon:11in75-mk1
+    field: weapon.elevation.max
+    value: 110
+    unit: deg
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1937 }
+    confidence: C
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.caliber_length
+    value: 70
+    unit: ratio
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: C
+    note: L/70
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.weight
+    value: 68.04
+    unit: kg
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: C
+    note: 150 lbs，含炮闩
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.muzzle_velocity
+    value: 844
+    qual: { shell_type: he }
+    unit: mps
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: C
+    note: 新炮 844 mps；平均 835 mps
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.range.max
+    value: 4389
+    unit: m
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: C
+    note: 45° 仰角，4,800 yards
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.range.max_elevation
+    value: 45
+    unit: deg
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: C
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.range.aa_max
+    value: 3048
+    unit: m
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: C
+    note: 90° 仰角时的最大弹道高
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.rate_of_fire
+    value: 450
+    unit: rpm
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: C
+    note: 理论射速；实战约 250-320 发/分
+
+  - about: weapon:11in75-mk1
+    field: weapon.rate_of_fire
+    value: 150
+    unit: rpm
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1937 }
+    confidence: C
+    note: 理论（cyclic）150 发/分；实战约 100 发/分；1933 年试验 140 发/分。四管齐射合计约等于一挺 .50 机枪的 500 发/分。
+
+  - about: weapon:f4f-wildcat
+    field: weapon.aircraft.span
+    value: 11.58
+    unit: m
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04 }
+    confidence: C
+    note: 折叠后 14 ft 4 in（约 4.37 m）——这个数字受升降机尺寸限制
+
+  - about: weapon:f4f-wildcat
+    field: weapon.aircraft.length
+    value: 9.09
+    unit: m
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04 }
+    confidence: C
+
+  - about: weapon:f4f-wildcat
+    field: weapon.aircraft.height
+    value: 3.58
+    unit: m
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04 }
+    confidence: C
+    note: 另有一源记 3.2 m，但该源写作 9 英尺 21 英寸，明显是排印错误
+
+  - about: weapon:f4f-wildcat
+    field: weapon.aircraft.empty_weight
+    value: 2471
+    unit: kg
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04 }
+    confidence: C
+    note: 5,448 lbs。另一源记 2,611 kg，不裁决
+
+  - about: weapon:f4f-wildcat
+    field: weapon.aircraft.gross_weight
+    value: 3617
+    unit: kg
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04 }
+    confidence: C
+    note: 最大起飞 7,975 lbs。另一源记 3,358 kg
+
+  - about: weapon:f4f-wildcat
+    field: weapon.aircraft.engine
+    value: "P&W R-1830-86 Twin Wasp 双排星型气冷 14 缸"
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04 }
+    confidence: C
+
+  - about: weapon:f4f-wildcat
+    field: weapon.aircraft.power
+    value: 1200
+    unit: hp
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04 }
+    confidence: C
+    note: 895 kW
+
+  - about: weapon:f4f-wildcat
+    field: weapon.aircraft.crew
+    value: 1
+    unit: persons
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04 }
+    confidence: C
+    note: 单座
+
+  - about: weapon:sbd-dauntless
+    field: weapon.aircraft.span
+    value: 12.66
+    unit: m
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04 }
+    confidence: C
+    note: 41 ft 6 in
+
+  - about: weapon:sbd-dauntless
+    field: weapon.aircraft.length
+    value: 9.96
+    unit: m
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04 }
+    confidence: C
+    note: 32 ft 8 in。SBD-3 各源多用此值；SBD-2 记 9.79 m、SBD-5/6 记 10.09 m
+
+  - about: weapon:sbd-dauntless
+    field: weapon.aircraft.height
+    value: 4.14
+    unit: m
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04 }
+    confidence: C
+    note: 13 ft 7 in
+
+  - about: weapon:sbd-dauntless
+    field: weapon.aircraft.crew
+    value: 2
+    unit: persons
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04 }
+    confidence: C
+    note: 双座：飞行员 + 后座机枪手/无线电员
+
+  - about: weapon:tbd-devastator
+    field: weapon.aircraft.crew
+    value: 3
+    unit: persons
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04 }
+    confidence: C
+    note: 三座：飞行员、鱼雷手、后座无线电员/机枪手

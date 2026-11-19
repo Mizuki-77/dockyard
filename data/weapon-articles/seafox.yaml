@@ -1,0 +1,114 @@
+# ============================================================================
+# 武器正文 —— Fairey Seafox
+#
+# 这是本批 33 个实体里材料最少的一条，正文必须把这个限度写在最前面。
+# 全部依据只有 navypedia 舰级页的一行：弹射器 1 座 D-III-H、2 架水上飞机
+# （Walrus, Swordfish, Seafox）。没有任何影像或日志证据表明本舰实际搭载过它。
+# 所以：不写数量、不写搭载时段、不写机型参数。
+# ============================================================================
+weapon: seafox
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Fairey Seafox 是一型舰载水上侦察机。它在英王乔治五世级的记载里只出现一次：
+      舰级页在「1 座 D-III-H 弹射器、2 架水上飞机」这一行后面，
+      把候选机型列成 Walrus、Swordfish、Seafox 三型。
+      目前没有找到任何影像或日志证据表明本舰实际搭载过这一型，
+      因此本页不写数量、也不写搭载时段。
+      本页能写的是这一行记录本身该怎么读，以及为什么它不能被当成搭载清单。
+    en: >-
+      The Fairey Seafox was a carrier-borne floatplane used for reconnaissance. It appears
+      exactly once in the King George V class record: the class page's line reading "1
+      catapult D-III-H, 2 seaplanes" is followed by the candidate types Walrus, Swordfish
+      and Seafox. No photographic or log evidence has been found that the ship actually
+      carried this type, so no quantity and no embarkation period are given here. What can
+      be written is how that line should be read, and why it is not a manifest.
+
+  paragraphs:
+    - heading: 那一行是型号清单，不是搭载记录
+      text:
+        zh: >-
+          这一点必须讲清，否则读者会把「2 seaplanes (Walrus, Swordfish, Seafox)」
+          读成「同时载了这三型」。同一行写的是 2 架水上飞机，
+          括号里却有 3 个型号——数学上就对不上。
+          所以括号只能是「本级的弹射器与机库可以配套使用的型号范围」，
+          而不是某一天的实载清单。同一个页面给同级其他舰的写法也印证了这一点：
+          安森号与豪号那一行括号里只有 Walrus 与 Swordfish 两型，
+          说明这串名单是按舰分别列的，不是一句通用套话。
+        en: >-
+          This has to be said or the line "2 seaplanes (Walrus, Swordfish, Seafox)" will be
+          read as three types carried at once. The same line says two seaplanes and the
+          bracket names three - the arithmetic alone rules that out. The bracket can only
+          be the range of types the class's catapult and stowage could support, not a
+          manifest for any one day. The same page's entries for other ships of the class
+          bear this out: Anson and Howe carry only Walrus and Swordfish in that bracket, so
+          the roster is written per ship rather than as a stock phrase.
+      src: [navypedia-kgv]
+
+    - heading: 为什么本站仍然把它立成一个实体
+      text:
+        zh: >-
+          因为站点的原则是「来源登记过、就按来源的粒度记录」。
+          舰级页明确把 Seafox 列为本级水上飞机的可用型号之一，
+          这就是一条可追到出处的陈述；它说的是「本级可以用这一型」，
+          而不是「本舰用过这一型」。
+          本站按前一种口径立实体，并且在数据层把置信度记低
+          （该事实记 C，理由就是「本舰实际搭载该型的影像或日志证据未获取」）。
+          这一条不是内容，是本站处理证据的方式，写在这里是为了让读者知道该信到什么程度。
+        en: >-
+          Because the site's rule is to record at the granularity the source supports. The
+          class page does state that the Seafox was among the floatplane types available to
+          the class, and that is a traceable statement: it says the class could use the
+          type, not that this ship did. The entity is created on the former reading, and
+          the data layer carries a low confidence for it, the reason being precisely that
+          photographic or log evidence for actual embarkation has not been obtained. That
+          is not content but the site's handling of evidence, recorded here so a reader
+          knows how far to trust it.
+      src: [navypedia-kgv]
+
+    - heading: 同一行里唯一可以确证的硬件是弹射器
+      text:
+        zh: >-
+          把这一行拆开看，其中只有一项是硬件事实：本级装的弹射器型号是 D-III-H，
+          1 座，双向。这一项与本批其他飞机条目是共用的，
+          也就是说它不专属 Seafox，也不专属 Walrus。
+          至于这一型飞机本身的尺寸、性能、产量、服役年份，
+          本站没有任何非 E 档来源，一律不写。
+          宁可这一页短，也不拿百科条目去填。
+        en: >-
+          Taken apart, only one item in that line is a hardware fact: the class's catapult
+          was the D-III-H, one installation, twin-ended. That belongs to this batch of
+          aircraft entries in common, so it is specific neither to the Seafox nor to the
+          Walrus. As for the aircraft's own dimensions, performance, production numbers or
+          service dates, this project has no non-encyclopedic source and writes none of
+          them. A short page is preferable to filling it from an encyclopedia.
+      src: [navypedia-kgv]
+
+history:
+  - id: record
+    title: { zh: 记载与限度, en: What is recorded, and its limit }
+    range: { from: 1940-10, to: 1940-10 }
+    lead:
+      zh: >-
+        这一节只有一条事件，因为可写的内容就只有一条。
+      en: >-
+        One event only, because there is only one thing to record.
+    events:
+      - date: 1940-10-01
+        text:
+          zh: >-
+            英王乔治五世号服役。舰级页的装备行记「1 座 D-III-H 弹射器、
+            2 架水上飞机（Walrus, Swordfish, Seafox）」。
+            本站据此把 Seafox 登记为本级水上飞机的候选型号之一，
+            但不据此断言本舰实际搭载过它——影像与日志证据均未获取，
+            数量与搭载时段因此留空。
+          en: >-
+            HMS King George V came into service. The class page's equipment line reads "1
+            catapult D-III-H, 2 seaplanes (Walrus, Swordfish, Seafox)". On that basis the
+            Seafox is registered here as one of the floatplane types available to the
+            class, but it is not asserted that this ship carried one: no photographic or
+            log evidence has been obtained, so quantity and embarkation period are left
+            blank.
+        src: [navypedia-kgv]

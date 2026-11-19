@@ -1,0 +1,556 @@
+# ============================================================================
+# 单舰：HMS King George V（英王乔治五世号战列舰，舷号 41）
+# ----------------------------------------------------------------------------
+# 与 tirpitz.yaml 同一套约定：
+#   1) 建造/服役/损失等单舰事件
+#   2) 单舰实测值（试航）——与舰级设计值不是分歧，是两件事
+#   3) 状态切片：随时间变化的字段，用 valid 窗口表达"当时是什么样"
+#
+# 解析顺序（docs/00-framework.md §3.6）：单舰 fact -> 舰级 fact -> 未记载。
+# 本文件命中即覆盖舰级，**不算分歧**。
+#
+# 本文件只写 King George V 本体：舰名与舷号、建造节点、舰长与隶属、
+# 逐年高炮/雷达配置、弹射器拆除、结局。舰级共有的主尺度、排水量、
+# 装甲、主副炮与武器本体参数在 data/classes/king-george-v.yaml。
+#
+# 【两个必须并列、不许裁决的争议】
+# 1) 14 英寸四联炮塔的可靠性：设计时就知道机械复杂（3,000+ 活动件、
+#    防闪爆措施繁复），战时暴露为卡弹与齐射不全。这不是"英舰造得差"
+#    一句话能收的，单舰 fact 只记参数，评价留给叙事层。
+# 2) 姊妹舰 Prince of Wales 的沉没原因：1941-12-10 被日军航空鱼雷击沉，
+#    2007/2009 年残骸调查认为四雷中三雷落在 SPS 防雷区之外、第四雷处
+#    保持舱壁完好，主因是"B"螺旋桨轴支架断裂撕裂舱壁。本条属 PoW，
+#    本文件不据此改写 KGV 的防雷数据，只在舰级 note 里并列。
+# ============================================================================
+
+id: king-george-v
+name:
+  zh: 英王乔治五世
+  en: HMS King George V
+class: king-george-v
+
+open_ended_note: |
+  本文件中 valid.to 留空的 fact，均为"至今为止仍成立的单舰事实"
+  （如结局、拆解），不存在后续变化事件。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: King George V
+    src: [rmg-kgv-guide, navypedia-kgv]
+    valid: { from: 1936-07-29 }
+    confidence: A
+    note: >
+      正式舰名 HMS King George V，舷号 41。建造代号未见记载；
+      navypedia 记 Yard No 10。这是英国海军第二次用该舰名
+      （前一艘是 1911 年级战列舰，1926 年出售）。
+
+  - field: identity.name_zh
+    value: 英王乔治五世
+    src: [rmg-kgv-guide]
+    valid: { from: 1936-07-29 }
+    confidence: B
+    note: 大陆通行译名。另有"乔治五世国王"等写法，本站取前者。
+
+  - field: identity.name_en
+    value: HMS King George V
+    src: [rmg-kgv-guide]
+    valid: { from: 1936-07-29 }
+    confidence: A
+
+  - field: identity.name_note
+    value: >-
+      原拟名 HMS King George VI（新朝第一艘主力舰按例用在位君主名），
+      国王本人要求改为纪念其父乔治五世；国王的名号让给二号舰 Duke of York
+    src: [rmg-kgv-guide]
+    valid: { from: 1936-07-29 }
+    confidence: A
+    note: >
+      RMG 原话「Originally, she was to have been named HMS King George VI …
+      The King requested that the ship be named in honour of his late father,
+      King George V … A later member of this class of battleship was named
+      HMS Duke of York in honour of the King instead」。掷瓶人也是乔治六世本人，
+      与命名让渡互为因果。
+
+  - field: identity.namesake
+    value: 英王乔治五世（George V，1865–1936）
+    src: [rmg-kgv-guide]
+    valid: { from: 1936-07-29 }
+    confidence: A
+    note: 1911 年级战列舰已用其名；本舰为第二次使用。
+
+  - field: identity.pennant_number
+    value: "41"
+    src: [rmg-kgv-guide, navypedia-kgv]
+    valid: { from: 1940-10-01 }
+    confidence: A
+    note: RMG 年表原文为 1940-10-01 服役时给定舷号 41。
+
+  - field: identity.ship_type
+    value: battleship
+    src: [rmg-kgv-guide]
+    valid: { from: 1936-07-29 }
+    confidence: A
+
+  - field: identity.nation
+    value: united_kingdom
+    src: [rmg-kgv-guide]
+    valid: { from: 1936-07-29 }
+    confidence: A
+
+  - field: identity.operator
+    value: Royal Navy
+    src: [rmg-kgv-guide]
+    valid: { from: 1940-10-01 }
+    confidence: A
+
+  - field: identity.era
+    value: ww2
+    src: [rmg-kgv-guide]
+    valid: { from: 1940-10-01, to: 1945-09-02 }
+    confidence: A
+    note: 服役 1940-10-01 至 1945-09-02（VJ Day），全程在二战；战后转训练舰与预备役，1958 拆解。
+
+  - field: identity.building_program
+    value: 1936 年造舰计划（1936 Build Programme）
+    src: [rmg-kgv-guide]
+    valid: { from: 1936-07-29 }
+    confidence: B
+    note: 五舰分两批订购；本舰为 1936 年计划首批。
+
+  # ============================================================ 建造
+  - field: construction.builder
+    value: Vickers-Armstrong, Walker Navy Yard（维克斯-阿姆斯特朗，沃克海军船厂）
+    src: [rmg-kgv-guide, navypedia-kgv]
+    valid: { from: 1937-01-01 }
+    confidence: A
+
+  - field: construction.builder_location
+    value: Newcastle-upon-Tyne
+    src: [rmg-kgv-guide]
+    valid: { from: 1937-01-01 }
+    confidence: A
+
+  - field: construction.yard_number
+    value: "10"
+    src: [navypedia-kgv, tyne-kgv]
+    valid: { from: 1937-01-01 }
+    confidence: A
+
+  - field: construction.building_slip
+    value: High Walker 船台
+    src: [tyne-kgv]
+    valid: { from: 1937-01-01 }
+    confidence: B
+    note: tynebuiltships 的 Yard 栏记 High Walker，与 Walker Navy Yard 同址。
+
+  - field: construction.order_date
+    value: 1936-07-29
+    unit: date
+    src: [rmg-kgv-guide, navypedia-kgv]
+    valid: { from: 1936-07-29 }
+    confidence: A
+
+  - field: construction.laid_down
+    value: 1937-01-01
+    unit: date
+    src: [rmg-kgv-guide, navypedia-kgv, tyne-kgv]
+    valid: { from: 1937-01-01 }
+    confidence: A
+    note: 三源一致。同批 Prince of Wales 同日开工，两舰不在同一船厂。
+
+  - field: construction.launched
+    value: 1939-02-21
+    unit: date
+    src: [rmg-kgv-guide, navypedia-kgv, tyne-kgv]
+    valid: { from: 1939-02-21 }
+    confidence: A
+    note: 掷瓶人为英王乔治六世本人（RMG 唯一明确写出，其余来源只给日期）。
+
+  - field: construction.commissioned
+    value: 1940-10-01
+    unit: date
+    src: [rmg-kgv-guide, navypedia-kgv]
+    valid: { from: 1940-10-01 }
+    confidence: A
+    note: >
+      1940-10-01 服役（for trials），当时尚未完工，随后赴 Rosyth 完工并装外侧
+      螺旋桨、加强舵、完成武备与雷达安装。1940-12-11 加入本土舰队（Scapa Flow）。
+      **两节点被不同来源各自标成 commissioned**：navypedia/tyne 的
+      「Comp 11.12.1940」是完工/加入舰队，RMG 的 Completed 却是 1940-10-01——
+      不是真矛盾，是"服役"与"完工"两名一实。
+
+  - field: construction.building_time_days
+    value: 1369
+    unit: count
+    src: [rmg-kgv-guide]
+    valid: { from: 1940-10-01 }
+    confidence: C
+    note: >
+      由开工 1937-01-01 至服役 1940-10-01 推算（本报告计算），非来源直接给出。
+      仅作横向对比，不作建造效率结论。若以完工/加入舰队 1940-12-11 计则为 1,440 天。
+
+  - field: construction.fate_date
+    value: "1958"
+    unit: date
+    src: [rmg-kgv-guide]
+    valid: { from: 1958-01-01 }
+    confidence: B
+    note: >
+      1957-04 批准本级拆解，1957-12-17 从海军名册除籍；1958 年由
+      Arnott Young & Co 在 Dalmuir 拆解，舰体拖至 Troon 拆完。精确开工拆解日未获取，故记到年。
+
+  - field: construction.fate_type
+    value: scrapped
+    src: [rmg-kgv-guide]
+    valid: { from: 1958-01-01 }
+    confidence: A
+
+  # ============================================================ 服役与隶属
+  - field: service.unit
+    value: 本土舰队（Home Fleet），Scapa Flow 为主要基地
+    src: [rmg-kgv-guide]
+    valid: { from: 1940-12-11, to: 1944-10-27 }
+    confidence: A
+    note: >
+      1941-04-01 起为本土舰队旗舰（Tovey 上将，至 1943-05）。
+      期间 1943-05 至 1943-10 临时配属 Force H、1944-02 至 1944-07 在利物浦
+      改装，均不改变本土舰队隶属，故本条时间窗不切段。
+
+  - field: service.unit
+    value: Force H（临时配属，支援 Husky 登陆西西里）
+    src: [rmg-kgv-guide]
+    valid: { from: 1943-05-01, to: 1943-10-31 }
+    confidence: A
+    note: 与 Howe 同行；1943-07-12 炮击 Trapani 与 Levanzo 岛 Favigana，1943-09-09 参加 Slapstick（Taranto）。
+
+  - field: service.unit
+    value: 英国太平洋舰队（BPF）/ 第 57 特混舰队（TF 57），升 Rawlings 少将旗
+    src: [rmg-kgv-guide]
+    valid: { from: 1944-10-28, to: 1945-09-02 }
+    confidence: A
+    note: >
+      1944-10-28 至 12-15 驶往锡兰 Trincomalee；1945-03 起编入美军太平洋舰队
+      参加 Iceberg（冲绳），1945-03-20 改称 TF 57。1945-09-02 在日本投降
+      签字式上为签字方提供座椅。
+
+  - field: service.unit
+    value: 训练战列舰（Portland）
+    src: [rmg-kgv-guide]
+    valid: { from: 1947-11-01, to: 1949-06-30 }
+    confidence: B
+    note: 1946-12 在 Devonport 改装后，1947-11 起任波特兰训练舰。
+
+  - field: service.unit
+    value: 预备役（Gareloch，与 Anson、Duke of York 同泊）
+    src: [rmg-kgv-guide]
+    valid: { from: 1950-06-01, to: 1957-12-17 }
+    confidence: B
+    note: 1950-06 拖往 Gareloch 封存（cocooned）；1949-07 海军部已宣布本级将转入预备役。
+
+  - field: service.commander
+    value: Captain W. R. Patterson
+    src: [rmg-kgv-guide]
+    valid: { from: 1940-07-15, to: 1942-05-05 }
+    confidence: A
+    note: 首任舰长，1940-07-15 任命；任内经历 1941-05 追击俾斯麦与 1942-05-01 撞沉 Punjabi。
+
+  - field: service.commander
+    value: Captain P. J. Mack
+    src: [rmg-kgv-guide]
+    valid: { from: 1942-05-06, to: 1943-02-14 }
+    confidence: A
+
+  - field: service.commander
+    value: Captain T. E. Halsey
+    src: [rmg-kgv-guide]
+    valid: { from: 1943-02-15, to: 1945-04-09 }
+    confidence: A
+
+  - field: service.commander
+    value: Captain B. B. Schofield
+    src: [rmg-kgv-guide]
+    valid: { from: 1945-04-10 }
+    confidence: A
+    note: 任命日 1945-04-10；卸任日期未获取，RMG 时间线只给任命日，故 valid.to 留空。
+
+  - field: service.commander
+    value: Commander D. G. Clark
+    src: [rmg-kgv-guide]
+    valid: { from: 1947-02-15, to: 1948-07-05 }
+    confidence: B
+    note: 战后训练舰阶段；军衔为 Commander，不是 Captain。
+
+  - field: service.commander
+    value: Captain H. Dalrymple-Smith
+    src: [rmg-kgv-guide]
+    valid: { from: 1948-07-06, to: 1949-11-30 }
+    confidence: B
+    note: RMG 记「to November 1949 into Reserve」，精确日未获取。
+
+  - field: service.fate_category
+    value: 战后封存，1957-04 批准拆解，1958 年由 Arnott Young & Co 拆解
+    src: [rmg-kgv-guide]
+    valid: { from: 1958-01-01 }
+    confidence: A
+
+  # ============================================================ 逐年武备（本舰独有节奏）
+  - field: armament.mount.summary
+    value: >-
+      10 × 14 in/45（A/Y 四联 Mk III + B 双联 Mk II）+ 16 × 5.25 in/50
+      （8 座双联）+ 40 × 2-pdr（5 座八联 + 1 座四联 Mk VII）+ 18 × 20 mm 单装
+    src: [rmg-kgv-guide, navypedia-kgv]
+    valid: { from: 1941-12-01, to: 1943-04-30 }
+    confidence: A
+    note: >
+      1941 年末改装：拆 4 座 UP，加 1 座八联 + 1 座四联 pom-pom，加 18 门
+      20 mm 单装。与服役时相比近程火力明显加强，但 5.25 英寸两用炮未变。
+
+  - field: armament.mount.summary
+    value: >-
+      10 × 14 in/45 + 16 × 5.25 in/50（8 座双联）+ 40 × 2-pdr
+      （5 座八联 + 1 座四联）+ 38 × 20 mm 单装
+    src: [rmg-kgv-guide, navypedia-kgv]
+    valid: { from: 1943-05-01, to: 1944-06-30 }
+    confidence: A
+    note: 1943-05 加 20 门 20 mm 单装，累计 38 门；同月赴地中海支援 Husky。
+
+  - field: armament.mount.summary
+    value: >-
+      10 × 14 in/45 + 16 × 5.25 in/50（8 座双联）+ 64 × 2-pdr（8 座八联）
+      + 26 × 20 mm 单装 + 6 座 20 mm 双联 + 8 × 40 mm Bofors（2 座四联美制）
+    src: [rmg-kgv-guide, navypedia-kgv]
+    valid: { from: 1944-07-01, to: 1945-08-31 }
+    confidence: A
+    note: >
+      1944-02~06 利物浦改装：拆 1 座四联 pom-pom 与 12 门 20 mm 单装，
+      加 3 座八联 pom-pom、6 座双联 20 mm、2 座四联 40 mm Bofors；
+      同时拆除弹射器与水机，原位改建上层建筑安置小艇。
+
+  - field: armament.mount.summary
+    value: >-
+      10 × 14 in/45 + 16 × 5.25 in/50（8 座双联）+ 64 × 2-pdr（8 座八联）
+      + 24 × 20 mm 单装 + 6 座 20 mm 双联 + 2 座四联美制 40 mm
+      + 2 门单装英制 40 mm Bofors
+    src: [rmg-kgv-guide]
+    valid: { from: 1945-09-01 }
+    confidence: B
+    note: 1945-09 状态；tynebuiltships 口径为 64×2pdr、10×40mm、36×20mm，与本条一致。
+
+  # ============================================================ 雷达演进（本舰独有）
+  - field: sensors.radar.installed
+    value: Type 279 对空警戒雷达
+    src: [navypedia-kgv]
+    valid: { from: 1940-10-01, to: 1944-06-30 }
+    confidence: B
+    note: navypedia 记首舰与 Prince of Wales 装 type 279 与 type 284；1944-07 换 279B。
+
+  - field: sensors.radar.installed
+    value: Type 284 主炮测距雷达
+    src: [navypedia-kgv]
+    valid: { from: 1940-10-01, to: 1944-06-30 }
+    confidence: B
+    note: 1944-07 改为 274（navypedia 记 7/1944 增 277/279B/293，274 的换装见同期同级舰条目）。
+
+  - field: sensors.radar.installed
+    value: Type 271 水面搜索雷达
+    src: [navypedia-kgv]
+    valid: { from: 1941-06-15, to: 1944-06-30 }
+    confidence: C
+    note: navypedia 记 1941 年加装；1941-06-15~30 为常见说法，精确日未获取，标 C。
+
+  - field: sensors.radar.installed
+    value: Type 273 水面搜索雷达
+    src: [navypedia-kgv]
+    valid: { from: 1941-12-01, to: 1944-06-30 }
+    confidence: B
+    note: 1941 年末改装同批加装。
+
+  - field: sensors.radar.installed
+    value: Type 282 火控雷达（5 台）
+    src: [navypedia-kgv]
+    valid: { from: 1941-12-01, to: 1944-06-30 }
+    confidence: B
+
+  - field: sensors.radar.installed
+    value: Type 285 火控雷达（4 台）
+    src: [navypedia-kgv]
+    valid: { from: 1942-06-01, to: 1944-06-30 }
+    confidence: B
+    note: navypedia 记 1942 年中加装 4 台 type 285。
+
+  - field: sensors.radar.installed
+    value: Type 277 测高雷达
+    src: [navypedia-kgv]
+    valid: { from: 1944-07-01 }
+    confidence: B
+    note: 1944-07 改装：拆 273/279，加 277、279B、2 座 282、285、293。
+
+  - field: sensors.radar.installed
+    value: Type 279B 对空警戒雷达
+    src: [navypedia-kgv]
+    valid: { from: 1944-07-01 }
+    confidence: B
+
+  - field: sensors.radar.installed
+    value: Type 293 目标指示雷达
+    src: [navypedia-kgv]
+    valid: { from: 1944-07-01 }
+    confidence: B
+
+  # ============================================================ 航空设施（本舰拆除节点）
+  - field: aviation.catapult.count
+    value: 0
+    unit: count
+    src: [tyne-kgv, navypedia-kgv]
+    valid: { from: 1944-07-01 }
+    confidence: A
+    note: >
+      1944-02~06 利物浦改装中拆除弹射器与水机（tyne 记「1943: Seaplanes &
+      catapult removed」，navypedia 挂 7/1944 条目，两说时点差约一年，
+      以改装完成 1944-07 为界记 0；拆除动作本身无争议）。
+      这是"已知为 0"，不是"未获取"。
+
+  - field: aviation.aircraft.capacity
+    value: 0
+    unit: count
+    src: [tyne-kgv, navypedia-kgv]
+    valid: { from: 1944-07-01 }
+    confidence: A
+    note: 随弹射器一并拆除；此后本舰不再搭载水机。
+
+  # ============================================================ 雷达（本舰型号身份）
+  # 型号升为独立武器实体，只登记身份三条；装舰窗口与数量仍在上面 sensors.* 里。
+  # 型号首服役年（weapon.in_service_from）**未获取**，不写。
+
+  - field: weapon.designation
+    about: weapon:type-279
+    value: Type 279 对空警戒雷达（air warning radar）
+    src: [navypedia-kgv, rmg-kgv-guide]
+    valid: { from: 1940-10-01 }
+    confidence: B
+    note: 本舰建成时装；英王乔治五世级的对空警戒主力，1944 年换成 279B。
+
+  - field: weapon.nation
+    about: weapon:type-279
+    value: united_kingdom
+    src: [navypedia-kgv, rmg-kgv-guide]
+    valid: { from: 1940-10-01 }
+    confidence: B
+
+  - field: weapon.category
+    about: weapon:type-279
+    value: radar
+    src: [navypedia-kgv, rmg-kgv-guide]
+    valid: { from: 1940-10-01 }
+    confidence: B
+
+  - field: weapon.designation
+    about: weapon:type-279b
+    value: Type 279B 对空警戒雷达（Type 279 的改进型）
+    src: [navypedia-kgv]
+    valid: { from: 1944-07-01 }
+    confidence: B
+    note: 1944 年改装中以 279B 取代 279，与 Type 277、Type 293 同批。
+
+  - field: weapon.nation
+    about: weapon:type-279b
+    value: united_kingdom
+    src: [navypedia-kgv]
+    valid: { from: 1944-07-01 }
+    confidence: B
+
+  - field: weapon.category
+    about: weapon:type-279b
+    value: radar
+    src: [navypedia-kgv]
+    valid: { from: 1944-07-01 }
+    confidence: B
+
+  - field: weapon.designation
+    about: weapon:type-271
+    value: Type 271 水面搜索雷达（surface search radar）
+    src: [navypedia-kgv]
+    valid: { from: 1941-06-15 }
+    confidence: C
+    note: 本舰 1941-06-15 装舰这一段只有 navypedia 一家，故置信度记 C。
+
+  - field: weapon.nation
+    about: weapon:type-271
+    value: united_kingdom
+    src: [navypedia-kgv]
+    valid: { from: 1941-06-15 }
+    confidence: C
+
+  - field: weapon.category
+    about: weapon:type-271
+    value: radar
+    src: [navypedia-kgv]
+    valid: { from: 1941-06-15 }
+    confidence: C
+
+  - field: weapon.designation
+    about: weapon:type-273
+    value: Type 273 水面搜索雷达（surface search radar）
+    src: [navypedia-kgv]
+    valid: { from: 1941-12-01 }
+    confidence: B
+    note: 271 的后继型号，1941-12 起替换 271。
+
+  - field: weapon.nation
+    about: weapon:type-273
+    value: united_kingdom
+    src: [navypedia-kgv]
+    valid: { from: 1941-12-01 }
+    confidence: B
+
+  - field: weapon.category
+    about: weapon:type-273
+    value: radar
+    src: [navypedia-kgv]
+    valid: { from: 1941-12-01 }
+    confidence: B
+
+  - field: weapon.designation
+    about: weapon:type-277
+    value: Type 277 测高雷达（height finder radar）
+    src: [navypedia-kgv]
+    valid: { from: 1944-07-01 }
+    confidence: B
+    note: 1944 年改装加装，与 293 同批；用于给对空射击提供目标高度。
+
+  - field: weapon.nation
+    about: weapon:type-277
+    value: united_kingdom
+    src: [navypedia-kgv]
+    valid: { from: 1944-07-01 }
+    confidence: B
+
+  - field: weapon.category
+    about: weapon:type-277
+    value: radar
+    src: [navypedia-kgv]
+    valid: { from: 1944-07-01 }
+    confidence: B
+
+  - field: weapon.designation
+    about: weapon:type-293
+    value: Type 293 目标指示雷达（target indication radar）
+    src: [navypedia-kgv]
+    valid: { from: 1944-07-01 }
+    confidence: B
+    note: 1944 年改装加装。本舰是否由 271/273 之外的型号替代，材料未明，不推断。
+
+  - field: weapon.nation
+    about: weapon:type-293
+    value: united_kingdom
+    src: [navypedia-kgv]
+    valid: { from: 1944-07-01 }
+    confidence: B
+
+  - field: weapon.category
+    about: weapon:type-293
+    value: radar
+    src: [navypedia-kgv]
+    valid: { from: 1944-07-01 }
+    confidence: B

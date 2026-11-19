@@ -1,0 +1,377 @@
+version: 1
+updated: 2026-11-17
+note: >
+  字段注册表 v0。任何 fact 的 field 必须出现在本表，否则校验失败。
+  新增字段 = 改本文件 → 提 PR → 过校验。不允许在数据文件里现造字段名。
+  命名规则：namespace.name[.sub]，全小写 + 下划线，至少两段，第一段必须属于 namespaces。
+
+# ---------------------------------------------------------------- 单位
+# 存储层统一公制。英制/其它单位在录入时换算，不收。
+units:
+  t:        { zh: 公吨,       en: metric tonne,   kind: mass }
+  kg:       { zh: 千克,       en: kilogram,       kind: mass }
+  m:        { zh: 米,         en: metre,          kind: length }
+  cm:       { zh: 厘米,       en: centimetre,     kind: length }
+  mm:       { zh: 毫米,       en: millimetre,     kind: length }
+  kn:       { zh: 节,         en: knot,           kind: speed }
+  mps:      { zh: 米/秒,      en: metre/second,   kind: speed }
+  nmi:      { zh: 海里,       en: nautical mile,  kind: distance }
+  km:       { zh: 千米,       en: kilometre,      kind: distance }
+  kph:      { zh: 千米/时,    en: kilometre/hour, kind: speed }
+  hp:       { zh: 马力,       en: shaft horsepower, kind: power }
+  kW:       { zh: 千瓦,       en: kilowatt,       kind: power }
+  deg:      { zh: 度,         en: degree,         kind: angle }
+  celsius:  { zh: 摄氏度,     en: degree Celsius, kind: temperature }
+  s:        { zh: 秒,         en: second,         kind: time }
+  rpm:      { zh: 发/分,      en: rounds per minute, kind: rate }
+  atm:      { zh: 大气压,     en: atmosphere,     kind: pressure }
+  dm3:      { zh: 立方分米,   en: cubic decimetre, kind: volume }
+  count:    { zh: 个,         en: count,          kind: count }
+  persons:  { zh: 人,         en: persons,        kind: count }
+  ratio:    { zh: 比值,       en: ratio,          kind: dimensionless }
+  pct:      { zh: 百分比,     en: percent,        kind: dimensionless }
+  date:     { zh: 日期,       en: date,           kind: date }
+
+# 明确拒收的单位 —— 报错时给出换算提示。防止把公吨写成 mt、长度写成英尺。
+rejected_units:
+  mt:  公吨请写 t。mt 在部分文献里指 metric ton、在另一些文献里指 measurement ton，含义不唯一。
+  tonne: 请写 t。
+  lt: 长吨（long ton）请在录入时换算为 t。
+  st: 短吨（short ton）请在录入时换算为 t。
+  ft: 英尺请换算为 m。
+  in: 英寸请换算为 cm 或 mm。
+  yd: 码请换算为 m。
+  mi: 英里请换算为 km。
+  psi: 请换算为 atm 或 kg/cm²。
+  kn_: 节请写 kn。
+
+# ---------------------------------------------------------------- 命名空间
+namespaces:
+  identity:     身份标识
+  displacement: 排水量
+  dimensions:   尺度
+  propulsion:   动力与推进
+  protection:   装甲与防护
+  armament:     武备装载
+  weapon:       武器本体
+  mount:        炮位实例
+  sensors:      探测与火控
+  aviation:     航空设施
+  construction: 建造
+  service:      服役与编制
+  appearance:   涂装与标识
+  media:        影像与线图
+  modelling:    模型套件
+
+# ---------------------------------------------------------------- 字段分组
+groups:
+  - { id: identity,     label: { zh: 身份标识, en: Identity },           order: 1 }
+  - { id: dimensions,   label: { zh: 尺寸与排水, en: Dimensions },        order: 2 }
+  - { id: propulsion,   label: { zh: 动力与推进, en: Propulsion },        order: 3 }
+  - { id: protection,   label: { zh: 装甲与防护, en: Protection },        order: 4 }
+  - { id: armament,     label: { zh: 武备装载, en: Armament },            order: 5 }
+  - { id: sensors,      label: { zh: 探测与火控, en: Sensors & Fire Control }, order: 6 }
+  - { id: aviation,     label: { zh: 航空设施, en: Aviation },            order: 7 }
+  - { id: construction, label: { zh: 建造, en: Construction },            order: 8 }
+  - { id: service,      label: { zh: 服役与编制, en: Service },           order: 9 }
+  - { id: appearance,   label: { zh: 涂装与标识, en: Appearance },        order: 10 }
+  - { id: media,        label: { zh: 影像与线图, en: Media },             order: 11 }
+  - { id: modelling,    label: { zh: 模型套件, en: Modelling },           order: 12 }
+  - { id: weapon,       label: { zh: 武器本体, en: Weapon },              order: 13 }
+
+# ---------------------------------------------------------------- 字段
+# 默认 applies_to: [class, ship]。比较器只遍历 compare: true。
+# better: higher | lower | context | none
+fields:
+
+  # ===== identity =====
+  - { id: identity.name_original,          label: { zh: 原名, en: Name (original) },        type: string, unit: null, group: identity, compare: false, better: none }
+  - { id: identity.name_zh,                label: { zh: 中文名, en: Name (zh) },            type: string, unit: null, group: identity, compare: false, better: none }
+  - { id: identity.name_en,                label: { zh: 英文名, en: Name (en) },            type: string, unit: null, group: identity, compare: false, better: none }
+  - { id: identity.name_note,              label: { zh: 译名说明, en: Name note },          type: string, unit: null, group: identity, compare: false, better: none }
+  - { id: identity.ship_type,              label: { zh: 舰种, en: Ship type },              type: enum,   unit: null, group: identity, compare: false, better: none, values: [battleship, battlecruiser, heavy_cruiser, light_cruiser, armored_cruiser, protected_cruiser, aircraft_carrier, escort_carrier, seaplane_carrier, destroyer, destroyer_leader, torpedo_boat, frigate, corvette, submarine, monitor, coastal_defence_ship, minelayer, auxiliary, other] }
+  - { id: identity.nation,                 label: { zh: 所属国家, en: Nation },             type: enum,   unit: null, group: identity, compare: false, better: none, values: [germany, united_kingdom, united_states, japan, italy, france, soviet_union, china, netherlands, australia, canada, poland, norway, sweden, greece, turkey, spain, finland, romania, other] }
+  - { id: identity.operator,               label: { zh: 所属海军, en: Operator },           type: string, unit: null, group: identity, compare: false, better: none }
+  - { id: identity.pennant_number,         label: { zh: 旗号/舷号, en: Pennant / hull number }, type: string, unit: null, group: identity, compare: false, better: none }
+  - { id: identity.namesake,               label: { zh: 命名来源, en: Namesake },           type: string, unit: null, group: identity, compare: false, better: none }
+  - { id: identity.building_program,       label: { zh: 建造计划, en: Building programme }, type: string, unit: null, group: identity, compare: false, better: none }
+  # 时代：分类浏览的第一级轴。不填则按 construction.commissioned 的年份自动推（见 data.ts 的 eraFromYear），
+  # 所以能填就填——一艘 1943 年服役、1980 年还在跑的舰，自动推会判成二战，但你可能想归冷战。
+  - { id: identity.era,                    label: { zh: 时代, en: Era },                     type: enum,   unit: null, group: identity, compare: false, better: none, values: [ww1, interwar, ww2, cold_war, modern], note: 按服役期定位，不是按设计年份。全级同代就写在舰级，个别舰不同才写单舰。 }
+
+  # ===== dimensions: 排水量（口径必须拆开，见框架 3.5） =====
+  - { id: displacement.standard,           label: { zh: 标准排水量, en: Standard displacement },        type: number, unit: t, group: dimensions, compare: true, better: none, note: 华盛顿/伦敦条约定义口径。来源须自述其定义，否则降级。 }
+  - { id: displacement.standard_metric,    label: { zh: 标准排水量（公制口径）, en: Standard displacement (metric) }, type: number, unit: t, group: dimensions, compare: true, better: none, note: 德制 Typverdrängung 等非条约口径的标准状态，与 displacement.standard 不可混用。2026-11-18 已补俾斯麦级 43,313 t（kbismarck bsweights）。 }
+  - { id: displacement.construction,       label: { zh: 建造排水量, en: Construction displacement },    type: number, unit: t, group: dimensions, compare: false, better: none }
+  - { id: displacement.empty,              label: { zh: 空载排水量, en: Empty displacement },           type: number, unit: t, group: dimensions, compare: false, better: none }
+  - { id: displacement.full,               label: { zh: 满载排水量, en: Full load displacement },       type: number, unit: t, group: dimensions, compare: true,  better: none }
+  - { id: displacement.deep,               label: { zh: 深载排水量, en: Deep load displacement },       type: number, unit: t, group: dimensions, compare: true,  better: none }
+  - { id: displacement.maximum,            label: { zh: 最大排水量, en: Maximum displacement },         type: number, unit: t, group: dimensions, compare: false, better: none }
+  - { id: displacement.declared,           label: { zh: 对外申报排水量, en: Declared displacement },    type: number, unit: t, group: dimensions, compare: false, better: none, note: 政治申报值，与真实值并存，不构成分歧。 }
+  - { id: displacement.measurement,        label: { zh: 容积吨位, en: Measurement tonnage (GRT) },      type: number, unit: t, group: dimensions, compare: false, better: none, note: 商船口径，军舰通常不适用。 }
+  - { id: displacement.trial,              label: { zh: 试验排水量, en: Trial displacement },            type: number, unit: t, group: dimensions, compare: false, better: none, note: 试航或倾斜试验当时的实测排水量，含试验压载。既不是空载也不是标准排水量，不可当二者引用。 }
+
+  # ===== dimensions: 尺度（口径后缀必填，见 field-design 硬结论 2） =====
+  - { id: dimensions.length.oa,            label: { zh: 全长, en: Length overall },                    type: number, unit: m, group: dimensions, compare: true,  better: none }
+  - { id: dimensions.length.wl,            label: { zh: 水线长, en: Length at waterline },             type: number, unit: m, group: dimensions, compare: true,  better: none }
+  - { id: dimensions.length.pp,            label: { zh: 垂线间长, en: Length between perpendiculars }, type: number, unit: m, group: dimensions, compare: true,  better: none }
+  - { id: dimensions.length.dl,            label: { zh: 甲板长, en: Length on deck },                  type: number, unit: m, group: dimensions, compare: false, better: none }
+  - { id: dimensions.beam.wl,              label: { zh: 水线宽, en: Beam at waterline },               type: number, unit: m, group: dimensions, compare: true,  better: none }
+  - { id: dimensions.beam.max,             label: { zh: 最大宽, en: Beam maximum },                    type: number, unit: m, group: dimensions, compare: true,  better: none }
+  - { id: dimensions.beam.molded,          label: { zh: 型宽, en: Beam molded },                       type: number, unit: m, group: dimensions, compare: false, better: none }
+  - { id: dimensions.draught.mean,         label: { zh: 平均吃水, en: Draught mean },                  type: number, unit: m, group: dimensions, compare: true,  better: none, note: 必须与排水量状态绑定，否则不可比。 }
+  - { id: dimensions.draught.max,          label: { zh: 最大吃水, en: Draught maximum },               type: number, unit: m, group: dimensions, compare: true,  better: none }
+  - { id: dimensions.depth.molded,         label: { zh: 型深, en: Depth molded },                      type: number, unit: m, group: dimensions, compare: false, better: none }
+  - { id: dimensions.freeboard,            label: { zh: 干舷, en: Freeboard },                         type: number, unit: m, group: dimensions, compare: false, better: none }
+  - { id: dimensions.metacentric_height,   label: { zh: 稳心高 GM, en: Metacentric height },           type: number, unit: m, group: dimensions, compare: false, better: context }
+  - { id: dimensions.block_coefficient,    label: { zh: 方形系数, en: Block coefficient },             type: number, unit: ratio, group: dimensions, compare: false, better: none }
+  - { id: dimensions.prismatic_coefficient, label: { zh: 棱形系数, en: Prismatic coefficient },        type: number, unit: ratio, group: dimensions, compare: false, better: none }
+  - { id: dimensions.watertight_compartments, label: { zh: 水密隔舱数, en: Watertight compartments },  type: integer, unit: count, group: dimensions, compare: false, better: none }
+
+  # ===== propulsion =====
+  - { id: propulsion.plant_type,           label: { zh: 动力型式, en: Propulsion type },              type: enum,   unit: null, group: propulsion, compare: false, better: none, values: [steam_turbine, steam_reciprocating, diesel, diesel_electric, gas_turbine, nuclear, combined_diesel_gas, turbo_electric, other] }
+  - { id: propulsion.shafts,               label: { zh: 轴数, en: Shafts },                            type: integer, unit: count, group: propulsion, compare: false, better: none }
+  - { id: propulsion.boiler.count,         label: { zh: 锅炉数, en: Boilers },                         type: integer, unit: count, group: propulsion, compare: false, better: none }
+  - { id: propulsion.boiler.type,          label: { zh: 锅炉型号, en: Boiler type },                   type: string, unit: null, group: propulsion, compare: false, better: none }
+  - { id: propulsion.boiler.manufacturer,  label: { zh: 锅炉制造厂, en: Boiler manufacturer },         type: string, unit: null, group: propulsion, compare: false, better: none }
+  - { id: propulsion.boiler.pressure,      label: { zh: 锅炉蒸汽压力, en: Boiler pressure },           type: number, unit: atm, group: propulsion, compare: false, better: none }
+  - { id: propulsion.boiler.temperature,   label: { zh: 锅炉蒸汽温度, en: Boiler temperature },        type: number, unit: celsius, group: propulsion, compare: false, better: none }
+  - { id: propulsion.turbine.count,        label: { zh: 主机数量, en: Turbines/engines },              type: integer, unit: count, group: propulsion, compare: false, better: none }
+  - { id: propulsion.turbine.type,         label: { zh: 主机型号, en: Turbine type },                  type: string, unit: null, group: propulsion, compare: false, better: none }
+  - { id: propulsion.turbine.manufacturer, label: { zh: 主机制造厂, en: Turbine manufacturer },        type: string, unit: null, group: propulsion, compare: false, better: none, note: 逐舰不同，Bismarck 用 Blohm & Voss，Tirpitz 用 Brown-Boveri。 }
+  - { id: propulsion.power.design,         label: { zh: 设计功率, en: Design shaft power },            type: number, unit: hp, group: propulsion, compare: true,  better: higher }
+  - { id: propulsion.power.trial,          label: { zh: 试航实测功率, en: Trial shaft power },         type: number, unit: hp, group: propulsion, compare: true,  better: higher }
+  - { id: propulsion.speed.design,         label: { zh: 设计航速, en: Design speed },                  type: number, unit: kn, group: propulsion, compare: true,  better: higher }
+  - { id: propulsion.speed.trial,          label: { zh: 试航实测航速, en: Trial speed },               type: number, unit: kn, group: propulsion, compare: true,  better: higher }
+  - { id: propulsion.speed.max,            label: { zh: 最大航速, en: Maximum speed },                 type: number, unit: kn, group: propulsion, compare: true,  better: higher }
+  # 2026-11-18 对比器开工：改为 compare:false。巡航航速只有在来源自己给出
+  # 「某航速下的续航」时才有意义（如「9,250 nm @ 14 kn」）。现收录 5 舰里
+  # illustrious / KGV 的续航带了对应航速，但那是续航条件，不是独立的巡航航速指标；
+  # 由它反推出「巡航航速」属于推断，违反红线 §2.2。真要补，必须连
+  # propulsion.range.at_speed 一起成对记录。
+  - { id: propulsion.speed.cruise,         label: { zh: 巡航航速, en: Cruising speed },                type: number, unit: kn, group: propulsion, compare: false, better: none, note: 全库暂无数据。此值必须与对应续航成对出现，单填一个数会被误读为经济航速。 }
+  - { id: propulsion.range.max,            label: { zh: 最大续航力, en: Maximum range },               type: number, unit: nmi, group: propulsion, compare: true, better: higher, note: 续航力必须与对应航速成对解读，单看数值会误判。 }
+  - { id: propulsion.range.at_speed,       label: { zh: 续航力对应航速, en: Range at speed },          type: number, unit: kn, group: propulsion, compare: false, better: none }
+  - { id: propulsion.fuel.capacity,        label: { zh: 燃油装载量, en: Fuel oil capacity },           type: number, unit: t, group: propulsion, compare: false, better: none }
+  - { id: propulsion.fuel.type,            label: { zh: 燃料种类, en: Fuel type },                     type: string, unit: null, group: propulsion, compare: false, better: none }
+  - { id: propulsion.propeller.count,      label: { zh: 螺旋桨数, en: Propellers },                    type: integer, unit: count, group: propulsion, compare: false, better: none }
+  - { id: propulsion.propeller.diameter,   label: { zh: 螺旋桨直径, en: Propeller diameter },          type: number, unit: m, group: propulsion, compare: false, better: none }
+  - { id: propulsion.propeller.type,       label: { zh: 螺旋桨型式, en: Propeller type },              type: string, unit: null, group: propulsion, compare: false, better: none }
+  - { id: propulsion.rudder.count,         label: { zh: 舵数, en: Rudders },                           type: integer, unit: count, group: propulsion, compare: false, better: none }
+  - { id: propulsion.rudder.angle_max,     label: { zh: 最大舵角, en: Maximum rudder angle },          type: number, unit: deg, group: propulsion, compare: false, better: none }
+  # 2026-11-18：改为 compare:false。回转直径在 work/raw 里只在
+  # field-design-refs.md（别人的字段方案）和我们自己的 field 命名建议里出现，
+  # 没有任何一条真实的战术直径数据。且这个指标必须绑定航速与舵角才有可比性，
+  # 裸值横向比较就是错的（自己也在 note 里写了这句）。
+  - { id: propulsion.turning_diameter,     label: { zh: 回转直径, en: Turning diameter },              type: number, unit: m, group: propulsion, compare: false, better: none, note: 全库暂无数据。越小越灵活，但受排水量与舵面积共同影响、且必须绑定航速与舵角才可比，故不参与横向对比着色。 }
+  - { id: propulsion.electrical.output,    label: { zh: 发电机总功率, en: Electrical output },         type: number, unit: kW, group: propulsion, compare: false, better: none }
+
+  # ===== protection =====
+  - { id: protection.scheme,               label: { zh: 装甲体系, en: Protection scheme },             type: enum,   unit: null, group: protection, compare: false, better: none, values: [all_or_nothing, incremental, turtle_back, other] }
+  - { id: protection.armor.thickness,      label: { zh: 装甲厚度, en: Armour thickness },              type: number, unit: mm, group: protection, compare: false, better: context,
+                                                                                                         qual_keys: [part, region],
+                                                                                                         qual_values: { part: [belt, upper_belt, lower_belt, deck, slope, bulkhead, turret, barbette, conning_tower, funnel_uptake, splinter_belt, main_belt_aft, flight_deck, hangar_side, hangar_deck, magazine], region: [main, fore, aft, upper, lower, face, side, rear, roof, top, bottom, torpedo, splinter] },
+                                                                                                         note: 部位索引。厚度不是越大越好，比较器须结合倾角与材质。 }
+  - { id: protection.armor.angle,          label: { zh: 装甲倾角, en: Armour inclination },            type: number, unit: deg, group: protection, compare: false, better: context,
+                                                                                                         qual_keys: [part, region],
+                                                                                                         qual_values: { part: [belt, upper_belt, deck, slope, turret, flight_deck, hangar_deck], region: [main, upper, lower, face, side] } }
+  - { id: protection.armor.material,       label: { zh: 装甲材质, en: Armour material },               type: string, unit: null, group: protection, compare: false, better: none,
+                                                                                                         qual_keys: [part, region],
+                                                                                                         qual_values: { part: [belt, upper_belt, lower_belt, deck, slope, bulkhead, splinter_belt, turret, barbette, conning_tower, flight_deck, hangar_side, hangar_deck, magazine], region: [main, upper, lower, fore, aft, face, side, rear, roof, torpedo, splinter] },
+                                                                                                         note: 例：KC n/A（克虏伯渗碳）、Wh（均质）、STS。材质影响等效厚度，必须记录。 }
+  - { id: protection.armor.weight,         label: { zh: 装甲总重, en: Armour weight },                 type: number, unit: t, group: protection, compare: false, better: none }
+  - { id: protection.armor.weight_ratio,   label: { zh: 装甲占排水量比, en: Armour weight ratio },     type: number, unit: pct, group: protection, compare: true, better: context }
+  - { id: protection.torpedo_bulge.type,   label: { zh: 防雷突出部型式, en: Torpedo bulge type },      type: string, unit: null, group: protection, compare: false, better: none }
+  - { id: protection.underwater.depth,     label: { zh: 水下防护纵深, en: Underwater protection depth }, type: number, unit: m, group: protection, compare: true, better: higher }
+  - { id: protection.mine_protection,      label: { zh: 防雷/防磁措施, en: Mine protection },          type: string, unit: null, group: protection, compare: false, better: none }
+
+  # ===== armament（装载层；武器本体见 weapon.*，炮位实例见 mount 实体） =====
+  - { id: armament.mount.summary,          label: { zh: 武备概览, en: Armament summary },              type: string, unit: null, group: armament, compare: false, better: none, note: 人读概览，非结构化数据源。结构化数据一律进 mount 实体。 }
+  - { id: armament.torpedo.tubes,          label: { zh: 鱼雷发射管数, en: Torpedo tubes },             type: integer, unit: count, group: armament, compare: true, better: none }
+  - { id: armament.torpedo.diameter,       label: { zh: 鱼雷口径, en: Torpedo diameter },              type: number, unit: mm, group: armament, compare: false, better: none }
+  - { id: armament.aa_20mm.count,          label: { zh: 2 cm 高炮数, en: 2 cm AA guns },             type: integer, unit: count, group: armament, compare: true, better: higher, note: 轻型高炮逐次加装的量，随时间窗变化。只记该口径总数，不区分单装与四联；炮位实例进 mount 实体。 }
+  # 2026-11-19 为中途岛入库补：日本海军没有 20 mm，主轻高炮是 25 mm（九六式三联装为主）；
+  # 美军航母主轻高炮是 40 mm Bofors + 20 mm Oerlikon 混装。只有一个 20 mm 字段
+  # 会让赤城/加贺/苍龙/飞龙的防空火力无处可记，也会让美舰漏掉 40 mm 那半边。
+  # 分口径各列，不合并成「轻型高炮总数」——口径不同混成一个数是失真。
+  - { id: armament.aa_25mm.count,          label: { zh: 25 mm 高炮数, en: 25 mm AA guns },           type: integer, unit: count, group: armament, compare: true, better: higher, note: 日本海军九六式 25 mm（单装/双联/三联）。按管数记，不按座数；炮位实例进 mount 实体。 }
+  - { id: armament.aa_40mm.count,          label: { zh: 40 mm 高炮数, en: 40 mm AA guns },           type: integer, unit: count, group: armament, compare: true, better: higher, note: 美军 40 mm Bofors（多为四联）。按管数记，不按座数。 }
+  - { id: armament.depth_charge.count,     label: { zh: 深水炸弹数, en: Depth charges },               type: integer, unit: count, group: armament, compare: true, better: none }
+  # 2026-11-18 对比器开工：全库 0 条 fact，且 work/raw 里 11 份原始材料零命中
+  #（「mine capacity / mines carried / 载雷 / mine rails」全无）。不是漏采，
+  # 是这 5 艘本来就都不是布雷舰。改为 false，等真做布雷舰（如阿波罗级、HMS Manxman）
+  # 或者哪天补到俾斯麦的布雷改装方案时再翻回来。留着 true 会让对比表多一行全空。
+  - { id: armament.mine.capacity,          label: { zh: 载雷量, en: Mine capacity },                   type: integer, unit: count, group: armament, compare: false, better: none, note: 全库暂无数据（现收录的 5 舰均非布雷舰），暂不参与对比。 }
+  - { id: armament.broadside_weight,       label: { zh: 舷侧齐射重量, en: Broadside weight },           type: number, unit: kg, group: armament, compare: true, better: higher, note: 对比器最好用的一项，可派生但建议显式记录来源值。 }
+  - { id: armament.total_weight,           label: { zh: 武备总重, en: Armament weight },               type: number, unit: t, group: armament, compare: false, better: none }
+
+  # ===== weapon（武器本体，applies_to: weapon） =====
+  - { id: weapon.designation,              label: { zh: 型号, en: Designation },                       type: string, unit: null, group: weapon, compare: false, better: none, applies_to: [weapon] }
+  - { id: weapon.nation,                   label: { zh: 制造国, en: Nation },                          type: enum, unit: null, group: weapon, compare: false, better: none, applies_to: [weapon], values: [germany, united_kingdom, united_states, japan, italy, france, soviet_union, other] }
+  - { id: weapon.category,                 label: { zh: 类别, en: Category },                          type: enum, unit: null, group: weapon, compare: false, better: none, applies_to: [weapon], values: [naval_gun, coastal_gun, anti_aircraft_gun, torpedo, depth_charge, mine, rocket, radar, fire_control, aircraft, other], note: radar/fire_control/aircraft 是 2026-11-18 为「武器与装备」栏目扩展的值，此前它们只作为舰体的 sensors./aviation. 字段存在。 }
+  - { id: weapon.bore,                     label: { zh: 口径, en: Bore },                              type: number, unit: mm, group: weapon, compare: true, better: higher, applies_to: [weapon] }
+  - { id: weapon.caliber_length,           label: { zh: 倍径, en: Calibre length },                    type: number, unit: ratio, group: weapon, compare: false, better: none, applies_to: [weapon], note: L/52 里的 52，按倍径定义法可能不同，须记 method。 }
+  - { id: weapon.caliber_method,           label: { zh: 倍径计算法, en: Calibre method },              type: enum, unit: null, group: weapon, compare: false, better: none, applies_to: [weapon], values: [german_method, usa_uk_method, unknown] }
+  - { id: weapon.length.oa,                label: { zh: 全长, en: Length overall },                    type: number, unit: m, group: weapon, compare: false, better: none, applies_to: [weapon] }
+  - { id: weapon.length.bore,              label: { zh: 膛线长, en: Bore length },                     type: number, unit: m, group: weapon, compare: false, better: none, applies_to: [weapon] }
+  - { id: weapon.weight,                   label: { zh: 炮身重, en: Gun weight },                      type: number, unit: kg, group: weapon, compare: false, better: none, applies_to: [weapon] }
+  - { id: weapon.projectile_weight,        label: { zh: 弹重, en: Projectile weight },                 type: number, unit: kg, group: weapon, compare: false, better: none, applies_to: [weapon],
+                                                                                                         qual_keys: [shell_type], qual_values: { shell_type: [apc, ap, he, he_base_fuze, he_nose_fuze, sap, aa, coastal, special] } }
+  - { id: weapon.muzzle_velocity,          label: { zh: 初速, en: Muzzle velocity },                   type: number, unit: mps, group: weapon, compare: true, better: higher, applies_to: [weapon],
+                                                                                                         qual_keys: [shell_type], qual_values: { shell_type: [apc, ap, he, he_base_fuze, he_nose_fuze, sap, aa, coastal, special] } }
+  - { id: weapon.charge.weight,            label: { zh: 装药重量, en: Propellant charge weight },      type: number, unit: kg, group: weapon, compare: false, better: none, applies_to: [weapon],
+                                                                                                         qual_keys: [charge_part, propellant], qual_values: { charge_part: [fore, rear, main, single], propellant: [rp_c32, rp_c38, rp_c40, other] },
+                                                                                                         note: Fore/Main 在不同来源间常被互换。装填序列必须成对记录，缺一项即判记录不完整。 }
+  - { id: weapon.charge.chamber_volume,    label: { zh: 药室容积, en: Chamber volume },                type: number, unit: dm3, group: weapon, compare: false, better: none, applies_to: [weapon], note: 舰炮与岸防炮药室不同，混用会导致射程/初速错误。 }
+  - { id: weapon.range.max,                label: { zh: 最大射程, en: Maximum range },                 type: number, unit: m, group: weapon, compare: true, better: higher, applies_to: [weapon] }
+  - { id: weapon.range.max_elevation,      label: { zh: 最大射程对应仰角, en: Elevation at maximum range }, type: number, unit: deg, group: weapon, compare: false, better: none, applies_to: [weapon], note: 最大射程离不开仰角，单写距离等于没有信息。 }
+  - { id: weapon.range.aa_max,             label: { zh: 最大对空射程, en: Maximum AA range },          type: number, unit: m, group: weapon, compare: true, better: higher, applies_to: [weapon] }
+  - { id: weapon.rate_of_fire,             label: { zh: 射速, en: Rate of fire },                      type: number, unit: rpm, group: weapon, compare: true, better: higher, applies_to: [weapon], note: 常被写成"世界最快"，须区分理论射速与实战射速。 }
+  - { id: weapon.elevation.min,            label: { zh: 最低仰角, en: Minimum elevation },             type: number, unit: deg, group: weapon, compare: false, better: none, applies_to: [weapon] }
+  - { id: weapon.elevation.max,            label: { zh: 最高仰角, en: Maximum elevation },             type: number, unit: deg, group: weapon, compare: false, better: none, applies_to: [weapon] }
+  - { id: weapon.barrel_life,              label: { zh: 炮管寿命, en: Barrel life },                   type: number, unit: count, group: weapon, compare: true, better: higher, applies_to: [weapon] }
+  - { id: weapon.ammo_outfit,              label: { zh: 弹药基数, en: Ammunition outfit },             type: number, unit: count, group: weapon, compare: true, better: higher, applies_to: [weapon], note: 必须标明是"每炮"还是"全舰"，且区分设计值与实载。 }
+  - { id: weapon.penetration,              label: { zh: 穿深, en: Armour penetration },                 type: table, unit: mm, group: weapon, compare: false, better: none, applies_to: [weapon], note: 距离-穿深表。不同来源用不同钢材与弹道模型，必须记 method。 }
+  - { id: weapon.in_service_from,          label: { zh: 服役起始, en: In service from },               type: date, unit: date, group: weapon, compare: false, better: none, applies_to: [weapon] }
+  - { id: weapon.in_service_to,            label: { zh: 服役结束, en: In service to },                 type: date, unit: date, group: weapon, compare: false, better: none, applies_to: [weapon] }
+  # 2026-11-19 为中途岛舰载机补。注册表原来只有「炮」的字段，没有任何描述
+  # 航空器本体的字段——翼展、机长、速度、航程、载弹全都没地方放。
+  # `weapon.category: aircraft` 早就存在（48 型武器里有 10 型舰载机），
+  # 但那些飞机只能记个型号名和装在哪几艘船上，本体参数无处可写。
+  # 以下 8 个字段补上这个缺口，全部 applies_to: [weapon]。
+  - { id: weapon.aircraft.span,            label: { zh: 翼展, en: Wingspan },                          type: number, unit: m, group: weapon, compare: true, better: none, applies_to: [weapon], note: 折叠后的翼展另记进 note——航母升降机尺寸常是折叠宽度的上限。 }
+  - { id: weapon.aircraft.length,          label: { zh: 机长, en: Length },                            type: number, unit: m, group: weapon, compare: true, better: none, applies_to: [weapon] }
+  - { id: weapon.aircraft.height,          label: { zh: 机高, en: Height },                            type: number, unit: m, group: weapon, compare: true, better: none, applies_to: [weapon], note: 机高直接受机库净高限制：光辉级机库 4.9 m、赤城 5 m。 }
+  - { id: weapon.aircraft.empty_weight,    label: { zh: 空重, en: Empty weight },                     type: number, unit: kg, group: weapon, compare: true, better: none, applies_to: [weapon] }
+  - { id: weapon.aircraft.gross_weight,    label: { zh: 全重, en: Gross weight },                     type: number, unit: kg, group: weapon, compare: true, better: none, applies_to: [weapon], note: 区分最大起飞重量与设计全重，写清是哪一个。 }
+  - { id: weapon.aircraft.max_speed,       label: { zh: 最大速度, en: Maximum speed },                type: number, unit: kph, group: weapon, compare: true, better: higher, applies_to: [weapon], note: 存公制 km/h；来源常用节或 mph，换算后须在 note 里给原值。 }
+  - { id: weapon.aircraft.range,           label: { zh: 航程, en: Range },                            type: number, unit: nmi, group: weapon, compare: true, better: higher, applies_to: [weapon], note: 航程与载荷强相关，单写一个数会被误读；必须注明是侦察航程还是带弹航程。 }
+  - { id: weapon.aircraft.crew,            label: { zh: 乘员数, en: Crew },                          type: integer, unit: persons, group: weapon, compare: false, better: none, applies_to: [weapon] }
+  - { id: weapon.aircraft.engine,          label: { zh: 发动机, en: Engine },                        type: string, unit: null, group: weapon, compare: false, better: none, applies_to: [weapon] }
+  - { id: weapon.aircraft.power,           label: { zh: 发动机功率, en: Engine power },              type: number, unit: hp, group: weapon, compare: true, better: higher, applies_to: [weapon] }
+
+  # ===== mount（炮位实例，applies_to: mount） =====
+  - { id: mount.label_name,                label: { zh: 炮位名, en: Mount name },                      type: string, unit: null, group: weapon, compare: false, better: none, applies_to: [mount], note: Anton/Bruno/Cäsar/Dora，德舰按字母序。 }
+  - { id: mount.weapon,                    label: { zh: 关联武器, en: Weapon },                        type: ref, unit: null, group: weapon, compare: false, better: none, applies_to: [mount] }
+  - { id: mount.turret_designation,        label: { zh: 炮塔型号, en: Turret designation },            type: string, unit: null, group: weapon, compare: false, better: none, applies_to: [mount] }
+  - { id: mount.type,                      label: { zh: 装载型式, en: Mount type },                   type: enum, unit: null, group: weapon, compare: false, better: none, applies_to: [mount], values: [twin_turret, triple_turret, quad_turret, single_turret, casemate, open_mount, shielded_mount, tube, rack, other] }
+  - { id: mount.barrels,                   label: { zh: 每座炮管数, en: Barrels per mount },           type: integer, unit: count, group: weapon, compare: false, better: none, applies_to: [mount] }
+  - { id: mount.count,                     label: { zh: 座数, en: Mounts },                          type: integer, unit: count, group: weapon, compare: true, better: higher, applies_to: [mount] }
+  - { id: mount.position,                  label: { zh: 位置, en: Position },                        type: enum, unit: null, group: weapon, compare: false, better: none, applies_to: [mount], values: [fore, aft, midships, port, starboard, superfiring_fore, superfiring_aft, wing] }
+  - { id: mount.weight,                    label: { zh: 炮塔重量, en: Mount weight },                 type: number, unit: kg, group: weapon, compare: false, better: none, applies_to: [mount] }
+  - { id: mount.elevation.max,             label: { zh: 炮塔最高仰角, en: Mount maximum elevation },   type: number, unit: deg, group: weapon, compare: false, better: none, applies_to: [mount], note: 炮塔与炮身的仰角上限可能不同，分开记。 }
+  - { id: mount.traverse,                  label: { zh: 射界, en: Arc of fire },                     type: string, unit: null, group: weapon, compare: false, better: none, applies_to: [mount] }
+  - { id: mount.rangefinder_count,         label: { zh: 炮塔测距仪数, en: Turret rangefinders },      type: integer, unit: count, group: weapon, compare: false, better: none, applies_to: [mount] }
+  - { id: mount.installed,                 label: { zh: 装舰时间, en: Installed },                    type: date, unit: date, group: weapon, compare: false, better: none, applies_to: [mount] }
+  - { id: mount.removed,                   label: { zh: 拆除时间, en: Removed },                      type: date, unit: date, group: weapon, compare: false, better: none, applies_to: [mount] }
+
+  # ===== sensors =====
+  - { id: sensors.radar.installed,         label: { zh: 雷达型号装载, en: Radar fitted },              type: string, unit: null, group: sensors, compare: false, better: none, multi: true, note: 每个型号一条 fact，valid 窗口即装/拆时间。不要在一条里写多个型号。标了 multi 的字段表示同时间窗内允许多条并存（不同型号各占一条），校验器不会把它们判成分歧。 }
+  - { id: sensors.radar.count,             label: { zh: 雷达数量, en: Radar count },                   type: integer, unit: count, group: sensors, compare: false, better: none }
+  - { id: sensors.rangefinder.baseline,    label: { zh: 测距仪基线长, en: Rangefinder baseline },      type: number, unit: m, group: sensors, compare: false, better: none }
+  - { id: sensors.rangefinder.present,     label: { zh: 测距仪装备状态, en: Rangefinder fitted },      type: bool, unit: null, group: sensors, compare: false, better: none, note: 只记"有/没有"，不记数量。数量若为推算值，不得写入。 }
+  - { id: sensors.director.count,          label: { zh: 射击指挥仪数, en: Directors },                 type: integer, unit: count, group: sensors, compare: false, better: none }
+  - { id: sensors.director.type,           label: { zh: 指挥仪型号, en: Director type },               type: string, unit: null, group: sensors, compare: false, better: none }
+  - { id: sensors.fire_control.rpc,        label: { zh: 遥控power控制 RPC, en: Remote power control }, type: enum, unit: null, group: sensors, compare: false, better: none, values: [elevation_only, train_only, both, none] }
+  - { id: sensors.sonar.type,              label: { zh: 声呐型号, en: Sonar type },                   type: string, unit: null, group: sensors, compare: false, better: none }
+  - { id: sensors.ecm.suite,               label: { zh: 电子战设备, en: ECM suite },                  type: string, unit: null, group: sensors, compare: false, better: none }
+  - { id: sensors.compass.gyro_count,      label: { zh: 陀螺罗经数, en: Gyrocompasses },               type: integer, unit: count, group: sensors, compare: false, better: none }
+
+  # ===== aviation =====
+  - { id: aviation.aircraft.capacity,      label: { zh: 搭载机数, en: Aircraft capacity },             type: integer, unit: count, group: aviation, compare: true, better: higher }
+  - { id: aviation.aircraft.types,         label: { zh: 搭载机型, en: Aircraft types },                type: string, unit: null, group: aviation, compare: false, better: none }
+  - { id: aviation.catapult.count,         label: { zh: 弹射器数, en: Catapults },                     type: integer, unit: count, group: aviation, compare: true, better: higher }
+  - { id: aviation.catapult.type,          label: { zh: 弹射器型式, en: Catapult type },               type: string, unit: null, group: aviation, compare: false, better: none }
+  - { id: aviation.crane.count,            label: { zh: 吊车数, en: Cranes },                          type: integer, unit: count, group: aviation, compare: false, better: none }
+  - { id: aviation.deck.length,            label: { zh: 飞行甲板长, en: Flight deck length },          type: number, unit: m, group: aviation, compare: true, better: higher }
+  # 2026-11-19 为赤城的三段式甲板补。三段甲板航母（赤城 1927-1935、加贺同期）
+  # 的上/中/下三段各有独立长度与用途，用单一 aviation.deck.length 表达不了：
+  # 赤城上段 190.20 m（着舰 + 大型机起飞）、中段 15.0 m（只够轻机）、
+  # 下段 55.02 m（大型机起飞）。中段 15 m 这个数字本身就是设计失败的直接证据，
+  # 混进一个「249 m 全通甲板」里就看不见了。
+  # 单段全通甲板的航母不写这三个字段，只写 aviation.deck.length。
+  - { id: aviation.deck.upper.length,      label: { zh: 上段甲板长, en: Upper flight deck length },    type: number, unit: m, group: aviation, compare: false, better: none, note: 三段式甲板的着舰段与大型机起飞段。单段全通甲板的航母不写此项。 }
+  - { id: aviation.deck.middle.length,     label: { zh: 中段甲板长, en: Middle flight deck length },   type: number, unit: m, group: aviation, compare: false, better: none, note: 三段式甲板的中段，通常只够极轻的飞机起降。赤城的中段仅 15 m，是该设计失败的直接证据。 }
+  - { id: aviation.deck.lower.length,      label: { zh: 下段甲板长, en: Lower flight deck length },    type: number, unit: m, group: aviation, compare: false, better: none, note: 三段式甲板的下段，用于大型机起飞。 }
+  - { id: aviation.deck.width,             label: { zh: 飞行甲板宽, en: Flight deck width },           type: number, unit: m, group: aviation, compare: true, better: higher }
+  - { id: aviation.elevator.count,         label: { zh: 升降机数, en: Elevators },                     type: integer, unit: count, group: aviation, compare: true, better: higher }
+  - { id: aviation.hangar.count,           label: { zh: 机库数, en: Hangars },                         type: integer, unit: count, group: aviation, compare: false, better: none }
+  - { id: aviation.hangar.height,          label: { zh: 机库净高, en: Hangar clear height },          type: number, unit: m, group: aviation, compare: true, better: higher, note: 装甲航母的核心代价就写在这一个数上：机库越矮，能塞进去的飞机越小。日后换装更大机型的瓶颈通常不是甲板长度而是机库高度 }
+  - { id: aviation.hangar.length,          label: { zh: 机库总长, en: Hangar length },                  type: number, unit: m, group: aviation, compare: true, better: higher }
+  - { id: aviation.hangar.width,           label: { zh: 机库宽, en: Hangar width },                     type: number, unit: m, group: aviation, compare: true, better: higher }
+  - { id: aviation.elevator.dimensions,    label: { zh: 升降机尺寸, en: Elevator dimensions },          type: string, unit: null, group: aviation, compare: false, better: none, note: 写成长×宽，如 45 x 22 ft。升降机尺寸常常比机库高度更早成为换装的限制 }
+  - { id: aviation.fuel.volume,           label: { zh: 航空汽油容量（体积）, en: Aviation fuel capacity (volume) }, type: number, unit: dm3, group: aviation, compare: false, better: none,
+                                                                                                         note: 文献常以加仑或升给出航空汽油容量，而重量随温度与牌号变化。体积是原话直接给的量，重量是换算结果——不要把换算值当记载值。1 升 = 1 dm³。 }
+  # 2026-11-18 对比器开工：改为 compare:false。原因不是没数据，是口径不可比——
+  # navyed 一向只给「体积」（dm3，见上一行 aviation.fuel.volume，illustrious 有 230,000 L），
+  # 换算成重量要乘密度，而航空汽油密度随牌号与温度变化。把换算值写进「容量(t)」
+  # 就是把本站的推算当史料，违反红线 §2.2。真要做，只能做成「按体积对比」。
+  - { id: aviation.fuel.capacity,          label: { zh: 航空燃油容量, en: Aviation fuel capacity },      type: number, unit: t, group: aviation, compare: false, better: none, note: 全库暂无数据。来源一律只给体积（见 aviation.fuel.volume），换算重量属推断，不入库。 }
+  - { id: aviation.armament.stowage,       label: { zh: 航空弹药储量, en: Aviation ordnance stowage },  type: string, unit: null, group: aviation, compare: false, better: none, note: 鱼雷、炸弹、深水炸弹的分别储量，常被合成一句「N 吨」而失真 }
+  - { id: aviation.arrestor.count,         label: { zh: 拦阻索数, en: Arrestor wires },                type: integer, unit: count, group: aviation, compare: false, better: none }
+
+  # ===== construction =====
+  - { id: construction.builder,            label: { zh: 建造厂, en: Builder },                        type: string, unit: null, group: construction, compare: false, better: none }
+  - { id: construction.builder_location,   label: { zh: 建造地, en: Builder location },                type: string, unit: null, group: construction, compare: false, better: none }
+  - { id: construction.yard_number,        label: { zh: 船台/船坞号, en: Yard number },                type: string, unit: null, group: construction, compare: false, better: none }
+  - { id: construction.building_slip,      label: { zh: 建造船台, en: Building slip },                 type: string, unit: null, group: construction, compare: false, better: none }
+  - { id: construction.order_date,         label: { zh: 订货日期, en: Ordered },                       type: date, unit: date, group: construction, compare: false, better: none }
+  - { id: construction.laid_down,          label: { zh: 开工日期, en: Laid down },                     type: date, unit: date, group: construction, compare: false, better: none }
+  - { id: construction.launched,           label: { zh: 下水日期, en: Launched },                      type: date, unit: date, group: construction, compare: false, better: none }
+  - { id: construction.commissioned,       label: { zh: 服役日期, en: Commissioned },                  type: date, unit: date, group: construction, compare: false, better: none }
+  - { id: construction.fate_date,          label: { zh: 结局日期, en: Fate date },                     type: date, unit: date, group: construction, compare: false, better: none }
+  - { id: construction.fate_type,          label: { zh: 结局型式, en: Fate type },                     type: enum, unit: null, group: construction, compare: false, better: none, values: [sunk_by_enemy, sunk_by_scuttling, sunk_by_own_forces, sunk_cause_disputed, scuttled, scrapped, preserved, wrecked, expended_as_target, other] }
+  - { id: construction.cost,               label: { zh: 造价, en: Cost },                              type: number, unit: count, group: construction, compare: false, better: none, note: 币种与年份必须写进 note，否则数值无意义。 }
+  - { id: construction.building_time_days, label: { zh: 建造周期, en: Building time },                 type: integer, unit: count, group: construction, compare: false, better: none, note: 派生字段，由日期算出，不手填。 }
+
+  # ===== service =====
+  - { id: service.flag,                    label: { zh: 服役旗号, en: Flag },                          type: string, unit: null, group: service, compare: false, better: none }
+  - { id: service.unit,                    label: { zh: 所属编队, en: Unit assignment },               type: string, unit: null, group: service, compare: false, better: none, note: 每条一个编队，valid 窗口即隶属期。 }
+  - { id: service.commander,               label: { zh: 舰长, en: Commanding officer },                 type: string, unit: null, group: service, compare: false, better: none, note: 每条一人，valid 窗口即任期。任期来源冲突时并列，不裁。 }
+  - { id: service.complement.standard,     label: { zh: 平时编制, en: Complement (standard) },          type: integer, unit: persons, group: service, compare: true, better: none }
+  - { id: service.complement.wartime,      label: { zh: 战时编制, en: Complement (wartime) },           type: integer, unit: persons, group: service, compare: true, better: none }
+  - { id: service.complement.officers,     label: { zh: 军官数, en: Officers },                        type: integer, unit: persons, group: service, compare: false, better: none }
+  - { id: service.casualties,              label: { zh: 阵亡人数, en: Casualties },                     type: integer, unit: persons, group: service, compare: false, better: none, note: 与"生还人数"分列，且都常见多源冲突。 }
+  - { id: service.survivors,               label: { zh: 生还人数, en: Survivors },                     type: integer, unit: persons, group: service, compare: false, better: none }
+  - { id: service.fate_category,           label: { zh: 结局判定, en: Fate assessment },                type: string, unit: null, group: service, compare: false, better: none }
+  - { id: service.fate_authority,          label: { zh: 结局判定机构, en: Fate assessment authority }, type: string, unit: null, group: service, compare: false, better: none }
+
+  # ===== appearance =====
+  - { id: appearance.scheme,               label: { zh: 涂装方案, en: Camouflage scheme },             type: string, unit: null, group: appearance, compare: false, better: none, note: 每个方案一条 fact，valid 窗口即适用期。无适用期的涂装记录等于没有记录。 }
+  - { id: appearance.scheme_authority,     label: { zh: 涂装依据文件, en: Painting authority document }, type: string, unit: null, group: appearance, compare: false, better: none }
+  - { id: appearance.color.hull,           label: { zh: 舰体色, en: Hull colour },                     type: string, unit: null, group: appearance, compare: false, better: none }
+  - { id: appearance.color.superstructure, label: { zh: 上层建筑色, en: Superstructure colour },       type: string, unit: null, group: appearance, compare: false, better: none }
+  - { id: appearance.color.deck,           label: { zh: 甲板色, en: Deck colour },                     type: string, unit: null, group: appearance, compare: false, better: none }
+  - { id: appearance.color.boot_topping,   label: { zh: 水线带色, en: Boot topping },                  type: string, unit: null, group: appearance, compare: false, better: none }
+  - { id: appearance.marking,              label: { zh: 标识与欺骗涂装, en: Markings },                type: string, unit: null, group: appearance, compare: false, better: none, note: 假艏波、斜条纹、舰艏锚位涂装等。 }
+  - { id: appearance.insignia,             label: { zh: 舰徽/艇徽, en: Insignia },                     type: string, unit: null, group: appearance, compare: false, better: none }
+  - { id: appearance.turret_top_color,     label: { zh: 炮塔顶识别色, en: Turret top colour },         type: string, unit: null, group: appearance, compare: false, better: none, note: 空中识别涂装，模型制作者高频需要。 }
+  # 2026-11-19 为中途岛补：赤城左舷舰岛是罕见实验设计，飞龙右舷（两舰设计曾互换），
+  # 约克城级右舷。这是航母最有辨识度的外形差异之一，模型制作者改件的第一处就看这里。
+  # 用 enum 而不是 string：左/右/无这三个值是穷举的，自由文本没法比对。
+  - { id: appearance.island_position,      label: { zh: 舰岛位置, en: Island position },               type: enum, unit: null, group: appearance, compare: false, better: none, values: [starboard, port, none, other], note: 航母的舰岛在左舷还是右舷。赤城左舷（实验性设计）、飞龙右舷、约克城级右舷。战列舰不写此项。 }
+
+  # ===== media（applies_to: image；实体表在 P2 落地） =====
+  - { id: media.image.caption,             label: { zh: 图注, en: Caption },                         type: string, unit: null, group: media, compare: false, better: none, applies_to: [image] }
+  - { id: media.image.date_taken,          label: { zh: 拍摄日期, en: Date taken },                    type: date, unit: date, group: media, compare: false, better: none, applies_to: [image] }
+  - { id: media.image.location,            label: { zh: 拍摄地点, en: Location },                      type: string, unit: null, group: media, compare: false, better: none, applies_to: [image] }
+  - { id: media.image.view,                label: { zh: 视角, en: View },                             type: enum, unit: null, group: media, compare: false, better: none, applies_to: [image], values: [bow, stern, broadside, deck, overhead, detail, underwater, other] }
+  - { id: media.image.part,                label: { zh: 部位索引, en: Part index },                    type: enum, unit: null, group: media, compare: false, better: none, applies_to: [image], values: [turret, barbette, conning_tower, funnel, mast, bridge, superstructure, hull_side, hull_bottom, deck, aircraft_handling, catapult, crane, propeller, rudder, anchor, boat, funnel_uptake, other], note: 本站差异化功能：按部位找细节图。 }
+  - { id: media.image.institution,         label: { zh: 收藏机构, en: Holding institution },           type: string, unit: null, group: media, compare: false, better: none, applies_to: [image] }
+  - { id: media.image.photo_id,            label: { zh: 藏品号, en: Photo ID },                        type: string, unit: null, group: media, compare: false, better: none, applies_to: [image], note: 必填。授权跟着"这张具体的数字化副本"走，只记文件名等于没有授权链。 }
+  - { id: media.image.license,             label: { zh: 授权, en: Licence },                          type: enum, unit: null, group: media, compare: false, better: none, applies_to: [image], values: [pd, cc0, cc_by, cc_by_sa, non_commercial, editorial_only, unknown, prohibited] }
+  - { id: media.image.license_tier,        label: { zh: 授权档, en: Licence tier },                    type: enum, unit: null, group: media, compare: false, better: none, applies_to: [image], values: [A, B, C], note: A 归档 / B 外链 / C 禁用，见框架 5.4。 }
+  - { id: media.image.source_url,          label: { zh: 原始链接, en: Source URL },                    type: string, unit: null, group: media, compare: false, better: none, applies_to: [image] }
+
+  # ===== modelling（applies_to: kit；实体表在 P2 落地） =====
+  - { id: modelling.kit.manufacturer,      label: { zh: 套件厂商, en: Kit manufacturer },              type: string, unit: null, group: modelling, compare: false, better: none, applies_to: [kit] }
+  - { id: modelling.kit.number,            label: { zh: 套件编号, en: Kit number },                     type: string, unit: null, group: modelling, compare: false, better: none, applies_to: [kit] }
+  - { id: modelling.kit.scale,             label: { zh: 比例, en: Scale },                              type: string, unit: null, group: modelling, compare: false, better: none, applies_to: [kit], note: 写 1/350 而不是 350。 }
+  - { id: modelling.kit.release_year,      label: { zh: 发售年份, en: Release year },                   type: integer, unit: count, group: modelling, compare: false, better: none, applies_to: [kit] }
+  - { id: modelling.kit.status,            label: { zh: 生产状态, en: Production status },              type: enum, unit: null, group: modelling, compare: false, better: none, applies_to: [kit], values: [in_production, discontinued, unknown], note: 用枚举 + discontinued_at，不用 in_stock 布尔。 }
+  - { id: modelling.kit.discontinued_at,   label: { zh: 停产时间, en: Discontinued },                  type: date, unit: date, group: modelling, compare: false, better: none, applies_to: [kit] }
+  - { id: modelling.kit.material,          label: { zh: 材质, en: Material },                           type: enum, unit: null, group: modelling, compare: false, better: none, applies_to: [kit], values: [injection, resin, wood, photo_etch, 3d_print, mixed] }
+  - { id: modelling.kit.parts_count,       label: { zh: 零件数, en: Parts count },                      type: integer, unit: count, group: modelling, compare: false, better: none, applies_to: [kit] }
+  - { id: modelling.kit.represents_state,  label: { zh: 呈现状态, en: Represents state },               type: string, unit: null, group: modelling, compare: false, better: none, applies_to: [kit], note: 套件呈现的是哪个时间切片，模型制作者最关心的一项。 }
+  - { id: modelling.aftermarket.item,      label: { zh: 改造件, en: Aftermarket item },                 type: string, unit: null, group: modelling, compare: false, better: none, applies_to: [kit] }
+  - { id: modelling.conversion.note,       label: { zh: 改造参考, en: Conversion note },                type: string, unit: null, group: modelling, compare: false, better: none, applies_to: [kit] }

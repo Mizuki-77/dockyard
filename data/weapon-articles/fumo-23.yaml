@@ -1,0 +1,154 @@
+# ============================================================================
+# 武器正文 —— FuMO 23 海上搜索雷达（Seetakt 系列）
+#
+# 三条必须写清的：
+#  1) 旧编号 FMG 39G (gO) / (gP)，约 1943 年统一改成 FuMO 编号；
+#  2) 天线绰号 Matratzen（床垫），这是识别它的主要依据；
+#  3) 没有 PPI，只有 A-scope，所以一次只能看一个目标、方位精度有限。
+# 频率/功率/探测距离一律不写。
+# ============================================================================
+weapon: fumo-23
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      FuMO 23 是德国海军的海上搜索雷达，属 Seetakt 系列，
+      天线是那副有名的矩形「床垫」（Matratzen）。
+      它在提尔皮茨号 1941 年 2 月服役时就已经在舰上，共三台，
+      分别装在前桅、前部与后部测距仪塔上，其中后部那台的服役期一直延续到
+      1944 年 11 月 12 日舰沉。
+      在旧编号体系里它对应 FMG 39G 的 (gO) 与 (gP) 两个变体。
+    en: >-
+      The FuMO 23 was a German naval surface-search radar of the Seetakt series, carrying
+      the well-known rectangular "mattress" (Matratzen) antenna. It was already aboard
+      Tirpitz when she commissioned in February 1941, three sets in all, on the foretop,
+      the forward and the after rangefinder towers, the after one serving until the ship
+      was sunk on 12 November 1944. In the older designation system it corresponds to
+      the FMG 39G in its (gO) and (gP) variants.
+
+  paragraphs:
+    - heading: 编号换过一次，这件事本身就是它的一部分
+      text:
+        zh: >-
+          德国海军的雷达编号在战争中改过一次。专题站的德国雷达专文写：
+          约 1943 年，DeTe 时代的编号被一套统一体系取代，
+          按设备类型给字母、再加一个流水号；
+          旧号按新体系重新登记，FMG 39G (gO) 成为 FuMO 23、
+          FMG 39G (gP) 也成为 FuMO 23、FMG 39G (gL) 成为 FuMO 21。
+          也就是说「同一个 FuMO 23」在旧体系里对应两个变体编号，
+          而另一个变体被归到了 21。这一层如果省略，
+          读者会以为型号从战争一开始就叫 FuMO 23。
+        en: >-
+          German naval radar designations changed once during the war. The specialist
+          article on German radar states that in about 1943 the DeTe-era designations
+          were replaced by a unified system giving a letter for the equipment type plus a
+          running number, and that existing sets were re-registered under it: FMG 39G
+          (gO) became FuMO 23, FMG 39G (gP) became FuMO 23, and FMG 39G (gL) became
+          FuMO 21. The single name FuMO 23 therefore covers two variant numbers from the
+          old system, while a third variant went to the 21. Omitting this would leave the
+          impression that the set was called FuMO 23 from the start of the war.
+      src: [navweaps-radar]
+
+    - heading: 没有 PPI，所以主力舰要装三台
+      text:
+        zh: >-
+          专题站与 KBismarck 的技术页都指出同一件事：德国这批 FuMO 没有
+          PPI（平面位置显示器），只有 A-scope 显示。
+          后果是它们一次很难同时跟踪一个以上的目标，方位精度也有限。
+          KBismarck 由此给出一句直接的推论：缺 PPI 是德国战列舰
+          要在舰上装三台雷达、布置得如此重复的原因之一。
+          这一条把「为什么是三台」和「为什么是三处」解释清楚了——
+          不是冗余设计癖好，是显示器能力的限制逼出来的。
+        en: >-
+          Both the specialist article and KBismarck's technical page make the same
+          point: these German FuMO sets had no PPI display, only a simple A-scope. The
+          consequence is that they could hardly track more than one target at a time and
+          that bearings were not very accurate. KBismarck draws the direct inference:
+          the lack of PPI was one of the reasons German battleships carried three radars
+          and were fitted out so redundantly. That explains both "why three" and "why in
+          three places" - it was not a taste for redundancy but a limit imposed by the
+          display.
+      src: [navweaps-radar, kbismarck-firecontrol]
+
+    - heading: 天线尺寸是识别型号的主要办法
+      text:
+        zh: >-
+          德国雷达的型号识别在很大程度上靠天线。专题站的专文在开头就提醒：
+          照片里多数天线被特意转到端向，只能看出「有一副床垫天线」，
+          却看不清细节；后期的厘米波天线小到常被误认为方块或风速计；
+          反过来，舰上那个喇叭状的物件常被当成雷达，其实是雾笛。
+          在这种条件下，天线尺寸成了最硬的线索：
+          KBismarck 记 FuMO 23 的床垫天线约 2 米高、4 米宽；
+          专题站记提尔皮茨号后部测距仪塔上是 2×4 米的 FuMO 27、
+          前部 7 米测距仪塔上也是 FuMO 23。
+          本站因此把「靠天线判型」这件事本身写进正文，而不是只给结论。
+        en: >-
+          Identifying German radar marks depends heavily on the antenna. The specialist
+          article warns at the outset that in most photographs the antennas have been
+          deliberately turned end-on, so one can see that a mattress antenna is present
+          but cannot make out its details; that late-war centimetric antennas are small
+          enough to be mistaken for blocks or anemometers; and that, conversely, the
+          trumpet-shaped object on many ships is an acoustic fog-horn rather than a
+          radar. Against that, antenna dimensions are the hardest clue: KBismarck gives
+          the FuMO 23 mattress as roughly 2 m high by 4 m wide, and the specialist
+          article records a 2 x 4 m FuMO 27 antenna on Tirpitz's after rangefinder tower
+          with a FuMO 23 on the forward 7 m tower. This article therefore records the
+          practice of identifying by antenna rather than only the conclusion.
+      src: [navweaps-radar, kbismarck-firecontrol]
+
+history:
+  - id: service
+    title: { zh: 装舰与演进, en: Fitting and evolution }
+    range: { from: 1941-02, to: 1944-11 }
+    lead:
+      zh: >-
+        它在提尔皮茨号上待了将近四年，从服役到沉没，中途被 26 型逐步接替。
+      en: >-
+        It served in Tirpitz for nearly four years, from commissioning to the sinking,
+        being progressively superseded by the 26.
+    events:
+      - date: 1941-02-25
+        text:
+          zh: >-
+            提尔皮茨号服役，舰上装 3 台 FuMO 23。
+            三台的分布是前桅 10.5 米测距仪塔、前部 7 米测距仪塔、
+            后部 10.5 米测距仪塔。
+          en: >-
+            Tirpitz commissioned with three FuMO 23 sets: on the foretop 10.5 m
+            rangefinder tower, the forward 7 m tower and the after 10.5 m tower.
+        src: [kbismarck-tirpitz, navweaps-radar]
+      - date: 1943
+        text:
+          zh: >-
+            编号体系统一，FMG 39G (gO) 与 (gP) 正式改为 FuMO 23，
+            FMG 39G (gL) 改为 FuMO 21。此后文献一律用 FuMO 编号。
+          en: >-
+            The designation system was unified: FMG 39G (gO) and (gP) became FuMO 23 and
+            FMG 39G (gL) became FuMO 21. Thereafter the literature uses the FuMO numbers
+            throughout.
+        src: [navweaps-radar]
+      - date: 1944-01
+        text:
+          zh: >-
+            本舰这一年的雷达记录已是 3 台 FuMO 26 加 FuMO "Hohentwiel" 与
+            FuMO 213 "Würzburg-D"，23 型不再是主力。
+            但后部测距仪塔上的 FuMO 23 天线记录到 1944-11-12，
+            即它一直留到舰沉。
+          en: >-
+            By this year the ship's radar record reads three FuMO 26 sets plus a FuMO
+            "Hohentwiel" and a FuMO 213 "Würzburg-D"; the 23 was no longer the main set.
+            The FuMO 23 antenna on the after rangefinder tower is however recorded to
+            12 November 1944, so it stayed aboard until the ship was lost.
+        src: [kbismarck-tirpitz, navweaps-radar]
+      - date: 1944-11-12
+        text:
+          zh: >-
+            提尔皮茨号在 Tromsø 附近被击沉，舰上的 FuMO 23 随之损失。
+            专题站记后部测距仪塔的 FuMO 23 天线服役期为「1940-11-12 至 1944-11-12」
+            （原文如此，起点应为该塔建成时点）。
+          en: >-
+            Tirpitz was sunk near Tromso and her FuMO 23 sets were lost with her. The
+            specialist article records the after tower's FuMO 23 antenna as running from
+            1940 to 12 November 1944, the start being when that tower was completed.
+        src: [kbismarck-tirpitz, navweaps-radar]

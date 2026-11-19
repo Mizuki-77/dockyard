@@ -1,0 +1,156 @@
+---
+import Base from '../../layouts/Base.astro';
+import SideNav from '../../components/SideNav.astro';
+import { getOperations } from '../../lib/data';
+
+const ops = getOperations().slice().reverse();
+---
+
+<Base title="行动与战役序列">
+  <SideNav
+    slot="sidenav"
+    kicker="Operations"
+    title="行动序列"
+    items={[
+      { href: '/battles', label: '海战历史' },
+      { href: '/operations', label: '行动序列' },
+      { href: '/ships', label: '战舰信息' },
+      { href: '/weapons', label: '武器与装备' },
+    ]}
+    note="一场行动往往包含数场战斗。这里从行动看全局，从战斗看细节。"
+  />
+
+  <div class="pagehead">
+    <div class="pagehead__kicker">Operations</div>
+    <h1 class="pagehead__title">行动序列</h1>
+    <p class="pagehead__sub">
+      一场作战行动通常横跨数日、包含若干场独立交战。
+      行动页给出全局的意图与结果，每一站再点进去看逐分钟的细节。
+      {ops.length > 0 && `目前收录 ${ops.length} 场行动。`}
+    </p>
+  </div>
+
+  {
+    ops.length === 0 ? (
+      <div class="empty">还没有收录行动。</div>
+    ) : (
+      <div class="stack">
+        {ops.map((o) => {
+          const withBattle = (o.phases ?? []).filter((p) => p.battle).length;
+          return (
+            <a class="opcard" href={`/operations/${o.id}`}>
+              <div class="opcard__date">
+                <span class="opcard__year mono">{String(o.date?.from ?? '').slice(0, 4)}</span>
+                <span class="opcard__md mono">
+                  {String(o.date?.from ?? '').slice(5).replace('-', '.')}
+                  {o.date?.to && o.date.to !== o.date.from
+                    ? `–${String(o.date.to).slice(5).replace('-', '.')}`
+                    : ''}
+                </span>
+              </div>
+              <div class="opcard__body">
+                <h2 class="opcard__title">{o.name.zh}</h2>
+                <p class="opcard__en">{o.codename ?? o.name.en}</p>
+                {o.summary && <p class="opcard__summary">{o.summary.zh}</p>}
+                <div class="opcard__meta">
+                  <span class="tag tiny">{o.phases.length} 站</span>
+                  {withBattle > 0 && <span class="tag tag--ghost tiny">{withBattle} 场已建战史</span>}
+                  {(o.belligerents ?? []).map((s) => (
+                    <span class="tag tag--ghost tiny">{s.label.zh}</span>
+                  ))}
+                </div>
+              </div>
+              <span class="opcard__arrow" aria-hidden="true">→</span>
+            </a>
+          );
+        })}
+      </div>
+    )
+  }
+</Base>
+
+<style>
+  .opcard {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr) 24px;
+    gap: 20px;
+    padding: 20px 22px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.16s ease, box-shadow 0.16s ease;
+  }
+  .opcard:hover {
+    border-color: var(--line-strong);
+    box-shadow: var(--shadow-1);
+  }
+  .opcard__date {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-right: 18px;
+    border-right: 1px solid var(--line);
+  }
+  .opcard__year {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--navy-700);
+    letter-spacing: -0.01em;
+  }
+  .opcard__md {
+    font-size: 12px;
+    color: var(--ink-300);
+  }
+  .opcard__title {
+    font-size: 18px;
+    font-weight: 680;
+    color: var(--ink-900);
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .opcard__en {
+    margin: 3px 0 0;
+    font-size: 11.5px;
+    color: var(--ink-300);
+    letter-spacing: 0.04em;
+  }
+  .opcard__summary {
+    margin: 9px 0 0;
+    font-size: 13px;
+    line-height: 1.72;
+    color: var(--ink-500);
+  }
+  .opcard__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 11px;
+  }
+  .opcard__arrow {
+    align-self: center;
+    color: var(--blue-400);
+    font-size: 15px;
+    transition: transform 0.16s ease;
+  }
+  .opcard:hover .opcard__arrow {
+    transform: translateX(4px);
+  }
+  @media (max-width: 720px) {
+    .opcard {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 12px;
+    }
+    .opcard__date {
+      flex-direction: row;
+      align-items: baseline;
+      gap: 8px;
+      padding-right: 0;
+      border-right: 0;
+    }
+    .opcard__arrow {
+      display: none;
+    }
+  }
+</style>

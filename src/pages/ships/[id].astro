@@ -1,0 +1,1114 @@
+---
+// ============================================================================
+// 单舰档案页。章节顺序按用户的意见定：
+//   总图 → 简介 → 武器配置 → 历史 → 状态时间轴 → 详细参数 → 争议
+// 时间轴放在「详细参数」之前，因为它是参数的另一种读法（按时间读），
+// 而不是参数表的一部分。
+// ============================================================================
+import Base from '../../layouts/Base.astro';
+import SideNav from '../../components/SideNav.astro';
+import {
+  buildShipView,
+  buildTimelinePayload,
+  getNarratives,
+  getBattles,
+  getArticle,
+  getField,
+  getGroups,
+  getShips,
+  getEntities,
+  getClass,
+  getSource,
+  getImagesFor,
+  primaryImage,
+  imageCredit,
+  mergeFactRows,
+  displayDate,
+  primaryValue,
+  enumLabel,
+} from '../../lib/data';
+
+export function getStaticPaths() {
+  return getShips().map((s) => ({ params: { id: s.id } }));
+}
+
+const { id } = Astro.params;
+const view = buildShipView(id!)!;
+const cls = view.classId ? getClass(view.classId) : undefined;
+const payload = buildTimelinePayload(view);
+const entities = getEntities(cls);
+const narratives = getNarratives(view.id);
+const article = getArticle(view.id);
+const groups = getGroups();
+
+const hero = primaryImage(`ship:${view.id}`);
+const gallery = getImagesFor(`ship:${view.id}`).filter((i) => i.id !== hero?.id);
+
+const battles = getBattles().filter((b) =>
+  (b.belligerents ?? []).some((side) =>
+    (side.ships ?? []).some((s) => s.ship_id === view.id),
+  ),
+);
+
+const navItems = [
+  { href: '#intro', label: '简介' },
+  ...(entities.weapons.length > 0 ? [{ href: '#armament', label: '武器配置' }] : []),
+  ...(article?.history?.length ? [{ href: '#history', label: '历史' }] : []),
+  { href: '#timeline', label: '状态时间轴' },
+  { href: '#specs', label: '详细参数' },
+  ...(narratives.length > 0 ? [{ href: '#disputes', label: '争议' }] : []),
+];
+
+/** 来源 id 渲染成带层级角标的小标签，指向原始页面。 */
+function srcLink(sid: string) {
+  const s = getSource(sid);
+  if (!s) return { id: sid, title: sid, url: undefined, tier: 'E' };
+  return { id: sid, title: s.title, url: s.url, tier: s.tier };
+}
+
+// 归类标签：时代 / 舰种 / 国家。三者都取自同一套取值，
+// 分类树用的是同一批数据，页面上得能对上号。
+// 舰名后面要不要再补一个「号」字。
+// 德英舰名是裸名（Bismarck / Hood / King George V），中文习惯加「号」：
+// 俾斯麦号、胡德号。但日美舰名本身已是完整称谓——「企业号」「赤城」，
+// 再补一个就变成「企业号号」。判据：名字已经以「号」结尾就不补。
+const nameSuffix = view.name.zh.endsWith('号') ? '' : '号';
+const displayName = view.name.zh + nameSuffix;
+
+const era = primaryValue(view.id, 'identity.era');
+const shipType = primaryValue(view.id, 'identity.ship_type');
+const nation = primaryValue(view.id, 'identity.nation');
+---
+
+<Base title={displayName}>
+  <SideNav
+    slot="sidenav"
+    kicker={view.className?.en ?? 'Ship'}
+    title={view.name.zh}
+    items={navItems}
+    note="本页按「总图 → 简介 → 武器配置 → 历史 → 详细参数」排列，最后是还没定论的问题。"
+  />
+
+  <nav class="crumbs">
+    <a href="/">主页</a>
+    <span class="sep">/</span>
+    <a href="/ships">战舰信息</a>
+    <span class="sep">/</span>
+    {view.classId && (
+      <>
+        <a href={`/classes/${view.classId}`}>{view.className?.zh}</a>
+        <span class="sep">/</span>
+      </>
+    )}
+    <span>{view.name.zh}</span>
+  </nav>
+
+  <!-- ============================== 总图 ============================== -->
+  <figure class="shiphero">
+    <div class="shiphero__media">
+      {hero?.file ? (
+        <img src={hero.file} alt={hero.title.zh} />
+      ) : (
+        <div class="shiphero__noimg">
+          <svg viewBox="0 0 640 168" class="shiphero__svg" role="img" aria-label={`${view.name.zh}侧视轮廓示意`}>
+            <path d="M44 118 L58 104 L520 100 L578 96 L604 108 L606 118 Z" />
+            <path d="M58 104 L520 100" />
+            <path d="M120 104 L120 92 L180 92 L180 100" />
+            <path d="M196 104 L196 86 L262 86 L262 100" />
+            <path d="M296 100 L296 62 L318 54 L340 62 L340 100" />
+            <path d="M356 100 L356 74 L392 74 L392 100" />
+            <path d="M404 100 L404 68 L438 68 L438 100" />
+            <path d="M188 92 l0 -22 M224 92 l0 -22" />
+            <path d="M436 100 l0 -20 M472 100 l0 -20" />
+            <path d="M40 140 L610 134" stroke-dasharray="7 6" />
+          </svg>
+          <div class="shiphero__noimgtext">配图待补 · 此处将放置该舰公有领域或已授权照片</div>
+        </div>
+      )}
+    </div>
+    <figcaption class="shiphero__cap">
+      <span class="shiphero__captitle">
+        {hero ? hero.title.zh : `${displayName} 侧视轮廓（示意图，非照片）`}
+      </span>
+      {hero ? (
+        <span class="shiphero__credit">
+          {imageCredit(hero)}
+          {hero.source_url && (
+            <>
+              {' · '}
+              <a href={hero.source_url} target="_blank" rel="noopener noreferrer">原始页面</a>
+            </>
+          )}
+          <span class:list={['tag', 'tiny', `tag--lic-${hero.license_tier}`]}>
+            授权 {hero.license_tier} 档
+          </span>
+        </span>
+      ) : (
+        <span class="shiphero__credit">
+          图片来源按授权分三档：A 档可归档，B 档外链并署名，C 档不使用。
+        </span>
+      )}
+    </figcaption>
+  </figure>
+
+  <div class="pagehead pagehead--tight">
+    <div class="pagehead__kicker">Ship record · {view.name.en}</div>
+    <h1 class="pagehead__title">
+      {displayName}
+      {view.className && <span class="pagehead__badge">{view.className.zh}</span>}
+    </h1>
+    <div class="pagehead__meta">
+      {era && <span class="tag tag--ghost">{enumLabel(era, 'zh')}</span>}
+      {shipType && <span class="tag tag--ghost">{enumLabel(shipType, 'zh')}</span>}
+      {nation && <span class="tag tag--ghost">{enumLabel(nation, 'zh')}</span>}
+      <span class="tag tag--dark">{view.facts.length} 条数据</span>
+      {narratives.length > 0 && <span class="tag tag--warn">{narratives.length} 条存疑</span>}
+      <span class="tag tag--ghost">时间跨度 {view.range.from} → {view.range.to}</span>
+    </div>
+  </div>
+
+  <!-- ============================== 简介 ============================== -->
+  {
+    article?.intro && (
+      <section class="section" id="intro">
+        <div class="section__head">
+          <h2 class="section__title">简介</h2>
+          <span class="section__en">Introduction</span>
+        </div>
+
+        {article.intro.lead && <p class="lead">{article.intro.lead.zh}</p>}
+
+        {(article.intro.paragraphs ?? []).map((p) => (
+          <div class="prose">
+            {p.heading && <h3 class="prose__h">{p.heading}</h3>}
+            <p class="prose__p">{p.text.zh}</p>
+            {p.src && p.src.length > 0 && (
+              <div class="srcline">
+                {p.src.map((sid) => {
+                  const s = srcLink(sid);
+                  return (
+                    <a class="srcchip" href={s.url} target="_blank" rel="noopener noreferrer">
+                      <span class={`conf conf--${s.tier}`}>{s.tier}</span>
+                      {s.title}
+                    </a>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        ))}
+
+        {!article.intro.paragraphs?.length && (
+          <p class="muted small">这一舰的简介还在写。数据部分已经可用。</p>
+        )}
+      </section>
+    )
+  }
+
+  <!-- ============================ 武器配置 ============================ -->
+  {
+    entities.weapons.length > 0 && (
+      <section class="section" id="armament">
+        <div class="section__head">
+          <h2 class="section__title">武器配置</h2>
+          <span class="section__en">Armament</span>
+          <span class="section__aside">{entities.weapons.length} 种</span>
+        </div>
+        <p class="section__sub">
+          按武器型号分组，每组下面是这型炮在舰上的具体炮位。
+          参数里凡是能随时间变化的（比如炮塔测距仪），都标了生效区间。
+        </p>
+
+        <div class="stack">
+          {entities.weapons.map((w) => (
+            <div class="weapon">
+              <div class="weapon__head">
+                <h3 class="weapon__title">{w.label}</h3>
+                <span class="tag tag--ghost">{w.facts.length} 条参数</span>
+              </div>
+              <div class="weapon__body">
+                <div class="weapon__facts">
+                  {mergeFactRows(w.facts).map((r) => {
+                    const def = getField(r.field);
+                    if (!def) return null;
+                    return (
+                      <div class="datarow datarow--tight">
+                        <div class="datarow__k datarow__k--wrap">{def.label.zh}</div>
+                        <div
+                          class:list={[
+                            'datarow__v',
+                            { 'datarow__v--long': r.text.length > 42 },
+                          ]}
+                        >
+                          {r.pairs.length > 0 ? (
+                            <span class="pairlist">
+                              {r.pairs.map((p) => (
+                                <span class="pair">
+                                  <span class="pair__q">{p.q}</span>
+                                  <span class="pair__t">{p.t}</span>
+                                </span>
+                              ))}
+                            </span>
+                          ) : (
+                            r.text
+                          )}
+                          {r.disputed && <span class="tag tag--warn tiny">存在争议</span>}
+                        </div>
+                        <div class="datarow__meta">
+                          {r.conf && <span class={`conf conf--${r.conf}`}>{r.conf}</span>}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+                {w.mounts.length > 0 && (
+                  <div class="mountbox">
+                    <div class="mountbox__title">炮位</div>
+                    {w.mounts.map((m) => (
+                      <div class="mountbox__row">
+                        <span class="mountbox__name">{m.label}</span>
+                        <span class="mountbox__n">{m.facts.length} 条</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <!-- ============================== 历史 ============================== -->
+  {
+    article?.history && article.history.length > 0 && (
+      <section class="section" id="history">
+        <div class="section__head">
+          <h2 class="section__title">历史</h2>
+          <span class="section__en">History</span>
+          <span class="section__aside">
+            {article.history.reduce((n, s) => n + (s.events?.length ?? 0), 0)} 条事件
+          </span>
+        </div>
+
+        <div class="hist">
+          {article.history.map((sec) => (
+            <div class="hist__sec">
+              <div class="hist__head">
+                <h3 class="hist__title">{sec.title.zh}</h3>
+                {sec.range && (
+                  <span class="hist__range mono">
+                    {displayDate(sec.range.from)}
+                    {sec.range.to ? ` — ${displayDate(sec.range.to)}` : ' 起'}
+                  </span>
+                )}
+              </div>
+              {sec.lead && <p class="hist__lead">{sec.lead.zh}</p>}
+              <div class="hist__events">
+                {(sec.events ?? []).map((ev) => (
+                  <div class="hist__ev">
+                    <div class="hist__date mono">{displayDate(ev.date)}</div>
+                    <div class="hist__text">
+                      {ev.text.zh}
+                      {ev.src && ev.src.length > 0 && (
+                        <div class="srcline srcline--inline">
+                          {ev.src.map((sid) => {
+                            const s = srcLink(sid);
+                            return (
+                              <a
+                                class="srcchip srcchip--sm"
+                                href={s.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title={s.title}
+                              >
+                                <span class={`conf conf--${s.tier}`}>{s.tier}</span>
+                                {s.id}
+                              </a>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {battles.length > 0 && (
+          <div class="btllist">
+            <div class="btllist__title">相关战役</div>
+            {battles.map((b) => (
+              <a class="btlrow" href={`/battles/${b.id}`}>
+                <span class="btlrow__date mono">{b.date.from}</span>
+                <span class="btlrow__body">
+                  <span class="btlrow__name">{b.name.zh}</span>
+                  <span class="btlrow__en">{b.name.en}</span>
+                </span>
+                <span class="btlrow__n">{b.timeline.length} 个事件</span>
+                <span class="btlrow__arrow" aria-hidden="true">→</span>
+              </a>
+            ))}
+          </div>
+        )}
+      </section>
+    )
+  }
+
+  <!-- ============================ 状态时间轴 ============================ -->
+  <section class="section" id="timeline">
+    <div class="section__head">
+      <h2 class="section__title">状态时间轴</h2>
+      <span class="section__en">State timeline</span>
+      <span class="section__aside">拖动横条或点切片</span>
+    </div>
+    <p class="section__sub">
+      同一艘舰在不同日期的参数并不同。拖动横条，下面只显示该时刻成立的取值。
+      没显示出来不代表是 0，而是「未记载」。
+    </p>
+
+    <div class="timeline" id="tl">
+      <div class="timeline__head">
+        <span class="timeline__date" id="tl-date">{payload.range.from}</span>
+        <span class="timeline__slice" id="tl-slice"></span>
+      </div>
+
+      <div class="timeline__body">
+        <div class="tl-track">
+          <div class="tl-rail"></div>
+          <div class="tl-fill" id="tl-fill"></div>
+          <div class="tl-knob" id="tl-knob"></div>
+          <input
+            class="tl-range"
+            id="tl-range"
+            type="range"
+            min="0"
+            max="1000"
+            value="0"
+            step="1"
+            aria-label="时间轴：拖动查看不同日期的状态"
+          />
+        </div>
+        <div class="tl-labels" id="tl-labels"></div>
+        <div class="tl-slices" id="tl-slices"></div>
+
+        <!-- 当前切片对应的照片。放在切片条与字段表之间：
+             读者的视线是「拖到哪个时期 → 那是艘什么状态的船 → 那时期的数据」，
+             图正好卡在这个顺序上。 -->
+        <figure class="tl-pic" id="tl-pic" hidden>
+          <img id="tl-pic-img" alt="" loading="lazy" />
+          <figcaption>
+            <span class="tl-pic__t" id="tl-pic-title"></span>
+            <span class="tl-pic__c">
+              <span id="tl-pic-credit"></span>
+              <span class="tag tiny" id="tl-pic-tier"></span>
+              <a id="tl-pic-url" target="_blank" rel="noopener noreferrer" hidden>原始页面</a>
+            </span>
+            <span class="tl-pic__n" id="tl-pic-note"></span>
+          </figcaption>
+        </figure>
+
+        <label class="tl-toggle">
+          <input type="checkbox" id="tl-all" />
+          <span>显示全部字段（默认只显示会随时间变化的）</span>
+        </label>
+      </div>
+
+      <div class="tl-body" id="tl-body">
+        <div class="empty">
+          <div class="empty__title">载入中</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script define:vars={{ payload }}>
+    const boxes = document.getElementById('tl-body');
+    const rangeInput = document.getElementById('tl-range');
+    const dateEl = document.getElementById('tl-date');
+    const sliceEl = document.getElementById('tl-slice');
+    const fillEl = document.getElementById('tl-fill');
+    const knobEl = document.getElementById('tl-knob');
+    const labelsEl = document.getElementById('tl-labels');
+    const chipsEl = document.getElementById('tl-slices');
+    const allToggle = document.getElementById('tl-all');
+
+    // DAY 必须在任何调用 num() 之前初始化：const 是 TDZ，
+    // 写在 from 之后会让整个脚本抛 "Cannot access 'DAY' before initialization"。
+    const DAY = 86400000;
+
+    const from = num(payload.range.from);
+    const to = num(payload.range.to);
+    const MIN = from;
+    const MAX = to === from ? from + 1 : to;
+
+    // 日期一律换算成「距 1970-01-01 的天数」。不能把 YYYYMMDD 当十进制数
+    // 直接加减：那样 19351116 + 14949 会算出 19366065，刻度年份全错。
+    function num(s) {
+      if (!s) return 99999999;
+      const p = String(s).split('-').map((x) => parseInt(x, 10));
+      return Date.UTC(p[0] || 1900, (p[1] || 1) - 1, p[2] || 1) / DAY;
+    }
+    function numToDate(n) {
+      const d = new Date(Math.round(n) * DAY);
+      const pad = (x) => String(x).padStart(2, '0');
+      return `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`;
+    }
+    function hit(win, t) {
+      const a = win.from ? num(win.from) : -Infinity;
+      const b = win.to ? num(win.to) : Infinity;
+      return a <= t && t <= b;
+    }
+    function pct(t) {
+      return Math.max(0, Math.min(100, ((t - MIN) / (MAX - MIN)) * 100));
+    }
+
+    const ticks = [];
+    for (let i = 0; i <= 4; i++) ticks.push(MIN + ((MAX - MIN) * i) / 4);
+    labelsEl.innerHTML = ticks
+      .map((t) => `<span style="left:${pct(t)}%">${numToDate(t).slice(0, 7)}</span>`)
+      .join('');
+
+    if (payload.slices?.length) {
+      chipsEl.innerHTML = payload.slices
+        .map(
+          (s, i) =>
+            `<button class="tl-chip" data-i="${i}">` +
+            (s.pic
+              ? `<img class="tl-chip__pic" src="${s.pic.file}" alt="" loading="lazy" />`
+              : `<span class="tl-chip__nop">无图</span>`) +
+            `<span class="tl-chip__body"><span class="tl-chip__code">${s.code}</span>${s.title}</span>` +
+            `</button>`,
+        )
+        .join('');
+      chipsEl.querySelectorAll('.tl-chip').forEach((b) => {
+        b.addEventListener('click', () => {
+          const s = payload.slices[+b.dataset.i];
+          setT(num(s.from) + 1);
+        });
+      });
+    }
+
+    const picEl = document.getElementById('tl-pic');
+    const picImg = document.getElementById('tl-pic-img');
+    const picTitle = document.getElementById('tl-pic-title');
+    const picCredit = document.getElementById('tl-pic-credit');
+    const picTier = document.getElementById('tl-pic-tier');
+    const picUrl = document.getElementById('tl-pic-url');
+    const picNote = document.getElementById('tl-pic-note');
+
+    /**
+     * 切片换图。没有图的切片要显式藏起来，不能留着上一片的老图——
+     * 那会让人以为 1955 年退役时舰还是 1940 年那个样子。
+     */
+    function showSlicePic(s) {
+      const pic = s?.pic;
+      if (!picEl) return;
+      if (!pic) {
+        picEl.hidden = true;
+        return;
+      }
+      picEl.hidden = false;
+      picImg.src = pic.file;
+      picImg.alt = pic.title;
+      picTitle.textContent = pic.title;
+      picCredit.textContent = pic.credit || '';
+      picTier.textContent = pic.tier + ' 档';
+      picTier.className = 'tag tag--lic-' + pic.tier + ' tiny';
+      if (pic.url) {
+        picUrl.href = pic.url;
+        picUrl.hidden = false;
+      } else {
+        picUrl.hidden = true;
+      }
+      // 只有「窗外最近一张」才需要提示；窗内的照片本来就是这个时期的样子。
+      picNote.textContent =
+        pic.how === 'nearest'
+          ? '该时期内没有已归档的照片，这是时间上最接近的一张。' + (pic.note ? ' ' + pic.note : '')
+          : pic.note || '';
+    }
+
+    function currentSlice(t) {
+      return (payload.slices ?? []).find((s) => {
+        const a = num(s.from);
+        const b = s.to ? num(s.to) : Infinity;
+        return a <= t && t <= b;
+      });
+    }
+
+    function render(t) {
+      const showAll = allToggle?.checked;
+      const rows = [];
+      for (const g of payload.groups) {
+        const fields = payload.fields.filter((f) => f.group === g.id);
+        const live = [];
+        for (const f of fields) {
+          // 默认只显示会变的字段：全长 250.5 m 这种一辈子一个值，列出来是噪音。
+          if (!showAll && f.windows.length < 2) continue;
+          const ws = f.windows.filter((w) => hit(w, t));
+          if (ws.length === 0) continue;
+          live.push({ f, ws });
+        }
+        if (live.length === 0) continue;
+        rows.push(
+          `<div class="tl-group"><div class="tl-group__title">${g.label.zh}<span>${g.label.en}</span></div>` +
+            live
+              .map(
+                ({ f, ws }) =>
+                  `<div class="datarow"><div class="datarow__k">${f.label.zh}</div>` +
+                  `<div class="datarow__v">${ws.map((w) => w.text).join(' <span class="muted">/</span> ')}` +
+                  (ws.some((w) => w.disputed)
+                    ? `<span class="tag tag--warn tiny">存在争议</span>`
+                    : '') +
+                  `</div>` +
+                  `<div class="datarow__meta">${
+                    ws[0].conf ? `<span class="conf conf--${ws[0].conf}">${ws[0].conf}</span>` : ''
+                  }</div></div>`,
+              )
+              .join('') +
+            `</div>`,
+        );
+      }
+      boxes.innerHTML =
+        rows.length > 0
+          ? rows.join('')
+          : `<div class="empty"><div class="empty__title">这一天没有记录</div><div class="empty__text">数据里没有覆盖该日期的时间窗。这不是「没有」，是「未记载」。</div></div>`;
+    }
+
+    let lastT = -1;
+    function setT(t) {
+      t = Math.max(MIN, Math.min(MAX, Math.round(t)));
+      if (t === lastT) return;
+      lastT = t;
+      dateEl.textContent = numToDate(t);
+      const p = pct(t);
+      fillEl.style.width = p + '%';
+      knobEl.style.left = p + '%';
+      rangeInput.value = String(Math.round(((t - MIN) / (MAX - MIN)) * 1000));
+      const s = currentSlice(t);
+      sliceEl.textContent = s ? `${s.code} · ${s.title}` : '';
+      chipsEl.querySelectorAll('.tl-chip').forEach((b, i) => {
+        b.classList.toggle('tl-chip--on', !!s && payload.slices[i].code === s.code);
+      });
+      showSlicePic(s);
+      render(t);
+    }
+
+    rangeInput.addEventListener('input', () => {
+      const v = +rangeInput.value;
+      setT(MIN + ((MAX - MIN) * v) / 1000);
+    });
+
+    allToggle?.addEventListener('change', () => {
+      const keep = lastT;
+      lastT = -1;
+      setT(keep);
+    });
+
+    // 默认定位：优先 S3（俾斯麦号"全战备"那一刀），没有就取跨度最长的一刀。
+    // 用 S3 写死是因为它是读者最想看的状态；但不能只认 S3——
+    // 提尔皮茨的切片编号是 T0–T6，硬套 S3 会退到 MIN（1936 年开工日），
+    // 一进来就是一片空白。跨度最长的切片通常就是"它最有代表性的那段常态"。
+    // （这里的 script 是纯 JS 不是 TS，写不了 `!` 断言，故先过滤再取。）
+    const slicesArr = payload.slices ?? [];
+    const closed = slicesArr
+      .filter((s) => s.to)
+      .sort((a, b) => num(b.to) - num(b.from) - (num(a.to) - num(a.from)));
+    const pick = slicesArr.find((s) => s.code === 'S3') ?? closed[0];
+    setT(pick ? num(pick.from) + 1 : MIN);
+  </script>
+
+  <!-- ============================ 详细参数 ============================ -->
+  <section class="section" id="specs">
+    <div class="section__head">
+      <h2 class="section__title">详细参数</h2>
+      <span class="section__en">Characteristics</span>
+    </div>
+    <p class="section__sub">
+      下面列出全生命期出现过的所有取值。同一字段出现多行，说明它在服役期间变过，
+      或者不同来源给出的数不一样。
+    </p>
+
+    {
+      groups.map((g) => {
+        const fields = payload.fields.filter((f) => f.group === g.id);
+        if (fields.length === 0) return null;
+        return (
+          <div class="group-block">
+            <div class="group-block__title">
+              {g.label.zh}
+              <span>{g.label.en}</span>
+            </div>
+            {fields.map((f) => (
+              <div class="datarow">
+                <div class="datarow__k">{f.label.zh}</div>
+                <div
+                  class:list={[
+                    'datarow__v',
+                    { 'datarow__v--long': f.windows.some((w) => w.text.length > 42) },
+                  ]}
+                >
+                  {f.windows.map((w, i) => (
+                    <>
+                      {i > 0 && <span class="muted"> · </span>}
+                      <span class={w.disputed ? 'is-disputed' : ''}>{w.text}</span>
+                      {f.windows.length > 1 && (w.from || w.to) && (
+                        <span class="tiny muted">
+                          （{w.from ?? '—'} ~ {w.to ?? '今'}）
+                        </span>
+                      )}
+                    </>
+                  ))}
+                </div>
+                <div class="datarow__meta">
+                  {f.windows[0]?.conf && (
+                    <span class={`conf conf--${f.windows[0].conf}`}>{f.windows[0].conf}</span>
+                  )}
+                  {f.windows.some((w) => w.disputed) && (
+                    <span class="tag tag--warn tiny">存在争议</span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        );
+      })
+    }
+  </section>
+
+  <!-- ============================== 争议 ============================== -->
+  {
+    narratives.length > 0 && (
+      <section class="section" id="disputes">
+        <div class="section__head">
+          <h2 class="section__title">存在争议的问题</h2>
+          <span class="section__en">Contested</span>
+          <span class="section__aside">{narratives.length} 条</span>
+        </div>
+        <p class="section__sub">
+          这些问题的不同说法并列保留，不做裁决。标蓝的是学界主流看法，但它不是定论。
+        </p>
+        {narratives.map((n) => (
+          <details class="narrative">
+            <summary>
+              <span class="tag tag--warn tiny">{n.positions.length} 种说法</span>
+              {n.question.zh}
+            </summary>
+            <div class="narrative__body">
+              {n.positions.map((p) => (
+                <div
+                  class={`position ${p.id === n.current_consensus ? 'position--consensus' : ''}`}
+                >
+                  <div class="position__head">
+                    <span class="position__claim">{p.claim.zh}</span>
+                    {p.id === n.current_consensus && <span class="tag tiny">主流</span>}
+                    <span class="position__by">{p.held_by}</span>
+                  </div>
+                  {p.evidence && <p class="position__text">{p.evidence}</p>}
+                </div>
+              ))}
+              {n.note && (
+                <div class="note">
+                  <strong>为什么没有定论：</strong>
+                  {n.note}
+                </div>
+              )}
+            </div>
+          </details>
+        ))}
+      </section>
+    )
+  }
+
+  <!-- ============================== 图集 ============================== -->
+  {
+    gallery.length > 0 && (
+      <section class="section" id="gallery">
+        <div class="section__head">
+          <h2 class="section__title">图片</h2>
+          <span class="section__en">Photographs</span>
+          <span class="section__aside">{gallery.length} 张</span>
+        </div>
+        <div class="gallery">
+          {gallery.map((img) => (
+            <figure class="gallery__item">
+              {img.file ? (
+                <a href={img.source_url} target="_blank" rel="noopener noreferrer">
+                  <img src={img.file} alt={img.title.zh} loading="lazy" />
+                </a>
+              ) : (
+                <div class="gallery__noimg">外链图 · 未归档</div>
+              )}
+              <figcaption>
+                <span class="gallery__title">{img.title.zh}</span>
+                <span class="gallery__credit">
+                  {imageCredit(img)}
+                  <span class:list={['tag', 'tiny', `tag--lic-${img.license_tier}`]}>
+                    {img.license_tier}
+                  </span>
+                </span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+    )
+  }
+</Base>
+
+<style>
+  /* ---------------------------------------------------------- 总图 */
+  .shiphero {
+    margin: 0 0 22px;
+  }
+  .shiphero__media {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: linear-gradient(150deg, var(--navy-900), var(--navy-700));
+    box-shadow: var(--shadow-md);
+  }
+  .shiphero__media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 460px;
+    object-fit: cover;
+  }
+  .shiphero__noimg {
+    padding: 28px 20px 30px;
+    position: relative;
+  }
+  .shiphero__svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    fill: none;
+    stroke: rgba(134, 192, 226, 0.62);
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .shiphero__svg path:nth-child(n + 4) {
+    stroke: rgba(216, 233, 245, 0.4);
+    stroke-width: 1.4;
+  }
+  .shiphero__noimgtext {
+    margin-top: 14px;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 0.03em;
+    color: rgba(179, 215, 236, 0.5);
+  }
+  .shiphero__cap {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 9px 2px 0;
+  }
+  .shiphero__captitle {
+    font-size: 12.5px;
+    font-weight: 620;
+    color: var(--ink-700);
+  }
+  .shiphero__credit {
+    font-size: 10.5px;
+    color: var(--ink-400);
+    line-height: 1.6;
+  }
+  .shiphero__credit a {
+    color: var(--blue-700);
+  }
+
+  .pagehead--tight {
+    margin-bottom: 26px;
+  }
+
+  /* ---------------------------------------------------------- 正文 */
+  .prose {
+    margin-bottom: 22px;
+  }
+  .prose__h {
+    font-size: 15px;
+    font-weight: 680;
+    color: var(--ink-900);
+    margin: 0 0 7px;
+    padding-left: 11px;
+    position: relative;
+  }
+  .prose__h::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.3em;
+    bottom: 0.3em;
+    width: 3px;
+    border-radius: 2px;
+    background: var(--blue-400);
+  }
+  .prose__p {
+    font-size: 14px;
+    line-height: 1.95;
+    color: var(--ink-700);
+    margin: 0;
+    max-width: 76ch;
+  }
+
+  .srcline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 9px;
+  }
+  .srcline--inline {
+    margin-top: 6px;
+  }
+  .srcchip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 9px 3px 4px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--paper);
+    font-size: 11px;
+    color: var(--ink-500);
+    text-decoration: none;
+    max-width: 320px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: border-color 0.14s ease, color 0.14s ease;
+  }
+  .srcchip:hover {
+    border-color: var(--blue-300);
+    color: var(--blue-700);
+    text-decoration: none;
+  }
+  .srcchip--sm {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    padding: 2px 8px 2px 3px;
+  }
+
+  /* ---------------------------------------------------------- 武器 */
+  .weapon {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    overflow: hidden;
+  }
+  .weapon__head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 15px;
+    background: linear-gradient(150deg, var(--blue-50), var(--white));
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .weapon__title {
+    font-size: 14.5px;
+    font-weight: 680;
+    color: var(--ink-900);
+    margin: 0;
+  }
+  .weapon__body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 190px;
+    gap: 0;
+  }
+  .weapon__facts {
+    padding: 6px 15px 12px;
+    min-width: 0;
+  }
+  .datarow--tight {
+    padding: 7px 0;
+  }
+  .mountbox {
+    border-left: 1px solid var(--line-soft);
+    padding: 11px 14px;
+    background: var(--paper);
+  }
+  .mountbox__title {
+    font-size: 9.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-400);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .mountbox__row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 5px 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: 12px;
+  }
+  .mountbox__row:last-child {
+    border-bottom: 0;
+  }
+  .mountbox__name {
+    color: var(--ink-700);
+    font-weight: 600;
+  }
+  .mountbox__n {
+    color: var(--ink-300);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  /* ---------------------------------------------------------- 历史 */
+  .hist__sec {
+    margin-bottom: 30px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .hist__sec:last-child {
+    border-bottom: 0;
+  }
+  .hist__head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .hist__title {
+    font-size: 16px;
+    font-weight: 680;
+    color: var(--ink-900);
+    margin: 0;
+  }
+  .hist__range {
+    font-size: 10.5px;
+    color: var(--blue-700);
+    background: var(--blue-50);
+    border: 1px solid var(--blue-100);
+    border-radius: 999px;
+    padding: 2px 9px;
+  }
+  .hist__lead {
+    font-size: 13px;
+    line-height: 1.85;
+    color: var(--ink-500);
+    margin: 0 0 16px;
+    max-width: 74ch;
+  }
+  .hist__events {
+    position: relative;
+  }
+  .hist__ev {
+    display: grid;
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 14px;
+    padding: 9px 0 9px 0;
+    border-top: 1px dashed var(--line-soft);
+  }
+  .hist__ev:first-child {
+    border-top: 0;
+  }
+  .hist__date {
+    font-size: 11px;
+    color: var(--blue-700);
+    font-weight: 600;
+    padding-left: 12px;
+    position: relative;
+    padding-top: 2px;
+  }
+  .hist__date::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--blue-400);
+  }
+  .hist__text {
+    font-size: 13.5px;
+    line-height: 1.85;
+    color: var(--ink-700);
+  }
+
+  .btllist {
+    margin-top: 6px;
+  }
+  .btllist__title {
+    font-size: 9.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-400);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  /* ---------------------------------------------------------- 图集 */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .gallery__item {
+    margin: 0;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background: var(--white);
+  }
+  .gallery__item img {
+    display: block;
+    width: 100%;
+    height: 168px;
+    object-fit: cover;
+  }
+  .gallery__noimg {
+    height: 168px;
+    display: grid;
+    place-items: center;
+    background: var(--navy-800);
+    color: rgba(179, 215, 236, 0.5);
+    font-size: 11.5px;
+  }
+  .gallery__item figcaption {
+    padding: 8px 11px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .gallery__title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink-700);
+  }
+  .gallery__credit {
+    font-size: 10px;
+    color: var(--ink-400);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 760px) {
+    .weapon__body {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .mountbox {
+      border-left: 0;
+      border-top: 1px solid var(--line-soft);
+    }
+    .hist__ev {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 3px;
+    }
+    .hist__date {
+      padding-top: 0;
+    }
+  }
+</style>

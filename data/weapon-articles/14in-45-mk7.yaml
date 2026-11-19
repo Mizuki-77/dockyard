@@ -1,0 +1,276 @@
+# ============================================================================
+# 武器正文 —— 14 in/45 BL Mark VII
+#
+# 这一篇要澄清两个误会：
+#  1) 编号写 Mark VII，但它其实是英国第一型"完全自研并服役"的 14 英寸炮；
+#  2) 「轻弹 + 低初速」不是退步，是 Nelson 级 16 英寸炮教训之后的主动选择。
+# 北角海战的射击统计各文献互相打架，正文按"两说并列"处理。
+# ============================================================================
+weapon: 14in-45-mk7
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      14 in/45 BL Mark VII 是英王乔治五世级战列舰的主炮，
+      1937 年设计、1940 年服役。编号虽然是 Mark VII，它实际上是
+      英国第一型完全自行设计并服役的 14 英寸舰炮——此前那些 14 英寸炮
+      要么来自接管的他国造舰，要么是从美国进口的。
+      它也是 1930 到 1946 年间建成的战列舰里武备最弱的一型，而这是条约逼出来的。
+    en: >-
+      The 14 in/45 BL Mark VII was the main armament of the King George V class,
+      designed in 1937 and in service from 1940. Despite the Mark VII number it was
+      the first 14-inch naval gun Britain both designed and put into service - the
+      earlier 14-inch pieces came either from ships taken over from other navies or
+      from American purchases. It also armed the most weakly gunned battleships
+      completed between 1930 and 1946, and the treaties are the reason.
+
+  paragraphs:
+    - heading: 编号会骗人：它其实是第一种英国自研的 14 英寸炮
+      text:
+        zh: >-
+          Mark VII 这个序号容易让人以为它是一长串改进的第七代，但 navweaps 讲得很清楚：
+          这实际是英国第一型完全自行设计并服役的 14 英寸舰炮。
+          在此之前英国用过的 14 英寸炮，来源要么是接管的他国造舰、要么是美国货。
+          序号跳得快，是因为中间那些编号属于没走完的试验型号。
+        en: >-
+          The Mark VII number suggests the seventh iteration of a long line, but
+          NavWeaps is explicit: this was the first 14-inch naval gun Britain designed
+          and brought into service itself. Earlier British 14-inch guns came either
+          from ships taken over from other navies or from American purchases. The
+          number jumps because the intervening marks belong to trials that never
+          completed.
+      src: [navweaps-14in-45-mk7]
+
+    - heading: 为什么它反而退回了低初速
+      text:
+        zh: >-
+          一战前后英国大口径炮的思路是高初速、重弹、远射程。纳尔逊级那门
+          16 in/45 Mark I 把这个思路推到头，问题也随之暴露。所以新 14 英寸炮
+          反过来走：回到较低的初速，其初速与一战时加拿大号
+          （原智利 Almirante Latorre）上那门 14 in/45 Mark I 相差无几。
+          这不是技术退步，是拿初速换身管寿命与射击精度的主动选择。
+        en: >-
+          British heavy-gun thinking around the First World War ran toward high
+          velocity, heavy shells and long range. The Nelson class 16 in/45 Mark I
+          pushed that to its limit and exposed the problems with it. The new 14-inch
+          therefore went the other way, back to a lower muzzle velocity close to that
+          of the First World War 14 in/45 Mark I aboard HMS Canada, the former Chilean
+          Almirante Latorre. That was not a step backwards but a deliberate trade of
+          velocity for barrel life and accuracy.
+      src: [navweaps-14in-45-mk7]
+
+    - heading: 结构上的两个第一次
+      text:
+        zh: >-
+          这型炮的设计基于 12 in/50 Mark XIV 那门 1933 年 8 月完成的试验炮，
+          后者是用来试「全钢」结构的。新炮采用无缠丝、径向膨胀结构，
+          结果比更大口径的 16 in/45 Mark I 更准、身管寿命更长，而且更轻、
+          不容易出现身管下垂。另一个第一次在炮座：这是英国第一批
+          在铸钢圆筒摇架内后坐（而不是在独立滑轨上后坐）的舰炮，
+          这个特征先在 12 in/50 Mark XIV 上试制过。
+        en: >-
+          The design rested on the 12 in/50 Mark XIV, an experimental gun completed in
+          August 1933 to try out "all-steel" construction. The new 14-inch used an
+          unwire-wound, radially expanded structure and came out more accurate, longer
+          lived, lighter and less prone to droop than the larger 16 in/45 Mark I. The
+          second first was in the mounting: these were the first British naval guns to
+          recoil inside a cast-steel cylindrical cradle rather than on separate slides,
+          a feature first trialled on the 12 in/50 Mark XIV.
+      src: [navweaps-14in-45-mk7]
+
+    - heading: 四联装：设计阶段就知道的代价
+      text:
+        zh: >-
+          乔治五世级用 14 英寸是为了守第二次伦敦海军条约（1936 年 3 月签署）
+          定下的 14 英寸上限。在 35,000 吨与 14 英寸的双重限制下，
+          要凑出十二门炮只有四联装一条路；最终削成十门，B 炮塔降为双联。
+          代价在服役中兑现得很直接：navweaps 记录这型炮座在战争前期
+          容易出机械故障，威尔士亲王号与英王乔治五世号在对俾斯麦号的交战里
+          都遇到了大量问题。到 1943 年多数问题已经修正。
+        en: >-
+          The King George V class used 14-inch guns to stay inside the 14-inch limit
+          set by the Second London Naval Treaty of March 1936. Within 35,000 tons and
+          14 inches the only way to get twelve guns was quadruple turrets; the design
+          ended up with ten when B turret became a twin. The cost showed up directly in
+          service: NavWeaps records that these mountings were prone to mechanical
+          failure early in the war, and both Prince of Wales and King George V ran into
+          extensive problems engaging Bismarck. By 1943 most had been corrected.
+      src: [navweaps-14in-45-mk7, rmg-kgv-guide]
+
+    - heading: 北角海战：一组互相打架的数字
+      text:
+        zh: >-
+          1943 年 12 月 26 日北角海战是对这型炮最完整的一次检验。约克公爵号
+          前段 52 次齐射有 31 次夹中，后段 25 次齐射有 21 次夹中，全战 80 次齐射
+          打出 446 发；但因为机械与操作失误，该舰在这场战斗中只发挥出不到
+          可能输出的 70%。**这里必须两说并列**：navweaps 在来源说明里明写，
+          关于约克公爵号此战到底打了多少发弹、射了多少次齐射，各参考文献之间
+          存在冲突，它采用的是 A.J. Watts《Loss of Scharnhorst》第二部分
+          统计表里的数字。本站照录这个取舍，但不把它的数字当成唯一答案。
+        en: >-
+          The Battle of North Cape on 26 December 1943 was the fullest test this gun
+          got. Duke of York straddled with 31 of 52 salvos in the first phase and 21 of
+          25 later, firing 446 rounds in 80 salvos overall, yet mechanical and
+          drill errors kept her below 70 per cent of her possible output. **Both
+          readings have to stand here**: NavWeaps states in its source note that
+          references conflict over how many rounds and salvos Duke of York actually
+          fired, and that it follows the statistical tables in A.J. Watts' "Loss of
+          Scharnhorst", Part II. This article records that choice without treating its
+          figures as the only answer.
+      src: [navweaps-14in-45-mk7]
+
+    - heading: 产量、上岸与存世
+      text:
+        zh: >-
+          一共造了 78 门，含两门试验炮：皇家炮厂 24 门、Vickers-Armstrong 39 门、
+          Elswick 与 Beardmore 共 15 门。后 46 门的炮尾环形状不同、全重降低，
+          配重由 11 吨改为 12.5 吨以维持同样的重心。另有 2 门被用作多佛的岸炮，
+          但那套临时炮座不适合瞄准快速移动的舰船，配 Super Charge 时射程很远。
+          计划中的活衬版本 Mark VII* 从未制造。今天至少有一门存世，
+          陈列在英国 Hampshire 的 Fort Nelson 皇家军械库。
+        en: >-
+          Seventy-eight guns were built including two trial pieces: 24 at the Royal Gun
+          Factory, 39 by Vickers-Armstrong and 15 between Elswick and Beardmore. The
+          last 46 had a differently shaped breech ring and lower all-up weight, with
+          counterweights raised from 11 to 12.5 tons to keep the same centre of gravity.
+          Two more became coast artillery at Dover, where the improvised mounting was
+          unsuited to aiming at fast-moving ships but the range with Super Charges was
+          considerable. The lined version, Mark VII*, was never built. At least one gun
+          survives, at the Royal Armoury in Fort Nelson, Hampshire.
+      src: [navweaps-14in-45-mk7]
+
+history:
+  - id: design
+    title: { zh: 设计与定型, en: Design }
+    range: { from: 1933-08, to: 1940 }
+    lead:
+      zh: >-
+        它的技术底子来自一门 1933 年的试验炮，而它存在的理由来自 1936 年的一份条约。
+      en: >-
+        Its engineering came from a 1933 experimental gun; its reason for existing came
+        from a 1936 treaty.
+    events:
+      - date: 1933-08
+        text:
+          zh: >-
+            12 in/50 Mark XIV 试验炮完成。它用来试「全钢」结构与炮座内后坐方案，
+            后来的 14 in/45 Mark VII 直接沿用了这两条。
+          en: >-
+            The 12 in/50 Mark XIV experimental gun was completed, trialling the
+            all-steel structure and the recoil-in-cradle arrangement that the 14 in/45
+            Mark VII would inherit.
+        src: [navweaps-14in-45-mk7]
+      - date: 1936-03
+        text:
+          zh: >-
+            第二次伦敦海军条约签署，主力舰主炮上限定为 14 英寸。英国不愿动用
+            退出条款，于是乔治五世级按 14 英寸设计；在 35,000 吨限制下，
+            十二门炮只能用四联装凑，最终削为十门。
+          en: >-
+            The Second London Naval Treaty was signed, capping capital-ship main
+            armament at 14 inches. Britain declined to use the opt-out clause, so the
+            King George V class was designed around 14 inches; within 35,000 tons
+            twelve guns required quadruple turrets, and the design ended at ten.
+        src: [rmg-kgv-guide]
+      - date: 1937
+        text:
+          zh: >-
+            完成设计，编号 14 in/45 Mark VII。它是英国第一型完全自研并服役的
+            14 英寸舰炮，初速回到较低水平，与一战加拿大号上的 14 in/45 相当。
+          en: >-
+            Design completed as the 14 in/45 Mark VII, the first 14-inch naval gun
+            Britain designed and brought into service, with muzzle velocity returned to
+            the lower level of the First World War 14 in/45 aboard HMS Canada.
+        src: [navweaps-14in-45-mk7]
+      - date: 1940
+        text:
+          zh: >-
+            进入服役。
+          en: >-
+            Entered service.
+        src: [navweaps-14in-45-mk7]
+
+  - id: service
+    title: { zh: 战时使用, en: Wartime service }
+    range: { from: 1940-10, to: 1945-09 }
+    lead:
+      zh: >-
+        这型炮的问题与它的优点几乎同时出现在第一场交战里。
+      en: >-
+        Its faults and its virtues showed up together in its first action.
+    events:
+      - date: 1940-10-01
+        text:
+          zh: >-
+            英王乔治五世号服役，主炮为两座四联 Mk III 与一座双联 Mk II，
+            炮塔编号 A、B、Y（navweaps 把后炮塔写作 X，本站按英舰惯例用 Y）。
+          en: >-
+            King George V commissioned with two quadruple Mk III turrets and one twin
+            Mk II, lettered A, B and Y. NavWeaps writes X for the after turret; this
+            article follows the British practice of Y.
+        src: [rmg-kgv-guide, navweaps-14in-45-mk7]
+      - date: 1941-05-24
+        text:
+          zh: >-
+            丹麦海峡海战。威尔士亲王号的主炮在交战中出现大量机械故障，
+            这一天它只以部分火炮对俾斯麦号射击。
+          en: >-
+            The Battle of the Denmark Strait. Prince of Wales suffered extensive
+            mechanical failures in her main battery and engaged Bismarck with only part
+            of her armament.
+        src: [navweaps-14in-45-mk7, kbismarck-denmark-strait]
+      - date: 1941-05-27
+        text:
+          zh: >-
+            围歼俾斯麦号的最后一场战斗。英王乔治五世号与罗德尼号一同开火，
+            主炮同样出现故障，射击过程并不顺利。
+          en: >-
+            The final action against Bismarck. King George V opened fire alongside
+            Rodney, her main battery also giving trouble and the shoot running far from
+            smoothly.
+        src: [navweaps-14in-45-mk7, kbismarck-patterson-report]
+      - date: 1943-12-26
+        text:
+          zh: >-
+            北角海战。约克公爵号前段 52 次齐射 31 次夹中、后段 25 次齐射 21 次夹中，
+            全战 80 次齐射打出 446 发，但因机械与操作失误只发挥不到可能输出的 70%。
+            **navweaps 明写：关于此战的弹数与齐射数，各参考文献互相冲突，
+            它采用的是 A.J. Watts 的统计表——数字并列，本站不裁决。**
+          en: >-
+            The Battle of North Cape. Duke of York straddled with 31 of 52 salvos and
+            then 21 of 25, firing 446 rounds in 80 salvos, but mechanical and drill
+            errors capped her output below 70 per cent of what was possible. **NavWeaps
+            states that references conflict on the rounds and salvos fired and that it
+            follows A.J. Watts' tables - the figures stand side by side here without
+            adjudication.**
+        src: [navweaps-14in-45-mk7]
+
+  - id: ashore
+    title: { zh: 岸炮与存世, en: Coast artillery and survivors }
+    range: { from: 1940, to: 1959 }
+    lead:
+      zh: >-
+        这型炮也有上岸的一段，只是比起 15 英寸那门要短得多。
+      en: >-
+        This gun went ashore too, though on a much smaller scale than the 15-inch.
+    events:
+      - date: 1940
+        text:
+          zh: >-
+            多佛附近架设 2 门此型炮作岸防。临时炮座不适合瞄准快速移动的舰船，
+            但配 Super Charge 时射程很远。
+          en: >-
+            Two guns of this type were mounted as coast artillery near Dover. The
+            improvised mounting was unsuited to tracking fast-moving ships, but with
+            Super Charges the range was considerable.
+        src: [navweaps-14in-45-mk7]
+      - date: 1959
+        text:
+          zh: >-
+            多佛那两门岸炮在这一年撤除。至少一门 14 in/45 Mark VII 存世，
+            陈列于 Fort Nelson 的皇家军械库。
+          en: >-
+            The two Dover guns were removed this year. At least one 14 in/45 Mark VII
+            survives, displayed at the Royal Armoury in Fort Nelson.
+        src: [navweaps-14in-45-mk7]

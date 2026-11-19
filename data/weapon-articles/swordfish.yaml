@@ -1,0 +1,258 @@
+# ============================================================================
+# 武器正文 —— Fairey Swordfish
+#
+# 三条能落到原文的事实：
+#  1) 挂 Mk XII 鱼雷时最大速度 143 mph；
+#  2) 挂鱼雷与远程油箱时，机组的原话是「maxed-out at just 93 knots」；
+#  3) 塔兰托的 21 架可用机与两个攻击波（12 + 9）。
+# 机型参数（马力、翼展）本站无来源，不写。
+# ============================================================================
+weapon: swordfish
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Fairey Swordfish 是英国舰队航空兵二战前期的主力鱼雷轰炸机，
+      也兼做侦察与校射（TSR：Torpedo, Spotter, Reconnaissance）。
+      它是一架双翼、固定起落架、敞舱的慢飞机——慢到挂上鱼雷与远程油箱后
+      机组报告只有 93 节，慢到用这套设计去打一支锚泊的现代化战列舰队
+      听起来不像能成功。1940 年 11 月 11 日夜，它做到了。
+      本页只写能追到原文的部分，机型参数（马力、翼展）本站无来源，不写。
+    en: >-
+      The Fairey Swordfish was the Fleet Air Arm's principal torpedo bomber in the first
+      half of the war, doubling as a spotter and reconnaissance machine under the TSR
+      designation. It was a biplane with a fixed undercarriage and an open cockpit - so
+      slow that with a torpedo and a long-range tank the crews reported 93 knots, and
+      slow enough that using it against a modern battleship fleet at anchor does not
+      sound like a plan that works. On the night of 11 November 1940 it worked. Only what
+      can be traced to a source appears here; airframe figures such as power and span have
+      no source in this project and are not written.
+
+  paragraphs:
+    - heading: 它的速度是短板，而且是官方数据与机组原话两说
+      text:
+        zh: >-
+          这里要把两组说法并列。官方性能试飞数据给出的是：挂 18 英寸、
+          1,550 磅的 Mk XII 鱼雷时，这架双翼机的最大速度是 143 mph。
+          而机组的反复报告是另一回事：挂鱼雷又挂远程油箱时，
+          这架飞机「maxed-out at just 93 knots」。
+          两个数字不是矛盾——一个是试飞条件下的最大速度，
+          一个是实战挂载条件下的实际速度。本站两个都写，
+          不把 143 当成它的作战速度。
+        en: >-
+          Two figures have to stand together. The official performance testing gives the
+          biplane a top speed of 143 mph while carrying the 18-inch, 1,550 lb Mk XII
+          torpedo. The crews' repeated reports say something else: with a torpedo and
+          long-range tanks the aircraft was "maxed-out at just 93 knots". The two are not
+          in conflict - one is a top speed under test conditions, the other the actual
+          speed with an operational load. Both are recorded here, and 143 is not presented
+          as its combat speed.
+      src: [ac-taranto-narrative]
+
+    - heading: 它不只是鱼雷机，也当过俯冲轰炸机
+      text:
+        zh: >-
+          这一点与常见印象相反，而材料写得很直接：尽管有相反的常见说法，
+          Swordfish 在设计上也考虑了俯冲轰炸——这来自该机研制期间
+          希腊政府提出的一项要求（后来希腊失去了兴趣），
+          但钢丝与钢管构成的机身结构是按这个用途加强过的。
+          它能被「立」在机头上，固定起落架、支柱与双翼让它的速度足够低、
+          操控足够稳定，从而把武器投得准。
+          塔兰托那一夜两波攻击里，挂炸弹的飞机做的就是这件事。
+        en: >-
+          This runs against the usual impression, and the source is direct: despite common
+          assertions to the contrary, the Swordfish was also designed as a dive bomber,
+          a requirement the Greek government set during development before losing
+          interest, and the wire and steel-tube airframe was stressed to take it. It could
+          be stood on its nose, its fixed undercarriage, struts and dual mainplanes keeping
+          it slow and controllable enough to deliver weapons accurately. In both waves at
+          Taranto the bomb-carrying aircraft were doing exactly that.
+      src: [ac-taranto-narrative]
+
+    - heading: 它的活路是低空低速的机动性
+      text:
+        zh: >-
+          速度慢本来是死路，但在塔兰托这样的场景里变成了活路。
+          材料给的判断是：它在生存性上的关键，一是飞行员当时正在摸索的失速战术，
+          二是它出色的低空低速机动性——贴着浪尖走、不断变向的
+          Swordfish 极难被打中。塔兰托的优势更具体：
+          它能在夜间、在极小的空间里、在零高度上被随意甩动。
+          当晚的实际记录也印证了这一点：多数飞行员报告说高炮从头顶过去，
+          探照灯没有抓到他们。
+        en: >-
+          Being slow should have been fatal and in a setting like Taranto it became the
+          way out. The source's judgement is that its survivability rested on two things:
+          the stall tactics its pilots were then developing, and its remarkable low-level,
+          low-speed manoeuvrability - a jinking Swordfish at wave-top height proved
+          incredibly hard to hit. At Taranto the advantage was more specific still: it
+          could be thrown about at night, in confined spaces, at zero feet. The night's own
+          record bears it out, with most pilots reporting the flak passing over their heads
+          and the searchlights failing to find them.
+      src: [ac-taranto-narrative]
+
+history:
+  - id: taranto
+    title: { zh: 塔兰托, en: Taranto }
+    range: { from: 1940-11, to: 1940-11 }
+    lead:
+      zh: >-
+        两波、21 架可用机、两架未归。这一夜是这一型最出名的一战。
+      en: >-
+        Two waves, 21 serviceable aircraft, two that did not return. This night is the
+        type's most famous action.
+    events:
+      - date: 1940-11-10
+        text:
+          zh: >-
+            光辉号此时的机群编成：806 中队 15 架 Fulmar Mk I、815 中队 9 架 Swordfish、
+            819 中队 9 架 Swordfish，另有自鹰号（HMS Eagle）借调的
+            813 中队 4 架 Swordfish 与 2 架 Sea Gladiator、824 中队 2 架 Swordfish。
+            Swordfish 是这个机群里数量最多的机型。
+          en: >-
+            The ship's air group at this point: 806 Squadron with 15 Fulmar Mk Is, 815 with
+            nine Swordfish, 819 with nine Swordfish, plus 813 Squadron's four Swordfish and
+            two Sea Gladiators and 824's two Swordfish, both borrowed from HMS Eagle. The
+            Swordfish was the most numerous type in the group.
+        src: [ac-taranto-narrative, ac-design]
+      - date: 1940-11-11
+        text:
+          zh: >-
+            可用机降到 21 架。原因不止一个：燃油污染使三架 Swordfish
+            在 11 月 9、10、11 日三天里分别迫降损失，舰长报告明确写着这使
+            参加突击的飞机减到 21 架；此外 11 月 10 日一架机在甲板上因
+            远程油箱的油气被工具火花点燃而烧毁，火势蔓延到相邻飞机。
+            全部参战机都装了 60 加仑的内部辅助油箱——挂在领航员座位后面，
+            因为原本挂油箱的位置被鱼雷占了。
+          en: >-
+            The available force fell to 21. More than one cause: contaminated petrol cost
+            three Swordfish, which force-landed in the sea on 9, 10 and 11 November, and
+            the commanding officer's report states plainly that this reduced the number
+            available to 21. Separately, on 10 November an aircraft was destroyed on deck
+            when a dropped tool sparked the fumes from its long-range tank and the fire
+            spread to neighbouring machines. Every aircraft committed carried a 60-gallon
+            internal auxiliary tank, secured behind the observer's position because the
+            usual place for a tank was occupied by the torpedo.
+        src: [ac-taranto-report, ac-taranto-narrative]
+      - date: 1940-11-11
+        text:
+          zh: >-
+            第一波 12 架（10 架来自本舰、2 架来自鹰号），其中 6 架挂鱼雷、
+            2 架挂 4 枚 250 磅炸弹加 16 具照明弹、其余挂 6 枚炸弹。
+            鱼雷设定为 27 节、定深 33 英尺——塔兰托战列舰锚地的平均水深是 49 英尺，
+            这个定深能让鱼雷从防雷网下方通过，同时让双触发引信
+            在舰体下方感应起爆。
+          en: >-
+            The first wave of twelve, ten from this ship and two from Eagle: six with
+            torpedoes, two with four 250 lb bombs and sixteen parachute flares, the rest
+            with six bombs. The torpedoes were set to run at 27 knots at a preset depth of
+            33 feet - the battleship anchorage averaged 49 feet, so that depth let the
+            torpedo pass under the anti-torpedo nets while still letting the duplex pistol
+            sense a ship above and detonate beneath it.
+        src: [ac-taranto-narrative]
+      - date: 1940-11-12
+        text:
+          zh: >-
+            第二波 9 架起飞，其中 5 架挂鱼雷。全场只有两架 Swordfish 未返航。
+            战果是三艘战列舰被命中：Cavour 沉没、Littorio 与 Duilio 重创。
+            注意这里有一层要并列表述的：材料同时指出炸弹攻击的效果
+            被 250 磅半穿甲弹的性能拖累了。
+          en: >-
+            The second wave of nine took off, five of them with torpedoes. Only two
+            Swordfish failed to return. Three battleships were hit: Cavour sank, Littorio
+            and Duilio were badly damaged. One qualification has to be kept alongside
+            that: the same source notes that the bombing attacks were let down by the
+            performance of their 250 lb semi-armour-piercing bombs.
+        src: [ac-taranto-narrative]
+
+  - id: bismarck
+    title: { zh: 追击俾斯麦号, en: The chase of Bismarck }
+    range: { from: 1941-05, to: 1941-05 }
+    lead:
+      zh: >-
+        半年后这一型又出现在另一场有名的战斗里，这一次它是从两艘不同的母舰上起飞的。
+      en: >-
+        Six months later the type appears in another famous action, this time flying from
+        two different carriers.
+    events:
+      - date: 1941-05-24
+        text:
+          zh: >-
+            胜利号（HMS Victorious）当日 22:10 起飞 825 中队全部鱼雷机，
+            该舰此时机群很小：只有 9 架 Swordfish 与 6 架 Fulmar，
+            其中 3 架 Swordfish 装了新的 ASV 对海搜索雷达。
+            一架在云层中与友机失去联络，实际只有 8 架在午夜前后发起攻击。
+            一枚 18 英寸 Mk XII 鱼雷命中右舷舯部装甲带，损伤极小；
+            尽管高炮火力密集，这批过时的双翼机无一被击落。
+          en: >-
+            HMS Victorious flew off all of 825 Squadron's torpedo bombers at 2210; her
+            air group was small, nine Swordfish and six Fulmars, three of the Swordfish
+            carrying the new ASV air-to-surface-vessel radar. One lost contact with the
+            rest in a cloud layer and only eight attacked around midnight. One 18-inch
+            Mk XII torpedo struck the amidships belt to starboard with negligible effect,
+            and despite heavy anti-aircraft fire none of the obsolete biplanes was shot
+            down.
+        src: [kbismarck-chase, kbismarck-denmark-strait]
+      - date: 1941-05-26
+        text:
+          zh: >-
+            皇家方舟号当日两次出击。14:50 起飞 15 架（Stewart-Moore 少校），
+            攻击了 ASV 在预期位置约 20 英里外发现的一艘军舰——
+            实为轻巡洋舰谢菲尔德号；投下 11 枚鱼雷，两枚落水即爆、
+            三枚越过航迹时爆炸，其余被规避，谢菲尔德号一发未还。
+            19:15 后再次起飞 15 架（Coode 少校），多为上一波原机改装触发引信、
+            定深改为 22 英尺，先向谢菲尔德号核对方位距离再进入。
+            20:47 开始攻击，命中两枚（一说三枚）：
+            其中一枚打在左舷艉部靠近左舵轴，使两舵卡死在向左 12 度。
+            无一架 Swordfish 被击落，4 架被破片击伤，
+            其中一架 4C 机身数出 175 个弹孔，飞行员与后座机枪手分别伤在肩与腿。
+          en: >-
+            Ark Royal flew two strikes that day. Fifteen aircraft under Lt-Cdr
+            Stewart-Moore took off at 1450 and attacked a ship that ASV had detected about
+            twenty miles from the expected enemy position - in fact the light cruiser HMS
+            Sheffield. Eleven torpedoes were dropped: two exploded on hitting the water,
+            three on crossing the wake, the rest were avoided, and Sheffield did not fire a
+            round in reply. Another fifteen under Lt-Cdr Coode took off after 1915, mostly
+            the same aircraft re-armed with contact pistols set to 22 feet, homing via
+            Sheffield for range and bearing before running in. The attack began at 2047
+            and obtained two hits, with three claimed in some accounts: one struck low on
+            the port quarter near the port rudder shaft and jammed both rudders at twelve
+            degrees to port. No Swordfish was shot down, four were damaged by splinters,
+            and one of them, 4C, was found to have 175 holes in it with the pilot and
+            air-gunner wounded in the shoulder and thigh.
+        src: [kbismarck-chase, kbismarck-last-battle]
+
+  - id: atlantic
+    title: { zh: 大西洋与北极航线的日常, en: Routine work in the Atlantic and the Arctic }
+    range: { from: 1941-05, to: 1941-05 }
+    lead:
+      zh: >-
+        除了两次出名的大战，这一型在 1941 年 5 月做的更多是搜索。
+      en: >-
+        Beyond the two famous actions, most of what the type did in May 1941 was search.
+    events:
+      - date: 1941-05-26
+        text:
+          zh: >-
+            当日 08:35 起飞 10 架 Swordfish 执行第一次搜索，搜索区的西边界由
+            托维的作战报告给出。两架在 25、26 日的空中搜索中损失，
+            其中一架的机组落在一条空救生艇旁，靠艇上的给养与淡水
+            在海上撑了九天，最后被一艘商船救起。
+          en: >-
+            Ten Swordfish flew off at 0835 for the first search, whose western edge is
+            given in Tovey's despatch. Two were lost during the air searches of 25 and 26
+            May; the crew of one came down alongside an unoccupied lifeboat complete with
+            provisions and water, spent nine days in it, and was picked up by a merchant
+            vessel.
+        src: [hmshood-tovey-dispatch]
+      - date: 1941-05-27
+        text:
+          zh: >-
+            09:20 皇家方舟号起飞 12 架 Swordfish，约 10:15 抵达战场，
+            但被英舰自己的炮火逼退，没有发起攻击。
+            这一天俾斯麦号是被水面舰只的炮火与鱼雷终结的。
+          en: >-
+            Ark Royal flew off twelve Swordfish at 0920; they reached the area around 1015
+            but were driven off by British ships' own gunfire and did not attack. Bismarck
+            was finished that day by surface gunfire and torpedoes.
+        src: [kbismarck-last-battle]

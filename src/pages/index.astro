@@ -1,0 +1,366 @@
+---
+import Base from '../layouts/Base.astro';
+import SideNav from '../components/SideNav.astro';
+import { stats, getNarratives, getFields, getImage, primaryImage, imageCredit } from '../lib/data';
+
+const s = stats();
+const narratives = getNarratives('bismarck');
+const fields = getFields();
+
+// 首页主视觉用真实的俾斯麦号照片，不用示意图。
+// 这张是公有领域（A 档），可以放心归档在仓库里。
+// 首页大图：中途岛赤城规避攻击的航拍（1942-06-04，美军拍摄，PD）。
+// 这张图的叙事价值最高——船还在，几小时后就不在了。
+// 取不到就退回俾斯麦，保证首页永远有图。
+const hero =
+  getImage('akagi-1942-06-04-aerial') ?? primaryImage('ship:bismarck');
+const heroCredit = hero ? imageCredit(hero) : '';
+
+const navItems = [
+  { href: '/ships', label: '战舰信息' },
+  { href: '/ships/bismarck', label: '俾斯麦号' },
+  { href: '/classes/bismarck', label: '俾斯麦级' },
+  { href: '/battles', label: '海战历史' },
+  { href: '/weapons', label: '武器与装备' },
+  { href: '/sources', label: '资料来源' },
+  { href: '/help', label: '帮助及反馈' },
+];
+
+const modules = [
+  {
+    href: '/ships',
+    kicker: 'Ships',
+    title: '战舰信息',
+    desc: '按舰级与单舰分层。同级舰只写差异，重要战舰逐艘展开。',
+  },
+  {
+    href: '/battles',
+    kicker: 'Battles',
+    title: '海战历史',
+    desc: '战役档案与参战舰只双向链接，交战时序精确到分钟。',
+  },
+  {
+    href: '/weapons',
+    kicker: 'Weapons',
+    title: '武器与装备',
+    desc: '火炮、炮塔、火控各自成实体，多舰复用，不重复录入。',
+  },
+  {
+    href: '/sources',
+    kicker: 'Provenance',
+    title: '资料来源',
+    desc: '每条数据指向具体来源，标注证据层级与采集日期。',
+  },
+];
+
+const latest = [
+  {
+    date: '11-17',
+    ship: '俾斯麦',
+    href: '/ships/bismarck',
+    text: '全字段落库：舰级 221 条、单舰 56 条事实，含 7 个状态切片',
+  },
+  {
+    date: '11-17',
+    ship: '俾斯麦',
+    href: '/ships/bismarck#narrative',
+    text: '新增 5 条叙述性争议，沉没原因五种说法并列保留',
+  },
+  {
+    date: '11-17',
+    ship: '通用',
+    href: '/sources',
+    text: '来源登记表扩至 80 条，其中一手档案 8 份已归档',
+  },
+];
+---
+
+<Base title="首页">
+  <SideNav
+    slot="sidenav"
+    kicker="Quick access"
+    title="主页"
+    items={navItems}
+    note="左侧为快捷导航：常用舰艇与模块的直达入口。"
+  />
+
+  <!-- ======================================================= 档案更新 -->
+  <section class="section">
+    <div class="section__head">
+      <h2 class="section__title">档案更新</h2>
+      <span class="section__en">Latest records</span>
+      <span class="section__aside">2026-11-17</span>
+    </div>
+
+    <div class="hero">
+      <a class="hero__media" href="/ships/akagi" aria-label="查看赤城号档案">
+        {hero && hero.file ? (
+          <img class="hero__photo" src={hero.file} alt={hero.title.zh} loading="eager" />
+        ) : (
+          <div class="hero__nophoto">配图待补</div>
+        )}
+
+        <div class="hero__caption">
+          <span class="hero__cap-main">{hero ? hero.title.zh : '图片位'}</span>
+          <span class="hero__cap-note">
+            {heroCredit ? `${heroCredit} · 公有领域` : '公有领域影像，可自由使用'}
+          </span>
+        </div>
+      </a>
+
+      <div class="hero__side">
+        <div class="hero__kicker">
+          <span class="hero__kicker-dot"></span>
+          NEW RECORD
+        </div>
+        <h3 class="hero__title">中途岛：赤城与企业号上线</h3>
+        <p class="hero__desc">
+          这张照片摄于 1942 年 6 月 4 日上午，美军飞机拍的——赤城正在规避攻击。
+          几个小时后它就被击中起火了。本站新增赤城与企业号两舰档案、
+          中途岛海战与 MI 作战两个战役条目，全部按当地时间记录。
+        </p>
+
+        <div class="hero__meta">
+          <span class="tag">航空母舰</span>
+          <span class="tag tag--ghost">日本 · 美国</span>
+          <span class="tag tag--ghost">1942-06-04 中途岛</span>
+        </div>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="/ships/akagi">查看赤城</a>
+          <a class="btn btn--line" href="/battles/midway">中途岛海战</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== 统计 -->
+  <section class="section">
+    <div class="stats">
+      <div class="stat">
+        <div class="stat__n">{s.ships}</div>
+        <div class="stat__label">艘单舰</div>
+      </div>
+      <div class="stat">
+        <div class="stat__n">{s.classes}</div>
+        <div class="stat__label">个舰级</div>
+      </div>
+      <div class="stat">
+        <div class="stat__n">{s.facts.toLocaleString('en-US')}</div>
+        <div class="stat__label">条事实记录</div>
+      </div>
+      <div class="stat">
+        <div class="stat__n">{s.sources}</div>
+        <div class="stat__label">个来源</div>
+      </div>
+      <div class="stat">
+        <div class="stat__n">{s.narratives}</div>
+        <div class="stat__label">条争议记录</div>
+      </div>
+      <div class="stat">
+        <div class="stat__n">{fields.length}</div>
+        <div class="stat__label">个已注册字段</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== 模块 -->
+  <section class="section">
+    <div class="section__head">
+      <h2 class="section__title">模块</h2>
+      <span class="section__en">Modules</span>
+    </div>
+
+    <div class="modules">
+      {
+        modules.map((m) => (
+          <a class="module" href={m.href}>
+            <div class="module__kicker">{m.kicker}</div>
+            <div class="module__title">{m.title}</div>
+            <div class="module__desc">{m.desc}</div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- ====================================================== 最近增补 -->
+  <section class="section">
+    <div class="section__head">
+      <h2 class="section__title">最近增补</h2>
+      <span class="section__en">Recent additions</span>
+    </div>
+
+    <div class="card">
+      <div class="card__body" style="padding:6px 20px">
+        {
+          latest.map((l) => (
+            <a class="feed" href={l.href}>
+              <span class="feed__date mono">{l.date}</span>
+              <span class="feed__who">{l.ship}</span>
+              <span class="feed__text">{l.text}</span>
+              <span class="feed__arrow" aria-hidden="true">
+                →
+              </span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== 弹窗 -->
+  <div class="modal" id="notice" role="dialog" aria-modal="true" aria-labelledby="notice-title">
+    <div class="modal__panel">
+      <div class="modal__head">
+        <div class="modal__kicker">Notice</div>
+        <div class="modal__title" id="notice-title">公告</div>
+      </div>
+      <div class="modal__body">
+        <div class="modal__block">
+          <div class="modal__label">本站做什么</div>
+          <div class="modal__text">
+            以多源交叉核对为基础的战舰资料库，同时服务历史爱好者与模型制作者。
+            资料按证据层级排序，一条数据挂多个来源。
+          </div>
+        </div>
+        <div class="modal__block">
+          <div class="modal__label">反馈</div>
+          <div class="modal__text">
+            每个数据点旁都有纠错入口。发现错误请带着上下文提交，审核后合入，
+            修正记录永久可查。
+          </div>
+        </div>
+        <div class="modal__block">
+          <div class="modal__label">赞助</div>
+          <div class="modal__text">
+            本站不含广告、不接受打赏、不做周边。因此可以合法引用非商业授权的图片，
+            这正是零变现的直接好处。
+          </div>
+        </div>
+      </div>
+      <div class="modal__foot">
+        <button class="btn btn--primary" id="notice-ok" type="button">我已知晓</button>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .hero__media {
+    text-decoration: none;
+    display: block;
+    position: relative;
+  }
+  .hero__media:hover {
+    text-decoration: none;
+  }
+
+  /* 真实照片铺满左栏。用 object-fit: cover 裁到 4:3 高，
+     目的是让照片占满框、不出现深蓝底露白边。 */
+  .hero__photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    object-fit: cover;
+    object-position: center 42%;
+  }
+  .hero__nophoto {
+    display: grid;
+    place-items: center;
+    min-height: 320px;
+    color: rgba(179, 215, 236, 0.5);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+  }
+
+  /* .hero__caption / .hero__cap-note 的排版统一放在 global.css，
+     这里不再覆盖，免得两处 display 打架。 */
+
+  .feed {
+    display: grid;
+    grid-template-columns: 52px 72px minmax(0, 1fr) 16px;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--line);
+    color: var(--ink-700);
+    text-decoration: none;
+    font-size: 13px;
+  }
+  .feed:last-child {
+    border-bottom: 0;
+  }
+  .feed:hover {
+    text-decoration: none;
+    color: var(--blue-700);
+  }
+  .feed:hover .feed__arrow {
+    transform: translateX(3px);
+    color: var(--blue-600);
+  }
+  .feed__date {
+    font-size: 11.5px;
+    color: var(--ink-300);
+  }
+  .feed__who {
+    font-weight: 620;
+    color: var(--ink-900);
+    font-size: 12.5px;
+  }
+  .feed__text {
+    color: var(--ink-500);
+    line-height: 1.5;
+  }
+  .feed__arrow {
+    color: var(--line-strong);
+    transition: transform 0.15s ease, color 0.15s ease;
+  }
+  @media (max-width: 620px) {
+    .feed {
+      grid-template-columns: 46px 1fr;
+      row-gap: 3px;
+    }
+    .feed__who {
+      text-align: right;
+    }
+    .feed__text {
+      grid-column: 1 / -1;
+    }
+    .feed__arrow {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const modal = document.getElementById('notice') as HTMLElement | null;
+  const ok = document.getElementById('notice-ok');
+  const KEY = 'wa.notice.seen.v1';
+
+  function close() {
+    if (!modal) return;
+    modal.classList.remove('modal--open');
+    try {
+      localStorage.setItem(KEY, new Date().toISOString());
+    } catch {
+      /* 隐私模式下 localStorage 不可用，忽略 */
+    }
+  }
+
+  // ?nopopup 供截图与调试跳过公告，不影响 localStorage 里的已读记录
+  const skip = new URLSearchParams(location.search).has('nopopup');
+  if (modal && !skip && !localStorage.getItem(KEY)) {
+    // 稍作延迟，避免和首屏渲染抢焦点
+    setTimeout(() => modal.classList.add('modal--open'), 550);
+  }
+
+  ok?.addEventListener('click', close);
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) close();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal?.classList.contains('modal--open')) close();
+  });
+</script>

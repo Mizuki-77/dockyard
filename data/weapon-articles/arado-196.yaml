@@ -1,0 +1,158 @@
+# ============================================================================
+# 武器正文 —— Arado Ar 196
+#
+# 一手材料很足（德文技术说明 + KBismarck 航空页）。
+# 两条必须并列的差异：弹射器尺寸 16 m/24 m（一手）vs 32 m/48 m（dewiki）；
+# 以及俾斯麦是 32 m 双联弹射器，与提尔皮茨的 Doppel-Teleskop 说法不同。
+# 马力/极速等参数：一手页给了，但本站正文按「不写机型参数」的惯例处理。
+# ============================================================================
+weapon: arado-196
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Arado Ar 196 是德国海军的舰载水上侦察机，双浮筒、单发，
+      在提尔皮茨号上担任侦察、巡逻与炮术校射。
+      本舰搭载 A-2 与 A-3 两种浮筒型，常规搭载 4 架、
+      必要时可载 6 架（4 架在 3 个机库、2 架停在弹射器上）。
+      它的操作方式是弹射起飞、水面降落、吊车回收，
+      这套流程对母舰的航速要求很苛刻——回收时舰几乎要停在水上。
+    en: >-
+      The Arado Ar 196 was a German naval floatplane reconnaissance aircraft, single-engined
+      with twin floats, used aboard Tirpitz for reconnaissance, patrol and gunnery
+      spotting. The ship carried both the A-2 and A-3 floatplane variants, four as a
+      normal load and six at a pinch, with four in the three hangars and two parked on the
+      catapults. It operated by catapult launch, landing on the water and crane recovery -
+      a cycle that made severe demands on the ship, which had to come almost dead in the
+      water to recover an aircraft.
+
+  paragraphs:
+    - heading: 四个机位、三个机库、两具弹射器
+      text:
+        zh: >-
+          这里的布置值得写细，因为它直接解释了「4 架」与「6 架」两个数字。
+          一手德文技术说明记：机库 3 个，1 号库在上甲板中部（Spant 94–106）装 2 架，
+          2 号库在左舷烟囱旁（Spant 122–134）装 1 架，3 号库在右舷同位装 1 架；
+          另设修理间；弹射器是 Doppel-Teleskop-Katapult（双联伸缩式），
+          Deutsche Werke 制造，左右舷各一、位于舯部。
+          也就是说「4 架」是机库容量，「6 架」是再加两架停在弹射器上的极限。
+          两个数字是不同口径，不是矛盾。
+        en: >-
+          The layout deserves detail because it explains the two figures of four and six.
+          The German technical description records three hangars: No. 1 amidships on the
+          upper deck at frames 94-106 holding two aircraft, No. 2 beside the funnel to port
+          at frames 122-134 holding one, and No. 3 opposite to starboard holding one; a
+          workshop was provided; and the catapults were Doppel-Teleskop-Katapult,
+          twin telescopic type, built by Deutsche Werke, one to each side amidships. Four
+          is therefore the hangar capacity and six the extreme with two more parked on the
+          catapults. The two are different measures, not a contradiction.
+      src: [luftwaffe-zur-see-196-tirpitz, kbismarck-tirpitz]
+
+    - heading: 弹射器长度：一手材料与百科差整整一倍
+      text:
+        zh: >-
+          这里必须两说并列。一手德文技术说明记：每具弹射器长 16 米，
+          可伸缩伸出舷外至 24 米。另一处百科级条目记的是 32 米、伸出至 48 米。
+          两个数字恰好是两倍关系——一个合理的解释是把「左右两舷合计」
+          当成了「单具长度」，但这只是解释，材料本身没有给出换算说明。
+          第三种说法来自英文维基：1 座 double-ended catapult（双端弹射器），
+          与「左右各一」的表述不同，可能指的是同一套背靠背装置。
+          本站三种说法都保留，数据层取德文一手说明。
+        en: >-
+          Two readings have to stand here. The German technical description gives each
+          catapult as 16 m long, telescoping outboard to 24 m. An encyclopedic entry gives
+          32 m, extending to 48 m. The two are exactly double - one plausible explanation
+          is that the figure for both sides together has been taken as a single
+          installation's length, but that is an explanation and the material offers no
+          conversion of its own. A third account, in English Wikipedia, describes one
+          double-ended catapult, which differs from "one to each side" and may refer to the
+          same back-to-back installation. All three are kept, with the German primary
+          description used in the data layer.
+      src: [luftwaffe-zur-see-196-tirpitz, kbismarck-tirpitz]
+
+    - heading: 回收是这套系统最危险的一步
+      text:
+        zh: >-
+          这一层在一手叙述里写得很具体：飞机完成任务后在水面降落于舰侧，
+          由一台大型吊车吊回——而吊回时「the ship had to lie almost dead in the
+          water」，也就是说母舰几乎要停下来。对一艘需要保持航速规避潜艇
+          与空袭的战列舰来说，这是有代价的动作。
+          吊出水面后，另有烟囱探照灯平台下的两台小吊车把飞机送回机库。
+          俾斯麦号 1941 年 5 月 27 日清晨试图弹射一架 Ar 196 送出战史日志，
+          结果弹射器损坏，飞机没能起飞——这套系统在最需要的时刻出过故障。
+        en: >-
+          The primary account is specific about this: after a mission the aircraft landed
+          on the water alongside the ship and was lifted aboard by one of the large cranes,
+          and during recovery "the ship had to lie almost dead in the water". For a
+          battleship that needed to keep speed against submarines and air attack, that is a
+          costly manoeuvre. Once out of the water, two smaller cranes under the funnel
+          searchlight platform helped place the aircraft back in the hangars. On the morning
+          of 27 May 1941 Bismarck tried to launch an Ar 196 carrying the ship's war diary
+          and the catapult was damaged, so the aircraft could not be launched - the system
+          failed at the moment it was most wanted.
+      src: [kbismarck-aviation]
+
+history:
+  - id: service
+    title: { zh: 航空活动, en: Flying operations }
+    range: { from: 1941-02, to: 1944-04 }
+    lead:
+      zh: >-
+        提尔皮茨号的航空活动集中在 1941 到 1943 年，1944 年之后只剩残存的飞机。
+      en: >-
+        Tirpitz's flying operations cluster in 1941 to 1943; after 1944 only surviving
+        aircraft remained.
+    events:
+      - date: 1941-02-25
+        text:
+          zh: >-
+            提尔皮茨号服役，载 4 架 Ar 196（3 架 A-2 加 1 架 A-3），
+            属 Bordfliegerkommando 1./196。
+            机库分布为 1 号库 2 架、2 号与 3 号库各 1 架。
+          en: >-
+            Tirpitz commissioned carrying four Ar 196s, three A-2s and one A-3, of
+            Bordfliegerkommando 1./196, with two in No. 1 hangar and one each in Nos. 2
+            and 3.
+        src: [kbismarck-tirpitz, luftwaffe-zur-see-196-tirpitz]
+      - date: 1941-09-03
+        text:
+          zh: >-
+            弹射装置在 E-Stelle Travemünde 验收，首批两架为 B BY F 与 B BY L（均为 A-3）。
+            此后 9 月 17 日至 10 月 30 日在波罗的海试飞。
+          en: >-
+            The catapult installation was accepted at E-Stelle Travemunde, the first two
+            aircraft being B BY F and B BY L, both A-3s. Flying trials in the Baltic
+            followed from 17 September to 30 October.
+        src: [luftwaffe-zur-see-196-tirpitz]
+      - date: 1941-10-31
+        text:
+          zh: >-
+            因舰只进坞，Bordfliegerabschnitt 解散，飞机全部飞回 Wilhelmshaven。
+            11 月 30 日起再度上舰，含挪威航渡。
+          en: >-
+            With the ship going into dock, the air section was disbanded and the aircraft
+            flew back to Wilhelmshaven. They came aboard again from 30 November, including
+            the passage to Norway.
+        src: [luftwaffe-zur-see-196-tirpitz]
+      - date: 1942-04-21
+        text:
+          zh: >-
+            全部飞机与人员转移至 Drontheim 水上机场，此后本舰只当起降平台。
+            这条时间点很关键：它标志着本舰的舰载航空从「驻舰」变成「借用」。
+          en: >-
+            All aircraft and personnel transferred to the Drontheim seaplane station, after
+            which the ship served only as a platform. The date matters because it marks the
+            change from embarked aviation to borrowed aviation.
+        src: [luftwaffe-zur-see-196-tirpitz]
+      - date: 1944-04
+        text:
+          zh: >-
+            本舰在这一年的空袭中损失两架 Ar 196。
+            一手记录止于 1943-11-26，此后没有飞机上舰的记录；
+            弹射器何时拆除，所有已查来源均无记载。
+          en: >-
+            The ship lost two Ar 196s in the air attacks of this year. The primary record
+            ends on 26 November 1943 with no later embarkations, and no source consulted
+            records when the catapults were removed.
+        src: [kbismarck-tirpitz, luftwaffe-zur-see-196-tirpitz]

@@ -1,0 +1,591 @@
+# ============================================================================
+# 舰艇正文：Illustrious（光辉号，87）
+#
+# 为什么单独一个文件、而不塞进 ships/<id>.yaml：
+#   fact 是「可计算的单值」，article 是「给人读的段落」。两者校验规则完全不同。
+#
+# 硬规则（scripts/validate.py 的 check_article 会拦）：
+#   1. 每个 paragraph 必须带 src，且 src 全部已登记、不是 tier E
+#   2. lead 必须有；paragraphs 至少一段
+#   3. history 每段 events 的 date 必须是 YYYY / YYYY-MM / YYYY-MM-DD
+#   4. 正文里不写「据说」「有人认为」这类模糊归属——那是 narrative 的活
+#
+# 本文件与 data/slices/illustrious.yaml 的 I0–I8 对齐，历史分节边界取自切片；
+# 两者若有一天冲突，以 fact 的 valid 窗口为准，切片与正文一起改。
+# ============================================================================
+ship: illustrious
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      光辉号（HMS Illustrious, 87）是英国海军第一级装甲航母的首舰。
+      它把飞行甲板本身做成 3 in 装甲板、用 4.5 in 侧壁把机库围成一个「装甲盒子」，
+      代价是机库净高只有 16 ft、载机量比同吨位的美日航母少一半。
+      1940 年 5 月建成，三个月后即穿进地中海，同年 11 月打出塔兰托夜袭；
+      1941 年 1 月在马耳他以西被德机重创，此后在印度洋、地中海、
+      太平洋断续作战到 1945 年，战后改作试飞与训练舰，1956 年拆解。
+    en: >-
+      HMS Illustrious was the name ship of the Royal Navy's first armoured
+      carriers: the flight deck itself was 3-inch armour plate and the hangar
+      was boxed in by 4.5-inch sides, at the cost of a hangar only 16 feet high.
+      Completed in May 1940, she fought at Taranto that November, was badly
+      damaged off Malta in January 1941, and served in the Indian Ocean, the
+      Mediterranean and the Pacific until 1945. She ended her career as a
+      trials and training carrier and was broken up in 1956.
+
+  paragraphs:
+    - heading: 舰名与定位
+      text:
+        zh: >-
+          这是皇家海军第 4 艘用 Illustrious 命名的军舰。名字 1795 年首次启用，
+          上一任是 1896 年下水、1920 年出售的一艘战列舰。
+          本舰是 1936 年度计划的首舰，也是「装甲航母」这一路线的第一个成品：
+          它之后的 Formidable、Victorious 与改型的 Indomitable 都在同一套设计逻辑上。
+      src: [naval-history-illustrious, navypedia-illustrious]
+
+    - heading: 装甲机库：这一级在赌什么
+      text:
+        zh: >-
+          1936 年 7 月 8 日的参谋要求写得很具体：36 架飞机、一部弹射器、
+          飞行甲板不薄于 3 in 非渗碳钢，能抗住 550 lb 半穿甲弹在 7,000 ft 以下的投掷、
+          250 lb 弹在 11,500 ft 以下、1,100 lb 穿甲弹在 4,500 ft 以下，
+          水下要抗 750 lb 装药。设计的心理基准是 1935 年空军部的保证——
+          未来作战中最大只会遇到 500 lb 炸弹。于是机库做成了 458 × 62 × 16 ft 的
+          装甲盒子：侧壁 4.5 in、顶板 3 in，单是甲板装甲就约 1,500 t、
+          覆盖飞行甲板的 62%。代价写在船体外型上：干舷只有 38 ft，
+          而同样用装甲机库思路的 Ark Royal 是 60 ft。
+      src: [ac-staff-requirements, ac-design, navypedia-illustrious]
+
+    - heading: 16 ft 机库的天花板
+      text:
+        zh: >-
+          机库净高 16 ft 是这一级最长期、也最难辩解的一笔账。
+          同期美国航母的机库高度是 Lexington 20 ft、Yorktown 17 ft 3 in、Essex 17 ft 6 in，
+          差别在 1940 年只体现为「能不能多挂一层飞机」，到战后就成了
+          「能不能起降喷气机」：Essex 靠 17 ft 6 in 的余量一路改到越战，
+          光辉级没有这个余量。反过来，装甲盒子的防护优势在战争中也确实兑现过——
+          1941 年 1 月的重伤是它撑得住的证据，但撑住之后船体结构付出的代价，
+          要到 1945 年才被完整看见。
+      src: [ac-worthwhile, ac-design, ac-battle-damage]
+
+    - heading: 武备、雷达，以及没有装的东西
+      text:
+        zh: >-
+          建成时的主要对空火力是 8 座双联 4.5 in（Mk II BD 座，每门 12 发/分，
+          43° 射程 19,900 码、80° 射高 41,000 ft），近距离靠 6 座八联 2-pdr
+          「pom-pom」（共 48 门），没有 20 mm 机关炮——那些是 1941 年之后才加的。
+          它还是第一艘在完工前就装好雷达的航母：为装 Type 79 对空警戒雷达，
+          交舰日期被推迟。另一件事值得记下来：UP 无控火箭发射器首批 40 座的分配令里
+          既没有本舰、也没有任何一艘航母，本站据此判定它未装 UP。
+      src: [navweaps-45in-45-mk1, navweaps-2pdr-mk8-octuple, naval-history-illustrious, hood-adm1-23040]
+
+    - heading: 它在战史上的位置
+      text:
+        zh: >-
+          光辉号身上挂着两件互不相干、却常常被一起提起的事。
+          一件是 1940 年 11 月 11 日夜的塔兰托：21 架 Swordfish 分两波出击，
+          以 2 架飞机的代价让三艘意大利战列舰退出战斗，Boyd 把它与
+          纳尔逊在特拉法尔加、乃至近乎日德兰全舰队两倍的战果相提并论。
+          另一件是 1941 年 1 月的马耳他以西：六枚炸弹与多枚近失，
+          机库内 9 架 Swordfish 与 4 架 Fulmar 被烧毁，炸弹与鱼雷却没有殉爆，
+          主机无损，船自己开进了马耳他。装甲甲板在这里第一次被实战检验，
+          而 1945 年 4 月神风近失之后在菲律宾查出的外板开裂与横肋骨断裂，
+          是同一次检验的账单。
+      src: [ac-taranto-narrative, ac-taranto-report, ac-excess, ac-kamikaze]
+
+history:
+  - id: build
+    title: { zh: 建造与服役 }
+    range: { from: 1937-01-12, to: 1940-08-14 }
+    lead:
+      zh: >-
+        它在 Vickers Armstrong 的 Barrow-in-Furness 船厂建造，
+        从下单到交舰用了三年四个月，其中最后一年是被雷达拖住的。
+    events:
+      - date: 1937-01-12
+        text:
+          zh: >-
+            按 1936 年度计划向 Vickers Armstrong（Barrow）下单。
+        src: [naval-history-illustrious]
+      - date: 1937-04-27
+        text:
+          zh: >-
+            铺设龙骨。船台号在二手资料里有 732 与 752 两说，本站不取。
+        src: [naval-history-illustrious]
+      - date: 1939-04-05
+        text:
+          zh: >-
+            下水。掷瓶人是海军军需总监（Controller of the Navy）之妻 Lady Henderson。
+        src: [naval-history-illustrious]
+      - date: 1940-01
+        text:
+          zh: >-
+            完工日期被主动推迟，以便安装 Type 79 对空警戒雷达——这是该型雷达
+            第一次装上航母。1940 年 1 月至 3 月都记作「为装雷达而延期」。
+        src: [naval-history-illustrious]
+      - date: 1940-04-20
+        text:
+          zh: >-
+            承包商试航结束、离 Barrow 时撞沉拖船 Poolgarth，随后转往 Liverpool。
+        src: [naval-history-illustrious]
+      - date: 1940-04-24
+        text:
+          zh: >-
+            海军接收（accepted into service）。交舰日期口径不一：
+            本条记 04-24 接收，05-25 另记作完工（见下一条），
+            站内单舰页的日期字段取的是完工口径。
+        src: [naval-history-illustrious]
+      - date: 1940-05-24
+        text:
+          zh: >-
+            验收试航。记录中特别指出舰桥结构振动过大，这个问题在之后的服役期内
+            从未彻底解决；同月还换装了磷青铜螺旋桨。
+        src: [naval-history-illustrious]
+      - date: 1940-05-26
+        text:
+          zh: >-
+            在 Portsmouth 服役（commissioned for service），此前 05-25 记为完工日期。
+        src: [naval-history-illustrious, navypedia-illustrious]
+      - date: 1940-07
+        text:
+          zh: >-
+            赴西印度试航。原定以 Dakar 为基地，法国投降后改地；07-28 返抵英国。
+        src: [naval-history-illustrious]
+      - date: 1940-08
+        text:
+          zh: >-
+            在 Clydebank 短修，把在大西洋航渡中受损的外部消磁电缆改为内部布线，
+            随后与已上舰的中队进行飞行训练。
+        src: [naval-history-illustrious]
+
+  - id: mediterranean-1940
+    title: { zh: 地中海首战：Hats、Benghazi 与塔兰托 }
+    range: { from: 1940-08-15, to: 1940-12-31 }
+    lead:
+      zh: >-
+        交舰不到四个月，它就从 Gibraltar 穿进地中海，成了亚历山大舰队的主力航母；
+        这一段的顶点是 11 月 11 日夜的塔兰托。
+    events:
+      - date: 1940-08-30
+        text:
+          zh: >-
+            自 Gibraltar 随 Force F 东行（同行的有战列舰 Valiant、防空巡洋舰
+            Calcutta 与 Coventry，Force H 提供掩护），即 Operation Hats，
+            目的是增援亚历山大。09-02 于 Pantelleria 外加入地中海舰队。
+        src: [naval-history-illustrious]
+      - date: 1940-09-04
+        text:
+          zh: >-
+            空袭 Rhodes 岛上的 Maritza 与 Callato 机场。
+        src: [naval-history-illustrious]
+      - date: 1940-09-17
+        text:
+          zh: >-
+            在 Benghazi 港布雷并攻击港内船只（Operation MD1），意大利驱逐舰
+            Borea 被击沉。
+        src: [naval-history-illustrious]
+      - date: 1940-10-12
+        text:
+          zh: >-
+            在掩护马耳他运输船团期间遭意大利鱼雷艇攻击，来袭三艘被击沉。
+        src: [naval-history-illustrious]
+      - date: 1940-11-11
+        text:
+          zh: >-
+            塔兰托夜袭（Operation Judgement）。第一波 20:35 起飞、20:40 十二架升空，
+            第二波 21:28、21:34 起飞；22:52 观察到爆炸。全部 Swordfish 加装
+            60 gal 副油箱，机群由本舰与 Eagle 的机组混编（Eagle 未参战，
+            其 8 名机组与 5 架飞机转乘本舰）。燃油污染使 3 架飞机在 11-09 至 11-11 间损失，
+            可用机降至 21 架。
+        src: [ac-taranto-report, naval-history-illustrious]
+      - date: 1940-11-12
+        text:
+          zh: >-
+            01:12 开始回收、02:50 最后一架落舰。战果为 Littorio 中 3 雷、
+            Conte di Cavour 中 1 雷坐底、Caio Duilio 中 1 雷；英方损失 2 架
+            （Williamson 与 Scarlett 被俘，Bayley 与 Slaughter 阵亡）。
+            Boyd 在报告里写「三艘战列舰被击沉或失去战斗力，用了 9 枚、也可能是 11 枚
+            18 in 鱼雷」。次夜的重演因天气取消。
+        src: [ac-taranto-report, ac-taranto-narrative]
+      - date: 1940-12-21
+        text:
+          zh: >-
+            在 Kerkennah 附近攻击驶往 Tripoli 的意大利运输船队，三艘中击沉两艘。
+        src: [naval-history-illustrious]
+
+  - id: excess-1941
+    title: { zh: 马耳他战损与赴美大修 }
+    range: { from: 1941-01-01, to: 1941-12-31 }
+    lead:
+      zh: >-
+        1941 年 1 月 10 日的一次空袭把它打出战场十个月，
+        但也成了「装甲甲板值不值」这个问题最直接的一份实验记录。
+    events:
+      - date: 1941-01-03
+        text:
+          zh: >-
+            为 Warspite、Barham、Valiant 炮击 Bardia 提供空中掩护。
+        src: [naval-history-illustrious]
+      - date: 1941-01-10
+        text:
+          zh: >-
+            Operation Excess 期间，在马耳他以西 60 英里处遭新到战区的德军
+            Ju 87 持续空袭，全天五波（12:20–19:30），中 6 弹并有多枚近失。
+            一枚 2,200 lb 炸弹打穿 3 in 飞行甲板在机库内爆炸，烧毁 9 架 Swordfish
+            与 4 架 Fulmar；机库内的炸弹与鱼雷均未殉爆，主机无损，
+            船在 Hasty 与 Jaguar 护卫下自行驶抵马耳他。
+            空袭日期另有一说记为 01-07。
+        src: [ac-excess, ac-battle-damage, naval-history-illustrious]
+      - date: 1941-01-11
+        text:
+          zh: >-
+            在马耳他入坞临时修理。当日 10:35 的电文报初步伤亡 83 死、60 重伤；
+            事后统计为 126 死、91 伤。英方与美方 BuShips 在 1941 年 6 月的弹道分析中
+            对第 6 枚炸弹的命中角度与引信判断不同，两说并存。
+        src: [ac-battle-damage]
+      - date: 1941-01-16
+        text:
+          zh: >-
+            马耳他空袭中再中两弹（一枚穿透后升降机之后的甲板）；01-19 又一次近失
+            造成约 5° 横倾。此时舰上已无可用飞机。
+        src: [ac-blitz, naval-history-illustrious]
+      - date: 1941-01-23
+        text:
+          zh: >-
+            以 20 kt 撤出马耳他，由 Greyhound、Janus、Juno、Jervis 护航，
+            01-25 抵 Alexandria。
+        src: [naval-history-illustrious]
+      - date: 1941-03-19
+        text:
+          zh: >-
+            启程赴 Durban 入坞，评估水下与结构损伤的完整范围；随后转赴美国。
+        src: [naval-history-illustrious]
+      - date: 1941-05-12
+        text:
+          zh: >-
+            在 Norfolk 美国海军船厂进坞大修。除修复战损外，还换了后升降机、
+            通过结构改动增加 50 ft 飞行甲板、加装 10 门 20 mm Oerlikon，
+            并改装弹射器以便弹射美制飞机。
+        src: [naval-history-illustrious]
+      - date: 1941-08
+        text:
+          zh: >-
+            舰长换人：Mountbatten 勋爵接任，但随后调任联合作战司令部司令，
+            未长期在舰。
+        src: [naval-history-illustrious]
+      - date: 1941-11-28
+        text:
+          zh: >-
+            赴 Jamaica 搭载 12 架 Swordfish 并进行飞行试验，之后与 Formidable
+            结伴返英。
+        src: [naval-history-illustrious]
+      - date: 1941-12-16
+        text:
+          zh: >-
+            在大西洋浓雾与大风浪中，舰首撞上 Formidable 舰尾，两舰均严重受损；
+            12-21 抵 Greenock 修理，直至 1942 年 2 月下旬才出坞。
+        src: [naval-history-illustrious]
+
+  - id: indian-ocean
+    title: { zh: 印度洋：Ironclad、Stab 与东方舰队 }
+    range: { from: 1942-01-01, to: 1943-01-05 }
+    lead:
+      zh: >-
+        1942 年它被派往印度洋，一年里做的事大多不是和日本舰队交战，
+        而是给登陆行动提供空中掩护、在海上找封锁船、以及充当战略佯动。
+    events:
+      - date: 1942-01
+        text:
+          zh: >-
+            在 Liverpool 修理期间，以 Type 281 对空警戒雷达替换了原来的 Type 79。
+        src: [naval-history-illustrious]
+      - date: 1942-03-23
+        text:
+          zh: >-
+            在 Clyde 加入 WS17 运输船团，与 Inconstant、Javelin、Pakenham
+            一同担任远洋护航，前往 Freetown；03-31 护航解除。
+        src: [naval-history-illustrious]
+      - date: 1942-04
+        text:
+          zh: >-
+            机库发生火灾（一说 04-02），在 Freetown 修复后继续南下。
+        src: [naval-history-illustrious]
+      - date: 1942-04-28
+        text:
+          zh: >-
+            与战列舰 Ramillies、巡洋舰 Hermione 及 6 艘驱逐舰一同护送
+            Convoy Z 前往马达加斯加。
+        src: [naval-history-illustrious]
+      - date: 1942-05-05
+        text:
+          zh: >-
+            Ironclad 行动：与 Indomitable 一同为 Diego Suarez 登陆提供空中掩护。
+            05-07 舰载机击沉维希法国潜艇 Le Héros。
+        src: [naval-history-illustrious]
+      - date: 1942-05-20
+        text:
+          zh: >-
+            解除 Ironclad 任务，赴 Mombasa 与东方舰队会合。两艘航母在此役共飞
+            309 架次，战斗损失 4 架。
+        src: [naval-history-illustrious]
+      - date: 1942-05-29
+        text:
+          zh: >-
+            自 Kilindini 随 Warspite、Formidable、Hermione 启程前往锡兰。
+        src: [naval-history-illustrious]
+      - date: 1942-08
+        text:
+          zh: >-
+            按美方请求在印度洋做攻势扫荡，作为瓜达尔卡纳尔登陆的牵制（Operation Stab）。
+        src: [naval-history-illustrious]
+      - date: 1942-09-10
+        text:
+          zh: >-
+            与 Warspite、水上飞机母舰 Albatross 一同为完成马达加斯加占领的
+            军事行动提供空中掩护（Operation Stream）。
+        src: [naval-history-illustrious]
+      - date: 1942-10
+        text:
+          zh: >-
+            赴 Durban 短修，11 月在修，12 月完成后返回锡兰归队。
+        src: [naval-history-illustrious]
+      - date: 1943-01-05
+        text:
+          zh: >-
+            从东方舰队撤出，其位置将由护航航母 Battler 接替。
+        src: [naval-history-illustrious]
+
+  - id: refit-1943
+    title: { zh: 本土改装与 Salerno }
+    range: { from: 1943-02-01, to: 1943-12-31 }
+    lead:
+      zh: >-
+        1943 年的那次改装决定了它之后两年的样子：甲板延长、雷达整代换新、
+        近防火力改成双联。改完它先回本土舰队，再被借去地中海。
+    events:
+      - date: 1943-02
+        text:
+          zh: >-
+            抵 Birkenhead 进坞改装，主要项目是延长飞行甲板、全面更新雷达
+            （对空警戒 Type 79B 与 281B、对海 10 cm 的 Type 272、
+            防空火控 Type 282 与 285）、以双联 Oerlikon 取代单装，
+            并在后升降机之后增加两道拦阻索（6 道改 8 道）。06 月完成后
+            在 Clyde 训练机组。
+        src: [naval-history-illustrious]
+      - date: 1943-07
+        text:
+          zh: >-
+            加入本土舰队，与航母 Unicorn 一同参加挪威海攻势扫荡
+            （Operation Camera），击落 3 架德军侦察机。
+        src: [naval-history-illustrious]
+      - date: 1943-08-14
+        text:
+          zh: >-
+            随本土舰队护送载有首相的 Queen Mary 号，后者正从魁北克会议返国。
+        src: [naval-history-illustrious]
+      - date: 1943-09-09
+        text:
+          zh: >-
+            调归地中海 Force H，与 Nelson、Rodney、Warspite、Valiant、
+            Formidable 组成 Salerno 登陆的掩护兵力（Operation Avalanche），
+            任务是阻止意大利水面舰艇干涉登陆。意军未出击，
+            对掩护兵力的鱼雷机攻击亦未成功。
+        src: [naval-history-illustrious]
+      - date: 1943-10-24
+        text:
+          zh: >-
+            在 Birkenhead 为海外服役做准备：加装双联 Oerlikon、
+            改动飞行甲板、改良弹射器以弹射满载的 Barracuda。
+        src: [naval-history-illustrious]
+      - date: 1943-12-30
+        text:
+          zh: >-
+            随 Queen Elizabeth、Valiant、Renown 与轻型航母 Unicorn
+            启程前往东方舰队。
+        src: [naval-history-illustrious]
+
+  - id: eastern-fleet-1944
+    title: { zh: 东方舰队：Sabang、苏门答腊与 57 架 }
+    range: { from: 1944-01-28, to: 1944-09-30 }
+    lead:
+      zh: >-
+        1944 年它是东方舰队唯一的装甲航母，一年里打了从 Sabang 到 Soerabaja
+        的一串空袭，中间还短期搭载过美军航母 Saratoga 的飞机。
+    events:
+      - date: 1944-01-31
+        text:
+          zh: >-
+            经地中海与红海抵 Trincomalee 归队，此时编制已超过 2,000 人。
+        src: [naval-history-illustrious]
+      - date: 1944-03
+        text:
+          zh: >-
+            与巡洋舰 Gambia、Sussex，驱逐舰 Rotherham 及荷兰驱逐舰
+            Tjerk Hiddes 在 Cocos 群岛西南搜索封锁船（Operation Sleuth）。
+        src: [naval-history-illustrious]
+      - date: 1944-03-27
+        text:
+          zh: >-
+            在 Cocos 西南与前来加入东方舰队的美国航母 Saratoga 会合
+            （Operation Diplomat）；04-02 一同返回 Trincomalee，
+            并互派飞机做着舰试验。
+        src: [naval-history-illustrious, ac-saratoga]
+      - date: 1944-04-19
+        text:
+          zh: >-
+            Operation Cockpit：与 Saratoga 一同空袭 Sabang，
+            掩护兵力为 Queen Elizabeth、Valiant、法国 Richelieu 与 Renown（TF 70）。
+        src: [naval-history-illustrious]
+      - date: 1944-05-17
+        text:
+          zh: >-
+            Operation Transom：与 Saratoga 的飞机一同空袭 Soerabaja 的港口与炼油厂，
+            出动前 Barracuda 已换成 Avenger。事后评估认为攻击效果「不甚满意」。
+        src: [naval-history-illustrious]
+      - date: 1944-06-10
+        text:
+          zh: >-
+            Operation Councillor：空袭 Sabang，作为美军登陆马里亚纳的牵制。
+        src: [naval-history-illustrious, ac-eastfleet]
+      - date: 1944-06-19
+        text:
+          zh: >-
+            Operation Pedal：返航途中空袭 Port Blair 港与机场
+            （另一说记为 7 月）。此时舰上载 57 架飞机，行动高潮时 53 架同时在空，
+            全部回收耗时一小时——「已在运载能力的边缘运作」。
+        src: [naval-history-illustrious, ac-eastfleet]
+      - date: 1944-07-22
+        text:
+          zh: >-
+            Operation Crimson：与 Victorious 一同空袭 Sabang 附近机场。
+            07-25 日军反击，Corsair 击落来袭 10 架中的 7 架，己方损失 2 架。
+        src: [naval-history-illustrious]
+      - date: 1944-08-24
+        text:
+          zh: >-
+            Operation Boomerang：与 Victorious、Indomitable 一同为美军空袭苏门答腊
+            提供海空救援保障；随后空袭 Padang（Operation Banquet）。
+        src: [naval-history-illustrious]
+      - date: 1944-09
+        text:
+          zh: >-
+            赴 Simonstown 海军船厂改装，为转隶太平洋做准备：锅炉换管、
+            加装美制 Type YE 归航信标，并增设海上为护航舰加油的设施。
+        src: [naval-history-illustrious]
+
+  - id: pacific
+    title: { zh: 太平洋：TF 57 与神风 }
+    range: { from: 1945-01-16, to: 1945-06-27 }
+    lead:
+      zh: >-
+        它在太平洋只打了三个月，其中一半时间在修船。这一段留下两件事：
+        一次被神风近失后的结构损伤，和一份「装甲甲板撑住了、船体却已经疲劳」的账。
+    events:
+      - date: 1945-01-16
+        text:
+          zh: >-
+            随 Victorious、Indomitable、Indefatigable、战列舰 King George V
+            及巡洋舰 Argonaut、Black Prince、Euryalus 等作为 TF 63 启程赴澳大利亚。
+        src: [naval-history-illustrious]
+      - date: 1945-01-24
+        text:
+          zh: >-
+            Operation Meridian I：与其他航母一同空袭苏门答腊 Pladjoe 炼油厂。
+            小规模日机反击被击退；此役损失 7 架飞机，另有 25 架在着舰时损毁。
+        src: [naval-history-illustrious]
+      - date: 1945-01-29
+        text:
+          zh: >-
+            Operation Meridian II：空袭 Palembang 附近的 Soengi Gerong 炼油厂。
+            日军神风在机群着舰时反击，本舰被 Euryalus 的高射炮弹片击中两处，
+            11 死、22 人受伤。
+        src: [naval-history-illustrious]
+      - date: 1945-02-09
+        text:
+          zh: >-
+            抵 Sydney 修理，拆除了中间那根主轴，航速降至 24 kt；
+            振动问题仍然存在。
+        src: [naval-history-illustrious]
+      - date: 1945-03-18
+        text:
+          zh: >-
+            英国太平洋舰队获准编为美国第 5 舰队的 TF 57；03-26 首次出击，
+            与 Indomitable、Indefatigable、Victorious 空袭 Sakishima 群岛机场
+            （Operation Iceberg）。
+        src: [naval-history-illustrious]
+      - date: 1945-04-06
+        text:
+          zh: >-
+            一架 D4Y3「Judy」大角度俯冲，被舰岛前部的 Bofors 打断左翼，
+            未撞上舰体，但右翼尖击碎了舰桥前的 Type 272 雷达罩；
+            所携 1,000 kg 炸弹在离舷 50 ft 处水中爆炸，冲击波损毁甲板上 2 架 Corsair。
+            舰体水上部分损伤轻微，水下结构损伤严重。
+        src: [ac-kamikaze, naval-history-illustrious]
+      - date: 1945-04-09
+        text:
+          zh: >-
+            自 Iceberg 任务中抽调转攻 Formosa，04-12 在恶劣天气下攻击化工厂与机场；
+            04-14 由 Formidable 在 TF 57 中接替。此阶段共飞 505 架次，
+            搭载燃油 3,549 t、航空汽油 88,363 gal。
+        src: [naval-history-illustrious]
+      - date: 1945-04-15
+        text:
+          zh: >-
+            赴菲律宾做水下检查，发现损伤远比原先判断的严重。
+        src: [naval-history-illustrious]
+      - date: 1945-05-24
+        text:
+          zh: >-
+            自 Sydney 以 19 kt 的限速启程返英。
+        src: [naval-history-illustrious]
+      - date: 1945-06-27
+        text:
+          zh: >-
+            抵 Rosyth 修理，并接受为期四个月的改装。
+        src: [naval-history-illustrious]
+
+  - id: postwar
+    title: { zh: 战后：试飞、训练与拆解 }
+    range: { from: 1946-06-01, to: 1956-11-03 }
+    lead:
+      zh: >-
+        战后十年它没有再随作战舰队部署过。16 ft 的机库在这一段从「设计取舍」
+        变成了「无法改装」，而它的用处只剩下两样：试飞平台与训练舰。
+    events:
+      - date: 1946-06
+        text:
+          zh: >-
+            胜利日之后仍在改装以更新设备，至 1946 年 6 月才重新服役，
+            此后用于着舰试验。
+        src: [naval-history-illustrious]
+      - date: 1947
+        text:
+          zh: >-
+            转入预备役。
+        src: [naval-history-illustrious]
+      - date: 1948
+        text:
+          zh: >-
+            重新服役，并再次改装以继续承担试验与训练任务。
+        src: [naval-history-illustrious]
+      - date: 1951
+        text:
+          zh: >-
+            运送部队前往塞浦路斯。
+        src: [naval-history-illustrious]
+      - date: 1953-06
+        text:
+          zh: >-
+            参加 Spithead 的加冕海上阅兵。
+        src: [naval-history-illustrious]
+      - date: 1956
+        text:
+          zh: >-
+            编入预备役后封存于 Gareloch，同年列入处置名单。
+        src: [naval-history-illustrious]
+      - date: 1956-11-03
+        text:
+          zh: >-
+            由 BISCO 购得用于拆解，当日被拖抵 Faslane。
+        src: [naval-history-illustrious, navypedia-illustrious]

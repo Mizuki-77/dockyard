@@ -1,0 +1,148 @@
+# 海战实体。与 fact 不同：战役的结构是「有先后顺序的事件流」，
+# 所以时间轴条目直接内联（time 在同一战役内唯一即可，不用 valid 时间窗）。
+# src 规则与 fact 相同：至少一个已登记来源，tier E 不得使用。
+
+id: denmark-strait
+name:
+  zh: 丹麦海峡海战
+  en: Battle of the Denmark Strait
+
+date: { from: 1941-05-24, to: 1941-05-24 }
+# 海区：给「海战历史」左树做第一层分组。不写会落到「其他海域」。
+theater: atlantic
+period:
+  zh: 1941-05-24 05:52–06:13，约 20 分钟
+  en: 24 May 1941, 05:52–06:13, about 20 minutes
+
+location:
+  zh: 丹麦海峡，格陵兰与冰岛之间
+  en: Denmark Strait, between Greenland and Iceland
+# Hood 沉没位置
+coordinates: 63°22′N 32°17′W
+
+scale:
+  zh: 单场水面炮战，双方主力舰近距离直瞄
+  en: Single surface gunnery action at close range
+
+summary:
+  zh: 一场持续不到 20 分钟的炮战改变了整个大西洋战场的兵力对比。英国战列巡洋舰胡德号被弹药库殉爆击沉，1,415 人阵亡、3 人生还；德国战列舰俾斯麦号被威尔士亲王号命中三发，其中一发击穿舰首燃油舱，为四天后的覆灭埋下伏笔。
+  en: A gunnery action lasting less than twenty minutes that changed the balance of the Atlantic campaign.
+
+belligerents:
+  - side: axis
+    label: { zh: 德国, en: Germany }
+    ships:
+      - name: Bismarck
+        ship_id: bismarck
+        role: { zh: 战列舰 · 编队旗舰, en: Battleship · flagship }
+      - name: Prinz Eugen
+        role: { zh: 重巡洋舰, en: Heavy cruiser }
+  - side: allies
+    label: { zh: 英国, en: United Kingdom }
+    ships:
+      - name: HMS Hood
+        role: { zh: 战列巡洋舰 · 分舰队旗舰, en: Battlecruiser · squadron flagship }
+      - name: HMS Prince of Wales
+        role: { zh: 战列舰 · 服役不足两个月, en: Battleship · in service less than two months }
+
+# 双方兵力以「当时实际能开火的武器」计，不是编制表数字 ——
+# 英舰迎头接敌只能用前主炮，这是理解战果的前提。
+forces:
+  - side: axis
+    guns: { zh: 8 × 38 cm + 8 × 20.3 cm，可全舷齐射, en: 8 × 38 cm + 8 × 20.3 cm, full broadside }
+  - side: allies
+    guns: { zh: 8 × 38.1 cm + 10 × 35.6 cm，仅前主炮可开火, en: 8 × 38.1 cm + 10 × 35.6 cm, forward turrets only }
+
+timeline:
+  - time: '05:30'
+    text:
+      zh: 欧根亲王号声呐听到左舷两个螺旋桨声。
+    src: [kbismarck-denmark-strait]
+  - time: '05:37'
+    major: true
+    text:
+      zh: 德舰目视发现英舰，距离约 19 英里（35,190 m）。
+    src: [kbismarck-denmark-strait]
+  - time: '05:52'
+    major: true
+    text:
+      zh: 距离缩至约 26,000 m，胡德号开火——打的是欧根亲王号，不是俾斯麦号。德舰此前已调换队位，英方仍按「战列舰在前」的惯例判断。
+    src: [kbismarck-denmark-strait]
+  - time: '05:53'
+    text:
+      zh: 威尔士亲王号随后开火。
+    src: [kbismarck-denmark-strait]
+  - time: '05:55'
+    major: true
+    text:
+      zh: 俾斯麦号开火，距离约 20,300 m，首轮齐射对胡德号。
+    src: [kbismarck-denmark-strait]
+  - time: '05:57'
+    text:
+      zh: 欧根亲王号以 20.3 cm 高爆弹命中胡德号主桅附近遮蔽甲板，引发大火，迅速扑灭。
+    src: [kbismarck-denmark-strait]
+  - time: '06:00'
+    major: true
+    text:
+      zh: 俾斯麦号第五次齐射命中胡德号，距离不足 9 英里（16,668 m）。至少一发 38 cm 穿甲弹穿透薄甲板进入后部弹药库，引爆约 112 t 发射药；爆炸在主机与后烟囱之间折断舰体。
+    src: [kbismarck-denmark-strait]
+  - time: '06:01'
+    major: true
+    text:
+      zh: 胡德号断成两截沉没。在舰 1,418 人（编制数），阵亡 1,415 人，仅 3 人生还——Ted Briggs、William Dundas、Robert Tilburn，约三小时后由驱逐舰 Electra 救起。舰体残骸位置 63°22′N 32°17′W，实际交战位置见 PoW 05:37 电报的 63°20′N 31°50′W。
+    src: [kbismarck-denmark-strait]
+  - time: '06:02'
+    text:
+      zh: 俾斯麦号第 8 次齐射命中威尔士亲王号舰桥，炮弹未爆炸穿出；舰桥指挥中枢除舰长 Leach 与另一人外全部阵亡。距离缩至 14,000 m。
+    src: [kbismarck-denmark-strait]
+  - time: '06:03'
+    text:
+      zh: 威尔士亲王号主炮故障，10 门 14 英寸炮中仅 7 门可用（A 塔 3 门、B 塔 2 门、Y 塔 2 门），施放烟幕撤退。
+    src: [kbismarck-denmark-strait]
+  - time: '06:09'
+    major: true
+    text:
+      zh: 德舰最后一次齐射，战斗结束。俾斯麦号此战共发射 93 发 38 cm 穿甲弹。林德曼主张追击歼灭，吕特晏斯依作战命令（避免与不护航队的敌舰交战）拒绝。
+    src: [kbismarck-denmark-strait, kbismarck-armament]
+
+# 俾斯麦号被命中三发，全部来自威尔士亲王号 35.6 cm 主炮。
+hits_received:
+  - text:
+      zh: XIV 段水线下穿过主装甲带下方，在 45 mm 防雷舱壁处爆炸。4 号左舷涡轮发电机舱完全淹没，2 号锅炉舱少量进水（用吊床堵住）。
+    src: [kbismarck-denmark-strait]
+  - text:
+      zh: XX–XXI 段水线以上穿过舰首，未爆炸，右舷出孔直径 1.5 m。约 1,000 t 海水进入艏楼，数百吨燃油被封在下部油舱。
+    src: [kbismarck-denmark-strait]
+  - text:
+      zh: 穿过一艘救生艇，再穿过水上飞机弹射器，未爆炸。打坏弹射器蒸汽管——这直接导致 5 月 27 日无法弹射 Ar 196 送走航海日志。
+    src: [kbismarck-denmark-strait, kbismarck-aviation]
+
+consequences:
+  - text:
+      zh: 俾斯麦号最大航速降至 28 节；艏倾 3°、左倾 9°；右舷螺旋桨叶露出水面，向 II、III 段右舷空舱注水配平。
+    src: [kbismarck-denmark-strait]
+  - text:
+      zh: 俾斯麦号 5 人轻伤、无死亡。舰首燃油舱被污染，可用的破交续航能力大幅缩水——这才是此战真正的战略后果。
+    src: [kbismarck-denmark-strait]
+
+losses:
+  - side: allies
+    ships_lost: { zh: HMS Hood（弹药库殉爆）, en: HMS Hood (magazine explosion) }
+    killed: 1415
+    survivors: 3
+    note:
+      zh: 另有威尔士亲王号阵亡 13 人，次日增至 14 人。
+  - side: axis
+    killed: 0
+    note:
+      zh: 5 人轻伤。
+
+outcome:
+  zh: 战术上德军胜，击沉英军一艘战列巡洋舰并迫退一艘战列舰；战略上德军败——俾斯麦号燃油系统受损，破交任务实际已经终结。
+  en: Tactical German victory, strategic German defeat.
+
+narrative_refs: []
+
+# 属于哪一次行动。反向索引由 operations/*.yaml 的 phases 建立，
+# 这里写明是为了让战役页能直接链回总行动，不用遍历所有 action 文件。
+operation: rheinubung

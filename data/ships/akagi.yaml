@@ -1,0 +1,1335 @@
+# ============================================================================
+# 赤城（あかぎ / Akagi）—— 天城型战列巡洋舰改装航空母舰
+#
+# 2026-11-19 入库。数据来自 work/raw/akagi-tech.md（773 行调研）。
+#
+# 赤城不属于任何「赤城级」。 航母化后日文 Wikipedia 的级名栏写的是
+# 「空母：未分類」——它是唯一舰。战巡时代属天城型（天城号因关东大地震损毁，
+# 改装中止）。kasado.net 把它单列「赤城型」是编目习惯，不代表有同级舰。
+# 加贺来自加贺级战列舰，与赤城不同级——不要把两者写成同级。
+#
+# 三个 20cm 主炮状态（不是两个）：
+#   1927-03 竣工 = 单装 6 门
+#   1928 末起   = 单装 6 + 连装 4 = 10 门
+#   1938 改装后 = 单装 6 门（连装撤除）
+# ============================================================================
+
+id: akagi
+name:
+  zh: 赤城
+  en: Akagi
+class: akagi
+note: >-
+  天城型战列巡洋舰 2 号舰，因华盛顿条约改装为航母。航母化后无同级舰。
+  1935-1938 年大改装：三段式飞行甲板改为单段全通甲板，加装左舷岛式舰桥。
+
+open_ended_note: >-
+  本舰多数参数的有效期从各自状态起始日到该状态结束（改装或战没），
+  改装前后的两套数据用不同时间窗区分，故部分 valid.to 留空。
+
+facts:
+  # ============================================================
+  # 身份
+  # ============================================================
+  - field: identity.name_original
+    value: 赤城（あかぎ）
+    src: [japanese-warship-akagi]
+    valid: { from: 1925-04-22 }
+    confidence: C
+    note: 日文原名为「赤城」，假名「あかぎ」。
+
+  - field: identity.name_zh
+    value: 赤城
+    src: [combinedfleet-akagi]
+    valid: { from: 1925-04-22 }
+    confidence: C
+
+  - field: identity.name_en
+    value: Akagi
+    src: [combinedfleet-akagi]
+    valid: { from: 1925-04-22 }
+    confidence: C
+    note: 命名取自群马县赤城山（"Red Castle"）。
+
+  - field: identity.ship_type
+    value: aircraft_carrier
+    src: [japanese-warship-akagi]
+    valid: { from: 1923-11-19 }
+    confidence: C
+    note: >-
+      1923-11-19 舰种由巡洋战舰改为航空母舰。此前作为天城型战列巡洋舰建造。
+
+  - field: identity.nation
+    value: japan
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25 }
+    confidence: C
+
+  - field: identity.operator
+    value: 大日本帝国海軍（Imperial Japanese Navy）
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25 }
+    confidence: C
+
+  - field: identity.era
+    value: ww2
+    src: [combinedfleet-akagi]
+    valid: { from: 1927-03-25 }
+    confidence: C
+
+  - field: identity.namesake
+    value: 群马县前桥市赤城山
+    src: [japanese-warship-akagi]
+    valid: { from: 1925-04-22 }
+    confidence: C
+    note: 日文原文「赤城の艦名は群馬県前橋市の赤城山にちなんで命名された」。
+
+  - field: identity.building_program
+    value: 八八舰队计划（八四舰队计划起案）
+    src: [japanese-warship-akagi]
+    valid: { from: 1920 }
+    confidence: C
+    note: >-
+      原文「軍艦赤城は、八八艦隊計画により天城型巡洋戦艦の2番艦として
+      呉海軍工廠で建造が始まった」。
+
+  # 注：identity.pennant_number 不写。
+  # 日本海军无 pennant number 制度，日文原始档案的识别是「舰名 + 舰艇类别等级」，
+  # 中途岛期的航空队识别是着舰识别文字「ア」。见 appearance.marking。
+
+  # ============================================================
+  # 建造
+  # ============================================================
+  - field: construction.builder
+    value: 呉海軍工廠（Kure Naval Arsenal）
+    src: [japanese-warship-akagi, combinedfleet-akagi]
+    valid: { from: 1920-12-06 }
+    confidence: C
+
+  - field: construction.builder_location
+    value: 広島県呉（Kure, Hiroshima）
+    src: [combinedfleet-akagi]
+    valid: { from: 1920-12-06 }
+    confidence: C
+
+  - field: construction.order_date
+    value: 1920
+    unit: date
+    src: [combinedfleet-akagi]
+    valid: { from: 1920 }
+    confidence: C
+
+  - field: construction.laid_down
+    value: 1920-12-06
+    unit: date
+    src: [japanese-warship-akagi, combinedfleet-akagi]
+    valid: { from: 1920-12-06 }
+    confidence: C
+    note: 以天城型战列巡洋舰 2 号舰开工。
+
+  - field: construction.launched
+    value: 1925-04-22
+    unit: date
+    src: [japanese-warship-akagi, combinedfleet-akagi]
+    valid: { from: 1925-04-22 }
+    confidence: C
+
+  - field: construction.commissioned
+    value: 1927-03-25
+    unit: date
+    src: [japanese-warship-akagi, combinedfleet-akagi]
+    valid: { from: 1927-03-25 }
+    confidence: C
+    note: >-
+      纸面竣工日。日文专题指出实际完成比这个日期晚约四个月：
+      「紙の上では竣工した【赤城】も、実際は予算不足で残工事が多くあり、
+      公試開始が5月、試験終了が7月末だったことから、実際に完成したのは
+      さらに4ヶ月後でした」。
+
+  - field: construction.fate_date
+    value: 1942-06-05
+    unit: date
+    src: [combinedfleet-akagi]
+    valid: { from: 1942-06-05 }
+    confidence: C
+    note: >-
+      当地时间（中途岛当地）6 月 5 日 05:20 沉没。
+      日本时间记 6 月 6 日，是同一时刻的两种时区写法。
+      Tully 在 TROM 开头专门说明用当地时区。引用时必须注明是哪个时区，
+      否则会与「6 月 4 日被弹」读成隔了一天多。
+
+  - field: construction.fate_type
+    value: scuttled
+    src: [combinedfleet-akagi, ussbs-aoki-akagi]
+    valid: { from: 1942-06-05 }
+    confidence: C
+    note: >-
+      己方驱逐舰雷击处分。原话「AKAGI lay over to starboard and sank tail first
+      after two or three torpedo hits out of four fired into her starboard side」。
+      注意：损伤来自美军俯冲轰炸，处分由日方执行——两者要分清。
+
+  # ============================================================
+  # 主尺度（改装前 1927-03-25 ~ 1935-10）
+  # ============================================================
+  - field: dimensions.length.oa
+    value: 261.21
+    unit: m
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25, to: 1935-10-24 }
+    confidence: C
+
+  - field: dimensions.length.wl
+    value: 248.95
+    unit: m
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25, to: 1935-10-24 }
+    confidence: C
+
+  - field: dimensions.length.pp
+    value: 234.70
+    unit: m
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25, to: 1935-10-24 }
+    confidence: C
+
+  - field: dimensions.beam.wl
+    value: 28.96
+    unit: m
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25, to: 1935-10-24 }
+    confidence: C
+
+  - field: dimensions.beam.max
+    value: 33.53
+    unit: m
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25, to: 1935-10-24 }
+    confidence: C
+    note: 另有「水線下最大幅 102.05 ft = 31.10 m」一说，同一来源并列给出。
+
+  - field: dimensions.draught.mean
+    value: 8.08
+    unit: m
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25, to: 1935-10-24 }
+    confidence: C
+
+  # ============================================================
+  # 主尺度（改装后 1938-08-31 ~ 1942-06-05）
+  # ============================================================
+  - field: dimensions.length.oa
+    value: 260.67
+    unit: m
+    src: [japanese-warship-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+
+  - field: dimensions.length.wl
+    value: 250.36
+    unit: m
+    src: [japanese-warship-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+
+  - field: dimensions.length.pp
+    value: 235.0
+    unit: m
+    src: [navypedia-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+    note: 日文源记 234.70 m（与改装前相同），navypedia 记 235.0，差 0.3 m。
+
+  - field: dimensions.beam.wl
+    value: 31.32
+    unit: m
+    src: [japanese-warship-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+    note: 改装加装防雷鼓包使宽度从 28.96 m 增至 31.32 m。
+
+  - field: dimensions.beam.max
+    value: 33.5
+    unit: m
+    src: [japanese-warship-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+
+  - field: dimensions.draught.mean
+    value: 8.71
+    unit: m
+    src: [japanese-warship-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+
+  # ============================================================
+  # 排水量
+  # ============================================================
+  - field: displacement.standard
+    value: 26900
+    unit: t
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25, to: 1935-10-24 }
+    confidence: C
+    note: 原文「基準排水量 26,900英トン」——注意是英吨（long ton），非公吨。
+
+  - field: displacement.full
+    value: 34364
+    unit: t
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25, to: 1935-10-24 }
+    confidence: C
+    note: >-
+      口径分歧：日文源（日文 Wikipedia / japanese-warship）标为「公試排水量」，
+      navypedia 标为 full。同一数字两种口径词，不裁决。
+
+  - field: displacement.standard
+    value: 36500
+    unit: t
+    src: [japanese-warship-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      原文「基準排水量 36,500英トン」。36,500 英吨 = 37,100 公吨，
+      combinedfleet 写「37,100-tons (standard)」是同一质量的公吨数值。
+      两者不是分歧，是单位差；引用时必须说明用的是英吨还是公吨。
+
+  - field: displacement.standard_metric
+    value: 37100
+    unit: t
+    src: [combinedfleet-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      即上条 36,500 英吨换算成公吨的值。单列此字段是为了不与英吨值混淆。
+
+  - field: displacement.full
+    value: 41300
+    unit: t
+    src: [japanese-warship-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      口径分歧（重要）：日文源标「公試排水量 41,300トン」，
+      英文源标「41,300 long tons (42,000 t) (deep load)」。
+      「公試」不等于 deep load，也不等于满载。 三种口径词指同一数量级，
+      但本站不裁决——两说并存。
+
+  - field: displacement.maximum
+    value: 42750
+    unit: t
+    src: [kasado-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+    note: 原文「満載 42,750t」。日语「満載」对应英文 full load。
+
+  # ============================================================
+  # 动力
+  # ============================================================
+  - field: propulsion.plant_type
+    value: steam_turbine
+    src: [navypedia-akagi]
+    valid: { from: 1927-03-25 }
+    confidence: C
+
+  - field: propulsion.shafts
+    value: 4
+    unit: count
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25 }
+    confidence: C
+
+  - field: propulsion.boiler.count
+    value: 19
+    unit: count
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25, to: 1935-10-24 }
+    confidence: C
+    note: 原文「ロ号艦本式専焼缶 11 基 + 同混焼缶 8 基」= 11 + 8 = 19 基。
+
+  - field: propulsion.boiler.count
+    value: 19
+    unit: count
+    src: [japanese-warship-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+    note: 改装后为「ロ号艦本式専焼缶 大型 11 基 + 同小型 8 基」，总数仍 19。
+
+  - field: propulsion.boiler.type
+    value: ロ号艦本式
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25 }
+    confidence: C
+
+  - field: propulsion.turbine.count
+    value: 4
+    unit: count
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25 }
+    confidence: C
+    note: 技本式汽轮机（高低压 2 组）4 基。
+
+  - field: propulsion.turbine.type
+    value: 技本式齿轮传动蒸汽轮机（Gihon geared steam turbines）
+    src: [navypedia-akagi, japanese-warship-akagi]
+    valid: { from: 1927-03-25 }
+    confidence: C
+
+  - field: propulsion.power.design
+    value: 131200
+    unit: hp
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25, to: 1935-10-24 }
+    confidence: C
+
+  - field: propulsion.power.design
+    value: 133000
+    unit: hp
+    src: [japanese-warship-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+
+  - field: propulsion.speed.design
+    value: 31.0
+    unit: kn
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25, to: 1935-10-24 }
+    confidence: C
+
+  - field: propulsion.speed.design
+    value: 31.2
+    unit: kn
+    src: [japanese-warship-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+
+  - field: propulsion.speed.trial
+    value: 32.5
+    unit: kn
+    src: [combinedfleet-akagi, japanese-warship-akagi]
+    valid: { from: 1927-06-17 }
+    confidence: C
+    note: >-
+      1927-06-17 试航创 32.5 节纪录。另有 32.1 节一说
+      （japanese-warship 与 S6 均记「公試32.1ノット」）。两说并存。
+
+  - field: propulsion.range.max
+    value: 8000
+    unit: nmi
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25, to: 1935-10-24 }
+    confidence: C
+
+  - field: propulsion.range.at_speed
+    value: 14
+    unit: kn
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25, to: 1935-10-24 }
+    confidence: C
+    note: 8,000 海里 / 14 节。
+
+  - field: propulsion.range.max
+    value: 8200
+    unit: nmi
+    src: [japanese-warship-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+
+  - field: propulsion.range.at_speed
+    value: 16
+    unit: kn
+    src: [japanese-warship-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      8,200 海里 / 16 节。英文源另记 10,000 海里 / 16 节，
+      燃油 7,500 长吨 vs 日文源 5,770 吨。三说并存，不裁决。
+
+  - field: propulsion.fuel.capacity
+    value: 6000
+    unit: t
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25, to: 1935-10-24 }
+    confidence: C
+    note: >-
+      改装前为「重油 3,900 英吨 + 石炭 2,100 英吨」，合计约 6,000（不同燃料，
+      此处按总量记并在此说明构成）。改装后燃油三说：5,770 / 6,000 / 7,500 长吨。
+
+  - field: propulsion.fuel.capacity
+    value: 5770
+    unit: t
+    src: [japanese-warship-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+    note: 日文源「重油 5,770トン（或 5,775，1938-03）」。另有 6,000（navypedia）与 7,500 长吨（英文源）两说。
+
+  - field: propulsion.propeller.count
+    value: 4
+    unit: count
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25 }
+    confidence: C
+    note: 四轴四桨。
+
+  # ============================================================
+  # 防护
+  # ============================================================
+  - field: protection.scheme
+    value: other
+    src: [navypedia-akagi, japanese-warship-akagi]
+    valid: { from: 1927-03-25 }
+    confidence: C
+    note: >-
+      非 all-or-nothing，沿用战巡的「舷侧装甲带 + 装甲甲板 + 倾斜连接」局部防御。
+      原文「Main 152mm belt closed about 2.3 of hull length and was inclined at
+      14° from vertical」。注册表枚举里无对应值，用 other 并在本条说明。
+
+  - field: protection.armor.thickness
+    value: 152
+    unit: mm
+    src: [navypedia-akagi, kasado-akagi]
+    valid: { from: 1927-03-25 }
+    confidence: C
+    qual: { part: belt, region: main }
+    note: >-
+      舷侧装甲带。改装时由原战巡设计的 254 mm 削减至 152 mm，
+      并被下移到比原设计更低的位置（「reduced from 254 to 152 mm and placed
+      lower on the ship than originally designed」）。
+      倾角三说：navypedia 14° / 日文源 12° / japanese-warship 10°。
+
+  - field: protection.armor.thickness
+    value: 79
+    unit: mm
+    src: [kasado-akagi]
+    valid: { from: 1927-03-25 }
+    confidence: C
+    qual: { part: deck, region: main }
+    note: 装甲甲板水平部 79 mm，外舷倾斜部 102 mm。改装时由 96 mm 削减至 79 mm。
+
+  - field: protection.armor.thickness
+    value: 102
+    unit: mm
+    src: [kasado-akagi]
+    valid: { from: 1927-03-25 }
+    confidence: C
+    qual: { part: slope, region: main }
+    note: 装甲甲板外舷倾斜部。
+
+  - field: protection.underwater.depth
+    value: 1.2
+    unit: m
+    src: [navypedia-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      原文「Depth of underwater protection was increased at 1.2m by bulges」——
+      这是鼓包带来的增量，不是防护纵深绝对值。 绝对值未获取。
+      登记为增量是为了保留这条可溯源事实；引用时不可当作总纵深。
+
+  # ============================================================
+  # 航空设施（改装后；三段式时代的关键数据另记）
+  # ============================================================
+  # 三段式飞行甲板（1927-1935）—— 三段各有独立长度与用途
+  - field: aviation.deck.upper.length
+    value: 190.20
+    unit: m
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25, to: 1935-10-24 }
+    confidence: C
+    note: 上段 624 ft × 100 ft（190.20 × 30.48 m）。用于着舰与大型机起飞。
+
+  - field: aviation.deck.middle.length
+    value: 15.0
+    unit: m
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25, to: 1935-10-24 }
+    confidence: C
+    note: >-
+      中段仅 15.0 m × 约 25 m（375 ㎡），只够极轻的飞机起降。
+      英文源原句「her middle flight deck (beginning right in front of the
+      bridge) was only 15 meters (49 ft 3 in) long」。
+      这个数字本身就是三段甲板设计失败的直接证据。
+      navypedia 记 18 m，与日文源的 15.0 m 不符。
+
+  - field: aviation.deck.lower.length
+    value: 55.02
+    unit: m
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25, to: 1935-10-24 }
+    confidence: C
+    note: 下段 180 ft 6 in × 75 ft（55.02 × 22.86 m）。用于大型机起飞。
+
+  # 改装后单段全通甲板（1938-1942）
+  - field: aviation.deck.length
+    value: 249.17
+    unit: m
+    src: [japanese-warship-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+
+  - field: aviation.deck.width
+    value: 30.48
+    unit: m
+    src: [japanese-warship-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+
+  - field: aviation.hangar.count
+    value: 3
+    unit: count
+    src: [navypedia-akagi, kasado-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      三层机库：上、中为主机库（全密闭），下为小型辅助库（仅存放拆解状态飞机）。
+      原文「The third and lowest hangar deck was used only for storing
+      disassembled aircraft」。
+
+  - field: aviation.hangar.length
+    value: 130.0
+    unit: m
+    src: [kasado-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+    note: 上/中机库各 130.0 m（改装前为 100.0 m）。
+
+  - field: aviation.hangar.width
+    value: 22.0
+    unit: m
+    src: [kasado-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+
+  - field: aviation.hangar.height
+    value: 5.0
+    unit: m
+    src: [kasado-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+
+  - field: aviation.elevator.count
+    value: 3
+    unit: count
+    src: [japanese-warship-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+    note: 改装前为 2 基，改装后增为 3 基（前 11.8×16.0 m、中 11.8×13.0 m、后 12.8×8.4 m）。
+
+  - field: aviation.elevator.dimensions
+    value: 前 11.8 × 16.0 m；中 11.8 × 13.0 m；后 12.8 × 8.4 m
+    src: [navypedia-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+
+  - field: aviation.arrestor.count
+    value: 9
+    unit: count
+    src: [combinedfleet-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      英文源「hydraulic Type 1 system with 9 wires」，日文源记「呉式四型 10 索」。
+      9 vs 10 未定；且日文文献一致指向「呉式四型」，英文源的 Type 1 疑为译名混淆。
+
+  # 弹射器：0，但要说清「曾计划过」
+  - field: aviation.catapult.count
+    value: 0
+    unit: count
+    src: [combinedfleet-akagi, japanese-warship-akagi]
+    valid: { from: 1927-03-25, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      这是「0」，不是「未获取」。 原话「No catapults were fitted.」。
+      但日文专题补充：改装时曾为安装 2 基弹射器做过配套工程，
+      工程进度不明且远未完成。所以准确说法是「计划 2 基、部分施工、最终未装成」，
+      而不是「从未考虑」。
+
+  - field: aviation.aircraft.capacity
+    value: 60
+    unit: count
+    src: [combinedfleet-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      机库总容量 60 架（含拆解存放）。中途岛出击时的实际搭载三说并存：
+      54+6（combinedfleet）/ 60（英文维基）/ 63（日文维基）。
+
+  - field: aviation.aircraft.types
+    value: 零式舰战（A6M2）、九九式舰爆（D3A1）、九七式舰攻（B5N2）
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+
+  # ============================================================
+  # 武备
+  # ============================================================
+  - field: armament.mount.summary
+    value: >-
+      1938 改装后：20cm/50 三年式单装炮 6 门（舰尾两舷炮廓）+
+      12cm/45 十年式连装高角炮 6 基 12 门 +
+      25mm 九六式连装机炮 14 基 28 门 +
+      7.7mm 单装机枪若干
+    src: [japanese-warship-akagi, combinedfleet-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+
+  - field: armament.aa_25mm.count
+    value: 28
+    unit: count
+    src: [japanese-warship-akagi, combinedfleet-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      14 基双联装 = 28 门，全部为双联装，无单装、无三联装。
+      原文「25mm連装機銃 14基28門」／「14 × twin 25 mm AA guns」。
+      1938 改装完成时替换原有的 13mm 连装机枪。
+
+  - field: armament.torpedo.tubes
+    value: 0
+    unit: count
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25, to: 1942-06-05 }
+    confidence: C
+    note: 作为航母无鱼雷发射管；舰载机携带航空鱼雷，但那是飞机武器。
+
+  # ============================================================
+  # 雷达与火控
+  # ============================================================
+  - field: sensors.radar.count
+    value: 0
+    unit: count
+    src: [ussbs-aoki-akagi]
+    valid: { from: 1927-03-25, to: 1942-06-05 }
+    confidence: A
+    note: >-
+      这是「0」，有一手证言（A 级）。 USSBS 审问赤城舰长青木泰二郎原话：
+      「Q. Did you have radar on the Akagi? A. No.」
+      并补充「There was no ship at MIDWAY or carrier which had it.」——
+      即整个机动部队的航母都没有雷达，不只是赤城。
+      日文 Wikipedia 全文检索「電探」0 命中，佐证一致。
+
+  - field: sensors.director.type
+    value: 一四式方位盘（20cm 炮用）/ 九一式高射装置（12cm 高角炮用）/ 九五式机铳射击装置（25mm 用）
+    src: [kasado-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      数量分歧：九一式 2 组（kasado）vs 3 基（japanese-warship）；
+      九五式 4 组（kasado）vs 6 组（英文维基）。
+      英文源另记 20cm 用 Type 89 director 1 部，与日文源的一四式方位盘 2 组不一致。
+
+  # ============================================================
+  # 编制
+  # ============================================================
+  - field: service.complement.standard
+    value: 1630
+    unit: persons
+    src: [japanese-warship-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      「最終時 1,630名」。中途岛出击时另有第一航空舰队司令部 64 名搭乘。
+      实际搭载人数不可考——日文源明言「不明」，
+      原因是中途岛基地占领后的基地要员与兵员也搭便船。
+
+  - field: service.casualties
+    value: 221
+    unit: persons
+    src: [japanese-warship-akagi]
+    valid: { from: 1942-06-05 }
+    confidence: C
+    note: >-
+      战死者 221 名（准士官以上 8 + 下士官兵 213）。
+      四说并存：221（日文源）/ 263（combinedfleet）/ 267（英文维基）/
+      约 200（青木舰长 1945 年回忆，约数）。日文源区分了军官与士兵口径，
+      英文源可能口径不同。不裁决。
+
+  # ============================================================
+  # 涂装与外形
+  # ============================================================
+  - field: appearance.scheme
+    value: 无迷彩，单色军舰色（工厂灰）
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      日文 Wikipedia 检索「迷彩」0 命中。仅有舰首局部重新涂装的记录
+      （锡兰冲海战后、珍珠港出击前各一次）。
+
+  - field: appearance.color.hull
+    value: 呉海軍工廠グレイ（建造厂为吴）
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25, to: 1938-08-31 }
+    confidence: C
+
+  - field: appearance.color.hull
+    value: 佐世保海軍工廠グレイ（改装在佐世保实施）
+    src: [japanese-warship-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+
+  - field: appearance.island_position
+    value: port
+    src: [combinedfleet-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      左舷岛式舰桥，罕见的实验性设计。 原话「An island superstructure is
+      added on the ship's port side, an unusual arrangement which will be later
+      shared by carrier HIRYU. However, this experiment will not be continued on
+      other future carriers.」
+      放左舷的原因：赤城由战巡改装，舰体细长，舰桥若放右舷会与右舷大烟囱
+      一起造成重量偏右（「艦橋を左舷に移せば煙突とのバランスが取りやすい」）。
+      1938 年 10-11 月做了 451 架次实船试验，结论是负面的
+      （右舷来风时气流紊乱、夜间着舰困难），但改装已成事实，至死未改。
+      改装前（1927-1938）无岛式舰桥，指挥所在上段甲板前端下方。
+
+  - field: appearance.marking
+    value: 着舰识别文字「ア」；中途岛时飞行甲板前部绘巨大日章旗
+    src: [japanese-warship-akagi]
+    valid: { from: 1938-08-31, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      甲板日章旗是珊瑚海海战后的敌我识别措施，
+      但日文源指出「これはアメリカ軍急降下爆撃隊にとって絶好の的となった」。
+
+  - about: weapon:20cm-3ns
+    field: weapon.designation
+    value: 50口径三年式二〇糎砲（1号）/ 20cm/50 三年式 No.1
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      必须是 No.1，不是 No.2。No.2 是 8 吋（20.3cm）炮，1931-04 才采用，
+      使用舰名单里没有赤城、加贺。赤城、加贺装的是 7.9 吋的 No.1。
+      原文 these two carriers were the only Japanese ships still armed with
+      these weapons ... until they were sunk at the Battle of Midway。
+      两型参数差别很大：炮身重 17.6 t vs 18.7 t、弹重 110 kg vs 125.85 kg、
+      初速 870 mps vs 840 mps、射程 28,000 m vs 29,400 m。按 No.2 填表会全错。
+  - about: weapon:20cm-3ns
+    field: weapon.category
+    value: naval_gun
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:20cm-3ns
+    field: weapon.nation
+    value: japan
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:20cm-3ns
+    field: weapon.bore
+    value: 200
+    unit: mm
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:20cm-3ns
+    field: weapon.in_service_from
+    value: 1941-12-07
+    unit: date
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+    note: 1938 改装后单装 6 门（舰尾两舷炮廓）；连装 2 基已于改装时撤除
+
+  - about: weapon:12cm-10ns
+    field: weapon.designation
+    value: 12cm/45 十年式
+    src: [navweaps-12cm-10ns]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:12cm-10ns
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-12cm-10ns]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:12cm-10ns
+    field: weapon.nation
+    value: japan
+    src: [navweaps-12cm-10ns]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:12cm-10ns
+    field: weapon.bore
+    value: 120
+    unit: mm
+    src: [navweaps-12cm-10ns]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:12cm-10ns
+    field: weapon.in_service_from
+    value: 1941-12-07
+    unit: date
+    src: [navweaps-12cm-10ns]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+    note: 连装 6 基 12 门，至死未换装 12.7cm
+
+  - about: weapon:25mm-96
+    field: weapon.designation
+    value: 25mm 九六式
+    src: [navweaps-25mm-96]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:25mm-96
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-25mm-96]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:25mm-96
+    field: weapon.nation
+    value: japan
+    src: [navweaps-25mm-96]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:25mm-96
+    field: weapon.bore
+    value: 25
+    unit: mm
+    src: [navweaps-25mm-96]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:25mm-96
+    field: weapon.in_service_from
+    value: 1941-12-07
+    unit: date
+    src: [navweaps-25mm-96]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+    note: 连装 14 基 28 挺，无单装、无三联
+
+  - about: weapon:a6m2
+    field: weapon.designation
+    value: 零式舰战 21 型
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:a6m2
+    field: weapon.category
+    value: aircraft
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:a6m2
+    field: weapon.nation
+    value: japan
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:a6m2
+    field: weapon.in_service_from
+    value: 1941-12-07
+    unit: date
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+    note: 中途岛时舰载战斗机
+
+  - about: weapon:d3a1
+    field: weapon.designation
+    value: 九九式舰爆 11 型
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:d3a1
+    field: weapon.category
+    value: aircraft
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:d3a1
+    field: weapon.nation
+    value: japan
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:d3a1
+    field: weapon.in_service_from
+    value: 1941-12-07
+    unit: date
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+    note: 中途岛时舰载俯冲轰炸机
+
+  - about: weapon:b5n2
+    field: weapon.designation
+    value: 九七式舰攻 12 型
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:b5n2
+    field: weapon.category
+    value: aircraft
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:b5n2
+    field: weapon.nation
+    value: japan
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+  - about: weapon:b5n2
+    field: weapon.in_service_from
+    value: 1941-12-07
+    unit: date
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-05 }
+    confidence: C
+    note: 中途岛时舰载鱼雷机
+
+  - about: weapon:20cm-3ns
+    field: weapon.caliber_length
+    value: 50
+    unit: ratio
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1939 }
+    confidence: C
+    note: L/50。日文原名「五十口径三年式二〇糎砲」
+
+  - about: weapon:20cm-3ns
+    field: weapon.weight
+    value: 17900
+    unit: kg
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1939 }
+    confidence: C
+    note: 17.6 吨（17.9 mt），原文「Gun Weight 17.6 tons (17.9 mt)」
+
+  - about: weapon:20cm-3ns
+    field: weapon.muzzle_velocity
+    value: 870
+    qual: { shell_type: ap }
+    unit: mps
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1939 }
+    confidence: C
+    note: 原文照抄单值，未分弹种
+
+  - about: weapon:20cm-3ns
+    field: weapon.range.max
+    value: 28000
+    unit: m
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1939 }
+    confidence: C
+    note: 45° 仰角时的最大射程
+
+  - about: weapon:20cm-3ns
+    field: weapon.range.max_elevation
+    value: 45
+    unit: deg
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1939 }
+    confidence: C
+
+  - about: weapon:20cm-3ns
+    field: weapon.rate_of_fire
+    value: 5
+    unit: rpm
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1939 }
+    confidence: C
+    note: 理论 3-5 发/分；实战射速未获取。古鹰级除外（<2 发/分）
+
+  - about: weapon:12cm-10ns
+    field: weapon.caliber_length
+    value: 45
+    unit: ratio
+    src: [navweaps-12cm-10ns]
+    valid: { from: 1932 }
+    confidence: C
+    note: L/45
+
+  - about: weapon:12cm-10ns
+    field: weapon.weight
+    value: 2950
+    unit: kg
+    src: [navweaps-12cm-10ns]
+    valid: { from: 1932 }
+    confidence: C
+    note: 2.9 吨（2.95 mt）
+
+  - about: weapon:12cm-10ns
+    field: weapon.muzzle_velocity
+    value: 825
+    qual: { shell_type: he }
+    unit: mps
+    src: [navweaps-12cm-10ns]
+    valid: { from: 1932 }
+    confidence: C
+    note: 通常弹 825-830 mps；照明弹 700、对潜弹 250
+
+  - about: weapon:12cm-10ns
+    field: weapon.range.max
+    value: 16000
+    unit: m
+    src: [navweaps-12cm-10ns]
+    valid: { from: 1932 }
+    confidence: C
+    note: 45° 仰角，20.4 kg 高爆弹
+
+  - about: weapon:12cm-10ns
+    field: weapon.range.max_elevation
+    value: 45
+    unit: deg
+    src: [navweaps-12cm-10ns]
+    valid: { from: 1932 }
+    confidence: C
+
+  - about: weapon:12cm-10ns
+    field: weapon.range.aa_max
+    value: 10000
+    unit: m
+    src: [navweaps-12cm-10ns]
+    valid: { from: 1932 }
+    confidence: C
+    note: 75° 仰角时的最大射高
+
+  - about: weapon:12cm-10ns
+    field: weapon.rate_of_fire
+    value: 10
+    unit: rpm
+    src: [navweaps-12cm-10ns]
+    valid: { from: 1932 }
+    confidence: C
+    note: 理论 10-11 发/分；实战 6-8 发/分
+
+  - about: weapon:12cm-10ns
+    field: weapon.elevation.min
+    value: -10
+    unit: deg
+    src: [navweaps-12cm-10ns]
+    valid: { from: 1932 }
+    confidence: C
+
+  - about: weapon:12cm-10ns
+    field: weapon.elevation.max
+    value: 75
+    unit: deg
+    src: [navweaps-12cm-10ns]
+    valid: { from: 1932 }
+    confidence: C
+
+  - about: weapon:25mm-96
+    field: weapon.caliber_length
+    value: 60
+    unit: ratio
+    src: [navweaps-25mm-96]
+    valid: { from: 1936 }
+    confidence: C
+    note: L/60
+
+  - about: weapon:25mm-96
+    field: weapon.weight
+    value: 115
+    unit: kg
+    src: [navweaps-25mm-96]
+    valid: { from: 1936 }
+    confidence: C
+    note: 不含弹匣
+
+  - about: weapon:25mm-96
+    field: weapon.muzzle_velocity
+    value: 900
+    qual: { shell_type: he }
+    unit: mps
+    src: [navweaps-25mm-96]
+    valid: { from: 1936 }
+    confidence: C
+
+  - about: weapon:25mm-96
+    field: weapon.rate_of_fire
+    value: 220
+    unit: rpm
+    src: [navweaps-25mm-96]
+    valid: { from: 1936 }
+    confidence: C
+    note: 循环射速 200-260 发/分（标准 220）；实战 110-120 发/分
+
+  - about: weapon:a6m2
+    field: weapon.aircraft.crew
+    value: 1
+    unit: persons
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07 }
+    confidence: C
+    note: 单座。盟军代号 Zeke
+
+  - about: weapon:d3a1
+    field: weapon.aircraft.crew
+    value: 2
+    unit: persons
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07 }
+    confidence: C
+    note: 双座。盟军代号 Val
+
+  - about: weapon:b5n2
+    field: weapon.aircraft.crew
+    value: 3
+    unit: persons
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07 }
+    confidence: C
+    note: 三座。盟军代号 Kate
+
+  - about: weapon:a6m2
+    field: weapon.aircraft.span
+    value: 12.0
+    unit: m
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07 }
+    confidence: C
+    note: 翼面积 22.4 m²
+
+  - about: weapon:a6m2
+    field: weapon.aircraft.length
+    value: 9.06
+    unit: m
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07 }
+    confidence: C
+
+  - about: weapon:a6m2
+    field: weapon.aircraft.height
+    value: 3.05
+    unit: m
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07 }
+    confidence: C
+
+  - about: weapon:a6m2
+    field: weapon.aircraft.empty_weight
+    value: 1680
+    unit: kg
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07 }
+    confidence: C
+
+  - about: weapon:a6m2
+    field: weapon.aircraft.gross_weight
+    value: 2410
+    unit: kg
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07 }
+    confidence: C
+    note: 最大 2,796 kg
+
+  - about: weapon:a6m2
+    field: weapon.aircraft.engine
+    value: 中岛 荣一二型（NK1C Sakae 12）14 缸空冷星型
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07 }
+    confidence: C
+
+  - about: weapon:a6m2
+    field: weapon.aircraft.power
+    value: 940
+    unit: hp
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07 }
+    confidence: C
+    note: 起飞功率 940 hp；4,200 m 高度 950 hp
+
+  - about: weapon:d3a1
+    field: weapon.aircraft.span
+    value: 14.37
+    unit: m
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07 }
+    confidence: C
+    note: 另源记 14.365 m；翼面积 34.9 m²
+
+  - about: weapon:d3a1
+    field: weapon.aircraft.length
+    value: 10.2
+    unit: m
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07 }
+    confidence: C
+    note: 另源记 10.195 m
+
+  - about: weapon:d3a1
+    field: weapon.aircraft.height
+    value: 3.85
+    unit: m
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07 }
+    confidence: C
+
+  - about: weapon:d3a1
+    field: weapon.aircraft.empty_weight
+    value: 2408
+    unit: kg
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07 }
+    confidence: C
+
+  - about: weapon:d3a1
+    field: weapon.aircraft.gross_weight
+    value: 3650
+    unit: kg
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07 }
+    confidence: C
+    note: 翼载 104.6 kg/m²
+
+  - about: weapon:d3a1
+    field: weapon.aircraft.engine
+    value: 三菱 金星四四型（MK4D Kinsei 44）14 缸空冷星型
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07 }
+    confidence: C
+
+  - about: weapon:b5n2
+    field: weapon.aircraft.span
+    value: 15.52
+    unit: m
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07 }
+    confidence: C
+    note: 另源记 15.518 m；翼面积 37.7 m²
+
+  - about: weapon:b5n2
+    field: weapon.aircraft.length
+    value: 10.3
+    unit: m
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07 }
+    confidence: C
+
+  - about: weapon:b5n2
+    field: weapon.aircraft.height
+    value: 3.7
+    unit: m
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07 }
+    confidence: C
+
+  - about: weapon:b5n2
+    field: weapon.aircraft.empty_weight
+    value: 2279
+    unit: kg
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07 }
+    confidence: C
+
+  - about: weapon:b5n2
+    field: weapon.aircraft.gross_weight
+    value: 3800
+    unit: kg
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07 }
+    confidence: C
+
+  - about: weapon:b5n2
+    field: weapon.aircraft.engine
+    value: 中岛 荣一一型（NK1B Sakae 11）14 缸空冷星型
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07 }
+    confidence: C

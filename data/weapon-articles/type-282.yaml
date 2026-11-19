@@ -1,0 +1,133 @@
+# ============================================================================
+# 武器正文 —— Type 282 高炮指挥仪雷达
+#
+# 这一型最好写的一条是「一座指挥仪配一部雷达」的对应关系：
+# 本舰 1943-06 清单里 6 部 282，对应 6 座八联 pom-pom 指挥仪。
+# 性能不写。
+# ============================================================================
+weapon: type-282
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Type 282 是一型装在 pom-pom 指挥仪上的近程高炮控制雷达，
+      任务是把目标距离交给指挥仪，让 2-pdr 八联装炮在看不见目标时也能打。
+      它在本舰上的数量与 pom-pom 指挥仪一一对应：1943 年 6 月的清单记 6 部，
+      同一份清单里正好是 6 座八联装 pom-pom。
+      Type 282 的战时首次装舰对象是威尔士亲王号（HMS Prince of Wales）。
+    en: >-
+      The Type 282 was a close-range anti-aircraft control radar mounted on the pom-pom
+      director; its task was to feed range to the director so that the 2-pdr octuple
+      mountings could engage a target they could not see. Aboard HMS Illustrious its
+      number matches the pom-pom directors one for one: the June 1943 list records six
+      sets, against six octuple pom-pom mountings in the same list. Its first wartime
+      fitting was in HMS Prince of Wales.
+
+  paragraphs:
+    - heading: 一座指挥仪一部雷达，本舰是 6 对 6
+      text:
+        zh: >-
+          这一型的装舰逻辑是「跟着指挥仪走」，因此数量由指挥仪数量决定。
+          本舰 1943 年 6 月的清单写的是 6 部 type 282，而同一份清单里
+          是 6 座八联装 pom-pom——两者是一一对应的关系。
+          这一点在设计资料里有独立印证：1941 到 1942 年的换装被概括为
+          「79 换成 281（对空）加 285（4.5 英寸炮术）」，
+          而 282 走的是另一条线，是逐个指挥仪加装的，
+          不是作为一套集中系统一次性装上去的。
+        en: >-
+          The set was fitted to follow the director, so its number is set by the number
+          of directors. The June 1943 list for this ship records six type 282 sets, and
+          the same list carries six octuple pom-pom mountings - the two correspond one
+          for one. The design record supports this independently: the 1941-42 change is
+          summed up as the Type 79 giving way to the Type 281 for air warning and the
+          Type 285 for 4.5-inch gunnery, while the 282 belongs to a separate line, added
+          director by director rather than installed once as a centralised system.
+      src: [navypedia-illustrious, ac-design]
+
+    - heading: 它的价值上限由指挥仪本身决定
+      text:
+        zh: >-
+          这一点必须写清楚，否则会把 282 的作用说大。
+          本舰 1941 年 2 月 7 日的炮术报告对 pom-pom 指挥仪的判断是：
+          缺少动力随动（power follow up），由此产生的时间滞后与瞄准误差
+          使该指挥仪「在实战条件下对付编队俯冲轰炸形同无用」；
+          报告还记，舰队正常航速下指挥仪振动很大，
+          有一次整个 C.O.F.A.S. 直接震断。也就是说，
+          即便雷达把距离送进去了，指挥仪跟不上目标这个瓶颈仍然在。
+          本站不把 282 写成「解决了 pom-pom 打不准的问题」。
+        en: >-
+          This has to be stated or the 282 will be over-credited. The ship's gunnery
+          report of 7 February 1941 judged the pom-pom director to lack power follow-up,
+          with the resulting time lags and pointer errors rendering the director useless
+          under action conditions against massed dive-bombing; the same report records
+          that at normal fleet speed the vibration of the pom-pom directors was great,
+          and that on one occasion the whole C.O.F.A.S. of a director snapped off. Even
+          with radar range fed in, the bottleneck of a director that could not keep up
+          with the target remained. This article does not present the 282 as having
+          solved the pom-pom's accuracy problem.
+      src: [ac-gunnery-report]
+
+    - heading: 时间顺序：雷达比本舰的战损报告晚
+      text:
+        zh: >-
+          装舰时点要注意口径。现有的最早可证装舰时点是英王乔治五世级 1941 年 12 月；
+          本舰的记录是 1943 年 6 月清单里的 6 部。
+          而本舰 1941 年 1 月 10 日那次战损报告里没有提到火控雷达，
+          也就是说 1941 年初的这场战斗与本型无关。
+          专题站的英国雷达表另记 Type 282 于 1941 年进入服役、
+          用途写为近程对空控制、首次装舰对象是威尔士亲王号；
+          这三条与本舰的清单位于不同口径，引用时须分开。
+        en: >-
+          The dating needs care. The earliest fitting that can be evidenced is in the
+          King George V class in December 1941; this ship's record is the six sets in
+          the June 1943 list. The ship's January 1941 damage report mentions no fire
+          control radar, so that early action has nothing to do with this set. The
+          specialist site's table separately records the Type 282 as operational in 1941,
+          gives its purpose as close-range anti-aircraft control and names HMS Prince of
+          Wales as first fitting; those three statements sit at a different level from
+          this ship's lists and must be cited separately.
+      src: [navypedia-illustrious, navypedia-kgv, navweaps-radar-uk, ac-gunnery-report]
+
+history:
+  - id: service
+    title: { zh: 装舰记录, en: Fitting record }
+    range: { from: 1941-12, to: 1946-01 }
+    lead:
+      zh: >-
+        最早的装舰证据在英王乔治五世级，本舰的 6 部出现在 1943 年 6 月，
+        一直留到战后。
+      en: >-
+        The earliest fitting evidence is in the King George V class; this ship's six
+        sets appear in June 1943 and stay to the end of the war.
+    events:
+      - date: 1941-12
+        text:
+          zh: >-
+            英王乔治五世级此时装有 type 282，这是现有来源里最早可证的装舰时点。
+            专题站另记该型 1941 年进入服役、首次装舰对象为威尔士亲王号。
+          en: >-
+            The King George V class carried the type 282 by this date, the earliest
+            fitting that can be evidenced from the sources at hand. The specialist site
+            separately records the set as operational in 1941 with HMS Prince of Wales
+            as first fitting.
+        src: [navypedia-kgv, navweaps-radar-uk]
+      - date: 1943-06
+        text:
+          zh: >-
+            本舰清单记 6 部 type 282，与同一份清单里的 6 座八联装 pom-pom 一一对应。
+          en: >-
+            The ship's list records six type 282 sets, corresponding one for one with
+            the six octuple pom-pom mountings in the same list.
+        src: [navypedia-illustrious]
+      - date: 1946-01
+        text:
+          zh: >-
+            战后清单里仍为 6 部 type 282，与 1946 年 1 月的 5 座八联装 pom-pom 并存。
+            本条只记清单内容，不据此推断拆装顺序——现有材料未给。
+          en: >-
+            The post-war list still shows six type 282 sets, alongside the five octuple
+            pom-pom mountings listed in January 1946. This records the list only and
+            draws no conclusion about the order of removal, which the material does not
+            give.
+        src: [navypedia-illustrious]

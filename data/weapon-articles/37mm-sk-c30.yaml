@@ -1,0 +1,183 @@
+# ============================================================================
+# 武器正文 —— 3.7 cm SK C/30
+#
+# 这一型最值得写的是两件事：三轴炮座这个"看起来很先进"的方案，
+# 以及射速造成的连锁后果（自动装填机研制→取消→转向 55mm Gerät 58）。
+# 射速数字来源互相打架，正文不写具体数值。
+# ============================================================================
+weapon: 37mm-sk-c30
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      3.7 cm SK C/30 是德国海军二战中期的标准中程高射炮，
+      1930 年设计、1934 年服役，几乎每一艘德国主力舰上都装过。
+      它的射速受制于半自动、逐发装填的装填方式，这个短板最终引出了一段
+      自动装填机的研制、试验成功、然后被取消的历史。
+    en: >-
+      The 3.7 cm SK C/30 was the German Navy's standard medium anti-aircraft gun
+      of the mid-war years, designed in 1930 and in service from 1934, and carried
+      by almost every German capital ship. Its rate of fire was limited by a
+      semi-automatic, single-round loading cycle, and that shortfall led to an
+      automatic loader that was tested successfully and then cancelled.
+
+  paragraphs:
+    - heading: 第三根轴：稳定炮架
+      text:
+        zh: >-
+          这门炮的炮座除了旋回和俯仰之外还有第三根轴，作用是在舰体横摇纵摇时
+          把炮架稳定住，让火炮跟着飞机走而不是跟着船走。这个思路本身和
+          10.5 cm 的三轴炮座是同一套。但 navweaps 指出，正是这套三轴炮座暴露出来的问题，
+          让德国人后来的 3.7 cm 设计干脆放弃了这一方案。
+        en: >-
+          Beyond training and elevation the mounting carried a third axis that
+          stabilised the gun against the ship's roll and pitch, so the piece followed
+          the aircraft rather than the hull. The idea is the same one behind the
+          10.5 cm three-axis mount. But NavWeaps records that the problems this
+          mounting revealed led later German 3.7 cm designs to abandon the scheme
+          altogether.
+      src: [navweaps-37mm-sk-c30]
+
+    - heading: 半自动、逐发装填：射速的根
+      text:
+        zh: >-
+          它是半自动武器，需要人工逐发把炮弹送进炮膛，装填手的动作直接决定射速。
+          作为防空炮这不够——目标在接近，炮口需要连续覆盖。navweaps 记录了对此的
+          三种口径（30 发/分、理论 80 发/分、实际 40 发/分），页面作者自己倾向其中一种，
+          但那是来源内部的取舍，本站正文因此不写射速数字，只写它的装填方式与后果。
+        en: >-
+          The gun was semi-automatic and each round had to be fed by hand, so the
+          loader's pace set the rate of fire. For anti-aircraft work that was not
+          enough - the target was closing and the gun needed to keep the airspace
+          covered. NavWeaps records three different figures (30, a theoretical 80 and
+          a practical 40 rounds per minute) and its author leans toward one of them,
+          but that is a judgement internal to the source; this article therefore gives
+          the loading method and its consequence instead of a number.
+      src: [navweaps-37mm-sk-c30]
+
+    - heading: 自动装填机：试验成功，然后合同取消
+      text:
+        zh: >-
+          因为射速慢，德国海军启动了自动装填机的研制。原型在试验中成功了，
+          但 1943 年末研制合同被取消，理由不是技术失败，而是这型炮已经过时：
+          舰上正在换成 40 mm Bofors 与 3.7 cm KM42/KM43，设计力量要转向
+          55 mm Gerät 58 这类更先进的舰用高炮。这条线索说明一件事——
+          装备的淘汰往往不是因为原型没做成，而是因为别的方案先到了。
+        en: >-
+          The slow rate of fire prompted work on an automatic loader. The prototype
+          succeeded in trials, yet the development contract was cancelled late in 1943
+          - not because of technical failure but because the gun was already obsolete:
+          ships were moving to the 40 mm Bofors and the 3.7 cm KM42/KM43, and design
+          effort was redirected to more advanced weapons such as the 55 mm Gerät 58.
+          The episode shows that equipment is often retired not because its prototype
+          failed but because a better answer arrived first.
+      src: [navweaps-37mm-sk-c30]
+
+    - heading: 变型与出口
+      text:
+        zh: >-
+          3.7 cm/L83 SK C/30U 是为 U 艇设计的型号，装在「湿式炮座」里——
+          潜艇炮座需要能在水下状态保持可用。另有一部分这型炮出口到西班牙。
+        en: >-
+          The 3.7 cm/L83 SK C/30U was the U-boat variant, mounted in a "wet" mount
+          built to remain serviceable in a submarine environment. Some guns were also
+          exported to Spain.
+      src: [navweaps-37mm-sk-c30]
+
+    - heading: 它在实战里的位置
+      text:
+        zh: >-
+          俾斯麦号装 16 门（八座双联），备弹 34,100 发。这个数字说明德国海军
+          对它的定位是「用弹量换命中概率」——射速不够，就靠备弹量与炮位数堆。
+          战争后期飞机更快、更结实，20 mm 与 37 mm 这类中近程火炮的效力都在下降，
+          这也是德国转向更大口径高炮的原因之一。
+        en: >-
+          Bismarck carried sixteen guns in eight twin mountings with an outfit of
+          34,100 rounds. That number shows how the navy compensated: where rate of fire
+          was short, it stacked ammunition and mountings. As aircraft grew faster and
+          tougher late in the war, medium and short-range weapons like the 20 mm and
+          37 mm lost effectiveness, which is part of why Germany moved toward larger
+          anti-aircraft calibres.
+      src: [kbismarck-armament, navweaps-37mm-sk-c30]
+
+history:
+  - id: design
+    title: { zh: 设计与定型, en: Design }
+    range: { from: 1930, to: 1934 }
+    lead:
+      zh: >-
+        1930 年设计、1934 年服役，是德国海军第一代专门设计的舰用中程高炮。
+      en: >-
+        Designed in 1930 and in service from 1934, it was the German Navy's first
+        purpose-designed medium anti-aircraft gun.
+    events:
+      - date: 1930
+        text:
+          zh: >-
+            完成设计，编号 3.7 cm SK C/30，采用垂直滑动炮闩。
+          en: >-
+            Design completed as the 3.7 cm SK C/30, using a vertical sliding breech
+            block.
+        src: [navweaps-37mm-sk-c30]
+      - date: 1934
+        text:
+          zh: >-
+            进入服役，随后成为几乎所有德国主力舰的标准中程高炮。
+          en: >-
+            Entered service and became the standard medium anti-aircraft gun of almost
+            every German capital ship.
+        src: [navweaps-37mm-sk-c30]
+
+  - id: service
+    title: { zh: 战时使用, en: Wartime service }
+    range: { from: 1939-08, to: 1944-11 }
+    lead:
+      zh: >-
+        它在每一场德国主力舰参与的交战里都在射击，也几乎每一次都被评价为不够快。
+      en: >-
+        It fired in every action a German capital ship fought, and almost every
+        assessment found it too slow.
+    events:
+      - date: 1940-08-24
+        text:
+          zh: >-
+            俾斯麦号服役，装八座双联共 16 门，备弹 34,100 发。
+          en: >-
+            Bismarck commissioned with eight twin mountings, sixteen guns, and an
+            outfit of 34,100 rounds.
+        src: [kbismarck-armament]
+      - date: 1940-10-31
+        text:
+          zh: >-
+            一份德国海军备忘录记录了俾斯麦号高炮座位的调整意见：
+            III、IV 号 3.7 cm 炮座位置不当、射界受限；I、II 号 2 cm 炮座在前甲板受风浪影响，
+            只有停船时才便于操作；XI、XII 号 2 cm 炮座装在 D 炮塔前缘、可折叠，
+            但只有在尾部 38 cm 炮不射击时才能使用。备忘录同时请求改为双联或四联座。
+          en: >-
+            A German Navy memorandum records the case for relocating Bismarck's
+            anti-aircraft mounts: the III and IV 3.7 cm positions were badly placed
+            with restricted arcs, the I and II 2 cm positions on the forecastle were
+            exposed to heavy weather and workable mainly when the ship was stopped,
+            and the XI and XII 2 cm positions on the forward edge of D turret were
+            foldable and usable only when the after 38 cm turret was not firing. The
+            same document asked for twin or quadruple mountings instead.
+        src: [kbismarck-flak-relocation]
+      - date: 1943
+        text:
+          zh: >-
+            自动装填机的研制合同在这一年末取消。理由是这型炮已过时，
+            舰上正在改用 40 mm Bofors 与 3.7 cm KM42/KM43，
+            设计力量转向 55 mm Gerät 58。
+          en: >-
+            The automatic loader contract was cancelled late this year. The gun was
+            judged obsolete, ships were converting to the 40 mm Bofors and 3.7 cm
+            KM42/KM43, and design effort moved to the 55 mm Gerät 58.
+        src: [navweaps-37mm-sk-c30]
+      - date: 1944-11-12
+        text:
+          zh: >-
+            提尔皮茨号被击沉。它当时装的是八座双联共 16 门。
+          en: >-
+            Tirpitz was sunk, still carrying eight twin mountings and sixteen guns.
+        src: [kbismarck-tirpitz]

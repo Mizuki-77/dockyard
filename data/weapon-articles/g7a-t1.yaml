@@ -1,0 +1,188 @@
+# ============================================================================
+# 武器正文 —— 53.3 cm G7a T1
+#
+# 这一型有两条必须并列的争议：
+#  1) 装药重量：navweaps 明写各参考文献给 280–430 kg，它自己倾向 280；
+#  2) 44 节这一档：发动机过载，战争前期实际上没使用。
+# 本站不裁决，两组数字都留。
+# ============================================================================
+weapon: g7a-t1
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      53.3 cm G7a T1 是德国海军二战期间一直发放、评价「非常可靠」的蒸汽鱼雷，
+      1934 年设计、1935 年服役，俾斯麦级与提尔皮茨号上的四联装鱼雷发射管用的就是它。
+      它几乎直接由一战 50 cm G7 发展而来，与其他国家同类武器的关键差别是用
+      Decalin（十氢化萘）而不是煤油作燃料。
+    en: >-
+      The 53.3 cm G7a T1 was the steam torpedo the German Navy issued throughout the
+      Second World War and considered very reliable. Designed in 1934 and in service
+      from 1935, it armed the quadruple torpedo tubes of the Bismarck class and
+      Tirpitz. It descends almost directly from the First World War 50 cm G7, and its
+      key difference from other nations' torpedoes was burning Decalin
+      (decahydronaphthalene) rather than kerosene.
+
+  paragraphs:
+    - heading: 它的燃料选择不是小事
+      text:
+        zh: >-
+          navweaps 把「用 Decalin 而不用煤油」列为这型鱼雷与其他国家武器的
+          主要区别。这是蒸汽鱼雷的共同问题——燃料决定航迹，航迹决定被发现的距离。
+          这里不展开技术细节，但需要指出：同一时期德国还有电动的 G7e，
+          那型更慢但航迹不明显、也相对安静。G7a 与 G7e 是两条并行路线，
+          不是替代关系。
+        en: >-
+          NavWeaps singles out the use of Decalin rather than kerosene as the principal
+          difference from other nations' torpedoes. This matters for any steam torpedo:
+          the fuel determines the wake, and the wake determines how far away the target
+          sees you coming. The detail need not be expanded here, but it is worth noting
+          that Germany ran a parallel electric design, the G7e, which was slower but
+          trackless and relatively quiet. The G7a and G7e were two lines, not a
+          replacement path.
+      src: [navweaps-torpedoes-wwii]
+
+    - heading: 制造工时：一枚 G7a 相当于两枚电动雷
+      text:
+        zh: >-
+          1939 年每枚 G7a 约需 3,730 工时；到 1943 年降到 1,707 工时。
+          即便如此，它仍然显著高于电动 G7e 的工时（G7e 约 1,255 工时）。
+          这一条对理解德国潜艇部队在战争后期的鱼雷选择很关键：
+          同一条生产线的时间可以造更多的电动雷。
+        en: >-
+          Each G7a took about 3,730 man-hours in 1939, falling to 1,707 by 1943. Even
+          then it cost significantly more than the electric G7e at around 1,255 hours.
+          That matters for understanding German torpedo choices late in the war: the
+          same production capacity could yield more electric torpedoes.
+      src: [navweaps-torpedoes-wwii]
+
+    - heading: 44 节这一档，战争前期其实没在用
+      text:
+        zh: >-
+          navweaps 记了两个容易忽略的点：44 节被发现会让发动机过载，
+          所以战争前期并没有使用这一档；1939 年的早期型号，
+          实际射程比表列的数值低约 20%。也就是说标称的三档速度/射程
+          （44 节 6,000 米、40 节 8,000 米、30 节 14,000 米）
+          在服役初期并不是全都能拿到的。
+        en: >-
+          NavWeaps records two easily missed points: the 44-knot setting was found to
+          overload the engine and was not used during the early war years, and the early
+          models issued in 1939 had ranges about twenty per cent below the tabulated
+          figures. The nominal three settings - 44 knots for 6,000 m, 40 knots for
+          8,000 m and 30 knots for 14,000 m - were therefore not all available at the
+          start of the war.
+      src: [navweaps-torpedoes-wwii]
+
+    - heading: 装药重量：一组互相打架的数字
+      text:
+        zh: >-
+          这里必须两说并列。navweaps 在来源说明里明写：这型鱼雷的装药重量
+          在各参考文献之间冲突，它见过的数字最低 280 kg、最高 430 kg。
+          它自己的判断是 280 kg 正确，并推测低值属于战争前期、后来换过更重的弹头。
+          **本站照录这个冲突，不取单一数字当定论。**
+        en: >-
+          Both readings have to stand. NavWeaps states in its source note that the
+          warhead weight conflicts across references, with figures as low as 280 kg and
+          as high as 430 kg. It believes 280 kg is correct and suggests the lower
+          figures may belong to torpedoes issued early in the war with heavier warheads
+          introduced later. **This article records the conflict rather than settling
+          on one figure.**
+      src: [navweaps-torpedoes-wwii]
+
+    - heading: FAT 与 LUT：两种会拐弯的改型
+      text:
+        zh: >-
+          Federapparattorpedo（弹簧装置鱼雷，FAT）变型有一套简单的制导装置，
+          可以在设定长度直航段的末端走出一系列长短段或环形——用来打护航队里
+          反复穿越同一片水域的目标。1944 年中期起引入的 Lagenunabhängiger Torpedo
+          （LUT）是 FAT 的更复杂版本，可在任意目标角发射并沿曲线奔向目标。
+          但 LUT 有发射时制导装置不脱开的问题，造成「管中跑」（tube runners），
+          1944 年 12 月以后似乎很少使用。
+        en: >-
+          The Federapparattorpedo (FAT) variant had a simple guidance system that could
+          run a series of long or short legs or loops at the end of a configurable
+          straight course - useful against convoy targets crossing the same water
+          repeatedly. The Lagenunabhängiger Torpedo (LUT) introduced from mid-1944 was a
+          more sophisticated FAT that could be fired at any target angle and follow a
+          curved path. LUT suffered from the guidance gear failing to disengage at
+          launch, producing "tube runners", and appears to have been rarely used after
+          December 1944.
+      src: [navweaps-torpedoes-wwii]
+
+history:
+  - id: design
+    title: { zh: 设计与定型, en: Design }
+    range: { from: 1934, to: 1935 }
+    lead:
+      zh: >-
+        1934 年设计、1935 年服役，谱系直接接到一战的 50 cm G7。
+      en: >-
+        Designed in 1934 and in service from 1935, tracing directly back to the First
+        World War 50 cm G7.
+    events:
+      - date: 1934
+        text:
+          zh: >-
+            完成设计，编号 53.3 cm G7a T1，别名「Ato」。由一战 50 cm G7 直接发展而来，
+            燃料用 Decalin 而非煤油。
+          en: >-
+            Design completed as the 53.3 cm G7a T1, also known as "Ato". It descends
+            almost directly from the First World War 50 cm G7 and burns Decalin rather
+            than kerosene.
+        src: [navweaps-torpedoes-wwii]
+      - date: 1935
+        text:
+          zh: >-
+            进入服役。全战争期间一直发放。
+          en: >-
+            Entered service and was issued throughout the war.
+        src: [navweaps-torpedoes-wwii]
+
+  - id: service
+    title: { zh: 战时使用, en: Wartime service }
+    range: { from: 1941-10, to: 1944-11 }
+    lead:
+      zh: >-
+        它在俾斯麦号上只是配角，在提尔皮茨号上才有固定的四联装发射管。
+      en: >-
+        Aboard Bismarck it was a minor fitting; Tirpitz is where it got fixed
+        quadruple tubes.
+    events:
+      - date: 1941-10
+        text:
+          zh: >-
+            提尔皮茨号在 Gotenhafen 期间加装两座四联装鱼雷发射管，
+            分别位于舯部上层甲板两舷（第 X 区段）。
+          en: >-
+            While at Gotenhafen, Tirpitz received two quadruple torpedo mounts on the
+            upper deck, one to each side amidships in section X.
+        src: [kbismarck-tirpitz]
+      - date: 1943
+        text:
+          zh: >-
+            制造工时从上年的水平降到每枚 1,707 工时（1939 年为 3,730 工时），
+            仍显著高于电动 G7e。
+          en: >-
+            Production effort fell to 1,707 man-hours per torpedo from 3,730 in 1939,
+            still well above the electric G7e.
+        src: [navweaps-torpedoes-wwii]
+      - date: 1944-07
+        text:
+          zh: >-
+            1944 年中期起引入 LUT 变型（Lagenunabhängiger Torpedo），
+            是 FAT 的复杂化版本，可在任意目标角发射并沿曲线路径奔向目标。
+          en: >-
+            From about mid-1944 the LUT variant (Lagenunabhängiger Torpedo) was
+            introduced, a more sophisticated FAT able to be fired at any target angle
+            and follow a curved path to the target.
+        src: [navweaps-torpedoes-wwii]
+      - date: 1944-11-12
+        text:
+          zh: >-
+            提尔皮茨号被击沉。它当时的装备表里列有 8 具 53.3 cm 鱼雷发射管，
+            装在两座四联装座上。
+          en: >-
+            Tirpitz was sunk. Her armament list at the time included eight 53.3 cm
+            torpedo tubes in two quadruple mountings.
+        src: [kbismarck-tirpitz]

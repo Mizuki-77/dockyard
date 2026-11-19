@@ -1,0 +1,130 @@
+# ============================================================================
+# 武器正文 —— Fairey Flycatcher
+#
+# 材料最薄的一条之一：只有「1930 年代初 1–2 架、至 1933 年止」与
+# 「撤装月份未获取」「机型参数一律不写」两条边界。
+# 正文因此写三件事：它在舰上的时段、起飞方式的演变、以及材料的限度。
+# ============================================================================
+weapon: flycatcher
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Fairey Flycatcher 是一型舰载战斗机，在胡德号上属于 1930 年代初的那一段：
+      本舰当时载 1 到 2 架，至 1933 年为止。
+      它的起飞方式与后来的水上飞机不同——那时用的是装在炮塔顶上的起飞平台，
+      而不是弹射器与吊车。
+      具体的撤装月份本站未获取；机型参数（马力、极速、翼展）本站无来源，一律不写。
+    en: >-
+      The Fairey Flycatcher was a carrier-borne fighter, and aboard Hood it belongs to
+      the early 1930s: one or two aircraft were carried, up to 1933. It flew differently
+      from the floatplanes that came later, launching from platforms mounted on top of
+      gun turrets rather than from a catapult with crane recovery. The month of its
+      removal has not been obtained, and airframe figures such as power, top speed and
+      span have no source in this project, so none are written.
+
+  paragraphs:
+    - heading: 它用的是炮塔顶起飞平台，不是弹射器
+      text:
+        zh: >-
+          这一条是理解本舰航空设备演变的关键。协会的材料记：
+          胡德号最初在 B 与 X 炮塔顶上装有起飞平台，Flycatcher 从那里起飞；
+          1929 到 1931 年的改装中，X 炮塔上的平台被拆除，
+          舰尾甲板上装了一台可旋转、可折叠的弹射器，并配一台吊车来回收水上飞机。
+          也就是说「炮塔平台 → 弹射器」这个转变发生过，而且有具体日期。
+          另有一处年表记 1920 年 4 至 5 月装的是 A 与 B 炮塔的平台——
+          与「B 与 X」的说法不同。两说并列：一处讲后期状态、一处讲 1920 年状态。
+        en: >-
+          This is the key to the ship's aviation gear. The association's material records
+          that Hood was initially fitted with flying-off platforms on top of B and X
+          turrets, from which Flycatchers could launch, and that during the 1929-1931
+          refit the platform was removed from X turret and a rotating, folding catapult
+          installed on the quarterdeck with a crane to recover a seaplane. The move from
+          turret platform to catapult therefore happened, and it has dates. A separate
+          chronology records platforms fitted to A and B turrets in April and May 1920,
+          which differs from "B and X": one describes the later state, the other the 1920
+          state, and both stand.
+      src: [hmshood-association, hmshood-timeline]
+
+    - heading: 它在舰上的时段，只有起点是清楚的
+      text:
+        zh: >-
+          时间线要分开写。起点是清楚的：本实体在数据层的有效窗口从 1931 年 3 月 10 日
+          开始，而这个日期取的是本舰 1929–1931 年大改装完成后的服役状态口径。
+          终点不清楚：材料只说「至 1933 年止」，
+          并明确写着「具体撤装月份未获取」，所以数据层的 valid.to 取 1933 年末，
+          那是年份界的写法，不是精确日期。
+          同时可确证的还有一件事：全部航空设备在 1933 年 12 月前拆完——
+          这是航空装备整体的退场时间，不是这一型单独的退场时间。
+        en: >-
+          The dates have to be split. The start is clear: the data layer's validity window
+          opens on 10 March 1931, the date used for the ship's post-refit state after the
+          1929-1931 work. The end is not clear: the material says only "up to 1933" and
+          states outright that the month of removal has not been obtained, so the data
+          layer's end is the end of 1933, a year boundary rather than a precise date. One
+          further point can be fixed: all aircraft gear had been removed by December 1933,
+          which is the date aviation left the ship as a whole rather than this type's own
+          departure.
+      src: [hmshood-association, hmshood-timeline]
+
+    - heading: 同一时期舰上还有别的机型
+      text:
+        zh: >-
+          这一段不能只写 Flycatcher，否则会把 1930 年代初的胡德号写成单一机型。
+          协会的材料把当时舰上的机型列成：「1-2 Fairey "Flycatchers" (up to 1933)
+          and/or 1 Fairey IIIF (1929-1933)」，并补一句 Sopwith 1½ Strutter
+          也曾见于舰上。也就是说 Flycatcher 与 IIIF 是并存或交替的关系，
+          材料没有给出各占多少、什么时候换的。
+          本站按机型的粒度分成两个实体，各自写各自的记录，不合并也不补空。
+        en: >-
+          This stretch cannot be written about the Flycatcher alone without turning early
+          1930s Hood into a single-type ship. The association's material lists the aircraft
+          as "1-2 Fairey 'Flycatchers' (up to 1933) and/or 1 Fairey IIIF (1929-1933)",
+          adding that a Sopwith 1 1/2 Strutter was also seen aboard. The Flycatcher and the
+          IIIF therefore coexisted or alternated, and the material does not say in what
+          proportion or when the change happened. This site keeps them as separate entities
+          at the granularity of the type, each with its own record, neither merged nor
+          padded out.
+      src: [hmshood-association]
+
+history:
+  - id: service
+    title: { zh: 装舰记录, en: Fitting record }
+    range: { from: 1931-03, to: 1933-12 }
+    lead:
+      zh: >-
+        起点清楚、终点只到年份：这是本页全部的时间精度。
+      en: >-
+        A clear start and a year-only end: that is the whole of this page's precision.
+    events:
+      - date: 1931-03-10
+        text:
+          zh: >-
+            本舰 1929–1931 年大改装完成后，载 1 到 2 架 Flycatcher。
+            此日期是数据层采用的有效窗口起点，对应改装后的服役状态。
+          en: >-
+            After the 1929-1931 refit the ship carried one or two Flycatchers. This date is
+            the opening of the validity window used in the data layer, corresponding to the
+            post-refit state.
+        src: [hmshood-association, navypedia-hood]
+      - date: 1932-06
+        text:
+          zh: >-
+            弹射器与吊车拆除（navypedia 记 6/1932「- 1 catapult with seaplane」）。
+            这一条是航空装备退场的中间节点：先走弹射器，后走全部。
+          en: >-
+            The catapult and crane were removed, navypedia recording "minus 1 catapult with
+            seaplane" for June 1932. This is the intermediate step in aviation leaving the
+            ship: the catapult first, then everything.
+        src: [hmshood-association, navypedia-hood]
+      - date: 1933-12
+        text:
+          zh: >-
+            全部航空设备在本月前拆完。这一型的具体撤装月份未获取，
+            数据层的有效窗口因此以 1933 年末为界，属年份界写法而非精确日期。
+          en: >-
+            All aircraft gear had been removed by this month. The month in which this type
+            specifically left has not been obtained, so the data layer's window ends at the
+            end of 1933 - a year boundary rather than a precise date.
+        src: [hmshood-association]

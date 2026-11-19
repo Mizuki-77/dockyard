@@ -1,0 +1,727 @@
+---
+// ============================================================================
+// 武器详情页 —— 图 + 参数 + 装在哪几艘船上 + 正文
+// ----------------------------------------------------------------------------
+// 三种内容来源，优先级与展示方式不同：
+//   1. 参数来自舰级/单舰文件里的 fact（可能有多个来源各写一套，分块并列）；
+//   2. 配图来自 data/images.yaml 的 weapon:<id> 条目；
+//   3. 正文来自 data/weapon-articles/<id>.yaml，没有就明说没有，不留白块。
+//
+// 参数为什么按来源分块而不是合成一张表：
+//   同一型 20 mm Oerlikon 在光辉级里记弹重 0.123 kg、在 KGV 级里记 0.12 kg，
+//   在光辉级里记了初速 844、在 KGV 级里也记 844 但没记 aa_max。
+//   合成一张表就必须挑一个值，那等于替来源做裁决。所以各写各的，
+//   读者看到的是「谁在哪份档案里怎么记的」。
+// ============================================================================
+import Base from '../../layouts/Base.astro';
+import CatalogTree from '../../components/CatalogTree.astro';
+import {
+  getWeaponIndex,
+  getWeapon,
+  getWeaponArticle,
+  getField,
+  mergeFactRows,
+  getSource,
+  getImagesFor,
+  primaryImage,
+  imageCredit,
+  getClasses,
+  getShips,
+} from '../../lib/data';
+import { roleOf, ROLE_LABEL, nationLabel, roleIsCurated } from '../../lib/catalog';
+import { buildWeaponTree, nationRank } from '../../lib/tree';
+
+export function getStaticPaths() {
+  return [...getWeaponIndex().keys()].map((id) => ({ params: { id } }));
+}
+
+const { id } = Astro.params;
+const w = getWeapon(id!)!;
+const art = getWeaponArticle(id!);
+const hero = primaryImage(`weapon:${id}`);
+const gallery = getImagesFor(`weapon:${id}`).filter((i) => i.id !== hero?.id);
+const role = roleOf(w.id, w.categories[0]);
+
+// ---- 左树与列表页同构（类别 → 国别 → 型号），选中当前项 ----
+// 装配逻辑在 src/lib/tree.ts，两个页面共用同一份，避免改一处漏一处。
+const idx = getWeaponIndex();
+const tree = buildWeaponTree([...idx.values()]);
+const branches = tree.map((r) => ({
+  key: r.key,
+  label: r.label,
+  en: r.en,
+  hint: r.hint,
+  count: r.count,
+  groups: r.nations
+    .slice()
+    .sort((a, b) => nationRank(a.key) - nationRank(b.key))
+    .map((n) => ({
+      key: n.key,
+      label: n.label,
+      en: n.en,
+      count: n.count,
+      leaves: n.weapons.map((x) => ({
+        label: x.label,
+        href: x.href,
+        meta: x.sources > 1 ? `${x.sources} 个来源` : '',
+      })),
+    })),
+}));
+
+// ---- 装在哪几艘船上：class → 该级的单舰 ----
+const classByShip = new Map(getShips().map((s) => [s.id, s.class]));
+const shipNameById = new Map(getShips().map((s) => [s.id, s.name.zh]));
+
+/** 某来源（舰级或单舰）对应的「实际装着这型炮的船」列表。 */
+function shipsForSource(ownerId: string, ownerKind: 'class' | 'ship'): { id: string; zh: string }[] {
+  if (ownerKind === 'ship') {
+    return [{ id: ownerId, zh: shipNameById.get(ownerId) ?? ownerId }];
+  }
+  return getShips()
+    .filter((s) => s.class === ownerId)
+    .map((s) => ({ id: s.id, zh: s.name.zh }));
+}
+
+const usedSrcIds = new Set<string>();
+for (const s of w.sources) for (const f of s.facts) for (const r of f.src ?? []) usedSrcIds.add(r);
+const usedSources = [...usedSrcIds].map((s) => getSource(s)).filter(Boolean);
+
+const disambiguate = (s: string) => s.replace(/^weapon:/, '');
+void disambiguate;
+---
+
+<Base title={w.label}>
+  <CatalogTree
+    slot="sidenav"
+    kicker="Weapons"
+    title="武器与装备"
+    branches={branches}
+    currentHref={`/weapons/${w.id}`}
+    footLink={{ href: '/weapons', label: '回到武器总览' }}
+    note="分类（主炮 / 副炮 / 防空炮 …）是本站为了检索做的归并，不是史料字段。"
+  />
+
+  <div class="crumbs">
+    <a href="/weapons">武器与装备</a>
+    <span aria-hidden="true">/</span>
+    <span>{ROLE_LABEL[role as never].zh}</span>
+    <span aria-hidden="true">/</span>
+    <span>{w.label}</span>
+  </div>
+
+  <div class="pagehead">
+    <div class="pagehead__kicker">
+      {ROLE_LABEL[role as never].en}
+      {w.categories.length > 0 && <span class="pagehead__raw"> · {w.categories.join(' / ')}</span>}
+    </div>
+    <h1 class="pagehead__title">{w.label}</h1>
+    {w.designations.length > 1 && (
+      <p class="pagehead__alias">
+        各来源记法不同：
+        {w.designations.map((d) => (
+          <span class="tag tag--ghost tiny">{d}</span>
+        ))}
+      </p>
+    )}
+    <div class="pagehead__meta">
+      {w.nations.map((n) => (
+        <span class="tag">{nationLabel(n).zh}</span>
+      ))}
+      <span class="tag tag--ghost">
+        装于 {w.classIds.length + w.shipIds.length} 个来源
+      </span>
+      {roleIsCurated(w.id) && <span class="tag tag--ghost tiny">分类：本站归并</span>}
+    </div>
+  </div>
+
+  {
+    hero?.file ? (
+      <figure class="whero">
+        <img src={hero.file} alt={hero.title.zh} loading="eager" />
+        <figcaption>
+          <span class="whero__t">{hero.title.zh}</span>
+          <span class="whero__c">
+            {imageCredit(hero)}
+            <span class={`tag tag--lic-${hero.license_tier} tiny`}>{hero.license_tier} 档</span>
+            {hero.source_url && (
+              <a href={hero.source_url} target="_blank" rel="noopener noreferrer">
+                原始页面
+              </a>
+            )}
+          </span>
+          {hero.note && <span class="whero__n">{hero.note}</span>}
+        </figcaption>
+      </figure>
+    ) : (
+      <div class="empty">
+        <div class="empty__title">这一型还没有配图</div>
+        <div class="empty__text">
+          本站的图全部来自公有领域或 CC 授权，找不到能合法归档的照片时就空着，
+          不拿相似的炮凑数。
+        </div>
+      </div>
+    )
+  }
+
+  <!-- 简介 -->
+  <section class="section" id="intro">
+    <div class="section__head">
+      <h2 class="section__title">简介</h2>
+      <span class="section__en">Overview</span>
+    </div>
+    {
+      art?.intro?.lead ? (
+        <div class="prose">
+          <p class="lead">{art.intro.lead.zh}</p>
+          {(art.intro.paragraphs ?? []).map((p) => (
+            <div class="prose__block">
+              {p.heading && <h3 class="prose__h">{p.heading}</h3>}
+              <p>{p.text.zh}</p>
+              {p.src && p.src.length > 0 && (
+                <div class="prose__src">{p.src.join(' · ')}</div>
+              )}
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div class="empty">
+          <div class="empty__title">这一型还没有整理简介</div>
+          <div class="empty__text">
+            参数与装舰信息是有的（见下方），但叙述性的介绍还没写。
+            本站不拿百科转述顶替——没有可追溯的原文就留空。
+          </div>
+        </div>
+      )
+    }
+  </section>
+
+  <!-- 参数 -->
+  <section class="section" id="specs">
+    <div class="section__head">
+      <h2 class="section__title">参数</h2>
+      <span class="section__en">Specifications</span>
+      <span class="section__aside">{w.sources.length} 个来源</span>
+    </div>
+    <p class="section__sub">
+      同一型炮在不同舰级档案里的记载可能不一致。这里按来源分块列出，不做合并——
+      合并就必须挑一个值，那等于替史料裁决。
+    </p>
+
+    {
+      w.sources.map((s) => {
+        const rows = mergeFactRows(s.facts);
+        if (rows.length === 0) return null;
+        return (
+          <div class="srcblock">
+            <div class="srcblock__head">
+              <span class="srcblock__kind">{s.ownerKind === 'class' ? '舰级' : '单舰'}</span>
+              <a
+                class="srcblock__name"
+                href={s.ownerKind === 'class' ? `/classes/${s.ownerId}` : `/ships/${s.ownerId}`}
+              >
+                {s.ownerName}
+              </a>
+              <span class="srcblock__n">{rows.length} 项</span>
+            </div>
+            <div class="srcblock__body">
+              {rows.map((r) => {
+                const def = getField(r.field);
+                if (!def) return null;
+                return (
+                  <div class="datarow">
+                    <div class="datarow__k datarow__k--wrap">{def.label.zh}</div>
+                    <div class:list={['datarow__v', { 'datarow__v--long': r.text.length > 42 }]}>
+                      {r.pairs.length > 0 ? (
+                        <span class="pairlist">
+                          {r.pairs.map((p) => (
+                            <span class="pair">
+                              <span class="pair__q">{p.q}</span>
+                              <span class="pair__t">{p.t}</span>
+                            </span>
+                          ))}
+                        </span>
+                      ) : (
+                        r.text
+                      )}
+                      {r.disputed && <span class="tag tag--warn tiny">存在争议</span>}
+                    </div>
+                    <div class="datarow__meta">
+                      {r.conf && <span class={`conf conf--${r.conf}`}>{r.conf}</span>}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {s.mounts.length > 0 && (
+              <div class="mounts">
+                <div class="mounts__title">炮位实例（{s.mounts.length} 类）</div>
+                {s.mounts.map((m) => {
+                  const cnt = m.facts.find((f) => f.field === 'mount.count');
+                  const inst = m.facts.find((f) => f.field === 'mount.installed');
+                  return (
+                    <div class="mounts__item">
+                      <span class="mounts__name">{m.label}</span>
+                      <span class="mounts__meta">
+                        {typeof cnt?.value === 'number' && <span>{cnt.value} 座</span>}
+                        {inst && <span class="mono">{String(inst.value)}</span>}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        );
+      })
+    }
+  </section>
+
+  <!-- 装在哪几艘船 -->
+  <section class="section" id="mounts">
+    <div class="section__head">
+      <h2 class="section__title">装在哪几艘船</h2>
+      <span class="section__en">Fitted to</span>
+    </div>
+    <div class="fitlist">
+      {
+        w.sources.map((s) =>
+          shipsForSource(s.ownerId, s.ownerKind).map((sh) => (
+            <a class="fitrow" href={`/ships/${sh.id}`}>
+              <span class="fitrow__name">{sh.zh}</span>
+              <span class="fitrow__via">记载于 {s.ownerName}</span>
+              <span class="fitrow__arrow" aria-hidden="true">
+                →
+              </span>
+            </a>
+          )),
+        )
+      }
+    </div>
+  </section>
+
+  <!-- 历史 -->
+  <section class="section" id="history">
+    <div class="section__head">
+      <h2 class="section__title">历史</h2>
+      <span class="section__en">Service history</span>
+    </div>
+    {
+      art?.history && art.history.length > 0 ? (
+        art.history.map((sec) => (
+          <div class="histsect">
+            <div class="histsect__head">
+              <h3 class="histsect__title">{sec.title.zh}</h3>
+              {sec.range?.from && (
+                <span class="histsect__range mono">
+                  {String(sec.range.from)}
+                  {sec.range.to ? ` – ${String(sec.range.to)}` : ''}
+                </span>
+              )}
+            </div>
+            {sec.lead && <p class="histsect__lead">{sec.lead.zh}</p>}
+            <ol class="histev">
+              {sec.events.map((ev) => (
+                <li class="histev__item">
+                  <time class="histev__date mono">{String(ev.date)}</time>
+                  <div class="histev__text">
+                    {ev.text.zh}
+                    {ev.src && ev.src.length > 0 && (
+                      <span class="histev__src">{ev.src.join(' · ')}</span>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        ))
+      ) : (
+        <div class="empty">
+          <div class="empty__title">这一型还没有整理服役史</div>
+          <div class="empty__text">
+            武器不像舰艇有明确的「下水—服役—沉没」节点，很多型号的设计与退役跨几十年，
+            勉强拆成时间轴反而会造假。这一栏等有可追溯的原文再补。
+          </div>
+        </div>
+      )
+    }
+  </section>
+
+  <!-- 图集 -->
+  {
+    gallery.length > 0 && (
+      <section class="section" id="gallery">
+        <div class="section__head">
+          <h2 class="section__title">更多影像</h2>
+          <span class="section__en">{gallery.length} 张</span>
+        </div>
+        <div class="wgal">
+          {gallery.map((g) => (
+            <figure class="wgal__item">
+              <img src={g.file} alt={g.title.zh} loading="lazy" />
+              <figcaption>
+                <span class="wgal__t">{g.title.zh}</span>
+                <span class="wgal__c">
+                  {imageCredit(g)}
+                  <span class={`tag tag--lic-${g.license_tier} tiny`}>{g.license_tier} 档</span>
+                </span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <!-- 来源 -->
+  <section class="section" id="sources">
+    <div class="section__head">
+      <h2 class="section__title">本页来源</h2>
+      <span class="section__en">Sources</span>
+    </div>
+    <ul class="plainlist plainlist--tight">
+      {
+        usedSources.map((s) => (
+          <li>
+            <span class={`conf conf--${s!.tier}`}>{s!.tier}</span>{' '}
+            <a href={s!.url} target="_blank" rel="noopener noreferrer">
+              {s!.title}
+            </a>
+            <span class="mono tiny muted"> {s!.id}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .pagehead__raw {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--ink-300);
+    letter-spacing: 0;
+  }
+  .pagehead__alias {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin: 7px 0 0;
+    font-size: 11.5px;
+    color: var(--ink-400);
+  }
+
+  .whero {
+    margin: 0;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--navy-900);
+  }
+  .whero img {
+    display: block;
+    width: 100%;
+    max-height: 460px;
+    object-fit: cover;
+    object-position: center 42%;
+  }
+  .whero figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 11px 16px 14px;
+  }
+  .whero__t {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: rgba(226, 240, 250, 0.95);
+  }
+  .whero__c {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex-wrap: wrap;
+    font-size: 11px;
+    color: rgba(179, 215, 236, 0.72);
+  }
+  .whero__c a {
+    color: var(--blue-300);
+  }
+  .whero__n {
+    font-size: 11.5px;
+    line-height: 1.75;
+    color: rgba(200, 224, 240, 0.7);
+  }
+
+  /* ---- 参数块 ---- */
+  .srcblock {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white);
+    overflow: hidden;
+  }
+  .srcblock + .srcblock {
+    margin-top: 12px;
+  }
+  .srcblock__head {
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
+    flex-wrap: wrap;
+    padding: 11px 16px;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+  }
+  .srcblock__kind {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--ink-400);
+    text-transform: uppercase;
+  }
+  .srcblock__name {
+    font-size: 13.5px;
+    font-weight: 680;
+    color: var(--blue-700);
+    text-decoration: none;
+    border-bottom: 1px solid var(--blue-200);
+  }
+  .srcblock__name:hover {
+    border-bottom-color: var(--blue-600);
+  }
+  .srcblock__n {
+    margin-left: auto;
+    font-size: 10px;
+    font-family: var(--font-mono);
+    color: var(--ink-300);
+  }
+  .srcblock__body {
+    padding: 8px 16px 12px;
+  }
+
+  .pairlist {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .pair {
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
+  }
+  .pair__q {
+    min-width: 128px;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--ink-400);
+  }
+  .pair__t {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    color: var(--ink-900);
+  }
+
+  .mounts {
+    padding: 10px 16px 14px;
+    border-top: 1px dashed var(--line);
+    background: var(--paper);
+  }
+  .mounts__title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ink-400);
+    margin-bottom: 7px;
+  }
+  .mounts__item {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 4px 0;
+    font-size: 12.5px;
+  }
+  .mounts__name {
+    color: var(--ink-800);
+    font-weight: 580;
+  }
+  .mounts__meta {
+    display: flex;
+    gap: 12px;
+    font-size: 11px;
+    color: var(--ink-400);
+    font-family: var(--font-mono);
+  }
+
+  /* ---- 装舰 ---- */
+  .fitlist {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .fitrow {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 10px 15px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--white);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.16s ease, background 0.16s ease;
+  }
+  .fitrow:hover {
+    border-color: var(--blue-300);
+    background: var(--blue-50);
+  }
+  .fitrow__name {
+    font-size: 13.5px;
+    font-weight: 620;
+    color: var(--ink-900);
+  }
+  .fitrow__via {
+    font-size: 11px;
+    color: var(--ink-400);
+  }
+  .fitrow__arrow {
+    margin-left: auto;
+    color: var(--blue-400);
+    font-size: 13px;
+  }
+
+  /* ---- 正文 ---- */
+  .prose__block + .prose__block {
+    margin-top: 18px;
+  }
+  .prose__h {
+    margin: 0 0 6px;
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--ink-900);
+    letter-spacing: -0.01em;
+  }
+  .prose p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.85;
+    color: var(--ink-700);
+  }
+  .prose__src {
+    margin-top: 6px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--ink-300);
+  }
+
+  /* ---- 历史 ---- */
+  .histsect + .histsect {
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .histsect__head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .histsect__title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink-900);
+  }
+  .histsect__range {
+    font-size: 11px;
+    color: var(--ink-400);
+  }
+  .histsect__lead {
+    margin: 7px 0 10px;
+    font-size: 13px;
+    line-height: 1.75;
+    color: var(--ink-500);
+  }
+  .histev {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .histev__item {
+    display: grid;
+    grid-template-columns: 84px minmax(0, 1fr);
+    gap: 14px;
+    padding: 7px 0;
+    border-top: 1px dashed var(--line);
+  }
+  .histev__date {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--blue-700);
+    padding-top: 1px;
+  }
+  .histev__text {
+    font-size: 13.5px;
+    line-height: 1.78;
+    color: var(--ink-700);
+  }
+  .histev__src {
+    display: block;
+    margin-top: 3px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--ink-300);
+  }
+
+  .wgal {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+  }
+  .wgal__item {
+    margin: 0;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--white);
+  }
+  .wgal__item img {
+    display: block;
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+    background: var(--blue-50);
+  }
+  .wgal__item figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 9px 12px 11px;
+  }
+  .wgal__t {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink-900);
+    line-height: 1.45;
+  }
+  .wgal__c {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 10.5px;
+    color: var(--ink-400);
+  }
+
+  @media (max-width: 720px) {
+    .histev__item {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 3px;
+    }
+    .pair__q {
+      min-width: 92px;
+    }
+  }
+</style>

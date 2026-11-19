@@ -1,0 +1,384 @@
+# 舰载机配图分片（img-aircraft 产出，合并进 data/images.yaml）
+# 10 个 aircraft 类武器实体，共 19 条；全部逐张核对 Commons imageinfo.extmetadata 与分类。
+# width/height 为 Pillow 实测的站内落盘文件像素，不是源图尺寸。
+# 本批全部 A 档（PD / PD-UKGov / PD-USGov-Military-Navy），无 B 档，故无需 CC 条款回填。
+images:
+  - id: swordfish-hms-victorious-bismarck-strike
+    file: /img/weapons/swordfish-hms-victorious-bismarck-strike.jpg
+    subject: weapon:swordfish
+    title:
+      zh: 胜利号后甲板待发的剑鱼式机群（1941-05-24，出击俾斯麦号前）
+      en: Swordfish torpedo bombers ranged on the after deck of HMS Victorious, 24 May 1941
+    part: aircraft
+    view: overhead
+    date: 1941-05-24
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Royal Navy official photographer
+    credit: Imperial War Museums, A 4090
+    source_url: "https://commons.wikimedia.org/wiki/File:Swordfish_on_HMS_Victorious_before_strike_on_Bismarck.jpg"
+    width: 1007
+    height: 737
+    primary: true
+    note: 胜利号后甲板上多架剑鱼式密集排开，机翼展开、鱼雷挂载状态与甲板系留索都能看清，是这批图里唯一同时拍到编队停放与「出击俾斯麦号」这一具体行动的甲板全景；湿甲板反光把翼展与轮距的比例交代得比较准，做甲板摆放参考优先用这张。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。
+
+  - id: swordfish-hms-activity-lift-wings-folded
+    file: /img/weapons/swordfish-hms-activity-lift-wings-folded.jpg
+    subject: weapon:swordfish
+    title:
+      zh: 824 中队剑鱼式折翼后下升降机（活动号护航航母）
+      en: A 824 Squadron Swordfish with wings folded going down the lift of HMS Activity
+    part: aircraft
+    view: detail
+    date: 1939-1945
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Beadell, S J (Lt), Royal Navy official photographer
+    credit: Imperial War Museums, A 18270
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A18270.jpg"
+    width: 800
+    height: 599
+    primary: false
+    note: 剑鱼式后向折翼的机构是本型最好用的辨识点，这张正拍到机翼折叠后下垂的四个铰点与支撑撑杆，甲板人员扶翼下升降机的姿态说明折翼宽度与升降机开口的余量。Commons 对该图的日期只到「1939 至 1945 之间」，本站不细化。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。
+
+  - id: fulmar-hms-victorious-hangar-row
+    file: /img/weapons/fulmar-hms-victorious-hangar-row.jpg
+    subject: weapon:fulmar
+    title:
+      zh: 胜利号机库内折翼的海燕式（两翼为长鳍式 Albacore）
+      en: A row of folded-wing Fairey Fulmars in the hangar of HMS Victorious, flanked by Albacores
+    part: aircraft
+    view: detail
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Claude Henry Parnall, Royal Navy official photographer
+    credit: Imperial War Museums, A 7279
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A7279.jpg"
+    width: 800
+    height: 602
+    primary: true
+    note: 冰岛 Hvalfjörður 锚地，胜利号机库甲板上中间一排是海燕式、两侧各一排 Albacore，全部折翼停放；海燕式只有飞行员与观察员两名乘员、没有后座机枪手，座舱盖到此为止，而两侧的 Albacore 是三座、尾部有明显的后机枪座——这个差别在这张里比任何空中照都容易看出来；机库净高余量也是模型做机库场景的直接依据。Commons 原注日期写「1939 至 1945 之间」，说明文字称摄于搜索提尔皮茨号前后，本站按说明取 1942，精确到月的日期未获取。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。
+
+  - id: fulmar-hms-victorious-wings-folded-deck
+    file: /img/weapons/fulmar-hms-victorious-wings-folded.jpg
+    subject: weapon:fulmar
+    title:
+      zh: 胜利号甲板逆光中的折翼海燕式（斯卡帕湾，起飞前）
+      en: A Fairey Fulmar with wings folded, backlit on the flight deck of HMS Victorious at Scapa Flow
+    part: aircraft
+    view: detail
+    date: 1941-1942
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Parnall, C H (Lt), Royal Navy official photographer
+    credit: Imperial War Museums, A 7977
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A7977.jpg"
+    width: 800
+    height: 602
+    primary: false
+    note: 清晨逆光下的甲板，海燕式已折翼、发动机暖机待发，远处甲板尾端是另一架折翼的 Albacore；折翼后机翼前端上翻的角度与主起落架间距看得清，但曝光偏暗、背光，细节要放大看，做轮廓与折翼姿态参考够用。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。
+
+  - id: sea-gladiator-hms-victorious-landing
+    file: /img/weapons/sea-gladiator-hms-victorious-landing.jpg
+    subject: weapon:sea-gladiator
+    title:
+      zh: 海斗士即将着舰胜利号，着舰钩清晰可见
+      en: A Gloster Sea Gladiator about to land on HMS Victorious, arrestor hook visible
+    part: aircraft
+    view: detail
+    date: 1939-1945
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Claude Henry Parnall, Royal Navy official photographer
+    credit: Imperial War Museums, A 6974
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A6974.jpg"
+    width: 800
+    height: 587
+    primary: true
+    note: 海斗士放下着舰钩、压低机头接近胜利号甲板的瞬间，钩体与尾轮、主起落架的相对位置一目了然——这是海斗士相对陆基 Gladiator 的改装重点，模型做钩架时直接照这张。驾驶员是哈茨顿航空站站长 Fancourt 上校。Commons 对日期只给「1939 至 1945 之间」，本站不细化。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。
+
+  - id: sea-gladiator-malta-faith-n5520
+    file: /img/weapons/sea-gladiator-malta-faith-n5520.jpg
+    subject: weapon:sea-gladiator
+    title:
+      zh: 马耳他「信仰」号海斗士 Mk I（序列号 N5520，1940-09）
+      en: Gloster Sea Gladiator Mk I N5520 'Faith' at Malta, September 1940
+    part: aircraft
+    view: detail
+    date: 1940-09
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: 未署名官方摄影（Commons 记作 photographer not identified, "Official photograph"）
+    credit: Imperial War Museums, ZZZ 3915E（collection no. 4700-26）
+    source_url: "https://commons.wikimedia.org/wiki/File:ZZZ_003915_E_Gladiator.jpg"
+    width: 1280
+    height: 1015
+    primary: false
+    note: 马耳他塔卡利机场，Hal Far 战斗机小队三机中唯一存世的 N5520（1943 年以「Faith／信仰」之名赠予马耳他人民）。这张是地面全景，机身、环状发动机整流罩、双叶螺旋桨与滑橇式尾轮都完整，但**不在舰上**；本型号目前能查到的舰上影像只有胜利号着舰那一张，故舰上作业请参该条。图中该机已换上从布伦海姆轰炸机拆来的水星发动机与三叶汉密尔顿螺旋桨，与出厂状态不同，做 1940 年 6 月首战状态时需注意这一处差异。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。
+
+  - id: corsair-hms-formidable-ranged-deck
+    file: /img/weapons/corsair-hms-formidable-ranged-deck.jpg
+    subject: weapon:corsair
+    title:
+      zh: 可畏号甲板上列队的海盗式（FAA 涂装，1944-07 挪威外海）
+      en: Fleet Air Arm Corsairs ranged on the flight deck of HMS Formidable off Norway, July 1944
+    part: aircraft
+    view: overhead
+    date: 1944-07
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Hudson, F A (Lt), Royal Navy official photographer
+    credit: Imperial War Museums, A 24787
+    source_url: "https://commons.wikimedia.org/wiki/File:Corsair_fighters_and_Fairey_Barracuda_torpedo_bombers_ranged_on_the_flight_deck_of_HMS_FORMIDABLE_off_Norway_in_July_1944.jpg"
+    width: 1280
+    height: 966
+    primary: true
+    note: 皇家海军涂装（圆环国籍标志、深色上衣）的海盗式在可畏号甲板上成排展开，机翼全部展开、螺旋桨待转，后排是梭鱼式。这张同时给出甲板系留间距、机翼展开后的横向占位与折叠前的状态，是这批海盗式图里信息量最大的一张甲板全景，做甲板摆放与 FAA 涂装参考首选。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。
+
+  - id: corsair-hms-victorious-wings-folding
+    file: /img/weapons/corsair-hms-victorious-wings-folding.jpg
+    subject: weapon:corsair
+    title:
+      zh: 海盗式在胜利号甲板上折翼（轰炸博德外海德军船队返舰后）
+      en: A Chance-Vought Corsair folding its wings after landing on HMS Victorious
+    part: aircraft
+    view: detail
+    date: 1939-1945
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Hudson, F A (Lt), Royal Navy official photographer
+    credit: Imperial War Museums, A 23036
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A23036.jpg"
+    width: 800
+    height: 603
+    primary: false
+    note: 海盗式着舰后原地折翼，右翼上翻到接近垂直、左翼尚在展开位，背景是另外两架已折翼停在甲板边。倒海鸥翼的内侧折线、外段上反角与折叠后的高度都在这张里交代得最清楚，做折叠机构与甲板净高核算看这张。Commons 原注日期只给「1939 至 1945 之间」，说明文字给出情境（轰炸博德 Bodø 外海德军船队返舰后），本站不细化年份。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。
+
+  - id: avenger-hms-illustrious-bombing-up
+    file: /img/weapons/avenger-hms-illustrious-bombing-up.jpg
+    subject: weapon:avenger
+    title:
+      zh: 光辉号甲板上为复仇者挂弹（1944-05，泗水空袭准备）
+      en: Bombing up a Fleet Air Arm Avenger on the flight deck of HMS Illustrious, May 1944
+    part: aircraft
+    view: detail
+    date: 1944-05-17
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Trusler, C (Lt), Royal Navy official photographer
+    credit: Imperial War Museums, A 24250
+    source_url: "https://commons.wikimedia.org/wiki/File:Avenger_being_armed_on_HMS_Illustrious_(87)_1944.jpg"
+    width: 1280
+    height: 955
+    primary: true
+    note: 弹药手半个身子在弹舱里往外递弹，甲板上还摆着两枚待装的炸弹，机腹弹舱开口、挂弹架与起落架支柱的相对位置非常清楚，做复仇者腹部结构与挂弹状态首选。机身为 832 或 845 中队、光辉号在印度洋准备空袭泗水（Soerabaja）时的状态。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。
+
+  - id: avenger-hms-trumpeter-catapult
+    file: /img/weapons/avenger-hms-trumpeter-catapult.jpg
+    subject: weapon:avenger
+    title:
+      zh: 846 中队复仇者自小号手号弹射起飞
+      en: A 846 Squadron Avenger catapulted off the escort carrier HMS Trumpeter
+    part: aircraft
+    view: detail
+    date: 1939-1945
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Hudson, F A (Lt), Royal Navy official photographer
+    credit: Imperial War Museums, A 25377
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A25377.jpg"
+    width: 800
+    height: 608
+    primary: false
+    note: 复仇者刚离开弹射器、离甲板不到一人高的瞬间，起落架与机腹弹舱、三座舱盖的侧面轮廓都完整，背景只有海面，是判断弹射起飞姿态与起飞重量姿态的好参照；护航航母的弹射器滑块与甲板开口在画面下方露出一角。Commons 对日期只给「1939 至 1945 之间」，本站不细化。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。
+
+  - id: walrus-hms-prince-of-wales-catapult-deck
+    file: /img/weapons/walrus-hms-prince-of-wales-catapult-deck.jpg
+    subject: weapon:walrus
+    title:
+      zh: 威尔士亲王号弹射甲板上吊放海象式（旁为双联 5.25 in 炮塔）
+      en: A Supermarine Walrus hoisted from the catapult deck of HMS Prince of Wales
+    part: aircraft
+    view: detail
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Coote, R G G (Lt), Royal Navy official photographer
+    credit: Imperial War Museums, A 3868
+    source_url: "https://commons.wikimedia.org/wiki/File:A_Supermarine_Walrus_amphibious_aircraft_being_hoisted_from_the_catapult_deck_of_HMS_PRINCE_OF_WALES.jpg"
+    width: 1268
+    height: 939
+    primary: true
+    note: 海象式被吊车吊离弹射甲板的瞬间，机翼展开、浮筒与吊挂点、机库门开口与两侧双联 5.25 in 炮塔同框——战列舰弹射器作业的空间关系（机库门高度、吊臂摆幅、炮塔射界干涉）在这张里最直观，做战列舰航空设施场景优先用这张。Commons 对该图的日期只给「1939 至 1945 之间」，但其文件分类里有一条「1945 black and white photographs」，与威尔士亲王号 1941-12-10 沉没的事实矛盾，属 Commons 分类错误；本站按舰史把标签收到 1941，不采该分类。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。
+
+  - id: walrus-hms-mauritius-catapult-launch
+    file: /img/weapons/walrus-hms-mauritius-catapult.jpg
+    subject: weapon:walrus
+    title:
+      zh: 海象式刚离毛里求斯号弹射器
+      en: A Supermarine Walrus just leaving the catapult of HMS Mauritius
+    part: aircraft
+    view: detail
+    date: 1939-1945
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Mason, H A (Lt), Royal Navy official photographer
+    credit: Imperial War Museums, A 9272
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A9272.jpg"
+    width: 800
+    height: 602
+    primary: false
+    note: 从巡洋舰弹射器上刚刚弹出去的瞬间，机腹与浮筒的支撑结构（N 型浮筒支柱、翼下散热器）拍得很清楚，弹射滑块与甲板边沿在画面下方留了一角。这张是「弹射起飞」而不是吊放，配上一条的吊放图正好覆盖弹射器的两个作业端。Commons 对日期只给「1939 至 1945 之间」，本站不细化。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。
+
+  - id: seafox-hms-canton-alighting
+    file: /img/weapons/seafox-hms-canton-alighting.jpg
+    subject: weapon:seafox
+    title:
+      zh: 海狐式自广州号（HMS Canton）弹射侦察后落水
+      en: A Fairey Seafox alighting after a reconnaissance flight from HMS Canton
+    part: aircraft
+    view: detail
+    date: 1939-1945
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Zimmerman, E A (Lt), Royal Navy official photographer
+    credit: Imperial War Museums, A 6654
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A6654.jpg"
+    width: 800
+    height: 613
+    primary: true
+    note: 海狐式在大西洋上完成侦察后落水滑行的瞬间，双浮筒与水花、上单翼双翼面与长机鼻的剪影，在 Commons 分类与全库检索可及的范围内是该型唯一的在役作业照。**注意：Commons 分类 Category:Fairey Seafox 全库只有 4 个文件**，其中 1 个是 1938 年百慕大与海象式并排的场地照、1 个只是 355 px 的机型小图，能用的只有本条与另一条地面维护照；舰上甲板/弹射器上的海狐式影像在 Commons 上不存在，此处不给不存在的场景。Commons 对日期只给「1939 至 1945 之间」，本站不细化。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。
+
+  - id: seafox-fitters-at-work-maharagama
+    file: /img/weapons/seafox-fitters-at-work.jpg
+    subject: weapon:seafox
+    title:
+      zh: 锡兰马哈拉加马航空厂内检修海狐式
+      en: Air fitters working on a Fairey Seafox at RN Aircraft Establishment Maharagama, Ceylon
+    part: aircraft
+    view: detail
+    date: 1939-1945
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Rolfe, W E (Lt), Royal Navy official photographer
+    credit: Imperial War Museums, A 22229
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A22229.jpg"
+    width: 763
+    height: 800
+    primary: false
+    note: 三名空军机械士（Harvey、Hughes、Mason）站在海狐式机头两侧作业，双叶螺旋桨、发动机整流罩、上翼与浮筒支柱全部入画，是唯一能看清该型正面结构的照片；背景是锡兰的训练场地，不是舰上。海狐式做模型时的机头与浮筒间距照这张核对比侧面剪影有用。Commons 对日期只给「1939 至 1945 之间」，本站不细化。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。
+
+  - id: arado-196-gneisenau-aboard
+    file: /img/weapons/arado-196-gneisenau-aboard.jpg
+    subject: weapon:arado-196
+    title:
+      zh: 格奈森瑙号弹射器上的 Ar 196（约 1940）
+      en: An Arado Ar 196 on the catapult of the battleship Gneisenau, circa 1940
+    part: aircraft
+    view: detail
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    credit: U.S. Navy, NH 83610（Naval History and Heritage Command）
+    source_url: "https://commons.wikimedia.org/wiki/File:Arado_Ar_196_aboard_the_German_battleship_Gneisenau,_circa_in_1940_(NH_83610).jpg"
+    width: 1280
+    height: 914
+    primary: true
+    note: 格奈森瑙号舰桥侧的弹射器上停着一架 Ar 196，浮筒架、折叠后的外翼、弹射滑车与吊臂同框，是这批图里唯一把「德舰弹射器 + 整机」的空间关系拍全的一张。格奈森瑙属沙恩霍斯特级，与俾斯麦级（提尔皮茨号）的弹射器、吊臂与机库布置并不相同，**不可直接照搬尺寸**，只能作为德舰弹射作业方式的参照。需要说明：**提尔皮茨号本舰的 Ar 196 影像在 Commons 上未检出**，本站没有拿姊妹舰的图冒充本舰，subject 归到机型而非某条舰。此件为美国海军（NHHC）收藏的二战德军飞机照片，属 PD-USGov，A 档。
+
+  - id: arado-196-catapult-admiral-scheer
+    file: /img/weapons/arado-196-catapult-admiral-scheer.jpg
+    subject: weapon:arado-196
+    title:
+      zh: 舍尔海军上将号弹射器上的 Ar 196A-3（T3+EK，1942）
+      en: Arado Ar 196A-3 (T3+EK) of Bordfliegergruppe 196 on a catapult, 1942
+    part: aircraft
+    view: detail
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    credit: U.S. Navy, NH 71324（Naval History and Heritage Command）
+    source_url: "https://commons.wikimedia.org/wiki/File:German_Arado_Ar_196A-3_on_the_catapult_of_a_German_warship,_circa_in_1942_(NH_71324).jpg"
+    width: 1280
+    height: 910
+    primary: false
+    note: 自下往上仰拍的 Ar 196A-3，机体编号 T3+EK 属第 196 舰载机大队（Bordfliegergruppe 196），NHHC 记录该机 Wk.Nr. 196 0232 于 1942-02-15 配属舍尔海军上将号 1./196，1942-08-25 在喀拉海着水事故中损失。仰角把浮筒支柱、机腹挂架与折叠翼铰点拍得极清楚，是核对 A-3 型下表面细节的好材料。此件为美国海军（NHHC）收藏的二战德军飞机照片，属 PD-USGov，A 档。
+
+  - id: flycatcher-1923-prototype-n164
+    file: /img/weapons/flycatcher-1923.jpg
+    subject: weapon:flycatcher
+    title:
+      zh: 捕蝇鸟式（N164，1923 年，胡德号 1931-1933 年搭载同型）
+      en: Fairey Flycatcher N164, 1923
+    part: aircraft
+    view: detail
+    date: 1923
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: British official photographer
+    credit: Imperial War Museums, ATP 430B（collection no. 7112-17）
+    source_url: "https://commons.wikimedia.org/wiki/File:Fairey_Flycatcher_1923.jpg"
+    width: 1280
+    height: 946
+    primary: true
+    note: 侧后方四分之三视角的整机照，星型发动机、上下翼间的 I 形支柱与张线、滑橇式尾轮、机腹副油箱挂点全部可见，是这批图里唯一能核对捕蝇鸟式机体比例的一张。机号 N164——Commons 另一件 FFlycatcher(a) 把 N164 标为第二架原型机，故本图所示可能是原型状态而非量产型，做模型时翼尖与尾翼细节需另找量产型照片比对。**胡德号本舰搭载的捕蝇鸟式影像未在 Commons 检出**（Category:HMS Hood (51) 无舰载机子类，全库 insource 检索 0 命中），故此处只归到机型。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域（PD-UKGov），按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。
+
+  - id: flycatcher-401-flight-hms-eagle
+    file: /img/weapons/flycatcher-401-flight-hms-eagle.jpg
+    subject: weapon:flycatcher
+    title:
+      zh: 401 飞行队捕蝇鸟式飞越鹰号航母（1930）
+      en: A Fairey Flycatcher of 401 Flight over HMS Eagle, 1930
+    part: aircraft
+    view: detail
+    date: 1930
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: 未署名（Commons 记作 British government employee）
+    credit: 英国政府雇员摄影，经 Commons File:Fairey Flycatcher.jpg 数字化
+    source_url: "https://commons.wikimedia.org/wiki/File:Fairey_Flycatcher.jpg"
+    width: 1101
+    height: 584
+    primary: false
+    note: 捕蝇鸟式低空掠过鹰号航母飞行甲板，是这批图里唯一的舰上作业场景——机翼展开状态下的翼展、张线与起落架整流罩与航母甲板宽度的比例关系可以互相比对。画面清晰度一般（1101 px 原始尺寸，已是站内落盘尺寸），细节放大有限。Commons 的授权模板为 PD-UKGov（英国政府作品，Crown Copyright 已过期），A 档。
+
+  - id: fairy-iiif-hms-furious-landing
+    file: /img/weapons/fairy-iiif-hms-furious-landing.jpg
+    subject: weapon:fairy-iiif
+    title:
+      zh: 费雷 IIIF 着舰暴怒号（1930 年代初，可见高架拦阻索）
+      en: A Fairey IIIF landing on HMS Furious, early 1930s
+    part: aircraft
+    view: detail
+    date: 1930-1933
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: 未署名（U.S. Naval Historical Center Photograph）
+    credit: U.S. Naval Historical Center（今 NHHC），经 history.navy.mil 照片库
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Furious-19.jpg"
+    width: 740
+    height: 552
+    primary: true
+    note: 费雷 IIIF 正压低机头进场、即将触到暴怒号甲板，前景一排高架拦阻索（elevated arresting wires）与甲板两侧的引导人员都入画——这是 1930 年代初英国航母拦阻装置的原始形态，也是 Commons 上该型唯一一张舰上作业照。**胡德号搭载的费雷 IIIF 影像在 Commons 未检出**（Category:Fairey III / IIIF 全库 22 件，均为陆基或他国机，另有智利、阿根廷各一件且分辨率过低），故按机型归档，不冒称胡德号本舰。此件为美国海军历史中心收藏的英国航母照片，属 PD-USGov，A 档；原始落盘尺寸即 740 px，未再缩放。

@@ -1,0 +1,213 @@
+# ============================================================================
+# 武器正文 —— UP（Unrotated Projectile）
+#
+# 这一型是二战英国最典型的"应急武器"：思路离奇、效果接近零、还烧过自己的舰。
+# 三处必须两说并列：
+#  1) 英王乔治五世号的 UP 座数，navypedia 记 4 座、navweaps 记 3 座；
+#  2) 胡德号沉没时 UP 弹的易燃性，一手证词与官方调查结论不是一回事；
+#  3) 光辉级有没有装过 UP——navweaps 与海军部分配令里都没有，本站不写座数。
+# ============================================================================
+weapon: up-rocket
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      UP（Unrotated Projectile，非旋转弹射器）是二战初期英国装在多型大舰上的
+      近程防空火箭武器，1940 年服役、1941 年基本拆完。
+      它朝天上打出去的不是炮弹，而是挂着降落伞与钢丝、下面吊一枚小雷的火箭，
+      指望飞机撞上钢丝时把雷拉向自己。实战证明这套思路几乎完全无效，
+      而且它储存的弹药相当易燃。
+    en: >-
+      UP - Unrotated Projectile - was a short-range anti-aircraft rocket fitted to
+      several large British warships early in the Second World War, in service from
+      1940 and largely removed during 1941. What it threw into the air was not a shell
+      but a rocket trailing parachutes and wire with a small mine hanging beneath,
+      intended to pull the mine into any aircraft that caught the wire. In practice it
+      was almost entirely ineffective, and its stored ammunition was distinctly
+      flammable.
+
+  paragraphs:
+    - heading: 「Unrotated」是什么意思
+      text:
+        zh: >-
+          「Unrotated」指的是发射管没有膛线，弹不靠自旋稳定——靠尾翼。
+          每一座发射装置由二十根滑膛管组成，通常一次打十发。
+          用柯达药点燃一个 3 英寸火箭发动机，推动带尾翼稳定、
+          直径 7 英寸的 PAC（Parachute and Cable，降落伞与钢丝）火箭，
+          火箭里带一枚 8.4 盎司（238 克）的雷。火箭升到约 1,000 英尺（330 米）时爆炸，
+          把雷抛出来，雷由 400 英尺（122 米）钢丝连着三具降落伞。
+          设计意图是：飞机撞上伞或钢丝，就会把雷拉向自己。
+        en: >-
+          "Unrotated" means the tube had no rifling, so the projectile was not
+          spin-stabilised but fin-stabilised. Each emplacement was a set of twenty
+          smooth-bore tubes, usually fired ten at a time. Cordite ignited a 3-inch
+          rocket motor that propelled the fin-stabilised 7-inch Parachute and Cable
+          (PAC) rocket carrying an 8.4 oz (238 g) mine. At about 1,000 feet the rocket
+          burst and threw out the mine, which hung from three parachutes on 400 feet of
+          wire. The concept was that an aircraft hitting the parachutes or the wire
+          would pull the mine into itself.
+      src: [navweaps-up-rockets]
+
+    - heading: 为什么它不行
+      text:
+        zh: >-
+          navweaps 的判定很干脆：几乎完全无效。理由有三条——
+          弹幕成形太慢，飞机很容易规避；再装填慢；以及雷有「alarming tendency」
+          飘回发射舰上。这三条不是使用不当，是武器本身的性质。
+          1941 年几乎所有 UP 座都被拆掉，换成八联 2-pdr 与单装 Oerlikon 20 mm。
+          威尔士亲王号被日军击沉前不久，三座 UP 全部换成了 2-pdr。
+        en: >-
+          NavWeaps is blunt: almost totally ineffective. Three reasons - the barrage
+          took too long to establish and was easily avoided, reloading was slow, and the
+          mines showed an "alarming tendency" to drift back onto the firing ship. These
+          are properties of the weapon, not failures of drill. Almost all UP mountings
+          were removed during 1941, replaced by octuple 2-pdr and single Oerlikon 20 mm
+          guns. Shortly before she was sunk by the Japanese, Prince of Wales had all
+          three of her UP emplacements replaced with 2-pdr mounts.
+      src: [navweaps-up-rockets]
+
+    - heading: 胡德号那件事：两说并列
+      text:
+        zh: >-
+          这里有两条不同性质的记录，必须分开写。
+          一是 navweaps 的概括：「胡德号的沉没表明这些储存的武器相当易燃」。
+          二是胡德号的幸存者证词（ADM116/4351）：炮术军官 Tilburn 认为
+          第一处火源起于舯部 UP 发射器附近，他的原话是
+          「My idea was the U.P. ammunition had caught fire」。
+          **但这是幸存者的推测，不是调查结论**；本站把两条并列，
+          不把它写成已证实的起火原因。
+          UP 弹确实存放在发射器旁边的即用柜里，这是它的固有风险。
+        en: >-
+          Two records of different kinds belong here and must be kept apart. First,
+          NavWeaps' summary: "The sinking of HMS Hood showed that these stored weapons
+          were rather flammable." Second, the survivor testimony in ADM116/4351:
+          gunnery officer Tilburn believed the first fire started near the midships UP
+          launcher, saying "My idea was the U.P. ammunition had caught fire".
+          **That is a survivor's conjecture, not a finding of the inquiry**, and both
+          are reported here without promoting it to established cause. UP rounds were
+          indeed kept in ready lockers beside the projectors, which is the inherent
+          risk.
+      src: [navweaps-up-rockets, hoodaaa]
+
+    - heading: 一座二十管，一共造了六十座
+      text:
+        zh: >-
+          每座二十管，全部产量约六十座。装舰清单包括主力舰
+          胡德号（5 座）、英王乔治五世号、威尔士亲王号、纳尔逊号、巴勒姆号（各若干），
+          以及巡洋舰曙光号、伯明翰号、格拉斯哥号、纽卡斯尔号、诺福克号、苏塞克斯号。
+          **但这里有一处来源打架**：navweaps 记英王乔治五世号为 3 座，
+          navypedia 与皇家博物馆格林威治的研究指南都记 4 座。本站两说并列，不裁决；
+          至于这 4 座分别装在哪里，本站没有找到已登记的来源，因此不写。
+        en: >-
+          Twenty tubes per mounting and about sixty mountings built in total. The list
+          of ships includes the capital ships Hood (5), King George V, Prince of Wales,
+          Nelson and Barham, and the cruisers Aurora, Birmingham, Glasgow, Newcastle,
+          Norfolk and Sussex. **One conflict has to be flagged**: NavWeaps gives King
+          George V three mountings, while both navypedia and the Royal Museums
+          Greenwich research guide give four. Both are reported here without
+          adjudication; where exactly those four stood is not something a registered
+          source states, so it is left out.
+      src: [navweaps-up-rockets, navypedia-kgv]
+
+    - heading: 它不是给航母用的，也没有证据说光辉级装过
+      text:
+        zh: >-
+          这一条是本站核对时的一个否定结论，写在这里以免下游误用：
+          navweaps 的装舰清单里有主力舰与巡洋舰，没有任何航母；
+          1940 年海军部第一批 40 座的分配令原件（ADM 1/23040）里也没有光辉级，
+          也没有任何航母。同一份文件还写明，UP 装置因为甲板压力问题
+          「不适用于巡洋舰以下的舰艇」，斐济级、狄多级与 C 级巡洋舰都被排除。
+          所以「光辉级装过 UP」这个说法在现有材料里找不到依据，本站不写座数。
+        en: >-
+          This is a negative finding worth recording so it is not misused downstream:
+          NavWeaps' fitting list contains capital ships and cruisers but no carrier at
+          all, and the original Admiralty allocation order for the first forty mountings
+          (ADM 1/23040) contains neither Illustrious nor any carrier. The same document
+          states that UP installations were "not suitable for vessels smaller than
+          Cruisers on account of the deck pressures involved", excluding the Fiji, Dido
+          and C classes. No source here supports the claim that the Illustrious class
+          carried UP, so no mounting count is given.
+      src: [navweaps-up-rockets, navypedia-illustrious]
+
+history:
+  - id: design
+    title: { zh: 设计与定型, en: Design }
+    range: { from: 1938, to: 1940 }
+    lead:
+      zh: >-
+        它填补的是 2-pdr 与更近程武器之间的空档，而这个空档最后是被
+        20 mm Oerlikon 填上的。
+      en: >-
+        It was meant to fill the gap between the 2-pdr and closer-range weapons, a gap
+        the 20 mm Oerlikon eventually filled.
+    events:
+      - date: 1938
+        text:
+          zh: >-
+            1930 年代末英国认为需要一种介于 2-pdr 与更近程之间的中程防空武器，
+            UP Mark I 是应这一需求设计的火箭武器之一。
+          en: >-
+            In the late 1930s the British saw a need for an intermediate close-range
+            anti-aircraft weapon to supplement the 2-pdr, and the UP Mark I was one of
+            the rocket designs produced to meet it.
+        src: [navweaps-up-rockets]
+      - date: 1940-03-22
+        text:
+          zh: >-
+            海军部一份文件提出，若有可能，驻斯卡帕湾的航空母舰应与主力舰
+            一同享有优先装配 UP 的权利。但第一批 40 座的分配令里没有航母。
+          en: >-
+            An Admiralty document proposed that carriers likely to be based at Scapa
+            should have first priority for UP alongside capital ships. The first
+            allocation of forty mountings nonetheless contained no carriers.
+        src: [navweaps-up-rockets]
+
+  - id: service
+    title: { zh: 战时使用与拆除, en: Wartime service and removal }
+    range: { from: 1940, to: 1941-12 }
+    lead:
+      zh: >-
+        它在舰队里只待了不到两年，留下的记录主要是负面的。
+      en: >-
+        It stayed in the fleet less than two years and left a mostly negative record.
+    events:
+      - date: 1940
+        text:
+          zh: >-
+            胡德号加装 5 座 UP 发射器：1 座在 B 炮塔顶，4 座在后部遮蔽甲板。
+          en: >-
+            Hood was fitted with five UP mountings: one atop B turret and four on the
+            rear shelter deck.
+        src: [hoodaaa, navweaps-up-rockets]
+      - date: 1940-07-27
+        text:
+          zh: >-
+            胡德号 B 炮塔上的 UP 装置在港内意外齐射 20 发，3 名军士重度烧伤。
+          en: >-
+            The UP mounting on Hood's B turret accidentally fired all twenty charges
+            over the harbour, badly burning three ratings.
+        src: [hmshood-timeline, hoodaaa]
+      - date: 1941
+        text:
+          zh: >-
+            几乎所有 UP 座在这一年被拆除，换成八联 2-pdr 与单装 Oerlikon 20 mm。
+            威尔士亲王号被击沉前不久，三座 UP 全部换成 2-pdr。
+          en: >-
+            Almost all UP mountings were removed this year in favour of octuple 2-pdr
+            and single Oerlikon 20 mm guns. Shortly before she was sunk, Prince of Wales
+            had all three of hers replaced with 2-pdr mounts.
+        src: [navweaps-up-rockets]
+      - date: 1941-05-24
+        text:
+          zh: >-
+            胡德号在丹麦海峡被击沉。navweaps 认为这次沉没表明 UP 储存弹相当易燃；
+            幸存炮术军官 Tilburn 认为起火点在舯部 UP 附近。**前者是概括判断，
+            后者是幸存者推测，两者并列，均不等同于调查结论。**
+          en: >-
+            Hood was sunk at the Denmark Strait. NavWeaps reads the loss as showing that
+            UP storage was rather flammable; the surviving gunnery officer Tilburn
+            believed the fire started near the midships UP launcher. **One is a summary
+            judgement, the other a survivor's conjecture; both are reported and neither
+            is a finding of the inquiry.**
+        src: [navweaps-up-rockets, hoodaaa]

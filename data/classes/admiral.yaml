@@ -1,0 +1,376 @@
+# 海军上将级战列巡洋舰（Admiral class）— 舰级公共数据
+#
+# 这一级只建成一艘（胡德号），另外三艘（Howe / Rodney / Anson）在 1918 年 10 月取消。
+# 所以本文件同时承担两个角色：
+#   1. 「这一级本来应该长什么样」——设计意图、四艘的计划
+#   2. 「胡德号继承了哪些参数」——凡四艘共有的设计值都写在这里
+# 单舰独有的事实（实际建成状态、改装、损失）写 data/ships/hood.yaml。
+#
+# 解析顺序：单舰 fact → 舰级 fact → 未记载。
+# 单舰命中即覆盖舰级，不与舰级值构成分歧。
+#
+# 【一个必须讲清楚的历史事实】
+# 本级的初版设计（1916-04-07 批准）是 4 艘 36,000 t、8 门 15 英寸、32 节的战列巡洋舰，
+# 主装带 9 英寸——和已经被击沉的几级战巡一样薄。
+# 1916-05-31 日德兰海战中三艘英国战列巡洋舰爆炸沉没，英国海军部在两个月内重审设计，
+# 主装带从 9 英寸加到 12 英寸（与伊丽莎白女王级战列舰同级），1916-08-04 批准改版。
+# 结果就是胡德号：一艘防护接近战列舰、但为了 32 节航速把水平装甲与炮塔顶
+# 留在战巡水平的 42,000 吨级大舰。
+#
+# 这个「改了一半」的取舍，正是 1941-05-24 那天它在八分钟内被击沉的结构性原因。
+# 调查委员会 1941-09-12 的原话是：
+#   "It was known that HOOD's protection was poor by modern standards and had it not
+#    been for the war she would by now have been undergoing complete reconstruction."
+
+id: admiral
+name:
+  zh: 海军上将级战列巡洋舰
+  en: Admiral class battlecruiser
+class_of: [hood]
+open_ended_note: >
+  舰级参数的有效期到本级全损或退役为止。本级只建成一艘，
+  且下面这些设计值多为 1916-1918 年的设计口径——胡德号实际建成时
+  与设计已有出入（见数据缺口的注记），1929-1931 年大改装后又变过一次。
+  引用时请注意对应的年份，不要把这些数字当成「胡德号任何时刻的参数」。
+
+facts:
+  # ========== 身份 ==========
+  - field: identity.name_original
+    value: Admiral class
+    unit: null
+    src: [hmshood-construction]
+    valid: { from: 1916-04-21 }
+    confidence: A
+    note: >
+      级名取自「海军上将」序列。四艘舰名全部来自英国海军史上的海军上将：
+      Hood（第一代胡德子爵 Samuel Hood）、Howe（Richard Howe）、
+      Rodney（George Brydges Rodney）、Anson（George Anson）。
+
+  - field: identity.ship_type
+    value: battlecruiser
+    unit: null
+    src: [hmshood-construction, navypedia-hood]
+    valid: { from: 1916-04-21 }
+    confidence: A
+    note: >
+      官方分类是战列巡洋舰（battlecruiser），不是快速战列舰。
+      但改版后的防护接近伊丽莎白女王级战列舰，所以文献里常见
+      「a fast battleship in all but name」这类说法。
+      本站按官方分类记 battlecruiser。
+
+  - field: identity.nation
+    value: united_kingdom
+    unit: null
+    src: [hmshood-construction]
+    valid: { from: 1916-04-21 }
+    confidence: A
+
+  - field: identity.operator
+    value: Royal Navy
+    unit: null
+    src: [hmshood-timeline]
+    valid: { from: 1920-03-29 }
+    confidence: B
+
+  - field: identity.era
+    value: ww2
+    unit: null
+    src: [hmshood-timeline]
+    valid: { from: 1916-09-01 }
+    confidence: B
+    note: >
+      按服役期定位：1920-03-29 服役至 1941-05-24 沉没，横跨战间期与二战，
+      按「沉没时所处的战争」归二战。设计年代是一战，这个区别在页面上会提醒读者。
+
+  - field: identity.building_program
+    value: 1916 年造舰计划（初版设计 1916-04-07 批准，日德兰后改版 1916-08-04 批准）
+    unit: null
+    src: [hmshood-construction]
+    valid: { from: 1916-04-07 }
+    confidence: A
+    note: >
+      原话：「The design was approved by the Admiralty on 7 April 1916…
+      The reworked design was approved on 4 August 1916.」
+
+  # ========== 设计取舍（本级最该记住的部分）==========
+  - field: dimensions.length.oa
+    value: 262.3
+    unit: m
+    src: [hoodspecs-dimensions]
+    valid: { from: 1918-08-22 }
+    confidence: B
+    note: 原值 860 ft 7 in。三条来源一致，见单舰文件里的并列。
+
+  - field: dimensions.beam.max
+    value: 32.0
+    unit: m
+    src: [hoodspecs-dimensions]
+    valid: { from: 1918-08-22 }
+    confidence: B
+    note: 原值 105 ft 2.5 in（含防雷鼓包的最大宽）。
+
+  - field: dimensions.length.pp
+    value: 247.0
+    unit: m
+    src: [hoodspecs-dimensions]
+    valid: { from: 1918-08-22 }
+    confidence: C
+    note: 原值 810 ft 6 in。垂线间长，用于方形系数与舱容计算。
+
+  - field: dimensions.depth.molded
+    value: 15.4
+    unit: m
+    src: [hoodspecs-dimensions]
+    valid: { from: 1918-08-22 }
+    confidence: C
+    note: 原值 50.5 ft，龙骨底到舷侧甲板面（amidships）。
+
+  # ========== 动力 ==========
+  - field: propulsion.plant_type
+    value: steam_turbine
+    unit: null
+    src: [navypedia-hood]
+    valid: { from: 1920-03-29 }
+    confidence: A
+
+  - field: propulsion.boiler.count
+    value: 24
+    unit: count
+    src: [navypedia-hood]
+    valid: { from: 1920-03-29 }
+    confidence: A
+
+  - field: propulsion.boiler.type
+    value: Yarrow 三鼓小水管锅炉
+    unit: null
+    src: [navypedia-hood]
+    valid: { from: 1920-03-29 }
+    confidence: B
+    note: 原话「24 Yarrow boilers」。1918 年设计时为燃油专烧，无煤。
+
+  - field: propulsion.turbine.count
+    value: 4
+    unit: count
+    src: [navypedia-hood]
+    valid: { from: 1920-03-29 }
+    confidence: A
+
+  - field: propulsion.turbine.type
+    value: Brown-Curtis 齿轮传动汽轮机（单级减速，含巡航级）
+    unit: null
+    src: [hmshood-construction]
+    valid: { from: 1920-03-29 }
+    confidence: B
+    note: >
+      construction.htm 原话：「The ship's main propelling machinery, Brown Curtis
+      geared turbines, were the most powerful manufactured at that time with a
+      designed output of 144,000 shp.」
+
+  - field: propulsion.power.design
+    value: 144000
+    unit: hp
+    src: [hmshood-construction]
+    valid: { from: 1920-03-29 }
+    confidence: A
+
+  - field: propulsion.speed.design
+    value: 32
+    unit: kn
+    src: [hmshood-construction]
+    valid: { from: 1920-03-29 }
+    confidence: A
+
+  - field: propulsion.shafts
+    value: 4
+    unit: count
+    src: [navypedia-hood]
+    valid: { from: 1920-03-29 }
+    confidence: A
+
+  - field: propulsion.propeller.count
+    value: 4
+    unit: count
+    src: [hoodspecs-machinery]
+    valid: { from: 1920-03-29 }
+    confidence: B
+
+  - field: propulsion.propeller.diameter
+    value: 4.57
+    unit: m
+    src: [hoodspecs-machinery]
+    valid: { from: 1920-03-29 }
+    confidence: B
+    note: 原值 15 ft，三叶锰青铜，每只约 20 t。
+
+  # ========== 防护（本级全部争议的核心）==========
+  - field: protection.scheme
+    value: incremental
+    unit: null
+    src: [navypedia-hood]
+    valid: { from: 1918-08-22 }
+    confidence: B
+    note: >
+      不是 all-or-nothing。胡德号保留了防弹片装甲、多层薄甲板、
+      以及一处致命的构造：主装带的上缘与主装甲甲板的平部之间，
+      存在一条「弹道可以钻过去」的缝隙带——1941 年调查委员会的
+      技术结论里专门描述了它（见单舰文件的 narrative）。
+
+  - field: protection.armor.thickness
+    value: 305
+    unit: mm
+    qual: { part: belt, region: main }
+    src: [navypedia-hood, hmshood-construction]
+    valid: { from: 1916-08-04 }
+    confidence: A
+    note: >
+      主装甲带 12 英寸。这个数字本身就是历史：初版设计是 9 英寸，
+      日德兰之后加到 12 英寸。construction.htm 原话：
+      「The thickness of the main armoured belt was raised from 9" to 12"
+      the same as the Queen Elizabeth Class battleships.」
+      带高 2.9 m，长 171.3 m（frame 区间对应 barbette A 至 Y），向内倾 12°。
+
+  - field: protection.armor.thickness
+    value: 178
+    unit: mm
+    qual: { part: upper_belt, region: main }
+    src: [navypedia-hood]
+    valid: { from: 1918-08-22 }
+    confidence: B
+    note: 7 英寸中装甲带，位于两端炮座之间，深 2.75 m。
+
+  - field: protection.armor.thickness
+    value: 127
+    unit: mm
+    qual: { part: upper_belt, region: upper }
+    src: [navypedia-hood]
+    valid: { from: 1918-08-22 }
+    confidence: B
+    note: 5 英寸上装甲带，与艏楼甲板相接。
+
+  - field: protection.armor.thickness
+    value: 76
+    unit: mm
+    qual: { part: deck, region: main }
+    src: [navypedia-hood]
+    valid: { from: 1918-08-22 }
+    confidence: B
+    note: >
+      主甲板平部 76 mm（弹药库上方），机舱上方降为 51-38 mm，
+      另有 51 mm 斜部。这层甲板是胡德号最后的防线，
+      也是 1941 年那一发炮弹「从带顶与甲板之间钻过去」时要绕开的东西。
+
+  - field: protection.armor.thickness
+    value: 381
+    unit: mm
+    qual: { part: turret, region: face }
+    src: [navypedia-hood]
+    valid: { from: 1918-08-22 }
+    confidence: B
+    note: 炮塔正面 15 英寸。侧面 305-279、后部 279、顶部只有 127 mm。
+
+  - field: protection.armor.thickness
+    value: 127
+    unit: mm
+    qual: { part: turret, region: roof }
+    src: [navypedia-hood]
+    valid: { from: 1918-08-22 }
+    confidence: B
+    note: 炮塔顶 5 英寸——远距离炮战里落角大的炮弹正是打这里。
+
+  - field: protection.armor.thickness
+    value: 305
+    unit: mm
+    qual: { part: barbette, region: main }
+    src: [navypedia-hood]
+    valid: { from: 1918-08-22 }
+    confidence: B
+    note: 炮座在主甲板以上 305 mm，以下递减至 152-127 mm。
+
+  - field: protection.armor.thickness
+    value: 280
+    unit: mm
+    qual: { part: conning_tower, region: main }
+    src: [navypedia-hood]
+    valid: { from: 1918-08-22 }
+    confidence: B
+    note: 司令塔 280 mm，顶部降至 76 mm。
+
+  - field: protection.armor.thickness
+    value: 38
+    unit: mm
+    qual: { part: bulkhead, region: torpedo }
+    src: [navypedia-hood]
+    valid: { from: 1918-08-22 }
+    confidence: B
+
+  - field: protection.armor.angle
+    value: 12
+    unit: deg
+    qual: { part: belt, region: main }
+    src: [navypedia-hood]
+    valid: { from: 1918-08-22 }
+    confidence: B
+    note: 舷侧与装甲带相对垂直面内倾 12°。
+
+  - field: protection.underwater.depth
+    value: 3.1
+    unit: m
+    src: [navypedia-hood]
+    valid: { from: 1918-08-22 }
+    confidence: B
+    note: >
+      水下防护纵深 3.1 m，明显小于同期美国标准型战列舰。
+      侧舷的防雷鼓包是后来加装的（1929-1931 改装期），
+      加装前的原始设计没有外置鼓包。
+
+  - field: protection.armor.weight
+    value: 13800
+    unit: t
+    src: [hoodpamphlet-1930s]
+    valid: { from: 1931-03-10 }
+    confidence: C
+    note: >
+      装甲总重 13,800 t，来自 1930 年代官方宣传手册。
+      按当时排水量折算约占 30.9%——**这个百分比是本报告换算的，
+      不是来源原句**，所以标 C 档。
+      同类的战列舰（如俾斯麦号）约占 40%，这个差距就是
+      「改了防护但没改到战列舰水平」的量化体现。
+
+  # ========== 武备 ==========
+  - field: armament.mount.summary
+    value: 8 × 15 英寸/L42（4 座双联，A/B/X/Y）+ 12 × 5.5 英寸/L50（单装）+ 高炮若干
+    unit: null
+    src: [navypedia-hood, navweaps-15in-42-mk1]
+    valid: { from: 1920-03-29, to: 1940-05-31 }
+    confidence: B
+    note: >
+      建成时的完整武装。副炮（12 门 5.5 英寸单装）在 1940 年 5 月
+      全部拆除，高炮逐次换代——这些变化写在单舰文件的状态切片里。
+
+  - field: armament.torpedo.tubes
+    value: 6
+    unit: count
+    src: [navypedia-hood]
+    valid: { from: 1920-03-29, to: 1937-12-31 }
+    confidence: B
+    note: >
+      建成时 6 具 533 mm 鱼雷发射管：舷侧水上 4 具 + 水下 2 具。
+      水下 2 具在 1937 年拆除，水上 2 具在 1937-12 又拆了 2 具
+      （navypedia 记「12/1937: - 2 - 533 TT」）。
+      具体剩几具与拆除顺序见单舰文件的切片。
+
+  - field: armament.torpedo.diameter
+    value: 533
+    unit: mm
+    src: [navypedia-hood]
+    valid: { from: 1920-03-29 }
+    confidence: B
+
+  # ========== 编制 ==========
+  - field: service.complement.standard
+    value: 1200
+    unit: persons
+    src: [hoodspecs-complement]
+    valid: { from: 1920-03-29 }
+    confidence: C
+    note: 和平时期约 1,200 人。战时编制 1,400+，1941-05-24 实际 1,418 人。

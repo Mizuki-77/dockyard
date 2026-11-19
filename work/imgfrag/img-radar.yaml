@@ -1,0 +1,441 @@
+# 雷达 / 火控配图分片（img-radar 产出，合并进 data/images.yaml）
+# 全部逐条核对 Commons imageinfo.extmetadata 授权字段；width/height 为 Pillow 实测落盘文件像素。
+# 档位全部为 A（Public domain 或 CC0）。B 档本次未采用；C 档候选一律未入库。
+images:
+- id: type-271-hmcs-assiniboine-bridge
+  file: /img/weapons/type-271-hmcs-assiniboine-bridge.jpg
+  subject: weapon:type-271
+  title:
+    zh: 阿西尼博因号舰桥上的 Type 271 水面搜索雷达
+    en: Type 271 surface-search radar above the bridge of HMCS Assiniboine
+  part: radar
+  view: detail
+  date: 1943
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: Ken Macpherson / Naval Museum of Alberta
+  credit: 加拿大艾伯塔海军博物馆，底片号 IKMD-03388
+  source_url: "https://commons.wikimedia.org/wiki/File:HMCS_Assiniboine_IKMD-03388.jpg"
+  width: 1280
+  height: 838
+  primary: true
+  note: 舰桥上方那盏圆鼓状 Type 271 天线罩与两侧 20 mm 厄利孔同框，是花级/河级护航舰装 271 的典型位置。原片 Commons 只标「约 1943—1944」，具体月份不明，故 date 只写年份。
+- id: type-271-hmas-barcoo-bridge
+  file: /img/weapons/type-271-hmas-barcoo-bridge.jpg
+  subject: weapon:type-271
+  title:
+    zh: 巴库号舰桥上方、两舷探照灯之间的 Type 271 雷达
+    en: Type 271 radar between the searchlights above the bridge of HMAS Barcoo
+  part: radar
+  view: bow
+  date: 1944-02-18
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: 澳大利亚战争纪念馆（摄影者未署名）
+  credit: Australian War Memorial, 300353（Naval Historical Collection）
+  source_url: "https://commons.wikimedia.org/wiki/File:HMAS_Barcoo_(300353).jpg"
+  width: 640
+  height: 482
+  primary: false
+  note: AWM 原始图注直接点名「舰桥上方、两侧探照灯之间为 Type 271 水面搜索雷达」，是 271 安装位置的权威说明。局限是整舰远景，天线罩本体只有几个像素，看不出鼓形罩内部结构。
+- id: type-272-hmas-quality-lantern
+  file: /img/weapons/type-272-hmas-quality-lantern.jpg
+  subject: weapon:type-272
+  title:
+    zh: 品质号探照灯平台上换装的 Type 272 雷达罩
+    en: Type 272 radar lantern replacing the searchlight platform of HMAS Quality
+  part: radar
+  view: broadside
+  date: 1945
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: SOI Sydney，澳大利亚武装部队
+  credit: Australian War Memorial（PD-Australia）
+  source_url: "https://commons.wikimedia.org/wiki/File:HMAS_Quality_(G62)_underway_at_sea,_circa_in_late_1945.JPG"
+  width: 850
+  height: 408
+  primary: true
+  note: AWM 图注说明该舰把舯部探照灯换成了 Type 272 雷达罩（lantern）。这张图恰好说明 272 与 271 共用同一种鼓形/圆筒罩外形——单看外形无法区分两型，这正是 272 常被误标成 271 的原因。整舰远景，细节有限。
+- id: type-277-hms-swiftsure-aerial
+  file: /img/weapons/type-277-hms-swiftsure-aerial.jpg
+  subject: weapon:type-277
+  title:
+    zh: 敏捷号上的 Type 277 网状抛物面天线
+    en: Type 277 wire-mesh parabolic aerial on HMS Swiftsure
+  part: radar
+  view: detail
+  date: 1944-1945
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: Davies, F A（Lt），皇家海军官方摄影师
+  credit: Imperial War Museums, A 24893
+  source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A24893.jpg"
+  width: 800
+  height: 608
+  primary: true
+  note: 目前最清楚的 Type 277 单张：为减重与减风压而用金属网做的抛物面、左侧纵向稳定驱动电机、右侧旋转波导接头都在画面内，图注还标出了波导编号 W7897。原件藏帝国战争博物馆（IWM A 24893），战时皇家海军官方摄影，Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本。
+- id: type-277-hmcs-copper-cliff-outfit-auj
+  file: /img/weapons/type-277-hmcs-copper-cliff-outfit-auj.jpg
+  subject: weapon:type-277
+  title:
+    zh: 库珀克利夫号主桅附近的 Type 277（Outfit AUJ）抛物面天线
+    en: Type 277 (Outfit AUJ) parabolic antenna near the mainmast of HMCS Copper Cliff
+  part: radar
+  view: detail
+  date: 1944
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: 皇家海军摄影师（未署名）
+  credit: forposterityssake.ca，HMCS Copper Cliff K495 档案（PD Canada）
+  source_url: "https://commons.wikimedia.org/wiki/File:HMSC_Copper_Cliff_radars.jpg"
+  width: 1241
+  height: 767
+  primary: false
+  note: 库珀克利夫号是专门试验「护卫舰装 Type 277」的试验舰，图注明确 Outfit AUJ 抛物面约在画面中央。局限是整舰侧视，天线轮廓可辨、驱动与波导细节不可辨。
+- id: type-279-hms-triumph-mainmast
+  file: /img/weapons/type-279-hms-triumph-mainmast.jpg
+  subject: weapon:type-279
+  title:
+    zh: 凯旋号主桅上的 Type 279 对空搜索天线
+    en: Type 279 air-search radar on the mainmast of HMS Triumph
+  part: radar
+  view: broadside
+  date: 1950-1953
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: 澳大利亚武装部队
+  credit: Australian War Memorial（PD-Australia）
+  source_url: "https://commons.wikimedia.org/wiki/File:HMS_Triumph_(R16)_off_Iwakuni.jpg"
+  width: 450
+  height: 341
+  primary: true
+  note: AWM 图注逐项点名「前桅顶 281b、岛式上层建筑 277、主桅 279」，一张图可同时核对三种天线的相对位置。局限是朝鲜战争期远景，279 那副大网状阵只剩轮廓，看不出网格与馈线。
+- id: type-279b-hms-glory-masthead
+  file: /img/weapons/type-279b-hms-glory-masthead.jpg
+  subject: weapon:type-279b
+  title:
+    zh: 光荣号桅顶的 Type 279B 天线与 YE 归航信标
+    en: Type 279B aerial and YE homing beacon at the masthead of HMS Glory
+  part: radar
+  view: broadside
+  date: 1945
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: 澳大利亚武装部队
+  credit: Australian War Memorial（PD-Australia）
+  source_url: "https://commons.wikimedia.org/wiki/File:HMS_Glory_(R62)_at_Sydney_1945.jpg"
+  width: 450
+  height: 341
+  primary: true
+  note: 图注明确桅顶为 Type 279B 加 YE 归航信标，是 279B 最直接的实照标注。450 px 源、整舰远景，能看出「桅顶横桁上的长条网状阵」这一 279 系特征，但阵面网格与馈线不可辨。
+- id: type-281-hms-illustrious-foremast
+  file: /img/weapons/type-281-hms-illustrious-foremast.jpg
+  subject: weapon:type-281
+  title:
+    zh: 光辉号前后桅顶的 Type 281 天线
+    en: Type 281 aerials at the heads of the fore and main masts of HMS Illustrious
+  part: radar
+  view: overhead
+  date: 1940-1941
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: 澳大利亚武装部队
+  credit: Australian War Memorial, 302415（PD-Australia）
+  source_url: "https://commons.wikimedia.org/wiki/File:HMS_Illustrious_(AWM_302415).jpg"
+  width: 640
+  height: 505
+  primary: true
+  note: AWM 图注点名前桅与主桅顶各一部 Type 281，前桅那部顶上还叠着 Type 291、桅身大圆筒是 Type 72 归航信标，可用于区分 281 与 291 的外形差异。注意图注写 c.1942，而 Commons 结构化日期写「约 1940—1941」，两者不一致，date 按区间处理。
+- id: type-281-hms-swiftsure-rx-cabin
+  file: /img/weapons/type-281-hms-swiftsure-rx-cabin.jpg
+  subject: weapon:type-281
+  title:
+    zh: 敏捷号雷达舱内的 Type 281 接收机
+    en: Type 281 receiver (281 RX) in the radar cabin of HMS Swiftsure
+  part: radar
+  view: detail
+  date: 1944-1945
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: Davies, F A（Lt），皇家海军官方摄影师
+  credit: Imperial War Museums, A 24891
+  source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A24891.jpg"
+  width: 800
+  height: 592
+  primary: false
+  note: 拍的是舱内 281 接收机机柜与操作台，适合说明 281 的设备形态与舱室布置，但看不到桅顶天线阵。原件藏帝国战争博物馆（IWM A 24891），Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本。
+- id: type-281b-hms-swiftsure-aerial
+  file: /img/weapons/type-281b-hms-swiftsure-aerial.jpg
+  subject: weapon:type-281b
+  title:
+    zh: 敏捷号上的 Type 281B 天线
+    en: Type 281B aerial on HMS Swiftsure
+  part: radar
+  view: detail
+  date: 1944-1945
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: Davies, F A（Lt），皇家海军官方摄影师
+  credit: Imperial War Museums, A 24895
+  source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A24895.jpg"
+  width: 800
+  height: 611
+  primary: true
+  note: IWM 图注只写「281 B Aerial on board HMS SWIFTSURE」，是 281B 最直接的实物标注；画面为桅顶近景，横向振子与支撑桁架看得清。原件藏帝国战争博物馆（IWM A 24895），Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本。
+- id: type-281b-hms-colossus-stump-mast
+  file: /img/weapons/type-281b-hms-colossus-stump-mast.jpg
+  subject: weapon:type-281b
+  title:
+    zh: 巨人号短桅上的 Type 281B 对空搜索天线
+    en: Type 281B air-search aerial on the stump mast of HMS Colossus
+  part: radar
+  view: overhead
+  date: 1945-09
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: 摄影者未署名
+  credit: Australian War Memorial（PD-Australia）
+  source_url: "https://commons.wikimedia.org/wiki/File:HMS_Colossus_(R15)_off_Shanghai_1945.jpg"
+  width: 640
+  height: 484
+  primary: false
+  note: 空中侧视，图注点名短桅上那副是 Type 281B；俯视角度能看清天线在轻舰队航母上的位置关系，但天线本体太小，看不出细节。
+- id: type-282-piet-hein-hazemeyer
+  file: /img/weapons/type-282-piet-hein-hazemeyer.jpg
+  subject: weapon:type-282
+  title:
+    zh: 皮特·海因号 Hazemeyer 炮座配用的 Type 282 火控雷达
+    en: Type 282 fire-control radar on the Hazemeyer mounting of Hr.Ms. Piet Hein
+  part: radar
+  view: detail
+  date: 1946-01
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: 澳大利亚武装部队
+  credit: Australian War Memorial（PD-Australia）
+  source_url: "https://commons.wikimedia.org/wiki/File:Dutch_destroyer_Piet_Hein_(G94)_at_Melbourne_1946.jpg"
+  width: 450
+  height: 289
+  primary: true
+  note: AWM 图注直接写明「40 mm 博福斯双联 Hazemeyer 炮座配 Type 282 火控雷达」，可看到 282 的小型天线装在炮座一侧。同一张图注还提到 285 与 291，看图时注意区分，别把另外两副算到 282 头上；450 px 源，天线细节有限。
+- id: type-285-hmas-warramunga-director
+  file: /img/weapons/type-285-hmas-warramunga-director.jpg
+  subject: weapon:type-285
+  title:
+    zh: 瓦拉蒙加号高角指挥仪上的 Type 285 火控雷达
+    en: Type 285 fire-control radar on the high-angle director of HMAS Warramunga
+  part: radar
+  view: broadside
+  date: 1944
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: A. J. Davies，澳大利亚武装部队
+  credit: Australian War Memorial（PD-Australia）
+  source_url: "https://commons.wikimedia.org/wiki/File:HMAS_Warramunga_(I44)_at_anchor_c1944.JPG"
+  width: 850
+  height: 636
+  primary: true
+  note: 图注点名高角指挥仪上装 Type 285，桅顶另有一部美制 SC；侧视全舰能看清 285 装在指挥仪顶部这一位置关系，天线本体偏小。
+- id: type-285-hmas-nepal-director
+  file: /img/weapons/type-285-hmas-nepal-director.jpg
+  subject: weapon:type-285
+  title:
+    zh: 尼泊尔号舰桥后高角指挥仪塔上的 Type 285
+    en: Type 285 on the high-angle director tower abaft the bridge of HMAS Nepal
+  part: radar
+  view: broadside
+  date: 1945
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: 摄影者未署名
+  credit: Australian War Memorial, 301077（Naval Historical Collection，PD-Australia）
+  source_url: "https://commons.wikimedia.org/wiki/File:HMAS_Nepal_AWM-301077.jpg"
+  width: 450
+  height: 336
+  primary: false
+  note: 同一张图注同时点名桅顶 Type 291、舯部探照灯平台上的 Type 271、舰桥后高角指挥仪塔上的 Type 285，适合一次对照三种天线的舰上位置。缺点同样是 450 px 远景，天线细节不可辨。
+- id: type-293-hms-swiftsure-avr
+  file: /img/weapons/type-293-hms-swiftsure-avr.jpg
+  subject: weapon:type-293
+  title:
+    zh: 敏捷号桅上的 Type 293（242）AVR 天线组
+    en: Type 293 (242) AVR antennas on HMS Swiftsure
+  part: radar
+  view: detail
+  date: 1944-1945
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: Davies, F A（Lt），皇家海军官方摄影师
+  credit: Imperial War Museums, A 24890
+  source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A24890.jpg"
+  width: 800
+  height: 602
+  primary: true
+  note: IWM 图注写「A 293 (242) AVR antennae」，即 Type 293 的对空/对海搜索天线组，是 293 在巡洋舰桅上的实拍；横桁上的振子组可辨，馈电细节看不出。原件藏帝国战争博物馆（IWM A 24890），Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本。
+- id: type-293-hmas-tobruk-masthead
+  file: /img/weapons/type-293-hmas-tobruk-masthead.jpg
+  subject: weapon:type-293
+  title:
+    zh: 托布鲁克号桅顶的 Type 293 对空/对海搜索天线
+    en: Type 293 air/surface-search aerial at the masthead of HMAS Tobruk
+  part: radar
+  view: overhead
+  date: 1954-08
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: 摄影者未署名
+  credit: Australian War Memorial, 301573（Naval Historical Collection，PD-Australia）
+  source_url: "https://commons.wikimedia.org/wiki/File:HMAS_Tobruk_(AWM_301573).jpg"
+  width: 450
+  height: 331
+  primary: false
+  note: AWM 图注点名桅顶为 Type 293，并同时指出指挥仪上的 275 与炮座上的 262，可用来分辨搜索雷达与炮术雷达的不同安装位置。450 px 源、空中远景，天线细节不可辨。
+- id: hacs-mk4-hms-duke-of-york-table
+  file: /img/weapons/hacs-mk4-hms-duke-of-york-table.jpg
+  subject: weapon:hacs-mk4
+  title:
+    zh: 约克公爵号上的 HACS Mk IV 高角火控台
+    en: HACS Mk IV high-angle fire-control table aboard HMS Duke of York
+  part: radar
+  view: detail
+  date: 1941-1945
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: 英国海军部（UK Admiralty）
+  credit: Imperial War Museums, object 205150895
+  source_url: "https://commons.wikimedia.org/wiki/File:HACS_MK_IV_Table_on_board_HMS_Duke_of_York.jpg"
+  width: 1280
+  height: 962
+  primary: true
+  note: 偏转屏操作手坐在偏转屏前、距离标绘手站在对面，是 HACS Mk IV 台位分工的实拍，能看清偏转屏、手轮与标绘台的关系。Commons 未给原始拍摄日期（只记了 2016 年的数字化日期），date 按二战期处理。原件藏帝国战争博物馆（IWM object 205150895），Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本。
+- id: hacs-mk4-kgv-525-director
+  file: /img/weapons/hacs-mk4-kgv-525-director.jpg
+  subject: weapon:hacs-mk4
+  title:
+    zh: 英王乔治五世号上正在操作的 5.25 in 高炮指挥仪
+    en: The 5.25-inch gun director manned aboard HMS King George V
+  part: radar
+  view: detail
+  date: 1941-1945
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: Coote, R G G（Lt），皇家海军官方摄影师
+  credit: Imperial War Museums, A 3883
+  source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A3883.jpg"
+  width: 800
+  height: 604
+  primary: false
+  note: 拍的是英王乔治五世号 5.25 in 高平两用炮指挥仪（HACS Mk IV 系统的指挥仪端），瞄准手与测距仪窗口都清楚。限制要说清：IWM 原图注只写「a director for the 5.25 inch guns」，没有点名 Mk 型号，Mk IV 的归属是按该级舰装备推定，未经原始标注确认。原件藏帝国战争博物馆（IWM A 3883），Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本。
+- id: pom-pom-director-mk3-kgv-controls
+  file: /img/weapons/pom-pom-director-mk3-kgv-controls.jpg
+  subject: weapon:pom-pom-director-mk3
+  title:
+    zh: 俯视英王乔治五世号的 pom-pom 指挥仪操作端
+    en: Looking down on the pom-pom director controls of HMS King George V
+  part: radar
+  view: detail
+  date: 1941-1945
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: Coote, R G G（Lt），皇家海军官方摄影师
+  credit: Imperial War Museums, A 3651
+  source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A3651.jpg"
+  width: 800
+  height: 602
+  primary: true
+  note: 俯视 2 磅 pom-pom 指挥仪内部，操作手轮、瞄准具与操作手站位都在画面内，是这套指挥仪人机界面的直观图。限制：IWM 原图注只写「pom-pom director」，未标 Mk 号，Mk III 的归属按英王乔治五世级装备推定，未经原始标注确认。原件藏帝国战争博物馆（IWM A 3651），Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本。
+- id: fumo-213-wurzburg-d-schematic
+  file: /img/weapons/fumo-213-wurzburg-d-schematic.jpg
+  subject: weapon:fumo-213
+  title:
+    zh: Würzburg-D 型（FuMO 213 的基型）雷达站结构分解图
+    en: Würzburg Type D radar station, the land-based parent of FuMO 213
+  part: radar
+  view: detail
+  date: 1945-04
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: 美国陆军部（US War Department）
+  credit: TM E 11-219《Directory of German Radar Equipment》，图号 TL 47770
+  source_url: "https://commons.wikimedia.org/wiki/File:Wurzburg_type_D_diagram.jpg"
+  width: 1280
+  height: 1847
+  primary: true
+  note: 这是陆基 Würzburg-D 的设备图，不是 FuMO 213 的舰上实照——Commons 全库检索（含 insource 正则与 Category:FuMO / Seetakt / Würzburg）均无标为 FuMO 213 的舰载照片，此图是唯一带「Würzburg Type D」原始标注的公开资料。FuMO 213 即 Würzburg-D 的舰载化型，天线碟与机柜同源，图中逐项标出 CRT 显示、距离手轮、方位与俯仰手轮及主显示单元，可用来认这套设备；差异是陆基型基座与操作台为固定式，舰载型另有稳定基座，本图反映不出。型号归属按美军 TM E 11-219 的 Type D 标注，舰载改型部分未经原始标注确认。
+- id: pom-pom-director-mk3-kgv-crew
+  file: /img/weapons/pom-pom-director-mk3-kgv-crew.jpg
+  subject: weapon:pom-pom-director-mk3
+  title:
+    zh: 英王乔治五世号 pom-pom 指挥仪内的操作班组
+    en: The pom-pom director crew closed up aboard HMS King George V
+  part: radar
+  view: detail
+  date: 1941-01
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: Coote, R G G（Lt），皇家海军官方摄影师
+  credit: Imperial War Museums, A 2873
+  source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A2873.jpg"
+  width: 1280
+  height: 967
+  primary: false
+  note: 指挥仪内全班人马就位，瞄准手、俯仰/方位手轮与俯视潜望镜一目了然，图注还特别指出「每具指挥仪前方都装有测距仪」。拍摄缘于 1941 年 1 月哈利法克斯勋爵乘该舰赴美。限制同另一张：IWM 只写 pom-pom director，未标 Mk 号，Mk III 归属按该级舰装备推定，未经原始标注确认。原件藏帝国战争博物馆（IWM A 2873），Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本。
+- id: fumb-4-prinz-eugen-ant4
+  file: /img/weapons/fumb-4-prinz-eugen-ant4.jpg
+  subject: weapon:fumb-4
+  title:
+    zh: 欧根亲王号主桅上的 FuMB Ant. 4 被动探测天线（原片手写标注）
+    en: FuMB Ant. 4 passive-detector antenna on the mainmast of Prinz Eugen, as annotated on the original print
+  part: radar
+  view: detail
+  date: 1945-05
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: 美国海军（摄影者未署名）
+  credit: U.S. Navy photo NH 96442（Naval History and Heritage Command）
+  source_url: "https://commons.wikimedia.org/wiki/File:FuMO_25_radar_antenna_aboard_the_German_cruiser_Prinz_Eugen,_in_1945_(NH_96442).jpg"
+  width: 1280
+  height: 870
+  primary: true
+  note: 底片上直接手写了「FuMO 25」与「FuMB Ant. 4」两处箭头标注，FuMB 那处指的正是主桅下方那组被动探测天线，编号出自原始标注而非后人推断。要注意史料分歧：Commons 的英文说明把这套 FuMB 称作 Sumatra，而 Scharnhorst 复原图注把 FuMB 4 写作 Samos，两种说法互相冲突、尚无定论，本站只按原片手写的 Ant. 4 编号登记，不替你裁定 Sumatra/Samos。
+- id: fumb-7-u889-naxos-tunis
+  file: /img/weapons/fumb-7-u889-naxos-tunis.jpg
+  subject: weapon:fumb-7
+  title:
+    zh: U-889 桅上的 FuMB 7 Naxos 与 FuMB 26 Tunis 天线
+    en: FuMB 7 Naxos and FuMB 26 Tunis antennas on the mast of U-889
+  part: radar
+  view: detail
+  date: 1945-05-25
+  license: pd
+  license_tier: A
+  license_raw: Public domain
+  author: PO George Gadde，加拿大皇家海军 / 加拿大国防部
+  credit: Library and Archives Canada, PA-137697
+  source_url: "https://commons.wikimedia.org/wiki/File:FuMB-7_Naxos_and_FuMB-26_Tunis_antenna.jpg"
+  width: 600
+  height: 780
+  primary: true
+  note: 图注说明正对镜头的是 FuMB 7 Naxos（Fliege 型，抛物面网罩里两片叶状有源振子），它上方背对镜头的是 FuMB 26 Tunis 的喇叭天线，一张图就能区分两种被动天线的外形。照片为 U-889 投降后于 1945 年 5 月 25 日在哈利法克斯拍摄，加拿大公有领域。

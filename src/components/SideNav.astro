@@ -1,0 +1,58 @@
+---
+interface NavItem {
+  href: string;
+  label: string;
+  hint?: string;
+}
+
+interface Props {
+  kicker?: string;
+  title: string;
+  items: NavItem[];
+  note?: string;
+  activeHref?: string;
+}
+
+const { kicker = 'Quick access', title, items, note, activeHref } = Astro.props;
+const path = activeHref ?? Astro.url.pathname;
+
+function matches(href: string): boolean {
+  if (href === '/') return path === '/';
+  return path === href || path.startsWith(href + '/');
+}
+
+// 只让「最具体」的那一项高亮。否则 /ships/by-type 会同时点亮 /ships，
+// 因为 /ships 也是它的前缀——侧栏出现两个当前项比不高亮更糟。
+const activeHrefResolved = items
+  .map((it) => it.href)
+  .filter(matches)
+  .sort((a, b) => b.length - a.length)[0];
+
+function isActive(href: string): boolean {
+  return href === activeHrefResolved;
+}
+---
+
+<aside class="sidenav" aria-label={title}>
+  <div class="sidenav__head">
+    <div class="sidenav__kicker">{kicker}</div>
+    <div class="sidenav__title">{title}</div>
+  </div>
+  <ul class="sidenav__list">
+    {
+      items.map((it) => (
+        <li class="sidenav__item">
+          <a
+            class="sidenav__link"
+            href={it.href}
+            aria-current={isActive(it.href) ? 'page' : undefined}
+          >
+            <span class="sidenav__dot" aria-hidden="true" />
+            <span>{it.label}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  {note && <div class="sidenav__note">{note}</div>}
+</aside>

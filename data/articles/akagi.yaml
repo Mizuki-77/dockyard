@@ -1,0 +1,343 @@
+# ============================================================================
+# 赤城 正文
+#
+# 2026-11-19 建。数据来源见 work/raw/akagi-tech.md。
+# 叙事口径：不吹不贬，把「为什么是这样」讲清楚——赤城的每一个缺陷
+# 几乎都能追到「条约限制」或「预算不足」这两个原因上。
+# ============================================================================
+
+ship: akagi
+updated: 2026-11-19
+
+intro:
+  lead:
+    zh: >-
+      赤城是日本海军第一艘大型航母之一，也是最能说明「改装航母」是什么样子的一艘：
+      它原本是天城型战列巡洋舰的 2 号舰，因为华盛顿条约而改成航母，
+      二十年间一直是机动部队的旗舰，最后在中途岛一天之内烧成废铁。
+    en: >-
+      Akagi was one of the IJN's first large carriers and the clearest example
+      of what a converted carrier really means: laid down as a battlecruiser,
+      reborn as a carrier under the Washington Treaty, and destroyed in a
+      single morning at Midway.
+
+  paragraphs:
+    - heading: 它不是设计出来的航母，是改出来的
+      text:
+        zh: >-
+          理解赤城要抓住一个前提：它不是设计出来的航母，是改出来的。
+          战列巡洋舰的舰体给了它高航速和细长的船型，也给了它一堆改不掉的毛病——
+          飞行甲板要架在原本放炮塔的地方，机库只能往船体里硬塞，
+          舰桥为了避开烟囱不得不放到左舷。这些不是设计失误，是条约逼出来的妥协。
+        en: >-
+          Akagi was not designed as a carrier but converted into one. The
+          battlecruiser hull gave her speed and a long, narrow form; it also
+          forced every subsequent compromise.
+      src: [japanese-warship-akagi]
+
+    - heading: 预算是第二条主线
+      text:
+        zh: >-
+          另一个关键前提是预算。日文专题反复提到「金がねぇ」（没钱）：
+          赤城至死没有换装 12.7cm 高角炮，弹射器只做了部分配套工程就停下，
+          连弯曲烟囱航母必备的海水灭火装置都没装。中途岛那天它烧得那么彻底，
+          跟这些省掉的东西直接相关。
+        en: >-
+          Money was the second constraint. Akagi never received the 12.7 cm AA
+          guns, her catapult installation was abandoned partway, and she lacked
+          the seawater fire-extinguishing system that carriers with curved
+          funnels required.
+      src: [japanese-warship-akagi]
+
+history:
+  - id: build
+    title:
+      zh: 从战巡到航母
+      en: From battlecruiser to carrier
+    range: { from: 1920-12-06, to: 1927-03-25 }
+    lead:
+      zh: 一艘造到一半变成航母的船。
+    events:
+      - date: 1920-12-06
+        text:
+          zh: >-
+            作为天城型战列巡洋舰 2 号舰在吴海军工厂开工。天城型是八八舰队计划的
+            核心，设计指标是 30 节以上的高速战巡。
+          en: Laid down at Kure Naval Yard as the second Amagi-class battlecruiser.
+        src: [combinedfleet-akagi, japanese-warship-akagi]
+
+      - date: 1922-02-05
+        text:
+          zh: >-
+            华盛顿海军条约签订，天城型两舰建造取消。已下水过半的舰体不浪费，
+            选定改装为航母。
+          en: >-
+            The Washington Naval Treaty cancelled the Amagi class; the two
+            incomplete hulls were selected for carrier conversion.
+        src: [combinedfleet-akagi]
+
+      - date: 1923-09-01
+        text:
+          zh: >-
+            关东大地震，天城号舰体严重受损，改装中止。赤城成为唯一继续的
+            天城型改装舰——这就是为什么赤城没有同级舰。
+          en: >-
+            The Great Kanto Earthquake wrecked Amagi's hull and her conversion
+            was abandoned, leaving Akagi without a sister ship.
+        src: [combinedfleet-akagi]
+
+      - date: 1923-11-19
+        text:
+          zh: >-
+            舰种正式由巡洋战舰变更为航空母舰，改装工程在吴工厂开始。
+          en: Reclassified as an aircraft carrier; conversion work begins at Kure.
+        src: [japanese-warship-akagi, combinedfleet-akagi]
+
+      - date: 1925-04-22
+        text:
+          zh: 下水，命名「赤城」，取自群马县赤城山。
+        src: [japanese-warship-akagi]
+
+      - date: 1927-03-25
+        text:
+          zh: >-
+            竣工。三段式飞行甲板，无岛式舰桥。但日文专题指出这是「纸面上的竣工」——
+            因预算不足留下大量收尾工程，实际完成还要晚约四个月。
+          en: >-
+            Completed with three superimposed flight decks and no island.
+            The completion date was on paper; actual work ran about four
+            months longer.
+        src: [japanese-warship-akagi, combinedfleet-akagi]
+
+  - id: interwar
+    title:
+      zh: 三段甲板时代
+      en: The three-deck era
+    range: { from: 1927-06-17, to: 1935-10-23 }
+    lead:
+      zh: 一个后来被证明走不通的设计。
+    events:
+      - date: 1927-06-17
+        text:
+          zh: >-
+            试航跑出 32.5 节，超过设计值 31 节。
+            （另有 32.1 节一说，两说并存）
+        src: [combinedfleet-akagi, japanese-warship-akagi]
+
+      - date: 1928
+        text:
+          zh: >-
+            年末工事加装 20cm 连装炮 2 基，至此主炮 10 门。
+            竣工时其实只有单装 6 门——这一点很多资料会记错。
+          en: >-
+            Two twin 20 cm mounts added at the end of the year, bringing the
+            main battery to 10 guns. At completion she had only six singles.
+        src: [japanese-warship-akagi]
+
+      - date: 1931
+        text:
+          zh: >-
+            拦阻装置由英国式纵索换为日本自研横索式 6 索。原英国式靠钩与索的
+            摩擦力制动，性能不佳。
+        src: [combinedfleet-akagi]
+
+      - date: 1932
+        text:
+          zh: >-
+            一二八事变期间出动舰载机。三段甲板在实战中的问题开始暴露：
+            中段甲板太短（仅 15 m），只能起降极轻的飞机；各层甲板之间
+            气流互相干扰。
+        src: [japanese-warship-akagi]
+
+  - id: rebuild
+    title:
+      zh: 大改装：变成另一艘船
+      en: The great reconstruction
+    range: { from: 1935-10-24, to: 1938-12-15 }
+    lead:
+      zh: 三段甲板拆掉，换成单段全通甲板，左舷舰桥。
+    events:
+      - date: 1935-10-24
+        text:
+          zh: 入佐世保海军工厂，开始现代化改装。这次改装持续近三年。
+        src: [combinedfleet-akagi]
+
+      - date: 1938-08-31
+        text:
+          zh: >-
+            改装完成。三段甲板拆除，改为单段全通甲板 249.17 × 30.48 m；
+            机库三层（上/中各 130×22×5 m）；左舷岛式舰桥。
+            动力从 131,200 hp 提升到 133,000 hp。
+          en: >-
+            Modernization complete: single flush flight deck, three hangar
+            decks, and an island on the port side.
+        src: [combinedfleet-akagi, japanese-warship-akagi, kasado-akagi]
+
+      - date: 1938-10
+        text:
+          zh: >-
+            左舷舰桥做了实船试验，共 451 架次起降。结论是负面的：
+            右舷来风时气流紊乱、着舰困难，夜间尤其糟。
+            但改装已成事实，赤城至死没改回右舷。
+          en: >-
+            The port-side island was evaluated over 451 sorties. The verdict
+            was negative — turbulence with wind from starboard made landings
+            difficult, especially at night.
+        src: [japanese-warship-akagi]
+
+      - date: 1938-12-15
+        text:
+          zh: 复归现役，编入第一航空战队。
+        src: [combinedfleet-akagi]
+
+  - id: war
+    title:
+      zh: 机动部队旗舰
+      en: Flagship of the Kido Butai
+    range: { from: 1941-04-10, to: 1942-05-26 }
+    lead:
+      zh: 从珍珠港打到印度洋，一路未败。
+    events:
+      - date: 1941-04-10
+        text:
+          zh: >-
+            第一航空舰队编成，南云忠一中将任司令长官，赤城为旗舰。
+            这是当时世界上最强的一支航母部队。
+        src: [japanese-warship-akagi]
+
+      - date: 1941-12-07
+        text:
+          zh: >-
+            珍珠港攻击。赤城派出第一波 27 架九七舰攻 + 9 架零战，
+            第二波 18 架九九舰爆 + 9 架零战。自身损失零战 1 架、九九舰爆 4 架。
+          en: >-
+            Pearl Harbor: Akagi contributed 27 B5N2 in the first wave and
+            18 D3A1 in the second, losing five aircraft.
+        src: [combinedfleet-akagi]
+
+      - date: 1942-04-05
+        text:
+          zh: >-
+            印度洋作战。当日击沉英国重巡康沃尔号与多塞特郡号；
+            4 月 9 日又参与击沉竞技神号。这是航母对水面舰最有效的一次展示。
+        src: [combinedfleet-akagi]
+
+      - date: 1942-04-09
+        text:
+          zh: >-
+            险遭 9 架英军布伦海姆轰炸机攻击，炸弹近失未中。
+          en: Nine British Blenheims penetrated the CAP and near-missed her.
+        src: [combinedfleet-akagi]
+
+      - date: 1942-04-18
+        text:
+          zh: >-
+            杜立特空袭东京后，赤城、苍龙、飞龙奉命追击美军航母编队，
+            在海上扑空。
+        src: [combinedfleet-akagi]
+
+  - id: midway
+    title:
+      zh: 中途岛：一天之内
+      en: 'Midway: one day'
+    range: { from: 1942-05-27, to: 1942-06-05 }
+    lead:
+      zh: 从出击到沉没，十天；从被弹到弃舰，九个小时。
+    events:
+      - date: 1942-05-27
+        text:
+          zh: 自柱岛出击，参加 MI 作战，任第一航空战队旗舰。
+        src: [combinedfleet-akagi]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            第一波攻击中途岛：赤城派出 18 架九九舰爆 + 9 架零战。
+            返航后开始换装鱼雷准备攻击美舰，作业未完成即遭攻击。
+            （当地时刻）
+        src: [combinedfleet-akagi]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            企业号 VB-6 的 Best 队 3 架 SBD 从 80 度左舷方向俯冲，
+            1 发 1,000 磅炸弹直击中部、在机库内爆炸。
+            加贺、苍龙几乎同时被击中。
+            青木舰长 1945 年证言说被弹两发，但 Tully 考订认为只有一发致命
+            ——后部那发可能在舰尾附近近失、未在甲板引爆。
+          en: >-
+            Three SBDs from VB-6 led by LtCdr Best attacked from 80 degrees
+            port; one 1,000 lb bomb struck amidships and exploded in the hangar.
+        src: [combinedfleet-akagi, ussbs-aoki-akagi]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            下令注水弹药库。前部成功，后部因阀件损坏失败——这是船舱失控的
+            直接原因之一。
+        src: [combinedfleet-akagi]
+
+      - date: 1942-06-04
+        text:
+          zh: 舵机卡死于右 20-30°，丧失机动能力。
+        src: [combinedfleet-akagi]
+
+      - date: 1942-06-04
+        text:
+          zh: 南云中将将旗舰转移至轻巡长良号。指挥中枢脱离。
+        src: [combinedfleet-akagi]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            青木舰长决定弃舰。舰员转移到驱逐舰上。
+        src: [combinedfleet-akagi]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            山本五十六直接下令推迟处分，舰长被劝离。
+            （日方仍希望拖带或自航）
+        src: [combinedfleet-akagi]
+
+      - date: 1942-06-05
+        text:
+          zh: 山本下令处分。
+        src: [combinedfleet-akagi]
+
+      - date: 1942-06-05
+        text:
+          zh: >-
+            岚、萩风、舞风、野分各射 1 雷。赤城向右倾覆、舰尾先沉，
+            沉没于 30°30′N 178°40′W。
+            注意：英文维基记「bow first」是未更新的旧说；Tully 据 2005 年
+            野分舰长古贺日记考订，舰首是最后没入水面的部分。
+            （当地时刻；日本时间记 6 月 6 日）
+          en: >-
+            Scuttled by four destroyers; capsized to starboard and sank stern
+            first — the bow was the last part to leave the surface.
+        src: [combinedfleet-akagi]
+
+  - id: aftermath
+    title:
+      zh: 之后
+      en: Aftermath
+    range: { from: 1942-09-25 }
+    events:
+      - date: 1942-09-25
+        text:
+          zh: 除籍。
+        src: [combinedfleet-akagi]
+
+      - date: 2019-10-20
+        text:
+          zh: >-
+            残骸由研究船 Petrel 在 5,490 m 深处发现。这是中途岛四艘日军航母中
+            最后被找到的一艘。
+          en: Wreck located by R/V Petrel at a depth of 5,490 m.
+        src: [combinedfleet-akagi]
+
+      - date: 2023-09
+        text:
+          zh: 研究船 EV Nautilus 拍摄残骸。
+        src: [combinedfleet-akagi]

@@ -1,0 +1,372 @@
+---
+// ============================================================================
+// 战舰信息索引（左侧层级树）
+//
+// 版式来源：用户手绘草图。左侧一棵可折叠的缩进树
+//   国家 → 舰种 → 舰级 → 单舰
+// 右侧才是内容。目的不是「多一个导航」，而是让人在页面上看得见自己在资料
+// 体系里的位置——现在有多少国家、每个国家下面有哪些舰种，一眼扫得到。
+//
+// 为什么用 <details>/<summary> 而不是 JS 折叠：
+//   静态站每次跳页都会重载，用原生元素就不必存展开状态，浏览器也不会闪。
+//   含当前页的那条分支在服务端就写成 open，所以从列表点进某艘舰时，
+//   树会自动展开到它，位置不会丢。
+//
+// 三种浏览顺序共用这一棵树（都长这样，只是根不同），切换靠顶部三个小标签：
+//   /ships            按时代
+//   /ships/by-type    按舰种
+//   /ships/by-nation  按国家
+// ============================================================================
+import { buildTree, type TreeMode } from '../lib/data';
+
+interface Props {
+  mode: TreeMode;
+  /** 当前页指向的节点，形如 'ship:bismarck' / 'class:bismarck'。用于高亮与自动展开 */
+  current?: string;
+  /**
+   * true = 单舰链接改成「右侧预览就地切换」而不是跳页。
+   * 只有左树右文的索引页用；分类浏览页仍然是真跳转。
+   * 链接本身写成 ?ship=<id>，不用 JS 也能用（只是会回到第一艘的预览）。
+   */
+  preview?: boolean;
+}
+
+const { mode, current = '', preview = false } = Astro.props;
+
+const MODES: { mode: TreeMode; href: string; label: string }[] = [
+  { mode: 'nation', href: '/ships', label: '按国家' },
+  { mode: 'type', href: '/ships/by-type', label: '按舰种' },
+  { mode: 'era', href: '/ships/by-era', label: '按时代' },
+];
+
+const tree = buildTree(mode);
+const totalShips = tree.reduce((n, g) => n + g.count, 0);
+
+/** 该分支里是否含当前页，含则默认展开 */
+function hasCurrent(g: unknown): boolean {
+  if (!current) return false;
+  const stack: unknown[] = [g];
+  while (stack.length) {
+    const node = stack.pop();
+    if (!node || typeof node !== 'object') continue;
+    const o = node as Record<string, unknown>;
+    if (o.id && typeof o.id === 'string') {
+      const [kind, id] = current.split(':');
+      if (o.id === id && (kind === 'ship' || kind === 'class')) return true;
+    }
+    if (o.ships) stack.push(...(o.ships as unknown[]));
+    if (o.classes) stack.push(...(o.classes as unknown[]));
+    if (o.subs) stack.push(...(o.subs as unknown[]));
+    if (o.loose) stack.push(...(o.loose as unknown[]));
+  }
+  return false;
+}
+---
+
+<nav class="sidx" aria-label="战舰信息索引">
+  <div class="sidx__head">
+    <div class="sidx__kicker">Index</div>
+    <div class="sidx__title">战舰信息索引</div>
+    <div class="sidx__n">{totalShips} 艘已收录</div>
+  </div>
+
+  <div class="sidx__modes">
+    {
+      MODES.map((m) => (
+        <a
+          class:list={['sidx__mode', mode === m.mode && 'sidx__mode--on']}
+          href={m.href}
+          aria-current={mode === m.mode ? 'true' : undefined}
+        >
+          {m.label}
+        </a>
+      ))
+    }
+  </div>
+
+  <ul class="sidx__tree" role="tree">
+    {
+      tree.map((g) => (
+        <li class="sidx__g" role="none">
+          <details open={hasCurrent(g) || tree.length <= 3}>
+            <summary class="sidx__row sidx__row--g">
+              <span class="sidx__arrow" aria-hidden="true" />
+              <span class="sidx__label">{g.label}</span>
+              <span class="sidx__count">{g.count}</span>
+            </summary>
+
+            <ul class="sidx__sub" role="group">
+              {g.subs.map((sub) => (
+                <li role="none">
+                  <details open={hasCurrent(sub)}>
+                    <summary class="sidx__row sidx__row--sub">
+                      <span class="sidx__arrow" aria-hidden="true" />
+                      <span class="sidx__label">{sub.label}</span>
+                      <span class="sidx__count">{sub.count}</span>
+                    </summary>
+
+                    <ul class="sidx__cls" role="group">
+                      {sub.classes.map((c) => (
+                        <li role="none">
+                          <a
+                            class:list={[
+                              'sidx__row',
+                              'sidx__row--cls',
+                              current === `class:${c.id}` && 'sidx__row--on',
+                            ]}
+                            href={`/classes/${c.id}`}
+                          >
+                            <span class="sidx__label">{c.name.zh}</span>
+                          </a>
+                          {c.ships.length > 0 && (
+                            <ul class="sidx__ships" role="group">
+                              {c.ships.map((s) => (
+                                <li role="none">
+                                  <a
+                                    class:list={[
+                                      'sidx__row',
+                                      'sidx__row--ship',
+                                      current === `ship:${s.id}` && 'sidx__row--on',
+                                    ]}
+                                    href={preview ? `?ship=${s.id}` : `/ships/${s.id}`}
+                                    data-preview={preview ? s.id : undefined}
+                                  >
+                                    <span class="sidx__label">{s.name.zh}</span>
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                </li>
+              ))}
+            </ul>
+          </details>
+        </li>
+      ))
+    }
+  </ul>
+
+  <div class="sidx__foot">
+    <a href="/classes">舰级档案</a>
+    <span aria-hidden="true">·</span>
+    <a href="/sources">数据来源</a>
+  </div>
+</nav>
+
+<style>
+  .sidx {
+    position: sticky;
+    top: calc(var(--nav-h) + 18px);
+    max-height: calc(100vh - var(--nav-h) - 36px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white);
+    padding: 16px 8px 12px;
+    scrollbar-width: thin;
+  }
+  .sidx::-webkit-scrollbar {
+    width: 7px;
+  }
+  .sidx::-webkit-scrollbar-thumb {
+    background: var(--line-strong);
+    border-radius: 4px;
+  }
+
+  .sidx__head {
+    padding: 0 10px 12px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .sidx__kicker {
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-300);
+    font-weight: 700;
+  }
+  .sidx__title {
+    margin-top: 4px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy-900);
+    letter-spacing: -0.01em;
+  }
+  .sidx__n {
+    margin-top: 3px;
+    font-size: 11px;
+    color: var(--ink-400);
+    font-family: var(--font-mono);
+  }
+
+  .sidx__modes {
+    display: flex;
+    gap: 4px;
+    padding: 10px 10px 8px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .sidx__mode {
+    flex: 1;
+    text-align: center;
+    padding: 5px 2px;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--ink-500);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.14s ease;
+  }
+  .sidx__mode:hover {
+    border-color: var(--blue-300);
+    background: var(--blue-50);
+    text-decoration: none;
+  }
+  .sidx__mode--on,
+  .sidx__mode--on:hover {
+    background: var(--navy-800);
+    border-color: var(--navy-800);
+    color: #fff;
+  }
+
+  .sidx__tree,
+  .sidx__sub,
+  .sidx__cls,
+  .sidx__ships {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sidx__tree {
+    padding: 8px 0 0;
+  }
+
+  /* 每一行都是同一套骨架：箭头占位 → 文字 → 计数 */
+  .sidx__row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px 4px 6px;
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--ink-700);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+  }
+  .sidx__row:hover {
+    background: var(--blue-50);
+    text-decoration: none;
+  }
+  details > summary.sidx__row {
+    list-style: none;
+  }
+  details > summary.sidx__row::-webkit-details-marker {
+    display: none;
+  }
+  .sidx__row--g {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--navy-900);
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+  .sidx__row--sub {
+    font-weight: 600;
+    color: var(--ink-700);
+  }
+  .sidx__row--cls {
+    padding-left: 30px;
+    color: var(--ink-500);
+  }
+  .sidx__row--ship {
+    padding-left: 44px;
+    color: var(--ink-700);
+  }
+  .sidx__row--ship .sidx__label::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--blue-300);
+    margin-right: 7px;
+    vertical-align: middle;
+  }
+  .sidx__row--on {
+    background: var(--blue-50);
+    color: var(--blue-700);
+    font-weight: 700;
+  }
+  .sidx__row--on .sidx__label::before {
+    background: var(--blue-600);
+  }
+
+  /* 小三角：开合状态由 details 决定，不用 JS 改 class */
+  .sidx__arrow {
+    flex: none;
+    width: 11px;
+    height: 11px;
+    position: relative;
+    color: var(--ink-300);
+  }
+  .sidx__arrow::before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 1px;
+    width: 5px;
+    height: 5px;
+    border-right: 1.4px solid currentColor;
+    border-bottom: 1.4px solid currentColor;
+    transform: rotate(-45deg);
+    transition: transform 0.16s ease;
+  }
+  details[open] > summary .sidx__arrow::before {
+    transform: rotate(45deg) translate(-1px, -1px);
+  }
+
+  .sidx__label {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .sidx__count {
+    flex: none;
+    font-size: 10.5px;
+    font-family: var(--font-mono);
+    color: var(--ink-300);
+  }
+
+  .sidx__foot {
+    display: flex;
+    gap: 7px;
+    margin-top: 10px;
+    padding: 10px 10px 0;
+    border-top: 1px solid var(--line-soft);
+    font-size: 11.5px;
+    color: var(--ink-400);
+  }
+  .sidx__foot a {
+    color: var(--ink-500);
+    text-decoration: none;
+  }
+  .sidx__foot a:hover {
+    color: var(--blue-700);
+    text-decoration: underline;
+  }
+
+  @media (max-width: 1080px) {
+    .sidx {
+      position: static;
+      max-height: 320px;
+    }
+  }
+</style>

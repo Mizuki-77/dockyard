@@ -1,0 +1,5091 @@
+version: 2
+updated: 2026-11-17
+note: |
+  图片登记表。授权三档规则（详见 docs/00-framework.md §5.4 与 data/sources.yaml）：
+  A = 公有领域或 CC0，可站内归档、可商用，署名是礼貌而非义务；
+  B = CC BY / CC BY-SA，可站内归档，但必须署作者、链授权条款、标明是否改作；
+  C = 仅外链，不得归档（IWM 全站、大和ミュージアム、Europeana 的 NoC-NC 件、一切 editorial use only）。
+  本表 file 字段为空表示只能外链。license_raw 是 Commons 上的原始授权字符串，原样保留以便复核。
+  IWM 判例（2026-11-18 定）：原件藏 IWM 的英国战时官方摄影，若 Commons 上的数字化副本标为 Public domain（Crown Copyright 已过期、无署名义务），按 A 档归档，note 必须写明 IWM 编号并说明「IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本」；从 IWM 站内直接取得、或 Commons 上无 PD 依据的副本，一律 C 档禁用。依据 §5.4 硬约束 1——授权跟这张数字化副本走。
+  注意：Commons 的 PD 标签是社区标注，不是法律担保（见 work/raw/image-sources.md §4.3 第 4 条）。归档条目一旦被发现有误标，立刻撤下并改外链。
+  所有条目均逐张读过 Commons imageinfo.extmetadata；source_url 是 Commons 文件页，不是原机构页面。
+  width / height 记的是站内落盘文件的实际像素，不是源图尺寸。
+
+images:
+  - id: 10_5cm-sk-c33-prinz-eugen
+    file: /img/weapons/10_5cm-sk-c33-twin-mount.jpg
+    subject: weapon:10_5cm-sk-c33
+    title: { zh: 10.5 cm SK C/33 双联高炮炮座, en: 10.5 cm SK C/33 twin mount }
+    part: turret
+    view: detail
+    date: 1946-06-17
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy Bureau of Ordnance
+    credit: 美国海军军械局
+    source_url: "https://commons.wikimedia.org/wiki/File:10.5_cm_mount_on_Prinz_Eugen.jpg"
+    width: 1280
+    height: 1214
+    primary: true
+    note: 拍的是欧根亲王号上的同型炮座，由美国海军军械局在战后拍摄。俾斯麦号的 C/37 炮座与之基本同型。
+
+  - id: tirpitz-fjord-camouflaged-1942
+    file: /img/ships/tirpitz-1942-fjord-camouflaged.jpg
+    subject: ship:tirpitz
+    title: { zh: 提尔皮茨号在挪威峡湾（迷彩状态）, en: Tirpitz camouflaged in a Norwegian fjord }
+    part: hull_side
+    view: broadside
+    date: 1941-1944
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author
+    credit: 美国海军历史与遗产司令部（NHHC）
+    source_url: "https://commons.wikimedia.org/wiki/File:Acorazado_Tirpitz_camuflado_en_Noruega.jpg"
+    width: 1280
+    height: 902
+    note: Commons 记录为约 1941—1944 年，无法定到单一年份。挪威峡湾内的迷彩状态，可对照同舰在不同时期的涂装差异。
+
+  - id: denmark-strait-action-1941
+    file: /img/battles/denmark-strait-battle-scene.jpg
+    subject: battle:denmark-strait
+    title: { zh: 丹麦海峡海战：俾斯麦号向威尔士亲王号发出最后一轮齐射, en: Battle of the Denmark Strait, 24 May 1941 }
+    view: other
+    date: 1941-05-24
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown
+    source_url: "https://commons.wikimedia.org/wiki/File:Battle_of_the_Denmark_Strait_1941.jpg"
+    width: 1280
+    height: 762
+    primary: true
+    note: 画面为德方视角。注意此图长期被误标为「击沉胡德号」的瞬间，实际是俾斯麦号对威尔士亲王号射击，拍摄于胡德号爆炸之后。Commons 上该文件的 source 与 author 均为 unknown，出处链最弱，引用时应另行核对。
+
+  - id: bismarck-launch-1939
+    file: /img/battles/bismarck-launch-1939.jpg
+    subject: ship:bismarck
+    title: { zh: 俾斯麦号下水典礼（1939-02-14）, en: Launch of Bismarck, 14 February 1939 }
+    part: hull_side
+    view: other
+    date: 1939-02-14
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Naval Historical Center Photograph.
+    source_url: "https://commons.wikimedia.org/wiki/File:Bismark_Stapellauf_1.jpg"
+    width: 1280
+    height: 930
+    note: 在布洛姆+福斯船厂 9 号船台。掷瓶人是 Dorothea von Löwenfeld，铁血宰相的孙女。
+
+  - id: bismarck-launch-1939-crowd
+    file: /img/battles/bismarck-launch-1939-crowd.jpg
+    subject: ship:bismarck
+    title: { zh: 俾斯麦号下水典礼现场, en: Crowd at the launch of Bismarck }
+    part: hull_side
+    view: other
+    date: 1939-02-14
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Naval Historical Center Photograph.
+    source_url: "https://commons.wikimedia.org/wiki/File:Bismark_Stapellauf_2.jpg"
+    width: 1280
+    height: 908
+
+  - id: hood-broadside-1932
+    file: /img/ships/hood-1932-broadside.jpg
+    subject: ship:hood
+    title: { zh: 胡德号战列巡洋舰（约 1931）, en: HMS Hood circa 1931 }
+    part: hull_side
+    view: broadside
+    date: 1931-06
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown photographer (Wright & Logan)
+    source_url: "https://commons.wikimedia.org/wiki/File:British_Battlecruiser_HMS_Hood_circa_1932.jpg"
+    width: 1280
+    height: 786
+    primary: true
+    note: Commons 原始记录为 1931-06-01，现存版本是 1931—1932 年间的修版。文件名沿用旧称，日期以原始记录为准。
+
+  - id: bismarck-commissioning-1940
+    file: /img/battles/bismarck-commissioning-1940.jpg
+    subject: ship:bismarck
+    title: { zh: 俾斯麦号服役典礼（1940-08-24）, en: Commissioning of Bismarck, 24 August 1940 }
+    view: other
+    date: 1940-08-24
+    license: cc_by_sa
+    license_tier: B
+    license_raw: CC BY-SA 3.0 de
+    author: Winkelmann
+    credit: 德国联邦档案馆（Bundesarchiv）
+    source_url: "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101II-MN-1361-16A,_Schlachtschiff_Bismarck,_Indienststellung.jpg"
+    width: 1280
+    height: 807
+    note: Ernst Lindemann 舰长（Kapitän zur See）在典礼上就任。
+
+  - id: denmark-strait-bismarck-firing
+    file: /img/battles/denmark-strait-bismarck-firing.jpg
+    subject: battle:denmark-strait
+    title: { zh: 俾斯麦号在丹麦海峡开火, en: Bismarck firing during the action }
+    view: other
+    date: 1941-05-24
+    license: cc_by_sa
+    license_tier: B
+    license_raw: CC BY-SA 3.0 de
+    author: Lagemann
+    credit: 德国联邦档案馆（Bundesarchiv）
+    source_url: "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_146-1984-055-13,_Schlachtschiff_Bismarck,_Seegefecht.jpg"
+    width: 1280
+    height: 795
+
+  - id: denmark-strait-after-action
+    file: /img/battles/denmark-strait-bismarck-after-action.jpg
+    subject: battle:denmark-strait
+    title: { zh: 丹麦海峡战后：俾斯麦号舰首出现浸水纵倾, en: Bismarck after the action }
+    part: hull_side
+    view: bow
+    date: 1941-05-24
+    license: cc_by_sa
+    license_tier: B
+    license_raw: CC BY-SA 3.0 de
+    author: Lagemann
+    credit: 德国联邦档案馆（Bundesarchiv）
+    source_url: "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_146-1984-055-14,_Schlachtschiff_Bismarck,_nach_Seegefecht.jpg"
+    width: 1280
+    height: 796
+    note: 可见舰首因进水而下沉，与「穿舰首未爆、约 1,000 t 海水涌入」的记载互为印证。
+
+  - id: bismarck-baltic-trials-1940
+    file: /img/ships/bismarck-1940-baltic-trials.jpg
+    subject: ship:bismarck
+    title: { zh: 俾斯麦号在波罗的海, en: Bismarck in the Baltic }
+    part: hull_side
+    view: broadside
+    date: 1941-05
+    license: cc_by_sa
+    license_tier: B
+    license_raw: CC BY-SA 3.0 de
+    author: Lagemann
+    credit: 德国联邦档案馆（Bundesarchiv）
+    source_url: "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_146-1989-012-03,_Schlachtschiff_Bismarck_in_der_Ostsee.jpg"
+    width: 1280
+    height: 846
+    note: 注意：Commons 记录为 1941 年 5 月，不是 1940 年。舰体为单色浅灰，与波罗的海条纹迷彩期（1940-12 至 1941-05-20）不符，判断为条纹已涂掉之后。
+
+  - id: bismarck-atlantic-broadside-1940
+    file: /img/ships/bismarck-1940-atlantic-broadside.jpg
+    subject: ship:bismarck
+    title: { zh: 俾斯麦号舷侧全景, en: Bismarck broadside view }
+    part: hull_side
+    view: broadside
+    date: 1940
+    license: cc_by_sa
+    license_tier: B
+    license_raw: CC BY-SA 3.0 de
+    author: Unknown author
+    credit: 德国联邦档案馆（Bundesarchiv）
+    source_url: "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_193-04-1-26,_Schlachtschiff_Bismarck.jpg"
+    width: 1280
+    height: 627
+    note: 全舰侧视，四座主炮塔与上层建筑轮廓清晰，适合作为舰体线条与比例的基准图。
+
+  - id: 15cm-sk-c28-bismarck-mount
+    file: /img/weapons/15cm-sk-c28-on-bismarck.jpg
+    subject: weapon:15cm-sk-c28
+    title: { zh: 俾斯麦号舰上的 15 cm SK C/28 双联炮座, en: 15 cm SK C/28 twin mount aboard Bismarck }
+    part: turret
+    view: detail
+    date: 1940
+    license: cc_by_sa
+    license_tier: B
+    license_raw: CC BY-SA 3.0 de
+    author: Unknown author
+    credit: 德国联邦档案馆（Bundesarchiv）
+    source_url: "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_193-04-4-16A,_Schlachtschiff_Bismarck.jpg"
+    width: 1280
+    height: 851
+    primary: true
+
+  - id: 38cm-sk-c34-bruno
+    file: /img/weapons/38cm-sk-c34-turret-bruno.jpg
+    subject: weapon:38cm-sk-c34
+    title: { zh: 俾斯麦号 Bruno 炮塔（38 cm SK C/34 双联）, en: "Bismarck 38 cm SK C/34 twin turret \"Bruno\"" }
+    part: turret
+    view: detail
+    date: 1940
+    license: cc_by_sa
+    license_tier: B
+    license_raw: CC BY-SA 3.0 de
+    author: Unknown author
+    credit: 德国联邦档案馆（Bundesarchiv）
+    source_url: "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_193-05-2-07A,_Schlachtschiff_Bismarck.jpg"
+    width: 1280
+    height: 817
+    primary: true
+    note: 炮塔正面装甲板、铆接细节、侧面梯子与顶盖轮廓都在画面内。模型制作者核对炮塔外形首选此图。
+
+  - id: bismarck-at-sea-distant-1940
+    file: /img/battles/bismarck-1940-at-sea-distant.jpg
+    subject: ship:bismarck
+    title: { zh: 俾斯麦号在海上（远距）, en: Bismarck at sea, distant view }
+    part: hull_side
+    view: broadside
+    date: 1940
+    license: cc_by_sa
+    license_tier: B
+    license_raw: CC BY-SA 3.0 de
+    author: Urbahns, Gerd
+    credit: 德国联邦档案馆（Bundesarchiv）
+    source_url: "https://commons.wikimedia.org/wiki/File:Bundesarchiv_DVM_10_Bild-23-63-41,_Schlachtschiff_%22Bismarck%22.jpg"
+    width: 1280
+    height: 669
+    note: 远距离拍摄，可用于观察舰体在水线以上的剪影轮廓。
+
+  - id: prinz-eugen-underway-1945
+    file: /img/ships/prinz-eugen-1945-underway.jpg
+    subject: ship:prinz-eugen
+    title: { zh: 欧根亲王号在航行中（1945-05）, en: Prinz Eugen underway, May 1945 }
+    part: hull_side
+    view: broadside
+    date: 1945-05-26
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Australian armed forces
+    source_url: "https://commons.wikimedia.org/wiki/File:Cruiser_Prinz_Eugen_underway_in_May_1945.jpg"
+    width: 1280
+    height: 757
+    primary: true
+    note: 拍摄时间在 1945-05-26 至 05-29 之间（哥本哈根）。丹麦海峡海战时该舰与俾斯麦号同行，英军最初的射击目标就是它而非俾斯麦号。
+
+  - id: yamato-explosion-1945
+    file: /img/ships/yamato-1945-explosion.jpg
+    subject: ship:yamato
+    title: { zh: 大和号主弹药库爆炸（1945-04-07）, en: Explosion of Yamato, 7 April 1945 }
+    view: other
+    date: 1945-04-07
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    credit: 80-G-413914
+    source_url: "https://commons.wikimedia.org/wiki/File:Explosion_of_the_Japanese_battleship_Yamato_on_7_April_1945_(80-G-413914).jpg"
+    width: 1280
+    height: 969
+    note: 弹药库殉爆的火球在数百公里外可见，是军舰沉没影像中最著名的一张。
+
+  - id: bismarck-grimstadfjord-1941
+    file: /img/ships/bismarck-1940-grimstadfjord.jpg
+    subject: ship:bismarck
+    title: { zh: 俾斯麦号在挪威格里姆斯塔峡湾, en: Bismarck in the Grimstadfjord }
+    part: hull_side
+    view: broadside
+    date: 1941-05-21
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Paul S. Schmalenbach
+    credit: 美国海军历史与遗产司令部（NHHC）
+    source_url: "https://commons.wikimedia.org/wiki/File:German_Battleship_Bismarck_in_the_Grimstadfjord.jpg"
+    width: 1280
+    height: 684
+    primary: true
+    note: 从重巡欧根亲王号上拍摄，出击大西洋前数日。舰体仍可见波罗的海斜条纹迷彩，与 1941-05-21 改涂舷外灰的记载同日，是判断涂装过渡期最直接的一张。
+
+  - id: 20mm-flakvierling-38
+    file: /img/weapons/2cm-flakvierling-38-naval-mount.jpg
+    subject: weapon:20mm-c38
+    title: { zh: 2 cm Flakvierling 38 四联装舰载炮座, en: 2 cm Flakvierling 38 naval mount }
+    part: turret
+    view: detail
+    date: 2008-06-20
+    license: cc_by_sa
+    license_tier: B
+    license_raw: CC BY-SA 4.0
+    author: National Heritage Institute
+    source_url: "https://commons.wikimedia.org/wiki/File:Gustloff_Flakvierling_38_naval.jpg"
+    width: 1280
+    height: 853
+    primary: true
+    note: 罗马尼亚 Gustloff 纪念馆藏。俾斯麦号于 1941-04 下旬在 Gotenhafen 加装两座同型四联装。
+
+  - id: hood-sydney-1924
+    file: /img/ships/hood-1924-sydney.jpg
+    subject: ship:hood
+    title: { zh: 胡德号战列巡洋舰（1924，悉尼）, en: HMS Hood at Sydney, 1924 }
+    part: hull_side
+    view: broadside
+    date: 1924
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Allan C. Green（修复：Adam Cuerden）
+    credit: 维多利亚州立图书馆
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Hood_(51)_-_March_17,_1924.jpg"
+    width: 1280
+    height: 816
+    note: 帝国巡游（Empire Cruise）期间摄于悉尼。此时胡德号仍是世界最大军舰，舰容为两次大战之间的标准状态。
+
+  - id: kgv-missouri-japan-1945
+    file: /img/ships/kgv-and-missouri-1945-japan.jpg
+    subject: ship:king-george-v
+    title: { zh: 英王乔治五世号与密苏里号在日本近海（1945-08-16）, en: HMS King George V and USS Missouri off Japan }
+    part: hull_side
+    view: broadside
+    date: 1945-08-16
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    credit: 80-G-455703
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_King_George_V_and_USS_Missouri_(BB-63)_underway_off_Japan,_16_August_1945_(80-G-455703).jpg"
+    width: 1280
+    height: 959
+    primary: true
+    note: 日本投降后数日拍摄，本舰在东京湾外。左侧为密苏里号。原登记在 general 名下，2026-11-18 本舰入库后归入 ship:king-george-v。
+
+  - id: prince-of-wales-argentia-1941
+    file: /img/ships/prince-of-wales-1941-argentia.jpg
+    subject: ship:prince-of-wales
+    title: { zh: 威尔士亲王号在纽芬兰阿真舍（1941-08）, en: HMS Prince of Wales off Argentia }
+    part: hull_side
+    view: broadside
+    date: 1941-08-10
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: 美国海军（自奥古斯塔号拍摄）
+    credit: NH 67194-A
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Prince_of_Wales_(53)_off_Argentia,_Newfoundland,_in_August_1941_(NH_67194-A).jpg"
+    width: 1280
+    height: 947
+    primary: true
+    note: 摄于《大西洋宪章》会谈期间（1941-08-10 至 08-12），从美国巡洋舰奥古斯塔号上拍摄。
+
+  - id: prince-of-wales-force-z-1941
+    file: /img/ships/prince-of-wales-1941-force-z.jpg
+    subject: ship:prince-of-wales
+    title: { zh: 威尔士亲王号与反击号（1941-12-10）, en: HMS Prince of Wales and HMS Repulse, 10 December 1941 }
+    part: hull_side
+    view: broadside
+    date: 1941-12-10
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author
+    credit: 80-G-413520
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Prince_of_Wales_and_HMS_Repulse_underway_with_a_destroyer_on_10_December_1941_(80-G-413520).jpg"
+    width: 1280
+    height: 1011
+    note: Z 舰队出击当天。次日两舰均在马来亚海域被日军陆基轰炸机击沉，这是它们最后的活动影像之一。
+
+  - id: yamato-trials-1941
+    file: /img/ships/yamato-1941-trials-sukumo.jpg
+    subject: ship:yamato
+    title: { zh: 大和号在宿毛湾试航（1941-10-30）, en: Yamato running trials in Sukumo Bay }
+    part: hull_side
+    view: broadside
+    date: 1941-10-30
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    credit: 美国国家档案馆（NARA） · 80-G-704702
+    source_url: "https://commons.wikimedia.org/wiki/File:Japanese_battleship_Yamato_running_trials_in_Sukumo_Bay,_30_October_1941_(80-G-704702).jpg"
+    width: 1280
+    height: 1036
+    primary: true
+    note: 战后由占领当局在日本查获，现存美国国家档案馆（80-G-704702）。
+
+  - id: yamato-under-attack-1945
+    file: /img/ships/yamato-1945-under-attack.jpg
+    subject: ship:yamato
+    title: { zh: 大和号在东海遭受空袭（1945-04-07）, en: Yamato under attack, 7 April 1945 }
+    view: other
+    date: 1945-04-07
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    credit: U.S. Navy photo L42-09.06.05
+    source_url: "https://commons.wikimedia.org/wiki/File:Japanese_battleship_Yamato_under_attack_in_the_East_China_Sea_on_7_April_1945_(L42-09.06.05).jpg"
+    width: 1280
+    height: 1053
+    note: 天一号作战当天，美军舰载机拍摄。可见舰体已中弹倾斜。
+
+  - id: yamato-samar-1944
+    file: /img/ships/yamato-1944-samar.jpg
+    subject: ship:yamato
+    title: { zh: 大和号在萨马岛海战中（1944-10-25）, en: Yamato during the Battle off Samar }
+    part: hull_side
+    view: broadside
+    date: 1944-10-25
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    credit: 80-G-48888
+    source_url: "https://commons.wikimedia.org/wiki/File:Japanese_battleship_Yamato_underway_during_the_Battle_off_Samar,_25_October_1944_(80-G-48888).jpg"
+    width: 1280
+    height: 954
+
+  - id: 38cm-sk-c34-bruno-model
+    file: /img/weapons/38cm-sk-c34-turret-bruno-model-1to50.jpg
+    subject: weapon:38cm-sk-c34
+    title: { zh: "38 cm SK C/34 双联炮塔 1:50 比例模型", en: "1:50 scale model of a Bismarck 38 cm turret" }
+    part: turret
+    view: detail
+    date: 1960-2010
+    license: cc0
+    license_tier: A
+    license_raw: CC0
+    author: Vermandel, F. R. E. (modelbouwer)
+    source_url: "https://commons.wikimedia.org/wiki/File:Model_van_een_38cm_kanontoren_van_het_slagschip_Bismarck,_asset_kQQCRGgCBRJHXSUCe3SsJ8CO.jpg"
+    width: 1280
+    height: 960
+    note: 安特卫普博物馆藏，作者 Vermandel。CC0 授权，可自由使用。比例模型把炮塔各面装甲板的分块与厚度变化表现得比照片更清楚。
+
+  - id: 15cm-sk-c28-oscarsborg
+    file: /img/weapons/15cm-sk-c28-twin-dopp-mpl-c36.jpg
+    subject: weapon:15cm-sk-c28
+    title: { zh: 15 cm SK C/28 双联炮座（Dopp. MPL C/36，岸防型）, en: 15 cm SK C/28 in Dopp. MPL C/36 mounting }
+    part: turret
+    view: detail
+    date: 2010-06-15
+    license: cc_by_sa
+    license_tier: B
+    license_raw: CC BY-SA 3.0
+    author: Quistnix
+    source_url: "https://commons.wikimedia.org/wiki/File:Oscarsborg_-_15_cm_SK_C28_in_Dopp_MPL_C36_mounting.jpg"
+    width: 1280
+    height: 853
+    note: 重要：这是挪威 Oscarsborg 要塞的岸防型，炮座型号虽同为 C/36，但与俾斯麦号上的舰载型在基座与防护上不同。请勿直接当作舰载型参考。
+
+  - id: hood-explosion-1941
+    file: /img/battles/hood-explosion.jpg
+    subject: battle:denmark-strait
+    title: { zh: "胡德号弹药库爆炸（1941-05-24 06:00 许）", en: Explosion and sinking of HMS Hood }
+    view: other
+    date: 1941-05-24
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: J.C. Schmitz-Westerholt
+    credit: 美国海军历史中心（NHHC 前身）
+    source_url: "https://commons.wikimedia.org/wiki/File:Sinking_of_HMS_Hood.jpg"
+    width: 1280
+    height: 951
+    note: 这不是照片，是当时绘制的画作，日期只对应它所描绘的事件。该舰 1,418 名舰员仅 3 人生还。
+
+  - id: tirpitz-broadside-1941
+    file: /img/ships/tirpitz-1941-broadside.jpg
+    subject: ship:tirpitz
+    title: { zh: 提尔皮茨号舷侧, en: Tirpitz broadside }
+    part: hull_side
+    view: broadside
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: "https://commons.wikimedia.org/wiki/File:Tirpitz-2.jpg"
+    width: 1280
+    height: 701
+    primary: true
+    note: 与俾斯麦级同型，可用于比对两舰在舰桥、雷达与高炮布置上的差异。原图未记录拍摄日期，文件名里的 1941 只是推测，不作为定年依据。
+
+  - id: tirpitz-altafjord-1943
+    file: /img/ships/tirpitz-1943-altafjord.jpg
+    subject: ship:tirpitz
+    title: { zh: 提尔皮茨号在阿尔塔峡湾（约 1943）, en: Tirpitz in Altafjord, circa 1943 }
+    part: hull_side
+    view: broadside
+    date: 1943-1944
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author
+    credit: 美国海军历史中心（NHHC 前身） · NH 71390
+    source_url: "https://commons.wikimedia.org/wiki/File:Tirpitz_altafjord.jpg"
+    width: 1280
+    height: 484
+    note: Commons 记录为约 1943—1944 年。
+
+  - id: tirpitz-altafjord-astern-1942
+    file: /img/ships/tirpitz-1942-altafjord-astern.jpg
+    subject: ship:tirpitz
+    title: { zh: 提尔皮茨号在阿尔塔峡湾（舰艉视角）, en: Tirpitz astern in Altafjord }
+    part: hull_side
+    view: stern
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    credit: 美国海军历史中心（NHHC 前身） · NH 59672
+    source_url: "https://commons.wikimedia.org/wiki/File:Tirpitz_astern.jpg"
+    width: 1280
+    height: 1133
+
+  - id: iowa-broadside-1944
+    file: /img/ships/iowa-1944-broadside.jpg
+    subject: ship:iowa
+    title: { zh: 衣阿华号战列舰（1944）, en: USS Iowa (BB-61), 1944 }
+    part: hull_side
+    view: broadside
+    date: 1944
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: US Navy
+    source_url: "https://commons.wikimedia.org/wiki/File:USS_Iowa_(BB-61),_1944.jpg"
+    width: 1280
+    height: 717
+    primary: true
+
+  - id: missouri-pacific-1945
+    file: /img/ships/missouri-1945-pacific.jpg
+    subject: ship:missouri
+    title: { zh: 密苏里号在太平洋（1945 年初）, en: USS Missouri at sea in the Pacific }
+    part: hull_side
+    view: broadside
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: 美国海军
+    credit: 美国海军历史与遗产司令部（NHHC） · 80-G-316036
+    source_url: "https://commons.wikimedia.org/wiki/File:USS_Missouri_(BB-63)_at_sea_in_the_Pacific,_circa_early_1945.jpg"
+    width: 1280
+    height: 795
+    primary: true
+
+  - id: bismarck-1941-reconnaissance
+    file: /img/ships/bismarck-1941-reconnaissance.jpg
+    subject: ship:bismarck
+    title: { zh: 英军侦察机拍到的俾斯麦号（1941-05-21）, en: Aerial reconnaissance photo of Bismarck, 21 May 1941 }
+    part: deck
+    view: overhead
+    date: 1941-05-21
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Michael Suckling（英国皇家空军飞行官）
+    credit: Imperial War Museums, CS 159
+    source_url: "https://commons.wikimedia.org/wiki/File:Bismarck_reconnaissance.jpg"
+    width: 1280
+    height: 1162
+    note: 英国飞行官 Michael Suckling 在挪威 Bergen 附近拍摄，正是这张照片让英军确认俾斯麦号已出海。俯视角度适合核对甲板布置与炮塔朝向。原件藏帝国战争博物馆（IWM CS 159），作品本身已属公有领域；IWM 官网对「其网站上的副本」另有非商业条款，本站引用的是 Commons 的公有领域版本。
+
+  - id: bismarck-survivors-dorsetshire-1941
+    file: /img/battles/bismarck-survivors-dorsetshire.jpg
+    subject: ship:bismarck
+    title: { zh: 俾斯麦号生还者被多塞特郡号救起（1941-05-27）, en: Bismarck survivors rescued by HMS Dorsetshire }
+    view: other
+    date: 1941-05-27
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Royal Navy official photographer
+    credit: Imperial War Museums, ZZZ 3130C
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Dorsetshire_Bismarck_survivors.jpg"
+    width: 1280
+    height: 1530
+    note: 约 114 人获救，另有数人被 U-74 与德国气象船 Sachsenwald 救起；数量各源在 110–116 之间不等，本站按并列处理。原件藏帝国战争博物馆（IWM ZZZ 3130C），作品本身已属公有领域。
+
+  - id: rodney-broadside-1928
+    file: /img/ships/rodney-1928-broadside.jpg
+    subject: ship:rodney
+    title: { zh: 罗德尼号战列舰（1928）, en: HMS Rodney, 1928 }
+    part: hull_side
+    view: broadside
+    date: 1928
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Central News / Agence Rol
+    credit: Bibliothèque nationale de France
+    source_url: "https://commons.wikimedia.org/wiki/File:Le_(HMS)_%22Rodney%22_(cuirass%C3%A9_britannique)_(CNews)_-_btv1b53197692k.jpg"
+    width: 1280
+    height: 928
+    note: 法国国家图书馆藏新闻社照片。此时为间战期状态，与 1941 年最终战时的雷达天线、高炮布置差异很大，做模型需按年份区分。
+
+  - id: rodney-broadside-1940s
+    file: /img/ships/rodney-1940s-broadside.jpg
+    subject: ship:rodney
+    title: { zh: 罗德尼号战列舰（1940 年代）, en: HMS Rodney, 1940s }
+    part: hull_side
+    view: broadside
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Royal Navy（Commons 上传者 tormentor4555）
+    credit: Flickr / Wikimedia Commons
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Rodney_(29)_year_unknown_(50151874546).jpg"
+    width: 1280
+    height: 492
+    primary: true
+    note: 注意：此件经 Flickr 上传至 Commons，标注为公有领域，但原始拍摄年份与机构未明确记录。作为舰体外形参考可用，不宜作为精确年代依据。
+
+  - id: prinz-eugen-panama-1946
+    file: /img/ships/prinz-eugen-1946-panama-canal.jpg
+    subject: ship:prinz-eugen
+    title: { zh: 欧根亲王号通过巴拿马运河（1946-03-15）, en: Prinz Eugen transiting the Panama Canal, 1946 }
+    part: hull_side
+    view: broadside
+    date: 1946-03-15
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy Naval Photographic Center, 80-G-365075
+    credit: U.S. Navy photo 80-G-365075
+    source_url: "https://commons.wikimedia.org/wiki/File:Cruiser_Prinz_Eugen_transiting_the_Panama_Canal_on_15_March_1946.jpg"
+    width: 1280
+    height: 1034
+    note: 战后作为美国战利品（IX-300）驶往比基尼环礁途中。战时状态已改，武备大部分拆除，仅作舰体线形参考。
+
+  - id: illustrious-1940-broadside
+    file: /img/ships/illustrious-1940-broadside.jpg
+    subject: ship:illustrious
+    title: { zh: 光辉号全舰侧视（1940）, en: HMS Illustrious underway in 1940 }
+    part: hull_side
+    view: broadside
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Royal Navy official photographer
+    credit: Imperial War Museums, FL 2425
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_ILLUSTRIOUS,_1940._FL2425.jpg"
+    width: 1280
+    height: 855
+    primary: true
+    note: 1940 年建成后的全舰侧视。舰体为深色块状迷彩（色号未获取），可见悬伸式甲板前端、舰桥与烟囱布局、后桅上的 Type 79Z 雷达天线；此时无 285 炮术雷达、无 20 mm。原件藏帝国战争博物馆（IWM FL 2425），战时皇家海军官方摄影，Crown Copyright 已过期，Commons 标为公有领域；IWM 官网对其网站上的副本另有非商业条款，本站归档的是 Commons 的公有领域版本，2026-11-18 逐张核对 imageinfo.extmetadata（LicenseShortName 为 Public domain）。
+
+  - id: illustrious-1941-malta-flight-deck-damage
+    file: /img/ships/illustrious-1941-malta-flight-deck-damage.jpg
+    subject: ship:illustrious
+    title: { zh: 光辉号飞行甲板中弹后（1941-01-10）, en: HMS Illustrious flight deck after bomb damage on 10 January 1941 }
+    part: deck
+    view: other
+    date: 1941-01-10
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Royal Navy official photographer（Commons 的 Artist 栏记作 Credited to the Imperial War Museum）
+    credit: Imperial War Museums, A 9793
+    source_url: "https://commons.wikimedia.org/wiki/File:IllustriousFlightDeck10Jan41.jpg"
+    width: 1280
+    height: 1067
+    note: 1941-01-10 Operation Excess 期间，X. Fliegerkorps 五波空袭中中 6 弹，其中一枚 2,200 lb 炸弹打穿 3 in 飞行甲板在机库内爆炸；本照为飞行甲板中弹起火后的情形，甲板人员在处置。IWM 编号 A 9793，原件藏帝国战争博物馆，照片本身已属公有领域；Commons 上的这件是 1971 年《Warship Profile 10》第 220 页的影印扫描。
+
+  - id: illustrious-1941-norfolk-repair
+    file: /img/ships/illustrious-1941-norfolk-repair.jpg
+    subject: ship:illustrious
+    title: { zh: 光辉号在诺福克海军船厂（1941-11）, en: HMS Illustrious at the Norfolk Naval Shipyard in November 1941 }
+    part: hull_side
+    view: bow
+    date: 1941-11
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    credit: NH 96323（美国海军历史与遗产司令部）
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Illustrious_(87)_at_the_Norfolk_Naval_Shipyard_in_November_1941.jpg"
+    width: 1280
+    height: 923
+    note: 1941 年 5 月抵诺福克海军船厂大修（换后升降机、弹射器改为可弹美制飞机、加 Type 285 炮术雷达与 20 mm Oerlikon），本照为当年 11 月仍在厂时的状态，舰体为深色块状迷彩（色号未获取）。码头起重机横跨舰体上方，可见悬伸式甲板前端与舰桥轮廓。美国海军拍摄，编号 NH 96323。
+
+  - id: illustrious-1944-indian-ocean
+    file: /img/ships/illustrious-1944-indian-ocean.jpg
+    subject: ship:illustrious
+    title: { zh: 光辉号在印度洋航行（1944）, en: HMS Illustrious underway in the Indian Ocean in 1944 }
+    part: hull_side
+    view: overhead
+    date: 1944
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    credit: 美国海军照片（萨拉托加号 1944 年巡航纪念册）
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Illustrious_(R87)_underway_in_the_Indian_Ocean,_between_March_and_May_1944.jpg"
+    width: 960
+    height: 567
+    note: 1944 年 3—5 月与萨拉托加号（CV-3）在印度洋协同期间拍摄的空拍。此时已完成 1943 年的飞行甲板延长与雷达换装，甲板上系留的舰载机机翼折叠，可对照 1940 年侧视图看出飞行甲板前后两端的改动。Commons 记录出自萨拉托加号 1944 年巡航纪念册。
+
+  - id: illustrious-1945-kamikaze-bridge-damage
+    file: /img/ships/illustrious-1945-kamikaze-bridge-damage.jpg
+    subject: ship:illustrious
+    title: { zh: 光辉号舰桥被神风机擦损（1945-04-06）, en: Bridge damage on HMS Illustrious on 6 April 1945 }
+    part: superstructure
+    view: detail
+    date: 1945-04-06
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Royal Navy official photographer
+    credit: Imperial War Museums, A 29571
+    source_url: "https://commons.wikimedia.org/wiki/File:Kamikaze_A29571.jpg"
+    width: 1280
+    height: 900
+    note: 1945-04-06 下午，一架 D4Y3「Judy」神风大角度俯冲，被舰岛前部 Bofors 打断左翼，飞机掠过舰桥正前方，右翼尖击碎舰桥前的 Type 272 雷达罩，机身擦过舰桥结构；本照为事后检查舰桥侧壁破口的情形。IWM 编号 A 29571，原件藏帝国战争博物馆，照片本身已属公有领域。
+
+  - id: illustrious-1942-flight-deck-parked
+    file: /img/ships/illustrious-1942-flight-deck-parked.jpg
+    subject: ship:illustrious
+    title:
+      zh: "光辉号飞行甲板前部停机（1942-12）"
+      en: "Aircraft parked at the forward end of HMS Illustrious' flight deck, December 1942"
+    part: deck
+    view: overhead
+    date: 1942-12
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Oulds, D C (Lt)"
+    credit: "Imperial War Museums, A 15062"
+    source_url: "https://commons.wikimedia.org/wiki/File:On_Board_the_Aircraft_Carrier_Illustrious._December_1942,_in_the_Indian_Ocean._A15062.jpg"
+    width: 1280
+    height: 970
+    note: "1942 年 12 月印度洋，一次演习结束回收飞机后甲板前部的密集停机。这张能看清三件事：短甲板状态下前端的 round-down 形状、系留索的走向与间距、以及甲板边缘的防滑涂层分界。IWM 原说明：近处为 Hellcat 与 Wildcat，更前方是 Fairey Fulmar 与 Fairey Swordfish。IWM 编号 A 15062。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: illustrious-1943-cape-heavy-weather
+    file: /img/ships/illustrious-1943-cape-heavy-weather.jpg
+    subject: ship:illustrious
+    title:
+      zh: "光辉号在好望角外海遇大浪（1943-01）"
+      en: "HMS Illustrious in heavy weather off the Cape of Good Hope, January 1943"
+    part: hull_side
+    view: bow
+    date: 1942-1943
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Oulds, D C (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 15516"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A15516.jpg"
+    width: 1280
+    height: 970
+    note: "1943-01-18 前后绕好望角时的巨浪过艏。前景是挡风板与两座双联 4.5 in 舷台炮座的一角——这是本级最容易被模型制作者做错的部位：炮座是沉入舷侧的舷台，不是凸出的封闭炮塔。IWM 编号 A 15516。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: illustrious-1943-corsair-landing
+    file: /img/ships/illustrious-1943-corsair-landing.jpg
+    subject: ship:illustrious
+    title:
+      zh: "海盗式着舰瞬间（1943-12）"
+      en: "A Chance-Vought Corsair landing aboard HMS Illustrious, December 1943"
+    part: deck
+    view: detail
+    date: 1943-12
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Parnall, C H (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 20997"
+    source_url: "https://commons.wikimedia.org/wiki/File:A_Chance-Vought_Corsair_landing_aboard_HMS_ILLUSTRIOUS,_December_1943._A20997.jpg"
+    width: 1280
+    height: 869
+    note: "1943-12 一架 Corsair 收油门下沉、即将触甲的瞬间。可见甲板上的拦阻索、着舰区标志线与甲板人员站位。这是 1943 年改装后八道拦阻索状态的直接证据。IWM 编号 A 20997。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: illustrious-1944-hangar-corsairs
+    file: /img/ships/illustrious-1944-hangar-corsairs.jpg
+    subject: ship:illustrious
+    title:
+      zh: "光辉号机库内的海盗式（1944-05）"
+      en: "Corsairs in the hangar of HMS Illustrious, May 1944"
+    part: aircraft_handling
+    view: detail
+    date: 1944-05
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Lt C Trusler (Royal Navy photographer)"
+    credit: "Imperial War Museums, A 24278"
+    source_url: "https://commons.wikimedia.org/wiki/File:Corsairs_in_hanger_on_Illustrious_IWM_A24278.jpg"
+    width: 1280
+    height: 963
+    note: "1830 与 1833 中队 Corsair 折叠机翼后在机库内的密集停放，原图说明是「A tight fit」。16 ft 机库高度与 62 ft 宽度是光辉级的硬约束，这张把净空与系留方式拍得最清楚，做机库内构与折叠翼参考首选。IWM 编号 A 24278。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: illustrious-1944-bow-indian-ocean
+    file: /img/ships/illustrious-1944-bow-indian-ocean.jpg
+    subject: ship:illustrious
+    title:
+      zh: "光辉号在印度洋（1944-03 至 05）"
+      en: "HMS Illustrious at sea in the Indian Ocean, 1944"
+    part: hull_side
+    view: bow
+    date: 1944
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "U.S. Navy (This image is part of a photograph album kept by Commander Joseph C. Clifton, USN, during 1942-1944, which included service as Commanding Officer of Fighting Squadron (VF) 12 and Commander Air Group (CAG) 12 on the USS Saratoga)"
+    credit: "U.S. Navy National Museum of Naval Aviation, 1977.031.085.071"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Illustrious_bow_1944.jpg"
+    width: 1280
+    height: 939
+    note: "1944-03-27 至 05-18 与萨拉托加号协同期间拍摄，从舰艏斜前方看全舰。与已有的 -1944-indian-ocean（俯视）互补，这张能看清干舷高度、舷侧 4.5 in 舷台位置与舰艏形状。美海军拍摄，公有领域。"
+
+  - id: illustrious-1945-far-east-overhead
+    file: /img/ships/illustrious-1945-far-east-overhead.jpg
+    subject: ship:illustrious
+    title:
+      zh: "光辉号在远东水域航行（1945）"
+      en: "Looking down on HMS Illustrious in Far Eastern waters, 1945"
+    part: deck
+    view: overhead
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Royal Navy official photographer"
+    credit: "Imperial War Museums, A 27998"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A27998.jpg"
+    width: 1280
+    height: 920
+    note: "从空中俯瞰全甲板，东部舰队/英国太平洋舰队时期的远东水域。这张是现有条目里唯一一张能同时看到甲板全长、舰岛位置与甲板前端延长段的高分辨率俯视（2480 px 原图）。IWM 编号 A 27998，Crown Copyright 已过期。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: illustrious-1945-carriers-at-anchor
+    file: /img/ships/illustrious-1945-carriers-at-anchor.jpg
+    subject: ship:illustrious
+    title:
+      zh: "英国航母群锚泊（约 1945）"
+      en: "British aircraft carriers at anchor, circa 1945"
+    part: hull_side
+    view: broadside
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Royal Navy"
+    credit: "Imperial War Museums, MH 5309"
+    source_url: "https://commons.wikimedia.org/wiki/File:British_aircraft_carriers_at_anchor_c1945.jpg"
+    width: 1280
+    height: 934
+    note: "同框自左至右可见 Indomitable、Indefatigable、Unicorn、Illustrious、Victorious、Formidable 六舰。用于横向比对本级与改进型的舰岛、烟囱与甲板轮廓差异——同代三型并列，比例关系一目了然。原图经 Commons 用户 Cobatfor 裁正、锐化与色阶调整（改作版本）。IWM 编号 MH 5309。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: illustrious-1945-kamikaze-a29570
+    file: /img/ships/illustrious-1945-kamikaze-a29570.jpg
+    subject: ship:illustrious
+    title:
+      zh: "神风日机俯冲光辉号（1945-04-06）"
+      en: "The kamikaze aircraft diving on HMS Illustrious, 6 April 1945"
+    part: superstructure
+    view: detail
+    date: 1945-04-06
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Unknown author"
+    credit: "Imperial War Museums, A 29570"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Illustrious_'suicide_Bombed'._June_1945,_on_Board_HMS_Illustrious._during_British_Pacific_Fleet_Operations_the_Illustrious_Experienced_a_Japanese_Suicide_Attack._the_Airplane_Scraped_the_Bridge_Wi_A29570.jpg"
+    width: 1280
+    height: 2005
+    note: "1945-04-06 下午神风攻击中的日机（D4Y3「Judy」）本体：大角度俯冲被舰岛前部 Bofors 打断左翼后，机身在舰桥正前方掠过、右翼尖削掉 Type 272 雷达罩，随即坠海。IWM 编号 A 29570，与已有的 A 29571（事后检查舰桥破口）是同一事件的两端——这张拍的是来袭时刻，不是损伤特写。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: illustrious-1950-jet-landing
+    file: /img/ships/illustrious-1950-jet-landing.jpg
+    subject: ship:illustrious
+    title:
+      zh: "后掠翼喷气机首次着舰试验（1950-11）"
+      en: "Supermarine 510 landing on HMS Illustrious, November 1950"
+    part: deck
+    view: detail
+    date: 1950-11
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Royal Navy official photographer"
+    credit: "Imperial War Museums, A 31749"
+    source_url: "https://commons.wikimedia.org/wiki/File:Supermarine_510_landing_on_HMS_Illustrious_(R87)_1950.jpg"
+    width: 1280
+    height: 900
+    note: "1947 年改为试飞与训练航母之后，Supermarine 510（VV106）在本舰完成 12 次起降——后掠翼飞机的首次舰上起降。这一段（切片 I7）此前完全没有图。IWM 编号 A 31749。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: kgv-1941-y-turret-stern
+    file: /img/ships/kgv-1941-y-turret-stern.jpg
+    subject: ship:king-george-v
+    title:
+      zh: "从 Y 炮塔顶看舰尾（1941-01）"
+      en: "View from the roof of 'Y' turret over the stern, January 1941"
+    part: turret
+    view: stern
+    date: 1941-01
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Coote, R G G (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 2855"
+    source_url: "https://commons.wikimedia.org/wiki/File:Lord_Halifax_Leaves_For_the_USA_in_HMS_King_George_V,_January_1941_A2855.jpg"
+    width: 1280
+    height: 966
+    note: "1941-01-15 至 25 送哈利法克斯勋爵赴美期间拍摄，从 Y 炮塔炮室顶部越舰尾外望。Y 塔是四联 14 in，与 B 塔的双联形成本舰最容易做错的一处差别——这张能看到四联炮塔顶部的形状与测距仪位置。IWM 编号 A 2855。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: kgv-1941-a-turret-convoy
+    file: /img/ships/kgv-1941-a-turret-convoy.jpg
+    subject: ship:king-george-v
+    title:
+      zh: "从 B 炮塔下看大西洋船团（1941—1942）"
+      en: "An Atlantic convoy seen from beneath the guns of 'B' turret"
+    part: turret
+    view: detail
+    date: 1941-1942
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Coote, R G G (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 3623"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A3623.jpg"
+    width: 1280
+    height: 971
+    note: "前景是 A 塔的四门 14 in 炮管，射击方向越过 B 塔看船团。这张同时给出两件事：14 in 炮管的实际粗细与俯仰角，以及 A 塔四联炮室前壁的形状。IWM 编号 A 3623。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: kgv-1942-bow-damage-punjabi
+    file: /img/ships/kgv-1942-bow-damage-punjabi.jpg
+    subject: ship:king-george-v
+    title:
+      zh: "与旁遮普号相撞后的舰艏破口（1942-05-03）"
+      en: "The bow of HMS King George V after colliding with HMS Punjabi, 3 May 1942"
+    part: hull_side
+    view: bow
+    date: 1942-05-03
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Ware, C J (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 9943"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_King_George_V_after_collision.jpg"
+    width: 1280
+    height: 942
+    note: "1942-05-01 在浓雾中撞沉驱逐舰旁遮普号，旁遮普号的深水炸弹在舰艏下方爆炸，炸掉约 40 ft 舰艏。本照 05-03 摄于冰岛 Seydisfjord。做战损场景时注意：破口一直延伸到水线，锚链舱与艏部舱室全毁。IWM 编号 A 9943。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: kgv-1942-arctic-convoy
+    file: /img/ships/kgv-1942-arctic-convoy.jpg
+    subject: ship:king-george-v
+    title:
+      zh: "北极护航期间自胜利号所见（1942-03）"
+      en: "HMS King George V seen from HMS Victorious, March 1942"
+    part: hull_side
+    view: broadside
+    date: 1942-03
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Parnall, C H (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 7873"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_King_George_V_viewed_from_HMS_Victorious_between_2_and_9_March_1942.jpg"
+    width: 1280
+    height: 971
+    note: "1942-03-02 至 09 掩护北极护航（PQ 12 / QP 8）期间从胜利号航母上拍。舰体为本土舰队单色中灰，可见 A/B 炮塔与舰桥的层次关系，以及此时尚未拆除的弹射器与水机吊车。IWM 编号 A 7873。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: kgv-1943-14in-turret-interior
+    file: /img/ships/kgv-1943-14in-turret-interior.jpg
+    subject: ship:king-george-v
+    title:
+      zh: "14 in 炮塔内部（1943）"
+      en: "Inside a 14-inch gun turret of HMS King George V"
+    part: turret
+    view: detail
+    date: 1943
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Royal Navy official photographer : Mason, H A (Lt)"
+    credit: "Imperial War Museums, A 15888"
+    source_url: "https://commons.wikimedia.org/wiki/File:Inside_14_inch_turret_HMS_King_George_V_IWM_A_15888.jpg"
+    width: 1280
+    height: 973
+    note: "从装填笼位置向前看炮塔内部，可见炮尾、装填机、扬弹机与炮室结构。本级 10 门 14 in Mk VII 的布置是 A 塔四联在前、B 塔双联背负于 A 塔之上、Y 塔四联在后——A 与 Y 是四联、B 是双联，这是做模型时最容易搞错的一处。IWM 编号 A 15888。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: kgv-1943-5_25in-turret-interior
+    file: /img/ships/kgv-1943-5_25in-turret-interior.jpg
+    subject: ship:king-george-v
+    title:
+      zh: "5.25 in 炮塔内部（1943-04）"
+      en: "Inside a 5.25-inch gun turret of HMS King George V, April 1943"
+    part: turret
+    view: detail
+    date: 1943-04
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Mason, H A (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 15889"
+    source_url: "https://commons.wikimedia.org/wiki/File:Inside_5.25_inch_gun_turret_HMS_KGV_1943_IWM_A_15889.jpg"
+    width: 1280
+    height: 970
+    note: "双联 5.25 in Mk I 炮塔内部。本级共 8 座（四座双联在舰桥前方与后部上层建筑两侧），做剖面或开盖展示时按这张的内部层次走。IWM 编号 A 15889。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: kgv-1943-scapa-big-guns
+    file: /img/ships/kgv-1943-scapa-big-guns.jpg
+    subject: ship:king-george-v
+    title:
+      zh: "从安森号 14 in 炮管下看英王乔治五世号（1943-01-15）"
+      en: "HMS King George V viewed from beneath the 14-inch guns of HMS Anson"
+    part: hull_side
+    view: broadside
+    date: 1943-01-15
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "John Alfred Hampton"
+    credit: "Imperial War Museums, A 13962"
+    source_url: "https://commons.wikimedia.org/wiki/File:'big_Guns'_of_Britain's_Battle_Fleet._15_January_1943,_Scapa_Flow._A13962.jpg"
+    width: 1280
+    height: 974
+    note: "1943-01-15 斯卡帕湾。从同级的安森号炮管下方看本舰，舰体轮廓与上层建筑层次完整。同框两艘同级舰，可直接比对舰桥、雷达天线与烟囱的细微差别。IWM 编号 A 13962。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: kgv-1944-alexandria
+    file: /img/ships/kgv-1944-alexandria.jpg
+    subject: ship:king-george-v
+    title:
+      zh: "英王乔治五世号锚泊亚历山大港（1944-10/11）"
+      en: "HMS King George V at anchor at Alexandria, 1944"
+    part: hull_side
+    view: broadside
+    date: 1944-10
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Oulds, D C (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 27010"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A27010.jpg"
+    width: 1280
+    height: 1340
+    note: "1944-10-28 起赴锡兰加入英国太平洋舰队，途经亚历山大港时拍摄。此时刚完成利物浦大改装：弹射器与水机已拆、原位改建上层建筑安置小艇，舰艉轮廓与前几年不同——做 1944 版模型时以这张和 K5 切片为准。IWM 编号 A 27010。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: kgv-1945-guam-apra
+    file: /img/ships/kgv-1945-guam-apra.jpg
+    subject: ship:king-george-v
+    title:
+      zh: "英王乔治五世号驶入关岛阿普拉港（1945）"
+      en: "HMS King George V enters Apra Harbor, Guam, 1945"
+    part: deck
+    view: overhead
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "USN"
+    credit: "U.S. Navy 80-G-328942"
+    source_url: "https://commons.wikimedia.org/wiki/File:King_George_V_class_battleship_1945.jpg"
+    width: 1280
+    height: 884
+    note: "1945 年战后驶入关岛阿普拉港，甲板上舰员列队。这张是少见的全甲板俯视，能看清 A/B 炮塔的间距、舰桥与烟囱的相对位置、以及后部上层建筑的完整布局。美海军拍摄，公有领域。"
+
+  - id: kgv-1945-midships
+    file: /img/ships/kgv-1945-midships.jpg
+    subject: ship:king-george-v
+    title:
+      zh: "英王乔治五世号舯部（1945）"
+      en: "HMS King George V midships, 1945"
+    part: superstructure
+    view: broadside
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Allan C. Green 1878 - 1954"
+    credit: "State Library of Victoria, H91.108（Green 玻璃底片藏品）"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_King_George_V_midships_SLV_Green.jpg"
+    width: 1280
+    height: 929
+    note: "1945 年墨尔本访问期间由 Allan C. Green 拍摄的舯部特写。烟囱、舰桥后部、5.25 in 炮座与 pom-pom 的位置关系一次拍全，是本舰终态上层建筑最好的参照之一。PD-Australia。"
+
+  - id: kgv-1945-5_25in-turret
+    file: /img/ships/kgv-1945-5_25in-turret.jpg
+    subject: ship:king-george-v
+    title:
+      zh: "英王乔治五世号双联 5.25 in 炮塔（1945）"
+      en: "A twin QF 5.25-inch gun turret of HMS King George V, 1945"
+    part: turret
+    view: detail
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Allan C. Green"
+    credit: "State Library of Victoria, H91.108/2982"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_King_George_V_secondary_turret_SLV_Green.jpg"
+    width: 1280
+    height: 937
+    note: "1945 年墨尔本访问期间拍的舷侧双联 5.25 in 炮塔近景，原玻璃底片分辨率极高（5294×3874），炮塔外形、炮管根部防盾与基座环的结构都清楚。这是本级 5.25 in 炮座最清晰的一张。PD-Australia。"
+
+  - id: kgv-1945-sagami-wan
+    file: /img/ships/kgv-1945-sagami-wan.jpg
+    subject: ship:king-george-v
+    title:
+      zh: "英王乔治五世号在相模湾（1945-08 投降前）"
+      en: "HMS King George V in Sagami Wan, Japan, August 1945"
+    part: hull_side
+    view: broadside
+    date: 1945-08-27
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "USN"
+    credit: "Official U.S. Navy photo 80-G-K-6523, Naval History and Heritage Command"
+    source_url: "https://commons.wikimedia.org/wiki/File:US_and_British_ships_in_Sagami_Wan_in_August_1945.jpg"
+    width: 1280
+    height: 957
+    note: "1945-08-27 至 29 摄于相模湾，本舰居中且是画面里最近的一艘，正准备几天后的日本正式投降。彩色原片，但距离较远、舰体只占画面一小块，宜作时期与涂装（战时浅灰、无迷彩）参照，不宜看结构。美海军拍摄，公有领域。"
+
+  - id: hood-1920-agence-rol
+    file: /img/ships/hood-1920-agence-rol.jpg
+    subject: ship:hood
+    title:
+      zh: "胡德号建成时（1920）"
+      en: "HMS Hood as completed, 1920"
+    part: hull_side
+    view: broadside
+    date: 1920
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Agence Rol"
+    credit: "Bibliothèque nationale de France, Rol 57767"
+    source_url: "https://commons.wikimedia.org/wiki/File:Le_Hood_(HMS_Hood_de_la_Royal_Navy)_le_plus_gros_navire_du_monde,_41200_tonnes,_144000_cv,_8_canons_de_15_pouces_-_btv1b53036752t.jpg"
+    width: 1280
+    height: 922
+    note: "1920 年建成初期的全舰侧视，切片 H0 此前无图。此时尚未做大改装：无防雷鼓包、舰体较窄，副炮为 12 门 5.5 in 单装，A/B 炮塔顶已有起飞平台。法国国家图书馆藏 Agence Rol 新闻照片，公有领域。"
+
+  - id: hood-1924-us-waters
+    file: /img/ships/hood-1924-us-waters.jpg
+    subject: ship:hood
+    title:
+      zh: "胡德号在美国水域（1924-06/07）"
+      en: "HMS Hood in American waters, June-July 1924"
+    part: hull_side
+    view: broadside
+    date: 1924
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "probably US military"
+    credit: "U.S. Naval Historical Center, NH 60404"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Hood_h60404.jpg"
+    width: 1280
+    height: 711
+    note: "帝国巡游期间访美，前桅挂中将旗。与已有的 -1924-sydney（悉尼，左舷侧）不同机位，这张是右舷侧且能看清舰体全长的水线形状——做大改装前后的线形对比用。NHHC NH 60404，公有领域。"
+
+  - id: hood-1924-honolulu-overhead
+    file: /img/ships/hood-1924-honolulu-overhead.jpg
+    subject: ship:hood
+    title:
+      zh: "胡德号舯部俯视（1924-06-12，檀香山外）"
+      en: "Aerial view of HMS Hood's starboard midships area, 12 June 1924"
+    part: superstructure
+    view: overhead
+    date: 1924-06-12
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "US military"
+    credit: "U.S. Naval Historical Center, NH 60450"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Hood_h60450.jpg"
+    width: 1280
+    height: 981
+    note: "1924-06-12 檀香山外，珍珠港海军航空站的飞机拍的右舷舯部俯视。能看清指挥塔顶部的测距仪、烟囱与通风筒的布置、以及弹射器/水机吊车的位置。原图 4876×3737，细节充足。NHHC NH 60450。"
+
+  - id: hood-1926-aft-15in-guns
+    file: /img/ships/hood-1926-aft-15in-guns.jpg
+    subject: ship:hood
+    title:
+      zh: "胡德号舰尾 15 in 炮塔（1926-11-08）"
+      en: "HMS Hood's aft 15-inch guns, 8 November 1926"
+    part: turret
+    view: stern
+    date: 1926-11-08
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: Underwood & Underwood.
+    credit: "U.S. Naval Historical Center, NH 57184"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Hood_Aft_guns_1926_USNHC_57184.jpg"
+    width: 1280
+    height: 1046
+    note: "1926-11-08 波特兰外海演习时向后看，X/Y 两座双联 15 in 炮塔与后方海面。胡德的 15 in Mk I 是双联装，与 KGV 的四联完全不同，这张的炮塔顶部与测距仪罩形状最清楚。此时舰体仍是大改装前的原状。NHHC NH 57184。"
+
+  - id: hood-1931-full-speed
+    file: /img/ships/hood-1931-full-speed.jpg
+    subject: ship:hood
+    title:
+      zh: "胡德号全速航行（1931）"
+      en: "HMS Hood at full speed, 1931"
+    part: hull_side
+    view: broadside
+    date: 1931
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Unknown author"
+    credit: "Spaarnestad Photo / Nationaal Archief, SFA022801176"
+    source_url: "https://commons.wikimedia.org/wiki/File:H,_SFA022801176.jpg"
+    width: 1280
+    height: 853
+    note: "1931 年大改装出坞后不久的航行照，舰体已加防雷鼓包、两座八联 pom-pom 已装。Spaarnestad 的原说明写作「Foto uit 1931: de Hood op volle snelheid」。荷兰国家档案馆藏品，PD-anon-70-EU。"
+
+  - id: hood-1936-speed-trials
+    file: /img/ships/hood-1936-speed-trials.jpg
+    subject: ship:hood
+    title:
+      zh: "胡德号试航（1936）"
+      en: "HMS Hood on speed trials, 1936"
+    part: hull_side
+    view: broadside
+    date: 1936
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Andy Dingley (scanner)"
+    credit: "《Warships To-day》(1936) 第 15 图版，facing p.129；W. Robertson & Co. 摄"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Hood_on_speed_trials_(Warships_To-day,_1936).jpg"
+    width: 1280
+    height: 879
+    note: "1936 年测速航行，取自 Burgess《Warships To-day》(1936) 第 15 图版。此时是 H2 切片的中后期状态：无弹射器与水机（1932 年中已拆）、副炮仍为 5.5 in 单装、尚未装雷达。注意这一阶段地中海服役时是 507C 浅灰——不是深灰。原书 1936 年在伦敦出版，公有领域。"
+
+  - id: hood-1937-spithead-review
+    file: /img/ships/hood-1937-spithead-review.jpg
+    subject: ship:hood
+    title:
+      zh: "胡德号在 Spithead 阅舰式（1937）"
+      en: "HMS Hood at the Spithead Review, 1937"
+    part: hull_side
+    view: broadside
+    date: 1937
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Press Agency photographer"
+    credit: "Imperial War Museums, HU 108394"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Hood_HU108394.jpg"
+    width: 1280
+    height: 939
+    note: "1937 年 Spithead 阅舰式，作为本土舰队战巡分队旗舰受阅。舰容完整、涂装为战间期的浅灰，是 H2 末段状态最好的全舰侧视之一。IWM 编号 HU 108394。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: hood-1940-heavy-sea
+    file: /img/ships/hood-1940-heavy-sea.jpg
+    subject: ship:hood
+    title:
+      zh: "胡德号在巨浪中高速航行（约 1940）"
+      en: "HMS Hood at speed in a heavy sea, circa 1940"
+    part: hull_side
+    view: bow
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Press Agency photographer"
+    credit: "Imperial War Museums, HU 76081"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Hood_HU76081.jpg"
+    width: 1280
+    height: 973
+    note: "约 1940 年，战时深灰单色（AP507B/507A），舰艏大量上浪。此时 5.5 in 副炮已于 1940-05 拆除、换装 4 in 高炮与 UP 发射器——甲板边缘的炮座数量与 1937 年那张明显不同，可作 H3 切片对照。IWM 编号 HU 76081。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: hood-1941-last-photo
+    file: /img/ships/hood-1941-last-photo.jpg
+    subject: ship:hood
+    title:
+      zh: "胡德号最后一次被拍到（1941-05-24）"
+      en: "The last photograph of HMS Hood, 24 May 1941"
+    part: hull_side
+    view: detail
+    date: 1941-05-24
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Unknown author"
+    credit: "Imperial War Museums, HU 50190"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Hood_HU50190.jpg"
+    width: 1280
+    height: 1642
+    note: "1941-05-24 上午，从威尔士亲王号上拍到的胡德号，是它存世的最后一张照片。原图说明明确写「This image taken from HMS PRINCE OF WALES was the last photo ever taken of HMS HOOD」。远处舰影已很小，作史料而非细节参考。IWM 编号 HU 50190。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: hood-1941-raf-aerial
+    file: /img/ships/hood-1941-raf-aerial.jpg
+    subject: ship:hood
+    title:
+      zh: "胡德号航拍（1941-05-24，RAF 海岸司令部）"
+      en: "Aerial photograph of HMS Hood, 24 May 1941"
+    part: hull_side
+    view: broadside
+    date: 1941-05-24
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "J Gilbert"
+    credit: "Australian War Memorial, P04036.003"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Hood_24_May_1941.jpeg"
+    width: 1280
+    height: 1011
+    note: "1941-05-24 丹麦海峡交战当天，RAF 海岸司令部一架哈德逊机拍下的胡德号：这是它存世少数几张远距离舰影之一，当天 06:00 前后即在爆炸中沉没。距离很远、只能看出整体轮廓与上层建筑剪影，作时间坐标而非结构参考。AWM P04036.003，PD-Australia。"
+
+  - id: bismarck-1939-propellers
+    file: /img/ships/bismarck-1939-propellers.jpg
+    subject: ship:bismarck
+    title:
+      zh: "俾斯麦号的三叶螺旋桨（1939 年，干船坞）"
+      en: "Bismarck's three-bladed propellers in dry dock, 1939"
+    part: propeller
+    view: detail
+    date: 1939
+    license: cc_by_sa
+    license_tier: B
+    license_raw: "CC BY-SA 3.0 de"
+    author: "Unknown author"
+    credit: "德国联邦档案馆（Bundesarchiv） · Bild 193-B30-5-32"
+    source_url: "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_193-B30-5-32,_Schlachtschiff_Bismarck,_Schrauben.jpg"
+    width: 800
+    height: 533
+    note: "三个三叶螺旋桨全部露出，桨毂整流罩、桨叶根部与轴支架结构清晰，是核对桨叶形状与轴系布置的直接依据。署名按 Commons 要求写作「Bundesarchiv, Bild 193-B30-5-32 / Unknown author / CC-BY-SA 3.0」。"
+
+  - id: bismarck-1940-bow-anchor
+    file: /img/ships/bismarck-1940-bow-anchor.jpg
+    subject: ship:bismarck
+    title:
+      zh: "俾斯麦号舰艏与左舷锚（1940 年）"
+      en: "Bismarck's bow and port anchor, 1940"
+    part: hull_side
+    view: bow
+    date: 1940
+    license: cc_by_sa
+    license_tier: B
+    license_raw: "CC BY-SA 3.0 de"
+    author: "Unknown author"
+    credit: "德国联邦档案馆（Bundesarchiv） · Bild 193-02-6-17"
+    source_url: "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_193-02-6-17,_Schlachtschiff_Bismarck.jpg"
+    width: 799
+    height: 512
+    note: "舰艏侧面近景，可见锚链筒、锚冠与艏柱线型，以及甲板边缘的栏杆走向。1941-05-22 出击前舰艏锚被拆除，做 1941 年 5 月状态时注意这一处差异。"
+
+  - id: bismarck-1940-kiel-quay-bow
+    file: /img/ships/bismarck-1940-kiel-quay-bow.jpg
+    subject: ship:bismarck
+    title:
+      zh: "俾斯麦号靠泊基尔码头（1940-09-23）"
+      en: "Bismarck alongside at Kiel, 23 September 1940"
+    part: hull_side
+    view: bow
+    date: 1940-09-23
+    license: cc_by_sa
+    license_tier: B
+    license_raw: "CC BY-SA 3.0 de"
+    author: "Augst"
+    credit: "德国联邦档案馆（Bundesarchiv） · Bild 101II-MN-1396-04"
+    source_url: "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101II-MN-1396-04,_Kiel,_Schlachtschiff_Bismarck_am_Kai.jpg"
+    width: 799
+    height: 509
+    note: "正对舰艏拍摄，适合核对艏部横向线型、外飘与艏楼甲板宽度。此时舾装尚未完全收尾，属状态切片 S0/S1 交界。"
+
+  - id: bismarck-1940-superstructure
+    file: /img/ships/bismarck-1940-superstructure.jpg
+    subject: ship:bismarck
+    title:
+      zh: "俾斯麦号舰桥与测距仪圆顶（1940 年）"
+      en: "Bismarck's bridge area and rangefinder domes, 1940"
+    part: bridge
+    view: detail
+    date: 1940
+    license: cc_by_sa
+    license_tier: B
+    license_raw: "CC BY-SA 3.0 de"
+    author: "Unknown author"
+    credit: "德国联邦档案馆（Bundesarchiv） · Bild 193-03-1-06"
+    source_url: "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_193-03-1-06,_Schlachtschiff_Bismarck.jpg"
+    width: 799
+    height: 515
+    note: "舰桥塔楼、测距仪圆顶、吊艇架与存放的小艇同框，是做上层建筑堆叠与吊艇架走线时的关键参考。注意此处圆顶尚未装雷达天线（FuMO 23 是 1941 年初才加装）。"
+
+  - id: bismarck-1940-stern-portholes
+    file: /img/ships/bismarck-1940-stern-portholes.jpg
+    subject: ship:bismarck
+    title:
+      zh: "俾斯麦号舰艉舷窗与舰旗（1940 年）"
+      en: "Bismarck's stern portholes and ensign, 1940"
+    part: hull_side
+    view: stern
+    date: 1940
+    license: cc_by_sa
+    license_tier: B
+    license_raw: "CC BY-SA 3.0 de"
+    author: "Unknown author"
+    credit: "德国联邦档案馆（Bundesarchiv） · Bild 193-04-4-19A"
+    source_url: "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_193-04-4-19A,_Schlachtschiff_Bismarck.jpg"
+    width: 800
+    height: 528
+    note: "舰艉两排舷窗、探照灯、旗杆与艉部栏杆一览，可核对舷窗间距与艉部收窄曲线。艉旗为 1940 年的样式。"
+
+  - id: bismarck-1940-unfinished
+    file: /img/ships/bismarck-1940-unfinished.jpg
+    subject: ship:bismarck
+    title:
+      zh: "尚未完工的俾斯麦号（1940 年 8 月）"
+      en: "Bismarck not yet fully completed, August 1940"
+    part: hull_side
+    view: broadside
+    date: 1940-08
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    credit: "美国海军历史与遗产司令部（NHHC） · NH 59671"
+    source_url: "https://commons.wikimedia.org/wiki/File:Early_Bismarck.jpg"
+    width: 739
+    height: 468
+    note: "舾装未完成的整舰侧视（状态切片 S0）：艉部 10.5 cm 双联炮座与测距仪圆顶尚未装齐，桅杆上无雷达。做「刚下水/未完工」状态时这是少见的整舰侧视基准图。"
+
+  - id: tirpitz-1939-launch
+    file: /img/ships/tirpitz-1939-launch.jpg
+    subject: ship:tirpitz
+    title:
+      zh: "提尔皮茨号下水（1939-04-01）"
+      en: "Launch of Tirpitz, 1 April 1939"
+    part: other
+    view: other
+    date: 1939-04-01
+    license: cc_by_sa
+    license_tier: B
+    license_raw: "CC BY-SA 3.0 de"
+    author: "Unknown"
+    credit: "德国联邦档案馆（Bundesarchiv） · DVM 10 Bild-23-63-40"
+    source_url: "https://commons.wikimedia.org/wiki/File:Bundesarchiv_DVM_10_Bild-23-63-40,_Schlachtschiff_%22Tirpitz%22,_Stapellauf.jpg"
+    width: 772
+    height: 472
+    note: "舰体沿滑道下滑的瞬间，可见下水前的舰体涂装与艉部未安装区。署名按 Commons 要求写作「Bundesarchiv, DVM 10 Bild-23-63-40 / Unknown / CC-BY-SA 3.0」。"
+
+  - id: tirpitz-1942-faettenfjord
+    file: /img/ships/tirpitz-1942-faettenfjord.jpg
+    subject: ship:tirpitz
+    title:
+      zh: "提尔皮茨号停泊在法滕峡湾（1942 年）"
+      en: "Tirpitz in Fættenfjorden, 1942"
+    part: hull_side
+    view: broadside
+    date: 1942
+    license: cc_by
+    license_tier: B
+    license_raw: "CC BY 2.0"
+    author: "Unknown photographer / Åsen Museum og Historielag（收藏）"
+    credit: "Åsen Museum og Historielag（挪威 Åsen 博物馆与历史协会） · 数字化 Arne Langås"
+    source_url: "https://commons.wikimedia.org/wiki/File:%22Tirpitz%22_i_F%C3%A6ttenfjorden_(14535516382).jpg"
+    width: 1280
+    height: 885
+    note: "峡湾锚地的整舰侧视，能看清分裂式迷彩的明暗块在舰体上的分布。Fættenfjord 是 1942 年 1 月至 1943 年 10 月的主要驻泊地，岸上还做了防雷网与伪装措施。"
+
+  - id: tirpitz-1942-faettenfjord-aerial
+    file: /img/ships/tirpitz-1942-faettenfjord-aerial.jpg
+    subject: ship:tirpitz
+    title:
+      zh: "英军侦察机航拍法滕峡湾中的提尔皮茨号（1942-01-22）"
+      en: "RAF aerial reconnaissance of Tirpitz in Fættenfjorden, 22 January 1942"
+    part: hull_side
+    view: overhead
+    date: 1942-01-22
+    license: cc_by
+    license_tier: B
+    license_raw: "CC BY 2.0"
+    author: "Unknown photographer / Åsen Museum og Historielag（收藏）"
+    credit: "Åsen Museum og Historielag（挪威 Åsen 博物馆与历史协会） · 数字化 Arne Langås"
+    source_url: "https://commons.wikimedia.org/wiki/File:%22Tirpitz%22_i_F%C3%A6ttenfjorden_(17301883111).jpg"
+    width: 1280
+    height: 892
+    note: "英国飞机 1942-01-22 拍摄的侦察照，可见锚地周围布设的防雷网与岸上伪装网。俯视角适合核对甲板轮廓与炮塔朝位。"
+
+  - id: tirpitz-1942-drontheimfjord
+    file: /img/ships/tirpitz-1942-drontheimfjord.jpg
+    subject: ship:tirpitz
+    title:
+      zh: "提尔皮茨号在特隆赫姆峡湾（1942 年 8 月）"
+      en: "Tirpitz in Trondheimsfjord, August 1942"
+    part: hull_side
+    view: broadside
+    date: 1942-08
+    license: cc_by_sa
+    license_tier: B
+    license_raw: "CC BY-SA 3.0 de"
+    author: "Hermuth"
+    credit: "德国联邦档案馆（Bundesarchiv） · Bild 121-1429"
+    source_url: "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_121-1429,_Drontheim-Fjord,_Schlachtschiff_%22Tirpitz%22.jpg"
+    width: 799
+    height: 501
+    note: "远景整舰侧视，舰体与背景山体的明暗关系便于判断当时的迷彩明度。同批还有驱逐舰护航的镜头。署名按 Commons 要求写作「Bundesarchiv, Bild 121-1429 / Hermuth / CC-BY-SA 3.0」。"
+
+  - id: tirpitz-1944-380mm-turret
+    file: /img/ships/tirpitz-1944-380mm-turret.jpg
+    subject: ship:tirpitz
+    title:
+      zh: "提尔皮茨号 38 cm 炮塔横置与甲板水兵"
+      en: "Tirpitz's 38 cm turret trained abeam"
+    part: turret
+    view: detail
+    date: 1942-1944
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    credit: "美国海军历史与遗产司令部（NHHC） · NH 71318"
+    source_url: "https://commons.wikimedia.org/wiki/File:Ca%C3%B1ones_del_acorazado_Tirpitz.jpg"
+    width: 1280
+    height: 1873
+    note: "炮塔转向舷侧时的正面与顶盖轮廓，甲板上有成排水兵可作比例参照，远处可见迷彩浮标。做炮塔外形与转台高度时首选此图。"
+
+  - id: tirpitz-1942-sportpalast
+    file: /img/ships/tirpitz-1942-sportpalast.jpg
+    subject: ship:tirpitz
+    title:
+      zh: "提尔皮茨号在「体育宫」行动中规避鱼雷（1942-03-09）"
+      en: "Tirpitz evading torpedoes during Operation Sportpalast, 9 March 1942"
+    part: hull_side
+    view: other
+    date: 1942-03-09
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Royal Navy official photographer"
+    credit: "Imperial War Museums, Admiralty official collection"
+    source_url: "https://commons.wikimedia.org/wiki/File:German_battleship_Tirpitz_evading_torpedoes_during_Operation_Sportpalast.jpg"
+    width: 800
+    height: 540
+    note: "自飞机舷窗俯拍的规避机动瞬间，舰体在尾流中划出弧线。原件藏帝国战争博物馆（Admiralty official collection），作品本身已属公有领域；IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: tirpitz-1943-kaafjord-aerial
+    file: /img/ships/tirpitz-1943-kaafjord-aerial.jpg
+    subject: ship:tirpitz
+    title:
+      zh: "英军航拍卡峡湾锚地的提尔皮茨号（1943 年 5 月）"
+      en: "RAF aerial photo of Tirpitz at Kaafjord, May 1943"
+    part: hull_side
+    view: overhead
+    date: 1943-05
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Royal Air Force photographer"
+    credit: "Australian War Memorial"
+    source_url: "https://commons.wikimedia.org/wiki/File:Battleship_Tirptiz_in_Kaafjord_during_May_1943.JPG"
+    width: 640
+    height: 442
+    note: "原图用箭头标出了提尔皮茨号在其常用泊位的位置。锚地地形与防雷网、岸上烟雾发生器的布置一目了然，是理解「为什么炸不沉」的最好一张。"
+
+  - id: tirpitz-1944-operation-tungsten
+    file: /img/ships/tirpitz-1944-operation-tungsten.jpg
+    subject: ship:tirpitz
+    title:
+      zh: "「钨石行动」中的提尔皮茨号（1944-04-03）"
+      en: "Fleet Air Arm attack on Tirpitz, Operation Tungsten, 3 April 1944"
+    part: hull_side
+    view: overhead
+    date: 1944-04-03
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Royal Navy official photographer"
+    credit: "Imperial War Museums, A 22633"
+    source_url: "https://commons.wikimedia.org/wiki/File:Fleet_Air_Arm_attack_the_battleship_Tirpitz.jpg"
+    width: 1280
+    height: 923
+    note: "舰艏右前方落弹激起的水柱与舰体烟尘同框，可见炸弹落点与舰体相对位置。原件藏帝国战争博物馆（IWM A 22633），作品本身已属公有领域；IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: tirpitz-1944-tromso
+    file: /img/ships/tirpitz-1944-tromso.jpg
+    subject: ship:tirpitz
+    title:
+      zh: "特罗姆瑟峡湾的提尔皮茨号与被弹前态势（1944-11-12）"
+      en: "Tirpitz in Tromsø fjord before Operation Catechism, 12 November 1944"
+    part: hull_side
+    view: overhead
+    date: 1944-11-12
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    credit: "Australian War Memorial"
+    source_url: "https://commons.wikimedia.org/wiki/File:Tirpitz_at_Tromso_fjord_in_November_1944.JPG"
+    width: 638
+    height: 478
+    note: "「教义问答行动」前的航拍，舰体周围是防鱼雷浮栅（anti-torpedo boom）与浅水锚地。艏部已因 1944-09-15 的 Tallboy 命中受损，这里是拖到 Håkøya 后的最终泊位。"
+
+  - id: tirpitz-1945-capsized
+    file: /img/ships/tirpitz-1945-capsized.jpg
+    subject: ship:tirpitz
+    title:
+      zh: "翻覆在特罗姆瑟峡湾的提尔皮茨号（1945-03-22 航拍）"
+      en: "Tirpitz capsized in Tromsø fjord, aerial view, 22 March 1945"
+    part: hull_side
+    view: overhead
+    date: 1945-03-22
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Sqn.Ldr. F.L. Dodd, and P/O A. Hill, No. 544 Squadron RAF"
+    credit: "Imperial War Museums · No. 544 Squadron RAF"
+    source_url: "https://commons.wikimedia.org/wiki/File:Battlehip_Tirpitz_capsized_at_Tromso_c1944.jpg"
+    width: 1280
+    height: 809
+    note: "由 544 中队蚊式 PR Mk XVI（NS637）低空斜拍，舰体只剩翻覆后的船底露出水面，可见四轴与舵的排布。原件藏帝国战争博物馆，作品本身已属公有领域；IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: tirpitz-1943-kaafjord-smokescreen
+    file: /img/ships/tirpitz-1943-kaafjord-smokescreen.jpg
+    subject: ship:tirpitz
+    title:
+      zh: "卡峡湾烟幕中的提尔皮茨号"
+      en: "Tirpitz partly covered by a smokescreen at Kaafjord"
+    part: hull_side
+    view: broadside
+    date: 1944-04
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Royal Navy official photographer"
+    credit: "Imperial War Museums, A 22634"
+    source_url: "https://commons.wikimedia.org/wiki/File:German_battleship_Tirpitz_partly_covered_by_a_smokescreen_at_Kaafjord_A22634.jpg"
+    width: 1271
+    height: 689
+    note: "岸上烟雾发生器放出的烟幕正飘过军舰，舰体尚未完全被遮住。Commons 未标拍摄日期，按同批编号 A 22633（1944-04-03 钨石行动）推断为同期。原件藏帝国战争博物馆（IWM A 22634），作品本身已属公有领域；IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: 37mm-sk-c30-gdynia-museum
+    file: /img/weapons/37mm-sk-c30-gdynia-museum.jpg
+    subject: weapon:37mm-sk-c30
+    title:
+      zh: "3.7 cm SK C/30 高炮（格丁尼亚海军博物馆藏，U-艇打捞件）"
+      en: "3.7 cm SK C/30 AA gun, recovered from a U-boat, Gdynia Naval Museum"
+    part: other
+    view: detail
+    date: 2017-09-08
+    license: cc_by_sa
+    license_tier: B
+    license_raw: "CC BY-SA 4.0"
+    author: "Zala"
+    credit: "波兰格丁尼亚海军博物馆（Muzeum Marynarki Wojennej w Gdyni）"
+    source_url: "https://commons.wikimedia.org/wiki/File:37_mm_U-Boot_Gdynia_2.jpg"
+    width: 1280
+    height: 719
+    primary: true
+    note: "炮身、摇架、俯仰手轮与方向机全在同一画面内，是这批图里最能看清 C/30 单装炮座机械结构的一张。炮管被前景栏杆略微遮挡一段，看炮口段请参另一张双联 LC/30。该炮为 1945 年在格丁尼亚港内沉没的 U-艇所载，博物馆藏品。授权：CC BY-SA 4.0，作者 Zala，条款 https://creativecommons.org/licenses/by-sa/4.0/deed.zh；本站仅按站内统一宽度缩放到 1280 px，未裁剪、未改色、未合成，无改作。"
+
+  - id: 37mm-sk-c30-drache-twin-mount
+    file: /img/weapons/37mm-sk-c30-drache-twin-mount.jpg
+    subject: weapon:37mm-sk-c30
+    title:
+      zh: "训练舰 Drache 上的 3.7 cm SK C/30 双联 LC/30 炮座（1940-02）"
+      en: "3.7 cm SK C/30 twin LC/30 mounting on the training ship Drache, February 1940"
+    part: other
+    view: detail
+    date: 1940-02
+    license: cc_by_sa
+    license_tier: B
+    license_raw: "CC BY-SA 3.0 de"
+    author: "Winkelmann"
+    credit: "德国联邦档案馆（Bundesarchiv） · Bild 101II-MN-0945-08"
+    source_url: "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101II-MN-0945-08,_Schulboot_%22Drache%22,_Doppelflak.jpg"
+    width: 800
+    height: 501
+    note: "舰上实拍的双联 LC/30 炮座，两根炮管同时可见，炮手站位与半开放式防盾轮廓清楚，适合核对双联炮管的中心距与摇架宽度。Drache 是鱼雷回收训练舰，该炮座与俾斯麦号上的同型。授权：CC BY-SA 3.0 de，作者 Winkelmann，条款 https://creativecommons.org/licenses/by-sa/3.0/de/deed.zh；本站仅按站内统一宽度缩放到 800 px（源图即 800 px），未裁剪、未改作。Commons 要求的署名形式：Bundesarchiv, Bild 101II-MN-0945-08 / Winkelmann / CC-BY-SA 3.0。"
+
+  - id: 20mm-c30-u995-single-mount
+    file: /img/weapons/20mm-c30-u995-single-mount.jpg
+    subject: weapon:20mm-c30
+    title:
+      zh: "U-995 指挥塔「冬季花园」上的两门 2 cm 单装高炮"
+      en: "Two 2 cm single AA mountings on U-995's conning tower 'Wintergarten'"
+    part: other
+    view: detail
+    date: 2002-04
+    license: cc_by_sa
+    license_tier: B
+    license_raw: "CC BY-SA 3.0 de"
+    author: "Noop1958（德语维基）"
+    credit: "拉博海军纪念馆（Laboe），VII C 型 U-995"
+    source_url: "https://commons.wikimedia.org/wiki/File:VII_C_U-Boot_Flak.jpg"
+    width: 1280
+    height: 853
+    primary: true
+    note: "重要：Commons 上找不到任何标注为 2 cm MG C/30 的舰载照片（分类 Category:2 cm MG C/30 与全库 insource 检索均为 0 命中），此图拍的是 U-995 冬季花园栏杆上的 2 cm 单装高炮，型号为 2 cm Flak 38，与 MG C/30 同属 2 cm 系列但并非同一型号——C/30 为长后坐、射速约 280 发/分，Flak 38 为短后坐、约 420 发/分，炮口制退器与炮架形状亦有差别。此图仅作「VII C 型 U 艇 2 cm 单装炮位在指挥塔上的安装方式与比例」之参考，切勿当作 MG C/30 的准确外形依据。授权：CC BY-SA 3.0 de，作者 Noop1958，条款 https://creativecommons.org/licenses/by-sa/3.0/de/deed.zh；本站仅缩小到 1280 px，未裁剪、未改作。"
+
+  - id: 14in-45-mk7-kgv-y-turret
+    file: /img/weapons/14in-45-mk7-kgv-y-turret.jpg
+    subject: weapon:14in-45-mk7
+    title:
+      zh: "英王乔治五世号 Y 炮塔四门 14 in 炮（仰视）"
+      en: "Looking up at the four 14-inch guns of HMS King George V's 'Y' turret"
+    part: turret
+    view: detail
+    date: 1939-1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Hudson, F A（Lt），皇家海军官方摄影师"
+    credit: "Imperial War Museums, A 16493"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A16493.jpg"
+    width: 606
+    height: 799
+    primary: true
+    note: "四根炮管并排、炮塔正面装甲板与炮室顶盖一次入镜，是 Mk VII 四联炮塔外形的最佳单张。画面里站在甲板上的是离任的本土舰队司令 John C Tovey 上将，在向舰上人员告别。原件藏帝国战争博物馆（IWM A 16493），战时皇家海军官方摄影，Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站上的副本另有非商业条款，本站归档的是 Commons 的公有领域版本。未裁剪、未改作。"
+
+  - id: 14in-45-mk7-elswick-quad-mounting
+    file: /img/weapons/14in-45-mk7-elswick-quad-mounting.jpg
+    subject: weapon:14in-45-mk7
+    title:
+      zh: "Elswick 工厂装配中的 14 in 四联炮塔（1940-04-30，第 3 号炮吊出）"
+      en: "14-inch quadruple mounting under assembly at Elswick Works, 30 April 1940"
+    part: turret
+    view: detail
+    date: 1940-04-30
+    license: pd
+    license_tier: A
+    license_raw: "No known copyright restrictions"
+    author: Tyne & Wear Archives & Museums
+    credit: "Tyne & Wear Archives & Museums · TWAM ref. DS.VA/9/PH/5/2"
+    source_url: "https://commons.wikimedia.org/wiki/File:Quadruple_gun_mounting_in_24_Shop,_Elswick_Works_(26345255273).jpg"
+    width: 999
+    height: 755
+    note: "唯一一张能看到炮塔内部结构的图：吊出第 3 号炮后，炮室隔舱、炮架座圈、各炮独立摇架的布置全露，对模型制作者判断四联炮塔的体积分配极有用。这是 Elswick 工厂 24 号车间，英国 14 in 四联炮塔的生产现场。权属：Commons 的 LicenseShortName 为「No restrictions」，UsageTerms 为「No known copyright restrictions」，属公有领域，按 A 档归档。未裁剪、未改作。"
+
+  - id: 525in-50-mk1-pow-port-turrets
+    file: /img/weapons/525in-50-mk1-pow-port-turrets.jpg
+    subject: weapon:525in-50-mk1
+    title:
+      zh: "威尔士亲王号左舷三座 5.25 in 双联炮塔"
+      en: "HMS Prince of Wales' three port twin 5.25-inch mountings"
+    part: turret
+    view: detail
+    date: 1939-1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Coote, R G G（Lt），皇家海军官方摄影师"
+    credit: "Imperial War Museums, A 3917"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_three_port_twin_5.25_inch_guns_of_the_battleship_HMS_PRINCE_OF_WALES.jpg"
+    width: 1280
+    height: 954
+    primary: true
+    note: "一座完整的 Mk I 双联炮塔由近及远排开，炮塔外形、防盾折线、炮管俯仰角与炮塔之间的间距关系一目了然，最适合核对 Mk I 炮塔的三维比例。原件藏帝国战争博物馆（IWM A 3917），Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站归档的是 Commons 的公有领域版本。未裁剪、未改作。"
+
+  - id: 525in-50-mk1-kgv-secondary-turret
+    file: /img/weapons/525in-50-mk1-kgv-secondary-turret.jpg
+    subject: weapon:525in-50-mk1
+    title:
+      zh: "英王乔治五世号 5.25 in 副炮塔特写（1945 年）"
+      en: "HMS King George V's 5.25-inch secondary turret, 1945"
+    part: turret
+    view: detail
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Allan C. Green"
+    credit: "State Library of Victoria（SLV）"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_King_George_V_secondary_turret_SLV_Green.jpg"
+    width: 1280
+    height: 937
+    note: "近距离特写，双管水平状态，炮塔侧面铆接排布、观察窗、防盾边缘与顶部排气口都清楚；甲板上的水兵可作人体比例参照。原件藏维多利亚州立图书馆，作者 Allan C. Green，公有领域。注意此照摄于 1945 年，炮塔上可能已有后期加装的雷达天线座，做早期状态时需剔除。"
+
+  - id: 2pdr-mk8-hmas-napier-octuple
+    file: /img/weapons/2pdr-mk8-hmas-napier-octuple.jpg
+    subject: weapon:2pdr-mk8
+    title:
+      zh: "HMAS Napier 上的八联 2-pdr pom-pom 炮组（约 1943–44）"
+      en: "Octuple 2-pdr pom-pom crew on HMAS Napier, c. 1943–44"
+    part: other
+    view: detail
+    date: 1943-1944
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "未署名（not stated）"
+    credit: "State Library of Victoria（SLV）"
+    source_url: "https://commons.wikimedia.org/wiki/File:Multiple_pom-poms_on_HMAS_Napier_WWII-2.jpeg"
+    width: 1000
+    height: 720
+    primary: true
+    note: "正面视角，八根炮管呈上下两排四根排布，炮手戴防破片面罩立在炮座后方，炮座底板、供弹槽口与摇架外形都在画面内。八联 pom-pom 最容易被误画成八管同排，此图可直接否掉这种画法。原件藏维多利亚州立图书馆，公有领域。未裁剪、未改作。"
+
+  - id: 2pdr-mk8-hms-rodney-in-action
+    file: /img/weapons/2pdr-mk8-hms-rodney-in-action.jpg
+    subject: weapon:2pdr-mk8
+    title:
+      zh: "罗德尼号左舷八联 pom-pom 对空射击（1940-10）"
+      en: "HMS Rodney's port octuple pom-pom in anti-aircraft practice, October 1940"
+    part: other
+    view: detail
+    date: 1940-10
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Reginald George Guy Coote（Lt），皇家海军官方摄影师"
+    credit: "Imperial War Museums, A 1408"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_port_eight_barrelled_Vickers_two_pounder_Mk_VIII_%27pom-pom%27_gun_in_action_during_anti-aircraft_practice_on_board_HMS_RODNEY,_October_1940._A1408.jpg"
+    width: 1280
+    height: 963
+    note: "射击瞬间，炮口焰与抛壳、供弹槽的走向可见，能看出八管是分两排交错而非一字排列。舰上实拍，背景是海上，没有博物馆展品那种支架干扰。原件藏帝国战争博物馆（IWM A 1408），Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站归档的是 Commons 的公有领域版本。未裁剪、未改作。"
+
+  - id: 40mm-bofors-belfast-twin-side
+    file: /img/weapons/40mm-bofors-belfast-twin-side.jpg
+    subject: weapon:40mm-bofors
+    title:
+      zh: "贝尔法斯特号双联 40 mm Bofors（侧视）"
+      en: "Twin 40 mm Bofors on HMS Belfast, side view"
+    part: turret
+    view: detail
+    date: 2007-11-29
+    license: cc_by_sa
+    license_tier: B
+    license_raw: "CC BY-SA 3.0"
+    author: "Rémi Kaupp（User:Korrigan）"
+    credit: "贝尔法斯特号博物馆舰（HMS Belfast, Imperial War Museums）"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Belfast_-_Bofors_40_mm_gun_side_view.jpg"
+    width: 1280
+    height: 853
+    primary: true
+    note: "Commons 描述明确为「40mm QF Guns Mk XI in twin mounting RP50 Mk V, six of them on the ship」，即英制双联 RP50 Mk V 动力炮座，不是美制 Mk II 四联。炮座外形、防盾、供弹口与瞄准具侧面清楚。注意本站 40mm-bofors 实体同时涵盖美制四联 Mk II 与英制单装/双联，此图为英制双联型。授权：CC BY-SA 3.0，作者 Rémi Kaupp，条款 https://creativecommons.org/licenses/by-sa/3.0/deed.zh；本站仅按站内统一宽度缩放到 1280 px，未裁剪、未改作。"
+
+  - id: 40mm-bofors-belfast-twin-top
+    file: /img/weapons/40mm-bofors-belfast-twin-top.jpg
+    subject: weapon:40mm-bofors
+    title:
+      zh: "贝尔法斯特号双联 40 mm Bofors（俯视）"
+      en: "Twin 40 mm Bofors on HMS Belfast, top view"
+    part: turret
+    view: overhead
+    date: 2007-11-29
+    license: cc_by_sa
+    license_tier: B
+    license_raw: "CC BY-SA 3.0"
+    author: "Rémi Kaupp（User:Korrigan）"
+    credit: "贝尔法斯特号博物馆舰（HMS Belfast, Imperial War Museums）"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Belfast_-_Bofors_40_mm_gun_top_view_1.jpg"
+    width: 1280
+    height: 853
+    note: "俯视，可见炮座的回转平台、座圈直径、两门炮的中心距与摇架布置，是做炮座底盘与回转结构时的直接依据。与侧视图同一座同型炮。授权：CC BY-SA 3.0，作者 Rémi Kaupp，条款 https://creativecommons.org/licenses/by-sa/3.0/deed.zh；本站仅缩小到 1280 px，未裁剪、未改作。"
+
+  - id: 20mm-oerlikon-hms-rodney-training
+    file: /img/weapons/20mm-oerlikon-hms-rodney-training.jpg
+    subject: weapon:20mm-oerlikon
+    title:
+      zh: "罗德尼号上军官学习操作 20 mm Oerlikon"
+      en: "Officers receiving instruction on a 20 mm Oerlikon aboard HMS Rodney"
+    part: other
+    view: detail
+    date: 1939-1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Marshall（Lt），皇家海军官方摄影师"
+    credit: "Imperial War Museums, A 6264"
+    source_url: "https://commons.wikimedia.org/wiki/File:20mm_Oerlikon_training_on_HMS_Rodney_WWII_IWM_A_6264.jpg"
+    width: 800
+    height: 596
+    primary: true
+    note: "舰上实拍的 Mk IIIA 单装炮座：肩托、环形瞄具、弹鼓位置与立柱底座全在画面内，炮手站位与人体比例可直接换算。背景还带一座八联 pom-pom，可顺带核对两种炮的体量差。原件藏帝国战争博物馆（IWM A 6264），Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站归档的是 Commons 的公有领域版本。未裁剪、未改作。"
+
+  - id: 20mm-oerlikon-wellington-museum
+    file: /img/weapons/20mm-oerlikon-wellington-museum.jpg
+    subject: weapon:20mm-oerlikon
+    title:
+      zh: "惠灵顿博物馆藏 20 mm Oerlikon 单装炮座（带防盾）"
+      en: "20 mm Oerlikon single mount with shield, Wellington Museum"
+    part: other
+    view: detail
+    date: 2024-10-12
+    license: cc0
+    license_tier: A
+    license_raw: "CC0"
+    author: "Daderot"
+    credit: "新西兰惠灵顿博物馆（Wellington Museum），原装于 HMNZS Olphert（1943）"
+    source_url: "https://commons.wikimedia.org/wiki/File:20mm_Oerlikon_mounted_cannon,_HMNZS_Olphert,_1943_-_Wellington_Museum_-_Wellington,_NZ_DSC00021.jpg"
+    width: 1280
+    height: 1920
+    note: "HMNZS Olphert 上的原装炮位，带防盾与柱状底座，肩托与俯仰手轮从侧面完全露出。竖构图（1280×1920），比实照更适合看清防盾形状与炮座与甲板的连接方式。CC0 公有领域贡献，无署名义务，此处署名是礼貌。未裁剪、未改作。"
+
+  - id: 4_5in-qf-mk3-implacable-twin
+    file: /img/weapons/4_5in-qf-mk3-implacable-twin.jpg
+    subject: weapon:4_5in-qf-mk3
+    title:
+      zh: "光辉级／不倦级航母上的 4.5 in Mk III 双联炮塔"
+      en: "4.5-inch Mk III twin mountings on an Implacable-class carrier"
+    part: turret
+    view: detail
+    date: 1939-1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "皇家海军（Commons 的 Artist 栏记作 RN）"
+    credit: "Imperial War Museums（底片编号未确认）"
+    source_url: "https://commons.wikimedia.org/wiki/File:4.5_inch_guns_on_Implacable_class_aircraft_carrier.jpg"
+    width: 444
+    height: 245
+    primary: true
+    note: "题材最对位的一张：Commons 描述为不倦级（Implacable 或 Indefatigable）上的 4.5 in Mk III 双联 RP10 Mk II BD 炮座，正是光辉级同款。两组炮管上扬、炮塔轮廓与防盾弧线可辨。缺点：源图仅 444×245，是本站分辨率最低的一张，只宜看轮廓比例，不宜放大看铆接与细节——细节请用另一张 Explosion 博物馆的 Mk 5 双联照（型号不同，已在条目中说明）。公有领域，原件应藏帝国战争博物馆但编号未在 Commons 记录。"
+
+  - id: 4_5in-qf-mk3-mk5-twin-mk6-mounting
+    file: /img/weapons/4_5in-qf-mk3-mk5-twin-mk6-mounting.jpg
+    subject: weapon:4_5in-qf-mk3
+    title:
+      zh: "爆炸海军火器博物馆藏 4.5 in Mk 5 双联 Mk 6 炮座"
+      en: "QF 4.5-inch Mark 5 gun on twin Mark 6 mounting, Explosion Museum of Naval Firepower"
+    part: turret
+    view: detail
+    date: 2023-04-22
+    license: cc_by_sa
+    license_tier: B
+    license_raw: "CC BY-SA 4.0"
+    author: "The wub"
+    credit: "爆炸海军火器博物馆（Explosion Museum of Naval Firepower, Gosport）"
+    source_url: "https://commons.wikimedia.org/wiki/File:QF_4.5-inch_Mark_5_gun_on_twin_Mark_6_mounting_at_Explosion_Museum.jpg"
+    width: 1280
+    height: 853
+    note: "重要：这是陆上博物馆的 Mk 5 双联 Mk 6 炮座，与光辉级上的 Mk III／RP10 Mk II BD 不是同一对型号。但炮塔外形、防盾折角、铆接排布、炮口帆布罩与炮管锥度在这一代 4.5 in 炮上高度相似，且是本站能拿到的最高清（1280×853）4.5 in 炮塔实照，看外壳细节仍可用；判断炮塔内部与装填机构时不要以此为准。授权：CC BY-SA 4.0，作者 The wub，条款 https://creativecommons.org/licenses/by-sa/4.0/deed.zh；本站仅缩小到 1280 px，未裁剪、未改作。"
+
+  - id: up-rocket-kgv-quarterdeck-mount
+    file: /img/weapons/up-rocket-kgv-quarterdeck-mount.jpg
+    subject: weapon:up-rocket
+    title:
+      zh: "英王乔治五世号舰尾 UP 发射器的操作舱（约 1940–41）"
+      en: "The UP launcher's crew cabin on HMS King George V's quarterdeck, c. 1940–41"
+    part: other
+    view: detail
+    date: 1940-1941
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Beadell, S J（Lt），皇家海军官方摄影师"
+    credit: "Imperial War Museums, A 9385（collection no. 4700-01）"
+    source_url: "https://commons.wikimedia.org/wiki/File:UP_mount_HMS_King_George_V_IWM_A_9385.jpg"
+    width: 588
+    height: 777
+    primary: true
+    note: "Commons 描述：「gunner in cabin of 7-inch Unrotated Projectile (i.e. rocket) mounting on quarterdeck of HMS King George V」。舱门打开正对镜头，可见炮手与操作舱内部，上方是倾斜安装的二十管发射箱底缘。二十管 UP 发射器几乎没有清晰实照，这张是少数能看出「发射箱 + 操作舱」整体关系的图。拍摄时该舰在 Rosyth 干船坞。原件藏帝国战争博物馆（IWM A 9385），Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站归档的是 Commons 的公有领域版本。未裁剪、未改作。"
+
+  - id: up-rocket-hms-nelson-launchers
+    file: /img/weapons/up-rocket-hms-nelson-launchers.jpg
+    subject: weapon:up-rocket
+    title:
+      zh: "纳尔逊号 B 炮塔两侧的 UP 发射箱（1940 年）"
+      en: "UP launcher batteries beside HMS Nelson's 'B' turret, 1940"
+    part: other
+    view: bow
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Coote, R G G（Lt）"
+    credit: "Imperial War Museums, A 1995"
+    source_url: "https://commons.wikimedia.org/wiki/File:16_inch_gun_turrets_and_Unrotated_Projectile_launchers_on_HMS_Nelson_1940_IWM_A_1995.jpg"
+    width: 800
+    height: 606
+    note: "舰首俯视，B 炮塔顶两侧各一组 UP 发射箱（每组装二十管），可看出安装位置、与 16 in 炮塔的相对尺寸以及发射箱的仰角。IWM 原说明写着「the UP's...」（拼版剪掉了后半句）。原件藏帝国战争博物馆（IWM A 1995），Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站归档的是 Commons 的公有领域版本。未裁剪、未改作。"
+
+  - id: illustrious-1943-corsair-island-collision
+    file: /img/ships/illustrious-1943-corsair-island-collision.jpg
+    subject: ship:illustrious
+    title:
+      zh: "海盗式撞上舰岛（1943-12）"
+      en: "A Corsair that collided with the island of HMS Illustrious, December 1943"
+    part: superstructure
+    view: detail
+    date: 1943-12
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Parnall, C H (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 21002"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A21002.jpg"
+    width: 1280
+    height: 926
+    note: "1943 年 12 月一架 Corsair 收油门太晚，直接撞上舰岛，右侧机翼折断、发动机吊在支架上。这张的用处不在事故本身：它把舰岛右侧面（含雷达平台与附属结构）和该段甲板边缘的拦阻索导向轮、系留环一次拍全，是舰岛与甲板交界处最清楚的一张。IWM 编号 A 21002。"
+
+  - id: kgv-1941-scapa-anchor
+    file: /img/ships/kgv-1941-scapa-anchor.jpg
+    subject: ship:king-george-v
+    title:
+      zh: "英王乔治五世号在斯卡帕湾锚泊（1941）"
+      en: "HMS King George V at anchor, Scapa Flow, 1941"
+    part: hull_side
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Coote, R G G (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 6097"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A6097.jpg"
+    width: 1280
+    height: 966
+    note: "1941 年本土舰队时期在斯卡帕湾锚泊的整舰侧视，此时舰体为本土舰队的单色中灰（507B），尚未加装后来的迷彩。这是全站少数几张能同时看清 A 塔、B 塔（双联、背负）与后部 Y 塔轮廓的整舰侧视之一——四联/双联的差别在这张的剪影上一眼可辨。IWM 编号 A 6097。"
+
+  - id: hood-1939-crew-parade
+    file: /img/ships/hood-1939-crew-parade.jpg
+    subject: ship:hood
+    title:
+      zh: "胡德号全员甲板列队（1939）"
+      en: "HMS Hood with her crew paraded on deck, circa 1939"
+    part: hull_side
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Press Agency photographer"
+    credit: "Imperial War Museums, HU 76083"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Hood_HU76083.jpg"
+    width: 1280
+    height: 960
+    note: "1939 年前后全员在后甲板列队，从舰艏斜前方拍的整舰侧视。舰体已是战时的深灰（AP507B），但还没加装后来那些临时防空炮座。这张能看清 X/Y 炮塔的相对高度、后桅与弹射器的位置，以及干舷在全长上的变化。IWM 编号 HU 76083。"
+
+  - id: tirpitz-1943-altenfjord-reconnaissance
+    file: /img/ships/tirpitz-1943-altenfjord-reconnaissance.jpg
+    subject: ship:tirpitz
+    title:
+      zh: "阿尔塔峡湾锚地的提尔皮茨号与 L 形防雷网（英军侦察照）"
+      en: "Aerial reconnaissance of Alten Fjord showing Tirpitz and her L-shaped torpedo net"
+    part: hull_side
+    view: overhead
+    date: 1943
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Royal Navy official photographer"
+    credit: "Imperial War Museums, A 19625"
+    source_url: "https://commons.wikimedia.org/wiki/File:An_aerial_reconnaissance_photograph_of_Alten_Fjord_showing_the_German_battleship_TIRPITZ_at_her_anchorage.jpg"
+    width: 526
+    height: 513
+    note: "英军侦察机在 X-Craft 袭击前后拍摄，图注明确指出舰体周围那圈 L 形防鱼雷网——这是理解 1943-09-22 Operation Source 为何要用水下爆破筒（鱼雷被网挡住）的关键一张。原图分辨率偏低。原件藏帝国战争博物馆（IWM A 19625），作品本身已属公有领域；IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: illustrious-1941-norfolk-shipyard
+    file: /img/ships/illustrious-1941-norfolk-shipyard.jpg
+    subject: ship:illustrious
+    title:
+      zh: "光辉号在诺福克海军船厂（1941-11，战损修理后）"
+      en: "HMS Illustrious at the Norfolk Naval Shipyard, November 1941"
+    part: hull_side
+    view: other
+    date: 1941-11
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "U.S. Navy"
+    credit: "US Naval History and Heritage Command, NH 96323"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Illustrious_(87)_at_the_Norfolk_Naval_Shipyard_in_November_1941.jpg"
+    width: 1280
+    height: 923
+    note: "马耳他战损后赴美修理的收尾阶段，摄于弗吉尼亚诺福克海军船厂。舰首斜前偏左的视角：此时已换上大西洋迷彩，飞行甲板前部停着船厂起重机，舰首甲板两舷的 4.5 in 舷台炮座轮廓在这张里能看清。NH 96323，PD-USGov。"
+
+  - id: illustrious-1944-eastern-fleet-anchor
+    file: /img/ships/illustrious-1944-eastern-fleet-anchor.jpg
+    subject: ship:illustrious
+    title:
+      zh: "光辉号（东方舰队，1944）"
+      en: "HMS Illustrious of the Eastern Fleet, 1944"
+    part: hull_side
+    view: broadside
+    date: 1944
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Mason, H A (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 13559"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A13559.jpg"
+    width: 1280
+    height: 976
+    note: "东方舰队时期在近岸水域停泊，自巡洋舰毛里求斯号拍摄。舰体已改为东方舰队涂装，飞行甲板系留的飞机与两舷舷台布局都能辨认。 IWM 编号 A 13559。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: illustrious-1942-mozambique-oiling
+    file: /img/ships/illustrious-1942-mozambique-oiling.jpg
+    subject: ship:illustrious
+    title:
+      zh: "光辉号为驱逐舰加油（1942-10-18，莫桑比克海峡）"
+      en: "A destroyer oiling from HMS Illustrious, Mozambique Channel, 18 October 1942"
+    part: deck
+    view: other
+    date: 1942-10-18
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Oulds, D C"
+    credit: "Imperial War Museums, A 13481"
+    source_url: "https://commons.wikimedia.org/wiki/File:DESTROYER_OILING_FROM_HMS_ILLUSTRIOUS_AT_SEA._18_OCTOBER_1942,_ON_BOARD_THE_CARRIER_HMS_ILLUSTRIOUS_IN_THE_MOZAMBIQUE_CHANNEL._A13481.jpg"
+    width: 1280
+    height: 981
+    note: "印度洋阶段，光辉号在莫桑比克海峡给伴随驱逐舰横向加油，拍摄点在飞行甲板边缘。可看到甲板边缘的拦阻索导向轮、系留环与输油管路布置。 IWM 编号 A 13481。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: illustrious-1943-barracuda-takeoff
+    file: /img/ships/illustrious-1943-barracuda-takeoff.jpg
+    subject: ship:illustrious
+    title:
+      zh: "梭鱼式自光辉号起飞（1943-02-08，克莱德河）"
+      en: "A Fairey Barracuda taking off from HMS Illustrious, 8 February 1943"
+    part: catapult
+    view: detail
+    date: 1943-02
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Royal Navy official photographer"
+    credit: "Imperial War Museums, A 14858"
+    source_url: "https://commons.wikimedia.org/wiki/File:Fairey_Barracuda_taking_off_from_HMS_Illustrious.jpg"
+    width: 1280
+    height: 933
+    note: "1943 年本土改装后的试飞阶段，摄于克莱德河。梭鱼式刚服役，是当时舰队航空兵最新的鱼雷/俯冲两用机。这一张能看清起飞位甲板的弹射器轨道与甲板风向标。 IWM 编号 A 14858。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: kgv-1941-rosyth-drydock
+    file: /img/ships/kgv-1941-rosyth-drydock.jpg
+    subject: ship:king-george-v
+    title:
+      zh: "英王乔治五世号在罗塞斯干船坞（1941）"
+      en: "HMS King George V in dry dock at Rosyth, 1941"
+    part: deck
+    view: overhead
+    date: 1940-1941
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Beadell, S J (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 1485"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A1485.jpg"
+    width: 1280
+    height: 1681
+    note: "自船坞巨型吊车俯拍，是本站唯一一张能从上往下看清全舰甲板平面布局的图：A 塔四门 14 in 炮管、B 塔位置、舰桥与前桅的相对关系、舰首锚机与系缆布置一览无余。做甲板平面与上层建筑定位时最好用。IWM 原说明只给「Rosyth 干船坞、1939–1945」，故日期记为约 1940–1941。 IWM 编号 A 1485。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: kgv-1943-5_25in-director
+    file: /img/ships/kgv-1943-5_25in-director.jpg
+    subject: ship:king-george-v
+    title:
+      zh: "5.25 in 高平两用炮指挥仪（1943）"
+      en: "A 5.25 inch gun director on HMS King George V, 1943"
+    part: superstructure
+    view: detail
+    date: 1942-1943
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Coote, R G G (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 3883"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A3883.jpg"
+    width: 1280
+    height: 966
+    note: "5.25 in 副炮的指挥仪炮位内部：炮手与俯仰/旋回手就位，右侧是测距仪通道，四周是防盾。副炮每舷两座双联，指挥仪与炮座分开布置，做上层建筑与炮位细节时这一层关系值得注意。IWM 原说明只给 1939–1945，日期记为约 1942–1943。 IWM 编号 A 3883。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: hood-1940-rodney-guns
+    file: /img/ships/hood-1940-rodney-guns.jpg
+    subject: ship:hood
+    title:
+      zh: "自罗德尼号 16 in 炮之间看胡德号（1940）"
+      en: "HMS Hood seen between two 16 inch guns of HMS Rodney, 1940"
+    part: hull_side
+    view: bow
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Reginald George Guy Coote"
+    credit: "Imperial War Museums, A 111"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A111.jpg"
+    width: 1280
+    height: 952
+    note: "胡德号自地中海返回时摄于本土水域。前景是罗德尼号 16 in 三联装炮塔的两根炮管，胡德号在远处。战时深灰单色涂装（AP507B/AP507A）在这张里可以确认。 IWM 编号 A 111。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: hood-1926-passes-repulse
+    file: /img/ships/hood-1926-passes-repulse.jpg
+    subject: ship:hood
+    title:
+      zh: "胡德号与反击号交会（1926）"
+      en: "HMS Hood passing HMS Repulse, 1926"
+    part: hull_side
+    view: broadside
+    date: 1926
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Press Agency photographer"
+    credit: "Imperial War Museums, HU 73785"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Hood_HU73785.jpg"
+    width: 1280
+    height: 962
+    note: "IWM 原说明为「HMS HOOD passing HMS REPULSE」，摄于两舰交会时，照片从前景另一艘主力舰的炮位上方拍过去，远处为胡德号。前景炮管为双联装、炮口罩帆布罩。远景里胡德号的三脚前桅、两根烟囱与长艏楼轮廓清楚，可作 1920 年代状态的整体比例参考。IWM 编号 HU 73785。 原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: 15in-42-mk1-royal-oak-twin-turret
+    file: /img/weapons/15in-42-mk1-royal-oak-twin-turret.jpg
+    subject: weapon:15in-42-mk1
+    title:
+      zh: "皇家橡树号 15 in Mk I 双联炮塔正面（1916）"
+      en: "Twin 15-inch Mk I turret of HMS Royal Oak, 1916"
+    part: turret
+    view: detail
+    date: 1916
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Royal Navy official photographer"
+    credit: "Imperial War Museums, Q 17919"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_First_World_War_Q17919.jpg"
+    width: 1280
+    height: 1003
+    primary: true
+    note: "四根炮管同向、炮口罩着帆布、炮塔正面的防盾折线与顶盖形状全在同一画面里，是这批候选中最纯粹的一张某型 15 in 双联炮塔外形照，也顺带给出炮口内径与炮管在防盾上的开口位置关系。IWM 原说明为「Battleship HMS Royal Oak, showing 15 inch guns and turret」。需要说明的差异：这是复仇级上的双联 Mk I 炮座，胡德号装的是双联 Mk II 炮座，炮身同为 15 in Mk I 而同族不同型的炮座；做胡德号模型时炮塔细节请对照本站胡德号条目的另几张。原件藏帝国战争博物馆（IWM Q 17919），Crown Copyright 已过期，Commons 副本的 LicenseShortName / UsageTerms 均为 Public domain；IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本。未裁剪、未改作。"
+
+  - id: 15in-42-mk1-renown-forward-turrets
+    file: /img/weapons/15in-42-mk1-renown-forward-turrets.jpg
+    subject: weapon:15in-42-mk1
+    title:
+      zh: "声望号舰艏两座双联 15 in 炮塔（1939-1945）"
+      en: "HMS Renown's two forward twin 15-inch turrets"
+    part: turret
+    view: detail
+    date: 1939-1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Oulds, D C (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 29851"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Renown_forward_two_turrets.jpg"
+    width: 1280
+    height: 1666
+    note: "从舰艏甲板向来路方向拍，A、B 两座双联炮塔前后背负的关系一次入镜：炮管仰起、炮口罩帆布、炮塔与甲板之间那道防盾基座的高低差都看得清，适合核对「双联炮塔装在背负位置」的体量与间距。前景是列队的舰员，画面下三分之一被人物占去。Commons 未给具体日期，只有 IWM 的 1939-1945 范围。原件藏帝国战争博物馆（IWM A 29851），Crown Copyright 已过期，Commons 副本的 LicenseShortName / UsageTerms 均为 Public domain；IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本。未裁剪、未改作。"
+
+  - id: g7a-t1-torpedo-tarifa
+    file: /img/weapons/g7a-t1-torpedo-tarifa.jpg
+    subject: weapon:g7a-t1
+    title:
+      zh: "塔里法港展出的 G7a 鱼雷（西班牙海军用）"
+      en: "G7a torpedo on display at Tarifa, Spain"
+    part: other
+    view: detail
+    date: 2018-11-24
+    license: cc_by_sa
+    license_tier: B
+    license_raw: "CC BY-SA 4.0"
+    author: "User:Zenwort"
+    credit: "西班牙塔里法港（Puerto de Tarifa）岸上展品，2013 年起陈列"
+    source_url: "https://commons.wikimedia.org/wiki/File:Torpedo-G7a_Tarifa_20181124_1.jpg"
+    width: 1280
+    height: 960
+    primary: true
+    note: "全雷外形最完整的一张：雷头锥、雷身圆柱段与尾部四叶螺旋桨、上下垂直舵与左右水平舵的比例关系可以直接量，画面上是训练雷的红黄白涂装（不是战时战雷的深灰）。Commons 原描述写明「German made Torpedo Type G7a, used by the Spanish navy」，型号明确无歧义；但它是西班牙海军战后的库存训练雷，与俾斯麦级四联装发射管里那枚战时 G7a T1 的涂装和部分附件可能不同，看外形与雷体分段用这张，看战时使用状态请用本站条目里的装填照。授权：CC BY-SA 4.0，作者 User:Zenwort，条款全称 Creative Commons Attribution-ShareAlike 4.0 International，条款直链 https://creativecommons.org/licenses/by-sa/4.0/deed.zh；本站仅按站内统一宽度缩放到 1280 px，未裁剪、未改作。"
+
+  - id: g7a-t1-engine-cutaway
+    file: /img/weapons/g7a-t1-engine-cutaway.jpg
+    subject: weapon:g7a-t1
+    title:
+      zh: "G7a 鱼雷发动机舱剖面（Wilhelm Bauer 号艇内展品）"
+      en: "Cutaway of a G7a torpedo's engine room, U-boat Wilhelm Bauer"
+    part: other
+    view: detail
+    date: 2008-08-18
+    license: cc_by_sa
+    license_tier: B
+    license_raw: "CC BY-SA 3.0"
+    author: "WerWil"
+    credit: "博物馆潜艇「Wilhelm Bauer」号（不来梅哈芬 / 威廉港）艇内展品"
+    source_url: "https://commons.wikimedia.org/wiki/File:G7a_Motor.JPG"
+    width: 1280
+    height: 960
+    note: "雷身开了检修口，能看到 G7a 之所以是「蒸汽鱼雷」的那套东西：四缸 Brotherhood 主机、燃油与压缩空气管路、减速与传动机构，铭牌原文写「Maschinenkammer (mit 4-Zylinder Brotherhood Maschine)」。这张补的是外形照看不到的动力段，做剖面或内构展示时用。局限：切口只露出机器舱一侧，燃烧室与舵机不在画面内。授权：CC BY-SA 3.0，作者 WerWil，条款全称 Creative Commons Attribution-ShareAlike 3.0 Unported，条款直链 https://creativecommons.org/licenses/by-sa/3.0/deed.zh；本站仅按站内统一宽度缩放到 1280 px，未裁剪、未改作。"
+
+  - id: swordfish-hms-victorious-bismarck-strike
+    file: /img/weapons/swordfish-hms-victorious-bismarck-strike.jpg
+    subject: weapon:swordfish
+    title:
+      zh: "胜利号后甲板待发的剑鱼式机群（1941-05-24，出击俾斯麦号前）"
+      en: "Swordfish torpedo bombers ranged on the after deck of HMS Victorious, 24 May 1941"
+    part: aircraft
+    view: overhead
+    date: 1941-05-24
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Royal Navy official photographer"
+    credit: "Imperial War Museums, A 4090"
+    source_url: "https://commons.wikimedia.org/wiki/File:Swordfish_on_HMS_Victorious_before_strike_on_Bismarck.jpg"
+    width: 1007
+    height: 737
+    primary: true
+    note: "胜利号后甲板上多架剑鱼式密集排开，机翼展开、鱼雷挂载状态与甲板系留索都能看清，是这批图里唯一同时拍到编队停放与「出击俾斯麦号」这一具体行动的甲板全景；湿甲板反光把翼展与轮距的比例交代得比较准，做甲板摆放参考优先用这张。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: swordfish-hms-activity-lift-wings-folded
+    file: /img/weapons/swordfish-hms-activity-lift-wings-folded.jpg
+    subject: weapon:swordfish
+    title:
+      zh: "824 中队剑鱼式折翼后下升降机（活动号护航航母）"
+      en: "A 824 Squadron Swordfish with wings folded going down the lift of HMS Activity"
+    part: aircraft
+    view: detail
+    date: 1939-1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Beadell, S J (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 18270"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A18270.jpg"
+    width: 800
+    height: 599
+    note: "剑鱼式后向折翼的机构是本型最好用的辨识点，这张正拍到机翼折叠后下垂的四个铰点与支撑撑杆，甲板人员扶翼下升降机的姿态说明折翼宽度与升降机开口的余量。Commons 对该图的日期只到「1939 至 1945 之间」，本站不细化。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: fulmar-hms-victorious-hangar-row
+    file: /img/weapons/fulmar-hms-victorious-hangar-row.jpg
+    subject: weapon:fulmar
+    title:
+      zh: "胜利号机库内折翼的海燕式（两翼为长鳍式 Albacore）"
+      en: "A row of folded-wing Fairey Fulmars in the hangar of HMS Victorious, flanked by Albacores"
+    part: aircraft
+    view: detail
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Claude Henry Parnall, Royal Navy official photographer"
+    credit: "Imperial War Museums, A 7279"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A7279.jpg"
+    width: 800
+    height: 602
+    primary: true
+    note: "冰岛 Hvalfjörður 锚地，胜利号机库甲板上中间一排是海燕式、两侧各一排 Albacore，全部折翼停放；海燕式只有飞行员与观察员两名乘员、没有后座机枪手，座舱盖到此为止，而两侧的 Albacore 是三座、尾部有明显的后机枪座——这个差别在这张里比任何空中照都容易看出来；机库净高余量也是模型做机库场景的直接依据。Commons 原注日期写「1939 至 1945 之间」，说明文字称摄于搜索提尔皮茨号前后，本站按说明取 1942，精确到月的日期未获取。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: fulmar-hms-victorious-wings-folded-deck
+    file: /img/weapons/fulmar-hms-victorious-wings-folded.jpg
+    subject: weapon:fulmar
+    title:
+      zh: "胜利号甲板逆光中的折翼海燕式（斯卡帕湾，起飞前）"
+      en: "A Fairey Fulmar with wings folded, backlit on the flight deck of HMS Victorious at Scapa Flow"
+    part: aircraft
+    view: detail
+    date: 1941-1942
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Parnall, C H (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 7977"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A7977.jpg"
+    width: 800
+    height: 602
+    note: "清晨逆光下的甲板，海燕式已折翼、发动机暖机待发，远处甲板尾端是另一架折翼的 Albacore；折翼后机翼前端上翻的角度与主起落架间距看得清，但曝光偏暗、背光，细节要放大看，做轮廓与折翼姿态参考够用。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: sea-gladiator-hms-victorious-landing
+    file: /img/weapons/sea-gladiator-hms-victorious-landing.jpg
+    subject: weapon:sea-gladiator
+    title:
+      zh: "海斗士即将着舰胜利号，着舰钩清晰可见"
+      en: "A Gloster Sea Gladiator about to land on HMS Victorious, arrestor hook visible"
+    part: aircraft
+    view: detail
+    date: 1939-1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Claude Henry Parnall, Royal Navy official photographer"
+    credit: "Imperial War Museums, A 6974"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A6974.jpg"
+    width: 800
+    height: 587
+    primary: true
+    note: "海斗士放下着舰钩、压低机头接近胜利号甲板的瞬间，钩体与尾轮、主起落架的相对位置一目了然——这是海斗士相对陆基 Gladiator 的改装重点，模型做钩架时直接照这张。驾驶员是哈茨顿航空站站长 Fancourt 上校。Commons 对日期只给「1939 至 1945 之间」，本站不细化。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: sea-gladiator-malta-faith-n5520
+    file: /img/weapons/sea-gladiator-malta-faith-n5520.jpg
+    subject: weapon:sea-gladiator
+    title:
+      zh: "马耳他「信仰」号海斗士 Mk I（序列号 N5520，1940-09）"
+      en: "Gloster Sea Gladiator Mk I N5520 'Faith' at Malta, September 1940"
+    part: aircraft
+    view: detail
+    date: 1940-09
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "未署名官方摄影（Commons 记作 photographer not identified, \"Official photograph\"）"
+    credit: "Imperial War Museums, ZZZ 3915E（collection no. 4700-26）"
+    source_url: "https://commons.wikimedia.org/wiki/File:ZZZ_003915_E_Gladiator.jpg"
+    width: 1280
+    height: 1015
+    note: "马耳他塔卡利机场，Hal Far 战斗机小队三机中唯一存世的 N5520（1943 年以「Faith／信仰」之名赠予马耳他人民）。这张是地面全景，机身、环状发动机整流罩、双叶螺旋桨与滑橇式尾轮都完整，但**不在舰上**；本型号目前能查到的舰上影像只有胜利号着舰那一张，故舰上作业请参该条。图中该机已换上从布伦海姆轰炸机拆来的水星发动机与三叶汉密尔顿螺旋桨，与出厂状态不同，做 1940 年 6 月首战状态时需注意这一处差异。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: corsair-hms-formidable-ranged-deck
+    file: /img/weapons/corsair-hms-formidable-ranged-deck.jpg
+    subject: weapon:corsair
+    title:
+      zh: "可畏号甲板上列队的海盗式（FAA 涂装，1944-07 挪威外海）"
+      en: "Fleet Air Arm Corsairs ranged on the flight deck of HMS Formidable off Norway, July 1944"
+    part: aircraft
+    view: overhead
+    date: 1944-07
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Hudson, F A (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 24787"
+    source_url: "https://commons.wikimedia.org/wiki/File:Corsair_fighters_and_Fairey_Barracuda_torpedo_bombers_ranged_on_the_flight_deck_of_HMS_FORMIDABLE_off_Norway_in_July_1944.jpg"
+    width: 1280
+    height: 966
+    primary: true
+    note: "皇家海军涂装（圆环国籍标志、深色上衣）的海盗式在可畏号甲板上成排展开，机翼全部展开、螺旋桨待转，后排是梭鱼式。这张同时给出甲板系留间距、机翼展开后的横向占位与折叠前的状态，是这批海盗式图里信息量最大的一张甲板全景，做甲板摆放与 FAA 涂装参考首选。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: corsair-hms-victorious-wings-folding
+    file: /img/weapons/corsair-hms-victorious-wings-folding.jpg
+    subject: weapon:corsair
+    title:
+      zh: "海盗式在胜利号甲板上折翼（轰炸博德外海德军船队返舰后）"
+      en: "A Chance-Vought Corsair folding its wings after landing on HMS Victorious"
+    part: aircraft
+    view: detail
+    date: 1939-1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Hudson, F A (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 23036"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A23036.jpg"
+    width: 800
+    height: 603
+    note: "海盗式着舰后原地折翼，右翼上翻到接近垂直、左翼尚在展开位，背景是另外两架已折翼停在甲板边。倒海鸥翼的内侧折线、外段上反角与折叠后的高度都在这张里交代得最清楚，做折叠机构与甲板净高核算看这张。Commons 原注日期只给「1939 至 1945 之间」，说明文字给出情境（轰炸博德 Bodø 外海德军船队返舰后），本站不细化年份。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: avenger-hms-illustrious-bombing-up
+    file: /img/weapons/avenger-hms-illustrious-bombing-up.jpg
+    subject: weapon:avenger
+    title:
+      zh: "光辉号甲板上为复仇者挂弹（1944-05，泗水空袭准备）"
+      en: "Bombing up a Fleet Air Arm Avenger on the flight deck of HMS Illustrious, May 1944"
+    part: aircraft
+    view: detail
+    date: 1944-05-17
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Trusler, C (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 24250"
+    source_url: "https://commons.wikimedia.org/wiki/File:Avenger_being_armed_on_HMS_Illustrious_(87)_1944.jpg"
+    width: 1280
+    height: 955
+    primary: true
+    note: "弹药手半个身子在弹舱里往外递弹，甲板上还摆着两枚待装的炸弹，机腹弹舱开口、挂弹架与起落架支柱的相对位置非常清楚，做复仇者腹部结构与挂弹状态首选。机身为 832 或 845 中队、光辉号在印度洋准备空袭泗水（Soerabaja）时的状态。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: avenger-hms-trumpeter-catapult
+    file: /img/weapons/avenger-hms-trumpeter-catapult.jpg
+    subject: weapon:avenger
+    title:
+      zh: "846 中队复仇者自小号手号弹射起飞"
+      en: "A 846 Squadron Avenger catapulted off the escort carrier HMS Trumpeter"
+    part: aircraft
+    view: detail
+    date: 1939-1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Hudson, F A (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 25377"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A25377.jpg"
+    width: 800
+    height: 608
+    note: "复仇者刚离开弹射器、离甲板不到一人高的瞬间，起落架与机腹弹舱、三座舱盖的侧面轮廓都完整，背景只有海面，是判断弹射起飞姿态与起飞重量姿态的好参照；护航航母的弹射器滑块与甲板开口在画面下方露出一角。Commons 对日期只给「1939 至 1945 之间」，本站不细化。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: walrus-hms-prince-of-wales-catapult-deck
+    file: /img/weapons/walrus-hms-prince-of-wales-catapult-deck.jpg
+    subject: weapon:walrus
+    title:
+      zh: "威尔士亲王号弹射甲板上吊放海象式（旁为双联 5.25 in 炮塔）"
+      en: "A Supermarine Walrus hoisted from the catapult deck of HMS Prince of Wales"
+    part: aircraft
+    view: detail
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Coote, R G G (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 3868"
+    source_url: "https://commons.wikimedia.org/wiki/File:A_Supermarine_Walrus_amphibious_aircraft_being_hoisted_from_the_catapult_deck_of_HMS_PRINCE_OF_WALES.jpg"
+    width: 1268
+    height: 939
+    primary: true
+    note: "海象式被吊车吊离弹射甲板的瞬间，机翼展开、浮筒与吊挂点、机库门开口与两侧双联 5.25 in 炮塔同框——战列舰弹射器作业的空间关系（机库门高度、吊臂摆幅、炮塔射界干涉）在这张里最直观，做战列舰航空设施场景优先用这张。Commons 对该图的日期只给「1939 至 1945 之间」，但其文件分类里有一条「1945 black and white photographs」，与威尔士亲王号 1941-12-10 沉没的事实矛盾，属 Commons 分类错误；本站按舰史把标签收到 1941，不采该分类。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: walrus-hms-mauritius-catapult-launch
+    file: /img/weapons/walrus-hms-mauritius-catapult.jpg
+    subject: weapon:walrus
+    title:
+      zh: "海象式刚离毛里求斯号弹射器"
+      en: "A Supermarine Walrus just leaving the catapult of HMS Mauritius"
+    part: aircraft
+    view: detail
+    date: 1939-1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Mason, H A (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 9272"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A9272.jpg"
+    width: 800
+    height: 602
+    note: "从巡洋舰弹射器上刚刚弹出去的瞬间，机腹与浮筒的支撑结构（N 型浮筒支柱、翼下散热器）拍得很清楚，弹射滑块与甲板边沿在画面下方留了一角。这张是「弹射起飞」而不是吊放，配上一条的吊放图正好覆盖弹射器的两个作业端。Commons 对日期只给「1939 至 1945 之间」，本站不细化。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: seafox-hms-canton-alighting
+    file: /img/weapons/seafox-hms-canton-alighting.jpg
+    subject: weapon:seafox
+    title:
+      zh: "海狐式自广州号（HMS Canton）弹射侦察后落水"
+      en: "A Fairey Seafox alighting after a reconnaissance flight from HMS Canton"
+    part: aircraft
+    view: detail
+    date: 1939-1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Zimmerman, E A (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 6654"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A6654.jpg"
+    width: 800
+    height: 613
+    primary: true
+    note: "海狐式在大西洋上完成侦察后落水滑行的瞬间，双浮筒与水花、上单翼双翼面与长机鼻的剪影，在 Commons 分类与全库检索可及的范围内是该型唯一的在役作业照。**注意：Commons 分类 Category:Fairey Seafox 全库只有 4 个文件**，其中 1 个是 1938 年百慕大与海象式并排的场地照、1 个只是 355 px 的机型小图，能用的只有本条与另一条地面维护照；舰上甲板/弹射器上的海狐式影像在 Commons 上不存在，此处不给不存在的场景。Commons 对日期只给「1939 至 1945 之间」，本站不细化。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: seafox-fitters-at-work-maharagama
+    file: /img/weapons/seafox-fitters-at-work.jpg
+    subject: weapon:seafox
+    title:
+      zh: "锡兰马哈拉加马航空厂内检修海狐式"
+      en: "Air fitters working on a Fairey Seafox at RN Aircraft Establishment Maharagama, Ceylon"
+    part: aircraft
+    view: detail
+    date: 1939-1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Rolfe, W E (Lt), Royal Navy official photographer"
+    credit: "Imperial War Museums, A 22229"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A22229.jpg"
+    width: 763
+    height: 800
+    note: "三名空军机械士（Harvey、Hughes、Mason）站在海狐式机头两侧作业，双叶螺旋桨、发动机整流罩、上翼与浮筒支柱全部入画，是唯一能看清该型正面结构的照片；背景是锡兰的训练场地，不是舰上。海狐式做模型时的机头与浮筒间距照这张核对比侧面剪影有用。Commons 对日期只给「1939 至 1945 之间」，本站不细化。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域，按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: arado-196-gneisenau-aboard
+    file: /img/weapons/arado-196-gneisenau-aboard.jpg
+    subject: weapon:arado-196
+    title:
+      zh: "格奈森瑙号弹射器上的 Ar 196（约 1940）"
+      en: "An Arado Ar 196 on the catapult of the battleship Gneisenau, circa 1940"
+    part: aircraft
+    view: detail
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "U.S. Navy"
+    credit: "U.S. Navy, NH 83610（Naval History and Heritage Command）"
+    source_url: "https://commons.wikimedia.org/wiki/File:Arado_Ar_196_aboard_the_German_battleship_Gneisenau,_circa_in_1940_(NH_83610).jpg"
+    width: 1280
+    height: 914
+    primary: true
+    note: "格奈森瑙号舰桥侧的弹射器上停着一架 Ar 196，浮筒架、折叠后的外翼、弹射滑车与吊臂同框，是这批图里唯一把「德舰弹射器 + 整机」的空间关系拍全的一张。格奈森瑙属沙恩霍斯特级，与俾斯麦级（提尔皮茨号）的弹射器、吊臂与机库布置并不相同，**不可直接照搬尺寸**，只能作为德舰弹射作业方式的参照。需要说明：**提尔皮茨号本舰的 Ar 196 影像在 Commons 上未检出**，本站没有拿姊妹舰的图冒充本舰，subject 归到机型而非某条舰。此件为美国海军（NHHC）收藏的二战德军飞机照片，属 PD-USGov，A 档。"
+
+  - id: arado-196-catapult-admiral-scheer
+    file: /img/weapons/arado-196-catapult-admiral-scheer.jpg
+    subject: weapon:arado-196
+    title:
+      zh: "舍尔海军上将号弹射器上的 Ar 196A-3（T3+EK，1942）"
+      en: "Arado Ar 196A-3 (T3+EK) of Bordfliegergruppe 196 on a catapult, 1942"
+    part: aircraft
+    view: detail
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "U.S. Navy"
+    credit: "U.S. Navy, NH 71324（Naval History and Heritage Command）"
+    source_url: "https://commons.wikimedia.org/wiki/File:German_Arado_Ar_196A-3_on_the_catapult_of_a_German_warship,_circa_in_1942_(NH_71324).jpg"
+    width: 1280
+    height: 910
+    note: "自下往上仰拍的 Ar 196A-3，机体编号 T3+EK 属第 196 舰载机大队（Bordfliegergruppe 196），NHHC 记录该机 Wk.Nr. 196 0232 于 1942-02-15 配属舍尔海军上将号 1./196，1942-08-25 在喀拉海着水事故中损失。仰角把浮筒支柱、机腹挂架与折叠翼铰点拍得极清楚，是核对 A-3 型下表面细节的好材料。此件为美国海军（NHHC）收藏的二战德军飞机照片，属 PD-USGov，A 档。"
+
+  - id: flycatcher-1923-prototype-n164
+    file: /img/weapons/flycatcher-1923.jpg
+    subject: weapon:flycatcher
+    title:
+      zh: "捕蝇鸟式（N164，1923 年，胡德号 1931-1933 年搭载同型）"
+      en: "Fairey Flycatcher N164, 1923"
+    part: aircraft
+    view: detail
+    date: 1923
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "British official photographer"
+    credit: "Imperial War Museums, ATP 430B（collection no. 7112-17）"
+    source_url: "https://commons.wikimedia.org/wiki/File:Fairey_Flycatcher_1923.jpg"
+    width: 1280
+    height: 946
+    primary: true
+    note: "侧后方四分之三视角的整机照，星型发动机、上下翼间的 I 形支柱与张线、滑橇式尾轮、机腹副油箱挂点全部可见，是这批图里唯一能核对捕蝇鸟式机体比例的一张。机号 N164——Commons 另一件 FFlycatcher(a) 把 N164 标为第二架原型机，故本图所示可能是原型状态而非量产型，做模型时翼尖与尾翼细节需另找量产型照片比对。**胡德号本舰搭载的捕蝇鸟式影像未在 Commons 检出**（Category:HMS Hood (51) 无舰载机子类，全库 insource 检索 0 命中），故此处只归到机型。原件藏帝国战争博物馆（IWM），Commons 副本标注为公有领域（PD-UKGov），按本站 §5.4 的 IWM 判例作 A 档归档；IWM 官网对其网站上的副本另行适用非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: flycatcher-401-flight-hms-eagle
+    file: /img/weapons/flycatcher-401-flight-hms-eagle.jpg
+    subject: weapon:flycatcher
+    title:
+      zh: "401 飞行队捕蝇鸟式飞越鹰号航母（1930）"
+      en: "A Fairey Flycatcher of 401 Flight over HMS Eagle, 1930"
+    part: aircraft
+    view: detail
+    date: 1930
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "未署名（Commons 记作 British government employee）"
+    credit: "英国政府雇员摄影，经 Commons File:Fairey Flycatcher.jpg 数字化"
+    source_url: "https://commons.wikimedia.org/wiki/File:Fairey_Flycatcher.jpg"
+    width: 1101
+    height: 584
+    note: "捕蝇鸟式低空掠过鹰号航母飞行甲板，是这批图里唯一的舰上作业场景——机翼展开状态下的翼展、张线与起落架整流罩与航母甲板宽度的比例关系可以互相比对。画面清晰度一般（1101 px 原始尺寸，已是站内落盘尺寸），细节放大有限。Commons 的授权模板为 PD-UKGov（英国政府作品，Crown Copyright 已过期），A 档。"
+
+  - id: fairy-iiif-hms-furious-landing
+    file: /img/weapons/fairy-iiif-hms-furious-landing.jpg
+    subject: weapon:fairy-iiif
+    title:
+      zh: "费雷 IIIF 着舰暴怒号（1930 年代初，可见高架拦阻索）"
+      en: "A Fairey IIIF landing on HMS Furious, early 1930s"
+    part: aircraft
+    view: detail
+    date: 1930-1933
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "未署名（U.S. Naval Historical Center Photograph）"
+    credit: "U.S. Naval Historical Center（今 NHHC），经 history.navy.mil 照片库"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Furious-19.jpg"
+    width: 740
+    height: 552
+    primary: true
+    note: "费雷 IIIF 正压低机头进场、即将触到暴怒号甲板，前景一排高架拦阻索（elevated arresting wires）与甲板两侧的引导人员都入画——这是 1930 年代初英国航母拦阻装置的原始形态，也是 Commons 上该型唯一一张舰上作业照。**胡德号搭载的费雷 IIIF 影像在 Commons 未检出**（Category:Fairey III / IIIF 全库 22 件，均为陆基或他国机，另有智利、阿根廷各一件且分辨率过低），故按机型归档，不冒称胡德号本舰。此件为美国海军历史中心收藏的英国航母照片，属 PD-USGov，A 档；原始落盘尺寸即 740 px，未再缩放。"
+
+  - id: type-271-hmcs-assiniboine-bridge
+    file: /img/weapons/type-271-hmcs-assiniboine-bridge.jpg
+    subject: weapon:type-271
+    title:
+      zh: "阿西尼博因号舰桥上的 Type 271 水面搜索雷达"
+      en: "Type 271 surface-search radar above the bridge of HMCS Assiniboine"
+    part: radar
+    view: detail
+    date: 1943
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Ken Macpherson / Naval Museum of Alberta"
+    credit: "加拿大艾伯塔海军博物馆，底片号 IKMD-03388"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMCS_Assiniboine_IKMD-03388.jpg"
+    width: 1280
+    height: 838
+    primary: true
+    note: "舰桥上方那盏圆鼓状 Type 271 天线罩与两侧 20 mm 厄利孔同框，是花级/河级护航舰装 271 的典型位置。原片 Commons 只标「约 1943—1944」，具体月份不明，故 date 只写年份。"
+
+  - id: type-271-hmas-barcoo-bridge
+    file: /img/weapons/type-271-hmas-barcoo-bridge.jpg
+    subject: weapon:type-271
+    title:
+      zh: "巴库号舰桥上方、两舷探照灯之间的 Type 271 雷达"
+      en: "Type 271 radar between the searchlights above the bridge of HMAS Barcoo"
+    part: radar
+    view: bow
+    date: 1944-02-18
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "澳大利亚战争纪念馆（摄影者未署名）"
+    credit: "Australian War Memorial, 300353（Naval Historical Collection）"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMAS_Barcoo_(300353).jpg"
+    width: 640
+    height: 482
+    note: "AWM 原始图注直接点名「舰桥上方、两侧探照灯之间为 Type 271 水面搜索雷达」，是 271 安装位置的权威说明。局限是整舰远景，天线罩本体只有几个像素，看不出鼓形罩内部结构。"
+
+  - id: type-272-hmas-quality-lantern
+    file: /img/weapons/type-272-hmas-quality-lantern.jpg
+    subject: weapon:type-272
+    title:
+      zh: "品质号探照灯平台上换装的 Type 272 雷达罩"
+      en: "Type 272 radar lantern replacing the searchlight platform of HMAS Quality"
+    part: radar
+    view: broadside
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "SOI Sydney，澳大利亚武装部队"
+    credit: "Australian War Memorial（PD-Australia）"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMAS_Quality_(G62)_underway_at_sea,_circa_in_late_1945.JPG"
+    width: 850
+    height: 408
+    primary: true
+    note: "AWM 图注说明该舰把舯部探照灯换成了 Type 272 雷达罩（lantern）。这张图恰好说明 272 与 271 共用同一种鼓形/圆筒罩外形——单看外形无法区分两型，这正是 272 常被误标成 271 的原因。整舰远景，细节有限。"
+
+  - id: type-277-hms-swiftsure-aerial
+    file: /img/weapons/type-277-hms-swiftsure-aerial.jpg
+    subject: weapon:type-277
+    title:
+      zh: "敏捷号上的 Type 277 网状抛物面天线"
+      en: "Type 277 wire-mesh parabolic aerial on HMS Swiftsure"
+    part: radar
+    view: detail
+    date: 1944-1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Davies, F A（Lt），皇家海军官方摄影师"
+    credit: "Imperial War Museums, A 24893"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A24893.jpg"
+    width: 800
+    height: 608
+    primary: true
+    note: "目前最清楚的 Type 277 单张：为减重与减风压而用金属网做的抛物面、左侧纵向稳定驱动电机、右侧旋转波导接头都在画面内，图注还标出了波导编号 W7897。原件藏帝国战争博物馆（IWM A 24893），战时皇家海军官方摄影，Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: type-277-hmcs-copper-cliff-outfit-auj
+    file: /img/weapons/type-277-hmcs-copper-cliff-outfit-auj.jpg
+    subject: weapon:type-277
+    title:
+      zh: "库珀克利夫号主桅附近的 Type 277（Outfit AUJ）抛物面天线"
+      en: "Type 277 (Outfit AUJ) parabolic antenna near the mainmast of HMCS Copper Cliff"
+    part: radar
+    view: detail
+    date: 1944
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "皇家海军摄影师（未署名）"
+    credit: "forposterityssake.ca，HMCS Copper Cliff K495 档案（PD Canada）"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMSC_Copper_Cliff_radars.jpg"
+    width: 1241
+    height: 767
+    note: "库珀克利夫号是专门试验「护卫舰装 Type 277」的试验舰，图注明确 Outfit AUJ 抛物面约在画面中央。局限是整舰侧视，天线轮廓可辨、驱动与波导细节不可辨。"
+
+  - id: type-279-hms-triumph-mainmast
+    file: /img/weapons/type-279-hms-triumph-mainmast.jpg
+    subject: weapon:type-279
+    title:
+      zh: "凯旋号主桅上的 Type 279 对空搜索天线"
+      en: "Type 279 air-search radar on the mainmast of HMS Triumph"
+    part: radar
+    view: broadside
+    date: 1950-1953
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "澳大利亚武装部队"
+    credit: "Australian War Memorial（PD-Australia）"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Triumph_(R16)_off_Iwakuni.jpg"
+    width: 450
+    height: 341
+    primary: true
+    note: "AWM 图注逐项点名「前桅顶 281b、岛式上层建筑 277、主桅 279」，一张图可同时核对三种天线的相对位置。局限是朝鲜战争期远景，279 那副大网状阵只剩轮廓，看不出网格与馈线。"
+
+  - id: type-279b-hms-glory-masthead
+    file: /img/weapons/type-279b-hms-glory-masthead.jpg
+    subject: weapon:type-279b
+    title:
+      zh: "光荣号桅顶的 Type 279B 天线与 YE 归航信标"
+      en: "Type 279B aerial and YE homing beacon at the masthead of HMS Glory"
+    part: radar
+    view: broadside
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "澳大利亚武装部队"
+    credit: "Australian War Memorial（PD-Australia）"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Glory_(R62)_at_Sydney_1945.jpg"
+    width: 450
+    height: 341
+    primary: true
+    note: "图注明确桅顶为 Type 279B 加 YE 归航信标，是 279B 最直接的实照标注。450 px 源、整舰远景，能看出「桅顶横桁上的长条网状阵」这一 279 系特征，但阵面网格与馈线不可辨。"
+
+  - id: type-281-hms-illustrious-foremast
+    file: /img/weapons/type-281-hms-illustrious-foremast.jpg
+    subject: weapon:type-281
+    title:
+      zh: "光辉号前后桅顶的 Type 281 天线"
+      en: "Type 281 aerials at the heads of the fore and main masts of HMS Illustrious"
+    part: radar
+    view: overhead
+    date: 1940-1941
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "澳大利亚武装部队"
+    credit: "Australian War Memorial, 302415（PD-Australia）"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Illustrious_(AWM_302415).jpg"
+    width: 640
+    height: 505
+    primary: true
+    note: "AWM 图注点名前桅与主桅顶各一部 Type 281，前桅那部顶上还叠着 Type 291、桅身大圆筒是 Type 72 归航信标，可用于区分 281 与 291 的外形差异。注意图注写 c.1942，而 Commons 结构化日期写「约 1940—1941」，两者不一致，date 按区间处理。"
+
+  - id: type-281-hms-swiftsure-rx-cabin
+    file: /img/weapons/type-281-hms-swiftsure-rx-cabin.jpg
+    subject: weapon:type-281
+    title:
+      zh: "敏捷号雷达舱内的 Type 281 接收机"
+      en: "Type 281 receiver (281 RX) in the radar cabin of HMS Swiftsure"
+    part: radar
+    view: detail
+    date: 1944-1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Davies, F A（Lt），皇家海军官方摄影师"
+    credit: "Imperial War Museums, A 24891"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A24891.jpg"
+    width: 800
+    height: 592
+    note: "拍的是舱内 281 接收机机柜与操作台，适合说明 281 的设备形态与舱室布置，但看不到桅顶天线阵。原件藏帝国战争博物馆（IWM A 24891），Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: type-281b-hms-swiftsure-aerial
+    file: /img/weapons/type-281b-hms-swiftsure-aerial.jpg
+    subject: weapon:type-281b
+    title:
+      zh: "敏捷号上的 Type 281B 天线"
+      en: "Type 281B aerial on HMS Swiftsure"
+    part: radar
+    view: detail
+    date: 1944-1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Davies, F A（Lt），皇家海军官方摄影师"
+    credit: "Imperial War Museums, A 24895"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A24895.jpg"
+    width: 800
+    height: 611
+    primary: true
+    note: "IWM 图注只写「281 B Aerial on board HMS SWIFTSURE」，是 281B 最直接的实物标注；画面为桅顶近景，横向振子与支撑桁架看得清。原件藏帝国战争博物馆（IWM A 24895），Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: type-281b-hms-colossus-stump-mast
+    file: /img/weapons/type-281b-hms-colossus-stump-mast.jpg
+    subject: weapon:type-281b
+    title:
+      zh: "巨人号短桅上的 Type 281B 对空搜索天线"
+      en: "Type 281B air-search aerial on the stump mast of HMS Colossus"
+    part: radar
+    view: overhead
+    date: 1945-09
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "摄影者未署名"
+    credit: "Australian War Memorial（PD-Australia）"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Colossus_(R15)_off_Shanghai_1945.jpg"
+    width: 640
+    height: 484
+    note: "空中侧视，图注点名短桅上那副是 Type 281B；俯视角度能看清天线在轻舰队航母上的位置关系，但天线本体太小，看不出细节。"
+
+  - id: type-282-piet-hein-hazemeyer
+    file: /img/weapons/type-282-piet-hein-hazemeyer.jpg
+    subject: weapon:type-282
+    title:
+      zh: "皮特·海因号 Hazemeyer 炮座配用的 Type 282 火控雷达"
+      en: "Type 282 fire-control radar on the Hazemeyer mounting of Hr.Ms. Piet Hein"
+    part: radar
+    view: detail
+    date: 1946-01
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "澳大利亚武装部队"
+    credit: "Australian War Memorial（PD-Australia）"
+    source_url: "https://commons.wikimedia.org/wiki/File:Dutch_destroyer_Piet_Hein_(G94)_at_Melbourne_1946.jpg"
+    width: 450
+    height: 289
+    primary: true
+    note: "AWM 图注直接写明「40 mm 博福斯双联 Hazemeyer 炮座配 Type 282 火控雷达」，可看到 282 的小型天线装在炮座一侧。同一张图注还提到 285 与 291，看图时注意区分，别把另外两副算到 282 头上；450 px 源，天线细节有限。"
+
+  - id: type-285-hmas-warramunga-director
+    file: /img/weapons/type-285-hmas-warramunga-director.jpg
+    subject: weapon:type-285
+    title:
+      zh: "瓦拉蒙加号高角指挥仪上的 Type 285 火控雷达"
+      en: "Type 285 fire-control radar on the high-angle director of HMAS Warramunga"
+    part: radar
+    view: broadside
+    date: 1944
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "A. J. Davies，澳大利亚武装部队"
+    credit: "Australian War Memorial（PD-Australia）"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMAS_Warramunga_(I44)_at_anchor_c1944.JPG"
+    width: 850
+    height: 636
+    primary: true
+    note: "图注点名高角指挥仪上装 Type 285，桅顶另有一部美制 SC；侧视全舰能看清 285 装在指挥仪顶部这一位置关系，天线本体偏小。"
+
+  - id: type-285-hmas-nepal-director
+    file: /img/weapons/type-285-hmas-nepal-director.jpg
+    subject: weapon:type-285
+    title:
+      zh: "尼泊尔号舰桥后高角指挥仪塔上的 Type 285"
+      en: "Type 285 on the high-angle director tower abaft the bridge of HMAS Nepal"
+    part: radar
+    view: broadside
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "摄影者未署名"
+    credit: "Australian War Memorial, 301077（Naval Historical Collection，PD-Australia）"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMAS_Nepal_AWM-301077.jpg"
+    width: 450
+    height: 336
+    note: "同一张图注同时点名桅顶 Type 291、舯部探照灯平台上的 Type 271、舰桥后高角指挥仪塔上的 Type 285，适合一次对照三种天线的舰上位置。缺点同样是 450 px 远景，天线细节不可辨。"
+
+  - id: type-293-hms-swiftsure-avr
+    file: /img/weapons/type-293-hms-swiftsure-avr.jpg
+    subject: weapon:type-293
+    title:
+      zh: "敏捷号桅上的 Type 293（242）AVR 天线组"
+      en: "Type 293 (242) AVR antennas on HMS Swiftsure"
+    part: radar
+    view: detail
+    date: 1944-1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Davies, F A（Lt），皇家海军官方摄影师"
+    credit: "Imperial War Museums, A 24890"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A24890.jpg"
+    width: 800
+    height: 602
+    primary: true
+    note: "IWM 图注写「A 293 (242) AVR antennae」，即 Type 293 的对空/对海搜索天线组，是 293 在巡洋舰桅上的实拍；横桁上的振子组可辨，馈电细节看不出。原件藏帝国战争博物馆（IWM A 24890），Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: type-293-hmas-tobruk-masthead
+    file: /img/weapons/type-293-hmas-tobruk-masthead.jpg
+    subject: weapon:type-293
+    title:
+      zh: "托布鲁克号桅顶的 Type 293 对空/对海搜索天线"
+      en: "Type 293 air/surface-search aerial at the masthead of HMAS Tobruk"
+    part: radar
+    view: overhead
+    date: 1954-08
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "摄影者未署名"
+    credit: "Australian War Memorial, 301573（Naval Historical Collection，PD-Australia）"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMAS_Tobruk_(AWM_301573).jpg"
+    width: 450
+    height: 331
+    note: "AWM 图注点名桅顶为 Type 293，并同时指出指挥仪上的 275 与炮座上的 262，可用来分辨搜索雷达与炮术雷达的不同安装位置。450 px 源、空中远景，天线细节不可辨。"
+
+  - id: hacs-mk4-hms-duke-of-york-table
+    file: /img/weapons/hacs-mk4-hms-duke-of-york-table.jpg
+    subject: weapon:hacs-mk4
+    title:
+      zh: "约克公爵号上的 HACS Mk IV 高角火控台"
+      en: "HACS Mk IV high-angle fire-control table aboard HMS Duke of York"
+    part: radar
+    view: detail
+    date: 1941-1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "英国海军部（UK Admiralty）"
+    credit: "Imperial War Museums, object 205150895"
+    source_url: "https://commons.wikimedia.org/wiki/File:HACS_MK_IV_Table_on_board_HMS_Duke_of_York.jpg"
+    width: 1280
+    height: 962
+    primary: true
+    note: "偏转屏操作手坐在偏转屏前、距离标绘手站在对面，是 HACS Mk IV 台位分工的实拍，能看清偏转屏、手轮与标绘台的关系。Commons 未给原始拍摄日期（只记了 2016 年的数字化日期），date 按二战期处理。原件藏帝国战争博物馆（IWM object 205150895），Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: hacs-mk4-kgv-525-director
+    file: /img/weapons/hacs-mk4-kgv-525-director.jpg
+    subject: weapon:hacs-mk4
+    title:
+      zh: "英王乔治五世号上正在操作的 5.25 in 高炮指挥仪"
+      en: "The 5.25-inch gun director manned aboard HMS King George V"
+    part: radar
+    view: detail
+    date: 1941-1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Coote, R G G（Lt），皇家海军官方摄影师"
+    credit: "Imperial War Museums, A 3883"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A3883.jpg"
+    width: 800
+    height: 604
+    note: "拍的是英王乔治五世号 5.25 in 高平两用炮指挥仪（HACS Mk IV 系统的指挥仪端），瞄准手与测距仪窗口都清楚。限制要说清：IWM 原图注只写「a director for the 5.25 inch guns」，没有点名 Mk 型号，Mk IV 的归属是按该级舰装备推定，未经原始标注确认。原件藏帝国战争博物馆（IWM A 3883），Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: pom-pom-director-mk3-kgv-controls
+    file: /img/weapons/pom-pom-director-mk3-kgv-controls.jpg
+    subject: weapon:pom-pom-director-mk3
+    title:
+      zh: "俯视英王乔治五世号的 pom-pom 指挥仪操作端"
+      en: "Looking down on the pom-pom director controls of HMS King George V"
+    part: radar
+    view: detail
+    date: 1941-1945
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Coote, R G G（Lt），皇家海军官方摄影师"
+    credit: "Imperial War Museums, A 3651"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A3651.jpg"
+    width: 800
+    height: 602
+    primary: true
+    note: "俯视 2 磅 pom-pom 指挥仪内部，操作手轮、瞄准具与操作手站位都在画面内，是这套指挥仪人机界面的直观图。限制：IWM 原图注只写「pom-pom director」，未标 Mk 号，Mk III 的归属按英王乔治五世级装备推定，未经原始标注确认。原件藏帝国战争博物馆（IWM A 3651），Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: fumo-213-wurzburg-d-schematic
+    file: /img/weapons/fumo-213-wurzburg-d-schematic.jpg
+    subject: weapon:fumo-213
+    title:
+      zh: "Würzburg-D 型（FuMO 213 的基型）雷达站结构分解图"
+      en: "Würzburg Type D radar station, the land-based parent of FuMO 213"
+    part: radar
+    view: detail
+    date: 1945-04
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "美国陆军部（US War Department）"
+    credit: "TM E 11-219《Directory of German Radar Equipment》，图号 TL 47770"
+    source_url: "https://commons.wikimedia.org/wiki/File:Wurzburg_type_D_diagram.jpg"
+    width: 1280
+    height: 1847
+    primary: true
+    note: "这是陆基 Würzburg-D 的设备图，不是 FuMO 213 的舰上实照——Commons 全库检索（含 insource 正则与 Category:FuMO / Seetakt / Würzburg）均无标为 FuMO 213 的舰载照片，此图是唯一带「Würzburg Type D」原始标注的公开资料。FuMO 213 即 Würzburg-D 的舰载化型，天线碟与机柜同源，图中逐项标出 CRT 显示、距离手轮、方位与俯仰手轮及主显示单元，可用来认这套设备；差异是陆基型基座与操作台为固定式，舰载型另有稳定基座，本图反映不出。型号归属按美军 TM E 11-219 的 Type D 标注，舰载改型部分未经原始标注确认。"
+
+  - id: pom-pom-director-mk3-kgv-crew
+    file: /img/weapons/pom-pom-director-mk3-kgv-crew.jpg
+    subject: weapon:pom-pom-director-mk3
+    title:
+      zh: "英王乔治五世号 pom-pom 指挥仪内的操作班组"
+      en: "The pom-pom director crew closed up aboard HMS King George V"
+    part: radar
+    view: detail
+    date: 1941-01
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Coote, R G G（Lt），皇家海军官方摄影师"
+    credit: "Imperial War Museums, A 2873"
+    source_url: "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A2873.jpg"
+    width: 1280
+    height: 967
+    note: "指挥仪内全班人马就位，瞄准手、俯仰/方位手轮与俯视潜望镜一目了然，图注还特别指出「每具指挥仪前方都装有测距仪」。拍摄缘于 1941 年 1 月哈利法克斯勋爵乘该舰赴美。限制同另一张：IWM 只写 pom-pom director，未标 Mk 号，Mk III 归属按该级舰装备推定，未经原始标注确认。原件藏帝国战争博物馆（IWM A 2873），Crown Copyright 已过期，Commons 副本标为公有领域；IWM 官网对其网站副本另有非商业条款，本站引用的是 Commons 的公有领域版本。"
+
+  - id: fumb-4-prinz-eugen-ant4
+    file: /img/weapons/fumb-4-prinz-eugen-ant4.jpg
+    subject: weapon:fumb-4
+    title:
+      zh: "欧根亲王号主桅上的 FuMB Ant. 4 被动探测天线（原片手写标注）"
+      en: "FuMB Ant. 4 passive-detector antenna on the mainmast of Prinz Eugen, as annotated on the original print"
+    part: radar
+    view: detail
+    date: 1945-05
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "美国海军（摄影者未署名）"
+    credit: "U.S. Navy photo NH 96442（Naval History and Heritage Command）"
+    source_url: "https://commons.wikimedia.org/wiki/File:FuMO_25_radar_antenna_aboard_the_German_cruiser_Prinz_Eugen,_in_1945_(NH_96442).jpg"
+    width: 1280
+    height: 870
+    primary: true
+    note: "底片上直接手写了「FuMO 25」与「FuMB Ant. 4」两处箭头标注，FuMB 那处指的正是主桅下方那组被动探测天线，编号出自原始标注而非后人推断。要注意史料分歧：Commons 的英文说明把这套 FuMB 称作 Sumatra，而 Scharnhorst 复原图注把 FuMB 4 写作 Samos，两种说法互相冲突、尚无定论，本站只按原片手写的 Ant. 4 编号登记，不替你裁定 Sumatra/Samos。"
+
+  - id: fumb-7-u889-naxos-tunis
+    file: /img/weapons/fumb-7-u889-naxos-tunis.jpg
+    subject: weapon:fumb-7
+    title:
+      zh: "U-889 桅上的 FuMB 7 Naxos 与 FuMB 26 Tunis 天线"
+      en: "FuMB 7 Naxos and FuMB 26 Tunis antennas on the mast of U-889"
+    part: radar
+    view: detail
+    date: 1945-05-25
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "PO George Gadde，加拿大皇家海军 / 加拿大国防部"
+    credit: "Library and Archives Canada, PA-137697"
+    source_url: "https://commons.wikimedia.org/wiki/File:FuMB-7_Naxos_and_FuMB-26_Tunis_antenna.jpg"
+    width: 600
+    height: 780
+    primary: true
+    note: "图注说明正对镜头的是 FuMB 7 Naxos（Fliege 型，抛物面网罩里两片叶状有源振子），它上方背对镜头的是 FuMB 26 Tunis 的喇叭天线，一张图就能区分两种被动天线的外形。照片为 U-889 投降后于 1945 年 5 月 25 日在哈利法克斯拍摄，加拿大公有领域。"
+
+  - id: type-273-belfast-masthead-antenna
+    file: /img/weapons/type-273-belfast-masthead-antenna.jpg
+    subject: weapon:type-273
+    title:
+      zh: "贝尔法斯特号主桅雷达天线（现存实物，策略 C）"
+      en: "The preserved radar antenna on HMS Belfast's mainmast"
+    part: radar
+    view: detail
+    date: 2007-11-29
+    license: cc_by_sa
+    license_tier: B
+    license_raw: "CC BY-SA 3.0"
+    author: "Rémi Kaupp (User:Korrigan)"
+    credit: "Wikimedia Commons, HMS Belfast - Raar antenna.jpg"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Belfast_-_Raar_antenna.jpg"
+    width: 1136
+    height: 1280
+    primary: true
+    note: "这是贝尔法斯特号（现为伦敦泰晤士河上的博物馆舰）主桅上的雷达天线实物近照， 不是战时照片。天线为网状抛物面反射体、装在可转动的驱动基座上，与英舰战时 厘米波雷达天线的形态一致。按 data/ships 与本站 type-273 条目，本舰 1944 年 装的是 Type 273 水面搜索 + Type 284 主炮火控 + Type 277 测高， 但 Commons 原图注只写「Main radar antenna on HMS Belfast」，未标具体型号， 因此这张图只能作为「同舰同期舰载雷达天线实物」，不能据图注确认它就是 273。 局限：型号归属靠推定，若日后查到该桅位确为 277 或 284，应改挂对应实体。 授权 CC BY-SA 3.0，作者 Rémi Kaupp；条款全文 https://creativecommons.org/licenses/by-sa/3.0/ ；直链 https://upload.wikimedia.org/wikipedia/commons/6/64/HMS_Belfast_-_Raar_antenna.jpg ； 本站仅按站内统一宽度缩放到 1280 px，未裁剪、未改作。"
+
+  - id: type-79z-illustrious-norfolk-1941
+    file: /img/weapons/type-79z-illustrious-norfolk-1941.jpg
+    subject: weapon:type-79z
+    title:
+      zh: "光辉号 1941 年诺福克船厂改装期间的舰桥与前桅"
+      en: "HMS Illustrious's island and foremast at Norfolk Navy Yard, October 1941"
+    part: radar
+    view: detail
+    date: 1941-10-04
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "U.S. Navy Bureau of Ships"
+    credit: "U.S. Navy, Norfolk Naval Shipyard, 4 October 1941"
+    source_url: "https://commons.wikimedia.org/wiki/File:USS_Chaumont_(AP-5)_at_the_Norfolk_Naval_Shipyard_on_4_October_1941.jpg"
+    width: 1280
+    height: 1243
+    primary: true
+    note: "1941 年 10 月 4 日诺福克海军船厂，前景即是正在美国做战损修理的光辉号， 画面为舰桥与前桅一带的高分辨率裁切。本舰自 1940-05-25 至 1941-12-31 按 data/ships/illustrious.yaml 的 sensors.radar.installed 装的是 Type 79Z， 1941 年 10 月正处在这个窗口内，因此图中前桅上的对空预警天线即 79Z 系统。 局限：原图注只说明这是航母光辉号，未点名雷达型号；而 79Z 在光辉号上是 临时加装的一根杆状天线，在图中与桅杆结构混在一起，无法单凭画面认定型号， 本图的价值在于给出该时期本舰前桅的真实形态与雷达位置。"
+
+  - id: type-79z-illustrious-1940-masthead
+    file: /img/weapons/type-79z-illustrious-1940-masthead.jpg
+    subject: weapon:type-79z
+    title:
+      zh: "光辉号 1940 年桅顶与雷达天线架"
+      en: "HMS Illustrious's masthead in 1940, the year Type 79Z was fitted"
+    part: radar
+    view: detail
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Royal Navy official photographer"
+    credit: "Imperial War Museums, FL 2425"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_ILLUSTRIOUS,_1940._FL2425.jpg"
+    width: 836
+    height: 1280
+    note: "1940 年光辉号官方照的桅顶裁切。本舰 1940 年 5 月完工时即装上 Type 79Z， 是世界上第一艘完工前就装雷达的航母，因此这张 1940 年照处于 79Z 装舰窗口内。 画面可见桅顶横桁与加装的杆状天线结构。 局限：IWM 原图注仅「HMS ILLUSTRIOUS, 1940. Underway.」，没有标注雷达型号； 79Z 的天线在照片上尺度很小，只能看出桅顶有横杆状加装物，无法据此判型， 本图用于定位安装位置而非展示天线细部。 IWM 编号 FL 2425；IWM 官网对其网站副本另有非商业条款， 本站引用的是 Commons 的公有领域版本。"
+
+  - id: type-79b-illustrious-1944-masthead
+    file: /img/weapons/type-79b-illustrious-1944-masthead.jpg
+    subject: weapon:type-79b
+    title:
+      zh: "光辉号 1944 年主桅顶的对空预警天线"
+      en: "HMS Illustrious's masthead air-warning antenna, 1944"
+    part: radar
+    view: detail
+    date: 1944-04
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "U.S. Navy (Commander Joseph C. Clifton album)"
+    credit: "U.S. Navy National Museum of Naval Aviation photo No. 1977.031.085.071"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_Illustrious_bow_1944.jpg"
+    width: 692
+    height: 1280
+    primary: true
+    note: "1944 年 3 月至 5 月间光辉号在印度洋与萨拉托加号协同时的舰影， 此处裁到桅顶。按 data/ships/illustrious.yaml，本舰自 1943-06-01 起 sensors.radar.installed 记的是 Type 79B 对空预警雷达（同期还有 281B、272、282、285）， 1944 年 4 月在这个窗口内，桅顶这一组对空预警天线即属于 79B 系统。 局限：原图注只写「HMS Illustrious (87) at sea in the Indian Ocean」， 未点名 79B；图中桅顶同时叠有多型天线（281B/79B）， 单凭画面无法把某一段结构确指为 79B，型号归属依据是 ships yaml 的装舰清单。"
+
+  - id: type-284-hood-1941-last-photo
+    file: /img/weapons/type-284-hood-1941-last-photo.jpg
+    subject: weapon:type-284
+    title:
+      zh: "胡德号 1941 年 5 月 24 日最后时刻的前桅"
+      en: "HMS Hood's foremast on 24 May 1941, the ship's last photograph"
+    part: radar
+    view: other
+    date: 1941-05-24
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Unknown Royal Navy photographer aboard HMS Prince of Wales"
+    credit: "Imperial War Museums, HU 50190"
+    source_url: "https://commons.wikimedia.org/wiki/File:HOOD023.jpg"
+    width: 1280
+    height: 948
+    primary: true
+    note: "1941 年 5 月 24 日自威尔士亲王号拍下的胡德号最后影像，此处裁到上层建筑与前桅。 本舰在 1941-03-17 至 1941-05-24 之间按 data/ships/hood.yaml 装的是 Type 284 主炮测距雷达与 Type 279M 对空预警雷达，拍照当天正在这个窗口内， 因此桅上确有 284。 重要局限：照片中胡德号是远景，桅顶天线只占画面极小区域，无法辨认天线结构， 本图只能用于定位 284 在本舰的安装位置与当时的桅杆形态，不能作为天线细部证据。 另需注意本站 type-284 条目已记录：为装 284 拆除了前上桅， 图中前桅形态正是改装后的状态。 IWM 编号 HU 50190；IWM 官网对其网站副本另有非商业条款， 本站引用的是 Commons 的公有领域版本。"
+
+  - id: type-279m-hood-1941-last-photo
+    file: /img/weapons/type-279m-hood-1941-last-photo.jpg
+    subject: weapon:type-279m
+    title:
+      zh: "胡德号 1941 年 5 月 24 日最后时刻的主桅"
+      en: "HMS Hood's mainmast on 24 May 1941, the ship's last photograph"
+    part: radar
+    view: other
+    date: 1941-05-24
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Unknown Royal Navy photographer aboard HMS Prince of Wales"
+    credit: "Imperial War Museums, HU 50190"
+    source_url: "https://commons.wikimedia.org/wiki/File:HOOD023.jpg"
+    width: 1103
+    height: 1280
+    primary: true
+    note: "同一张 HU 50190 的主桅部分裁切。本站 type-279m 条目记载 279M 装在主桅高处， 与 Type 284 同批加装，役期为 1941-03-17 至 1941-05-24（data/ships/hood.yaml）， 拍照当日正处窗口内。 重要局限：与 284 那张同理，胡德号在画面中是远景，主桅天线结构无法辨认， 本图只用于定位 279M 的安装位置，不能充当天线细部实照。 IWM 编号 HU 50190；IWM 官网对其网站副本另有非商业条款， 本站引用的是 Commons 的公有领域版本。"
+
+  - id: fumo-23-prinz-eugen-seetakt-foretop
+    file: /img/weapons/fumo-23-prinz-eugen-seetakt-foretop.jpg
+    subject: weapon:fumo-23
+    title:
+      zh: "欧根亲王号前桅楼的 Seetakt 床垫形天线阵（策略 B）"
+      en: "Seetakt mattress antenna on Prinz Eugen's foretop"
+    part: radar
+    view: detail
+    date: 1946-06-14
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "U.S. Navy, Naval Photographic Center photo 80-G-627444"
+    credit: "U.S. Navy 80-G-627444, Operation Crossroads, 14 June 1946"
+    source_url: "https://commons.wikimedia.org/wiki/File:Cruiser_Prinz_Eugen_anchored_in_Bikini_Lagoon_on_14_June_1946.jpg"
+    width: 1280
+    height: 800
+    primary: true
+    note: "这是欧根亲王号（姊妹级重巡）上的同族 Seetakt 天线，不是提尔皮茨号本舰。 图中前桅楼正面那面矩形网状「床垫」（Matratze）阵清晰可辨， 即德国海军 Seetakt 系列海上搜索雷达的标准天线形态。 Commons 原图注明确写到「the German radars atop the director and mainmast」。 为什么可以用：FuMO 23 属 Seetakt 系列、天线就是这种矩形床垫阵， 提尔皮茨号本舰 1941-02-25 至 1941-12-31 装三台 FuMO 23 （见 data/ships/tirpitz.yaml）；本舰自身的清楚实照未找到， 故用同族天线实物补足形态说明。 局限：这是欧根亲王号 1946 年的状态，那艘舰的具体型号与提尔皮茨号未必相同， 本图不能证明提尔皮茨号装的就是 23，只说明 Seetakt 天线长什么样。"
+
+  - id: fumo-23-prinz-eugen-1941-bedspring
+    file: /img/weapons/fumo-23-prinz-eugen-1941-bedspring.jpg
+    subject: weapon:fumo-23
+    title:
+      zh: "1941 年欧根亲王号测距仪护盾前的床垫形雷达天线（策略 B）"
+      en: "Prinz Eugen's 1941 \"bedspring\" Seetakt antennas on the rangefinder shields"
+    part: radar
+    view: detail
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "U.S. Naval Historical Center Photograph"
+    credit: "U.S. Naval Historical Center, photo h69735c"
+    source_url: "https://commons.wikimedia.org/wiki/File:Prinz_Eugen_Kiel.jpg"
+    width: 1280
+    height: 805
+    note: "这是欧根亲王号 1941 年在基尔时的同族 Seetakt 天线，不是提尔皮茨号本舰。 Commons 原图注是同期最直接的一条文字证据： 「Note \"bedspring\" radar antennas mounted on the front of her rangefinder shields. At this time, German radar was used for rangefinding only, not for deflection.」 即当时德舰把床垫形天线直接装在测距仪护盾前面。 为什么可以用：提尔皮茨号的 FuMO 23 同样分装在前桅楼与前后测距仪塔上 （data/ships/tirpitz.yaml），本图给出的正是「测距仪塔上的 Seetakt 天线」这一安装方式。 局限：同族不等于同型，欧根亲王号当年装的严格说属 Seetakt 早期型， 不能据此断定提尔皮茨号那三台的具体型号。"
+
+  - id: fumo-26-tirpitz-foretop
+    file: /img/weapons/fumo-26-tirpitz-foretop.jpg
+    subject: weapon:fumo-26
+    title:
+      zh: "提尔皮茨号前桅楼的雷达平台与天线"
+      en: "Tirpitz's foretop radar platform and antenna"
+    part: radar
+    view: detail
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Unknown (German wartime photograph)"
+    credit: "Wikimedia Commons, German Battleship Tirpitz.jpg"
+    source_url: "https://commons.wikimedia.org/wiki/File:German_Battleship_Tirpitz.jpg"
+    width: 1280
+    height: 802
+    primary: true
+    note: "提尔皮茨号本舰艏向近照，此处裁到前桅楼与测距仪平台一带。 本站 fumo-26 条目记载：1944 年春夏换装约 3 米 × 6 米的大床垫天线， 专题站据天线尺寸判为 FuMO 26，共三台（data/ships/tirpitz.yaml 记 1944-01-01 起）。 画面中前桅楼正面的圆形基座与两侧平台结构即雷达安装位。 重要局限：这张照片的原图注只有「German Battleship Tirpitz」，无日期、无型号、 无作者；本站无法确认它拍于 1944 年换装之后，也无法从画面辨认出 3×6 米床垫阵的 完整轮廓，因此型号归属依据是 ships yaml 的装备记录，不是图注， 本图实际作用是给出该安装位的真实形态。"
+
+  - id: fumo-27-tirpitz-altafjord-superstructure
+    file: /img/weapons/fumo-27-tirpitz-altafjord-superstructure.jpg
+    subject: weapon:fumo-27
+    title:
+      zh: "阿尔塔峡湾中的提尔皮茨号上层建筑"
+      en: "Tirpitz's superstructure at Alta Fjord, Norway"
+    part: radar
+    view: other
+    date: 1943
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "tormentor4555 (Commons uploader)"
+    credit: "Wikimedia Commons, Tirpitz Anchored in the Alta Fjord (1943-1944)"
+    source_url: "https://commons.wikimedia.org/wiki/File:Tirpitz_Anchored_in_the_Alta_Fjord,_in_northern_Norway,_protected_by_anti-torpedo_nets_(1943-1944)._(51055432497).jpg"
+    width: 1280
+    height: 624
+    primary: true
+    note: "1943—1944 年提尔皮茨号在挪威阿尔塔峡湾锚地的侧影，裁到上层建筑与前桅一带。 本站 fumo-27 条目记载：1941 年夏后部测距仪塔先装它的天线， 次年年初前桅楼又加一座雷达塔装同一型；data/ships/tirpitz.yaml 记 1942-01-01 至 1943-12-31 为「FuMO 27 + FuMO 4 Samos」时期，本照落在这个窗口内。 重要局限：Commons 该文件用的是 CC Public Domain Mark，原始出处与拍摄者不明， 图注只有「Tirpitz Anchored in the Alta Fjord…protected by anti-torpedo nets」， 没有点名任何雷达型号；照片为远景，桅上天线无法辨认结构， 本图仅能用于交代 27 型服役期内本舰上层建筑的整体形态与雷达安装位置。"
+
+  - id: type-273-kgv-1942-arctic-convoy
+    file: /img/weapons/type-273-kgv-1942-arctic-convoy.jpg
+    subject: weapon:type-273
+    title:
+      zh: "1942 年 3 月英王乔治五世号在北极护航行动中"
+      en: "HMS King George V on Arctic convoy duty, March 1942"
+    part: radar
+    view: other
+    date: 1942-03
+    license: pd
+    license_tier: A
+    license_raw: "Public domain"
+    author: "Royal Navy official photographer"
+    credit: "Imperial War Museums (photographed from HMS Victorious)"
+    source_url: "https://commons.wikimedia.org/wiki/File:HMS_King_George_V_viewed_from_HMS_Victorious_between_2_and_9_March_1942.jpg"
+    width: 555
+    height: 450
+    note: "1942 年 3 月 2—9 日自胜利号拍下的英王乔治五世号，图为上层建筑与双桅裁切。 按 data/ships/king-george-v.yaml，本舰 1941-12-01 至 1944-06-30 装 Type 273 水面搜索雷达，拍照当月正在窗口内。 重要局限：原图注只写「HMS King George V viewed from HMS Victorious…protecting Arctic convoys」，未标注雷达型号；原始文件仅 800 px 宽，本裁切已接近原生像素， 桅上结构模糊，无法辨认 273 的方形面板天线。本图只作该时期装备状态的位置参照， 不能作为天线细部证据。IWM 官网对其网站副本另有非商业条款， 本站引用的是 Commons 的公有领域版本。"
+
+
+  - id: akagi-1925-three-deck
+    file: /img/ships/akagi-1925-three-deck.jpg
+    subject: ship:akagi
+    title:
+      zh: 三段甲板时期（1925 年）的赤城，可见上中下三层飞行甲板
+      en: Japanese aircraft carrier Akagi 1925
+    part: deck
+    view: overhead
+    date: 1925
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Akagi_1925.jpg"
+    width: 1280
+    height: 839
+    note: 三段甲板时期。上段用于着舰与大型机起飞，中段极短（15 m）只能起降轻机，下段用于大型机。
+
+  - id: akagi-three-deck-profile
+    file: /img/ships/akagi-three-deck-profile.jpg
+    subject: ship:akagi
+    title:
+      zh: 三段甲板时期的赤城侧视
+      en: JapaneseAircraftCarrierAkagi3Deck
+    part: hull_side
+    view: broadside
+    date: 1927-1935
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Sabishio(?) Yagi
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:JapaneseAircraftCarrierAkagi3Deck.jpg"
+    width: 1280
+    height: 873
+    note: 侧视可见三层飞行甲板与右舷双烟囱。此时无岛式舰桥。
+
+  - id: akagi-1939-sukumo
+    file: /img/ships/akagi-1939-sukumo.jpg
+    subject: ship:akagi
+    title:
+      zh: 1939 年宿毛湾，改装后单段甲板的赤城（右）与雾岛
+      en: Kirishima and Akagi at Sukumo Bay 1939
+    part: hull_side
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Shizuo Fukui
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Kirishima_and_Akagi_at_Sukumo_Bay_1939.jpg"
+    width: 1280
+    height: 846
+    note: 改装完成后。单段全通甲板、左舷岛式舰桥、右舷大弯烟囱。同框右侧为战列舰雾岛。
+
+  - id: akagi-1941-12-24
+    file: /img/ships/akagi-1941-12-24.jpg
+    subject: ship:akagi
+    title:
+      zh: 1941 年 12 月 24 日的赤城
+      en: Japanese aircraft carrier Akagi,December 24, 1941
+    part: hull_side
+    view: broadside
+    date: 1941-12-24
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: 作者は不明だが、真珠湾攻撃後の1941年（昭和16年）12月24日に赤城艦上で撮られたものと思われる。
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Akagi,December_24,_1941.jpg"
+    width: 1234
+    height: 892
+    note: 珍珠港作战返航后。
+
+  - id: akagi-a6m2-1941
+    file: /img/ships/akagi-a6m2-1941.jpg
+    subject: ship:akagi
+    title:
+      zh: 1941 年赤城甲板上的零式舰战
+      en: A6M2 on carrier Akagi 1941
+    part: deck
+    view: deck
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: IJN
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:A6M2_on_carrier_Akagi_1941.jpeg"
+    width: 1280
+    height: 1003
+    note: 甲板上的零式舰战（A6M2）。
+
+  - id: akagi-d3a-indian-ocean
+    file: /img/ships/akagi-d3a-indian-ocean.jpg
+    subject: ship:akagi
+    title:
+      zh: 印度洋作战期间的九九舰爆
+      en: Akagi Aichi D3A Indian Ocean raid
+    part: deck
+    view: deck
+    date: 1942-04
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: not stated
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Akagi_Aichi_D3A_Indian_Ocean_raid.jpg"
+    width: 1280
+    height: 905
+    note: 九九式舰爆（D3A）在印度洋作战期间。
+
+  - id: akagi-1942-06-04-aerial
+    file: /img/ships/akagi-1942-06-04-aerial.jpg
+    subject: ship:akagi
+    title:
+      zh: 1942 年 6 月 4 日中途岛，赤城规避攻击时的航拍（美军拍摄）
+      en: Aerial view of the Japanese aircraft carrier Akagi maneuvering on 4 June 1942 (USAF-57576)
+    part: hull_side
+    view: overhead
+    date: 1942-06-04
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_Japanese_aircraft_carrier_Akagi_maneuvering_on_4_June_1942_(USAF-57576).jpg"
+    width: 1280
+    height: 1020
+    note: 中途岛 1942-06-04，赤城规避美军攻击时的航拍（美军拍摄）。这是它沉没前最后的影像之一。
+
+  - id: akagi-deck
+    file: /img/ships/akagi-deck.jpg
+    subject: ship:akagi
+    title:
+      zh: 赤城飞行甲板细节
+      en: Japanese aircraft carrier Akagi Deck
+    part: deck
+    view: deck
+    date: 1941-1942
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: 不明。
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Akagi_Deck.jpg"
+    width: 1280
+    height: 878
+    note: 飞行甲板细节。可对照改装后 249.17 × 30.48 m 的甲板尺度。
+
+  - id: enterprise-1939
+    file: /img/ships/enterprise-1939.jpg
+    subject: ship:enterprise
+    title:
+      zh: 1939 年锚泊中的企业号
+      en: USS Enterprise (CV-6) at anchor, circa 1939 (NH 54226)
+    part: hull_side
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:USS_Enterprise_(CV-6)_at_anchor,_circa_1939_(NH_54226).jpg"
+    width: 1280
+    height: 898
+    note: 建成初期。此时无雷达、无 20mm，飞行甲板尚未染蓝。
+
+  - id: enterprise-1942-03-pearl
+    file: /img/ships/enterprise-1942-03-pearl.jpg
+    subject: ship:enterprise
+    title:
+      zh: 1942 年 3 月珍珠港的企业号（改装后）
+      en: USS Enterprise (CV-6) at Pearl Harbor, circa March 1942
+    part: hull_side
+    view: broadside
+    date: 1942-03
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:USS_Enterprise_(CV-6)_at_Pearl_Harbor,_circa_March_1942.jpg"
+    width: 1280
+    height: 945
+    note: 1942 年 3 月珍珠港改装后。已加装 30 门 20mm 与雷达。
+
+  - id: enterprise-1942-05
+    file: /img/ships/enterprise-1942-05.jpg
+    subject: ship:enterprise
+    title:
+      zh: 1942 年 5 月停泊于福特岛的企业号（中途岛出击前）
+      en: USS Enterprise (CV-6) docked at Ford Island, in May 1942
+    part: hull_side
+    view: broadside
+    date: 1942-05
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy photo 19-LCM-CV6-29695
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:USS_Enterprise_(CV-6)_docked_at_Ford_Island,_in_May_1942.jpg"
+    width: 1280
+    height: 934
+    note: 1942 年 5 月停泊福特岛，中途岛出击前夕。
+
+  - id: enterprise-deck-1942
+    file: /img/ships/enterprise-deck-1942.jpg
+    subject: ship:enterprise
+    title:
+      zh: 1942-08-07 飞行甲板前视
+      en: Flight deck view on USS Enterprise (CV-6) on 7 August 1942 (80-G-7859)
+    part: deck
+    view: deck
+    date: 1942-08-07
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Flight_deck_view_on_USS_Enterprise_(CV-6)_on_7_August_1942_(80-G-7859).jpg"
+    width: 1280
+    height: 1019
+    note: 飞行甲板前视。可对照 244.4 × 26.2 m 的甲板尺度。
+
+  - id: enterprise-vt6-tbd
+    file: /img/ships/enterprise-vt6-tbd.jpg
+    subject: ship:enterprise
+    title:
+      zh: VT-6 的 TBD-1 蹂躏者鱼雷机
+      en: Douglas TBD-1 Devastators of VT-6 in flight, circa in 1939 (NH 77104)
+    part: deck
+    view: other
+    date: 1942-04
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Douglas_TBD-1_Devastators_of_VT-6_in_flight,_circa_in_1939_(NH_77104).jpg"
+    width: 1280
+    height: 852
+    note: VT-6 的 TBD-1 蹂躏者鱼雷机。中途岛时 VT-6 的 14 架中 10 架未返——这是它们最后的样子。
+
+  - id: enterprise-sbd-vb6
+    file: /img/ships/enterprise-sbd-vb6.jpg
+    subject: ship:enterprise
+    title:
+      zh: VB-6 的 SBD-3 无畏俯冲轰炸机
+      en: Douglas SBD-3 Dauntless of VB-6 after landing on USS Yorktown (CV-5), 4 June 1942 (NH 95557)
+    part: deck
+    view: deck
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Douglas_SBD-3_Dauntless_of_VB-6_after_landing_on_USS_Yorktown_(CV-5),_4_June_1942_(NH_95557).jpg"
+    width: 1280
+    height: 1003
+    note: VB-6 的 SBD-3 无畏着陆后。中途岛当天正是 SBD 队重创了日军三艘航母。
+
+  - id: enterprise-1944-saipan
+    file: /img/ships/enterprise-1944-saipan.jpg
+    subject: ship:enterprise
+    title:
+      zh: 1944 年塞班岛外海的企业号
+      en: USS Enterprise (CV-6) anchored off Saipan, circa mid-1944 (NH 97266)
+    part: hull_side
+    view: broadside
+    date: 1944
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:USS_Enterprise_(CV-6)_anchored_off_Saipan,_circa_mid-1944_(NH_97266).jpg"
+    width: 1280
+    height: 982
+    note: 1944 年塞班岛外海。已是大改装后的形态：防雷突出部、40mm 群、SK/SM 雷达。
+
+  - id: akagi-hitokappu-bay
+    file: /img/ships/akagi-hitokappu-bay.jpg
+    subject: ship:akagi
+    title:
+      zh: 1941-11 单冠湾集结（珍珠港出击前）
+      en: Akagi Hitokappu Bay
+    part: hull_side
+    view: broadside
+    date: 1941-11
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Not stated.
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Akagi_Hitokappu_Bay.jpg"
+    width: 1280
+    height: 825
+    note: 1941 年 11 月单冠湾集结，珍珠港出击前。同框有多艘主力舰。
+
+  - id: akagi-hitokappu-deck
+    file: /img/ships/akagi-hitokappu-deck.jpg
+    subject: ship:akagi
+    title:
+      zh: 单冠湾：飞行甲板上的机群
+      en: Akagi flight deck Hitokappu Bay
+    part: deck
+    view: deck
+    date: 1941-11
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Not stated
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Akagi_flight_deck_Hitokappu_Bay.jpg"
+    width: 1280
+    height: 776
+    note: 单冠湾：飞行甲板上的机群，出击前的满编状态。
+
+  - id: akagi-ph-second-wave
+    file: /img/ships/akagi-ph-second-wave.jpg
+    subject: ship:akagi
+    title:
+      zh: 珍珠港第二波出击
+      en: Akagi Pearl Harbor Second Wave Launch
+    part: deck
+    view: deck
+    date: 1941-12-07
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Not stated.
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Akagi_Pearl_Harbor_Second_Wave_Launch.jpg"
+    width: 1280
+    height: 788
+    note: 1941-12-07 珍珠港第二波出击：赤城派出 18 架九九舰爆 + 9 架零战。
+
+  - id: akagi-post-ph
+    file: /img/ships/akagi-post-ph.jpg
+    subject: ship:akagi
+    title:
+      zh: 珍珠港作战返航后
+      en: Akagi post Pearl Harbor
+    part: hull_side
+    view: broadside
+    date: 1941-12
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Not stated
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Akagi_post_Pearl_Harbor.jpg"
+    width: 1280
+    height: 909
+    note: 珍珠港作战返航后。
+
+  - id: akagi-nagumo-staff
+    file: /img/ships/akagi-nagumo-staff.jpg
+    subject: ship:akagi
+    title:
+      zh: 南云与第一航空舰队参谋
+      en: Chuichi Nagumo with the staff of the 1st Air Fleet
+    part: other
+    view: other
+    date: 1941-1942
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown photographer for the IJN
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Chuichi_Nagumo_with_the_staff_of_the_1st_Air_Fleet.jpg"
+    width: 1280
+    height: 813
+    note: 南云忠一中将与第一航空舰队参谋。中途岛的四艘航母都归他指挥。
+
+  - id: akagi-aa-position
+    file: /img/ships/akagi-aa-position.jpg
+    subject: ship:akagi
+    title:
+      zh: 赤城防空炮位细节
+      en: Akagi AA gun position
+    part: other
+    view: detail
+    date: 1941-1942
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: "Unknown author<span style=\"display: none;\">Unknown author</span>"
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Akagi_AA_gun_position.jpg"
+    width: 1280
+    height: 1740
+    note: 赤城的防空炮位细节。可对照 12cm/45 十年式连装高角炮 6 基与 25mm 双联 14 基的布置。
+
+  - id: akagi-kaga-soryu-attack
+    file: /img/ships/akagi-kaga-soryu-attack.jpg
+    subject: ship:akagi
+    title:
+      zh: 加贺、赤城、苍龙遭攻击（1942-06-04）
+      en: Kaga, Akagi and Soryu under attack
+    part: hull_side
+    view: overhead
+    date: 1942-06-04
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Official U.S. Navy Photograph work
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Kaga,_Akagi_and_Soryu_under_attack.jpg"
+    width: 1280
+    height: 638
+    note: 1942-06-04：加贺、赤城、苍龙遭美军俯冲轰炸机攻击。三舰在同一张照片里，这是中途岛最著名的影像之一。
+
+  - id: akagi-midway-battle
+    file: /img/ships/akagi-midway-battle.jpg
+    subject: ship:akagi
+    title:
+      zh: 中途岛海战
+      en: Battle of Midway
+    part: hull_side
+    view: overhead
+    date: 1942-06-04
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Official U.S. Navy Photograph work
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Battle_of_Midway.jpg"
+    width: 1280
+    height: 911
+    note: 中途岛海战：日军航母规避攻击。
+
+  - id: akagi-air-mechanics
+    file: /img/ships/akagi-air-mechanics.jpg
+    subject: ship:akagi
+    title:
+      zh: 1941 年赤城的整备员
+      en: Akagi air mechanics 1941
+    part: deck
+    view: other
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Not stated
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Akagi_air_mechanics_1941.jpg"
+    width: 1280
+    height: 521
+    note: 1941 年赤城的整备员在甲板上作业。
+
+  - id: akagi-indian-ocean
+    file: /img/ships/akagi-indian-ocean.jpg
+    subject: ship:akagi
+    title:
+      zh: 1942-04-05 印度洋作战
+      en: Akagi Indian Ocean 5 April 1942
+    part: hull_side
+    view: broadside
+    date: 1942-04-05
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: not stated
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Akagi_Indian_Ocean_5_April_1942.jpg"
+    width: 1280
+    height: 893
+    note: 1942-04-05 印度洋作战。当日赤城的舰载机击沉英国重巡康沃尔号与多塞特郡号。
+
+  - id: akagi-hiei-kirishima
+    file: /img/ships/akagi-hiei-kirishima.jpg
+    subject: ship:akagi
+    title:
+      zh: 赤城与比叡、雾岛（珍珠港出击前）
+      en: Akagi Hiei Kirishima Pearl Harbor
+    part: hull_side
+    view: broadside
+    date: 1941-11
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: "Unknown author<span style=\"display: none;\">Unknown author</span>"
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Akagi_Hiei_Kirishima_Pearl_Harbor.jpg"
+    width: 1182
+    height: 785
+    note: 赤城与战列舰比叡、雾岛同框（珍珠港出击前集结）。
+
+  - id: enterprise-vb6-attack-kido
+    file: /img/ships/enterprise-vb6-attack-kido.jpg
+    subject: ship:enterprise
+    title:
+      zh: VB-6 与 VS-6 攻击日军机动部队（1942-06-04，企业号机队战绩）
+      en: "Attack of VB6 & VS6 on Kido Butai"
+    part: other
+    view: other
+    date: 1942-06-04
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: "<p>J. R. PENLAND  Lieutenant, U.S. Navy,  </p> Commander, Bombing Squadron Six"
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Attack_of_VB6_%26_VS6_on_Kido_Butai.jpg"
+    width: 400
+    height: 472
+    note: 麦克拉斯基队的手绘航线图。图上标着「VB6 ATTACK SIGNAL GIVEN AT THIS POINT」与「A VT SQUADRON SEEN AT THIS POINT BEING ATTACKED BY ZERO FIGHTERS」——这张图直接证明了鱼雷机（VT）的牺牲把日军战斗机吸引到低空，为俯冲轰炸机开了路。原图为手绘示意图，扫描尺寸仅 400×472。
+
+  - id: enterprise-vs6-1941
+    file: /img/ships/enterprise-vs6-1941.jpg
+    subject: ship:enterprise
+    title:
+      zh: 1941-10-27：VS-6 的 SBD-2 飞越企业号
+      en: Douglas SBD-2 Dauntless of VS-6 in flight over USS Enterprise (CV-6) on 27 October 1941 (80-G-6678)
+    part: deck
+    view: other
+    date: 1941-10-27
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Douglas_SBD-2_Dauntless_of_VS-6_in_flight_over_USS_Enterprise_(CV-6)_on_27_October_1941_(80-G-6678).jpg"
+    width: 1280
+    height: 1011
+    note: 1941-10-27：VS-6 的 SBD-2 飞越企业号。途中岛前八个月。
+
+  - id: enterprise-1942-10-bomb-near
+    file: /img/ships/enterprise-1942-10-bomb-near.jpg
+    subject: ship:enterprise
+    title:
+      zh: 1942-10-26：炸弹在企业号附近爆炸
+      en: Bomb explodes near USS Enterprise (CV-6) during the Battle of Santa Cruz Islands, 26 October 1942 (80-G-30202)
+    part: hull_side
+    view: broadside
+    date: 1942-10-26
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Bomb_explodes_near_USS_Enterprise_(CV-6)_during_the_Battle_of_Santa_Cruz_Islands,_26_October_1942_(80-G-30202).jpg"
+    width: 1280
+    height: 840
+    note: 1942-10-26 圣克鲁斯海战：炸弹在企业号附近爆炸。这一战它被命中 2 弹，死 44 伤 75。
+
+  - id: enterprise-aerial-sb
+    file: /img/ships/enterprise-aerial-sb.jpg
+    subject: ship:enterprise
+    title:
+      zh: 企业号右舷舰首航拍（甲板载机）
+      en: Enterprise (CV6). Aerial, starboard bow, underway, aircraft on deck - NARA - 520811
+    part: hull_side
+    view: overhead
+    date: 1942-1943
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: "<div class=\"fn value\"> Unknown author<span style=\"display: none;\">Unknown author</span> or not provided</div>"
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Enterprise_(CV6)._Aerial,_starboard_bow,_underway,_aircraft_on_deck_-_NARA_-_520811.jpg"
+    width: 1280
+    height: 927
+    note: 企业号右舷舰首航拍，甲板载机。
+
+  - id: enterprise-1944-palau
+    file: /img/ships/enterprise-1944-palau.jpg
+    subject: ship:enterprise
+    title:
+      zh: 1944-03 帕劳：第 10 舰载机大队飞越企业号
+      en: Carrier Air Group 10 aircraft over USS Enterprise (CV-6) off Palau in March 1944
+    part: deck
+    view: other
+    date: 1944-03
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Carrier_Air_Group_10_aircraft_over_USS_Enterprise_(CV-6)_off_Palau_in_March_1944.jpg"
+    width: 1280
+    height: 976
+    note: 1944-03 帕劳：第 10 舰载机大队飞越企业号。
+
+  - id: enterprise-1945-kamikaze
+    file: /img/ships/enterprise-1945-kamikaze.jpg
+    subject: ship:enterprise
+    title:
+      zh: 1945-04-11：神风在企业号附近落水
+      en: Kamikaze hits water near USS Enterprise (CV-6) on 11 April 1945
+    part: hull_side
+    view: broadside
+    date: 1945-04-11
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: "U.S. Navy, photographed from USS <i>Bunker Hill</i> (CV-17)."
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Kamikaze_hits_water_near_USS_Enterprise_(CV-6)_on_11_April_1945.jpg"
+    width: 1280
+    height: 1715
+    note: 1945-04-11：神风在企业号附近落水。一个月后的 05-14 另一架神风撞毁了它的前升降机。
+
+  - id: enterprise-logo
+    file: /img/ships/enterprise-logo.jpg
+    subject: ship:enterprise
+    title:
+      zh: 企业号舰徽
+      en: CV-6 Enterprise logo
+    part: other
+    view: other
+    date: 1943-1945
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: "Unknown author<span style=\"display: none;\">Unknown author</span>"
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:CV-6_Enterprise_logo.jpg"
+    width: 1280
+    height: 1269
+    note: 企业号舰徽。
+
+  - id: enterprise-insignia-1938
+    file: /img/ships/enterprise-insignia-1938.jpg
+    subject: ship:enterprise
+    title:
+      zh: 1938 年企业号徽记
+      en: Insignia of USS Enterprise (CV-6) 1938
+    part: other
+    view: other
+    date: 1938
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Insignia_of_USS_Enterprise_(CV-6)_1938.png"
+    width: 1280
+    height: 1276
+    note: 1938 年的企业号徽记。
+
+  - id: enterprise-aa-fire
+    file: /img/ships/enterprise-aa-fire.jpg
+    subject: ship:enterprise
+    title:
+      zh: 圣克鲁斯海战：企业号上空的防空火网
+      en: AA fire over USS Enterprise (CV-6) during Battle of Santa Cruz Islands 1942
+    part: other
+    view: other
+    date: 1942-10-26
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:AA_fire_over_USS_Enterprise_(CV-6)_during_Battle_of_Santa_Cruz_Islands_1942.jpeg"
+    width: 1280
+    height: 1030
+    note: 圣克鲁斯海战：企业号上空的防空火网。
+
+  - id: kaga-main
+    file: /img/ships/kaga-main.jpg
+    subject: ship:kaga
+    title:
+      zh: 加贺号侧视
+      en: Japanese aircraft carrier kaga
+    part: hull_side
+    view: broadside
+    date: 1935-1942
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Donation of Kazutoshi Hando, 1970. U.S. Naval History and Heritage Command Photograph.
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_kaga.jpg"
+    width: 1280
+    height: 828
+    note: 改装后的加贺。单段全通甲板、右舷舰岛。
+
+  - id: kaga-sideview
+    file: /img/ships/kaga-sideview.jpg
+    subject: ship:kaga
+    title:
+      zh: 加贺号（改装后）
+      en: HIJMS Kaga
+    part: hull_side
+    view: broadside
+    date: 1935-1942
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: "Unknown author<span style=\"display: none;\">Unknown author</span>"
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:HIJMS_Kaga.jpg"
+    width: 1280
+    height: 476
+    note: 加贺侧视。可对照 248.6 m 全长与右舷岛式舰桥。
+
+  - id: kaga-sideview-ijn
+    file: /img/ships/kaga-sideview-ijn.jpg
+    subject: ship:kaga
+    title:
+      zh: 加贺号侧视线图
+      en: Aircraft carrier Kaga sideview IJN
+    part: hull_side
+    view: broadside
+    date: 1935-1942
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: "Unknown author<span style=\"display: none;\">Unknown author</span>"
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Aircraft_carrier_Kaga_sideview_IJN.jpg"
+    width: 1280
+    height: 494
+    note: 加贺侧视线图（日本海军制图）。
+
+  - id: kaga-overhead
+    file: /img/ships/kaga-overhead.jpg
+    subject: ship:kaga
+    title:
+      zh: 加贺号改装后俯视
+      en: Kaga Reconstruction overhead
+    part: deck
+    view: overhead
+    date: 1935-1942
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Not stated
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Kaga_Reconstruction_overhead.jpg"
+    width: 1280
+    height: 320
+    note: 加贺改装后俯视。甲板布局与赤城的三段式完全不同——它是单段全通。
+
+  - id: kaga-deck-1937
+    file: /img/ships/kaga-deck-1937.jpg
+    subject: ship:kaga
+    title:
+      zh: 1937 年加贺飞行甲板满编作业
+      en: Kaga air operations full deck 1937
+    part: deck
+    view: deck
+    date: 1937
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Shizuo Fukui
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Kaga_air_operations_full_deck_1937.jpg"
+    width: 1280
+    height: 1025
+    note: 1937 年加贺飞行甲板满编作业。加贺载机 90 架，是中途岛四艘日军航母里最多的。
+
+  - id: kaga-landing-1937
+    file: /img/ships/kaga-landing-1937.jpg
+    subject: ship:kaga
+    title:
+      zh: 1937 年加贺着舰作业
+      en: Kaga landing operations 1937
+    part: deck
+    view: deck
+    date: 1937
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Shizuo Fukui
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Kaga_landing_operations_1937.jpg"
+    width: 1280
+    height: 1163
+    note: 1937 年加贺着舰作业。
+
+  - id: kaga-china
+    file: /img/ships/kaga-china.jpg
+    subject: ship:kaga
+    title:
+      zh: 中日战争期间的加贺
+      en: Kaga China Incident
+    part: hull_side
+    view: broadside
+    date: 1937-1938
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Imperial Japanese Navy
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Kaga_China_Incident.jpg"
+    width: 1280
+    height: 781
+    note: 中日战争期间的加贺。
+
+  - id: kaga-b5n-crew
+    file: /img/ships/kaga-b5n-crew.jpg
+    subject: ship:kaga
+    title:
+      zh: 珍珠港出击前的加贺九七舰攻机组
+      en: Kaga B5N aircrew Pearl Harbor
+    part: deck
+    view: other
+    date: 1941-11
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: "Unknown author<span style=\"display: none;\">Unknown author</span>"
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Kaga_B5N_aircrew_Pearl_Harbor.jpg"
+    width: 1280
+    height: 1010
+    note: 珍珠港出击前的加贺九七舰攻机组。
+
+  - id: kaga-pilots
+    file: /img/ships/kaga-pilots.jpg
+    subject: ship:kaga
+    title:
+      zh: 加贺战斗机飞行员
+      en: Kaga Type 3 fighter pilots
+    part: deck
+    view: other
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Air Review
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Kaga_Type_3_fighter_pilots.jpg"
+    width: 1280
+    height: 757
+    note: 加贺的战斗机飞行员。这批人在中途岛几乎全数阵亡——熟练飞行员的损失比航母更难补。
+
+  - id: kaga-hitokappu
+    file: /img/ships/kaga-hitokappu.jpg
+    subject: ship:kaga
+    title:
+      zh: 单冠湾：加贺与雾岛、比叡
+      en: Kirishima Kaga and Hiei at Hitokappu
+    part: hull_side
+    view: broadside
+    date: 1941-11
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Imperial Japanese Navy
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Kirishima_Kaga_and_Hiei_at_Hitokappu.jpg"
+    width: 1280
+    height: 758
+    note: 单冠湾集结：加贺与战列舰雾岛、比叡同框。
+
+  - id: kaga-zuikaku
+    file: /img/ships/kaga-zuikaku.jpg
+    subject: ship:kaga
+    title:
+      zh: 珍珠港出击前的加贺与瑞鹤
+      en: Kaga and Zuikaku Pearl Harbor
+    part: hull_side
+    view: broadside
+    date: 1941-11
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Imperial Japanese Navy
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Kaga_and_Zuikaku_Pearl_Harbor.jpg"
+    width: 1280
+    height: 719
+    note: 珍珠港出击前的加贺与瑞鹤。
+
+  - id: kaga-attack
+    file: /img/ships/kaga-attack.jpg
+    subject: ship:kaga
+    title:
+      zh: 加贺、赤城、苍龙遭攻击（1942-06-04）
+      en: Kaga, Akagi and Soryu under attack
+    part: hull_side
+    view: overhead
+    date: 1942-06-04
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Official U.S. Navy Photograph work
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Kaga,_Akagi_and_Soryu_under_attack.jpg"
+    width: 1280
+    height: 638
+    note: 1942-06-04：加贺、赤城、苍龙遭美军俯冲轰炸。三舰在同一张照片里。
+
+  - id: kaga-akagi-air-attack
+    file: /img/ships/kaga-akagi-air-attack.jpg
+    subject: ship:kaga
+    title:
+      zh: 中途岛：加贺与赤城遭空袭
+      en: Air Attack on Japanese Carriers Kagi and Akagi, Midway Battle
+    part: hull_side
+    view: overhead
+    date: 1942-06-04
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Air_Attack_on_Japanese_Carriers_Kagi_and_Akagi,_Midway_Battle.jpg"
+    width: 1280
+    height: 1699
+    note: "中途岛：加贺与赤城遭空袭。加贺是当天第一个被击中的日军航母（10:22）。"
+
+  - id: kaga-hosho
+    file: /img/ships/kaga-hosho.jpg
+    subject: ship:kaga
+    title:
+      zh: 加贺与凤翔
+      en: Hosho and Kaga
+    part: hull_side
+    view: broadside
+    date: 1930s
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Not stated
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Hosho_and_Kaga.jpg"
+    width: 1280
+    height: 686
+    note: 加贺与凤翔。凤翔是日本第一艘航母。
+
+  - id: soryu-main
+    file: /img/ships/soryu-main.jpg
+    subject: ship:soryu
+    title:
+      zh: 苍龙号
+      en: Japanese aircraft carrier Soryu
+    part: hull_side
+    view: broadside
+    date: 1937-1942
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Donation of Kazutoshi Hando, 1970
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Soryu.jpg"
+    width: 1280
+    height: 569
+    note: 苍龙号。右舷前部那座小得跟驱逐舰一样的舰岛是它的标志。
+
+  - id: soryu-1937
+    file: /img/ships/soryu-1937.jpg
+    subject: ship:soryu
+    title:
+      zh: 1937 年的苍龙
+      en: Japanese aircraft carrier Soryu 1937
+    part: hull_side
+    view: broadside
+    date: 1937
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: "Unknown author<span style=\"display: none;\">Unknown author</span>"
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Soryu_1937.jpg"
+    width: 1280
+    height: 840
+    note: 1937 年的苍龙（刚服役）。
+
+  - id: soryu-1938
+    file: /img/ships/soryu-1938.jpg
+    subject: ship:soryu
+    title:
+      zh: 1938 年的苍龙
+      en: Japanese aircraft carrier Soryu 1938
+    part: hull_side
+    view: broadside
+    date: 1938
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: 不明。Unknown
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Soryu_1938.jpg"
+    width: 1280
+    height: 580
+    note: 1938 年的苍龙。
+
+  - id: soryu-1937b
+    file: /img/ships/soryu-1937b.jpg
+    subject: ship:soryu
+    title:
+      zh: 苍龙（1937）
+      en: Soryu 1937
+    part: hull_side
+    view: broadside
+    date: 1937
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Imperial Japanese Navy
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Soryu_1937.jpg"
+    width: 1000
+    height: 600
+    note: 苍龙（1937）。
+
+  - id: soryu-evading
+    file: /img/ships/soryu-evading.jpg
+    subject: ship:soryu
+    title:
+      zh: 1942-06-04：苍龙规避空袭的航拍
+      en: Aerial view of the Japanese aircraft carrier Sōryū evading an air attack on 4 June 1942 (fsa.8e00397)
+    part: hull_side
+    view: overhead
+    date: 1942-06-04
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: United States Army Air Forces (USAAF)
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_Japanese_aircraft_carrier_S%C5%8Dry%C5%AB_evading_an_air_attack_on_4_June_1942_(fsa.8e00397).jpg"
+    width: 1280
+    height: 1175
+    note: 1942-06-04：苍龙规避空袭的航拍（美军拍摄）。几小时后它被约克城 VB-3 命中 2 弹。
+
+  - id: soryu-landing
+    file: /img/ships/soryu-landing.jpg
+    subject: ship:soryu
+    title:
+      zh: 苍龙着舰试验
+      en: Soryu landing test
+    part: deck
+    view: deck
+    date: 1930s
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Imperial Japanese Navy
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Soryu_landing_test.jpg"
+    width: 1280
+    height: 874
+    note: 苍龙着舰试验。
+
+  - id: soryu-fantail
+    file: /img/ships/soryu-fantail.jpg
+    subject: ship:soryu
+    title:
+      zh: 苍龙舰尾
+      en: Fantail Soryu
+    part: stern
+    view: detail
+    date: 1930s
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Fantail_Soryu.jpg"
+    width: 1280
+    height: 956
+    note: 苍龙舰尾。可见拦阻索与舰尾着舰标识——这套标准装备是苍龙首次在建成时就装上的。
+
+  - id: soryu-indian-ocean
+    file: /img/ships/soryu-indian-ocean.jpg
+    subject: ship:soryu
+    title:
+      zh: 印度洋作战期间的苍龙（1942）
+      en: GF in Indian Ocean, 1942
+    part: hull_side
+    view: broadside
+    date: 1942-04
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: "Unknown author<span style=\"display: none;\">Unknown author</span>"
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:GF_in_Indian_Ocean,_1942.jpg"
+    width: 1280
+    height: 848
+    note: 1942 年印度洋作战期间的苍龙。当月参与击沉康沃尔号、多塞特郡号、竞技神号。
+
+  - id: hiryu-main
+    file: /img/ships/hiryu-main.jpg
+    subject: ship:hiryu
+    title:
+      zh: 飞龙号
+      en: Japanese aircraft carrier Hiryu
+    part: hull_side
+    view: broadside
+    date: 1939-1942
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Donation of Kazutoshi Hando, 1970. U.S. Naval History and Heritage Command Photograph
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Hiryu.jpg"
+    width: 1280
+    height: 710
+    note: 飞龙号。左舷中央舰岛是它最要紧的识别特征——日造航母中只有赤城与它如此。
+
+  - id: hiryu-alt
+    file: /img/ships/hiryu-alt.jpg
+    subject: ship:hiryu
+    title:
+      zh: 飞龙号侧视
+      en: Japanese aircraft carrier hiryu
+    part: hull_side
+    view: broadside
+    date: 1939-1942
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: "<p>U.S. Naval Historical Center Photograph<br> </p> Donation of Kazutoshi Hando, 1970."
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_hiryu.jpg"
+    width: 1280
+    height: 716
+    note: 飞龙侧视。
+
+  - id: hiryu-1939
+    file: /img/ships/hiryu-1939.jpg
+    subject: ship:hiryu
+    title:
+      zh: 1939 年的飞龙
+      en: Japanese aircraft carrier Hiryu 1939
+    part: hull_side
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Hiryu_1939.jpg"
+    width: 1280
+    height: 775
+    note: 1939 年的飞龙（竣工当年）。
+
+  - id: hiryu-construction
+    file: /img/ships/hiryu-construction.jpg
+    subject: ship:hiryu
+    title:
+      zh: 建造中的飞龙（横须贺）
+      en: Hiryu under construction
+    part: hull_side
+    view: broadside
+    date: 1937
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Imperial Japanese Navy
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Hiryu_under_construction.jpg"
+    width: 991
+    height: 678
+    note: 建造中的飞龙（横须贺海军工厂）。
+
+  - id: hiryu-dodging
+    file: /img/ships/hiryu-dodging.jpg
+    subject: ship:hiryu
+    title:
+      zh: 1942-06-04：飞龙规避炸弹的航拍
+      en: Japanese aircraft carrier Hiryu dodging bombs on 4 June 1942 (USAF-3725)
+    part: hull_side
+    view: overhead
+    date: 1942-06-04
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: "<div class=\"fn value\"> Unknown author<span style=\"display: none;\">Unknown author</span></div>"
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Hiryu_dodging_bombs_on_4_June_1942_(USAF-3725).jpg"
+    width: 1280
+    height: 1570
+    note: 1942-06-04：飞龙规避炸弹的航拍。当天上午三舰起火时它躲进飑区幸存，成了唯一还能反击的航母。
+
+  - id: hiryu-burning-6-5
+    file: /img/ships/hiryu-burning-6-5.jpg
+    subject: ship:hiryu
+    title:
+      zh: 1942-06-05：燃烧中的飞龙
+      en: Japanese aircraft carrier Hiryu burning on 5 June 1942 (NH 73064)
+    part: hull_side
+    view: broadside
+    date: 1942-06-05
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: "<div class=\"fn value\"> Special Service Ensign Oniwa Kiyoshi</div>"
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Hiryu_burning_on_5_June_1942_(NH_73064).jpg"
+    width: 1280
+    height: 823
+    note: "1942-06-05：燃烧中的飞龙。前一天 17:03 被 4 发 1,000 磅炸弹命中。"
+
+  - id: hiryu-adrift
+    file: /img/ships/hiryu-adrift.jpg
+    subject: ship:hiryu
+    title:
+      zh: 1942-06-05：漂流燃烧的飞龙——它最后的样子
+      en: Japanese aircraft carrier Hiryu adrift and burning on 5 June 1942 (NH 73065)
+    part: hull_side
+    view: broadside
+    date: 1942-06-05
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: "<div class=\"fn value\"> Special Service Ensign Oniwa Kiyoshi</div>"
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Hiryu_adrift_and_burning_on_5_June_1942_(NH_73065).jpg"
+    width: 1280
+    height: 850
+    note: "1942-06-05：漂流燃烧的飞龙——它最后的样子。当天 09:12 舰首下沉翻覆，山口多闻与加来止男留舰。"
+
+  - id: hiryu-yamaguchi
+    file: /img/ships/hiryu-yamaguchi.jpg
+    subject: ship:hiryu
+    title:
+      zh: 山口多闻少将的最后时刻（画作）
+      en: Last Moments of Admiral Yamaguchi
+    part: other
+    view: other
+    date: 1942-06-05
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Last_Moments_of_Admiral_Yamaguchi.jpg"
+    width: 740
+    height: 620
+    note: 山口多闻少将的最后时刻（画作）。飞龙沉没时他拒绝离舰。
+
+  - id: hiryu-indian-ocean
+    file: /img/ships/hiryu-indian-ocean.jpg
+    subject: ship:hiryu
+    title:
+      zh: 1942 年印度洋作战期间的飞龙
+      en: GF in Indian Ocean, 1942
+    part: hull_side
+    view: broadside
+    date: 1942-04
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: "Unknown author<span style=\"display: none;\">Unknown author</span>"
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:GF_in_Indian_Ocean,_1942.jpg"
+    width: 1280
+    height: 848
+    note: 1942 年印度洋作战期间的飞龙。
+
+  - id: yorktown-1937
+    file: /img/ships/yorktown-1937.jpg
+    subject: ship:yorktown
+    title:
+      zh: 1937 年的约克城号
+      en: USS Yorktown (CV-5) Jul1937
+    part: hull_side
+    view: broadside
+    date: 1937-07
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy photo 19-N-17424
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:USS_Yorktown_(CV-5)_Jul1937.jpg"
+    width: 1280
+    height: 984
+    note: 1937 年服役当年的约克城号。
+
+  - id: yorktown-1938-overhead
+    file: /img/ships/yorktown-1938-overhead.jpg
+    subject: ship:yorktown
+    title:
+      zh: 1938-01-17 加勒比海：约克城号俯视
+      en: Overhead view of USS Yorktown (CV-5) in the Caribbean Sea on 17 January 1938
+    part: deck
+    view: overhead
+    date: 1938-01-17
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Overhead_view_of_USS_Yorktown_(CV-5)_in_the_Caribbean_Sea_on_17_January_1938.jpg"
+    width: 1280
+    height: 945
+    note: 1938-01-17 加勒比海：约克城号俯视。单层大机库、无装甲甲板——约克城级的核心特征。
+
+  - id: yorktown-1937-hampton
+    file: /img/ships/yorktown-1937-hampton.jpg
+    subject: ship:yorktown
+    title:
+      zh: 1937-10-30 汉普顿锚地
+      en: USS Yorktown (CV-5) anchored in Hampton Roads on 30 October 1937
+    part: hull_side
+    view: broadside
+    date: 1937-10-30
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:USS_Yorktown_(CV-5)_anchored_in_Hampton_Roads_on_30_October_1937.jpg"
+    width: 1280
+    height: 964
+    note: 1937-10-30 汉普顿锚地。
+
+  - id: yorktown-1942-02-pearl
+    file: /img/ships/yorktown-1942-02-pearl.jpg
+    subject: ship:yorktown
+    title:
+      zh: 1942-02 抵珍珠港
+      en: USS Yorktown (CV-5) arrives at Pearl Harbor in February 1942
+    part: hull_side
+    view: broadside
+    date: 1942-02
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: "USN; Photographed from USS <i>Enterprise</i> (CV-6)."
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:USS_Yorktown_(CV-5)_arrives_at_Pearl_Harbor_in_February_1942.jpg"
+    width: 1280
+    height: 997
+    note: 1942-02 抵珍珠港。此时已装 CXAM-1 雷达、20mm 炮。
+
+  - id: yorktown-coral-sea
+    file: /img/ships/yorktown-coral-sea.jpg
+    subject: ship:yorktown
+    title:
+      zh: 1942-04 珊瑚海海战期间的约克城
+      en: USS Yorktown (CV-5) during the Battle of the Coral Sea, April 1942
+    part: hull_side
+    view: broadside
+    date: 1942-04
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:USS_Yorktown_(CV-5)_during_the_Battle_of_the_Coral_Sea,_April_1942.jpg"
+    width: 1280
+    height: 1002
+    note: 1942-04 珊瑚海海战期间。几周后它在这里被重创。
+
+  - id: yorktown-midway-burning1
+    file: /img/ships/yorktown-midway-burning1.jpg
+    subject: ship:yorktown
+    title:
+      zh: 1942-06-04 中途岛：第一波攻击后燃烧的约克城
+      en: USS Yorktown (CV-5) burning after first Japanese attack at Midway 1942
+    part: hull_side
+    view: broadside
+    date: 1942-06-04
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:USS_Yorktown_(CV-5)_burning_after_first_Japanese_attack_at_Midway_1942.jpg"
+    width: 1280
+    height: 957
+    note: 1942-06-04 中途岛：第一波日军攻击后燃烧的约克城。
+
+  - id: yorktown-midway-listing
+    file: /img/ships/yorktown-midway-listing.jpg
+    subject: ship:yorktown
+    title:
+      zh: 1942-06-04：燃烧并倾斜的约克城
+      en: USS Yorktown (CV-5) burning and listing on 4 June 1942
+    part: hull_side
+    view: broadside
+    date: 1942-06-04
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:USS_Yorktown_(CV-5)_burning_and_listing_on_4_June_1942.jpg"
+    width: 1280
+    height: 1015
+    note: 1942-06-04：燃烧并倾斜的约克城。飞龙两波攻击炸坏 3 座锅炉、全舰断电。
+
+  - id: yorktown-abandoned
+    file: /img/ships/yorktown-abandoned.jpg
+    subject: ship:yorktown
+    title:
+      zh: 1942-06-04：弃舰
+      en: USS Yorktown (CV-5) being abandonded, 4 June 1942
+    part: deck
+    view: deck
+    date: 1942-06-04
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: USN
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:USS_Yorktown_(CV-5)_being_abandonded,_4_June_1942.jpg"
+    width: 1280
+    height: 944
+    note: 1942-06-04：弃舰。但舰体仍在漂浮，两天后才被伊-168 击沉。
+
+  - id: yorktown-torpedo-attack
+    file: /img/ships/yorktown-torpedo-attack.jpg
+    subject: ship:yorktown
+    title:
+      zh: 1942-06-04：日军鱼雷机掠过约克城
+      en: Japanese torpedo bombers fly past USS Yorktown (CV-5) on 4 June 1942
+    part: hull_side
+    view: other
+    date: 1942-06-04
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: "USN, photographed from USS <i>Pensacola</i> (CA-24)."
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Japanese_torpedo_bombers_fly_past_USS_Yorktown_(CV-5)_on_4_June_1942.jpg"
+    width: 1280
+    height: 959
+    note: 1942-06-04：日军鱼雷机掠过约克城。飞龙第二波 10 架九七舰攻中 2 架命中。
+
+  - id: yorktown-b5n-attack
+    file: /img/ships/yorktown-b5n-attack.jpg
+    subject: ship:yorktown
+    title:
+      zh: 中途岛：九七舰攻攻击约克城
+      en: B5Ns attacking USS Yorktown (CV-5) at Midway 1942
+    part: hull_side
+    view: other
+    date: 1942-06-04
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: USN
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:B5Ns_attacking_USS_Yorktown_(CV-5)_at_Midway_1942.jpg"
+    width: 1280
+    height: 1017
+    note: 中途岛：九七舰攻攻击约克城。
+
+  - id: yorktown-sinking
+    file: /img/ships/yorktown-sinking.jpg
+    subject: ship:yorktown
+    title:
+      zh: 约克城号沉没（1942-06-07 被伊-168 击沉）
+      en: Sinking of the USS Yorktown (CV-5) 01
+    part: hull_side
+    view: broadside
+    date: 1942-06-07
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: USN
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Sinking_of_the_USS_Yorktown_(CV-5)_01.jpg"
+    width: 1280
+    height: 957
+    note: "约克城号沉没。**注意日期是 6-07，不是 6-04**——它是被伊-168 补的两条鱼雷送走的，这是中途岛最常被记错的一处。"
+
+  - id: yorktown-hammann
+    file: /img/ships/yorktown-hammann.jpg
+    subject: ship:yorktown
+    title:
+      zh: 驱逐舰哈曼号被击沉时的深水炸弹爆炸（约克城号旁）
+      en: USS Hammann DD-412 sunk-depth charges exploding near Yorktown
+    part: other
+    view: other
+    date: 1942-06-07
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: USN
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:USS_Hammann_DD-412_sunk-depth_charges_exploding_near_Yorktown.jpg"
+    width: 1280
+    height: 987
+    note: 驱逐舰哈曼号被击沉时的深水炸弹爆炸。哈曼当时正靠在约克城旁协助损管，伊-168 的鱼雷把两舰一起送了。
+
+  - id: yorktown-enterprise-1939
+    file: /img/ships/yorktown-enterprise-1939.jpg
+    subject: ship:yorktown
+    title:
+      zh: 1939 年：约克城与企业号同框
+      en: USS Yorktown (CV-5) and USS Enterprise (CV-6) at North Island, California (USA), 28 June 1939 (80-CF-37125-1)
+    part: hull_side
+    view: broadside
+    date: 1939-06-28
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:USS_Yorktown_(CV-5)_and_USS_Enterprise_(CV-6)_at_North_Island,_California_(USA),_28_June_1939_(80-CF-37125-1).jpg"
+    width: 1280
+    height: 1003
+    note: 1939 年：约克城与企业号同框（北岛）。三艘同级舰的建造厂是同一个。
+
+  - id: hornet-1941-aft
+    file: /img/ships/hornet-1941-aft.jpg
+    subject: ship:hornet
+    title:
+      zh: 1941 年末：大黄蜂舰尾视角
+      en: Aft view of USS Hornet (CV-8), circa in late 1941 (NH 81313)
+    part: stern
+    view: detail
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: "<div class=\"fn value\"> Unknown author<span style=\"display: none;\">Unknown author</span></div>"
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Aft_view_of_USS_Hornet_(CV-8),_circa_in_late_1941_(NH_81313).jpg"
+    width: 740
+    height: 514
+    note: 1941 年末：大黄蜂舰尾视角。
+
+  - id: hornet-abandon
+    file: /img/ships/hornet-abandon.jpg
+    subject: ship:hornet
+    title:
+      zh: 1942-10-26：圣克鲁斯，大黄蜂舰员准备弃舰
+      en: 80-G-34110 Crew members of USS Hornet (CV-8) prepare to abandon ship on 26 October 1942
+    part: deck
+    view: deck
+    date: 1942-10-26
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: "<span lang=\"en\">Anonymous</span><span style=\"display:none\">Unknown author</span>"
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:80-G-34110_Crew_members_of_USS_Hornet_(CV-8)_prepare_to_abandon_ship_on_26_October_1942.jpg"
+    width: 1280
+    height: 1609
+    note: 1942-10-26 圣克鲁斯：大黄蜂舰员准备弃舰。次日由己方驱逐舰雷击处分。
+
+  - id: hornet-burning
+    file: /img/ships/hornet-burning.jpg
+    subject: ship:hornet
+    title:
+      zh: 1942-10-26：燃烧并倾斜的大黄蜂
+      en: Aft view of the burning and listing USS Hornet (CV-8) during the Battle of Santa Cruz Islands, 26 October 1942 (80-G-33901)
+    part: hull_side
+    view: broadside
+    date: 1942-10-26
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Aft_view_of_the_burning_and_listing_USS_Hornet_(CV-8)_during_the_Battle_of_Santa_Cruz_Islands,_26_October_1942_(80-G-33901).jpg"
+    width: 1280
+    height: 996
+    note: 1942-10-26：燃烧并倾斜的大黄蜂。
+
+  - id: hornet-1942-06-06
+    file: /img/ships/hornet-1942-06-06.jpg
+    subject: ship:hornet
+    title:
+      zh: 1942-06-06 中途岛：大黄蜂与新奥尔良号等
+      en: "-USS Hornet (CV-8), USS New Orleans (CA-32), USS Atlanta (CL-51) and USS Phelps (DD-360) at sea on 6 June 1942 (80-G-7750)"
+    part: hull_side
+    view: broadside
+    date: 1942-06-06
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:-USS_Hornet_(CV-8),_USS_New_Orleans_(CA-32),_USS_Atlanta_(CL-51)_and_USS_Phelps_(DD-360)_at_sea_on_6_June_1942_(80-G-7750).jpg"
+    width: 1280
+    height: 957
+    note: 1942-06-06 中途岛：大黄蜂与新奥尔良号、亚特兰大号、菲尔普斯号同框。本舰全程无损伤。
+
+  - id: hornet-damage
+    file: /img/ships/hornet-damage.jpg
+    subject: ship:hornet
+    title:
+      zh: 圣克鲁斯：日机撞舰后烟囱与信号舰桥的损伤
+      en: 80-G-40300 Damage to the smokestack and signal bridge of USS Hornet after struck by a crashing Japanese dive bomber
+    part: other
+    view: detail
+    date: 1942-10-26
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: "<span lang=\"en\">Anonymous</span><span style=\"display:none\">Unknown author</span>"
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:80-G-40300_Damage_to_the_smokestack_and_signal_bridge_of_USS_Hornet_after_struck_by_a_crashing_Japanese_dive_bomber.jpg"
+    width: 1280
+    height: 1565
+    note: 圣克鲁斯：日机撞舰后烟囱与信号舰桥的损伤。
+
+  - id: midway-kaga-akagi-soryu
+    file: /img/battles/midway-kaga-akagi-soryu.jpg
+    subject: battle:midway
+    title:
+      zh: 1942-06-04 上午：加贺、赤城、苍龙同时遭美军 SBD 俯冲轰炸（USN 战时沙盘复原）
+      en: Kaga, Akagi and Soryu under attack
+    part: other
+    view: overhead
+    date: 1942-06-04
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Official U.S. Navy Photograph work
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Kaga,_Akagi_and_Soryu_under_attack.jpg"
+    width: 1280
+    height: 638
+    primary: true
+    note: 1942-06-04 上午：加贺、赤城、苍龙同时遭美军 SBD 俯冲轰炸。这是 USN 战时依据当时情报制作的沙盘复原，不是现场照片——但它是这三舰同处一格的唯一影像证据。
+
+  - id: midway-battle-scene
+    file: /img/battles/midway-battle-scene.jpg
+    subject: battle:midway
+    title:
+      zh: 中途岛：约克城与企业号的俯冲轰炸机攻击苍龙、赤城、加贺
+      en: Battle of Midway
+    part: other
+    view: overhead
+    date: 1942-06-04
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Official U.S. Navy Photograph work
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Battle_of_Midway.jpg"
+    width: 1280
+    height: 911
+    note: 同一沙盘的另一幅：约克城与企业号的俯冲轰炸机攻击苍龙、赤城、加贺。
+
+  - id: midway-b5n-shotdown
+    file: /img/battles/midway-b5n-shotdown.jpg
+    subject: battle:midway
+    title:
+      zh: 1942-06：日军九七舰攻在约克城附近被击落
+      en: Japanese B5N2 shot down near USS Yorktown (CV-5) in June 1942
+    part: other
+    view: other
+    date: 1942-06
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: USN
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Japanese_B5N2_shot_down_near_USS_Yorktown_(CV-5)_in_June_1942.jpg"
+    width: 960
+    height: 637
+    note: 日军九七舰攻在约克城附近被击落。中途岛那天美军三支 TBD 鱼雷机队几乎全灭，但日军的损失同样惨重。
+
+  - id: midway-dive-bombers-yorktown
+    file: /img/battles/midway-dive-bombers-yorktown.jpg
+    subject: battle:midway
+    title:
+      zh: 中途岛：日军俯冲轰炸机攻击约克城
+      en: Japanese dive bombers attack USS Yorktown (CV-5) at Midway 1942
+    part: other
+    view: other
+    date: 1942-06-04
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: USN
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Japanese_dive_bombers_attack_USS_Yorktown_(CV-5)_at_Midway_1942.jpg"
+    width: 1280
+    height: 959
+    note: 中途岛：日军俯冲轰炸机攻击约克城。这是飞龙下午两波反击的画面。
+
+  - id: midway-torpedo-bombers
+    file: /img/battles/midway-torpedo-bombers.jpg
+    subject: battle:midway
+    title:
+      zh: 1942-06-04：日军鱼雷机掠过约克城
+      en: Japanese torpedo bombers fly past USS Yorktown (CV-5) on 4 June 1942
+    part: other
+    view: other
+    date: 1942-06-04
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: "USN, photographed from USS <i>Pensacola</i> (CA-24)."
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Japanese_torpedo_bombers_fly_past_USS_Yorktown_(CV-5)_on_4_June_1942.jpg"
+    width: 1280
+    height: 959
+    note: 1942-06-04：日军鱼雷机掠过约克城。飞龙第二波 10 架九七舰攻中 2 架命中。
+
+  - id: midway-hammann-explosion
+    file: /img/battles/midway-hammann-explosion.jpg
+    subject: battle:midway
+    title:
+      zh: 1942-06-07：驱逐舰哈曼号被伊-168 击沉，深水炸弹连锁爆炸
+      en: USS Hammann DD-412 sunk-depth charges exploding near Yorktown
+    part: other
+    view: other
+    date: 1942-06-07
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: USN
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:USS_Hammann_DD-412_sunk-depth_charges_exploding_near_Yorktown.jpg"
+    width: 1280
+    height: 987
+    note: 1942-06-07：驱逐舰哈曼号被伊-168 击沉，其深水炸弹连锁爆炸。哈曼当时正靠在约克城旁协助损管——伊-168 一条鱼雷送了兩艘船。
+
+  - id: midway-yorktown-sinking
+    file: /img/battles/midway-yorktown-sinking.jpg
+    subject: battle:midway
+    title:
+      zh: 1942-06-07：约克城号沉没
+      en: Sinking of the USS Yorktown (CV-5) 01
+    part: hull_side
+    view: broadside
+    date: 1942-06-07
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: USN
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:Sinking_of_the_USS_Yorktown_(CV-5)_01.jpg"
+    width: 1280
+    height: 957
+    note: "1942-06-07：约克城号沉没。**这是它真正的沉没日，不是 6-04**——中途岛最常被记错的一处。"
+
+  - id: midway-tbd-yorktown
+    file: /img/battles/midway-tbd-yorktown.jpg
+    subject: battle:midway
+    title:
+      zh: 约克城甲板上的 TBD 蹂躏者（1940-06）。中途岛时这三支 TBD 队几乎全灭
+      en: TBDs on Yorktown June 1940
+    part: deck
+    view: deck
+    date: 1940-06
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:TBDs_on_Yorktown_June_1940.jpg"
+    width: 1280
+    height: 1019
+    note: 约克城甲板上的 TBD 蹂躏者（1940-06）。中途岛时三支 TBD 队 41 架出击、35 架被击落——它们的牺牲把日军战斗机引到了低空。
+
+  - id: midway-enterprise-may
+    file: /img/battles/midway-enterprise-may.jpg
+    subject: battle:midway
+    title:
+      zh: 1942-05：中途岛出击前的企业号
+      en: USS Enterprise (CV-6) docked at Ford Island, in May 1942
+    part: hull_side
+    view: broadside
+    date: 1942-05
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy photo 19-LCM-CV6-29695
+    credit: 维基共享资源（Wikimedia Commons）
+    source_url: "https://commons.wikimedia.org/wiki/File:USS_Enterprise_(CV-6)_docked_at_Ford_Island,_in_May_1942.jpg"
+    width: 1280
+    height: 934
+    note: 1942-05：中途岛出击前的企业号，停泊于福特岛。

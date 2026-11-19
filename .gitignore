@@ -1,0 +1,48 @@
+# Dockyard · 版本控制范围
+# 原则：入库的是「重建站点所必需的内容」与「可读的调研报告」；
+#       抓下来的原始 HTML/PDF/截图是原料，留在磁盘上，但不进 git。
+
+# ── 依赖与构建产物 ──────────────────────────────
+node_modules/
+dist/
+.astro/
+.wrangler/
+__pycache__/
+*.pyc
+
+# ── 本地临时 ────────────────────────────────────
+_tmp/
+
+# ── 备份文件（交接报告 §9.1 第 8 条，确认无用后可删）──
+*.bak
+*.bak2
+*.bak3
+*.bak-*
+
+# ── work/ 只有这几类入库 ────────────────────────
+#   根目录的 *.py（可复用脚本）与 *.md（工作报告）
+#   raw/ 下的 *.md（调研报告，带英文原句与来源 URL）
+#   raw/ktb/bs-ktb.txt（sources.yaml 的 local_copy 指向它）
+work/shots/
+work/_tmp/
+work/_src/
+work/ijn-weapons/
+work/*.txt
+work/*.log
+work/_[!_]*.json
+work/imgfrag/**/*.jpg
+work/imgfrag/**/*.jpeg
+work/imgfrag/**/*.png
+work/imgfrag/**/*.json
+work/imgfrag/**/*.txt
+work/navweaps/*.php
+work/navweaps/*.txt
+work/raw/**/*.pdf
+work/raw/**/*.html
+work/raw/**/*.htm
+work/raw/**/*.zip
+work/raw/**/*.bin
+work/raw/**/*.txt
+
+# 唯一例外：sources.yaml 引用的德国海军战争日志原文
+!work/raw/ktb/bs-ktb.txt

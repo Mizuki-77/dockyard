@@ -1,0 +1,103 @@
+# ============================================================================
+# 中途岛作战（MI 作戦 / Operation MI）
+#
+# 2026-11-19 建。结构照 rheinubung：一次行动里包含多个阶段，
+# 每阶段可以挂一场独立战斗。中途岛这条线分四段：
+#   侦察与接敌 → 6/4 上午航母对决 → 6/4 下午飞龙反击 → 追击与自沉
+#
+# 首批只放结构，时间线与细节待调研回来填。
+# ============================================================================
+
+id: midway
+name:
+  zh: 中途岛作战
+  en: Operation MI
+codename: MI作戦
+
+date:
+  from: 1942-06-03
+  to: 1942-06-07
+
+summary:
+  zh: >-
+    日本海军联合舰队倾巢而出的战略进攻作战。目标是攻占中途岛、
+    把美军航母诱入决战。计划本身建立在「美军只剩一两艘航母」的
+    错误情报上，实际美军投入三艘。
+  en: >-
+    The IJN's attempt to seize Midway Atoll and force a decisive fleet
+    engagement, premised on faulty intelligence that the US had only one or
+    two carriers available.
+
+objective:
+  zh: 攻占中途岛环礁，诱歼美国太平洋舰队航母部队，确立太平洋制海权。
+  en: >-
+    Seize Midway Atoll and destroy the US Pacific Fleet's carrier force.
+
+belligerents:
+  - side: axis
+    label: { zh: 大日本帝国海军, en: Imperial Japanese Navy }
+  - side: allies
+    label: { zh: 美国太平洋舰队, en: United States Pacific Fleet }
+
+phases:
+  - label:
+      zh: 出航与侦察接敌
+      en: Sortie and first contact
+    date: { from: 1942-06-03, to: 1942-06-04 }
+    summary:
+      zh: >-
+        联合舰队分三路出动。6 月 3 日美军巡逻机发现日方运输船团，
+        首次接触；6 月 4 日晨美军航母进入攻击位置。
+      en: >-
+        The Japanese fleet sortied in several groups. US patrol aircraft
+        sighted the transport group on 3 June; by dawn on 4 June the US
+        carriers were in position.
+
+  - battle: midway
+    label:
+      zh: 航母对决
+      en: Carrier engagement
+    date: { from: 1942-06-04, to: 1942-06-04 }
+    summary:
+      zh: >-
+        6 月 4 日上午，美军航母舰载机连续攻击，赤城、加贺、苍龙
+        在数分钟内相继中弹起火。
+      en: >-
+        On the morning of 4 June US carrier aircraft attacked in waves;
+        Akagi, Kaga and Soryu were hit and set ablaze within minutes.
+
+  - label:
+      zh: 飞龙反击
+      en: Hiryu's counterstrike
+    date: { from: 1942-06-04, to: 1942-06-04 }
+    summary:
+      zh: >-
+        唯一幸存的飞龙号发动两次反击，重创约克城号；随后飞龙自身
+        被美军发现并击毁。
+      en: >-
+        The sole surviving carrier Hiryu launched two counterstrikes that
+        crippled Yorktown, before being located and destroyed in turn.
+
+  - label:
+      zh: 追击与自沉
+      en: Pursuit and scuttling
+    date: { from: 1942-06-05, to: 1942-06-07 }
+    summary:
+      zh: >-
+        日军放弃占领计划撤退。赤城、加贺等失去动力或无法拖带的主力舰
+        由己方驱逐舰雷击处分。
+      en: >-
+        The Japanese abandoned the operation. Crippled carriers that could
+        not be salvaged were scuttled by their own destroyers.
+
+outcome:
+  zh: >-
+    日军惨败：四艘主力航母、一艘重巡、约 250 架飞机损失，
+    大批熟练飞行员阵亡。美军损失约克城号航母与一艘驱逐舰。
+    太平洋战争主动权自此转入美军手中。
+  en: >-
+    A decisive Japanese defeat: four fleet carriers and some 250 aircraft
+    lost, along with a large share of its trained carrier aviators.
+
+narratives: []
+src: [combinedfleet-akagi, danfs-enterprise]

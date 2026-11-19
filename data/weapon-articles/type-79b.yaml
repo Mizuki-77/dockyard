@@ -1,0 +1,93 @@
+# ============================================================================
+# 武器正文 —— Type 79B 对空预警雷达
+#
+# 这一型的材料非常薄：它只在装舰清单里出现，没有任何一篇文献单独描述它。
+# 所以正文只写三件事：它是 79 系列的改进型、它在 1943 年替换了什么、
+# 以及它和 79Z 不是同一条。凡是查不到的（性能、产量、首装舰）一律不写。
+# ============================================================================
+weapon: type-79b
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Type 79B 是 Type 79 系列对空预警雷达的改进型，属于同一条产品线的后期型号，
+      而不是另一型全新的设备。它在光辉号的装舰清单里出现于 1943 年 6 月，
+      到 1946 年 1 月的清单里仍然在列。
+      本站把它与 Type 79Z 分列两个实体，理由只有一个：装舰清单把它们写成了两个型号。
+    en: >-
+      The Type 79B is a later mark of the Type 79 air-warning family rather than a
+      separate design. It appears in HMS Illustrious's equipment list in June 1943 and
+      is still listed in January 1946. This site keeps it as its own entity for one
+      reason only: the fitting lists name it as a distinct mark.
+
+  paragraphs:
+    - heading: 为什么它和 79Z 要分成两条
+      text:
+        zh: >-
+          79Z 是 1940 年本舰建成时那一条，1942 年 1 月被 Type 281 换掉；
+          79B 是 1943 年 6 月清单里的那一条，一直留到战后。
+          装舰清单把它们写成两个型号，本站就按两个实体处理，
+          不合并、也不推断两者在硬件上差在哪里——
+          翻了现有的设计资料、专题站雷达表和装舰清单，
+          没有一处说明 79Z 与 79B 的具体差别。
+        en: >-
+          The 79Z is the set the ship completed with in 1940, replaced by the Type 281
+          in January 1942; the 79B is the set in the June 1943 list and it stayed to
+          the end of the war. The fitting lists name them as two marks, so this site
+          keeps two entities and does not merge them or guess at the hardware
+          difference: neither the design record, the specialist radar tables nor the
+          fitting lists state what actually changed between the two.
+      src: [navypedia-illustrious, navweaps-radar-uk]
+
+    - heading: 权威雷达表里根本没有这一型
+      text:
+        zh: >-
+          这一点值得单独说明。专题站的英国战时雷达总表列了 Type 79，
+          并注明它 1938 年 8 月开始服役、用途是对空预警、
+          首次装舰对象是谢菲尔德号（HMS Sheffield），但整张表里没有 79B 这一行。
+          也就是说，79B 目前的证据只有装舰清单这一类材料，
+          没有任何一型性能条目可以与它对应。本站照此处理：
+          只写它在哪艘舰上、什么时候在，不写它「比 79Z 好在哪」。
+        en: >-
+          This deserves a paragraph of its own. The specialist site's table of wartime
+          British radar lists the Type 79, noting that it became operational in August
+          1938, that its purpose was air warning and that it was first fitted to HMS
+          Sheffield - but the table has no row for a 79B. The only evidence for the
+          79B is therefore fitting-list material; there is no performance entry to
+          match against it. This article follows that limit: it records where and when
+          the set was carried, and says nothing about how it improved on the 79Z.
+      src: [navweaps-radar-uk, navypedia-illustrious]
+
+history:
+  - id: service
+    title: { zh: 装舰记录, en: Fitting record }
+    range: { from: 1943-06, to: 1946-01 }
+    lead:
+      zh: >-
+        它在本舰的记载只有两头：1943 年 6 月已经在，1946 年 1 月还在。
+      en: >-
+        The record for this set aboard is only two points: present in June 1943, still
+        present in January 1946.
+    events:
+      - date: 1943-06
+        text:
+          zh: >-
+            本舰此月的装备清单里列为 type 79B。
+            同一份清单还列有 type 272、type 281B、6 部 type 282 与 type 285。
+          en: >-
+            Listed as type 79B in the ship's equipment list for this month. The same
+            list also carries the type 272, type 281B, six type 282 sets and the
+            type 285.
+        src: [navypedia-illustrious]
+      - date: 1946-01
+        text:
+          zh: >-
+            1946 年 1 月的清单里 type 79B 仍在列，同期清单为
+            type 79B、type 272、type 281B、6 部 type 282、type 285。
+            这说明它没有被后续型号替换掉，而是随舰留到了战后。
+          en: >-
+            The type 79B is still listed in January 1946, alongside the type 272, type
+            281B, six type 282 sets and the type 285. It was therefore never replaced by
+            a later mark in this ship but stayed aboard into the post-war period.
+        src: [navypedia-illustrious]

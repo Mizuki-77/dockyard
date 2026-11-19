@@ -1,0 +1,1094 @@
+# ============================================================================
+# 单舰：Tirpitz（提尔皮茨号战列舰）
+# ----------------------------------------------------------------------------
+# 与 bismarck.yaml 同一套约定：
+#   1) 建造/服役/损失等单舰事件
+#   2) 单舰实测值（试航）——与舰级设计值不是分歧，是两件事
+#   3) 状态切片：随时间变化的字段，用 valid 窗口表达"当时是什么样"
+#
+# 解析顺序（docs/00-framework.md §3.6）：单舰 fact -> 舰级 fact -> 未记载。
+# 本文件命中即覆盖舰级，**不算分歧**。
+#
+# 本文件的意义：Tirpitz 与 Bismarck 同级，绝大多数字段靠继承；这里只写
+# 真正不同的地方——更长更重、独有的巡航汽轮机、统一为 C/37 的 10.5 cm 炮座、
+# 两座四联鱼雷管、从 12 门加到 78 门的 2 cm 高炮、以及一路升级的雷达。
+# ============================================================================
+
+id: tirpitz
+name:
+  zh: 提尔皮茨
+  en: Tirpitz
+class: bismarck
+
+open_ended_note: |
+  本文件中 valid.to 留空的 fact，均为"至今为止仍成立的单舰事实"
+  （如损失结局、编制），不存在后续变化事件。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: Tirpitz
+    src: [kbismarck-tirpitz, german-navy-tirpitz]
+    valid: { from: 1936-06-14 }
+    confidence: A
+    note: 两源一致。建造代号 Schlachtschiff G，名义为替换旧舰 Schleswig-Holstein。
+
+  - field: identity.name_zh
+    value: 提尔皮茨
+    src: [kbismarck-tirpitz]
+    valid: { from: 1936-06-14 }
+    confidence: B
+    note: 中文通行译名。另有"铁必制"（港台旧译）等写法，本站取大陆通行译名。
+
+  - field: identity.name_en
+    value: Tirpitz
+    src: [kbismarck-tirpitz]
+    valid: { from: 1936-06-14 }
+    confidence: A
+
+  - field: identity.namesake
+    value: Alfred von Tirpitz（1849–1930），德意志帝国海军国务秘书、公海舰队缔造者
+    src: [kbismarck-tirpitz]
+    valid: { from: 1936-06-14 }
+    confidence: B
+    note: >-
+      命名与其"大洋舰队"倡导者身份直接相关——用他的名字命名本级二号舰，
+      在 1930 年代德国海军复兴的语境里是一次刻意表态。
+
+  - field: identity.ship_type
+    value: battleship
+    src: [kbismarck-tirpitz]
+    valid: { from: 1936-06-14 }
+    confidence: A
+
+  - field: identity.nation
+    value: germany
+    src: [kbismarck-tirpitz]
+    valid: { from: 1936-06-14 }
+    confidence: A
+
+  - field: identity.era
+    value: ww2
+    src: [kbismarck-tirpitz]
+    valid: { from: 1936-06-14 }
+    confidence: A
+    note: >-
+      与舰级相同（ww2），但这里要单列一条：舰级那条的 note 写的是
+      "1940-08-24 服役至 1941-05-27 沉没"，那是俾斯麦号的日期。
+      单舰覆盖舰级不算分歧，所以本文件命中即覆盖。
+
+  - field: identity.operator
+    value: Kriegsmarine
+    src: [kbismarck-tirpitz]
+    valid: { from: 1941-02-25 }
+    confidence: A
+
+  # ============================================================ 建造
+  - field: construction.builder
+    value: Kriegsmarinewerft Wilhelmshaven（威廉港海军船厂）
+    src: [kbismarck-tirpitz, german-navy-tirpitz]
+    valid: { from: 1936-06-14 }
+    confidence: A
+
+  - field: construction.builder_location
+    value: Wilhelmshaven
+    src: [kbismarck-tirpitz]
+    valid: { from: 1936-06-14 }
+    confidence: A
+
+  - field: construction.building_slip
+    value: Slipway 2（二号船台）
+    src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1936-11-02 }
+    confidence: B
+    note: >-
+      从威廉港海军船厂二号船台下水。注意与 Bismarck 的汉堡 Blohm & Voss
+      九号船台不同——两舰不在同一家船厂建造，这也是它们工期不同的原因。
+
+  - field: construction.yard_number
+    value: S 128（Baunummer 128）
+    src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1936-11-02 }
+    confidence: B
+    note: 建造编号 S 128；美方 1945 年技术报告记作 "Yard No 128"。
+
+  - field: construction.order_date
+    unit: date
+    value: 1936-06-14
+    src: [kbismarck-tirpitz, german-navy-tirpitz]
+    valid: { from: 1936-06-14 }
+    confidence: A
+
+  - field: construction.laid_down
+    unit: date
+    value: 1936-11-02
+    src: [kbismarck-tirpitz, german-navy-tirpitz]
+    valid: { from: 1936-11-02 }
+    confidence: B
+    note: >-
+      铺设龙骨日存在四说：1936-11-02（kbismarck 主表、german-navy、dewiki，
+      取此说）、1936-11-01（kbismarck 另一页）、1936-10-20（navypedia）、
+      1936-10-24（deutsches-marinearchiv）。四种说法来源层级相当，并列保留。
+
+  - field: construction.laid_down
+    unit: date
+    value: 1936-10-20
+    src: [navypedia-bismarck]
+    valid: { from: 1936-10-20 }
+    confidence: C
+    note: >-
+      与 1936-11-02 并存。navypedia 把 Tirpitz 与 Bismarck 放在同一页，
+      该页的日期栏与其它来源普遍差 10–13 天，疑为混用了合同日期与动工日期。
+
+  - field: construction.launched
+    unit: date
+    value: 1939-04-01
+    src: [kbismarck-tirpitz, german-navy-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1939-04-01 }
+    confidence: A
+    note: 掷瓶人为 Tirpitz 元帅之女 Ilse von Hassell。
+
+  - field: construction.commissioned
+    unit: date
+    value: 1941-02-25
+    src: [kbismarck-tirpitz, german-navy-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1941-02-25 }
+    confidence: A
+    note: >-
+      就役仪式于 1140 时举行，首任舰长 Karl Topp。
+      注意与下水相隔近两年——舾装期比 Bismarck 长，部分原因是威廉港船厂
+      同期还在赶工其它舰艇。
+
+  - field: construction.cost
+    unit: count
+    value: 181600000
+    src: [deutsches-marinearchiv-tirpitz, german-navy-tirpitz]
+    valid: { from: 1941-02-25 }
+    confidence: B
+    note: >-
+      单位帝国马克（RM），1938 年币值。deutsches-marinearchiv 记 1.816 亿，
+      german-navy 记 1.81 亿（四舍五入），取精确值。币种与年份必须一起引用，
+      否则数字无意义——同期 1 RM 的购买力与战后不可比。
+
+  - field: construction.building_time_days
+    unit: count
+    value: 1576
+    src: [kbismarck-tirpitz]
+    valid: { from: 1941-02-25 }
+    confidence: C
+    note: >-
+      按铺设龙骨 1936-11-02 至服役 1941-02-25 推算，非来源直接给出。
+      仅作粗略对比用（Bismarck 同口径 1,515 天），不作为建造效率结论。
+
+  # ============================================================ 损失
+  - field: construction.fate_date
+    unit: date
+    value: 1944-11-12
+    src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz, kbismarck-tirpitz-3444]
+    valid: { from: 1944-11-12 }
+    confidence: A
+    note: >-
+      沉没时刻 0952 时，位置 69°38′49"N 18°48′27"E（挪威 Tromsø 以西 Håkøya 外）。
+      翻覆而非爆炸解体，因此残骸形态与 Bismarck 完全不同。
+
+  - field: construction.fate_type
+    value: sunk_by_enemy
+    src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1944-11-12 }
+    confidence: A
+    note: >-
+      与 Bismarck 不同，Tirpitz 的沉没没有自沉争议：皇家空军 617 与 9 中队
+      的 Tallboy 命中导致翻覆，德方战报与英方记录一致。
+
+  - field: service.fate_category
+    value: 战斗损失（1944-11-12 皇家空军空袭，Tallboy 命中后翻覆）
+    src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1944-11-12 }
+    confidence: A
+
+  - field: service.fate_authority
+    value: 皇家空军第 617 与第 9 中队空袭；德方战报记 0952 时翻覆于 Håkøya 外
+    src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1944-11-12 }
+    confidence: A
+    note: >-
+      1944-11-12 当天 32 架 Lancaster 出击，两枚 5.4 t Tallboy 命中左舷舯部、
+      另有多枚近失。舰体被炸出一个大破口后迅速左倾翻覆，与 Bismarck 的
+      缓慢下沉过程不同，因此生还比例反而更低。
+
+  - field: service.casualties
+    unit: persons
+    value: 971
+    src: [kbismarck-tirpitz]
+    valid: { from: 1944-11-12 }
+    confidence: B
+    note: >-
+      当日在舰约 1,700 人（部分船员岸上休假），971 人随舰沉没。
+      全生涯死亡另有 1,120 / 1,101 两种统计（deutsches-marinearchiv 自述
+      "Die Verlustzahlen schwanken"），差异来自是否计入 1944-04-03 与
+      1944-08-24 空袭的死者。
+
+  - field: service.casualties
+    unit: persons
+    value: 1204
+    src: [deutsches-marinearchiv-tirpitz]
+    valid: { from: 1944-11-12 }
+    confidence: C
+    note: >-
+      与 971 并存：1,204 是某些德方统计给出的沉没当日死亡数，
+      可能是把失踪者一并计入。本站并列保留，页面标"存在争议"。
+
+  # ============================================================ 编制
+  - field: service.complement.standard
+    unit: persons
+    value: 2608
+    src: [kbismarck-tirpitz, german-navy-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1943 }
+    confidence: B
+    note: >-
+      2,608 人 = 108 名军官 + 2,500 名士兵，四家来源一致，取 1943 年状态。
+      比 Bismarck 的 2,200+ 多出约 400 人，主因是防空炮位大幅增加后
+      所需炮手与弹药搬运人员增多。
+
+  - field: service.complement.standard
+    unit: persons
+    value: 2065
+    src: [kbismarck-tirpitz]
+    valid: { from: 1941 }
+    confidence: C
+    note: >-
+      kbismarck 引英文维基的另一种统计（103 名军官 + 1,962 名士兵 = 2,065）。
+      与 2,608 并存：很可能分别是 1941 年服役初期与 1943 年满编状态，
+      但两源都没写清口径，故并列而不取舍。
+
+  - field: service.complement.officers
+    unit: persons
+    value: 108
+    src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1943 }
+    confidence: B
+
+  - field: service.commander
+    value: Kpt.z.S. Karl Topp
+    src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1941-02-25, to: 1943-02-24 }
+    confidence: A
+    note: 首任舰长，任内经历波罗的海试航、移驻挪威与 X 艇袭击。
+
+  - field: service.commander
+    value: Kpt.z.S. Hans Meyer
+    src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1943-02-25, to: 1944-04-30 }
+    confidence: A
+    note: 任内经历斯匹次卑尔根炮击与 1944-04-03 卡亚空袭。
+
+  - field: service.commander
+    value: Kpt.z.S. Wolf Junge
+    src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1944-05-01, to: 1944-11-03 }
+    confidence: A
+    note: 任内经历 Tallboy 重创与移泊 Tromsø。
+
+  - field: service.commander
+    value: Kpt.z.S. Robert Weber（i.V. 代理）
+    src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1944-11-04, to: 1944-11-12 }
+    confidence: A
+    note: 代理舰长，1944-11-12 随舰阵亡。
+
+  - field: service.unit
+    value: 1944-10 起作为 Tromsø 外 Håkøya 的浮动炮台
+    src: [kbismarck-tirpitz]
+    valid: { from: 1944-10-15 }
+    confidence: B
+    note: >-
+      1944-09-15 Tallboy 命中舰首后失去航海能力，临时修补后以 8 节
+      自行驶往 Tromsø，此后只作为固定炮台存在——这也是英方坚持
+      要击沉它的原因：只要还浮着就仍能牵制兵力。
+
+  # ============================================================ 尺寸（与舰级不同）
+  # Bismarck 级的设计值在舰级文件里，这里只写 Tirpitz 实际不同的部分。
+  - field: dimensions.length.oa
+    unit: m
+    value: 250.5
+    src: [kbismarck-tirpitz, kbismarck-tirpitz-report]
+    valid: { from: 1941-02-25 }
+    confidence: B
+    note: >-
+      kbismarck 记 "overall length 250.5 m"，与 Bismarck 相同；
+      1945 年美方实测报告记 821.5 ft = 250.4 m，两者相差在测量误差内。
+      另有 253.6 m（navypedia / dewiki / deutsches-marinearchiv）与
+      251.0 m（german-navy）两说，见下方并列条目。
+
+  - field: dimensions.length.oa
+    unit: m
+    value: 253.6
+    src: [navypedia-bismarck, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1941-02-25 }
+    confidence: C
+    note: >-
+      与 250.5 并存。一说 Bismarck 级两舰全长本应相差约 3 m（Tirpitz 后续
+      加装导致），另一说两者完全相同、253.6 是把水线长与全长记混。
+      两源都没给出测量口径，无法裁决，并列保留。
+
+  - field: dimensions.length.oa
+    unit: m
+    value: 251.0
+    src: [german-navy-tirpitz]
+    valid: { from: 1941-02-25 }
+    confidence: C
+    note: 与 250.5 及 253.6 并存，同属"口径未写明"的一类，并列保留。
+
+  - field: dimensions.length.wl
+    unit: m
+    value: 241.55
+    src: [kbismarck-tirpitz]
+    valid: { from: 1941-02-25 }
+    confidence: B
+    note: 另有 241.6 m 与 241.7 m 两说，差异在四舍五入量级，不构成分歧。
+
+  - field: dimensions.draught.max
+    unit: m
+    value: 10.61
+    src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1942 }
+    confidence: B
+    note: >-
+      1941-02 状态的实测吃水另记 50,425 t 满载状态；10.61 m 对应
+      后期的 53,500 mt 满载状态。dewiki 记 9.9 m 疑为把建造吃水当最大吃水。
+
+  # ============================================================ 排水量（与舰级不同）
+  - field: displacement.standard
+    unit: t
+    value: 43900
+    src: [kbismarck-tirpitz]
+    valid: { from: 1941-02-25 }
+    confidence: B
+    note: >-
+      kbismarck 原文 "standard 43,900 mt"。注意同站 genedata 的对比表
+      抄的是 Bismarck 的 43,978 构成——**站内自相矛盾**，取专门页的数字。
+      另有 42,900 t（navypedia 与英文维基，后者是 42,200 长吨换算）
+      与 41,700 tn.l.（dewiki Infobox，该站正文却写 42,900，Infobox 疑似漏改）。
+
+  - field: displacement.standard
+    unit: t
+    value: 42900
+    src: [navypedia-bismarck]
+    valid: { from: 1941-02-25 }
+    confidence: C
+    note: 与 43,900 并存，差 1,000 t。两说口径都未写明是条约吨位还是公吨，无法裁决。
+
+  - field: displacement.full
+    unit: t
+    value: 52600
+    src: [navypedia-bismarck, german-navy-tirpitz]
+    valid: { from: 1941-02-25 }
+    confidence: B
+    note: >-
+      三家一致（navypedia、英文维基的 51,800 长吨换算、german-navy 的
+      "Maximum displacement 52600 t"）。genedata 对比表同样抄了 Bismarck 的
+      51,700，属站内矛盾，不取。
+
+  - field: displacement.maximum
+    unit: t
+    value: 53500
+    src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1944 }
+    confidence: B
+    note: >-
+      kbismarck 原文 "full load max. 53,500 mt"。deutsches-marinearchiv 另给
+      1941-02 状态的 50,425 t——两者不是分歧，是不同时期：防空炮与弹药
+      在 1942–44 年间持续增加，满载排水量随之上升。
+
+  # ============================================================ 动力（与舰级不同）
+  - field: propulsion.power.trial
+    unit: hp
+    value: 163026
+    src: [kbismarck-tirpitz, german-navy-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1941 }
+    confidence: A
+    note: >-
+      实测最大值，比 Bismarck 的 150,170 hp 高约 13,000 hp。四家来源一致；
+      genedata 记 163,024（差 2 hp，属抄写噪声），英文维基记 163,023 PS。
+
+  - field: propulsion.speed.trial
+    unit: kn
+    value: 30.8
+    src: [kbismarck-tirpitz, german-navy-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1941 }
+    confidence: A
+    note: 实测最大值，比 Bismarck 的 30.1 kn 高 0.7 kn。设计值仍为 29 kn，与舰级一致。
+
+  - field: propulsion.turbine.manufacturer
+    value: Brown, Boveri & Cie（BBC）
+    src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1941-02-25 }
+    confidence: A
+    note: >-
+      Tirpitz 的三组齿轮传动汽轮机由 BBC 制造，Bismarck 用的是 Blohm & Voss
+      的机组。这一点在动力舱布局与备件体系上都有实际影响。
+
+  - field: propulsion.turbine.count
+    unit: count
+    value: 3
+    src: [kbismarck-tirpitz]
+    valid: { from: 1941-02-25 }
+    confidence: A
+    note: >-
+      三组 BBC 齿轮传动蒸汽轮机，**另有 1 组 Marschturbine 巡航汽轮机**。
+      舰级那条 note 写"无巡航涡轮"是俾斯麦号的情况，不适用于本舰。
+
+  - field: propulsion.turbine.type
+    value: BBC 齿轮传动汽轮机 + 1 组 Marschturbine 巡航汽轮机
+    src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1941-02-25 }
+    confidence: B
+    note: >-
+      **Tirpitz 独有的巡航汽轮机**（Marschturbine），4,220 rpm / 轴 170 rpm。
+      kbismarck 明确写 "No cruising turbine was fitted on Bismarck."；
+      德文资料称该机组"优化了部分负荷下的燃油消耗"。这是两舰动力系统
+      最实质的差别之一，也是 Tirpitz 续航曲线不同的原因。
+
+  - field: propulsion.fuel.capacity
+    unit: t
+    value: 8297
+    src: [kbismarck-tirpitz]
+    valid: { from: 1941-02-25 }
+    confidence: C
+    note: >-
+      kbismarck 记 8,297 mt，navypedia 记 7,780 t，差 517 t。
+      Bismarck 的同类数据在 kbismarck 内部就有 7,900 与 8,294 两说，
+      说明该站的燃油容量栏本身口径不稳，本站并列保留、标低置信度。
+
+  # ============================================================ 武备（与舰级不同）
+  - field: armament.torpedo.tubes
+    unit: count
+    value: 8
+    src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1941-10 }
+    confidence: A
+    note: >-
+      两座四联装 533 mm 鱼雷发射管，共 8 具，装上甲板舯部两舷（section X）。
+      Bismarck 完全没有鱼雷武装——这是两舰最容易被忽略的实质差异。
+      加装时间有 1941-09（navypedia）、1941-10 Gotenhafen（kbismarck）、
+      1941 秋（dewiki）、1941-12 至 1942-01（英文维基）四说，取 1941-10。
+
+  - field: armament.torpedo.diameter
+    unit: mm
+    value: 533
+    src: [kbismarck-tirpitz, navweaps-torpedoes-wwii]
+    valid: { from: 1941-10 }
+    confidence: A
+    note: 德制 53.3 cm（21 英寸）标准口径，型号为 G7a T1。
+
+  - field: armament.mount.summary
+    value: >-
+      8×38 cm/L52（4 座双联）+ 12×15 cm/L55（6 座双联）+ 16×10.5 cm/L65
+      （8 座双联，**全部 C/37**）+ 16×3.7 cm/L83（8 座双联）+
+      2 cm 高炮（1941 年 12 门 → 1944 年 78 门）+ 8 具 533 mm 鱼雷管
+    src: [kbismarck-tirpitz, navweaps-10_5cm-sk-c33]
+    valid: { from: 1944 }
+    confidence: B
+    note: >-
+      与 Bismarck 的差别四处：① 10.5 cm 八座统一为 C/37（Bismarck 是
+      前四座 C/31d、后四座 C/37）② 多两座四联鱼雷管 ③ 2 cm 数量从 12 增至 78
+      ④ 1944 年起 38 cm 与 15 cm 均可对空射击。
+
+  - field: armament.mount.summary
+    value: >-
+      8×38 cm/L52（4 座双联）+ 12×15 cm/L55（6 座双联）+ 16×10.5 cm/L65
+      （8 座双联）+ 16×3.7 cm/L83（8 座双联）+ 12×2 cm 单装
+    src: [kbismarck-tirpitz]
+    valid: { from: 1941-02-25, to: 1941-09-30 }
+    confidence: B
+    note: 服役时的原始配置，尚未装鱼雷管，2 cm 只有 12 门单装。
+
+  # ============================================================ 2 cm 高炮增量（Tirpitz 独有节奏）
+  - field: armament.aa_20mm.count
+    unit: count
+    value: 12
+    src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1941-02-25, to: 1941-06-30 }
+    confidence: B
+    note: 服役时 12 门 2 cm 单装。
+
+  - field: armament.aa_20mm.count
+    unit: count
+    value: 16
+    src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1941-07-01, to: 1941-09-30 }
+    confidence: C
+    note: navypedia 改装时间线：1941-07 加 4 门单装，共 16 门。
+
+  - field: armament.aa_20mm.count
+    unit: count
+    value: 24
+    src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1941-10-01, to: 1942-05-31 }
+    confidence: C
+    note: navypedia：1941-09 减 4 门单装、加 6 座四联（24 门），与鱼雷管同批改装。
+
+  - field: armament.aa_20mm.count
+    unit: count
+    value: 32
+    src: [kbismarck-tirpitz]
+    valid: { from: 1942-06-01, to: 1943-02-28 }
+    confidence: C
+    note: navypedia：1942-06 加 2 座四联。
+
+  - field: armament.aa_20mm.count
+    unit: count
+    value: 40
+    src: [kbismarck-tirpitz]
+    valid: { from: 1943-03-01, to: 1944-05-31 }
+    confidence: C
+    note: navypedia：1943-03 加 2 座四联。
+
+  - field: armament.aa_20mm.count
+    unit: count
+    value: 78
+    src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+    valid: { from: 1944-06-01 }
+    confidence: C
+    note: >-
+      终值存在 78 / 72 / 58 / 16–58 四说。78 见 kbismarck 原文
+      "20 x 2cm guns (78 in 1944)" 与 deutsches-marinearchiv 的
+      "bis zu 78 x 2,0 cm-Flak"；英文维基记 58；navypedia 的增减累计为 72。
+      取 78（两家一致），其余并列保留于 note。**这一项是全篇最不可靠的数字之一。**
+
+  # ============================================================ 雷达与电子战（Tirpitz 独有演进）
+  - field: sensors.radar.installed
+    value: FuMO 23（3 台：前桅楼、前部与后部测距仪塔）
+    src: [kbismarck-tirpitz, navweaps-radar]
+    valid: { from: 1941-02-25, to: 1941-12-31 }
+    confidence: B
+    note: 服役时的原始配置，与 Bismarck 相同。
+
+  - field: sensors.radar.installed
+    value: FuMO 27 + FuMO 4 "Samos"
+    src: [navweaps-radar, kbismarck-tirpitz]
+    valid: { from: 1942-01-01, to: 1943-12-31 }
+    confidence: C
+    note: >-
+      1942-01 前后前桅测距仪塔顶加装一层雷达室：装 FuMO 27 大天线，
+      其上方小框装 Timor（FuMO 4 Samos），雷达室两侧与后方装 Sumatra。
+      navweaps 用 "Probably" 措辞，置信度按 C 处理。
+
+  - field: sensors.radar.installed
+    value: FuMO 26（3 台）+ FuMO 213 "Würzburg-D" 炮瞄雷达
+    src: [navweaps-radar, kbismarck-tirpitz]
+    valid: { from: 1944-01-01 }
+    confidence: C
+    note: >-
+      1944 年春夏换装加大型 3 m × 6 m 天线，判为 FuMO 26；第三座防空指挥仪
+      （主桅后，昵称 Wackeltopf）基座抬高 2 m 加装炮瞄雷达，
+      判为 Würzburg-C 或 -D（海军编号 FuMO 212 / 213）。**只有 Tirpitz 有**。
+      navweaps 总评：Tirpitz 拥有德国大型水面舰中最完善的雷达装备。
+
+  - field: sensors.ecm.suite
+    value: FuMB 4 "Samoa" + FuMB 7 被动探测
+    src: [navweaps-radar]
+    valid: { from: 1941-09-01, to: 1944-05-31 }
+    confidence: C
+    note: 1941-09 装；1944-06 追加 FuMB 6（Palau 偶极子反雷达涂层/干扰）。
+
+  # ============================================================ 航空
+  - field: aviation.aircraft.capacity
+    unit: count
+    value: 4
+    src: [kbismarck-tirpitz, luftwaffe-zur-see-196-tirpitz]
+    valid: { from: 1941-02-25, to: 1941-12-31 }
+    confidence: B
+    note: >-
+      4 架 Ar 196（3 架 A-2 + 1 架 A-3），属 Bordfliegerkommando 1./196。
+      机库分布：1 号库上甲板中部 Spant 94–106 装 2 架，2 号库左舷烟囱旁
+      Spant 122–134、3 号库右舷同位各装 1 架。
+
+  - field: aviation.aircraft.capacity
+    unit: count
+    value: 6
+    src: [kbismarck-tirpitz]
+    valid: { from: 1942-01-01 }
+    confidence: C
+    comparable: false
+    note: >-
+      与 4 并存：4 架是机库容量，6 架是"4 架在库 + 2 架停在弹射器上"的
+      极限搭载。两者是不同口径，不是矛盾，故并列而非标争议。
+      【2026-11-18】标 comparable: false —— 6 是极限搭载、4 才是机库容量。
+      对比器按机库容量比，不按极限。
+
+  - field: aviation.aircraft.types
+    value: Arado Ar 196（A-2 / A-3 浮筒水上飞机）
+    src: [kbismarck-tirpitz, luftwaffe-zur-see-196-tirpitz]
+    valid: { from: 1941-02-25 }
+    confidence: A
+
+  - field: aviation.catapult.count
+    unit: count
+    value: 2
+    src: [luftwaffe-zur-see-196-tirpitz]
+    valid: { from: 1941-02-25 }
+    confidence: B
+    note: >-
+      Doppel-Teleskop-Katapult（Deutsche Werke 制）左右舷各一。
+      注意：德文一手技术说明记每具 16 m、可伸出舷外至 24 m；
+      dewiki 记 32 m、伸出 48 m，恰好差一倍（疑为把两舷合计当单具）；
+      英文维基记"1 座双端弹射器"。本站取德文一手说明。
+
+  - field: aviation.hangar.count
+    unit: count
+    value: 3
+    src: [luftwaffe-zur-see-196-tirpitz]
+    valid: { from: 1941-02-25 }
+    confidence: B
+
+  - field: aviation.crane.count
+    unit: count
+    value: 4
+    src: [luftwaffe-zur-see-196-tirpitz]
+    valid: { from: 1941-02-25 }
+    confidence: C
+    note: >-
+      2 台固定式 12 t 旋转吊（Spant 121）+ 2 台 4 t 移机吊（Spant 114.950）。
+      注意 Tirpitz 把烟囱旁的上层建筑延伸到上甲板边缘（Bismarck 没有），
+      主吊车因此装在更高一层甲板——这是肉眼可辨的结构差异。
+
+  # ============================================================ 涂装（全篇证据最弱）
+  - field: appearance.scheme
+    value: 波罗的海迷彩（深浅色块 disruptive pattern）
+    src: [navweaps-camouflage]
+    valid: { from: 1941-02-25, to: 1941-12-31 }
+    confidence: C
+    note: >-
+      navweaps 图注 "KMS Tirpitz in a Dazzle Disruptive Measure"。
+      **注意：本站没有任何一手德国海军涂装命令**，涂装是全篇证据最弱的一环，
+      所有取值均为根据照片反推，置信度一律 C。
+
+  - field: appearance.scheme
+    value: 分裂式迷彩（splinter pattern，浅灰底 + 深灰色块）
+    src: [navweaps-camouflage]
+    valid: { from: 1942-01-01, to: 1942-12-31 }
+    confidence: C
+    note: 据 Fættenfjord 时期照片反推。
+
+  - field: appearance.scheme
+    value: 峡湾锚地伪装（深灰整体 + 局部伪装网与植被）
+    src: [navweaps-camouflage]
+    valid: { from: 1943-01-01, to: 1944-03-31 }
+    confidence: C
+    note: >-
+      挪威博物馆 1943 年照片记为 "ikledd kamuflasje dekor"。
+      德文模型圈所称 "Scheme J" 的配色（白 RAL 9002 / 浅灰 RAL 7001 /
+      深灰 RAL 7024）来自论坛二手推测，作者自述是估计，**不采信**。
+
+  - field: appearance.scheme
+    value: 1944 年末方案（细节未获取）
+    src: [navweaps-camouflage]
+    valid: { from: 1944-04-01 }
+    confidence: C
+    note: >-
+      权威专著 Asmussen & Leon《German Naval Camouflage Volume II》pp.18–35
+      专论 Tirpitz，但仅取得 17 页预览 PDF、不含图版，故本段留空待补。
+
+  # ============================================================ 单舰独有的炮位与武器
+  # 舰级文件里的 weapon/mount 实体是两舰共用的；这里只写 Tirpitz 多出来的东西。
+
+  - about: weapon:g7a-t1
+    field: weapon.designation
+    value: 53.3 cm G7a T1 鱼雷
+    src: [navweaps-torpedoes-wwii]
+    valid: { from: 1935 }
+    confidence: B
+
+  - about: weapon:g7a-t1
+    field: weapon.nation
+    value: germany
+    src: [navweaps-torpedoes-wwii]
+    valid: { from: 1935 }
+    confidence: B
+
+  - about: weapon:g7a-t1
+    field: weapon.category
+    value: torpedo
+    src: [navweaps-torpedoes-wwii]
+    valid: { from: 1935 }
+    confidence: B
+
+  - about: weapon:g7a-t1
+    field: weapon.bore
+    unit: mm
+    value: 533
+    src: [navweaps-torpedoes-wwii]
+    valid: { from: 1935 }
+    confidence: A
+
+  - about: weapon:g7a-t1
+    field: weapon.weight
+    unit: kg
+    value: 1528
+    src: [navweaps-torpedoes-wwii]
+    valid: { from: 1935 }
+    confidence: B
+
+  - about: weapon:g7a-t1
+    field: weapon.in_service_from
+    unit: date
+    value: 1935
+    src: [navweaps-torpedoes-wwii]
+    valid: { from: 1935 }
+    confidence: B
+
+  - about: mount:tirpitz-torpedo
+    field: mount.label_name
+    value: 鱼雷发射管
+    src: [kbismarck-tirpitz]
+    valid: { from: 1941-10 }
+    confidence: B
+
+  - about: mount:tirpitz-torpedo
+    field: mount.weapon
+    value: weapon:g7a-t1
+    src: [navweaps-torpedoes-wwii]
+    valid: { from: 1941-10 }
+    confidence: B
+
+  - about: mount:tirpitz-torpedo
+    field: mount.type
+    value: tube
+    src: [kbismarck-tirpitz]
+    valid: { from: 1941-10 }
+    confidence: B
+
+  - about: mount:tirpitz-torpedo
+    field: mount.barrels
+    unit: count
+    value: 4
+    src: [kbismarck-tirpitz]
+    valid: { from: 1941-10 }
+    confidence: B
+
+  - about: mount:tirpitz-torpedo
+    field: mount.count
+    unit: count
+    value: 2
+    src: [kbismarck-tirpitz]
+    valid: { from: 1941-10 }
+    confidence: B
+    note: >-
+      两座四联装，分置上甲板舯部两舷（section X）。备雷 24 发。
+      加装时 Tirpitz 把该处上层建筑延伸到上甲板边缘，主吊车因此上移一层。
+
+  - about: mount:tirpitz-torpedo
+    field: mount.position
+    value: midships
+    src: [kbismarck-tirpitz]
+    valid: { from: 1941-10 }
+    confidence: B
+
+  - about: mount:tirpitz-torpedo
+    field: mount.installed
+    unit: date
+    value: 1941-10
+    src: [kbismarck-tirpitz]
+    valid: { from: 1941-10 }
+    confidence: C
+    note: 加装时间四说（1941-09 / 1941-10 / 1941 秋 / 1941-12 至 1942-01），取 1941-10。
+
+  - about: mount:tirpitz-105cm-twin
+    field: mount.label_name
+    value: 10.5 cm 双联炮座
+    src: [navweaps-10_5cm-sk-c33]
+    valid: { from: 1941-12 }
+    confidence: A
+
+  - about: mount:tirpitz-105cm-twin
+    field: mount.weapon
+    value: weapon:10_5cm-sk-c33
+    src: [navweaps-10_5cm-sk-c33]
+    valid: { from: 1941-12 }
+    confidence: A
+
+  - about: mount:tirpitz-105cm-twin
+    field: mount.turret_designation
+    value: Dop. L. C/37（八座全统一）
+    src: [navweaps-10_5cm-sk-c33]
+    valid: { from: 1941-12 }
+    confidence: A
+    note: >-
+      navweaps 原话："Tirpitz was originally fitted with two Dop. L. C/31d mounts
+      but these were replaced in late 1941 giving her a uniform battery of eight
+      Dop. L. C/37 mounts." Bismarck 则是前四座 C/31d、后四座 C/37 混装。
+
+  - about: mount:tirpitz-105cm-twin
+    field: mount.count
+    unit: count
+    value: 8
+    src: [navweaps-10_5cm-sk-c33]
+    valid: { from: 1941-12 }
+    confidence: A
+
+  - about: mount:tirpitz-105cm-twin
+    field: mount.barrels
+    unit: count
+    value: 2
+    src: [navweaps-10_5cm-sk-c33]
+    valid: { from: 1941-12 }
+    confidence: A
+
+  - about: mount:tirpitz-105cm-twin
+    field: mount.weight
+    unit: kg
+    value: 26425
+    src: [navweaps-10_5cm-sk-c33]
+    valid: { from: 1941-12 }
+    confidence: A
+    note: >-
+      C/37 座重 26,425 kg；C/31d 是 27,350 kg，C/31 是 27,805 kg。
+      统一成 C/37 后比混装轻约 900 kg/座，同时俯仰速率从 10 °/s 提到 12 °/s、
+      旋回从 8.0 提到 8.5 °/s，对空性能有实质改善。
+
+  - about: mount:tirpitz-105cm-twin
+    field: mount.elevation.max
+    unit: deg
+    value: 80
+    src: [navweaps-10_5cm-sk-c33]
+    valid: { from: 1941-12 }
+    confidence: A
+
+  - about: mount:tirpitz-20mm-bruno
+    field: mount.label_name
+    value: Bruno 炮塔顶 2 cm 四联
+    src: [deutsches-marinearchiv-tirpitz]
+    valid: { from: 1943 }
+    confidence: C
+    note: >-
+      dewiki 记 Bruno 炮塔顶部有一台 2 cm Flakvierling 38，
+      原文特别指出「姊妹舰上没有这个」——即 **Bismarck 无此配置**。
+      这是模型制作者最容易漏掉的一处外观差异。
+
+  - about: mount:tirpitz-20mm-bruno
+    field: mount.weapon
+    value: weapon:20mm-c38
+    src: [deutsches-marinearchiv-tirpitz]
+    valid: { from: 1943 }
+    confidence: C
+
+  - about: mount:tirpitz-20mm-bruno
+    field: mount.type
+    value: quad_turret
+    src: [deutsches-marinearchiv-tirpitz]
+    valid: { from: 1943 }
+    confidence: C
+
+  - about: mount:tirpitz-20mm-bruno
+    field: mount.barrels
+    unit: count
+    value: 4
+    src: [deutsches-marinearchiv-tirpitz]
+    valid: { from: 1943 }
+    confidence: C
+
+  - about: mount:tirpitz-20mm-bruno
+    field: mount.count
+    unit: count
+    value: 1
+    src: [deutsches-marinearchiv-tirpitz]
+    valid: { from: 1943 }
+    confidence: C
+
+  - about: mount:tirpitz-20mm-bruno
+    field: mount.position
+    value: superfiring_fore
+    src: [deutsches-marinearchiv-tirpitz]
+    valid: { from: 1943 }
+    confidence: C
+    note: Bruno 是前部两座炮塔中较高的一座（overhöht），四联装在它的顶部。
+
+  # ============================================================ 雷达 — 武器实体
+  # 型号身份三条；装舰窗口与数量仍在上面 sensors.radar.installed 里。
+  # 型号首服役年（weapon.in_service_from）**未获取**，不写。
+  # 注：navweaps 的德制雷达部分措辞大量使用 Probably / possibly，本站按 D 档采信，
+  # 故下列 fact 的 confidence 最高只到 B（有第二来源旁证时才给 B）。
+
+  - about: weapon:fumo-23
+    field: weapon.designation
+    value: FuMO 23 海上搜索雷达（Seetakt 系列，绰号 Matratzen 床垫天线）
+    src: [navweaps-radar, kbismarck-tirpitz]
+    valid: { from: 1941-02-25 }
+    confidence: B
+    note: >
+      旧编号体系里对应 FMG 39G (gO) / (gP)，约 1943 年统一改为 FuMO 编号。
+      性能数值（368 MHz、天线约 2 m × 4 m、9 kW、约 25,000 m、无 PPI 只有 A-scope）
+      本站注册表无对应字段，一律不入库。
+
+  - about: weapon:fumo-23
+    field: weapon.nation
+    value: germany
+    src: [navweaps-radar, kbismarck-tirpitz]
+    valid: { from: 1941-02-25 }
+    confidence: B
+
+  - about: weapon:fumo-23
+    field: weapon.category
+    value: radar
+    src: [navweaps-radar, kbismarck-tirpitz]
+    valid: { from: 1941-02-25 }
+    confidence: B
+
+  - about: weapon:fumo-26
+    field: weapon.designation
+    value: FuMO 26 海上搜索雷达（3 m × 6 m 加大型床垫天线）
+    src: [navweaps-radar, kbismarck-tirpitz]
+    valid: { from: 1944-01-01 }
+    confidence: B
+    note: >
+      装舰判断依据是天线尺寸的变化：1944 年春夏换装约 3 m × 6 m 的大天线，
+      navweaps 据此判为 FuMO 26（原文用 probably）。性能数值（368 MHz、
+      20-25 km、方位精度 70 m、角度精度 0.25°）无对应字段，不入库。
+
+  - about: weapon:fumo-26
+    field: weapon.nation
+    value: germany
+    src: [navweaps-radar, kbismarck-tirpitz]
+    valid: { from: 1944-01-01 }
+    confidence: B
+
+  - about: weapon:fumo-26
+    field: weapon.category
+    value: radar
+    src: [navweaps-radar, kbismarck-tirpitz]
+    valid: { from: 1944-01-01 }
+    confidence: B
+
+  - about: weapon:fumo-27
+    field: weapon.designation
+    value: FuMO 27 海上搜索雷达（2 m × 4 m 垂直极化天线）
+    src: [navweaps-radar, kbismarck-tirpitz]
+    valid: { from: 1941-07-01 }
+    confidence: C
+    note: >
+      **装舰时点两说并列，不裁决**：navweaps 记后部测距仪塔上的 FuMO 27 天线
+      于 1941 年夏装设，前桅楼上另加一座雷达塔（probably 1942-01）；
+      本文件 sensors.radar.installed 那一条把 1942-01 起的「FuMO 23 三台」
+      换成「FuMO 27 + FuMO 4 Samos」。此处 valid.from 取较早的 1941-07，
+      表示该型已在本舰出现，不代表全舰换装完成。
+      navypedia 另给出静态清单「4 × FuMO 27」，与上述演进叙述口径不同，亦保留。
+
+  - about: weapon:fumo-27
+    field: weapon.nation
+    value: germany
+    src: [navweaps-radar, kbismarck-tirpitz]
+    valid: { from: 1941-07-01 }
+    confidence: C
+
+  - about: weapon:fumo-27
+    field: weapon.category
+    value: radar
+    src: [navweaps-radar, kbismarck-tirpitz]
+    valid: { from: 1941-07-01 }
+    confidence: C
+
+  - about: weapon:fumo-213
+    field: weapon.designation
+    value: FuMO 213 "Würzburg-D" 炮瞄雷达（AA gunnery radar）
+    src: [navweaps-radar, kbismarck-tirpitz]
+    valid: { from: 1944-01-01 }
+    confidence: C
+    note: >
+      装在第三座 3-D 稳定的对空指挥仪上，用 3 m 抛物面天线；1944 年春夏该指挥仪
+      基座抬高约 2 m 装这台炮瞄雷达。旧编号体系里对应 FMG 39T/D（后改 FuSE 62D），
+      海军编号 FuMO 213；同族另有 FuMO 212，两者的具体分配原文用 probably，
+      故记 C。性能（560 MHz、40-60 km、精度 35 m / 1.15°）无对应字段，不入库。
+
+  - about: weapon:fumo-213
+    field: weapon.nation
+    value: germany
+    src: [navweaps-radar, kbismarck-tirpitz]
+    valid: { from: 1944-01-01 }
+    confidence: C
+
+  - about: weapon:fumo-213
+    field: weapon.category
+    value: radar
+    src: [navweaps-radar, kbismarck-tirpitz]
+    valid: { from: 1944-01-01 }
+    confidence: C
+
+  # ============================================================ 被动探测 — 武器实体
+  # category 归入 fire_control（本站分类树没有「电子战」栏），
+  # **它们是雷达告警接收机，不是雷达**，这一点写在 note 里。
+
+  - about: weapon:fumb-4
+    field: weapon.designation
+    value: FuMB 4 "Sumatra" 被动雷达侦测仪（passive radar detector）
+    src: [navweaps-radar]
+    valid: { from: 1941-09-01 }
+    confidence: C
+    note: >
+      这是**被动 ESM 设备，不是雷达**：FuMB 系列的定位是
+      「Radar - detector, passive detection (of enemy radar transmission)」，
+      只接收不发射，用于侦测敌方雷达信号。
+      category 记 fire_control 是因为本站分类树没有电子战栏，不代表它是火力控制雷达。
+      装舰时点与 FuMB 7 同批（1941-09），细节只在 navweaps 一家，故 C。
+
+  - about: weapon:fumb-4
+    field: weapon.nation
+    value: germany
+    src: [navweaps-radar]
+    valid: { from: 1941-09-01 }
+    confidence: C
+
+  - about: weapon:fumb-4
+    field: weapon.category
+    value: fire_control
+    src: [navweaps-radar]
+    valid: { from: 1941-09-01 }
+    confidence: C
+
+  - about: weapon:fumb-7
+    field: weapon.designation
+    value: FuMB 7 "Timor" 被动雷达侦测仪（passive radar detector）
+    src: [navweaps-radar]
+    valid: { from: 1941-09-01 }
+    confidence: C
+    note: >
+      同样是**被动 ESM，不是雷达**（FuMB = passive detection of enemy radar transmission），
+      不发射。category 记 fire_control 只因分类树没有电子战栏。
+      本舰 1941-09 与 FuMB 4 同批装；1944-06 另加 FuMB 6 一说见 sensors.ecm.suite 相关条目。
+
+  - about: weapon:fumb-7
+    field: weapon.nation
+    value: germany
+    src: [navweaps-radar]
+    valid: { from: 1941-09-01 }
+    confidence: C
+
+  - about: weapon:fumb-7
+    field: weapon.category
+    value: fire_control
+    src: [navweaps-radar]
+    valid: { from: 1941-09-01 }
+    confidence: C
+
+  # ============================================================ 舰载机 — 武器实体
+  - about: weapon:arado-196
+    field: weapon.designation
+    value: Arado Ar 196 舰载水上侦察机（A-2 / A-3 浮筒型）
+    src: [kbismarck-tirpitz, luftwaffe-zur-see-196-tirpitz]
+    valid: { from: 1941-02-25 }
+    confidence: A
+    note: 本舰搭载 A-2 与 A-3 两种浮筒型；机库 3 座、弹射器 2 座、吊车 4 台的编制见 aviation.* 各条。
+
+  - about: weapon:arado-196
+    field: weapon.nation
+    value: germany
+    src: [kbismarck-tirpitz, luftwaffe-zur-see-196-tirpitz]
+    valid: { from: 1941-02-25 }
+    confidence: A
+
+  - about: weapon:arado-196
+    field: weapon.category
+    value: aircraft
+    src: [kbismarck-tirpitz, luftwaffe-zur-see-196-tirpitz]
+    valid: { from: 1941-02-25 }
+    confidence: A

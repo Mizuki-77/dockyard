@@ -1,0 +1,1104 @@
+---
+// ============================================================================
+// 对比器（P3）
+//
+// 页面骨架由服务端渲染（表头、字段行、初始值），滑块互动走一段浏览器脚本。
+// 数据全部来自 buildCompareIndex()：一份约 50 KB 的内联 JSON。
+//
+// 为什么是「每舰一条时间轴」而不是「全场一条」：
+//   现收录 5 舰同时在世的交集只有 1941-02-25 ~ 1941-05-24 三个月。
+//   一条全局滑块会把 95% 的组合都拖进「某舰已沉没」的灰区。
+//   而读者真正想问的是「俾斯麦 1941 出击时 vs 提尔皮茨 1944 挨炸前」——
+//   这两艘船从没在同一时刻处于战备状态，全局时间轴永远做不到。
+//   所以每舰各一条滑块，另给一个「同步到同一时刻」开关。
+// ============================================================================
+import Base from '../layouts/Base.astro';
+import { buildCompareIndex } from '../lib/data';
+
+const idx = buildCompareIndex();
+
+// 默认选中的两艘：优先俾斯麦 / 提尔皮茨（同级异型差异最大，最能看出这套东西的价值），
+// 没有就退回前两艘。
+const DEFAULT_PAIR = ['bismarck', 'tirpitz'];
+const picked = DEFAULT_PAIR.filter((id) => idx.ships.some((s) => s.id === id));
+const initial = picked.length === 2 ? picked : idx.ships.slice(0, 2).map((s) => s.id);
+
+const payload = { ...idx, initial };
+---
+
+<Base title="对比器" variant="full">
+  <div class="cmp">
+    <header class="cmp__head">
+      <div class="cmp__titles">
+        <h1 class="cmp__title">对比器</h1>
+        <p class="cmp__sub">
+          选两艘舰，拖动各自的时间轴看它们在不同年代的状态。
+          <span class="cmp__note">
+            主值是「默认先给你看哪个」，不是正确答案；每条都能点开看来源。
+          </span>
+        </p>
+      </div>
+
+      <div class="cmp__tools">
+        <button type="button" id="cmp-sync" class="cmp-btn" aria-pressed="false">
+          同步到同一时刻
+        </button>
+        <button type="button" id="cmp-all" class="cmp-btn" aria-pressed="false">
+          显示全部字段
+        </button>
+      </div>
+    </header>
+
+    <!-- ============================ 选舰 + 每舰滑块 ============================ -->
+    <section class="cmp-pickers" id="cmp-pickers">
+      {
+        idx.ships.map((s) => (
+          <div class="cmp-pick" data-ship={s.id}>
+            <label class="cmp-pick__row">
+              <input type="checkbox" class="cmp-pick__cb" value={s.id} />
+              {s.pic ? (
+                <img class="cmp-pick__pic" src={s.pic.file} alt="" loading="lazy" />
+              ) : (
+                <span class="cmp-pick__nopic" aria-hidden="true">
+                  {s.name.zh.slice(0, 1)}
+                </span>
+              )}
+              <span class="cmp-pick__txt">
+                <span class="cmp-pick__name">
+                  {s.name.zh}
+                  <span class="cmp-pick__en">{s.name.en ?? ''}</span>
+                </span>
+                <span class="cmp-pick__meta">
+                  {s.className?.zh ?? ''}
+                  <span class="cmp-pick__span">
+                    {s.span.from.slice(0, 4)}–{s.span.to.slice(0, 4)}
+                  </span>
+                </span>
+              </span>
+            </label>
+
+            <div class="cmp-slider" hidden>
+              <input
+                type="range"
+                class="cmp-slider__input"
+                min={0}
+                max={1000}
+                value={500}
+                step={1}
+                aria-label={`${s.name.zh} 的状态时刻`}
+              />
+              <div class="cmp-slider__read">
+                <span class="cmp-slider__date">—</span>
+                <span class="cmp-slider__slice"></span>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </section>
+
+    <div class="cmp-hint" id="cmp-hint">
+      <b>勾选两艘舰开始对比。</b>
+      共 {idx.ships.length} 艘在库，{idx.fields.length} 个可比较字段。
+    </div>
+
+    <!-- ============================ 对比表 ============================ -->
+    <div class="cmp-wrap" id="cmp-wrap" hidden>
+      <table class="cmp-table" id="cmp-table">
+        <thead id="cmp-thead"></thead>
+        <tbody id="cmp-tbody"></tbody>
+      </table>
+    </div>
+
+    <footer class="cmp-legend">
+      <span class="lg"><i class="lg-dot lg-dot--val"></i>有值</span>
+      <span class="lg"><i class="lg-dot lg-dot--none"></i>未记载（来源没有这一项，不是 0）</span>
+      <span class="lg"><i class="lg-dot lg-dot--dead"></i>已沉没 / 未服役（此刻不在状态）</span>
+      <span class="lg"><i class="lg-dot lg-dot--inc"></i>口径存疑（来源自述不是该字段要求的口径，不参与高低判定）</span>
+    </footer>
+  </div>
+
+  <script define:vars={{ payload }}>
+    const DAY = 86400000;
+
+    /** 日期 → 距 1970-01-01 的天数。
+     *  不能把 YYYYMMDD 当十进制直接加减：19351116 + 14949 = 19366065。 */
+    function num(s) {
+      if (!s) return NaN;
+      const p = String(s).split('-').map((x) => parseInt(x, 10));
+      return Date.UTC(p[0] || 1900, (p[1] || 1) - 1, p[2] || 1) / DAY;
+    }
+    function numToDate(n) {
+      const d = new Date(Math.round(n) * DAY);
+      const pad = (x) => String(x).padStart(2, '0');
+      return `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`;
+    }
+    function hit(win, t) {
+      const a = win.from ? num(win.from) : -Infinity;
+      const b = win.to ? num(win.to) : Infinity;
+      return a <= t && t <= b;
+    }
+    function esc(s) {
+      return String(s ?? '').replace(/[&<>"]/g, (c) => (
+        { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]
+      ));
+    }
+
+    const SHIPS = new Map(payload.ships.map((s) => [s.id, s]));
+    const cells = payload.cells;
+    const fields = payload.fields;
+    const groups = payload.groups;
+    const deps = payload.deps;
+
+    // ---------------------------------------------------------------- 状态
+    /** 每舰当前时刻。默认落在服役期正中，不是起点——
+     *  起点那年往往还在舾装，读者想看的是「这条船最典型的样子」。 */
+    const T = new Map();
+    for (const s of payload.ships) {
+      const a = num(s.span.from);
+      const b = num(s.span.to);
+      T.set(s.id, Number.isFinite(a) && Number.isFinite(b) ? a + (b - a) / 2 : (a || b));
+    }
+
+    let selected = payload.initial.slice(0, 2);
+    // 默认**不同步**：每舰停在自己服役期的正中，各自看最典型的状态。
+    // 这也正是做对比器的理由——俾斯麦 1941 出击时 vs 提尔皮茨 1944 挨炸前，
+    // 两船从没在同一时刻处于战备状态，只有各自独立才比得出来。
+    // 想锁同一时刻，点「同步到同一时刻」。
+    let synced = false;
+    let showAll = false;
+
+    // ---------------------------------------------------------------- 主值
+    /** 某个字段在某舰某时刻的全部命中窗口，已按「单舰覆盖舰级」筛过。
+     *  这一步本来在 resolve.ts 的 candidatesAt()，但那边吃的是 ResolvedFact
+     *  对象；索引里已经是压平后的窗口，所以按同一套语义重写一遍：
+     *  先按时间窗筛，筛完若单舰层（own）有命中，就只用 own。 */
+    function windowsAt(shipId, fieldId, t) {
+      const arr = cells[shipId]?.[fieldId];
+      if (!arr) return [];
+      const hits = arr.filter((w) => hit(w, t));
+      const own = hits.filter((w) => w.own);
+      return own.length > 0 ? own : hits;
+    }
+
+    /** 「多种说法」的真判据。
+     *
+     *  命中多条窗口 ≠ 分歧。tirpitz 的编制是 1941 起 2,065、1943 起 2,608，
+     *  两条都 open-ended，所以 1943 年之后两条都命中。那是同一个字段在
+     *  两个时期的状态，主值取新的那条（2,608）就对了，标「多种说法」
+     *  等于把时序演进讲成了争议。
+     *
+     *  真正的分歧（同一时间窗两个值）在**建索引时**就已经被 pickPrimary
+     *  合成一格，并且那一格带了 disputed 标记 —— 只有那个标记才算数。 */
+    function isDisputed(ws) {
+      return ws.some((w) => w.disputed);
+    }
+
+    /** 缓存：来源层级 → 用于同级多值时的取舍。规则与 docs/00-framework.md §3.9 一致
+     *  （证据层级高者优先 → 有 note 者优先 → 采集时间新者优先 → source id 字母序）。 */
+    function tierOf(id) {
+      return deps.tier[id] ?? -1;
+    }
+    function fetchedOf(id) {
+      return deps.fetched[id] ?? '';
+    }
+    function betterOf(a, b) {
+      const ta = a.src.length ? Math.max(...a.src.map(tierOf)) : -1;
+      const tb = b.src.length ? Math.max(...b.src.map(tierOf)) : -1;
+      if (ta !== tb) return tb - ta;
+      const na = a.note ? 1 : 0;
+      const nb = b.note ? 1 : 0;
+      if (na !== nb) return nb - na;
+      const fa = a.src.map(fetchedOf).sort().pop() ?? '';
+      const fb = b.src.map(fetchedOf).sort().pop() ?? '';
+      if (fa !== fb) return fa < fb ? 1 : -1;
+      return (a.src.slice().sort().join(','))
+        .localeCompare(b.src.slice().sort().join(','));
+    }
+    function pickOne(list) {
+      if (list.length === 0) return null;
+      if (list.length === 1) return list[0];
+      // 多条窗口同时命中时，**取起始日最晚的那条**。
+      // 这是「后写的覆盖先写的」在时间轴上的正确形式：
+      // tirpitz 编制 1941 起 2,065 + 1943 起 2,608，两条都 open-ended，
+      // 1943 年之后两条都命中 —— 此刻的编制是 2,608，不是 2,065。
+      // 同一起始日再用 §3.9 的证据层级取舍。
+      const latest = list.reduce((a, b) =>
+        (b.from ?? '') > (a.from ?? '') ? b : a,
+      );
+      const same = list.filter((w) => (w.from ?? '') === (latest.from ?? ''));
+      return same.length > 1 ? same.slice().sort(betterOf)[0] : latest;
+    }
+
+    /** 该舰此刻是否在服役期内。 */
+    function alive(shipId, t) {
+      const s = SHIPS.get(shipId);
+      const a = num(s.span.from);
+      const b = num(s.span.to);
+      return t >= a && t <= b;
+    }
+
+    function sliceAt(shipId, t) {
+      const s = SHIPS.get(shipId);
+      return (s.slices ?? []).find((x) => {
+        const a = num(x.from);
+        const b = x.to ? num(x.to) : Infinity;
+        return a <= t && t <= b;
+      });
+    }
+
+    // ---------------------------------------------------------------- 渲染
+    const thead = document.getElementById('cmp-thead');
+    const tbody = document.getElementById('cmp-tbody');
+    const wrap = document.getElementById('cmp-wrap');
+    const hint = document.getElementById('cmp-hint');
+
+    function renderHead() {
+      const c = commonWindow();
+      const noOverlap = synced && selected.length >= 2 && !c;
+      thead.innerHTML =
+        '<tr><th class="cmp-th cmp-th--k">项目</th>' +
+        selected
+          .map((id) => {
+            const s = SHIPS.get(id);
+            const t = T.get(id);
+            const sl = sliceAt(id, t);
+            const living = alive(id, t);
+            return (
+              `<th class="cmp-th${living ? '' : ' is-dead'}" data-ship="${id}">` +
+              `<div class="cmp-th__name">${esc(s.name.zh)}` +
+              `<span class="cmp-th__en">${esc(s.name.en ?? '')}</span></div>` +
+              `<div class="cmp-th__when">${numToDate(t)}` +
+              (sl ? ` <span class="cmp-th__slice">${esc(sl.code)}</span>` : '') +
+              (living ? '' : ' <span class="cmp-th__dead">已沉没 / 未服役</span>') +
+              `</div></th>`
+            );
+          })
+          .join('') +
+        '</tr>' +
+        (noOverlap
+          ? `<tr><td colspan="${selected.length + 1}" class="cmp-warnrow">` +
+            `这两艘舰没有同时在世的时段，无法真正同步到同一时刻——` +
+            `各自停在了距你拖动位置最近的一端。关掉同步可以分别拖动。` +
+            `</td></tr>`
+          : '');
+    }
+
+    function cellHtml(shipId, field, t) {
+      if (!alive(shipId, t)) {
+        return '<td class="cmp-td cmp-td--dead"><span class="cmp-void">—</span></td>';
+      }
+      const ws = windowsAt(shipId, field.id, t);
+      const p = pickOne(ws);
+      if (!p) {
+        return '<td class="cmp-td cmp-td--none"><span class="cmp-void">未记载</span></td>';
+      }
+      const classes = ['cmp-td'];
+      if (p.incomparable) classes.push('cmp-td--inc');
+      if (isDisputed(ws)) classes.push('cmp-td--disp');
+      const bits = [`<span class="cmp-val">${esc(p.text)}</span>`];
+      if (p.incomparable) {
+        bits.push('<span class="cmp-tag cmp-tag--inc" title="口径存疑：不参与高低判定">口径存疑</span>');
+      }
+      if (isDisputed(ws)) {
+        bits.push('<span class="cmp-tag cmp-tag--disp">多种说法</span>');
+      }
+      if (p.conf === 'C') bits.push('<span class="cmp-tag cmp-tag--conf">C</span>');
+      return `<td class="${classes.join(' ')}"${p.note ? ` title="${esc(p.note)}"` : ''}>${bits.join(' ')}</td>`;
+    }
+
+    /** 一行里的最值高亮。只在：
+     *   - 字段 better 是 higher / lower（context / none 不着色）
+     *   - 两侧都是真数值
+     *   - 都没标 incomparable
+     *  时才标。任何一个条件不满足就整行不着色——宁可不标，也不误导。 */
+    function markRow(tr, vals) {
+      const numeric = vals.filter((v) => v && v.num != null && !v.incomparable);
+      if (numeric.length < 2 || numeric.length !== vals.filter(Boolean).length) return;
+      const best = Math.max(...numeric.map((v) => v.num));
+      const worst = Math.min(...numeric.map((v) => v.num));
+      if (best === worst) return;
+      tr.querySelectorAll('.cmp-td').forEach((td, i) => {
+        const v = vals[i];
+        if (!v || v.num == null || v.incomparable) return;
+        if (v.num === best) td.classList.add('is-best');
+        if (v.num === worst) td.classList.add('is-worst');
+      });
+    }
+
+    function renderBody() {
+      if (selected.length < 2) {
+        wrap.hidden = true;
+        hint.hidden = false;
+        hint.innerHTML = '<b>再选一艘舰开始对比。</b>';
+        return;
+      }
+      wrap.hidden = false;
+      hint.hidden = true;
+
+      // 全部拼成字符串最后一次性写入。
+      // 不能边拼边 tbody.appendChild()：后面的 innerHTML = ... 会把
+      // 刚 append 进去的节点全部清掉，页面只剩分组标题没有数据行。
+      const rows = [];
+      const rowVals = []; // 与 rows 里 <tr class="cmp-row"> 一一对应，供 markRow 用
+
+      for (const g of groups) {
+        const gs = fields.filter((f) => f.group === g.id);
+        const use = gs.filter((f) => {
+          if (showAll) return true;
+          // 默认显示两类的并集：
+          //
+          //  a) 两艘舰都有值的字段 —— 这是「能横向比」的那批；
+          //  b) **在任何一艘被选舰上随时间变化**的字段 —— 这是「拖时间轴有反应」的那批。
+          //
+          // 只留 (a) 会把时间轴变成空转：现收录的 5 舰里，长度/排水量这类
+          // 一辈子一个值，真正会变的（提尔皮茨 20 mm 炮 32→78、雷达换型、
+          // 涂装、编制）恰恰多半只有一舰有值。少了 (b)，读者拖滑块看不到任何变化，
+          // 会以为这个时间轴是装饰。
+          const withVal = selected.filter((id) => cells[id]?.[f.id]?.length).length;
+          if (withVal >= 2) return true;
+          return selected.some((id) => (cells[id]?.[f.id]?.length ?? 0) >= 2);
+        });
+        if (use.length === 0) continue;
+
+        rows.push(
+          `<tr class="cmp-group"><td colspan="${selected.length + 1}">` +
+          `<span class="cmp-group__zh">${esc(g.label.zh)}</span>` +
+          `<span class="cmp-group__en">${esc(g.label.en ?? '')}</span></td></tr>`,
+        );
+
+        for (const f of use) {
+          const vals = selected.map((id) => {
+            if (!alive(id, T.get(id))) return null;
+            const ws = windowsAt(id, f.id, T.get(id));
+            const p = pickOne(ws);
+            return p ? { ...p, n: ws.length } : null;
+          });
+
+          const dirHint =
+            f.better === 'higher'
+              ? '<span class="cmp-k__dir">越高越好</span>'
+              : f.better === 'lower'
+                ? '<span class="cmp-k__dir">越低越好</span>'
+                : '';
+
+          const cellsHtml = selected.map((id) => {
+            const t = T.get(id);
+            if (!alive(id, t)) {
+              return '<td class="cmp-td cmp-td--dead"><span class="cmp-void">—</span></td>';
+            }
+            const ws = windowsAt(id, f.id, t);
+            const p = pickOne(ws);
+            if (!p) {
+              return '<td class="cmp-td cmp-td--none"><span class="cmp-void">未记载</span></td>';
+            }
+            const cls = ['cmp-td'];
+            if (p.incomparable) cls.push('cmp-td--inc');
+            const bits = [`<span class="cmp-val">${esc(p.text)}</span>`];
+            if (p.incomparable) {
+              bits.push('<span class="cmp-tag cmp-tag--inc">口径存疑</span>');
+            }
+            // 分歧不能只给主值——那等于让读者以为没有别的说法。
+            // 做成可展开的「另有 N 说」，列出全部并列值 + 各自来源的 note。
+            if (isDisputed(ws)) {
+              const alts = (p.alts ?? []).filter((a) => a.text !== p.text);
+              if (alts.length > 0) {
+                bits.push(
+                  `<details class="cmp-alts"><summary class="cmp-tag cmp-tag--disp">` +
+                    `另有 ${alts.length} 说</summary>` +
+                    `<ul class="cmp-alts__list">` +
+                    alts
+                      .map(
+                        (a) =>
+                          `<li><b>${esc(a.text)}</b>` +
+                          (a.conf ? ` <i>${esc(a.conf)}</i>` : '') +
+                          (a.note ? `<span>${esc(a.note)}</span>` : '') +
+                          `</li>`,
+                      )
+                      .join('') +
+                    `</ul></details>`,
+                );
+              } else {
+                bits.push('<span class="cmp-tag cmp-tag--disp">多种说法</span>');
+              }
+            }
+            const title = p.note ? ` title="${esc(p.note)}"` : '';
+            return `<td class="${cls.join(' ')}"${title}>${bits.join(' ')}</td>`;
+          }).join('');
+
+          rows.push(
+            `<tr class="cmp-row"><th class="cmp-k"${f.note ? ` title="${esc(f.note)}"` : ''}>` +
+            `<span class="cmp-k__zh">${esc(f.label.zh)}</span>${dirHint}</th>` +
+            cellsHtml +
+            '</tr>',
+          );
+          rowVals.push({ f, vals });
+        }
+      }
+
+      tbody.innerHTML = rows.join('');
+
+      // 最值高亮放到 DOM 落地之后做——它要读每个 td 的 class 再补 is-best/is-worst。
+      const trs = tbody.querySelectorAll('tr.cmp-row');
+      rowVals.forEach(({ f, vals }, i) => {
+        const tr = trs[i];
+        if (!tr) return;
+        if (f.better === 'higher' || f.better === 'lower') markRow(tr, vals);
+      });
+    }
+
+    /** 整表重绘：表头 + 行。滑块动一次调一次，字段少（33 行）所以不优化。 */
+    function render() {
+      renderHead();
+      tbody.innerHTML = '';
+      renderBody();
+      syncSliderReads();
+    }
+
+    // ---------------------------------------------------------------- 滑块
+    const pickers = document.getElementById('cmp-pickers');
+    const sliderEls = new Map();
+
+    for (const s of payload.ships) {
+      const box = pickers.querySelector(`[data-ship="${s.id}"]`);
+      const slider = box.querySelector('.cmp-slider');
+      const input = box.querySelector('.cmp-slider__input');
+      sliderEls.set(s.id, { box, slider, input });
+      input.addEventListener('input', () => {
+        const a = num(s.span.from);
+        const b = num(s.span.to);
+        const t = a + ((b - a) * Number(input.value)) / 1000;
+        T.set(s.id, t);
+        if (synced) {
+          // 同步模式的语义：**所有被选舰落在同一个时刻**。
+          //
+          // 不能简单地「夹到对方服役期内」——那样拖俾斯麦到 1940-08，
+          // 提尔皮茨会被夹成 1941-02，两张表头日期不一样，可按钮还亮着
+          // 「已同步」，这是骗人。
+          //
+          // 正确做法：把 t 夹到**所有被选舰的共同交集**里；交集为空时
+          // 各舰退到自己服役期内距 t 最近的那一端，并在界面上说明
+          // 「此刻两舰无法同时存在」——绝不假装同步成功。
+          const c = commonWindow();
+          if (c) {
+            const t2 = Math.max(c.lo, Math.min(c.hi, t));
+            for (const id of selected) T.set(id, t2);
+          } else {
+            T.set(s.id, t);
+            for (const id of selected) {
+              if (id === s.id) continue;
+              const o = SHIPS.get(id);
+              const oa = num(o.span.from);
+              const ob = num(o.span.to);
+              T.set(id, t < oa ? oa : ob);
+            }
+          }
+        }
+        render();
+      });
+    }
+
+    /** 把所有被选舰的时刻夹进它们的共同在世区间；没有交集时返回 null。 */
+    function commonWindow() {
+      if (selected.length < 2) return null;
+      let lo = -Infinity;
+      let hi = Infinity;
+      for (const id of selected) {
+        const s = SHIPS.get(id);
+        lo = Math.max(lo, num(s.span.from));
+        hi = Math.min(hi, num(s.span.to));
+      }
+      return lo <= hi ? { lo, hi } : null;
+    }
+
+    function syncSliderReads() {
+      for (const [id, els] of sliderEls) {
+        const s = SHIPS.get(id);
+        const on = selected.includes(id);
+        els.slider.hidden = !on;
+        if (!on) continue;
+        const a = num(s.span.from);
+        const b = num(s.span.to);
+        const t = T.get(id);
+        els.input.value = String(b > a ? Math.round(((t - a) / (b - a)) * 1000) : 500);
+        const sl = sliceAt(id, t);
+        els.box.querySelector('.cmp-slider__date').textContent = numToDate(t);
+        els.box.querySelector('.cmp-slider__slice').textContent = sl ? sl.code : '';
+      }
+    }
+
+    // ---------------------------------------------------------------- 选舰
+    pickers.querySelectorAll('.cmp-pick__cb').forEach((cb) => {
+      cb.addEventListener('change', () => {
+        const on = [...pickers.querySelectorAll('.cmp-pick__cb')]
+          .filter((x) => x.checked)
+          .map((x) => x.value);
+        // 最多两艘：再勾第三艘就把最早勾的那艘取消。
+        // 三列以上在窄屏上挤成一团，且读起来要来回扫视，反而比两列难用。
+        if (on.length > 2) {
+          const drop = on.find((id) => !selected.includes(id)) ?? on[0];
+          const cb2 = pickers.querySelector(`.cmp-pick__cb[value="${drop}"]`);
+          if (cb2 && cb2 !== cb) cb2.checked = false;
+          selected = on.filter((id) => id !== drop).slice(0, 2);
+        } else {
+          selected = on;
+        }
+        render();
+      });
+    });
+
+    function applySelection() {
+      pickers.querySelectorAll('.cmp-pick').forEach((box) => {
+        const id = box.dataset.ship;
+        const cb = box.querySelector('.cmp-pick__cb');
+        cb.checked = selected.includes(id);
+        box.classList.toggle('is-on', selected.includes(id));
+      });
+    }
+
+    // ---------------------------------------------------------------- 工具
+    const syncBtn = document.getElementById('cmp-sync');
+    syncBtn.addEventListener('click', () => {
+      synced = !synced;
+      syncBtn.classList.toggle('cmp-btn--on', synced);
+      syncBtn.setAttribute('aria-pressed', String(synced));
+      if (synced && selected.length === 2) {
+        // 打开同步时，以第一艘的时刻为准，把第二艘夹到它的服役期内。
+        const t = T.get(selected[0]);
+        const s2 = SHIPS.get(selected[1]);
+        T.set(selected[1], Math.max(num(s2.span.from), Math.min(num(s2.span.to), t)));
+        render();
+      }
+    });
+
+    const allBtn = document.getElementById('cmp-all');
+    allBtn.addEventListener('click', () => {
+      showAll = !showAll;
+      allBtn.classList.toggle('cmp-btn--on', showAll);
+      allBtn.setAttribute('aria-pressed', String(showAll));
+      render();
+    });
+
+    // ---------------------------------------------------------------- 启动
+    applySelection();
+    render();
+
+    // 从单舰页跳过来时带 ?a=bismarck&b=tirpitz，直接选中。
+    const qs = new URLSearchParams(location.search);
+    const qa = qs.get('a');
+    const qb = qs.get('b');
+    if (qa && qb && SHIPS.has(qa) && SHIPS.has(qb)) {
+      selected = [qa, qb];
+      applySelection();
+      render();
+    }
+  </script>
+</Base>
+
+<style>
+  .cmp {
+    padding: 18px 0 60px;
+    /* grid 子项默认 min-width:auto，内容比容器宽时会顶破父级，
+       导致 .cmp-wrap 的 overflow-x:auto 永远不触发、整页横向溢出。
+       显式归零，滚动条才会出现在表格内部。 */
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .cmp__head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 24px;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
+  .cmp__title {
+    margin: 0 0 4px;
+    font-size: 21px;
+    letter-spacing: 0.02em;
+    color: var(--navy-900);
+  }
+  .cmp__sub {
+    margin: 0;
+    font-size: 12.5px;
+    color: var(--ink-600);
+    max-width: 62ch;
+    line-height: 1.7;
+  }
+  .cmp__note {
+    color: var(--ink-500);
+  }
+
+  .cmp__tools {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .cmp-btn {
+    font: inherit;
+    font-size: 12px;
+    padding: 7px 13px;
+    border: 1px solid var(--line-300);
+    background: #fff;
+    color: var(--ink-700);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+  }
+  .cmp-btn:hover {
+    border-color: var(--blue-400);
+    color: var(--blue-700);
+  }
+  .cmp-btn--on {
+    background: var(--navy-800);
+    border-color: var(--navy-800);
+    color: #fff;
+  }
+
+  /* ---------------------------------------------------------- 选舰卡 */
+  .cmp-pickers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .cmp-pick {
+    border: 1px solid var(--line-300);
+    border-radius: 10px;
+    padding: 10px 12px;
+    background: #fff;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .cmp-pick.is-on {
+    border-color: var(--blue-500);
+    box-shadow: 0 0 0 2px rgba(37, 99, 168, 0.1);
+  }
+  .cmp-pick__row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+  .cmp-pick__cb {
+    flex: none;
+    width: 15px;
+    height: 15px;
+    accent-color: var(--blue-600);
+    cursor: pointer;
+  }
+  .cmp-pick__pic,
+  .cmp-pick__nopic {
+    flex: none;
+    width: 46px;
+    height: 34px;
+    object-fit: cover;
+    border-radius: 5px;
+    background: var(--navy-800);
+  }
+  .cmp-pick__nopic {
+    display: grid;
+    place-items: center;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 15px;
+  }
+  .cmp-pick__txt {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  .cmp-pick__name {
+    font-size: 13px;
+    color: var(--navy-900);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .cmp-pick__en {
+    margin-left: 6px;
+    font-size: 10.5px;
+    color: var(--ink-400);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .cmp-pick__meta {
+    font-size: 11px;
+    color: var(--ink-500);
+    display: flex;
+    gap: 8px;
+  }
+  .cmp-pick__span {
+    color: var(--ink-400);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---------------------------------------------------------- 滑块 */
+  .cmp-slider {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--line-200);
+  }
+  .cmp-slider[hidden] {
+    display: none;
+  }
+  .cmp-slider__input {
+    width: 100%;
+    accent-color: var(--blue-600);
+    cursor: grab;
+  }
+  .cmp-slider__input:active {
+    cursor: grabbing;
+  }
+  .cmp-slider__read {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 11.5px;
+    color: var(--ink-600);
+    margin-top: 2px;
+  }
+  .cmp-slider__date {
+    font-variant-numeric: tabular-nums;
+    color: var(--navy-800);
+    font-weight: 600;
+  }
+  .cmp-slider__slice {
+    font-size: 10px;
+    color: #fff;
+    background: var(--blue-600);
+    border-radius: 4px;
+    padding: 1px 6px;
+  }
+  .cmp-slider__slice:empty {
+    display: none;
+  }
+
+  /* ---------------------------------------------------------- 提示 */
+  .cmp-hint {
+    border: 1px dashed var(--line-300);
+    border-radius: 10px;
+    padding: 26px 20px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--ink-600);
+  }
+
+  /* ---------------------------------------------------------- 表
+     这一段必须走 :global()。
+     Astro 的 scoped style 会给每条规则加 [data-astro-cid-xxx]，而表格的
+     <td> 是浏览器脚本用字符串 innerHTML 动态生成的 —— 那些节点上没有
+     cid 属性，普通选择器一条都命中不了（表现为「class 加上了但样式不生效」，
+     极难看出来）。整个 tbody 都是动态的，所以 .cmp 以下的表格样式一律 global。 */
+  .cmp-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--line-300);
+    border-radius: 10px;
+    background: #fff;
+    /* 同 .cmp：grid/flex 子项默认 min-width:auto，内容撑宽时
+       overflow-x 不会触发，整页反而横向溢出。 */
+    min-width: 0;
+    max-width: 100%;
+  }
+  .cmp-wrap[hidden] {
+    display: none;
+  }
+  .cmp-table {
+    /* 不能用 width:100%：列有 min-width，100% 会让表格去挤列宽、
+       最终撑破容器。让表格按内容自然宽，超出部分由外层滚动。 */
+    min-width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+  }
+  /* thead 也是脚本动态生成的（renderHead 里 thead.innerHTML = ...），
+     所以 .cmp-th 这一族同样必须 :global()。 */
+  :global(.cmp-th) {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: var(--navy-900);
+    color: #fff;
+    text-align: left;
+    padding: 10px 13px;
+    font-weight: 600;
+    min-width: 150px;
+  }
+  :global(.cmp-th--k) {
+    width: 34%;
+    min-width: 170px;
+  }
+  :global(.cmp-th__name) {
+    display: block;
+    font-size: 13.5px;
+  }
+  :global(.cmp-th__en) {
+    margin-left: 6px;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    font-weight: 400;
+  }
+  :global(.cmp-th__when) {
+    display: block;
+    margin-top: 3px;
+    font-size: 11px;
+    font-weight: 400;
+    opacity: 0.8;
+    font-variant-numeric: tabular-nums;
+  }
+  :global(.cmp-th__slice) {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    padding: 0 5px;
+    font-size: 10px;
+  }
+  :global(.cmp-th__dead) {
+    color: #ffb4b4;
+    font-size: 10.5px;
+  }
+  :global(.cmp-th.is-dead) {
+    background: #4a3b3b;
+  }
+
+  /* 同步失败提示行：两舰没有共同在世时段时插在表头下面 */
+  :global(.cmp-warnrow) {
+    background: #fdf6e3;
+    color: #7a5c00;
+    font-size: 11.5px;
+    line-height: 1.6;
+    padding: 8px 13px;
+    border-bottom: 1px solid #e8d9a8;
+  }
+
+  /* 以下是 tbody 内部样式。整个 tbody 都是脚本用 innerHTML 生成的，
+     节点上没有 Astro 的 data-astro-cid 属性，普通选择器命中不了，
+     必须走 :global()。典型症状：class 明明加上了，样式却不生效。 */
+  :global(.cmp-group td) {
+    background: var(--paper-100, #f5f7fa);
+    padding: 9px 13px;
+    border-top: 1px solid var(--line-200);
+    border-bottom: 1px solid var(--line-200);
+  }
+  :global(.cmp-group__zh) {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--navy-800);
+    letter-spacing: 0.04em;
+  }
+  :global(.cmp-group__en) {
+    margin-left: 7px;
+    font-size: 10px;
+    color: var(--ink-400);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  :global(.cmp-k) {
+    text-align: left;
+    font-weight: 500;
+    color: var(--ink-700);
+    padding: 9px 13px;
+    border-bottom: 1px solid var(--line-100);
+    vertical-align: top;
+  }
+  :global(.cmp-k__zh) {
+    display: block;
+  }
+  :global(.cmp-k__dir) {
+    display: block;
+    margin-top: 2px;
+    font-size: 10px;
+    color: var(--ink-400);
+    font-weight: 400;
+  }
+
+  :global(.cmp-td) {
+    padding: 9px 13px;
+    border-bottom: 1px solid var(--line-100);
+    border-left: 1px solid var(--line-100);
+    vertical-align: top;
+    color: var(--ink-800);
+    font-variant-numeric: tabular-nums;
+  }
+  :global(.cmp-td.is-best) {
+    background: rgba(37, 99, 168, 0.13);
+    box-shadow: inset 3px 0 0 var(--blue-600);
+    font-weight: 700;
+    color: var(--blue-800, #17456f);
+  }
+  :global(.cmp-td.is-worst) {
+    color: var(--ink-500);
+    background: rgba(0, 0, 0, 0.018);
+  }
+  :global(.cmp-td--none .cmp-void) {
+    color: var(--ink-300);
+    font-size: 11.5px;
+  }
+  :global(.cmp-td--dead) {
+    background: repeating-linear-gradient(
+      45deg,
+      #fafafa,
+      #fafafa 6px,
+      #f2f2f2 6px,
+      #f2f2f2 12px
+    );
+  }
+  :global(.cmp-td--dead .cmp-void) {
+    color: var(--ink-300);
+  }
+  :global(.cmp-td--inc .cmp-val) {
+    font-style: italic;
+    color: #8a5a00;
+  }
+
+  :global(.cmp-tag) {
+    display: inline-block;
+    margin-left: 6px;
+    font-size: 9.5px;
+    padding: 1px 5px;
+    border-radius: 4px;
+    vertical-align: 1px;
+    letter-spacing: 0.02em;
+  }
+  :global(.cmp-tag--inc) {
+    background: #fdf1d8;
+    color: #8a5a00;
+  }
+  :global(.cmp-tag--disp) {
+    background: #eef2f8;
+    color: var(--blue-700);
+  }
+  :global(.cmp-tag--conf) {
+    background: var(--line-200);
+    color: var(--ink-500);
+  }
+
+  /* 分歧展开：点「另有 N 说」看全部并列值 */
+  :global(.cmp-alts) {
+    display: inline-block;
+    margin-left: 6px;
+    vertical-align: top;
+  }
+  :global(.cmp-alts > summary) {
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+  :global(.cmp-alts > summary::-webkit-details-marker) {
+    display: none;
+  }
+  :global(.cmp-alts > summary::after) {
+    content: '▾';
+    margin-left: 3px;
+    font-size: 8px;
+  }
+  :global(.cmp-alts[open] > summary::after) {
+    content: '▴';
+  }
+  :global(.cmp-alts__list) {
+    margin: 5px 0 0;
+    padding: 6px 9px 6px 20px;
+    list-style: disc;
+    background: #fbfcfe;
+    border: 1px solid var(--line-200);
+    border-radius: 6px;
+    font-weight: 400;
+    color: var(--ink-700);
+    font-size: 11.5px;
+    line-height: 1.65;
+  }
+  :global(.cmp-alts__list li) {
+    margin: 2px 0;
+  }
+  :global(.cmp-alts__list i) {
+    font-style: normal;
+    font-size: 9.5px;
+    color: var(--ink-400);
+    border: 1px solid var(--line-300);
+    border-radius: 3px;
+    padding: 0 3px;
+  }
+  :global(.cmp-alts__list span) {
+    display: block;
+    color: var(--ink-500);
+    font-size: 10.5px;
+  }
+
+  /* ---------------------------------------------------------- 图例 */
+  .cmp-legend {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    font-size: 11px;
+    color: var(--ink-500);
+  }
+  .cmp-legend .lg {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .lg-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 3px;
+    border: 1px solid var(--line-300);
+    display: inline-block;
+  }
+  .lg-dot--val {
+    background: rgba(37, 99, 168, 0.14);
+    border-color: rgba(37, 99, 168, 0.4);
+  }
+  .lg-dot--none {
+    background: #fafafa;
+  }
+  .lg-dot--dead {
+    background: repeating-linear-gradient(
+      45deg,
+      #fafafa,
+      #fafafa 3px,
+      #e8e8e8 3px,
+      #e8e8e8 6px
+    );
+  }
+  .lg-dot--inc {
+    background: #fdf1d8;
+    border-color: #e8c887;
+  }
+
+  @media (max-width: 640px) {
+    .cmp__head {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    :global(.cmp-th),
+    :global(.cmp-td),
+    :global(.cmp-k) {
+      padding: 8px 9px;
+    }
+    :global(.cmp-th) {
+      min-width: 116px;
+    }
+    :global(.cmp-th--k),
+    :global(.cmp-k) {
+      min-width: 120px;
+    }
+    /* 首列固定，横向滚动时不跟着跑掉 */
+    :global(.cmp-th--k),
+    :global(.cmp-k) {
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      background: #fff;
+    }
+    :global(.cmp-th--k) {
+      z-index: 3;
+      background: var(--navy-900);
+    }
+    :global(.cmp-group td) {
+      position: sticky;
+      left: 0;
+    }
+  }
+</style>

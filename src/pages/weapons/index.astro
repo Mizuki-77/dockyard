@@ -1,0 +1,328 @@
+---
+// ============================================================================
+// 武器与装备 —— 左树按「类别 → 国别 → 型号」三层，右侧按类别列出型号
+// ----------------------------------------------------------------------------
+// 树为什么是三层：
+//   两层（类别 → 型号）在 48 型之后不够用了。防空炮那 8 型里英德各 4，
+//   全平铺在一层，读者扫一眼分不出哪些是德国的；加上国别这一层，
+//   「主炮 → 德国 → 38 cm SK C/34」才是可检索的路径。
+//
+// 分类是本站做的（见 src/lib/catalog.ts 抬头）；国别来自 weapon.nation，是硬数据。
+//
+// 参数的合并规则：
+//   同一型炮可能同时登记在几个舰级文件里（20 mm Oerlikon 就在光辉级和 KGV 级
+//   各写了一遍），两边数值不完全一致。这里**不合并数值**，只合并「这一型装过
+//   哪些舰」，参数按来源分块并列显示——合并数值等于替来源做裁决。
+// ============================================================================
+import Base from '../../layouts/Base.astro';
+import CatalogTree from '../../components/CatalogTree.astro';
+import { getWeaponIndex, primaryImage, getImagesFor } from '../../lib/data';
+import { nationLabel } from '../../lib/catalog';
+import { buildWeaponTree, nationRank } from '../../lib/tree';
+
+const idx = getWeaponIndex();
+const all = [...idx.values()];
+const tree = buildWeaponTree(all);
+
+// 左树：类别 → 国别 → 型号
+const branches = tree.map((r) => ({
+  key: r.key,
+  label: r.label,
+  en: r.en,
+  hint: r.hint,
+  count: r.count,
+  groups: r.nations
+    .slice()
+    .sort((a, b) => nationRank(a.key) - nationRank(b.key))
+    .map((n) => ({
+      key: n.key,
+      label: n.label,
+      en: n.en,
+      count: n.count,
+      leaves: n.weapons.map((w) => ({
+        label: w.label,
+        href: w.href,
+        meta: w.sources > 1 ? `${w.sources} 个来源` : '',
+      })),
+    })),
+}));
+
+const total = all.length;
+const withImage = all.filter((w) => primaryImage(`weapon:${w.id}`)?.file).length;
+const nationsTotal = new Set(tree.flatMap((r) => r.nations.map((n) => n.key))).size;
+---
+
+<Base title="武器与装备" variant="tree">
+  <CatalogTree
+    slot="sidenav"
+    kicker="Weapons"
+    title="武器与装备"
+    branches={branches}
+    currentHref={Astro.url.pathname}
+    note="分类（主炮 / 副炮 / 防空炮 …）是本站为了检索做的归并，不是史料字段；国别来自每型武器的制造国记录。"
+  />
+
+  <div class="pagehead">
+    <div class="pagehead__kicker">Weapons</div>
+    <h1 class="pagehead__title">武器与装备</h1>
+    <p class="pagehead__sub">
+      收录 {total} 型武器，{withImage} 型有图，分属 {tree.length} 个类别、{nationsTotal} 个国家。
+      炮、炮塔、火控各自作为独立实体：同一门 38 cm SK C/34 只写一份参数，
+      装在俾斯麦还是提尔皮茨上由「炮位实例」区分。
+    </p>
+  </div>
+
+  {
+    total === 0 ? (
+      <div class="empty">
+        <div class="empty__title">还没有武器数据</div>
+        <div class="empty__text">
+          武器实体写在舰级或单舰文件的 facts 里，用 about: weapon:&lt;id&gt; 标注归属。
+        </div>
+      </div>
+    ) : (
+      <div class="stack">
+        {tree.map((role) => (
+          <section class="roleblock">
+            <div class="roleblock__head">
+              <h2 class="roleblock__title">{role.label}</h2>
+              <span class="roleblock__en">{role.en}</span>
+              <span class="roleblock__n">{role.count} 型</span>
+            </div>
+            <p class="roleblock__hint">{role.hint}</p>
+
+            {role.nations
+              .slice()
+              .sort((a, b) => nationRank(a.key) - nationRank(b.key))
+              .map((nat) => (
+                <div class="natblock">
+                  <div class="natblock__head">
+                    <span class="natblock__flag" aria-hidden="true" />
+                    <span class="natblock__label">{nat.label}</span>
+                    <span class="natblock__en">{nat.en}</span>
+                    <span class="natblock__n">{nat.count} 型</span>
+                  </div>
+                  <div class="wgrid">
+                    {nat.weapons.map((leaf) => {
+                      const w = idx.get(leaf.href.replace('/weapons/', ''))!;
+                      const img = primaryImage(`weapon:${w.id}`);
+                      const galleryN = getImagesFor(`weapon:${w.id}`).length;
+                      return (
+                        <a class="wcard" href={`/weapons/${w.id}`}>
+                          <span class="wcard__media">
+                            {img?.file ? (
+                              <>
+                                <img src={img.file} alt={img.title.zh} loading="lazy" />
+                                {galleryN > 1 && <span class="wcard__n">{galleryN}</span>}
+                              </>
+                            ) : (
+                              <span class="wcard__noimg" aria-hidden="true">
+                                {w.label.slice(0, 1)}
+                              </span>
+                            )}
+                          </span>
+                          <span class="wcard__body">
+                            <span class="wcard__title">{w.label}</span>
+                            <span class="wcard__meta">
+                              <span class="tag tag--ghost tiny">{nationLabel(nat.key).zh}</span>
+                              {w.classIds.length + w.shipIds.length > 0 && (
+                                <span class="tag tiny">
+                                  装于 {w.classIds.length + w.shipIds.length} 级
+                                </span>
+                              )}
+                              {w.sources.length > 1 && (
+                                <span class="tag tag--ghost tiny">{w.sources} 个来源</span>
+                              )}
+                            </span>
+                          </span>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+          </section>
+        ))}
+
+        <p class="note">
+          左树与上方的「主炮 / 副炮 / 防空炮」是本站的检索分类。史料里并没有这一栏——
+          同一门 5.25 in 在英舰上既是副炮又是高平两用炮，本站按「模型件的安装位置」归类。
+          国别取自每型武器的制造国记录（weapon.nation），有出处。
+        </p>
+      </div>
+    )
+  }
+</Base>
+
+<style>
+  .roleblock {
+    padding: 20px 22px 22px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--paper);
+  }
+  .roleblock__head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .roleblock__title {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--ink-900);
+  }
+  .roleblock__en {
+    font-size: 11px;
+    color: var(--ink-300);
+    letter-spacing: 0.05em;
+  }
+  .roleblock__n {
+    margin-left: auto;
+    font-size: 10.5px;
+    font-family: var(--font-mono);
+    color: var(--ink-400);
+  }
+  .roleblock__hint {
+    margin: 7px 0 0;
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--ink-400);
+    max-width: 78ch;
+  }
+
+  /* 国别子块：一条细竖线把同一国别的型号圈起来，
+     省得读者在两个国别的网格之间来回找边界。 */
+  .natblock {
+    margin-top: 16px;
+    padding-left: 12px;
+    border-left: 2px solid var(--blue-100);
+  }
+  .natblock__head {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+    flex-wrap: wrap;
+    margin-bottom: 9px;
+  }
+  .natblock__flag {
+    width: 6px;
+    height: 6px;
+    flex: none;
+    border-radius: 50%;
+    background: var(--blue-400);
+    transform: translateY(-2px);
+  }
+  .natblock__label {
+    font-size: 13px;
+    font-weight: 680;
+    color: var(--ink-800);
+  }
+  .natblock__en {
+    font-size: 10px;
+    color: var(--ink-300);
+    letter-spacing: 0.04em;
+  }
+  .natblock__n {
+    margin-left: auto;
+    font-size: 10px;
+    font-family: var(--font-mono);
+    color: var(--ink-300);
+  }
+
+  .wgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
+    gap: 12px;
+  }
+  .wcard {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    overflow: hidden;
+    background: var(--white);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+  }
+  .wcard:hover {
+    border-color: var(--blue-300);
+    box-shadow: var(--shadow-1);
+    transform: translateY(-1px);
+  }
+  .wcard__media {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 10;
+    background: var(--navy-800);
+    overflow: hidden;
+  }
+  .wcard__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 42%;
+    transition: transform 0.3s ease;
+  }
+  .wcard:hover .wcard__media img {
+    transform: scale(1.04);
+  }
+  .wcard__noimg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 26px;
+    font-weight: 700;
+    color: rgba(226, 240, 250, 0.28);
+    background: linear-gradient(150deg, var(--navy-800), var(--navy-900));
+  }
+  .wcard__n {
+    position: absolute;
+    right: 7px;
+    bottom: 7px;
+    min-width: 18px;
+    padding: 1px 5px;
+    border-radius: 9px;
+    background: rgba(11, 39, 64, 0.72);
+    color: #fff;
+    font-size: 10px;
+    font-family: var(--font-mono);
+    text-align: center;
+  }
+  .wcard__body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px 12px 12px;
+  }
+  .wcard__title {
+    font-size: 13px;
+    font-weight: 620;
+    line-height: 1.42;
+    color: var(--ink-900);
+  }
+  .wcard__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  @media (max-width: 720px) {
+    .roleblock {
+      padding: 16px 14px 18px;
+    }
+    .natblock {
+      padding-left: 9px;
+    }
+    .wgrid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
+    }
+  }
+</style>

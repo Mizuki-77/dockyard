@@ -1,0 +1,17 @@
+# Cloudflare Workers 静态资源部署配置
+#
+# worker 名用 archive 而不是 dockyard：账号的 workers.dev 子域已经叫 dockyard，
+# 如果 worker 也叫 dockyard，地址会变成 dockyard.dockyard.workers.dev（重复很别扭）。
+# 现在得到的是 archive.dockyard.workers.dev。
+#
+# 发布：npx wrangler deploy
+# 每次改完内容要先 `npx astro build`，这个配置只上传 dist/ 里的成品。
+
+name = "archive"
+compatibility_date = "2026-11-01"
+
+[assets]
+directory = "./dist"
+
+# 关掉预览 URL：每次部署都会生成一堆带哈希的临时地址，没有用处还容易混淆。
+preview_urls = false

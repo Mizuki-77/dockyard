@@ -1,0 +1,109 @@
+# ============================================================================
+# 武器正文 —— Type 281B 对空预警雷达（一说记作 Type 281M）
+#
+# 全篇只有一条必须坚持的事：281B 与 281M 是同一型的两种记法，
+# 不是两种型号。两说并列，不裁决。查不到的一律不写。
+# ============================================================================
+weapon: type-281b
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Type 281B 是 Type 281 对空预警雷达的改进型。它在 1943 年 6 月进入
+      光辉号的装舰清单，并一直留到 1946 年 1 月。
+      这一型的记法有两说：装舰清单写 Type 281B，另一处百科级条目写 Type 281M。
+      本站把两种写法当作同一型雷达，合并为一个实体，正文两说并列。
+    en: >-
+      The Type 281B is an improved mark of the Type 281 air-warning radar. It enters
+      HMS Illustrious's fitting list in June 1943 and is still there in January 1946.
+      Two spellings exist: the fitting lists write Type 281B, while an encyclopedic
+      entry writes Type 281M. This site treats the two spellings as one radar, keeps
+      them as a single entity, and reports both.
+
+  paragraphs:
+    - heading: 281B 与 281M 是同一型，不是两型
+      text:
+        zh: >-
+          这里必须把口径讲清楚。navypedia 在 1943 年 6 月与本舰 1946 年 1 月的
+          两份装舰清单里都写作 Type 281B；另一处百科级条目写作 Type 281M。
+          本站在检索中没有找到任何支持「两种不同型号」的材料——
+          没有两份不同的性能条目，也没有任何一处把 B 与 M 并列对比。
+          所以处理方式是：合并成一个实体，正文两种写法都保留，
+          不去猜哪一个才是「正确的官方编号」。
+        en: >-
+          The notation question has to be stated plainly. Navypedia's fitting lists for
+          June 1943 and January 1946 both write Type 281B; an encyclopedic entry writes
+          Type 281M. Nothing found in this search supports the reading that these are
+          two distinct models: there are no two separate performance entries and no
+          source anywhere compares a B against an M. The handling is therefore to merge
+          them into one entity, to keep both spellings in the text, and not to guess
+          which one is the correct official designation.
+      src: [navypedia-illustrious]
+
+    - heading: 它在舰上待到了战后
+      text:
+        zh: >-
+          与 1942 年那一台被换掉的 281 不同，281B 没有被后续型号顶替：
+          1946 年 1 月的清单里它还在。同期的清单是 type 79B、type 272、
+          type 281B、6 部 type 282、type 285——这五型构成了本舰战后的电子设备底子。
+          需要说明的是，这份清单是静态的一列型号，不带装舰时间与位置；
+          本舰具体把 281B 天线装在哪里，现有材料未给。
+        en: >-
+          Unlike the plain 281 replaced in 1942, the 281B was never displaced by a later
+          mark: it is still listed in January 1946. That list reads type 79B, type 272,
+          type 281B, six type 282 sets and type 285 - five sets that make up the ship's
+          post-war electronic basis. Note that the list is a static column of marks with
+          no fitting dates or positions; where the 281B antenna sat aboard is not stated
+          in the material available.
+      src: [navypedia-illustrious]
+
+    - heading: 同族的前一型是什么来路
+      text:
+        zh: >-
+          要说清 281B 得先说 281。专题站的英国雷达总表记 Type 281 于
+          1940 年 12 月服役，评语是二战中使用最广的一型，首次装舰对象是
+          轻巡洋舰狄多号（HMS Dido）。281B 作为它的改进型，
+          服役时间与首次装舰对象在现有材料中都没有单独列出——
+          总表里只有 Type 281 那一行，没有 281B 的行。
+          本站不把 281 的数据挪到 281B 头上。
+        en: >-
+          The 281B cannot be described without the 281 it derives from. The specialist
+          site's table of British radar records the Type 281 as operational in December
+          1940, calls it the most widely used set of the war, and names the light
+          cruiser HMS Dido as first fitting. For the 281B as an improved mark, no
+          separate service date and no separate first-fitting ship are given in the
+          material available: the table has a row for the Type 281 and none for a 281B.
+          This article does not transfer the 281's data onto the 281B.
+      src: [navweaps-radar-uk]
+
+history:
+  - id: service
+    title: { zh: 装舰记录, en: Fitting record }
+    range: { from: 1943-06, to: 1946-01 }
+    lead:
+      zh: >-
+        记载只有两头：1943 年 6 月装上，1946 年 1 月还在。
+      en: >-
+        Two points only: fitted by June 1943, still aboard in January 1946.
+    events:
+      - date: 1943-06
+        text:
+          zh: >-
+            本舰此月的清单里出现 type 281B（一说记作 Type 281M）。
+            同一份清单为 type 79B / type 272 / type 281B / 6×type 282 / type 285。
+          en: >-
+            The ship's list for this month carries a type 281B, written elsewhere as
+            Type 281M. The same list reads type 79B / type 272 / type 281B / six
+            type 282 / type 285.
+        src: [navypedia-illustrious]
+      - date: 1946-01
+        text:
+          zh: >-
+            战后清单里仍在列，同列为 type 79B、type 272、type 281B、
+            6 部 type 282、type 285。此型没有被后续型号替换。
+          en: >-
+            Still listed in the post-war list, alongside the type 79B, type 272, type
+            281B, six type 282 sets and the type 285. The mark was never replaced by a
+            later one aboard this ship.
+        src: [navypedia-illustrious]

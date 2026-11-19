@@ -1,0 +1,65 @@
+---
+const path = Astro.url.pathname;
+const items = [
+  { href: '/', label: '主页' },
+  { href: '/ships', label: '战舰信息' },
+  { href: '/battles', label: '海战历史' },
+  { href: '/weapons', label: '武器与装备' },
+  { href: '/compare', label: '对比器' },
+  { href: '/sources', label: '资料来源' },
+  { href: '/help', label: '帮助及反馈' },
+];
+
+function isActive(href: string): boolean {
+  if (href === '/') return path === '/';
+  return path === href || path.startsWith(href + '/');
+}
+---
+
+<header class="topnav">
+  <div class="topnav__inner">
+    <a class="brand" href="/" aria-label="船坞 Dockyard 首页">
+      <span class="brand__mark" aria-hidden="true">坞</span>
+      <span class="brand__text">
+        <span class="brand__zh">船坞</span>
+        <span class="brand__en">Dockyard</span>
+      </span>
+    </a>
+
+    <nav class="navlinks" aria-label="主导航">
+      {
+        items.map((it) => (
+          <a
+            class="navlink"
+            href={it.href}
+            aria-current={isActive(it.href) ? 'page' : undefined}
+          >
+            {it.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <form class="navsearch" role="search" action="/ships" method="get">      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.2"
+        stroke-linecap="round"
+        aria-hidden="true"
+      >
+        <circle cx="11" cy="11" r="7"></circle>
+        <path d="m20 20-3.5-3.5"></path>
+      </svg>
+      <input
+        type="search"
+        name="q"
+        placeholder="搜索舰名、舰级、武器"
+        aria-label="站内搜索"
+        autocomplete="off"
+      />
+    </form>
+  </div>
+</header>

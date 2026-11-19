@@ -1,0 +1,411 @@
+---
+import Base from '../../layouts/Base.astro';
+import SideNav from '../../components/SideNav.astro';
+import {
+  getOperations,
+  getOperation,
+  resolvePhases,
+  getNarratives,
+  getSource,
+} from '../../lib/data';
+
+export function getStaticPaths() {
+  return getOperations().map((o) => ({ params: { id: o.id } }));
+}
+
+const { id } = Astro.params;
+const op = getOperation(id!)!;
+const phases = resolvePhases(op);
+const sides = op.belligerents ?? [];
+
+/* 相关争议：operation 里可以引用 narrative id，这里解析成可点条目。
+   故意不把争议写进 phases——争议不属于「哪一站」，属于整场行动。 */
+const narrs = (op.narratives ?? [])
+  .map((nid) => getNarratives().find((n) => n.id === nid))
+  .filter((n): n is NonNullable<typeof n> => Boolean(n));
+
+const srcIds = new Set<string>();
+for (const s of op.src ?? []) srcIds.add(s);
+for (const p of op.phases ?? []) for (const s of p.src ?? []) srcIds.add(s);
+const usedSources = [...srcIds].map((s) => getSource(s)).filter(Boolean);
+
+const withBattle = phases.filter((p) => p.battle).length;
+---
+
+<Base title={op.name.zh}>
+  <SideNav
+    slot="sidenav"
+    kicker="Operation"
+    title={op.name.zh}
+    items={[
+      { href: '#overview', label: '行动概况' },
+      { href: '#phases', label: `各阶段（${phases.length}）` },
+      { href: '#sides', label: '参战兵力' },
+      { href: '#outcome', label: '结局怎么评' },
+      ...(narrs.length ? [{ href: '/ships/bismarck#disputes', label: '相关争议' }] : []),
+      { href: '#sources', label: `来源（${usedSources.length}）` },
+    ]}
+    note="行动页讲全局，每一站再点进去看细节。"
+  />
+
+  <div class="crumbs">
+    <a href="/battles">海战历史</a>
+    <span aria-hidden="true">/</span>
+    <a href="/operations">行动序列</a>
+    <span aria-hidden="true">/</span>
+    <span>{op.name.zh}</span>
+  </div>
+
+  <div class="pagehead" id="overview">
+    <div class="pagehead__kicker">
+      Operation · {op.date.from}
+      {op.date.to && op.date.to !== op.date.from ? `–${op.date.to}` : ''}
+    </div>
+    <h1 class="pagehead__title">{op.name.zh}</h1>
+    {op.codename && <p class="pagehead__en">德方代号 {op.codename}</p>}
+    <div class="pagehead__meta">
+      <span class="tag">{phases.length} 个阶段</span>
+      {withBattle > 0 && <span class="tag tag--ghost">{withBattle} 场已建战史</span>}
+      {sides.map((s) => (
+        <span class="tag tag--ghost">{s.label.zh}</span>
+      ))}
+    </div>
+  </div>
+
+  {op.summary && <p class="lead">{op.summary.zh}</p>}
+
+  {
+    op.objective && (
+      <div class="callout">
+        <strong>这场行动想达成什么</strong>
+        <p>{op.objective.zh}</p>
+      </div>
+    )
+  }
+
+  <!-- 各阶段：一条线，但有战史页的那一站可以点进去 -->
+  <section class="section" id="phases">
+    <div class="section__head">
+      <h2 class="section__title">行动经过</h2>
+      <span class="section__en">Phases</span>
+    </div>
+    <p class="section__sub">
+      一次行动常常横跨数日、牵涉不同的部队。下面按时间把整段分成若干站，
+      每站只交代「这一段发生了什么、为什么重要」；该站如果已经建了独立战史页，标题可以点进去看逐分钟的细节。
+    </p>
+
+    <ol class="phases">
+      {
+        phases.map((p, i) => {
+          const from = String(p.phase.date.from);
+          const to = p.phase.date.to ? String(p.phase.date.to) : '';
+          const sameDay = !to || to === from;
+          return (
+            <li class:list={['phase', { 'phase--linked': Boolean(p.battle) }]}>
+              <div class="phase__rail" aria-hidden="true">
+                <span class="phase__n mono">{String(i + 1).padStart(2, '0')}</span>
+              </div>
+              <div class="phase__body">
+                <div class="phase__head">
+                  <h3 class="phase__title">
+                    {p.battle ? (
+                      <a href={`/battles/${p.battle.id}`}>{p.phase.label.zh}</a>
+                    ) : (
+                      p.phase.label.zh
+                    )}
+                  </h3>
+                  <span class="phase__date mono">
+                    {from.slice(5).replace('-', '.')}
+                    {!sameDay && ` – ${to.slice(5).replace('-', '.')}`}
+                    <span class="phase__year">{from.slice(0, 4)}</span>
+                  </span>
+                </div>
+                {p.phase.summary && <p class="phase__text">{p.phase.summary.zh}</p>}
+                <div class="phase__foot">
+                  {p.battle && (
+                    <a class="phase__go" href={`/battles/${p.battle.id}`}>
+                      查看这一站的战史
+                      <span class="phase__go-n">
+                        {p.battle.timeline?.length ?? 0} 个事件
+                      </span>
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  )}
+                  {(p.phase.src ?? []).length > 0 && (
+                    <span class="phase__src mono">{p.phase.src!.join(' · ')}</span>
+                  )}
+                </div>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ol>
+  </section>
+
+  <!-- 参战兵力 -->
+  {
+    sides.length > 0 && (
+      <section class="section" id="sides">
+        <div class="section__head">
+          <h2 class="section__title">参战兵力</h2>
+          <span class="section__en">Forces engaged</span>
+        </div>
+        <p class="section__sub">
+          这是整场行动中出现过的全部舰只，不是某一刻的编成——
+          某一艘舰只在行动中途加入或退出，以各站的战史页为准。
+        </p>
+        <div class="sides">
+          {sides.map((s) => (
+            <div class={`side side--${s.side}`}>
+              <div class="side__head">
+                <span class={`side__flag side__flag--${s.side}`} aria-hidden="true" />
+                <span class="side__label">{s.label.zh}</span>
+                <span class="side__count mono">{(s.ships ?? []).length} 艘</span>
+              </div>
+              <div class="side__ships">
+                {(s.ships ?? []).map((x) => (
+                  <div class="side__ship">
+                    {x.ship_id ? (
+                      <a class="side__name" href={`/ships/${x.ship_id}`}>
+                        {x.name}
+                      </a>
+                    ) : (
+                      <span class="side__name side__name--plain">{x.name}</span>
+                    )}
+                    {x.role && <span class="side__role">{x.role.zh}</span>}
+                  </div>
+                ))}
+              </div>
+              {(op.forces ?? [])
+                .filter((f) => f.side === s.side)
+                .map((f) => (
+                  <p class="side__guns">{f.guns?.zh}</p>
+                ))}
+            </div>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <!-- 结局 -->
+  {
+    op.outcome && (
+      <section class="section" id="outcome">
+        <div class="section__head">
+          <h2 class="section__title">结局怎么评</h2>
+          <span class="section__en">How it ended</span>
+        </div>
+        <div class="callout">
+          <p>{op.outcome.zh}</p>
+        </div>
+      </section>
+    )
+  }
+
+  <!-- 相关争议 -->
+  {
+    narrs.length > 0 && (
+      <section class="section" id="disputes">
+        <div class="section__head">
+          <h2 class="section__title">相关争议</h2>
+          <span class="section__en">Open questions</span>
+        </div>
+        <p class="section__sub">
+          有争议就并列摆着，不定论。下面每一条都写明是谁持哪种说法。
+        </p>
+        <div class="stack">
+          {narrs.map((n) => (
+            <details class="narrative">
+              <summary>
+                <span class="narrative__q">{n.question.zh}</span>
+                <span class="tag tag--warn tiny">{n.positions.length} 种说法</span>
+              </summary>
+              <div class="narrative__body">
+                {n.positions.map((p) => (
+                  <div class:list={['position', { 'position--consensus': p.id === n.current_consensus }]}>
+                    <div class="position__head">
+                      <span class="position__claim">{p.claim.zh}</span>
+                      {p.id === n.current_consensus && <span class="tag tiny">主流</span>}
+                    </div>
+                    <p class="position__by">{p.held_by.join(' · ')}</p>
+                    {p.evidence && <p class="position__ev">{p.evidence}</p>}
+                  </div>
+                ))}
+                {n.note && <p class="note">为什么没有定论：{n.note}</p>}
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <!-- 来源 -->
+  <section class="section" id="sources">
+    <div class="section__head">
+      <h2 class="section__title">本页来源</h2>
+      <span class="section__en">Sources</span>
+    </div>
+    <ul class="plainlist plainlist--tight">
+      {
+        usedSources.map((s) => (
+          <li>
+            <span class={`conf conf--${s!.tier}`}>{s!.tier}</span>
+            <a href={s!.url} target="_blank" rel="noopener noreferrer">
+              {s!.title}
+            </a>
+            <span class="mono tiny muted">{s!.id}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .phases {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .phase {
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 0;
+    position: relative;
+  }
+  /* 竖线：除最后一站外都往下延伸，形成「一条线」的视觉 */
+  .phase:not(:last-child) .phase__rail::after {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 46px;
+    bottom: -10px;
+    width: 1px;
+    background: linear-gradient(180deg, var(--line-strong), var(--line));
+  }
+  .phase__rail {
+    position: relative;
+    padding-top: 4px;
+  }
+  .phase__n {
+    display: grid;
+    place-items: center;
+    width: 31px;
+    height: 31px;
+    border: 1px solid var(--line-strong);
+    border-radius: 50%;
+    background: var(--white);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ink-400);
+  }
+  .phase--linked .phase__n {
+    border-color: var(--blue-400);
+    color: var(--blue-700);
+    background: var(--blue-50);
+  }
+  .phase__body {
+    padding: 0 0 30px 16px;
+  }
+  .phase__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .phase__title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 680;
+    letter-spacing: -0.01em;
+    color: var(--ink-900);
+  }
+  .phase__title a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid var(--blue-300);
+  }
+  .phase__title a:hover {
+    color: var(--blue-700);
+    border-bottom-color: var(--blue-600);
+  }
+  .phase__date {
+    font-size: 12px;
+    color: var(--blue-700);
+    white-space: nowrap;
+  }
+  .phase__year {
+    margin-left: 6px;
+    color: var(--ink-300);
+  }
+  .phase__text {
+    margin: 10px 0 0;
+    font-size: 13.5px;
+    line-height: 1.85;
+    color: var(--ink-700);
+    max-width: 76ch;
+  }
+  .phase__foot {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+  .phase__go {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 13px;
+    border: 1px solid var(--blue-300);
+    border-radius: 999px;
+    background: var(--blue-50);
+    color: var(--blue-700);
+    font-size: 12.5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.16s ease, border-color 0.16s ease;
+  }
+  .phase__go:hover {
+    background: var(--blue-100);
+    border-color: var(--blue-500);
+  }
+  .phase__go-n {
+    font-weight: 400;
+    color: var(--blue-600);
+    font-size: 11.5px;
+  }
+  .phase__src {
+    font-size: 10px;
+    color: var(--ink-300);
+  }
+  .side__count {
+    margin-left: auto;
+    font-size: 10.5px;
+    color: var(--ink-300);
+  }
+  @media (max-width: 720px) {
+    .phase {
+      grid-template-columns: 40px minmax(0, 1fr);
+    }
+    .phase:not(:last-child) .phase__rail::after {
+      left: 14px;
+    }
+    .phase__n {
+      width: 28px;
+      height: 28px;
+      font-size: 10px;
+    }
+    .phase__body {
+      padding-left: 10px;
+    }
+  }
+</style>

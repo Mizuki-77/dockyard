@@ -1,0 +1,253 @@
+# ============================================================================
+# 舰艇正文：Tirpitz
+#
+# 为什么单独一个文件、而不塞进 ships/<id>.yaml：
+#   fact 是「可计算的单值」，article 是「给人读的段落」。两者校验规则完全不同。
+#
+# 硬规则（scripts/validate.py 的 check_article 会拦）：
+#   1. 每个 paragraph 必须带 src，且 src 全部已登记、不是 tier E
+#   2. lead 必须有；paragraphs 至少一段
+#   3. history 每段 events 的 date 必须是 YYYY / YYYY-MM / YYYY-MM-DD
+#   4. 正文里不写「据说」「有人认为」这类模糊归属——那是 narrative 的活
+# ============================================================================
+ship: tirpitz
+updated: 2026-11-17
+
+intro:
+  lead:
+    zh: >-
+      提尔皮茨号是俾斯麦级战列舰的二号舰，1936 年下单、1941 年服役、
+      1944 年 11 月被皇家空军炸沉于挪威。它的一生与姊妹舰几乎是镜像：
+      俾斯麦号九个月内打了三场硬仗然后沉没，提尔皮茨号则在挪威的峡湾里
+      待了将近三年，一炮未向敌舰发射过，却被英国本土舰队当作存在的理由
+      反复围猎——丘吉尔称之为"存在的舰队"（the beast）而必须除掉的威胁。
+    en: >-
+      Tirpitz was the second ship of the Bismarck class. Ordered in 1936,
+      commissioned in 1941 and sunk by Royal Air Force Lancasters in November
+      1944, she spent almost three years in Norwegian fjords without ever
+      firing at an enemy warship - yet the British Home Fleet was held in
+      being by her mere existence.
+
+  paragraphs:
+    - heading: 它为什么叫这个名字
+      text:
+        zh: >-
+          舰名取自阿尔弗雷德·冯·提尔皮茨（1849–1930），德意志帝国海军国务秘书，
+          公海舰队的缔造者。1930 年代德国海军复兴时用他的名字命名本级二号舰，
+          是一次刻意的政治表态——俾斯麦号纪念的是统一德国的人，提尔皮茨号
+          纪念的是造出那支舰队的人。
+      src: [kbismarck-tirpitz]
+
+    - heading: 与俾斯麦号的实质差别
+      text:
+        zh: >-
+          两舰同级，绝大多数参数靠继承，但真正不同的地方有六处：
+          全长说法不一（250.5 / 251.0 / 253.6 m 三说并存）、排水量更大约
+          1,000 t、独有一组 Marschturbine 巡航汽轮机使其续航曲线不同、
+          10.5 cm 八座统一为 C/37（俾斯麦号是 C/31d 与 C/37 混装）、
+          1941 年秋加装两座四联 533 mm 鱼雷管（俾斯麦号完全没有鱼雷武装）、
+          以及 2 cm 高炮从 12 门一路加到 78 门。对这六处，本站都单列字段
+          而不是覆盖舰级值。
+      src: [kbismarck-tirpitz, navweaps-10_5cm-sk-c33, navweaps-torpedoes-wwii]
+
+    - heading: 动力上的一个例外
+      text:
+        zh: >-
+          俾斯麦号没有巡航汽轮机——这是德国大型舰的一贯做法，代价是低速时
+          燃油经济性很差。提尔皮茨号独有的一组 Marschturbine（4,220 rpm、
+          轴转速 170 rpm）正是为此补上的，德文资料说它"优化了部分负荷下的
+          燃油消耗"。主机也不同：俾斯麦号用 Blohm & Voss 的汽轮机组，
+          提尔皮茨号用 Brown, Boveri & Cie 的。所以两舰虽然设计功率相同
+          （138,000 hp / 29 kn），实测值拉开了一截：俾斯麦号 150,170 hp /
+          30.1 kn，提尔皮茨号 163,026 hp / 30.8 kn。
+      src: [kbismarck-tirpitz, kbismarck-propulsion, deutsches-marinearchiv-tirpitz]
+
+    - heading: 防空，以及它为什么不断加炮
+      text:
+        zh: >-
+          提尔皮茨号的一生几乎全在锚地，面对的不是敌方战列舰而是空袭。
+          这直接决定了它的改装方向：轻型防空炮越加越多。1941 年服役时
+          只有 12 门 2 cm 单装，1941 年 9 月加六座四联、1942 年 6 月与
+          1943 年 3 月各加两座，1944 年再加八座，终值有 78 / 72 / 58 三说。
+          10.5 cm 也从混装统一成八座 C/37——俯仰速率从 10 °/s 提到 12 °/s、
+          旋回从 8.0 提到 8.5 °/s，每座还轻了约 900 kg。
+          1944 年起 38 cm 与 15 cm 都改装成可对空射击，但 38 cm 对空榴弹
+          在实战中被证明效果不佳，8 月至 11 月的空袭里最多只起到打散编队的作用。
+      src: [kbismarck-tirpitz, navweaps-10_5cm-sk-c33, deutsches-marinearchiv-tirpitz]
+
+    - heading: 模型制作者要注意的外形差异
+      text:
+        zh: >-
+          提尔皮茨号有三处肉眼可辨、且常常被套件厂家忽略的差异：
+          一是舯部两舷的鱼雷发射管，加装时该处上层建筑被延伸到上甲板边缘，
+          主吊车因此装在更高一层甲板上（俾斯麦号没有这个延伸）；
+          二是 Bruno 炮塔顶部的那台 2 cm 四联（德文资料特别注明"姊妹舰上没有"）；
+          三是 1944 年后的雷达天线——前桅顶是加大的 3 m × 6 m FuMO 26 网幕，
+          第三座防空指挥仪基座抬高 2 m 并加装抛物面炮瞄雷达。
+          涂装部分则是全站证据最弱的一环：没有任何一手德国海军涂装命令，
+          所有配色都是从照片反推的。
+      src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz, navweaps-radar, navweaps-camouflage]
+
+    - heading: 它到底牵制了什么
+      text:
+        zh: >-
+          从战果看它一炮未向敌舰发射；从战略看它压住了整个英国本土舰队。
+          1942 年 7 月 PQ17 船团被命令解散，直接原因是英方判断提尔皮茨号
+          已经出海——它实际直到 7 月 5 日傍晚才离港，且当天就被召回。
+          英方为此付出了 24 艘商船的代价，而德方一艘舰都没有出动到战场。
+          这也是为什么英军要用袖珍潜艇、舰载机、重型轰炸机反复打它：
+          只要它浮着，威慑就是真的。
+      src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+
+history:
+  - id: build
+    title: { zh: 建造与服役 }
+    range: { from: 1936-06-14, to: 1941-02-25 }
+    lead:
+      zh: >-
+        它在威廉港海军船厂二号船台建造，从下单到服役用了四年八个月。
+    events:
+      - date: 1936-06-14
+        text:
+          zh: 海军下达建造合同。建造代号 Schlachtschiff G，名义上是替换旧战列舰 Schleswig-Holstein。
+        src: [kbismarck-tirpitz, german-navy-tirpitz]
+      - date: 1936-11-02
+        text:
+          zh: 在威廉港海军船厂（Kriegsmarinewerft Wilhelmshaven）二号船台铺设龙骨，建造编号 S 128。注：铺龙骨日期另有 1936-10-20 与 1936-10-24 两说。
+        src: [kbismarck-tirpitz, german-navy-tirpitz]
+      - date: 1939-04-01
+        text:
+          zh: 下水。掷瓶人是提尔皮茨元帅之女 Ilse von Hassell。
+        src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+      - date: 1941-02-25
+        text:
+          zh: 1140 时服役，首任舰长 Karl Topp。从下水到服役近两年，比俾斯麦号长约半年。
+        src: [kbismarck-tirpitz, german-navy-tirpitz]
+
+  - id: baltic
+    title: { zh: 波罗的海试航 }
+    range: { from: 1941-03-09, to: 1941-09-30 }
+    lead:
+      zh: >-
+        服役后的半年它在波罗的海练手，从未进入大西洋。
+    events:
+      - date: 1941-03-09
+        text:
+          zh: 离开威廉港前往基尔，03-13 东行至格丁尼亚（Gotenhafen）。
+        src: [kbismarck-tirpitz]
+      - date: 1941-03-21
+        text:
+          zh: 开始在但泽湾与波罗的海试航，持续到 04-17。
+        src: [kbismarck-tirpitz]
+      - date: 1941-05-05
+        text:
+          zh: 希特勒登舰视察；05-06 舰队司令 Lütjens 登舰——此时俾斯麦号正在准备莱茵演习。
+        src: [kbismarck-tirpitz]
+      - date: 1941-10
+        text:
+          zh: 在格丁尼亚改装：加装两座四联 533 mm 鱼雷管，10.5 cm 八座统一为 C/37，2 cm 增至 24 门。
+        src: [kbismarck-tirpitz, navweaps-10_5cm-sk-c33]
+
+  - id: norway
+    title: { zh: 驻泊挪威 }
+    range: { from: 1942-01-14, to: 1943-09-21 }
+    lead:
+      zh: >-
+        此后近三年它基本待在挪威的峡湾里，主要作用是牵制。
+    events:
+      - date: 1942-01-14
+        text:
+          zh: 2345 时执行"北极之夜"（Operation Polarnacht）离港赴特隆赫姆，01-16 抵 Fættenfjord。
+        src: [kbismarck-tirpitz]
+      - date: 1942-03-06
+        text:
+          zh: 出击拦截 QP8 与 PQ12 船团，被英潜艇 Seawolf 发现，行动中止。
+        src: [kbismarck-tirpitz]
+      - date: 1942-03-09
+        text:
+          zh: 遭胜利号 12 架 Albacore 空袭，全雷规避、击落 2 架；1957 时锚泊 Bogen Bay。
+        src: [kbismarck-tirpitz]
+      - date: 1942-07-02
+        text:
+          zh: 执行"骑士行动"（Operation Rösselsprung），目标 PQ17。07-05 苏联潜艇 K-21 于 1702 时射雷未中，2130 时行动取消——PQ17 已被命令解散，24 艘商船损失，而德方水面舰未到战场。
+        src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+      - date: 1943-09-06
+        text:
+          zh: 执行"西西里行动"（Operation Sizilien）炮击斯匹次卑尔根，09-08 摧毁港口设施。这是它一生唯一一次对岸开火。
+        src: [kbismarck-tirpitz]
+      - date: 1943-09-09
+        text:
+          zh: 锚泊 Kåfjord。
+        src: [kbismarck-tirpitz]
+
+  - id: x-craft
+    title: { zh: 袖珍潜艇袭击与长期修理 }
+    range: { from: 1943-09-22, to: 1944-03-14 }
+    lead:
+      zh: >-
+        英军用三艘 X 艇换掉了它半年的战斗力。
+    events:
+      - date: 1943-09-22
+        text:
+          zh: 英军 X-5、X-6、X-7 潜入 Kåfjord。X-6 在龙骨下放置两枚 2 t 水雷、X-7 再放一枚，三艇全部沉没但水雷起爆造成舰体严重变形，1 死 40 伤，失去战斗力近六个月。
+        src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+      - date: 1944-02-12
+        text:
+          zh: 苏联飞机空袭，未命中。
+        src: [kbismarck-tirpitz]
+      - date: 1944-03-15
+        text:
+          zh: 完成修理，恢复试航。
+        src: [kbismarck-tirpitz]
+
+  - id: air-attacks
+    title: { zh: 舰载机与重型轰炸机的轮番攻击 }
+    range: { from: 1944-04-03, to: 1944-10-29 }
+    lead:
+      zh: >-
+        1944 年它一共挨了十余次空袭，改装的重点也从火炮转向雷达。
+    events:
+      - date: 1944-04-03
+        text:
+          zh: 0528 时遭 40 架舰载机空袭，被 10 枚 225 kg 与 4 枚 775 kg 命中，122 死 316 伤；0636 时第二波无果。当日弹药消耗 10.5 cm 506 发、3.7 cm 400 发、2 cm 8,260 发。注：德文另一份统计记 15 命中、108 死 284 伤。
+        src: [kbismarck-tirpitz, kbismarck-tirpitz-3444, deutsches-marinearchiv-tirpitz]
+      - date: 1944-06-01
+        text:
+          zh: 重新试航；检修期间换装 FuMO 26 大型雷达天线与 FuMO 213 炮瞄雷达，2 cm 增至 78 门。
+        src: [kbismarck-tirpitz, navweaps-radar]
+      - date: 1944-08-22
+        text:
+          zh: 32 架 Barracuda 空袭，无命中。
+        src: [kbismarck-tirpitz]
+      - date: 1944-08-24
+        text:
+          zh: 33 架 Barracuda 空袭，两弹命中，8 死 13 伤。
+        src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+      - date: 1944-09-15
+        text:
+          zh: 27 架 Lancaster（第 617 与第 9 中队，自阿尔汉格尔斯克附近的 Yagodnik 起飞）投下 5.4 t Tallboy，一枚命中舰首，造成重创并丧失航海能力。
+        src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+      - date: 1944-10-15
+        text:
+          zh: 临时修补后以 8 节速度自行驶往 Tromsø，锚于 Håkøya 外充当浮动炮台——此时已不可能再出海作战。
+        src: [kbismarck-tirpitz]
+      - date: 1944-10-29
+        text:
+          zh: 32 架 Lancaster 空袭，无命中。
+        src: [kbismarck-tirpitz]
+
+  - id: sinking
+    title: { zh: 沉没与拆解 }
+    range: { from: 1944-11-12, to: 1957 }
+    lead:
+      zh: >-
+        它最后的结局来得比俾斯麦号快得多——四分钟之内翻覆。
+    events:
+      - date: 1944-11-12
+        text:
+          zh: 0940 后 32 架 Lancaster 投弹，两枚 Tallboy 命中左舷舯部、四枚近失；0952 在 69°38′49"N 18°48′27"E 翻覆。971 人随舰沉没，代理舰长 Robert Weber 阵亡。注：另有 1,204 人的统计，差异在是否计入失踪者。
+        src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+      - date: 1948
+        text:
+          zh: 战后由挪威与德国公司联合拆解，工作持续到 1957 年。1947 年拆解权由 Einar Høvding 购得。
+        src: [kbismarck-tirpitz]

@@ -1,0 +1,32 @@
+---
+import { stats } from '../lib/data';
+const s = stats();
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__col">
+      <strong style="color:var(--ink-700)">船坞 Dockyard</strong><br />
+      每条数据都登记来源与证据层级，有争议的说法一律并列保留，不删任何一说。<br />
+      本站不含广告、不接受打赏，图片来源标注在每张图上。
+    </div>
+    <div class="footer__col">
+      <div class="footer__links">
+        <a href="/sources">来源体系</a>
+        <a href="/help">纠错与反馈</a>
+        <a href="/help#license">图片授权</a>
+        <a href="/help#about">关于本站</a>
+      </div>
+      <div class="small muted" style="margin-top:8px">
+        已收录 {s.ships} 艘 · {s.classes} 级 · {s.facts} 条事实 · {s.sources} 个来源
+      </div>
+    </div>
+  </div>
+  <div
+    class="footer__inner"
+    style="padding-top:0;padding-bottom:22px;font-size:11px;color:var(--ink-300)"
+  >
+    <span>© {year} 船坞 Dockyard · 内容以史实记录为目的，不含任何政治立场</span>
+  </div>
+</footer>

@@ -1,0 +1,587 @@
+# ============================================================================
+# 中途岛海战（Battle of Midway）—— 本站第一场太平洋海区战斗
+#
+# 2026-11-19 建。首批只放已确认的结构性事实与参战舰艇关系；
+# 时间线、命中记录、伤亡等细节待调研回来后填。
+#
+# 结构说明：中途岛不是一场「一两个小时打完」的战斗，而是
+# 6 月 3 日侦察接触 → 6 月 4 日上午航母对决 → 6 月 4 日下午飞龙反击
+# → 6 月 5-7 日追击与自沉 这样一条线。故归入 operation（见
+# data/operations/midway.yaml），战斗本身按阶段拆开。
+# ============================================================================
+
+id: midway
+name:
+  zh: 中途岛海战
+  en: Battle of Midway
+date:
+  from: 1942-06-04
+  to: 1942-06-07
+theater: pacific
+period:
+  zh: 太平洋战争
+  en: Pacific War
+
+location:
+  zh: 中途岛环礁西北海域，北太平洋
+  en: North Pacific, northwest of Midway Atoll
+coordinates: 30°N 178°W（大致交战海域）
+
+scale:
+  zh: 航母 7 艘（日 4 / 美 3）、舰载机约 500 架
+  en: 7 fleet carriers (4 IJN / 3 USN), roughly 500 carrier aircraft
+
+summary:
+  zh: >-
+    1942 年 6 月，日本海军试图攻占中途岛并诱歼美军航母，结果四艘主力航母
+    全数损失。这是太平洋战争的转折点——日本海军航空兵的骨干飞行员与
+    四艘精锐航母一次性赔光，此后再无力发动战略进攻。
+  en: >-
+    In June 1942 the Imperial Japanese Navy attempted to seize Midway Atoll
+    and destroy the US carrier force. Instead it lost four fleet carriers,
+    the core of its carrier aviation, in a single day.
+
+operation: midway
+
+belligerents:
+  - side: axis
+    label:
+      zh: 大日本帝国海军
+      en: Imperial Japanese Navy
+    ships:
+      - name: 赤城
+        ship_id: akagi
+        role: { zh: 第一航空战队旗舰, en: Flagship, Carrier Division 1 }
+      - name: 加贺
+        ship_id: kaga
+        role: { zh: 第一航空战队, en: Carrier Division 1 }
+      - name: 苍龙
+        ship_id: soryu
+        role: { zh: 第二航空战队, en: Carrier Division 2 }
+      - name: 飞龙
+        ship_id: hiryu
+        role: { zh: 第二航空战队, en: Carrier Division 2 }
+
+  - side: allies
+    label:
+      zh: 美国太平洋舰队
+      en: United States Pacific Fleet
+    ships:
+      - name: 企业号
+        ship_id: enterprise
+        role: { zh: 第 16 特混舰队旗舰, en: Flagship, Task Force 16 }
+      - name: 约克城号
+        ship_id: yorktown
+        role: { zh: 第 17 特混舰队旗舰, en: Flagship, Task Force 17 }
+      - name: 大黄蜂号
+        ship_id: hornet
+        role: { zh: 第 16 特混舰队, en: Task Force 16 }
+
+# ---------------------------------------------------------------------------
+# 时间线：一律用中途岛当地时间（local West Longitude date）。
+#
+# 这个约定不是随便定的——赤城调研（work/raw/akagi-tech.md §15 纠错②）发现：
+# 被弹是当地 6 月 4 日 10:26，沉没是当地 6 月 5 日 05:20；而日文源记「6 月 6 日
+# 雷击处分」用的是日本时间。三种写法都对，但不注明时区就会被读成
+# 「被弹和沉没隔了一天多」。Tully 在 combinedfleet 的 TROM 开头专门说明了这点。
+#
+# 状态：骨架级。等 TROM 与 NHHC/DANFS 的战斗报告全部抓回后要逐条精确化。
+# ---------------------------------------------------------------------------
+timeline:
+  - time: '06-03 04:30'
+    text:
+      zh: 中途岛全部可用飞机升空（例行搜索开始）。
+    src: [oni-midway-combat-narrative]
+  - time: '06-03 09:04'
+    text:
+      zh: 全战役第一次水面接触：PBY 发现两艘日军货船。机号未获取（原报告只给方位距离，未给机号或 Bureau Number）。
+    src: [oni-midway-combat-narrative]
+  - time: '06-03 09:25'
+    text:
+      zh: 另一架巡逻机报告「主力」六艘大船成纵队。
+    src: [oni-midway-combat-narrative]
+  - time: '06-03 11:00'
+    text:
+      zh: 同一机修正为 11 艘，航向 090、航速 19 节（后证为占领部队一部，非主力）。
+    src: [oni-midway-combat-narrative]
+  - time: '06-03 12:30'
+    text:
+      zh: 9 架 B-17E（Lt.Col. Walter C. Sweeney Jr.）自中途岛起飞。
+    src: [oni-midway-combat-narrative]
+  - time: '06-03 16:23'
+    text:
+      zh: B-17 对运输船团投弹 36 枚 600 磅，战果存疑（见 §5 争议 3）。
+    src: [aaf-wwii-midway-chapter]
+  - time: '06-03 16:40'
+    text:
+      zh: 长程 B-17 报告 261° 方向 700 英里处有 2 艘运输船与驱逐舰。
+    src: [oni-midway-combat-narrative]
+  - time: '06-03 21:15'
+    text:
+      zh: 4 架 PBY-5A 各挂一条 MK XIII 鱼雷起飞，执行美军巡逻机首次夜间鱼雷攻击（Lt. William L. Richards 带队）。
+    src: [oni-midway-combat-narrative, oni-japanese-story-midway]
+  - time: '06-04 01:15'
+    text:
+      zh: 4 架 PBY 在月夜接近运输船团，雷达先于目视发现约 10 艘船、6 艘驱逐舰。
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 01:30'
+    text:
+      zh: PBY 发起鱼雷攻击（ONI 叙述：领队 800 码投雷，「以为」有爆炸；未确认战果）。
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 01:53'
+    text:
+      zh: （与上条冲突） NHHC 记 Ensign Gaylord Probst 命中油船曙丸 Akebono Maru，且为全战役美军唯一命中日舰的鱼雷。
+    src: [nhhc-h006-3-victory-barely]
+  - time: '06-04 04:15'
+    text:
+      zh: 中途岛搜索机群起飞。
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 04:30'
+    major: true
+    text:
+      zh: 日军第一波 108 机（36 舰攻 + 36 舰爆 + 36 零战）起飞攻击中途岛，总指挥为飞龙飞行队长友永丈市海军大尉。
+    src: [combinedfleet-akagi, oni-japanese-story-midway, combinedfleet-kaga, combinedfleet-soryu]
+  - time: '06-04 05:30'
+    text:
+      zh: "PBY（Lt. Howard P. Ady）发现日舰，05:34 发出报告。"
+    src: [nhhc-h006-2-isr-midway]
+  - time: '06-04 05:45'
+    text:
+      zh: PBY（Lt. William Chase）报告「大量飞机飞向中途岛」——用明语，为全战役首次。
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 05:52'
+    text:
+      zh: 报告发现两艘航母及主力，航向 135、航速 25，方位 320、距离 180 英里。
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 05:55'
+    text:
+      zh: "中途岛空袭警报；06:00 前除一架 J2F 外全部飞机升空。"
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 06:16'
+    text:
+      zh: 陆战队战斗机（VMF-221）在 12,000 英尺、距岛 30 英里处与日机群接触。
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 06:30'
+    text:
+      zh: 第一枚炸弹落于中途岛；东岛机库、沙岛油罐被毁。
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 07:05'
+    text:
+      zh: 4 架 B-26（Capt. James F. Collins Jr.）与 6 架 TBF（Lt. Langdon K. Fieberling）同时发现日航母编队并进入攻击。
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 07:10'
+    text:
+      zh: 赤城瞭望发现低空来袭的 6 架 TBF 与 4 架 B-26；2 条鱼雷被规避。
+    src: [combinedfleet-akagi]
+  - time: '06-04 07:15'
+    text:
+      zh: 南云下令第二波改挂陆用炸弹（第一次换弹）。
+    src: [combinedfleet-kaga]
+  - time: '06-04 07:20'
+    text:
+      zh: TBF 队扑向飞龙；Earnest 机重创后返航。
+    src: [nhhc-h006-3-victory-barely]
+  - time: '06-04 07:28'
+    text:
+      zh: 利根 4 号机发现敌舰——观察员未立即识别出航母，日后被视为关键失误。
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 07:40'
+    text:
+      zh: "该报告送达南云（另一说为 07:40 报告、07:45 处置，见 §5 争议 2）。"
+    src: [nhhc-h006-3-victory-barely]
+  - time: '06-04 07:45'
+    text:
+      zh: 南云下令停止换装陆用炸弹，改回鱼雷（第二次换弹）。
+    src: [combinedfleet-kaga]
+  - time: '06-04 07:55'
+    text:
+      zh: VMSB-241 的 16 架 SBD-2（Maj. Lofton R. Henderson）开始滑翔轰炸。
+    src: [oni-midway-combat-narrative, combinedfleet-kaga]
+  - time: '06-04 08:10'
+    text:
+      zh: B-17 群（15 架，Sweeney）找到航母并分三队攻击。
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 08:20'
+    text:
+      zh: VMSB-241 的 11 架 SB2U-3（Maj. Benjamin W. Norris）转向攻击战列舰（实为榛名）。
+    src: [combinedfleet-mikuma, oni-midway-combat-narrative]
+  - time: '06-04 08:20'
+    text:
+      zh: 利根 4 号机报告「敌似有航母随行」，南云处境逆转。
+    src: [nhhc-h006-3-victory-barely]
+  - time: '06-04 08:30'
+    text:
+      zh: 苍龙起飞 1 架 D4Y1「彗星」接替利根 4 号机保持接触。
+    src: [combinedfleet-soryu, combinedfleet-kaga]
+  - time: '06-04 09:05'
+    text:
+      zh: 南云下令回收完毕后北转，寻求歼灭敌舰队。
+    src: [combinedfleet-kaga]
+  - time: '06-04 09:20'
+    text:
+      zh: 大黄蜂号 VT-8（15 架 TBD，Lt.Cdr. John C. Waldron）单机种突入，全队覆没，仅 Ensign George H. Gay 生还。
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 09:38'
+    text:
+      zh: 加贺瞭望发现第二波鱼雷机（企业号 VT-6，Lt.Cdr. Eugene E. Lindsey），直接以加贺为目标。
+    src: [combinedfleet-kaga]
+  - time: '06-04 10:00'
+    text:
+      zh: 加贺记录 VT-6 攻击被击退，舰队转向 030 度接近敌航母。
+    src: [combinedfleet-kaga]
+  - time: '06-04 10:06'
+    text:
+      zh: 赤城发现约克城 VT-3（15 架，方位 48° 右舷，距离 45,000 米）。
+    src: [combinedfleet-akagi]
+  - time: '06-04 10:20'
+    text:
+      zh: 南云下令待命即发（CAP 优先升空）；此时美机已临空。
+    src: [combinedfleet-kaga, combinedfleet-soryu, combinedfleet-akagi]
+  - time: '06-04 10:29'
+    text:
+      zh: 赤城机库内鱼雷开始诱爆；前部弹药库注水成功、后部因阀门损坏失败。
+    src: [combinedfleet-akagi]
+  - time: '06-04 10:42'
+    text:
+      zh: 赤城舵机卡死在 20 度，无法保持旗舰职能；南云决定转移旗舰。
+    src: [combinedfleet-akagi]
+  - time: '06-04 10:45'
+    major: true
+    text:
+      zh: 苍龙舰长柳本柳作下令非必要人员弃舰，本人拒离舰桥。
+    src: [combinedfleet-soryu]
+  - time: '06-04 10:54'
+    major: true
+    text:
+      zh: 飞龙第一波反击起飞：18 架舰爆 + 6 架零战（小林道雄大队）。
+    src: [combinedfleet-i168, oni-japanese-story-midway]
+  - time: '06-04 11:20'
+    text:
+      zh: 赤城舰长青木及舰桥军官移至前部飞行甲板；火从升降机喷出。
+    src: [combinedfleet-akagi]
+  - time: '06-04 11:27'
+    text:
+      zh: 机动部队旗移至轻巡长良。
+    src: [combinedfleet-akagi]
+  - time: '06-04 11:30'
+    text:
+      zh: "山口多闻令第八战队各派驱逐舰一艘给三艘受损航母，并令其向主力方向后退（11:47 重复）。"
+    src: [combinedfleet-kaga]
+  - time: '06-04 11:30'
+    text:
+      zh: 约克城放出 10 架 SBD 搜索第四艘航母。
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 11:59'
+    text:
+      zh: 约克城雷达在 250°、46 英里发现大批来袭机（30–40 架）。
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 12:08'
+    major: true
+    text:
+      zh: 飞龙第一波俯冲约克城，命中 3 弹（后升降机后、右舷烟道、一号升降机）。
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 12:15'
+    text:
+      zh: 攻击结束；来袭 18 架舰爆无一返航。
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 12:45'
+    text:
+      zh: 飞龙第二波起飞：10 架舰攻（友永丈市）+ 6 架零战。
+    src: [combinedfleet-i168]
+  - time: '06-04 13:50'
+    text:
+      zh: 赤城再次完全停车，开始漂流灭火。
+    src: [combinedfleet-akagi, combinedfleet-kaga]
+  - time: '06-04 14:27'
+    text:
+      zh: 彭萨科拉号雷达（接替约克城雷达警戒）在 340°、33 英里发现第二批来袭机。
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 14:30'
+    text:
+      zh: "约克城搜索机（Lt. Samuel Adams）报告飞龙位置：31°15'N, 179°05'W。"
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 14:41'
+    text:
+      zh: 日机进入约克城左舷 12,000 码，防空火网全开。
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 14:45'
+    text:
+      zh: 两条鱼雷命中约克城左舷中部，相隔约 30 秒。
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 14:55'
+    major: true
+    text:
+      zh: 约克城弃舰。
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 15:30'
+    text:
+      zh: 企业号起飞 24 架 SBD（其中 14 架来自约克城）。
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 16:03'
+    text:
+      zh: 大黄蜂号起飞 16 架 SBD。
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 16:40'
+    text:
+      zh: 加贺判断无望，残余人员全部弃舰，由萩风、舞风收容。
+    src: [combinedfleet-kaga, combinedfleet-hiryu, oni-japanese-story-midway]
+  - time: '06-04 17:15'
+    text:
+      zh: 加贺残员全部离舰（萩风报告南云）。
+    src: [combinedfleet-kaga]
+  - time: '06-04 17:30'
+    text:
+      zh: 大黄蜂号机群抵达，飞龙已烈焰冲天，转向攻击战列舰与巡洋舰。
+    src: [oni-midway-combat-narrative]
+  - time: '06-04 17:50'
+    text:
+      zh: 南云向山本报告加贺失去战斗力、全员已转移。
+    src: [combinedfleet-kaga]
+  - time: '06-04 18:56'
+    text:
+      zh: 日落；此后加贺、苍龙接获自沉命令。
+    src: [combinedfleet-kaga, combinedfleet-soryu]
+  - time: '06-04 19:20'
+    text:
+      zh: 赤城舰长青木决定弃舰，并电请以驱逐舰鱼雷处分。
+    src: [combinedfleet-akagi, combinedfleet-kaga]
+  - time: '06-04 21:00'
+    text:
+      zh: 赤城非必要人员离舰（岚 500 人、野分 200 人），青木自缚于锚甲板。
+    src: [combinedfleet-akagi]
+  - time: '06-04 21:23'
+    text:
+      zh: 飞龙停车，风云、卷云留驻警戒。
+    src: [combinedfleet-hiryu]
+  - time: '06-04 21:25'
+    text:
+      zh: 山本直接下令推迟赤城自沉；青木被劝离舰，转至岚。
+    src: [combinedfleet-akagi]
+  - time: '06-05 01:58'
+    text:
+      zh: 飞龙发生大诱爆，希望断绝，下达弃舰令；山口多闻与加来舰长留舰。
+    src: [combinedfleet-hiryu]
+  - time: '06-05 02:15'
+    text:
+      zh: USS Tambor (SS-198) 在中途岛以西 90 英里发现多艘不明舰船（实为栗田的第七战队）。
+    src: [oni-midway-combat-narrative, oni-japanese-story-midway]
+  - time: '06-05 04:50'
+    text:
+      zh: 山本直接下令处分赤城。
+    src: [combinedfleet-akagi, combinedfleet-hiryu]
+  - time: '06-05 05:20'
+    major: true
+    text:
+      zh: "赤城由岚、萩风、舞风、野分各射 1 条鱼雷（命中 2–3 条），舰尾先沉于 30-30'N, 178-40'W；生还逾 1,070 人，阵亡 263 人。"
+    src: [combinedfleet-akagi]
+  - time: '06-05 06:00'
+    text:
+      zh: Tambor 报告两艘最上型重巡（实际为最上、三隈）方位 272°、距中途岛 115 英里、航向 270°。
+    src: [oni-midway-combat-narrative]
+  - time: '06-05 06:30'
+    text:
+      zh: 凤翔号一架飞机发现并拍摄仍漂浮的飞龙，甲板上尚可见幸存者。
+    src: [combinedfleet-hiryu]
+  - time: '06-05 08:05'
+    text:
+      zh: 中途岛 VMSB-241 的 6 架 SBD-2（Capt. Marshall A. Tyler）与 6 架 SB2U-3（Capt. Richard E. Fleming）攻击三隈、最上；Fleming 机被 25mm 炮火击中，投弹后坠海（追授荣誉勋章）。
+    src: [combinedfleet-mikuma]
+  - time: '06-05 08:30'
+    text:
+      zh: B-17（8 架，Lt.Col. Brooke E. Allen）高空轰炸两艘重巡，无命中。
+    src: [combinedfleet-mikuma]
+  - time: '06-05 09:12'
+    major: true
+    text:
+      zh: 飞龙最终倾覆沉没，位于中途岛西北 240–260 英里；70 名滞留者中 35 人后被美军救起（含轮机长）。
+    src: [combinedfleet-hiryu]
+  - time: '06-05 13:08'
+    text:
+      zh: 扫雷舰 Vireo 拖带约克城，航速约 3 节。
+    src: [oni-midway-combat-narrative]
+  - time: '06-06 04:15'
+    text:
+      zh: 哈曼号把救援队送上约克城（Buckmaster 上校 + 29 名军官 + 130 名士兵）。
+    src: [oni-midway-combat-narrative]
+  - time: '06-06 05:02'
+    text:
+      zh: 企业号起飞 18 架 SBD 向西搜索 200 英里。
+    src: [oni-midway-combat-narrative]
+  - time: '06-06 06:45'
+    text:
+      zh: "搜索机发现一支日军编队（29°33'N, 174°30'E），报为 1 战列舰 + 5 驱逐舰，因口误被当成含航母。"
+    src: [oni-midway-combat-narrative]
+  - time: '06-06 09:50'
+    text:
+      zh: 大黄蜂号 26 架 SBD 攻击（目标实为最上、三隈、朝潮、荒潮）。
+    src: [oni-midway-combat-narrative, combinedfleet-mikuma, combinedfleet-i168]
+  - time: '06-06 13:35'
+    text:
+      zh: 约克城瞭望发现 4 条鱼雷航迹。
+    src: [oni-midway-combat-narrative]
+  - time: '06-06 13:39'
+    text:
+      zh: 哈曼号沉没。
+    src: [oni-midway-combat-narrative]
+  - time: '06-06 14:45'
+    text:
+      zh: 大黄蜂号第二波 24 架 SBD 攻击最上（被误报为「战列舰＋巡洋舰」编队）。
+    src: [oni-midway-combat-narrative]
+  - time: '06-06 19:30'
+    major: true
+    text:
+      zh: "三隈向左倾覆沉没于 29-28'N, 173-11'E，约 700 人阵亡。"
+    src: [combinedfleet-mikuma]
+  - time: '06-07 04:58'
+    major: true
+    text:
+      zh: 约克城向左翻转沉没，水深约 3,000 浔。
+    src: [combinedfleet-i168, oni-midway-combat-narrative]
+
+hits_received:
+  - time: '06-04 10:22'
+    text:
+      zh: KAGA 右舷后部（第 4 弹）
+    src: [oni-japanese-story-midway]
+    note: 投弹单位：企业号 VS-6 / VB-6（McClusky）
+  - time: '06-04 10:22'
+    text:
+      zh: KAGA 前升降机附近（第 7 弹）
+    src: [oni-japanese-story-midway]
+    note: 投弹单位：企业号 VS-6 / VB-6
+  - time: '06-04 10:22'
+    text:
+      zh: KAGA 前升降机附近（第 8 弹）——舰桥全毁，冈田舰长阵亡
+    src: [oni-japanese-story-midway]
+    note: 投弹单位：企业号 VS-6 / VB-6
+  - time: '06-04 10:22'
+    text:
+      zh: KAGA 中部（第 9 弹）
+    src: [oni-japanese-story-midway]
+    note: 投弹单位：企业号 VS-6 / VB-6
+  - time: '06-04 10:25'
+    text:
+      zh: SORYU 前升降机
+    src: [combinedfleet-soryu]
+    note: 投弹单位：约克城 VB-3（Leslie）13 机
+  - time: '06-04 10:26'
+    text:
+      zh: SORYU 第二升降机之后
+    src: [combinedfleet-soryu]
+    note: 投弹单位：约克城 VB-3
+  - time: '06-04 10:29'
+    text:
+      zh: SORYU 中部烟囱侧（1,000 磅）——穿透至下机库爆炸，蒸汽管路断裂
+    src: [combinedfleet-soryu]
+    note: 投弹单位：约克城 VB-3
+  - time: '06-04 10:26'
+    text:
+      zh: AKAGI 舰岛附近中部（1,000 磅）——引爆机库内舰攻
+    src: [combinedfleet-akagi]
+    note: 投弹单位：企业号 VB-6（Best）3 机
+  - time: '06-04 10:26'
+    text:
+      zh: AKAGI 舰尾舷侧（穿过护栏在左后舷外爆炸）——Tully 主张未在甲板起爆，故赤城实际只受一弹致命伤
+    src: [combinedfleet-akagi]
+    note: 投弹单位：企业号 VB-6
+  - time: '06-04 17:15'
+    text:
+      zh: HIRYU 前部飞行甲板连续 3 弹——首弹气浪把前升降机掀向舰岛
+    src: [combinedfleet-hiryu]
+    note: 投弹单位：企业号 13 架 SBD
+  - time: '06-04 17:15'
+    text:
+      zh: HIRYU 舰桥旁中部（第 4 弹）
+    src: [combinedfleet-hiryu]
+    note: 投弹单位：企业号 13 架 SBD
+  - time: '06-04 12:08'
+    text:
+      zh: YORKTOWN 二号升降机之后的飞行甲板
+    src: [oni-midway-combat-narrative]
+    note: 投弹单位：飞龙第一波 18 架 D3A1（小林道雄）
+  - time: '06-04 12:08'
+    text:
+      zh: YORKTOWN 右舷穿透烟道、在第三甲板上方爆炸——这一弹使全舰失去速度
+    src: [oni-midway-combat-narrative]
+    note: 投弹单位：飞龙第一波
+  - time: '06-04 12:08'
+    text:
+      zh: YORKTOWN 一号升降机（在第四甲板上方爆炸、起火）
+    src: [oni-midway-combat-narrative]
+    note: 投弹单位：飞龙第一波
+  - time: '06-04 14:45'
+    text:
+      zh: YORKTOWN 左舷中部——两条鱼雷相隔约 30 秒命中
+    src: [oni-midway-combat-narrative]
+    note: 投弹单位：飞龙第二波 10 架 B5N
+  - time: '06-07 13:30'
+    text:
+      zh: YORKTOWN 被伊-168 命中 2 条鱼雷
+    src: [combinedfleet-i168]
+    note: 投弹单位：日本潜艇伊-168
+
+consequences:
+  - time: '06-04 10:29'
+    text:
+      zh: 赤城前部弹药库注水成功、后部因阀门损坏失败——这是船舱失控的直接原因之一
+    src: [combinedfleet-akagi]
+  - time: '06-04 10:40'
+    text:
+      zh: 赤城舵机卡死，丧失机动能力
+    src: [combinedfleet-akagi]
+  - time: '06-04 10:46'
+    text:
+      zh: 南云中将将旗舰转移至轻巡长良号，指挥中枢脱离赤城
+    src: [combinedfleet-akagi]
+  - time: '06-04 16:30'
+    text:
+      zh: 山口多闻电告南云，拟黄昏发第三波；南云令舰队西撤
+    src: [combinedfleet-hiryu]
+  - time: '06-04 19:20'
+    text:
+      zh: 赤城舰长青木决定弃舰，并电请以驱逐舰鱼雷处分
+    src: [combinedfleet-akagi]
+  - time: '06-04 21:25'
+    text:
+      zh: 山本直接下令推迟赤城自沉；青木被劝离舰、转至岚号
+    src: [combinedfleet-akagi]
+  - time: '06-05 01:58'
+    text:
+      zh: 飞龙发生大诱爆，希望断绝，下达弃舰令；山口多闻与加来止男留舰
+    src: [combinedfleet-hiryu]
+  - time: '06-05 04:50'
+    text:
+      zh: 山本下令处分赤城
+    src: [combinedfleet-akagi]
+  - time: '06-05 05:10'
+    text:
+      zh: 飞龙由巻雲发射鱼雷处置（另一条未命中）
+    src: [combinedfleet-hiryu]
+  - time: '06-06 14:55'
+    text:
+      zh: 最上、三隈在撤退中相撞受损，随后遭美军连续空袭
+    src: [combinedfleet-mikuma]
+
+losses:
+  - side: axis
+    ships_lost:
+      zh: 航空母舰 4 艘（赤城、加贺、苍龙、飞龙）+ 重巡 1 艘（三隈）
+    killed: 3057
+    note:
+      zh: 飞机损失约 248 架；舰载机飞行员阵亡约 110 名——这批熟练飞行员比航母更难补充。各来源对总数的口径有差异。
+  - side: allies
+    ships_lost:
+      zh: 航空母舰 1 艘（约克城）+ 驱逐舰 1 艘（哈曼）
+    killed: 362
+    note:
+      zh: 飞机损失约 150 架。岸基航空兵的损失占相当比例，其中 TBD 鱼雷机三队几乎全灭（41 架出击、35 架被击落）。
+
+outcome:
+  zh: >-
+    美军损失航母 1 艘（约克城号）、驱逐舰 1 艘、飞机约 150 架；
+    日军损失航母 4 艘（赤城、加贺、苍龙、飞龙）、重巡 1 艘、飞机约 250 架。
+  en: >-
+    US: 1 carrier and 1 destroyer lost. Japan: 4 fleet carriers and 1 heavy
+    cruiser lost.
+
+narrative_refs: []

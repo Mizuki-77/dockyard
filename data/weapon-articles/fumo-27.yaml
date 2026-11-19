@@ -1,0 +1,143 @@
+# ============================================================================
+# 武器正文 —— FuMO 27 海上搜索雷达
+#
+# 两条必须并列的事：
+#  1) 装舰时点两说（navweaps：后塔 1941 年夏、前塔约 1942-01；
+#     本文件 sensors 记录把 1942-01 起的三台 23 换成 27 + Samos）；
+#  2) navypedia 另给静态清单「4 × FuMO 27」，与演进叙述口径不同。
+# ============================================================================
+weapon: fumo-27
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      FuMO 27 是德国海军的海上搜索雷达，属 Seetakt 系列，
+      特征是 2 米 × 4 米的垂直极化「床垫」天线。
+      它在提尔皮茨号上出现得很早：1941 年夏后部测距仪塔就装了它的天线，
+      次年年初前桅楼又加了一座雷达塔装同一型。
+      这一型的装舰时点有两说，本站并列，不裁决。
+    en: >-
+      The FuMO 27 was a German naval surface-search radar of the Seetakt series, with a
+      2 m by 4 m vertically polarised "mattress" antenna. It appeared early aboard
+      Tirpitz: the after rangefinder tower carried one from the summer of 1941, and a
+      radar tower added atop the foretop carried another from about January 1942. Two
+      readings of the fitting dates exist and both are reported here.
+
+  paragraphs:
+    - heading: 装舰时点的两说
+      text:
+        zh: >-
+          第一说来自专题站的德国雷达专文：它记后部测距仪塔上的 2×4 米
+          FuMO 27 天线于 1941 年夏装设，前桅楼上另加的那座雷达塔
+          原文写作 1942 年 1 月前后。第二说是本站另一份数据的处理方式：
+          它在描述本舰雷达演进时，把 1942 年 1 月起的状态从
+          「三台 FuMO 23」改成了「FuMO 27 加 FuMO 4 Samos」。
+          两说都是从同一批材料里读出来的，差别在于「27 是逐步替换 23，
+          还是 1942 年 1 月一次性换装」。本站两个都保留。
+        en: >-
+          The first reading comes from the specialist article on German radar: it dates
+          the 2 x 4 m FuMO 27 antenna on the after rangefinder tower to the summer of
+          1941, and the radar tower added atop the foretop to about January 1942. The
+          second is the treatment used in another data record for this ship, which
+          describes the radar fit from January 1942 as FuMO 27 plus FuMO 4 Samos instead
+          of three FuMO 23 sets. Both readings come out of the same body of material; the
+          difference is whether the 27 progressively replaced the 23 or replaced it in
+          one change in January 1942. Both are kept here.
+      src: [navweaps-radar, kbismarck-tirpitz]
+
+    - heading: navypedia 另给一份静态清单，与演进叙述对不上
+      text:
+        zh: >-
+          这是第二层分歧，而且性质不同。navypedia 给本舰的是一份静态清单：
+          「4 × FuMO 27」。它没有给时间点，也没说这四台分布在哪儿。
+          而专题站的叙述是时间演进的：后塔先有一台，前塔架好后再一台，
+          后来前塔那台又被更大的 26 型天线替掉。
+          两种口径没法调和——一份是「某时点的总数」，一份是「逐台的变动史」。
+          本站两边都留，不把「4 台」和演进叙述合并成一个数字。
+        en: >-
+          The second disagreement is of a different kind. Navypedia gives a static list
+          for the ship: "4 x FuMO 27". It gives no date and no indication of where the
+          four were. The specialist article, by contrast, gives an evolution: one on the
+          after tower first, another after the foretop tower is raised, and the foretop
+          one later replaced by a larger 26 antenna. The two cannot be reconciled: one is
+          a total at some point, the other a sequence of individual changes. Both are
+          kept, and the figure of four is not merged with the narrative into a single
+          number.
+      src: [navypedia-bismarck, navweaps-radar]
+
+    - heading: 它同时期的德国雷达体系很不整齐
+      text:
+        zh: >-
+          专题站的专文对德国雷达的总评值得引：德国雷达在早期很有前途，
+          但很快被盟军技术超过；原因之一是德国海军在三个军种中最保守，
+          没意识到主动雷达的全部潜力，反而担心雷达发射会给敌方提供测向定位的机会，
+          因此不鼓励广泛使用雷达；再加上相信自身光学器材的优势，
+          年轻军官在受训时完全没学过雷达。
+          这段判断解释了为什么提尔皮茨号上的雷达型号会一层一层叠着装、
+          并且各舰配置彼此不一样。
+        en: >-
+          The specialist article's overall judgement on German radar is worth quoting: it
+          was promising early and was quickly overtaken by Allied technology; one reason
+          was that the German Navy, the most conservative of the three services, did not
+          grasp the full potential of active radar and worried instead that radar
+          transmissions would give an enemy a fix on the ship's position, so extensive use
+          of radar was discouraged; combined with a belief in the superiority of German
+          optics, young officers were taught nothing about radar at all. That judgement
+          explains why the radars aboard Tirpitz were stacked mark upon mark and why fits
+          differed from ship to ship.
+      src: [navweaps-radar]
+
+history:
+  - id: service
+    title: { zh: 装舰与演进, en: Fitting and evolution }
+    range: { from: 1941-07, to: 1944-11 }
+    lead:
+      zh: >-
+        这一型在提尔皮茨号上是「先出现、后被替」：27 在前，26 在后。
+      en: >-
+        Aboard Tirpitz the pattern is appearance then supersession: the 27 first, the 26
+        after it.
+    events:
+      - date: 1941-07
+        text:
+          zh: >-
+            后部测距仪塔装 FuMO 27 天线（2×4 米，垂直极化）。
+            专题站的原文另记前桅楼上加了一座雷达塔，时点写作 1942 年 1 月前后。
+          en: >-
+            The after rangefinder tower received a FuMO 27 antenna, 2 x 4 m, vertically
+            polarised. The specialist article separately records a radar tower added atop
+            the foretop, dated to about January 1942.
+        src: [navweaps-radar, kbismarck-tirpitz]
+      - date: 1942-01
+        text:
+          zh: >-
+            前桅测距仪塔顶加雷达室，装 FuMO 27 天线；
+            其上方小框装 Timor（FuMO 4 Samos）天线，雷达室两侧与后方装 Sumatra 天线。
+            另一份数据记录直接把 1942 年 1 月起的状态记为「FuMO 27 + FuMO 4 Samos」。
+          en: >-
+            The foretop rangefinder tower was crowned with a radar office carrying a
+            FuMO 27 antenna, with a Timor (FuMO 4 Samos) antenna in a smaller frame above
+            it and Sumatra antennas on the sides and rear of the office. A separate data
+            record gives the state from January 1942 as FuMO 27 plus FuMO 4 Samos.
+        src: [navweaps-radar, kbismarck-tirpitz]
+      - date: 1944-01
+        text:
+          zh: >-
+            本舰雷达清单改为 3 台 FuMO 26 加 FuMO "Hohentwiel" 与
+            FuMO 213 "Würzburg-D"，27 型不再是主力。
+            navypedia 的静态清单另记「4 × FuMO 27」，与上述演进叙述口径不同，并列保留。
+          en: >-
+            The ship's radar list reads three FuMO 26 sets plus a FuMO "Hohentwiel" and a
+            FuMO 213 "Würzburg-D", the 27 no longer being the main set. Navypedia's static
+            list separately records "4 x FuMO 27", a different order of statement, kept
+            here alongside the narrative.
+        src: [kbismarck-tirpitz, navypedia-bismarck]
+      - date: 1944-11-12
+        text:
+          zh: >-
+            提尔皮茨号在 Tromsø 附近被击沉。这一天是本舰各型雷达可追到的最后时点。
+          en: >-
+            Tirpitz was sunk near Tromso. That date is the last traceable point for the
+            ship's radars.
+        src: [kbismarck-tirpitz]

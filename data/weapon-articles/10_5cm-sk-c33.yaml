@@ -1,0 +1,194 @@
+# ============================================================================
+# 武器正文 —— 10.5 cm SK C/33
+#
+# 这一型的核心矛盾：炮本身不差，问题全在炮座上（三轴稳定但敞篷、防水差、电气故障）。
+# 战后它还在法国和意大利造的舰上用过，这一段很容易漏。
+# ============================================================================
+weapon: 10_5cm-sk-c33
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      10.5 cm SK C/33 是德国海军二战主力舰与巡洋舰的重型高射炮，
+      1933 年设计、1935 年服役，用来取代较老的 8.8 cm SK C/31。
+      它本身是一门性能合格的高平两用炮，问题几乎全出在炮座上：
+      三轴稳定本是为了在舰体摇摆时保持跟踪，实际却因为敞篷、防水不良和电气故障
+      成了整型武器最薄弱的环节。
+    en: >-
+      The 10.5 cm SK C/33 was the heavy anti-aircraft gun of the German Navy's
+      capital ships and cruisers, designed in 1933 and in service from 1935 as a
+      replacement for the older 8.8 cm SK C/31. The gun itself was competent; its
+      problems were almost entirely in the mount, where three-axis stabilisation
+      meant to hold a steady aim in a seaway turned into the weakest link through
+      open construction, poor watertightness and electrical faults.
+
+  paragraphs:
+    - heading: 三轴炮座：想解决的问题和造出来的问题
+      text:
+        zh: >-
+          这型炮座有三根轴：旋回、俯仰，以及一根用来补偿舰体横摇的稳定轴。
+          想法是舰体在浪里摇摆时，炮架自己把摇摆抵掉，射手就只需要跟踪目标。
+          但 navweaps 的记录是这套东西在实船上被防水不良和敞篷结构拖垮了：
+          敞开暴露的炮位在海上不断进水，电气系统因此频繁故障，
+          而早期炮座还只有有限的遥控（RPC）。
+        en: >-
+          The mounting had three axes: training, elevation and a stabilisation axis
+          that compensated for the ship's roll. The idea was that the mount would
+          cancel the ship's motion and leave the layer tracking only the target.
+          NavWeaps records the opposite outcome: poor watertightness and open
+          construction undid the design, with seawater continually entering the
+          exposed gun positions, electrical systems failing as a result, and early
+          mounts fitted with only limited remote power control.
+      src: [navweaps-10_5cm-sk-c33]
+
+    - heading: 从 8.8 厘米换到 10.5 厘米
+      text:
+        zh: >-
+          它取代的是 8.8 cm SK C/31。换大的理由直接：飞机飞得更高更快，
+          8.8 厘米的射高与弹重不够用了。有意思的是德国海军没有像英美那样
+          让这一门炮同时承担对舰任务的主力角色——对舰有专门的 15 cm，
+          10.5 cm 只管对空，虽然结构上它也能打水面目标。
+        en: >-
+          It replaced the 8.8 cm SK C/31, and the reason for going larger was
+          straightforward: aircraft were flying higher and faster, and the 8.8 cm
+          round no longer had the reach or the shell weight. Notably the German Navy
+          did not make this gun the surface-workhorse the way Britain and the United
+          States used their dual-purpose guns - the 15 cm handled surface targets -
+          though the 10.5 cm could engage them.
+      src: [navweaps-10_5cm-sk-c33, navweaps-15cm-sk-c28]
+
+    - heading: 身管的三种改型
+      text:
+        zh: >-
+          早期炮是「loose barrel」结构。后期的 SK C/33 na 改成两段式身管、
+          外筒更厚，重量明显下降；战时后期的 SK C/33 nT 又把两段改成
+          前段活动炮口件加后段短活衬。这些改型的共同目标是把更换身管的
+          工时降下来——高射炮的身管寿命比主炮短得多，换管速度直接影响可用性。
+        en: >-
+          Early guns used a loose barrel. The later SK C/33 na went to a two-part
+          barrel with a thicker jacket and dropped noticeably in weight; the late-war
+          SK C/33 nT then replaced that with a removable muzzle section plus a short
+          rear liner. All three variants aimed at the same thing, cutting the man-hours
+          needed to change a barrel - an anti-aircraft gun wears its barrel out far
+          faster than a main battery, so reload speed drives availability.
+      src: [navweaps-10_5cm-sk-c33]
+
+    - heading: 计划中的封闭炮座，和没建成的船
+      text:
+        zh: >-
+          navweaps 提到「H」级战列舰原本打算用全遥控的封闭式炮座来取代这套敞篷设计。
+          「H」级一艘都没建成，所以这个改进只留在图纸上。
+        en: >-
+          NavWeaps notes that the "H" class battleships were to have carried fully
+          enclosed, fully remote-controlled mountings in place of this open design.
+          No "H" class ship was built, so the improvement never left the drawing
+          board.
+      src: [navweaps-10_5cm-sk-c33]
+
+    - heading: 战后：装在法国驱逐舰上
+      text:
+        zh: >-
+          这一型炮战后还有一段不常被提到的经历。法国驱逐舰 Guichen 与 Châteaurenault
+          原本是意大利轻巡洋舰 Scipione Africano 与 Atilio Regolo，1948 年作为战争赔偿
+          割让给法国。法国人把舰上的意大利武备全部拆掉，换成 6 门德国 10.5 cm/65
+          加 10 门法国 57 mm/60 高炮；训练舰 Albatros 也加装了一座双联。
+        en: >-
+          The gun had a less frequently told post-war career. The French destroyers
+          Guichen and Châteaurenault were the Italian light cruisers Scipione Africano
+          and Atilio Regolo, ceded to France as war reparations in 1948. The French
+          stripped out the Italian armament and replaced it with six German 10.5 cm/65
+          guns and ten French 57 mm/60 anti-aircraft guns; the training ship Albatros
+          also received a twin mounting.
+      src: [navweaps-10_5cm-sk-c33]
+
+history:
+  - id: design
+    title: { zh: 设计与定型, en: Design }
+    range: { from: 1933, to: 1935 }
+    lead:
+      zh: >-
+        1933 年设计、1935 年服役，取代 8.8 cm SK C/31。
+      en: >-
+        Designed in 1933 and in service by 1935, it replaced the 8.8 cm SK C/31.
+    events:
+      - date: 1933
+        text:
+          zh: >-
+            完成设计，编号 10.5 cm SK C/33。
+          en: >-
+            Design completed as the 10.5 cm SK C/33.
+        src: [navweaps-10_5cm-sk-c33]
+      - date: 1935
+        text:
+          zh: >-
+            进入服役。装舰对象包括德意志级、沙恩霍斯特级、俾斯麦级、
+            希佩尔海军上将级与欧根亲王号，另有 U 艇供应舰 Bauer 级、
+            S 艇供应舰 Lüderitz 与 Nachtigal 级。
+          en: >-
+            Entered service aboard the Deutschland, Scharnhorst, Bismarck, Admiral
+            Hipper and Prinz Eugen classes, plus the U-boat depot ship Bauer and the
+            S-boat depot ships Lüderitz and Nachtigal.
+        src: [navweaps-10_5cm-sk-c33]
+
+  - id: service
+    title: { zh: 战时使用, en: Wartime service }
+    range: { from: 1939-08, to: 1944-11 }
+    lead:
+      zh: >-
+        它是德国主力舰对空火力的中坚，也是每一份"防空不够"的战报里被点名的部分。
+      en: >-
+        It was the backbone of German capital-ship anti-aircraft fire and the part
+        most often named in reports that judged that fire insufficient.
+    events:
+      - date: 1940-08-24
+        text:
+          zh: >-
+            俾斯麦号服役，装八座双联共 16 门，备弹 6,825 发，
+            另有 337 发照明弹。炮座为 C31 与 C37 两型混装。
+          en: >-
+            Bismarck commissioned with eight twin mountings, sixteen guns, an outfit
+            of 6,825 rounds and 337 starshells. Mountings of the C31 and C37 types were
+            mixed.
+        src: [kbismarck-armament]
+      - date: 1941-05-24
+        text:
+          zh: >-
+            丹麦海峡海战。交战后期的远距离阶段，德国舰队的对空炮
+            并未参与主要交战；这一天德舰的损失来自英舰主炮。
+          en: >-
+            The Battle of the Denmark Strait. The anti-aircraft battery took no part
+            in the main long-range exchange, where the damage to the German ships came
+            from British main guns.
+        src: [kbismarck-denmark-strait]
+      - date: 1944-11-12
+        text:
+          zh: >-
+            提尔皮茨号在 Tromsø 附近被击沉，是这一型炮最后一艘还在服役的载舰。
+          en: >-
+            Tirpitz was sunk near Tromsø, the last ship still carrying this gun in
+            service.
+        src: [kbismarck-tirpitz]
+
+  - id: postwar
+    title: { zh: 战后的第二次服役, en: Second service after the war }
+    range: { from: 1948, to: 1948 }
+    lead:
+      zh: >-
+        这一节讲的是这一型炮最容易被漏掉的一段：它战后在法国海军里还服役过。
+      en: >-
+        This section covers the part most often missed: the gun served on in the
+        French Navy after the war.
+    events:
+      - date: 1948
+        text:
+          zh: >-
+            意大利轻巡洋舰 Scipione Africano 与 Atilio Regolo 作为战争赔偿割让法国，
+            改名 Guichen 与 Châteaurenault。法国拆掉全部意制武备，
+            换装 6 门德国 10.5 cm/65 与 10 门法国 57 mm/60 高炮。
+          en: >-
+            The Italian light cruisers Scipione Africano and Atilio Regolo were ceded
+            to France as reparations and renamed Guichen and Châteaurenault. The French
+            removed the Italian armament entirely and fitted six German 10.5 cm/65 guns
+            with ten French 57 mm/60 anti-aircraft guns.
+        src: [navweaps-10_5cm-sk-c33]

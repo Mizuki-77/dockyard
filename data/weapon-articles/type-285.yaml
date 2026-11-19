@@ -1,0 +1,148 @@
+# ============================================================================
+# 武器正文 —— Type 285 主炮炮术雷达（4.5 英寸）
+#
+# 这里有一条必须并列的时间分歧：
+#   ac-design 把 285 写进「1941-42 的换装」；
+#   navypedia 的清单把 285 记在 6/1943 那次加装里；
+#   navweaps 的型号表又说它「late 1942」才服役。
+# 三个口径互不相同，全部照录，不合并。
+# ============================================================================
+weapon: type-285
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Type 285 是配 4.5 英寸两用炮的炮术雷达，任务是给这批炮提供测距与落点观测，
+      装在本舰的主指挥仪上。专题站的英国雷达型号表把它写作 Type 284 的变型、
+      为小型舰只改装而来，用途记为「远程对空炮术」。
+      它在光辉号上的装舰时点有三份材料给出三个不同的口径，本站并列，不裁决。
+    en: >-
+      The Type 285 was the gunnery radar for the 4.5-inch dual-purpose battery: it
+      supplied range and fall-of-shot observation to those guns and was mounted on the
+      ship's main directors. The specialist site's table of British radar describes it
+      as a variant of the Type 284 adapted for small ships, with its purpose given as
+      long-range anti-aircraft gunnery. Three sources give three different dates for
+      its fitting aboard HMS Illustrious, and all three are reported here.
+
+  paragraphs:
+    - heading: 三个装舰时点，三个口径
+      text:
+        zh: >-
+          这里必须把分歧摊开。第一，装甲航母的设计资料把 1941 到 1942 年的
+          那次换装概括为「79 换成 281（对空）加 285（4.5 英寸炮术）」，
+          即把 285 放在 1941-42 这个窗口里；
+          第二，navypedia 的逐次改装清单把 type 285 记在 1943 年 6 月那一次加装中，
+          与 type 79B、type 272、type 281B、6 部 type 282 同批；
+          第三，专题站的型号总表把 Type 285 的服役时间写作「late 1942」。
+          三种说法分别讲的是「换装计划的一句话概括」「某舰某月的清单」和
+          「全海军服役年份」，不是同一种陈述，本站不把它们合并成一个日期。
+        en: >-
+          The disagreement has to be laid out. First, the armoured-carrier design record
+          sums up the 1941-42 change as the Type 79 giving way to the Type 281 for air
+          warning and the Type 285 for 4.5-inch gunnery, placing the 285 inside that
+          window. Second, navypedia's list of successive refits records the type 285 in
+          the June 1943 addition, alongside the type 79B, type 272, type 281B and six
+          type 282 sets. Third, the specialist site's table gives the Type 285 an
+          operational date of late 1942. The three are respectively a one-line summary of
+          a rearmament plan, a single ship's list for a single month, and a Navy-wide
+          service year; they are not the same kind of statement and are not merged into
+          one date here.
+      src: [ac-design, navypedia-illustrious, navweaps-radar-uk]
+
+    - heading: 它的活儿是测距和看落点，不是替炮算解
+      text:
+        zh: >-
+          4.5 英寸两用炮在本舰上承担的是远程对空火力和对海副炮两件事，
+          而这两个任务都吃测距。设计资料说 285 装在本舰的主指挥仪上，
+          专题站把它的用途写作远程对空炮术。
+          需要区分清楚的是：285 提供的是距离数据，
+          真正把距离变成高低与方向修正的是指挥仪和高角控制台那一套。
+          本站因此不把 285 写成「提高了命中率」的设备，
+          只写它给系统送进了更准的距离这一件事。
+        en: >-
+          The 4.5-inch dual-purpose battery aboard carried both the long-range
+          anti-aircraft role and the secondary anti-surface role, and both depend on
+          range. The design record places the 285 on the ship's main directors and the
+          specialist table describes its purpose as long-range anti-aircraft gunnery.
+          The distinction that matters: the 285 supplies range data, while the director
+          and the high-angle control table are what turn range into elevation and
+          deflection. This article therefore does not present the 285 as a device that
+          improved hit rates, only as the set that fed more accurate range into the
+          system.
+      src: [ac-design, navweaps-radar-uk]
+
+    - heading: 型号总表里它是「给小船的 284」
+      text:
+        zh: >-
+          专题站给 Type 285 的说明只有一句：「Variant of Type 284 adapted for small
+          ships」，用途写作远程对空炮术，服役时间写作 late 1942。
+          同表里 Type 284 的用途是「大型舰的主炮炮术」、
+          首次装舰对象是纳尔逊号（HMS Nelson）、评语是「Very successful」、
+          服役时间写作 1940 年 6 月。
+          两型的关系在这张表里是明确的派生关系，
+          但表里没有说明 285 具体改了什么、为什么叫「为小船适配」。
+          本站不补充这一层。
+        en: >-
+          The specialist table has one line for the Type 285: "Variant of Type 284
+          adapted for small ships", purpose long-range anti-aircraft gunnery,
+          operational late 1942. In the same table the Type 284 is given as main gunnery
+          for large ships, first fitted to HMS Nelson, judged "Very successful", and
+          operational from June 1940. The two stand in a clear parent-derivative relation
+          in that table, but the table does not say what was actually changed to suit
+          smaller ships, and this article does not fill that in.
+      src: [navweaps-radar-uk]
+
+history:
+  - id: service
+    title: { zh: 装舰时点的三种口径, en: Three dates for one fitting }
+    range: { from: 1941-05, to: 1946-01 }
+    lead:
+      zh: >-
+        这一节的作用就是把三种时点原样摆出来，让读者自己看清分歧在哪里。
+      en: >-
+        The point of this section is to lay the three dates out as they stand so that
+        the disagreement is visible.
+    events:
+      - date: 1941-05-12
+        text:
+          zh: >-
+            本实体在数据层采用的装舰起点。此日期对应的是现有来源里能追到的
+            最早时点；设计资料把 285 放进 1941-42 的换装叙述，
+            这是它被采用为起点的依据。
+          en: >-
+            The fitting start date used in the data layer, taken as the earliest point
+            that could be traced from the sources at hand: the design record places the
+            285 inside its account of the 1941-42 change, and that is the basis for
+            using it.
+        src: [ac-design]
+      - date: 1942
+        text:
+          zh: >-
+            专题站的型号总表把 Type 285 的服役时间写作 late 1942。
+            这一条讲的是全海军的服役年份，不是某一艘舰的装舰月份。
+          en: >-
+            The specialist site's table gives the Type 285 an operational date of late
+            1942. That statement is a Navy-wide service date, not a fitting month for any
+            one ship.
+        src: [navweaps-radar-uk]
+      - date: 1943-06
+        text:
+          zh: >-
+            navypedia 的逐次改装清单把 type 285 记在这一次：
+            减 type 281 雷达，加 type 79B、type 272、type 281B、6 部 type 282、type 285。
+            同一份清单还列有 16 座双联与 2 座单装 20 mm Oerlikon。
+          en: >-
+            Navypedia's list of successive refits puts the type 285 here: minus type 281
+            radar, plus the type 79B, type 272, type 281B, six type 282 sets and the type
+            285. The same entry lists sixteen twin and two single 20 mm Oerlikon mounts.
+        src: [navypedia-illustrious]
+      - date: 1946-01
+        text:
+          zh: >-
+            战后清单里 type 285 仍在列（type 79B、type 272、type 281B、6 部 type 282、
+            type 285）。它没有被后续型号替换。
+          en: >-
+            The type 285 is still listed post-war, alongside the type 79B, type 272, type
+            281B and six type 282 sets. It was never displaced by a later mark aboard.
+        src: [navypedia-illustrious]

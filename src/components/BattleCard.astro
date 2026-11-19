@@ -1,0 +1,174 @@
+---
+import { primaryImage } from '../lib/data';
+import type { BattleFile } from '../lib/types';
+
+interface Props {
+  battle: BattleFile;
+  /** 归在某个行动下面时用紧凑一点的样子 */
+  compact?: boolean;
+}
+const { battle: b, compact = false } = Astro.props;
+const thumb = primaryImage(`battle:${b.id}`);
+const years = String(b.date?.from ?? '').slice(0, 4);
+const mdFrom = String(b.date?.from ?? '').slice(5).replace('-', '.');
+const mdTo =
+  b.date?.to && b.date.to !== b.date.from ? `–${String(b.date.to).slice(5).replace('-', '.')}` : '';
+---
+
+<a
+  class:list={['battlecard', { 'battlecard--nomedia': !thumb?.file, 'battlecard--compact': compact }]}
+  href={`/battles/${b.id}`}
+>
+  {thumb?.file && (
+    <span class="battlecard__thumb">
+      <img src={thumb.file} alt={thumb.title.zh} loading="lazy" />
+    </span>
+  )}
+  <div class="battlecard__date">
+    <span class="battlecard__year mono">{years}</span>
+    <span class="battlecard__md mono">{mdFrom}{mdTo}</span>
+  </div>
+  <div class="battlecard__body">
+    <h3 class="battlecard__title">{b.name.zh}</h3>
+    <p class="battlecard__en">{b.name.en}</p>
+    {!compact && b.summary && <p class="battlecard__summary">{b.summary.zh}</p>}
+    <div class="battlecard__ships">
+      {(b.belligerents ?? []).map((side) =>
+        (side.ships ?? []).map((s) => <span class="tag tag--ghost tiny">{s.name}</span>),
+      )}
+      <span class="tag tiny">{b.timeline.length} 个事件</span>
+    </div>
+  </div>
+  <span class="battlecard__arrow" aria-hidden="true">→</span>
+</a>
+
+<style>
+  .battlecard {
+    display: grid;
+    grid-template-columns: 224px 92px minmax(0, 1fr) 24px;
+    gap: 20px;
+    padding: 20px 22px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.16s ease, box-shadow 0.16s ease;
+  }
+  .battlecard--nomedia {
+    grid-template-columns: 92px minmax(0, 1fr) 24px;
+  }
+  .battlecard--compact {
+    padding: 15px 18px;
+    border-color: var(--line-soft);
+  }
+  .battlecard:hover {
+    border-color: var(--line-strong);
+    box-shadow: var(--shadow-1);
+  }
+  .battlecard__thumb {
+    display: block;
+    overflow: hidden;
+    border-radius: 6px;
+    background: var(--navy-800);
+    aspect-ratio: 16 / 10;
+  }
+  .battlecard__thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    filter: saturate(0.92);
+    transition: transform 0.3s ease;
+  }
+  .battlecard:hover .battlecard__thumb img {
+    transform: scale(1.03);
+  }
+  .battlecard__date {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-right: 18px;
+    border-right: 1px solid var(--line);
+  }
+  .battlecard__year {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--navy-700);
+    letter-spacing: -0.01em;
+  }
+  .battlecard__md {
+    font-size: 12px;
+    color: var(--ink-300);
+  }
+  .battlecard__title {
+    font-size: 18px;
+    font-weight: 680;
+    color: var(--ink-900);
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .battlecard--compact .battlecard__title {
+    font-size: 16px;
+  }
+  .battlecard__en {
+    margin: 3px 0 0;
+    font-size: 11.5px;
+    color: var(--ink-300);
+    letter-spacing: 0.02em;
+  }
+  .battlecard__summary {
+    margin: 9px 0 0;
+    font-size: 13px;
+    line-height: 1.72;
+    color: var(--ink-500);
+  }
+  .battlecard__ships {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 11px;
+  }
+  .battlecard--compact .battlecard__ships {
+    margin-top: 8px;
+  }
+  .battlecard__arrow {
+    align-self: center;
+    color: var(--blue-400);
+    font-size: 15px;
+    transition: transform 0.16s ease;
+  }
+  .battlecard:hover .battlecard__arrow {
+    transform: translateX(4px);
+  }
+  @media (max-width: 860px) {
+    .battlecard {
+      grid-template-columns: 140px minmax(0, 1fr);
+      gap: 16px;
+    }
+    .battlecard--nomedia {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .battlecard__date {
+      flex-direction: row;
+      align-items: baseline;
+      gap: 8px;
+      padding-right: 0;
+      border-right: 0;
+    }
+    .battlecard__arrow {
+      display: none;
+    }
+  }
+  @media (max-width: 720px) {
+    .battlecard,
+    .battlecard--nomedia {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 12px;
+    }
+    .battlecard__thumb {
+      aspect-ratio: 16 / 9;
+    }
+  }
+</style>

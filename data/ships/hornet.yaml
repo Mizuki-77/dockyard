@@ -1,0 +1,412 @@
+# ============================================================================
+# 大黄蜂（USS Hornet, CV-8）—— 约克城级三号舰
+#
+# 2026-11-19 入库。数据来自 work/raw/yorktown-hornet-tech.md。
+#
+# **DANFS 路径是 hornet-vii，不是 hornet-viii。**
+# CV-8 在 DANFS 里是 Hornet VII；hornet-viii.html 是 CV-12（埃塞克斯级）。
+#
+# 与另两艘同级舰的三处硬差异：
+#   1. **5"/38 炮架型号 Mk 24 Mod 2**（后改 Mod 6）—— 姊妹舰是 Mk 21 Mod 16
+#   2. **射击指挥仪 Mk 37** —— 姊妹舰是 Mk 33
+#   3. **中途岛时没有 CXAM，只有 SC**；CXAM 是 1942-06-20～28
+#      才从加利福尼亚号拆来装上的
+#
+# 关于「按战时标准建造」：不准确。原句是「minimally modified Yorktown design」，
+# 1939-09 开工，属战前。
+# ============================================================================
+
+id: hornet
+name:
+  zh: 大黄蜂号
+  en: Hornet
+class: yorktown
+note: >-
+  约克城级三号舰。杜立特空袭东京的起飞母舰。
+  圣克鲁斯海战后于 1942-10-27 沉没。
+
+open_ended_note: >-
+  本舰参数有效期自 1941-10-20 服役至 1942-10-27 沉没。
+  与同级舰共用的舰体、动力、机库等数据写在 classes/yorktown.yaml。
+
+facts:
+  # ============================================================
+  # 身份
+  # ============================================================
+  - field: identity.name_original
+    value: Hornet
+    src: [nhhc-danfs-hornet-vii]
+    valid: { from: 1940-12-14 }
+    confidence: B
+
+  - field: identity.name_zh
+    value: 大黄蜂号
+    src: [nhhc-danfs-hornet-vii]
+    valid: { from: 1940-12-14 }
+    confidence: B
+
+  - field: identity.name_en
+    value: USS Hornet
+    src: [nhhc-danfs-hornet-vii]
+    valid: { from: 1940-12-14 }
+    confidence: B
+
+  - field: identity.pennant_number
+    value: CV-8
+    src: [nhhc-danfs-hornet-vii]
+    valid: { from: 1941-10-20 }
+    confidence: B
+
+  - field: identity.ship_type
+    value: aircraft_carrier
+    src: [nhhc-danfs-hornet-vii]
+    valid: { from: 1941-10-20 }
+    confidence: B
+
+  - field: identity.nation
+    value: united_states
+    src: [nhhc-danfs-hornet-vii]
+    valid: { from: 1941-10-20 }
+    confidence: B
+
+  - field: identity.operator
+    value: United States Navy
+    src: [nhhc-danfs-hornet-vii]
+    valid: { from: 1941-10-20 }
+    confidence: B
+
+  - field: identity.era
+    value: ww2
+    src: [nhhc-danfs-hornet-vii]
+    valid: { from: 1941-10-20 }
+    confidence: B
+
+  - field: identity.building_program
+    value: >-
+      1933-06-16 国会法案授权的同级舰；1939-09 开工，属战前建造。
+      设计上只是「minimally modified Yorktown design」，
+      **不是「按战时标准建造」**。
+    src: [nhhc-danfs-hornet-vii]
+    valid: { from: 1939-09-25 }
+    confidence: B
+
+  # ============================================================
+  # 建造
+  # ============================================================
+  - field: construction.builder
+    value: Newport News Shipbuilding & Dry Dock Co.
+    src: [nhhc-danfs-hornet-vii]
+    valid: { from: 1939-09-25 }
+    confidence: B
+    note: 三舰同一建造厂，差异只在船台号（约克城 359 / 企业 360 / **大黄蜂 385**）。
+
+  - field: construction.builder_location
+    value: Newport News, Virginia
+    src: [nhhc-danfs-hornet-vii]
+    valid: { from: 1939-09-25 }
+    confidence: B
+
+  - field: construction.yard_number
+    value: "385"
+    src: [navypedia-yorktown-class]
+    valid: { from: 1939-09-25 }
+    confidence: C
+
+  - field: construction.laid_down
+    value: 1939-09-25
+    unit: date
+    src: [nhhc-danfs-hornet-vii]
+    valid: { from: 1939-09-25 }
+    confidence: B
+
+  - field: construction.launched
+    value: 1940-12-14
+    unit: date
+    src: [nhhc-danfs-hornet-vii]
+    valid: { from: 1940-12-14 }
+    confidence: B
+
+  - field: construction.commissioned
+    value: 1941-10-20
+    unit: date
+    src: [nhhc-danfs-hornet-vii]
+    valid: { from: 1941-10-20 }
+    confidence: B
+
+  - field: construction.fate_date
+    value: 1942-10-27
+    unit: date
+    src: [nhhc-danfs-hornet-vii]
+    valid: { from: 1942-10-27 }
+    confidence: B
+    note: >-
+      圣克鲁斯海战（1942-10-26）重伤后被放弃，10-27 由己方驱逐舰
+      雷击处分（含 Mustin、Anderson 等）。沉没坐标各来源差 9 个经度。
+
+  - field: construction.fate_type
+    value: sunk_by_enemy
+    src: [nhhc-danfs-hornet-vii]
+    valid: { from: 1942-10-27 }
+    confidence: B
+    note: >-
+      严格说是「先被敌机重创、后被己方处分」。
+      注：此处记 sunk_by_enemy 而非 scuttled，因为致命损伤来自日军空袭；
+      若按「谁让它沉」的严格口径应记 scuttled。两种口径都能自圆，不裁决。
+
+  # ============================================================
+  # 武备（本舰特有 —— 三舰最硬的装备差异）
+  # ============================================================
+  - field: armament.mount.summary
+    value: >-
+      1942-06 中途岛时：5"/38 单装 8 座（**Mk 24 Mod 2 炮架**）+
+      1.1"/75 四联装 4 座（16 管）+ 20mm 厄利孔若干
+    src: [nhhc-hornet-midway-report]
+    valid: { from: 1942-05-28, to: 1942-06-13 }
+    confidence: A
+    note: >-
+      **5"/38 的炮架型号与两艘姊姊舰不同**：约克城与企业号是 Mk 21 Mod 16，
+      大黄蜂是 Mk 24 Mod 2（后改 Mod 6）。
+      这是同级舰里最硬的一处装备差异。
+
+  - field: armament.aa_40mm.count
+    value: 0
+    unit: count
+    src: [nhhc-hornet-midway-report]
+    valid: { from: 1941-10-20, to: 1942-06-13 }
+    confidence: A
+    note: >-
+      这是「0」，有一手战报支撑。大黄蜂的中途岛战报与损管表逐项列全了
+      全自动武器——只有 1.1"/75 与 20mm，没有 40mm。
+      全美首装四联 40mm 是 1942-06-22 的怀俄明号训练舰，比中途岛晚 18 天。
+
+  - field: armament.torpedo.tubes
+    value: 0
+    unit: count
+    src: [nhhc-danfs-hornet-vii]
+    valid: { from: 1941-10-20, to: 1942-10-27 }
+    confidence: B
+
+  # ============================================================
+  # 雷达与火控（与姊姊舰不同）
+  # ============================================================
+  - field: sensors.radar.installed
+    value: SC 对空搜索雷达
+    src: [nhhc-hornet-midway-report]
+    valid: { from: 1941-10-20, to: 1942-06-19 }
+    confidence: A
+    note: >-
+      **中途岛时大黄蜂没有 CXAM，只有 SC。**
+      CXAM 是 1942-06-20 至 28 才从加利福尼亚号拆来装上的——
+      也就是说它在圣克鲁斯海战前才有 CXAM。
+      这是三舰在雷达上的实际差异，不是笔误。
+
+  - field: sensors.director.type
+    value: Mk 37
+    src: [navweaps-5in38-mk24]
+    valid: { from: 1941-10-20, to: 1942-10-27 }
+    confidence: C
+    note: >-
+      与两艘姊姊舰不同：约克城与企业号是 Mk 33，大黄蜂是 Mk 37。
+      这跟它的 Mk 24 炮架配套。
+
+  # ============================================================
+  # 编制
+  # ============================================================
+  - field: service.complement.standard
+    value: 2217
+    unit: persons
+    src: [nhhc-danfs-hornet-vii]
+    valid: { from: 1941-10-20, to: 1942-10-27 }
+    confidence: C
+    note: 与同级舰同（2,217 名 1941 年编制）。
+
+  - field: service.casualties
+    value: 143
+    unit: persons
+    src: [nhhc-danfs-hornet-vii]
+    valid: { from: 1942-10-27 }
+    confidence: C
+    note: 圣克鲁斯海战阵亡约 143 名（含随舰沉没与后来失踪的）。各来源口径不同。
+
+  - about: weapon:5in38-mk12
+    field: weapon.designation
+    value: "5\"/38 Mark 12"
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:5in38-mk12
+    field: weapon.category
+    value: naval_gun
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:5in38-mk12
+    field: weapon.nation
+    value: united_states
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:5in38-mk12
+    field: weapon.bore
+    value: 127
+    unit: mm
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:5in38-mk12
+    field: weapon.in_service_from
+    value: 1942-06-04
+    unit: date
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+    note: "单装 8 座，**炮架为 Mk 24 Mod 2**（后改 Mod 6）——两艘姊姊舰是 Mk 21 Mod 16"
+
+  - about: weapon:11in75-mk1
+    field: weapon.designation
+    value: "1.1\"/75 Mark 1"
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:11in75-mk1
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:11in75-mk1
+    field: weapon.nation
+    value: united_states
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:11in75-mk1
+    field: weapon.bore
+    value: 28
+    unit: mm
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:11in75-mk1
+    field: weapon.in_service_from
+    value: 1942-06-04
+    unit: date
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+    note: 四联装 4 座 16 管
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.designation
+    value: 20mm 厄利孔
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:20mm-oerlikon
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:20mm-oerlikon
+    field: weapon.nation
+    value: united_states
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:20mm-oerlikon
+    field: weapon.bore
+    value: 20
+    unit: mm
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:20mm-oerlikon
+    field: weapon.in_service_from
+    value: 1942-06-04
+    unit: date
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+    note: 中途岛时数量未获取
+
+  - about: weapon:f4f-wildcat
+    field: weapon.designation
+    value: F4F-4 野猫
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:f4f-wildcat
+    field: weapon.category
+    value: aircraft
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:f4f-wildcat
+    field: weapon.nation
+    value: united_states
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:f4f-wildcat
+    field: weapon.in_service_from
+    value: 1942-06-04
+    unit: date
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+    note: VF-8
+
+  - about: weapon:sbd-dauntless
+    field: weapon.designation
+    value: SBD-3 无畏
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:sbd-dauntless
+    field: weapon.category
+    value: aircraft
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:sbd-dauntless
+    field: weapon.nation
+    value: united_states
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:sbd-dauntless
+    field: weapon.in_service_from
+    value: 1942-06-04
+    unit: date
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+    note: VB-8 / VS-8
+
+  - about: weapon:tbd-devastator
+    field: weapon.designation
+    value: TBD-1 蹂躏者
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:tbd-devastator
+    field: weapon.category
+    value: aircraft
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:tbd-devastator
+    field: weapon.nation
+    value: united_states
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+  - about: weapon:tbd-devastator
+    field: weapon.in_service_from
+    value: 1942-06-04
+    unit: date
+    src: [nhhc-midway-us-order-of-battle]
+    valid: { from: 1942-06-04, to: 1942-06-06 }
+    confidence: C
+    note: VT-8 15 架全灭，仅 George Gay 一人获救

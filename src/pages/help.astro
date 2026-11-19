@@ -1,0 +1,285 @@
+---
+import Base from '../layouts/Base.astro';
+import SideNav from '../components/SideNav.astro';
+import { getFields, getSources, getGroups } from '../lib/data';
+
+const fields = getFields();
+const sources = getSources();
+const groups = getGroups();
+---
+
+<Base title="帮助及反馈">
+  <SideNav
+    slot="sidenav"
+    kicker="Help"
+    title="帮助及反馈"
+    items={[
+      { href: '#read', label: '怎么读这些数据' },
+      { href: '#tiers', label: '证据层级' },
+      { href: '#dispute', label: '为什么有争议也不删' },
+      { href: '#image', label: '图片授权' },
+      { href: '#feedback', label: '纠错与反馈' },
+      { href: '#about', label: '关于本站' },
+    ]}
+    note="本站的数据规则写在前面。规则比结论重要——知道数据是怎么来的，你才能判断该不该信。"
+  />
+
+  <div class="pagehead">
+    <div class="pagehead__kicker">Help & feedback</div>
+    <h1 class="pagehead__title">帮助及反馈</h1>
+    <p class="pagehead__sub">
+      这个站不打算把结论直接喂给你。每条数据都能点开看它的来源、时间窗和置信度，
+      读的时候知道「这条是档案原文」还是「这条是二手转述」，比记住一个数字有用。
+    </p>
+  </div>
+
+  <section class="section" id="read">
+    <div class="section__head">
+      <h2 class="section__title">怎么读这些数据</h2>
+      <span class="section__en">Reading the data</span>
+    </div>
+    <div class="prose">
+      <p>
+        每条数据叫一条<b>事实记录</b>，它不是一个孤零零的数字，而是「某段时间内、某个来源说的一个值」。
+        所以同一艘船的同一个指标，可能同时存在几个值——那不是错误，是它们在等你判断。
+      </p>
+      <dl class="defs">
+        <dt>置信度 A</dt>
+        <dd>一手档案（原始报告、战争日志、官方图纸）。可以直接引用。</dd>
+        <dt>置信度 B</dt>
+        <dd>同期官方出版物或权威二次文献，口径明确。</dd>
+        <dt>置信度 C</dt>
+        <dd>二手转述、推算值、口径不明的数据。页面上会标明，但不作主值之外的推断。</dd>
+        <dt>时间窗</dt>
+        <dd>这条值的有效期。舰首涂装 1941 年 5 月 21 日改掉了，那之前的记录就不适用于之后——拖动时间轴能看见它变。</dd>
+        <dt>未记载</dt>
+        <dd>时间轴上某一天没有数据，意思是「没有记载」，不是「这个值是 0」。这两件事不能混。</dd>
+      </dl>
+      <p class="muted small">
+        目前注册了 {fields.length} 个字段、{groups.length} 个分组、{sources.length} 条来源。
+        字段是固定的——不允许随手写一个新字段名，否则同一个东西会分裂成十种写法。
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="tiers">
+    <div class="section__head">
+      <h2 class="section__title">证据层级</h2>
+      <span class="section__en">Evidence tiers</span>
+    </div>
+    <div class="tierbars">
+      {
+        [
+          { t: 'A', name: '一手档案', ex: '战争日志、射击报告、倾斜试验记录、原始机密文件', verdict: '可作事实依据' },
+          { t: 'B', name: '同期官方出版物', ex: '当年度《简氏战舰》、海军部手册', verdict: '可作事实依据' },
+          { t: 'C', name: '权威二次文献', ex: 'Conway\'s、Garzke & Dulin、Campbell', verdict: '可作事实依据，需注明' },
+          { t: 'D', name: '专题网站', ex: 'NavWeaps、KBismarck、combinedfleet', verdict: '可作事实依据，优先交叉验证' },
+          { t: 'E', name: '百科与聚合站', ex: '维基百科、WikiData', verdict: '仅用于找线索，不作事实来源' },
+        ].map((r) => (
+          <div class="tierbar">
+            <span class={`conf conf--${r.t}`}>{r.t}</span>
+            <div class="tierbar__body">
+              <div class="tierbar__name">{r.name}</div>
+              <div class="tierbar__ex">{r.ex}</div>
+            </div>
+            <div class="tierbar__verdict">{r.verdict}</div>
+          </div>
+        ))
+      }
+    </div>
+    <p class="note">
+      E 层不是「不能用」，是「用了要去追原文」。本站的维基条目都留在来源表里，
+      标注为「仅线索」——它们最有价值的用途是告诉你该去查哪份原始文件。
+    </p>
+  </section>
+
+  <section class="section" id="dispute">
+    <div class="section__head">
+      <h2 class="section__title">为什么有争议也不删</h2>
+      <span class="section__en">Disputes are data</span>
+    </div>
+    <div class="prose">
+      <p>
+        大部分资料站遇到两个来源对不上，会挑一个看起来更权威的写上去，另一个丢掉。
+        本站不这么做，原因很实在：<b>被丢掉的那个说法，往往是后来被证明对的那个。</b>
+      </p>
+      <p>所以这里有三种处理方式，视情况而定：</p>
+      <ul>
+        <li>
+          <b>口径不同 → 拆成两个字段并存。</b>比如「标准排水量」有两种计算口径，
+          不是谁错了，是它们算的不是一件事。分成两个字段，各自标口径，都能查。
+        </li>
+        <li>
+          <b>真冲突 → 按证据层级裁决，但另一种说法保留在册。</b>页面显示主值，
+          旁边有角标说明还有其他说法，点开能看到全部。
+        </li>
+        <li>
+          <b>无法裁决 → 并列展示，标「存在争议」。</b>这种情况通常是学术问题，
+          不是资料问题。比如俾斯麦号是被击沉还是自沉——五种说法都列出来，
+          连德国官方当年的公告口径也留着。
+        </li>
+      </ul>
+      <p class="muted small">
+        争议不会因为「看起来乱」被删掉。如果某天某个说法被新证据推翻了，它也不是消失，
+        而是在原处标为「已被取代」，并写清是被什么取代的。
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="image">
+    <div class="section__head">
+      <h2 class="section__title">图片授权</h2>
+      <span class="section__en">Image licensing</span>
+    </div>
+    <div class="prose">
+      <p>图片分三档，因为不同机构的授权差别很大，混在一起用迟早出问题：</p>
+      <ul>
+        <li><b>A 档 · 归档</b>——公有领域或 CC0，可以存到本站服务器。</li>
+        <li><b>B 档 · 外链</b>——允许使用但有限制（如 CC-BY 要求署名、部分机构只允许非商业用途），只外链不归档。</li>
+        <li><b>C 档 · 禁用</b>——条款不允许，或者需要逐张申请。宁可不放，也不放一张说不清来源的图。</li>
+      </ul>
+      <p class="muted small">
+        本站目前零变现，这一点直接影响图片合规：有些机构的「非商业」许可在站点出现广告、
+        商品或订阅后立即失效。所以赞助入口只接受无条件捐赠，不提供任何回报。
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="feedback">
+    <div class="section__head">
+      <h2 class="section__title">纠错与反馈</h2>
+      <span class="section__en">Corrections</span>
+    </div>
+    <div class="prose">
+      <p>
+        发现数据有问题，指出来就行——<b>但请带上你的来源</b>。
+        说「这个数字不对」没法处理，说「NavWeaps 那页写的是 35,550 m，你们写的是 36,520」
+        才能处理，因为那可以直接变成一条新的证据记录。
+      </p>
+      <p>提交流程会往 GitHub 提一个 issue，自动带上：舰船 id、字段 id、当前值、当前来源、页面地址。
+      审核后合入，那个 issue 会一直留着——它就是这条数据被修正的记录。</p>
+      <div class="callout">
+        <div class="callout__title">目前的状态</div>
+        <p>
+          纠错入口还在做（数据层已经支持，界面没接）。现在要提意见，走
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub 仓库</a>
+          或者直接联系站长。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="section__head">
+      <h2 class="section__title">关于本站</h2>
+      <span class="section__en">About</span>
+    </div>
+    <div class="prose">
+      <p>
+        一个偏执的战舰资料站。起因是想给模型制作者和战舰爱好者一个「能查到出处」的地方——
+        现有资料站大多只给结论，不给过程，导致同一个数字在不同站之间抄来抄去，
+        最后没人知道它最初是从哪份文件里读出来的。
+      </p>
+      <p>
+        覆盖优先级：二战主力舰 → 现代舰 → 一战舰。<b>内容先于功能</b>，
+        所以对比器、穿深查询这些工具在数据够用之前不会做。
+      </p>
+      <p class="muted small">
+        数据不是从百科抄的。每一条都要回到能查证的来源，抓不到的就标「尚未获取」，不猜。
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .prose {
+    max-width: 74ch;
+    font-size: 13.5px;
+    line-height: 1.85;
+    color: var(--ink-700);
+  }
+  .prose p {
+    margin: 0 0 12px;
+  }
+  .prose ul {
+    margin: 0 0 12px;
+    padding-left: 20px;
+  }
+  .prose li {
+    margin-bottom: 8px;
+  }
+  .prose a {
+    color: var(--blue-700);
+  }
+  .prose b {
+    color: var(--ink-900);
+    font-weight: 650;
+  }
+
+  .defs {
+    margin: 0 0 14px;
+    padding: 14px 18px;
+    border-left: 3px solid var(--blue-200);
+    background: var(--blue-50);
+    border-radius: var(--radius-sm);
+  }
+  .defs dt {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--navy-700);
+    margin-top: 10px;
+  }
+  .defs dt:first-child {
+    margin-top: 0;
+  }
+  .defs dd {
+    margin: 3px 0 0;
+    font-size: 13px;
+    line-height: 1.72;
+    color: var(--ink-700);
+  }
+
+  .tierbars {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--white);
+  }
+  .tierbar {
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr) 150px;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 18px;
+  }
+  .tierbar + .tierbar {
+    border-top: 1px solid var(--line-soft);
+  }
+  .tierbar__name {
+    font-size: 13px;
+    font-weight: 650;
+    color: var(--ink-900);
+  }
+  .tierbar__ex {
+    font-size: 11.5px;
+    color: var(--ink-400);
+    margin-top: 2px;
+  }
+  .tierbar__verdict {
+    font-size: 11.5px;
+    color: var(--ink-500);
+    text-align: right;
+  }
+  @media (max-width: 700px) {
+    .tierbar {
+      grid-template-columns: 26px minmax(0, 1fr);
+    }
+    .tierbar__verdict {
+      grid-column: 2;
+      text-align: left;
+      color: var(--ink-300);
+    }
+  }
+</style>

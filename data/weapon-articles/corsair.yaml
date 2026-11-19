@@ -1,0 +1,155 @@
+# ============================================================================
+# 武器正文 —— Vought F4U Corsair
+#
+# 三条必须写清的：
+#  1) 美国海军判它不安全，英国皇家海军反而把它用起来了；
+#  2) 为了塞进装甲航母 16 ft 的机库，翼尖被切短了；
+#  3) 切短翼尖还有个意外好处：降低了降落时「飘」的倾向。
+# 马力/极速/翼展无来源，不写。
+# ============================================================================
+weapon: corsair
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Vought F4U Corsair 是英国舰队航空兵在战争后期最重要的舰载战斗机之一，
+      但它的上舰过程有点反讽：美国海军以不安全为由拒绝了它，皇家海军把它接过来用；
+      而且它原本塞不进装甲航母的机库，是靠切短翼尖才装进去的。
+      1945 年 3 月 26 日冰山行动时，本舰载 36 架。
+      马力、极速、翼展这些参数本站无来源，不写。
+    en: >-
+      The Vought F4U Corsair was one of the Fleet Air Arm's most important carrier
+      fighters in the last part of the war, and it came aboard by a small irony: the US
+      Navy rejected it as unsafe while the Royal Navy took it up. Nor would it fit the
+      armoured carriers' hangars until its wingtips were clipped. During Operation
+      Iceberg on 26 March 1945 the ship carried thirty-six. Power, top speed and span
+      have no source in this project and are not written.
+
+  paragraphs:
+    - heading: 切短翼尖不是改装癖好，是机库高度逼出来的
+      text:
+        zh: >-
+          装甲航母的机库净高是当时的英国标准 16 英尺，而且因为空间紧，
+          还要在顶部存放备用部件，实际可用高度更小。
+          这个数字直接决定了哪些飞机能上舰：Corsair 装不进去，
+          解决办法是把翼尖切短。
+          同一层证据还给了对照：无敌号与不倦号的上层机库只有 14 英尺，
+          所以她们根本带不了 Corsair——材料写得很直接：
+          「With hangars only 14ft high, she could not carry the Corsair」。
+          也就是说这不是「英国人的怪癖」，是机库高度与机型尺寸之间
+          硬碰硬的结果。
+        en: >-
+          The armoured carriers' hangar height was the then British standard of 16 feet,
+          and because space was at a premium spare components were stowed overhead, so the
+          usable height was less still. That figure decided which aircraft could come
+          aboard: the Corsair would not fit, and the answer was to clip its wingtips. The
+          same layer of evidence supplies the comparison: Indomitable and Indefatigable had
+          upper hangars only 14 feet high and so could not carry the Corsair at all - the
+          source is blunt that "With hangars only 14ft high, she could not carry the
+          Corsair". This was therefore not a British eccentricity but the hard collision of
+          hangar height with airframe size.
+      src: [ac-design, ac-eastfleet]
+
+    - heading: 切短翼尖还有个意外好处
+      text:
+        zh: >-
+          这一点是材料自己给出的，值得照录：把翼尖切短之后，
+          发现它「reduced the Corsair's tendency to 'float' on the landing approach」——
+          即降低了这架重战斗机在进场时「飘」的倾向。
+          同一段还讲了它上舰的另一半条件：这型被美国海军判为不安全，
+          而皇家海军为长机头的 Seafire 已经采用了弧形进场航线，
+          这套方法同样适用于这架重战斗机。
+          也就是说「能上舰」是两件事凑成的：切翼尖解决高度，
+          弧形进场解决视野与操控。
+        en: >-
+          The material supplies this point itself and it is worth recording: clipping the
+          wingtips turned out to reduce the Corsair's tendency to "float" on the landing
+          approach. The same passage gives the other half of the carrier qualification: the
+          type had been rejected as unsafe by the US Navy, while the Royal Navy had already
+          adopted a curved approach for the long-nosed Seafire, and that method suited this
+          heavy fighter as well. Getting it aboard was therefore two things together:
+          clipping solved the height, the curved approach solved the view and the handling.
+      src: [ac-saratoga]
+
+    - heading: 它在 1944 到 1945 年的本舰机群里是主体
+      text:
+        zh: >-
+          数字能说明它的地位。1944 年 5 月本舰的机群是 1830 与 1833 中队各 14 架 Corsair II，
+          加上 810 与 847 中队各 12 架 Barracuda；
+          到 1945 年 3 月冰山行动时变成 36 架 Corsair（1830、1833 两个中队各 18 架）
+          与 854 中队的 16 架 Avenger II。
+          材料另记：1944 年本舰的编制额度是 36 架 Corsair 与 27 架 Avenger，
+          实际出航可以按 36 加 18、或 27 加 27 两种组合装载。
+          机群从「战斗机一小部分」变成「战斗机为主体」，这一型是主要原因。
+        en: >-
+          The numbers place it. In May 1944 the ship's group was fourteen Corsair IIs each
+          in 1830 and 1833 Squadrons plus twelve Barracudas each in 810 and 847; by
+          Operation Iceberg in March 1945 it was thirty-six Corsairs, eighteen each in 1830
+          and 1833, with sixteen Avenger IIs of 854 Squadron. The material also records
+          that in 1944 the ship's establishment was thirty-six Corsairs and twenty-seven
+          Avengers, and that a deployment could load either thirty-six plus eighteen or
+          twenty-seven plus twenty-seven. The group shifted from fighters being a fraction
+          to fighters being the bulk, and this type is the main reason.
+      src: [ac-design, navypedia-illustrious]
+
+history:
+  - id: service
+    title: { zh: 装舰与作战, en: Fitting and operations }
+    range: { from: 1944-01, to: 1945-08 }
+    lead:
+      zh: >-
+        本舰是皇家海军最早把 Corsair 带上舰的两支中队所在的舰之一。
+      en: >-
+        This ship was among the first to take Corsair squadrons to sea in the Royal Navy.
+    events:
+      - date: 1944-01
+        text:
+          zh: >-
+            本舰转属东方舰队。随舰的是 810 与 847 中队各 12 架 Barracuda，
+            以及 1830 与 1833 中队各 14 架 Corsair。
+            材料记：本舰是皇家海军最早把两支架载 Corsair 中队带上舰的舰之一，
+            这两支中队刚完成改装训练、刚开始进入作战状态。
+          en: >-
+            The ship transferred to the Eastern Fleet, with twelve Barracudas each in 810
+            and 847 Squadrons and fourteen Corsairs each in 1830 and 1833. The material
+            notes that she carried the first two FAA Corsair units to put to sea, both of
+            which had only just finished training on the type and begun working up to
+            operational status.
+        src: [ac-eastfleet]
+      - date: 1944-05
+        text:
+          zh: >-
+            机群为 1830、1833 中队各 14 架 Corsair II，加 810、847 中队各 12 架 Barracuda。
+            同月的记录另记一次与萨拉托加号的联合行动中，
+            本舰的机群构成是 14 架 Corsair II 两个中队。
+          en: >-
+            The group was fourteen Corsair IIs each in 1830 and 1833 plus twelve
+            Barracudas each in 810 and 847. A record for the same month, during the joint
+            operation with USS Saratoga, gives the ship's group as two squadrons of
+            fourteen Corsair IIs.
+        src: [ac-saratoga, ac-design]
+      - date: 1945-03-26
+        text:
+          zh: >-
+            冰山行动开始时本舰载 36 架 Corsair 与 16 架 Avenger。
+            此后不久的一场交锋里，本舰的 Corsair 声称击落了一架 Ki-21「Sally」；
+            材料对这一条的评价是：这是 Corsair 从航空母舰上起飞作战以来的首次战果。
+          en: >-
+            At the start of Operation Iceberg the ship carried thirty-six Corsairs and
+            sixteen Avengers. In an engagement shortly afterwards her Corsairs claimed a
+            Ki-21 "Sally"; the material's comment on this is that these were the first
+            kills by the Corsair while operating from an aircraft carrier.
+        src: [navypedia-illustrious, ac-eastfleet]
+      - date: 1945-04-06
+        text:
+          zh: >-
+            神风攻击中，一架被打断机翼的 D4Y3 残骸掠过舰桥前部，
+            翼尖划破一座雷达罩；爆炸的冲击波与碎片使甲板停放的 2 架 Corsair 受损。
+            本舰航空作业未中断。
+          en: >-
+            During the kamikaze attack the wreckage of a D4Y3 with a sheared wing swept
+            the front of the island and gashed a radar dome; the blast and debris damaged
+            two Corsairs of the deck park. The ship's flying operations were not
+            interrupted.
+        src: [ac-kamikaze]

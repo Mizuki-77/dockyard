@@ -1,0 +1,575 @@
+---
+// ============================================================================
+// 战舰索引列表 —— 索引页底部的「按列表总览」用的就是它。
+// 三种浏览顺序共用这一份渲染逻辑，只有主维度不同：
+//   /ships            按国家（德国 → 战列舰 → 俾斯麦级）
+//   /ships/by-type    按舰种（战列舰 → 国家 → 舰级）
+//   /ships/by-era     按时代（二战 → 舰种 → 舰级）
+// 层级：主维度 → 次维度 → 舰级 → 单舰。
+// 静态站不能用 ?by=xxx 切换（构建期 searchParams 恒为空），所以做成三条真实路由。
+// ============================================================================
+import {
+  getShips,
+  getClasses,
+  buildShipView,
+  buildTree,
+  primaryImage,
+  toResolved,
+  pickPrimary,
+  formatValue,
+  unitLabel,
+  getField,
+  deps,
+  type TreeMode,
+} from '../lib/data';
+import type { ShipFile } from '../lib/types';
+
+interface Props {
+  mode: TreeMode;
+}
+const { mode } = Astro.props;
+
+const ships = getShips();
+const classes = getClasses();
+const classById = new Map(classes.map((c) => [c.id, c]));
+
+// 卡片上要的几个关键指标。不能直接 String(value)：那样排水量会显示成
+// 43978、航速没有单位。走 pickPrimary 拿主值，再拼 formatValue + unitLabel。
+const KEY = [
+  'displacement.standard',
+  'dimensions.length.oa',
+  'propulsion.speed.design',
+  'service.complement.standard',
+];
+
+function cells(s: ShipFile): string[] {
+  const cls = s.class ? classById.get(s.class) : undefined;
+  const out: string[] = [];
+  for (const field of KEY) {
+    const shipFacts = (s.facts ?? []).filter((f) => f.field === field);
+    const clsFacts = (cls?.facts ?? []).filter((f) => f.field === field);
+    const raw = shipFacts.length > 0 ? shipFacts : clsFacts;
+    if (raw.length === 0) continue;
+    const items = raw.map((f) => toResolved(f, shipFacts.length > 0 ? 'ship' : 'class'));
+    const best = pickPrimary(items, deps);
+    if (!best) continue;
+    const def = getField(field);
+    const unit = def?.unit ? unitLabel(def.unit) : '';
+    const v = formatValue(best.value, 'zh');
+    out.push(unit ? `${v} ${unit}` : v);
+  }
+  return out;
+}
+
+const meta = new Map(
+  ships.map((s) => {
+    const v = buildShipView(s.id);
+    return [
+      s.id,
+      {
+        img: primaryImage(`ship:${s.id}`),
+        narratives: v?.narratives.length ?? 0,
+        cells: cells(s),
+        /** 客户端搜索用的检索串，预先拼好省得运行时再算 */
+        hay: [s.id, s.name.zh, s.name.en ?? '', s.class ?? ''].join(' ').toLowerCase(),
+      },
+    ];
+  }),
+);
+
+const tree = buildTree(mode);
+
+const MODES: { mode: TreeMode; href: string; k: string; sample: string }[] = [
+  { mode: 'nation', href: '/ships', k: '按国家', sample: '德国 → 战列舰 → 俾斯麦级' },
+  { mode: 'type', href: '/ships/by-type', k: '按舰种', sample: '战列舰 → 二战 → 俾斯麦级' },
+  { mode: 'era', href: '/ships/by-era', k: '按时代', sample: '二战 → 战列舰 → 俾斯麦级' },
+];
+const otherHref = MODES.find((m) => m.mode !== mode)!.href;
+---
+
+<div class="pathbar">
+  <span class="pathbar__label">浏览方式</span>
+  {
+    MODES.map((m) => (
+      <a
+        class:list={['pathbar__opt', mode === m.mode && 'pathbar__opt--on']}
+        href={m.href}
+        aria-current={mode === m.mode ? 'true' : undefined}
+      >
+        <span class="pathbar__k">{m.k}</span>
+        <span class="pathbar__sample">{m.sample}</span>
+      </a>
+    ))
+  }
+  <span class="pathbar__count" id="tree-count"></span>
+</div>
+
+<div class="callout callout--quiet" id="tree-empty" hidden>
+  没有匹配的战舰。换个关键词试试，或者<a href={otherHref}>清除</a>。
+</div>
+
+<div id="tree-root">
+  {
+    tree.map((g) => (
+      <div class="treegroup" data-group={g.key}>
+        <div class="treegroup__head">
+          <h2 class="treegroup__title">{g.label}</h2>
+          <span class="treegroup__n">{g.count} 艘</span>
+        </div>
+
+        {g.subs.map((sub) => (
+          <div class="treesub">
+            <div class="treesub__head">
+              <h3 class="treesub__title">{sub.label}</h3>
+              <span class="treesub__n">{sub.count}</span>
+            </div>
+
+            <div class="treesub__classes">
+              {sub.classes.map((c) => (
+                <div class="classthumb">
+                  <a class="classthumb__link" href={`/classes/${c.id}`}>
+                    <div class="classthumb__kicker">Class</div>
+                    <div class="classthumb__name">{c.name.zh}</div>
+                    <div class="classthumb__en">{c.name.en ?? ''}</div>
+                    {c.sub && (
+                      <div class="classthumb__sub">
+                        <span class="classthumb__subk">{c.subLabel}</span>
+                        {c.sub}
+                      </div>
+                    )}
+                  </a>
+                  <div class="classthumb__ships">
+                    {c.ships.length === 0 ? (
+                      <div class="classthumb__empty">本级暂无单舰条目，见舰级档案</div>
+                    ) : (
+                      c.ships.map((s) => {
+                        const m = meta.get(s.id);
+                        const img = m?.img;
+                        return (
+                          <a
+                            class="shipcard"
+                            href={`/ships/${s.id}`}
+                            data-hay={m?.hay ?? ''}
+                            data-cls={c.id}
+                          >
+                            <div class="shipcard__media">
+                              {img?.file ? (
+                                <img src={img.file} alt={img.title.zh} loading="lazy" />
+                              ) : (
+                                <div class="shipcard__noimg">
+                                  <span>{s.name.zh.slice(0, 1)}</span>
+                                </div>
+                              )}
+                            </div>
+                            <div class="shipcard__body">
+                              <div class="shipcard__name">
+                                {s.name.zh}
+                                <span class="shipcard__en">{s.name.en ?? ''}</span>
+                              </div>
+                              <div class="shipcard__meta">
+                                {(m?.narratives ?? 0) > 0 && (
+                                  <span class="tag tag--warn">{m!.narratives} 条争议</span>
+                                )}
+                                <span class="tag tag--ghost">{(m?.cells ?? []).join(' · ')}</span>
+                              </div>
+                            </div>
+                          </a>
+                        );
+                      })
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+
+        {g.loose.length > 0 && (
+          <div class="treegroup__loose">
+            {g.loose.map((s) => (
+              <a class="loosechip" href={`/ships/${s.id}`} data-hay={meta.get(s.id)?.hay ?? ''}>
+                {s.name.zh}
+                <span class="loosechip__en">{s.name.en ?? ''}</span>
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    ))
+  }
+</div>
+
+<script>
+  // 客户端搜索。静态站里 ?q= 没法在构建期读到，只能运行时筛 DOM。
+  // 顺手把空舰级、空子层、空分组也折掉——留一堆空壳比没结果更让人困惑。
+  const input = document.querySelector<HTMLInputElement>('.navsearch input[name="q"]');
+  const root = document.getElementById('tree-root');
+  const empty = document.getElementById('tree-empty');
+  const countEl = document.getElementById('tree-count');
+  const total = root ? root.querySelectorAll<HTMLElement>('[data-hay]').length : 0;
+
+  function apply(q: string) {
+    if (!root) return;
+    const needle = q.trim().toLowerCase();
+    let shown = 0;
+
+    root.querySelectorAll<HTMLElement>('[data-hay]').forEach((el) => {
+      const ok = !needle || (el.dataset.hay ?? '').includes(needle);
+      el.hidden = !ok;
+      if (ok) shown += 1;
+    });
+
+    // 自下而上折：先舰级卡，再子层，最后分组
+    root.querySelectorAll<HTMLElement>('.classthumb').forEach((c) => {
+      const any = c.querySelector<HTMLElement>('[data-hay]:not([hidden])');
+      c.hidden = !any;
+    });
+    root.querySelectorAll<HTMLElement>('.treesub').forEach((s) => {
+      const any = s.querySelector<HTMLElement>('.classthumb:not([hidden])');
+      s.hidden = !any;
+    });
+    root.querySelectorAll<HTMLElement>('.treegroup').forEach((g) => {
+      const any = g.querySelector<HTMLElement>('.treesub:not([hidden])');
+      g.hidden = !any;
+    });
+
+    if (empty) empty.hidden = shown > 0;
+    if (countEl) {
+      countEl.textContent = needle ? `命中 ${shown} / ${total} 艘` : '';
+    }
+  }
+
+  // 首次进入时读 URL 上的 q（首页/导航栏搜索框就是 GET 提交到这里的）
+  const initial = new URLSearchParams(location.search).get('q') ?? '';
+  if (input && initial) input.value = initial;
+  apply(initial);
+
+  input?.addEventListener('input', () => apply(input.value));
+
+  // 搜索框所在的 form 是 GET 到 /ships 的；在分类页按回车会跳走并丢掉 mode，
+  // 这里拦住它，改成原地筛选，模式不变。
+  input?.form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    apply(input.value);
+    const url = new URL(location.href);
+    if (input.value.trim()) url.searchParams.set('q', input.value.trim());
+    else url.searchParams.delete('q');
+    history.replaceState(null, '', url);
+  });
+</script>
+
+<style>
+  .pathbar {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .pathbar__label {
+    align-self: center;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-400);
+    font-weight: 650;
+    margin-right: 4px;
+  }
+  .pathbar__opt {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 9px 15px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    text-decoration: none;
+    transition: all 0.14s ease;
+  }
+  .pathbar__opt:hover {
+    border-color: var(--blue-300);
+    background: var(--blue-50);
+    text-decoration: none;
+  }
+  .pathbar__opt--on,
+  .pathbar__opt--on:hover {
+    border-color: var(--navy-800);
+    background: var(--navy-800);
+  }
+  .pathbar__k {
+    font-size: 13.5px;
+    font-weight: 650;
+    color: var(--ink-900);
+  }
+  .pathbar__opt--on .pathbar__k {
+    color: #fff;
+  }
+  .pathbar__sample {
+    font-size: 10.5px;
+    color: var(--ink-300);
+    font-family: var(--font-mono);
+  }
+  .pathbar__opt--on .pathbar__sample {
+    color: rgba(179, 215, 236, 0.72);
+  }
+  .pathbar__count {
+    align-self: center;
+    margin-left: auto;
+    font-size: 11.5px;
+    font-family: var(--font-mono);
+    color: var(--blue-700);
+  }
+
+  .callout--quiet {
+    background: var(--paper);
+    border-color: var(--line);
+    font-size: 12.5px;
+    margin-bottom: 18px;
+  }
+
+  .treegroup {
+    margin-bottom: 40px;
+  }
+  .treegroup__head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding-bottom: 9px;
+    margin-bottom: 18px;
+    border-bottom: 2px solid var(--line-strong);
+  }
+  .treegroup__title {
+    position: relative;
+    padding-left: 14px;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .treegroup__title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.26em;
+    bottom: 0.26em;
+    width: 4px;
+    border-radius: 2px;
+    background: var(--navy-800);
+  }
+  .treegroup__n {
+    font-size: 11.5px;
+    color: var(--ink-400);
+    font-family: var(--font-mono);
+  }
+
+  /* 第二层：舰种。比分组轻、比舰级重，靠左侧细线串起来 */
+  .treesub {
+    margin: 0 0 26px 6px;
+    padding-left: 16px;
+    border-left: 1px solid var(--line);
+  }
+  .treesub__head {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 13px;
+  }
+  .treesub__title {
+    font-size: 14px;
+    font-weight: 680;
+    letter-spacing: 0.02em;
+    color: var(--blue-700);
+  }
+  .treesub__n {
+    font-size: 10.5px;
+    color: var(--ink-300);
+    font-family: var(--font-mono);
+  }
+
+  .treesub__classes {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* 一个舰级 = 一条横带：左侧舰级名，右侧该级的舰 */
+  .classthumb {
+    display: grid;
+    grid-template-columns: 176px minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+  }
+  .classthumb__link {
+    display: block;
+    padding: 12px 13px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    background: linear-gradient(160deg, var(--blue-50), var(--white));
+    text-decoration: none;
+    transition: border-color 0.14s ease;
+  }
+  .classthumb__link:hover {
+    border-color: var(--blue-400);
+    text-decoration: none;
+  }
+  .classthumb__kicker {
+    font-size: 9.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--blue-600);
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .classthumb__name {
+    font-size: 14.5px;
+    font-weight: 660;
+    color: var(--ink-900);
+  }
+  .classthumb__en {
+    font-size: 11px;
+    color: var(--ink-400);
+    margin-top: 1px;
+  }
+  .classthumb__sub {
+    margin-top: 8px;
+    padding-top: 7px;
+    border-top: 1px dashed var(--line-strong);
+    font-size: 11.5px;
+    color: var(--ink-700);
+    font-weight: 600;
+  }
+  .classthumb__subk {
+    margin-right: 5px;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-300);
+    font-weight: 700;
+  }
+
+  .classthumb__ships {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 12px;
+  }
+  .classthumb__empty {
+    align-self: center;
+    padding: 10px 0;
+    font-size: 12.5px;
+    color: var(--ink-300);
+  }
+
+  .shipcard {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    overflow: hidden;
+    text-decoration: none;
+    transition: border-color 0.14s ease, transform 0.14s ease;
+  }
+  .shipcard:hover {
+    border-color: var(--blue-300);
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+  .shipcard__media {
+    background: var(--navy-800);
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+  }
+  .shipcard__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 42%;
+    filter: saturate(0.94);
+    transition: transform 0.3s ease;
+  }
+  .shipcard:hover .shipcard__media img {
+    transform: scale(1.03);
+  }
+  .shipcard__noimg {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(150deg, var(--blue-700), var(--navy-800));
+    color: rgba(216, 233, 245, 0.5);
+    font-size: 26px;
+    font-weight: 700;
+  }
+  .shipcard__body {
+    padding: 10px 13px 12px;
+    min-width: 0;
+    flex: 1;
+  }
+  .shipcard__name {
+    font-size: 14.5px;
+    font-weight: 660;
+    color: var(--ink-900);
+  }
+  .shipcard__en {
+    margin-left: 6px;
+    font-size: 10.5px;
+    font-weight: 500;
+    color: var(--ink-300);
+    font-family: var(--font-mono);
+  }
+  .shipcard__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 6px;
+  }
+
+  .treegroup__loose {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 14px;
+  }
+  .loosechip {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--white);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-700);
+    text-decoration: none;
+  }
+  .loosechip:hover {
+    border-color: var(--blue-300);
+    background: var(--blue-50);
+    text-decoration: none;
+  }
+  .loosechip__en {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--ink-300);
+    font-family: var(--font-mono);
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+
+  @media (max-width: 760px) {
+    .classthumb {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 10px;
+    }
+    .classthumb__ships {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .treesub {
+      margin-left: 0;
+      padding-left: 12px;
+    }
+  }
+</style>

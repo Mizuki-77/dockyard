@@ -1,0 +1,560 @@
+# ============================================================================
+# 单舰：Bismarck（俾斯麦号战列舰）
+# ----------------------------------------------------------------------------
+# 只放 Bismarck 自己的东西：
+#   1) 建造/服役/损失等单舰事件
+#   2) 单舰实测值（试航、倾斜试验）——与舰级设计值不是分歧，是两件事
+#   3) 状态切片：随时间变化的字段，用 valid 窗口表达"当时是什么样"
+#
+# 解析顺序（docs/00-framework.md §3.6）：单舰 fact -> 舰级 fact -> 未记载。
+# 本文件命中即覆盖舰级，**不算分歧**。
+#
+# 时间窗约定：valid 只到日精度（校验器契约）。同一天发生的事件若需区分，
+# 在 note 里写时刻，不要往 valid 里塞时间。
+# ============================================================================
+
+id: bismarck
+name:
+  zh: 俾斯麦
+  en: Bismarck
+class: bismarck
+
+open_ended_note: |
+  本文件中 valid.to 留空的 fact，均为"至今为止仍成立的单舰事实"
+  （如损失结局、最终编制），不存在后续变化事件。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: Bismarck
+    src: [kbismarck-genedata, german-navy-bismarck]
+    valid: { from: 1936-07-01 }
+    confidence: A
+    note: 两源一致。建造代号 Schlachtschiff F，后改 Ersatz Hannover。
+
+  - field: identity.name_zh
+    value: 俾斯麦
+    src: [kbismarck-genedata]
+    valid: { from: 1936-07-01 }
+    confidence: B
+    note: 中文通行译名，取人名"奥托·冯·俾斯麦"。
+
+  - field: identity.name_en
+    value: Bismarck
+    src: [kbismarck-genedata]
+    valid: { from: 1936-07-01 }
+    confidence: A
+
+  - field: identity.namesake
+    value: Otto von Bismarck（1815–1898），德意志帝国首任宰相
+    src: [kbismarck-genedata]
+    valid: { from: 1936-07-01 }
+    confidence: B
+
+  - field: identity.ship_type
+    value: battleship
+    src: [kbismarck-genedata]
+    valid: { from: 1936-07-01 }
+    confidence: A
+    note: 德方自称 Schlachtschiff（战列舰）；英方同期文献有时归入 "capital ship"。
+
+  - field: identity.nation
+    value: germany
+    src: [kbismarck-genedata]
+    valid: { from: 1936-07-01 }
+    confidence: A
+
+  - field: identity.operator
+    value: Kriegsmarine
+    src: [kbismarck-genedata]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - field: identity.building_program
+    value: Plan Z 前期的替代建造（Ersatz Hannover）
+    src: [kbismarck-genedata]
+    valid: { from: 1936-07-01 }
+    confidence: B
+    note: 名义上是替换一战后报废的旧舰 Hannover，以规避条约限制。
+
+  # ============================================================ 建造
+  - field: construction.builder
+    value: Blohm & Voss
+    src: [kbismarck-genedata, german-navy-bismarck]
+    valid: { from: 1936-07-01 }
+    confidence: A
+
+  - field: construction.builder_location
+    value: Hamburg
+    src: [kbismarck-genedata]
+    valid: { from: 1936-07-01 }
+    confidence: A
+
+  - field: construction.building_slip
+    value: Slipway 1（德文 Helgen IX）
+    src: [german-navy-bismarck]
+    valid: { from: 1936-07-01 }
+    confidence: C
+    note: >-
+      存疑：german-navy 记 Slipway 1，英文维基记 Helgen IX（9 号船台），
+      两者可能指同一处的不同编号体系，也可能是错记。倾向 Blohm & Voss
+      在汉堡的 9 号船台，但未取得一手船厂文件，暂标 C 并保留两种说法。
+
+  - field: construction.order_date
+    unit: date
+    value: 1935-11-16
+    src: [kbismarck-genedata]
+    valid: { from: 1935-11-16 }
+    confidence: B
+    note: 下单日；部分文献记 1935-11-16 为建造合同签署日。
+
+  - field: construction.laid_down
+    unit: date
+    value: 1936-07-01
+    src: [kbismarck-genedata, german-navy-bismarck]
+    valid: { from: 1936-07-01 }
+    confidence: A
+    note: 两源一致。
+
+  - field: construction.launched
+    unit: date
+    value: 1939-02-14
+    src: [kbismarck-genedata, german-navy-bismarck]
+    valid: { from: 1939-02-14 }
+    confidence: A
+    note: 下水掷瓶人为 Dorothee von Löwenfeld，俾斯麦孙女。
+
+  - field: construction.commissioned
+    unit: date
+    value: 1940-08-24
+    src: [kbismarck-genedata, german-navy-bismarck, kbismarck-histoperi]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 三源一致。服役时舰体尚未完全舾装完毕（舰艉四座 10.5 cm 炮座未装）。
+
+  - field: construction.cost
+    unit: count
+    value: 196800000
+    src: [kbismarck-genedata]
+    valid: { from: 1936-07-01 }
+    confidence: B
+    note: >-
+      单位是帝国马克（RM），**1938 年币值**（来源脚注 1 明写 "at 1938 values"）。
+      不写币种与年份，这个数字毫无意义，转移数据时必须连 note 一起搬。
+
+  - field: construction.building_time_days
+    unit: count
+    value: 1515
+    src: [kbismarck-genedata]
+    valid: { from: 1936-07-01 }
+    confidence: C
+    note: >-
+      由 laid down 1936-07-01 至 commissioned 1940-08-24 推算（1,515 天），
+      来源未直接给出，属推算值，不上前端显示。
+
+  # ============================================================ 损失
+  - field: construction.fate_date
+    unit: date
+    value: 1941-05-27
+    src: [kbismarck-genedata, kbismarck-last-battle, kbismarck-ktb]
+    valid: { from: 1941-05-27 }
+    confidence: A
+    note: >-
+      沉没时刻约 10:39（中欧夏令时），位置 48°10'N 16°12'W。
+      精确时刻各源在 10:35–10:40 间有几分钟出入，日期无争议。
+
+  - field: construction.fate_type
+    value: sunk_cause_disputed
+    src: [kbismarck-last-battle, kbismarck-ktb]
+    valid: { from: 1941-05-27 }
+    confidence: A
+    note: >-
+      枚举取 sunk_cause_disputed 而非 sunk_by_enemy：战斗损伤致沉与
+      自沉（Oels 下令开海底阀）两说并存，学界主流为"两者皆是"。
+      五种说法与各自证据放在 narrative:bismarck-sinking；role 仅 narrative
+      的来源（如 kbismarck-debriefing）只能在那一层作 positions[].evidence，
+      不能作此处 fact 的 src。
+
+  - field: service.fate_category
+    value: 战斗损失（沉没原因存在争议，见 narrative:bismarck-sinking）
+    src: [kbismarck-last-battle, kbismarck-ktb]
+    valid: { from: 1941-05-27 }
+    confidence: A
+
+  - field: service.fate_authority
+    value: 德方 Naval Group Command West 1941-06-14 呈文 B.Nr. g.Kdos. 3156/41 A1
+    src: [kbismarck-ktb]
+    valid: { from: 1941-06-14 }
+    confidence: B
+    note: >-
+      该呈文原话 "The actual sinking was not witnessed by any of the
+      survivors." —— 没有任何生还者目击沉没过程，这是争议无法消解的根源。
+      呈文本体登记在 kbismarck-debriefing（role 仅 narrative），故这条
+      改引战争日志作为事实支撑，呈文原文留给 narrative 层的证据引用。
+
+  - field: service.survivors
+    unit: persons
+    value: 114
+    src: [kbismarck-last-battle]
+    valid: { from: 1941-05-27 }
+    confidence: C
+    note: >-
+      存疑：110–116 之间的多个数字在流传（114 最常见，另有 115、116）。
+      差异多数来自是否计入获救后死亡者与是否含被 USS Dorsetshire
+      与 HMS Maori 分别救起的人数统计口径。
+
+  - field: service.casualties
+    unit: persons
+    value: 2086
+    src: [kbismarck-last-battle]
+    valid: { from: 1941-05-27 }
+    confidence: C
+    note: >-
+      按编制 2,200 减生还 114 推算，非来源直接点数。实际在舰人数
+      因搭载 prize crew 与参谋人员而高于编制，故此值为近似。
+
+  # ============================================================ 编制
+  - field: service.complement.standard
+    unit: persons
+    value: 2200
+    src: [kbismarck-genedata]
+    valid: { from: 1940-08-24 }
+    confidence: C
+    note: >-
+      来源写 "2,200+"（含"+"号，是下界不是确数）。german-navy 另给
+      2,092，差 108 人。两说并存，此处取"+"号那一说并保留另一条
+      fact 在下方（不同时间窗无法拆，故并列）。
+
+  - field: service.complement.standard
+    unit: persons
+    value: 2092
+    src: [german-navy-bismarck]
+    valid: { from: 1940-08-24 }
+    confidence: C
+    note: >-
+      与 kbismarck 的 "2,200+" 并存：2,092 可能是设计编制（不含
+      参谋与加强人员），2,200+ 是 1941-05 出击时的实际在舰人数。
+      资料不足以判定口径，两者都保留，页面标"存在争议"。
+
+  - field: service.complement.wartime
+    unit: persons
+    value: 2221
+    src: [kbismarck-histoperi, kbismarck-ktb]
+    valid: { from: 1941-05-18 }
+    confidence: B
+    note: >-
+      Rheinübung 出击时在舰人数，含约 65 人的舰队参谋班子
+      （Lütjens 上将随舰）与约 80 人的 prize crew。
+
+  # ============================================================ 试航实测
+  # 与舰级设计值（138,000 hp / 29 kn）并存，不是分歧：设计 vs 实测。
+  - field: propulsion.power.trial
+    unit: hp
+    value: 150170
+    src: [kbismarck-genedata, kbismarck-propulsion, kbismarck-testi]
+    valid: { from: 1940-10-23 }
+    confidence: A
+    note: >-
+      1940-10-23 于波罗的海测速实测，来源原话 "maximum obtained"。
+      设计值 138,000 hp 在舰级文件里，两者并存不冲突。
+
+  - field: propulsion.speed.trial
+    unit: kn
+    value: 30.1
+    src: [kbismarck-genedata, kbismarck-propulsion, kbismarck-testi]
+    valid: { from: 1940-10-23 }
+    confidence: A
+    note: >-
+      同一航次实测。kbismarck 另有 30.12 kn（更精确的原始读数），
+      差异属四舍五入，取 30.1 与三源一致。
+
+  - field: propulsion.speed.max
+    unit: kn
+    value: 30.12
+    src: [kbismarck-genedata]
+    valid: { from: 1940-10-23 }
+    confidence: B
+    note: 来源表格里的精确值；与 propulsion.speed.trial 差 0.02 kn，不构成分歧。
+
+  # ============================================================ 倾斜试验
+  # 1940-07-21 Blohm & Voss。这是全部排水量口径里最容易搞错的一组数字。
+  - field: dimensions.metacentric_height
+    unit: m
+    value: 3.96
+    src: [kbismarck-inclining-test]
+    valid: { from: 1940-07-21 }
+    confidence: A
+    note: >-
+      一手试验报告实测：GM = 3.96 m，同页给 KM 14.77 m、KG 10.81 m。
+      试验状态为"含倾斜压载 42,662.88 t"，**不是标准排水量也不是空载**，
+      引用时必须带这句，否则等于换了个排水量口径算 GM。
+
+  - field: dimensions.metacentric_height
+    unit: m
+    value: 4.00
+    src: [kbismarck-genedata]
+    valid: { from: 1940-07-21 }
+    confidence: C
+    note: >-
+      与倾斜试验的 3.96 m 并存：这是来源按 47,200 t 状态给出的 GM
+      曲线读值，与实测试验状态不同（排水量不同，GM 自然不同）。
+      两说并列，页面标"存在争议（不同排水量口径）"。
+
+  - field: displacement.trial
+    unit: t
+    value: 42662.88
+    src: [kbismarck-inclining-test]
+    valid: { from: 1940-07-21 }
+    confidence: A
+    note: >-
+      倾斜试验实际状态（含压载）。分解：不含压载 42,250.92 t +
+      压载 407.14 t + 木铺板 4.82 t = 42,662.88 t。此值常被误当成
+      "空载排水量"或"标准排水量"引用，务必看清。
+
+  - field: displacement.empty
+    unit: t
+    value: 40250
+    src: [kbismarck-inclining-test, kbismarck-bsweights]
+    valid: { from: 1940-07-21 }
+    confidence: A
+    note: >-
+      一手试验报告与逐项分解表互证。德文 Schiff Fertig Leer，
+      指舰体完工但未加任何液体与弹药装备。
+
+  # ============================================================ 状态切片 S0
+  # 1940-08-24 ~ 1940-01-14：舾装未完成（as fitted）
+  - field: sensors.radar.count
+    unit: count
+    value: 0
+    src: [kbismarck-firecontrol, kbismarck-histoperi]
+    valid: { from: 1940-08-24, to: 1941-02-28 }
+    confidence: B
+    note: >-
+      服役至 1941-02 底无舰载雷达。FuMO 23 三台于 1941-03 装于
+      三座指挥所，故 S0/S1/S2 三个切片均为 0。
+
+  - field: sensors.rangefinder.present
+    value: false
+    src: [kbismarck-drawings, kbismarck-firecontrol]
+    valid: { from: 1940-08-24, to: 1940-10-31 }
+    confidence: C
+    note: >-
+      此条指**三个指挥所的测距仪旋转圆顶**（前桅楼/前/后），
+      服役时尚未安装（线图图 1）。四座主炮塔各自的 10.5 m 测距仪
+      服役时已有，但按决策不记数量——推算值不上前端。
+      布尔字段只回答"指挥所圆顶装了没有"。
+
+  - field: sensors.rangefinder.present
+    value: true
+    src: [kbismarck-firecontrol, kbismarck-histoperi]
+    valid: { from: 1940-11-01, to: 1941-05-27 }
+    confidence: B
+    note: >-
+      1940-10~11 于 Gotenhafen 装两具 10.5 m 基线（前桅楼、后指挥所）。
+      前司令塔的 7 m 基线单独记录在 sensors.rangefinder.baseline。
+
+  - field: sensors.rangefinder.baseline
+    unit: m
+    value: 10.5
+    src: [kbismarck-firecontrol]
+    valid: { from: 1940-11-01, to: 1941-05-27 }
+    confidence: A
+    note: 主力基线。前桅楼指挥所一具（海拔约 31 m，最大 50 倍、视场 360°），后指挥所一具。
+
+  - field: sensors.rangefinder.baseline
+    unit: m
+    value: 7
+    src: [kbismarck-firecontrol]
+    valid: { from: 1941-03-01, to: 1941-05-27 }
+    confidence: B
+    note: 前司令塔附设，视场较小；1941-03 月装入。
+
+  - field: aviation.aircraft.capacity
+    unit: count
+    value: 0
+    src: [kbismarck-aviation, kbismarck-histoperi]
+    valid: { from: 1940-08-24, to: 1941-03-14 }
+    confidence: B
+    note: 首批两架 Ar 196 于 1941-03-15 接收，此前机上无飞机（机库与弹射器已建成）。
+
+  - field: aviation.aircraft.capacity
+    unit: count
+    value: 4
+    src: [kbismarck-aviation, kbismarck-histoperi]
+    valid: { from: 1941-03-15, to: 1941-05-26 }
+    confidence: A
+    note: >-
+      1941-03-15 两架 + 1941-04-02 两架。机上设计容量 4 架（最多 6 架）：
+      主桅下 120 m² 双机库 2 架 + 烟囱两侧各 60 m² 单机库 2 架，机翼可折叠。
+
+  - field: aviation.aircraft.capacity
+    unit: count
+    value: 0
+    src: [kbismarck-last-battle, kbismarck-ktb]
+    valid: { from: 1941-05-27 }
+    confidence: A
+    note: >-
+      1941-05-27 05:00–06:00 一架被推下海（弹射器已被打坏，
+      原拟用 Ar 196 送出战争日志未成功），其余随舰沉没。
+
+  - field: aviation.aircraft.types
+    value: Arado Ar 196（A-2 ×3、A-3 ×1）
+    src: [kbismarck-aviation]
+    valid: { from: 1941-03-15, to: 1941-05-26 }
+    confidence: A
+    note: >-
+      四架 Werk.No. 052 T3+IH / 110 T3+AK / 123 T3+DL / 150 T3+MK。
+      属 Bordfliegergruppe 196 1. Staffel，飞行员与技师为 Luftwaffe 人员，
+      不占海军编制。
+
+  # ============================================================ 状态切片 S1
+  # 1940-09-15 ~ 1940-12-08：波罗的海试航
+  - field: armament.mount.summary
+    value: >-
+      8×38 cm（4×2）、12×15 cm（6×2）、16×10.5 cm（8×2）、
+      16×3.7 cm（8×2）、20×2 cm（12×单装）、9 深水炸弹
+    src: [kbismarck-armament, kbismarck-genedata]
+    valid: { from: 1940-11-01, to: 1941-04-30 }
+    confidence: B
+    note: >-
+      舰艉四座 10.5 cm C/37 双联于 1940-10~11 于 Gotenhafen 装齐，
+      故 1940-11 起才达到 8 座。服役初（S0）只有前 6 座。
+
+  - field: armament.mount.summary
+    value: >-
+      8×38 cm（4×2）、12×15 cm（6×2）、16×10.5 cm（8×2）、
+      16×3.7 cm（8×2）、10×2 cm 单装 + 2×2 cm 四联（C/38）、9 深水炸弹
+    src: [kbismarck-armament, kbismarck-flak-relocation]
+    valid: { from: 1941-05-01, to: 1941-05-27 }
+    confidence: A
+    note: >-
+      1941-04 月下旬于 Gotenhafen：前桅两侧探照灯平台上方的两门
+      2 cm 单装换为两座 C/38 四联装。此即 1940-10-31 机密文件
+      B.-Nr. G. 120 Wa.O.（Lindemann 署名）所要求的改装落地。
+      四联装座用 C/38 炮身，"四联就是 C/38"是误读，炮身型号另计。
+
+  # ============================================================ 状态切片 S2
+  # 1940-12-09 ~ 1941-03-05：汉堡舾装收尾 + 冬季迷彩
+  - field: appearance.scheme
+    value: 波罗的海迷彩——舰体深灰底 + 三道黑白斜条纹 + 假白浪
+    src: [kbismarck-drawings, kbismarck-drawing-24may]
+    valid: { from: 1940-12-09, to: 1941-05-20 }
+    confidence: B
+    note: >-
+      1940 冬于汉堡涂装，用于波罗的海训练期伪装。条纹为舰体两舷
+      整体覆盖，艏艉另有假白浪图案。见线图 work/raw 附图。
+      **该线图有作者版权（Manuel P. González López），不可直接归档**。
+
+  - field: appearance.insignia
+    value: 艉甲板与舷墙红底卐字（1941-05-22 13:07 涂掉）
+    src: [kbismarck-histoperi, kbismarck-ktb]
+    valid: { from: 1940-12-09, to: 1941-05-22 }
+    confidence: B
+    note: >-
+      Rheinübung 出击后为防识别而涂掉。这是本站收录的史实，
+      不代表任何政治立场。
+
+  - field: appearance.turret_top_color
+    value: RAL 7024 深灰
+    src: [kbismarck-drawing-24may]
+    valid: { from: 1940-12-09, to: 1941-05-25 }
+    confidence: C
+    note: 冬季迷彩期炮塔顶色。1941-05-26 晨改涂 RAL 1003 黄。
+
+  - field: appearance.turret_top_color
+    value: RAL 1003 信号黄
+    src: [kbismarck-last-battle, kbismarck-ktb]
+    valid: { from: 1941-05-26, to: 1941-05-27 }
+    confidence: B
+    note: >-
+      1941-05-26 晨奉命在炮塔顶涂黄以便己方飞机识别；海况恶劣，
+      油漆大部被海浪冲掉。只存在约一天，是最难考证的涂装状态。
+
+  # ============================================================ 状态切片 S4
+  # 1941-05-18 ~ 1941-05-23：莱茵演习出击
+  - field: appearance.scheme
+    value: 统一舷外灰（outboard grey），无条纹
+    src: [kbismarck-histoperi, kbismarck-ktb]
+    valid: { from: 1941-05-21, to: 1941-05-27 }
+    confidence: B
+    note: >-
+      1941-05-21 于 Korsfjord（挪威）涂掉黑白斜条纹与假白浪，
+      改为统一舷外灰。距出击仅数日，是最终战涂装。
+
+  - field: appearance.marking
+    value: 舰首锚与小艇已拆除；舰首舰尾旗杆拆除
+    src: [kbismarck-histoperi, kbismarck-ktb]
+    valid: { from: 1941-05-22, to: 1941-05-27 }
+    confidence: B
+    note: >-
+      1941-05-22 拆除上层甲板两舷舢板/救生艇与舰首锚，减少雷达与
+      目视特征，也避免炮口冲击波损坏。拆掉救生艇直接影响了沉没时
+      的生还率——生还者只能靠充气筏。
+
+  - field: service.flag
+    value: 舰队司令旗（Admiral Lütjens，Flottenchef）
+    src: [kbismarck-histoperi, kbismarck-ktb]
+    valid: { from: 1941-05-18, to: 1941-05-27 }
+    confidence: A
+    note: 主桅顶挂舰队司令旗，兼任 Operation Rheinübung 全权指挥。
+
+  - field: service.commander
+    value: Kapitän zur See Ernst Lindemann
+    src: [kbismarck-histoperi]
+    valid: { from: 1940-08-24, to: 1941-05-27 }
+    confidence: A
+    note: >-
+      舰长（Kommandant）。与舰队司令 Günther Lütjens 上将的指挥权
+      划分是丹麦海峡决策争议的核心之一：Lütjens 是战术全权。
+
+  # ============================================================ 状态切片 S5
+  # 1941-05-24 ~ 1941-05-26：丹麦海峡后受损减速
+  - field: sensors.radar.count
+    unit: count
+    value: 2
+    src: [kbismarck-firecontrol, kbismarck-last-battle]
+    valid: { from: 1941-05-24, to: 1941-05-27 }
+    confidence: C
+    note: >-
+      1941-05-23 2030 前向雷达被自身主炮炮口冲击波损坏，
+      三台中剩两台（后部与桅楼）。此为推算台数，前端显示为
+      "雷达降级"，不显示具体数字。
+
+  - field: propulsion.speed.max
+    unit: kn
+    value: 28
+    src: [kbismarck-last-battle]
+    valid: { from: 1941-05-24, to: 1941-05-26 }
+    confidence: C
+    note: >-
+      丹麦海峡后战术上限。因放弃左舷 2 号锅炉曾降至 16 kn，
+      后恢复至 20 kn，再后巡航 12–20 kn。此值指"可达最大"，
+      非持续航速，且属从叙述中归纳而非仪器读数，故 C。
+      kbismarck-chase 的 role 仅 narrative，不能作 fact 的 src。
+
+  # ============================================================ 状态切片 S6
+  # 1941-05-27：舵损瘫痪 → 最终战 → 沉没
+  - field: propulsion.speed.max
+    unit: kn
+    value: 7
+    src: [kbismarck-last-battle, kbismarck-ktb]
+    valid: { from: 1941-05-27 }
+    confidence: A
+    note: >-
+      1941-05-26 2047 被两枚空投鱼雷命中后，舵卡死于左舵 12°，
+      次晨实测最大 7 kn，且无法保持航向。
+
+  - field: armament.mount.summary
+    value: >-
+      四座主炮塔逐次失效：0908 Anton+Bruno 失效 → 0921 Dora 失效
+      → 0927 Bruno 最后一次射击 → 0931 Cäsar 最后一次射击 = 0
+    src: [kbismarck-last-battle, kbismarck-ktb]
+    valid: { from: 1941-05-27 }
+    confidence: A
+    note: >-
+      时间取战争日志（含 SKL 1941-07 重建段）与英方记录的综合。
+      逐炮塔失效的具体分钟在不同记录间有 1–3 分钟差，顺序无争议。
+
+  # ============================================================ 图片
+  # 图片条目单独挂在 data/media/ 下，此处只留占位说明与授权判断原则。
+  # 具体选图待 P5 阶段处理。

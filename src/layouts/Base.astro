@@ -1,0 +1,85 @@
+---
+import '../styles/global.css';
+import TopNav from '../components/TopNav.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** full = 不加左侧导航栏；tree = 左侧是一棵较宽的层级树 */
+  variant?: 'default' | 'full' | 'tree';
+}
+
+const { title, description, variant = 'default' } = Astro.props;
+const pageTitle = title === '首页' ? title : `${title} · 船坞`;
+const desc =
+  description ??
+  '船坞 Dockyard：以多源交叉核对为基础的战舰资料库，服务历史爱好者与模型制作者。每条数据可追溯到来源，有争议的说法一律并列保留。';
+
+// 分享卡片用：og:url 与 og:image 必须是绝对地址，否则各平台一律不显示图。
+// site 在 astro.config.mjs 里配，换域名只改那一处。
+const site = Astro.site?.href.replace(/\/$/, '') ?? '';
+const canonical = `${site}${Astro.url.pathname}`;
+const ogImage = `${site}/img/ships/bismarck-1940-grimstadfjord.jpg`;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={desc} />
+    <meta name="theme-color" content="#0b2740" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="船坞 Dockyard" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1149" />
+    <meta property="og:image:height" content="614" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={desc} />
+    <meta name="twitter:image" content={ogImage} />
+  </head>
+  <body>
+    <a href="#main" class="skip">跳到主要内容</a>
+    <TopNav />
+    <main id="main" class:list={['page']}>
+      <div
+        class:list={[
+          'shell',
+          variant === 'full' && 'shell--full',
+          variant === 'tree' && 'shell--tree',
+        ]}
+      >
+        <slot name="sidenav" />
+        <div class="stack">
+          <slot />
+        </div>
+      </div>
+    </main>
+    <Footer />
+    <style>
+      .skip {
+        position: absolute;
+        left: -9999px;
+        top: 0;
+        z-index: 999;
+        background: var(--navy-800);
+        color: #fff;
+        padding: 10px 16px;
+        border-radius: 0 0 8px 0;
+      }
+      .skip:focus {
+        left: 0;
+      }
+    </style>
+  </body>
+</html>

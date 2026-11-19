@@ -1,0 +1,222 @@
+# ============================================================================
+# 武器正文 —— Bofors 40 mm
+#
+# 这一型的故事分三层：瑞典人自己不太想要的研制过程、英国靠"救回来"的陆军炮
+# 起家、美国把它做成工业规模。navweaps 那张页同时含美德英日四国数据。
+# ============================================================================
+weapon: 40mm-bofors
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Bofors 40 mm 是二战中最好的一型自动高射炮，几乎所有美英主力舰上都装过。
+      它的原型由瑞典博福斯在 1930 年代初研制，但瑞典军队自己并不是最早的客户；
+      真正把它做成战争规模的是英国与美国——英国靠 1940 年从挪威撤回来的陆军炮起家，
+      美国则在 1943 年前把它变成了舰队的标准中程高炮。
+    en: >-
+      The Bofors 40 mm was the best automatic anti-aircraft gun of the Second World
+      War and was mounted on almost every major US and British warship. Bofors of
+      Sweden developed the prototype in the early 1930s, but the Swedish services were
+      not its first customers; Britain and the United States turned it into a weapon
+      of war scale, Britain starting from army guns rescued during the 1940 evacuation
+      of Norway and the US making it the fleet's standard medium AA gun by 1943.
+
+  paragraphs:
+    - heading: 瑞典海军要它，博福斯起初不想做
+      text:
+        zh: >-
+          navweaps 的记述是：1920 年代末，瑞典皇家海军几次去找博福斯，
+          要求设计一门新的 40 mm 高炮来替换当时在用的英国 2-pdr。
+          博福斯对这个项目兴趣不大——瑞典海军的订单会很小，
+          他们也看不到多少外销的可能。但海军坚持，最后提出分担研制费用。
+          有了这笔钱，博福斯才真正动手。第一台试验台样炮 1930 年夏末完成，
+          1930 年 10 月 17 日用自动装填机打出了三发。
+        en: >-
+          NavWeaps records that during the late 1920s the Swedish Royal Navy went to
+          Bofors several times asking for a new 40 mm AA gun to replace the British
+          2-pdrs then in service. Bofors showed little interest, since any Swedish order
+          would be small and foreign sales looked unlikely. The Navy persisted and
+          finally offered to help fund development; with that money Bofors began work in
+          earnest. The first test-bed prototype was finished late in the summer of 1930,
+          and on 17 October 1930 it fired three rounds using the automatic loader.
+      src: [navweaps-40mm-bofors]
+
+    - heading: 从 3 发到 130 发/分：两年的工程
+      text:
+        zh: >-
+          1931 年 11 月 10 日，第一门正式炮做了单发射击；到 11 月 25 日，
+          试验已经能在 7.58 秒内打出 8 发。这证明自动装填的概念可行，
+          但离海军要求的每分钟 130 发还差得远。改进之后再经官方试验，
+          1932 年 3 月 21 日瑞典海军的验收通过。接下来两年是纯工程：
+          3 万小时的绘图工作产出了 1,800 张工作图与 1,600 张机床图，
+          才做出 40 mm L/60 Model 1934。这个型号外销到好几个国家，
+          但瑞典自己的军队没有采用。
+        en: >-
+          On 10 November 1931 the first proper gun fired single shots, and by 25
+          November trials had reached eight rounds in 7.58 seconds. That proved the
+          autoloader concept but fell well short of the Navy's 130 rounds per minute.
+          After further improvement the official Swedish Navy trials passed on 21 March
+          1932. The next two years were pure engineering: 30,000 hours of drawing-board
+          work produced 1,800 working drawings and 1,600 machine-tool drawings for the
+          40 mm L/60 Model 1934, which was exported to several countries but not adopted
+          by the Swedish armed forces.
+      src: [navweaps-40mm-bofors]
+
+    - heading: 真正的量产型是 1936 年那版
+      text:
+        zh: >-
+          瑞典陆海军直到 1936 年才下单，订的是略微修改过的版本，也就是
+          40 mm L/60 Model 1936——二战中博福斯、英国与美国生产的绝大多数炮
+          都基于这个设计。瑞典海军 1934 年真正订的反而是给潜艇用的短身管型
+          （L/43 Model 1932），收纳在指挥塔或甲板下的防水筒里。
+          博福斯自己一直生产到 1954 年才停产，转而做更强的 L/70 与 57 mm L/60。
+        en: >-
+          The Swedish Army and Navy did not order until 1936, and what they ordered was
+          a slightly modified version, the 40 mm L/60 Model 1936, whose basic design
+          underlay most guns produced during the war by Bofors, Britain and the United
+          States. What the Swedish Navy actually ordered in 1934 was a short-barrel
+          submarine version, the L/43 Model 1932, stowed in a watertight tube in the
+          conning tower or under the decking. Bofors kept building the L/60 until 1954,
+          then switched to the more powerful L/70 and 57 mm L/60.
+      src: [navweaps-40mm-bofors]
+
+    - heading: 英国是从陆军炮开始用的
+      text:
+        zh: >-
+          英国陆军 1933 年就开始关注，1937 年订了 100 门。皇家海军第一次在舰上使用
+          风冷型是 1941 年末，装在威尔士亲王号、纳尔逊号以及曼彻斯特号、埃里伯斯号上；
+          但有些舰更早就临时装过陆军的风冷炮——那些炮是 1940 年
+          挪威撤退时「救回来」的。英国的水冷型是照抄荷兰 Hazemeyer 炮座做出来的，
+          那套炮座 1940 年随荷兰布雷舰 Willem van der Zaan 一起到了英国。
+          英国自产水冷型首发是 1942 年 11 月交给黑天鹅级护卫舰 Whimbrel。
+          澳、英、加造的风冷炮总数不详，大约在 2,100 到 2,800 门之间，
+          另有 200 到 400 门来自美国。
+        en: >-
+          The British Army showed interest in 1933 and ordered 100 guns in 1937. The
+          Royal Navy's first shipboard use of air-cooled guns came late in 1941 aboard
+          Prince of Wales, Nelson, Manchester and Erebus, though some ships had earlier
+          been temporarily armed with army
+          air-cooled guns "rescued" during the 1940 evacuation of Norway. The British
+          water-cooled version was developed by copying the Dutch Hazemeyer mounting,
+          which reached Britain in 1940 aboard the Dutch minelayer Willem van der Zaan.
+          The first issue of locally produced water-cooled guns went to the Black Swan
+          class sloop HMS Whimbrel in November 1942. The total of air-cooled guns built
+          by Australia, Britain and Canada is not accurately known but lies between
+          2,100 and 2,800, with a further 200 to 400 supplied from the United States.
+      src: [navweaps-40mm-bofors]
+
+    - heading: 一个反复被写错的倍数
+      text:
+        zh: >-
+          这型炮常被写成「60 倍径」，但 navweaps 明确指出：除日本之外，
+          所有国家造的这种炮实际都是 56.25 倍径。这不是一个小差别——
+          当有人拿「40 mm L/60」去比对苏联或日本的同类炮时，比对的基础就是错的。
+        en: >-
+          The gun is routinely given as 60 calibres, and NavWeaps states plainly that
+          every gun of this type from every nation except Japan was actually 56.25
+          calibres long. That is not a trivial difference: comparisons built on
+          "40 mm L/60" against Soviet or Japanese equivalents are resting on the wrong
+          figure.
+      src: [navweaps-40mm-bofors]
+
+history:
+  - id: design
+    title: { zh: 博福斯的研制, en: Development at Bofors }
+    range: { from: 1920, to: 1936 }
+    lead:
+      zh: >-
+        它不是一个国家下决心要一门好炮的结果，而是瑞典海军反复游说的结果。
+      en: >-
+        It was not the product of a navy deciding it wanted a good gun, but of one navy
+        persisting until it got one.
+    events:
+      - date: 1930-10-17
+        text:
+          zh: >-
+            第一台试验台样炮（1930 年夏末完成）用自动装填机打出三发，
+            证明自动装填的概念可行。
+          en: >-
+            The first test-bed prototype, completed late in the summer, fired three
+            rounds with the automatic loader, proving the concept.
+        src: [navweaps-40mm-bofors]
+      - date: 1931-11-10
+        text:
+          zh: >-
+            第一门正式炮做单发射击。到 11 月 25 日，试验已能 7.58 秒打 8 发，
+            但仍未达到瑞典海军每分钟 130 发的要求。
+          en: >-
+            The first proper gun fired single shots. By 25 November trials had reached
+            eight rounds in 7.58 seconds, still short of the Navy's 130 rounds per
+            minute.
+        src: [navweaps-40mm-bofors]
+      - date: 1932-03-21
+        text:
+          zh: >-
+            瑞典海军官方试验通过。
+          en: >-
+            Official trials for the Swedish Navy passed.
+        src: [navweaps-40mm-bofors]
+      - date: 1934
+        text:
+          zh: >-
+            40 mm L/60 Model 1934 定型（3 万工时、1,800 张工作图）。该型外销多国，
+            但瑞典军队没有采用。
+          en: >-
+            The 40 mm L/60 Model 1934 was finalised after 30,000 hours of drawing work
+            and 1,800 working drawings. It was exported widely but not adopted by the
+            Swedish services.
+        src: [navweaps-40mm-bofors]
+      - date: 1936
+        text:
+          zh: >-
+            瑞典陆海军订购略改型，即 40 mm L/60 Model 1936。二战期间博福斯、
+            英国与美国生产的多数据此设计。
+          en: >-
+            The Swedish Army and Navy ordered a slightly modified version, the 40 mm
+            L/60 Model 1936, whose design underlay most wartime production by Bofors,
+            Britain and the United States.
+        src: [navweaps-40mm-bofors]
+
+  - id: service
+    title: { zh: 英国与美国的使用, en: British and American service }
+    range: { from: 1941-12, to: 1945-09 }
+    lead:
+      zh: >-
+        在英美两国，它的服役史几乎就是护航战与太平洋战争本身。
+      en: >-
+        In British and American service its history is almost the escort war and the
+        Pacific war itself.
+    events:
+      - date: 1941-12
+        text:
+          zh: >-
+            皇家海军首次在舰上使用风冷型 Bofors，装于威尔士亲王号、纳尔逊号
+            以及曼彻斯特号与埃里伯斯号。navweaps 原文把后两者并称「the cruisers」，
+            但埃里伯斯号是浅水重炮舰——此处照录原文，不改写。
+          en: >-
+            The Royal Navy's first shipboard use of air-cooled Bofors guns, aboard
+            Prince of Wales, Nelson, and Manchester and Erebus. NavWeaps groups the last
+            two as "the cruisers" although Erebus was a monitor; the wording is
+            reproduced rather than silently corrected.
+        src: [navweaps-40mm-bofors]
+      - date: 1942-11
+        text:
+          zh: >-
+            英国自产的水冷型首发，交给黑天鹅级护卫舰 Whimbrel。水冷型炮座是
+            照抄 1940 年随荷兰布雷舰抵英的 Hazemeyer 炮座。
+          en: >-
+            The first issue of British-produced water-cooled guns, to the Black Swan
+            class sloop HMS Whimbrel. The water-cooled mounting copied the Hazemeyer
+            design brought to Britain aboard the Dutch minelayer Willem van der Zaan in
+            1940.
+        src: [navweaps-40mm-bofors]
+      - date: 1944-07
+        text:
+          zh: >-
+            英王乔治五世号加装 2 座四联美制 Mk II Bofors，共 8 门。
+            1945 年 9 月另有 2 门单装英制。
+          en: >-
+            King George V received two quadruple US-built Mk II Bofors mountings, eight
+            guns. Two single British-pattern guns followed by September 1945.
+        src: [rmg-kgv-guide]

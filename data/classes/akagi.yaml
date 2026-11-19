@@ -1,0 +1,77 @@
+# ============================================================================
+# 赤城（Akagi）—— 天城型战列巡洋舰改装航空母舰
+#
+# 2026-11-19 建级。
+#
+# 为什么要建这个文件：赤城航母化后**没有同级舰**（天城号因关东大地震损毁、
+# 改装中止），日文 Wikipedia 的级名栏写「空母：未分類」。
+# 但数据模型需要它有个 class 归属，否则左树会把它当「散舰」处理、无法展开。
+# 所以这里建一个「只有一艘成员舰」的级——(单舰)一级，不是有同级舰的舰级。
+#
+# 命名上不叫「赤城级」：kasado.net 单列「赤城型」是编目习惯，
+# 不代表真有同级舰。用 id: akagi，label 写「赤城（单舰）」。
+# ============================================================================
+
+id: akagi
+name:
+  zh: 赤城（单舰）
+  en: Akagi (single ship)
+class_of:
+  - akagi
+
+open_ended_note: >-
+  本级仅一艘。绝大多数的「级」公共数据在这里没有意义——
+  逐舰参数全部写在 ships/akagi.yaml 里。此文件只放
+  「为什么它没有同级舰」这条结构性事实，供左树定位用。
+
+facts:
+  - field: identity.name_original
+    value: 赤城（あかぎ）
+    src: [japanese-warship-akagi]
+    valid: { from: 1925-04-22 }
+    confidence: C
+
+  - field: identity.name_zh
+    value: 赤城
+    src: [japanese-warship-akagi]
+    valid: { from: 1925-04-22 }
+    confidence: C
+
+  - field: identity.name_en
+    value: Akagi
+    src: [combinedfleet-akagi]
+    valid: { from: 1925-04-22 }
+    confidence: C
+
+  - field: identity.ship_type
+    value: aircraft_carrier
+    src: [japanese-warship-akagi]
+    valid: { from: 1923-11-19 }
+    confidence: C
+
+  - field: identity.nation
+    value: japan
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25 }
+    confidence: C
+
+  - field: identity.era
+    value: ww2
+    src: [combinedfleet-akagi]
+    valid: { from: 1927-03-25 }
+    confidence: C
+
+  - field: identity.operator
+    value: 大日本帝国海軍（Imperial Japanese Navy）
+    src: [japanese-warship-akagi]
+    valid: { from: 1927-03-25 }
+    confidence: C
+
+  - field: identity.building_program
+    value: 八八舰队计划（天城型战列巡洋舰 2 号舰，因华盛顿条约改装为航母）
+    src: [japanese-warship-akagi]
+    valid: { from: 1920 }
+    confidence: C
+    note: >-
+      天城号因 1923-09-01 关东大地震损毁、改装中止，
+      赤城成为唯一完成的天城型改装舰。这就是它没有同级舰的原因。

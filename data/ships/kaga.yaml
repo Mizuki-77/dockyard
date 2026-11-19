@@ -1,0 +1,679 @@
+# ============================================================================
+# 加贺（かが / Kaga）—— 加贺级战列舰改装航空母舰
+#
+# 2026-11-19 入库。数据来自 work/raw/kaga-tech.md（774 行，覆盖 84%）。
+#
+# **与赤城不是同一舰级。** 加贺原设计是**加贺级战列舰**（长门级改良型，
+# 日方档案用「加賀型」，美英文献用「Tosa-class」，同一级）。
+# 赤城来自天城型战列巡洋舰。两舰底子完全不同。
+#
+# 与赤城的三个实质差别：
+#   1. **加贺换装了 12.7cm 八九式高角炮（8 基 16 门）；赤城至死保留 12cm 十年式。**
+#      NavWeaps 原句：「The carrier Kaga … replaced by the 12.7 cm/40 Type 89 …
+#      However, Akagi carried them to her end at Midway.」
+#   2. 加贺 1942 年春因触礁修理，**错过了印度洋作战、杜立特追歼、珊瑚海**。
+#   3. 沉没方式：当地 6/4 19:25 由萩风号两枚鱼雷处分。
+#      日文维基另持「16:25 大爆炸致沉」说，两说并列。
+# ============================================================================
+
+id: kaga
+name:
+  zh: 加贺
+  en: Kaga
+class: kaga
+note: >-
+  加贺级战列舰（Tosa-class）改装航母。与赤城不同级——赤城来自天城型战巡。
+  1935 年大改装后换装 12.7cm 高角炮，这是与赤城最大的武备差别。
+
+open_ended_note: >-
+  本舰参数有效期从 1928 竣工到 1942-06 战没，中间有 1935 年大改装。
+  改装前后两套数据用不同时间窗区分。
+
+facts:
+  # ============================================================
+  # 身份
+  # ============================================================
+  - field: identity.name_original
+    value: 加賀（かが）
+    src: [japanese-warship-kaga]
+    valid: { from: 1928-03-31 }
+    confidence: C
+
+  - field: identity.name_zh
+    value: 加贺
+    src: [japanese-warship-kaga]
+    valid: { from: 1928-03-31 }
+    confidence: C
+
+  - field: identity.name_en
+    value: Kaga
+    src: [combinedfleet-kaga]
+    valid: { from: 1928-03-31 }
+    confidence: C
+
+  - field: identity.name_note
+    value: 取自加贺国（今石川县南部）。原为加贺级战列舰一号舰的舰名。
+    src: [japanese-warship-kaga]
+    valid: { from: 1928-03-31 }
+    confidence: C
+
+  - field: identity.ship_type
+    value: aircraft_carrier
+    src: [japanese-warship-kaga]
+    valid: { from: 1923-11-19 }
+    confidence: C
+    note: 1923-11-19 与赤城同日变更舰种为航空母舰。
+
+  - field: identity.nation
+    value: japan
+    src: [japanese-warship-kaga]
+    valid: { from: 1928-03-31 }
+    confidence: C
+
+  - field: identity.operator
+    value: 大日本帝国海軍（Imperial Japanese Navy）
+    src: [japanese-warship-kaga]
+    valid: { from: 1928-03-31 }
+    confidence: C
+
+  - field: identity.era
+    value: ww2
+    src: [combinedfleet-kaga]
+    valid: { from: 1928-03-31 }
+    confidence: C
+
+  - field: identity.building_program
+    value: 八八舰队计划（加贺级战列舰一号舰），因华盛顿条约改装为航母
+    src: [japanese-warship-kaga]
+    valid: { from: 1920 }
+    confidence: C
+    note: >-
+      日方档案用「加賀型」、美英文献用「Tosa-class」，指同一级
+      （一番舰加贺、二番舰土佐）。不矛盾，是命名惯例差异。
+
+  # ============================================================
+  # 建造
+  # ============================================================
+  - field: construction.builder
+    value: 川崎造船所（Kawasaki Dockyard）
+    src: [japanese-warship-kaga]
+    valid: { from: 1920-07-19 }
+    confidence: C
+
+  - field: construction.builder_location
+    value: 神戸（Kobe）
+    src: [japanese-warship-kaga]
+    valid: { from: 1920-07-19 }
+    confidence: C
+
+  - field: construction.laid_down
+    value: 1920-07-19
+    unit: date
+    src: [japanese-warship-kaga]
+    valid: { from: 1920-07-19 }
+    confidence: C
+
+  - field: construction.launched
+    value: 1921-11-17
+    unit: date
+    src: [japanese-warship-kaga]
+    valid: { from: 1921-11-17 }
+    confidence: C
+
+  - field: construction.commissioned
+    value: 1928-03-31
+    unit: date
+    src: [japanese-warship-kaga]
+    valid: { from: 1928-03-31 }
+    confidence: C
+
+  - field: construction.fate_date
+    value: 1942-06-04
+    unit: date
+    src: [combinedfleet-kaga]
+    valid: { from: 1942-06-04 }
+    confidence: C
+    note: >-
+      **中途岛当地时间 6/4 19:25**，由驱逐舰萩风发射两枚鱼雷处分。
+      原句「Sunk: 1925 (1625 JST) destroyer HAGIKAZE fires two torpedoes」。
+      日本时间记 6/5 16:25，是同一时刻。
+      **注意：中弹是当天上午 10:22，不是「当日下午爆炸沉没」。**
+      日文维基另持「16:25 大爆炸致沉」说，与「鱼雷处分」并列不裁决。
+
+  - field: construction.fate_type
+    value: scuttled
+    src: [combinedfleet-kaga]
+    valid: { from: 1942-06-04 }
+    confidence: C
+    note: >-
+      己方驱逐舰雷击处分。但日文维基持「大爆炸致沉」说，
+      两说并存——若采后者则应为 sunk_by_enemy（损伤）叠加自沉因素。
+      不裁决。
+
+  # ============================================================
+  # 主尺度（改装后 1935-06-25 起）
+  # ============================================================
+  - field: dimensions.length.oa
+    value: 260.67
+    unit: m
+    src: [japanese-warship-kaga]
+    valid: { from: 1935-06-25, to: 1942-06-04 }
+    confidence: C
+
+  - field: dimensions.beam.wl
+    value: 31.32
+    unit: m
+    src: [japanese-warship-kaga]
+    valid: { from: 1935-06-25, to: 1942-06-04 }
+    confidence: C
+    note: 加装防雷鼓包后的宽度。改装前为 28.96 m。
+
+  - field: dimensions.draught.mean
+    value: 8.71
+    unit: m
+    src: [japanese-warship-kaga]
+    valid: { from: 1935-06-25, to: 1942-06-04 }
+    confidence: C
+
+  # ============================================================
+  # 排水量
+  # ============================================================
+  - field: displacement.standard
+    value: 38200
+    unit: t
+    src: [japanese-warship-kaga]
+    valid: { from: 1935-06-25, to: 1942-06-04 }
+    confidence: C
+    note: 改装后。原文「基準排水量 38,200英トン」。改装前 26,900 英吨。
+
+  - field: displacement.full
+    value: 43650
+    unit: t
+    src: [japanese-warship-kaga]
+    valid: { from: 1935-06-25, to: 1942-06-04 }
+    confidence: C
+    note: 改装后满载。加贺比赤城重得多——它是战列舰底子。
+
+  # ============================================================
+  # 动力
+  # ============================================================
+  - field: propulsion.plant_type
+    value: steam_turbine
+    src: [navypedia-kaga]
+    valid: { from: 1928-03-31 }
+    confidence: C
+
+  - field: propulsion.shafts
+    value: 4
+    unit: count
+    src: [japanese-warship-kaga]
+    valid: { from: 1928-03-31 }
+    confidence: C
+
+  - field: propulsion.boiler.count
+    value: 8
+    unit: count
+    src: [japanese-warship-kaga]
+    valid: { from: 1935-06-25, to: 1942-06-04 }
+    confidence: C
+    note: 改装后 ロ号艦本式锅炉 8 座（改装前 12 座）。
+
+  - field: propulsion.boiler.type
+    value: ロ号艦本式
+    src: [japanese-warship-kaga]
+    valid: { from: 1928-03-31 }
+    confidence: C
+
+  - field: propulsion.turbine.count
+    value: 4
+    unit: count
+    src: [japanese-warship-kaga]
+    valid: { from: 1928-03-31 }
+    confidence: C
+
+  - field: propulsion.power.design
+    value: 127000
+    unit: hp
+    src: [japanese-warship-kaga]
+    valid: { from: 1935-06-25, to: 1942-06-04 }
+    confidence: C
+    note: 改装后 127,000 hp（改装前 91,000 hp）。
+
+  - field: propulsion.speed.design
+    value: 28.34
+    unit: kn
+    src: [japanese-warship-kaga]
+    valid: { from: 1935-06-25, to: 1942-06-04 }
+    confidence: C
+    note: >-
+      改装后 28.34 节。**这是加贺与赤城的重大差别**——赤城 31.2 节，
+      加贺只有 28.3；这是战列舰底子的直接后果，也是它在中途岛
+      跟不上机动部队高速机动的物理原因之一。
+
+  - field: propulsion.range.max
+    value: 10000
+    unit: nmi
+    src: [japanese-warship-kaga]
+    valid: { from: 1935-06-25, to: 1942-06-04 }
+    confidence: C
+
+  - field: propulsion.range.at_speed
+    value: 16
+    unit: kn
+    src: [japanese-warship-kaga]
+    valid: { from: 1935-06-25, to: 1942-06-04 }
+    confidence: C
+    note: 10,000 海里 / 16 节。
+
+  - field: propulsion.fuel.capacity
+    value: 7500
+    unit: t
+    src: [japanese-warship-kaga]
+    valid: { from: 1935-06-25, to: 1942-06-04 }
+    confidence: C
+    note: 重油 7,500 t。
+
+  # ============================================================
+  # 防护
+  # ============================================================
+  - field: protection.scheme
+    value: other
+    src: [navypedia-kaga]
+    valid: { from: 1928-03-31 }
+    confidence: C
+    note: >-
+      战列舰底子的舷侧装甲带 + 装甲甲板，改装为航母时未大幅削减
+      （与赤城从天城级战巡削减 254→152 mm 不同）。
+      注册表枚举无对应值，用 other 说明。
+
+  - field: protection.underwater.depth
+    value: 0
+    unit: m
+    src: [navypedia-kaga]
+    valid: { from: 1935-06-25, to: 1942-06-04 }
+    confidence: C
+    note: 未获取总纵深数值。改装时加装防雷鼓包。此处不填猜测值。
+
+  # ============================================================
+  # 航空设施
+  # ============================================================
+  - field: aviation.deck.length
+    value: 248.6
+    unit: m
+    src: [navypedia-kaga]
+    valid: { from: 1935-06-25, to: 1942-06-04 }
+    confidence: C
+    note: 改装后单段全通甲板。改装前三段：上段 171.30 m / 中段 15.0 m / 下段 55.02 m。
+
+  - field: aviation.deck.upper.length
+    value: 171.30
+    unit: m
+    src: [navypedia-kaga]
+    valid: { from: 1928-03-31, to: 1935-06-24 }
+    confidence: C
+    note: 三段甲板时期的上段（着舰 + 起飞主甲板），171.30 × 30.48 m，面积 5,190 ㎡。
+
+  - field: aviation.deck.middle.length
+    value: 15.0
+    unit: m
+    src: [japanese-warship-kaga]
+    valid: { from: 1928-03-31, to: 1935-06-24 }
+    confidence: C
+    note: >-
+      中段仅 15.0 m × 25.0 m（375 ㎡）。**加贺的中段甲板比赤城的更没用**——
+      横贯全宽的大舰桥就压在中段甲板前端，直接把可用长度吃掉了。
+      原文「問題となったのは発着用飛行甲板の短さであり、
+      特に中段の甲板で顕著に表れ」。
+      宽度的两说：25.0 m（日文源）/ 约 25 m（navypedia）。
+
+  - field: aviation.deck.lower.length
+    value: 55.02
+    unit: m
+    src: [navypedia-kaga]
+    valid: { from: 1928-03-31, to: 1935-06-24 }
+    confidence: C
+    note: >-
+      下段 55.02 × 24.38 m（navypedia）或 55.0 × 20.0 m（日文源），面积 1,100 ㎡。
+      宽度两说并存。
+
+  - field: aviation.hangar.count
+    value: 3
+    unit: count
+    src: [navypedia-kaga]
+    valid: { from: 1935-06-25, to: 1942-06-04 }
+    confidence: C
+    note: 改装后三层机库，与赤城同为三层结构。
+
+  - field: aviation.elevator.count
+    value: 3
+    unit: count
+    src: [japanese-warship-kaga]
+    valid: { from: 1935-06-25, to: 1942-06-04 }
+    confidence: C
+    note: 改装前为 2 基，改装后 3 基。
+
+  - field: aviation.catapult.count
+    value: 0
+    unit: count
+    src: [japanese-warship-kaga]
+    valid: { from: 1928-03-31, to: 1942-06-04 }
+    confidence: C
+    note: >-
+      这是「0」。日本海军至终战未把空母弹射器实用化
+      （"a usable model was not ready until the end of the war"）。
+      加贺改装时曾为弹射器做过配套工程，但未装成——与赤城同样的情况。
+
+  - field: aviation.aircraft.capacity
+    value: 90
+    unit: count
+    src: [combinedfleet-kaga]
+    valid: { from: 1935-06-25, to: 1942-06-04 }
+    confidence: C
+    note: >-
+      机库容量约 90 架（含备用机），是中途岛四艘日军航母里最大的。
+      赤城 60、苍龙 57、飞龙 64——加贺能装这么多，正是因为它有战列舰的大舰体。
+
+  - field: aviation.aircraft.types
+    value: 零式舰战（A6M2）、九九式舰爆（D3A1）、九七式舰攻（B5N2）
+    src: [combinedfleet-kaga]
+    valid: { from: 1941-11-26, to: 1942-06-04 }
+    confidence: C
+
+  # ============================================================
+  # 武备
+  # ============================================================
+  - field: armament.mount.summary
+    value: >-
+      1928 竣工时：20cm/50 三年式单装炮 6 门 +
+      45 口径 12cm 十年式连装高角炮 6 基 12 门 +
+      13mm 连装机枪 4 基 + 留式机枪 2 挺
+    src: [japanese-warship-kaga]
+    valid: { from: 1928-03-31, to: 1935-06-24 }
+    confidence: C
+    note: >-
+      加贺竣工时装的是 12cm 十年式，不是 12.7cm。1935 年改装才换装八九式。
+      这一点容易搞错——赤城也是 12cm，但赤城申请换装被驳回、至死未换；
+      加贺换成了。两舰的武备差别就出在这里。
+
+  - field: armament.mount.summary
+    value: >-
+      1935 改装后：20cm/50 三年式单装炮 6 门 +
+      40 口径 89 式 12.7cm 连装高角炮 8 基 16 门 +
+      25mm 九六式连装机炮 11-14 基（22-28 挺，两说）+
+      6.5mm 十一式轻机枪 6 挺
+    src: [japanese-warship-kaga]
+    valid: { from: 1935-06-25, to: 1942-06-04 }
+    confidence: C
+
+  - field: armament.aa_25mm.count
+    value: 22
+    unit: count
+    src: [japanese-warship-kaga]
+    valid: { from: 1935-06-25, to: 1942-06-04 }
+    confidence: C
+    note: >-
+      九六式 25mm **11 基双联 = 22 挺**（有力说），另一说 14 基 28 挺。
+      两说无法定案，因为官方图纸没留下来：
+      「25mm連装機銃も同時に増強されたがその位置・数は公式図面が残されていないことも
+      あって不明である（11基とする説と14基とする説あり）」。
+      另有 1940 年「+4 座双联」的记载，与 11 基/14 基两说都不吻合。
+      全部为双联装，无单装、无三联（三联装 1941 年才出现，加贺没赶上）。
+
+  - field: armament.torpedo.tubes
+    value: 0
+    unit: count
+    src: [japanese-warship-kaga]
+    valid: { from: 1928-03-31, to: 1942-06-04 }
+    confidence: C
+    note: 作为航母无鱼雷发射管。
+
+  # ============================================================
+  # 雷达
+  # ============================================================
+  - field: sensors.radar.count
+    value: 0
+    unit: count
+    src: [jm93-midway-operations]
+    valid: { from: 1928-03-31, to: 1942-06-04 }
+    confidence: B
+    note: >-
+      这是「0」，有官方记录支撑。原句「At the outbreak of the war, the Navy
+      did not have ship radar… the Navy finally completed the installation of
+      radar equipment on the battleships, ISE and HYUGA, on 27 May」。
+      中途岛时全部四艘日军航母都没有雷达。
+
+  - field: sensors.director.type
+    value: 九四式高射指挥装置 + 九五式机枪指挥装置
+    src: [japanese-warship-kaga]
+    valid: { from: 1935-06-25, to: 1942-06-04 }
+    confidence: C
+
+  # ============================================================
+  # 编制
+  # ============================================================
+  - field: service.complement.standard
+    value: 1708
+    unit: persons
+    src: [japanese-warship-kaga]
+    valid: { from: 1935-06-25, to: 1942-06-04 }
+    confidence: C
+    note: >-
+      改装后定员 1,708 名（一说 1,700）。中途岛实载人数未获取——
+      日文源与美方记录口径不同，且 JACAR 的战斗详报含「人員」节但图像未读取。
+
+  - field: service.casualties
+    value: 811
+    unit: persons
+    src: [japanese-warship-kaga]
+    valid: { from: 1942-06-04 }
+    confidence: C
+    note: >-
+      战死 811 名。各来源口径有差异，加贺是四艘里损失最惨重的
+      （它载机最多、油料弹药也最多）。
+
+  # ============================================================
+  # 涂装与外形
+  # ============================================================
+  - field: appearance.island_position
+    value: starboard
+    src: [japanese-warship-kaga]
+    valid: { from: 1935-06-25, to: 1942-06-04 }
+    confidence: C
+    note: >-
+      改装后右舷舰岛（与赤城的左舷相反）。
+      **改装前（1928-1935）没有岛式舰桥**——但有横贯全宽的大舰桥压在中段甲板前端，
+      正是它废掉中段甲板的元凶。1932/1933 年右舷还出现过塔型补助舰桥与临时小型舰桥。
+
+  - field: appearance.marking
+    value: 着舰识别文字存疑（一说「カ」，但仅商业商品页作证）
+    src: [japanese-warship-kaga]
+    valid: { from: 1935-06-25, to: 1942-06-04 }
+    confidence: C
+    note: >-
+      **这条证据很弱，不建议采信**：日文维基加贺条目检索「着艦識別文字」0 命中，
+      唯一来源是一个商业 T 恤商品页。
+      对比：赤城的「ア」有《写真日本の軍艦 第3巻》p.63 作脚注、飞龙的「ヒ」有
+      中途岛空拍照片可辨。加贺这条达不到同等证据强度。
+
+  - about: weapon:20cm-3ns
+    field: weapon.designation
+    value: 20cm/50 三年式
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+  - about: weapon:20cm-3ns
+    field: weapon.category
+    value: naval_gun
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+  - about: weapon:20cm-3ns
+    field: weapon.nation
+    value: japan
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+  - about: weapon:20cm-3ns
+    field: weapon.bore
+    value: 200
+    unit: mm
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+  - about: weapon:20cm-3ns
+    field: weapon.in_service_from
+    value: 1941-12-07
+    unit: date
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+    note: 1935 改装后单装 6 门
+
+  - about: weapon:127cm-89
+    field: weapon.designation
+    value: 12.7cm/40 八九式
+    src: [navweaps-127cm-89]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+  - about: weapon:127cm-89
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-127cm-89]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+  - about: weapon:127cm-89
+    field: weapon.nation
+    value: japan
+    src: [navweaps-127cm-89]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+  - about: weapon:127cm-89
+    field: weapon.bore
+    value: 127
+    unit: mm
+    src: [navweaps-127cm-89]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+  - about: weapon:127cm-89
+    field: weapon.in_service_from
+    value: 1941-12-07
+    unit: date
+    src: [navweaps-127cm-89]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+    note: 连装 8 基 16 门——与赤城的 12cm 十年式不同，这是两舰最大的武备差别
+
+  - about: weapon:25mm-96
+    field: weapon.designation
+    value: 25mm 九六式
+    src: [navweaps-25mm-96]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+  - about: weapon:25mm-96
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-25mm-96]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+  - about: weapon:25mm-96
+    field: weapon.nation
+    value: japan
+    src: [navweaps-25mm-96]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+  - about: weapon:25mm-96
+    field: weapon.bore
+    value: 25
+    unit: mm
+    src: [navweaps-25mm-96]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+  - about: weapon:25mm-96
+    field: weapon.in_service_from
+    value: 1941-12-07
+    unit: date
+    src: [navweaps-25mm-96]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+    note: 连装 11 基 22 挺（有力说）或 14 基 28 挺，官方图纸未存
+
+  - about: weapon:a6m2
+    field: weapon.designation
+    value: 零式舰战 21 型
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+  - about: weapon:a6m2
+    field: weapon.category
+    value: aircraft
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+  - about: weapon:a6m2
+    field: weapon.nation
+    value: japan
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+  - about: weapon:a6m2
+    field: weapon.in_service_from
+    value: 1941-12-07
+    unit: date
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+    note: 中途岛时舰载战斗机
+
+  - about: weapon:d3a1
+    field: weapon.designation
+    value: 九九式舰爆 11 型
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+  - about: weapon:d3a1
+    field: weapon.category
+    value: aircraft
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+  - about: weapon:d3a1
+    field: weapon.nation
+    value: japan
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+  - about: weapon:d3a1
+    field: weapon.in_service_from
+    value: 1941-12-07
+    unit: date
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+    note: 中途岛时舰载俯冲轰炸机
+
+  - about: weapon:b5n2
+    field: weapon.designation
+    value: 九七式舰攻 12 型
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+  - about: weapon:b5n2
+    field: weapon.category
+    value: aircraft
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+  - about: weapon:b5n2
+    field: weapon.nation
+    value: japan
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+  - about: weapon:b5n2
+    field: weapon.in_service_from
+    value: 1941-12-07
+    unit: date
+    src: [combinedfleet-akagi]
+    valid: { from: 1941-12-07, to: 1942-06-04 }
+    confidence: C
+    note: 中途岛时舰载鱼雷机

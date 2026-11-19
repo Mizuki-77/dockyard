@@ -1,0 +1,165 @@
+# ============================================================================
+# 武器正文 —— 2 cm C/30
+#
+# 注意：这不是盟军用的那门 Oerlikon。德系 2 cm 是莱茵金属从索罗通 ST-5 发展来的，
+# 这一篇里要点明这一点，否则读者会把它和 20mm-oerlikon 搞混。
+# ============================================================================
+weapon: 20mm-c30
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      2 cm C/30 是德国海军二战前期的标准轻型高射炮，1930 年设计、1934 年服役，
+      由莱茵金属从索罗通的 ST-5 发展而来。它和盟军大量使用的 Oerlikon 20 mm
+      不是同一种武器，虽然口径相同——这一点在中文资料里经常被混为一谈。
+    en: >-
+      The 2 cm C/30 was the German Navy's standard light anti-aircraft gun of the
+      pre-war and early war years, designed in 1930 and in service from 1934,
+      developed by Rheinmetall from the Solothurn ST-5. It is not the same weapon as
+      the Oerlikon 20 mm the Allies used in huge numbers, although the bore matches
+      - a distinction Chinese-language sources frequently blur.
+
+  paragraphs:
+    - heading: 先把它和 Oerlikon 分开
+      text:
+        zh: >-
+          navweaps 在这一页的开头就专门写了一句：不要和盟军用的 Oerlikon 20 mm 混淆，
+          这些德国 2 cm 武器是莱茵金属制造的。谱系上它来自索罗通更早的 ST-5。
+          C/30 与后来的 C/38 都是全自动武器。
+        en: >-
+          NavWeaps opens the page with an explicit warning not to confuse these with
+          the Oerlikon 20 mm used by the Allies: the German 2 cm weapons were built by
+          Rheinmetall. Their lineage runs back to the earlier Solothurn ST-5, and both
+          the C/30 and the later C/38 were fully automatic.
+      src: [navweaps-20mm-c30]
+
+    - heading: C/30 的两个硬伤
+      text:
+        zh: >-
+          第一是卡壳，第二是弹匣。C/30 用的是 20 发弹匣，也就是说打二十发就要停下来
+          换一次，这个停顿在防空射击里是致命的，因为它正好覆盖了目标飞过危险区的
+          那几十秒。这两点直接促成了后来的 C/38——一种采用短后坐原理的改进型。
+        en: >-
+          The first problem was jamming, the second the magazine. The C/30 fed from a
+          20-round box, so every twenty rounds meant a pause to reload - a fatal
+          interruption in anti-aircraft fire, which is exactly the interval in which a
+          target crosses the danger zone. Those two faults drove the later C/38, an
+          improved short-recoil weapon.
+      src: [navweaps-20mm-c30]
+
+    - heading: 毛瑟的三轴四联座与 C/35 这个名字
+      text:
+        zh: >-
+          1930 年代中期，毛瑟为海军研制过一种用 C/30 的三轴四联炮座：
+          瞄准手和俯仰手在炮的前方，负责补偿横摇的操作手在炮的后方。
+          它因为配用 Flakvisier 35 瞄准具，被非正式地叫作 C/35。
+          这个设计后来由莱茵金属接手生产。也就是说「C/35」并不是一门炮的编号，
+          而是一个炮座的俗称——这一点常被误当成独立型号。
+        en: >-
+          In the mid-1930s Mauser developed a three-axis quadruple mounting for the
+          Navy using C/30 guns, with the layer and pointer seated in front of the
+          guns and the cross-roll operator behind them. Because it used the Flakvisier
+          35 sight it was unofficially called the C/35. Production of the design passed
+          to Rheinmetall. "C/35" is therefore a nickname for a mounting, not a gun
+          designation - a point often mistaken for a separate weapon model.
+      src: [navweaps-20mm-c30]
+
+    - heading: 四联座的两条分支
+      text:
+        zh: >-
+          一条是海军的 2 cm Flak C/38 auf Vierlingslafette C/38，把四联座里的 C/30
+          换成 C/38。另一条是陆军的 Flakvierling 38：把三轴简化成双轴，
+          只留一个射手坐在炮后同时控制旋回与俯仰。海军也用了后者的改型。
+          简化去掉了横摇补偿，换来的是更少的人、更快的训练与更低的成本。
+        en: >-
+          Two branches came out of the quadruple mounting. The naval one was the
+          2 cm Flak C/38 auf Vierlingslafette C/38, which replaced the C/30 guns with
+          C/38s. The army one was the Flakvierling 38, which cut the three axes down to
+          two and left a single gunner seated behind the guns controlling both training
+          and elevation; the Navy used a modified version of that as well. The
+          simplification dropped roll compensation in exchange for fewer crew, faster
+          training and lower cost.
+      src: [navweaps-20mm-c30]
+
+    - heading: 为什么它后来不够用了
+      text:
+        zh: >-
+          服役初期这型炮是有效的。到战争后期，飞机的速度与防护都上去了，
+          20 mm 弹的威力与射程都不足以在够远的距离上拦住目标，效力明显下降。
+          这也是德国海军后期把重心往 37 mm 与更大口径挪的原因。
+        en: >-
+          On introduction the gun was effective. By the later war aircraft were faster
+          and better protected, the 20 mm projectile lacked the destructive power and
+          reach to stop a target at useful range, and effectiveness fell away. That is
+          part of why the German Navy shifted weight toward 37 mm and larger calibres
+          later in the war.
+      src: [navweaps-20mm-c30, navweaps-37mm-sk-c30]
+
+history:
+  - id: design
+    title: { zh: 设计与定型, en: Design }
+    range: { from: 1930, to: 1934 }
+    lead:
+      zh: >-
+        1930 年设计、1934 年服役，谱系来自索罗通的 ST-5。
+      en: >-
+        Designed in 1930 and in service from 1934, its lineage runs back to the
+        Solothurn ST-5.
+    events:
+      - date: 1930
+        text:
+          zh: >-
+            完成设计，编号 2 cm C/30。莱茵金属制造，源自索罗通 ST-5，全自动。
+          en: >-
+            Design completed as the 2 cm C/30: Rheinmetall manufacture, derived from
+            the Solothurn ST-5, fully automatic.
+        src: [navweaps-20mm-c30]
+      - date: 1934
+        text:
+          zh: >-
+            进入服役。装备范围是「几乎所有」德国军舰。
+          en: >-
+            Entered service, fitted to "almost all" German warships.
+        src: [navweaps-20mm-c30]
+
+  - id: service
+    title: { zh: 战时使用, en: Wartime service }
+    range: { from: 1939-08, to: 1944-11 }
+    lead:
+      zh: >-
+        它是德国主力舰上数量最多的一型防空武器，也是被换得最早的一型。
+      en: >-
+        It was the most numerous anti-aircraft weapon aboard German capital ships,
+        and among the first to be replaced.
+    events:
+      - date: 1940-08-24
+        text:
+          zh: >-
+            俾斯麦号服役时装 10 门基座式（Sockel-Lafette）单装，另有 2 门其他单装，
+            备弹 22,000 发。后来前桅两侧又加了两座 C/38 四联座。
+          en: >-
+            Bismarck commissioned with ten single pedestal (Sockel-Lafette) mountings
+            plus two further single mounts, with an outfit of 22,000 rounds. Two C/38
+            quadruple mountings were added later, abreast the foremast.
+        src: [kbismarck-armament]
+      - date: 1941-04
+        text:
+          zh: >-
+            俾斯麦号在 Gotenhafen 加装两座 2 cm Flak C/38 四联座，
+            位置在前桅两侧、探照灯平台上方。这是该舰第一次装上 C/38，
+            也是本站数据里 20mm-c38 从 1941 年 4 月起才有效的原因。
+          en: >-
+            At Gotenhafen Bismarck received two 2 cm Flak C/38 quadruple mountings
+            abreast the foremast above the searchlight platform. This was the ship's
+            first fitting of the C/38, and it is why the site's data treats that weapon
+            as valid only from April 1941.
+        src: [kbismarck-armament]
+      - date: 1944-11-12
+        text:
+          zh: >-
+            提尔皮茨号被击沉。它当时装 20 门 2 cm 炮，1944 年内曾增至 78 门。
+          en: >-
+            Tirpitz was sunk, then carrying twenty 2 cm guns, a number that had risen
+            to 78 during 1944.
+        src: [kbismarck-tirpitz]

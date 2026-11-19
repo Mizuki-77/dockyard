@@ -1,0 +1,1092 @@
+# 胡德号（HMS Hood，舷号 51）— 单舰数据
+#
+# 本文件只写「胡德号这一艘船」的事实：它的实际建成状态、它经历的改装、
+# 它被击沉的过程。四艘同级的共同设计值写在 data/classes/admiral.yaml。
+#
+# 解析顺序：单舰 fact → 舰级 fact → 未记载。单舰命中即覆盖舰级。
+#
+# 【这一条船为什么值得单列】
+# 它是 1941 年 5 月 24 日之前全世界最大的军舰，是两战之间英国海军的门面，
+# 也是「战列巡洋舰」这个舰种最后的海战牺牲品。
+# 它下水时的名字是一次政治决定：日德兰之后英国公众需要一个「我们的新舰能打」的象征，
+# 于是主装带从 9 英寸加到 12 英寸、排水量涨了六千吨，但水平装甲与炮塔顶
+# 仍停在战巡水平——因为 32 节的指标不肯放。
+# 二十二年后，那个没改到位的水平防护成了它的死因。
+#
+# 【置信度说明】
+# 技术数据多取自 H.M.S. Hood Association（C 档，但它是这一艘船最专的来源，
+# 且大部分内容转引自 Bruce Taylor 的专著）。
+# 沉没过程与调查结论取自 ADM 116/4351 原件转录（A 档）。
+# 凡图上只给定义没给数值的字段（方形系数、水线面积、水密段数、标准/满载排水量），
+# 一律不写 fact —— 不推算填充是本项目的硬规则。
+
+id: hood
+name:
+  zh: 胡德
+  en: HMS Hood
+class: admiral
+open_ended_note: >
+  本舰参数的有效期到 1941-05-24 沉没为止。
+  1929-1931 年大改装前后、以及 1939-1941 年各次小改装前后，
+  很多数字都变过——这些变化落在状态切片里，不在本节重复。
+
+facts:
+  # ============================================================
+  # 身份
+  # ============================================================
+  - field: identity.name_original
+    value: Hood
+    unit: null
+    src: [hmshood-construction, hmshood-timeline]
+    valid: { from: 1916-07-14 }
+    confidence: A
+    note: >
+      1916-07-14 海军部通知 John Brown 船厂，该舰命名为 Hood
+      （timeline1 原话「Admiralty informed John Brown that their ship is to be named Hood」）。
+
+  - field: identity.name_zh
+    value: 胡德
+    unit: null
+    src: [hmshood-construction]
+    valid: { from: 1916-07-14 }
+    confidence: B
+    note: 通行中文译名。另见「霍德」的旧译写法，本站统一用「胡德」。
+
+  - field: identity.name_en
+    value: HMS Hood
+    unit: null
+    src: [hmshood-construction]
+    valid: { from: 1916-07-14 }
+    confidence: A
+
+  - field: identity.namesake
+    value: 第一代胡德子爵 Samuel Hood（1724–1816）
+    unit: null
+    src: [hmshood-construction]
+    valid: { from: 1916-07-14 }
+    confidence: B
+    note: >
+      命名对象是海军上将 Samuel Hood 子爵。
+      **常见误解**：不是民间传说中的 Robin Hood，也不是同为海军上将的
+      Horace Hood 少将（后者是日德兰海战中随无敌号沉没的那位，
+      他的遗孀 Lady Hood 在两年后为这条舰掷瓶下水——两件事常被混为一谈）。
+
+  - field: identity.pennant_number
+    value: '51'
+    unit: null
+    src: [navypedia-hood, hmshood-timeline]
+    valid: { from: 1920-03-29 }
+    confidence: B
+    note: 舷号 51。呼号 GECV。
+
+  - field: identity.ship_type
+    value: battlecruiser
+    unit: null
+    src: [hmshood-construction]
+    valid: { from: 1916-04-21 }
+    confidence: A
+    note: >
+      官方分类战列巡洋舰。改版后防护已接近伊丽莎白女王级战列舰，
+      所以也常被称作「事实上是快速战列舰」。
+      本站按官方分类记 battlecruiser，但在页面简介里会说明这个模糊地带，
+      因为「战巡防护差」这个刻板印象与胡德号的实际情况并不完全吻合——
+      它的问题不在装甲带厚度，而在水平防护与那条带顶缝隙。
+
+  - field: identity.nation
+    value: united_kingdom
+    unit: null
+    src: [hmshood-construction]
+    valid: { from: 1916-04-21 }
+    confidence: A
+
+  - field: identity.operator
+    value: Royal Navy
+    unit: null
+    src: [hmshood-timeline]
+    valid: { from: 1920-03-29 }
+    confidence: A
+
+  - field: identity.era
+    value: ww2
+    unit: null
+    src: [hmshood-timeline]
+    valid: { from: 1920-03-29 }
+    confidence: B
+    note: 按服役期定位。横跨战间期与二战，为它捐躯的那场战争是二战。
+
+  # ============================================================
+  # 建造
+  # ============================================================
+  - field: construction.builder
+    value: John Brown & Company Ltd
+    unit: null
+    src: [hmshood-construction]
+    valid: { from: 1916-04-21 }
+    confidence: A
+
+  - field: construction.builder_location
+    value: Clydebank, Scotland
+    unit: null
+    src: [hmshood-construction]
+    valid: { from: 1916-04-21 }
+    confidence: A
+
+  - field: construction.building_slip
+    value: Number 3 slip
+    unit: null
+    src: [hmshood-construction]
+    valid: { from: 1916-09-01 }
+    confidence: B
+
+  - field: construction.yard_number
+    value: '460'
+    unit: null
+    src: [hmshood-construction]
+    valid: { from: 1916-04-21 }
+    confidence: B
+    note: 船厂编号 460。timeline1 原话「She was ship number 460」。
+
+  - field: construction.order_date
+    value: 1916-04-21
+    unit: date
+    src: [hmshood-construction, hmshood-timeline]
+    valid: { from: 1916-04-21 }
+    confidence: A
+    note: >
+      1916-04-21 下单三艘（Hood / Howe / Rodney），同月稍后加订 Anson，
+      共四艘。后来只建成这一艘。
+
+  - field: construction.laid_down
+    value: 1916-09-01
+    unit: date
+    src: [hmshood-timeline]
+    valid: { from: 1916-09-01 }
+    confidence: B
+    note: >
+      协会依船厂记录认定 1916-09-01，timeline1 原话
+      「01 September: Confirmed date Hood's keel was laid」。
+      **流传最广的 1916-05-31（日德兰海战当天）被协会明确否定**：
+      「this date is NOT supported by the construction yard records …
+      not confirmed and most unlikely」。
+      navypedia 同时保留「31.5.1916, again 1.9.1916」，即首次铺设 + 重铺一说——
+      所以「日德兰后四小时铺龙骨」这个巧合本身存疑，不应作为定论出现在页面上。
+
+  - field: construction.laid_down
+    value: 1916-05-31
+    unit: date
+    src: [navypedia-hood]
+    valid: { from: 1916-05-31 }
+    confidence: C
+    note: >
+      与上一条构成分歧，并列保留。来自 navypedia 的「laid down 31.5.1916,
+      again 1.9.1916」——它自己也只把这天记为首次铺设。
+      采用此说会把下水日推成一个「日德兰当天开工」的戏剧巧合，
+      这正是它流传广的原因，也是它可疑的原因。
+
+  - field: construction.launched
+    value: 1918-08-22
+    unit: date
+    src: [hmshood-construction, hmshood-timeline]
+    valid: { from: 1918-08-22 }
+    confidence: A
+    note: 13:05 下水，掷瓶人是 Lady Hood（Horace Hood 少将的遗孀）。
+
+  - field: construction.commissioned
+    value: 1920-03-29
+    unit: date
+    src: [hmshood-timeline]
+    valid: { from: 1920-03-29 }
+    confidence: A
+    note: >
+      协会依舰务日志 ADM53/78910 认定 1920-03-29，当日由 Captain Tomkinson
+      接管、舰员 967 人。
+      **1920-05-15 这个流传极广的服役日是错的**，协会原话：
+      「Over the years an urban myth has grown up that Hood was Commissioned
+      into the Royal Navy on this day … not supported or even recorded in
+      any official documentation」。5 月 15 日实际是她离开 Rosyth 赴普利茅斯的日子。
+      另有第三个日期 1920-03-05（建成/完工），navypedia 站 15.5.1920——
+      三个数字分别是「建成」「commission」「交付」三个口径。
+
+  - field: construction.cost
+    value: 6025000
+    unit: count
+    src: [hmshood-construction]
+    valid: { from: 1920-03-29 }
+    confidence: B
+    note: '单位英镑（£），1920 年前后币值。当时属英国海军史上最贵的单舰之一。'
+
+  - field: construction.building_time_days
+    value: 1436
+    unit: count
+    src: [hmshood-timeline]
+    valid: { from: 1920-03-29 }
+    confidence: C
+    note: >
+      1916-04-21 下单至 1920-03-29 服役共 1,436 天。
+      这是本项目按日期差算出的推算值，来源里没有直接给这个数字，故标 C 档。
+
+  # ============================================================
+  # 主尺度
+  # ============================================================
+  - field: dimensions.length.oa
+    value: 262.3
+    unit: m
+    src: [hoodspecs-dimensions]
+    valid: { from: 1941-05-01 }
+    confidence: B
+    note: 原值 860 ft 7 in。全长含舰艏撞角突出部。
+
+  - field: dimensions.length.wl
+    value: 259.2
+    unit: m
+    src: [hoodspecs-dimensions]
+    valid: { from: 1941-05-01 }
+    confidence: B
+    note: 原值 850 ft 5 in。水线长，吃水随载重变化时以此为准。
+
+  - field: dimensions.length.pp
+    value: 247.0
+    unit: m
+    src: [hoodspecs-dimensions]
+    valid: { from: 1941-05-01 }
+    confidence: B
+    note: 原值 810 ft 6 in。垂线间长。
+
+  - field: dimensions.beam.max
+    value: 32.0
+    unit: m
+    src: [hoodspecs-dimensions]
+    valid: { from: 1931-03-10 }
+    confidence: B
+    note: >
+      原值 105 ft 2.5 in，含 1929-1931 年加装的防雷鼓包。
+      加装鼓包前的最大宽是 103 ft 11.5 in（静宽 31.7 m）。
+      **模型制作注意**：鼓包是横贯水线的一圈外凸结构，不是局部补丁，
+      它直接改变了水线以下的舰体轮廓。
+
+  - field: dimensions.beam.wl
+    value: 28.9
+    unit: m
+    src: [hoodspecs-dimensions]
+    valid: { from: 1941-05-01 }
+    confidence: C
+    note: 原值约 95 ft。三个宽度（静宽 31.7 / 最大 32.0 / 水线 28.9）口径不同，别混用。
+
+  - field: dimensions.draught.mean
+    value: 8.6
+    unit: m
+    src: [hoodspecs-dimensions]
+    valid: { from: 1920-03-29, to: 1929-06-02 }
+    confidence: C
+    note: 1920 年轻载吃水 28 ft 3 in。
+
+  - field: dimensions.draught.max
+    value: 10.1
+    unit: m
+    src: [hoodspecs-dimensions]
+    valid: { from: 1939-01-01 }
+    confidence: C
+    note: >
+      1939 年深载吃水 33 ft 4 in。1920 年深载是 31 ft 11 in（9.7 m）——
+      这个增量一半来自改装加的设备，一半来自年月积累的载重。
+
+  - field: dimensions.depth.molded
+    value: 15.4
+    unit: m
+    src: [hoodspecs-dimensions]
+    valid: { from: 1941-05-01 }
+    confidence: B
+    note: 原值 50.5 ft，龙骨底到舷侧甲板面，舯部量取。
+
+  # ============================================================
+  # 排水量
+  #
+  # 权威专题站的图只给了 Light 与 Deep 两档。
+  # 「标准排水量」「满载排水量」在这个来源里只有定义、没有数值——
+  # 所以那两个字段本文件不写。这是有意的留白，不是遗漏。
+  # ============================================================
+  - field: displacement.empty
+    value: 42752
+    unit: t
+    src: [hoodspecs-dimensions]
+    valid: { from: 1939-01-01, to: 1940-12-31 }
+    confidence: B
+    note: >
+      1939 年的 Light 状态（无燃油、满弹药、50% 给养、满员）42,752 t。
+      1920 年同口径是 41,125 t，1931 年是 42,037 t，1940 年是 42,462 t——
+      四个数字是同一艘船在四个年份的状态，不是四个说法，所以分时间窗写。
+
+  - field: displacement.deep
+    value: 48650
+    unit: t
+    src: [hoodspecs-dimensions]
+    valid: { from: 1939-01-01, to: 1940-12-31 }
+    confidence: B
+    note: >
+      1939 年 Deep 状态（满弹药、6 个月给养、满员、最大燃油）48,650 t。
+      1920 年 46,680 t / 1931 年 48,000 t / 1940 年 48,360 t。
+      这一档最接近读者心里的「满载」，但它严格说不是满载。
+
+  - field: displacement.standard
+    value: 42670
+    unit: t
+    src: [navypedia-hood]
+    valid: { from: 1939-01-01 }
+    confidence: C
+    comparable: false
+    note: >
+      navypedia 记「normal 42,670 t」。这一档与专题站的 Light 口径接近
+      （1931 年 42,037 t）但不相等，且 normal 本身不是标准排水量。
+      并列保留，供读者判断；页面主值取专题站的 Light 口径。
+      【2026-11-18】标 comparable: false —— 来源自己写的是 normal，
+      不是字段要求的条约标准排水量口径。对比器不得拿它与其他舰的
+      标准排水量排高低，否则胡德会显得比实际更轻。
+
+  # ============================================================
+  # 动力
+  # ============================================================
+  - field: propulsion.plant_type
+    value: steam_turbine
+    unit: null
+    src: [navypedia-hood]
+    valid: { from: 1920-03-29 }
+    confidence: A
+
+  - field: propulsion.boiler.count
+    value: 24
+    unit: count
+    src: [hoodspecs-machinery, navypedia-hood]
+    valid: { from: 1920-03-29 }
+    confidence: A
+    note: 24 台 Yarrow 三鼓小水管锅炉，全部燃油专烧。
+
+  - field: propulsion.boiler.type
+    value: Yarrow 三鼓小水管锅炉
+    unit: null
+    src: [hoodspecs-machinery]
+    valid: { from: 1920-03-29 }
+    confidence: B
+
+  - field: propulsion.boiler.manufacturer
+    value: Yarrow
+    unit: null
+    src: [hoodspecs-machinery]
+    valid: { from: 1920-03-29 }
+    confidence: B
+
+  - field: propulsion.boiler.pressure
+    value: 16
+    unit: atm
+    src: [hoodspecs-machinery]
+    valid: { from: 1920-03-29 }
+    confidence: C
+    note: >
+      原值 235 psi，约合 16.0 atm。
+      这个压力在 1920 年不算低，但到 1940 年已落后于美德新舰
+      （俾斯麦号 55-56 atm、450 °C）——蒸汽参数的代差是胡德号动力系统
+      在二战中最大的短板，也是它无法简单换锅炉升级的原因。
+
+  - field: propulsion.turbine.count
+    value: 4
+    unit: count
+    src: [hoodspecs-machinery, navypedia-hood]
+    valid: { from: 1920-03-29 }
+    confidence: A
+
+  - field: propulsion.turbine.type
+    value: Brown-Curtis 齿轮传动汽轮机（单级减速，含巡航级）
+    unit: null
+    src: [hmshood-construction]
+    valid: { from: 1920-03-29 }
+    confidence: B
+    note: >
+      construction.htm 原话「Brown Curtis geared turbines, were the most
+      powerful manufactured at that time with a designed output of 144,000 shp」。
+      设巡航级是为远洋巡游的燃油经济性——这一点与俾斯麦号正好相反
+      （德舰没有巡航涡轮，低速经济性差）。
+
+  - field: propulsion.power.design
+    value: 144000
+    unit: hp
+    src: [hmshood-construction, hoodspecs-machinery]
+    valid: { from: 1920-03-29 }
+    confidence: A
+
+  - field: propulsion.power.trial
+    value: 151000
+    unit: hp
+    src: [hmshood-construction]
+    valid: { from: 1920-03-18 }
+    confidence: A
+    note: 1920-03-18 在 Arran 测速段跑出 151,000 shp。
+
+  - field: propulsion.speed.design
+    value: 32
+    unit: kn
+    src: [hmshood-construction]
+    valid: { from: 1920-03-29 }
+    confidence: A
+
+  - field: propulsion.speed.trial
+    value: 32.07
+    unit: kn
+    src: [hmshood-construction]
+    valid: { from: 1920-03-18 }
+    confidence: A
+    note: 排水量约 42,000 t、6 级风条件下的实测值。
+
+  - field: propulsion.speed.max
+    value: 28.8
+    unit: kn
+    src: [hoodadm116pow]
+    valid: { from: 1941-05-24 }
+    confidence: B
+    note: >
+      1941-05-24 实战航速。威尔士亲王号导航官 Rowell 证词里
+      Briggs 说「we were doing 29 knots」，同页记录改为 28.8 kn。
+      二十二年船龄 + 未大修过的动力系统，比设计值掉了三节多——
+      这直接影响了丹麦海峡那天的战术：胡德号追不上、也跑不掉。
+
+  - field: propulsion.range.max
+    value: 4500
+    unit: nmi
+    src: [hoodspecs-machinery]
+    valid: { from: 1920-03-29 }
+    confidence: C
+    note: >
+      4,500 海里 @ 20 节。另一说 5,000 海里 @ 18 节，navypedia 给
+      7,500 海里 @ 14 节（三者口径与估算方法不同，差异很大，
+      本站不裁决，三条并列）。
+
+  - field: propulsion.range.at_speed
+    value: 20
+    unit: kn
+    src: [hoodspecs-machinery]
+    valid: { from: 1920-03-29 }
+    confidence: C
+
+  - field: propulsion.fuel.capacity
+    value: 4000
+    unit: t
+    src: [hoodspecs-armour]
+    valid: { from: 1920-03-29, to: 1929-06-02 }
+    confidence: C
+    note: >
+      专题站装甲页记「常规约 1,200 t、最大 4,000 t」。
+      另有 3,895 t（navypedia）、4,600 t（1930 年代手册）、
+      4,615 t（1931 年改装后，navypedia）——四个数字并列。
+      燃油容量是胡德号最混乱的一组数据，没有任何两个来源完全一致。
+
+  - field: propulsion.fuel.capacity
+    value: 4615
+    unit: t
+    src: [navypedia-hood]
+    valid: { from: 1931-03-10 }
+    confidence: C
+    note: 1931 年大改装后油舱扩容至 4,615 t。与上一条构成时间窗分歧。
+
+  - field: propulsion.shafts
+    value: 4
+    unit: count
+    src: [navypedia-hood, hoodspecs-machinery]
+    valid: { from: 1920-03-29 }
+    confidence: A
+
+  - field: propulsion.propeller.count
+    value: 4
+    unit: count
+    src: [hoodspecs-machinery]
+    valid: { from: 1920-03-29 }
+    confidence: B
+    note: 四具三叶锰青铜螺旋桨，直径 15 ft，每只约 20 t。轴径 28.5 in。
+
+  - field: propulsion.propeller.diameter
+    value: 4.57
+    unit: m
+    src: [hoodspecs-machinery]
+    valid: { from: 1920-03-29 }
+    confidence: B
+
+  # ============================================================
+  # 防护（本级设计值的单舰落地 + 改装带来的变化）
+  # ============================================================
+  - field: protection.torpedo_bulge.type
+    value: 外置防雷鼓包（1929-1931 年改装加装，横贯水线）
+    unit: null
+    src: [navypedia-hood]
+    valid: { from: 1931-03-10 }
+    confidence: B
+    note: >
+      原始设计没有外置鼓包，水下防护纵深只有 3.1 m。
+      鼓包是为弥补这个短板加上的，同时带来两个副作用：
+      最大宽从 31.7 m 涨到 32.0 m（进出干船坞与水道的余量变小），
+      以及航速略有下降。
+
+  - field: protection.armor.thickness
+    value: 76
+    unit: mm
+    qual: { part: deck, region: main }
+    src: [navypedia-hood, hoodadm116]
+    valid: { from: 1941-05-24 }
+    confidence: B
+    note: >
+      弹药库上方主装甲甲板 76 mm。这个数字是沉没争议的核心之一：
+      调查委员会的技术结论指出，俾斯麦号 38 cm 炮弹的落角在这个距离
+      足以穿透这层甲板，而它的上方只有一层 19 mm 的上甲板。
+      委员会原话「It was known that HOOD's protection was poor by modern
+      standards」指的主要就是水平防护，不是那条 305 mm 的装甲带。
+
+  # ============================================================
+  # 武备 — 武器实体
+  # ============================================================
+  - field: weapon.designation
+    about: weapon:15in-42-mk1
+    value: 15 英寸/L42 BL Mark I
+    unit: null
+    src: [navweaps-15in-42-mk1]
+    valid: { from: 1920-03-29 }
+    confidence: A
+
+  - field: weapon.nation
+    about: weapon:15in-42-mk1
+    value: united_kingdom
+    unit: null
+    src: [navweaps-15in-42-mk1]
+    valid: { from: 1920-03-29 }
+    confidence: A
+
+  - field: weapon.category
+    about: weapon:15in-42-mk1
+    value: naval_gun
+    unit: null
+    src: [navweaps-15in-42-mk1]
+    valid: { from: 1920-03-29 }
+    confidence: A
+
+  - field: weapon.bore
+    about: weapon:15in-42-mk1
+    value: 381
+    unit: mm
+    src: [navweaps-15in-42-mk1]
+    valid: { from: 1920-03-29 }
+    confidence: A
+
+  - field: weapon.caliber_length
+    about: weapon:15in-42-mk1
+    value: 42
+    unit: ratio
+    src: [navweaps-15in-42-mk1]
+    valid: { from: 1920-03-29 }
+    confidence: A
+    note: 炮身全长 16.520 m，重 101,605 kg。药室 502.3 dm³，膛线 76 条。
+
+  - field: weapon.projectile_weight
+    about: weapon:15in-42-mk1
+    value: 879
+    unit: kg
+    qual: { shell_type: apc }
+    src: [navweaps-15in-42-mk1]
+    valid: { from: 1920-03-29 }
+    confidence: B
+    note: >
+      6crh 被帽穿甲弹 879 kg（1,938 lbs）。
+      一战时期的 4crh APC 是 871 kg（1,920 lbs）——弹形改进后重了 8 kg。
+      这个弹重比俾斯麦号的 800 kg 重约 10%，是英国 15 英寸炮
+      穿透力的重要来源，也是它炮管寿命较短的代价。
+
+  - field: weapon.muzzle_velocity
+    about: weapon:15in-42-mk1
+    value: 746
+    unit: mps
+    qual: { shell_type: apc }
+    src: [navweaps-15in-42-mk1]
+    valid: { from: 1920-03-29 }
+    confidence: B
+    note: >
+      6crh APC 标准装药 746 m/s。另有 804 m/s（6crh 超装药）与
+      752 m/s（4crh 标准装药）。**超装药不发给仰角 30 度的炮座**，
+      因为炮管磨损与炮座应力不可接受——这条规定值得单独记住。
+
+  - field: weapon.rate_of_fire
+    about: weapon:15in-42-mk1
+    value: 2
+    unit: rpm
+    src: [navweaps-15in-42-mk1]
+    valid: { from: 1920-03-29 }
+    confidence: B
+    note: >
+      每分钟 2 发。Mark II 炮座标称装填周期 32 秒（Mark I 是 36 秒）。
+      **实战中打不出这个数**：丹麦海峡胡德号在约 8 分钟里只完成
+      大约 4-5 次齐射（8 门炮约 40 发），主因是指挥与观测时间，
+      不是装填机构。
+
+  - field: weapon.barrel_life
+    about: weapon:15in-42-mk1
+    value: 335
+    unit: count
+    src: [navweaps-15in-42-mk1]
+    valid: { from: 1920-03-29 }
+    confidence: B
+    note: 炮管寿命约 335 发（超装药会显著缩短）。
+
+  - field: weapon.ammo_outfit
+    about: weapon:15in-42-mk1
+    value: 100
+    unit: count
+    src: [navweaps-15in-42-mk1]
+    valid: { from: 1939-12-01 }
+    confidence: B
+    note: >
+      战时每炮 80 APC + 20 CPC。
+      建成时是每炮 289 CPC + 672 APC + 30 Shrapnel + 82 练习弹（共约 4,341 发）；
+      1929-31 改装后改为 160 CPC + 640 APC + 48 shrapnel + 96 练习弹，
+      省下约 203 t 重量；1939 年开战时进一步压缩到每炮 100 发。
+
+  - field: weapon.range.max
+    about: weapon:15in-42-mk1
+    value: 26520
+    unit: m
+    src: [navweaps-15in-42-mk1]
+    valid: { from: 1920-03-29 }
+    confidence: B
+    note: >
+      30 度仰角、6crh APC 的最大射程约 29,000 码（26,520 m）。
+      具体值与弹型、装药相关，这里是常用口径。
+      丹麦海峡的交战距离约 17,000-20,000 m，远未到这个极限。
+
+  # ============================================================
+  # 武备 — 炮位实体
+  # ============================================================
+  - field: mount.label_name
+    about: mount:hood-15in-twin
+    value: A / B / X / Y
+    unit: null
+    src: [navweaps-15in-42-mk1]
+    valid: { from: 1920-03-29 }
+    confidence: A
+    note: >
+      四座炮塔的编号名称。A、B 两座在前（B 为背负式），X、Y 两座在后（Y 为背负式）。
+      胡德号没有德舰那种「Anton / Bruno」命名体系，
+      用英式的字母编号——这是模型说明书上最容易搞混的地方。
+
+  - field: mount.weapon
+    about: mount:hood-15in-twin
+    value: weapon:15in-42-mk1
+    unit: null
+    src: [navweaps-15in-42-mk1]
+    valid: { from: 1920-03-29 }
+    confidence: A
+
+  - field: mount.turret_designation
+    about: mount:hood-15in-twin
+    value: Mark II
+    unit: null
+    src: [navweaps-15in-42-mk1]
+    valid: { from: 1920-03-29 }
+    confidence: A
+    note: >
+      **Mark II 炮座只有胡德号用过**，这是它作为一艘独舰最实在的凭据。
+      与 Mark I 的区别逐条：炮座更高（为容纳更大的仰角）、装甲更厚、
+      正面护板是多边形（战列舰式）而非圆弧形、
+      四座炮塔全装 30 英尺（9.17 m）MG14 测距仪（Mark I 战列舰只在 B、X 塔装）、
+      装填室与药包提升机的防火密性改进、增设装甲军官室、
+      火炮复进由液压改为气动。
+
+  - field: mount.type
+    about: mount:hood-15in-twin
+    value: twin_turret
+    unit: null
+    src: [navweaps-15in-42-mk1]
+    valid: { from: 1920-03-29 }
+    confidence: A
+
+  - field: mount.barrels
+    about: mount:hood-15in-twin
+    value: 2
+    unit: count
+    src: [navweaps-15in-42-mk1]
+    valid: { from: 1920-03-29 }
+    confidence: A
+
+  - field: mount.count
+    about: mount:hood-15in-twin
+    value: 4
+    unit: count
+    src: [navweaps-15in-42-mk1]
+    valid: { from: 1920-03-29 }
+    confidence: A
+
+  - field: mount.weight
+    about: mount:hood-15in-twin
+    value: 894000
+    unit: kg
+    src: [navweaps-15in-42-mk1]
+    valid: { from: 1920-03-29 }
+    confidence: A
+    note: >
+      880 长吨 = 894 公吨。Mark I 是 770 长吨（782 t）、
+      Mark I/N 改装型 815 长吨（828 t）——胡德号的炮座是三者中最重的，
+      多出来的重量全在装甲与更高的炮座结构上。
+
+  - field: mount.elevation.max
+    about: mount:hood-15in-twin
+    value: 30
+    unit: deg
+    src: [navweaps-15in-42-mk1]
+    valid: { from: 1920-03-29 }
+    confidence: A
+    note: >
+      仰角 -5 / +30 度。**这是胡德号相对英国其他 15 英寸舰的关键优势**：
+      Mark I 只有 +20 度，30 度带来约 4,000 码的射程增量。
+      模型制作上，炮管俯仰角度画错是最容易被挑出来的错误。
+
+  - field: mount.traverse
+    about: mount:hood-15in-twin
+    value: -150 / +150 度，回转速度 2 度/秒
+    unit: null
+    src: [navweaps-15in-42-mk1]
+    valid: { from: 1920-03-29 }
+    confidence: B
+    note: 回转靠四条滚道上的 48 个滚轮，液压驱动，速度只有 2 度/秒——比德舰的 5 度/秒慢得多。
+
+  - field: mount.rangefinder_count
+    about: mount:hood-15in-twin
+    value: 4
+    unit: count
+    src: [navweaps-15in-42-mk1]
+    valid: { from: 1920-03-29 }
+    confidence: A
+    note: 四座炮塔各一具 30 英尺（9.17 m）MG14 测距仪，全部装在炮塔后部。
+
+  # ============================================================
+  # 火控与雷达
+  # ============================================================
+  - field: sensors.fire_control.rpc
+    about: null
+    value: none
+    unit: null
+    src: [hoodfirecontrol]
+    valid: { from: 1920-03-29 }
+    confidence: B
+    note: >
+      主炮没有遥控动力（RPC），全靠指挥仪传令、炮塔人工跟随。
+      这在一战设计的舰上是常态，但到 1941 年已明显落后：
+      俾斯麦号的炮塔有俯仰遥控（回转仍是人工）。
+
+  - field: sensors.director.count
+    value: 1
+    unit: count
+    src: [hoodfirecontrol]
+    valid: { from: 1920-03-29 }
+    confidence: C
+    note: >
+      15 英寸指挥仪塔（Director Tower）一座，位于 Spotting Top 上方。
+      这一项的来源描述不够明确（是否计入副炮指挥仪存疑），故标 C。
+
+  - field: sensors.director.type
+    value: 15 英寸三联柱式指挥仪（tripod-type director）
+    unit: null
+    src: [hoodfirecontrol]
+    valid: { from: 1920-03-29 }
+    confidence: C
+
+  - field: sensors.radar.installed
+    value: Type 284 主炮测距雷达
+    unit: null
+    src: [hmshood-timeline]
+    valid: { from: 1941-03-17, to: 1941-05-24 }
+    confidence: A
+    note: >
+      1941-01-16 至 03-17 在 Rosyth 的改装中加装，有效距离约 10 海里。
+      **为了装它，前上桅被拆掉了**——因为主桅挡住 284 天线的旋转。
+      这是个很实在的模型细节：1941 年 5 月的胡德号与前上桅完好的状态不一样。
+
+  - field: sensors.radar.installed
+    value: Type 279M 对空预警雷达
+    unit: null
+    src: [hmshood-timeline]
+    valid: { from: 1941-03-17, to: 1941-05-24 }
+    confidence: A
+    note: 与 284 同期安装，7.5 m 波长。
+
+  - field: sensors.radar.count
+    value: 2
+    unit: count
+    src: [hmshood-timeline]
+    valid: { from: 1941-03-17, to: 1941-05-24 }
+    confidence: B
+    note: >
+      沉没时只有这两套雷达。**没有火控雷达可以测距解算、没有炮瞄雷达、
+      没有 IFF**——与对面俾斯麦号的三台 FuMO 23 相比，
+      在夜战与低能见度条件下的差距是结构性的。
+      这也是丹麦海峡那天胡德号一直打错目标的技术背景之一。
+
+  - field: sensors.rangefinder.baseline
+    value: 9.17
+    unit: m
+    src: [navweaps-15in-42-mk1]
+    valid: { from: 1920-03-29 }
+    confidence: B
+    note: >
+      30 英尺（9.17 m）基线。四座主炮塔各一具，指挥仪塔一具，
+      司令塔顶一具。此前 Spotting Top 上还有一具 15 英尺的，1941 年装 284 时拆除。
+
+  # ============================================================
+  # 航空
+  # ============================================================
+  - field: aviation.catapult.count
+    value: 1
+    unit: count
+    src: [navypedia-hood]
+    valid: { from: 1931-03-10, to: 1932-06-30 }
+    confidence: B
+    note: >
+      1929-1931 年改装时装 F-IV-H 弹射器与吊车，位于 Y 炮塔后方的艉甲板。
+      1932 年中拆除。**胡德号在二战期间没有任何弹射器**，
+      这一点常被画错——很多模型说明书给 1941 年的状态配了水上飞机。
+
+  - field: aviation.catapult.type
+    value: F-IV-H（火药弹射器）
+    unit: null
+    src: [navypedia-hood]
+    valid: { from: 1931-03-10, to: 1932-06-30 }
+    confidence: B
+
+  - field: aviation.aircraft.types
+    value: Fairey Flycatcher / Fairey IIIF（1930 年代初）
+    unit: null
+    src: [navypedia-hood, hmshood-timeline]
+    valid: { from: 1931-03-10, to: 1932-06-30 }
+    confidence: C
+    note: >
+      弹射器在役期间搭载过 Fairey Flycatcher 与 Fairey IIIF。
+      另有 B、X 炮塔顶的起飞平台（1920 年记录为 A、B 炮塔，两说有分歧）。
+      全部航空设备在 1933 年 12 月前拆除。
+
+  # ============================================================
+  # 编制与损失
+  # ============================================================
+  - field: service.complement.standard
+    value: 1237
+    unit: persons
+    src: [hoodspecs-complement, hmshood-timeline]
+    valid: { from: 1940-06-01 }
+    confidence: B
+    note: >
+      1940 年 6 月核准的战时编制 1,237 人（ADM 136/13）。
+      和平时期约 1,200 人，战时 1,400+。
+
+  - field: service.complement.wartime
+    value: 1418
+    unit: persons
+    src: [hmshood-timeline]
+    valid: { from: 1941-05-24 }
+    confidence: B
+    note: >
+      1941-05-24 沉没时实际在舰 1,418 人：
+      皇家海军 89 名军官 + 约 1,157 名士兵，
+      皇家海军陆战队约 4 名军官 + 约 161 名士兵，
+      NAAFI 文职约 7 人。
+
+  - field: service.casualties
+    value: 1418
+    unit: persons
+    src: [hmshood-timeline, hooddenmark3]
+    valid: { from: 1941-05-24 }
+    confidence: B
+    note: >
+      阵亡 1,418 人。协会核证的「损失」数字是 **1,415**——
+      差额来自 3 名生还者（他们是幸存者，不计入损失），
+      以及个别名册统计口径的出入。本站两个数字都给，
+      因为「在舰 1,418 / 阵亡 1,415 / 生还 3」这组账本身需要读者自己看。
+      见习军官（midshipman）核实为 14 人（13 名 Midshipman + 1 名
+      Probationary Temporary Midshipman），其中 13 人阵亡——
+      「舰上有大量 cadet」这个流传的说法没有原句支撑。
+
+  - field: service.survivors
+    value: 3
+    unit: persons
+    src: [hooddenmark3]
+    valid: { from: 1941-05-24 }
+    confidence: A
+    note: >
+      三名生还者：William John Dundas（见习军官）、Robert Ernest Tilburn（一等兵）、
+      Ted Briggs（信号兵）。他们在冰冷海水中约 3 小时后被驱逐舰 Electra 救起。
+      全舰 1,418 人只有 3 人活下来，生还率 0.21%——
+      这个数字本身就是「弹药库爆炸」这个结论最有力的旁证：
+      舰体在不到三分钟内断成两截并下沉，绝大多数人没有机会离舰。
+
+  - field: construction.fate_date
+    value: 1941-05-24
+    unit: date
+    src: [hoodadm116, hooddenmark2]
+    valid: { from: 1941-05-24 }
+    confidence: A
+    note: >
+      约 06:00 沉没（ADM 116/4351 原话「at 0600 HOOD blew up and sank in
+      just under 3 minutes」）。另有「0559-0600」的区间表述。
+      **部分资料写 06:01，本次抓到的所有一手正文里都没有这个时刻**，
+      本站取 06:00 并在战役页注明时间戳可能有最多 2 分钟误差
+      （威尔士亲王号导航官 Rowell 的证词）。
+
+  - field: construction.fate_type
+    value: sunk_by_enemy
+    unit: null
+    src: [hoodadm116]
+    valid: { from: 1941-05-24 }
+    confidence: A
+    note: >
+      被敌方火力击沉。与俾斯麦号不同，胡德号的沉没**没有自沉争议**——
+      两次调查委员会都认定是德舰炮弹击穿装甲后引爆艉部弹药库。
+      但「是哪一发、从哪条路径进去的」仍有争议，另见 narrative。
+
+  - field: service.fate_category
+    value: 弹药库爆炸，舰体在不到三分钟内断为两截沉没
+    unit: null
+    src: [hoodadm116, hooddenmark3]
+    valid: { from: 1941-05-24 }
+    confidence: A
+    note: >
+      残骸 2001-07 由 David L. Mearns 在约 9,200 英尺深处找到，
+      舰艏与舰艉都已与主舰体脱离。舰钟 2015 年 8 月打捞出水，
+      现藏国家皇家海军博物馆。
+
+  - field: service.fate_authority
+    value: 1941-09-12 调查委员会（ADM 116/4351）认定艉部弹药库爆炸，无人应受责备
+    unit: null
+    src: [hoodadm116]
+    valid: { from: 1941-09-12 }
+    confidence: A
+    note: >
+      委员会原话：「I do not think that there is much doubt that the HOOD was
+      lost as the result of the explosion of the after magazines and that
+      no blame attaches to the Vice-Admiral Commanding the Squadron,
+      the Captain or anyone else.」
+      同一份报告里另一句更值得记住：「It was known that HOOD's protection was
+      poor by modern standards and had it not been for the war she would by
+      now have been undergoing complete reconstruction.」
+
+  # ============================================================
+  # 雷达 — 武器实体
+  # 型号身份三条（designation / nation / category），装舰窗口仍在 sensors.* 里。
+  # 型号首服役年（weapon.in_service_from）**未获取**，不写。
+  # ============================================================
+  - field: weapon.designation
+    about: weapon:type-284
+    value: Type 284 主炮测距雷达（main armament ranging radar）
+    unit: null
+    src: [hmshood-association, hmshood-timeline]
+    valid: { from: 1941-03-17 }
+    confidence: B
+    note: >
+      本舰 1941 年 Rosyth 改装中装两型雷达之一。**安装完成日期两说并列，不裁决**：
+      hmshood 技术页记改装期「16 January - 15 March 1941」，
+      timeline 记「16 January – 17 March」。本 fact 的 valid.from 取较晚的 03-17，
+      以免把尚未装完的时段算作已装。
+      性能数值（50 cm 波长、25 kw、~600 MHz、10 nm）来自 hmshood 技术页，
+      本站注册表没有对应字段，故不入库。
+
+  - field: weapon.nation
+    about: weapon:type-284
+    value: united_kingdom
+    unit: null
+    src: [hmshood-association, hmshood-timeline]
+    valid: { from: 1941-03-17 }
+    confidence: B
+
+  - field: weapon.category
+    about: weapon:type-284
+    value: radar
+    unit: null
+    src: [hmshood-association, hmshood-timeline]
+    valid: { from: 1941-03-17 }
+    confidence: B
+
+  - field: weapon.designation
+    about: weapon:type-279m
+    value: Type 279M 对空预警雷达（air warning radar）
+    unit: null
+    src: [hmshood-association, hmshood-timeline]
+    valid: { from: 1941-03-17 }
+    confidence: B
+    note: >
+      Type 279 的改进型（M 表示改良记法），单列，不并入 type-279。
+      **本舰装的是哪一型，两说并列，不裁决**：hmshood 技术页与 timeline 都写
+      Type 279M；navypedia 记本舰 1941 年初装的是 **Type 79B**。
+      两条都保留，本文件 sensors.radar.installed 里记的是 279M。
+      性能（7.5 m 波长、60/70 kW、39-42 MHz、精度 3°、高空 100 nm）无对应字段，不入库。
+
+  - field: weapon.nation
+    about: weapon:type-279m
+    value: united_kingdom
+    unit: null
+    src: [hmshood-association, hmshood-timeline]
+    valid: { from: 1941-03-17 }
+    confidence: B
+
+  - field: weapon.category
+    about: weapon:type-279m
+    value: radar
+    unit: null
+    src: [hmshood-association, hmshood-timeline]
+    valid: { from: 1941-03-17 }
+    confidence: B
+
+  # ============================================================
+  # 舰载机 — 武器实体
+  # ============================================================
+  - field: weapon.designation
+    about: weapon:flycatcher
+    value: Fairey Flycatcher 舰载战斗机
+    unit: null
+    src: [hmshood-association, navypedia-hood]
+    valid: { from: 1931-03-10, to: 1933-12-31 }
+    confidence: C
+    note: >
+      本舰 1930 年代初搭载 1–2 架，至 1933 年止。
+      **具体撤装月份未获取**，valid.to 取 1933 年末，是年份界的写法而非精确日期。
+      机型参数（马力、极速、翼展）本站无来源，一律不写。
+
+  - field: weapon.nation
+    about: weapon:flycatcher
+    value: united_kingdom
+    unit: null
+    src: [hmshood-association, navypedia-hood]
+    valid: { from: 1931-03-10, to: 1933-12-31 }
+    confidence: C
+
+  - field: weapon.category
+    about: weapon:flycatcher
+    value: aircraft
+    unit: null
+    src: [hmshood-association, navypedia-hood]
+    valid: { from: 1931-03-10, to: 1933-12-31 }
+    confidence: C
+
+  - field: weapon.designation
+    about: weapon:fairy-iiif
+    value: Fairey IIIF 舰载侦察/校射机
+    unit: null
+    src: [hmshood-association, navypedia-hood]
+    valid: { from: 1931-03-10, to: 1933-12-31 }
+    confidence: C
+    note: >
+      1929–1933 年间本舰搭载 1 架。1931-06-26 损失一架（timeline3 有记）。
+      **具体撤装月份未获取**，valid.to 取 1933 年末。
+      机型参数本站无来源，不写。
+
+  - field: weapon.nation
+    about: weapon:fairy-iiif
+    value: united_kingdom
+    unit: null
+    src: [hmshood-association, navypedia-hood]
+    valid: { from: 1931-03-10, to: 1933-12-31 }
+    confidence: C
+
+  - field: weapon.category
+    about: weapon:fairy-iiif
+    value: aircraft
+    unit: null
+    src: [hmshood-association, navypedia-hood]
+    valid: { from: 1931-03-10, to: 1933-12-31 }
+    confidence: C

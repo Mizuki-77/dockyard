@@ -1,0 +1,903 @@
+# 1941-05-26/27 最终战。
+#
+# 这一场跨两天，所以 timeline 的 time 一律写成 'MM-DD HH:MM'；
+# 丹麦海峡那一场在同一天内打完，用的是裸 'HH:MM'。两种写法不能在同一文件里混用
+# （validate.py 会拦）。
+#
+# 数据来源：Tovey 战报 ADM 234/509、Patterson（KGV 舰长）战报、英国海军部战争日志、
+# 英海军部对生还者的审讯 C.B. 4051 (24)、德方战争日志 KTB、kbismarck 的整理页。
+# 有争议的地方一条都没删，写进 data/narratives/bismarck.yaml 或各自的 note 里。
+
+id: last-battle
+name:
+  zh: 最终战与沉没
+  en: The Final Action
+date:
+  from: '1941-05-26'
+  to: '1941-05-27'
+# 海区：给「海战历史」左树做第一层分组。
+theater: atlantic
+period:
+  zh: 1941-05-26 至 1941-05-27
+  en: 26–27 May 1941
+location:
+  zh: 北大西洋，爱尔兰以西约 700 海里
+  en: North Atlantic, about 700 nm west of Ireland
+coordinates: 48°09′N 16°07′W
+scale:
+  zh: 2 艘战列舰 + 2 艘重巡 + 5 艘驱逐舰 + 1 艘航母
+  en: Two battleships, two heavy cruisers, five destroyers, one carrier
+summary:
+  zh: 舵机被打坏之后的一天两夜。英方几乎动用了整个本土舰队的可用兵力围歼一条失去机动力的战列舰，而她在最后半小时里仍然打出了第二轮跨射。她怎么沉的——炮火、自沉、还是两者叠加——至今没有定论。
+  en: A day and two nights after her steering was wrecked. Nearly every available Home Fleet unit closed
+    in on a battleship that could no longer steer, and she still straddled a British battleship in the
+    last half hour. How she sank — gunfire, scuttling, or both — is still not settled.
+belligerents:
+- side: axis
+  label:
+    zh: 德国
+    en: Germany
+  ships:
+  - name: Bismarck
+    ship_id: bismarck
+    role:
+      zh: 战列舰 · 编队旗舰
+      en: Battleship · fleet flagship
+- side: allies
+  label:
+    zh: 英国（含波兰驱逐舰 Piorun）
+    en: United Kingdom (with Polish destroyer Piorun)
+  ships:
+  - name: HMS King George V
+    role:
+      zh: 战列舰 · 本土舰队旗舰
+      en: Battleship · Home Fleet flagship
+  - name: HMS Rodney
+    role:
+      zh: 战列舰 · 原定赴波士顿修理
+      en: Battleship · en route to Boston for repairs
+  - name: HMS Norfolk
+    role:
+      zh: 重巡洋舰 · 整夜绕至东北做 flank marking
+      en: Heavy cruiser
+  - name: HMS Dorsetshire
+    role:
+      zh: 重巡洋舰 · 执行最后雷击
+      en: Heavy cruiser · delivered the final torpedoes
+  - name: HMS Sheffield
+    role:
+      zh: 轻巡洋舰 · 5-26 跟踪
+      en: Light cruiser · shadower on 26 May
+  - name: HMS Ark Royal
+    role:
+      zh: 航空母舰 · Force H
+      en: Aircraft carrier · Force H
+  - name: HMS Victorious
+    role:
+      zh: 航空母舰 · 5-24 空袭（5-26 已脱离、不在战场，见文首更正）
+      en: Aircraft carrier · 24 May strike only; detached well before 26–27 May
+  - name: HMS Cossack
+    role:
+      zh: 驱逐舰 · 第 4 驱逐舰分队旗舰
+      en: Destroyer · Captain (D)
+      4th Flotilla: null
+  - name: HMS Maori
+  - name: HMS Zulu
+  - name: HMS Sikh
+  - name: ORP Piorun
+    role:
+      zh: 驱逐舰 · 波兰海军
+      en: Destroyer · Polish Navy
+forces:
+- side: axis
+  guns:
+    zh: 8 × 38 cm SK C/34（4 座双联）+ 12 × 15 cm + 16 × 10.5 cm 高炮
+    en: 8 × 38 cm SK C/34 (4 twin turrets) + 12 × 15 cm + 16 × 10.5 cm AA
+  state:
+    zh: 航速 7 节、顶风；两舵卡死向左 12°，无法用主机保持航向；Anton/Bruno 可射，Cäsar/Dora 因舵损无法转向；左倾轻微至明显（各来源不一致）。
+    en: Seven knots, steering jammed 12° to port; Anton and Bruno could bear, Cäsar and Dora could not
+      be trained; slight to marked list to port depending on the account.
+  src:
+  - kbismarck-last-battle
+  - kbismarck-histoperi
+  - hmshood-tovey-dispatch
+- side: allies
+  guns:
+    zh: 罗德里号 9 × 40.6 cm（16"/45 Mark I，三座三联全在舰前部）+ 12 × 15.2 cm（6"/50 Mark XXIII，六座双联）；英王乔治五世号 10 × 35.6
+      cm（14"/45 Mark VII）+ 16 × 13.3 cm（5.25 英寸）；诺福克号、多塞特郡号各 8 × 20.3 cm（8"/50 Mark VIII）
+    en: Rodney 9 × 40.6 cm (16"/45 Mk I, all forward) + 12 × 15.2 cm (6"/50 Mk XXIII); KGV 10 × 35.6 cm
+      (14"/45 Mk VII) + 16 × 13.3 cm; Norfolk and Dorsetshire 8 × 20.3 cm (8"/50 Mk VIII) each
+  state:
+    zh: 罗德里号最高航速 21 节，已被英王乔治五世号追越、编在其后；炮术报告中 X 炮塔在前 25 次齐射中只有 6 次能瞄准目标，25 次后又有 9 次不能（合计 28 次）；战斗结束时 A
+      塔右炮因 tilting tray 卡死完全失效、B 塔左炮因下发射药提升机 double loaded 极短暂失效、B 塔中炮因两发弹无发射药暂时失效；4.7 英寸高炮全程未开火。英王乔治五世号
+      A 塔失效近 30 分钟、Y 塔 7 分钟、B 塔短暂失效，R.D/F 受损，有时一次 14 英寸齐射只有 1–2 门能打，只好改用全舷射。
+    en: Rodney's best speed was 21 knots and she had been overhauled by KGV. Her report records that X
+      turret could bear on only 6 of the first 25 salvoes and failed 9 more times; at the end A turret's
+      right gun was out (jammed tilting tray), B's left gun briefly out (double-loaded hoist) and B's
+      centre gun temporarily out. The 4.7-inch AA never fired. KGV had A turret out for nearly 30 minutes,
+      Y for 7 minutes, B briefly, her R.D/F damaged, and sometimes only one or two 14-inch guns per salvo.
+  src:
+  - kbismarck-rodney-report
+  - kbismarck-patterson-report
+  - navweaps-16in-45-mk1
+  - navweaps-14in-45-mk7
+  - navweaps-8in-50-mk8
+  - navweaps-6in-50-mk23
+- side: allies
+  air:
+    zh: 5-26 两波各 15 架 Swordfish（皇家方舟号 810/818/820 中队）；5-27 09:20 再起飞 12 架，抵达时未能攻击。**必须更正一个常见误解** —— 胜利号（HMS
+      Victorious）并未参加 5-26 夜至 5-27 的决战。她的 Swordfish 空袭发生在 5-24 深夜至 5-25 凌晨（对俾斯麦号，命中 1 雷），此后即脱离。Admiralty
+      War Diary 5-26 记她当日 09:55B 位于 39°05'N 26°05'W、天气不宜飞行，13:28B 已奉命赴克莱德湾加油 —— 距战场数百英里。5-26/27 在场的是皇家方舟号（Force
+      H）。
+    en: Two strikes of 15 Swordfish each on 26 May from Ark Royal; twelve more flown off at 0920 on 27
+      May but unable to attack. Victorious did NOT take part in the 26-27 May action — her Swordfish strike
+      was on the night of 24/25 May, after which she was detached, and on 26 May she was ordered to the
+      Clyde to refuel while far to the north.
+  src:
+  - hmshood-tovey-dispatch
+  - kbismarck-last-battle
+  - kbismarck-admiralty-war-diary
+timeline:
+- time: 05-26 03:00
+  text:
+    zh: 两架海岸司令部 Catalina 从北爱尔兰 Lough Erne（RAF Castle Archdale）起飞，分赴南北两条巡逻线。
+    en: Two Coastal Command Catalinas took off from Lough Erne, Northern Ireland, for the northern and
+      southern patrol lines.
+  src:
+  - kbismarck-chase
+- time: 05-26 03:25
+  text:
+    zh: 据美方随行观察员 Smith 少尉报告，他所在的 Catalina 于 03:25 起飞，04:30 经 Eagle Island 转入向西搜索航向，高度 500 英尺。
+    en: Ensign Smith's report gives take-off at 0325 and departure from Eagle Island at 0430, heading
+      west at 500 ft.
+  src:
+  - kbismarck-smith-report
+- time: 05-26 10:10
+  text:
+    zh: Catalina Z/209 在 49°33'N 21°47'W 附近发现一艘大型军舰，方位 345°、距离 8 英里；因云层遮挡一度无法确认身份。英方记载的发现者为 F/O Dennis
+      Briggs，实际操纵飞机的是随行的美国海军少尉 Leonard B. Smith（当时美国尚未参战，英方公报只写 Briggs）。
+    en: Catalina Z/209 sighted a large warship bearing 345°, 8 miles, near 49°33'N 21°47'W. Officially
+      credited to F/O Dennis Briggs; the aircraft was actually piloted by USN Ensign Leonard B. Smith.
+  src:
+  - kbismarck-smith-report
+  - kbismarck-chase
+- time: 05-26 10:30
+  major: true
+  text:
+    zh: 首次发现电报发出：「1 battleship, bearing 240°, distance 5 miles, course 150°. My position 49°33'N 21°47'W.」——注意方位与距离和
+      10:10 目视时不同，是发电时重新测的。
+    en: 'First sighting signal: "1 battleship, bearing 240°, distance 5 miles, course 150°, my position
+      49°33''N 21°47''W."'
+  src:
+  - kbismarck-catalina-reports
+  - kbismarck-coastal-command
+  - kbismarck-chase
+  - kbismarck-communiques
+- time: 05-26 10:35
+  text:
+    zh: 补充电报：敌航向 150°、航速 20 节，本机位置 49°28'N 21°50'W。
+    en: 'Supplementary signal: enemy course 150°, speed 20 knots, own position 49°28''N 21°50''W.'
+  src:
+  - kbismarck-catalina-reports
+- time: 05-26 10:39
+  text:
+    zh: 云层意外破开，几乎正好在俾斯麦号上空。德舰立即开火，Catalina 未及重回云中即被破片击中、机体多处穿孔。
+    en: The cloud broke directly over Bismarck; she opened fire at once and hit the Catalina with shrapnel
+      before it could regain cloud cover.
+  src:
+  - kbismarck-coastal-command
+  - kbismarck-smith-report
+- time: 05-26 10:45
+  text:
+    zh: Catalina 失去接触，敌最后位置 49°22'N 21°44'W。接触共中断 31 小时余后才重新建立。
+    en: Contact lost at 1045, enemy last seen at 49°22'N 21°44'W; the chase had been without contact for
+      over 31 hours.
+  src:
+  - kbismarck-catalina-reports
+- time: 05-26 11:14
+  text:
+    zh: 皇家方舟号的两架 Swordfish（2H，Hartley 机组）在 49°32'N 20°55'W 重新发现俾斯麦号，7 分钟后 2F（Callander 机组）也到达。此后又派出两架带远程油箱的
+      Swordfish 接力跟踪。
+    en: Two Ark Royal Swordfish (2H, Hartley crew) regained contact at 49°32'N 20°55'W; 2F (Callander)
+      arrived seven minutes later and two long-range Swordfish took over shadowing.
+  src:
+  - kbismarck-admiralty-war-diary
+  - kbismarck-chase
+  - kbismarck-histoperi
+- time: 05-26 13:30
+  text:
+    zh: Catalina M/240 报「1 艘战列舰，方位 180°、距离 4 英里、航向 130°」，本机位置 48°12'N 19°50'W。此后断续跟踪到 18:00（47°15'N 18°23'W）返航。
+    en: Catalina M/240 reported one battleship bearing 180°, 4 miles, course 130°, own position 48°12'N
+      19°50'W; shadowing continued intermittently until 1800.
+  src:
+  - kbismarck-catalina-reports
+- time: 05-26 14:50
+  text:
+    zh: 皇家方舟号第一波 15 架 Swordfish（Stewart-Moore 少校）起飞——其中 1 架中途返航。鱼雷装双联引信、定深 30 英尺（而非 34 英尺），因为当时皇家方舟号不确定目标到底是俾斯麦号还是欧根亲王号。
+    en: First Ark Royal strike force of 15 Swordfish (Lt-Cdr Stewart-Moore) took off; one turned back.
+      Torpedoes had duplex pistols set to 30 ft instead of 34 ft because the carrier was unsure whether
+      the target was Bismarck or Prinz Eugen.
+  src:
+  - kbismarck-chase
+  - hmshood-tovey-dispatch
+- time: 05-26 15:50
+  text:
+    zh: '**误击事件**：机群靠 ASV 在预期阵位约 20 英里处发现一艘军舰并穿云攻击——那是轻巡谢菲尔德号（舰长 Charles A. Larcom），英方并不知道她在俾斯麦号附近。11
+      枚鱼雷全部落空：2 枚入水即爆、3 枚横穿巡洋舰尾迹时爆炸、其余 6 枚被规避。谢菲尔德号一炮未还。'
+    en: 'The striking force attacked a ship detected by ASV about 20 miles from the expected enemy position
+      — the light cruiser Sheffield. Eleven torpedoes were dropped: two exploded on hitting the water,
+      three on crossing the wake, the rest were avoided. Sheffield did not fire a round in reply.'
+  src:
+  - hmshood-tovey-dispatch
+  - kbismarck-admiralty-war-diary
+  - kbismarck-chase
+- time: 05-26 17:05
+  text:
+    zh: 英舰队燃油告急：英王乔治五世号仅剩 1,200 吨（32%）燃油，罗德里号报告次晨 08:00 将不得不脱离。Tovey 下令主力减速至 22 节以省油，此时已被追越的罗德里号编在其后。
+    en: KGV had only 1,200 tons (32 per cent) of fuel left and Rodney reported she would have to part
+      company at 0800 next morning; speed was reduced to 22 knots at 1705 to economise fuel, with the
+      by-then overhauled Rodney formed astern.
+  src:
+  - hmshood-tovey-dispatch
+  - kbismarck-admiralty-war-diary
+- time: 05-26 17:40
+  text:
+    zh: 谢菲尔德号目视发现俾斯麦号，接管跟踪，并保持在西侧约 14 英里。
+    en: Sheffield made visual contact with Bismarck and took over shadowing, keeping about 14 miles to
+      the westward.
+  src:
+  - kbismarck-histoperi
+  - kbismarck-chase
+- time: 05-26 19:03
+  text:
+    zh: 俾斯麦号致西方集群：「燃油紧急，何时可得补给？」
+    en: 'Bismarck to Group West: "Fuel situation urgent. When can I expect replenishment?"'
+  src:
+  - kbismarck-histoperi
+- time: 05-26 19:15
+  major: true
+  text:
+    zh: 皇家方舟号第二波 15 架 Swordfish（Coode 少校）起飞，多为第一波飞机重新装弹加油。这一波换装触发引信、定深 22 英尺。起飞前受命先与谢菲尔德号会合、由她引导。
+    en: Second strike force of 15 Swordfish (Lt-Cdr Coode) flown off, mostly re-armed aircraft from the
+      first wave, now with contact pistols set to 22 ft, ordered to home via Sheffield first.
+  src:
+  - kbismarck-chase
+  - hmshood-tovey-dispatch
+- time: 05-26 19:48
+  text:
+    zh: U-556（Wohlfarth 上尉）发现声望号与皇家方舟号，但六天前打 HX-126 时已把鱼雷用尽，只能报出对方位置、航向与航速。
+    en: U-556 (Kptlt Wohlfarth) sighted Renown and Ark Royal but had no torpedoes left, having expended
+      them on convoy HX-126 six days earlier; she could only report position, course and speed.
+  src:
+  - kbismarck-chase
+- time: 05-26 20:47
+  text:
+    zh: 第二波攻击开始，持续约半小时。机群在俾斯麦号上空的锋面云下被打散，只能以小队或双机分批进入，德舰主副炮与高炮全程猛烈射击。**无 Swordfish 被击落**（4 架被破片击伤，其中 4C
+      数出 175 个弹孔）。至少 2 枚命中（一说是 3 枚）。英方战后的战俘审讯呈文把这次攻击记作 20:55–21:25，与 20:47 起算的叙述差约 8 分钟——两说并列。
+    en: The attack began at 2047 and lasted about half an hour. The force was split by a cold front; attacks
+      went in by sub-flights or pairs against intense fire. No Swordfish was lost (four were damaged by
+      splinters, one with 175 holes). At least two hits were scored. The Admiralty interrogation report
+      times the attack 2055–2125.
+  src:
+  - kbismarck-chase
+  - kbismarck-histoperi
+  - hmshood-tovey-dispatch
+  - admiralty-bismarck-interrogation
+- time: 05-26 21:05
+  major: true
+  text:
+    zh: 德方报文时间组 2105（记录时刻 21:14）：「BE 6192 方格，艉部中雷」。
+    en: 'German time-group 2105 (logged 2114): "Square BE 6192, hit by torpedo aft."'
+  src:
+  - kbismarck-ktb
+- time: 05-26 21:15
+  major: true
+  text:
+    zh: 德方报文时间组 2115：「舯部中雷」；同组另一电报：「舰已不可操纵」。两枚鱼雷的命中位置：一枚左舷舯部（多数能量被水下防护与装甲带吸收，仅结构与轻微进水），一枚艉部舵机区——**舷别左/右有争议（见争议
+      5）：kbismarck 早期叙述记左舷艉部、后文与最新残骸分析倾向右舷，英方一手审讯明确说右舷艉部**。左舵组联轴器严重损坏，**两舵卡死在向左 12°**（Junack 证词说左舵卡在 15°；英方审讯记
+      10–15° 并称舰「向右缓慢转圈」）。
+    en: 'Time-group 2115: "hit amidships" and "ship no longer manoeuvrable". One hit amidships to port
+      did little damage; the second struck the stern steering area — port or starboard is disputed (see
+      dispute 5). The coupling was wrecked and both rudders jammed at 12 degrees to port (Junack recalled
+      15 degrees; the Admiralty interrogation gives 10–15 degrees and has her turning slowly to starboard).'
+  src:
+  - kbismarck-ktb
+  - kbismarck-histoperi
+  - kbismarck-chase
+  - admiralty-bismarck-interrogation
+- time: 05-26 21:30
+  text:
+    zh: 俾斯麦号兜了一个整圈后不由自主朝西北顶风航行，此后只能兜大圈。艉部进水使操舵舱及邻近舱室淹没，修理须在水下进行，潜水员无法下潜；曾考虑炸掉舵，但怕伤及螺旋桨而放弃。
+    en: Bismarck circled and was then forced up into the north-west wind. The stern flooding put the steering
+      compartment under water; divers could not work and the idea of blowing the rudders off was dropped
+      for fear of damaging the propellers.
+  src:
+  - kbismarck-chase
+  - kbismarck-histoperi
+- time: 05-26 21:40
+  major: true
+  text:
+    zh: Lütjens 致 OKM 与西方集群：「舰已无法机动。将战斗至最后一发炮弹。元首万岁。」（英方维基记 23:40，德方电报时间组记 21:40——见争议 7）
+    en: 'Lütjens to OKM and Group West: "Ship unmanoeuvrable. We will fight to the last shell. Long live
+      the Führer." (21:40 in the German time-groups; some accounts give 23:40.)'
+  src:
+  - kbismarck-histoperi
+  - kbismarck-last-battle
+- time: 05-26 21:45
+  text:
+    zh: 谢菲尔德号发出最后一次敌情报告（21:40）后约 5 分钟，俾斯麦号在约 9 英里距离上向她打了 6 次齐射——前两群偏差很大，第三群跨射——未直接命中，但破片打坏其雷达、伤 12 人，其中
+      3 人后来死亡（Ordinary Seaman David T. George 当日阵亡、Able Seaman Ambrose Ling 5-27 阵亡、Able Seaman Raymond
+      C. Taylor 5-28 阵亡）。谢菲尔德号全速转向、施放烟幕脱离。
+    en: Sheffield made her last enemy report; Bismarck fired six 15-inch salvoes at her at nine miles.
+      No direct hit, but splinters wrecked her radar and wounded twelve, three of whom died. Sheffield
+      turned away at full speed under smoke.
+  src:
+  - hmshood-tovey-dispatch
+  - kbismarck-chase
+  - kbismarck-histoperi
+- time: 05-26 22:00
+  text:
+    zh: 谢菲尔德号联络 Vian 上校的第 4 驱逐舰分队（Cossack、Maori、Zulu、Sikh 与波兰 Piorun），把敌情方位距离交给驱逐舰。
+    en: Sheffield passed the enemy's bearing and range to Captain (D) Vian's 4th Destroyer Flotilla —
+      Cossack, Maori, Zulu, Sikh and the Polish Piorun.
+  src:
+  - kbismarck-chase
+  - hmshood-tovey-dispatch
+- time: 05-26 22:38
+  text:
+    zh: 波兰驱逐舰 Piorun（kmdr Eugeniusz Plawski）在左翼发现俾斯麦号。4 分钟后德舰向其开火。
+    en: The Polish destroyer Piorun (kmdr Plawski) sighted Bismarck on the port wing; the German ship
+      opened fire four minutes later.
+  src:
+  - hmshood-tovey-dispatch
+  - kbismarck-histoperi
+  - kbismarck-chase
+- time: 05-26 22:42
+  text:
+    zh: 俾斯麦号向 Piorun 开火（英方记录 2242，德方 2242 同）。Piorun 还击后施放烟幕转开；Tovey 记她此后接近到可用火炮交战的距离，随后失去接触。
+    en: Bismarck opened fire on Piorun, which replied and turned away under smoke.
+  src:
+  - hmshood-tovey-dispatch
+  - kbismarck-histoperi
+- time: 05-26 23:00
+  text:
+    zh: Cossack 在 48°N 15°W 附近（敌方位 115°、7 英里、航向 060°）与俾斯麦号建立接触。
+    en: Cossack established contact with Bismarck, enemy bearing 115°, 7 miles, course 060°.
+  src:
+  - kbismarck-admiralty-war-diary
+- time: 05-26 23:42
+  text:
+    zh: 一发近失弹破片打掉 Cossack 的天线。
+    en: Splinters from a near miss carried away Cossack's wireless antenna.
+  src:
+  - kbismarck-chase
+- time: 05-26 23:58
+  text:
+    zh: Lütjens 致希特勒电：「我们战斗到最后一人，忠于您，我的元首，并坚信德国的胜利。」（德方记录时刻 00:32）
+    en: 'Lütjens to Hitler: "We shall fight to the last man with confidence in you, my Führer, and with
+      rock-solid trust in Germany''s victory."'
+  src:
+  - kbismarck-ktb
+  - kbismarck-histoperi
+- time: 05-27 01:22
+  text:
+    zh: Zulu 报告「已完成鱼雷攻击」。此后 01:38 Maori 报告攻击、0138–0140 估称一雷命中、0145 报「一雷确认，舰首起火」、0146 Captain D.4 报「Cossack
+      攻击完成，声称一雷命中」。整夜第 4 驱逐舰分队共发射 16 枚鱼雷，英方声称 Cossack、Maori 各命中一雷、Sikh 可能也命中——但俾斯麦号最高生还军官说驱逐舰鱼雷无一命中（见争议
+      6）。
+    en: Zulu reported her torpedo attack delivered at 0122; Maori attacked at 0138 and claimed one hit,
+      "fire on forecastle" at 0145; Cossack completed her attack at 0146, claiming one hit. Sixteen torpedoes
+      were fired during the night; the German senior survivor said none hit.
+  src:
+  - kbismarck-admiralty-war-diary
+  - hmshood-tovey-dispatch
+- time: 05-27 02:34
+  text:
+    zh: Sikh 报「敌似已停住」。
+    en: Sikh reported that the enemy appeared to be stopped.
+  src:
+  - kbismarck-admiralty-war-diary
+- time: 05-27 03:53
+  text:
+    zh: Captain D.4 报告：俾斯麦号在 02:40–03:40 之间沿 310° 前进约 8 英里，**仍能进行沉重而准确的射击**。
+    en: Captain (D) 4th Flotilla reported that Bismarck had made about 8 miles on 310° between 0240 and
+      0340 and was still firing heavily and accurately.
+  src:
+  - kbismarck-admiralty-war-diary
+- time: 05-27 04:00
+  text:
+    zh: 04:00–05:00 之间夜间驱逐舰战斗中止。舰上用广播向全舰传达了元首与海军总司令的电文。
+    en: The destroyer battle broke off between 0400 and 0500; the Führer's and the Commander-in-Chief's
+      messages were broadcast to the crew.
+  src:
+  - kbismarck-ktb
+- time: 05-27 05:00
+  text:
+    zh: 俾斯麦号报天气：半阴、云底 600 米、西北风 7 级。此时舰横在海面、几乎不动，浪打上甲板把部分 10.5 cm 高炮炮手卷下海；一架舰载机被冲下海（浮筒朝上漂流）。夜间曾试图弹射另一架
+      Ar 196 送走战争日志与对胡德号作战的胶片，因横摇过剧失败；弹射器蒸汽管早在 5-24 已被威尔士亲王号打坏。满油飞机随后被推下海以免起火。
+    en: 'Weather report: half overcast, ceiling 600 m, NW 7. The ship lay almost stopped, abeam to the
+      sea; one floatplane was washed overboard. An attempt to launch an Arado 196 with the war diary and
+      the Hood film had failed in the night, its catapult having been damaged on 24 May; the fuelled aircraft
+      was pushed overboard to reduce fire risk.'
+  src:
+  - kbismarck-ktb
+  - kbismarck-histoperi
+- time: 05-27 07:10
+  text:
+    zh: 俾斯麦号最后一份电报（德方记录时刻 07:29）：「派 U 艇来保管战争日志！」此后德方再未收到该舰任何回复；Herzog 称天线已被打断。U-556 受命前往，但因潜航错过电令且燃油不足。
+    en: 'Bismarck''s last signal (time-group 0710, logged 0729): "Send U-boat for safe-keeping of war
+      diary!" Nothing further was ever received from her; U-556 was assigned but missed the order while
+      submerged and was short of fuel.'
+  src:
+  - kbismarck-ktb
+  - kbismarck-histoperi
+- time: 05-27 07:37
+  text:
+    zh: 英王乔治五世号编队得知敌在方位 120°、距离 21 英里，改向 080° 接近。08:20 望见诺福克号，建立目视联系（诺福克号整夜绕到东北方向，为战列舰做 flank marking）。
+    en: The battlefleet learned the enemy bore 120° at 21 miles and altered to 080°; Norfolk was sighted
+      at 0820, providing a visual link.
+  src:
+  - hmshood-tovey-dispatch
+- time: 05-27 08:43
+  text:
+    zh: 英王乔治五世号瞭望在 25,000 码（约 23,000 m）发现俾斯麦号，方位 188°，正向英舰驶来；英队航向 110°。德舰此时航速仅 7 节，顶风，艉部进水略减小了艏倾，左倾轻微。
+    en: Bismarck was sighted at 0843, bearing 188°, 25,000 yards, steering directly towards the British
+      line, which was on 110°. The German ship was making only seven knots.
+  src:
+  - hmshood-tovey-dispatch
+  - kbismarck-last-battle
+  - kbismarck-patterson-report
+- time: 05-27 08:47
+  text:
+    zh: '**罗德里号开火**，距离约 20,000 m（21,870 码）。它九门 16 英寸炮全在舰前部，可同时射击。一分钟后英王乔治五世号开火（该舰记录为 08:48、距离 24,600 码），诺福克号稍后加入。'
+    en: 'Rodney opened fire at 0847 at about 20,000 m; KGV followed one minute later (her own report:
+      0848, 24,600 yards) and Norfolk joined shortly after.'
+  src:
+  - hmshood-tovey-dispatch
+  - kbismarck-last-battle
+  - kbismarck-patterson-report
+- time: 05-27 08:49
+  text:
+    zh: 俾斯麦号以 Anton、Bruno 两座前炮塔（共 4 门 38 cm）还击罗德里号；Cäsar、Dora 因舵损无法转向，打不到目标。开局是 4 门德炮对 15 门英炮。首群偏近约 400
+      码，第二群距离对但方向错；**第二次齐射即跨射罗德里号**——这是德舰在整个决战中最接近命中英舰的一次。
+    en: Bismarck replied at 0849 with Anton and Bruno (four 38 cm guns) at Rodney; Cäsar and Dora could
+      not be trained. Four German guns against fifteen British; the second salvo straddled Rodney.
+  src:
+  - kbismarck-last-battle
+  - kbismarck-patterson-report
+  - kbismarck-histoperi
+- time: 05-27 08:54
+  text:
+    zh: 英王乔治五世号报告首枚命中，打进俾斯麦号前上层建筑基部。诺福克号（8 门 20.3 cm）此时加入射击。
+    en: KGV reported her first hit at 0854 on the base of the forward superstructure; Norfolk joined with
+      her eight 8-inch guns.
+  src:
+  - kbismarck-patterson-report
+  - kbismarck-last-battle
+- time: 05-27 08:58
+  text:
+    zh: 罗德里号 6 英寸副炮加入射击。
+    en: Rodney's 6-inch secondary battery opened fire.
+  src:
+  - kbismarck-last-battle
+- time: 05-27 09:02
+  text:
+    zh: 俾斯麦号被多发命中舰首楼与前桅，前桅测距仪失效。多份材料把这一发（罗德里号 16 英寸齐射）记为**第一次中弹**，并称它摧毁舰桥与主火控指挥仪、当场打死舰桥内大部分军官。**但英方一手审讯记战俘说法为
+      08:57 首次中弹（在 08:51 罗德里号跨射之后），见争议 12。**
+    en: Bismarck was hit on the forecastle and foremast, disabling the foretop rangefinder; this is usually
+      given as her first hit and is credited with destroying the bridge and main fire-control director.
+      The Admiralty interrogation of survivors, however, puts her first hit at 0857 (see dispute 12).
+  src:
+  - kbismarck-histoperi
+  - kbismarck-last-battle
+  - admiralty-bismarck-interrogation
+- time: 05-27 09:04
+  text:
+    zh: 多塞特郡号（舰长 Benjamin C. S. Martin）加入射击。此刻是两艘战列舰 + 两艘重巡同时打一条失去机动的船。
+    en: Dorsetshire (Captain Benjamin C. S. Martin) opened fire, making two battleships and two heavy
+      cruisers in action.
+  src:
+  - kbismarck-last-battle
+- time: 05-27 09:08
+  text:
+    zh: 前测距仪与 Anton、Bruno 两座前炮塔失效。火控转到后指挥所，由第四炮术官 Müllenheim-Rechberg 上尉指挥，向英王乔治五世号打了 4 次齐射。
+    en: The forward rangefinder and turrets Anton and Bruno were put out of action; fire control shifted
+      aft to the after command post under Kapitänleutnant Müllenheim-Rechberg, who fired four salvoes
+      at KGV.
+  src:
+  - kbismarck-last-battle
+  - kbismarck-histoperi
+- time: 05-27 09:10
+  text:
+    zh: 罗德里号在远距离发射 6 枚鱼雷（口径本文未在已抓一手材料中取得，**不作断言**），全部未中。诺福克号亦于此时前后发射 4 枚——**「诺福克号 4 枚」仅见于英文维基（tier E），kbismarck
+      未记，存疑**。Tovey 战报第 88 段把「罗德里号鱼雷 1 发命中」列入其损伤序列，但自己也只写「one by Rodney's torpedo」而无从证实。
+    en: Rodney fired six torpedoes at long range, none hitting. Norfolk is said (secondary source only)
+      to have fired four about this time. Tovey's dispatch lists "one by Rodney's torpedo" among possible
+      hits, unconfirmed.
+  src:
+  - kbismarck-last-battle
+  - hmshood-tovey-dispatch
+- time: 05-27 09:13
+  text:
+    zh: 后指挥所刚测出距离即被一发 14 英寸炮弹摧毁 cupola。此后后炮塔转局部控制射击罗德里号。
+    en: The after command post was itself destroyed by a 14-inch shell just as it had found the range;
+      the after turrets then fired under local control at Rodney.
+  src:
+  - kbismarck-last-battle
+  - kbismarck-histoperi
+- time: 05-27 09:17
+  text:
+    zh: 英舰战列线改向敌并右转至正北（罗德里号抢先转），两舰射向约成直角，可互不干扰射击。
+    en: The British line turned towards the enemy and round to due north, giving the two ships arcs at
+      right angles.
+  src:
+  - hmshood-tovey-dispatch
+- time: 05-27 09:21
+  text:
+    zh: Dora 炮塔因自身炮弹在右炮管内爆炸而失效。
+    en: Turret Dora was put out of action when one of its own shells exploded inside the right barrel.
+  src:
+  - kbismarck-last-battle
+  - kbismarck-histoperi
+- time: 05-27 09:27
+  text:
+    zh: Anton 或 Bruno 意外打出最后一次齐射。
+    en: Turret Anton or Bruno fired one last, unexpected salvo.
+  src:
+  - kbismarck-last-battle
+  - kbismarck-histoperi
+- time: 05-27 09:31
+  text:
+    zh: Cäsar 打出最后一次齐射，四座主炮塔全部失效，只剩少数副炮仍在射击（很快也被压制）。此后英舰再未遭到有效还击。英王乔治五世号上的 Guernsey 少校记 Tovey 在整场战斗中反复喊「Close
+      the range」，并描述此时一发德弹跨射英舰舰首（一近三远），以及一处桥楼基部的火焰「瞬间吞没整个观察所」。
+    en: Cäsar fired her last salvo; all four main turrets were out of action and only a few secondary
+      guns remained, soon silenced. Guernsey, aboard KGV, recalled Tovey repeatedly calling "Close the
+      range", a German salvo straddling the KGV's bow, and a flame at the base of a superstructure that
+      momentarily engulfed the whole spotting position.
+  src:
+  - kbismarck-last-battle
+  - kbismarck-histoperi
+  - kbismarck-guernsey-report
+- time: 05-27 09:40
+  text:
+    zh: Bruno 炮塔后壁被炸开、炮塔起火。罗德里号已进至 2,500–4,000 m，用九门 16 英寸同时打两舷。
+    en: The rear wall of turret Bruno blew out and the turret caught fire; Rodney closed to 2,500–4,000
+      m and fired her nine 16-inch guns at both sides.
+  src:
+  - kbismarck-last-battle
+- time: 05-27 09:56
+  text:
+    zh: 罗德里号自 2,700 m 发射 2 枚鱼雷（另一记载为 09:58），可能 1 发命中左舷；10:00 后诺福克号又自约 3,600 m 发射 4 枚，可能 1 发命中右舷。两处均无确证。
+    en: Rodney fired two torpedoes at 2,700 m (some accounts say 0958), possibly one hit to port; after
+      1000 Norfolk fired four at about 3,600 m, possibly one hit to starboard. Neither is confirmed.
+  src:
+  - kbismarck-last-battle
+  - kbismarck-histoperi
+  - admiralty-bismarck-interrogation
+- time: 05-27 10:00
+  text:
+    zh: 约此刻舰内涡轮舱的爆破装药爆炸——这是自沉程序实际开始执行的时刻之一（与 10:15「准备沉舰」令并存，两说的关系见第三部分争议 1）。
+    en: About this time the demolition charges in the turbine room detonated — one of the moments at which
+      the scuttling procedure actually began (see dispute 1).
+  src:
+  - kbismarck-histoperi
+  - kbismarck-last-hours
+- time: 05-27 10:15
+  text:
+    zh: 轮机长（Korvkpt(Ing) Walter Lehmann）电话通知 Junack「准备沉舰」——这是 Junack 收到的最后一道命令，此后全舰命令传递中断。自沉装药装 9 分钟引信。同一时段，皇家方舟号
+      09:20 起飞的 12 架 Swordfish 抵达，因英舰炮火密集无法攻击，未投雷（英王乔治五世号一度误认其为德机并向其开高炮，未命中）。
+    en: The Chief Engineer, Korvkpt(Ing) Lehmann, telephoned Junack to "prepare the ship for sinking"
+      — the last order Junack received; charges were set with nine-minute fuses. About the same time twelve
+      Swordfish flown off Ark Royal at 0920 arrived but could not attack through the British gunfire and
+      dropped no torpedoes.
+  src:
+  - kbismarck-last-hours
+  - kbismarck-last-battle
+- time: 05-27 10:16
+  text:
+    zh: 罗德里号停火（kbismarck 记 10:16）。英王乔治五世号稍后于 10:21 停火。停火原因是两舰燃油极缺，Tovey 判断「进一步炮击也不会加速其沉没」。
+    en: Rodney ceased fire at 1016, KGV at 1021. Tovey broke off because KGV and Rodney were critically
+      short of fuel and further gunfire would do little to hasten the end. The Admiralty interrogation
+      gives 1022 for the cease-fire.
+  src:
+  - kbismarck-last-battle
+  - hmshood-tovey-dispatch
+  - kbismarck-patterson-report
+  - admiralty-bismarck-interrogation
+- time: 05-27 10:22
+  text:
+    zh: 多塞特郡号自 3,000 m 向右舷发射 2 枚 21 英寸 Mark VII 鱼雷，均命中，但「几乎没有使她震动」。英方一手审讯记该舰「having hit with three torpedoes」（合计
+      3 雷，见争议 13）。
+    en: Dorsetshire fired two 21-inch Mark VII torpedoes at 3,000 m into the starboard side; both hit,
+      with almost no visible effect. The Admiralty interrogation credits her with three torpedo hits in
+      all (see dispute 13).
+  src:
+  - kbismarck-histoperi
+  - kbismarck-last-battle
+  - admiralty-bismarck-interrogation
+- time: 05-27 10:28
+  text:
+    zh: Tovey 正式中止战斗：「Have had to discontinue action for fuel.」10:42 他通报 Force H「cannot get BISMARCK to
+      sink by gunfire」，10:45 又补「Cannot get her to sink with guns」——措辞后被他自己评为「perhaps unfortunately phrased」。
+    en: 'Tovey: "Have had to discontinue action for fuel"; at 1042 and 1045 he signalled Force H that
+      he could not get Bismarck to sink by gunfire, phrasing he later called unfortunate.'
+  src:
+  - kbismarck-admiralty-war-diary
+  - hmshood-tovey-dispatch
+- time: 05-27 10:36
+  text:
+    zh: 多塞特郡号转向，自 2,200 m 向左舷再射 1 枚鱼雷，命中。此时俾斯麦号已严重左倾、水已漫上主甲板、左舷副炮塔几近没入。
+    en: Dorsetshire turned and fired one more torpedo at 2,200 m into the port side; by then Bismarck
+      was listing heavily with water over the main deck.
+  src:
+  - kbismarck-histoperi
+  - kbismarck-last-battle
+  - kbismarck-patterson-report
+- time: 05-27 10:39
+  major: true
+  text:
+    zh: 俾斯麦号向左翻覆、舰艉先沉，沉没于 48°09'N 16°07'W（BE 5336 方格）。另有一组记录为 10:37、10:36 或 10:40；英海军部对外公布的是 11:01（见争议
+      8）。沉没点水深：Patterson 报告该处为 2,500 英寻（约 4,570 m）；1989 年 Ballard 队实测残骸处深 4,790 m（15,700 英尺）。
+    en: Bismarck capsized to port and sank stern-first at 48°09'N 16°07'W. Other sources give 1037, 1036
+      or 1040; the Admiralty communiqué gave 1101. Patterson's report gives 2,500 fathoms (about 4,570
+      m) at the sinking point; Ballard's 1989 survey measured 4,790 m (15,700 ft) at the wreck.
+  src:
+  - kbismarck-histoperi
+  - kbismarck-last-battle
+  - hmshood-tovey-dispatch
+  - kbismarck-admiralty-war-diary
+  - kbismarck-patterson-report
+  - kbismarck-wreck
+  - kbismarck-communiques
+  - kbismarck-debriefing
+- time: 05-27 11:40
+  text:
+    zh: 救援中止。多塞特郡号放下绳索，约 800 人在水中；瞭望报告下风出现可疑物（可能是 U 艇潜望镜），多塞特郡号与毛利人号被迫离开。**该瞭望判断很可能是错的**——Junack 记「附近并无德国
+      U 艇」，英方一手审讯也称「this may have been the only one in the vicinity when Bismarck sank」（附近可能仅此一艘，且几小时后才有
+      4–6 艘 U 艇赶到）。已救起者：多塞特郡号 85 或 86 人（含 4 名军官）、毛利人号 24 或 25 人；**Tovey 战报的官方口径是「4 军官 + 75 兵」与「毛利人 24
+      兵」，即合计 103 人——与 111/116 并存，见争议 14。**
+    en: The rescue was abandoned at 1140 when a possible periscope was sighted; Dorsetshire and Maori
+      had by then picked up about 85–86 and 24–25 men respectively. Junack recorded that there was no
+      U-boat nearby, and the Admiralty interrogation thought any U-boat present may have been the only
+      one. Tovey's dispatch gives the official figures as four officers and 75 ratings plus 24 from Maori
+      — 103 in all (see dispute 14).
+  src:
+  - hmshood-tovey-dispatch
+  - kbismarck-last-battle
+  - kbismarck-last-hours
+  - kbismarck-admiralty-war-diary
+  - admiralty-bismarck-interrogation
+- time: 05-27 19:30
+  text:
+    zh: U-74（Kentrat 艇长）从小艇救起 3 人：Herbert Manthey、Otto Höntzsch、Georg Herzog。
+    en: U-74 (Kptlt Kentrat) rescued three men from a raft — Manthey, Höntzsch and Herzog.
+  src:
+  - kbismarck-last-battle
+- time: 05-28 22:45
+  text:
+    zh: 德国气象船 Sachsenwald（Schütte 舰长）22:35 见左舷 2–3 海里处三颗红色信号弹，转向后发现一只木筏、2 人，22:45 靠帮用两副绳梯救起 Otto Maus
+      与 Walter Lorenzen。该舰 5-30 00:45 在搜索区与西班牙重巡 Canarias 会合，6-1 靠泊波尔多。
+    en: The German weather ship Sachsenwald (Kptlt Schütte) saw three red flares at 2235 and rescued Otto
+      Maus and Walter Lorenzen by rope ladder at 2245, later rendezvousing with the Spanish cruiser Canarias.
+  src:
+  - kbismarck-sachsenwald-report
+  - kbismarck-last-battle
+- time: 05-30 10:00
+  text:
+    zh: 西班牙重巡 Canarias 在搜索区捞起两具遗体（Walter Gaszczak、Heinrich Neuschwander），5-31 10:00 海葬。她 5-27 约 11:00
+      自 El Ferrol 出动。
+    en: On 30 May the Spanish cruiser Canarias recovered two bodies (Gaszczak and Neuschwander), burying
+      them at sea on 31 May; she had sailed from El Ferrol on 27 May.
+  src:
+  - kbismarck-last-battle
+  - kbismarck-ktb
+hits_received:
+- text:
+    zh: 5-24 丹麦海峡：被威尔士亲王号命中 3 发（Tovey 战报口径）。
+    en: Three gunfire hits from Prince of Wales on 24 May, per Tovey's dispatch.
+  src:
+  - hmshood-tovey-dispatch
+- text:
+    zh: 5-26 20:47 起的空袭：英方与德方都确认至少 2 枚 18 英寸 Mark XII 航空鱼雷命中——一枚左舷舯部（主装甲带下缘，能量多被水下防护吸收，仅结构与轻微进水）、一枚艉部舵机区（左舵组联轴器严重损坏，两舵卡死向左
+      12°）。有材料说 3 枚（第 3 枚通常指另一枚打在舯部附近）。
+    en: 'At least two 18-inch Mark XII aerial torpedoes: one amidships to port with little effect, one
+      in the stern steering area which wrecked the rudder coupling and jammed both rudders 12° to port.'
+  src:
+  - kbismarck-chase
+  - kbismarck-histoperi
+  - kbismarck-admiralty-war-diary
+- text:
+    zh: 5-27 08:54：英王乔治五世号命中俾斯麦号前上层建筑基部（该舰报告口径）。
+    en: At 0854 on 27 May KGV hit the base of the forward superstructure.
+  src:
+  - kbismarck-patterson-report
+- text:
+    zh: 5-27 09:02：罗德里号 16 英寸齐射命中前上层建筑，摧毁舰桥与前桅测距仪/主火控指挥仪，当场打死舰桥内大部分军官，并波及前主炮塔。**部分材料（含德方档案整理页与英方维基）把这一击记为同时打死
+      Lindemann、Lütjens 与舰桥其余人员；另一些幸存者说沉没前还看见 Lindemann 在甲板上——见争议 3。** 另：英方一手审讯记战俘称首枚中弹在 **08:57**（08:51
+      罗德里号跨射之后），并记 Müllenheim-Rechberg 认为摧毁主火控的那一发其实**来自多塞特郡号**——见争议 12。
+    en: At 0902 a Rodney 16-inch salvo wrecked the bridge, foretop rangefinder and main fire-control director,
+      killing most of the bridge staff. Some accounts place the deaths of Lindemann and Lütjens here;
+      other survivors saw Lindemann on deck later. The Admiralty interrogation puts the first hit at 0857,
+      and Müllenheim-Rechberg believed the shell that destroyed the main fire control came from Dorsetshire.
+  src:
+  - kbismarck-histoperi
+  - kbismarck-last-battle
+  - admiralty-bismarck-interrogation
+- text:
+    zh: 5-27 约 09:40：Bruno 炮塔后壁被炸开、起火。
+    en: About 0940 the rear wall of turret Bruno blew out and the turret burned.
+  src:
+  - kbismarck-last-battle
+- text:
+    zh: 5-27 约 10:00：**据单一二手叙述**，一发英王乔治五世号 14 英寸炮弹穿透上部纵深装甲带，在舰尾食堂内爆炸，炸死副舰长（First Officer）Hans Oels 与约一百人。**本条仅见于英文维基（tier
+      E），本次未在一手材料中取得佐证**；Oels 下令自沉一事同样只见于二手文献与 Cameron 2002 的引文。使用前应另找一手来源，或按「存疑」标注。
+    en: About 1000 a 14-inch shell from KGV reportedly penetrated the upper citadel belt and burst in
+      the aft canteen, killing First Officer Oels and about a hundred men. This appears only in secondary/encyclopedic
+      accounts and was not corroborated in any primary source gathered here.
+  src:
+  - kbismarck-last-battle
+- text:
+    zh: 5-27 约 10:05：英王乔治五世号自约 3,000 码打出三发可见命中——两发打进上层建筑基部甲板，一发从前部打进 B 炮塔、似将塔后半整体掀入海。
+    en: About 1005, from about 3,000 yards, KGV observed three clear hits — two on the superstructure
+      base and one entering B turret from forward, apparently tearing away the rear of the turret.
+  src:
+  - kbismarck-patterson-report
+- text:
+    zh: 鱼雷命中（合计，各方数字不一）：5-26 航空雷 2（或 3）；5-27 01:22–01:46 驱逐舰雷英方声称 2–3 发命中、德方最高生还军官称 0；09:56 罗德里号 2 枚（可能
+      1 命中左舷）；10:00 后诺福克号 4 枚（可能 1 命中右舷）；10:22 多塞特郡号 2 枚右舷均命中；10:36 多塞特郡号 1 枚左舷命中。**英方一手审讯只记「Rodney 命中一雷」+「多塞特郡三雷全中」，不列驱逐舰战果；Tovey
+      第 88 段则把 5-27 晨驱逐舰鱼雷两发计入损伤序列。见争议 6 与争议 13。**
+    en: 'Torpedo hits, all sources: two (possibly three) aerial on 26 May; two to three claimed by destroyers
+      in the night, denied by the German senior survivor; possibly one from Rodney at 0956 and one from
+      Norfolk after 1000; two confirmed from Dorsetshire to starboard at 1022 and one to port at 1036.
+      The Admiralty interrogation credits only Rodney with one torpedo hit and Dorsetshire with three.'
+  src:
+  - kbismarck-admiralty-war-diary
+  - hmshood-tovey-dispatch
+  - kbismarck-last-battle
+  - kbismarck-histoperi
+  - admiralty-bismarck-interrogation
+- text:
+    zh: '**残骸调查 + 英方一手审讯的物证口径**：可见舰体上只有 2 处 320 mm 主装甲带被完全穿透，都在右舷舯部；主装甲带与装甲甲板全程未被击穿。英方审讯记战俘一致供称「no shells
+      penetrated the armour belt」（除一名下级军官外）。这是「自沉说」最重要的物证（但穿透数量取决于能否看清被泥掩埋的部分）。多名战俘还认为炮战结束时若没有最后的鱼雷与自沉，舰仍可能开回港。'
+    en: 'Wreck survey: only two complete penetrations of the 320 mm main belt, both on the starboard side
+      amidships; neither belt nor armoured deck was pierced through. Prisoners interrogated by the Admiralty
+      agreed that no shells penetrated the armour belt. This is the strongest physical evidence for the
+      scuttling argument.'
+  src:
+  - kbismarck-last-battle
+  - kbismarck-wreck
+  - admiralty-bismarck-interrogation
+- text:
+    zh: 炮弹发射总数：本次战斗四舰合计 2,876 发（罗德里号 40.6 cm 380、英王乔治五世号 35.6 cm 339、诺福克号 20.3 cm 527、多塞特郡号 20.3 cm 254、罗德里号
+      15.2 cm 716、英王乔治五世号 13.3 cm 660）。罗德里号自己的炮术报告只给 16 英寸 378 发、6 英寸 706 发——**378 与 380、706 与 716 是同一批数字的两个版本**。
+    en: 'Total rounds fired in the final action: 2,876 (Rodney 380 × 40.6 cm, KGV 339 × 35.6 cm, Norfolk
+      527, Dorsetshire 254, Rodney 716 × 15.2 cm, KGV 660). Rodney''s own gunnery report gives 378 × 16-inch
+      and 706 × 6-inch — the same expenditure recorded two ways.'
+  src:
+  - kbismarck-last-battle
+  - kbismarck-rodney-report
+  - kbismarck-patterson-report
+  - kbismarck-admiralty-war-diary
+- text:
+    zh: 命中数：**永远无法确知**。kbismarck 的原话是「200、300，也许更多？」；英方维基记「四舰共发约 2,800 发、命中约 400 发」。见争议 2。
+    en: 'The number of hits can never be established: specialist estimates range from 200–300 to about
+      400 out of roughly 2,800 rounds fired.'
+  src:
+  - kbismarck-last-battle
+consequences:
+- text:
+    zh: 舵机被毁是整场追击的转折点：两舵卡死后，俾斯麦号只能兜圈、被西北风顶向追击的英舰，5-26 夜至 5-27 晨只以 7 节左右前进，从 5-26 的 24 节一路掉到决战时的 7 节。**舵角三种口径**：向左
+      12°（kbismarck）、左舵 15°（Junack）、10–15°（英方一手审讯，并称舰「向右缓慢转圈」）——见争议 5。
+    en: 'The wrecked steering was the turning point of the chase: with both rudders jammed Bismarck could
+      only circle and was forced up into the north-west wind towards her pursuers, dropping from 24 knots
+      to about 7. The jam angle is given as 12°, 15°, or 10–15° (the last with her turning slowly to starboard).'
+  src:
+  - kbismarck-chase
+  - kbismarck-histoperi
+  - kbismarck-admiralty-war-diary
+  - admiralty-bismarck-interrogation
+- text:
+    zh: 5-26 夜德方仍有战斗力：03:53 英方报告它「仍能进行沉重而准确的射击」，一发炮弹削掉 Cossack 的天线，另三发跨射 Zulu 伤 3 人。
+    en: 'She remained dangerous through the night: at 0353 the British reported heavy and accurate fire;
+      one shell carried away Cossack''s antenna and three straddled Zulu, wounding three.'
+  src:
+  - kbismarck-admiralty-war-diary
+- text:
+    zh: 5-27 决战中火控被逐层剥离：09:02 前桅测距仪失效 → 09:08 前指挥所与两座前炮塔失效、火控转后 → 09:13 后指挥所被毁 → 09:21 Dora 自爆失效 → 09:31
+      Cäsar 最后一击。此后只剩局部控制的零星副炮。
+    en: 'Fire control was stripped layer by layer: foretop rangefinder at 0902, forward command post and
+      both forward turrets at 0908, after command post at 0913, Dora at 0921, Cäsar''s last salvo at 0931.'
+  src:
+  - kbismarck-histoperi
+  - kbismarck-last-battle
+- text:
+    zh: 通信中断：07:10 之后德方再未收到该舰任何电报；德方 09:15、10:56、11:23、11:52、12:10 的询问全部无回复，Group West 从路透社报道确认其已沉没。
+    en: After 0710 nothing more was heard from her; Group West's signals at 0915, 1056, 1123, 1152 and
+      1210 went unanswered and the report was confirmed from a Reuters bulletin.
+  src:
+  - kbismarck-ktb
+- text:
+    zh: 舰体向左翻覆、舰艉先沉，舰旗仍在飘扬。Tovey 战后评语：「most gallant fight against impossible odds worthy of the old days
+      of the Imperial German Navy, and she went down with her colours flying.」英方一手审讯同记「Bismarck sank,
+      **with her colours flying**, at 1037 in position 48°09'N, 16°07'W, close to where the final action
+      had started」；多塞特郡号 1107B 电报亦记「She had ceased firing but her colours were still flying」。
+    en: She capsized to port and sank stern-first with her colours still flying, prompting Tovey's tribute
+      to "the old days of the Imperial German Navy"; the Admiralty interrogation likewise records that
+      she sank colours flying at 1037 in 48°09'N 16°07'W.
+  src:
+  - kbismarck-admiralty-war-diary
+  - admiralty-bismarck-interrogation
+- text:
+    zh: 英方代价：主力舰与巡洋舰无伤亡、无损伤；Cossack、Zulu 轻微损伤与少数伤亡，Sikh 一人落海失踪。Sheffield 被破片伤 12 人（3 人后死）。5-28 返航途中 Mashona
+      被 He 111 炸沉，46 人阵亡。
+    en: 'British cost: no casualties or damage in the capital ships or cruisers; slight damage and a few
+      casualties in Cossack and Zulu, one man lost overboard from Sikh; Sheffield lost three men later;
+      on 28 May Mashona was sunk by bombers with 46 dead.'
+  src:
+  - kbismarck-admiralty-war-diary
+  - kbismarck-chase
+losses:
+- side: axis
+  ships_lost:
+    zh: 俾斯麦号（自沉与战损复合，见争议 1）
+    en: Bismarck (scuttled and/or sunk by battle damage)
+  killed: 约 2200
+  survivors: 114
+  note:
+    zh: '生还人数三种口径并列：**114**（英方维基）／**115**（Junack 回忆、kbismarck 正文「2,200 余名官兵仅 115 人生还」）／**116 被活救**（kbismarck
+      脚注：多塞特郡 86 + 毛利人 25 + U-74 3 + Sachsenwald 2）。 差额来自 Maschinengefreiter Gerhard Lüttich——被救起但 1941-05-28
+      伤重死于多塞特郡号上，5-28 以全军训礼海葬。故「被救 116、生还 115、返国 109」三者可以同时成立。 编制 2,220 人（2,092 舰员 + 128 舰队参谋），另加 100
+      余名编外人员（训练支队、电影组等），**确切死亡数未知**。 **第三说（英方一手审讯）**：C.B. 4051 (24) 记「total number on board was given
+      as between 2,300 and 2,400 ... more than 100 officers」——即舰上总数 2,300–2,400、军官 100 余名。此数与德方 2,220
+      + 编外人员的算法相容，但**没有一份来源给出确切总数**，故 killed 只能写「约 2,200」。 100 名军官中仅 2 人获救。沉没前约 800 人离舰，其余随舰沉没；水温约 13
+      ℃。
+
+      '
+    en: 'Survivor counts differ: 114 / 115 alive, or 116 picked up (Dorsetshire 86 + Maori 25 + U-74 3
+      + Sachsenwald 2), the difference being Lüttich, who died aboard Dorsetshire on 28 May. Complement
+      was 2,220 (2,092 crew + 128 fleet staff) plus over 100 supernumeraries; the Admiralty interrogation
+      (C.B. 4051 (24)) was told the total on board was "between 2,300 and 2,400 ... more than 100 officers".
+      No source gives an exact total, so exact casualties are unknown. Only two of about 100 officers
+      survived.
+
+      '
+  src:
+  - kbismarck-last-battle
+  - kbismarck-last-hours
+  - kbismarck-admiralty-war-diary
+  - admiralty-bismarck-interrogation
+- side: allies
+  ships_lost:
+    zh: 无（5-27 决战中）; 5-28 损失驱逐舰 Mashona
+    en: none in the final action; destroyer Mashona lost on 28 May
+  killed: 0
+  survivors: null
+  note:
+    zh: '决战本身英方阵亡 0：两艘战列舰与两艘重巡无伤亡。驱逐舰有少数破片伤（Sheffield 12 伤、3 人后死；Sikh 1 人落海失踪）。 若把 5-26 至 5-28 全期算进去，英方维基给「49
+      killed / 5 wounded / Mashona scuttled」——**这个 49 是全期合计，不是 5-27 炮战的**。
+
+      '
+    en: 'No British deaths in the action itself. The figure of 49 killed covers the whole operation through
+      28 May, including the loss of Mashona.
+
+      '
+  src:
+  - kbismarck-admiralty-war-diary
+  - kbismarck-chase
+outcome:
+  zh: 英方达成目的：大西洋上最后一批能威胁运输线的德国水面主力被清除，此后德国水面舰队基本退回挪威水域充当存在舰队。代价是几乎耗尽本土舰队的燃油储备，多艘主力舰需要进坞。
+  en: 'The British got what they wanted: the last German surface unit capable of threatening the Atlantic
+    convoys was gone, and the surface fleet withdrew to Norwegian waters as a fleet in being. The cost
+    was a Home Fleet left nearly dry of fuel and several capital ships needing dockyard time.'
+narrative_refs:
+- bismarck-sinking-cause
+- bismarck-lindemann-death
+- bismarck-hits-received
+operation: rheinubung
+src:
+- hmshood-tovey-dispatch
+- kbismarck-patterson-report
+- kbismarck-admiralty-war-diary
+- kbismarck-last-battle
+- kbismarck-histoperi
+- admiralty-bismarck-interrogation
+- kbismarck-ktb

@@ -1,0 +1,257 @@
+# ============================================================================
+# 苍龙级 / 苍龙・飞龙 —— 日本海军条约时代的中型正规航母
+#
+# 2026-11-19 建。
+#
+# **重要：苍龙与飞龙实际上是两型，不是一个级的两个成员。**
+# 两舰在同一造舰计划（昭和 9 年度②計画）下起案，最初确实按同型舰设计，
+# 但飞龙建造期间设计大幅修改，基本计划编号也不同（苍龙 G9 / 飞龙 G10）。
+# 英文维基：「Generally regarded as the only ship of her class, she was built
+# to a modified Sōryū design.」日文原文用「準同型艦 / near sister」。
+#
+# 所以本文件的分工是：
+#   - 放两舰**真正共有**的数据（动力系统、拦阻索型号、机库尺寸、25mm 指挥仪等）
+#   - 两舰不同的（主尺度、排水量、舰岛位置、25mm 管数）**一律写进各自的单舰文件**
+#
+# 舰岛位置是两舰最容易搞错的识别特征：
+#   苍龙 = 右舷前部（小型，与驱逐舰舰桥同规模，装在右舷外伸平台上）
+#   飞龙 = **左舷中央**（与赤城同为左舷，日造航母中仅此两艘）
+#   ← 这条曾被多个二手资料写错成「飞龙右舷」，Kojinsha Vol.6 p.91 明确原文
+#     "the port amidships location of the island"
+# ============================================================================
+
+id: soryu
+name:
+  zh: 苍龙级
+  en: Sōryū class
+class_of:
+  - soryu
+  - hiryu
+
+open_ended_note: >-
+  本级（严格说是「同型计划舰」）两舰的共用数据写在此文件；
+  主尺度、排水量、舰岛位置、防空炮管数等**两舰不同**的项写在各自单舰文件里。
+  绝大多数参数的有效期到 1942-06 两舰战没为止。
+
+facts:
+  # ============================================================
+  # 身份（级层）
+  # ============================================================
+  - field: identity.name_original
+    value: 蒼龍型 / 蒼龍・飛龍
+    src: [japanese-warship-soryu]
+    valid: { from: 1934 }
+    confidence: C
+
+  - field: identity.name_zh
+    value: 苍龙级
+    src: [japanese-warship-soryu]
+    valid: { from: 1934 }
+    confidence: C
+
+  - field: identity.name_en
+    value: Sōryū class
+    src: [navypedia-soryu]
+    valid: { from: 1934 }
+    confidence: C
+
+  - field: identity.ship_type
+    value: aircraft_carrier
+    src: [japanese-warship-soryu]
+    valid: { from: 1937 }
+    confidence: C
+
+  - field: identity.nation
+    value: japan
+    src: [japanese-warship-soryu]
+    valid: { from: 1937 }
+    confidence: C
+
+  - field: identity.operator
+    value: 大日本帝国海軍（Imperial Japanese Navy）
+    src: [japanese-warship-soryu]
+    valid: { from: 1937 }
+    confidence: C
+
+  - field: identity.era
+    value: ww2
+    src: [combinedfleet-soryu]
+    valid: { from: 1937 }
+    confidence: C
+
+  - field: identity.building_program
+    value: >-
+      昭和 9 年度（1934 年）②計画（第二次海军军备补充计划）。
+      苍龙基本计划番号 G9，飞龙 G10——**两舰按两型建造**。
+    src: [japanese-warship-soryu]
+    valid: { from: 1934 }
+    confidence: C
+    note: >-
+      英文维基对飞龙的说法：「Generally regarded as the only ship of her class,
+      she was built to a modified Sōryū design.」
+      日文原文用「準同型艦 / near sister」，方向是飞龙为苍龙的后续改进型。
+
+  # ============================================================
+  # 动力（两舰基本共用）
+  # ============================================================
+  - field: propulsion.plant_type
+    value: steam_turbine
+    src: [navypedia-soryu]
+    valid: { from: 1937-12-29 }
+    confidence: C
+
+  - field: propulsion.shafts
+    value: 4
+    unit: count
+    src: [japanese-warship-soryu]
+    valid: { from: 1937-12-29 }
+    confidence: C
+
+  - field: propulsion.boiler.count
+    value: 8
+    unit: count
+    src: [japanese-warship-soryu]
+    valid: { from: 1937-12-29 }
+    confidence: C
+    note: ロ号艦本式锅炉 8 座（附空气预热器）。原文「ロ号艦本式ボイラー(空気過熱器附) 8基」。
+
+  - field: propulsion.boiler.type
+    value: ロ号艦本式（附空气预热器）
+    src: [japanese-warship-soryu]
+    valid: { from: 1937-12-29 }
+    confidence: C
+
+  - field: propulsion.turbine.count
+    value: 4
+    unit: count
+    src: [japanese-warship-soryu]
+    valid: { from: 1937-12-29 }
+    confidence: C
+    note: 舰本式汽轮机（高/中/低压）4 基。原句「艦本式タービン(高中低圧)4基」。
+
+  - field: propulsion.turbine.type
+    value: 舰本式齿轮传动蒸汽轮机（与最上级巡洋舰同型）
+    src: [japanese-warship-soryu]
+    valid: { from: 1937-12-29 }
+    confidence: C
+    note: 原句「The turbines and boilers were the same as those used in the Mogami-class cruisers.」
+
+  # ============================================================
+  # 航空设施（两舰共用的部分）
+  # ============================================================
+  - field: aviation.deck.length
+    value: 216.9
+    unit: m
+    src: [japanese-warship-soryu]
+    valid: { from: 1937-12-29, to: 1942-06-05 }
+    confidence: C
+    note: 两舰飞行甲板长度相同（216.9 m），宽度不同（苍龙 26.0 / 飞龙 27.0 m）。
+
+  - field: aviation.hangar.count
+    value: 2
+    unit: count
+    src: [japanese-warship-soryu]
+    valid: { from: 1937-12-29, to: 1942-06-05 }
+    confidence: C
+    note: 上下两层，每层 3 区划，共 6 区划。
+
+  - field: aviation.hangar.length
+    value: 171.3
+    unit: m
+    src: [japanese-warship-soryu]
+    valid: { from: 1937-12-29, to: 1942-06-05 }
+    confidence: C
+    note: 上层机库 171.3 × 18.3 m；下层 142.3 × 18.3 m。此处记上层。
+
+  - field: aviation.hangar.width
+    value: 18.3
+    unit: m
+    src: [japanese-warship-soryu]
+    valid: { from: 1937-12-29, to: 1942-06-05 }
+    confidence: C
+
+  - field: aviation.hangar.height
+    value: 4.6
+    unit: m
+    src: [japanese-warship-soryu]
+    valid: { from: 1937-12-29, to: 1942-06-05 }
+    confidence: C
+    note: 上层机库约 4.6 m，下层约 4.3 m。此处记上层。
+
+  - field: aviation.elevator.count
+    value: 3
+    unit: count
+    src: [japanese-warship-soryu]
+    valid: { from: 1937-12-29, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      三部升降机，前部在舰岛旁中线上、中后两部偏向右舷。
+      载重能力 5,000 kg。尺寸两舰不同：
+      苍龙前 16×11.5 / 中 11.5×12 / 后 11.8×10 m；
+      飞龙前 16×13 / 中 13×12 / 后 11.8×13 m。
+
+  - field: aviation.arrestor.count
+    value: 9
+    unit: count
+    src: [kojinsha-vol6-carriers]
+    valid: { from: 1937-12-29, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      呉式四型横索 9 组，可拦停 6,000 kg 飞机。
+      分布不同：苍龙防冲网前 2 组 + 后 7 组；飞龙前 3 组 + 后 6 组。
+      飞龙那前移的 3 组是为了「向舰首方向着舰」（实战从未用过）。
+
+  - field: aviation.catapult.count
+    value: 0
+    unit: count
+    src: [japanese-warship-soryu]
+    valid: { from: 1937-12-29, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      **这是「0」，但要说明白**：单舰原文没有直接说「无弹射器」，
+      三条旁证指向「日本海军至终战未把空母弹射器实用化」：
+      ① 原始设计要求里写了「カタパルトで一気に発艦させることも求められています」（是要求不是实装）
+      ② 「日本海軍は空母用カタパルトを実用化できなかった」
+      ③ "a usable model was not ready until the end of the war"
+
+  # ============================================================
+  # 武备（两舰共用：12.7cm 主炮）
+  # ============================================================
+  - field: armament.mount.summary
+    value: >-
+      40 口径 12.7cm 连装高角炮 6 基 12 门（舷侧突出炮座，左右各 3 基）+
+      九六式 25mm 高炮（苍龙 14 基双联 28 挺 / 飞龙 7 基三联 + 5 基双联 31 挺）
+    src: [japanese-warship-soryu]
+    valid: { from: 1937-12-29, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      **与赤城加贺不同：这两艘的主炮是 12.7cm，不是 20cm。**
+      20cm 原本在 G6/G8 计划案里（G6 案「20.3cm連装砲3基6門」），
+      最终因友鹤事件全部取消。
+
+  # ============================================================
+  # 雷达（两舰都无）
+  # ============================================================
+  - field: sensors.radar.count
+    value: 0
+    unit: count
+    src: [jm93-midway-operations]
+    valid: { from: 1937-12-29, to: 1942-06-05 }
+    confidence: B
+    note: >-
+      **这是「0」，有官方记录支撑。** 原句「At the outbreak of the war,
+      the Navy did not have ship radar… the Navy finally completed the
+      installation of radar equipment on the battleships, ISE and HYUGA,
+      on 27 May, just prior to the beginning of this operation.」
+      即开战时日本海军根本没有舰载雷达，1942-05-27 才首次装到战列舰伊势、日向。
+      中途岛时全部四艘日军航母都没有雷达。
+
+  - field: sensors.director.type
+    value: 九四式高射指挥装置 2 基（左右各 1）+ 九五式机枪指挥装置 5 基（左右各 2、舰首 1）
+    src: [japanese-warship-soryu]
+    valid: { from: 1937-12-29, to: 1942-06-05 }
+    confidence: C
+    note: >-
+      九四式指挥 12.7cm 高角炮，舰岛上的右舷那台可统控全部八九式炮
+      （"the starboard director on the island could control all of the Type 89 guns"）。
+      飞龙的两台位置：右舷的在舰岛顶上，左舷的在飞行甲板以下。

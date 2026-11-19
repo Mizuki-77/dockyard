@@ -1,0 +1,1899 @@
+# ============================================================================
+# Bismarck 级（Bismarck class）舰级公共数据
+# ----------------------------------------------------------------------------
+# 这里只放 Bismarck 与 Tirpitz 两舰**共有**的设计参数与武器/炮位实体。
+# 单舰的实测值、建造日期、编制、时间轴状态变化一律写在 data/ships/<id>.yaml，
+# 解析顺序见 docs/00-framework.md §3.6：单舰 fact -> 舰级 fact -> 未记载。
+#
+# 约定：facts 里每条可带一个 about 键指明归属实体。
+#   about 缺省       -> 本文件主体（舰级本身）
+#   about: weapon:x  -> 武器实体 x（weapon.* 字段）
+#   about: mount:x   -> 炮位实体 x（mount.* 字段）
+# 校验器不认识 about，只按 field/unit/type/qual 校验，不影响契约。
+# ============================================================================
+
+id: bismarck
+name:
+  zh: 俾斯麦级
+  en: Bismarck class
+class_of: [bismarck, tirpitz]
+note: |
+  舰级层只登记两舰共有的设计值。凡 Bismarck 与 Tirpitz 不同的项，
+  一律不写在这里，由单舰文件覆盖。
+
+open_ended_note: |
+  本文件绝大多数 fact 的 valid.to 都留空，这是结构性的，不是漏填：
+  舰级设计参数的生效期从设计定案/服役起，到该级最后一艘损失或拆解为止，
+  期间不因改装而改变；实际战备状态随时间的变化写在 data/ships/<id>.yaml 的
+  状态切片里，由单舰 fact 覆盖。因此这里的 open 时间窗表示「无已知终止事件」，
+  逐条写 note 只会是同一句话复制上百遍。
+
+facts:
+  # ---------------------------------------------------------------- 身份
+  - field: identity.name_original
+    value: Bismarck
+    src: [kbismarck-genedata]
+    valid: { from: 1936-07-01 }
+    confidence: A
+    note: 舰级名取首舰名；Schlachtschiff F 为建造代号。
+
+  - field: identity.ship_type
+    value: battleship
+    src: [kbismarck-genedata, navypedia-bismarck]
+    valid: { from: 1936-07-01 }
+    confidence: A
+    note: 两源一致。
+
+  - field: identity.nation
+    value: germany
+    src: [kbismarck-genedata]
+    valid: { from: 1936-07-01 }
+    confidence: A
+
+  - field: identity.era
+    value: ww2
+    src: [kbismarck-genedata]
+    valid: { from: 1936-07-01 }
+    confidence: A
+    note: 按服役期定位（1940-08-24 服役至 1941-05-27 沉没），不是按设计年份。
+
+  - field: identity.operator
+    value: Kriegsmarine
+    src: [kbismarck-genedata]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - field: identity.building_program
+    value: Schlachtschiff F / G（Z 计划前身，1934 起设计研究）
+    src: [kbismarck-genedata, german-navy-bismarck]
+    valid: { from: 1934 }
+    confidence: C
+    note: german-navy 记 1934 年 Panzerschiff F 设计研究起点为 35,000 t / 8×33 cm，后因敦刻尔克级加厚装甲而放大。
+
+  # ---------------------------------------------------------------- 排水量
+  # 五个口径各自独立成字段，绝不合并。Bismarck 的数值见 ships/bismarck.yaml。
+  # 口径定义来自 kbismarck-bsweights 的逐项分解表。
+
+  - field: displacement.empty
+    value: 40250
+    unit: t
+    src: [kbismarck-bsweights]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: Schiff Fertig Leer（空载完工状态）。bsweights 逐项累加得出，非概略值。
+
+  - field: displacement.standard
+    value: 43978
+    unit: t
+    src: [kbismarck-bsweights]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: >
+      按 1922 华盛顿条约定义（不含燃油与备用给水）逐项累加得出，
+      口径在脚注 1 里自证，故可作主值。英文维基的 41,700 t 未标口径，
+      按 §3.9 主值规则落选，但仍保留为单舰 fact 的并列说法。
+
+  - field: displacement.standard_metric
+    value: 43313
+    unit: t
+    src: [kbismarck-bsweights]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: >
+      Typverdrängung（型号/设计排水量），kbismarck bsweights 页原值 43,313 mt。
+      这不是标准排水量（不含饮水 155 + 洗涤水 510 的 43,978 才是），
+      故按注册表定义单列此字段，不与 displacement.standard 混用。
+      德军自己的口径里它是设计状态的基本重量，出图与配重计算用的就是它。
+
+  - field: displacement.construction
+    value: 47870
+    unit: t
+    src: [kbismarck-bsweights]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: Construction displacement，装甲重量占比的分母用的就是这个值。
+
+  - field: displacement.full
+    value: 51760
+    unit: t
+    src: [kbismarck-bsweights, kbismarck-genedata]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: >
+      bsweights 逐项表与 genedata 主表一致。但 genedata 同页三张对比表把
+      full load 写成 51,700 mt，属同页自相矛盾，已作单舰分歧另行登记。
+
+  - field: displacement.maximum
+    value: 53486
+    unit: t
+    src: [kbismarck-bsweights]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 含备用燃油与洗涤水的极限排水量。
+
+  # ---------------------------------------------------------------- 尺寸
+  # 一律带口径后缀。长度三个口径都要有，缺一个就没法和别的舰比。
+
+  - field: dimensions.length.oa
+    value: 250.50
+    unit: m
+    src: [kbismarck-genedata]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 另有 german-navy 记 251.0 m，差 0.5 m，属单舰分歧，见 ships/bismarck.yaml。
+
+  - field: dimensions.length.wl
+    value: 241.55
+    unit: m
+    src: [kbismarck-genedata]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 水线长。german-navy 记 241.6 m，四舍五入差异。
+
+  - field: dimensions.beam.wl
+    value: 36.00
+    unit: m
+    src: [kbismarck-genedata]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - field: dimensions.draught.mean
+    value: 9.33
+    unit: m
+    src: [kbismarck-genedata]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 标准排水量状态下的吃水。字段 note 要求必须绑定排水量状态，此处即 standard。
+
+  - field: dimensions.draught.max
+    value: 10.55
+    unit: m
+    src: [kbismarck-genedata]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 满载状态。英文维基记 9.9 m，与 german-navy 的 9.9 m 一致，属单舰分歧。
+
+  - field: dimensions.depth.molded
+    value: 15.00
+    unit: m
+    src: [kbismarck-genedata]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 脚注 2 说明是舯部自上层甲板量至龙骨底。
+
+  - field: dimensions.block_coefficient
+    value: 0.55
+    unit: ratio
+    src: [kbismarck-genedata]
+    valid: { from: 1940-08-24 }
+    confidence: B
+    note: genedata 注释给出算式 44,900/(241.55×36×9.33)；分母用的是 44,900 t 而非某个标准排水量，口径可疑，降为 B。
+
+  - field: dimensions.prismatic_coefficient
+    value: 0.57
+    unit: ratio
+    src: [kbismarck-genedata]
+    valid: { from: 1940-08-24 }
+    confidence: B
+    note: 与同站 propulsion 页的 0.56 矛盾，两条并列，不裁。
+
+  - field: dimensions.prismatic_coefficient
+    value: 0.56
+    unit: ratio
+    src: [kbismarck-propulsion]
+    valid: { from: 1940-08-24 }
+    confidence: B
+    note: 与同站 genedata 的 0.57 矛盾，两条并列，不裁。
+
+  - field: dimensions.watertight_compartments
+    value: 22
+    unit: count
+    src: [kbismarck-protection]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 22 个水密段中 17 个（section III–XIX）在装甲堡内。
+
+  # ---------------------------------------------------------------- 动力
+  # 设计值放舰级；实测功率与实测航速是单舰的，写 ships/。
+
+  - field: propulsion.plant_type
+    value: steam_turbine
+    src: [kbismarck-propulsion]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - field: propulsion.shafts
+    value: 3
+    unit: count
+    src: [kbismarck-propulsion]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - field: propulsion.boiler.count
+    value: 12
+    unit: count
+    src: [kbismarck-propulsion]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: Wagner Hochdruck 高压锅炉，分置 6 个水密舱（section XI 与 XIII），锅炉号 1529–1540。
+
+  - field: propulsion.boiler.type
+    value: Wagner Hochdruck（高压水管锅炉）
+    src: [kbismarck-propulsion]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - field: propulsion.boiler.manufacturer
+    value: Wagner
+    src: [kbismarck-propulsion]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - field: propulsion.boiler.pressure
+    value: 56
+    unit: atm
+    src: [kbismarck-propulsion]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 原文 55–56 atm（58 kg/cm²）；安全阀 58 atm，许可上限 64 atm。存上限值。
+
+  - field: propulsion.boiler.temperature
+    value: 450
+    unit: celsius
+    src: [kbismarck-propulsion]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 过热蒸汽 450 °C；饱和蒸汽 287 °C；给水预热 160 °C。
+
+  - field: propulsion.turbine.count
+    value: 3
+    unit: count
+    src: [kbismarck-propulsion]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 三组齿轮传动蒸汽轮机，无巡航涡轮。
+
+  - field: propulsion.turbine.type
+    value: Blohm & Voss 齿轮传动汽轮机（HP Curtis 40 级 / IP 双流 15 级 / LP 9 级 + 冷凝器，HP 倒车单 Curtis，LP 倒车双流，无巡航级）
+    src: [kbismarck-propulsion]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - field: propulsion.turbine.manufacturer
+    value: Blohm & Voss
+    src: [kbismarck-propulsion]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: Tirpitz 用 Brown-Boveri，故此项不能从舰级无脑继承。
+
+  - field: propulsion.power.design
+    value: 138000
+    unit: hp
+    src: [navypedia-bismarck, kbismarck-testi]
+    valid: { from: 1940-08-24 }
+    confidence: B
+    note: navypedia 记 138,000 hp，kbismarck-testi 记设计 138,000 hp / 29 节。设计值，非实测。
+
+  - field: propulsion.speed.design
+    value: 29
+    unit: kn
+    src: [kbismarck-testi, navypedia-bismarck]
+    valid: { from: 1940-08-24 }
+    confidence: B
+    note: 设计航速。实测 30.1 节（1940-10-23 Neukrug 测速航程）见单舰文件。
+
+  - field: propulsion.propeller.count
+    value: 3
+    unit: count
+    src: [kbismarck-propulsion]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - field: propulsion.propeller.diameter
+    value: 4.70
+    unit: m
+    src: [kbismarck-propulsion]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 三叶；左与中桨逆时针、右桨顺时针；满速 270 rpm。
+
+  - field: propulsion.propeller.type
+    value: 三叶定距桨（每桨容积 2.4 m³）
+    src: [kbismarck-propulsion]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - field: propulsion.rudder.count
+    value: 2
+    unit: count
+    src: [kbismarck-propulsion]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 两平行舵各 24.21 m²，偏离垂直 8° 指向中线。
+
+  - field: propulsion.electrical.output
+    value: 7910
+    unit: kW
+    src: [kbismarck-propulsion]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 220 V；8×500 kW 柴油 + 5×690 kW 涡轮 + 1×460 kW 涡轮，四个配电舱 E-Werk 1–4。
+
+  - field: propulsion.fuel.capacity
+    value: 7900
+    unit: t
+    src: [kbismarck-genedata]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: genedata 正文与同页对比表都是 7,900 mt，但同站 propulsion 页写 8,294 mt，构成同站矛盾，两条并列。
+
+  - field: propulsion.fuel.capacity
+    value: 8294
+    unit: t
+    src: [kbismarck-propulsion]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: propulsion 页的燃油装载量，与 genedata 的 7,900 mt 矛盾。可能是设计容量 vs 可用容量之差，但两站均未说明，故并列不裁。
+
+  - field: propulsion.fuel.type
+    value: 重油（Furnace fuel oil spec 0.950 @21°C）
+    src: [kbismarck-bsweights]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  # ---------------------------------------------------------------- 防护
+  # 装甲一律 compare: false / better: context —— 厚度不是越大越好。
+  # part / region 词表严格取自 fields.yaml。
+
+  - field: protection.scheme
+    value: incremental
+    src: [kbismarck-protection]
+    valid: { from: 1940-08-24 }
+    confidence: B
+    note: >
+      德式分舱防御（多层甲板 + 装甲堡 + 内置防雷系统），不是美式 all-or-nothing。
+      来源只描述构造，未直接给体系名称，故此值属归纳判定，降为 B。
+
+  - field: protection.armor.weight
+    value: 19082
+    unit: t
+    src: [kbismarck-protection, kbismarck-genedata]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 两源一致。bsweights 另给「不含炮塔装甲的装甲板」11,902 t + 炮塔装甲 1,023 t 的分解。
+
+  - field: protection.armor.weight_ratio
+    value: 39.9
+    unit: pct
+    src: [kbismarck-protection]
+    valid: { from: 1940-08-24 }
+    confidence: B
+    note: 19,082 / 47,870（Construction）= 39.86%。原文只写「≈40%」，分母取 Construction 是据同页文字推断。
+
+  - field: protection.armor.thickness
+    value: 320
+    unit: mm
+    qual: { part: belt, region: main }
+    src: [kbismarck-protection]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: KC n/A 舷侧带，4.8 m 宽、170.7 m 长（frame 32→202.7），覆盖 70% 水线，背衬 50 mm 柚木，螺栓固定于 16–25 mm 舷板。
+
+  - field: protection.armor.thickness
+    value: 145
+    unit: mm
+    qual: { part: upper_belt, region: main }
+    src: [kbismarck-protection]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: KC；frame 186.7–202.7 段减为 120 mm。
+
+  - field: protection.armor.thickness
+    value: 100
+    unit: mm
+    qual: { part: deck, region: main }
+    src: [kbismarck-protection]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 第三装甲甲板平部：弹药库段 100 mm Wh，机舱段 80 mm。存弹药库值，完整梯度见 note 里的分层表。
+
+  - field: protection.armor.thickness
+    value: 120
+    unit: mm
+    qual: { part: slope, region: main }
+    src: [kbismarck-protection]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 第三装甲甲板外侧斜部 110–120 mm Wh，与水平约 22°。存上限。
+
+  - field: protection.armor.thickness
+    value: 360
+    unit: mm
+    qual: { part: turret, region: face }
+    src: [kbismarck-protection]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 主炮塔下正面 360 mm KC；上正面 180 mm。
+
+  - field: protection.armor.thickness
+    value: 220
+    unit: mm
+    qual: { part: turret, region: side }
+    src: [kbismarck-protection]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 下侧面 220 mm KC；上侧面 150 mm。
+
+  - field: protection.armor.thickness
+    value: 320
+    unit: mm
+    qual: { part: turret, region: rear }
+    src: [kbismarck-protection]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 下后部 320 mm KC；上后部 180 mm。
+
+  - field: protection.armor.thickness
+    value: 130
+    unit: mm
+    qual: { part: turret, region: roof }
+    src: [kbismarck-protection]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - field: protection.armor.thickness
+    value: 340
+    unit: mm
+    qual: { part: barbette, region: main }
+    src: [kbismarck-protection]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 上甲板以上 340 mm KC，以下至第三装甲甲板 220 mm。原文称等效于美制 Class A 的 390–405 mm。
+
+  - field: protection.armor.thickness
+    value: 350
+    unit: mm
+    qual: { part: conning_tower, region: main }
+    src: [kbismarck-protection]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 前司令塔壁 350 mm KC、顶 220 mm；后司令塔壁 150 mm、顶 50 mm。
+
+  - field: protection.armor.thickness
+    value: 45
+    unit: mm
+    qual: { part: bulkhead, region: torpedo }
+    src: [kbismarck-protection]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: Ww n/A 纵向防雷舱壁，与外壳间距中部 5.4 m、Anton/Dora 处 3 m、Bruno 3.5 m、Cäsar 3.8 m。
+
+  - field: protection.armor.angle
+    value: 17
+    unit: deg
+    qual: { part: belt, region: main }
+    src: [kbismarck-protection]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 舷侧带外倾分段不同：Anton 段 17°、Bruno 10°、Cäsar 8–10°、Dora 7°。存最大值。
+
+  - field: protection.armor.material
+    value: KC n/A（Krupp Cemented new type）
+    qual: { part: belt, region: main }
+    src: [kbismarck-protection]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 3.5–3.8% Ni、2% Cr、0.3% C、0.3% Mn、0.2% Mo，670 Brinell 表层，硬化层占板厚 40–50%。
+
+  - field: protection.armor.material
+    value: Wh n/A（Wotan hart，均质）
+    qual: { part: deck, region: main }
+    src: [kbismarck-protection]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 抗拉 85–95 kg/mm²，屈服 50–55。
+
+  - field: protection.armor.material
+    value: Ww n/A（Wotan weich）
+    qual: { part: bulkhead, region: torpedo }
+    src: [kbismarck-protection]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 抗拉 65–75 kg/mm²，屈服 38–40。
+
+  - field: protection.underwater.depth
+    value: 5.4
+    unit: m
+    src: [kbismarck-protection]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 防雷舱壁与外壳间距，中部 5.4 m；两炮塔段较窄（Anton/Dora 3 m）。
+
+  - field: protection.torpedo_bulge.type
+    value: 内置防雷系统（无外置突出部；45 mm Ww 纵舱壁 + 装甲甲板与上甲板间 30 mm Wh 纵隔壁，形成 102 个防护格）
+    src: [kbismarck-protection]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - field: protection.mine_protection
+    value: MES 消磁系统（1940-06-23 装）；防雷系统设计抗 250 kg TNT
+    src: [kbismarck-protection, kbismarck-histoperi]
+    valid: { from: 1940-06-23 }
+    confidence: A
+    note: 脚注 2 引 Tirpitz 报告称实际按 300 kg hexanite 设计。
+
+  # ---------------------------------------------------------------- 武备概览
+  # 结构化数据在下面的 weapon / mount 实体里；这里只放总量与派生值。
+
+  - field: armament.depth_charge.count
+    value: 9
+    unit: count
+    src: [kbismarck-genedata]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - field: armament.broadside_weight
+    value: 6400
+    unit: kg
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: B
+    note: 8 门 × 800 kg = 6,400 kg 主炮弹丸重量。派生值，非来源直接给出的数。
+
+  - field: armament.mount.summary
+    value: 8×38 cm/L52（4 座双联）+ 12×15 cm/L55（6 座双联）+ 16×10.5 cm/L65（8 座双联）+ 16×3.7 cm/L83（8 座双联）+ 20×2 cm/L65 + 9 具深水炸弹
+    src: [kbismarck-genedata]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 人读概览。设计状态；服役后 2 cm 高炮的构型多次变动，见单舰文件。
+
+  # ================================================================ 武器实体
+  # 全部 applies_to: [weapon]，用 about: weapon:<id> 分隔。
+
+  # ------------------------------------------------ 38 cm SK C/34（主炮）
+  - about: weapon:38cm-sk-c34
+    field: weapon.designation
+    value: 38 cm SK C/34
+    src: [navweaps-38cm-sk-c34, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.nation
+    value: germany
+    src: [navweaps-38cm-sk-c34]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.category
+    value: naval_gun
+    src: [navweaps-38cm-sk-c34]
+    valid: { from: 1939 }
+    confidence: A
+    note: 同型有岸防版本，药室 361.7 dm³、初速 1,050 mps，属另一武器，不并入本节。见 next 条目。
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.bore
+    value: 380
+    unit: mm
+    src: [navweaps-38cm-sk-c34, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.caliber_length
+    value: 51.66
+    unit: ratio
+    src: [navweaps-38cm-sk-c34]
+    valid: { from: 1939 }
+    confidence: A
+    note: 德制算法 51.66，美英制换算为 48.43。kbismarck 写 L/52，是取整。
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.caliber_method
+    value: german_method
+    src: [navweaps-38cm-sk-c34]
+    valid: { from: 1939 }
+    confidence: A
+    note: 德国算法量到炮口平面，故同一门炮在德制/美英制下差 3 倍径。
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.length.oa
+    value: 19.630
+    unit: m
+    src: [navweaps-38cm-sk-c34]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.length.bore
+    value: 15.982
+    unit: m
+    src: [navweaps-38cm-sk-c34]
+    valid: { from: 1939 }
+    confidence: A
+    note: NavWeaps 膛线长 15.982 m；kbismarck 写 18.405 m（标 L/48.5）。两者不一致，并列见下一条。
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.length.bore
+    value: 18.405
+    unit: m
+    src: [kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: B
+    note: kbismarck 称膛线部长 18.405 m，与 NavWeaps 的 15.982 m 相差 2.4 m，疑为"膛线部"与"炮身有效长度"两种口径，两源均未给定义，并列不裁。
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.weight
+    value: 111000
+    unit: kg
+    src: [navweaps-38cm-sk-c34]
+    valid: { from: 1939 }
+    confidence: A
+    note: 含炮尾；后期型轻约 300 kg。
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.weight
+    value: 110700
+    unit: kg
+    src: [kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: B
+    note: kbismarck 记 110.7 mt，与 NavWeaps 的 111,000 kg 差 300 kg，恰为后者所述的后期减重，可能是不同批次，并列不裁。
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.projectile_weight
+    value: 800
+    unit: kg
+    qual: { shell_type: ap }
+    src: [navweaps-38cm-sk-c34, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+    note: Psgr. L/4,4 m.Hb；装药 18.8 kg、被帽 112.50 kg、长 1.672 m、底发引信 Bdz 38 延时 0.0035 s。
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.projectile_weight
+    value: 800
+    unit: kg
+    qual: { shell_type: he_base_fuze }
+    src: [kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+    note: Spgr. L/4,5 Bdz；装药 32.6 kg、被帽 69.35 kg、长 1.710 m。
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.projectile_weight
+    value: 800
+    unit: kg
+    qual: { shell_type: he_nose_fuze }
+    src: [kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+    note: Spgr. L/4,6 Kz；装药 64.25 kg、长 1.748 m、Kz 27 无延时。
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.muzzle_velocity
+    value: 820
+    unit: mps
+    qual: { shell_type: ap }
+    src: [navweaps-38cm-sk-c34, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+    note: 岸防型 Siegfried 初速 1,050 mps，差 230 m/s，不可混用。
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.charge.weight
+    value: 99.5
+    unit: kg
+    qual: { charge_part: fore, propellant: rp_c32 }
+    src: [navweaps-38cm-sk-c34]
+    valid: { from: 1939 }
+    confidence: A
+    note: 前装药 Vorladung。英文维基炮条目把 Fore/Rear 的数值对调，是典型转写错误，已在此锁定正确配对。
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.charge.weight
+    value: 111.5
+    unit: kg
+    qual: { charge_part: rear, propellant: rp_c32 }
+    src: [navweaps-38cm-sk-c34]
+    valid: { from: 1939 }
+    confidence: A
+    note: 后装药 Hauptladung，RP C/32。RP C/38 时后装药为 112.5 kg。
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.charge.chamber_volume
+    value: 319
+    unit: dm3
+    src: [navweaps-38cm-sk-c34]
+    valid: { from: 1939 }
+    confidence: A
+    note: 舰炮药室 319 dm³；岸防型 Siegfried 为 361.7 dm³。这是区分两型最硬的证据。
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.range.max
+    value: 35550
+    unit: m
+    src: [navweaps-38cm-sk-c34, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+    note: 两源一致。英文维基的 36,520 m 是孤证，疑混入岸防型数据，按主值规则落选。
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.range.max_elevation
+    value: 30
+    unit: deg
+    src: [navweaps-38cm-sk-c34, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+    note: 即炮塔最大仰角。缺了仰角的射程数字没有意义。
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.rate_of_fire
+    value: 2.5
+    unit: rpm
+    src: [navweaps-38cm-sk-c34, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+    note: >
+      理论 2.3–3 发/分（Krupp 文件称 4° 仰角下 26 秒一发）；实战远低于此：
+      丹麦海峡 13 分钟仅 93 发，不到每炮每分 1 发。AVSK 1941-05 报告称四炮塔
+      合计 23–25 发/分但设计缺陷导致两次长时间断供。存中值 2.5。
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.elevation.min
+    value: -5.5
+    unit: deg
+    src: [navweaps-38cm-sk-c34, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.elevation.max
+    value: 30
+    unit: deg
+    src: [navweaps-38cm-sk-c34, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.barrel_life
+    value: 250
+    unit: count
+    src: [navweaps-38cm-sk-c34, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: B
+    note: NavWeaps 180–210 发，kbismarck 200–300 发，两源区间不重叠，取中值 250 并降为 B。真实寿命取决于装药与射速。
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.ammo_outfit
+    value: 125
+    unit: count
+    src: [kbismarck-armament, navweaps-38cm-sk-c34]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: >
+      全舰 1,004 发 / 8 门 ≈ 125 发/炮（353 Psgr + 338 Spgr Bdz + 313 Spgr Kz）。
+      逐弹种点数是 kbismarck 原始清单，非反推。NavWeaps 给的设计基数为 108 发/炮。
+
+  - about: weapon:38cm-sk-c34
+    field: weapon.in_service_from
+    value: 1939
+    unit: date
+    src: [navweaps-38cm-sk-c34]
+    valid: { from: 1939 }
+    confidence: B
+
+  # ------------------------------------------------ 15 cm SK C/28（副炮）
+  - about: weapon:15cm-sk-c28
+    field: weapon.designation
+    value: 15 cm SK C/28
+    src: [navweaps-15cm-sk-c28, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:15cm-sk-c28
+    field: weapon.nation
+    value: germany
+    src: [navweaps-15cm-sk-c28]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:15cm-sk-c28
+    field: weapon.category
+    value: naval_gun
+    src: [navweaps-15cm-sk-c28]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:15cm-sk-c28
+    field: weapon.bore
+    value: 150
+    unit: mm
+    src: [navweaps-15cm-sk-c28, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:15cm-sk-c28
+    field: weapon.length.oa
+    value: 8.25
+    unit: m
+    src: [kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+    note: L/55。44 条膛线，深 1.75 mm、宽 6.14 mm。
+
+  - about: weapon:15cm-sk-c28
+    field: weapon.weight
+    value: 9080
+    unit: kg
+    src: [kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:15cm-sk-c28
+    field: weapon.projectile_weight
+    value: 45.3
+    unit: kg
+    qual: { shell_type: he_base_fuze }
+    src: [navweaps-15cm-sk-c28, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:15cm-sk-c28
+    field: weapon.muzzle_velocity
+    value: 875
+    unit: mps
+    qual: { shell_type: he_base_fuze }
+    src: [navweaps-15cm-sk-c28, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:15cm-sk-c28
+    field: weapon.charge.weight
+    value: 23.5
+    unit: kg
+    qual: { charge_part: single, propellant: rp_c32 }
+    src: [kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: B
+    note: kbismarck 只写「装药 23.5 kg」，未区分前后装药，按单装药处理并降 B。propellant 型号未见记载，填 rp_c32 属推定。
+
+  - about: weapon:15cm-sk-c28
+    field: weapon.range.max
+    value: 23000
+    unit: m
+    src: [navweaps-15cm-sk-c28, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:15cm-sk-c28
+    field: weapon.range.max_elevation
+    value: 40
+    unit: deg
+    src: [navweaps-15cm-sk-c28, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+    note: 35° 时 22,000 m，40° 时 23,000 m。
+
+  - about: weapon:15cm-sk-c28
+    field: weapon.rate_of_fire
+    value: 8
+    unit: rpm
+    src: [kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:15cm-sk-c28
+    field: weapon.barrel_life
+    value: 2500
+    unit: count
+    src: [kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: B
+
+  # ------------------------------------------------ 10.5 cm SK C/33（重型高炮）
+  - about: weapon:10_5cm-sk-c33
+    field: weapon.designation
+    value: 10.5 cm SK C/33
+    src: [navweaps-10_5cm-sk-c33, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:10_5cm-sk-c33
+    field: weapon.nation
+    value: germany
+    src: [navweaps-10_5cm-sk-c33]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:10_5cm-sk-c33
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-10_5cm-sk-c33]
+    valid: { from: 1939 }
+    confidence: A
+    note: 兼作水面射击，故部分来源归为双用途炮。
+
+  - about: weapon:10_5cm-sk-c33
+    field: weapon.bore
+    value: 105
+    unit: mm
+    src: [navweaps-10_5cm-sk-c33, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:10_5cm-sk-c33
+    field: weapon.length.oa
+    value: 6.825
+    unit: m
+    src: [kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+    note: L/65。
+
+  - about: weapon:10_5cm-sk-c33
+    field: weapon.weight
+    value: 4560
+    unit: kg
+    src: [kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:10_5cm-sk-c33
+    field: weapon.projectile_weight
+    value: 15.1
+    unit: kg
+    qual: { shell_type: he }
+    src: [navweaps-10_5cm-sk-c33, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+    note: NavWeaps 另给 AP 15.8 kg；整装弹 27.0 或 27.35 kg。
+
+  - about: weapon:10_5cm-sk-c33
+    field: weapon.projectile_weight
+    value: 15.8
+    unit: kg
+    qual: { shell_type: ap }
+    src: [navweaps-10_5cm-sk-c33]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:10_5cm-sk-c33
+    field: weapon.muzzle_velocity
+    value: 900
+    unit: mps
+    qual: { shell_type: he }
+    src: [navweaps-10_5cm-sk-c33, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:10_5cm-sk-c33
+    field: weapon.range.max
+    value: 17850
+    unit: m
+    src: [kbismarck-armament, navweaps-10_5cm-sk-c33]
+    valid: { from: 1939 }
+    confidence: A
+    note: 水面射程 17,850 m（kbismarck）；NavWeaps 给 45° 时 17,700 m。差 150 m，属不同仰角，未构成分歧。
+
+  - about: weapon:10_5cm-sk-c33
+    field: weapon.range.aa_max
+    value: 13000
+    unit: m
+    src: [kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: B
+    note: kbismarck 记垂直射高 13,000 m @80°；NavWeaps 记 12,500 m @80°。两源差 500 m，取 kbismarck 值并降 B。
+
+  - about: weapon:10_5cm-sk-c33
+    field: weapon.rate_of_fire
+    value: 18
+    unit: rpm
+    src: [kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: B
+    note: 理论射速。实战受引信装定与供弹限制显著降低。
+
+  - about: weapon:10_5cm-sk-c33
+    field: weapon.elevation.min
+    value: -10
+    unit: deg
+    src: [kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+    note: C/37 座为 −10°；早期 C/31 座为 −8°。
+
+  - about: weapon:10_5cm-sk-c33
+    field: weapon.elevation.max
+    value: 80
+    unit: deg
+    src: [navweaps-10_5cm-sk-c33, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  # ------------------------------------------------ 3.7 cm SK C/30（中口径高炮）
+  - about: weapon:37mm-sk-c30
+    field: weapon.designation
+    value: 3.7 cm SK C/30
+    src: [navweaps-37mm-sk-c30, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:37mm-sk-c30
+    field: weapon.nation
+    value: germany
+    src: [navweaps-37mm-sk-c30]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:37mm-sk-c30
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-37mm-sk-c30]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:37mm-sk-c30
+    field: weapon.bore
+    value: 37
+    unit: mm
+    src: [navweaps-37mm-sk-c30, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:37mm-sk-c30
+    field: weapon.length.oa
+    value: 3.071
+    unit: m
+    src: [kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+    note: L/83。
+
+  - about: weapon:37mm-sk-c30
+    field: weapon.projectile_weight
+    value: 0.742
+    unit: kg
+    qual: { shell_type: he }
+    src: [navweaps-37mm-sk-c30]
+    valid: { from: 1939 }
+    confidence: A
+    note: 整装弹 2.1 kg。kbismarck 记弹重 0.745 kg，差 3 g，属四舍五入。
+
+  - about: weapon:37mm-sk-c30
+    field: weapon.muzzle_velocity
+    value: 1000
+    unit: mps
+    qual: { shell_type: he }
+    src: [navweaps-37mm-sk-c30, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:37mm-sk-c30
+    field: weapon.range.max
+    value: 8500
+    unit: m
+    src: [navweaps-37mm-sk-c30]
+    valid: { from: 1939 }
+    confidence: A
+    note: 45° 时 8,500 m；kbismarck 记 6,750 m（未注仰角），并列见下条。
+
+  - about: weapon:37mm-sk-c30
+    field: weapon.range.max
+    value: 6750
+    unit: m
+    src: [kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: B
+    note: kbismarck 未注仰角，疑为有效射程而非最大射程，故与 NavWeaps 的 8,500 m（45°）并列不裁。
+
+  - about: weapon:37mm-sk-c30
+    field: weapon.range.aa_max
+    value: 6800
+    unit: m
+    src: [navweaps-37mm-sk-c30]
+    valid: { from: 1939 }
+    confidence: A
+    note: 85° 射高 6,800 m；曳光弹 4,800 m。
+
+  - about: weapon:37mm-sk-c30
+    field: weapon.rate_of_fire
+    value: 80
+    unit: rpm
+    src: [kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: B
+    note: kbismarck 注明实战约每管 30–40 发/分。存理论值，实战值见 note。
+
+  - about: weapon:37mm-sk-c30
+    field: weapon.elevation.min
+    value: -10
+    unit: deg
+    src: [kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:37mm-sk-c30
+    field: weapon.elevation.max
+    value: 80
+    unit: deg
+    src: [kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  # ------------------------------------------------ 2 cm MG C/30（轻型高炮）
+  - about: weapon:20mm-c30
+    field: weapon.designation
+    value: 2 cm MG C/30
+    src: [navweaps-20mm-c30, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:20mm-c30
+    field: weapon.nation
+    value: germany
+    src: [navweaps-20mm-c30]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:20mm-c30
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-20mm-c30]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:20mm-c30
+    field: weapon.bore
+    value: 20
+    unit: mm
+    src: [navweaps-20mm-c30, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:20mm-c30
+    field: weapon.length.oa
+    value: 1.3
+    unit: m
+    src: [kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+    note: L/65。
+
+  - about: weapon:20mm-c30
+    field: weapon.projectile_weight
+    value: 0.148
+    unit: kg
+    qual: { shell_type: ap }
+    src: [navweaps-20mm-c30]
+    valid: { from: 1939 }
+    confidence: A
+    note: AP-T 0.148 kg / HE-I 0.120 kg / HE-T 0.116 kg；整装弹 0.320 kg。kbismarck 记 0.132 kg，疑取 HE 均值。
+
+  - about: weapon:20mm-c30
+    field: weapon.muzzle_velocity
+    value: 875
+    unit: mps
+    qual: { shell_type: ap }
+    src: [navweaps-20mm-c30, kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:20mm-c30
+    field: weapon.range.max
+    value: 4900
+    unit: m
+    src: [navweaps-20mm-c30]
+    valid: { from: 1939 }
+    confidence: A
+    note: 45° 时 4,900 m；kbismarck 记 4,600 m（未注仰角）。
+
+  - about: weapon:20mm-c30
+    field: weapon.range.aa_max
+    value: 3700
+    unit: m
+    src: [navweaps-20mm-c30]
+    valid: { from: 1939 }
+    confidence: A
+    note: 85° 射高 3,700 m；kbismarck 记 3,500 m。
+
+  - about: weapon:20mm-c30
+    field: weapon.rate_of_fire
+    value: 200
+    unit: rpm
+    src: [kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: B
+    note: 理论射速，实际约 120 发/分。
+
+  - about: weapon:20mm-c30
+    field: weapon.elevation.max
+    value: 85
+    unit: deg
+    src: [kbismarck-armament]
+    valid: { from: 1939 }
+    confidence: A
+
+  # ------------------------------------------------ 2 cm Flak C/38（四联装用炮身）
+  - about: weapon:20mm-c38
+    field: weapon.designation
+    value: 2 cm Flak C/38
+    src: [navweaps-20mm-c30, kbismarck-armament]
+    valid: { from: 1941-04 }
+    confidence: A
+    note: >
+      Flak C/35 四联装座用的是 C/30 炮身，不是 C/38；「四联就是 C/38」是常见误读。
+      Bismarck 1941-04 下旬在 Gotenhafen 装的四联装为 C/38 炮身，故单列一型。
+
+  - about: weapon:20mm-c38
+    field: weapon.nation
+    value: germany
+    src: [navweaps-20mm-c30, kbismarck-armament]
+    valid: { from: 1941-04 }
+    confidence: A
+
+  - about: weapon:20mm-c38
+    field: weapon.bore
+    value: 20
+    unit: mm
+    src: [kbismarck-armament]
+    valid: { from: 1941-04 }
+    confidence: A
+
+  - about: weapon:20mm-c38
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [kbismarck-armament]
+    valid: { from: 1941-04 }
+    confidence: A
+
+  - about: weapon:20mm-c38
+    field: weapon.elevation.max
+    value: 100
+    unit: deg
+    src: [kbismarck-armament]
+    valid: { from: 1941-04 }
+    confidence: A
+    note: C/38 四联装座仰角上限 100°，高于 C/30 的 85°。
+
+  - about: weapon:20mm-c38
+    field: weapon.rate_of_fire
+    value: 220
+    unit: rpm
+    src: [kbismarck-armament]
+    valid: { from: 1941-04 }
+    confidence: B
+    note: 原文写「其余同 C/30」并给 220 发/分（C/30 为 200）。属理论值。
+
+  # ================================================================ 炮位实体
+  # 只登记设计状态即存在的炮位；装/拆时间在单舰文件里用 valid 窗口表达。
+
+  # ------------------------------------------------ 主炮塔四座
+  - about: mount:anton
+    field: mount.label_name
+    value: Anton
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 德舰按字母序命名（Anton/Bruno/Cäsar/Dora），位于 frame 192.55。
+
+  - about: mount:anton
+    field: mount.weapon
+    value: weapon:38cm-sk-c34
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:anton
+    field: mount.turret_designation
+    value: Drh. L. C/34
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: B
+    note: 来源只写双联炮塔与型号 C/34，Drh. L. 前缀为德制炮塔通称，推定填写。
+
+  - about: mount:anton
+    field: mount.type
+    value: twin_turret
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:anton
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:anton
+    field: mount.count
+    value: 1
+    unit: count
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 同名炮位仅一座；总数 4 座见 armament.mount.summary。
+
+  - about: mount:anton
+    field: mount.position
+    value: superfiring_fore
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: frame 192.55，最高一座，可越过 Bruno 射击。
+
+  - about: mount:anton
+    field: mount.weight
+    value: 1048000
+    unit: kg
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 1,048 t，比其余三座轻 8 t，因 10.5 m 测距仪于 1940/41 冬被拆。
+
+  - about: mount:anton
+    field: mount.elevation.max
+    value: 30
+    unit: deg
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:anton
+    field: mount.traverse
+    value: 215°–0°–145°（约 290° 可用扇面，受上层建筑限制）
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: Cäsar 与 Dora 为 35°–180°–325°，只能向艉方向射击。
+
+  - about: mount:anton
+    field: mount.rangefinder_count
+    value: 0
+    unit: count
+    src: [kbismarck-firecontrol]
+    valid: { from: 1940-12 }
+    confidence: A
+    note: 原装 1 具 10.5 m 基线测距仪，1940/41 冬在汉堡拆除（高速航行时海水起雾致无用）。此条记拆除后状态；拆除前的 1 具见 valid 更早的并列条目。
+
+  - about: mount:bruno
+    field: mount.label_name
+    value: Bruno
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: frame 174.35。
+
+  - about: mount:bruno
+    field: mount.weapon
+    value: weapon:38cm-sk-c34
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:bruno
+    field: mount.type
+    value: twin_turret
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:bruno
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:bruno
+    field: mount.count
+    value: 1
+    unit: count
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:bruno
+    field: mount.position
+    value: fore
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:bruno
+    field: mount.weight
+    value: 1056000
+    unit: kg
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:bruno
+    field: mount.elevation.max
+    value: 30
+    unit: deg
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:bruno
+    field: mount.rangefinder_count
+    value: 1
+    unit: count
+    src: [kbismarck-firecontrol]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 10.5 m 基线。
+
+  - about: mount:caesar
+    field: mount.label_name
+    value: Cäsar
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: frame 64.35。
+
+  - about: mount:caesar
+    field: mount.weapon
+    value: weapon:38cm-sk-c34
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:caesar
+    field: mount.type
+    value: twin_turret
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:caesar
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:caesar
+    field: mount.count
+    value: 1
+    unit: count
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:caesar
+    field: mount.position
+    value: superfiring_aft
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 舯部炮塔，向艉方向越射 Dora。
+
+  - about: mount:caesar
+    field: mount.weight
+    value: 1056000
+    unit: kg
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:caesar
+    field: mount.elevation.max
+    value: 30
+    unit: deg
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:caesar
+    field: mount.traverse
+    value: 35°–180°–325°
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:caesar
+    field: mount.rangefinder_count
+    value: 1
+    unit: count
+    src: [kbismarck-firecontrol]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 10.5 m 基线。
+
+  - about: mount:dora
+    field: mount.label_name
+    value: Dora
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: frame 46.15。
+
+  - about: mount:dora
+    field: mount.weapon
+    value: weapon:38cm-sk-c34
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:dora
+    field: mount.type
+    value: twin_turret
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:dora
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:dora
+    field: mount.count
+    value: 1
+    unit: count
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:dora
+    field: mount.position
+    value: aft
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:dora
+    field: mount.weight
+    value: 1056000
+    unit: kg
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:dora
+    field: mount.elevation.max
+    value: 30
+    unit: deg
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:dora
+    field: mount.traverse
+    value: 35°–180°–325°
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:dora
+    field: mount.rangefinder_count
+    value: 1
+    unit: count
+    src: [kbismarck-firecontrol]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 10.5 m 基线。
+
+  # ------------------------------------------------ 副炮六座
+  - about: mount:15cm-twin
+    field: mount.weapon
+    value: weapon:15cm-sk-c28
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:15cm-twin
+    field: mount.turret_designation
+    value: Dop. L. C/34
+    src: [navweaps-15cm-sk-c28]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:15cm-twin
+    field: mount.type
+    value: twin_turret
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:15cm-twin
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:15cm-twin
+    field: mount.count
+    value: 6
+    unit: count
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 每舷三座，共 12 门。
+
+  - about: mount:15cm-twin
+    field: mount.position
+    value: midships
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 沿上层建筑两舷布置（非炮廓，是双联装炮塔）。
+
+  - about: mount:15cm-twin
+    field: mount.weight
+    value: 108000
+    unit: kg
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 中央两座为 110 t。
+
+  - about: mount:15cm-twin
+    field: mount.elevation.max
+    value: 40
+    unit: deg
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:15cm-twin
+    field: mount.rangefinder_count
+    value: 1
+    unit: count
+    src: [kbismarck-firecontrol]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 中央炮塔各装 6.5 m 基线测距仪。
+
+  # ------------------------------------------------ 10.5 cm 双联八座
+  - about: mount:105cm-twin-c37
+    field: mount.weapon
+    value: weapon:10_5cm-sk-c33
+    src: [kbismarck-armament]
+    valid: { from: 1940-10 }
+    confidence: A
+
+  - about: mount:105cm-twin-c37
+    field: mount.turret_designation
+    value: Dop. L. C/37
+    src: [kbismarck-armament]
+    valid: { from: 1940-10 }
+    confidence: A
+    note: C/37 座 26.425 t；早期 C/31 座 27.350 t。Bismarck 后期八座均为 C/37。
+
+  - about: mount:105cm-twin-c37
+    field: mount.type
+    value: twin_turret
+    src: [kbismarck-armament]
+    valid: { from: 1940-10 }
+    confidence: A
+    note: 有炮罩，属封闭式炮座，非敞开炮架。
+
+  - about: mount:105cm-twin-c37
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [kbismarck-armament]
+    valid: { from: 1940-10 }
+    confidence: A
+
+  - about: mount:105cm-twin-c37
+    field: mount.count
+    value: 8
+    unit: count
+    src: [kbismarck-armament]
+    valid: { from: 1940-10 }
+    confidence: A
+    note: >
+      设计 8 座 16 门。但 1940-08 服役时舰艉四座尚未安装，
+      1940 年 10–11 月在 Gotenhafen 补装完毕。故本条的 valid.from 定在 1940-10，
+      而非服役日；12 门状态见单舰文件。
+
+  - about: mount:105cm-twin-c37
+    field: mount.position
+    value: midships
+    src: [kbismarck-armament]
+    valid: { from: 1940-10 }
+    confidence: A
+    note: 每舷四座：前二座在上层建筑两侧，后二座在舰艉。
+
+  - about: mount:105cm-twin-c37
+    field: mount.weight
+    value: 26425
+    unit: kg
+    src: [kbismarck-armament]
+    valid: { from: 1940-10 }
+    confidence: A
+
+  - about: mount:105cm-twin-c37
+    field: mount.elevation.max
+    value: 80
+    unit: deg
+    src: [kbismarck-armament]
+    valid: { from: 1940-10 }
+    confidence: A
+
+  # ------------------------------------------------ 3.7 cm 双联八座
+  - about: mount:37mm-twin
+    field: mount.weapon
+    value: weapon:37mm-sk-c30
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:37mm-twin
+    field: mount.type
+    value: shielded_mount
+    src: [kbismarck-armament, kbismarck-flak-relocation]
+    valid: { from: 1940-08-24 }
+    confidence: B
+    note: >
+      双联装于上/下桅平台，有防护但非全封闭炮塔。该型炮座有严重缺陷：
+      炮弹需逐发手动送入，炮架随动不足 —— 见 1940-05 后实战记录与 flak-relocation 文件。
+
+  - about: mount:37mm-twin
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:37mm-twin
+    field: mount.count
+    value: 8
+    unit: count
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 16 门。1940-10-31 Lindemann 呈文要求 III/IV 从下桅平台移到上桅平台、并挪开遮挡射界的设备。
+
+  - about: mount:37mm-twin
+    field: mount.position
+    value: midships
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: 前后各两座于上/下桅平台。
+
+  - about: mount:37mm-twin
+    field: mount.elevation.max
+    value: 80
+    unit: deg
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  # ------------------------------------------------ 2 cm 单装（C/30）
+  - about: mount:20mm-single
+    field: mount.weapon
+    value: weapon:20mm-c30
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:20mm-single
+    field: mount.type
+    value: open_mount
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: Sockel-Lafette 单装基座，无防护。10 门装于基座，2 门另有单装架。
+
+  - about: mount:20mm-single
+    field: mount.barrels
+    value: 1
+    unit: count
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+
+  - about: mount:20mm-single
+    field: mount.count
+    value: 12
+    unit: count
+    src: [kbismarck-armament]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: >
+      设计状态 12 门单装。1941-04 下旬探照灯平台两门改用 C/38 四联装，
+      构型此后为 10 单装 + 2 四联，故本条的 valid.to 定在 1941-04，
+      接续条目见单舰文件。
+
+  - about: mount:20mm-single
+    field: mount.position
+    value: midships
+    src: [kbismarck-armament, kbismarck-flak-relocation]
+    valid: { from: 1940-08-24 }
+    confidence: A
+    note: >
+      布点分散：舰首 I/II 门（受风浪暴露，仅停泊可操作）、D 塔前缘 XI/XII 门（可折叠）、
+      上/下桅平台与艉部若干。1940-10-31 文件要求重布并换双联。
+
+  # ------------------------------------------------ 2 cm 四联装（C/38）
+  - about: mount:20mm-quad
+    field: mount.weapon
+    value: weapon:20mm-c38
+    src: [kbismarck-armament]
+    valid: { from: 1941-04 }
+    confidence: A
+
+  - about: mount:20mm-quad
+    field: mount.turret_designation
+    value: Flak C/35 四联装座（炮身为 C/38）
+    src: [kbismarck-armament, navweaps-20mm-c30]
+    valid: { from: 1941-04 }
+    confidence: A
+    note: 座型号与炮身型号不同型，混写会导致武器实体挂错。
+
+  - about: mount:20mm-quad
+    field: mount.type
+    value: quad_turret
+    src: [kbismarck-armament]
+    valid: { from: 1941-04 }
+    confidence: A
+
+  - about: mount:20mm-quad
+    field: mount.barrels
+    value: 4
+    unit: count
+    src: [kbismarck-armament]
+    valid: { from: 1941-04 }
+    confidence: A
+
+  - about: mount:20mm-quad
+    field: mount.count
+    value: 2
+    unit: count
+    src: [kbismarck-armament]
+    valid: { from: 1941-04 }
+    confidence: A
+    note: 1941-04 下旬于 Gotenhafen 装于前桅两侧探照灯平台上方，替换原两门单装。
+
+  - about: mount:20mm-quad
+    field: mount.position
+    value: midships
+    src: [kbismarck-armament]
+    valid: { from: 1941-04 }
+    confidence: A
+
+  - about: mount:20mm-quad
+    field: mount.elevation.max
+    value: 100
+    unit: deg
+    src: [kbismarck-armament]
+    valid: { from: 1941-04 }
+    confidence: A

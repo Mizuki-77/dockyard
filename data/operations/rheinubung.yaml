@@ -1,0 +1,104 @@
+# 战役系列（operation）。一次作战行动里先后发生的几场战斗串成一条线。
+#
+# 与 battles/ 的分工：
+#   operations/  只存「顺序 + 每一站的定位」——读者从这里进入整段历史
+#   battles/     存每场战斗的全套细节（兵力、逐分钟事件流、命中、伤亡）
+#
+# 为什么不分层就会乱：莱茵演习包含丹麦海峡交战、大西洋追击、最终战三个环节，
+# 三者参战兵力各不相同（5-24 是四艘主力舰对轰，5-27 是二十余艘英舰围歼一艘），
+# 塞进一个时间轴会把「谁打了谁」彻底搅混。
+#
+# src 规则同 battle：只引已登记来源，tier E 不得使用。
+
+id: rheinubung
+name:
+  zh: 莱茵演习
+  en: Operation Rheinübung
+codename: Rheinübung
+
+date: { from: 1941-05-18, to: 1941-05-27 }
+
+summary:
+  zh: 德国海军 1941 年 5 月发起的大西洋破交作战。战列舰俾斯麦号与重巡洋舰欧根亲王号从格丁尼亚出击，企图切断英国的大西洋补给线。行动在第九天以俾斯麦号被围歼告终——战果是击沉了英国皇家海军的精神象征胡德号，代价是德国水面舰队此后基本退出大西洋。
+  en: The German Atlantic raiding operation of May 1941, in which Bismarck and Prinz Eugen sortied to cut Britain's supply lines. It ended nine days later with Bismarck's destruction.
+
+objective:
+  zh: 切断英国本土与北美之间的运输线。德国海军司令部认为，单舰突入大西洋造成的护航中断，效果大于同吨位舰艇留在挪威的威慑价值。
+  en: Sever Britain's transatlantic supply lines.
+
+belligerents:
+  - side: axis
+    label: { zh: 德国, en: Germany }
+    ships:
+      - name: Bismarck
+        ship_id: bismarck
+        role: { zh: 战列舰 · 编队旗舰, en: Battleship · flagship }
+      - name: Prinz Eugen
+        role: { zh: 重巡洋舰, en: Heavy cruiser }
+  - side: allies
+    label: { zh: 英国, en: United Kingdom }
+    ships:
+      - name: HMS Hood
+        role: { zh: 战列巡洋舰 · 丹麦海峡阵亡, en: Battlecruiser · lost in Denmark Strait }
+      - name: HMS Prince of Wales
+        role: { zh: 战列舰, en: Battleship }
+      - name: HMS King George V
+        role: { zh: 战列舰 · 本土舰队旗舰, en: Battleship · Home Fleet flagship }
+      - name: HMS Rodney
+        role: { zh: 战列舰, en: Battleship }
+      - name: HMS Norfolk
+        role: { zh: 重巡洋舰, en: Heavy cruiser }
+      - name: HMS Suffolk
+        role: { zh: 重巡洋舰, en: Heavy cruiser }
+      - name: HMS Dorsetshire
+        role: { zh: 重巡洋舰 · 救起生还者, en: Heavy cruiser · rescued survivors }
+      - name: HMS Ark Royal
+        role: { zh: 航空母舰, en: Aircraft carrier }
+      - name: HMS Victorious
+        role: { zh: 航空母舰, en: Aircraft carrier }
+      - name: HMS Sheffield
+        role: { zh: 轻巡洋舰, en: Light cruiser }
+
+phases:
+  - label:
+      zh: 出击与突破
+      en: Sortie and breakout
+    date: { from: 1941-05-18, to: 1941-05-23 }
+    summary:
+      zh: 5 月 18 日两舰从格丁尼亚出航，经卡特加特海峡北上，22 日在挪威卑尔根附近的格里姆斯塔峡湾短暂停留但未补给燃油。英国情报通过空中侦察确认其动向，本土舰队随即出港封锁。23 日晚在丹麦海峡被萨福克号与诺福克号的雷达发现，接触一直保持到次日凌晨。
+    src: [kbismarck-histoperi, kbismarck-chase]
+
+  - battle: denmark-strait
+    label:
+      zh: 丹麦海峡海战
+      en: Battle of the Denmark Strait
+    date: { from: 1941-05-24 }
+    summary:
+      zh: 5 月 24 日 05:52 起双方在丹麦海峡交战约 20 分钟。胡德号被第五次齐射击穿薄甲板引爆弹药库，1,418 人仅 3 人生还；威尔士亲王号中弹后撤出。俾斯麦号自身被命中三发，一发击穿舰首燃油舱，燃料损失成为后续覆灭的直接原因。
+    src: [kbismarck-denmark-strait, kbismarck-armament]
+
+  - label:
+      zh: 大西洋追击
+      en: The Atlantic chase
+    date: { from: 1941-05-24, to: 1941-05-26 }
+    summary:
+      zh: 交战结束后俾斯麦号因燃油舱破损改为直驶法国圣纳泽尔，欧根亲王号单独继续破交。5 月 24 日夜间被胜利号鱼雷机攻击，一雷命中但损伤轻微；随后一度摆脱英方跟踪，25 日凌晨短暂失去接触。26 日上午被卡特琳娜水上飞机重新发现，皇家方舟号的剑鱼式鱼雷机傍晚发动攻击，两雷命中舵机区。
+    src: [kbismarck-chase, kbismarck-aviation]
+
+  - battle: last-battle
+    label:
+      zh: 最终战与沉没
+      en: Final battle and sinking
+    date: { from: 1941-05-26, to: 1941-05-27 }
+    summary:
+      zh: 5 月 26 日 20:47 两枚鱼雷打坏舵机，俾斯麦号失去操舵能力只能原地打转。当夜英国驱逐舰轮番骚扰保持接触。27 日上午英王乔治五世号与罗德尼号在约 23,000 米距离开火，战斗持续约一个半小时，俾斯麦号上层建筑被逐层摧毁、四座主炮塔相继失效，约 10:39 沉没于 48°09′N 16°07′W。全舰 2,200 余人仅 114 人生还。
+    src: [kbismarck-last-battle, kbismarck-ktb]
+
+outcome:
+  zh: 战术上德国赢得了一场战斗，战略上输掉了整个作战。胡德号的损失让英国海军部短期内不敢再让主力舰单独行动，但俾斯麦号的沉没同样使德国水面舰队丧失了继续在大西洋破交的能力——此后德国海军的重心彻底转向潜艇。对英国而言，真正的收获不是击沉了哪艘舰，而是护航体系在此后没有再被水面舰艇打乱。
+  en: A tactical victory for Germany at Denmark Strait, but a strategic defeat that ended the surface raider campaign.
+
+narratives:
+  - bismarck-sinking-cause
+
+src: [kbismarck-histoperi, kbismarck-ktb, kbismarck-raeder-report]

@@ -1,0 +1,223 @@
+# ============================================================================
+# 叙述性争议（narrative 层）—— Bismarck
+# ----------------------------------------------------------------------------
+# 这里只放**装不进字段**的争议：一个事实如果有明确的值（哪怕有多个互斥的值），
+# 就该拆成 fact 并列；只有当「争议本身是一段叙述」时才进这里。
+#
+# 结构见 docs/00-framework.md §3.8。四条硬规则：
+#   1. 所有说法都列，一个都不删，包括官方口径与已被否定的旧说。
+#   2. held_by 写主张者姓名，不写"有人认为"；没有署名的观点不进 narrative。
+#   3. current_consensus 标主流但不作结论，页面同时显示主流与少数说。
+#   4. 能降级成 fact 的一律降级，narrative 是最后手段。
+#
+# 字段约定：
+#   id          全局唯一，<ship>-<topic>
+#   question    双语的"问题"表述，不是标题
+#   positions[] 每种说法：id / claim / held_by / evidence / source_refs
+#   status      disputed | settled | minority
+#   current_consensus  主流说法的 id，可为 null（无公认主流）
+#
+# 注意：positions[].source_refs 只引用 data/sources.yaml 里已登记的 id。
+# narrative 的来源不需要 role 含 data（那是 fact 的要求），但必须真实存在。
+# ============================================================================
+
+ship: bismarck
+
+narratives:
+  # ==========================================================================
+  - id: bismarck-sinking-cause
+    question:
+      zh: Bismarck 是因战斗损伤沉没，还是被舰员自行凿沉？
+      en: Did Bismarck sink from battle damage or was she scuttled by her crew?
+    positions:
+      - id: battle-damage
+        claim:
+          zh: 战斗损伤导致不可控进水，最终沉没
+          en: Uncontrolled flooding from battle damage caused the sinking
+        held_by: [Mearns]
+        evidence: >-
+          1941-05-27 最终战中，HMS Rodney 与 HMS King George V 近距离射击，
+          英方记录合计发射 2,800 余发主炮炮弹（Rodney 单舰 16 英寸实发 378 发、
+          6 英寸 706 发，见其 preliminary gunnery report），命中数百发；
+          另有 HMS Dorsetshire 发射鱼雷。上层建筑被逐层摧毁，进水无法控制。
+        source_refs: [kbismarck-rodney-report, kbismarck-last-battle]
+
+      - id: scuttling
+        claim:
+          zh: 舰员按命令开启通海阀并引爆破口，舰体自行沉没
+          en: The crew opened sea valves and set scuttling charges on orders
+        held_by: [Oels, Ballard]
+        evidence: >-
+          首席轮机官 Gerhard Junack 与舰长以下军官的证词称 09:30 左右
+          Korvettenkapitän Oels 下令自沉，约 10:20 装药起爆。
+          Robert Ballard 1989 年考察残骸后指出舰体未见内爆痕迹
+          （"Bismarck did not implode"），认为进水速率与自沉行为一致。
+        source_refs: [kbismarck-debriefing, kbismarck-last-hours, kbismarck-wreck]
+
+      - id: both
+        claim:
+          zh: 两者皆是——炮火已使沉没不可避免，自沉只是加速了结局
+          en: Both — the gunfire had already made sinking inevitable; scuttling merely hastened it
+        held_by: [Cameron, Dulin, Garzke, Jurens]
+        evidence: >-
+          2002 年 Cameron 探险队与 Naval Institute 合作考察后，
+          Garzke 与 Jurens 在报告中以原文 "BOTH!!" 回应二选一的问题，
+          认为炮火造成的进水已足以致沉，自沉使沉没提早数十分钟。
+          这是目前学界最广泛接受的立场。
+        source_refs: [kbismarck-wreck, kbismarck-last-battle]
+
+      - id: scuttling-minor
+        claim:
+          zh: 自沉只让沉没提前几分钟，不具有实质因果意义
+          en: Scuttling advanced the sinking by only minutes and is causally insignificant
+        held_by: [Mearns]
+        evidence: >-
+          Mearns 在后期的著作中修正了早期立场，认为以当时舰体的进水状态，
+          即便不自沉也会在很短时间内沉没，故"自沉致沉"的说法在因果上过强。
+        source_refs: [kbismarck-last-battle]
+
+      - id: german-official
+        claim:
+          zh: 德国官方口径——成为优势兵力之牺牲品，完全未提自沉
+          en: German official account — "a victim of overwhelming force"; scuttling was not mentioned
+        held_by: [Wehrmachtbericht]
+        evidence: >-
+          1941-05-27 国防军公报（Wehrmachtbericht）原话
+          "Opfer der Übermacht"（成为优势兵力的牺牲品），
+          只强调敌我力量悬殊，未提任何自沉行为。
+          此说作为史料保留：它反映的是当时的宣传口径，
+          而不是技术结论，但它也是"为什么自沉说在德国长期不被讨论"的答案。
+        source_refs: [kbismarck-last-battle]
+
+    status: disputed
+    current_consensus: both
+    note: >-
+      此争议无法收敛的根源是证据性质：没有任何生还者目击沉没过程
+      （德方 Naval Group Command West 1941-06-14 呈文原话
+      "The actual sinking was not witnessed by any of the survivors."），
+      而残骸证据只能证明"发生了内爆/未内爆"，不能直接区分因果。
+      因此本站立场是永久并列，不随时间改判。
+
+  # ==========================================================================
+  - id: bismarck-lindemann-death
+    question:
+      zh: 舰长 Lindemann 是什么时候死的？
+      en: When did Captain Lindemann die?
+    positions:
+      - id: killed-early
+        claim:
+          zh: 09:02 前后，在舰桥被一次齐射直接命中时阵亡
+          en: Killed around 09:02 when the bridge took a direct hit
+        held_by: [Mearns, KBismarck]
+        evidence: >-
+          多方叙述称 09:02 前后一枚 16 英寸炮弹击中前部舰桥区域，
+          舰桥人员几乎全部阵亡，Lindemann 在其中。
+        source_refs: [kbismarck-last-hours, kbismarck-last-battle]
+
+      - id: died-later
+        claim:
+          zh: 活到沉没前，最后被看到在舰首甲板
+          en: Survived until shortly before the sinking; last seen on the forecastle
+        held_by: [Junack, 部分生还者证词]
+        evidence: >-
+          生还者证词（含 Junack 回忆）提到他本人最后见到舰长是在舰首
+          方向，此时舰桥已被摧毁。此说与"09:02 舰桥阵亡"直接冲突。
+        source_refs: [kbismarck-last-hours, kbismarck-debriefing]
+
+    status: disputed
+    current_consensus: killed-early
+    note: >-
+      两种证词都来自生还者，且都不是第一手目击死亡。本站并列保留；
+      舰长的阵亡时刻在页面上不显示具体时刻，只显示"1941-05-27"。
+
+  # ==========================================================================
+  - id: bismarck-hits-received
+    question:
+      zh: Bismarck 在最终战中中了多少发炮弹？
+      en: How many shell hits did Bismarck receive in her final battle?
+    positions:
+      - id: hits-200-300
+        claim:
+          zh: 约 200–300 发命中
+          en: Roughly 200–300 hits
+        held_by: [Garzke & Dulin, Campbell]
+        evidence: >-
+          基于残骸考察与英方射击记录的推算，认为命中数在 200–300 之间。
+        source_refs: [kbismarck-wreck, kbismarck-last-battle]
+
+      - id: hits-400-plus
+        claim:
+          zh: 400 发以上命中
+          en: More than 400 hits
+        held_by: [Mearns]
+        evidence: >-
+          Mearns 统计英方射击记录（合计 2,800 余发发射）后，按观测到的
+          命中率推得 400 发以上。
+        source_refs: [kbismarck-last-battle, kbismarck-rodney-report]
+
+    status: disputed
+    current_consensus: null
+    note: >-
+      无法收敛的关键：英方各舰的炮术报告并不完整。已取得的只有
+      HMS Rodney 的 preliminary report（16 英寸 378 发、6 英寸 706 发），
+      King George V、Norfolk、Dorsetshire 的报告尚未采入，
+      在拿到全部一手报告前不应给出单一数值。已记入 sources.yaml 的 todo 段。
+
+  # ==========================================================================
+  - id: bismarck-survivors-count
+    question:
+      zh: Bismarck 有多少生还者？
+      en: How many survivors were rescued from Bismarck?
+    positions:
+      - id: surv-114
+        claim: { zh: 114 人, en: 114 men }
+        held_by: [KBismarck, 多数英文文献]
+        evidence: 最常见的数字，被广泛引用。
+        source_refs: [kbismarck-last-battle]
+
+      - id: surv-115
+        claim: { zh: 115 人, en: 115 men }
+        held_by: [部分德文文献]
+        evidence: 差异可能来自是否计入获救后在舰上死亡的一人。
+        source_refs: [kbismarck-histoperi]
+
+      - id: surv-116
+        claim: { zh: 116 人, en: 116 men }
+        held_by: [部分德文文献]
+        evidence: 差异可能来自是否计入被不同舰艇救起的分批统计。
+        source_refs: [kbismarck-histoperi]
+
+    status: disputed
+    current_consensus: surv-114
+    note: >-
+      这种 1–2 人的差异不该影响任何其它数据的可信度判断，但也不能
+      随便取一个数当真理。fact 层已按主值规则取 114 并标 C。
+
+  # ==========================================================================
+  - id: bismarck-wreck-discovery-date
+    question:
+      zh: 残骸是哪一天被发现的？
+      en: On what date was the wreck discovered?
+    positions:
+      - id: found-0608
+        claim: { zh: 1989-06-08, en: 8 June 1989 }
+        held_by: [Ballard]
+        evidence: >-
+          Ballard 团队在 1989-06-08 当地时间发现残骸；
+          按船上时间记录为 06-08，是他本人叙述采用的日期。
+        source_refs: [kbismarck-wreck]
+
+      - id: found-0609
+        claim: { zh: 1989-06-09, en: 9 June 1989 }
+        held_by: [部分文献]
+        evidence: >-
+          按格林尼治时间或按考察船日志的跨日记录可得出 06-09。
+          属时区/跨日口径差异，不是发现行为本身的争议。
+        source_refs: [kbismarck-wreck]
+
+    status: minority
+    current_consensus: found-0608
+    note: >-
+      本质是时区口径差异而非事实争议，但既然两种日期都在流通，
+      就都列出。fact 层 construction 里不登记"发现日"——
+      那是残骸的事件，不是舰的建造事件。

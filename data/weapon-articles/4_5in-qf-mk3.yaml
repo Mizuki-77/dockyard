@@ -1,0 +1,256 @@
+# ============================================================================
+# 武器正文 —— QF 4.5 in Mark III
+#
+# 素材用的是 navweaps-45in-45-mk1（同一门炮的 Mark I / Mark III / Mark IV 家族页）。
+# 这一型最值得写的是「定装弹选错了」这条主线：整发 85 磅，
+# 而二十年前英国人就发现 74 磅已经太重。两个层面的评价互相打架，两说并列。
+# ============================================================================
+weapon: 4_5in-qf-mk3
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      QF 4.5 in Mark III 是英国皇家海军 1930 年代为新建航母选定的双用途炮，
+      装在光辉级与怨仇级上，与 Mark I 同族、可互换，差别只在击发机构细节。
+      它服役后的评价分裂得很清楚：炮座与火炮的持续工作表现被实战报告称赞，
+      而它用的整装式定装弹被 navweaps 直接判定为「过重」。
+    en: >-
+      The QF 4.5 in Mark III was the dual-purpose gun the Royal Navy chose in the
+      1930s for its new carriers, mounting it in the Illustrious and Implacable
+      classes. It is interchangeable with the Mark I and differs only in firing
+      mechanism detail. Its reputation splits cleanly: action reports praised the
+      sustained working of gun and mounting, while NavWeaps judges the fixed round it
+      fired to have been too heavy.
+
+  paragraphs:
+    - heading: 它本来是要替换 5.1 英寸那门失败的炮
+      text:
+        zh: >-
+          5.1 in/50 QF Mark I 的计划失败之后，英国在 1930 年代中期选定 4.5 英寸
+          作为航母的新双用途炮。选它的理由是：这被认为是「人工装填定装弹所能承受的
+          最大口径」——整发弹重 85 磅（38.6 公斤），而 5.1 英寸那门是 108 磅（49 公斤）。
+          换句话说，这是一次在「口径」与「人力」之间做的取舍。
+        en: >-
+          Following the failure of the 5.1 in/50 QF Mark I programme, the 4.5-inch was
+          selected in the mid-1930s as the new dual-purpose weapon for carriers. The
+          reasoning was that this was believed to be the largest calibre that could use
+          a manually handled fixed round: 85 pounds (38.6 kg) complete, against 108
+          pounds (49 kg) for the 5.1-inch. It was a trade between calibre and manpower.
+      src: [navweaps-45in-45-mk1]
+
+    - heading: 这次取舍在二十年前就被否证过一次
+      text:
+        zh: >-
+          navweaps 对这一点的批评写得很细，值得完整转述：这个决定在重量上有两处自相矛盾。
+          第一，4.7 英寸驱逐舰弹药一直做成分装，就是为了减轻弹药搬运的负担；
+          第二，1920 年代为纳尔逊级 4.7 in/40 Mark XII 高炮设计的定装弹整发只有
+          74 磅（33.6 公斤），而服役评估已经发现，这门炮维持不了高射速——
+          因为重的定装弹很快就把炮组累垮了。既然 1930 年代初已经认定 74 磅太重，
+          几年后却认为 85 磅可以接受，就显得很奇怪。navweaps 的结论是：
+          现役海军与海军部在定装弹的实际使用经验上沟通严重不足。
+        en: >-
+          NavWeaps makes the criticism in detail and it is worth setting out: the
+          decision was contradictory on weight for two reasons. First, the slightly
+          lighter 4.7-inch destroyer ammunition had always been made in separate form
+          precisely to reduce the burden on the handlers. Second, a fixed round had been
+          designed in the 1920s for the 4.7 in/40 Mark XII anti-aircraft gun in the
+          Nelson class and weighed only 74 pounds (33.6 kg) complete - and service
+          evaluation had found that gun could not maintain a high rate of fire, because
+          the heavy fixed round rapidly wore out the crews. If 74 pounds was already too
+          heavy in the early 1930s, an 85-pound fixed round being judged acceptable a
+          few years later looks odd. NavWeaps concludes that the active Navy and the
+          Admiralty communicated poorly about practical experience with fixed
+          ammunition.
+      src: [navweaps-45in-45-mk1]
+
+    - heading: 服役之后：定装弹确实太重
+      text:
+        zh: >-
+          这项预判在服役中应验了。navweaps 的原话是：这个定装弹在服役使用中
+          被证明过重，正常搬运时弹头有与药筒分离的倾向；这些问题导致长时间射击时
+          射速迅速下降。后来为皇家方舟号与鹰号设计的 Mark II*** BD 双联座
+          改用了分装弹药——这是一次事后的修正。
+        en: >-
+          The prediction was borne out. NavWeaps states that the fixed round "proved to
+          be too heavy in service use and there was a tendency for the projectiles to
+          separate from the cartridge cases during normal handling", with the result
+          that "a rapidly decreasing rate of fire during prolonged firing periods".
+          The Mark II*** BD twin mountings later designed for Ark Royal and Eagle used
+          separate ammunition instead - a correction after the fact.
+      src: [navweaps-45in-45-mk1]
+
+    - heading: 但这一型也有正面的战绩记录
+      text:
+        zh: >-
+          这一节必须两说并列。光辉级 1941 年 1 月 10 日的实战报告（ADM 3363/0197）
+          对 4.5 英寸炮的评价是正面的：八门炮在约三十分钟里打出约 3,000 发高爆弹，
+          平均射速 12 发/分，报告称之为「remarkable」。
+          而 navweaps 说的是长时间持续射击时射速会退化。两者并不直接冲突——
+          一个是短时高强度交战、一个是长时间持续射击的趋势——但本站不替来源裁决，
+          两组记录并列保留。
+        en: >-
+          Both readings stand here. The Illustrious class action report of 10 January
+          1941 (ADM 3363/0197) was positive about the 4.5-inch: eight guns fired
+          roughly 3,000 rounds of HE in about thirty minutes at an average of 12 rounds
+          per minute, which the report called "remarkable". NavWeaps describes a rate of
+          fire that falls off during prolonged firing. The two do not directly
+          contradict - one is a short, intense engagement and the other a trend over
+          sustained fire - but this article reports both rather than adjudicating.
+      src: [navweaps-45in-45-mk1, naval-history-illustrious]
+
+    - heading: 一次致命的事故
+      text:
+        zh: >-
+          1941 年 5 月 8 日，声望号在与意大利鱼雷机交战时，失效保护锁定装置失灵，
+          她的 P3 炮座向 P2 炮座的后方开火，造成 6 人死亡、26 人受伤。
+          舰员在炮座周围架起角铁架防止重演，同年晚些在罗塞斯大修时
+          翻修了失效保护装置。这一条不属于 4.5 英寸炮本身的缺陷，
+          但它是这型炮座在实战条件下面临的真实风险。
+        en: >-
+          On 8 May 1941, while Renown was engaging Italian torpedo bombers, a fail-safe
+          lockout malfunctioned and her P3 mounting fired into the back of P2, killing
+          six and wounding twenty-six. The crew erected angle-iron frames around the
+          mountings to prevent a repeat, and the fail-safe gear was overhauled at Rosyth
+          later that year. This is not a defect of the 4.5-inch gun as such, but it is
+          the kind of risk these mountings carried in action.
+      src: [navweaps-45in-45-mk1]
+
+    - heading: 后来被 Mark IV 取代，以及为什么改用分装
+      text:
+        zh: >-
+          1944 年，4.7 英寸炮让位给新的 4.5 in QF Mark IV（有单装与双联两种座）。
+          新炮原计划也用定装弹，但斯库拉号与卡律布狄斯号的报告说：大浪中装填
+          因为弹药过重出了问题。这两艘是六千吨级的巡洋舰，那么更轻的驱逐舰
+          只会更糟。于是新的驱逐舰炮座改用分装弹药。navweaps 补了一句评价：
+          这个结论，皇家海军本该在十多年前就明白。
+        en: >-
+          In 1944 the 4.7-inch gave way to the new 4.5 in QF Mark IV, in single and twin
+          mountings. That gun was also to have used fixed ammunition, but reports from
+          the cruisers Scylla and Charybdis described loading problems in rough weather
+          caused by the weight. Those were 6,000-ton ships, so the much lighter
+          destroyers would obviously be worse - a conclusion NavWeaps observes the Royal
+          Navy should have reached more than a decade earlier. The new destroyer
+          mountings were therefore designed for separate ammunition.
+      src: [navweaps-45in-45-mk1]
+
+history:
+  - id: design
+    title: { zh: 设计与定型, en: Design }
+    range: { from: 1935, to: 1938 }
+    lead:
+      zh: >-
+        5.1 英寸计划失败之后，4.5 英寸被选出来当航母的双用途炮。
+      en: >-
+        After the 5.1-inch programme failed, the 4.5-inch was picked as the carrier
+        dual-purpose gun.
+    events:
+      - date: 1935
+        text:
+          zh: >-
+            完成设计（navweaps 的 Date Of Design 为 "about 1935"）。
+            在 5.1 in/50 QF Mark I 计划失败后，4.5 英寸被选为航母的新双用途炮，
+            理由是这是人工装填定装弹可承受的最大口径。
+          en: >-
+            Design completed (NavWeaps gives "about 1935"). Following the failure of the
+            5.1 in/50 QF Mark I programme, the 4.5-inch was selected as the carriers'
+            new dual-purpose gun on the grounds that it was the largest calibre workable
+            with a manually handled fixed round.
+        src: [navweaps-45in-45-mk1]
+      - date: 1938
+        text:
+          zh: >-
+            进入服役。Mark I 与 Mark III 只用于双联座、可互换，差别仅在击发机构细节；
+            有舰同时装两型，取决于建造或改装时手头有什么。
+          en: >-
+            Entered service. The Mark I and Mark III were used only in twin mountings
+            and were interchangeable, differing only in firing mechanism detail; some
+            ships carried both, depending on what was available when they were built or
+            modernised.
+        src: [navweaps-45in-45-mk1]
+
+  - id: service
+    title: { zh: 战时使用, en: Wartime service }
+    range: { from: 1940, to: 1945-09 }
+    lead:
+      zh: >-
+        它在光辉级上打满了整个地中海与印度洋阶段，评价两头都有。
+      en: >-
+        It served through the Illustrious class's Mediterranean and Indian Ocean years,
+        drawing praise and criticism alike.
+    events:
+      - date: 1940-04-16
+        text:
+          zh: >-
+            光辉号服役，装 8 座双联 Mark II BD，共 16 门，备弹每门 400 发。
+            炮座嵌入飞行甲板外伸的舷台上，以减小对飞行作业的影响。
+          en: >-
+            Illustrious commissioned with eight twin Mark II BD mountings, sixteen guns,
+            and 400 rounds per gun. The mountings were countersunk into sponsons
+            projecting from the flight deck to reduce their impact on flying operations.
+        src: [navypedia-illustrious, navweaps-45in-45-mk1]
+      - date: 1941-01-10
+        text:
+          zh: >-
+            光辉级实战报告（ADM 3363/0197）：八门 4.5 英寸炮在约三十分钟里
+            打出约 3,000 发高爆弹，平均射速 12 发/分，报告称之为「remarkable」。
+            **这一条与 navweaps 关于长时间射击时射速下降的说法并列，不裁决。**
+          en: >-
+            The Illustrious class action report (ADM 3363/0197): eight 4.5-inch guns
+            fired about 3,000 rounds of HE in roughly thirty minutes at an average of 12
+            rounds per minute, which the report called "remarkable". **This stands
+            alongside NavWeaps' account of rate of fire falling off in prolonged firing;
+            neither is adjudicated here.**
+        src: [naval-history-illustrious]
+      - date: 1941-05-08
+        text:
+          zh: >-
+            声望号与意大利鱼雷机交战，失效保护锁定装置失灵，P3 炮座向 P2 炮座后方开火，
+            6 死 26 伤。舰员架角铁架防重演，同年晚些在罗塞斯翻修该装置。
+          en: >-
+            While Renown engaged Italian torpedo bombers, a fail-safe lockout
+            malfunctioned and P3 fired into the back of P2, killing six and wounding
+            twenty-six. The crew erected angle-iron frames to prevent a repeat and the
+            gear was overhauled at Rosyth later that year.
+        src: [navweaps-45in-45-mk1]
+      - date: 1944
+        text:
+          zh: >-
+            4.7 英寸炮让位给 4.5 in QF Mark IV。新炮座原拟用定装弹，
+            但斯库拉号与卡律布狄斯号的报告说大浪中装填因弹药过重出问题，遂改分装。
+          en: >-
+            The 4.7-inch gave way to the 4.5 in QF Mark IV. Its mountings were to have
+            used fixed ammunition, but reports from Scylla and Charybdis described
+            loading problems in rough weather from the weight, so separate ammunition
+            was adopted instead.
+        src: [navweaps-45in-45-mk1]
+
+  - id: postwar
+    title: { zh: 战后延续, en: Post-war continuation }
+    range: { from: 1951, to: 1955 }
+    lead:
+      zh: >-
+        这型炮座在战后还给两艘新航母用过，也出口到了委内瑞拉。
+      en: >-
+        The mounting went to two post-war carriers and was exported to Venezuela.
+    events:
+      - date: 1951
+        text:
+          zh: >-
+            鹰号（HMS Eagle）服役，装此型双联座；navweaps 把 Mark III 的装舰对象
+            列为伊丽莎白女王（17 门）、英勇（15 门）、声望（16 门）、怨仇号、
+            野蛮人号、1942 与 1943 年战斗级、鹰号（1951）与皇家方舟号（1955）、
+            以及委内瑞拉的新埃斯帕塔级。
+          en: >-
+            HMS Eagle commissioned with these twin mountings. NavWeaps lists the Mark
+            III as fitted to Queen Elizabeth (17 guns), Valiant (15), Renown (16),
+            Implacable, Savage, the Battle 1942 and 1943 classes, Eagle (1951) and Ark
+            Royal (1955), and the Venezuelan Nueva Esparta class.
+        src: [navweaps-45in-45-mk1]
+      - date: 1955
+        text:
+          zh: >-
+            皇家方舟号（HMS Ark Royal）服役，同样装此型双联座。
+          en: >-
+            HMS Ark Royal commissioned, also with these twin mountings.
+        src: [navweaps-45in-45-mk1]

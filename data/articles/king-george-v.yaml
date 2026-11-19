@@ -1,0 +1,491 @@
+# ============================================================================
+# 舰艇正文 —— 简介与历史
+#
+# 为什么单独一个文件、而不塞进 ships/<id>.yaml：
+#   fact 是「可计算的单值」，article 是「给人读的段落」。两者校验规则完全不同
+#   （fact 要单位/类型/时间窗，段落只要来源和句子），混在一个文件里会让
+#   校验器越来越难写，也让人越来越不敢改。
+#
+# 硬规则（scripts/validate.py 的 check_article 会拦）：
+#   1. 每个 paragraph 必须带 src，且 src 全部已登记、不是 tier E
+#   2. lead 必须有；paragraphs 至少一段
+#   3. history 每段 events 的 date 必须是 YYYY / YYYY-MM / YYYY-MM-DD
+#   4. 正文里不写「据说」「有人认为」这类模糊归属——那是 narrative 的活
+#
+# 本舰的特殊约束：它与同名的一战前战列舰（1911 级，1926 年出售）共用舰名，
+# navypedia 同站有两个页面；本文件一律指 1939 年下水的 1939 级首舰。
+# ============================================================================
+ship: king-george-v
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      英王乔治五世号是英王乔治五世级战列舰的首舰，也是英国在海军条约限制下
+      建成的最后一级主力舰的首舰。它 1940 年 10 月服役，1941 年 5 月在本土
+      舰队旗舰任上参与击沉俾斯麦号，此后在大西洋、北极航线、地中海与太平洋
+      断续作战，1945 年 9 月 2 日出现在东京湾的投降签字式上，1958 年拆解。
+      它没有姊妹舰威尔士亲王号那样突兀的沉没，价值更多在于「一直在场」。
+    en: >-
+      HMS King George V was the lead ship of the King George V class, the last
+      class of British capital ships designed under the naval treaties. She was
+      completed in October 1940, took part in the sinking of Bismarck in May
+      1941 as flagship of the Home Fleet, and went on to serve in the Atlantic,
+      the Arctic, the Mediterranean and the Pacific before being scrapped in 1958.
+
+  paragraphs:
+    - heading: 舰名的让渡
+      text:
+        zh: >-
+          这艘船原本要叫 King George VI，按「新朝第一艘主力舰随君主取名」的惯例。
+          乔治六世要求以先王乔治五世命名，把自己的名号让给了二号舰 Duke of York。
+          1939 年 2 月 21 日下水仪式由乔治六世亲自主持。这是皇家海军第二次使用
+          这个舰名：前一代是 1911 级战列舰首舰，1926 年出售拆解。本舰舷号 41。
+      src: [rmg-kgv-guide, navypedia-kgv]
+
+    - heading: 为什么是十门 14 英寸
+      text:
+        zh: >-
+          1936 年 3 月，第二次伦敦海军条约把主力舰主炮上限定为 14 英寸、标准
+          排水量上限定为 35,000 吨。英国算过账：援引 16 英寸升级条款会把工期
+          推后约 18 个月，于是决定在条约框内解决火力问题。初版设计是三座四联、
+          共 12 门 14 英寸；35,000 吨装不下这套火力加上想要的防护，B 炮塔最终
+          降为双联，形成 A、Y 两座四联加 B 一座双联的十门布局。十门 14 英寸的
+          舷侧投射量仍高于九门 15 英寸，这是四联方案没有被推翻的根本算术。
+      src: [navypedia-kgv, rmg-kgv-guide]
+
+    - heading: 四联炮塔：设计时就知道的赌注
+      text:
+        zh: >-
+          代价集中在炮塔。四联装 Mk III 的活动件超过 3,000 件，四门炮共用一套
+          扬弹与装填循环，而且全级从未装过远程动力控制（RPC），全生涯靠
+          「跟随指针」随动。navypedia 的评语是炮座可靠性不足、缺陷到战争后半期
+          才纠正。1941 年 5 月 27 日对俾斯麦号的最后一场炮战里，A 炮塔停摆近
+          30 分钟、Y 炮塔 7 分钟、B 炮塔短暂失效，测距仪也被震坏，有时一次齐射
+          只有一到两门炮能打——这是舰长 Patterson 当天战报里的记录。
+      src: [navweaps-14in-45-mk7, navypedia-kgv, kbismarck-patterson-report]
+
+    - heading: 把重量花在防护上
+      text:
+        zh: >-
+          防护走的是 all-or-nothing：装甲总重 12,413 吨，占标准排水量的 32.5%。
+          主装甲带高 7.16 m、长 126.5 m，覆盖前后炮塔之间的核心区；上部 4.62 m
+          在弹药库段为 381 mm、机舱段为 356 mm（这是英国「每平方英尺 40 磅 =
+          1 英寸」的重量口径，名义厚度是 373 / 349 mm），下缘削薄到 140 / 114 mm。
+          主带垂直安装、没有倾角。水下防雷纵深 4.1 m，设计指标是抗 454 kg TNT。
+          作为对照，俾斯麦号的装甲占比约 40%——差掉的这几个百分点，就是十门
+          14 英寸与四联炮塔换走的部分。
+      src: [navypedia-kgv, rmg-kgv-guide, kbismarck-protection]
+
+    - heading: 动力与「纸面续航」
+      text:
+        zh: >-
+          动力是八座 Admiralty 三鼓小管锅炉、四台 Parsons 单级减速齿轮汽轮机，
+          设计 110,000 轴马力、28 节，试航实测 28.25 节。载油 3,700 吨，后增至
+          4,030 吨。续航有两个常用值：15,600 海里 / 10 节（navypedia）与
+          14,000 海里 / 10 节（MaritimeQuest），本站并列保留。纸面续航不等于
+          作战半径：1941 年 5 月 27 日追击俾斯麦号时本舰只剩 1,200 吨、约 32%
+          的燃油，Tovey 因此在 10:28 以缺油为由中止战斗。
+      src: [rmg-kgv-guide, navypedia-kgv, maritimequest-kgv, hmshood-tovey-dispatch]
+
+    - heading: 它在战争里的位置
+      text:
+        zh: >-
+          它的履历是一串「在场」：1941 年 4 月起任本土舰队旗舰，5 月参与击沉
+          俾斯麦号，1941 至 1944 年给北极航线船团提供远程掩护，1943 年调地中海
+          参加西西里登陆与塔兰托行动，1944 年 10 月起任英国太平洋舰队二把手
+          Rawlings 的旗舰，1945 年参加冲绳战役与本州南部的舰炮射击。1945 年
+          9 月 2 日东京湾投降签字式上，各国代表坐的椅子由本舰提供。战后它作为
+          旗舰、训练舰与预备役舰又存在了十三年，1958 年拆解。
+      src: [rmg-kgv-guide]
+
+history:
+  - id: build
+    title: { zh: 设计与建造, en: Design and construction }
+    range: { from: 1936-07-29, to: 1940-12-11 }
+    lead:
+      zh: >-
+        本舰是 1936 年造舰计划的首舰，从下单到加入本土舰队用了四年四个月。
+        单舰精确造价没有公开数字：1957 年 3 月 20 日下议院的口径是同级四舰
+        「每艘约 850 万英镑」，未分舰、也未注明币值年份。
+    events:
+      - date: 1936-07-29
+        text:
+          zh: >-
+            在 1936 年造舰计划下向 Vickers-Armstrong 下单，建造地点是泰恩河畔
+            纽卡斯尔的 Walker 海军船厂（High Walker 船台，厂号 10）。
+        src: [rmg-kgv-guide, tyne-kgv]
+      - date: 1937-01-01
+        text:
+          zh: >-
+            铺设龙骨。同日姊妹舰威尔士亲王号在伯肯黑德的 Cammell Laird 开工。
+            同级五舰里，只有本舰在 1939 年 9 月战争爆发前下水。
+        src: [navypedia-kgv, tyne-kgv]
+      - date: 1939-02-21
+        text:
+          zh: >-
+            由乔治六世亲自主持下水。下水时舰体尚未完成舾装。
+        src: [rmg-kgv-guide, tyne-kgv]
+      - date: 1940-07-15
+        text:
+          zh: >-
+            首任舰长 W. R. Patterson 到任。他后来写下了 1941 年 5 月 27 日
+            那场炮战的英方逐分钟战报。
+        src: [rmg-kgv-guide, kbismarck-patterson-report]
+      - date: 1940-10-01
+        text:
+          zh: >-
+            服役，舷号 41。此时舰仍未完成全部试航与调试，人员与设备都在
+            「边服役边完工」的状态下补齐。
+        src: [rmg-kgv-guide, navypedia-kgv]
+      - date: 1940-12-11
+        text:
+          zh: >-
+            完工并加入驻扎斯卡帕湾的本土舰队。各来源把 10 月 1 日与 12 月 11 日
+            都标成「completed」，实际是服役与完工两个节点，不是分歧。
+        src: [rmg-kgv-guide, navypedia-kgv, tyne-kgv]
+
+  - id: home-fleet
+    title: { zh: 本土舰队的第一个冬天, en: First months with the Home Fleet }
+    range: { from: 1940-12-11, to: 1941-03-31 }
+    lead:
+      zh: >-
+        服役后的第一个冬天，它执行的是旗舰与护航任务，同时作为本土舰队对德国
+        主力舰的威慑力量存在。真正的水面决战还没有轮到它。
+    events:
+      - date: 1941-01-15
+        text:
+          zh: >-
+            载着新任驻美大使哈利法克斯勋爵（Lord Halifax）横渡大西洋，赴美就职；
+            返程时为一支哈利法克斯航线船团护航，1 月 25 日结束任务。
+        src: [rmg-kgv-guide]
+      - date: 1941-03-02
+        text:
+          zh: >-
+            参加「克莱莫尔行动」（Operation Claymore），为突袭罗弗敦群岛鱼油工厂的
+            突击队提供海上掩护，3 月 6 日结束。
+        src: [rmg-kgv-guide]
+
+  - id: bismarck
+    title: { zh: 追击俾斯麦号, en: The Bismarck operation }
+    range: { from: 1941-04-01, to: 1941-06-30 }
+    lead:
+      zh: >-
+        1941 年 4 月 1 日，本土舰队司令 Tovey 上将把将旗移到本舰。五周后，
+        它作为本土舰队旗舰参加对俾斯麦号的追击。丹麦海峡那场二十分钟的炮战
+        由胡德号与威尔士亲王号接战，本舰不在场；真正由它主导的是 5 月 27 日
+        的最后一场炮战，以及那场炮战打到一半就必须面对的燃料问题。
+    events:
+      - date: 1941-04-01
+        text:
+          zh: >-
+            成为本土舰队旗舰，Tovey 的将旗升起。这个身份一直保持到 1943 年 5 月。
+        src: [rmg-kgv-guide]
+      - date: 1941-05-22
+        text:
+          zh: >-
+            本土舰队从斯卡帕湾出击拦截俾斯麦号，主力群中有本舰、反击号与胜利号。
+            RMG 把 5 月 22 日至 27 日整体记为「俾斯麦行动」。
+        src: [rmg-kgv-guide, kbismarck-chase]
+      - date: 1941-05-24
+        text:
+          zh: >-
+            丹麦海峡交战。接战序列里只有胡德号与威尔士亲王号：胡德号于 06:01
+            弹药库殉爆沉没，1,415 人阵亡、3 人生还；俾斯麦号被威尔士亲王号命中
+            三发。本舰未参与这二十分钟的炮战。
+        src: [kbismarck-denmark-strait]
+      - date: 1941-05-27
+        text:
+          zh: >-
+            08:43，本舰瞭望在 25,000 码发现俾斯麦号，方位 188°，德舰正以约 7 节
+            迎头驶来。英方编队航向 110°，罗德里号位于本舰 010° 方位、距离 8 链处。
+        src: [kbismarck-patterson-report, kbismarck-last-battle]
+      - date: 1941-05-27
+        text:
+          zh: >-
+            08:47 罗德里号开火；08:48 本舰在 24,600 码开火，诺福克号随后加入。
+            三舰的主炮与副炮把目标不断罩在弹幕里，但观测修正很困难：德舰的
+            发射药烟比英方更浓、停留更久，把过远的弹着遮住了。
+        src: [kbismarck-patterson-report, kbismarck-last-battle]
+      - date: 1941-05-27
+        text:
+          zh: >-
+            08:54，本舰报告首次命中，弹着在前上层建筑基部。
+        src: [kbismarck-patterson-report, kbismarck-last-battle]
+      - date: 1941-05-27
+        text:
+          zh: >-
+            09:21，右舷副炮群在 11,400 码开火。Patterson 对 5.25 英寸副炮的评价
+            是「每门打了 77 发无故障」；同一份战报里，主炮却是另一种境况。
+        src: [kbismarck-patterson-report]
+      - date: 1941-05-27
+        text:
+          zh: >-
+            主炮进入故障期：A 炮塔停摆近 30 分钟、Y 炮塔 7 分钟、B 炮塔短暂失效，
+            284 型雷达受损。有时一次 14 英寸齐射只有一到两门炮能打，炮术官只能
+            改打全舷齐射——少于两发就打不出跨射。
+        src: [kbismarck-patterson-report]
+      - date: 1941-05-27
+        text:
+          zh: >-
+            约 10:05，距离约 3,000 码，Tovey 下令靠近击沉，本舰观测到三次清晰命中：
+            两发落在上层建筑基部的甲板上，一发从 B 炮塔正面钻入，把炮塔后部整个
+            掀到舷外。
+        src: [kbismarck-patterson-report]
+      - date: 1941-05-27
+        text:
+          zh: >-
+            10:21 停火。本舰 14 英寸炮共发射 339 发，约为全部备弹的三分之一；
+            5.25 英寸副炮的记录是 600 发（Patterson 战报）或 660 发（Tovey 战报），
+            两说并列。本舰无人员伤亡，也没有吃到德舰一发炮弹；但 Y 炮塔向 175°
+            方位打出的几轮齐射，爆风对本舰造成了不算严重的损伤。
+        src: [kbismarck-patterson-report, hmshood-tovey-dispatch]
+      - date: 1941-05-27
+        text:
+          zh: >-
+            10:28，Tovey 以缺油为由正式中止战斗，原话是「Have had to discontinue
+            action for fuel」。本舰当时只剩 1,200 吨、约 32% 的燃油。俾斯麦号在
+            10:36（Patterson 记）至 10:37（Tovey 记）之间翻覆沉没。
+        src: [hmshood-tovey-dispatch, kbismarck-patterson-report, kbismarck-last-battle]
+
+  - id: north-atlantic
+    title: { zh: 重返北大西洋, en: Back to the North Atlantic }
+    range: { from: 1941-07, to: 1941-12-31 }
+    lead:
+      zh: >-
+        俾斯麦号沉没后，本土舰队的任务回到「存在即威慑」：给船团远程掩护、
+        在挪威外海做攻势扫荡，并在年末进行第一次像样的防空与雷达改装。
+    events:
+      - date: 1941-10
+        text:
+          zh: >-
+            参加「EJ 行动」，支援胜利号航母编队攻击挪威沿岸的德国航运。
+        src: [rmg-kgv-guide]
+      - date: 1941-12
+        text:
+          zh: >-
+            为突袭沃格岛（Vaagso）的突击队提供海上掩护。
+        src: [rmg-kgv-guide]
+      - date: 1941-12
+        text:
+          zh: >-
+            年末改装：拆除四座 UP 火箭发射器，加装一座八联与一座四联 2 磅炮、
+            18 门单装 20 mm 厄利孔，并补上 273 型与 282 型雷达。
+        src: [navypedia-kgv]
+
+  - id: arctic
+    title: { zh: 北极航线与旁遮普号, en: Arctic convoys and the Punjabi collision }
+    range: { from: 1942-01-01, to: 1942-12-31 }
+    lead:
+      zh: >-
+        1942 年它主要在北冰洋给往返苏联北部的船团做远程掩护，没有等到与德国
+        水面舰交手的机会。这一年最重的事故不是敌人造成的。
+    events:
+      - date: 1942-05-01
+        text:
+          zh: >-
+            在浓雾中与驱逐舰旁遮普号（HMS Punjabi）相撞。旁遮普号为避雷横越
+            本舰舰首，被切成两段沉没，49 名舰员死亡；其深水炸弹在水下爆炸，
+            把本舰舰首炸掉约 40 英尺。
+        src: [rmg-kgv-guide, tyne-kgv]
+      - date: 1942-05
+        text:
+          zh: >-
+            在利物浦修理舰首。navypedia 称这次丧失战斗力近三个月，7 月返回
+            斯卡帕湾归建。
+        src: [rmg-kgv-guide, navypedia-kgv]
+      - date: 1942-07
+        text:
+          zh: >-
+            回到斯卡帕湾。中期改装补装四部 285 型火控雷达。
+        src: [rmg-kgv-guide, navypedia-kgv]
+
+  - id: mediterranean
+    title: { zh: 地中海：西西里与塔兰托, en: The Mediterranean }
+    range: { from: 1943-01-01, to: 1943-10-31 }
+    lead:
+      zh: >-
+        1943 年 5 月，它被临时拨给 Force H，与姊妹舰豪号一起参加西西里登陆。
+        这是它第一次在地中海作战，也是主炮第一次用于对岸轰击。
+    events:
+      - date: 1943-05
+        text:
+          zh: >-
+            加入 Force H，为「哈士奇行动」（Operation Husky，西西里登陆）提供
+            海上掩护。同月加装 20 门单装 20 mm，全舰 20 mm 达到 38 门。
+        src: [rmg-kgv-guide, navypedia-kgv]
+      - date: 1943-07-12
+        text:
+          zh: >-
+            与豪号一起炮击西西里的特拉帕尼（Trapani）以及莱万佐岛的法维尼亚纳
+            （Favigana）。这是本舰主炮第一次对岸射击。
+        src: [rmg-kgv-guide]
+      - date: 1943-09-09
+        text:
+          zh: >-
+            参加「拍击行动」（Operation Slapstick），与萨勒诺登陆（Operation
+            Avalanche）同时攻击塔兰托的意大利海军基地。
+        src: [rmg-kgv-guide]
+      - date: 1943-10
+        text:
+          zh: >-
+            返回斯卡帕湾归建本土舰队。
+        src: [rmg-kgv-guide]
+
+  - id: refit
+    title: { zh: 转向东方前的改装, en: Refit before the Far East }
+    range: { from: 1943-11-01, to: 1944-06-30 }
+    lead:
+      zh: >-
+        从地中海回来后它进厂，为转调东方舰队做准备。这次改装的重心不是加厚
+        装甲，而是拆掉不再有用的东西、补齐雷达与近程防空。
+    events:
+      - date: 1943-12
+        text:
+          zh: >-
+            奉派到直布罗陀接运丘吉尔。丘吉尔刚参加完开罗会议与德黑兰会议，
+            这一程一直延续到 1944 年 1 月。
+        src: [rmg-kgv-guide]
+      - date: 1944-02
+        text:
+          zh: >-
+            进入利物浦的船厂改装，7 月完成。
+        src: [rmg-kgv-guide]
+      - date: 1944-06
+        text:
+          zh: >-
+            改装以拆除弹射器与水上飞机收尾，腾出的甲板空间把前后上层建筑连成一体；
+            近程防空改为八座八联 2 磅炮、26 门单装与 6 门双联 20 mm、两座
+            四联美制 40 mm 博福斯；雷达换成 277、279B、282、285、293 型组合。
+            弹射器拆除时点两说：tyne 记 1943 年，navypedia 把这项改动挂在
+            1944 年 7 月的条目下，本文件按改装完成时间记。
+        src: [navypedia-kgv, tyne-kgv, rmg-kgv-guide]
+
+  - id: pacific
+    title: { zh: 太平洋：TF 57 与日本近海, en: The British Pacific Fleet }
+    range: { from: 1944-07-01, to: 1945-09-02 }
+    lead:
+      zh: >-
+        1944 年 10 月本舰离开本土，经地中海、印度洋到锡兰，成为新组建的英国
+        太平洋舰队二把手 Rawlings 的旗舰。它在太平洋的角色是给航母编队提供
+        防空与炮击支援，而不是追猎敌方主力舰。
+    events:
+      - date: 1944-10
+        text:
+          zh: >-
+            短暂返回斯卡帕湾，防备提尔皮茨号可能出港。提尔皮茨号在 11 月 12 日
+            被英国皇家空军炸沉，这项戒备解除。
+        src: [rmg-kgv-guide]
+      - date: 1944-10-28
+        text:
+          zh: >-
+            启程前往锡兰的亭可马里，12 月 15 日抵达，加入新组建的英国太平洋
+            舰队，升起二把手 Rawlings 的将旗——他同时是这支舰队在海上的
+            战术指挥官。
+        src: [rmg-kgv-guide]
+      - date: 1944-11
+        text:
+          zh: >-
+            途经亚历山德里亚时，炮击爱琴海米洛斯岛（Milos）上拉克达炮台
+            （Lakida Battery）的德军阵地。
+        src: [rmg-kgv-guide]
+      - date: 1945-01
+        text:
+          zh: >-
+            启程赴悉尼。航渡中完成本舰第一次海上加油，耗时 12 小时。
+        src: [rmg-kgv-guide]
+      - date: 1945-02
+        text:
+          zh: >-
+            以第 113 特混舰队（TF 113）编成开赴阿德默勒尔蒂群岛的马努斯，
+            那里是英国太平洋舰队的前进基地。
+        src: [rmg-kgv-guide]
+      - date: 1945-03-20
+        text:
+          zh: >-
+            抵达乌利西环礁，加入斯普鲁恩斯指挥的美国第五舰队；英国舰队同时
+            改称第 57 特混舰队（TF 57），投入「冰山行动」（冲绳登陆）。
+        src: [rmg-kgv-guide]
+      - date: 1945-03-26
+        text:
+          zh: >-
+            英国特混舰队攻击冲绳西南诸岛的六座日军机场，26 日至 27 日持续
+            出动舰载机。
+        src: [rmg-kgv-guide]
+      - date: 1945-07
+        text:
+          zh: >-
+            成为皇家海军第一艘以并列方式（abeam）从油船海上加油的军舰。
+            此前的加油方式是把软管从油船舰尾放出，软管容易被拉断。
+        src: [rmg-kgv-guide]
+      - date: 1945-07-29
+        text:
+          zh: >-
+            炮击本州南部的滨松（Hamamatsu）。23:19 开始，射程 20,075 码，
+            共打出 265 发 14 英寸炮弹，其中仅 7 发命中目标；23:56 停火。
+            这是本舰主炮最后一次对敌射击。
+        src: [rmg-kgv-guide]
+      - date: 1945-08-15
+        text:
+          zh: >-
+            日本宣布投降，对日作战结束。
+        src: [rmg-kgv-guide]
+      - date: 1945-09-02
+        text:
+          zh: >-
+            日本投降签字式在东京湾的密苏里号上举行，各国代表所用的座椅由本舰
+            提供。本舰当天锚泊在东京湾。
+        src: [rmg-kgv-guide]
+
+  - id: postwar
+    title: { zh: 战后：旗舰、训练舰、预备役, en: Post-war service and disposal }
+    range: { from: 1945-09-03, to: 1958 }
+    lead:
+      zh: >-
+        战争结束后它没有立刻退役：先当本土舰队旗舰，再当训练舰，最后在克莱德
+        湾的加洛克封存了七年。拆解的决定不是因为它打不动了，而是因为这一级
+        舰的运行成本在战后预算里已经无法维持。
+    events:
+      - date: 1946-03-02
+        text:
+          zh: >-
+            返回朴茨茅斯，出任本土舰队总司令旗舰。
+        src: [rmg-kgv-guide]
+      - date: 1946-12
+        text:
+          zh: >-
+            在德文波特改装。
+        src: [rmg-kgv-guide]
+      - date: 1947-11
+        text:
+          zh: >-
+            转作训练战列舰，驻波特兰。
+        src: [rmg-kgv-guide]
+      - date: 1949-07
+        text:
+          zh: >-
+            海军部宣布英王乔治五世级整体转入预备役。
+        src: [rmg-kgv-guide]
+      - date: 1950-06
+        text:
+          zh: >-
+            拖往加洛克（Gareloch）封存，与安森号、约克公爵号并泊。
+        src: [rmg-kgv-guide]
+      - date: 1957-04
+        text:
+          zh: >-
+            同级拆解获得批准。同年 3 月 20 日下议院的口径是四舰每艘造价约
+            850 万英镑，未分舰。
+        src: [rmg-kgv-guide, hansard-kgv-cost-1957]
+      - date: 1957-12-17
+        text:
+          zh: >-
+            从皇家海军舰艇名册中除名。
+        src: [rmg-kgv-guide]
+      - date: 1958
+        text:
+          zh: >-
+            由 Arnott Young 公司在克莱德河畔的达尔缪尔（Dalmuir）拆解，舰体
+            随后拖往特伦（Troon）拆完。tyne 记抵达达尔缪尔为 1958 年 1 月 20 日、
+            抵达特伦为 1959 年 5 月 20 日。
+        src: [rmg-kgv-guide, tyne-kgv]

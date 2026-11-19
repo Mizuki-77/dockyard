@@ -1,0 +1,82 @@
+# ============================================================================
+# 加贺（单舰级）—— 由加贺级战列舰改装航空母舰
+#
+# 2026-11-19 建级。
+#
+# 为什么要建这个文件：加贺作为战列舰原属**加贺级**（日方档案「加賀型」、
+# 美英文献「Tosa-class」，同一级，一番舰加贺、二番舰土佐）。
+# 但土佐因华盛顿条约作为靶舰被击沉，加贺是唯一完成航母化的本级舰。
+# 所以航母语义下的加贺是「单舰一级」。
+#
+# 与赤城的根源差别：
+#   加贺 = 加贺级**战列舰**底子（长门级改良型）
+#   赤城 = 天城级**战列巡洋舰**底子
+# 直接后果：加贺改装后 38,200 t（赤城 36,500 t）、28.34 节（赤城 31.2 节）、
+# 载机 90 架（赤城 60 架）。**它是四艘中途岛日军航母里最慢、最重、载机最多的。**
+# ============================================================================
+
+id: kaga
+name:
+  zh: 加贺（单舰）
+  en: Kaga (single ship)
+class_of:
+  - kaga
+
+open_ended_note: >-
+  航母化的加贺是唯一舰（土佐未完成航母化）。
+  逐舰参数全部写在 ships/kaga.yaml 里，本文件只放「它的根源是什么」这条结构性事实。
+
+facts:
+  - field: identity.name_original
+    value: 加賀（かが）
+    src: [japanese-warship-kaga]
+    valid: { from: 1928-03-31 }
+    confidence: C
+
+  - field: identity.name_zh
+    value: 加贺
+    src: [japanese-warship-kaga]
+    valid: { from: 1928-03-31 }
+    confidence: C
+
+  - field: identity.name_en
+    value: Kaga
+    src: [combinedfleet-kaga]
+    valid: { from: 1928-03-31 }
+    confidence: C
+
+  - field: identity.ship_type
+    value: aircraft_carrier
+    src: [japanese-warship-kaga]
+    valid: { from: 1923-11-19 }
+    confidence: C
+
+  - field: identity.nation
+    value: japan
+    src: [japanese-warship-kaga]
+    valid: { from: 1928-03-31 }
+    confidence: C
+
+  - field: identity.era
+    value: ww2
+    src: [combinedfleet-kaga]
+    valid: { from: 1928-03-31 }
+    confidence: C
+
+  - field: identity.operator
+    value: 大日本帝国海軍（Imperial Japanese Navy）
+    src: [japanese-warship-kaga]
+    valid: { from: 1928-03-31 }
+    confidence: C
+
+  - field: identity.building_program
+    value: >-
+      八八舰队计划下的加贺级战列舰一号舰（日方「加賀型」/ 美英「Tosa-class」），
+      因华盛顿海军条约改装为航空母舰。
+    src: [japanese-warship-kaga]
+    valid: { from: 1920 }
+    confidence: C
+    note: >-
+      同级二番舰土佐因条约被作为靶舰击沉，从未航母化。
+      所以航母化的加贺没有同级舰。
+      它与赤城不同级——赤城来自天城型战列巡洋舰。

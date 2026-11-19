@@ -1,0 +1,192 @@
+# ============================================================================
+# 武器正文 —— Fairey Fulmar
+#
+# 这一型的看点不是参数，是「它为什么不够快、以及在不够快的前提下怎么用」。
+# 塔兰托时本舰 806 中队 15 架 Mk I；1941 年 1 月马耳他那一轮里
+# 它的爬升与速度被反复记录为短板。
+# 机型参数（马力、翼展、极速）本站无来源，不写。
+# ============================================================================
+weapon: fulmar
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Fairey Fulmar 是英国舰队航空兵在二战前期的战斗侦察机，
+      也就是那种「先解决有没有、再解决好不好」的舰载战斗机。
+      它的短板很明确：爬升率与速度都不够，追不上也爬不到高速目标的高度。
+      但它在本舰上的位置很清楚：它是有雷达引导之前的舰队防空里，
+      唯一能把来袭机群挡在舰队之外的东西。
+      机型参数（马力、翼展、极速）本站无来源，不写。
+    en: >-
+      The Fairey Fulmar was the Fleet Air Arm's fighter-reconnaissance aircraft in the
+      first part of the war - the kind of naval fighter that answered "do we have one"
+      before "is it any good". Its shortcomings are plain: neither climb nor speed was
+      sufficient, so it could not catch or climb to fast, high targets. Its place aboard
+      is equally plain: before radar direction matured it was the only thing that could
+      put a British carrier's fighters between an incoming formation and the fleet. Power,
+      span and top speed have no source in this project and are not written.
+
+  paragraphs:
+    - heading: 它的短板被写进了实战记录，不是评语
+      text:
+        zh: >-
+          这里不用概括，直接引记录。1941 年 1 月马耳他那一轮的炮术与战斗记录里，
+          飞行员的原话是「poor old Fulmar had problems gaining height and speed
+          against the Ju88s」；另一处写四架 Fulmar 的爬升率是每分钟 1,200 英尺，
+          这个数字被直接当作「它们赶不上」的原因来叙述。
+          舰队自己战后的总结更直接：Fulmar 没有足够的爬升速度，
+          无法应付「先来一次小规模或牵制性攻击、紧接着来一次重攻击」这种打法。
+          这些话不是本站的评语，是当月在舰上的人写的。
+        en: >-
+          No summary is needed here; the record speaks. In the gunnery and combat reports
+          of the January 1941 Malta period a pilot's own words are that the "poor old
+          Fulmar had problems gaining height and speed against the Ju88s", and elsewhere
+          the four Fulmars' climb is given as 1,200 feet per minute, cited directly as the
+          reason they could not get there in time. The fleet's own later assessment is
+          blunter still: the Fulmar had not sufficient climbing speed to counter the
+          pattern of a minor or diversionary attack followed quickly by a heavy one. Those
+          are the words of the men aboard that month, not this article's verdict.
+      src: [ac-blitz, ac-excess]
+
+    - heading: 它也不是全无还手之力
+      text:
+        zh: >-
+          同一批记录里也有相反方向的例子，不能只写短板。
+          马耳他那一轮里，一架 Fulmar 违反禁令追着一架 Stuka 穿过港区弹幕，
+          把那架 Ju 87 打进了海里——落地后飞行员发回的话是
+          他不太欣赏高炮炮组的准头，因为他们没打中 Stuka 却把他的飞机打得不轻。
+          这一条说明的是：对付慢速、低空、正在俯冲拉起的目标，Fulmar 还能打；
+          对付高速轰炸机，它不行。两件事在同一份记录里，本站并列。
+        en: >-
+          The same records contain the opposite case, and the shortcomings alone would
+          misrepresent them. During the Malta period a Fulmar broke the standing order and
+          chased a Stuka right through the harbour barrage, putting the Ju 87 into the sea;
+          on landing, its pilot sent back a terse message that he did not think much of the
+          anti-aircraft gunners' accuracy, since they had missed the Stuka and badly
+          damaged his own aircraft. The point is that against a slow, low, recovering
+          dive-bomber the Fulmar could still fight, while against fast bombers it could
+          not. Both sit in the same body of records and both are reported here.
+      src: [ac-blitz]
+
+    - heading: 它在舰队防空里的位置是「被引导的那一头」
+      text:
+        zh: >-
+          理解这一型要先理解它依靠什么。早期战争的经验很快把战斗机的实际作用
+          摆了出来：它们可以在来袭飞机被看见之前就被派出，也可以被引导到
+          有利的攻击位置——而这两件事恰好能弥补它自身的短板，
+          比如速度与爬升不足。也就是说 Fulmar 的效能很大程度上不取决于飞机本身，
+          取决于引导。本舰在 1940 年底的记录里，雷达发现接触之后
+          把在空巡逻的 Fulmar 派向拦截、同时让甲板上待命的飞机紧急起飞，
+          这一整套流程才是它发挥作用的条件。
+        en: >-
+          Understanding this type means first understanding what it depended on. Early war
+          experience quickly set out the fighter's practical role: aircraft could be
+          alerted before the raiders were seen, and could be directed to favourable attack
+          positions - which is exactly what offsets inherent weaknesses such as a lack of
+          speed or climb rate. The Fulmar's effectiveness therefore rested less on the
+          aircraft than on the direction. The ship's records for late 1940 show the
+          pattern: radar raises a contact, the airborne Fulmars are vectored to intercept,
+          and a ready aircraft on deck scrambles. That chain is the condition under which
+          the type worked.
+      src: [ac-design, ac-taranto-narrative]
+
+history:
+  - id: taranto
+    title: { zh: 塔兰托与 1940 年冬, en: Taranto and the winter of 1940 }
+    range: { from: 1940-11, to: 1940-11 }
+    lead:
+      zh: >-
+        塔兰托那一夜它是护航与巡逻的那一半，攻击不是它做的。
+      en: >-
+        At Taranto it was the escort and patrol half of the operation; the attack was not
+        its work.
+    events:
+      - date: 1940-11-10
+        text:
+          zh: >-
+            本舰此日的机群编成里，806 中队有 15 架 Fulmar Mk I，
+            是全舰数量最多的单一机型。同一份材料另给一份清单写作
+            「12 Fulmar、2 Sea Gladiator、24 Swordfish」，两个数字口径不同，
+            本站并列不裁决。
+          en: >-
+            The ship's air group on this date included 15 Fulmar Mk Is in 806 Squadron,
+            the largest single type aboard. Navypedia's air-group list for November 1940
+            gives the same period as twelve Fulmars, two Sea Gladiators and twenty-four
+            Swordfish; the two count differently and both are recorded without
+            adjudication.
+        src: [ac-taranto-narrative, navypedia-illustrious]
+      - date: 1940-11-11
+        text:
+          zh: >-
+            攻击当晚，Fulmar 的任务是战斗空中巡逻与掩护。记录里有一处
+            具体到分钟的细节：16:30 雷达屏幕再次出现接触，舰队有 20 分钟反应时间，
+            在空巡逻的两架 Fulmar 被派去拦截，甲板上待命的一架紧急起飞。
+            接触被判定在 12,000 英尺高度，是两支 SM79 编队共 15 架。
+          en: >-
+            On the night of the attack the Fulmars flew combat air patrol and cover. One
+            detail in the record is timed to the minute: at 1630 the radar screen lit up
+            again and the fleet had twenty minutes to respond, the two airborne Fulmars
+            were vectored to intercept and a ready aircraft on deck scrambled. The contacts
+            were judged to be at 12,000 feet, two formations of SM79s totalling fifteen
+            aircraft.
+        src: [ac-taranto-narrative]
+
+  - id: malta
+    title: { zh: 1941 年 1 月：马耳他与战损, en: January 1941, Malta and the damage }
+    range: { from: 1941-01, to: 1941-01 }
+    lead:
+      zh: >-
+        这一型在本舰上最吃紧的一段是 1941 年 1 月，也是它短板暴露得最彻底的一段。
+      en: >-
+        The type's hardest stretch aboard was January 1941, and it is where its
+        shortcomings show most plainly.
+    events:
+      - date: 1941-01-10
+        text:
+          zh: >-
+            本舰此时有 806 中队 12 架 Fulmar，另有 805 中队 3 架配属，
+            被认为是一艘舰队航母的标准战斗机编成。
+            当日战前 12 架可用、3 架因事故或机械故障不可用。
+            德机来袭时，甲板上待命的 Fulmar 刚开始滑跑，
+            对方已进入目视距离；另有 7 架在空的 Fulmar 在此前已打完两场、
+            高度低、弹药剩得不多。
+          en: >-
+            The ship then had twelve Fulmars of 806 Squadron plus three detached from 805,
+            regarded as the standard fighter complement for a fleet carrier. Twelve were
+            serviceable before the action and three were unserviceable through accident or
+            mechanical fault. When the German aircraft arrived the ready Fulmars were only
+            just rolling down the deck as they came into visual range; seven airborne
+            Fulmars had already fought two combats, were low, and had little ammunition
+            left.
+        src: [ac-excess]
+      - date: 1941-01-10
+        text:
+          zh: >-
+            一架 Blue Section 的 Fulmar 被击落。它先打下一架 Ju 87，
+            随即被另一架咬尾；一轮机枪扫射打死了观察员 Kensett、打伤了飞行员 Lowe 的肩。
+            飞机迫降在努比亚号（HMS Nubian）附近，Lowe 未被看到离开座舱，
+            约 30 分钟后美洲豹号（HMS Jaguar）偶然发现他在水面上漂着。
+          en: >-
+            A Fulmar of Blue Section was shot down. It had just brought down a Ju 87 when
+            another took position on its tail; a burst of machine-gun fire killed the
+            observer, Kensett, and wounded the pilot, Lowe, in the shoulder. The aircraft
+            ditched near HMS Nubian and Lowe was not seen to get out of the cockpit; some
+            thirty minutes later HMS Jaguar spotted him in the water by chance.
+        src: [ac-excess]
+      - date: 1941-01-10
+        text:
+          zh: >-
+            机库在攻击时停着 9 架 Swordfish 与 4 架 Fulmar。四架 Fulmar
+            所在的 C 机库起火，直到次日 02:00 才扑灭，四架全部烧毁；
+            Swordfish 报废 5 架、另有 4 架可修。
+            需要并列的是：本舰舰长当日的快报给的是「11 架 Swordfish 与 5 架 Fulmar 被毁」，
+            其他来源给的是 9 架与 4 架——两说并列。
+          en: >-
+            The hangar held nine Swordfish and four Fulmars at the time of the attack. The
+            four Fulmars were in C hangar, which caught fire and was not extinguished until
+            0200 the next morning; all four were burnt out, five Swordfish were written
+            off and four more were repairable. One conflict has to stand alongside this:
+            the commanding officer's flash report that day gave eleven Swordfish and five
+            Fulmars destroyed, while other sources give nine and four.
+        src: [ac-battle-damage, ac-excess]

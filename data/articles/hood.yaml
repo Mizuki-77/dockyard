@@ -1,0 +1,290 @@
+# ============================================================================
+# 舰艇正文 —— 胡德号
+#
+# 格式与 bismarck.yaml 完全一致：intro{lead, paragraphs[]} + history[]。
+# 注意 title 与 lead 都是 BiText（{zh, en}），写成裸字符串校验器会报
+# 「title 缺 zh」——这个坑在提尔皮茨那条上踩过一次。
+#
+# 这一条船的正文有一个难点：它活了二十二年，其中二十年没打过一场真正的海战。
+# 所以历史段落的重点不在「战斗」，而在「它本可以改，但一直没改」。
+# ============================================================================
+ship: hood
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      胡德号是英国皇家海军海军上将级战列巡洋舰唯一建成的一艘，1920 年服役时
+      是全世界最大的军舰。它服役了二十二年，其中大部分时间是帝国海军的展示品，
+      被称作「The Mighty Hood」。1941 年 5 月 24 日清晨，它在丹麦海峡被俾斯麦号
+      的第五次齐射命中，艉部弹药库爆炸，不到三分钟断成两截沉没，1,418 名在舰人员
+      只有 3 人生还。它是整场大西洋海战里英国损失的最大军舰，也是战列巡洋舰
+      这一舰种最后一次参加海战。
+    en: >-
+      HMS Hood was the only Admiral-class battlecruiser completed for the Royal Navy
+      and the largest warship in the world when she commissioned in 1920. After
+      twenty-two years of service she was sunk by Bismarck's fifth salvo on
+      24 May 1941; only three of the 1,418 men aboard survived.
+
+  paragraphs:
+    - heading: 它为什么会被造成这样
+      text:
+        zh: >-
+          1916 年 4 月 7 日批准的初版设计沿用了当时英国战列巡洋舰的思路：
+          快、装 15 英寸炮、水线装甲带只有 9 英寸。开工后不到两个月，日德兰海战
+          在 5 月 31 日打响了——三艘英国战列巡洋舰在几分钟内相继爆炸沉没，
+          原因正是炮塔被击穿后火焰直通弹药库。8 月 4 日改版设计批准，主装甲带
+          从 9 英寸加到 12 英寸，水平甲板也加厚。胡德号协会的原话是：这次改装之后，
+          「Hood was in many respects a larger version of the ships that had been sunk」——
+          在很多方面，它是那些已经沉掉的船的放大版，而不是修正版。
+      src: [hmshood-construction, hmshood-association]
+
+    - heading: 结构性代价：加厚了，但没加够
+      text:
+        zh: >-
+          12 英寸（305 mm）主装甲带高 9 英尺 6 英寸、内倾 12 度，装甲甲板在弹药库上方
+          只有 3 英寸（76 mm），机舱上方 2 英寸到 1.5 英寸。这套组合在 1918 年是够用的，
+          因为当时的交战距离在 10,000 码量级、炮弹落角小，主要威胁打的是垂直装甲。
+          到 1941 年，交战距离推到 15,000 码以上，落角变大，炮弹开始从顶部砸下来，
+          水平防护变成了真正的短板。战后设计总监（DNC）在 1941 年调查附录里写得很直白：
+          本来打算在伊丽莎白女王级改装完成后用同样的方式重建胡德号，战争爆发使计划作废。
+      src: [hoodadm116, navypedia-hood]
+
+    - heading: 二十二年的服役：展示品与没花完的改装预算
+      text:
+        zh: >-
+          1920 年 3 月 29 日服役，此后二十年的主线不是战斗而是巡游与访问。
+          1923 年 11 月至 1924 年 9 月的帝国巡游让「The Mighty Hood」成为
+          英语世界最出名的一条军舰名。真正重要的一次改装是 1929 年 6 月至 1931 年 3 月
+          在朴茨茅斯的工程：加装防雷鼓包、油舱扩容到 4,615 吨、加两座八联 2-pdr 高炮、
+          加弹射器与水机、拆掉鱼雷火控台。但水平防护没有再动——这是它 1941 年
+          5 月 24 日沉没的结构性背景。
+      src: [hmshood-timeline, navypedia-hood]
+
+    - heading: 火力与火控
+      text:
+        zh: >-
+          八门 15 英寸/42 倍径 Mark I 炮装在四座双联炮塔里，炮塔编号用英式的
+          A、B、X、Y 而不是德式的名字。这四座炮塔是 Mark II 型，专为胡德号设计，
+          唯一的特点是仰角能到 30 度（Mark I 只有 20 度），每座重 880 长吨，
+          四座全部装 30 英尺基线 MG14 测距仪。火控台是全舰队唯一的
+          Dreyer Table Mk V——不是后来常见的 AFCT，这一点很多资料写错。
+          1941 年 1 月的改装加了 Type 284 与 Type 279M 雷达，为此拆掉了前上桅，
+          因为它挡住 284 的旋转天线。
+      src: [navweaps-15in-42-mk1, hoodfirecontrol, hmshood-timeline]
+
+    - heading: 防空：从零到勉强够用
+      text:
+        zh: >-
+          1920 年服役时它没有一门专用的高射炮。1931 年加两座八联 2-pdr「pom-pom」，
+          1937 年换四座双联 4 英寸 Mk XVI，1937 年末加第三座 pom-pom 与后部两座
+          0.5 英寸四联机枪。1940 年又加五座 UP 火箭发射器——这是一种靠钢丝和
+          降落伞拉出空中障碍物的无制导武器，实战效果极差，1941 年起陆续拆除。
+          1940 年 7 月 27 日，B 炮塔上的 UP 装置意外齐射 20 发，3 人重伤。
+          到 1941 年 5 月，它的防空火力在纸面上已经不少，但缺少近炸引信、
+          缺少合格的指挥仪，面对俯冲轰炸机依然吃力。
+      src: [hoodaaa, navweaps-up-rockets, navweaps-2pdr-mk8]
+
+    - heading: 1940 年 7 月 3 日：米尔斯克比尔
+      text:
+        zh: >-
+          这是它一生中唯一一次主炮齐射。当天 17:55 至 18:04，H 舰队向停泊在
+          米尔斯克比尔的法国舰队开火，胡德号向布列塔尼号战列舰射击。法方约 1,300 人
+          死亡，胡德号自身仅 2 人轻伤。18:09 至 18:12 它又与岸炮交战，
+          随后追击斯特拉斯堡号到 20:22 未及。这次行动在军事上达成了目的，
+          在政治上留下了一道至今没有愈合的口子。
+      src: [hmshood-timeline, hmshood-association]
+
+    - heading: 为什么值得单独做条目
+      text:
+        zh: >-
+          因为它是本站数据规则最好的试金石：铺龙骨日期与服役日期这两个最基础的事实，
+          最权威的专题站在派单给的答案上直接说「not supported by the construction
+          yard records」；排水量只在图片里给 Light / Deep 两档，标准与满载
+          连数值都没有；阵亡人数有 1,415 / 1,418 / 1,419 三说；沉没时刻所有一手
+          正文都写 0600，没有一处写 0601。这些都不是「查得不够」，而是档案本身就这样。
+      src: [hmshood-association, hoodspecs-dimensions, hmshood-timeline]
+
+history:
+  - id: design
+    title: { zh: 设计：日德兰之后的改版, en: Design after Jutland }
+    range: { from: 1916-04, to: 1917-08 }
+    lead:
+      zh: >-
+        这一级原本要造四艘。日德兰海战改掉了它们的装甲，也改掉了它们的命运——
+        改完之后造价与工期都上去了，最后只建成一艘。
+    events:
+      - date: 1916-04-07
+        text: { zh: 初版设计批准：9 英寸主装甲带、15 英寸炮、32 节，本质上是伊丽莎白女王级的放大高速版。 }
+        src: [hmshood-construction]
+      - date: 1916-04-21
+        text: { zh: 下单三艘：Hood、Howe、Rodney。7 月又追加 Anson。 }
+        src: [hmshood-construction]
+      - date: 1916-05-31
+        text: { zh: 日德兰海战。三艘英国战列巡洋舰在几分钟内相继爆炸沉没，原因都是炮塔被击穿后火焰直通弹药库。 }
+        src: [hmshood-construction]
+      - date: 1916-08-04
+        text: { zh: 改版设计批准：主装甲带从 9 英寸增至 12 英寸，水平甲板加厚，排水量随之上升。协会原话「Hood was in many respects a larger version of the ships that had been sunk」。 }
+        src: [hmshood-construction]
+      - date: 1916-09-01
+        text: { zh: 在 Clydebank 的 John Brown 船厂铺龙骨。**注意：常被引用的 1916-05-31 不被船厂记录支持**，协会明确写「this date is NOT supported by the construction yard records」，navypedia 同时保留「31.5.1916, again 1.9.1916」两种说法（首次铺设与重铺）。 }
+        src: [hmshood-construction, navypedia-hood]
+      - date: 1917-03-09
+        text: { zh: 三艘同级舰停工，等待设计改版结论。 }
+        src: [hmshood-construction]
+      - date: 1917-08-30
+        text: { zh: 设计最终批准，恢复建造。 }
+        src: [navypedia-hood]
+
+  - id: build
+    title: { zh: 建造与下水, en: Construction and launch }
+    range: { from: 1918-08, to: 1920-03 }
+    lead:
+      zh: >-
+        下水时它是全世界最大的军舰，这个事实本身就是一次政治宣示。
+        服役日期长期被误传，正确日期比流传的那个早七周。
+    events:
+      - date: 1918-08-22
+        text: { zh: 13:05 下水，由 Lady Hood 掷瓶命名。 }
+        src: [hmshood-construction]
+      - date: 1918-10
+        text: { zh: 同级另外三艘（Howe、Rodney、Anson）全部取消。 }
+        src: [hmshood-construction]
+      - date: 1919-05-19
+        text: { zh: 舾装期间舱内发生爆炸，2 名工人死亡。 }
+        src: [hmshood-timeline]
+      - date: 1920-01-09
+        text: { zh: 靠自身动力驶离 Clydebank，功率一度推到 130,000 轴马力。 }
+        src: [hmshood-timeline]
+      - date: 1920-03-18
+        text: { zh: 在 Arran 的一英里测速段做全功率试航，实测 151,000 轴马力、32.07 节（排水量 42,000 吨、6 级风）。设计值是 144,000 轴马力、32 节。 }
+        src: [hmshood-construction]
+      - date: 1920-03-29
+        text: { zh: 正式服役，当时舰员 967 人。**流传甚广的 1920-05-15 是误传**——那是它出坞赴普利茅斯的日期；依舰志 ADM53/78910，服役日为 3 月 29 日。 }
+        src: [hmshood-timeline]
+
+  - id: interwar
+    title: { zh: 帝国巡游与战间二十年, en: The Empire Cruise and the interwar years }
+    range: { from: 1920-05, to: 1939-08 }
+    lead:
+      zh: >-
+        「The Mighty Hood」这个名号来自这二十年，不是来自战斗。
+        它在这一时期是英国海上力量的象征物，而象征物不需要改装。
+    events:
+      - date: 1920-04-15
+        text: { zh: 至 05-06 期间做倾斜试验；Spotting Top 装 15 英尺测距仪；拆除主上桅；在炮塔顶加装起飞平台（协会另有一处记录写成 B、X 炮塔，与 1920 年记录的 A、B 炮塔不一致，两说并列）。 }
+        src: [hmshood-timeline]
+      - date: 1920-05-18
+        text: { zh: 出任大西洋舰队战列巡洋舰分队旗舰（Keyes 中将）。 }
+        src: [hmshood-timeline]
+      - date: 1923-11-27
+        text: { zh: 至 1924-09-28 参加帝国巡游（Cruise of the Special Service Squadron），随行 Delhi、Dragon、Repulse、Danae、Dauntless。这次巡游是「The Mighty Hood」名号的直接来源。 }
+        src: [hmshood-timeline]
+      - date: 1929-06-03
+        text: { zh: 至 1931-03-10 在朴茨茅斯做服役期最大一次改装：加防雷鼓包、油舱扩至 4,615 吨、两座八联 2-pdr、F-IV-H 弹射器与水机、拆鱼雷火控台、15 英寸备弹从 4,341 发压缩至约 944 发（省 203 吨）。**水平防护没有动。** }
+        src: [hmshood-timeline, navypedia-hood]
+      - date: 1931-06-26
+        text: { zh: 损失一架 Fairey IIIF 水上飞机。次年 6 月拆掉弹射器，1933 年 12 月前全部航空设备拆完。 }
+        src: [hmshood-timeline]
+      - date: 1935-01-23
+        text: { zh: 与声望号相撞（位置 42°06′N 09°23′W），舰艏受损。 }
+        src: [hmshood-timeline]
+      - date: 1936
+        text: { zh: 至 1939 年在地中海舰队服役，涂装是 507C 浅灰——**这是模型制作者最常画错的地方**，1941 年 5 月时它早已换回本土舰队的深灰。 }
+        src: [hoodpaint]
+
+  - id: war
+    title: { zh: 战时改装与米尔斯克比尔, en: Wartime refits and Mers-el-Kébir }
+    range: { from: 1939-01, to: 1941-05-12 }
+    lead:
+      zh: >-
+        战争给了它最后一次改装机会，改的是防空与雷达，不是防护。
+        它一生唯一一次主炮齐射打的是昨天的盟友。
+    events:
+      - date: 1939-01-23
+        text: { zh: 至 08-12 在朴茨茅斯大修：4 英寸单管换四座双联 Mk XVI、修汽轮机与外底。06-02 重新服役，任本土舰队战列巡洋舰分队旗舰。 }
+        src: [hmshood-timeline, navypedia-hood]
+      - date: 1939-09-26
+        text: { zh: 在斯卡帕湾被一架 Ju-88 的 500 磅炸弹擦伤。 }
+        src: [hmshood-timeline]
+      - date: 1940-05
+        text: { zh: 拆除全部 12 门 5.5 英寸副炮，以腾出 4 英寸高炮的安装空间与弹药通道。 }
+        src: [hoodsecondary, navweaps-55in-50-mk1]
+      - date: 1940-07-03
+        text: { zh: 米尔斯克比尔。17:55 至 18:04 向停泊的法国舰队开火，法方约 1,300 人死亡，胡德号自身仅 2 人轻伤；18:09 至 18:12 与岸炮交战；追击斯特拉斯堡号至 20:22 未及。 }
+        src: [hmshood-timeline]
+      - date: 1940-07-27
+        text: { zh: B 炮塔上的 UP 火箭装置意外齐射 20 发，3 人重伤。 }
+        src: [hoodaaa, navweaps-up-rockets]
+      - date: 1940-08-31
+        text: { zh: 右舷汽轮机叶片剥离，被迫返港。 }
+        src: [hmshood-timeline]
+      - date: 1941-01-16
+        text: { zh: 至 03-17 在 Rosyth 改装：加装 Type 284 与 Type 279M 雷达，为此拆除前上桅（它挡住 284 的旋转天线）；同时更换右舷汽轮机叶片。 }
+        src: [hmshood-timeline, hoodfirecontrol]
+      - date: 1941-05-12
+        text: { zh: 最后一次记录涂装（据见习军官 Philip Bucket 日志），改为统一的 AP507B 深灰单色，此前的双色调试验涂装在出海时已弃用。 }
+        src: [hoodpaint]
+
+  - id: denmark-strait
+    title: { zh: 丹麦海峡, en: The Denmark Strait }
+    range: { from: 1941-05-22, to: 1941-05-24 }
+    lead:
+      zh: >-
+        从起锚到沉没不到四十小时。它开火时打的是欧根亲王号，
+        被击中时挨的是俾斯麦号的第五次齐射。
+    events:
+      - date: 1941-05-22
+        text: { zh: 23:56 与威尔士亲王号及护航驱逐舰起锚，次日 00:50 通过斯卡帕湾的 Hoxa 门。 }
+        src: [hmshood-timeline]
+      - date: 1941-05-23
+        text: { zh: 19:15 萨福克号目视发现德舰，此后以雷达保持接触。 }
+        src: [hmshood-timeline, hooddenmark1]
+      - date: 1941-05-24
+        text: { zh: 02:03 改向 200 度；02:47 萨福克号恢复雷达接触后改向 220 度、提速至 28 节（威尔士亲王号日志记 28.8 节）；03:41 改向 240 度。 }
+        src: [hmshood-timeline, hoodadm116pow]
+      - date: 1941-05-24
+        text: { zh: 05:35 至 05:36 威尔士亲王号在 38,000 码以上目视发现德舰。 }
+        src: [hmshood-timeline]
+      - date: 1941-05-24
+        text: { zh: 05:37 发出战斗电报，位置 63-20 N, 31-50 W；随即右转 40 度至 280 度，威尔士亲王号在其右后方 800 码。 }
+        src: [hoodadm116pow]
+      - date: 1941-05-24
+        text: { zh: 05:49 再右转 20 度至 300 度；05:50 下达目标指示 G.S.B. 337 L1，指向左侧德舰——**那实际是欧根亲王号**，英方按「战列舰在前」的惯例误判。 }
+        src: [hoodadm116, hooddenmark2]
+      - date: 1941-05-24
+        text: { zh: 05:52½ 开火（调查委员会记为 approximately 0553）。05:55 俾斯麦号开始还击，胡德号左转 20 度打开 A 炮塔射界，同时起火——ADM116/4351 记「caused by a hit from BISMARCK's third salvo」。 }
+        src: [hoodadm116, hooddenmark2]
+      - date: 1941-05-24
+        text: { zh: 05:59 至 06:00 被第五次齐射命中，艉部弹药库爆炸。生还者 Leach 描述「a very fierce upward rush of flame the shape of a funnel」。 }
+        src: [hoodadm116, hooddenmark2]
+      - date: 1941-05-24
+        text: { zh: 06:00 舰体断为两截沉没，全过程不到三分钟。在舰 1,418 人，只有 3 人生还（Ted Briggs、William Dundas、Robert Tilburn），由 Electra 号救起，当晚送抵雷克雅未克，05-29 在格里诺克下船。**所有一手正文都写 0600，没有任何一处写 0601。** }
+        src: [hoodadm116, hmshood-timeline, hooddenmark3]
+      - date: 1941-05-24
+        text: { zh: 06:02 至 06:03 威尔士亲王号放烟幕退出战斗；德方记录海战于 06:09 结束，06:20 防空炮停止射击。 }
+        src: [hooddenmark2]
+
+  - id: aftermath
+    title: { zh: 调查与残骸, en: Boards of enquiry and the wreck }
+    range: { from: 1941-06, to: 2015-08 }
+    lead:
+      zh: >-
+        两次调查都没有找到「谁该负责」的答案，因为答案是这艘船本身的设计年代。
+        残骸在 2001 年被找到，舰艏与舰艉都已脱离主舰体。
+    events:
+      - date: 1941-06
+        text: { zh: 第一次调查委员会成立，被批评取证不足：「very few witnesses were called, and of the Hood survivors, only William Dundas gave evidence. Verbatim records of the evidence were not made」。 }
+        src: [hooddenmark3]
+      - date: 1941-08-27
+        text: { zh: 第二次调查委员会成立，主席 Rear-Admiral H.T.C. Walker（本人曾任胡德号舰长）。取证 176 名目击者：71 名威尔士亲王号、89 名诺福克号、14 名萨福克号、2 名胡德号生还者。 }
+        src: [hooddenmark3, hoodadm116]
+      - date: 1941-09-12
+        text: { zh: 报告出具，由 Macintosh、Duke、Walker 签署。列出三条可能的击穿路径：主装甲带被直接击穿；从带顶与主甲板平部之间约 18 英寸 × 42 英尺的缝隙带穿过（引信延迟约 55 英尺）；从带下方入水后再穿入。结论是「no blame attaches to the Vice-Admiral Commanding the Squadron, the Captain or anyone else」。 }
+        src: [hoodadm116]
+      - date: 2001-07
+        text: { zh: David L. Mearns 在约 9,200 英尺深的海底找到残骸，舰艏与舰艉均已与主舰体脱离。 }
+        src: [hooddenmark3]
+      - date: 2015-08
+        text: { zh: 舰钟打捞出水，现藏英国国家皇家海军博物馆。 }
+        src: [hooddenmark3]

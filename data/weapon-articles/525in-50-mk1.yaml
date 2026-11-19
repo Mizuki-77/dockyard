@@ -1,0 +1,267 @@
+# ============================================================================
+# 武器正文 —— 5.25 in/50 QF Mark I
+#
+# 这一型的故事几乎全是"取舍做错了"的故事：口径选得太大的双用途炮，
+# 结果射速不够、炮座转得慢，还拖累了 Dido 级的完工状态。
+# 仰角与对空升限两处来源互相打架，正文两说并列。
+# ============================================================================
+weapon: 525in-50-mk1
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      5.25 in/50 QF Mark I 是英王乔治五世级与前卫号的双用途副炮，
+      同时也是狄多级与斯巴达级巡洋舰的主炮。它选这个口径的理由是
+      「这是普通炮组还能人工搬运的最大弹重」，而这条理由在服役中被证明站不住：
+      炮房局促、弹药过重，实际射速低于设计值，炮座的俯仰与旋回速度
+      也跟不上高速飞机。
+    en: >-
+      The 5.25 in/50 QF Mark I was the dual-purpose secondary of the King George V
+      class and Vanguard, and the main battery of the Dido and Spartan classes. It
+      was chosen on the argument that this was the largest shell weight an average
+      gun crew could still handle by hand, and that argument did not survive service:
+      cramped gunhouses and heavy ammunition kept the rate of fire below the design
+      figure, and the mountings trained and elevated too slowly for fast aircraft.
+
+  paragraphs:
+    - heading: 一句选型理由，两个反证
+      text:
+        zh: >-
+          navweaps 的记录是：这在双用途炮里口径偏大，选它的理由是
+          「普通炮组仍能人工搬运的最大弹重」。同类取舍在 4.5 英寸那门炮上
+          已经被否证过一次——英国人在 1920 年代就发现 74 磅的定装弹太重、
+          炮组撑不住持续射速，而这门炮的整发弹更重。
+          也就是说，选型时依据的那条经验，海军自己几年前就已经推翻过。
+        en: >-
+          NavWeaps records that the calibre was large for a dual-purpose gun and that
+          it was chosen because it was considered the largest shell weight the average
+          crew could still handle manually. The same trade had already been disproved
+          once with the 4.5-inch: by the 1920s the British had found that a 74-pound
+          fixed round was too heavy for sustained fire, and this weapon's round was
+          heavier still. The experience the choice rested on had been overturned by the
+          Navy itself a few years earlier.
+      src: [navweaps-525in-50-mk1, navweaps-45in-45-mk1]
+
+    - heading: 炮座：局促的炮房与转不动的方向机
+      text:
+        zh: >-
+          服役中暴露的两个问题都在炮座。一是炮房设计局促，加上弹与药筒都重，
+          炮组在里面的动作被限制，实际射速达不到预期；二是炮座的俯仰与旋回速度慢，
+          对付当时的高速飞机不够用。前卫号后期那批炮座在遥控（RPC）上做了大幅改进，
+          并配上美国 Mark 37 火控，取消了人工装定引信的定引信手与其操作员，
+          腾出了工作空间——但前卫号战后才服役，终生没有对敌开过火。
+        en: >-
+          Both faults that surfaced in service were in the mounting. The gunhouse was
+          cramped, and with heavy shell and cartridge case the crew's movements were
+          constricted, so the achieved rate of fire fell short. The mounting also
+          elevated and trained slowly, which was not enough for contemporary fast
+          aircraft. Vanguard's later mountings had a much improved remote power control
+          system and were paired with the US Navy's Mark 37 fire control, which removed
+          the manually operated fuze setters and their operators and gave the remaining
+          crew more room - but Vanguard did not enter service until after the war and
+          never fired her guns in anger.
+      src: [navweaps-525in-50-mk1]
+
+    - heading: 一处来源互相打架：仰角与对空升限
+      text:
+        zh: >-
+          这型炮座的最大仰角，navweaps 与 navypedia 都写 70 度，
+          而英国皇家博物馆格林威治的研究指南写 80 度；对空升限上，
+          navweaps 给 70 度时 46,500 英尺（14,170 米），
+          格林威治那份材料给 80 度时 29,544 英尺。**两组数字量级不同，
+          本站两说并列，不替来源裁决。**需要指出的是，单靠仰角差
+          解释不了这么大的升限差。
+        en: >-
+          The mountings' maximum elevation is given as 70 degrees by both NavWeaps and
+          navypedia, and as 80 degrees by the Royal Museums Greenwich research guide.
+          On ceiling, NavWeaps gives 46,500 feet (14,170 m) at 70 degrees while the
+          Greenwich material gives 29,544 feet at 80 degrees. **The two sets differ by
+          an order of magnitude and both are reported here without adjudication.** An
+          elevation difference alone cannot explain a ceiling gap that large.
+      src: [navweaps-525in-50-mk1, rmg-kgv-guide, navypedia-kgv]
+
+    - heading: 它拖累了别的舰
+      text:
+        zh: >-
+          这型炮的产量与制造难度直接影响了一批巡洋舰的完工状态。
+          1930 年代中期原计划用它改装霍金斯号与弗罗比舍号（6 门换 7 门 7.5 英寸），
+          但军工厂无法大量供货、船厂也已排满；1938 年 11 月的一份文件说，
+          可供巡洋舰的武备一年只够装四艘。加上 5.25 英寸炮座本身难造、
+          英王乔治五世级又优先，结果是霍金斯与弗罗比舍的改装取消，
+          狄多级的卡律布狄斯号与斯库拉号改用 8 门 4.5 英寸完工，
+          另有三艘（含狄多号本舰）只装 8 门 5.25 英寸就服役了。
+          狄多号的第五座炮塔是 1941 年末在布鲁克林海军船厂改装时补装的；
+          博纳文彻号 1941 年 3 月沉没，菲比号始终只有 8 门。
+        en: >-
+          The gun's production and manufacturing difficulty shaped how a whole group of
+          cruisers was completed. The mid-1930s plan was to rearm Hawkins and Frobisher
+          with it, six guns replacing seven 7.5-inch; but the armament factories could
+          not supply them in quantity and the yards were already overbooked, and a
+          November 1938 document put the supply available for cruisers at four ships a
+          year. With the 5.25-inch mounting itself hard to manufacture and the King
+          George V class holding top priority, the Hawkins and Frobisher rebuilds were
+          cancelled, HMS Charybdis and HMS Scylla were completed with eight 4.5-inch
+          guns, and three other cruisers including Dido herself commissioned with only
+          eight 5.25-inch. Dido's fifth turret went in during a late-1941 refit at the
+          Brooklyn Navy Yard; Bonaventure was sunk in March 1941 and Phoebe stayed an
+          eight-gun ship.
+      src: [navweaps-525in-50-mk1]
+
+    - heading: A 炮塔卡死与「generally unreliable」
+      text:
+        zh: >-
+          早期狄多级的 A 炮塔容易卡死，1940 到 1941 年间报过 13 起独立事故，
+          其中一起是 1940 年 12 月博纳文彻号与德国重巡希佩尔海军上将号交战时发生的。
+          主因不是炮本身，而是条约限制下的轻结构让舰艏在大浪或高速转向时变形；
+          早期舰通过加强舰艏段与更细致的炮座安装装配修正，后期舰建造时即已纳入。
+          另有记录说 1941 年冬以后早期舰舰长「在大浪中操纵得当」也缓解了问题。
+          但这套炮座的可靠性评价一直不好：1950 年尤里亚勒斯号的 A 炮塔因滚道问题
+          永久失效，英国皇家海军建造总监（RCNC）的 D.K. Brown 说他在该舰的经历是
+          这些炮座「generally unreliable」。
+        en: >-
+          The early Dido class's A turret was prone to jamming, with thirteen separate
+          incidents reported during 1940-41, one of them aboard Bonaventure in December
+          1940 while engaging the German heavy cruiser Admiral Hipper. The cause was
+          not the gun but the light construction permitted by the treaties, which let
+          the bow flex in heavy weather or hard turns; early ships were fixed by
+          stiffening the bow and by more careful attention to fitting the mountings,
+          and later ships incorporated that from the start. It is also recorded that
+          after the winter of 1941 captains of the early ships "handled them
+          appropriately" in heavy weather, which helped. The mounting's reputation
+          never recovered: in 1950 HMS Euryalus had A turret permanently out of action
+          over a roller path problem, and D.K. Brown, RCNC, described these mountings in
+          his experience aboard her as "generally unreliable".
+      src: [navweaps-525in-50-mk1]
+
+    - heading: 造了多少、改了什么
+      text:
+        zh: >-
+          共造 267 门，其中 6 门炮与 3 座双联被借给陆军用于伦敦防空。
+          身管是自紧式活衬（无内衬）、外筒到距炮口 99 英寸处、可拆炮尾环与密封环；
+          炮闩为手操水平滑动式、半自动开闩，换身管必须把整门炮卸下来。
+          另有一个没走完的后续方案：Mark IV 炮配 Mark III 双联座，
+          改用垂直滑动炮闩、分装弹药、人工装填，射速提到约 12 到 16 发/分，
+          只造了两门就停了。
+        en: >-
+          Two hundred and sixty-seven guns were built, of which six guns and three twin
+          mountings were loaned to the Army for the defence of London. The barrel was an
+          autofretted loose barrel with no liner, jacketed to 99 inches from the muzzle,
+          with a removable breech ring and sealing collar; the breech was a hand-operated
+          horizontal sliding block with semi-automatic opening, and changing a barrel
+          meant dismounting the gun. A follow-on scheme never completed was the Mark IV
+          gun in the Mark III twin mounting, with vertical sliding breeches, separate
+          ammunition, manual loading and a rate of roughly 12 to 16 rounds per minute;
+          only two were built.
+      src: [navweaps-525in-50-mk1]
+
+history:
+  - id: design
+    title: { zh: 设计与定型, en: Design }
+    range: { from: 1935, to: 1940 }
+    lead:
+      zh: >-
+        1935 年设计、1940 年服役。它被选中的理由，是英国人在 1920 年代自己推翻过的。
+      en: >-
+        Designed in 1935 and in service from 1940, selected on an argument the British
+        had disproved in the 1920s.
+    events:
+      - date: 1935
+        text:
+          zh: >-
+            完成设计，编号 5.25 in/50 QF Mark I。选型理由是「普通炮组仍能人工搬运的
+            最大弹重」。
+          en: >-
+            Design completed as the 5.25 in/50 QF Mark I, chosen as the largest shell
+            weight an average crew could still handle manually.
+        src: [navweaps-525in-50-mk1]
+      - date: 1938-11
+        text:
+          zh: >-
+            一份文件指出，可供巡洋舰的武备一年只够装四艘（5.25 英寸或 4.5 英寸），
+            霍金斯号与弗罗比舍号的改装因此后来被取消。
+          en: >-
+            A document recorded that armament supply for cruisers could equip only four
+            ships a year, in either 5.25-inch or 4.5-inch, which is why the Hawkins and
+            Frobisher rebuilds were later cancelled.
+        src: [navweaps-525in-50-mk1]
+      - date: 1940
+        text:
+          zh: >-
+            进入服役。早期狄多级因此只装 8 门就完工，第五座炮塔后期补装。
+          en: >-
+            Entered service, which is why early Dido class cruisers completed with only
+            eight guns and had the fifth turret fitted later.
+        src: [navweaps-525in-50-mk1]
+
+  - id: service
+    title: { zh: 战时使用, en: Wartime service }
+    range: { from: 1940-10, to: 1941-05 }
+    lead:
+      zh: >-
+        它打的仗不少，但每一次评价都绕不开射速与炮座。
+      en: >-
+        It saw plenty of action, and every assessment came back to rate of fire and
+        the mounting.
+    events:
+      - date: 1940-10-01
+        text:
+          zh: >-
+            英王乔治五世号服役，装 8 座双联共 16 门。实测射速 7 到 8 发/分，
+            设计值是 10 到 12 发/分。
+          en: >-
+            King George V commissioned with eight twin mountings, sixteen guns. The
+            achieved rate was 7 to 8 rounds per minute against a design figure of 10 to
+            12.
+        src: [rmg-kgv-guide, navweaps-525in-50-mk1]
+      - date: 1940-12
+        text:
+          zh: >-
+            博纳文彻号与德国重巡希佩尔海军上将号交战期间，A 炮塔卡死。
+            早期狄多级在 1940 到 1941 年间共报过 13 起这类独立事故。
+          en: >-
+            Bonaventure's A turret jammed while engaging the German heavy cruiser
+            Admiral Hipper. Early Dido class ships reported thirteen such separate
+            incidents during 1940-41.
+        src: [navweaps-525in-50-mk1]
+      - date: 1941-05-27
+        text:
+          zh: >-
+            围歼俾斯麦号。英王乔治五世号的副炮全程无故障，
+            帕特森舰长的战报原话是「fired 77 rounds a gun without a hitch」——
+            这与主炮在同一场战斗中的表现形成对照。
+          en: >-
+            The final action against Bismarck. King George V's secondary battery fired
+            throughout without fault; Captain Patterson's report records "fired 77
+            rounds a gun without a hitch", a contrast with the main battery's
+            performance in the same action.
+        src: [kbismarck-patterson-report]
+
+  - id: postwar
+    title: { zh: 前卫号与战后评价, en: Vanguard and the post-war verdict }
+    range: { from: 1946, to: 1950 }
+    lead:
+      zh: >-
+        这型炮最后一次改进装在了前卫号上，而那艘舰终生没对敌开火。
+      en: >-
+        The gun's last improvement went into Vanguard, a ship that never fired in anger.
+    events:
+      - date: 1946
+        text:
+          zh: >-
+            前卫号服役。她的炮座遥控系统大幅改进，配美国 Mark 37 火控，
+            取消人工定引信手；但该舰未参加二战作战。
+          en: >-
+            Vanguard commissioned with greatly improved remote power control in the
+            mountings and US Mark 37 fire control, dispensing with manual fuze setters.
+            She saw no combat in the Second World War.
+        src: [navweaps-525in-50-mk1]
+      - date: 1950
+        text:
+          zh: >-
+            尤里亚勒斯号的 A 炮塔因滚道问题永久失效。RCNC 的 D.K. Brown 称
+            这些炮座「generally unreliable」。
+          en: >-
+            Euryalus had A turret permanently out of action over a roller path problem.
+            D.K. Brown, RCNC, called these mountings "generally unreliable".
+        src: [navweaps-525in-50-mk1]

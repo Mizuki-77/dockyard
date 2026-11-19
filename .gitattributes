@@ -1,0 +1,19 @@
+# Dockyard · 换行符策略
+#
+# 本项目只在 Windows 上开发，且历史文件换行符本来就是混的
+# （实测：纯 LF 272 个 / 纯 CRLF 63 个 / 混合 12 个）。
+# 一律按字节原样存储，不做 CRLF↔LF 转换 ——
+# 否则那 63 个 CRLF 文件会在 git status 里永远显示为 modified。
+* -text
+
+# 已压缩的二进制，无需 diff
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.woff binary
+*.woff2 binary

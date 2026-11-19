@@ -1,0 +1,223 @@
+# 飞龙 正文
+# 2026-11-19 建。数据来源 work/raw/soryu-hiryuu-tech.md。
+
+ship: hiryu
+updated: 2026-11-19
+
+intro:
+  lead:
+    zh: >-
+      飞龙是中途岛那天唯一还能反击的日军航母。上午十点半，
+      赤城、加贺、苍龙在几分钟内接连起火时，它因为一个偶然的航行序列
+      躲进了飑区——然后独自打完了日本海军航空兵最后一场像样的进攻。
+    en: >-
+      Hiryu was the only Japanese carrier left able to strike back at Midway.
+      She survived the morning attack by accident of manoeuvring, then fought
+      alone for the rest of the day.
+
+  paragraphs:
+    - heading: 左舷舰岛——日造航母中只有两艘
+      text:
+        zh: >-
+          飞龙的舰岛在左舷中央。日造航母里只有两艘这样设计，
+          另一艘是赤城。Kojinsha Vol.6 说得最直接：
+          「The main difference in comparison with SORYU was the port amidships
+          location of the island」。
+          为什么要放左舷？因为右舷已经有一根大烟囱，
+          舰桥再放上去会重心偏斜。赤城出于同样的理由做了左舷。
+          **顺便纠正一个流传很广的说法：飞龙与赤城的舰岛设计不是「互换」的。**
+          实际情况是 1935 年航空本部同一份通達要求「舰桥与烟囱分置两舷、
+          舰桥置于舰体中央附近」，赤城先做木模型验证、飞龙因接近完工来不及改，
+          于是两舰都成了左舷。
+        en: >-
+          Hiryu and Akagi were the only two Japanese carriers with a port-side
+          island. The arrangement was mandated by the same 1935 Navy Air
+          Headquarters directive, not swapped between the two ships.
+      src: [japanese-warship-soryu, kojinsha-vol6-carriers]
+
+    - heading: 一个偶然救了它一上午
+      text:
+        zh: >-
+          上午十点二十五分前后，赤城、加贺、苍龙相继被俯冲轰炸机击中。
+          飞龙当时没有受损——因为左舷舰岛导致的航行序列，
+          它向三舰的左舷方向脱离并躲进了飑区，正好避开了第一轮攻击。
+          这不是设计得好，是**运气**。但它因此成为当天日军唯一还能出动的航母。
+        en: >-
+          Hiryu escaped the first dive-bombing attack by turning away into a
+          rain squall — an accident of station-keeping, not a design feature.
+      src: [combinedfleet-hiryu]
+
+    - heading: 两次反击与它的结束
+      text:
+        zh: >-
+          10:54 单舰反击：18 架九九舰爆 + 6 架零战，由小林道雄大尉指挥，
+          命中约克城 3 弹（日方记录 6 弹）。
+          13:30 第二波：10 架九七舰攻（含 1 架赤城机）+ 6 架零战
+          （含 2 架加贺机），由友永丈市大尉指挥，两架命中约克城，
+          炸坏 3 座锅炉、全舰断电。
+          17:03 企业号与约克城的 13-24 架 SBD 俯冲下来，命中 4 发 1,000 磅炸弹。
+          首弹掀飞前升降机砸向舰桥——却意外成了防爆墙，护住了舰桥里的人。
+          次日 05:10 驱逐舰巻雲发射 1 条鱼雷处置，09:12 舰首下沉、翻覆。
+          山口多闻少将、加来止男舰长留舰。残存 39 人乘小艇漂流 14 天，
+          被 PBY 发现后由 USS Ballard 救起，漂流途中死了 5 人。
+        en: >-
+          Two strikes from Hiryu crippled Yorktown; four 1,000 lb bombs then
+          finished Hiryu. She was scuttled the next morning. Admiral Yamaguchi
+          and Captain Kaku went down with her.
+      src: [combinedfleet-hiryu]
+
+history:
+  - id: build
+    title:
+      zh: 建造
+      en: Construction
+    range: { from: 1936-07-08, to: 1939-07-05 }
+    events:
+      - date: 1935-11-22
+        text:
+          zh: 正式命名「飛龍」。
+        src: [japanese-warship-soryu]
+
+      - date: 1936-07-08
+        text:
+          zh: 在横须贺海军工厂开工。
+        src: [japanese-warship-soryu]
+
+      - date: 1937-11-16
+        text:
+          zh: 下水。
+        src: [japanese-warship-soryu]
+
+      - date: 1939-07-05
+        text:
+          zh: 竣工，伏见宫博恭王临席。
+        src: [japanese-warship-soryu]
+
+  - id: prewar
+    title:
+      zh: 战前
+      en: Prewar
+    range: { from: 1939-11-15, to: 1941-11-25 }
+    events:
+      - date: 1939-11-15
+        text:
+          zh: 与苍龙、第 11 驱逐队编成第二航空战队。
+        src: [japanese-warship-soryu]
+
+      - date: 1940-12-09
+        text:
+          zh: 成为第二航空战队旗舰（此前旗舰是苍龙）。
+        src: [japanese-warship-soryu]
+
+  - id: war
+    title:
+      zh: 珍珠港至印度洋
+      en: From Pearl Harbor to the Indian Ocean
+    range: { from: 1941-11-26, to: 1942-05-26 }
+    events:
+      - date: 1941-12-07
+        text:
+          zh: >-
+            珍珠港：第一波 8 架 B5N 鱼雷机 + 10 架 B5N（800kg 弹）+ 6 架零战。
+            其中楠美正少佐的水平轰炸队投下的八〇番弹引爆了亚利桑那号前部弹药库
+            （约 08:06-07）。这是整场珍珠港攻击里最致命的一击。
+          en: >-
+            Hiryu's level bombers under Lt.Cdr. Kusumi are credited with the
+            bomb that detonated Arizona's forward magazines.
+        src: [combinedfleet-hiryu]
+
+      - date: 1942-03-01
+        text:
+          zh: 舰爆重创美驱逐舰 Edsall，同日击沉油船 Pecos。
+        src: [japanese-warship-soryu]
+
+      - date: 1942-04-09
+        text:
+          zh: 印度洋作战，参与击沉竞技神号。
+        src: [japanese-warship-soryu]
+
+      - date: 1942-04-22
+        text:
+          zh: 返佐世保入坞大修。
+        src: [combinedfleet-hiryu]
+
+  - id: midway
+    title:
+      zh: 中途岛
+      en: Midway
+    range: { from: 1942-05-27, to: 1942-06-05 }
+    lead:
+      zh: 最后一艘还能出动的日军航母。
+    events:
+      - date: 1942-05-27
+        text:
+          zh: 从柱岛出击参加 MI 作战。
+        src: [combinedfleet-hiryu]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            04:30（当地）第一波：18 架九七舰攻（友永丈市大尉指挥）+ 9 架零战。
+            06:34 攻击 Sand 岛，损失惨重——2 架被战斗机击落、1 架被高炮击落、
+            1 架重伤迫降、1 架返航途中迫降、5 架报废。
+        src: [combinedfleet-hiryu]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            10:25 前后三舰相继起火时飞龙未受损，因左舷舰岛导致的航行序列
+            躲进飑区，避开了第一轮俯冲轰炸。
+        src: [combinedfleet-hiryu]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            10:54 单舰反击：18 架九九舰爆（小林道雄大尉）+ 6 架零战，
+            12:00 前后命中约克城 3 弹（日方记录 6 弹），重创。
+            13:30 第二波：10 架九七舰攻（含 1 架赤城机）+ 6 架零战
+            （含 2 架加贺机），14:38 遭野猫突袭损失 4 架，
+            2 架命中约克城，炸坏 3 座锅炉、全舰断电。
+          en: >-
+            Hiryu's two counterstrikes, at 1054 and 1330, crippled Yorktown.
+        src: [combinedfleet-hiryu]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            17:03 企业号与约克城 SBD 共 13-24 架俯冲，命中 4 发 1,000 磅炸弹。
+            首弹掀飞前升降机砸向舰桥，却意外成了防爆墙护住舰桥。
+            前半个飞行甲板塌入机库。21:23 主机停转。
+        src: [combinedfleet-hiryu]
+
+      - date: 1942-06-05
+        text:
+          zh: >-
+            03:15 下令弃舰，山口多闻少将、加来止男舰长留舰。
+            05:10 驱逐舰巻雲发射 1 条鱼雷处置（另一条未命中）。
+            09:12 舰首下沉、翻覆，带走 389 具遗体。
+            残存 39 人乘小艇漂流 14 天，被 PBY 发现后由 USS Ballard 救起，
+            漂流途中 5 人死亡。
+          en: >-
+            Abandoned at 0315, scuttled at 0510 by Makigumo, capsized at 0912.
+        src: [combinedfleet-hiryu]
+
+  - id: aftermath
+    title:
+      zh: 之后
+      en: Aftermath
+    range: { from: 1942-07-14, to: 1942-09-25 }
+    events:
+      - date: 1942-07-14
+        text:
+          zh: >-
+            与赤城一起被列为第三舰队附属——这是为了隐匿损失。
+            原文「2隻が第三艦隊に加えられたのは喪失秘匿のためであった」。
+          en: >-
+            Listed as attached to the 3rd Fleet together with Akagi, purely to
+            conceal the loss.
+        src: [japanese-warship-soryu]
+
+      - date: 1942-09-25
+        text:
+          zh: 除籍。
+        src: [japanese-warship-soryu]

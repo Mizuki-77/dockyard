@@ -1,0 +1,117 @@
+# ============================================================================
+# 武器正文 —— Type 273 水面搜索雷达
+#
+# 271 的后继型号，1941-12 起在英王乔治五世号上替换 271。
+# 性能数字不写；只写它接的是哪一个位置、在舰上待了多久。
+# ============================================================================
+weapon: type-273
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Type 273 是一型水面搜索雷达，是 Type 271 的后继型号。
+      在英王乔治五世号上，它从 1941 年 12 月起替换 271，
+      此后一直是本级的水面搜索设备，直到 1944 年改装时与
+      一整套电子设备一起被换掉。
+      专题站的英国雷达型号表把这一型记作 1941 年进入服役、用途水面预警。
+    en: >-
+      The Type 273 was a surface-search radar and the successor to the Type 271. Aboard
+      HMS King George V it replaced the 271 from December 1941 and remained the class's
+      surface-search set until the 1944 refit exchanged it as part of a wholesale
+      electronic update. The specialist site's table records the type as operational in
+      1941 with surface warning as its purpose.
+
+  paragraphs:
+    - heading: 它接的是 271 的位置，不是新增一栏
+      text:
+        zh: >-
+          本级的改装记录写得很干脆：1941 年 12 月那一次是
+          「减 4 座 UP 火箭、减 type 271 雷达，加 1 座八联 pom-pom、
+          1 座四联 pom-pom、18 门单装 20 mm Oerlikon、type 273 雷达、5 部 type 282 雷达」。
+          type 273 与减掉的 271 出现在同一条里，一去一来，
+          说明这是一次替换而不是增加。
+          本站因此不把 273 与 271 写成并存关系。
+        en: >-
+          The class refit record is blunt: the December 1941 entry reads minus four UP
+          rocket projectors and the type 271 radar, plus one octuple pom-pom, one
+          quadruple pom-pom, eighteen single 20 mm Oerlikon mounts, the type 273 radar and
+          five type 282 sets. The 273 appears in the same entry as the 271 it supplants,
+          out with one and in with the other, which marks a replacement rather than an
+          addition. This article therefore does not describe the 273 and 271 as
+          coexisting.
+      src: [navypedia-kgv]
+
+    - heading: 它的有效期到 1944 年 7 月
+      text:
+        zh: >-
+          273 在本级上干了两年半。1944 年 7 月的改装里，
+          它和 type 279 对空警戒雷达一并被减掉，
+          换上来的是 type 277、type 279B、2 部 type 282、type 285、type 293。
+          也就是说水面搜索这一格在 1944 年交给了 type 293（目标指示雷达），
+          而不是另一型专门的「水面搜索」雷达。
+          需要提醒的是：本舰 1944 年是否还保留别的对海手段，
+          现有材料只给了这一张减/加表，本站不另行推断。
+        en: >-
+          The 273 served in the class for two and a half years. In the July 1944 refit it
+          was removed together with the type 279 air-warning set, and in came the type
+          277, type 279B, two type 282 sets, the type 285 and the type 293. The
+          surface-search slot was therefore handed to the type 293, a target-indication
+          set, rather than to another dedicated surface-search radar. Note the limit of
+          the evidence: the material gives only this table of removals and additions, and
+          this article draws no further inference about what other surface-search means
+          the ship retained in 1944.
+      src: [navypedia-kgv]
+
+    - heading: 与同族各型的关系在型号表里是一档
+      text:
+        zh: >-
+          专题站的型号表把 Type 271、272、273 三型归在同一档：
+          用途都是水面预警，评语栏的文字也几乎一样
+          （271 单独多一句「第一型微波雷达」与「非常成功」）。
+          273 那一行的评语是「用于巡洋舰与战列舰」，
+          而 271 写的是「用于小型舰只」——
+          这是这一档里唯一能分出各型定位的一句话。
+          至于三型之间在硬件上如何递进，表里没有说明，本站不写。
+        en: >-
+          The specialist table files the Type 271, 272 and 273 in one bracket: surface
+          warning for purpose, with near-identical wording in the comment field, except
+          that the 271 alone carries "first microwave radar set" and "very successful".
+          The 273's comment reads "used on cruisers and battleships" against the 271's
+          "used on small ships", which is the only sentence in that bracket that
+          separates their roles. How the three progressed in hardware is not stated in
+          the table and is not written here.
+      src: [navweaps-radar-uk]
+
+history:
+  - id: service
+    title: { zh: 装舰与换装, en: Fitting and replacement }
+    range: { from: 1941-12, to: 1944-07 }
+    lead:
+      zh: >-
+        从 1941 年 12 月接手到 1944 年 7 月交出，中间没有换型的记录。
+      en: >-
+        From taking over in December 1941 to handing back in July 1944, with no mark
+        change in between.
+    events:
+      - date: 1941-12
+        text:
+          zh: >-
+            本舰以 type 273 替换 type 271，同批减掉 4 座 UP 火箭、
+            加 1 座八联与 1 座四联 pom-pom、18 门单装 20 mm Oerlikon、5 部 type 282。
+          en: >-
+            The ship exchanged her type 271 for a type 273, in the same batch losing four
+            UP rocket projectors and gaining one octuple and one quadruple pom-pom,
+            eighteen single 20 mm Oerlikon mounts and five type 282 sets.
+        src: [navypedia-kgv]
+      - date: 1944-07
+        text:
+          zh: >-
+            1944 年改装中减掉 type 273 与 type 279，
+            加上 type 277、type 279B、2 部 type 282、type 285、type 293。
+            水面搜索这一职能在这一批里改由 type 293 承担。
+          en: >-
+            In the 1944 refit the type 273 and type 279 came off and the type 277, type
+            279B, two type 282 sets, the type 285 and type 293 went on. Surface search
+            passed to the type 293 in this batch.
+        src: [navypedia-kgv]

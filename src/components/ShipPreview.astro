@@ -1,0 +1,382 @@
+---
+// ============================================================================
+// 右侧内容区：一艘舰的「总图 + 简介 + 历史开头」。
+//
+// 这是索引页右半边。目的是让人在没点进完整档案之前，先看到这艘船长什么样、
+// 为什么值得读 —— 只给一张卡片和一串数字，读者无从判断要不要点。
+//
+// 内容全部取自已有的 data/articles/<id>.yaml，不新增数据源：
+// 索引页和历史页用的是同一份正文，改一处两边都变。
+// ============================================================================
+import {
+  getShip,
+  getArticle,
+  getClass,
+  buildShipView,
+  primaryImage,
+  imageCredit,
+  primaryValue,
+  enumLabel,
+  getImagesFor,
+} from '../lib/data';
+
+interface Props {
+  shipId: string;
+}
+
+const { shipId } = Astro.props;
+
+const ship = getShip(shipId);
+const article = getArticle(shipId);
+const cls = ship?.class ? getClass(ship.class) : undefined;
+const view = buildShipView(shipId);
+const hero = primaryImage(`ship:${shipId}`);
+const heroCredit = hero ? imageCredit(hero) : '';
+
+// 缩略条要有信息量：先按「看得清舰型」的视角排，再去重同一视角的近似图。
+// 否则按 yaml 顺序取前四张，往往是下水典礼连拍，四张看着一模一样。
+const VIEW_RANK = ['broadside', 'overhead', 'detail', 'deck', 'bow', 'stern', 'underwater', 'other'];
+const rank = (v?: string) => {
+  const i = VIEW_RANK.indexOf(v ?? 'other');
+  return i < 0 ? VIEW_RANK.length : i;
+};
+const seenView = new Map<string, number>();
+const others = getImagesFor(`ship:${shipId}`)
+  .filter((i) => i.file && i.id !== hero?.id)
+  .sort((a, b) => rank(a.view) - rank(b.view))
+  .filter((i) => {
+    // 同一视角最多留两张：全去重会让舷侧照只剩一张，可这恰恰是最该多的视角
+    const v = i.view ?? 'other';
+    const n = seenView.get(v) ?? 0;
+    if (n >= 2) return false;
+    seenView.set(v, n + 1);
+    return true;
+  });
+
+const nation = ship ? primaryValue(ship.id, 'identity.nation') : undefined;
+const shipType = ship ? primaryValue(ship.id, 'identity.ship_type') : undefined;
+const era = ship ? primaryValue(ship.id, 'identity.era') : undefined;
+
+// 历史只露第一节，其余留到完整档案里
+const firstSection = (article?.history ?? [])[0];
+const historyCount = (article?.history ?? []).reduce((n, s) => n + (s.events?.length ?? 0), 0);
+---
+
+{
+  !ship ? (
+    <div class="empty">还没有收录任何舰艇。数据文件放在 data/ships/ 下。</div>
+  ) : (
+    <article class="preview">
+      <header class="preview__head">
+        <div class="preview__kicker">
+          {cls?.name.zh ?? '单舰'} · {ship.name.en ?? ''}
+        </div>
+        <h1 class="preview__title">{ship.name.zh}</h1>
+        <div class="preview__meta">
+          {era && <span class="tag tag--ghost">{enumLabel(era, 'zh')}</span>}
+          {shipType && <span class="tag tag--ghost">{enumLabel(shipType, 'zh')}</span>}
+          {nation && <span class="tag tag--ghost">{enumLabel(nation, 'zh')}</span>}
+          {(view?.narratives.length ?? 0) > 0 && (
+            <span class="tag tag--warn">{view!.narratives.length} 条争议</span>
+          )}
+        </div>
+      </header>
+
+      {hero && (
+        <figure class="preview__fig">
+          <div class="preview__media">
+            {hero.file ? (
+              <img src={hero.file} alt={hero.title.zh} loading="eager" />
+            ) : (
+              <div class="preview__nomedia">配图待补</div>
+            )}
+          </div>
+          <figcaption class="preview__cap">
+            <span class="preview__capmain">{hero.title.zh}</span>
+            <span class="preview__capnote">
+              {heroCredit}
+              {hero.date ? ` · ${hero.date}` : ''}
+            </span>
+          </figcaption>
+        </figure>
+      )}
+
+      {others.length > 0 && (
+        <div class="preview__strip">
+          {others.slice(0, 4).map((i) => (
+            <a class="preview__thumb" href={`/ships/${shipId}#gallery`} title={i.title.zh}>
+              {i.file ? <img src={i.file} alt={i.title.zh} loading="lazy" /> : null}
+            </a>
+          ))}
+        </div>
+      )}
+
+      {article?.intro?.lead && (
+        <section class="preview__sec">
+          <h2 class="preview__h">简介</h2>
+          <p class="preview__lead">{article.intro.lead.zh}</p>
+          {(article.intro.paragraphs ?? []).slice(0, 2).map((p) => (
+            <div class="preview__para">
+              {p.heading && <h3 class="preview__h3">{p.heading}</h3>}
+              <p>{p.text.zh}</p>
+            </div>
+          ))}
+          {(article.intro.paragraphs ?? []).length > 2 && (
+            <p class="preview__more">
+              还有 {(article.intro.paragraphs ?? []).length - 2} 段，
+              <a href={`/ships/${shipId}#intro`}>到完整档案继续读</a>
+            </p>
+          )}
+        </section>
+      )}
+
+      {firstSection && (
+        <section class="preview__sec">
+          <h2 class="preview__h">历史</h2>
+          <div class="preview__histhead">
+            <span class="preview__histtitle">{firstSection.title.zh}</span>
+            {firstSection.range && (
+              <span class="preview__range">
+                {firstSection.range.from} – {firstSection.range.to ?? '至今'}
+              </span>
+            )}
+          </div>
+          <ul class="preview__events">
+            {(firstSection.events ?? []).map((e) => (
+              <li class="preview__ev">
+                <time class="preview__evdate mono">{e.date}</time>
+                <span class="preview__evtext">{e.text.zh}</span>
+              </li>
+            ))}
+          </ul>
+          <p class="preview__more">
+            全舰共 {historyCount} 条历史事件，
+            <a href={`/ships/${shipId}#history`}>查看完整历史</a>
+          </p>
+        </section>
+      )}
+
+      <div class="preview__cta">
+        <a class="btn btn--primary" href={`/ships/${shipId}`}>
+          打开完整档案 →
+        </a>
+        {cls && (
+          <a class="btn btn--line" href={`/classes/${cls.id}`}>
+            {cls.name.zh}数据
+          </a>
+        )}
+      </div>
+
+      <p class="preview__hint">
+        左侧是完整索引：国家 → 舰种 → 舰级 → 单舰。点任意一艘，这里就换成它的内容。
+      </p>
+    </article>
+  )
+}
+
+<style>
+  .preview__head {
+    margin-bottom: 16px;
+  }
+  .preview__kicker {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-300);
+    font-weight: 700;
+  }
+  .preview__title {
+    margin: 6px 0 10px;
+    font-size: 34px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 750;
+    color: var(--navy-900);
+  }
+  .preview__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .preview__fig {
+    margin: 0 0 10px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--navy-900);
+  }
+  .preview__media img {
+    display: block;
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    object-position: center 42%;
+  }
+  .preview__nomedia {
+    display: grid;
+    place-items: center;
+    min-height: 260px;
+    color: var(--blue-200);
+    font-size: 13px;
+  }
+  .preview__cap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    padding: 9px 14px;
+    background: var(--navy-900);
+    font-size: 11px;
+    line-height: 1.6;
+  }
+  .preview__capmain {
+    color: rgba(226, 240, 250, 0.94);
+  }
+  .preview__capnote {
+    color: rgba(179, 215, 236, 0.6);
+    font-family: var(--font-mono);
+  }
+
+  .preview__strip {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+    margin-bottom: 22px;
+  }
+  .preview__thumb {
+    display: block;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    line-height: 0;
+  }
+  .preview__thumb img {
+    width: 100%;
+    height: 74px;
+    object-fit: cover;
+    transition: transform 0.18s ease;
+  }
+  .preview__thumb:hover img {
+    transform: scale(1.05);
+  }
+
+  .preview__sec {
+    margin-top: 24px;
+  }
+  .preview__h {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 12px;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--navy-900);
+  }
+  .preview__h::before {
+    content: '';
+    width: 4px;
+    height: 15px;
+    border-radius: 1px;
+    background: var(--navy-800);
+  }
+  .preview__lead {
+    margin: 0 0 12px;
+    font-size: 14.5px;
+    line-height: 1.9;
+    color: var(--ink-700);
+    max-width: 74ch;
+  }
+  .preview__para p {
+    margin: 0 0 10px;
+    font-size: 13.5px;
+    line-height: 1.95;
+    color: var(--ink-500);
+    max-width: 76ch;
+  }
+  .preview__h3 {
+    margin: 14px 0 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blue-700);
+  }
+  .preview__more {
+    margin: 10px 0 0;
+    font-size: 12.5px;
+    color: var(--ink-400);
+  }
+  .preview__more a {
+    color: var(--blue-700);
+  }
+
+  .preview__histhead {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .preview__histtitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink-900);
+  }
+  .preview__range {
+    font-size: 11px;
+    font-family: var(--font-mono);
+    color: var(--blue-700);
+    background: var(--blue-50);
+    border: 1px solid var(--blue-200);
+    border-radius: 999px;
+    padding: 1px 9px;
+  }
+  .preview__events {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .preview__ev {
+    display: grid;
+    grid-template-columns: 84px minmax(0, 1fr);
+    gap: 12px;
+    padding: 7px 0;
+  }
+  .preview__ev + .preview__ev {
+    border-top: 1px dashed var(--line-soft);
+  }
+  .preview__evdate {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--blue-700);
+    padding-top: 2px;
+  }
+  .preview__evtext {
+    font-size: 13px;
+    line-height: 1.75;
+    color: var(--ink-700);
+  }
+
+  .preview__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 26px;
+  }
+  .preview__hint {
+    margin: 14px 0 0;
+    font-size: 11.5px;
+    line-height: 1.7;
+    color: var(--ink-400);
+  }
+
+  @media (max-width: 760px) {
+    .preview__title {
+      font-size: 27px;
+    }
+    .preview__strip {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .preview__ev {
+      grid-template-columns: 74px minmax(0, 1fr);
+      gap: 9px;
+    }
+  }
+</style>

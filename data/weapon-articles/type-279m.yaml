@@ -1,0 +1,138 @@
+# ============================================================================
+# 武器正文 —— Type 279M 对空预警雷达
+#
+# 两条必须并列的事：
+#  1) 胡德号装的是 279M 还是 navypedia 记的 Type 79B，两说并列不裁决；
+#  2) 279M 与 279 不是同一条，279M 是改良记法，单列实体。
+# 性能数字不写。
+# ============================================================================
+weapon: type-279m
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Type 279M 是对空预警雷达，属于 Type 279 系列的改良型——
+      后缀的 M 是改良记法，本站因此把它与 type-279 分列两个实体。
+      在胡德号上它是 1941 年初 Rosyth 改装中加装的两型雷达之一，
+      与 Type 284 主炮测距雷达同批，装在主桅高处。
+      它在舰上的役期只有两个多月：1941 年 3 月装成，5 月 24 日舰沉。
+    en: >-
+      The Type 279M was an air-warning radar, an improved mark of the Type 279 family;
+      the M suffix denotes the improvement, which is why this site keeps it as its own
+      entity rather than folding it into type-279. Aboard HMS Hood it was one of the two
+      radars added in the Rosyth refit of early 1941, alongside the Type 284
+      main-armament set, and its aerial sat high on the mainmast. Its service life in
+      the ship was a little over two months: fitted by March 1941, lost with her on
+      24 May.
+
+  paragraphs:
+    - heading: 本舰装的到底是 279M 还是 79B，两说并列
+      text:
+        zh: >-
+          这是这一型在胡德号上最需要讲清的分歧。协会的技术页与生涯年表都写
+          Type 279M；而 navypedia 记本舰 1941 年初装的是「type 79B, type 284」。
+          两种说法分别指向 279 系列与 79 系列两支不同的产品线，
+          不是同一个记法的不同拼写。
+          本站的处理是：两种都保留，数据层记 279M，
+          但不把 navypedia 那一说删掉，也不替来源裁决哪一个才对。
+        en: >-
+          This is the disagreement that most needs stating. The association's technical
+          page and its career chronology both write Type 279M, while navypedia records
+          the ship as receiving "type 79B, type 284" in early 1941. The two point at
+          different product lines, the 279 family and the 79 family, and are not
+          different spellings of one designation. This site keeps both: the data layer
+          records the 279M, but navypedia's reading is not dropped and no attempt is made
+          to decide which source is right.
+      src: [hmshood-association, hmshood-timeline, navypedia-hood]
+
+    - heading: 279M 与 279 的差别只追到一句原话
+      text:
+        zh: >-
+          协会年表里有一句具体的技术差别值得照录：本舰的 Type 279「不同之处在于
+          它可以用同一具天线收发」。这句话把 279M 与 279 系列的原始状态区分开来，
+          也是本站把它单列实体的一条实质依据。
+          需要说明的是：除此之外，现有材料没有给出 279M 的其他改动，
+          也没有给出它的性能数据——本站注册表里没有对应字段，正文一律不写数字。
+        en: >-
+          The association's chronology carries one specific technical distinction worth
+          quoting: Hood's Type 279 "was different in that it could transmit and receive
+          from the same aerial". That sentence separates the 279M from the original
+          state of the 279 family and is one substantive reason for giving it its own
+          entity. Beyond that, the material available gives no further changes for the
+          279M and no performance figures; the site's registry has no fields for such
+          numbers and none are written here.
+      src: [hmshood-timeline]
+
+    - heading: 天线在主桅高处，为它腾位置拆了前上桅
+      text:
+        zh: >-
+          装舰时的改动不止一处。协会的技术页记两具天线都装在
+          「观测平台上方那个旋转的指挥仪罩」上；
+          同一份年表还记这次改装拆除了前上桅，
+          理由是不拆它挡住 Type 284 的天线转动。
+          也就是说两型雷达的天线位置是相互牵扯的，
+          不是各自独立安装。本站不因此推断 279M 与 284 的天线具体怎么分工，
+          因为材料没有给这一层。
+        en: >-
+          More than one change went with the fitting. The association's technical page
+          records that both aerials were mounted on the rotating director hood situated
+          above the spotting top, and the same chronology records that the forward
+          topmast was removed in this refit because it blocked the Type 284's aerials
+          from rotating. The two sets' aerial positions therefore constrained each
+          other; they were not installed independently. This article does not go on to
+          infer how the 279M and 284 aerials were actually divided in function, because
+          the material does not reach that level.
+      src: [hmshood-association, hmshood-timeline]
+
+history:
+  - id: fitting
+    title: { zh: 1941 年 Rosyth 改装, en: The 1941 Rosyth refit }
+    range: { from: 1941-01, to: 1941-03 }
+    lead:
+      zh: >-
+        它与 Type 284 是同一批装上去的，本舰的雷达配置从这一批开始。
+      en: >-
+        It went aboard in the same batch as the Type 284; the ship's radar outfit dates
+        from this refit.
+    events:
+      - date: 1941-01-16
+        text:
+          zh: >-
+            本舰在 Rosyth 进坞开始改装。两处年表都以这一天为起点
+            （1 月 14 至 15 日先行卸弹药）。
+          en: >-
+            The ship was taken in hand at Rosyth, both chronologies starting the refit on
+            this date after de-ammunitioning on 14 and 15 January.
+        src: [hmshood-timeline, hmshood-association]
+      - date: 1941-03-17
+        text:
+          zh: >-
+            改装结束的两种记法之一（另一记法为 3 月 15 日，见 type-284 条目）。
+            改装内容包括加装 Type 279M 与 Type 284、拆除前上桅。
+            本舰的 Type 279 与前系列不同：可用同一具天线收发。
+          en: >-
+            One of the two recorded end dates for the refit, the other being 15 March
+            (see the type-284 entry). The work included adding the Type 279M and Type
+            284 and removing the forward topmast. Hood's Type 279 differed from earlier
+            sets in transmitting and receiving from the same aerial.
+        src: [hmshood-timeline, hmshood-association]
+
+  - id: loss
+    title: { zh: 随舰损失, en: Lost with the ship }
+    range: { from: 1941-05, to: 1941-05 }
+    lead:
+      zh: >-
+        它在舰上的时间不到三个月。
+      en: >-
+        Less than three months aboard.
+    events:
+      - date: 1941-05-24
+        text:
+          zh: >-
+            胡德号在丹麦海峡被击沉，本舰的 Type 279M 随之损失。
+            这一天之后，本舰再没有雷达记录。
+          en: >-
+            Hood was sunk in the Denmark Strait and the ship's Type 279M was lost with
+            her. There is no later radar record for the ship.
+        src: [hmshood-association, hooddenmark1]

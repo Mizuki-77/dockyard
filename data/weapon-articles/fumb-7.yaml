@@ -1,0 +1,135 @@
+# ============================================================================
+# 武器正文 —— FuMB 7 "Timor" 被动雷达侦测仪
+#
+# 与本类其他条目同一条红线：它不是雷达，只收不发。
+# 另有一条：它在本舰装得比 4 型更靠上，装在前桅雷达室上方的小框里。
+# ============================================================================
+weapon: fumb-7
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      FuMB 7 是德国海军的被动雷达侦测设备，代号 Timor，属 FuMB 系列。
+      与同系列的 FuMB 4 一样，它不发射，只接收敌方雷达信号，
+      用来判断本舰是否已被对方的雷达发现、以及信号来自哪个方向。
+      它不是雷达。本站分类树没有电子战栏，数据层把它的 category 记为 fire_control，
+      这只表示它服务于火控与预警链条，不代表它是一台火控雷达。
+      在提尔皮茨号上，它与 FuMB 4 于 1941 年 9 月同批装上。
+    en: >-
+      The FuMB 7 was a German passive radar-detection device, codenamed Timor, of the
+      FuMB series. Like the FuMB 4 of the same family it transmits nothing and only
+      receives enemy radar signals, to judge whether the ship has been detected by radar
+      and from which direction the signal comes. It is not a radar. This site's
+      classification tree has no electronic-warfare branch, so the data layer records its
+      category as fire_control; that means only that it serves the fire-control and
+      warning chain. Aboard Tirpitz it went on in September 1941 in the same batch as
+      the FuMB 4.
+
+  paragraphs:
+    - heading: 为什么它被记成 fire_control，而这并不矛盾
+      text:
+        zh: >-
+          这一条要在最前面讲，否则型号名里的「FuMB」会被当成雷达型号。
+          FuMB 是 Funkmess-Beobachtung（无线电测量—观察），与 FuMO 的
+          Funkmess-Ortung（无线电测量—定位）相对：一个只管看信号，
+          一个要发信号再收回声。专题站的德国雷达专文说明得很清楚：
+          FuMB 系列用来被动侦测敌方雷达发射，只接收不发射；
+          型号表里这一族各行的频率、射程、精度三栏分别是「-」「passive」「?」。
+          至于本站为什么把它归进 fire_control：分类树里没有电子战这一栏，
+          设备总得有个位置。这一层是本站的分类妥协，不是历史事实。
+        en: >-
+          This comes first, or the "FuMB" in the name will be read as a radar
+          designation. FuMB stands for Funkmess-Beobachtung, radio-measurement
+          observation, as against FuMO's Funkmess-Ortung, radio-measurement location:
+          one watches for signals, the other transmits and listens for the echo. The
+          specialist article on German radar is explicit that the FuMB series serve to
+          detect enemy radar transmissions passively, receiving without transmitting, and
+          in its table the frequency, range and accuracy columns for this family read
+          "-", "passive" and "?". As for why this site files it under fire_control: the
+          classification tree has no electronic-warfare branch and the equipment has to
+          sit somewhere. That is a local filing compromise, not a historical fact.
+      src: [navweaps-radar]
+
+    - heading: 它装得比 4 型更靠上
+      text:
+        zh: >-
+          两型的分工在装舰位置上看得出来。专题站描述本舰 1942 年 1 月前桅的布置：
+          测距仪塔顶加了一层雷达室，正面挂 FuMO 27 的大天线，
+          上方的小框装 Timor 天线（两具），雷达室两侧与后方装 Sumatra 天线。
+          也就是说 Timor 在这一组里装得最高，Sumatra 贴在雷达室四周。
+          装得高对被动侦测有利——越少被自己的上层建筑遮挡，
+          越能早接住从地平线附近来的信号。这一层是位置本身给出的解释，
+          原文没有写理由，本站只记位置关系，不替它补理由。
+        en: >-
+          The division between the two is visible in where they went. Describing the
+          ship's foretop in January 1942, the specialist article records a radar office
+          added atop the rangefinder tower with the large FuMO 27 antenna on its face, the
+          Timor antennas in the smaller frame above it, and Sumatra antennas on the sides
+          and rear of the office. Timor is therefore the highest of that group, with
+          Sumatra wrapped around the office. Height helps a passive set: the less it is
+          screened by the ship's own superstructure the sooner it catches a signal
+          arriving near the horizon. That is an explanation the position suggests rather
+          than one the source gives; this article records the positional fact and does not
+          supply the reasoning on the source's behalf.
+      src: [navweaps-radar]
+
+    - heading: 它在本舰留到 1944 年，之后还追加了 6 型
+      text:
+        zh: >-
+          被动设备的记录是积叠式的，不像主动雷达那样有明显的「换装」动作。
+          本舰 1941 年 9 月装 FuMB 4 与 FuMB 7；1944 年 6 月又记有追加 FuMB 6（Palau）一说。
+          专题站描述前桅那处布置时，把 Timor 与 Sumatra 并列为固定的几组偶极子，
+          说明它们长期共存而不是互相替代。
+          需要提醒：本页不写任何一型的频率与侦测距离——注册表里没有这些字段，
+          原文给的三栏也是「-」「passive」「?」。
+        en: >-
+          The passive record accumulates, unlike the active radars which show clear
+          changeover events. The ship received the FuMB 4 and FuMB 7 in September 1941,
+          and a FuMB 6 (Palau) addition is recorded for June 1944. Describing the foretop
+          layout, the specialist article lists Timor and Sumatra as fixed groups of
+          dipoles, which marks them as long-term companions rather than replacements for
+          one another. Note that no frequency or detection range is given here for either
+          type: the registry has no fields for them, and the three columns the source
+          does provide read "-", "passive" and "?".
+      src: [navweaps-radar, kbismarck-tirpitz]
+
+history:
+  - id: service
+    title: { zh: 装舰记录, en: Fitting record }
+    range: { from: 1941-09, to: 1944-06 }
+    lead:
+      zh: >-
+        记载集中在两头：1941 年 9 月的同批装舰，与 1942 年 1 月前桅雷达室的具体位置。
+      en: >-
+        The record clusters in two places: the September 1941 batch, and the foretop
+        radar office's layout in January 1942.
+    events:
+      - date: 1941-09
+        text:
+          zh: >-
+            FuMB 7 与 FuMB 4 同批装上本舰。这一批的细节只有 navweaps 一家记载。
+          en: >-
+            The FuMB 7 went aboard in the same batch as the FuMB 4. The details of this
+            batch rest on navweaps alone.
+        src: [navweaps-radar]
+      - date: 1942-01
+        text:
+          zh: >-
+            前桅测距仪塔顶加建的雷达室上方小框装 Timor 天线（两具）；
+            雷达室正面是 FuMO 27 的大天线，两侧与后方是 Sumatra（FuMB 4）天线。
+          en: >-
+            The small frame above the radar office atop the foretop rangefinder tower
+            carried two Timor antennas; the face of the office carried the large FuMO 27
+            antenna, and its sides and rear carried the Sumatra (FuMB 4) antennas.
+        src: [navweaps-radar]
+      - date: 1944-06
+        text:
+          zh: >-
+            本舰被动设备追加 FuMB 6（Palau）一说。
+            本页照录为「一说」：这一条见于被动设备清单汇总，没有独立装舰细节。
+          en: >-
+            A FuMB 6 (Palau) addition to the ship's passive equipment is recorded. It is
+            given here as one reading only: the entry appears in a summary list with no
+            separate fitting detail.
+        src: [navypedia-bismarck, navweaps-radar]

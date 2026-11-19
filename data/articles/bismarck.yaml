@@ -1,0 +1,277 @@
+# ============================================================================
+# 舰艇正文 —— 简介与历史
+#
+# 为什么单独一个文件、而不塞进 ships/<id>.yaml：
+#   fact 是「可计算的单值」，article 是「给人读的段落」。两者校验规则完全不同
+#   （fact 要单位/类型/时间窗，段落只要来源和句子），混在一个文件里会让
+#   校验器越来越难写，也让人越来越不敢改。
+#
+# 硬规则（scripts/validate.py 的 check_article 会拦）：
+#   1. 每个 paragraph 必须带 src，且 src 全部已登记、不是 tier E
+#   2. lead 必须有；paragraphs 至少一段
+#   3. history 每段 events 的 date 必须是 YYYY / YYYY-MM / YYYY-MM-DD
+#   4. 正文里不写「据说」「有人认为」这类模糊归属——那是 narrative 的活
+# ============================================================================
+ship: bismarck
+updated: 2026-11-17
+
+intro:
+  lead:
+    zh: >-
+      俾斯麦号是德国海军在第二次世界大战中建成的两艘俾斯麦级战列舰的首舰。
+      它以 1936 年开工、1940 年服役、1941 年 5 月 27 日沉没的九个月战斗生涯，
+      成为整场大西洋海战中最被反复研究的一艘军舰——既因为它在丹麦海峡
+      十三分钟内击沉了英国皇家海军的精神象征胡德号，也因为它的沉没过程
+      至今没有唯一结论。
+    en: >-
+      Bismarck was the lead ship of the two Bismarck-class battleships built for
+      Nazi Germany's Kriegsmarine. Laid down in 1936, commissioned in 1940 and
+      sunk on 27 May 1941, her nine-month career made her the most studied
+      warship of the Battle of the Atlantic.
+
+  paragraphs:
+    - heading: 为什么会出现这级舰
+      text:
+        zh: >-
+          德国战列舰的建造受两重约束。表面上是 1935 年 6 月 18 日签订的英德海军协定，
+          它允许德国海军总吨位达到英国的 35%；实质上是 1936 年伦敦条约的战列舰上限
+          35,000 吨。德国对外宣称俾斯麦号的排水量正好踩在这条线上，实际多出约 7,000 吨。
+          申报值与实际值是两件事，本站把它们拆成两个字段并存，不当成分歧。
+      src: [navypedia-bismarck, kbismarck-bsweights]
+
+    - heading: 船体与尺寸
+      text:
+        zh: >-
+          全长 250.50 m、水线长 241.55 m、最大舰宽 36.00 m。这个宽度比同期英美战列舰
+          都大，代价是必须通过基尔运河与威廉皇帝运河的闸门——后来的实际航行证明这是
+          一个真实的限制条件，1941 年 3 月它就在霍尔特瑙闸前搁浅过一次。
+          方形系数 0.55、棱形系数 0.56–0.57（两个来源给出的值不同，并列保留）。
+      src: [kbismarck-genedata, kbismarck-propulsion]
+
+    - heading: 防护
+      text:
+        zh: >-
+          装甲总重 19,082 吨，约等于设计战斗重量的 40%。主装甲带是 320 mm 厚的
+          Krupp KC n/A 渗碳装甲，宽 4.8 m、长 170.7 m，覆盖 70% 水线，背后衬 50 mm 柚木。
+          上装甲带 145 mm。水平防护是分层思路：50–80 mm 的上甲板、6–20 mm 的电池甲板、
+          再加一层 80–120 mm 的第三装甲甲板，三层叠加而不是单靠一层厚板。
+          水下纵向防雷舱壁 45 mm，与外壳间距中部 5.4 m，设计指标是抗 250 kg TNT。
+      src: [kbismarck-protection]
+
+    - heading: 动力
+      text:
+        zh: >-
+          十二座 Wagner 高压蒸汽锅炉，分装于六个水密舱，工作压力 55–56 个大气压、
+          过热蒸汽温度 450 °C；三台 Blohm & Voss 蒸汽轮机分别驱动三根轴。
+          设计功率 138,000 马力、设计航速 29 节，1940 年 10 月 23 日在诺伊克鲁格外的
+          深水测速航程中实测到 150,170 马力、30.1 节。三个螺旋桨直径 4.70 m。
+          没有巡航轮机——这是德国大型舰的一贯做法，代价是低速时燃油经济性差。
+      src: [kbismarck-propulsion, kbismarck-testi]
+
+    - heading: 火控
+      text:
+        zh: >-
+          三个指挥所各装一套 Zeiss 体视测距仪旋转穹与一台 FuMO 23 雷达。
+          前桅楼指挥所位于约 31 m 高度，装 10.5 m 基线测距仪；前司令塔上方装 7 m 基线；
+          后指挥所装 10.5 m 基线。四座主炮塔原本各装一具 10.5 m 测距仪，但 Anton 炮塔
+          那一具在 1940/41 年冬天被拆除——高速航行时海浪飞沫会让镜片起雾到无法使用。
+          FuMO 23 的工作频率 368 MHz、波长 81.5 cm、功率 9 kW，有效距离约 25,000 m，
+          只有 A 显式显示、没有 PPI，因此不能用于火控解算，只能测距与预警。
+      src: [kbismarck-firecontrol]
+
+    - heading: 为什么值得单独做一个网站条目
+      text:
+        zh: >-
+          它的数据在公开文献里分岔得厉害：标准排水量有 41,700 与 43,978 两个常被引用的值，
+          最大射程有 35,550 与 36,520 两个值，主炮装药量在英文维基里甚至在两处给出了
+          互相矛盾的数。这些分岔不是抄错那么简单，多数来自口径不同（条约定义 vs 德制
+          排水量口径）或者型号混入（岸防炮的装药被抄进了舰炮条目）。
+          本站的做法是每一项都保留来源、把口径写清楚，让读者自己判断。
+      src: [kbismarck-bsweights, navweaps-38cm-sk-c34]
+
+history:
+  - id: build
+    title: { zh: 设计与建造, en: Design and construction }
+    range: { from: 1935-11, to: 1940-08-24 }
+    lead:
+      zh: >-
+        从签合同到服役用了将近五年，其中舾装期比原计划长——德国船厂在 1939 年之后
+        同时被 U 艇与大型舰的订单挤满。
+    events:
+      - date: 1935-11-16
+        text: { zh: 与汉堡 Blohm & Voss 船厂签订建造合同，建造编号 BV 509，合同代号「Ersatz Hannover」（替代老前无畏舰汉诺威号），海军合同代号「F」。 }
+        src: [kbismarck-histoperi]
+      - date: 1936-07-01
+        text: { zh: 在汉堡 Blohm & Voss 九号船台铺龙骨。 }
+        src: [kbismarck-genedata, kbismarck-histoperi]
+      - date: 1939-02-14
+        text: { zh: 下水。由首相俾斯麦的孙女 Dorothea von Löwenfeld 掷瓶命名，希特勒到场发表演说。 }
+        src: [kbismarck-histoperi]
+      - date: 1939-02
+        text: { zh: 舾装期把原设计的垂直舰首改成类似沙恩霍斯特级的倾斜「大西洋舰首」。 }
+        src: [kbismarck-histoperi]
+      - date: 1940-06-23
+        text: { zh: 进入浮船坞三周，安装三具螺旋桨与 MES 消磁系统（磁性自我防护）。 }
+        src: [kbismarck-histoperi]
+      - date: 1940-08-24
+        text: { zh: 在 Blohm & Voss 正式服役，Ernst Lindemann 同日就任舰长。 }
+        src: [kbismarck-genedata, kbismarck-histoperi]
+
+  - id: trials
+    title: { zh: 试航与战备, en: Trials and work-up }
+    range: { from: 1940-08-24, to: 1941-05-18 }
+    lead:
+      zh: >-
+        这九个月里有大半时间不是在打仗，而是在波罗的海试航、在汉堡改装。
+        状态切片 S0–S3 就是在描述这段时间里舰本身的变化。
+    events:
+      - date: 1940-09-15
+        text: { zh: 首次离汉堡赴波罗的海试航，在易北河与船首拖船相撞（双方无损）。 }
+        src: [kbismarck-histoperi]
+      - date: 1940-10-23
+        text: { zh: 在诺伊克鲁格外的深水测速航程中达到实测 150,170 马力、30.1 节，超过设计值 138,000 马力、29 节。 }
+        src: [kbismarck-testi]
+      - date: 1940-10-31
+        text: { zh: Lindemann 签署机密文件 B.-Nr. G. 120 Wa.O.，提出 3.7cm 与 2cm 高炮炮位重新布置方案——原因是多个炮位射界被桅杆、测距仪穹与天线遮挡。这份文件是本站 A 档来源之一。 }
+        src: [kbismarck-flak-relocation]
+      - date: 1940-11
+        text: { zh: 在 Gotenhafen 加装两具 10.5 m 基线测距仪，同时装上舰艉四座 10.5cm SK C/33 C37 双联装炮座。 }
+        src: [kbismarck-histoperi, kbismarck-firecontrol]
+      - date: 1940-12
+        text: { zh: 在汉堡拆除 Anton 炮塔的 10.5 m 测距仪；同时涂上波罗的海条纹迷彩（三道黑白斜条纹加假白浪），艉甲板涂红底卐字供空中识别。 }
+        src: [kbismarck-histoperi, kbismarck-drawings]
+      - date: 1941-03
+        text: { zh: 三个指挥所各装一台 FuMO 23 雷达，前司令塔加装 7 m 基线测距仪。 }
+        src: [kbismarck-firecontrol]
+      - date: 1941-03-15
+        text: { zh: 接收首批两架 Arado Ar 196 水上飞机（T3+IH、T3+AK），4 月 2 日再接收两架。 }
+        src: [kbismarck-aviation, kbismarck-histoperi]
+      - date: 1941-04
+        text: { zh: 前桅两侧探照灯平台上方换装两座 2cm Flak C/38 四联装，替代原来的单装炮位。 }
+        src: [kbismarck-armament, kbismarck-flak-relocation]
+
+  - id: rheinubung
+    title: { zh: 莱茵演习出击, en: Operation Rheinübung }
+    range: { from: 1941-05-18, to: 1941-05-23 }
+    lead:
+      zh: >-
+        1941 年 5 月 18 日离 Gotenhafen 出大西洋破交。舰队司令 Günther Lütjens 的作战命令
+        明确要求避免与同级敌舰交战，这个约束在后面两天里反复影响他的判断。
+    events:
+      - date: 1941-05-18
+        text: { zh: 离 Gotenhafen，与重巡洋舰欧根亲王号会合编成特混编队，全舰 2,221 人（含 65 人舰队参谋与 80 人 prize crew）。 }
+        src: [kbismarck-histoperi]
+      - date: 1941-05-21
+        text: { zh: 在格里姆斯塔德外锚地涂掉波罗的海条纹，改涂统一舷外灰。 }
+        src: [kbismarck-drawings, kbismarck-histoperi]
+      - date: 1941-05-22
+        text: { zh: 13:07 涂掉艉甲板的卐字，同时拆除小艇与舰首锚——降低被雷达与目视发现的概率。拆掉的救生艇在六天后的沉没中直接影响了生还率。 }
+        src: [kbismarck-histoperi]
+      - date: 1941-05-23
+        text: { zh: 在丹麦海峡被英国重巡洋舰萨福克号与诺福克号雷达发现并持续跟踪，行踪暴露。 }
+        src: [kbismarck-chase]
+
+  - id: denmark-strait
+    title: { zh: 丹麦海峡海战, en: Battle of the Denmark Strait }
+    range: { from: 1941-05-24, to: 1941-05-24 }
+    lead:
+      zh: >-
+        05:52 到 06:09，十七分钟。这是整场海战里最短、后果最重的一场单舰交火。
+        逐分钟的事件流单独做成了一个战役条目，这里只留主线上必须知道的几件事。
+    events:
+      - date: 1941-05-24
+        text: { zh: 05:37 目视发现英舰，距离约 35,190 m。05:52 胡德号先开火，打的是欧根亲王号——英方按「战列舰在前」判断领队舰是俾斯麦号。 }
+        src: [kbismarck-denmark-strait]
+      - date: 1941-05-24
+        text: { zh: 05:55 俾斯麦号在约 20,300 m 开火。06:00 第五次齐射命中胡德号，一发 38cm 穿甲弹穿透薄甲板进入后弹药库，引爆约 112 吨发射药，舰体在主机与后烟囱之间折断。 }
+        src: [kbismarck-denmark-strait]
+      - date: 1941-05-24
+        text: { zh: 06:01 胡德号沉没于 63°22′N 32°17′W，1,418 人中仅 3 人生还。 }
+        src: [kbismarck-denmark-strait]
+      - date: 1941-05-24
+        text: { zh: 06:02 俾斯麦号第一次齐射命中威尔士亲王号舰桥，未爆炸穿出，除舰长 Leach 与另一人外指挥中枢全部阵亡。 }
+        src: [kbismarck-denmark-strait]
+      - date: 1941-05-24
+        text: { zh: 同期俾斯麦号被威尔士亲王号命中三发 14 英寸弹：一发从水线下穿过主装甲带下方在防雷舱壁处爆炸，淹掉四号左舷涡轮发电机舱；一发穿过舰首未爆，约 1,000 吨海水进艏楼；一发穿过救生艇再打坏弹射器蒸汽管。 }
+        src: [kbismarck-denmark-strait]
+      - date: 1941-05-24
+        text: { zh: 06:09 战斗结束，俾斯麦号共发射 93 发 38cm 穿甲弹。Lindemann 主张追击歼灭威尔士亲王号，Lütjens 依作战命令拒绝。 }
+        src: [kbismarck-denmark-strait, kbismarck-armament]
+
+  - id: chase
+    title: { zh: 大西洋追击, en: The chase }
+    range: { from: 1941-05-24, to: 1941-05-26 }
+    lead:
+      zh: >-
+        从丹麦海峡出来时俾斯麦号已经带着 1,000 吨进水和一座被毁的涡轮发电机舱。
+        接下来的三天是航速、燃油与雷达探测距离的对抗。
+    events:
+      - date: 1941-05-24
+        text: { zh: 战后状态：最大航速降至 28 节，艏倾 3°、左倾 9°，右舷螺旋桨叶露出水面，需向 II、III 段右舷空舱注水配平。 }
+        src: [kbismarck-denmark-strait]
+      - date: 1941-05-24
+        text: { zh: 午夜前后被胜利号航母的 8 架剑鱼攻击，右舷舯部装甲带被一枚 18 英寸鱼雷命中，损伤极小；但冲击波把一名军士抛撞舱壁身亡——全舰第一位阵亡者。 }
+        src: [kbismarck-chase]
+      - date: 1941-05-25
+        text: { zh: 03:00 前后 Lütjens 加速至 27 节右转，几乎绕整圈后取 130° 东南航向，成功摆脱英舰跟踪；04:01 萨福克号报告失去敌踪。 }
+        src: [kbismarck-chase]
+      - date: 1941-05-25
+        text: { zh: 中午对全舰广播「要么胜利要么死亡」，反而打击了士气；Lindemann 一小时后另行广播把士气拉回来。 }
+        src: [kbismarck-chase]
+      - date: 1941-05-26
+        text: { zh: 10:10 一架海岸司令部卡特琳娜水上飞机发现俾斯麦号，位置 49°33′N 21°47′W。跟踪一旦建立就再没断过。 }
+        src: [kbismarck-chase]
+      - date: 1941-05-26
+        text: { zh: 20:47 皇家方舟号 15 架剑鱼攻击，命中两枚 18 英寸鱼雷，其中一枚打坏左舵组联轴器，两舵卡死在向左 12°。21:15 Lütjens 报告「舰已无法机动」。 }
+        src: [kbismarck-chase, kbismarck-last-battle]
+      - date: 1941-05-26
+        text: { zh: 21:40 致 OKM：「舰无法机动。将战斗至最后一发炮弹。元首万岁。」 }
+        src: [kbismarck-last-battle]
+
+  - id: last-battle
+    title: { zh: 最终战与沉没, en: Last battle and sinking }
+    range: { from: 1941-05-27, to: 1941-05-27 }
+    lead:
+      zh: >-
+        从 08:47 英舰开火到 10:39 沉没，不到两小时。这一段里每一分钟都有不同来源的
+        说法差异，本站能确定的写进参数，不能确定的放进争议条目。
+    events:
+      - date: 1941-05-27
+        text: { zh: 05:00–06:00 试图弹射一架 Arado Ar 196 带走航海日志与对胡德号作战的胶片，但丹麦海峡那发打坏弹射器蒸汽管的炮弹让弹射器无法工作，飞机被推下海。 }
+        src: [kbismarck-aviation, kbismarck-last-battle]
+      - date: 1941-05-27
+        text: { zh: 08:43 英舰在约 23,000 m 发现俾斯麦号，当时航速仅 7 节。08:47 罗德尼号前炮塔开火，英王乔治五世号随后加入。 }
+        src: [kbismarck-last-battle]
+      - date: 1941-05-27
+        text: { zh: 09:02 一发 16 英寸弹命中前上层建筑，主火控指挥仪被毁，很可能同时炸死炮术官 Schneider；前桅楼测距仪失效。 }
+        src: [kbismarck-last-battle]
+      - date: 1941-05-27
+        text: { zh: 09:21 Dora 炮塔因自身炮弹在炮管内爆炸而失效；09:27 Anton、Bruno 最后一次齐射；09:31 Cäsar 最后一次齐射，四座主炮塔全部失效。 }
+        src: [kbismarck-last-battle]
+      - date: 1941-05-27
+        text: { zh: 约 09:30 副舰长 Hans Oels 在损管中央接管指挥并决定自沉，下令打开水密门、准备自沉装药。命令让甲板间舱盖保持开启，海水经炮击破口渗入，显著加剧横倾。 }
+        src: [kbismarck-last-battle]
+      - date: 1941-05-27
+        text: { zh: 约 10:10 一发 14 英寸弹穿透上部纵深装甲带在舰尾食堂爆炸，炸死 Oels 与约一百人；约 10:15 轮机军官 Junack 接到「准备沉舰」命令，装 9 分钟引信并自行引爆。 }
+        src: [kbismarck-last-battle, kbismarck-last-hours]
+      - date: 1941-05-27
+        text: { zh: 10:39（一说 10:40）翻覆沉没于 48°09′N 16°07′W。全舰 2,200 余人中仅 114 人被救起，100 名军官中只有 2 人获救。 }
+        src: [kbismarck-last-battle, kbismarck-ktb]
+
+  - id: wreck
+    title: { zh: 残骸, en: The wreck }
+    range: { from: 1989-06-08, to: null }
+    lead:
+      zh: >-
+        残骸在 4,790 m 深处，德国政府声明拥有所有权并视之为海员墓地，禁止进入内部与打捞。
+        对沉没原因的争论，正是在这几十年里因为对残骸的观察而不断改写的。
+    events:
+      - date: 1989-06-08
+        text: { zh: Robert Ballard 率队用 ROV Argo 发现残骸，深约 4,790 m，位于布雷斯特以西约 470 英里，舰体正坐龙骨。 }
+        src: [kbismarck-wreck]
+      - date: 2001-06
+        text: { zh: William N. Lange 观察后指出：上层建筑与甲板上可见大量弹孔，但舷侧并不多，水线以下一个也没有，未发现主装甲带被穿透。 }
+        src: [kbismarck-wreck]
+      - date: 2002-06
+        text: { zh: James Cameron 的纪录片考察首次获得舰体内部影像，Cameron、Dulin、Garzke 与 Jurens 随后联名提出「炮火必然致沉、自沉加速了结局」的看法。 }
+        src: [kbismarck-wreck]

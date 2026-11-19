@@ -1,0 +1,116 @@
+# ============================================================================
+# 武器正文 —— Type 279 对空警戒雷达
+#
+# 这一型是英王乔治五世级建成时的对空警戒主力，1944 年被 279B 换掉。
+# 性能不写；只写它在舰上的位置、换装关系、以及同族各 Mark 的记法问题。
+# ============================================================================
+weapon: type-279
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Type 279 是英王乔治五世级建成时装备的对空警戒雷达，
+      也是这一级在整个战争前中期对空警戒的主体。
+      它在 1940 年 10 月本舰服役时就已经在舰上，
+      1944 年的改装中被 Type 279B 取代。
+      专题站的英国雷达总表另记这一型 1940 年进入服役、用于大型舰只，
+      用途写作「Type 79 with gunnery ranging」。
+    en: >-
+      The Type 279 was the air-warning radar with which the King George V class was
+      completed, and it carried the class's air warning through the first half of the
+      war. It was aboard when HMS King George V came into service in October 1940, and
+      it was replaced by the Type 279B in the 1944 refit. The specialist site's table
+      records the type as operational in 1940, used on large ships, with its purpose
+      given as "Type 79 with gunnery ranging".
+
+  paragraphs:
+    - heading: 它是这一级建成时就有的东西
+      text:
+        zh: >-
+          与航母上那种「后期决定加装」的情形不同，这一型是英王乔治五世级
+          建成状态的一部分：1940 年 10 月本舰服役时，装备记录里就是
+          Type 279（对空）加 Type 284（主炮测距）两型。
+          这一点让 279 在这一级上的地位比较好定位——
+          它不是补丁，是原始设计里给对空警戒留的那一格。
+          本级的对空警戒一直到 1944 年改装才换型。
+        en: >-
+          Unlike the carrier case, where the set was a late addition, this one was part
+          of the King George V class as completed: when the ship came into service in
+          October 1940 her equipment list read Type 279 for air warning plus Type 284 for
+          main-armament ranging. That makes the 279's place in the class easy to state -
+          not a patch but the slot the design had reserved for air warning. The class
+          kept it until the 1944 refit.
+      src: [navypedia-kgv, rmg-kgv-guide]
+
+    - heading: 一个容易混的地方：279 与 79 不是一个系列
+      text:
+        zh: >-
+          专题站的表把 Type 279 的用途写成「Type 79 with gunnery ranging」，
+          字面上像是 79 系列的一个分支；但同表里 Type 79 是单独一行，
+          1938 年 8 月服役、用途对空预警、首次装舰对象是谢菲尔德号。
+          两张表并列看，279 与 79 是两个不同条目、不同服役年份，本站按两个型号处理，
+          不因为用途栏那句描述就把它们并成一条。
+          279 与 279B、279M 之间的关系则是明确的同族不同 Mark，
+          分别立实体，正文各自写各自的装舰记录。
+        en: >-
+          The specialist table gives the Type 279's purpose as "Type 79 with gunnery
+          ranging", which reads like a branch of the 79 family; yet the same table has a
+          separate row for the Type 79, operational in August 1938, purpose air warning,
+          first fitted to HMS Sheffield. Read side by side, the 279 and the 79 are two
+          entries with two different service dates, and this article keeps them as two
+          marks rather than merging them on the strength of one purpose-field phrase.
+          The relation between the 279 and its 279B and 279M siblings is a clear
+          same-family, different-mark one, so each has its own entity and its own fitting
+          record.
+      src: [navweaps-radar-uk, navypedia-kgv]
+
+    - heading: 换装是整批做的
+      text:
+        zh: >-
+          1944 年的那次改装不是只换雷达。按本级的记录，
+          这一次同时以 279B 取代 279、加装 Type 277 与 Type 293，
+          还把主炮测距的 284 换成了 274。
+          也就是说 279 的退役与这一整套电子设备的更新绑在一起，
+          不是单独因为 279 出了什么问题。
+          至于 279 与 279B 在硬件上差在哪里，现有材料未给，本站不写。
+        en: >-
+          The 1944 refit was not a radar swap on its own. By the class record, that one
+          refit replaced the 279 with the 279B, added the Type 277 and Type 293, and
+          exchanged the Type 284 main-armament set for a Type 274. The 279's retirement
+          is therefore bound up with a wholesale electronic update rather than with
+          anything wrong with the 279 specifically. What changed in hardware between the
+          279 and the 279B is not given in the material available and is not asserted
+          here.
+      src: [navypedia-kgv]
+
+history:
+  - id: service
+    title: { zh: 装舰与换装, en: Fitting and replacement }
+    range: { from: 1940-10, to: 1944-07 }
+    lead:
+      zh: >-
+        从建成到 1944 年改装，这一型在本级上干了近四年。
+      en: >-
+        From completion to the 1944 refit, the set served in this class for almost four
+        years.
+    events:
+      - date: 1940-10-01
+        text:
+          zh: >-
+            英王乔治五世号服役，装备记录为 Type 279（对空警戒）加 Type 284（主炮测距）。
+            本级的对空警戒由 279 承担。
+          en: >-
+            HMS King George V came into service with Type 279 for air warning and Type
+            284 for main-armament ranging. Air warning in the class rested on the 279.
+        src: [navypedia-kgv, rmg-kgv-guide]
+      - date: 1944-07
+        text:
+          zh: >-
+            1944 年改装中以 279B 取代 279，与 Type 277、Type 293 同批；
+            主炮测距的 284 同时换成 274。
+          en: >-
+            In the 1944 refit the 279 was replaced by the 279B, in the same batch as the
+            Type 277 and Type 293; the Type 284 main-armament set was exchanged for a
+            Type 274 at the same time.
+        src: [navypedia-kgv]

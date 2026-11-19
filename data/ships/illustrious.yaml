@@ -1,0 +1,809 @@
+# ============================================================================
+# 单舰：Illustrious（光辉号航空母舰，舷号 87）
+# ----------------------------------------------------------------------------
+# 与 bismarck.yaml / tirpitz.yaml 同一套约定：
+#   1) 建造/服役/结局等单舰事件
+#   2) 单舰实测值与状态变化——与舰级设计值不是分歧，是两件事
+#   3) 状态切片：随时间变化的字段，用 valid 窗口表达"当时是什么样"
+#
+# 解析顺序（docs/00-framework.md §3.6）：单舰 fact -> 舰级 fact -> 未记载。
+# 本文件命中即覆盖舰级，**不算分歧**。
+#
+# 本文件的意义：Illustrious 是光辉级的首舰（lead ship），设计参数都在
+# data/classes/illustrious.yaml，这里只写真正属于这一艘船的东西——
+# 建造日期、战损、逐次改装的雷达与防空配置、涂装、以及一条同级独有的记录
+# （没有舰桥前方的应急拦阻索）。
+#
+# 三条真实性说明：
+#   ① 舰名典故与 "Lusty" 绰号在 1940 年代的当舰用法：**未获取**。
+#      已抓的 1940–41 一手转录页面里没有把本舰称为 Lusty 的原句；
+#      唯一出现处是 armouredcarriers.com 的页面标题（2020 年代行文），
+#      而该绰号有官方原文支持的是 1982 年的 HMS Illustrious (R06)，不是本舰。
+#   ② UP 火箭（Unrotated Projectile）的装舰证据：**未获取**。
+#      NavWeaps 装舰清单与 ADM 1/23040 首批 40 座分配令**双双没有本舰，
+#      也没有任何航空母舰**。本文件据此写"无装舰证据"，不写座数。
+#   ③ HACS 的具体 Mark：**未获取**。只能给 Mk IV 指挥仪 ×4。
+# ============================================================================
+
+id: illustrious
+name:
+  zh: 光辉
+  en: Illustrious
+class: illustrious
+
+open_ended_note: |
+  本文件中 valid.to 留空的 fact，均为"至今为止仍成立的单舰事实"
+  （如结局、除籍），不存在后续变化事件。
+  涂装一条例外：它只在 1941-01-10 这一个时点有据，之后色号未获取，
+  所以 to 也留空并在 note 里写明"下一个可证时点未知"。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: Illustrious
+    src: [navypedia-illustrious]
+    valid: { from: 1937-04-13 }
+    confidence: A
+
+  - field: identity.name_zh
+    value: 光辉
+    src: [navypedia-illustrious]
+    valid: { from: 1937-04-13 }
+    confidence: B
+    note: 中文通行译名。另有「卓越」「杰出」等译法，本站取「光辉」。
+
+  - field: identity.name_en
+    value: Illustrious
+    src: [navypedia-illustrious]
+    valid: { from: 1937-04-13 }
+    confidence: A
+    note: >-
+      英文原意为「杰出的、光辉的」。命名典故的一手出处：**未获取**；
+      舰训 "Vox non Incerta"（No Uncertain Voice）与「本级第四艘同名舰」
+      仅见于百科线索，未取得一手件核对。
+
+  - field: identity.pennant_number
+    value: 87（1948 年短暂为 R2，1949 年起 R87）
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: A
+    note: 战后舷号加 R 前缀的年份见 navypedia「87, 1948- R2, 1949- R87」。
+
+  - field: identity.ship_type
+    value: aircraft_carrier
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: A
+
+  - field: identity.nation
+    value: united_kingdom
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: A
+
+  - field: identity.operator
+    value: Royal Navy
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: A
+
+  - field: identity.era
+    value: ww2
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: A
+
+  # ============================================================ 建造
+  - field: construction.builder
+    value: Vickers-Armstrong, Barrow（维克斯-阿姆斯特朗，巴罗船厂）
+    src: [navypedia-illustrious]
+    valid: { from: 1937-04-27 }
+    confidence: A
+
+  - field: construction.builder_location
+    value: Barrow-in-Furness
+    src: [navypedia-illustrious]
+    valid: { from: 1937-04-27 }
+    confidence: B
+    note: navypedia 写 "Vickers-Armstrong, Barrow"；船厂在 Barrow-in-Furness（坎布里亚郡）。
+
+  - field: construction.yard_number
+    value: 732
+    src: [navypedia-illustrious]
+    valid: { from: 1937-04-27 }
+    confidence: A
+
+  - field: construction.laid_down
+    unit: date
+    value: 1937-04-27
+    src: [navypedia-illustrious]
+    valid: { from: 1937-04-27 }
+    confidence: A
+
+  - field: construction.launched
+    unit: date
+    value: 1939-04-05
+    src: [navypedia-illustrious]
+    valid: { from: 1939-04-05 }
+    confidence: A
+    note: >-
+      掷瓶人 Lady Henderson（前任 Third Sea Lord 之妻）——该条仅见于百科线索，
+      未取得一手件。下水后拖至 Buccleuch Dock 舾装。
+
+  - field: construction.commissioned
+    unit: date
+    value: 1940-05-25
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      **这里有一个必须并列的口径分歧：** navypedia 记 25.5.1940「completed」（建成），
+      另一说 1940-04-16「commissioned」（接舰服役）。两者不是同一事件，
+      差 39 天。任务书若写「1940-05-25 服役」，采用的是 completed 口径。
+      本站取 05-25 为建成日期，04-16 作为线索并列，不裁决。
+      另：首任舰长 Captain Denis Boyd 于 1940-01-29 任命（线索级）。
+
+  # ============================================================ 结局
+  - field: construction.fate_date
+    unit: date
+    value: 1956-11
+    src: [navypedia-illustrious]
+    valid: { from: 1956-11 }
+    confidence: B
+    note: >-
+      navypedia 原文「stricken 11.1956」。另据百科线索：1955-02 底退役（paid off）、
+      1956-11-03 出售、1957 年初拆解——这几步只有线索级来源，
+      未取得非百科源，故不单列为 fate_type。
+
+  - field: service.fate_category
+    value: 1956-11 除籍（stricken）
+    src: [navypedia-illustrious]
+    valid: { from: 1956-11 }
+    confidence: C
+    note: >-
+      战后作为 Home Fleet 试飞与训练航母使用，1948 年改装后重新服役，1955 年退役。
+      除籍之后的拆解：百科线索给出 1956-11-03 出售、1957 年初拆解，
+      未取得非百科源，故不写进 value。
+
+  # ============================================================ 编队
+  - field: service.unit
+    value: Mediterranean Fleet（地中海舰队，Force A / Force H 编成内行动）
+    src: [ac-taranto-report, ac-excess]
+    valid: { from: 1940-08-15, to: 1941-01-23 }
+    confidence: B
+    note: >-
+      1940-08-15 抵 Scapa Flow（该日期为线索级），成为 Rear Admiral Lumley Lyster
+      的旗舰；08-22 下克莱德河赴 Gibraltar（Operation Hats），此后在地中海作战。
+      1941-01-23 在无飞机状态下由 4 艘驱逐舰护送至 Alexandria，结束本段。
+      **窗口起日为线索级，不是来源原话。**
+
+  - field: service.unit
+    value: Eastern Fleet（东方舰队；一度为航母少将旗舰）
+    src: [ac-eastfleet]
+    valid: { from: 1942-03-23, to: 1943-01-12 }
+    confidence: B
+    note: >-
+      1942-03-23 出航印度洋（该日期为线索级），参与 Ironclad（马达加斯加）、
+      Stab、Stream/Line/Jane；1943-01-13 启航返本土。
+      东方舰队的旗舰身份见百科线索（Denis Boyd 少将），未取得非百科源。
+
+  - field: service.unit
+    value: British Pacific Fleet / Task Force 57
+    src: [ac-kamikaze, ac-pacops]
+    valid: { from: 1945-03-26, to: 1945-05-14 }
+    confidence: B
+    note: >-
+      Iceberg I 期间编入 TF 57（编成日 1945-03-26 为线索级）。
+      1945-04-08 由 Formidable 接替，04-14 离队；05-14 抵 Sydney 后返英。
+
+  # ============================================================ 伤亡（1941-01-10）
+  - field: service.casualties
+    unit: persons
+    value: 83
+    src: [ac-battle-damage]
+    valid: { from: 1941-01-11 }
+    confidence: A
+    note: >-
+      ADM 267/83（Vice Admiral Malta 1941-01-11 10:35 电文）的**初步**数字：
+      83 死、60 重伤。这是当时能立刻报出的数，不是最终统计。
+
+  - field: service.casualties
+    unit: persons
+    value: 126
+    src: [ac-excess, ac-blitz]
+    valid: { from: 1941-01-11 }
+    confidence: B
+    note: >-
+      与 83 并存：126 死、91 伤是事后统计。两者不矛盾——一个是初步电文，
+      一个是事后汇总，口径不同，不可混用。本站并列保留，页面标「存在争议」。
+
+  # ============================================================ 雷达与火控
+  - field: sensors.radar.installed
+    value: Type 79Z 对空预警雷达
+    src: [navypedia-illustrious, ac-design]
+    valid: { from: 1940-05-25, to: 1941-12-31 }
+    confidence: B
+    note: >-
+      **世界上第一艘在完工前就装雷达的航母**。发射与接收天线分开；
+      波束宽 70°，对低空目标效果差。天线是临时加装在后桅的——
+      本级各舰的临时桅杆形态不同，成为识别各舰的视觉特征之一；
+      本舰「simply a pole」。
+
+  - field: sensors.radar.installed
+    value: Type 281 对空预警雷达
+    src: [navypedia-illustrious]
+    valid: { from: 1942-01-01, to: 1943-05-31 }
+    confidence: B
+    note: >-
+      navypedia 记「1/1942 - type 79 radar; + type 281 radar」，
+      即 1942 年 1 月以 281 换掉 79。
+
+  - field: sensors.radar.installed
+    value: Type 79B 对空预警雷达
+    src: [navypedia-illustrious]
+    valid: { from: 1943-06-01 }
+    confidence: B
+
+  - field: sensors.radar.installed
+    value: Type 272 水面/低空目标指示雷达（舰桥顶）
+    src: [navypedia-illustrious, ac-kamikaze]
+    valid: { from: 1943-06-01 }
+    confidence: B
+    note: 1945-04-06 神风近失时，其雷达罩被日机右翼尖击碎（见 ac-kamikaze）。
+
+  - field: sensors.radar.installed
+    value: Type 281B 对空预警雷达
+    src: [navypedia-illustrious]
+    valid: { from: 1943-06-01 }
+    confidence: B
+    note: >-
+      型号名有分歧：navypedia 记 281B，另一说 281M。两说并列，不裁决。
+      1946-01 的装备清单仍为 281B。
+
+  - field: sensors.radar.installed
+    value: Type 282 高炮指挥仪雷达 ×6
+    src: [navypedia-illustrious]
+    valid: { from: 1943-06-01 }
+    confidence: B
+    note: 每座 pom-pom 指挥仪一部，对应 6 座八联 pom-pom。
+
+  - field: sensors.radar.installed
+    value: Type 285 主炮（4.5 in）炮术雷达
+    src: [ac-design, navypedia-illustrious]
+    valid: { from: 1941-05-12 }
+    confidence: B
+    note: >-
+      1941 年大修期加装（ACDES：「Type 79 was replaced by Type 281 (air warning)
+      and 285 (4.5in gunnery)」）。1941-01-10 战斗中**尚无**此雷达——
+      该战损报告未提火控雷达。确切装舰日期未获取，取大修开始日。
+
+  - field: sensors.director.count
+    unit: count
+    value: 4
+    src: [ac-design]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      三个 Mk IV 高炮指挥仪环绕飞行甲板、装在液压升降台上，只在遭受直接攻击时
+      升起；第四个在舰岛顶，控制右舷前部的两座 4.5 in 炮座，可独立作战，
+      也能指挥全部八座炮座打拦阻火。炮术报告里 A/B/X/Y 四个指挥仪逐一出现，
+      与 4 部吻合。
+
+  - field: sensors.director.type
+    value: Mk IV 高炮指挥仪 ×4；pom-pom 指挥仪 Mk III
+    src: [ac-design, ac-gunnery-report]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >-
+      **HACS 的具体 Mark：未获取。** 全库检索（ac-* 各页与 navweaps 4.5 in 页）
+      没有出现 "HACS" 字样，只能确证指挥仪是 Mk IV 型 ×4，
+      不能确认它属于 HACS 哪个 Mark。pom-pom 指挥仪为 Mk III。
+
+  # ============================================================ 飞行甲板与载机（逐期变化）
+  - field: aviation.deck.length
+    unit: m
+    value: 190
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25, to: 1941-05-11 }
+    confidence: B
+    note: >-
+      可用长度 190 m（620 ft）。首尾 round-down（甲板下弯）是设计特征，
+      目的是减小气流扰动，但把有效长度压掉了约 40 m——
+      navypedia 原文「round-downs shrank deck effective length to 189m」。
+
+  - field: aviation.deck.length
+    unit: m
+    value: 225.7
+    src: [navypedia-illustrious]
+    valid: { from: 1943-11-01 }
+    confidence: B
+    note: >-
+      1943-11 改装后可用长度到 225.7 m（navypedia）/ 740 ft（225.6 m，另一说）。
+      中间状态：1941 年削平尾部 round-down 后约 204.2 m（670 ft）——
+      该值仅见于百科线索，未取得非百科源，故不单列 fact。
+
+  - field: aviation.arrestor.count
+    unit: count
+    value: 6
+    src: [ac-design]
+    valid: { from: 1940-05-25, to: 1943-06-07 }
+    confidence: B
+    note: >-
+      **本舰是同级唯一没有在舰桥前方装两道应急拦阻索的**（ACDES 原话：
+      「Illustrious was the only ship of the class not to have a two arrester
+      wires positioned forward of the island」）。这一条对模型与线图有意义：
+      别按同级其它舰补那两道。
+
+  - field: aviation.arrestor.count
+    unit: count
+    value: 8
+    src: [ac-design]
+    valid: { from: 1943-06-08 }
+    confidence: C
+    note: >-
+      战时改装在尾部升降机之后加两道拦阻索，总数到 8。
+      加装时点取 1943-02-26–06-07 的 Birkenhead 改装期末（ACDES 只说
+      「wartime refits soon saw an additional two arrester wires」）。
+
+  - field: aviation.aircraft.capacity
+    unit: count
+    value: 33
+    src: [navypedia-illustrious]
+    valid: { from: 1940-05-25, to: 1942-03-31 }
+    confidence: B
+    note: 机库系留位 33 个。设计指标 36 架（见舰级文件），差 3 架来自实际系留布置。
+
+  - field: aviation.aircraft.capacity
+    unit: count
+    value: 41
+    src: [ac-design, ac-taranto-narrative]
+    valid: { from: 1940-11-10, to: 1940-11-13 }
+    confidence: B
+    note: >-
+      塔兰托特编：33 架编制增至 41 架（ACDES 原文「air group of 33 aircraft,
+      rising to 41 for the strike against Taranto」）。
+      实际可用攻击机只有 21 架 Swordfish——三架因燃油污染在此前三天相继损失。
+      这个 41 是「特编搭载」，不是机库容量。
+
+  - field: aviation.aircraft.capacity
+    unit: count
+    value: 57
+    src: [ac-eastfleet]
+    valid: { from: 1944-07-01, to: 1944-12-31 }
+    confidence: B
+    note: >-
+      1944-07 一次行动载 57 架，其中 53 架同时在空，回收耗时一小时——
+      ACDES/ACEAST 原话「operating at the edge of her capacity」。
+      1944-12 Belawan Deli 行动载 53 架。
+
+  - field: aviation.aircraft.types
+    value: Fairey Swordfish（815/819/813/824 Sqn）、Fairey Fulmar（806 Sqn）、Sea Gladiator（813 Sqn）
+    src: [ac-taranto-narrative]
+    valid: { from: 1940-11-10, to: 1940-11-13 }
+    confidence: B
+    note: >-
+      塔兰托夜袭编成。机群数有分歧：ACJUDGE 给 15 Fulmar、navypedia 的
+      11/1940 栏给 12 Fulmar + 2 Sea Gladiator / 24 Swordfish。
+      一为编制、一为可用数，并列不裁决。
+
+  - field: aviation.aircraft.types
+    value: Vought Corsair（36）+ Grumman Avenger（16）
+    src: [navypedia-illustrious, ac-kamikaze]
+    valid: { from: 1945-03-26, to: 1945-05-14 }
+    confidence: B
+    note: 另有 2 架 Walrus 水上飞机的线索，未取得非百科源，不并入本条。
+
+  - field: aviation.catapult.type
+    value: 更强力弹射器（型号未获取）
+    src: [navypedia-illustrious]
+    valid: { from: 1946-06-01 }
+    confidence: C
+    note: >-
+      1946 年中换装，navypedia 只写「catapult was replaced by more powerful」，
+      型号未获取；同批改装使航空汽油增载 30%、飞行甲板两端重建以扩大可用面积。
+
+  # ============================================================ 涂装（全篇证据最弱的一环）
+  - field: appearance.scheme
+    value: MS4a 迷彩（覆盖在整体 B6 之上）
+    src: [ac-excess]
+    valid: { from: 1941-01-10 }
+    confidence: C
+    note: >-
+      1941-01-10 Operation Excess 时的状态，引自 Malcolm Wright
+      《British and Commonwealth Warship Camouflage of WWII, Vol.2》的图注
+      （经 ACEXCESS 转引）：两舷图案相似但左舷曲线更多。
+      **1940-11 塔兰托当夜的色号未获取**——连「正确色号」本身都没拿到，
+      所以「常被误画」这个说法既不能证实也不能否证。
+      下一个可证的涂装时点：未获取（1941 印度洋 / 1943 地中海 / 1945 太平洋三期均未取得色号）。
+
+  - field: appearance.color.deck
+    value: 507A
+    src: [ac-excess]
+    valid: { from: 1941-01-10 }
+    confidence: C
+    note: 与 MS4a 同源图注：「The deck was 507a and the markings dull yellow.」
+
+  - field: appearance.marking
+    value: 甲板中心虚线已刷成实线；标记为暗黄色（dull yellow）
+    src: [ac-excess]
+    valid: { from: 1941-01-10 }
+    confidence: C
+    note: >-
+      图注原话：「By January 10 the broken flight deck centre line had been
+      painted into a solid stripe. I have seen no evidence that the forward
+      round-down of the flight deck was ever painted yellow.」
+
+  - field: appearance.scheme
+    value: 未改刷东方舰队涂装（仍为本国/地中海涂装）
+    src: [ac-saratoga]
+    valid: { from: 1944-02-01, to: 1944-02-29 }
+    confidence: C
+    note: >-
+      1944-02 Trincomalee 的**反证**，不是正面色号：从本土与地中海新来的舰
+      「have not yet been repainted in Eastern Fleet camouflage」。
+      1945 年 BPF 涂装色号仍未获取。
+
+  # ============================================================ 武备（逐期变化）
+  - field: armament.mount.summary
+    value: >-
+      8 × 2 - 114 mm/45 QF Mk III + 5 × 8 - 40 mm/39 2-pdr +
+      3 × 1 - 40 mm Bofors + 20 mm Oerlikon 双联/单装若干
+    src: [navypedia-illustrious]
+    valid: { from: 1944-10-01, to: 1945-12-31 }
+    confidence: C
+    note: >-
+      1944-10 改装：减 1 座八联 pom-pom、加 3 门单装 40 mm Bofors，
+      并加 3 座双联 + 2 座单装 20 mm。20 mm 的累计数存在口径分歧：
+      navypedia 按「新增」记，另一说按「累计」记（1943-05 为 18 双联 + 2 单装），
+      两者可并存，不裁决。1946-01 定案状态见下一条。
+
+  - field: armament.mount.summary
+    value: >-
+      8 × 2 - 114/45 Mk II BD + 5 × 8 - 40/39 Mk VIA + 3 × 1 - 40/60 Mk III +
+      19 × 2 - 20/70 Mk V + 14 × 1 - 20/70 Mk III；33 架舰载机
+    src: [navypedia-illustrious]
+    valid: { from: 1946-01-01 }
+    confidence: B
+    note: >-
+      1946-01 的完整清单（navypedia）。注意 40 mm 的标法前后不同：
+      1944-10 记「40/56 Bofors Mk I/III」，1946-01 记「40/60 Mk III」，
+      口径长度 56 vs 60 cal，可能同型炮的两种标法，并列不裁决。
+
+  # ---- 40 mm Bofors：实体已归并到舰级文件 ----
+  #
+  # 2026-11-18：这里原本有一份 weapon:4in-bofors + mount:illustrious-bofors
+  # （4 条 weapon fact + 7 条 mount fact），与 data/classes/illustrious.yaml 的
+  # weapon:40mm-bofors + mount:illustrious-40mm-bofors 记的是同一批炮：
+  # 都是 1944-10 加装、都是 3 座单装。两份并存的结果是「武器与装备」左树上
+  # 出现两门一模一样的 40 mm Bofors，读者会以为这是两种炮。
+  #
+  # 归并方向：留舰级那份（信息更全，12 条 fact 含倍径、弹重、初速、射程、
+  # 炮座仰角与重量），删掉这份 4 条的。口径长度 56.3 与 60 倍径的两说
+  # 已经写在舰级那个条目的 note 里，没有丢。
+  #
+  # 不要「为了保险」把这份加回来 —— 重复实体不是冗余备份，是错误。
+
+  # ---- UP 火箭：装舰证据未获取 ----
+  - field: armament.mount.summary
+    value: 无 UP 火箭发射器装舰证据（首批 40 座分配令不含本舰，装舰清单亦无航母）
+    src: [hood-adm1-23040, navweaps-up-rockets]
+    valid: { from: 1940-05-25, to: 1941-12-31 }
+    confidence: A
+    note: >-
+      这是**反证条目**，不是座数条目。ADM 1/23040 首批 40 座分配表里
+      Hood 5、Southampton 2、Nelson 4、Glasgow 2、Rodney 4、Manchester 2、
+      Valiant 2、Newcastle 2、Warspite 2、Sheffield 2、Devonshire 2、Erebus 2、
+      Norfolk 2——**没有 Illustrious，也没有任何航母**；NavWeaps 的装舰清单
+      同样无航母。海军部 1940-03-22 另有一句「驻 Scapa 的航母应与主力舰
+      同享优先」，说明这事被讨论过但首批未落实。**不要写座数与拆除日期。**
+
+  # ============================================================ 雷达 / 火控 / 舰载机
+  # 以下型号原先只作为 sensors.radar.installed、sensors.director.type、
+  # aviation.aircraft.types 的文字值存在，现升为独立武器实体。
+  # **只登记型号身份（designation / nation / category），不复制装舰窗口与数量**——
+  # 那些仍在 ships 的 sensors.* / aviation.* 里，重复登记会让左树出现两条同名。
+  # 型号的服役起始年（weapon.in_service_from）：现有来源只给装舰时点，
+  # **未获取**型号本身的首服役年，故一条都不写。
+
+  - field: weapon.designation
+    about: weapon:type-79z
+    value: Type 79Z 对空预警雷达（air-search radar）
+    src: [navypedia-illustrious, ac-design]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >
+      光辉级与同级各舰 1940 年装舰；ACDES 称其是该国最早一批量产对空搜索雷达之一，
+      收发天线分离、波束宽 70°，对低飞目标效果差。本舰是**全球第一艘在完工前
+      就装上雷达的航空母舰**。
+
+  - field: weapon.nation
+    about: weapon:type-79z
+    value: united_kingdom
+    src: [navypedia-illustrious, ac-design]
+    valid: { from: 1940-05-25 }
+    confidence: B
+
+  - field: weapon.category
+    about: weapon:type-79z
+    value: radar
+    src: [navypedia-illustrious, ac-design]
+    valid: { from: 1940-05-25 }
+    confidence: B
+
+  - field: weapon.designation
+    about: weapon:type-281
+    value: Type 281 对空预警雷达（air warning radar）
+    src: [navypedia-illustrious, ac-design]
+    valid: { from: 1942-01-01 }
+    confidence: B
+    note: navypedia 记本舰 1942-01 以 Type 281 替换 Type 79。
+
+  - field: weapon.nation
+    about: weapon:type-281
+    value: united_kingdom
+    src: [navypedia-illustrious, ac-design]
+    valid: { from: 1942-01-01 }
+    confidence: B
+
+  - field: weapon.category
+    about: weapon:type-281
+    value: radar
+    src: [navypedia-illustrious, ac-design]
+    valid: { from: 1942-01-01 }
+    confidence: B
+
+  - field: weapon.designation
+    about: weapon:type-281b
+    value: Type 281B 对空预警雷达（一说记作 Type 281M）
+    src: [navypedia-illustrious]
+    valid: { from: 1943-06-01 }
+    confidence: B
+    note: >
+      记法两说并列，不裁决：navypedia 1943-06 与本舰 1946-01 装舰清单均写作
+      **Type 281B**；同处百科级条目写作 **Type 281M**。两者指同一型雷达的
+      不同记法，未发现支持「两种不同型号」的材料，故合并为一个实体。
+
+  - field: weapon.nation
+    about: weapon:type-281b
+    value: united_kingdom
+    src: [navypedia-illustrious]
+    valid: { from: 1943-06-01 }
+    confidence: B
+
+  - field: weapon.category
+    about: weapon:type-281b
+    value: radar
+    src: [navypedia-illustrious]
+    valid: { from: 1943-06-01 }
+    confidence: B
+
+  - field: weapon.designation
+    about: weapon:type-272
+    value: Type 272 水面与低空目标指示雷达（target indication radar）
+    src: [navypedia-illustrious, ac-kamikaze]
+    valid: { from: 1943-06-01 }
+    confidence: B
+    note: 本舰装在舰桥顶。1945-04-06 神风攻击中，日机右翼尖把这座雷达的罩子打碎了。
+
+  - field: weapon.nation
+    about: weapon:type-272
+    value: united_kingdom
+    src: [navypedia-illustrious, ac-kamikaze]
+    valid: { from: 1943-06-01 }
+    confidence: B
+
+  - field: weapon.category
+    about: weapon:type-272
+    value: radar
+    src: [navypedia-illustrious, ac-kamikaze]
+    valid: { from: 1943-06-01 }
+    confidence: B
+
+  - field: weapon.designation
+    about: weapon:type-282
+    value: Type 282 高炮指挥仪雷达（pom-pom director radar）
+    src: [navypedia-illustrious, navypedia-kgv]
+    valid: { from: 1941-12-01 }
+    confidence: B
+    note: >
+      valid.from 取现有来源里最早可证的装舰时点（英王乔治五世级 1941-12）；
+      本舰是 1943-06 清单里的 6 部，与 6 座八联 pom-pom 指挥仪一一对应。
+
+  - field: weapon.nation
+    about: weapon:type-282
+    value: united_kingdom
+    src: [navypedia-illustrious, navypedia-kgv]
+    valid: { from: 1941-12-01 }
+    confidence: B
+
+  - field: weapon.category
+    about: weapon:type-282
+    value: radar
+    src: [navypedia-illustrious, navypedia-kgv]
+    valid: { from: 1941-12-01 }
+    confidence: B
+
+  - field: weapon.designation
+    about: weapon:type-285
+    value: Type 285 主炮炮术雷达（4.5 in gunnery radar）
+    src: [ac-design, navypedia-illustrious]
+    valid: { from: 1941-05-12 }
+    confidence: B
+    note: >
+      配 4.5 in 两用炮的测距/落点观测，装在主指挥仪上。
+      ACDES 原句把 1941-42 的换装概括为「79 换成 281（对空）+ 285（4.5 in 炮术）」。
+
+  - field: weapon.nation
+    about: weapon:type-285
+    value: united_kingdom
+    src: [ac-design, navypedia-illustrious]
+    valid: { from: 1941-05-12 }
+    confidence: B
+
+  - field: weapon.category
+    about: weapon:type-285
+    value: radar
+    src: [ac-design, navypedia-illustrious]
+    valid: { from: 1941-05-12 }
+    confidence: B
+
+  - field: weapon.designation
+    about: weapon:type-79b
+    value: Type 79B 对空预警雷达（Type 79 系列的改进型）
+    src: [navypedia-illustrious]
+    valid: { from: 1943-06-01 }
+    confidence: B
+    note: 与 Type 79Z 的关系见 Type 79Z 条目；79B 是 1943 年的替换型号，不是同一条。
+
+  - field: weapon.nation
+    about: weapon:type-79b
+    value: united_kingdom
+    src: [navypedia-illustrious]
+    valid: { from: 1943-06-01 }
+    confidence: B
+
+  - field: weapon.category
+    about: weapon:type-79b
+    value: radar
+    src: [navypedia-illustrious]
+    valid: { from: 1943-06-01 }
+    confidence: B
+
+  - field: weapon.designation
+    about: weapon:pom-pom-director-mk3
+    value: Mk III pom-pom 指挥仪（Pom-Pom Director Mk III）
+    src: [ac-gunnery-report, ac-design]
+    valid: { from: 1940-05-25 }
+    confidence: B
+    note: >
+      本站仅有型号与「单人手瞄（one man sight）」这类描述，**座数未获取**，
+      因此不写数量。1941-02-07 的炮术报告（ADM 3363/0197）批评它缺少动力随动、
+      振动大，实战中对编队俯冲轰炸「形同无用」。
+
+  - field: weapon.nation
+    about: weapon:pom-pom-director-mk3
+    value: united_kingdom
+    src: [ac-gunnery-report, ac-design]
+    valid: { from: 1940-05-25 }
+    confidence: B
+
+  - field: weapon.category
+    about: weapon:pom-pom-director-mk3
+    value: fire_control
+    src: [ac-gunnery-report, ac-design]
+    valid: { from: 1940-05-25 }
+    confidence: B
+
+  - field: weapon.designation
+    about: weapon:swordfish
+    value: Fairey Swordfish 鱼雷轰炸机（Torpedo Bomber）
+    src: [ac-taranto-narrative]
+    valid: { from: 1940-11-10 }
+    confidence: B
+    note: >
+      塔兰托攻击时本舰搭载 815、819、813、824 四支中队的 Swordfish；
+      挂 18 in、1550 lb 的 Mk XII 鱼雷时最大速度仅 143 mph。
+
+  - field: weapon.nation
+    about: weapon:swordfish
+    value: united_kingdom
+    src: [ac-taranto-narrative]
+    valid: { from: 1940-11-10 }
+    confidence: B
+
+  - field: weapon.category
+    about: weapon:swordfish
+    value: aircraft
+    src: [ac-taranto-narrative]
+    valid: { from: 1940-11-10 }
+    confidence: B
+
+  - field: weapon.designation
+    about: weapon:fulmar
+    value: Fairey Fulmar 战斗侦察机（Mk I）
+    src: [ac-taranto-narrative]
+    valid: { from: 1940-11-10 }
+    confidence: B
+    note: 塔兰托时本舰搭载 806 中队 15 架 Fulmar Mk I。
+
+  - field: weapon.nation
+    about: weapon:fulmar
+    value: united_kingdom
+    src: [ac-taranto-narrative]
+    valid: { from: 1940-11-10 }
+    confidence: B
+
+  - field: weapon.category
+    about: weapon:fulmar
+    value: aircraft
+    src: [ac-taranto-narrative]
+    valid: { from: 1940-11-10 }
+    confidence: B
+
+  - field: weapon.designation
+    about: weapon:sea-gladiator
+    value: Gloster Sea Gladiator 舰载战斗机
+    src: [ac-taranto-narrative]
+    valid: { from: 1940-11-10 }
+    confidence: B
+    note: 塔兰托时 813 中队有 2 架 Sea Gladiator 配属，与同中队的 Swordfish 混编。
+
+  - field: weapon.nation
+    about: weapon:sea-gladiator
+    value: united_kingdom
+    src: [ac-taranto-narrative]
+    valid: { from: 1940-11-10 }
+    confidence: B
+
+  - field: weapon.category
+    about: weapon:sea-gladiator
+    value: aircraft
+    src: [ac-taranto-narrative]
+    valid: { from: 1940-11-10 }
+    confidence: B
+
+  - field: weapon.designation
+    about: weapon:corsair
+    value: Vought F4U Corsair 舰载战斗机
+    src: [navypedia-illustrious, ac-kamikaze]
+    valid: { from: 1945-03-26 }
+    confidence: B
+    note: >
+      美制租借装备，1945-03-26 冰山行动时本舰载 36 架。机库净高 16 ft，
+      是靠把翼尖切短才装得进去的。
+
+  - field: weapon.nation
+    about: weapon:corsair
+    value: united_states
+    src: [navypedia-illustrious, ac-kamikaze]
+    valid: { from: 1945-03-26 }
+    confidence: B
+
+  - field: weapon.category
+    about: weapon:corsair
+    value: aircraft
+    src: [navypedia-illustrious, ac-kamikaze]
+    valid: { from: 1945-03-26 }
+    confidence: B
+
+  - field: weapon.designation
+    about: weapon:avenger
+    value: Grumman TBF Avenger 鱼雷轰炸机
+    src: [navypedia-illustrious, ac-kamikaze]
+    valid: { from: 1945-03-26 }
+    confidence: B
+    note: 美制租借装备，1945-03-26 冰山行动时本舰载 16 架。
+
+  - field: weapon.nation
+    about: weapon:avenger
+    value: united_states
+    src: [navypedia-illustrious, ac-kamikaze]
+    valid: { from: 1945-03-26 }
+    confidence: B
+
+  - field: weapon.category
+    about: weapon:avenger
+    value: aircraft
+    src: [navypedia-illustrious, ac-kamikaze]
+    valid: { from: 1945-03-26 }
+    confidence: B

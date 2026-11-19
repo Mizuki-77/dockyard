@@ -1,0 +1,133 @@
+# ============================================================================
+# 武器正文 —— FuMO 213 "Würzburg-D" 炮瞄雷达
+#
+# 关键的三条：
+#  1) 它装在对空指挥仪上，用抛物面天线，不是床垫天线；
+#  2) 旧编号 FMG 39T/D，后改 FuSE 62D，海军编号 FuMO 213；
+#  3) 同族 FuMO 212 与 213 的具体分配，navweaps 原文用 probably。
+# 频率/探测距离/精度一律不写。
+# ============================================================================
+weapon: fumo-213
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      FuMO 213 是德国海军的一型对空炮瞄雷达，绰号 Würzburg-D，用抛物面天线，
+      与前面那些用「床垫」天线的搜索雷达不是一类东西。
+      它装在提尔皮茨号的第三座 3-D 稳定对空指挥仪上：
+      1944 年春夏，这座指挥仪（主桅后，昵称 Wackeltopf）的基座被抬高约 2 米，
+      正是为了装这台雷达。
+      在旧编号体系里它对应 FMG 39T/D，后来改称 FuSE 62D。
+    en: >-
+      The FuMO 213 was a German anti-aircraft gunnery radar, nicknamed Würzburg-D, with
+      a parabolic dish antenna - not the same family as the "mattress" search sets.
+      Aboard Tirpitz it went onto the third 3-D stabilised AA director: in spring or
+      summer 1944 that director, aft of the mainmast and nicknamed Wackeltopf, had its
+      base ring raised about two metres precisely to carry this set. In the older
+      designation system it corresponds to FMG 39T/D, later renamed FuSE 62D.
+
+  paragraphs:
+    - heading: 它是炮瞄雷达，不是搜索雷达
+      text:
+        zh: >-
+          本页与同舰其他雷达条目的区别必须先讲清楚。FuMO 23、26、27 都是
+          海面搜索雷达，天线是矩形「床垫」，装在各测距仪塔上；
+          213 装在 3-D 稳定的对空指挥仪上，天线是抛物面，
+          任务是把目标数据喂给指挥仪去打飞机。
+          也就是说它属于火控这一侧，不属于搜索这一侧。
+          本站把它与 FuMO 212 一起归在「对空炮瞄」这一档，
+          与搜索雷达分列实体，不合并叙述。
+        en: >-
+          The difference between this entry and the other radar entries for the ship has
+          to come first. The FuMO 23, 26 and 27 are surface-search sets with rectangular
+          mattress antennas on the rangefinder towers; the 213 sits on a 3-D stabilised
+          anti-aircraft director with a parabolic dish, and its job is to feed target data
+          to that director for engaging aircraft. It belongs on the fire-control side,
+          not the search side. This site files it and the FuMO 212 together as
+          anti-aircraft gunnery sets, separate entities from the search radars rather than
+          one merged account.
+      src: [navweaps-radar, kbismarck-tirpitz]
+
+    - heading: 为了装它，指挥仪基座抬高了两米
+      text:
+        zh: >-
+          这是本页最能落到实物上的一条。专题站的德国雷达专文记：
+          第三座 3-D 稳定的对空指挥仪用的是 3 米直径抛物面天线，
+          该指挥仪基座上那个环在 1944 年春夏被抬高 2 米。
+          抬高基座不是装雷达的副产品，而是装雷达的前提——
+          抛物面天线要转得开、要有视野。
+          另一份技术资料把这个改动列为提尔皮茨号相对俾斯麦号可确证的
+          实体差异之一，并点明这是本舰独有的。
+        en: >-
+          This is the most physical point on the page. The specialist article on German
+          radar records that the third 3-D stabilised AA director carried the 3 m
+          diameter parabolic dish antenna, and that the base ring on that director was
+          raised 2 m in spring or summer 1944. Raising the ring was not a by-product of
+          fitting the radar but a precondition for it: a parabolic dish has to be able to
+          train and to see. Another technical record lists this change among the physical
+          differences that can be confirmed between Tirpitz and Bismarck, and notes that
+          it is unique to this ship.
+      src: [navweaps-radar, kbismarck-tirpitz]
+
+    - heading: 212 与 213 怎么分，原文自己留了口
+      text:
+        zh: >-
+          这里要照录一层不确定性。专题站的专文写：
+          FMG 39T/T 成为海军编号 FuMO 212，FMG 39T/D（后改 FuSE 62D）
+          成为海军编号 FuMO 213；它还补了一句，说这揭示了一个此前未曾发表的事实。
+          但在描述本舰那座指挥仪上到底装的是哪一台时，原文用的是
+          「FuMO 212 or 213」「判为 Würzburg-C 或 Würzburg-D」这类并列措辞。
+          也就是说型号映射是确定的，但某一台具体是 212 还是 213，
+          材料本身没有收口。本站两说并列，数据层按较低的置信度处理。
+        en: >-
+          One layer of uncertainty has to be recorded. The specialist article states that
+          FMG 39T/T became the Navy designation FuMO 212 and FMG 39T/D, later FuSE 62D,
+          became FuMO 213, adding that this reveals a fact not previously published. Yet
+          when describing which set went on this ship's director, the same text writes
+          "FuMO 212 or 213" and judges it a Würzburg-C or Würzburg-D. The designation
+          mapping is therefore firm while the identification of the individual set is
+          not, and the material itself leaves it open. Both readings stand here and the
+          data layer carries a lower confidence accordingly.
+      src: [navweaps-radar, kbismarck-tirpitz]
+
+history:
+  - id: service
+    title: { zh: 装舰记录, en: Fitting record }
+    range: { from: 1944-01, to: 1944-11 }
+    lead:
+      zh: >-
+        它在舰上的时间不到一年：1944 年春夏装上，同年 11 月舰沉。
+      en: >-
+        Under a year aboard: fitted in spring or summer 1944, lost with the ship that
+        November.
+    events:
+      - date: 1944-01
+        text:
+          zh: >-
+            本舰此年的雷达记录为 3 台 FuMO 26 加一台 FuMO "Hohentwiel" 与
+            FuMO 213 "Würzburg-D"。213 是其中唯一的对空炮瞄设备。
+          en: >-
+            The ship's radar record for this year reads three FuMO 26 sets plus a FuMO
+            "Hohentwiel" and a FuMO 213 "Würzburg-D". The 213 is the only anti-aircraft
+            gunnery set among them.
+        src: [kbismarck-tirpitz]
+      - date: 1944-06
+        text:
+          zh: >-
+            1944 年春夏，第三座对空指挥仪基座抬高约 2 米以装这台炮瞄雷达。
+            该指挥仪位于主桅后，德方昵称 Wackeltopf。
+            原文对具体型号仍写作 Würzburg-C 或 -D（即 FuMO 212 或 213）。
+          en: >-
+            In spring or summer 1944 the base ring of the third AA director was raised
+            about 2 m to take this gunnery radar. The director stood aft of the mainmast
+            and was nicknamed Wackeltopf. The source still writes the mark as Würzburg-C
+            or -D, that is FuMO 212 or 213.
+        src: [navweaps-radar]
+      - date: 1944-11-12
+        text:
+          zh: >-
+            提尔皮茨号在 Tromsø 附近被击沉，舰上的 FuMO 213 随之损失。
+          en: >-
+            Tirpitz was sunk near Tromso and her FuMO 213 was lost with her.
+        src: [kbismarck-tirpitz]

@@ -1,0 +1,340 @@
+# ============================================================================
+# 企业号 正文
+#
+# 2026-11-19 建。数据来源见 work/raw/enterprise-tech.md。
+#
+# 叙事重心：中途岛（本次重点）+ 稍带战前战后。
+# 不写成「荣誉清单」——那种写法信息量低。
+# 重点讲清楚：约克城级为什么选择不装甲甲板、中途岛那天的具体经过、
+# 以及「一条船打了整场战争」这个事实的代价。
+# ============================================================================
+
+ship: enterprise
+updated: 2026-11-19
+
+intro:
+  lead:
+    zh: >-
+      企业号是二战中美军获得战斗荣誉最多的军舰之一，也是极少数从开战第一天
+      打到最后一天的航母。中途岛那天它是第 16 特混舰队的旗舰。
+    en: >-
+      Enterprise was among the most decorated US warships of WWII and one of
+      the few carriers to fight from the first day of the war to the last.
+      She flew the flag of Task Force 16 at Midway.
+
+  paragraphs:
+    - heading: 它与英国航母是两种答案
+      text:
+        zh: >-
+          约克城级最根本的一条设计选择是：飞行甲板和机库甲板都不装甲。
+          原句「The flight and hangar decks of the ships were unarmored.」
+          装甲全部集中在水线下方的「受保护箱体」里，只包住弹药库、锅炉、
+          机舱和通信中枢。
+          换来的是什么？单层大机库、26 米宽的甲板、73 架舰载机的编制。
+          英国光辉级反过来：装甲甲板、双层窄机库、载机少。两种哲学各有代价——
+          企业号在大战中被炸弹命中多次、每次都伤得不轻但活了下来；
+          光辉级挨了炸弹甲板不穿，却塞不进更多飞机。这不是谁更对，
+          是同一道题的两个答案。
+        en: >-
+          The Yorktown class accepted unarmored flight and hangar decks in
+          exchange for a single large hangar and a bigger air group. The
+          British armored carriers made the opposite trade.
+      src: [nhhc-danfs-enterprise, navsource-enterprise]
+
+    - heading: 中途岛那天它的甲板上有什么
+      text:
+        zh: >-
+          1942 年 6 月 4 日，企业号航空队 73 架：VF-6 的 27 架 F4F-4 野猫、
+          VB-6 的 15 架 SBD、VS-6 的 17 架 SBD、VT-6 的 14 架 TBD。
+          07:06 起飞攻击队（与大黄蜂号合计 116 架）。
+          鱼雷机那一路几乎全灭——VT-6 14 架出去 10 架没回来，
+          三艘航母合计 41 架 TBD 被击落 35 架。
+          但正是这些慢速鱼雷机的自杀式接近，把日军战斗巡逻机引到了低空，
+          给随后从 14,500 英尺俯冲下来的麦克拉斯基队开了路。
+          掩护是有代价的，这个代价那天由 TBD 机组付了。
+        en: >-
+          On 4 June the air group numbered 73 aircraft. VT-6 lost 10 of 14
+          TBDs, but their low-level runs pulled the Japanese CAP down and
+          opened the way for McClusky's dive bombers.
+      src: [nhhc-midway-us-order-of-battle, nhhc-enterprise-midway-report]
+
+    - heading: 一条船打完整场战争的代价
+      text:
+        zh: >-
+          企业号中途岛时没有受损、没有阵亡（原句「suffered no damage」），
+          但那是少数。此后它挨了：东所罗门 3 弹直击 4 近失（死 74 伤 95）、
+          圣克鲁斯 2 弹命中（死 44 伤 75）、1945-04-11 神风、
+          1945-05-14 神风撞毁前升降机（死 14 伤 68）。
+          它活到了战后，1947 年退役，1958 年出售拆解，拆完是 1960 年 2 月。
+          「幸运 E」这个绰号不是没来由的。
+        en: >-
+          She came through Midway undamaged, but was hit repeatedly
+          afterwards — Eastern Solomons, Santa Cruz, and two kamikaze strikes
+          in 1945 — and survived to the end of the war.
+      src: [nhhc-danfs-enterprise]
+
+history:
+  - id: build
+    title:
+      zh: 建造
+      en: Construction
+    range: { from: 1933-06-16, to: 1938-05-12 }
+    lead:
+      zh: 新政法案授权下的一艘条约型航母。
+    events:
+      - date: 1933-06-16
+        text:
+          zh: 国会法案（National Industrial Recovery Act）授权建造。
+        src: [nhhc-danfs-enterprise]
+
+      - date: 1933-08-03
+        text:
+          zh: 下单。
+        src: [nhhc-danfs-enterprise]
+
+      - date: 1934-07-16
+        text:
+          zh: 在弗吉尼亚州 Newport News 铺龙骨。船台号 360。
+        src: [nhhc-danfs-enterprise, navypedia-yorktown-class]
+
+      - date: 1936-10-03
+        text:
+          zh: 下水。掷瓶人为海军部长 Swanson 夫人。
+        src: [nhhc-danfs-enterprise]
+
+      - date: 1938-05-12
+        text:
+          zh: 服役于诺福克。首任舰长 Newton H. White。
+        src: [nhhc-danfs-enterprise]
+
+  - id: prewar
+    title:
+      zh: 战前
+      en: Prewar service
+    range: { from: 1939-04-20, to: 1941-12-06 }
+    events:
+      - date: 1939-04-20
+        text:
+          zh: 调往太平洋舰队。
+        src: [nhhc-danfs-enterprise]
+
+      - date: 1940-08
+        text:
+          zh: >-
+            CXAM-1 雷达装机（时间有争议：也有来源说 1942 年中途岛之后才装）。
+            这是美军航母相对日军的核心优势——日军整个机动部队的航母都没有雷达。
+        src: [nhhc-danfs-enterprise]
+
+  - id: early-war
+    title:
+      zh: 开战至中途岛前
+      en: From Pearl Harbor to Midway
+    range: { from: 1941-12-07, to: 1942-05-27 }
+    events:
+      - date: 1941-12-07
+        text:
+          zh: >-
+            珍珠港事件当天在海上。18 架 SBD 飞抵珍珠港上空，
+            7 架被击落、8 名空勤阵亡。
+        src: [nhhc-danfs-enterprise]
+
+      - date: 1941-12-10
+        text:
+          zh: 舰载机击沉日本潜艇伊-70——美军在太平洋战争爆发后首次击沉日舰。
+        src: [nhhc-danfs-enterprise]
+
+      - date: 1942-02-01
+        text:
+          zh: 马绍尔群岛空袭（夸贾林等）。此后 02-24 威克岛、03-04 马库斯岛。
+        src: [nhhc-enterprise-warshist]
+
+      - date: 1942-03-31
+        text:
+          zh: >-
+            珍珠港改装：拆 10 艘小艇、拆大部分 .50 机枪，
+            加装 30 门 20mm 厄利孔与雷达。
+        src: [nhhc-enterprise-warshist]
+
+      - date: 1942-04-18
+        text:
+          zh: 杜立特空袭东京时，为大黄蜂号提供战斗机巡逻与搜索。
+        src: [nhhc-enterprise-warshist]
+
+  - id: midway
+    title:
+      zh: 中途岛
+      en: Midway
+    range: { from: 1942-05-28, to: 1942-06-13 }
+    lead:
+      zh: 本舰无损，航空队打光了一半。
+    events:
+      - date: 1942-05-28
+        text:
+          zh: >-
+            作为第 16 特混舰队旗舰出港（斯普鲁恩斯）。
+            与大黄蜂号同队；弗莱彻的 TF 17（约克城号）为战术指挥。
+        src: [nhhc-danfs-enterprise]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            07:06 起飞攻击队：33 架 SBD + 14 架 TBD + 10 架 F4F，
+            与大黄蜂号合计 116 架。挂弹：15 架 SBD 各 1 枚 1,000 磅、
+            12 架各 1 枚 500 磅 + 2 枚 100 磅、6 架各 1 枚 500 磅。
+          en: >-
+            Enterprise launched her strike at 0706: 33 SBDs, 14 TBDs and
+            10 F4Fs.
+        src: [nhhc-enterprise-midway-report, nhhc-danfs-enterprise]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            约 12:20 VT-6 发起鱼雷攻击，无命中；14 架中 10 架未返，
+            中队长 Lindsey 阵亡。三艘航母合计 41 架 TBD 被击落 35 架。
+          en: >-
+            VT-6 attacked at about 1220 without scoring; ten of fourteen
+            did not return.
+        src: [nhhc-enterprise-midway-report]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            约 12:22 麦克拉斯基队俯冲轰炸，重创加贺与赤城。
+            战报原句「two (2) CV badly damaged with many direct bomb hits,
+            left in flames」。
+          en: >-
+            At about 1222 McClusky's dive bombers fatally damaged Kaga and
+            Akagi.
+        src: [nhhc-enterprise-midway-report]
+
+      - date: 1942-06-04
+        text:
+          zh: 下午第二波 24 架 SBD 出击，重创飞龙。
+        src: [nhhc-enterprise-midway-report]
+
+      - date: 1942-06-05
+        text:
+          zh: 32 架 SBD 出击未找到目标。
+        src: [nhhc-enterprise-midway-report]
+
+      - date: 1942-06-06
+        text:
+          zh: 31 架 SBD + 3 架 TBD + 12 架 F4F 击伤最上、击沉三隈。
+        src: [nhhc-enterprise-midway-report]
+
+      - date: 1942-06-13
+        text:
+          zh: >-
+            返珍珠港。本舰全程无损伤、无阵亡，但三日合计损失飞机 31 架
+            （VT-6 10 架、VB-6 11 架、VS-6 9 架、VF-6 1 架）。
+          en: >-
+            Returned to Pearl Harbor undamaged. Thirty-one aircraft were lost
+            over the three days.
+        src: [nhhc-enterprise-midway-report]
+
+  - id: solomons
+    title:
+      zh: 所罗门群岛
+      en: The Solomons
+    range: { from: 1942-08-24, to: 1942-11-15 }
+    events:
+      - date: 1942-08-24
+        text:
+          zh: 东所罗门海战：3 弹直接命中 + 4 近失，死 74 伤 95。
+        src: [nhhc-danfs-enterprise]
+
+      - date: 1942-10-26
+        text:
+          zh: 圣克鲁斯海战：2 弹命中，死 44 伤 75。接收大黄蜂号的飞机。
+        src: [nhhc-danfs-enterprise]
+
+      - date: 1942-11-13
+        text:
+          zh: 瓜达尔卡纳尔海战：舰载机参与击沉比叡、衣笠。
+        src: [nhhc-danfs-enterprise]
+
+  - id: late-war
+    title:
+      zh: 1943 年改装至终战
+      en: Refit and final campaigns
+    range: { from: 1943-05-27, to: 1945-08-15 }
+    events:
+      - date: 1943-05-27
+        text:
+          zh: 尼米兹授首面「总统单位嘉奖」——首艘获此荣誉的航母。
+        src: [nhhc-danfs-enterprise]
+
+      - date: 1943-10-31
+        text:
+          zh: >-
+            普吉特湾大改装完成：加装防雷突出部（frames 36-150）、鞍形油箱、
+            8 座双联 40mm（合计 40 管）、换新弹射器、加 SK/SM 雷达。
+            全长增至 252.2 m，水线宽增至 29.1 m。
+        src: [nhhc-enterprise-warshist, nhhc-danfs-enterprise]
+
+      - date: 1944-02
+        text:
+          zh: 特鲁克夜袭——美军航母首次夜间雷达轰炸。
+        src: [nhhc-danfs-enterprise]
+
+      - date: 1944-06-19
+        text:
+          zh: 菲律宾海海战（TF 58.3）。
+        src: [nhhc-danfs-enterprise]
+
+      - date: 1944-10-24
+        text:
+          zh: 莱特湾海战：参与击沉武藏、瑞凤，击伤山城、扶桑、最上。
+        src: [nhhc-danfs-enterprise]
+
+      - date: 1945-02-19
+        text:
+          zh: 硫磺岛支援——连续 174 小时不间断保持飞机在空中。
+        src: [nhhc-danfs-enterprise]
+
+      - date: 1945-04-11
+        text:
+          zh: 被神风命中受损。
+        src: [nhhc-danfs-enterprise]
+
+      - date: 1945-05-14
+        text:
+          zh: 神风撞毁前升降机，死 14 伤 68。
+        src: [nhhc-danfs-enterprise]
+
+  - id: aftermath
+    title:
+      zh: 战后
+      en: After the war
+    range: { from: 1945-11-01, to: 1960-02-28 }
+    events:
+      - date: 1946-01-18
+        text:
+          zh: 泊 Bayonne 转入封存。
+        src: [nhhc-danfs-enterprise]
+
+      - date: 1947-02-17
+        text:
+          zh: 退役。
+        src: [nhhc-danfs-enterprise]
+
+      - date: 1956-10-02
+        text:
+          zh: >-
+            除籍。检验委员会判定「不适于继续海军服役」
+            （unfit for further naval service）。
+        src: [nhhc-danfs-enterprise]
+
+      - date: 1958-07-01
+        text:
+          zh: 以 561,333 美元售予 Lipsett Corp. 拆解。
+        src: [nhhc-danfs-enterprise]
+
+      - date: 1960-02
+        text:
+          zh: >-
+            拆解完成。1958-08-21 由八艘拖船拖往新泽西州 Kearny，
+            原句「the breakers cut her up by February 1960」。
+          en: >-
+            Scrapping was completed by February 1960 at Kearny, New Jersey.
+        src: [nhhc-danfs-enterprise]

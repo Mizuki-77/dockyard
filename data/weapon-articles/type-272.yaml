@@ -1,0 +1,135 @@
+# ============================================================================
+# 武器正文 —— Type 272 水面与低空目标指示雷达
+#
+# 这一型有两条能写的硬事实：它装在本舰舰桥顶，以及 1945-04-06
+# 神风攻击中它的雷达罩被打碎。性能不写。
+# ============================================================================
+weapon: type-272
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Type 272 是一型水面与低空目标指示雷达，任务是先把海面方向和低空的目标找出来、
+      交给火控或战斗机引导，而不是自己给火炮解算。
+      在光辉号上它装在舰桥顶，1943 年 6 月的装舰清单里已经在列，
+      并一直留到战后。它在这艘舰上留下一个有具体日期的事件：
+      1945 年 4 月 6 日的神风攻击中，一架日机的翼尖把它的雷达罩打碎了。
+    en: >-
+      The Type 272 was a surface and low-level target-indication radar: its job was to
+      find targets on the surface and at low height and pass them to fire control or to
+      fighter direction, not to compute a gun solution itself. Aboard HMS Illustrious it
+      sat on top of the bridge, was already in the June 1943 fitting list, and stayed
+      into the post-war period. It also has one precisely dated event aboard this ship:
+      during the kamikaze attack of 6 April 1945 a Japanese aircraft's wingtip gashed
+      its radar dome.
+
+  paragraphs:
+    - heading: 它为什么被放在舰桥顶
+      text:
+        zh: >-
+          装舰位置本身就是它的职能说明。这一型装在本舰舰桥顶、
+          也就是全舰最高、视野最不受飞行甲板和前部结构遮挡的地方。
+          水面目标指示雷达需要尽可能早地看见海面接触，
+          装在低处就会被自己的舰体挡住。同一份材料还提到，
+          本舰在 1943 年 6 月与 1946 年 1 月两份清单里都列有 type 272，
+          说明它不是临时试用，而是这一型在本舰上的固定配置。
+        en: >-
+          Where the set was mounted is itself a statement of its function. It went on
+          top of the bridge, the highest point aboard and the position least screened by
+          the flight deck and the forward structure. A surface target-indication set
+          needs to see surface contacts as early as it can, and mounted low it would be
+          blocked by the ship's own hull. The same material notes that the type 272
+          appears in both the June 1943 and the January 1946 lists, which marks it as a
+          standing fitting aboard rather than a trial installation.
+      src: [navypedia-illustrious, ac-kamikaze]
+
+    - heading: 1945 年 4 月 6 日：雷达罩被翼尖划开
+      text:
+        zh: >-
+          这是本站能追到日期的唯一一次本舰该型雷达受损记录。
+          当日下午神风攻击中，一架 D4Y3「彗星」被舰艏 Bofors 炮打断一侧机翼后
+          在空中解体，残骸掠过舰桥前方，翼尖扫到舰桥前部、
+          据报道距舰长 Lambe 站立处只有 9 英尺，把一座雷达罩划开一道口子，
+          除此之外没有造成更多损伤。该机携带的炸弹随后在离舷约 50 英尺的水中爆炸。
+          需要说明的是：材料写的是「a radar dome」、
+          并把它放在舰桥前部，本站据此认为被打的是舰桥顶这座 Type 272，
+          但没有一份材料直接写出型号，此处理解为定位推断而非原文结论。
+        en: >-
+          This is the only dated damage to this set aboard that could be traced. During
+          the kamikaze attack that afternoon a D4Y3 "Judy" had a wing sheared off by the
+          forward Bofors and broke up in the air; the wreckage swept past the front of
+          the bridge, its wingtip reportedly passing within nine feet of where Captain
+          Lambe stood and putting a gash in a radar dome, with little other damage. The
+          aircraft's bomb detonated in the water some fifty feet off the side. Note what
+          the material does and does not say: it says "a radar dome" and places it at the
+          front of the island, from which this article takes the dome to be the Type 272
+          on the bridge top, but no source states the mark outright, so that is a
+          positional inference and not a quoted conclusion.
+      src: [ac-kamikaze]
+
+    - heading: 它在整个雷达体系里的位置
+      text:
+        zh: >-
+          把本舰 1943 年 6 月的清单连起来看，各型的职责是分开的：
+          type 79B 与 type 281B 管对空预警，type 272 管水面与低空目标指示，
+          6 部 type 282 分别配 6 座八联 pom-pom 指挥仪，
+          type 285 管 4.5 英寸两用炮的炮术。也就是说这一型不是备份，
+          而是低空这一层唯一的专用设备——对空预警雷达看不好的低飞目标，
+          正是它要接手的部分。专题站的英国雷达总表另记 Type 272
+          于 1941 年进入服役、用途写为水面预警、战时用于驱逐舰与巡洋舰；
+          航母上的装舰时点则要按本舰清单来算，两者口径不同。
+        en: >-
+          Read as a whole, the June 1943 list divides the work: the type 79B and 281B
+          handle air warning, the type 272 handles surface and low-level target
+          indication, six type 282 sets each serve a pom-pom director, and the type 285
+          serves the 4.5-inch dual-purpose battery. The 272 is therefore not a backup
+          but the only set dedicated to the low-level layer - the low-flying targets the
+          air-warning sets handled badly were precisely its share. The specialist site's
+          table separately records the Type 272 as operational in 1941, gives its
+          purpose as surface warning and its wartime use on destroyers and cruisers; the
+          carrier fitting date has to be taken from this ship's lists, which is a
+          different kind of statement.
+      src: [navypedia-illustrious, navweaps-radar-uk]
+
+history:
+  - id: service
+    title: { zh: 装舰与战损, en: Fitting and damage }
+    range: { from: 1943-06, to: 1946-01 }
+    lead:
+      zh: >-
+        它在舰上的记录是两个清单加一次战损：1943 年 6 月已在、1945 年 4 月被打坏一个罩子、
+        1946 年 1 月还在。
+      en: >-
+        The record is two lists and one hit: present in June 1943, a dome gashed in
+        April 1945, still aboard in January 1946.
+    events:
+      - date: 1943-06
+        text:
+          zh: >-
+            本舰此月的装舰清单里列有 type 272。
+            同一份清单为 type 79B / type 272 / type 281B / 6×type 282 / type 285。
+          en: >-
+            The ship's fitting list for this month carries the type 272, alongside the
+            type 79B, type 281B, six type 282 sets and the type 285.
+        src: [navypedia-illustrious]
+      - date: 1945-04-06
+        text:
+          zh: >-
+            神风攻击中该型雷达的罩子被打碎。一架 D4Y3 被舰艏 Bofors 打断一侧机翼后
+            空中解体，残骸掠过舰桥前部，翼尖扫过处留下一道口子；
+            除此之外损伤有限，本舰航空作业未被中断。
+          en: >-
+            The set's radar dome was gashed during the kamikaze attack. A D4Y3 had a
+            wing sheared off by the forward Bofors and broke up in the air; the wreckage
+            swept the front of the island and its wingtip left a gash in the dome. Other
+            damage was limited and the ship's flying operations were not interrupted.
+        src: [ac-kamikaze]
+      - date: 1946-01
+        text:
+          zh: >-
+            战后清单里 type 272 仍在列。这说明 1945 年那次损伤没有导致该型被拆除。
+          en: >-
+            The type 272 is still in the post-war list, which shows the 1945 damage did
+            not lead to the set being removed.
+        src: [navypedia-illustrious]

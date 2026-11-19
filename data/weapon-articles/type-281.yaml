@@ -1,0 +1,117 @@
+# ============================================================================
+# 武器正文 —— Type 281 对空预警雷达
+#
+# 这一型的关键是「它把 79 系列替掉了」，以及它在海军里的普及度。
+# 材料薄的地方（本舰装舰的具体机构、性能）不写。
+# ============================================================================
+weapon: type-281
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Type 281 是英国二战期间使用最广的一型舰载对空预警雷达，
+      1940 年 12 月进入服役，首次装舰对象是轻巡洋舰狄多号（HMS Dido）。
+      在光辉号上，它是 1942 年 1 月替换 Type 79 的那一型，
+      也是本舰对空预警链条在此后一年多的主体。
+    en: >-
+      The Type 281 was the most widely used shipborne air-warning radar of the Second
+      World War in British service. It became operational in December 1940 and was
+      first fitted to the light cruiser HMS Dido. Aboard HMS Illustrious it was the set
+      that replaced the Type 79 in January 1942, and it carried the ship's air-warning
+      duty for the following year or so.
+
+  paragraphs:
+    - heading: 它先去了巡洋舰，再回头换航母上的 79
+      text:
+        zh: >-
+          装舰次序值得记一笔。专题站的雷达表写明 Type 281 于 1940 年 12 月服役、
+          首次装舰对象是轻巡洋舰狄多号；而航母这一头，
+          光辉号是到 1942 年 1 月才把 79 换成 281。
+          也就是说这一型不是为航母专门研制的，是先装巡洋舰、再推广到主力舰与航母。
+          设计资料把 1941 到 1942 年的这次换装与 Type 285 并称：
+          「79 换成 281（对空）加 285（4.5 英寸炮术）」。
+        en: >-
+          The order of fitting is worth recording. The specialist radar table states
+          that the Type 281 became operational in December 1940 and was first fitted to
+          the light cruiser HMS Dido, while the carrier only swapped its Type 79 for a
+          281 in January 1942. The set was therefore not developed for carriers first;
+          it went into cruisers and then spread to capital ships and carriers. The
+          design record pairs this change with the Type 285: the Type 79 giving way to
+          the Type 281 for air warning and the Type 285 for 4.5-inch gunnery.
+      src: [navweaps-radar-uk, navypedia-illustrious, ac-design]
+
+    - heading: 「使用最广」这个评价来自型号总表，不是本站的概括
+      text:
+        zh: >-
+          专题站在 Type 281 那一行的评语原文是 "Most widely used set in WWII"。
+          本站引这句是因为它是目前能查到的、对这一型普及程度的唯一直接评价；
+          至于它一共装了多少艘、造了多少套，现有材料里没有数字，本站不写。
+          需要提醒的是同一张表给的是全海军「开始服役」的年份，
+          与 navypedia 记的本舰换装月份不是一回事，两处引用时必须写明是哪一种口径。
+        en: >-
+          The specialist table's own comment on the Type 281 row reads "Most widely used
+          set in WWII". It is quoted here because it is the only direct assessment of
+          the set's ubiquity that could be found, and the material available gives no
+          figure for how many ships or sets were involved, so none is offered. Note
+          also that the table dates a set by the year it became operational Navy-wide,
+          which is not the same thing as the month navypedia records for this ship's
+          re-equipment; citing either without saying which is meant would be misleading.
+      src: [navweaps-radar-uk, navypedia-illustrious]
+
+    - heading: 它在 1943 年被 B 型取代，但取代关系记法不一
+      text:
+        zh: >-
+          1943 年 6 月本舰的清单里已经写着 type 281B，另有说法写作 Type 281M。
+          两种写法指的是同一型雷达的不同记法，没有材料支持「这是两种不同型号」，
+          本站因此把 281B 与 281M 合并成一个实体，正文里两说并列。
+          至于 281 本身是什么时候、按什么标准判定该换的，现有材料未给，本站不写。
+        en: >-
+          The ship's June 1943 list already carries a type 281B, and other accounts
+          write the same set as Type 281M. The two spellings denote different notations
+          for one radar; nothing found supports treating them as two distinct models, so
+          this site merges them into a single entity and reports both spellings. What
+          actually triggered the change away from the plain 281, and by what standard,
+          is not stated in the material available and is not asserted here.
+      src: [navypedia-illustrious]
+
+history:
+  - id: service
+    title: { zh: 装舰与换装, en: Fitting and replacement }
+    range: { from: 1942-01, to: 1943-06 }
+    lead:
+      zh: >-
+        本舰上的 281 只有一年半：1942 年 1 月装上，1943 年 6 月清单里已换成 281B。
+      en: >-
+        The plain 281 lasted about eighteen months aboard: fitted in January 1942, and
+        by the June 1943 list the ship carried a 281B.
+    events:
+      - date: 1940-12
+        text:
+          zh: >-
+            这一型进入服役，首次装舰对象是轻巡洋舰狄多号（HMS Dido）。
+            这两条都出自专题站英国雷达总表。
+          en: >-
+            The set became operational, first fitted to the light cruiser HMS Dido.
+            Both points come from the specialist site's table of British radar.
+        src: [navweaps-radar-uk]
+      - date: 1942-01
+        text:
+          zh: >-
+            本舰换装：清单记为「减 type 79 雷达，加 type 281 雷达」。
+            同期加装配 4.5 英寸两用炮的 Type 285。
+          en: >-
+            The ship was re-equipped: the record reads "minus type 79 radar, plus type
+            281 radar", with the Type 285 for the 4.5-inch dual-purpose battery added in
+            the same period.
+        src: [navypedia-illustrious, ac-design]
+      - date: 1943-06
+        text:
+          zh: >-
+            本舰清单里已是 type 281B（一说记作 Type 281M）。
+            同一份清单还列有 type 79B、type 272、6 部 type 282 与 type 285。
+          en: >-
+            The ship's list now shows a type 281B, written elsewhere as Type 281M. The
+            same list carries the type 79B, type 272, six type 282 sets and the
+            type 285.
+        src: [navypedia-illustrious]

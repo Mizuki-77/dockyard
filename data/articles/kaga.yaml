@@ -1,0 +1,196 @@
+# 加贺 正文
+# 2026-11-19 建。数据来源 work/raw/kaga-tech.md。
+
+ship: kaga
+updated: 2026-11-19
+
+intro:
+  lead:
+    zh: >-
+      加贺是中途岛四艘日军航母里最重、最慢、载机最多的一艘。
+      它原本是战列舰——加贺级的一号舰，因华盛顿条约改成航母，
+      所以它跟赤城虽然常被并称「一航战双雄」，骨子里根本不是一种船。
+    en: >-
+      Kaga was the heaviest, slowest, and largest-capacity carrier at Midway.
+      She began as a battleship — the lead ship of the Kaga class (Tosa class
+      in Western sources) — and was converted under the Washington Treaty.
+
+  paragraphs:
+    - heading: 战列舰底子的三个后果
+      text:
+        zh: >-
+          加贺与赤城最大的区别来自出身：赤城是天城级**战列巡洋舰**，
+          加贺是加贺级**战列舰**。这决定了三件事——
+          一，加贺更重（改装后标准排水量 38,200 英吨，赤城 36,500）；
+          二，加贺更慢（28.34 节对 31.2 节，这在中途岛是致命的）；
+          三，加贺载机更多（90 架对 60 架，因为舰体容积大得多）。
+          中途岛那天，这三点全都在起作用：它装得最多、烧得最惨、
+          也最难跟上机动部队的高速规避。
+        en: >-
+          Her battleship hull made her heavier, slower and roomier than Akagi:
+          38,200 tons standard versus 36,500, 28.34 knots versus 31.2, and
+          90 aircraft versus 60.
+      src: [japanese-warship-kaga, combinedfleet-kaga]
+
+    - heading: 它换装过 12.7cm，赤城没有
+      text:
+        zh: >-
+          1935 年大改装时，加贺把 12cm 十年式高角炮换成了 40 口径 89 式
+          12.7cm 连装炮，而且从 6 基增到 8 基。赤城没有换——
+          NavWeaps 有一句直接对比：
+          「The carrier Kaga and those cruisers modernized during the late
+          1930s had these weapons replaced by the 12.7 cm/40 (5") Type 89 AA gun.
+          However, Akagi carried them to her end at Midway.」
+          这是两舰在武备上最实在的一处差别。
+        en: >-
+          During her 1935 refit Kaga received eight twin 12.7 cm Type 89
+          mounts; Akagi kept her older 12 cm guns to the end.
+      src: [japanese-warship-kaga]
+
+history:
+  - id: build
+    title:
+      zh: 从战列舰到航母
+      en: From battleship to carrier
+    range: { from: 1920-07-19, to: 1928-03-31 }
+    events:
+      - date: 1920-07-19
+        text:
+          zh: 作为加贺级战列舰一号舰在川崎造船所（神户）开工。
+        src: [japanese-warship-kaga]
+
+      - date: 1921-11-17
+        text:
+          zh: 下水。此后因华盛顿条约停建，同级二番舰土佐被改为靶舰击沉。
+        src: [japanese-warship-kaga]
+
+      - date: 1923-11-19
+        text:
+          zh: 与赤城同日变更舰种为航空母舰。
+        src: [japanese-warship-kaga]
+
+      - date: 1928-03-31
+        text:
+          zh: >-
+            竣工。三段式飞行甲板，无岛式舰桥——但有横贯全宽的大舰桥
+            压在中段甲板前端，那正是把中段甲板废掉的元凶。
+          en: >-
+            Completed with three flight decks and no island, though a
+            full-width bridge structure sat at the forward end of the middle
+            deck and effectively negated it.
+        src: [japanese-warship-kaga]
+
+  - id: rebuild
+    title:
+      zh: 1935 年大改装
+      en: The 1935 reconstruction
+    range: { from: 1934-07-01, to: 1935-06-24 }
+    events:
+      - date: 1935-06-25
+        text:
+          zh: >-
+            改装完成：三段甲板拆除、改单段全通甲板 248.6 m，
+            加装右舷岛式舰桥（与赤城的左舷相反）、加防雷鼓包。
+            动力提到 127,000 hp，但航速仍只有 28.34 节。
+            载机增至 90 架，成为四艘中途岛航母里载机最多的。
+          en: >-
+            Rebuilt with a single flush deck, a starboard island and bulges.
+            Her air group grew to about 90 aircraft.
+        src: [japanese-warship-kaga, navypedia-kaga]
+
+  - id: prewar
+    title:
+      zh: 战前与中日战争
+      en: Prewar and the China war
+    range: { from: 1935-06-25, to: 1941-11-25 }
+    events:
+      - date: 1937-08
+        text:
+          zh: 参加淞沪一带作战，舰载机支援陆上作战。
+        src: [combinedfleet-kaga]
+
+  - id: pearl
+    title:
+      zh: 珍珠港
+      en: Pearl Harbor
+    range: { from: 1941-11-26, to: 1941-12-07 }
+    events:
+      - date: 1941-12-07
+        text:
+          zh: >-
+            珍珠港攻击：第一波 8 架 B5N 鱼雷机 + 10 架 B5N（800kg 弹）+
+            9 架 A6M；第二波 18 架 D3A + 9 架 A6M。
+            损失飞机 5 架，另有多架轻伤。
+          en: >-
+            Kaga contributed 18 B5N, nine A6M in the first wave and
+            18 D3A in the second.
+        src: [combinedfleet-kaga]
+
+  - id: grounded
+    title:
+      zh: 缺席者：触礁与修理
+      en: The absentee
+    range: { from: 1942-02-09, to: 1942-05-26 }
+    lead:
+      zh: 从 2 月到 5 月，这艘船基本不在战场上。
+    events:
+      - date: 1942-02-09
+        text:
+          zh: >-
+            在帕劳触礁，舰底受损。
+          en: Ran aground on a reef at Palau and damaged her bottom.
+        src: [combinedfleet-kaga]
+
+      - date: 1942-03-22
+        text:
+          zh: 返佐世保进坞修船。
+        src: [combinedfleet-kaga]
+
+      - date: 1942-04-01
+        text:
+          zh: >-
+            舰载机参加了印度洋作战（Operation C），但加贺本舰在坞内。
+            因此错过了后来的杜立特追歼与珊瑚海海战。
+          en: >-
+            Her aircraft flew in the Indian Ocean raid, but the ship herself
+            was in dock and missed both the Doolittle pursuit and Coral Sea.
+        src: [combinedfleet-kaga]
+
+  - id: midway
+    title:
+      zh: 中途岛
+      en: Midway
+    range: { from: 1942-05-27, to: 1942-06-04 }
+    events:
+      - date: 1942-05-27
+        text:
+          zh: 从柱岛出击参加 MI 作战。
+        src: [combinedfleet-kaga]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            04:30（当地）第一波攻击中途岛：18 架 D3A + 9 架 A6M。
+        src: [combinedfleet-kaga]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            10:22（当地）被企业号 VB-6 与约克城 VB-3 的 SBD 俯冲轰炸命中多弹，
+            是当天第一个被击中的日军航母。命中集中在前部与中部，
+            引发航空燃油与弹药连锁爆炸，舰长冈田次作以下大批军官阵亡。
+          en: >-
+            Hit at about 1022 local by SBDs from Enterprise and Yorktown —
+            the first Japanese carrier struck that morning.
+        src: [combinedfleet-kaga]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            19:25（当地；日本时间 6/5 16:25）由驱逐舰萩风发射两枚鱼雷处分沉没。
+            日文维基另持「16:25 大爆炸致沉」说，两说并存。
+            战死 811 名——四艘里损失最惨重。
+          en: >-
+            Scuttled by two torpedoes from Hagikaze at 1925 local.
+            811 of her crew were lost.
+        src: [combinedfleet-kaga]

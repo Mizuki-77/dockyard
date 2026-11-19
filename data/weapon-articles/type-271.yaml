@@ -1,0 +1,128 @@
+# ============================================================================
+# 武器正文 —— Type 271 水面搜索雷达
+#
+# 这一型的材料最薄：本舰装舰只有 navypedia 一家，故数据层记 C。
+# 正文只写能追到的三件事：它是早期微波水面搜索雷达、
+# 本舰 1941-06 装、1941-12 起被 273 取代。
+# 性能一律不写。
+# ============================================================================
+weapon: type-271
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Type 271 是一型水面搜索雷达，属于英国最早的一批微波舰载雷达。
+      专题站的型号表把它评为「第一型微波雷达，非常成功，装了几百艘船」。
+      在英王乔治五世号上它是 1941 年 6 月中下旬加装的，
+      半年后就被 Type 273 取代。
+      关于本舰这一次装舰，目前只有 navypedia 一家记载，本站数据层因此按较低的置信度处理。
+    en: >-
+      The Type 271 was a surface-search radar and one of the Royal Navy's first
+      microwave sets. The specialist site's table calls it the first microwave radar,
+      very successful, and fitted to hundreds of ships. Aboard HMS King George V it was
+      added in mid-to-late June 1941 and replaced by the Type 273 six months later. Only
+      navypedia records this particular fitting, so the data layer carries it at a lower
+      confidence.
+
+  paragraphs:
+    - heading: 它在舰上只待了半年
+      text:
+        zh: >-
+          这是这一型在本舰上最值得注意的一点：1941 年 6 月装、1941 年 12 月就被
+          Type 273 换掉。也就是说它在本舰上更像是一次过渡性装备，
+          而不是长期配置。装舰之前，本舰 1941 年 5 月参加追击俾斯麦号时的
+          对海搜索依靠的是更早的设备，不含这一型。
+          需要说明的是：本舰 1941 年 6 月这一次装舰目前只有 navypedia 一家记载，
+          没有第二份材料可以交叉核对，本站照录并标明这一点。
+        en: >-
+          The most notable thing about the set aboard is how briefly it stayed: fitted in
+          June 1941 and replaced by the Type 273 in December 1941. It reads as a
+          transitional fitting rather than a long-term one. Before it went aboard, the
+          ship's surface search during the chase of Bismarck in May 1941 rested on
+          earlier equipment and did not include this set. Note also that the June 1941
+          fitting rests on navypedia alone, with no second source to cross-check against;
+          this article records it and says so.
+      src: [navypedia-kgv]
+
+    - heading: 型号表给它的评价很高
+      text:
+        zh: >-
+          专题站的英国雷达总表对 Type 271 的评语原文是：
+          「First microwave radar set. Very successful and fitted to hundreds of ships.」
+          同一行还记它首次装舰对象是花级轻护卫舰 Orchis 号（HMS Orchis）、
+          时间为 1941 年 5 月，用途写作水面预警、
+          战时用于小型舰只。
+          这里有个口径差别值得写出来：型号表把它归为「小型舰只」用的装备，
+          而本舰是一艘战列舰。也就是说这一型在本级上的出现是往上装，
+          不是它的原生用途；本级为什么装它、装在哪，现有材料未给。
+        en: >-
+          The specialist table's comment on the Type 271 reads: "First microwave radar
+          set. Very successful and fitted to hundreds of ships." The same row records its
+          first fitting as the Flower-class corvette HMS Orchis in May 1941, gives its
+          purpose as surface warning and its wartime use as small ships. One difference
+          in framing is worth stating: the table classes the set as small-ship
+          equipment, while this ship is a battleship. Its appearance in this class is
+          therefore an upward fitting rather than its native role; why the class took it
+          and where it was mounted are not given in the material.
+      src: [navweaps-radar-uk, navypedia-kgv]
+
+    - heading: 它和 273 的关系是前后任，不是并存
+      text:
+        zh: >-
+          本级的记录把 271 与 273 写成接力关系：1941 年 6 月加 271，
+          1941 年 12 月减 271、加 273。两型在型号表里也归在同一档
+          （水面预警、战时用于巡洋舰与战列舰），用途栏与评语栏都是同一套措辞。
+          本站因此把 273 单列一个实体，本页只写 271 这一头，
+          不把 273 的数据挪过来充内容。
+        en: >-
+          The class record treats the 271 and 273 as a relay: the 271 added in June
+          1941, and in December 1941 the 271 removed with the 273 added. The specialist
+          table files both in the same bracket, surface warning, used on cruisers and
+          battleships, with the same wording in the purpose and comment fields. This
+          article therefore keeps the 273 as its own entity and covers only the 271 on
+          this page, without borrowing the 273's data to fill it out.
+      src: [navypedia-kgv, navweaps-radar-uk]
+
+history:
+  - id: service
+    title: { zh: 装舰与换装, en: Fitting and replacement }
+    range: { from: 1941-06, to: 1941-12 }
+    lead:
+      zh: >-
+        半年：1941 年 6 月装上，同年 12 月被 273 换掉。
+      en: >-
+        Six months: fitted in June 1941 and replaced by the 273 that December.
+    events:
+      - date: 1941-05
+        text:
+          zh: >-
+            这一型首次装舰：花级轻护卫舰 Orchis 号（HMS Orchis）。
+            专题站记的时间是 1941 年 5 月，用途水面预警，
+            战时用于小型舰只。
+          en: >-
+            The set's first fitting: the Flower-class corvette HMS Orchis, dated May 1941
+            by the specialist site, purpose surface warning, wartime use on small ships.
+        src: [navweaps-radar-uk]
+      - date: 1941-06-15
+        text:
+          zh: >-
+            英王乔治五世号加装 Type 271。本舰此前的装备记录为
+            Type 279（对空警戒）加 Type 284（主炮测距）两型，
+            271 是第三型、也是第一型专用的水面搜索雷达。
+            本条只有 navypedia 一家记载。
+          en: >-
+            HMS King George V received the Type 271. Her equipment before this was
+            Type 279 for air warning plus Type 284 for main-armament ranging; the 271 was
+            the third set and the first dedicated surface-search radar aboard. This entry
+            rests on navypedia alone.
+        src: [navypedia-kgv]
+      - date: 1941-12
+        text:
+          zh: >-
+            减 Type 271，加 Type 273——本舰的水面搜索由 273 接手。
+            同一次记录里还加装了 5 部 Type 282 与 20 mm Oerlikon。
+          en: >-
+            Minus the Type 271, plus the Type 273: surface search passed to the 273. The
+            same entry also adds five Type 282 sets and 20 mm Oerlikon guns.
+        src: [navypedia-kgv]

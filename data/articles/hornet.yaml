@@ -1,0 +1,139 @@
+# 大黄蜂 正文
+# 2026-11-19 建。数据来源 work/raw/yorktown-hornet-tech.md。
+# **DANFS 路径是 hornet-vii（CV-8），不是 hornet-viii（那是 CV-12 埃塞克斯级）。**
+
+ship: hornet
+updated: 2026-11-19
+
+intro:
+  lead:
+    zh: >-
+      大黄蜂号在历史上留下了两件很不一样的事：1942 年 4 月，
+      16 架陆军的 B-25 从它的甲板上起飞去炸东京；六周后的中途岛，
+      它的航空队却没找到该打的日本航母。
+    en: >-
+      Hornet launched the Doolittle raid in April 1942, then at Midway her air
+      group largely failed to find the Japanese carriers.
+
+  paragraphs:
+    - heading: 它不是「战时赶工舰」
+      text:
+        zh: >-
+          一个常见说法是大黄蜂「按战时标准建造」——不准确。
+          它的原句是「minimally modified Yorktown design」（约克城设计的微改版），
+          1939 年 9 月开工，属于战前建造。
+          三艘同级舰的建造厂是同一个（Newport News），
+          差异只在船台号：约克城 359、企业 360、**大黄蜂 385**。
+        en: >-
+          Hornet was not a wartime emergency build; she was a minimally
+          modified Yorktown design laid down in September 1939.
+      src: [nhhc-danfs-hornet-vii]
+
+    - heading: 三舰里配置最不一样的一艘
+      text:
+        zh: >-
+          虽然同级，大黄蜂的装备跟两艘姊姊舰有三处硬差异：
+          一，5"/38 用的是 Mk 24 Mod 2 炮架（姊姊舰 Mk 21 Mod 16）；
+          二，射击指挥仪是 Mk 37（姊姊舰 Mk 33）；
+          三，**中途岛时它没有 CXAM 雷达，只有 SC**——
+          CXAM 是 1942 年 6 月 20 至 28 日才从加利福尼亚号拆来装上的，
+          也就是说中途岛那天它根本没用上大家通常以为美军航母都有的那部雷达。
+        en: >-
+          Three hard differences from her sisters: Mk 24 mounts, Mk 37
+          directors, and no CXAM at Midway — only SC.
+      src: [nhhc-hornet-midway-report, navweaps-5in38-mk24]
+
+    - heading: 中途岛那天它的航空队在哪
+      text:
+        zh: >-
+          6 月 4 日上午，大黄蜂的航空队出动了，但攻击航线偏向南面，
+          错过了第一轮攻击日军航母的机会。
+          它的鱼雷机队（VT-8，15 架 TBD）在没有战斗机掩护的情况下扑向日军航母，
+          全数被击落——15 架无一生还，只有 George Gay 一人被救起。
+          本站不裁决「这是指挥失误还是战场迷雾」，
+          只把这件事如实记在它的时间线上。
+        en: >-
+          Her air group flew off on a course that missed the Japanese carriers.
+          VT-8's fifteen TBDs attacked without fighter cover and were all shot
+          down; only one man survived.
+      src: [nhhc-hornet-midway-report]
+
+history:
+  - id: build
+    title:
+      zh: 建造
+      en: Construction
+    range: { from: 1939-09-25, to: 1941-10-20 }
+    events:
+      - date: 1939-09-25
+        text:
+          zh: 在 Newport News 铺龙骨。船台号 385。
+        src: [nhhc-danfs-hornet-vii, navypedia-yorktown-class]
+
+      - date: 1940-12-14
+        text:
+          zh: 下水。
+        src: [nhhc-danfs-hornet-vii]
+
+      - date: 1941-10-20
+        text:
+          zh: 服役。
+        src: [nhhc-danfs-hornet-vii]
+
+  - id: doolittle
+    title:
+      zh: 杜立特空袭
+      en: The Doolittle raid
+    range: { from: 1942-04-02, to: 1942-04-25 }
+    events:
+      - date: 1942-04-18
+        text:
+          zh: >-
+            16 架 B-25 米切尔从大黄蜂甲板起飞空袭东京。
+            这是 B-25 第一次、也是唯一一次从航母起飞执行作战任务。
+            甲板上塞满了陆军的双发轰炸机，本舰自己的舰载机全部留在珍珠港。
+          en: >-
+            Sixteen Army B-25s launched from her deck to bomb Tokyo — the only
+            time twin-engine bombers flew a combat mission from a carrier.
+        src: [nhhc-danfs-hornet-vii]
+
+  - id: midway
+    title:
+      zh: 中途岛
+      en: Midway
+    range: { from: 1942-05-28, to: 1942-06-13 }
+    events:
+      - date: 1942-06-04
+        text:
+          zh: >-
+            上午航空队出动，攻击航线偏向南面，错过第一轮攻击机会。
+            鱼雷机队 VT-8 的 15 架 TBD 在无战斗机掩护下攻击，全数被击落，
+            仅 George Gay 一人被救。
+        src: [nhhc-hornet-midway-report]
+
+      - date: 1942-06-13
+        text:
+          zh: 返珍珠港。本舰全程无损伤。
+        src: [nhhc-danfs-hornet-vii]
+
+  - id: santa-cruz
+    title:
+      zh: 圣克鲁斯
+      en: Santa Cruz
+    range: { from: 1942-10-26, to: 1942-10-27 }
+    events:
+      - date: 1942-10-26
+        text:
+          zh: >-
+            圣克鲁斯海战：被日军舰载机多次命中，一门 5"/38 炮位被炸、
+            舰体倾斜、失去动力。
+        src: [nhhc-danfs-hornet-vii]
+
+      - date: 1942-10-27
+        text:
+          zh: >-
+            弃舰后由己方驱逐舰（Mustin、Anderson 等）雷击处分沉没。
+            沉没坐标各来源差 9 个经度，雷击时刻两口径差 2 小时 03 分。
+          en: >-
+            Scuttled by US destroyers after being abandoned.
+        src: [nhhc-danfs-hornet-vii]

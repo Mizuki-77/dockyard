@@ -1,0 +1,145 @@
+# ============================================================================
+# 武器正文 —— Type 284 主炮测距雷达
+#
+# 两个必须坚持的点：
+#  1) 胡德号装舰完成日期两说并列（技术页 01-16～03-15 vs 年表 01-16～03-17）；
+#  2) 装 284 要拆掉前上桅，因为上桅挡住它的天线转动。
+# 性能数字（波长/功率/射程）不写。
+# ============================================================================
+weapon: type-284
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Type 284 是英国大型舰只的主炮测距雷达，1940 年 6 月进入服役，
+      首次装舰对象是纳尔逊号（HMS Nelson），专题站给它的评语是
+      「Very successful」。在胡德号上它是 1941 年初 Rosyth 改装中加装的两型雷达之一，
+      与 Type 279M 对空预警雷达同批。
+      它在本舰上的役期很短：装上是 1941 年 3 月，5 月 24 日舰就沉了。
+    en: >-
+      The Type 284 was the Royal Navy's main-armament ranging radar for large ships,
+      operational from June 1940, first fitted to HMS Nelson, and judged "Very
+      successful" by the specialist site. Aboard HMS Hood it was one of the two radars
+      added in the Rosyth refit of early 1941, in the same batch as the Type 279M
+      air-warning set. Its service life in this ship was very short: fitted in March
+      1941, and the ship was lost on 24 May.
+
+  paragraphs:
+    - heading: 为了装它，前上桅被拆掉了
+      text:
+        zh: >-
+          这是这一型在本舰上留下的最具体的一笔记录：1941 年初的改装中，
+          前上桅被拆除，原因是它挡住 Type 284 天线、使其无法正常转动；
+          上桅的横桁改到前海星平台的后部。
+          换句话说，这不是「加一台设备」，而是为了让这台设备能转，
+          改动了舰上的桅杆结构。这一条可以从两处年表同时追到，
+          是本站对这次改装最有把握的部分。
+        en: >-
+          This is the most concrete trace the set left aboard: in the early 1941 refit
+          the forward topmast was removed because it blocked the Type 284 aerials from
+          rotating properly, and the topmast's yard was re-sited to the rear of the
+          forward starfish platform. In other words this was not simply adding a piece of
+          equipment but altering the ship's mast structure so that the equipment could
+          train. The point can be traced in two separate chronology sources and is the
+          part of this refit this article is most confident about.
+      src: [hmshood-timeline, hmshood-association]
+
+    - heading: 装完的日期，两说并列
+      text:
+        zh: >-
+          这里必须保留分歧。协会的技术页记这次改装期为
+          「16 January - 15 March 1941」；而生涯年表记的是
+          「16 January – 17 March」，相差两天。
+          两处都以 1 月 16 日开始，只是结束日不同。
+          本站数据层取较晚的 3 月 17 日作为「已装成」的起点，
+          理由是不把尚未装完的时段算作已装；
+          但这只是取值的取舍，不是对哪一个日期更正确的判断，两种说法都留在本页。
+        en: >-
+          The disagreement has to stand. The association's technical page gives the
+          refit as 16 January to 15 March 1941, while the career chronology gives
+          16 January to 17 March - a two-day difference, both starting on 16 January and
+          differing only in the end date. The data layer here takes the later date,
+          17 March, as the point from which the set counts as fitted, on the reasoning
+          that a period still in refit should not be counted as fitted. That is a choice
+          of value, not a judgement that one date is more correct, and both readings are
+          kept on this page.
+      src: [hmshood-association, hmshood-timeline]
+
+    - heading: 它本来还该有同伴，但没装成
+      text:
+        zh: >-
+          1941 年 3 月发布的 C.A.F.O. 509 曾计划给本舰装 3 部 Type 282 与 3 部 Type 285。
+          协会的判断是：Type 282 的指挥仪确定没有装；
+          至于 282 的机柜本身装没装，材料说不清；
+          而 Type 285 则「没有任何迹象表明装过它的任何部分」。
+          也就是说本舰 1941 年 5 月时的雷达配置只有 284 与 279M 两型，
+          这一点是明确的。本站不把计划当成实施。
+        en: >-
+          C.A.F.O. 509, issued in March 1941, planned three Type 282 and three Type 285
+          sets for this ship. The association's judgement is that her Type 282 directors
+          were certainly not fitted, that it is unclear whether the 282 sets themselves
+          went aboard, and that there are no indications that any part of her Type 285
+          was installed. Her radar outfit in May 1941 was therefore just the 284 and the
+          279M, and that much is clear. This article does not treat a plan as an
+          installation.
+      src: [hmshood-association]
+
+history:
+  - id: fitting
+    title: { zh: 1941 年 Rosyth 改装, en: The 1941 Rosyth refit }
+    range: { from: 1941-01, to: 1941-03 }
+    lead:
+      zh: >-
+        这次改装给了本舰两型雷达，代价是一根桅杆和两个月的坞期。
+      en: >-
+        The refit gave the ship two radars at the cost of a mast and two months in dock.
+    events:
+      - date: 1941-01-16
+        text:
+          zh: >-
+            本舰在 Rosyth 进坞开始改装（1 月 14 至 15 日先行卸弹药）。
+            两处年表都以这一天为改装起点。
+          en: >-
+            The ship was taken in hand at Rosyth for refit, having been de-ammunitioned
+            on 14 and 15 January. Both chronologies start the refit on this date.
+        src: [hmshood-timeline, hmshood-association]
+      - date: 1941-03-15
+        text:
+          zh: >-
+            协会技术页记的改装结束日。另一处年表记 3 月 17 日，
+            两说并列，不裁决。
+          en: >-
+            The refit end date given by the association's technical page. A separate
+            chronology gives 17 March; both are recorded and neither is adjudicated.
+        src: [hmshood-association]
+      - date: 1941-03-17
+        text:
+          zh: >-
+            生涯年表记的改装结束日。本站数据层取这一天作为
+            「Type 284 已装成」的起点。
+            改装内容含加装 Type 284 与 Type 279M、拆除前上桅。
+          en: >-
+            The refit end date given by the career chronology, and the date the data
+            layer uses as the point from which the Type 284 counts as fitted. The work
+            included adding the Type 284 and Type 279M and removing the forward topmast.
+        src: [hmshood-timeline]
+
+  - id: loss
+    title: { zh: 随舰损失, en: Lost with the ship }
+    range: { from: 1941-05, to: 1941-05 }
+    lead:
+      zh: >-
+        它在舰上只工作了两个月零一周。
+      en: >-
+        It served aboard for two months and a week.
+    events:
+      - date: 1941-05-24
+        text:
+          zh: >-
+            胡德号在丹麦海峡被击沉。这是本舰 Type 284 役期的终点——
+            从 3 月 17 日算起，它在本舰上只存在了两个多月。
+          en: >-
+            Hood was sunk in the Denmark Strait. That ends the Type 284's service in this
+            ship: counted from 17 March, it existed aboard for just over two months.
+        src: [hmshood-association, hooddenmark1]

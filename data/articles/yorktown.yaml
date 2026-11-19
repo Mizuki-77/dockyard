@@ -1,0 +1,159 @@
+# 约克城 正文
+# 2026-11-19 建。数据来源 work/raw/yorktown-hornet-tech.md。
+
+ship: yorktown
+updated: 2026-11-19
+
+intro:
+  lead:
+    zh: >-
+      约克城号是中途岛战役里最容易被记错的一艘船。
+      很多人以为它 6 月 4 日就被炸沉了——实际上它又被拖了两天，
+      最后是 6 月 7 日被一艘日本潜艇补了两条鱼雷才沉下去的。
+    en: >-
+      Yorktown is the most commonly mis-dated ship of Midway. She was hit on
+      4 June, abandoned on the 5th, taken under tow on the 6th, and finally
+      torpedoed by I-168 on the 7th.
+
+  paragraphs:
+    - heading: 那一周的约克城
+      text:
+        zh: >-
+          5 月 8 日珊瑚海受伤——一枚 250kg 炸弹穿透飞行甲板在机库内爆炸，
+          另一枚近失在舰体上炸开裂缝。日方以为它沉了，它挣扎回了珍珠港。
+          5 月 27 日抵达，5 月 28 日进 1 号干船坞，**5 月 30 日就出港了**。
+          修理工 1400 人昼夜赶工、檀香山轮流停电、用整块钢板直接焊盖裂缝。
+          注意：DANFS 只写「around the clock」，**并没有给「72 小时」这个数字**；
+          Wikipedia 记 48 小时；而最初的估价是 90 天。
+          更要紧的是**有一项没修**：超热器锅炉没动，最高航速受限——
+          这直接决定了它中途岛时能不能跟上第 16 特混舰队。
+        en: >-
+          Damaged at Coral Sea, patched at Pearl Harbor in three days, and back
+          at sea by 30 May. Crucially, her superheater boilers were never
+          repaired, capping her speed.
+      src: [nhhc-danfs-yorktown, nhhc-yorktown-coral-sea-report]
+
+    - heading: 它的炮少了一门
+      text:
+        zh: >-
+          中途岛那天约克城的 5"/38 实际只有 7 座能用——
+          #2 号炮在战斗中哑火、弹丸卡在膛内退出战斗。
+          另一点：这三艘同级舰的炮架型号并不一样。
+          约克城与企业号是 Mk 21 Mod 16，**大黄蜂是 Mk 24 Mod 2**。
+          它们的射击指挥仪也不同（Mk 33 对 Mk 37）。
+          同级舰不等于同配置，这是本站在三舰上都单列这些字段的原因。
+        en: >-
+          Only seven of her eight 5"/38 mounts were operable at Midway.
+          Her mount type also differed from Hornet's.
+      src: [navweaps-5in38-mk24]
+
+history:
+  - id: build
+    title:
+      zh: 建造
+      en: Construction
+    range: { from: 1934-05-21, to: 1937-09-30 }
+    events:
+      - date: 1934-05-21
+        text:
+          zh: 在弗吉尼亚州 Newport News 铺龙骨。船台号 359。
+        src: [nhhc-danfs-yorktown, navypedia-yorktown-class]
+
+      - date: 1936-04-04
+        text:
+          zh: 下水。
+        src: [nhhc-danfs-yorktown]
+
+      - date: 1937-09-30
+        text:
+          zh: 服役。
+        src: [nhhc-danfs-yorktown]
+
+  - id: coral
+    title:
+      zh: 珊瑚海
+      en: Coral Sea
+    range: { from: 1942-05-04, to: 1942-05-26 }
+    events:
+      - date: 1942-05-08
+        text:
+          zh: >-
+            珊瑚海海战。被日军舰载机重创：一枚 250kg 炸弹穿透飞行甲板、
+            在机库内爆炸；另一枚近失在舰体上炸开裂缝。
+            损伤严重到日方以为它已沉没。
+          en: >-
+            Badly damaged by Japanese carrier aircraft; the Japanese believed
+            she had been sunk.
+        src: [nhhc-yorktown-coral-sea-report]
+
+      - date: 1942-05-27
+        text:
+          zh: 挣扎回珍珠港。
+        src: [nhhc-danfs-yorktown]
+
+  - id: repair
+    title:
+      zh: 抢修
+      en: The three-day repair
+    range: { from: 1942-05-27, to: 1942-05-30 }
+    lead:
+      zh: 原本估价 90 天，实际给了三天。
+    events:
+      - date: 1942-05-28
+        text:
+          zh: >-
+            进 1 号干船坞。1400 名修理工昼夜赶工，檀香山轮流停电保供电焊，
+            用整块钢板直接焊盖住舰体裂缝。
+          en: >-
+            Entered Drydock No. 1. Some 1,400 workmen laboured around the clock,
+            welding steel plate directly over the hull cracks.
+        src: [nhhc-danfs-yorktown]
+
+      - date: 1942-05-30
+        text:
+          zh: >-
+            出港赶赴中途岛。**超热器锅炉未修，最高航速受限。**
+        src: [nhhc-danfs-yorktown]
+
+  - id: midway
+    title:
+      zh: 中途岛
+      en: Midway
+    range: { from: 1942-06-04, to: 1942-06-07 }
+    events:
+      - date: 1942-06-04
+        text:
+          zh: >-
+            上午 VB-3（Leslie 少校）的 SBD 攻击苍龙，命中 2-3 弹。
+            **注意：苍龙是约克城的 VB-3 打沉的，不是麦克拉斯基的企业号机队**——
+            麦克拉斯基只打了加贺与赤城。这是流传很广的一处混淆。
+          en: >-
+            VB-3 from Yorktown fatally damaged Soryu; McClusky's Enterprise
+            group hit Kaga and Akagi.
+        src: [oni-midway-combat-narrative]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            下午被飞龙两波攻击重创：第一波 3 弹（日方记 6 弹）、
+            第二波 2 条鱼雷命中，炸坏 3 座锅炉、全舰断电、左倾 23°。
+        src: [combinedfleet-hiryu]
+
+      - date: 1942-06-05
+        text:
+          zh: 弃舰。但舰体仍在漂浮。
+        src: [nhhc-danfs-yorktown]
+
+      - date: 1942-06-06
+        text:
+          zh: 拖船尝试拖带，美军以为能救回来。
+        src: [nhhc-danfs-yorktown]
+
+      - date: 1942-06-07
+        text:
+          zh: >-
+            日本潜艇伊-168 突破护航、命中 2 条鱼雷，约克城沉没
+            （一说 0458）。这是中途岛战役美军损失的唯一一艘航母。
+          en: >-
+            Torpedoed and sunk by I-168 — the only US carrier lost at Midway.
+        src: [combinedfleet-i168]

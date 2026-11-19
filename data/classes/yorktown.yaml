@@ -1,0 +1,96 @@
+# ============================================================================
+# 约克城级航空母舰（Yorktown class）—— 美军二战前建成的条约型航母
+#
+# 2026-11-19 建：为中途岛入库。本级三艘：约克城 CV-5、企业 CV-6、大黄蜂 CV-8。
+# 三艘同在 1942 年 6 月 4 日的中途岛海战参战——这是本站第一次出现
+# 「同一舰级三艘同时参加同一场战斗」的情况，也是路径 A（继承）真正兑现的一次。
+#
+# 设计定位：约克城级是美军在条约限制下摸索出的「够用的航母」——
+# 无装甲飞行甲板、单层大机库、携带尽可能多的飞机。这与英国装甲航母
+# （光辉级：装甲甲板、双层窄机库、载机少）是两种完全不同哲学的答案。
+#
+# 数据状态：2026-11-19 首批入库，技术数据待 enterprise-tech 调研回来填充，
+# 当前只放已确认的结构性事实。不要凭印象填数字。
+# ============================================================================
+
+id: yorktown
+name:
+  zh: 约克城级
+  en: Yorktown class
+class_of:
+  - yorktown
+  - enterprise
+  - hornet
+
+# ---------------------------------------------------------------------------
+# 文件级开放时间窗声明：本级绝大多数参数的有效期从各自建成起，
+# 直到该舰损失或退役。逐条写 note 纯属噪音。
+open_ended_note: >-
+  本级各舰的公共技术参数（设计主尺度、动力、防护方案）在服役期内基本不变，
+  故多数 valid.to 留空；逐舰的改装差异（雷达、防空炮、排水量增长）
+  写在各自的单舰文件里，不在本级重复。
+
+facts:
+  # ============================================================
+  # 身份
+  # ============================================================
+  - field: identity.name_original
+    value: Yorktown class
+    src: [navypedia-yorktown]
+    valid: { from: 1934 }
+    confidence: C
+
+  - field: identity.name_zh
+    value: 约克城级
+    src: [navypedia-yorktown]
+    valid: { from: 1934 }
+    confidence: C
+
+  - field: identity.name_en
+    value: Yorktown class
+    src: [navypedia-yorktown]
+    valid: { from: 1934 }
+    confidence: C
+
+  - field: identity.ship_type
+    value: aircraft_carrier
+    src: [navypedia-yorktown]
+    valid: { from: 1934 }
+    confidence: C
+
+  - field: identity.nation
+    value: united_states
+    src: [navypedia-yorktown]
+    valid: { from: 1934 }
+    confidence: C
+
+  - field: identity.operator
+    value: United States Navy
+    src: [navypedia-yorktown]
+    valid: { from: 1934 }
+    confidence: C
+
+  - field: identity.era
+    value: ww2
+    src: [navypedia-yorktown]
+    valid: { from: 1937 }
+    confidence: C
+
+  - field: identity.namesake
+    value: 约克城号（CV-5）为纪念美国独立战争中 1781 年约克城围城战；企业号（CV-6）为传承同名舰；大黄蜂号（CV-8）同为传承舰名。
+    src: [navypedia-yorktown]
+    valid: { from: 1934 }
+    confidence: C
+    note: 三舰命名各有来源，此条为概览；逐舰的命名细节写在各单舰文件里。
+
+  # ============================================================
+  # 设计背景
+  # ============================================================
+  - field: identity.building_program
+    value: >-
+      受 1922 年华盛顿海军条约与 1930 年伦敦海军条约的总吨位限制设计。
+      约克城级是美军在 1930 年代唯一新建的航母级，三艘分别在
+      1934（约克城）、1934（企业）、1939（大黄蜂）年开工。
+    src: [navypedia-yorktown]
+    valid: { from: 1934 }
+    confidence: C

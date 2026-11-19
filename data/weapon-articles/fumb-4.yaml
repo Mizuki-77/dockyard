@@ -1,0 +1,135 @@
+# ============================================================================
+# 武器正文 —— FuMB 4 "Sumatra" 被动雷达侦测仪
+#
+# 最重要的一条：它不是雷达。FuMB 系列只收不发，用途是侦测敌方雷达信号。
+# 本站分类树没有电子战栏，所以 category 记 fire_control，
+# 但正文必须把这件事说清楚，否则会被读成火控雷达。
+# ============================================================================
+weapon: fumb-4
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      FuMB 4 是德国海军的被动雷达侦测设备，代号 Sumatra，属 FuMB 系列。
+      必须先把它的性质讲清楚：它不发射任何东西，只接收，
+      用途是发现敌方雷达正在照射本舰、并判断信号从哪个方向来。
+      所以它不是雷达。本站的分类树里没有电子战这一栏，
+      数据层把它的 category 记成 fire_control，
+      这只表示它服务于火控与预警流程，不表示它是一台火控雷达。
+    en: >-
+      The FuMB 4 was a German passive radar-detection device, codenamed Sumatra, of the
+      FuMB series. Its nature has to be stated first: it transmits nothing and only
+      receives, and its purpose is to detect that an enemy radar is illuminating the
+      ship and to judge from which direction the signal comes. It is therefore not a
+      radar. This site's classification tree has no electronic-warfare branch, so the
+      data layer records its category as fire_control; that means only that it serves
+      the fire-control and warning chain, not that it is a fire-control radar.
+
+  paragraphs:
+    - heading: 「只收不发」这件事决定了它的全部用法
+      text:
+        zh: >-
+          FuMB 是 Funkmess-Beobachtung 的缩写，字面就是「无线电测量—观察」，
+          与 FuMO（Funkmess-Ortung，无线电测量—定位）相对。
+          专题站的德国雷达专文在正文里点明：FuMB 系列属于被动设备，
+          用途是「passive detection (of enemy radar transmission)」；
+          同一篇的型号表里，FuMB 7、FuMB 3、FuMB 4 三行的频率栏都写作「-」、
+          射程栏写作「passive」、精度栏写作「?」。
+          表格本身就是最好的说明：一台不发射的设备没有频率与射程可填。
+          对舰上的人来说，它的价值在于「先知道对方在看我」，
+          而不是「我先看到对方」。
+        en: >-
+          FuMB stands for Funkmess-Beobachtung, radio-measurement observation, as against
+          FuMO, Funkmess-Ortung, radio-measurement location. The specialist article on
+          German radar states that the FuMB series are passive sets for the passive
+          detection of enemy radar transmission, and in its equipment table the frequency
+          column for the FuMB 7, FuMB 3 and FuMB 4 rows reads "-", the range column reads
+          "passive" and the accuracy column "?". The table is the clearest statement of
+          all: a device that does not transmit has no frequency or range to fill in. For
+          the men aboard, its value lay in learning first that someone was looking at
+          them, not in seeing the other ship first.
+      src: [navweaps-radar]
+
+    - heading: 德国人为什么越装越多被动设备
+      text:
+        zh: >-
+          专题站的专文给了这个问题的直接答案：为了对抗盟军更先进的雷达技术，
+          德国水面舰只装了越来越多的被动设备，多到这个题目本身
+          已经值得另写一篇文章。同一篇还给了背景：
+          德国海军担心雷达发射会给敌人提供测向定位的机会，
+          因此不鼓励广泛使用主动雷达。
+          把这两句连起来看，被动设备在德国海军里的地位就清楚了——
+          它不是主动雷达的补充小玩意，而是在「不敢多开机」的前提下
+          唯一能用的探测手段。
+        en: >-
+          The specialist article gives a direct answer to why: to counter superior Allied
+          radar technology, German surface vessels were fitted with more and more passive
+          sets, so many that the subject earned an article of its own. The same text gives
+          the background: the German Navy worried that radar transmissions would give an
+          enemy a fix on the ship's position, and therefore discouraged extensive use of
+          active radar. Put the two together and the standing of passive equipment in the
+          German navy is clear - not a small adjunct to active radar but the only means of
+          detection left once transmitting was something to be avoided.
+      src: [navweaps-radar]
+
+    - heading: 它在提尔皮茨号上的位置：与 FuMB 7 同批，后来还有 Palau
+      text:
+        zh: >-
+          本舰的被动设备记录是分批的：1941 年 9 月与 FuMB 7 同批装上 FuMB 4；
+          1944 年 6 月又追加 FuMB 6（Palau）一说。
+          专题站描述本舰 1942 年 1 月前桅雷达室的布置时提到，
+          雷达室两侧与后方装的是 Sumatra 天线——
+          也就是说这一型的偶极子不是装在桅顶，而是围绕雷达室布置的。
+          这一层比「装了某型设备」具体，本站照录。
+        en: >-
+          The ship's passive equipment record comes in batches: the FuMB 4 went aboard in
+          September 1941 in the same batch as the FuMB 7, with a FuMB 6 (Palau) addition
+          recorded for June 1944. Describing the layout of the foretop radar office in
+          January 1942, the specialist article notes that the Sumatra antennas were
+          mounted on the sides and rear of that office - so this set's dipoles were
+          arranged around the office rather than at the masthead. That is more specific
+          than "a set was fitted", and it is recorded here.
+      src: [navweaps-radar, kbismarck-tirpitz]
+
+history:
+  - id: service
+    title: { zh: 装舰记录, en: Fitting record }
+    range: { from: 1941-09, to: 1944-06 }
+    lead:
+      zh: >-
+        本舰的被动设备是分批加的：1941 年 9 月一批、1944 年 6 月又一批。
+      en: >-
+        The ship's passive equipment came in batches: one in September 1941, another in
+        June 1944.
+    events:
+      - date: 1941-09
+        text:
+          zh: >-
+            FuMB 4 与 FuMB 7 同批装上本舰。这一次装舰的细节目前只有
+            navweaps 一家记载。
+          en: >-
+            The FuMB 4 went aboard in the same batch as the FuMB 7. The details of this
+            fitting rest on navweaps alone.
+        src: [navweaps-radar]
+      - date: 1942-01
+        text:
+          zh: >-
+            前桅测距仪塔顶加建的雷达室两侧与后方装 Sumatra 天线。
+            同一位置的上方小框装的是 Timor（FuMB 7），雷达室正面是 FuMO 27 的大天线。
+          en: >-
+            The radar office added atop the foretop rangefinder tower carried Sumatra
+            antennas on its sides and rear. The small frame above it held the Timor
+            (FuMB 7), and the face of the office carried the large FuMO 27 antenna.
+        src: [navweaps-radar]
+      - date: 1944-06
+        text:
+          zh: >-
+            本舰被动设备追加 FuMB 6（Palau）一说。
+            本站照录为「一说」：这一条只见于被动设备清单的汇总，
+            没有独立的装舰细节。
+          en: >-
+            A FuMB 6 (Palau) addition is recorded for the ship's passive equipment. It is
+            written here as one reading only: the entry appears in a summary of the
+            passive fit with no separate fitting detail.
+        src: [navypedia-bismarck, navweaps-radar]

@@ -1,0 +1,166 @@
+# 苍龙 正文
+# 2026-11-19 建。数据来源 work/raw/soryu-hiryu-tech.md。
+
+ship: soryu
+updated: 2026-11-19
+
+intro:
+  lead:
+    zh: >-
+      苍龙是日本第一艘按「正规航母」从头设计的中型航母，
+      也是中途岛四艘日军航母里最小、最便宜的一艘。
+      它的右舷舰岛小得跟驱逐舰差不多——这个「省」字贯穿了它的整条生命。
+    en: >-
+      Sōryū was Japan's first medium carrier designed as such from the keel up.
+      Her starboard island was barely the size of a destroyer's bridge.
+
+  paragraphs:
+    - heading: 一个「省」字贯穿全船
+      text:
+        zh: >-
+          苍龙的舷侧装甲是 41 mm 的 Ducol 钢，只护住机舱和弹药库；
+          飞行甲板和机库甲板完全不设防。
+          舰岛小到「与驱逐舰舰桥同规模」，因为它建在向右舷外伸的平台上，
+          干脆不占飞行甲板宽度。
+          甚至舰载机的搭载数量都要靠甲板系留来补。
+          这些不是设计者的美学选择，是条约吨位限制下的一连串取舍。
+        en: >-
+          Minimal armour, a destroyer-sized island on an outrigged starboard
+          platform, and deck parking to make up the aircraft count — all
+          consequences of treaty tonnage limits.
+      src: [navypedia-soryu, japanese-warship-soryu]
+
+    - heading: 与飞龙不是简单的同级
+      text:
+        zh: >-
+          两舰在同一个造舰计划下起案，最初确实按同型舰设计，
+          但飞龙建造期间条约废除、设计自由度放开，加上第四舰队事件后
+          放弃焊接船体、为提高凌波性加高干舷——结果飞龙用了另一份图纸
+          （基本计划番号 G9 对 G10）。
+          日文资料用「準同型艦 / near sister」，英文资料说飞龙
+          「is often considered to be a separate class」。本站按两型处理。
+        en: >-
+          Planned as sisters, built to different drawings: G9 for Sōryū,
+          G10 for Hiryū. Usually treated as separate classes.
+      src: [japanese-warship-soryu]
+
+history:
+  - id: build
+    title:
+      zh: 建造
+      en: Construction
+    range: { from: 1934-11-20, to: 1937-12-29 }
+    events:
+      - date: 1934-11-20
+        text:
+          zh: 在吴海军工厂开工。预算 40,200,000 円。
+        src: [japanese-warship-soryu]
+
+      - date: 1935-12-23
+        text:
+          zh: >-
+            下水。书面上记的是 1935-01-23，实际是 12-23——
+            原文「書類上では1935年1月23日に進水したことになっているが、
+            実際には12月23日に進水した」。
+        src: [japanese-warship-soryu]
+
+      - date: 1937-12-29
+        text:
+          zh: 竣工，编入第二航空战队。
+        src: [japanese-warship-soryu]
+
+  - id: prewar
+    title:
+      zh: 战前
+      en: Prewar
+    range: { from: 1938-01-01, to: 1941-11-25 }
+    events:
+      - date: 1938
+        text:
+          zh: 参加广东攻略作战（中日战争）。
+        src: [japanese-warship-soryu]
+
+      - date: 1939-11-15
+        text:
+          zh: >-
+            飞龙编入，第二航空战队成为「苍龙 + 飞龙 + 第 11 驱逐队」的编制。
+        src: [japanese-warship-soryu]
+
+      - date: 1941-03
+        text:
+          zh: >-
+            南下途中与驱逐舰夕月碰撞，舰首撞入对方左舷中部，回佐世保入坞。
+        src: [japanese-warship-soryu]
+
+  - id: war
+    title:
+      zh: 珍珠港至印度洋
+      en: From Pearl Harbor to the Indian Ocean
+    range: { from: 1941-11-26, to: 1942-05-26 }
+    events:
+      - date: 1941-12-07
+        text:
+          zh: >-
+            珍珠港：第一波 8 架 B5N 鱼雷机 + 10 架 B5N（800kg 弹）+ 8 架零战；
+            第二波 18 架九九舰爆 + 9 架零战。损失 5 架，全在第二波。
+        src: [combinedfleet-soryu]
+
+      - date: 1942-02-19
+        text:
+          zh: 达尔文空袭：出零战 9、舰爆 18、舰攻 18，1 架舰爆迫降。
+        src: [japanese-warship-soryu]
+
+      - date: 1942-04-05
+        text:
+          zh: >-
+            印度洋作战。当日参与击沉英国重巡康沃尔号与多塞特郡号；
+            4 月 9 日参与击沉竞技神号。
+        src: [combinedfleet-soryu]
+
+  - id: midway
+    title:
+      zh: 中途岛
+      en: Midway
+    range: { from: 1942-05-27, to: 1942-06-04 }
+    events:
+      - date: 1942-05-27
+        text:
+          zh: 06:00 从柱岛出击参加 MI 作战。
+        src: [combinedfleet-soryu]
+
+      - date: 1942-06-04
+        text:
+          zh: 04:30（当地）第一波攻击中途岛：18 架九九舰爆 + 9 架零战。
+        src: [combinedfleet-soryu]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            10:25-10:26（当地）被约克城 VB-3 的 13 架 SBD 攻击，命中 2 弹
+            （一在前升降机、一在第二升降机后方），引发大火与诱爆。
+            10:29 第三发 1,000 磅炸弹命中舷侧烟囱处、穿透至下层机库爆炸，
+            炸断锅炉舱蒸汽管。10:40 失速停船、开始左倾。
+        src: [combinedfleet-soryu]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            10:45 柳本柳作舰长下令非必要人员离舰，本人拒绝离舰、
+            留在右舷信号塔上。
+            19:12（当地）驱逐舰磯風发射 3 条鱼雷，3 分钟后舰尾下沉、翻覆。
+            战死 718 名——柳本舰长以下准士官以上 35 人、下士官兵 683 人。
+          en: >-
+            Captain Yanagimoto refused to leave and went down with the ship.
+            718 men were lost.
+        src: [combinedfleet-soryu]
+
+  - id: aftermath
+    title:
+      zh: 之后
+      en: Aftermath
+    range: { from: 1942-08-10 }
+    events:
+      - date: 1942-08-10
+        text:
+          zh: 除籍。
+        src: [combinedfleet-soryu]

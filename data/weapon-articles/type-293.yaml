@@ -1,0 +1,113 @@
+# ============================================================================
+# 武器正文 —— Type 293 目标指示雷达
+#
+# 材料很薄：只有装舰清单，连型号表都只有一行。
+# 有一件事必须写清楚：本舰是否由 271/273 之外的型号替代，材料未明，不推断。
+# ============================================================================
+weapon: type-293
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Type 293 是一型目标指示雷达：它的任务是把目标找出来、交给火控或战斗机引导，
+      而不是自己解算火炮射击诸元。
+      它在英王乔治五世号上是 1944 年改装中加装的，与 Type 277 测高雷达同批。
+      同一批里减掉的是 type 273 水面搜索雷达——
+      也就是说这一批之后，本舰的「找目标」这一职能由 293 接过。
+    en: >-
+      The Type 293 was a target-indication radar: it found targets and passed them to
+      fire control or to fighter direction rather than computing gun solutions itself.
+      It was added to HMS King George V in the 1944 refit, in the same batch as the
+      Type 277 height-finder. The same batch removed the type 273 surface-search radar,
+      so after that batch the "find the target" function aboard passed to the 293.
+
+  paragraphs:
+    - heading: 它和 273 是不是替代关系，材料只到这里
+      text:
+        zh: >-
+          这是本页必须说清的限度。装舰清单显示 1944 年 7 月「减 type 273、加 type 293」，
+          从时间与位置上看的确实是一进一出；但现有材料没有一句话明说
+          「293 取代 273 的水面搜索职能」。
+          本站因此只陈述两条清单事实，不替来源下这个结论。
+          换句话说：页面里可以说「同一批里 273 减、293 加」，
+          但不能说「293 就是 273 的后继型号」——后者没有依据。
+        en: >-
+          This is the limit that has to be stated. The fitting list shows the type 273
+          coming off and the type 293 going on in July 1944, which in time and in slot
+          looks like one out and one in; but no sentence in the material available says
+          that the 293 took over the 273's surface-search function. This article
+          therefore states the two list facts and does not draw that conclusion on the
+          sources' behalf. Put plainly: the page may say that in one batch the 273 left
+          and the 293 arrived, but it may not say that the 293 is the 273's successor
+          mark - there is no basis for that.
+      src: [navypedia-kgv]
+
+    - heading: 它在本级上的位置是一整套更新的一格
+      text:
+        zh: >-
+          1944 年 7 月那次改装同时动了六型雷达：减掉 type 273 与 type 279，
+          加上 type 277、type 279B、2 部 type 282、type 285、type 293，
+          主炮测距的 284 换成 274。293 只是其中一格。
+          把它单拎出来讲「加装了目标指示雷达」会失真，
+          因为同一批里对空警戒、测高、炮术、主炮测距全都在动。
+          本站因此按整批来叙述。
+        en: >-
+          The July 1944 refit moved six radar marks at once: the type 273 and type 279
+          came off, the type 277, type 279B, two type 282 sets, the type 285 and the type
+          293 went on, and the 284 main-armament set was exchanged for a 274. The 293 is
+          one cell of that. Describing the event as "a target-indication radar was
+          added" would distort it, because air warning, height-finding, gunnery and
+          main-armament ranging all moved in the same batch. This article therefore
+          describes the batch.
+      src: [navypedia-kgv]
+
+    - heading: 型号表里这一型没有独立条目可引
+      text:
+        zh: >-
+          需要说明的是：专题站的英国雷达型号表里能查到 Type 277、279、281、282、
+          284、285 等条目，但本页没有找到 Type 293 的独立行可引。
+          因此本页关于 293 的全部内容都来自装舰清单这一种材料，
+          没有第二类来源交叉核对。这也是本站把本型正文写得很短的原因——
+          查不到的（服役时间、首次装舰对象、与 273 的关系）一律不写。
+        en: >-
+          One limitation should be noted: the specialist site's table of British radar
+          has entries for the Type 277, 279, 281, 282, 284 and 285, but no separate row
+          for a Type 293 was found to cite. Everything on this page about the 293
+          therefore comes from fitting lists alone, with no second kind of source to
+          cross-check against. That is why this entry is short: what could not be found -
+          the service date, the first ship fitted, the relationship to the 273 - is
+          simply not written.
+      src: [navweaps-radar-uk, navypedia-kgv]
+
+history:
+  - id: service
+    title: { zh: 装舰记录, en: Fitting record }
+    range: { from: 1944-07, to: 1945 }
+    lead:
+      zh: >-
+        只有一条装舰记录，加一条战后仍在列的记录。
+      en: >-
+        One fitting record, plus a post-war entry showing it still aboard.
+    events:
+      - date: 1944-07
+        text:
+          zh: >-
+            英王乔治五世号 1944 年改装中加装 type 293，与 type 277 同批。
+            同批减 type 273 与 type 279，加 type 279B、2 部 type 282、type 285，
+            主炮测距由 284 换成 274。
+          en: >-
+            HMS King George V received the type 293 in the 1944 refit, in the same batch
+            as the type 277. That batch removed the type 273 and type 279 and added the
+            type 279B, two type 282 sets and the type 285, exchanging the 284 for a 274.
+        src: [navypedia-kgv]
+      - date: 1945
+        text:
+          zh: >-
+            本级的战后清单里 293 仍在列，说明它没有被后续型号替换。
+            本页不据此推断它在战后承担的具体职责。
+          en: >-
+            The class's post-war lists still carry the 293, so it was not displaced by a
+            later mark. This page draws no inference about what specific duties it held
+            post-war.
+        src: [navypedia-kgv]

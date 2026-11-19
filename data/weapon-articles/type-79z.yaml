@@ -1,0 +1,122 @@
+# ============================================================================
+# 武器正文 —— Type 79Z 对空预警雷达
+#
+# 这一型要讲清两件互相打架的事：
+#  1) 它是「最早一批量产对空搜索雷达」，同时波束宽、看不见低飞目标；
+#  2) 它是后期决定加装的，代价是本舰完工延误三个月。
+# 性能数字（波长 / 功率 / 射程）一律不入正文，注册表没有这些字段。
+# ============================================================================
+weapon: type-79z
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Type 79Z 是光辉号 1940 年建成时就装上的一型对空预警雷达。
+      它属于英国最早一批量产的舰载对空搜索雷达，而本舰因此成了
+      世界上第一艘在完工之前就装上雷达的航空母舰。
+      它在舰上的角色不是引导火炮，而是先把来袭机群的存在和大致方位告诉舰上。
+    en: >-
+      The Type 79Z was the air-warning radar HMS Illustrious carried when she was
+      completed in 1940. It belongs to the Royal Navy's first production air-search
+      sets, and it made her the first aircraft carrier in the world to be fitted with
+      radar before completion. Its job was not to lay the guns but to tell the ship
+      that an attacking formation existed and roughly where it was.
+
+  paragraphs:
+    - heading: 它是后期决定加的，代价是三个月的工期
+      text:
+        zh: >-
+          这一型不是设计图上就有的东西。装甲航母的设计文字记录写得很直接：
+          工作时原本按计划推进，但「加装雷达的后期决定」使本舰的完工
+          推迟了三个月，而这三个月花在了装新桅杆、装对空预警雷达、
+          以及给一个最简陋的战斗机引导位置腾出空间上。
+          这种临时性留下了痕迹：发射机需要后期加一根新桅杆，
+          而每艘装甲航母加在哪里都不一样，于是天线桅杆本身成了
+          识别各舰的视觉标记——在光辉号上，那只是一根杆。
+        en: >-
+          The set was not in the original drawings. The armoured-carrier design
+          record is explicit that work on the ship had been proceeding on time, and
+          that the late decision to add radar delayed her completion by three months;
+          the time went into new masts, the air-warning set, and making space for
+          rudimentary fighter-direction facilities. The improvisation left marks: the
+          transmitter required the late addition of a new mast, sited differently in
+          each of the armoured carriers, so the mast itself became a visual identifier
+          of the individual ship. Aboard Illustrious it was simply a pole.
+      src: [ac-design]
+
+    - heading: 它能看见机群，看不见贴海飞的东西
+      text:
+        zh: >-
+          同一份设计资料的评语是：这型雷达有 70 度的波束宽度，
+          并且在定位低飞飞机方面效果不好。这条限制不是枝节——
+          它决定了这一型的用法只能是「早发现、把方位交出去」，
+          而不是「精确跟踪某一架」。在地中海的实战里，
+          舰上确实是靠它先把接触报出来，再把战斗机派出去，
+          但拦截成不成功取决于战斗机和引导，不取决于雷达本身。
+        en: >-
+          The same design source judges that the set had a 70-degree beam width and
+          was not effective at locating low-flying aircraft. That limitation is not a
+          detail: it fixed the set's role as early detection and hand-off of a bearing
+          rather than precise tracking of a single aircraft. In the Mediterranean the
+          ship did use it to raise a contact and then send fighters out, but whether
+          the interception worked depended on the fighters and the direction officers,
+          not on the radar.
+      src: [ac-design]
+
+    - heading: 两年就被换掉了
+      text:
+        zh: >-
+          这型在舰上只待了不到两年。1942 年 1 月本舰换装 Type 281，
+          记录写成「减 type 79 雷达，加 type 281 雷达」。
+          换装不是本舰独有的判断：Type 281 在 1940 年 12 月开始服役，
+          专题站给它的评语是二战中使用最广的一型，
+          首次装舰对象是轻巡洋舰狄多号（HMS Dido）——
+          也就是说海军是先把它推给巡洋舰、再回头换掉航母上的 79 系列。
+        en: >-
+          The set stayed aboard for under two years. In January 1942 the ship was
+          re-equipped with the Type 281, recorded as "minus type 79 radar, plus type
+          281 radar". The change was not this ship's own judgement: the Type 281 became
+          operational in December 1940, the specialist site calls it the most widely
+          used set of the war, and its first shipboard fitting was the light cruiser
+          HMS Dido - the Navy put it into cruisers first and then came back for the
+          79-series sets in the carriers.
+      src: [navypedia-illustrious, navweaps-radar-uk]
+
+history:
+  - id: service
+    title: { zh: 装舰与换装, en: Fitting and replacement }
+    range: { from: 1940, to: 1942-01 }
+    lead:
+      zh: >-
+        它在舰上的整个生涯就是 1940 年建成到 1942 年 1 月被 281 取代这一段。
+      en: >-
+        Its whole career aboard ran from completion in 1940 to replacement by the
+        Type 281 in January 1942.
+    events:
+      - date: 1940-05-25
+        text:
+          zh: >-
+            navypedia 记本舰此日完工，装备表里已列 type 79 雷达。
+            换装记录写得明确：1942 年 1 月「减 type 79 雷达，加 type 281 雷达」。
+            本舰服役日期各源口径不同（另有 04-24 accepted、05-26 commissioned 两说），
+            此处取的是完工日的口径。
+          en: >-
+            Navypedia records the ship as completed on this date with the type 79
+            radar already in her equipment list. Its replacement is recorded just as
+            plainly: in January 1942, "minus type 79 radar, plus type 281 radar".
+            Sources date her entry into service differently (24 April accepted,
+            26 May commissioned), so the completion date is the one used here.
+        src: [navypedia-illustrious, naval-history-illustrious]
+      - date: 1942-01
+        text:
+          zh: >-
+            换装 Type 281。同期本舰还加装了配 4.5 英寸两用炮的 Type 285；
+            设计资料把 1941 到 1942 年的这次换装概括为
+            「79 换成 281（对空）加 285（4.5 英寸炮术）」。
+          en: >-
+            Re-equipped with the Type 281. The ship also received the Type 285 for the
+            4.5-inch dual-purpose battery in the same period; the design record sums up
+            the 1941-42 change as the Type 79 giving way to the Type 281 for air warning
+            and the Type 285 for 4.5-inch gunnery.
+        src: [navypedia-illustrious, ac-design]

@@ -1,0 +1,226 @@
+# ============================================================================
+# 武器正文 —— 15 cm SK C/28
+#
+# 这一型的看点不是参数，是两条：德国人为什么要给对舰和对空各留一套炮，
+# 以及这些炮战后在丹麦的岸防里活到了 2000 年。
+# ============================================================================
+weapon: 15cm-sk-c28
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      15 cm SK C/28 是德国海军二战巡洋舰以上主力的中口径副炮，
+      1928 年设计、1934 年服役，装在德意志级装甲舰、沙恩霍斯特级与俾斯麦级上。
+      navweaps 对它的评价是「相当成功」，但同一页也指出了德国舰炮体系的根本毛病：
+      对舰和对空各搞一套单一用途的火炮，代价是空间与重量。
+    en: >-
+      The 15 cm SK C/28 was the medium-calibre secondary battery of the German Navy's
+      armoured ships, battlecruisers and battleships. Designed in 1928 and in service
+      from 1934, NavWeaps calls it a considerable success while making the larger
+      point that German practice - one single-purpose gun for surface targets and
+      another for aircraft - cost space and weight.
+
+  paragraphs:
+    - heading: 为什么德国人留着两套中口径炮
+      text:
+        zh: >-
+          英美在这十年里走的是「双用途炮」路线：一门炮同时对海对空。
+          德国人没有这么走，对舰用 15 cm SK C/28，对空另配 10.5 cm SK C/33，
+          两套系统各自独立。navweaps 在 15 cm 这一页把这套做法直接判定为
+          「浪费空间与重量」——因为它要两套扬弹机、两套炮座、两套火控。
+          这不是技术能力问题，SK C/28 本身的表现并不差；
+          问题出在分工方式上。
+        en: >-
+          Britain and the United States spent the 1930s converging on the dual-purpose
+          gun, one piece doing both the surface and the anti-aircraft job. Germany did
+          not: surface work went to the 15 cm SK C/28 and aircraft to the separate
+          10.5 cm SK C/33, two independent systems. NavWeaps calls this a waste of
+          space and weight, since it demanded two hoist chains, two mount designs and
+          two fire-control setups. It was not a question of capability - the SK C/28
+          performed well enough - but of how the jobs were divided.
+      src: [navweaps-15cm-sk-c28]
+
+    - heading: 一个所有资料都会提的细节：它其实是 14.91 厘米
+      text:
+        zh: >-
+          「15 cm」是名义口径。navweaps 明确写出这些炮的实际内膛是 14.91 cm，
+          与德国的 10.5 cm、3.7 cm、2 cm 一样，标称值与实际值差一点点。
+          这一点在比对不同国家的口径时会造成误判——同口径的名义值不等于同样的弹重与初速。
+        en: >-
+          "15 cm" is a nominal figure. NavWeaps states plainly that the actual bore of
+          these guns is 14.91 cm, the same pattern of nominal-versus-actual trimming
+          that runs through the German 10.5 cm, 3.7 cm and 2 cm weapons. It matters
+          when comparing calibres across navies: the same nominal bore does not imply
+          the same shell weight or muzzle velocity.
+      src: [navweaps-15cm-sk-c28]
+
+    - heading: 炮塔、炮架与「单装」的用途
+      text:
+        zh: >-
+          这型炮在德国军舰上有两种安装方式：双联炮塔与单装炮架。
+          俾斯麦号装的是六座双联，每舷三座；炮塔连炮身约 108 吨，
+          中央那一座因为结构不同是 110 吨。navweaps 列出它的使用者包括
+          德意志级、沙恩霍斯特级、俾斯麦级，并注明计划用于「H」级战列舰、
+          M 级巡洋舰与齐柏林伯爵号航母——后三者都没有建成。
+        en: >-
+          The gun was mounted two ways in German service: in twin turrets and on
+          single mountings. Bismarck carried six twin turrets, three per side, each
+          weighing about 108 tonnes with the central one at 110 tonnes because of its
+          different structure. NavWeaps lists the Deutschland, Scharnhorst and Bismarck
+          classes as users and notes that it was planned for the "H" class battleships,
+          the M class cruisers and the carrier Graf Zeppelin, none of which was
+          completed.
+      src: [navweaps-15cm-sk-c28, kbismarck-armament]
+
+    - heading: 战后：从丹麦的岸防炮台一直打到 2000 年
+      text:
+        zh: >-
+          这一型炮服役时间最长的一段是战后。格奈森瑙号 1943 年退役并卸下武装，
+          炮塔炮被用于丹麦的岸防工事，单管炮则改成列车炮。
+          1952 年丹麦把 Fanø 岛上 Batterie Gneisenau 的两座炮塔移到 Stevnsfort；
+          这个要塞 1984 年降为预备状态，但每年训练演习仍在射击。
+          最后一次是 2000 年夏：1 号炮塔打出一发高爆弹，落在波罗的海 17 公里外，
+          水柱高 150 米，炮弹在约 17 到 18 米深处爆炸。要塞 2001 年正式撤编，现在是博物馆。
+        en: >-
+          The longest chapter in this gun's service came after the war. Gneisenau was
+          decommissioned and disarmed in 1943; her turret guns went into Danish coastal
+          defences and the single mountings were converted to railway guns. In 1952
+          Denmark moved two turrets of Batterie Gneisenau on Fanø to Stevnsfort, which
+          dropped to reserve status in 1984 but kept firing annual training shoots.
+          The last was in the summer of 2000, when No. 1 turret put an HE round into
+          the Baltic 17 km away, throwing a 150 m column and bursting at a depth of
+          roughly 17 to 18 metres. The fort was decommissioned in 2001 and is now a
+          museum.
+      src: [navweaps-15cm-sk-c28]
+
+    - heading: 那些没打成的岸炮
+      text:
+        zh: >-
+          除了丹麦，这一型炮还散落在北欧的其他角落。两座原定给取消的齐柏林伯爵号的
+          双联炮塔，1942 年 9 月之前架在了芬兰北部的 Petsamo 地区；
+          另有两座双联在北挪威的 Finmark，1945 年迁到 Tromsø 以北。
+          德国投降后这些炮由挪威接收，用于 Harstad 的岸防；该防区 1989 年撤编，
+          其中一座炮廓式双联被移到 Oscarsborg 的 Northern Fortress。
+        en: >-
+          Beyond Denmark the gun was scattered around northern Europe. Two twin turrets
+          built for the cancelled Graf Zeppelin were emplaced in the Petsamo region of
+          northern Finland before September 1942; two more stood in Finmark in northern
+          Norway and were moved north of Tromsø in 1945. After the German surrender
+          Norway took them over for the Harstad defences; that district was stood down
+          in 1989 and one of the casemate twins went to the Northern Fortress at
+          Oscarsborg.
+      src: [navweaps-15cm-sk-c28]
+
+history:
+  - id: design
+    title: { zh: 设计与定型, en: Design }
+    range: { from: 1928, to: 1934 }
+    lead:
+      zh: >-
+        1928 年设计、1934 年服役，正好卡在德国重新武装的那几年。
+      en: >-
+        Designed in 1928 and in service by 1934, it sits squarely inside the years of
+        German rearmament.
+    events:
+      - date: 1928
+        text:
+          zh: >-
+            完成设计，编号 15 cm SK C/28。实际内膛为 14.91 cm。
+          en: >-
+            Design completed as the 15 cm SK C/28. The actual bore is 14.91 cm.
+        src: [navweaps-15cm-sk-c28]
+      - date: 1934
+        text:
+          zh: >-
+            进入服役。装舰对象为德意志级、沙恩霍斯特级、俾斯麦级；
+            计划用于「H」级、M 级与齐柏林伯爵号，三者均未建成。
+          en: >-
+            Entered service aboard the Deutschland, Scharnhorst and Bismarck classes.
+            Planned for the "H" class, the M class and Graf Zeppelin, none completed.
+        src: [navweaps-15cm-sk-c28]
+
+  - id: service
+    title: { zh: 战时使用, en: Wartime service }
+    range: { from: 1939-08, to: 1945-05 }
+    lead:
+      zh: >-
+        它打过丹麦海峡，也打过通商破袭战里的每一次水面交火。
+      en: >-
+        It fired at the Denmark Strait and in every surface action of the commerce
+        war.
+    events:
+      - date: 1940-08-24
+        text:
+          zh: >-
+            俾斯麦号服役，装六座双联（每舷三座），备弹 1,288 发：
+            穿甲弹 622 发、底发引信榴弹 666 发、照明弹 240 发。
+          en: >-
+            Bismarck commissioned with six twin turrets, three per side, and an outfit
+            of 1,288 rounds: 622 AP, 666 base-fuzed HE and 240 starshells.
+        src: [kbismarck-armament]
+      - date: 1941-05-24
+        text:
+          zh: >-
+            丹麦海峡海战。俾斯麦号的主炮是这场战斗的主角，15 cm 副炮
+            在英舰进入射程后同样开火；威尔士亲王号在交战中同时遭到
+            主炮与副炮射击。
+          en: >-
+            The Battle of the Denmark Strait. The main battery dominated the action,
+            but the 15 cm guns opened up as the British ships came into range and
+            Prince of Wales was under fire from both batteries.
+        src: [kbismarck-denmark-strait, kbismarck-armament]
+      - date: 1943
+        text:
+          zh: >-
+            格奈森瑙号退役并卸下武装。炮塔炮用于丹麦岸防工事，
+            单管炮改成列车炮。
+          en: >-
+            Gneisenau was decommissioned and disarmed. Her turret guns went into Danish
+            coastal defences and the single mountings became railway guns.
+        src: [navweaps-15cm-sk-c28]
+
+  - id: ashore
+    title: { zh: 战后岸防, en: Post-war coast defences }
+    range: { from: 1945, to: 2001 }
+    lead:
+      zh: >-
+        这一型炮的最后一次射击比德国投降晚了五十五年。
+      en: >-
+        The last round from this gun was fired fifty-five years after the German
+        surrender.
+    events:
+      - date: 1945
+        text:
+          zh: >-
+            德国投降，挪威接收了北挪威的那批炮，用于 Harstad 岸防。
+          en: >-
+            Germany surrendered and Norway took over the northern guns for the Harstad
+            defences.
+        src: [navweaps-15cm-sk-c28]
+      - date: 1952
+        text:
+          zh: >-
+            丹麦把 Fanø 岛上 Batterie Gneisenau 的两座炮塔移到 Stevnsfort。
+          en: >-
+            Denmark moved two turrets of Batterie Gneisenau on Fanø to Stevnsfort.
+        src: [navweaps-15cm-sk-c28]
+      - date: 1989
+        text:
+          zh: >-
+            挪威 Harstad 防区撤编，其中一座炮廓式双联被移到 Oscarsborg 的 Northern Fortress。
+          en: >-
+            The Harstad district in Norway was stood down; one casemate twin went to
+            the Northern Fortress at Oscarsborg.
+        src: [navweaps-15cm-sk-c28]
+      - date: 2000-07
+        text:
+          zh: >-
+            Stevnsfort 最后一次实弹射击。1 号炮塔打出一发高爆弹，
+            落点在波罗的海 17 公里外，水柱高 150 米，炮弹在约 17 到 18 米深处爆炸。
+            要塞 2001 年正式撤编。
+          en: >-
+            Stevnsfort fired its last live round. No. 1 turret put an HE shell into the
+            Baltic 17 km away, throwing a 150 m column and bursting at about 17 to 18
+            metres depth. The fort was decommissioned in 2001.
+        src: [navweaps-15cm-sk-c28]

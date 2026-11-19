@@ -1,0 +1,152 @@
+# ============================================================================
+# 武器正文 —— 2 cm C/38
+#
+# 与 20mm-c30 共用同一张 navweaps 页。这里重点写"改进型"改了什么，
+# 以及一个容易踩的坑：navweaps 的服役年份是 1940，而本站数据里
+# 这型在俾斯麦号上从 1941-04 才有效——两件事并不矛盾，正文要讲清。
+# ============================================================================
+weapon: 20mm-c38
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      2 cm C/38 是 C/30 的改进型，1938 年设计、1940 年服役，
+      改用短后坐原理，卡壳与可靠性比 C/30 明显改善，但仍然沿用 20 发弹匣。
+      它是德国海军战争中期以后数量最多的一型轻型高炮，也是俾斯麦号
+      1941 年 4 月才拿到手的那一版。
+    en: >-
+      The 2 cm C/38 was the improved version of the C/30, designed in 1938 and in
+      service from 1940, using short-recoil operation that markedly improved
+      reliability while keeping the same 20-round magazine. It became the most
+      numerous German light anti-aircraft gun of the mid and late war, and it is the
+      version Bismarck only received in April 1941.
+
+  paragraphs:
+    - heading: C/30 到 C/38：改的是自动机，不是弹匣
+      text:
+        zh: >-
+          navweaps 的原话是：后期的 C/38 是一种「much improved short-recoil weapon」，
+          也用 20 发弹匣。也就是说改进集中在自动机与可靠性上，供弹方式没变。
+          20 发一停的问题因此并没有随着型号改进而解决——这一点常被误以为换了炮就好。
+          同一页还提到有资料说后来出过 40 发弹匣，但原文用了 "Some sources say"，
+          属于存疑，本站不写进正文。
+        en: >-
+          NavWeaps calls the later C/38 "a much improved short-recoil weapon" and notes
+          that it also used a 20-round magazine. The improvement was concentrated in
+          the mechanism and its reliability, not in the feed, so the twenty-round pause
+          did not go away with the new model - something often assumed to have been
+          fixed. The same page mentions a 40-round magazine having been introduced
+          later, but attributes that to "some sources", so it is left out here.
+      src: [navweaps-20mm-c30]
+
+    - heading: 它为什么成了四联座的标准炮
+      text:
+        zh: >-
+          C/38 真正的舞台是四联座。海军那型叫 2 cm Flak C/38 auf Vierlingslafette C/38，
+          做法就是把原来装 C/30 的三轴四联座换上 C/38；陆军的 Flakvierling 38
+          则把三轴减成双轴，只留一个射手在炮后同时控旋回与俯仰，海军也采用其改型。
+          换句话说，C/38 的产量与它的炮座方案绑在一起——炮好不好，取决于它装在哪种座上。
+        en: >-
+          The C/38's real stage was the quadruple mounting. The naval version, the
+          2 cm Flak C/38 auf Vierlingslafette C/38, simply put C/38 guns into the
+          existing three-axis quadruple mount; the army's Flakvierling 38 reduced the
+          three axes to two with a single gunner behind the guns controlling both
+          training and elevation, and the Navy adopted a modified form of that too. In
+          other words the C/38's production history is tied to its mountings - how good
+          the weapon was depended on which mounting it sat in.
+      src: [navweaps-20mm-c30]
+
+    - heading: 一个容易被读错的年份
+      text:
+        zh: >-
+          navweaps 给的服役年份是 1940，而本站的参数表里这型炮在俾斯麦号上
+          从 1941 年 4 月才有效。两者不矛盾：1940 是这型炮本身的服役年份，
+          1941 年 4 月是俾斯麦号在 Gotenhafen 装上两座 C/38 四联座的时间。
+          舰的装备时间线与炮的定型时间线本来就是两条线。
+        en: >-
+          NavWeaps gives 1940 as the date in service, while this site's data treats the
+          gun as valid aboard Bismarck only from April 1941. There is no conflict: 1940
+          is when the weapon entered service, and April 1941 is when Bismarck received
+          her two C/38 quadruple mountings at Gotenhafen. A ship's fitting timeline and
+          a weapon's introduction timeline are two different things.
+      src: [navweaps-20mm-c30, kbismarck-armament]
+
+    - heading: 它挡不住的东西
+      text:
+        zh: >-
+          战争后期飞机更快、装甲更好，20 mm 的弹丸威力与有效射高都不够。
+          navweaps 对这一点的说法是：20 mm 炮的效力下降。这不是 C/38 一门炮的问题，
+          而是整个 20 mm 级别在 1944 年前后遇到的共同天花板。
+        en: >-
+          Late in the war aircraft were faster and better protected, and the 20 mm
+          projectile lacked both destructive power and useful ceiling. NavWeaps puts it
+          simply: the effectiveness of 20 mm guns declined. That is not a fault of the
+          C/38 specifically but a ceiling the whole 20 mm class ran into around 1944.
+      src: [navweaps-20mm-c30]
+
+history:
+  - id: design
+    title: { zh: 设计与定型, en: Design }
+    range: { from: 1938, to: 1940 }
+    lead:
+      zh: >-
+        1938 年设计、1940 年服役。它是 C/30 的直接改进型，不是全新武器。
+      en: >-
+        Designed in 1938 and in service by 1940, it is a direct development of the
+        C/30 rather than a new weapon.
+    events:
+      - date: 1938
+        text:
+          zh: >-
+            完成设计，编号 2 cm C/38。关键改动是改用短后坐原理。
+          en: >-
+            Design completed as the 2 cm C/38, whose key change was short-recoil
+            operation.
+        src: [navweaps-20mm-c30]
+      - date: 1940
+        text:
+          zh: >-
+            进入服役。仍使用 20 发弹匣。
+          en: >-
+            Entered service, still fed from a 20-round magazine.
+        src: [navweaps-20mm-c30]
+
+  - id: service
+    title: { zh: 战时使用, en: Wartime service }
+    range: { from: 1941-04, to: 1944-11 }
+    lead:
+      zh: >-
+        它在俾斯麦号上的服役期只有一个月出头，却是这型炮最有名的一次出场。
+      en: >-
+        Its service aboard Bismarck lasted little more than a month, and it produced
+        the gun's most famous appearance.
+    events:
+      - date: 1941-04
+        text:
+          zh: >-
+            俾斯麦号在 Gotenhafen 加装两座 2 cm Flak C/38 四联座，
+            位于前桅两侧、探照灯平台上方。
+          en: >-
+            Bismarck received two 2 cm Flak C/38 quadruple mountings at Gotenhafen,
+            abreast the foremast above the searchlight platform.
+        src: [kbismarck-armament]
+      - date: 1941-05-24
+        text:
+          zh: >-
+            丹麦海峡海战。俾斯麦号的 2 cm 炮在这一天没有参与主要交战；
+            英舰的损伤来自德舰主炮，德舰的损伤来自英舰主炮与自身火炮的震动故障。
+          en: >-
+            The Battle of the Denmark Strait. Bismarck's 2 cm battery played no part in
+            the main exchange, where the damage on both sides came from main batteries
+            and from the German ship's own gun-mounting failures.
+        src: [kbismarck-denmark-strait]
+      - date: 1944-11-12
+        text:
+          zh: >-
+            提尔皮茨号被击沉。它当时装 20 门 2 cm 炮，1944 年内曾增至 78 门——
+            这个数字里 C/30 与 C/38 混装。
+          en: >-
+            Tirpitz was sunk carrying twenty 2 cm guns, a total that had reached 78
+            during 1944 - a mix of C/30 and C/38.
+        src: [kbismarck-tirpitz]

@@ -1,0 +1,132 @@
+# ============================================================================
+# 武器正文 —— Type 277 测高雷达
+#
+# 这一型的功能一句话能说清：给对空射击提供目标高度。
+# 专题站的评语是「第一型带 PPI 的舰载测高雷达，但性能并不很好」。
+# 性能数字不写。
+# ============================================================================
+weapon: type-277
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Type 277 是一型测高雷达，作用是给对空射击提供目标的高度——
+      对空火控没有高度就定不出引信与射角，这是它存在的理由。
+      它在英王乔治五世级上是 1944 年改装中加装的，与 Type 293 同批。
+      专题站的英国雷达型号表给它的评语是：第一型带 PPI 显示的舰载测高雷达，
+      但「性能并不很好」（Not a very good performer），服役时间写作 1943 年末。
+    en: >-
+      The Type 277 was a height-finder: its job was to supply target height for
+      anti-aircraft fire, without which no fuze setting or gun elevation can be
+      derived. It was added to the King George V class in the 1944 refit, in the same
+      batch as the Type 293. The specialist site's table calls it the first shipboard
+      height-finder with a PPI display, but adds that it was "not a very good
+      performer", and dates it to late 1943.
+
+  paragraphs:
+    - heading: 为什么需要专门一型测高
+      text:
+        zh: >-
+          对空射击与对海射击的关键差别在于第三维。对海只要距离与方位，
+          对空还必须有高度——没有高度就算不出弹道、定不出定时引信。
+          当时的做法是靠光学测高仪和指挥仪里那套几何解算，
+          而这些都是靠人眼对准目标、靠操作手估计速度。
+          277 的定位就是把这个高度量从「人眼估」改成「雷达给」。
+          专题站把它的用途写作「对空与水面预警合并」，
+          也就是说它并不只做测高，还兼顾搜索——但本站只按它的主职能来叙述。
+        en: >-
+          The decisive difference between anti-aircraft and anti-surface fire is the
+          third dimension. Surface fire needs range and bearing; anti-aircraft fire also
+          needs height, because without it neither the ballistics nor the time fuze can be
+          set. The practice at the time relied on optical height-finders and the geometric
+          solution inside the director, all of which depended on a crew member keeping
+          the target in his sights and the control officer estimating its speed. The 277's
+          place is to move that height measurement from the eye to the radar. The
+          specialist table gives its purpose as combined air and surface warning, so it
+          was not purely a height-finder, but this article describes it by its primary
+          function.
+      src: [navweaps-radar-uk, navweaps-hacs]
+
+    - heading: 型号表给它的评价是「不好用」
+      text:
+        zh: >-
+          这一点要照录，不能只写它是「第一型带 PPI 的测高雷达」这半句。
+          专题站的完整评语是：「The First shipboard set with PPI height-finder.
+          Not a very good performer」，服役时间写作 1943 年末。
+          也就是说它确实是这一类里的第一型，但同一句话里就带着对它性能的否定。
+          本站不把「第一」写成「最好」，也不替来源补充它到底差在哪——
+          材料只给了这一句判断，没给差在哪里。
+        en: >-
+          This has to be recorded in full rather than as the flattering half. The
+          specialist table's complete comment is: "The First shipboard set with PPI
+          height-finder. Not a very good performer", with the service date given as late
+          1943. It was indeed the first of its kind, and the same sentence carries the
+          negative judgement on its performance. This article does not turn "first" into
+          "best", and does not supply a reason for the poor showing: the material gives
+          the verdict without the explanation.
+      src: [navweaps-radar-uk]
+
+    - heading: 1944 年那一批是一整套，不是单装一型
+      text:
+        zh: >-
+          277 在英王乔治五世号上出现于 1944 年 7 月的改装，
+          同批的还有 type 279B（替换 279 对空警戒）、type 293（目标指示）、
+          2 部 type 282、type 285，以及把主炮测距的 284 换成 274。
+          这张减/加表里有六型雷达同时变动，277 只是其中一格。
+          本站因此不把 277 写成一次独立的「加装测高雷达」事件，
+          而是一次整体电子设备更新的组成部分。
+        en: >-
+          The 277 appears in the July 1944 refit of HMS King George V, alongside the
+          type 279B replacing the 279 for air warning, the type 293 for target
+          indication, two type 282 sets, the type 285, and the exchange of the 284
+          main-armament set for a 274. Six radar marks move in that one table of removals
+          and additions, and the 277 is one cell of it. This article therefore does not
+          present the 277 as an independent "height-finder added" event, but as a
+          component of one overall electronic update.
+      src: [navypedia-kgv]
+
+history:
+  - id: service
+    title: { zh: 装舰记录, en: Fitting record }
+    range: { from: 1943, to: 1945 }
+    lead:
+      zh: >-
+        服役时间与装舰时间是两回事，本节把两个口径都摆出来。
+      en: >-
+        Navy-wide service date and this ship's fitting date are two different things;
+        this section gives both.
+    events:
+      - date: 1943
+        text:
+          zh: >-
+            专题站的型号表把 Type 277 的服役时间写作 late 1943，
+            评语为第一型带 PPI 的舰载测高雷达、性能并不很好。
+            这一条讲的是全海军的服役时间。
+          en: >-
+            The specialist table dates the Type 277 to late 1943, calling it the first
+            shipboard PPI height-finder and not a very good performer. That statement is
+            a Navy-wide service date.
+        src: [navweaps-radar-uk]
+      - date: 1944-07
+        text:
+          zh: >-
+            英王乔治五世号 1944 年改装中加装 type 277，与 type 293 同批。
+            同批减掉 type 273 与 type 279，加上 type 279B、2 部 type 282、
+            type 285，主炮测距由 284 换成 274。
+          en: >-
+            HMS King George V received the type 277 in the 1944 refit, in the same batch
+            as the type 293. That batch removed the type 273 and type 279 and added the
+            type 279B, two type 282 sets and the type 285, exchanging the 284
+            main-armament set for a 274.
+        src: [navypedia-kgv]
+      - date: 1945
+        text:
+          zh: >-
+            本级的战后清单里 277 仍在列，说明它没有在战争结束前被替换。
+            同级各舰的清单里同一位置也多为 277 或 275，本站只记本舰这一型。
+          en: >-
+            The class's post-war lists still carry the 277, so it was not replaced before
+            the war ended. Other ships of the class show either a 277 or a 275 in that
+            slot; this article records the 277 only.
+        src: [navypedia-kgv]

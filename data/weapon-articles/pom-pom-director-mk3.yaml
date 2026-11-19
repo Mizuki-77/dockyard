@@ -1,0 +1,139 @@
+# ============================================================================
+# 武器正文 —— Mk III pom-pom 指挥仪
+#
+# 三条必须写清的：
+#  1) 座数未获取，所以正文不写数量；
+#  2) 1941-02-07 的炮术报告（ADM 3363/0197）对它有三条具体批评；
+#  3) 它可以被当作「one man sight」用——这是它的优点，也是它不够格的原因。
+# 探测/跟踪距离一律不写。
+# ============================================================================
+weapon: pom-pom-director-mk3
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Mk III pom-pom 指挥仪是英国皇家海军用来指挥 2-pdr 八联装炮的射击指挥装置，
+      在光辉号上它是这一批近程防空炮的「眼睛与手」。
+      它在本舰上留下了一份非常具体的差评：1941 年 2 月 7 日的炮术报告
+      （ADM 3363/0197）指出它缺少动力随动、航行中振动很大，
+      并判断它在实战条件下对付编队俯冲轰炸「形同无用」。
+      本舰装了几座，现有材料未获取，因此本页不写数量。
+    en: >-
+      The Mk III pom-pom director was the Royal Navy's fire-control instrument for the
+      2-pdr octuple mounting, and aboard HMS Illustrious it was the eyes and hands of that
+      close-range battery. It left a very specific negative appraisal aboard: the gunnery
+      report of 7 February 1941 (ADM 3363/0197) finds it lacking power follow-up and badly
+      affected by vibration under way, and judges it useless under action conditions
+      against massed dive-bombing. How many were fitted has not been obtained, so no
+      number is given here.
+
+  paragraphs:
+    - heading: 1941 年 2 月 7 日那份报告的三个具体指控
+      text:
+        zh: >-
+          这份报告的价值在于它说的是机制，不是印象。
+          第一条：「the absence of Power follow up with the resultant time lags and
+          errors in pointer following are considered to render the director useless
+          under action conditions against massed D/B attack」——
+          缺动力随动，导致滞后与瞄准误差，结论是对付编队俯冲轰炸形同无用。
+          第二条：舰队正常航速下指挥仪振动很大，
+          有一次 S.1 指挥仪的整个 C.O.F.A.S. 被震断。
+          第三条：报告同时承认它可以「被相当容易地当作单人手瞄使用」——
+          也就是它的优点是简单，缺点正是简单的另一面。
+          三条合起来看，「好用」与「够用」在这台设备上是分开的。
+        en: >-
+          The report's value is that it speaks about mechanism rather than impression.
+          First: "the absence of Power follow up with the resultant time lags and errors in
+          pointer following are considered to render the director useless under action
+          conditions against massed D/B attack". Second: at normal fleet speed the
+          vibration of the pom-pom directors is great, and on one occasion the whole
+          C.O.F.A.S. of the S.1 director snapped off. Third, the report also concedes that
+          the director "can be used with comparative ease as a one man sight" - its virtue
+          being simplicity, which is the same thing as its defect. Read together, "easy to
+          use" and "good enough" come apart on this instrument.
+      src: [ac-gunnery-report]
+
+    - heading: 它的问题不是孤立的一台设备，是整条链
+      text:
+        zh: >-
+          同一份报告还批评了与它配套的其他环节，这些要一起看才公平。
+          4.5 英寸炮的指挥仪也有问题：近失弹的震动使 A 指挥仪滚转电机传动中的
+          开口销三次脱开；B 指挥仪里 U.D.4 测高仪的左端反射镜被炸弹破片或子弹打碎；
+          报告要求每座指挥仪都配一个测斜仪平面，因为 Y 指挥仪两次被飞机严重打坏后
+          「there has been no positive datum on which to work when replacing damaged parts
+          of the sight」。
+          目标指示系统更直接：Eversheds 那套系统在平时一直工作正常，
+          但「Under Action conditions the Evershed system failed completely」。
+          也就是说 pom-pom 指挥仪的表现，是在一整条都在出问题的链子上发生的。
+        en: >-
+          The same report criticises the surrounding links as well, and fairness requires
+          reading them together. The 4.5-inch directors had their own troubles: the shock
+          of near misses disconnected the cotter pin in the drive from the roll motor of
+          A director on three occasions, the left end reflectors of the U.D.4 heightfinder
+          in B director were smashed by bomb splinters or bullets, and the report asks for
+          a clinometer plane on each director because after Y director was twice badly
+          damaged by aircraft "there has been no positive datum on which to work when
+          replacing damaged parts of the sight". The target-indication system is more
+          direct still: the Eversheds installation had always worked satisfactorily given
+          continual attention, yet "Under Action conditions the Evershed system failed
+          completely". The pom-pom director's showing therefore happened inside a chain
+          that was failing at every link.
+      src: [ac-gunnery-report]
+
+    - heading: 它在本舰上的座数，材料没给
+      text:
+        zh: >-
+          这一条限度必须写明，否则容易顺手编一个数字出来。
+          现有材料能给的只有型号（Mk III）与「可以当作单人手瞄使用」这类描述；
+          本舰装了几座，没有任何来源给出。
+          本站因此不写数量，也不拿「6 座八联装 pom-pom」去反推「6 座指挥仪」——
+          后一组数字（1943 年 6 月清单的 6 部 type 282）是配 6 座炮座的，
+          但它讲的是雷达，不是指挥仪。两个数字不能互相替代。
+        en: >-
+          This limit has to be stated or a number will get invented. What the material
+          gives is the mark, Mk III, and descriptions such as its being usable as a one-man
+          sight; no source states how many were fitted to this ship. This article therefore
+          gives no number, and does not back-calculate six directors from the six octuple
+          pom-pom mountings - the latter figure, from the June 1943 list, is six type 282
+          radar sets matched to six mountings, and it is about radar, not directors. The
+          two numbers are not interchangeable.
+      src: [ac-gunnery-report, navypedia-illustrious]
+
+history:
+  - id: service
+    title: { zh: 装舰与实战评价, en: Fitting and the verdict of action }
+    range: { from: 1940-05, to: 1941-02 }
+    lead:
+      zh: >-
+        从建成到 1941 年 2 月那份报告，这一型在本舰上的口碑是同一份材料定的。
+      en: >-
+        From completion to the February 1941 report, the type's reputation aboard is set by
+        one body of material.
+    events:
+      - date: 1940-05-25
+        text:
+          zh: >-
+            本舰完工。此时 2-pdr 八联装 pom-pom 是近程防空的主体，
+            指挥它的就是 Mk III 型指挥仪。
+            本舰装了几座，现有材料未获取。
+          en: >-
+            The ship was completed. The 2-pdr octuple pom-pom was then the mainstay of
+            close-range anti-aircraft fire, and the Mk III director was what laid it. How
+            many were fitted has not been obtained.
+        src: [ac-design, navypedia-illustrious]
+      - date: 1941-02-07
+        text:
+          zh: >-
+            炮术报告（ADM 3363/0197）成文，对 pom-pom 指挥仪的判断是：
+            缺动力随动，滞后与瞄准误差使它在实战条件下对付编队俯冲轰炸形同无用；
+            舰队正常航速下振动很大，S.1 指挥仪的整个 C.O.F.A.S. 曾被震断；
+            报告同时承认它可以相当容易地当作单人手瞄使用。
+          en: >-
+            The gunnery report was written, judging the pom-pom director to lack power
+            follow-up, with the resulting lags and pointer errors rendering it useless under
+            action conditions against massed dive-bombing; at normal fleet speed its
+            vibration was great and the whole C.O.F.A.S. of the S.1 director had snapped
+            off; and the report concedes that it could be used with comparative ease as a
+            one-man sight.
+        src: [ac-gunnery-report]

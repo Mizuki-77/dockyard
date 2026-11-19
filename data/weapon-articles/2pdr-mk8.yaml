@@ -1,0 +1,230 @@
+# ============================================================================
+# 武器正文 —— 2-pdr QF Mark VIII（"multiple pom-pom"）
+#
+# 这一型的看点：它不是为二战设计的，是 1923 年的方案；
+# 到 1939 年已经过时，但产量却是 Bofors 40mm 的两倍。
+# 另一件必须写清的事：四联座与八联座的自动化程度是不同的。
+# ============================================================================
+weapon: 2pdr-mk8
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      2-pdr QF Mark VIII 是英国皇家海军二战中最普遍的一型中程高射炮，
+      也就是通常说的「multiple pom-pom」。它在 1923 年完成设计、1930 年随八联座服役，
+      1939 年时已经过时，但整个战争期间造了约两倍于 Bofors 40 mm 的数量，
+      是英国主力舰防空火力真正的骨架。
+    en: >-
+      The 2-pdr QF Mark VIII, the "multiple pom-pom", was the most widespread medium
+      anti-aircraft weapon in the Royal Navy during the Second World War. Designed in
+      1923 and in service in the octuple mounting from 1930, it was obsolete by 1939 -
+      yet roughly twice as many were built as Bofors 40 mm guns, and it formed the
+      actual skeleton of British anti-aircraft fire.
+
+  paragraphs:
+    - heading: 它是怎么从六门炮凑出来的
+      text:
+        zh: >-
+          这一型的起点不是设计图，而是一次试验：1921 到 1922 年，六门 2-pdr Mark II
+          被装到龙号（HMS Dragon）的同一个基座上，效果「modestly successful」。
+          于是维克斯与阿姆斯特朗各自开始搞多联座设计。阿姆斯特朗的方案能连续射击，
+          维克斯的方案不能，但阿姆斯特朗那套也更复杂。维克斯赢了合同，
+          1923 年 7 月在达特福德的厂里拿出一座八联模型供审查。
+          之后是漫长的拖延：资金不足把靶场试验推到 1927 年，
+          1928 年才在虎号（HMS Tiger）上做海上试验，
+          1930 年末才以一座炮座装到英勇号（HMS Valiant）上服役。
+        en: >-
+          This weapon began not with a drawing but with a trial: in 1921-22 six 2-pdr
+          Mark II guns were mounted on a common base aboard HMS Dragon and the result
+          was "modestly successful". Vickers and Armstrong then each worked on multiple
+          mountings. Armstrong's design allowed continuous fire and Vickers' did not,
+          but Armstrong's was also the more complicated. Vickers won the contract and
+          presented an eight-gun mock-up at its Dartford works in July 1923. Then came
+          the delays: lack of funding pushed proving-ground trials to 1927, sea trials
+          aboard HMS Tiger had to wait until 1928, and service introduction came only
+          at the end of 1930 with a single mounting aboard HMS Valiant.
+      src: [navweaps-2pdr-mk8]
+
+    - heading: 服役推广慢得不像战时武器
+      text:
+        zh: >-
+          英勇号试验满意之后，财政部才加了钱。1931 年纳尔逊号、罗德尼号、
+          复仇号各拿一座，胡德号拿两座；次年前卫号（HMS Furious）与皇家主权号各两座、
+          声望号一座。战前的产量一直很低——这说明它本来是和平时期的装备，
+          不是为应付一场总体战设计的。
+        en: >-
+          Only after the Valiant trials proved satisfactory did the Treasury release
+          more money. In 1931 Nelson, Rodney and Revenge each received one mounting and
+          Hood two; the following year Furious and Royal Sovereign got two each and
+          Renown one. Production stayed slow right up to the war, which is what you
+          expect of a peacetime weapon rather than one designed for a total war.
+      src: [navweaps-2pdr-mk8]
+
+    - heading: 到 1939 年它已经不够用了
+      text:
+        zh: >-
+          navweaps 的判断很直接：1930 年服役时它非常先进，但到 1939 年，
+          飞机设计的进步已经让它过时——初速低、缺合格的爆破弹、没有曳光弹。
+          1938 年推出了高初速（HV）弹来补救，但这需要改炮闩与击发机构；
+          而且 HV 与 LV 的弹和炮不能互换，所以二战期间一直在生产
+          只能打旧的低初速弹的炮。标准化的优先级在英国军械系统里
+          一直到 1950 年代都不高。
+        en: >-
+          NavWeaps is blunt: on introduction in 1930 it was a very advanced weapon, but
+          by 1939 rapid improvements in aircraft design had rendered it obsolescent,
+          with low muzzle velocity, no satisfactory explosive shell and no tracer. A
+          higher-velocity (HV) projectile appeared in 1938, but it required a different
+          breech mechanism and changes to the firing gear, and HV and LV ammunition and
+          guns were not interchangeable - so guns able to fire only the older
+          low-velocity rounds kept being built right through the war. Standardisation
+          was never a high priority in British ordnance thinking before the 1950s.
+      src: [navweaps-2pdr-mk8]
+
+    - heading: 四联座与八联座不是一回事
+      text:
+        zh: >-
+          服役初期这是后坐驱动、「controlled」（本质上是半自动）的武器，
+          四联座与八联座都靠人工摇柄操作击发机构。1939 年八联座改成可以全自动射击，
+          这个改动没有推广到四联座——四联座整个战争期间只造了「controlled」版本。
+          不过四联座在战争中的某个时点把摇柄手换成了电动机。
+          这一点常被写错：八联座是全自动的，四联座不是。
+        en: >-
+          As introduced this was a recoil-operated, "controlled" - essentially
+          semi-automatic - weapon, with a manually turned crank operating the firing
+          gear in both the quadruple and octuple mountings. In 1939 the octuple mounting
+          was changed to allow fully automatic fire, but that change was not extended to
+          the quadruple mounting, which was produced only in controlled form throughout
+          the war. The quadruple mounting did replace its crank-turner with an electric
+          motor at some point during the war. This is often written wrongly: the octuple
+          was automatic, the quadruple was not.
+      src: [navweaps-2pdr-mk8, navweaps-2pdr-mk8-octuple]
+
+    - heading: 产量与它的实际角色
+      text: 
+        zh: >-
+          这型炮的产量约为皇家海军所用 Bofors 40 mm 的两倍。海军炮登记册记录
+          英国造了 6,691 门（含 12 门原型），加拿大另造 843 门；
+          另有 219 门陆军退役炮在 1944 到 1945 年被拆解。
+          1935 年后还造了给小型舰艇的单装与四联座，单装那型在战争中被广泛
+          用作沿海护航舰的舰艏追击炮。内部机构极复杂、需要熟练维护，
+          卡弹与停射频繁——但链式供弹确实比旧的帆布弹带可靠。
+        en: >-
+          Production ran at roughly twice the number of Bofors 40 mm guns the Royal Navy
+          used. The Naval Gun Register records 6,691 built in Britain including 12
+          prototypes, plus 843 in Canada; a further 219 ex-army guns were scrapped in
+          1944-45. Single and quadruple mountings for smaller ships were produced after
+          1935, the single being widely used as a bow-chaser on coastal convoy escorts.
+          The internal mechanisms were very complex and needed skilled maintenance, and
+          jams and stoppages were frequent - but the linked ammunition did prove more
+          reliable in service than the older belt feed.
+      src: [navweaps-2pdr-mk8]
+
+history:
+  - id: design
+    title: { zh: 设计与定型, en: Design }
+    range: { from: 1921, to: 1930 }
+    lead:
+      zh: >-
+        从六门炮试装到八联座服役，用了九年。
+      en: >-
+        From a six-gun trial mounting to an octuple in service took nine years.
+    events:
+      - date: 1921
+        text:
+          zh: >-
+            六门 2-pdr Mark II 被装到龙号（HMS Dragon）的同一基座上试装，
+            结果「modestly successful」，多联座设计由此启动。
+          en: >-
+            Six 2-pdr Mark II guns were mounted on a common base aboard HMS Dragon. The
+            trial was "modestly successful" and work on multiple mountings began.
+        src: [navweaps-2pdr-mk8]
+      - date: 1923-07
+        text:
+          zh: >-
+            维克斯赢得合同，在达特福德厂展出八联座模型。阿姆斯特朗的方案能连续射击
+            但更复杂，最终落选。
+          en: >-
+            Vickers won the contract and showed an eight-gun mock-up at its Dartford
+            works. Armstrong's design allowed continuous fire but was more complicated,
+            and lost.
+        src: [navweaps-2pdr-mk8]
+      - date: 1928
+        text:
+          zh: >-
+            在虎号（HMS Tiger）上进行海上试验。资金不足把靶场试验推迟到了 1927 年。
+          en: >-
+            Sea trials were held aboard HMS Tiger, proving-ground firing having been
+            delayed to 1927 by lack of funding.
+        src: [navweaps-2pdr-mk8]
+      - date: 1930
+        text:
+          zh: >-
+            八联座进入服役，首装英勇号（HMS Valiant）单座。
+          en: >-
+            The octuple mounting entered service with a single installation aboard
+            HMS Valiant.
+        src: [navweaps-2pdr-mk8]
+
+  - id: service
+    title: { zh: 战前推广与战时使用, en: Pre-war expansion and wartime service }
+    range: { from: 1931, to: 1945-09 }
+    lead:
+      zh: >-
+        战前它一座一座地装，战时它成了英国主力舰防空火力的主体。
+      en: >-
+        Before the war it went aboard a mounting at a time; during the war it became
+        the bulk of British capital-ship anti-aircraft fire.
+    events:
+      - date: 1931
+        text:
+          zh: >-
+            纳尔逊号、罗德尼号、复仇号各装一座，胡德号装两座。
+          en: >-
+            Nelson, Rodney and Revenge each received one mounting; Hood received two.
+        src: [navweaps-2pdr-mk8]
+      - date: 1932
+        text:
+          zh: >-
+            前卫号（HMS Furious）与皇家主权号各两座，声望号一座。
+          en: >-
+            Furious and Royal Sovereign received two mountings each, Renown one.
+        src: [navweaps-2pdr-mk8]
+      - date: 1936
+        text:
+          zh: >-
+            四联座进入服役。它与八联座的关键差别是：四联座始终没有改成全自动。
+          en: >-
+            The quadruple mounting entered service. Its key difference from the
+            octuple: it was never converted to fully automatic fire.
+        src: [navweaps-2pdr-mk8]
+      - date: 1938
+        text:
+          zh: >-
+            推出高初速（HV）弹以弥补初速不足，但需要改炮闩与击发机构，
+            且 HV 与 LV 弹/炮不能互换。
+          en: >-
+            A higher-velocity projectile was introduced, requiring a different breech
+            mechanism and firing gear changes; HV and LV ammunition and guns were not
+            interchangeable.
+        src: [navweaps-2pdr-mk8]
+      - date: 1940-10-01
+        text:
+          zh: >-
+            英王乔治五世号服役时装 4 座八联（32 门）。到 1945 年 9 月增至 8 座八联。
+          en: >-
+            King George V commissioned with four octuple mountings, 32 guns, a number
+            that had risen to eight octuple mountings by September 1945.
+        src: [rmg-kgv-guide]
+      - date: 1941-12
+        text:
+          zh: >-
+            英王乔治五世号此时为 5 座八联加 1 座四联——八联与四联并存正是这一型
+            在战争中期的典型状态。四联座始终是「controlled」版本，八联座 1939 年起
+            可全自动射击。
+          en: >-
+            King George V then carried five octuple mountings and one quadruple - the
+            coexistence of both types being typical of the weapon in mid-war. The
+            quadruple mounting remained a controlled one; the octuple had been capable
+            of fully automatic fire since 1939.
+        src: [rmg-kgv-guide, navweaps-2pdr-mk8]

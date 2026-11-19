@@ -1,0 +1,94 @@
+# ============================================================================
+# 武器正文 —— Type 279B 对空警戒雷达
+#
+# 279 的改进型，1944 年整批换装。材料薄：只有装舰清单。
+# 与 279 的硬件差别、性能数字，本站均无来源，一律不写。
+# ============================================================================
+weapon: type-279b
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Type 279B 是 Type 279 对空警戒雷达的改进型。
+      1944 年的改装中它取代了 279，与 Type 277、Type 293 同批装舰。
+      「B」是改进记法，与 279 同族，本站单列一个实体，不并入 279。
+      与 279 之间在硬件上到底改了什么，现有材料未给，本页不写。
+    en: >-
+      The Type 279B is an improved mark of the Type 279 air-warning radar. In the 1944
+      refit it replaced the 279, going aboard in the same batch as the Type 277 and
+      Type 293. The "B" denotes an improved mark of the same family; it has its own
+      entity here rather than being merged into the 279. What actually changed in
+      hardware is not given in the material available, and this page does not invent it.
+
+  paragraphs:
+    - heading: 它是一次整批换装的一部分
+      text:
+        zh: >-
+          这一型在英王乔治五世级上的出现不是孤立事件。1944 年的那次改装
+          一次做了四件事：以 279B 取代 279、加装 Type 277 测高雷达、
+          加装 Type 293 目标指示雷达、把主炮测距的 Type 284 换成 Type 274。
+          把四件事放在一起看，279B 的位置就清楚了：
+          它接的是对空警戒这一格，不是新开一栏。
+          至于为什么用 B 型而不是继续用 279，材料只给了换装动作，没给理由。
+        en: >-
+          The set's appearance in the King George V class was not an isolated event. The
+          1944 refit did four things at once: replaced the 279 with the 279B, added the
+          Type 277 height-finder, added the Type 293 target-indication set, and exchanged
+          the Type 284 main-armament set for a Type 274. Taken together, the 279B's
+          position is clear: it inherits the air-warning slot rather than opening a new
+          one. Why the B mark was chosen over keeping the 279 is not stated in the
+          material, which records the change without the reasoning.
+      src: [navypedia-kgv]
+
+    - heading: 别把它和 281B 混起来
+      text:
+        zh: >-
+          本站同时收了 279B 与 281B 两个实体，两者不是一条线上的东西。
+          279 系列是英国对空警戒线里较早的一支，专题站的表记 Type 279
+          1940 年服役、用于大型舰只；281 系列则是二战中使用最广的一型，
+          1940 年 12 月服役、首次装舰对象是轻巡洋舰狄多号。
+          在本级的清单里，1944 年换上的是 279B，281B 出现在别的舰上
+          （例如光辉号 1943 年 6 月起的清单）。两型的分工与互换关系
+          现有材料未给，本站不做推断。
+        en: >-
+          This site carries both a 279B and a 281B, and they are not the same line. The
+          279 family is the earlier of the two British air-warning branches: the
+          specialist table records the Type 279 as operational in 1940 for large ships.
+          The 281 family is the most widely used set of the war, operational in December
+          1940 and first fitted to the light cruiser HMS Dido. In this class's lists the
+          1944 replacement is the 279B, while the 281B appears in other ships - the
+          Illustrious list from June 1943, for instance. How the two were divided or
+          whether they were interchangeable is not given in the material, and no
+          inference is drawn here.
+      src: [navweaps-radar-uk, navypedia-kgv, navypedia-illustrious]
+
+history:
+  - id: service
+    title: { zh: 装舰记录, en: Fitting record }
+    range: { from: 1944-07, to: 1945 }
+    lead:
+      zh: >-
+        记载只有两条：1944 年 7 月换上，到战争结束时仍在用。
+      en: >-
+        Two entries only: fitted in July 1944, still in use at the end of the war.
+    events:
+      - date: 1944-07
+        text:
+          zh: >-
+            1944 年改装中装上，取代 Type 279，与 Type 277、Type 293 同批。
+            同一次改装里主炮测距的 284 换成 274。
+          en: >-
+            Fitted in the 1944 refit, replacing the Type 279, in the same batch as the
+            Type 277 and Type 293. The same refit exchanged the Type 284 main-armament set
+            for a Type 274.
+        src: [navypedia-kgv]
+      - date: 1945
+        text:
+          zh: >-
+            本级的战后装备清单里对空警戒一栏为 279B，说明它一直用到战争结束，
+            没有被更新的型号替换。
+          en: >-
+            The class's post-war equipment lists show the 279B in the air-warning slot,
+            so it served to the end of the war without being displaced by a newer mark.
+        src: [navypedia-kgv]

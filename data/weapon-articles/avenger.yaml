@@ -1,0 +1,157 @@
+# ============================================================================
+# 武器正文 —— Grumman TBF Avenger
+#
+# 这一型在本舰上是一段「试验」：1944 年 5 月换上、两个月后又换回 Barracuda。
+# 两条必须写清的：
+#  1) 它不能挂英国的 18 英寸 Mk XII 鱼雷；
+#  2) 它不是俯冲轰炸机，机组得改攻击剖面。
+# 马力/极速/载弹量口径本站无来源，不写。
+# ============================================================================
+weapon: avenger
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Grumman TBF Avenger 是美国海军的鱼雷轰炸机，英国通过租借拿到了一批，
+      在皇家海军主要先用于护航航母的反潜巡逻，后来才上舰队航母。
+      本舰在 1944 年 5 月用它替下两个中队的 Barracuda，
+      两个月后又换回 Barracuda：材料对这一段的说法是
+      「The experiment with Avengers, while successful, was over」。
+      1945 年 3 月 26 日冰山行动时，本舰载 16 架。
+    en: >-
+      The Grumman TBF Avenger was the US Navy's torpedo bomber, obtained by Britain
+      under Lend-Lease and used in the Royal Navy first for anti-submarine patrols from
+      escort carriers before reaching fleet carriers. This ship used it in May 1944 to
+      replace two Barracuda squadrons and went back to Barracudas two months later; the
+      material's verdict on that episode is that "The experiment with Avengers, while
+      successful, was over". At Operation Iceberg on 26 March 1945 the ship carried
+      sixteen.
+
+  paragraphs:
+    - heading: 它挂不了英国最好的那条鱼雷
+      text:
+        zh: >-
+          这是英国人在 Avenger 与 Barracuda 之间反复的核心理由之一，材料写得很清楚：
+          「the Avenger could not carry the superior British 18in Mk XIIB torpedo」。
+          也就是说英国自己的舰队鱼雷在这架美国飞机上装不进去。
+          同一段给了另外两面：与 Avenger 相比 Barracuda 在对比中并不占优，
+          但海军仍然坚持 Barracuda，因为它的定位比 Avenger 更「多用途」，
+          具体在俯冲轰炸这一项；而且美制飞机的供应量没有保证。
+          三句话合起来才是一个完整的判断，本站照此并列，不简化成「Avenger 更好」。
+        en: >-
+          This is one of the core reasons the British went back and forth between the
+          Avenger and the Barracuda, and the material states it plainly: "the Avenger
+          could not carry the superior British 18in Mk XIIB torpedo". The British fleet
+          torpedo would not go into the American aircraft. The same passage gives the other
+          two sides: comparisons with the US aircraft were not favourable for the Barracuda,
+          yet the Navy persisted with it because the Barracuda was intended to be the more
+          multi-role machine, specifically in dive bombing, and because adequate supplies of
+          the American aircraft were not guaranteed. All three sentences together make the
+          judgement, and they are reported together rather than flattened into "the Avenger
+          was better".
+      src: [ac-saratoga]
+
+    - heading: 它的长处是航程，短处是不会俯冲
+      text:
+        zh: >-
+          材料对两者分工的概括是：Avenger 有 Barracuda 所没有的续航力，
+          但「unlike the Barracuda, they were not dive bombers」。
+          后果是机组必须改攻击剖面——改用浅角度滑翔投弹。
+          这一段还带出一个具体的组织后果：因为澳大利亚没有为 Avenger 准备好的设施，
+          英国太平洋舰队的出发时间被从 12 月推迟到 1 月。
+          也就是说换一型飞机不只是换飞机，训练与后勤要一起动。
+        en: >-
+          The material's summary of the division between them is that the Avenger had the
+          endurance the Barracuda did not, but that "unlike the Barracuda, they were not
+          dive bombers". The consequence was that crews had to adapt to new attack
+          profiles involving shallow glide-bombing approaches. The passage also carries an
+          organisational consequence: with no facilities ready for the Avenger in
+          Australia, the British Pacific Fleet's departure slipped from December to
+          January. Changing the aircraft meant moving training and logistics with it.
+      src: [ac-eastfleet]
+
+    - heading: 关于「5 月换上、7 月又换回」的时间线
+      text:
+        zh: >-
+          具体日期要小心，因为材料给的是相对时间。一处写：
+          1944 年 5 月本舰的两个 Barracuda 中队（各 21 架）被卸下，
+          换成 18 架 Avenger I，用于与萨拉托加号联合的两个月行动。
+          另一处写 6 月的一次行动里，本舰出的是 Barracuda 与 Corsair，
+          并评论说 Avenger 的试验「虽然成功，但已经结束」——
+          也就是 6 月已经在换回。
+          两处对「什么时候换回」的表述略有参差，本站按材料原样并列，
+          不合成一个精确日期。
+        en: >-
+          The dates need care because the material gives relative timing. One passage
+          records that in May 1944 the ship's two Barracuda squadrons, twenty-one aircraft
+          each, were landed and exchanged for eighteen Avenger Is for a two-month operation
+          in concert with USS Saratoga. Another records a June operation in which the ship
+          flew Barracudas and Corsairs and comments that the Avenger experiment, though
+          successful, was over - so the reversion had happened by June. The two passages
+          differ slightly on when the change back occurred; both are reported as they
+          stand rather than merged into one precise date.
+      src: [ac-design, ac-eastfleet]
+
+history:
+  - id: service
+    title: { zh: 装舰记录, en: Fitting record }
+    range: { from: 1944-05, to: 1945-03 }
+    lead:
+      zh: >-
+        两段：1944 年 5 月的两个月试用，与 1945 年 1 月以后作为舰队航母标准装备回归。
+      en: >-
+        Two phases: a two-month trial from May 1944, and a return from January 1945 as
+        standard fleet-carrier equipment.
+    events:
+      - date: 1944-05
+        text:
+          zh: >-
+            本舰的两个 Barracuda 中队（各 21 架）被卸下，
+            换上 18 架 Avenger I，用于与萨拉托加号联合的两个月行动。
+            材料对这一段的评价是「while successful」。
+          en: >-
+            The ship's two Barracuda squadrons, twenty-one aircraft each, were landed and
+            exchanged for eighteen Avenger Is for a two-month operation with USS Saratoga.
+            The material's verdict on the episode is "while successful".
+        src: [ac-design, ac-saratoga]
+      - date: 1944-06
+        text:
+          zh: >-
+            本舰此时又出 Barracuda 与 Corsair，Avenger 的试验结束。
+            换回的原因之一是 Avenger 挂不了英国的 18 英寸 Mk XIIB 鱼雷，
+            且它不是俯冲轰炸机，机组需要改攻击剖面。
+          en: >-
+            By now the ship was again flying Barracudas and Corsairs and the Avenger
+            experiment was over. One reason for the reversion is that the Avenger could not
+            carry the British 18-inch Mk XIIB torpedo, and that it was not a dive bomber,
+            so crews had to change attack profiles.
+        src: [ac-eastfleet, ac-saratoga]
+      - date: 1945-01
+        text:
+          zh: >-
+            英国太平洋舰队的第一航母中队开始让机组熟悉新的 Avenger。
+            材料记：这型虽然挂不了英国鱼雷，但有 Barracuda 没有的续航力；
+            与 Barracuda 不同，它不是俯冲轰炸机，所以机组必须改用浅角度滑翔投弹。
+            因为澳大利亚没有为这型准备好的设施，舰队出发时间从 12 月推迟到 1 月。
+          en: >-
+            The British Pacific Fleet's First Aircraft Carrier Squadron began working its
+            crews up on the new Avenger. The material records that while the type could not
+            carry the British torpedo it had the endurance the Barracuda lacked, and that
+            unlike the Barracuda it was not a dive bomber, so crews had to adapt to shallow
+            glide-bombing approaches. With no facilities ready for it in Australia, the
+            fleet's departure slipped from December to January.
+        src: [ac-eastfleet]
+      - date: 1945-03-26
+        text:
+          zh: >-
+            冰山行动开始时本舰载 36 架 Corsair 与 16 架 Avenger。
+            同期的清单记本舰为 1830、1833 中队各 18 架 Corsair II 与 854 中队 16 架 Avenger II
+            ——854 中队原编 21 架，为给备件与后备机组腾空间减到 16 架。
+          en: >-
+            At the start of Operation Iceberg the ship carried thirty-six Corsairs and
+            sixteen Avengers. The list for the period gives eighteen Corsair IIs each in
+            1830 and 1833 with sixteen Avenger IIs of 854 Squadron - the squadron had been
+            twenty-one strong and was cut to sixteen to make room for spares and reserve
+            aircrew.
+        src: [navypedia-illustrious, ac-design]

@@ -1,0 +1,184 @@
+# ============================================================================
+# 武器正文 —— HACS Mk IVGB 高角炮指挥仪
+#
+# 三条必须写清的：
+#  1) 它是英王乔治五世级首两舰独有的 4 部，后续舰改用 Mk V / Mk VI；
+#  2) 它与主炮的 AFCT Mk IX 是两套系统，不要混；
+#  3) 胡德号上装的是 HACS Mk I 与 Mk III*，不是这一型，不能挂错。
+# 探测/跟踪距离一律不写。
+# ============================================================================
+weapon: hacs-mk4
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      HACS Mk IVGB 是英国高角炮控制系统（High Angle Control System）的一个型号，
+      本站这一条指的是英王乔治五世级首两舰——英王乔治五世号与威尔士亲王号——
+      上装备的 4 部指挥仪。本级后续舰改用 Mk V 与 Mk VI。
+      它配的是 5.25 英寸两用炮，与本级主炮所用的海军部火控台 Mk IX
+      是两套彼此独立的系统。
+      必须提前说明：胡德号上装的是 HACS Mk I 与 Mk III*，不是这一型。
+    en: >-
+      The HACS Mk IVGB is a mark of the Royal Navy's High Angle Control System, and this
+      entry covers the four directors fitted to the first two ships of the King George V
+      class, King George V and Prince of Wales; the later ships of the class went to the
+      Mk V and Mk VI. It served the 5.25-inch dual-purpose battery and was a separate
+      system from the Admiralty Fire Control Table Mk IX used for the main armament. One
+      point has to be made up front: Hood carried HACS Mk I and Mk III* directors, not
+      this mark.
+
+  paragraphs:
+    - heading: 四部，而且是首两舰独有
+      text:
+        zh: >-
+          数量与范围都要写准。本级首两舰各装 4 部 Mk IVGB，
+          本级后续舰改为 Mk V 与 Mk VI，所以这一型在本级里不是通用配置。
+          至于四部怎么分工，现有的技术记录只给了「4 部」与「配 5.25 英寸炮」两条，
+          没有给出每部具体控制哪几座炮座。
+          这里还有一处口径差别必须并列：navypedia 与 RMG 的舰级资料说首两舰各装 4 部
+          Mk IVGB、后续舰改用 Mk V / Mk VI；而 HACS 专文在讲火控**台**时写
+          「the HACS Mark IV was installed on "Town" and succeeding cruisers,
+          the first four units of the King George V class battleships and to new
+          aircraft carriers」。两者不是同一件事——一个数指挥仪、一个列装了该型火控台的舰——
+          所以本站不把它们当一个矛盾，也不据此改写首两舰的指挥仪数量，两条都留在页面上。
+          本站因此不写「前部两部管左舷、后部两部管右舷」这类分工描述——
+          没有依据。要理解它的地位，看的是它配哪一批炮：
+          8 座双联 5.25 英寸是这一级唯一的重型对空火力，HACS 就是为它服务的。
+        en: >-
+          Both the number and the scope need to be exact. The first two ships each
+          carried four Mk IVGB directors, while later ships of the class went to the Mk V
+          and Mk VI, so the mark was not a class-wide fit. As for how the four divided
+          their work, the technical record available gives only "four" and "serving the
+          5.25-inch guns" without stating which director controlled which mountings. A
+          difference in the level of statement has to stand alongside that: the class
+          records in navypedia and the RMG guide say the first two ships carried four
+          Mk IVGB directors each with later ships going to the Mk V and Mk VI, while the
+          HACS article, discussing the fire-control table, writes that "the HACS Mark IV
+          was installed on 'Town' and succeeding cruisers, the first four units of the
+          King George V class battleships and to new aircraft carriers". The two are not
+          the same claim - one counts directors, the other lists the ships that took a
+          table of that mark - so they are not treated as a contradiction here and the
+          director count for the first two ships is not rewritten on their account; both
+          stay on the page. This article therefore gives no such split as "the forward
+          pair took the port side" - there is no basis for one. What places the system is
+          the battery it served: the eight twin 5.25-inch mountings were the class's only
+          heavy anti-aircraft armament, and HACS existed for them.
+      src: [navypedia-kgv, rmg-kgv-guide, navweaps-hacs]
+
+    - heading: 它与主炮那套不是一回事
+      text:
+        zh: >-
+          这是最容易写错的一处。本级的火控分成两条线：
+          主炮走的是海军部火控台 Mk IX（Admiralty Fire Control Table Mk IX），
+          高角炮走的是 HACS。两者不是同一个系统的上下级，
+          而是各管一批炮。
+          把 HACS 写成「全舰火控系统」会同时错两头：
+          既夸大了它对主炮的作用，也掩盖了它对 5.25 英寸炮的专属关系。
+          本站因此在本页只写 HACS 这一侧，
+          主炮火控另见 14 英寸炮与相关条目。
+        en: >-
+          This is the easiest place to go wrong. Fire control in this class ran on two
+          lines: the main armament through the Admiralty Fire Control Table Mk IX, the
+          heavy anti-aircraft battery through HACS. They are not superior and subordinate
+          parts of one system but two systems, each owning a set of guns. Calling HACS
+          the ship's fire-control system errs in both directions at once, overstating its
+          hold on the main armament and hiding its exclusive relation to the 5.25-inch
+          battery. This page therefore covers the HACS side only; main-armament fire
+          control belongs with the 14-inch gun entry.
+      src: [navypedia-kgv, navweaps-hacs]
+
+    - heading: 这一族系统的原始设计假设，本身就决定了它的上限
+      text:
+        zh: >-
+          要理解 Mk IV 为什么是这样，得看 HACS 这一族是怎么来的。
+          专题站的 HACS 专文记：1920 年代海军部委托 Vickers 研制这套系统，
+          Mark I 于 1930 年在战列舰英勇号（HMS Valiant）于直布罗陀外海试射；
+          1931 年估计训练良好的炮组击落一架飞机需 178 发 4 英寸弹，
+          1932 年这个估计降到 136 发。同一篇讲清了它的根本局限：
+          Mark IV 及更早各型都假定目标的高度、速度、航向不变，
+          而且速度估计正确——这个假设对俯冲轰炸和鱼雷攻击都不成立；
+          系统内在的滞后又使它对付 1930 年代末出现的高速飞机太慢。
+          对俯冲轰炸，HACS 只能靠指挥官的 forward area sight 目视设定弹幕。
+        en: >-
+          To understand why the Mk IV is what it is, look at where the HACS family came
+          from. The specialist HACS article records that the Admiralty ordered the system
+          from Vickers in the late 1920s, that the Mark I was trialled in the battleship
+          HMS Valiant off Gibraltar in 1930, that in 1931 a well-trained crew was
+          estimated to need 178 4-inch shells to bring down one aircraft, and that by
+          1932 the estimate had fallen to 136. The same article states the fundamental
+          limit: the Mark IV and all earlier marks assumed the target's height, speed and
+          course were constant and its speed correctly estimated, an assumption that
+          collapses for dive-bombing and torpedo attack, while the system's built-in lag
+          made it too slow for the higher-speed aircraft entering service in the late
+          1930s. Against dive-bombers, HACS could only set up a barrage using the control
+          officer's forward area sight.
+      src: [navweaps-hacs]
+
+history:
+  - id: development
+    title: { zh: 从 Mk I 到 Mk IV, en: From Mark I to Mark IV }
+    range: { from: 1930, to: 1939 }
+    lead:
+      zh: >-
+        这一族从 1930 年试射到 1939 年 Mk IV 服役，走了九年。
+      en: >-
+        Nine years separate the 1930 trials from the Mk IV in service in 1939.
+    events:
+      - date: 1930
+        text:
+          zh: >-
+            HACS Mark I 在战列舰英勇号（HMS Valiant）于直布罗陀外海试射。
+            1931 年估计击落一架飞机需 178 发 4 英寸弹，1932 年降到 136 发。
+          en: >-
+            The HACS Mark I was trialled in the battleship HMS Valiant off Gibraltar. In
+            1931 a well-trained crew was estimated to need 178 4-inch shells per aircraft
+            brought down; by 1932 the figure was 136.
+        src: [navweaps-hacs]
+      - date: 1939
+        text:
+          zh: >-
+            Mk IV 是 1939 年开战时在役的最新一型。
+            Mk IVGB 在 Mk IV 基础上加了液压交叉水平稳定，
+            「B」改型则允许火控台在盲射模式下对指挥仪做遥控动力驱动。
+            本级首两舰装的正是这一型，各 4 部。
+          en: >-
+            The Mark IV was the latest mark in service when war broke out in 1939. The
+            Mk IVGB added hydraulic cross-level stabilisation to the Mk IV, and the "B"
+            modification allowed remote power control of the director from the table in
+            blind-fire mode. The first two ships of this class carried four of them each.
+        src: [navweaps-hacs, navypedia-kgv]
+
+  - id: service
+    title: { zh: 装舰与局限, en: Fitting and limits }
+    range: { from: 1940-10, to: 1944-07 }
+    lead:
+      zh: >-
+        本级的 HACS 从建成到 1944 年改装都在，但这一型只属于首两舰。
+      en: >-
+        HACS was aboard the class from completion to the 1944 refit, but this mark
+        belongs only to the first two ships.
+    events:
+      - date: 1940-10-01
+        text:
+          zh: >-
+            英王乔治五世号服役，装 4 部 HACS Mk IVGB 指挥仪，
+            配 8 座双联 5.25 英寸两用炮。本级后续舰改用 Mk V 与 Mk VI。
+          en: >-
+            HMS King George V came into service with four HACS Mk IVGB directors serving
+            the eight twin 5.25-inch dual-purpose mountings. Later ships of the class went
+            to the Mk V and Mk VI.
+        src: [navypedia-kgv, rmg-kgv-guide]
+      - date: 1944-07
+        text:
+          zh: >-
+            1944 年改装时 HACS 系统本身并未更换，
+            换掉的是雷达与炮座——type 277、type 279B、type 293 等电子设备同批更新。
+            需要说明：Mk VI 在战时只有战列舰安森号（HMS Anson）装了完整系统，
+            与本舰不同。
+          en: >-
+            The 1944 refit did not replace the HACS system itself; what changed was radar
+            and mountings, with the type 277, type 279B and type 293 going aboard in one
+            batch. Note that the Mk VI was fitted complete in only one battleship before
+            the war ended, HMS Anson, and not in this ship.
+        src: [navypedia-kgv, navweaps-hacs]

@@ -1,0 +1,251 @@
+# ============================================================================
+# 武器正文 —— 38 cm SK C/34
+#
+# 这一型的正文有两个必须澄清的误传（47 倍径、沿自一战巴伐利亚级），
+# 以及一个必须两说并列的点（实际射速：AVSK 报告的扬弹机能力 vs 丹麦海峡实测）。
+# 参数不进正文，只写来龙去脉。
+# ============================================================================
+weapon: 38cm-sk-c34
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      38 cm SK C/34 是德国海军在二战中装在战列舰上的最大一型舰炮，
+      设计于 1934 年，装备俾斯麦级与「O」级战列舰，也曾计划用于格奈森瑙号的改装。
+      它是克虏伯为重新武装起来的德国海军重造的炮，而不是一战 38 cm L/45 的沿用；
+      战争期间同型炮还被大量改作岸炮，一直用到 1952 年。
+    en: >-
+      The 38 cm SK C/34 was the largest naval gun Germany mounted afloat in the
+      Second World War. Designed in 1934, it armed the Bismarck and "O" classes and
+      was intended for Gneisenau's rebuild. It was a new Krupp design rather than a
+      continuation of the First World War 38 cm L/45, and many were later converted
+      to coast artillery that stayed in service until 1952.
+
+  paragraphs:
+    - heading: 一个常被写错的数字：它是 51.66 倍径，不是 47
+      text:
+        zh: >-
+          这型炮最常被误称的地方在倍径。中文与部分英文资料写「38 cm L/47」，
+          但按德式算法全长是 51.66 倍径、按美英算法膛线长是 48.43 倍径；
+          navweaps 在页首专门纠正了这一点，指出 47 这个数字两种算法都对不上。
+          另一处常被沿用的说法是它沿自一战巴伐利亚级的 38 cm L/45——
+          实际上两者除了口径相同之外共同点很少，SK C/34 是全新的设计。
+        en: >-
+          The calibre length is the most frequently mangled figure. Sources often
+          give "38 cm L/47", but by the German convention the gun is 51.66 calibres
+          long overall and by the Anglo-American convention its rifling is 48.43
+          calibres - neither convention produces 47. The related claim that the gun
+          descends from the First World War Bayern class 38 cm L/45 is also wrong:
+          apart from the bore diameter the two have little in common, and the SK C/34
+          was a fresh design.
+      src: [navweaps-38cm-sk-c34]
+
+    - heading: 为什么俾斯麦号的炮塔看起来比别人的大
+      text:
+        zh: >-
+          四座双联炮塔按字母从前到后命名为 Anton、Bruno、Cäsar、Dora，
+          每座连炮身约 1,056 吨（Anton 因为没装 10.5 米测距仪，是 1,048 吨）。
+          kbismarck 的装甲与武备页指出，这些炮塔比外国同口径双联塔明显更大，
+          两门炮的身管间距也格外宽——目的就是减少两门炮在射击时的互相干扰，
+          并且每门炮都能独立俯仰、独立击发。同一页把它的特点总结为高初速、
+          低伸弹道和短飞行时间，作者认为这带来了「非常精确而迅速的射击」，
+          并以 1941 年 5 月 24 日晨对胡德号的交战作为证据。
+        en: >-
+          The four twin turrets were lettered Anton, Bruno, Cäsar and Dora from bow
+          to stern and weighed about 1,056 tonnes each (Anton, lacking the 10.5 m
+          rangefinder, came in at 1,048). KBismarck notes that these turrets were
+          conspicuously larger than foreign 38 cm twins and that the barrels were set
+          unusually far apart, which reduced interference between them and let each
+          gun elevate and fire independently. The same page credits the combination of
+          high muzzle velocity, flat trajectory and short time of flight with
+          "a very accurate and rapid fire", citing the engagement with Hood on the
+          morning of 24 May 1941 as the demonstration.
+      src: [kbismarck-armament, navweaps-38cm-sk-c34]
+
+    - heading: 射速：文件写的和海上打的不是一回事
+      text:
+        zh: >-
+          关于这型炮打得多快，档案里的两组数字互相打架，本站两说并列，不替来源裁决。
+          克虏伯自己的文件记录 4 度仰角时为 26 秒一发；1941 年 5 月的 AVSK
+          （舰炮射击试验指挥部）报告则称俾斯麦号的扬弹机能够同时供应四座炮塔、
+          合计每分钟 23 到 25 发，也就是每门炮 3 发/分——但同一份报告同时写明
+          扬弹机的设计缺陷在评估中造成过两次严重故障和长时间的供弹中断。
+          另一头是实战记录：丹麦海峡那 13 分钟里俾斯麦号一共打掉 93 发，
+          摊到每门炮不到 1 发/分。**三种口径都能追到出处，本站不合并成一个数字。**
+        en: >-
+          Two sets of figures in the archives disagree on how fast the gun actually
+          fired, and both are reported here rather than adjudicated. Krupp's own
+          paperwork records one round every 26 seconds at 4 degrees elevation; the
+          May 1941 AVSK (gunnery trials command) report credits Bismarck's hoists with
+          feeding all four turrets at 23 to 25 rounds per minute, three per gun - yet
+          the same report states that defects in those hoists caused two serious
+          breakdowns and long interruptions of supply during the evaluation. Against
+          that stands the action record: 93 rounds in thirteen minutes at the Denmark
+          Strait, under one round per gun per minute.
+          **All three figures trace to a source; none is averaged away here.**
+      src: [navweaps-38cm-sk-c34, kbismarck-armament]
+
+    - heading: 从舰炮变成岸炮
+      text:
+        zh: >-
+          这型炮在战争中的第二个身份是岸防炮。改型被命名为 Siegfried，
+          最出名的一处是加来海峡省格里奈角以东三公里的 Haringzelles 的
+          Batterie Todt——以 1942 年飞机失事身亡的军备部长弗里茨·托特命名，
+          四门炮经常跨多佛海峡射击。此外丹麦的 Oksby 与 Hanstead 各有四门、
+          挪威 Kristiansand 有三门。挪威那处战后被编入挪威岸防，1952 年还打了最后一次。
+          给沙恩霍斯特号和格奈森瑙号换装这型炮的计划也没走完：沙恩霍斯特号基本没动工，
+          格奈森瑙号有三座炮塔在建；1942 年格奈森瑙号重创后，这三座加上一座原定交付苏联的炮塔
+          改作岸炮，原打算在 Cap de la Hague 与法国 Paimpol 各放两座，最后没有实施。
+          苏联当年订购了 16 门，计划装在塞瓦斯托波尔号与喀琅施塔得号上（Project 69I），一门都没交货。
+        en: >-
+          The gun's second career was as coast artillery. The conversion was designated
+          Siegfried; the best known emplacement is Batterie Todt at Haringzelles, three
+          kilometres east of Cap Gris-Nez, whose four guns fired across the Dover
+          Strait. Four more stood at Oksby and four at Hanstead in Denmark, three at
+          Kristiansand in Norway, where the battery passed to Norwegian coastal
+          artillery after the war and fired its last round in 1952. The plan to rearm
+          Scharnhorst and Gneisenau with the same gun was never finished: Scharnhorst
+          was barely touched, Gneisenau had three turrets under construction, and after
+          she was crippled in 1942 those three plus one intended for the Soviet Union
+          became coast artillery - two for Cap de la Hague and two for Paimpol, a
+          scheme that was never carried out. The Soviet order for sixteen guns, meant
+          for Sevastopol and Kronstadt (Project 69I), was never delivered.
+      src: [navweaps-38cm-sk-c34]
+
+    - heading: 剩下的是什么
+      text:
+        zh: >-
+          这一型炮今天至少有两门存世：一门在丹麦的 Museumcenter Hanstholm，
+          一门在挪威的 Kristiansand Cannon Museum。它们和俾斯麦号残骸上的四座炮塔
+          构成了这型武器现在能被直接看到的部分。
+        en: >-
+          At least two guns survive today: one at the Museumcenter Hanstholm in
+          Denmark and one at the Kristiansand Cannon Museum in Norway. Together with
+          the four turrets still on Bismarck's wreck they are what remains physically
+          visible of the weapon.
+      src: [navweaps-38cm-sk-c34]
+
+history:
+  - id: design
+    title: { zh: 设计与定型, en: Design }
+    range: { from: 1934, to: 1940 }
+    lead:
+      zh: >-
+        1934 年设计、1940 年服役。它是克虏伯为一支正在重建的海军新画的炮，
+        而不是把一战的旧炮改一改。
+      en: >-
+        Designed in 1934 and in service by 1940, it was a new Krupp design for a navy
+        being rebuilt from scratch rather than a warmed-over First World War gun.
+    events:
+      - date: 1934
+        text:
+          zh: >-
+            完成设计，编号 38 cm SK C/34。navweaps 指出它与一战巴伐利亚级的
+            38 cm L/45 除口径外共同点很少，是新设计。
+          en: >-
+            Design completed as the 38 cm SK C/34. NavWeaps notes that beyond bore
+            diameter it shares little with the First World War 38 cm L/45 and is a new
+            design.
+        src: [navweaps-38cm-sk-c34]
+      - date: 1940
+        text:
+          zh: >-
+            进入服役（navweaps 的 Date In Service 栏）。装舰对象包括俾斯麦级、
+            计划中的「O」级，以及计划改装后的格奈森瑙号。
+          en: >-
+            Entered service according to NavWeaps' "Date In Service" field. It armed
+            the Bismarck class, the projected "O" class, and the planned rebuild of
+            Gneisenau.
+        src: [navweaps-38cm-sk-c34]
+
+  - id: service
+    title: { zh: 战时使用, en: Wartime service }
+    range: { from: 1940-08, to: 1944-11 }
+    lead:
+      zh: >-
+        这型炮只在两艘建成的战列舰上打过仗：俾斯麦号打了不到十天，
+        提尔皮茨号一次也没对舰开过火。
+      en: >-
+        The gun went to war aboard only two completed battleships: Bismarck, for less
+        than ten days, and Tirpitz, which never fired at a surface target.
+    events:
+      - date: 1940-08-24
+        text:
+          zh: >-
+            俾斯麦号服役，四座双联炮塔按 Anton、Bruno、Cäsar、Dora 命名，
+            每座约 1,056 吨。弹药基数 1,004 发，分三种：穿甲弹
+            Psgr. L/4,4 353 发、底发引信榴弹 Spgr. L/4,5 Bdz 338 发、
+            头发引信榴弹 Spgr. L/4,6 Kz 313 发。
+          en: >-
+            Bismarck commissioned with four twin turrets lettered Anton, Bruno, Cäsar
+            and Dora, about 1,056 tonnes each. The outfit was 1,004 rounds in three
+            types: 353 armour-piercing Psgr. L/4,4, 338 base-fuzed HE Spgr. L/4,5 Bdz
+            and 313 nose-fuzed HE Spgr. L/4,6 Kz.
+        src: [kbismarck-armament]
+      - date: 1941-05-24
+        text:
+          zh: >-
+            丹麦海峡海战。俾斯麦号在约 13 分钟内对胡德号与威尔士亲王号
+            一共打出 93 发穿甲弹；其中一发导致胡德号弹药库爆炸。
+            按 KBismarck 的统计，这 93 发全部是 Psgr. L/4,4 穿甲弹。
+          en: >-
+            The Battle of the Denmark Strait. In roughly thirteen minutes Bismarck
+            fired 93 armour-piercing rounds at Hood and Prince of Wales; one of them
+            detonated Hood's magazine. KBismarck records all 93 as Psgr. L/4,4 AP.
+        src: [kbismarck-armament, kbismarck-denmark-strait]
+      - date: 1944-11-12
+        text:
+          zh: >-
+            提尔皮茨号在 Tromsø 附近的 Håkøya 被英国兰开斯特轰炸机用
+            Tallboy 炸弹击沉。它是这型炮最后一艘还在服役的载舰。
+          en: >-
+            Tirpitz, the last ship still carrying the gun, was sunk by RAF Lancasters
+            with Tallboy bombs off Håkøya near Tromsø.
+        src: [kbismarck-tirpitz]
+
+  - id: ashore
+    title: { zh: 改作岸炮, en: Coast artillery conversion }
+    range: { from: 1942, to: 1952 }
+    lead:
+      zh: >-
+        这型炮服役时间最长的一段不在海上，而在法国、丹麦和挪威的海岸上。
+      en: >-
+        The longest part of this gun's service was not at sea but on the coasts of
+        France, Denmark and Norway.
+    events:
+      - date: 1942
+        text:
+          zh: >-
+            格奈森瑙号重创后退役，三座在建的炮塔与一座原定交付苏联的炮塔
+            改作岸炮。原计划在 Cap de la Hague 与 Paimpol 各放两座，未实施。
+          en: >-
+            After Gneisenau was crippled and decommissioned, three turrets under
+            construction plus one intended for the Soviet Union were turned over to
+            coast artillery. The plan to place two each at Cap de la Hague and Paimpol
+            was never carried out.
+        src: [navweaps-38cm-sk-c34]
+      - date: 1942
+        text:
+          zh: >-
+            加来海峡省 Haringzelles 的 Batterie Todt 建成，四门炮，
+            位于格里奈角以东三公里，常跨多佛海峡射击。炮台以
+            1942 年 2 月飞机失事身亡的军备部长弗里茨·托特命名。
+          en: >-
+            Batterie Todt at Haringzelles, three kilometres east of Cap Gris-Nez,
+            became operational with four guns and frequently fired across the Dover
+            Strait. It was named for Armaments Minister Fritz Todt, killed in an air
+            crash in February 1942.
+        src: [navweaps-38cm-sk-c34]
+      - date: 1952
+        text:
+          zh: >-
+            挪威 Kristiansand 的炮台战后编入挪威岸防，这一年打了最后一次。
+            丹麦 Oksby 的两座炮塔接近完工但战争结束前未成，
+            四门炮中三门就地拆解，第四门战后运往 Hanstead。
+          en: >-
+            The Kristiansand battery in Norway passed into Norwegian coastal artillery
+            and fired its last round this year. The two Oksby turrets in Denmark were
+            near completion when the war ended: three of the four guns were scrapped on
+            site and the fourth went to Hanstead after the war.
+        src: [navweaps-38cm-sk-c34]

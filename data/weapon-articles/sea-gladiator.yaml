@@ -1,0 +1,130 @@
+# ============================================================================
+# 武器正文 —— Gloster Sea Gladiator
+#
+# 材料薄：只有塔兰托时的 2 架配属记录、以及它在 813 中队与 Swordfish 混编。
+# 机型参数无来源，不写；本舰之外的使用史不在本页范围。
+# ============================================================================
+weapon: sea-gladiator
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      Gloster Sea Gladiator 是英国舰队航空兵在二战最初阶段使用的舰载战斗机，
+      到这型上舰时它已经属于要被替换的一代：双翼、固定起落架、
+      性能比不上陆基单翼机。它在本舰上的记载集中在 1940 年 11 月的塔兰托行动：
+      813 中队配属 2 架，与该中队的 Swordfish 混编。
+      机型参数（马力、翼展、极速）本站无来源，不写。
+    en: >-
+      The Gloster Sea Gladiator was a Fleet Air Arm fighter of the war's first phase, and
+      by the time it flew from carriers it belonged to a generation due for replacement:
+      a biplane with a fixed undercarriage, outclassed by land-based monoplanes. Its
+      record aboard HMS Illustrious centres on the Taranto operation of November 1940,
+      where 813 Squadron had two attached, mixed in with that squadron's Swordfish.
+      Power, span and top speed have no source in this project and are not written.
+
+  paragraphs:
+    - heading: 它不是本舰的编制机，是借来的
+      text:
+        zh: >-
+          这一层是理解它在塔兰托时位置的关键。813 中队与 824 中队都是从
+          鹰号（HMS Eagle）借调过来的，因为鹰号的燃油舱有缺陷、无法参加这次行动。
+          材料记：鹰号「to their great disappointment」不能参战，
+          于是 8 名飞行员与 8 名观察员上了光辉号，另记「5 架鹰号的 Swordfish 也上了舰」；
+          叙述材料则给出编成：813 中队「4 架 Swordfish、2 架 Sea Gladiator」、
+          824 中队「2 架 Swordfish」，并另记 6 架 Swordfish 与 8 名机组转舰——
+          借调的鱼雷机数量在两处材料里是 5 与 6，两说并列。
+          至于那两架 Sea Gladiator，出处是叙述材料：「Two of Eagle's requisitioned
+          Sea Gladiators would also take station as a deck park aboard Illustrious
+          to supplement the fighter defence」；舰长报告里没有提到这两种飞机。
+        en: >-
+          This is the key to its place at Taranto. Both 813 and 824 Squadrons were
+          borrowed from HMS Eagle, whose defective petrol tanks kept her out of the
+          operation. The record reads that Eagle, "to their great disappointment", could
+          not take part, so eight pilots and eight observers came aboard Illustrious and
+          "Five of 'EAGLE's Swordfish were also embarked"; the narrative account gives the
+          organisation instead - 813 with four Swordfish and two Sea Gladiators, 824 with
+          two Swordfish - and separately records six Swordfish and eight crew transferred,
+          so the borrowed torpedo aircraft number five in one place and six in the other,
+          and both stand. As for the two Sea Gladiators, the source is the narrative
+          account: "Two of Eagle's requisitioned Sea Gladiators would also take station as
+          a deck park aboard Illustrious to supplement the fighter defence". The
+          commanding officer's report mentions neither type.
+      src: [ac-taranto-narrative, ac-taranto-report]
+
+    - heading: 混编是当时的常态，不是特例
+      text:
+        zh: >-
+          813 中队的编制里同时有 Swordfish 与 Sea Gladiator，
+          这不是临时凑数而是当时英国航母机群的常态——
+          一个中队里既有攻击机又有战斗机。同一份材料里还有一处可以印证：
+          鹰号在 1940 年 7 月卡拉布里亚海战时，
+          「operating just 18 Swordfish and three Sea Gladiators」，
+          也就是说鹰号自己的机群里 Sea Gladiator 也只有 3 架。
+          航母机群小、型号混，是这个阶段的普遍状态。
+        en: >-
+          813 Squadron's establishment held both Swordfish and Sea Gladiators, which was
+          normal for a British carrier air group of the period rather than an improvisation:
+          one squadron containing both strike aircraft and fighters. The same material
+          offers a corroboration: at the Battle of Calabria in July 1940 Eagle was
+          "operating just 18 Swordfish and three Sea Gladiators", so Eagle's own group
+          carried only three of them too. Small groups and mixed types were the general
+          condition at this stage.
+      src: [ac-taranto-narrative]
+
+    - heading: 它在塔兰托那两天的实际工作
+      text: 
+        zh: >-
+          它的活儿不是攻击，是防空与拦截。记录里有两件事可以落到日期：
+          一架 Cant Z-501 侦察机被本舰的战斗空中巡逻击落，
+          执行的是鹰号调来的两架 Sea Gladiator 之一；
+          另一次是 11 月 8 日，Fulmar 在长时间追逐后勉强追上一架
+          一直在跟踪舰队的 Savoia 79——同一份记录顺带指出
+          Skua 追不上这种目标。也就是说，这一阶段舰队防空靠的是
+          「Fulmar 主攻、Sea Gladiator 补位」这样的组合。
+        en: >-
+          Its work was air defence and interception, not attack. Two things in the record
+          can be dated: a Cant Z-501 reconnaissance aircraft was shot down by the ship's
+          standing air patrol, flown by one of the two Sea Gladiators borrowed from Eagle;
+          and on 8 November the Fulmars only just caught a Savoia 79 that had been
+          shadowing the fleet after a long chase, the same record noting in passing that
+          the Skua could not have overtaken the shadower. Air defence at this stage
+          therefore rested on a combination of Fulmars doing the main work with Sea
+          Gladiators filling in.
+      src: [ac-taranto-narrative]
+
+history:
+  - id: taranto
+    title: { zh: 塔兰托行动, en: The Taranto operation }
+    range: { from: 1940-11, to: 1940-11 }
+    lead:
+      zh: >-
+        它在这次行动里的存在感只有两架，但那两架确实飞了、也确实打下来过东西。
+      en: >-
+        Its presence in the operation amounted to two aircraft, but those two did fly and
+        did shoot something down.
+    events:
+      - date: 1940-11-10
+        text:
+          zh: >-
+            813 中队编成内配属 2 架 Sea Gladiator，与同中队的 4 架 Swordfish 混编；
+            该中队与 824 中队都是从鹰号借调。
+            另有一份材料把这两架写作「813 Fighter Flight」的 4 架 Sea Gladiator，
+            数字与前者不同，两说并列。
+          en: >-
+            813 Squadron's establishment included two Sea Gladiators alongside four
+            Swordfish; both it and 824 Squadron were borrowed from Eagle. A separate source
+            gives the strength as 813 Fighter Flight with four Sea Gladiators, a different
+            count, and both stand.
+        src: [ac-taranto-narrative]
+      - date: 1940-11-11
+        text:
+          zh: >-
+            鹰号的两架 Sea Gladiator 参与本舰的常备空中巡逻，
+            拦截并击落了一架 186 Squadriglia 的 Cant Z-501 侦察机；
+            机上三名乘员被一艘英国 Sunderland 水上飞机从恶劣海况中救起。
+          en: >-
+            Two of Eagle's Sea Gladiators took part in the ship's standing air patrol, and
+            one of them intercepted and shot down a Cant Z-501 of 186 Squadriglia; three of
+            its crew were picked out of rough seas by a British Sunderland flying boat.
+        src: [ac-taranto-narrative]

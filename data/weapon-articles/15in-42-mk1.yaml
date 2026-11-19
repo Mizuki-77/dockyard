@@ -1,0 +1,248 @@
+# ============================================================================
+# 武器正文 —— 15 in/42 BL Mark I
+#
+# 这一型的核心故事是"跳过原型阶段"的豪赌，以及 1930 年代的现代化为什么
+# 改的是仰角与弹道帽而不是换炮。Super Charge 那段要写清楚：
+# 纸面有、实际几乎没人用。
+# ============================================================================
+weapon: 15in-42-mk1
+updated: 2026-11-18
+
+intro:
+  lead:
+    zh: >-
+      15 in/42 BL Mark I 是英国皇家海军二十世纪上半叶最重要的一型大口径舰炮，
+      1912 年设计、1915 年服役，装过伊丽莎白女王级、复仇级、声望号、
+      光荣级与胡德号，一直打到 1954 年。
+      navweaps 对它的评价是「很可能是英国造过最好的大口径舰炮」，
+      也是各国同类武器中寿命最长的之一。
+    en: >-
+      The 15 in/42 BL Mark I was the most important heavy naval gun the Royal Navy
+      fielded in the first half of the twentieth century. Designed in 1912 and in
+      service from 1915, it armed the Queen Elizabeth and Royal Sovereign classes,
+      Renown, Glorious and Hood, and fired its last rounds in 1954. NavWeaps calls it
+      "quite possibly the best large-calibre naval gun ever developed by Britain" and
+      one of the longest-lived of any nation.
+
+  paragraphs:
+    - heading: 一次跳过原型阶段的豪赌
+      text:
+        zh: >-
+          这型炮的设计大体基于 13.5 in/45 Mark V，但它是被紧急推上生产线的——
+          正常的、漫长的原型阶段被直接绕过。批准这个流程的是军械总监
+          Archibald Moore 少将，navweaps 的原话是：他拿自己的「professional existence」
+          为它的成功作赌注。之所以要赶，是为了让后来的伊丽莎白女王级
+          能装上比原本可能的更大的炮。
+        en: >-
+          The design leaned heavily on the 13.5 in/45 Mark V, but the gun was rushed
+          into production with the normal, lengthy prototype stage skipped entirely.
+          The officer who approved that shortcut was the Director of Naval Ordnance,
+          Rear Admiral Archibald Moore, who by NavWeaps' account staked his
+          "professional existence" on the result. The haste existed to let what became
+          the Queen Elizabeth class carry a larger gun than would otherwise have been
+          possible.
+      src: [navweaps-15in-42-mk1]
+
+    - heading: 日德兰才是它的证明
+      text:
+        zh: >-
+          它第一次实战射击是 1915 年在加里波利轰击岸上阵地，但真正显出价值是
+          日德兰（Skagerrak）海战：装这型炮的英国战列舰在 19,000 码
+          （约 17,400 米）上与德国战列巡洋舰交战，那个距离超出了德舰火炮的最大射程。
+          射程优势不是靠运气，是靠设计时多要的那点余量换来的。
+        en: >-
+          Its first shots in anger were shore bombardment at Gallipoli in 1915, but its
+          value became clear at Jutland (Skagerrak), where British battleships carrying
+          the gun engaged German battlecruisers at 19,000 yards - about 17,400 metres -
+          beyond the maximum range of the German ships' guns. That margin was not luck;
+          it was bought at the design stage.
+      src: [navweaps-15in-42-mk1]
+
+    - heading: 1930 年代的"现代化"：改仰角和弹，不改炮
+      text:
+        zh: >-
+          到 1930 年代中期，海军部认为这型炮正在过时：别国已经有了射程更远、
+          弹更重的炮，而载舰也服役近二十年、开始显出磨损。受条约限制不能造新战列舰，
+          于是走「现代化」路线，做两件事：把炮座仰角上限从 20 度提到 30 度，
+          让 4crh 弹的最大射程从 23,700 码提到 29,000 码（21,670 米到 26,520 米）；
+          再改进弹体、换用更流线的 6crh 弹道帽，30 度时射程再增到约 32,000 码（29,260 米）。
+          成果是 1940 年 7 月 Warspite 在约 26,200 码（23,960 米）命中意大利战列舰
+          Guilio Cesare——舰炮对敌舰最远命中的记录之一。
+        en: >-
+          By the mid-1930s the Admiralty judged the gun to be going obsolete: other
+          nations had weapons with longer range and heavier shells, and the ships
+          carrying it were approaching twenty years old. Treaty limits blocked new
+          battleships, so the answer was modernisation - raise the elevation limit from
+          20 to 30 degrees, lifting the 4crh range from 23,700 to 29,000 yards, then
+          improve the projectile and fit a more streamlined 6crh ballistic cap, taking
+          the 30-degree range to about 32,000 yards. The payoff came in July 1940 when
+          Warspite hit the Italian battleship Guilio Cesare at roughly 26,200 yards,
+          one of the longest hits ever scored by a naval gun.
+      src: [navweaps-15in-42-mk1]
+
+    - heading: Super Charge：纸面上有，实际几乎没人用
+      text:
+        zh: >-
+          改装速度有限，到二战爆发时 Malaya、Barham、Repulse 和五艘复仇级都还没升级。
+          原计划给这些舰提高仰角，没做成，改发「Super Charge」——
+          火炮与炮座能安全承受的最大发射药，1941 年起发放，20 度最大仰角配 6crh 弹
+          射程 28,800 码（26,335 米）。**但查记录，除 Malaya 在改配 6crh 弹之后的
+          初次射击试验之外，似乎没有一艘舰用 Super Charge 打过一发**；多佛的岸炮
+          跨海峡射击用过。30 度炮座的舰不发 Super Charge，因为身管磨损与炮座应力
+          不可接受——所以那些把 Vanguard 射程写成超过 32,000 码的资料是有误导性的，
+          那个数字需要 Super Charge，而她从未携带。
+        en: >-
+          Modernisation could not keep pace, and when war broke out Malaya, Barham,
+          Repulse and the five Royal Sovereigns had not been upgraded. The plan to
+          raise their elevation was dropped in favour of a "Super Charge", the largest
+          propellant charge the guns and mountings could safely take; issued from 1941,
+          it gave 28,800 yards at the 20-degree limit with 6crh shells. **Yet the
+          records suggest no ship ever fired a Super Charge except Malaya, during her
+          initial trials after being modified for 6crh projectiles.** Dover's coast
+          artillery used them across the Channel. Ships with 30-degree mountings were
+          not issued Super Charges because barrel wear and mounting stress were
+          unacceptable - which is why sources quoting Vanguard with ranges beyond
+          32,000 yards are misleading: that figure needs a Super Charge she never
+          carried.
+      src: [navweaps-15in-42-mk1]
+
+    - heading: 上岸之后
+      text:
+        zh: >-
+          除了舰炮，另有 5 门被用作新加坡的岸炮，2 门架在多佛附近的 Wanstone。
+          1945 年战争结束后这两门仍保持可用状态，直到 1959 年才撤除。
+        en: >-
+          Beyond the shipboard guns, five were used as coast artillery at Singapore and
+          two more were mounted at Wanstone near Dover. After the war ended in 1945
+          those last two were kept in an operational state and not removed until 1959.
+      src: [navweaps-15in-42-mk1]
+
+history:
+  - id: design
+    title: { zh: 设计与定型, en: Design }
+    range: { from: 1912, to: 1915 }
+    lead:
+      zh: >-
+        1912 年设计、1915 年服役。原型阶段被跳过，这在英国造炮史上很少见。
+      en: >-
+        Designed in 1912, in service by 1915, with the prototype stage skipped - a
+        rare thing in British ordnance history.
+    events:
+      - date: 1912
+        text:
+          zh: >-
+            完成设计。大体基于 13.5 in/45 Mark V，由军械总监 Archibald Moore 少将
+            批准跳过原型阶段直接投产，为的是让伊丽莎白女王级装上更大的炮。
+          en: >-
+            Design completed, largely based on the 13.5 in/45 Mark V. Rear Admiral
+            Archibald Moore, Director of Naval Ordnance, approved bypassing the
+            prototype stage to put it into production, so that the Queen Elizabeth class
+            could carry a larger gun.
+        src: [navweaps-15in-42-mk1]
+      - date: 1915
+        text:
+          zh: >-
+            进入服役，首次舰上射击也在这一年。最初的实战射击是加里波利轰击岸上阵地。
+          en: >-
+            Entered service, with the first shipboard firing the same year. The first
+            shots in anger were shore bombardment at Gallipoli.
+        src: [navweaps-15in-42-mk1]
+
+  - id: jutland
+    title: { zh: 日德兰与一战, en: Jutland and the First World War }
+    range: { from: 1916-05, to: 1918-11 }
+    lead:
+      zh: >-
+        日德兰海战是这型炮第一次证明射程优势的战斗。
+      en: >-
+        Jutland was where the gun's range advantage first proved itself.
+    events:
+      - date: 1916-05-31
+        text:
+          zh: >-
+            日德兰海战。装这型炮的英国战列舰在 19,000 码（17,400 米）
+            与德国战列巡洋舰交战，超出德舰火炮的最大射程。
+          en: >-
+            The Battle of Jutland. British battleships with this gun engaged German
+            battlecruisers at 19,000 yards (17,400 m), beyond the maximum range of the
+            German guns.
+        src: [navweaps-15in-42-mk1]
+
+  - id: modernise
+    title: { zh: 战间现代化, en: Interwar modernisation }
+    range: { from: 1935, to: 1939-08 }
+    lead:
+      zh: >-
+        条约不让造新舰，于是改炮座仰角、换弹道帽，把老炮的射程往上抬。
+      en: >-
+        With treaties blocking new ships, the answer was more elevation and a better
+        ballistic cap for the old guns.
+    events:
+      - date: 1935
+        text:
+          zh: >-
+            1930 年代中期，海军部判定这型炮渐趋过时：他国已发展出射程更远、
+            弹更重的武器，载舰也接近二十年舰龄。条约限制不能造新战列舰，
+            于是转为「现代化」改装，其中两项重要改进是——炮座仰角上限由 20 度
+            提至 30 度，4crh 弹射程随之由 23,700 码增至 29,000 码（21,670 米增至
+            26,520 米）；以及改进弹体、换用更流线的 6crh 弹道帽，30 度时射程
+            再增到约 32,000 码（29,260 米）。navweaps 未给出这两项改装的完成日期。
+          en: >-
+            By the mid-1930s the Admiralty judged the gun to be growing obsolete as
+            other nations developed weapons with longer range and heavier shells and
+            the ships approached twenty years of service. With treaties blocking new
+            battleships, the answer was modernisation, whose two significant
+            improvements were: mounting elevation raised from 20 to 30 degrees,
+            taking the 4crh range from 23,700 to 29,000 yards (21,670 to 26,520 m);
+            and an improved projectile with the more streamlined 6crh ballistic cap,
+            lifting the 30-degree range to about 32,000 yards (29,260 m). NavWeaps
+            gives no completion date for either modification.
+        src: [navweaps-15in-42-mk1]
+      - date: 1939-08
+        text:
+          zh: >-
+            二战爆发时，Malaya、Barham、Repulse 与五艘复仇级尚未完成升级。
+          en: >-
+            When the war broke out, Malaya, Barham, Repulse and the five Royal
+            Sovereigns had not been upgraded.
+        src: [navweaps-15in-42-mk1]
+
+  - id: ww2
+    title: { zh: 二战与战后, en: The Second World War and after }
+    range: { from: 1940-07, to: 1959 }
+    lead:
+      zh: >-
+        1940 年 7 月的那一炮是这型炮一生中最有名的一次命中；
+        战后它又以岸炮的身份多活了十四年。
+      en: >-
+        The July 1940 hit is the gun's most famous shot, and it lived on another
+        fourteen years ashore.
+    events:
+      - date: 1940-07
+        text:
+          zh: >-
+            Warspite 在约 26,200 码（23,960 米）命中意大利战列舰 Guilio Cesare，
+            是舰炮对敌舰最远命中的记录之一。navweaps 只给到月份，本站不补具体日期。
+          en: >-
+            Warspite hit the Italian battleship Guilio Cesare at about 26,200 yards
+            (23,960 m), one of the longest hits ever scored by a naval gun. NavWeaps
+            gives only the month, so no day is supplied here.
+        src: [navweaps-15in-42-mk1]
+      - date: 1941
+        text:
+          zh: >-
+            开始向未改装舰发放 Super Charge，20 度仰角配 6crh 弹射程 28,800 码
+            （26,335 米）。记录显示除 Malaya 的初次试验外无舰实际使用。
+          en: >-
+            Super Charges began to be issued to unmodernised ships, giving 28,800 yards
+            (26,335 m) at 20 degrees with 6crh shells. The records show no ship actually
+            firing them apart from Malaya's initial trials.
+        src: [navweaps-15in-42-mk1]
+      - date: 1959
+        text:
+          zh: >-
+            多佛附近 Wanstone 的两门岸炮撤除。它们自 1945 年战后一直保持可用状态。
+          en: >-
+            The two coast-artillery guns at Wanstone near Dover were removed. They had
+            been kept in an operational state since the war ended in 1945.
+        src: [navweaps-15in-42-mk1]
