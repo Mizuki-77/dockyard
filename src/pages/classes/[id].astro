@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import SideNav from '../../components/SideNav.astro';
+import ReportIssue from '../../components/ReportIssue.astro';
 import {
   getClasses,
   getClass,
@@ -147,6 +148,15 @@ const navItems = [
                     {primary.confidence && (
                       <span class={`conf conf--${primary.confidence}`}>{primary.confidence}</span>
                     )}
+                    <ReportIssue
+                      entity={cls.id}
+                      entityLabel={cls.name.zh}
+                      field={field}
+                      fieldLabel={def.label.zh}
+                      current={text}
+                      sources={primary.src}
+                      kind="class"
+                    />
                   </div>
                 </div>
               );
@@ -189,6 +199,15 @@ const navItems = [
                         {f.confidence && (
                           <span class={`conf conf--${f.confidence}`}>{f.confidence}</span>
                         )}
+                        <ReportIssue
+                          entity={cls.id}
+                          entityLabel={cls.name.zh}
+                          field={f.field}
+                          fieldLabel={def.label.zh}
+                          current={text}
+                          sources={f.src}
+                          kind="class"
+                        />
                       </div>
                     </div>
                   );

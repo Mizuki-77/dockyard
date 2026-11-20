@@ -226,28 +226,50 @@ akagi 页: 69 个纠错链接（详细参数区全部字段）
         我认为正确的是：
 ```
 
-### 4.5 目前覆盖范围
+### 4.5 覆盖范围（已全站覆盖）
 
-| 页面 | 状态 |
-|---|---|
-| `/ships/[id]` 详细参数 | ✅ 已接（约 1000 条 fact） |
-| `/weapons/[id]` | ❌ 待接 |
-| `/battles/[id]` | ❌ 待接 |
-| `/classes/[id]` | ❌ 待接 |
-| `/compare` | ❌ 待接（对比器每格都可单独纠错，价值高） |
+| 页面 | 状态 | 入口数（实测） |
+|---|---|---|
+| `/ships/[id]` 详细参数 | ✅ | akagi 页 69 处 |
+| `/weapons/[id]` 参数（按来源分块） | ✅ | 每型 13–24 处 |
+| `/classes/[id]` 舰级参数 + 武备 | ✅ | bismarck 级 135 处 |
+| `/battles/[id]` 事件流 / 命中记录 / 伤亡 | ✅ | midway 页 103 处 |
+| `/compare` 对比器每一格 | ✅ | 20 行 × 2 舰 = 38 处 |
 
-接法一致：`import ReportIssue` → 在该行的 `meta` 区加组件，传
-`entity` / `entityLabel` / `field` / `fieldLabel` / `current` / `sources` / `kind`。
+**战役页是特殊的一类。** 它的数据单位不是 fact，而是「事件 / 命中 / 伤亡」这些自由文本，
+没有 `field`。所以 `issueUrl()` 加了 `itemLabel` 参数——
+有无 `field` 走两条路径，预填正文里一个写「字段：X（id）」，一个写「条目：X」。
+
+**对比器需要单独处理。** 它的 `<tbody>` 全是客户端 `innerHTML` 拼的，
+用不了 `<ReportIssue>` 组件，所以在 `compare.astro` 的脚本里手拼了一份
+`reportHref()`。**改 `site.ts` 的 `issueUrl()` 时，这里必须同步改**（两处逻辑要一致）。
+
+对比器的样式必须写 `:global(.cmp-rept)`——这是老坑：动态 DOM 上不带
+`data-astro-cid-xxx`，普通选择器一条都命中不了（详见 `docs/20-p3-compare.md` 的坑 1）。
+
+### 4.6 对比器怎么验证的
+
+对比器不能靠数构建产物判断（表格在 JS 里拼，产物只有代码没有结果）。
+`work/verify_compare_rept.cjs` 用最小 DOM stub 把页面脚本真跑一遍，然后断言
+`tbody.innerHTML` 里的链接与参数：
+
+```
+数据行数：20
+纠错链接数：38
+第一个链接：俾斯麦 · 标准排水量（displacement.standard），当前 43,978 t
+PASS
+```
+
+跑法：`node work\verify_compare_rept.cjs`
 
 ---
 
 ## 5. 未做的事
 
-- **武器 / 战役 / 舰级 / 对比器页的纠错入口**（见 4.5）
 - **issue 的自动分类与看板**（现在只有 `correction` 一个 label）
-- **`docs/10-deploy.md` 里的部署流程尚未验证过**（这次只跑了 build，没 deploy）
 - **交接报告 §10.3 的代理端口** 需要改成 12450（本文档 §2.2 已记录正确值，
   但报告的正文还没动——下次改报告时一并修）
+- **`docs/10-deploy.md` 的部署流程**（本次 deploy 后应复核一遍，见 §7）
 
 ---
 
@@ -267,9 +289,36 @@ git push
 python scripts/validate.py
 python scripts/selftest.py
 
-# 构建
+# 构建 + 部署
 cmd /c "npm.cmd run build"
+cmd /c "npx.cmd wrangler deploy"
+
+# 对比器纠错链接的渲染验证（动态 DOM，不能靠数产物）
+node work\verify_compare_rept.cjs
 
 # 凭据掉了
 gh auth login --web --scopes repo,workflow
 ```
+
+## 7. 部署记录
+
+| 日期 | 版本 ID | 内容 |
+|---|---|---|
+| 2026-11-20 | `c71d0aea-6f4b-48a8-ad15-7ebf17b0a5b6` | P5 纠错入口全站上线 |
+
+部署命令 `npx wrangler deploy`（不是 `npm run deploy`，后者会重新 build，
+本次已经 build 过）。上传 193 个文件、耗时约 15 秒。
+
+线上逐页验证：
+
+| 页面 | HTTP | 纠错入口数 |
+|---|---|---|
+| `/ships/akagi/` | 200 | 69 |
+| `/weapons/10_5cm-sk-c33/` | 200 | 13 |
+| `/classes/bismarck/` | 200 | 135 |
+| `/battles/midway/` | 200 | 103 |
+| `/compare/` | 200 | 38（运行时生成） |
+
+> `wrangler` 在 PowerShell 里会以 exit code 1 结束但输出 Success——
+> 那是 PowerShell 把 stderr 当错误处理，不是部署失败。看「Success! Uploaded」
+> 与「Current Version ID」两行即可。

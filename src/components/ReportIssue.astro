@@ -18,6 +18,8 @@ interface Props {
   entityLabel: string;
   field?: string;
   fieldLabel?: string;
+  /** 没有 field 的场合（战役事件流的一条事件、一条伤亡数字）用它描述这一条 */
+  itemLabel?: string;
   current?: string;
   sources?: string[];
   kind?: 'ship' | 'class' | 'weapon' | 'battle' | 'operation' | 'other';
@@ -25,8 +27,17 @@ interface Props {
   compact?: boolean;
 }
 
-const { entity, entityLabel, field, fieldLabel, current, sources, kind, compact = true } =
-  Astro.props;
+const {
+  entity,
+  entityLabel,
+  field,
+  fieldLabel,
+  itemLabel,
+  current,
+  sources,
+  kind,
+  compact = true,
+} = Astro.props;
 
 // Astro.url 在构建期是当前页，站点根从 Astro.site 取（换域名只改 astro.config.mjs）
 const site = Astro.site?.href.replace(/\/$/, '') ?? '';
@@ -37,6 +48,7 @@ const href = issueUrl({
   entityLabel,
   field,
   fieldLabel,
+  itemLabel,
   current,
   sources,
   pageUrl,
@@ -45,7 +57,9 @@ const href = issueUrl({
 
 const title = fieldLabel
   ? `报告「${fieldLabel}」这条数据的错误`
-  : `报告「${entityLabel}」相关错误`;
+  : itemLabel
+    ? `报告「${itemLabel}」这条数据的错误`
+    : `报告「${entityLabel}」相关错误`;
 ---
 
 <a

@@ -15,6 +15,7 @@
 // ============================================================================
 import Base from '../../layouts/Base.astro';
 import CatalogTree from '../../components/CatalogTree.astro';
+import ReportIssue from '../../components/ReportIssue.astro';
 import {
   getWeaponIndex,
   getWeapon,
@@ -247,6 +248,15 @@ void disambiguate;
                     </div>
                     <div class="datarow__meta">
                       {r.conf && <span class={`conf conf--${r.conf}`}>{r.conf}</span>}
+                      <ReportIssue
+                        entity={w.id}
+                        entityLabel={w.label}
+                        field={r.field}
+                        fieldLabel={def.label.zh}
+                        current={r.text}
+                        sources={s.facts.filter((f) => f.field === r.field).flatMap((f) => f.src)}
+                        kind="weapon"
+                      />
                     </div>
                   </div>
                 );

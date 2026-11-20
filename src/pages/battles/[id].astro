@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import CatalogTree from '../../components/CatalogTree.astro';
+import ReportIssue from '../../components/ReportIssue.astro';
 import { getBattles, getBattle, getSource, getImagesFor, primaryImage, imageCredit, operationOf } from '../../lib/data';
 import { buildBattleTree } from '../../lib/tree';
 
@@ -258,6 +259,14 @@ const usedSources = [...srcIds].map((s) => getSource(s)).filter(Boolean);
                   {ev.text.zh}
                   <span class="btl__src">{ev.src.join(' · ')}</span>
                 </div>
+                <ReportIssue
+                  entity={b.id}
+                  entityLabel={b.name.zh}
+                  itemLabel={ts.time ? `事件 ${ts.time}` : '事件'}
+                  current={ev.text.zh}
+                  sources={ev.src}
+                  kind="battle"
+                />
               </li>
             );
           })
@@ -286,6 +295,14 @@ const usedSources = [...srcIds].map((s) => getSource(s)).filter(Boolean);
                 <p class="hit__text">{h.text.zh}</p>
                 <span class="hit__src">{h.src.join(' · ')}</span>
               </div>
+              <ReportIssue
+                entity={b.id}
+                entityLabel={b.name.zh}
+                itemLabel={`命中记录 ${String(i + 1).padStart(2, '0')}`}
+                current={h.text.zh}
+                sources={h.src}
+                kind="battle"
+              />
             </li>
           ))}
         </ol>
@@ -338,6 +355,19 @@ const usedSources = [...srcIds].map((s) => getSource(s)).filter(Boolean);
               )}
             </div>
             {l.note && <p class="losscard__note">{l.note.zh}</p>}
+            <ReportIssue
+              entity={b.id}
+              entityLabel={b.name.zh}
+              itemLabel={`伤亡与结局 · ${l.side === 'allies' ? '英方' : l.side === 'axis' ? '德方' : l.side}`}
+              current={[
+                l.ships_lost?.zh,
+                typeof l.killed === 'number' ? `阵亡 ${l.killed.toLocaleString('en-US')}` : '',
+                typeof l.survivors === 'number' ? `生还 ${l.survivors}` : '',
+              ]
+                .filter(Boolean)
+                .join('；')}
+              kind="battle"
+            />
           </div>
         ))
       }

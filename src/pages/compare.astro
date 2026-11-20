@@ -14,6 +14,7 @@
 // ============================================================================
 import Base from '../layouts/Base.astro';
 import { buildCompareIndex } from '../lib/data';
+import { REPO_URL, ISSUE_TEMPLATE } from '../lib/site';
 
 const idx = buildCompareIndex();
 
@@ -23,7 +24,16 @@ const DEFAULT_PAIR = ['bismarck', 'tirpitz'];
 const picked = DEFAULT_PAIR.filter((id) => idx.ships.some((s) => s.id === id));
 const initial = picked.length === 2 ? picked : idx.ships.slice(0, 2).map((s) => s.id);
 
-const payload = { ...idx, initial };
+// 纠错入口的公共参数。表格是客户端拼的，所以仓库地址与页面 URL 要传进 payload；
+// 逐格的 entity/field/current 在拼 HTML 时补上。
+const siteUrl = Astro.site?.href.replace(/\/$/, '') ?? '';
+const payload = {
+  ...idx,
+  initial,
+  repoUrl: REPO_URL,
+  issueTemplate: ISSUE_TEMPLATE,
+  pageUrl: `${siteUrl}${Astro.url.pathname}`,
+};
 ---
 
 <Base title="对比器" variant="full">
@@ -142,6 +152,26 @@ const payload = { ...idx, initial };
       return String(s ?? '').replace(/[&<>"]/g, (c) => (
         { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]
       ));
+    }
+
+    // 纠错链接。表格是 innerHTML 拼的，没法用 ReportIssue 组件，
+    // 这里按同一份参数规则手拼 —— 改 site.ts 的 issueUrl() 时这里要同步。
+    // entity / field / current 逐格补，cell 里点了就带对应那一格。
+    function reportHref(shipId, shipName, field, fieldLabel, current) {
+      const ctx = [];
+      if (current) ctx.push('站点当前显示：' + current);
+      ctx.push('字段：' + fieldLabel + '（' + field + '）');
+      ctx.push('');
+      ctx.push('我认为正确的是：');
+      ctx.push('');
+      const q = new URLSearchParams({
+        template: payload.issueTemplate,
+        title: '[纠错] ' + shipName + ' · ' + fieldLabel,
+        entity: shipName + '（' + shipId + '）',
+        page: payload.pageUrl,
+        claim: ctx.join('\n'),
+      });
+      return payload.repoUrl + '/issues/new?' + q.toString();
     }
 
     const SHIPS = new Map(payload.ships.map((s) => [s.id, s]));
@@ -423,7 +453,15 @@ const payload = { ...idx, initial };
               }
             }
             const title = p.note ? ` title="${esc(p.note)}"` : '';
-            return `<td class="${cls.join(' ')}"${title}>${bits.join(' ')}</td>`;
+            // 每格一个纠错入口：对比器是「同一字段横向比」的地方，
+            // 发现某舰某个值不对，这里是最近的落点。
+            const shipName = SHIPS.get(id)?.name?.zh ?? id;
+            const rep =
+              `<a class="cmp-rept" href="${esc(reportHref(id, shipName, f.id, f.label.zh, p.text))}"` +
+              ` target="_blank" rel="noopener noreferrer"` +
+              ` title="报告「${esc(f.label.zh)}」这条数据的错误"` +
+              ` aria-label="报告「${esc(f.label.zh)}」这条数据的错误">⚠</a>`;
+            return `<td class="${cls.join(' ')}"${title}>${bits.join(' ')}${rep}</td>`;
           }).join('');
 
           rows.push(
@@ -934,6 +972,42 @@ const payload = { ...idx, initial };
   :global(.cmp-td--none .cmp-void) {
     color: var(--ink-300);
     font-size: 11.5px;
+  }
+
+  /* 逐格纠错入口。
+     必须 :global() —— 这个 <a> 是 innerHTML 拼出来的，不带 data-astro-cid。
+     桌面默认隐藏、hover 整格才浮现；触屏没有 hover，保持常显。 */
+  :global(.cmp-rept) {
+    display: inline-block;
+    margin-left: 6px;
+    font-size: 10px;
+    line-height: 1;
+    color: var(--ink-300);
+    text-decoration: none;
+    opacity: 0.6;
+    transition: opacity 0.15s, color 0.15s;
+  }
+  :global(.cmp-rept:hover),
+  :global(.cmp-rept:focus-visible) {
+    opacity: 1;
+    color: var(--warn);
+    outline: none;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    :global(.cmp-rept) {
+      opacity: 0;
+    }
+    :global(.cmp-td:hover .cmp-rept) {
+      opacity: 0.6;
+    }
+    :global(.cmp-td:hover .cmp-rept:hover) {
+      opacity: 1;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    :global(.cmp-rept) {
+      transition: none;
+    }
   }
   :global(.cmp-td--dead) {
     background: repeating-linear-gradient(
