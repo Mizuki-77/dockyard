@@ -14,8 +14,12 @@ $ErrorActionPreference = 'Continue'
 
 # validate.py 输出是 UTF-8，但 PowerShell 默认按 GBK 解 Python 的 stdout，
 # 结果中文全成乱码。强制两边都用 UTF-8。
+#
+# 注意：只设 $env:PYTHONIOENCODING 和 $OutputEncoding。
+# 不要动 [Console]::OutputEncoding —— 在 DSH 的 read-only 沙箱下
+# （PowerShell ConstrainedLanguage）访问 .NET 静态成员会直接报错，
+# 而本脚本最常见的运行环境恰恰是定时任务里的只读会话。
 $OutputEncoding = [System.Text.UTF8Encoding]::new($false)
-[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)
 $env:PYTHONIOENCODING = 'utf-8'
 
 $ok = $true
