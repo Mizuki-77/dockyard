@@ -1,0 +1,131 @@
+---
+/**
+ * 纠错入口 —— 每个数据点旁边一个小按钮，点了跳到预填好的 GitHub Issue。
+ *
+ * 为什么不做全站一个「联系我们」：带上下文的投稿质量高一个数量级。
+ * 点开时 issue 里已经写好了「哪一页、哪个字段、当前值、当前来源」，
+ * 投稿人只需要补两件事：正确的值、他的来源。
+ *
+ * 为什么用 <a> 而不是 JS：
+ * - 静态站，无后端，GitHub issue 本身就是存储和审核队列
+ * - 中键能新开标签、能在新窗口里慢慢写、能右键复制
+ * - 禁用 JS 也能用
+ */
+import { issueUrl } from '../lib/site';
+
+interface Props {
+  entity: string;
+  entityLabel: string;
+  field?: string;
+  fieldLabel?: string;
+  current?: string;
+  sources?: string[];
+  kind?: 'ship' | 'class' | 'weapon' | 'battle' | 'operation' | 'other';
+  /** 紧凑模式：只显示图标，用于表格行内 */
+  compact?: boolean;
+}
+
+const { entity, entityLabel, field, fieldLabel, current, sources, kind, compact = true } =
+  Astro.props;
+
+// Astro.url 在构建期是当前页，站点根从 Astro.site 取（换域名只改 astro.config.mjs）
+const site = Astro.site?.href.replace(/\/$/, '') ?? '';
+const pageUrl = `${site}${Astro.url.pathname}`;
+
+const href = issueUrl({
+  entity,
+  entityLabel,
+  field,
+  fieldLabel,
+  current,
+  sources,
+  pageUrl,
+  kind,
+});
+
+const title = fieldLabel
+  ? `报告「${fieldLabel}」这条数据的错误`
+  : `报告「${entityLabel}」相关错误`;
+---
+
+<a
+  class:list={['rept', { 'rept--compact': compact }]}
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  title={title}
+  aria-label={title}
+>
+  <svg
+    width="12"
+    height="12"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M12 9v4"></path>
+    <path d="M12 17h.01"></path>
+    <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+  </svg>
+  {!compact && <span>报告错误</span>}
+</a>
+
+<style>
+  .rept {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    flex-shrink: 0;
+    color: var(--ink-300);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition:
+      color 0.15s,
+      background 0.15s,
+      opacity 0.15s;
+    /* 触屏没有 hover，默认就得看得见；桌面上再靠 hover 提亮 */
+    opacity: 0.55;
+  }
+  .rept--compact {
+    width: 18px;
+    height: 18px;
+  }
+  .rept:not(.rept--compact) {
+    padding: 3px 8px;
+    font-size: 11.5px;
+    border: 1px solid var(--line);
+  }
+
+  .rept:hover,
+  .rept:focus-visible {
+    opacity: 1;
+    color: var(--warn);
+    background: var(--warn-bg);
+    outline: none;
+  }
+  .rept--compact:hover,
+  .rept--compact:focus-visible {
+    outline: 1px solid var(--warn-line);
+  }
+
+  /* 桌面上：整行 hover 时才浮现，避免 1700 条数据点满屏都是警告图标 */
+  @media (hover: hover) and (pointer: fine) {
+    .rept {
+      opacity: 0;
+    }
+    .rept:focus-visible {
+      opacity: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rept {
+      transition: none;
+    }
+  }
+</style>

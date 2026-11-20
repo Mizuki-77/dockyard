@@ -7,6 +7,7 @@
 // ============================================================================
 import Base from '../../layouts/Base.astro';
 import SideNav from '../../components/SideNav.astro';
+import ReportIssue from '../../components/ReportIssue.astro';
 import {
   buildShipView,
   buildTimelinePayload,
@@ -670,6 +671,15 @@ const nation = primaryValue(view.id, 'identity.nation');
                   {f.windows.some((w) => w.disputed) && (
                     <span class="tag tag--warn tiny">存在争议</span>
                   )}
+                  <ReportIssue
+                    entity={view.id}
+                    entityLabel={view.name?.zh ?? view.id}
+                    field={f.id}
+                    fieldLabel={f.label.zh}
+                    current={f.windows.map((w) => w.text).join(' / ')}
+                    sources={f.windows[0]?.src}
+                    kind="ship"
+                  />
                 </div>
               </div>
             ))}

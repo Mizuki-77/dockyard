@@ -1,0 +1,80 @@
+name: 数据纠错
+description: 报告某条数据有误、缺来源，或者有更权威的来源
+title: "[纠错] "
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        谢谢你花时间来看这个站的数据。
+
+        **请务必带上你的来源。** 说「这个数字不对」没办法处理；
+        说「NavWeaps 那页写的是 35,550 m，你们写的是 36,520」才能处理，
+        因为那可以直接变成一条新的证据记录。
+
+        如果你是从页面上的「⚠」按钮点进来的，下面的推断信息已经自动填好了，
+        你只需要补最后两栏。
+
+  - type: input
+    id: entity
+    attributes:
+      label: 条目
+      description: 舰 / 武器 / 战役的 id 与名称，例如 `akagi`（赤城）
+      placeholder: "akagi（赤城）"
+    validations:
+      required: true
+
+  - type: input
+    id: page
+    attributes:
+      label: 页面地址
+      description: 这条数据在哪个页面
+      placeholder: https://archive.dockyard.workers.dev/ships/akagi/
+    validations:
+      required: true
+
+  - type: textarea
+    id: claim
+    attributes:
+      label: 你认为正确的是什么
+      description: 写清楚正确的值，或者这个字段应该怎么改。如果是缺数据，说明缺的是哪一项。
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 你的来源
+      description: |
+        URL、档案号、书名 + 页码都行。请尽量给到能直接核对的位置，
+        不要只写「某本书里写的」。
+      placeholder: |
+        NavWeaps, "Japan 20 cm/50 (7.9") 3rd Year Type"
+        https://www.navweaps.com/Weapons/WNJAP_8-50_3ns.htm
+    validations:
+      required: true
+
+  - type: dropdown
+    id: evidence-tier
+    attributes:
+      label: 你的来源属于哪一档
+      description: 判断不了就选「不确定」，我们来判断。参考站内「帮助及反馈 → 证据层级」。
+      options:
+        - A · 一手档案（战争日志、射击报告、原始文件）
+        - B · 同期官方出版物（当年度 Jane's、海军部手册）
+        - C · 权威二次文献（Conway's、Campbell、Garzke & Dulin）
+        - D · 专题网站（NavWeaps、KBismarck、combinedfleet）
+        - E · 百科（维基等）
+        - 不确定
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我理解有争议的说法会并列保留，而不是直接删掉（这是本站的硬规矩）
+          required: true
+        - label: 上面的来源是我真实查到的，不是凭印象写的
+          required: true

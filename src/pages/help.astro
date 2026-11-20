@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import SideNav from '../components/SideNav.astro';
 import { getFields, getSources, getGroups } from '../lib/data';
+import { REPO_URL } from '../lib/site';
 
 const fields = getFields();
 const sources = getSources();
@@ -156,14 +157,20 @@ const groups = getGroups();
         说「这个数字不对」没法处理，说「NavWeaps 那页写的是 35,550 m，你们写的是 36,520」
         才能处理，因为那可以直接变成一条新的证据记录。
       </p>
-      <p>提交流程会往 GitHub 提一个 issue，自动带上：舰船 id、字段 id、当前值、当前来源、页面地址。
-      审核后合入，那个 issue 会一直留着——它就是这条数据被修正的记录。</p>
+      <p>
+        战舰详情页「详细参数」里，每个字段右边都有一个 <span class="rept-demo">⚠</span> 标记。
+        点它就会打开一个已经填好上下文的 GitHub issue：哪一页、哪个字段、站点当前显示什么值、
+        当前用的哪条来源，全都在里面，你只需要补「正确的值」和「你的来源」两栏。
+      </p>
+      <p>提交流程完全不需要注册新账号——用 GitHub 就行。审核后合入，那个 issue 会一直留着，
+      它就是这条数据被修正的记录。</p>
       <div class="callout">
-        <div class="callout__title">目前的状态</div>
+        <div class="callout__title">目前覆盖范围</div>
         <p>
-          纠错入口还在做（数据层已经支持，界面没接）。现在要提意见，走
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub 仓库</a>
-          或者直接联系站长。
+          纠错入口已接在<b>战舰详情页的详细参数</b>上（12 舰、约 1000 条 fact）。
+          武器页、战役页、舰级页的入口还在做。
+          任何页面的问题也欢迎直接开
+          <a href={REPO_URL + '/issues/new'} target="_blank" rel="noopener noreferrer">空白 issue</a>。
         </p>
       </div>
     </div>
@@ -214,6 +221,19 @@ const groups = getGroups();
   .prose b {
     color: var(--ink-900);
     font-weight: 650;
+  }
+  .rept-demo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+    border-radius: var(--radius-sm);
+    color: var(--warn);
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-line);
+    vertical-align: -2px;
   }
 
   .defs {

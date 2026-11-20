@@ -1,0 +1,41 @@
+name: 凭据与数据健康自检
+
+# 为什么需要这个 workflow：
+#
+# 推送依赖本机的 `gh auth` 凭据（存在 Windows 凭据管理器里）。
+# 它不会「到期」，但可能因为重装系统、清空凭据管理器、换机器而失效 ——
+# 而失效的那一刻不会有任何提示，只会等到某天推送时才报错。
+#
+# 这个 workflow 每周跑一次，在 GitHub 的服务器上验证仓库本身是否健康。
+# 如果它开始失败，说明不是本机凭据的问题，而是数据层真的坏了。
+#
+# 本机凭据的失效检测走 `scripts/check_auth.ps1`（见根目录 docs/40-p5-issues.md）。
+
+on:
+  schedule:
+    # 每周一 09:00 Asia/Shanghai（UTC 01:00）
+    - cron: '0 1 * * 1'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'data/**'
+      - 'scripts/**'
+      - '.github/workflows/**'
+
+jobs:
+  # 数据层完整性：任何改动后都必须仍然 0 错误 0 警告
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # validate.py / selftest.py 只用标准库，不需要装任何依赖。
+      - name: 全量校验
+        run: python scripts/validate.py
+
+      - name: 自测
+        run: python scripts/selftest.py
