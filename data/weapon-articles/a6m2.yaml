@@ -1,0 +1,291 @@
+# ============================================================================
+# 武器正文 —— 零式舰战二一型（A6M2 Model 21）
+#
+# 三条能落到已登记来源的事实：
+#  1) 换装时点可查：1941 年 5 月赤城飞行队还是 18 架 A5M，11 月已换成 18 架 A6M2
+#     （赤城、加贺两舰 TROM 各自的编成记录）；
+#  2) 大机翼是这一型的特征：22.4 m² 为该族最大，后续型号缩到 21.5 / 21.3 m²，
+#     最大速度随之从 288 节升到 294 / 305 / 309 节；
+#  3) 结构描述原文只有「all-metal construction with fabric-covered control
+#     surfaces」一句 —— 布蒙皮操纵面是减重手段，但装甲与自封油箱的取舍
+#     没有任何已登记来源，故留空不写。
+# ============================================================================
+weapon: a6m2
+updated: 2026-11-20
+
+intro:
+  lead:
+    zh: >-
+      零式舰战二一型是 1941 年日本航母飞行队的主力战斗机，盟军代号 Zeke。
+      它的档案里有一组很能说明问题的对照：翼面积 22.4 m² 是这个家族里最大的一档，
+      后续型号缩到 21.5 与 21.3 m²，最大速度则从 288 节一路升到 294、305、309 节。
+      二一型保留了大机翼，也保留了正常 1,010 海里、最大 1,675 海里的航程。
+      本页只写能追到已登记来源的部分；装甲与自封油箱的具体取舍，
+      本站材料里没有，一个字也不写。
+    en: >-
+      The A6M2 Model 21 was the principal Japanese carrier fighter of 1941, known to
+      the Allies as Zeke. Its record holds one instructive comparison: at 22.4 m² its
+      wing was the largest of the family, while the later marks cut that to 21.5 and
+      21.3 m² and top speed climbed from 288 knots to 294, 305 and 309. The Model 21
+      kept the big wing, and with it range figures of 1,010 nautical miles normal and
+      1,675 maximum. Only what can be traced to a registered source appears here; this
+      project holds nothing on the armour and self-sealing tank trade-off, and so
+      nothing is written about it.
+
+  paragraphs:
+    - heading: 换装发生在开战前，两艘舰的行动记录各自留了一条
+      text:
+        zh: >-
+          这里有一条清楚的时间线，而且两端都有原始编成记录。
+          1941 年 4 月末到 5 月，赤城在九州与冲绳之间训练时，
+          飞行队编成写的是 18 架 A5M（Claude）、27 架 B5N（Kate）、
+          18 架 D3A（Val），三种各带 3 架备用。
+          同年 11 月 22 日加贺抵达单冠湾，编成已经写成 18 架 A6M2 零式（Zeke）、
+          27 架九七式舰攻、27 架九九式舰爆。
+          赤城的记录也把 11 月的编成改记为 18 架 A6M2。
+          也就是说，赤城与加贺这两艘舰的制空机在同一年内从 Claude 换成了 Zeke。
+          这不是战后追述，是两舰行动记录里各自的一条编成条目。
+        en: >-
+          There is a clean timeline here, and both ends of it are original establishment
+          records. In late April and May 1941, while Akagi trained between Kyushu and
+          Okinawa, her air group was recorded as 18 A5M (Claude), 27 B5N (Kate) and 18
+          D3A (Val), with three spares of each. By 22 November, when Kaga reached
+          Hitokappu Bay, the establishment reads 18 A6M2 Reisen (Zeke), 27 Type 97
+          carrier attack planes and 27 Type 99 carrier dive bombers; Akagi's record
+          revises her November establishment to 18 A6M2 as well. Within a single year the
+          fighter complement of these two ships changed from Claude to Zeke. These are not
+          postwar retellings but establishment entries in each ship's record of movement.
+      src: [combinedfleet-akagi, combinedfleet-kaga]
+
+    - heading: 大机翼与远航程是这一型的两个标签
+      text:
+        zh: >-
+          把同一张表里的四个型号并排看，取舍就摆在纸面上。
+          二一型：翼展 12.00 m、翼面积 22.4 m²、空重 1,680 kg、全重 2,410 kg、
+          翼载 107.4 kg/m²、最大速度 288 节（4,550 m）、巡航 180 节。
+          三二型把翼展收到 11.00 m、翼面积降到 21.5 m²，最大速度升到 294 节；
+          五二型 21.3 m²、305 节；六四型 309 节。
+          换句话说，二一型是这一族里机翼最大、也最慢的一型。
+          这不是一个评价：后三个型号的翼面积与速度就摆在同一条表上，
+          改动方向是明确的——收翼、提速。
+          航程一栏给的是正常 1,010 海里、最大 1,675 海里，
+          330 升副油箱在 A6M7 与 A6M8 之外的全型都有——
+          远航程不是某一批的临时改装，是这一族的标配。
+        en: >-
+          Set the four marks of the same table side by side and the trade-off is on the
+          page. The Model 21: span 12.00 m, wing area 22.4 m², empty 1,680 kg, loaded
+          2,410 kg, wing loading 107.4 kg/m², 288 knots at 4,550 m, 180 knots cruising.
+          The Model 32 cut the span to 11.00 m and the area to 21.5 m² and reached 294
+          knots; the Model 52 gives 21.3 m² and 305 knots; the Model 64, 309 knots. The
+          Model 21 is thus the largest-winged and slowest of the family. That is not a
+          judgement: the areas and speeds of the three later marks sit on the same table,
+          and the direction of the change is unambiguous - less wing, more speed. Range
+          is given as 1,010 nautical miles normal and 1,675 maximum, and the 330-litre
+          drop tank is listed for every version except the A6M7 and A6M8: long range was
+          not a field modification on some batch but standard equipment for the family.
+      src: [combinedfleet-a6m]
+
+    - heading: 减重的痕迹只到结构描述这一层
+      text:
+        zh: >-
+          材料对结构的全部描述只有一句：全金属结构，操纵面蒙布。
+          这一句值得单独拎出来看——全金属机体配上布蒙皮的操纵面，
+          是那个年代控制重量的常规做法。同一张表里还有两个数可以对照：
+          功载 2.5 kg/hp（940 hp 起飞功率对 2,410 kg 全重），空重 1,680 kg。
+          至于为这组数字放弃了什么——防弹钢板、自封油箱、结构冗余——
+          本站已登记的来源里没有对应条目，因此不写。
+          这一条是留空，不是遗漏。
+        en: >-
+          Everything the source says about construction is one line: all-metal
+          construction with fabric-covered control surfaces. That line is worth isolating,
+          because a metal airframe with fabric-covered control surfaces was the ordinary
+          way of holding weight down in that period. Two figures from the same table
+          belong beside it: a power loading of 2.5 kg/hp, that is 940 hp for take-off
+          against a 2,410 kg loaded weight, and an empty weight of 1,680 kg. What was
+          given up to reach those numbers - armour plate, self-sealing tanks, structural
+          redundancy - has no entry in any source registered for this project, and is
+          therefore not written. This is a blank, not an omission.
+      src: [combinedfleet-a6m]
+
+    - heading: 1942 年的两面记录
+      text:
+        zh: >-
+          实战记录里最紧的一组数字来自中途岛同一个上午。
+          6 月 4 日，加贺的零式执行战斗空中巡逻，行动记录写的是 Zeke 的 CAP
+          击落了来袭 14 架鱼雷机中的 10 架；同一日上午 0710，赤城遭到 6 架 TBF 与
+          4 架 B-26 的低空攻击，记录里写明这场交锋中损失 1 架零战。
+          本站把这两条并列记录，不合并成一句评价：一条是拦阻低速鱼雷机的战果，
+          一条是同一型飞机在同一场战斗中的损失。
+          更能说明它任务的另一条记录在两个月前：4 月 4 日一架英军 Catalina
+          发现机动部队后，赤城、苍龙、翔鹤、瑞鹤各出 3 架、飞龙出 6 架零战
+          合力拦截，把它逼落海中，9 名机组中 6 人被驱逐舰矶风号救起。
+          这条记录里没有战果数字，只有出动架数与结果，
+          但它说明了这一型在舰队里最日常的一份工作是什么。
+        en: >-
+          The tightest pair of figures in the record comes from a single morning at
+          Midway. On 4 June Kaga's Zeros flew the combat air patrol, and the record's
+          wording is that the Zeke CAP shot down ten of the fourteen attacking torpedo
+          aircraft; earlier the same morning, at 0710, Akagi came under low-level attack
+          by six TBFs and four B-26s, and the same record notes the loss of one Zeke in
+          that exchange. Both entries are set down side by side rather than merged into a
+          verdict: one is a result against slow torpedo planes, the other a loss suffered
+          by the same type in the same action. An entry from two months earlier says more
+          about its actual task: on 4 April, after a British Catalina sighted the mobile
+          force, Akagi, Soryu, Shokaku and Zuikaku each launched three Zeros and Hiryu
+          six, and together they forced it into the sea; six of its nine crew were picked
+          up by the destroyer Isokaze. There is no score in that entry, only a number of
+          aircraft launched and an outcome - but it shows what the most routine work of
+          this type in the fleet was.
+      src: [combinedfleet-kaga, combinedfleet-akagi]
+
+    - heading: 对手在 1942 年 6 月是怎么描述它的
+      text:
+        zh: >-
+          这段话值得整段引用，因为它不是后人的评价，是约克城号 1942 年 6 月的
+          战斗报告里「日军战术」一节的原文，作者是刚跟这一型交过手的美军飞行员。
+          报告先写机动性：零式可以轻易地在盘旋与爬升上压过 F4F-3，
+          飞行员的一致意见是 F4F-4 比 F4F-3 还要笨重迟缓。
+          再写打法：零式通常从后上方高速进入，攻击后靠垂直爬升脱离，
+          掉一些速度后拉过去做一个小半径的翼上翻转，这样既脱出射程又占好下一次攻击的位置；
+          想抓它爬升脱离的那一下，就得在每次攻击后反向急转。
+          报告还纠正了一个印象：这一仗里零式开始做侧向进入，
+          而珊瑚海时它们只从后方或高侧进入、收效不大；
+          同时「脱离或进入攻击时没有多余的花哨动作」。
+          报告的结论是一句请求：希望海军能拿到一种至少与零式相当的战斗机。
+          本站照抄这条请求，既不替它加注，也不替它反驳。
+        en: >-
+          This passage is worth quoting whole, because it is not a later assessment but
+          the section headed Japanese Tactics in Yorktown's action report of June 1942,
+          written by pilots who had just fought this type. The report takes
+          manoeuvrability first: the Zero fighters could easily outmaneuver and out-climb
+          the F4F-3, and the consensus of fighter pilot opinion was that the F4F-4 was
+          even more sluggish and slow. Then tactics: the Zeros usually attacked from above
+          and rear at high speed and recovered by climbing vertically until they lost some
+          speed, then pulled on through into a small loop or wing-over which placed them
+          out of reach and in position for another attack; to catch one while it climbed
+          away, the leader had to reverse the turn sharply after each attack. The report
+          also corrects an impression: this time the Zeros made beam runs, where at Coral
+          Sea they had approached only from the rear or high side with relatively little
+          effect, and there was an absence of fancy stunting during pull-outs or
+          approaches. Its conclusion is a request - that the Navy be supplied with a
+          fighter at least the equal of the Zero. That request is reproduced here as
+          written, neither annotated nor argued with.
+      src: [nhhc-yorktown-midway-report]
+
+history:
+  - id: air-group
+    title: { zh: 换装与开战, en: Re-equipment and the opening of the war }
+    range: { from: 1941-05, to: 1941-12 }
+    lead:
+      zh: >-
+        这一节只记编成变化与当日架数，不评价性能。
+      en: >-
+        This section records establishment changes and sortie numbers only; it does not
+        assess the aircraft.
+    events:
+      - date: 1941-05
+        text:
+          zh: >-
+            赤城飞行队此时为 18 架 A5M（Claude）、27 架 B5N（Kate）、
+            18 架 D3A（Val），三种各带 3 架备用。零式尚未上舰。
+          en: >-
+            Akagi's air group then stood at 18 A5M (Claude), 27 B5N (Kate) and 18 D3A
+            (Val), with three spares of each. The Zero had not yet reached the ship.
+        src: [combinedfleet-akagi]
+      - date: 1941-11-22
+        text:
+          zh: >-
+            加贺抵达单冠湾，编成为 18 架 A6M2 零式（Zeke）、27 架九七式舰攻、
+            27 架九九式舰爆。赤城的记录同期改为 18 架 A6M2。
+          en: >-
+            Kaga arrived at Hitokappu Bay with 18 A6M2 Reisen (Zeke), 27 Type 97 carrier
+            attack planes and 27 Type 99 carrier dive bombers. Akagi's record shifts to
+            18 A6M2 over the same period.
+        src: [combinedfleet-kaga, combinedfleet-akagi]
+      - date: 1941-12-07
+        text:
+          zh: >-
+            珍珠港。机动部队第一波 183 架中含 43 架零战，第二波 167 架中含 35 架零战。
+            赤城自身在两波中共损失 1 架零战。
+          en: >-
+            Pearl Harbor. The mobile force's first wave of 183 aircraft included 43 Zekes
+            and the second wave of 167 included 35. Akagi lost one Zeke across the two
+            waves.
+        src: [combinedfleet-akagi]
+      - date: 1941-12-09
+        text:
+          zh: >-
+            苍龙 1 架执行战斗空中巡逻的零战在着舰时坠海，飞行员阵亡。
+            这条记录的价值在于它不在战果栏里：一次非战斗损失，
+            同样被逐条写进行动记录。
+          en: >-
+            One of Soryu's Zeke CAP fighters crashed overboard while landing, the pilot
+            being lost. The entry's value is that it does not belong in a score column: a
+            non-combat loss, recorded line by line like everything else.
+        src: [combinedfleet-soryu]
+
+  - id: first-half-1942
+    title: { zh: 1942 年上半年的战线, en: The first half of 1942 }
+    range: { from: 1942-01, to: 1942-06 }
+    lead:
+      zh: >-
+        从拉包尔到印度洋再到中途岛，这一型出动的每一天都能追到具体架数。
+      en: >-
+        From Rabaul to the Indian Ocean to Midway, every day this type flew can be
+        traced to a specific number of aircraft.
+    events:
+      - date: 1942-01-21
+        text:
+          zh: >-
+            卡维恩攻击。赤城出 9 架零战与 18 架九九式舰爆，记录写明无损失。
+          en: >-
+            The strike on Kavieng. Akagi contributed nine Zekes and 18 Type 99 dive
+            bombers, with no casualties recorded.
+        src: [combinedfleet-akagi]
+      - date: 1942-02-19
+        text:
+          zh: >-
+            达尔文空袭。第一波 81 架九七式舰攻由 18 架零战护航；
+            接近途中，加贺的 1 架 A6M2 在巴瑟斯特岛西北击落 1 架 PBY Catalina。
+          en: >-
+            The raid on Darwin. The first wave of 81 Type 97 attack planes was escorted
+            by 18 Zekes; on the approach a single A6M2 from Kaga shot down a Consolidated
+            PBY Catalina north-west of Bathurst Island.
+        src: [combinedfleet-kaga]
+      - date: 1942-04-04
+        text:
+          zh: >-
+            1930，加拿大第 413 中队的一架 Catalina 发现机动部队，报称位于锡兰
+            最南端东南 360 英里。赤城、苍龙、翔鹤、瑞鹤各出 3 架、飞龙出 6 架零战
+            合力拦截，将其逼落海中，9 名机组中 6 人被驱逐舰矶风号救起。
+          en: >-
+            At 1930 a Catalina of No. 413 Squadron sighted the mobile force and reported
+            it 360 miles south-east of Ceylon's southern tip. Three Zeros each went up
+            from Akagi, Soryu, Shokaku and Zuikaku and six from Hiryu; the flying boat was
+            forced into the sea and six of its nine crew were rescued by the destroyer
+            Isokaze.
+        src: [combinedfleet-akagi]
+      - date: 1942-04-09
+        text:
+          zh: >-
+            亭可马里空袭。0900 出动 91 架九七式舰攻与 41 架 A6M2，由渊田指挥，
+            击落 9 架敌机、在地面摧毁至少 14 架。
+            41 架这个数字值得记一笔：它不是某一舰的编制数，
+            是整支机动部队凑出来的集中出动量（加贺此次未参加印度洋作战）。
+          en: >-
+            The raid on Trincomalee. At 0900 the force launched 91 Type 97 attack planes
+            and 41 A6M2s under Fuchida; they shot down nine aircraft and destroyed at
+            least fourteen more on the ground. The figure of 41 is worth noting: it is not
+            one ship's establishment but a concentration drawn from the whole mobile force,
+            Kaga being absent from the Indian Ocean operation.
+        src: [combinedfleet-akagi]
+      - date: 1942-06-04
+        text:
+          zh: >-
+            中途岛。加贺 CAP 的零战击落来袭 14 架鱼雷机中的 10 架；
+            同日 0710 赤城遭 6 架 TBF 与 4 架 B-26 低空攻击，损失 1 架零战。
+          en: >-
+            Midway. Kaga's Zeke CAP shot down ten of the fourteen attacking torpedo
+            aircraft; at 0710 the same morning Akagi came under low-level attack by six
+            TBFs and four B-26s and lost one Zeke.
+        src: [combinedfleet-kaga, combinedfleet-akagi]

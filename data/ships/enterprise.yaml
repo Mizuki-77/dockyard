@@ -818,7 +818,7 @@ facts:
     src: [navweaps-11in75-mk1]
     valid: { from: 1942-06-04, to: 1942-06-06 }
     confidence: C
-    note: 四联装 4 座 16 管——中途岛时美军航母的中程防空主力，40mm 尚未装舰
+    note: 四联装 4 座 16 管。**不是「中程防空主力」**——1.1"/75 是 28 mm，属近程，且当时公认不可靠（见 work/raw/usn-weapons.md §0.1 的反驳）。中途岛时企业号的防空分层是：5"/38 远程、1.1"/75 近程、.50 机枪补近界，40 mm 尚未装舰。
 
   - about: weapon:20mm-oerlikon
     field: weapon.designation

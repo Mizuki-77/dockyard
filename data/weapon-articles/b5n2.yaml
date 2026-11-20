@@ -1,0 +1,268 @@
+# ============================================================================
+# 武器正文 —— 九七式舰攻一二型（B5N2 / Kate）
+#
+# 这一篇有个硬约束必须写在前面：本页只能用 data/sources.yaml 里已登记、
+# 且原料（work/raw/ijn-weapons.md §7）引过的来源。§7 的机型数据全部挂在
+# S12 / S14 / S17 上（combinedfleet ijna/b5n、aviation-history b5n、
+# 英文维基 Nakajima B5N），这三条都没有登记，所以：
+#   - 翼展 / 重量 / 功率 / 极速 / 航程 / 载弹组合 / 产量 一律不写；
+#   - 一一型与一二型的差别（换荣一一型、整流罩变小）也不写；
+#   - 能写的只有 S6–S9 四舰 TROM 里的架次、编成与当日遭遇，那些是真的，
+#     而且是这一型最值得写的那部分——它是怎么死的。
+# 补来源以后（把上面三条登记进来）再补技术与产量，那时再改这几段。
+# ============================================================================
+weapon: b5n2
+updated: 2026-11-21
+
+intro:
+  lead:
+    zh: >-
+      九七式舰上攻击机一二型（B5N2，盟军代号 Kate）是机动部队在中途岛的主力雷击机。
+      1942 年 6 月 4 日，当日 04:30 起飞的那一百零八架里，三十六架是它；
+      已登记来源给出的单舰搭载数是赤城 18、加贺 27、苍龙 18，飞龙的机数没有，
+      故不填。
+      它的结局不在空战里。赤城、加贺、苍龙三舰是在自己甲板上被炸毁的，
+      而当时赤城与加贺的舰攻队正在把陆用爆弹换成对舰鱼雷，
+      甲板上停的正是刚从中途岛方向收回来、正在重装的那一批。
+      本页登记的来源只覆盖它的服役记录；这一型的机体性能数据在本地没有来源，
+      因此不写。
+    en: >-
+      The Type 97 carrier attack bomber Model 12 (B5N2, Allied code name Kate) was the
+      striking force's principal torpedo aircraft at Midway. Of the hundred and eight
+      aircraft launched at 0430 local on 4 June 1942, thirty-six were of this type. The
+      registered sources give Akagi eighteen, Kaga twenty-seven and Soryu eighteen; no
+      figure is available for Hiryu, so none is given. Its fate was decided not in the air:
+      three of the carriers were destroyed on their own decks while being rearmed with
+      torpedoes, and the aircraft parked on those decks were of this type, just recovered
+      from the Midway strike. The sources registered here cover the type's service record
+      only; no source in this project carries its airframe performance, so those figures
+      are not written.
+
+  paragraphs:
+    - heading: 已登记来源能给出多少架，就差多少
+      text:
+        zh: >-
+          数字要分舰记，而且只能记到手的。赤城 18 架、加贺 27 架、苍龙 18 架——
+          加贺比这两舰各多出九架，是已登记记录里最大的单舰差额。
+          飞龙的搭载数在已登记来源里没有，故留空，不以 18 补。
+          1942 年 6 月 4 日 04:30（当地时）起飞的那一波共 108 架：
+          36 架九七式舰攻、36 架九九式舰爆、36 架零战，
+          领队是飞龙的友永丈市大尉，他当日战死、追晋中佐。
+          同一天早上，加贺还单独放出一架九七式舰攻去参加远程搜索，10:05 收回。
+        en: >-
+          The figures have to be taken ship by ship, and only as far as the sources go:
+          Akagi eighteen, Kaga twenty-seven, Soryu eighteen. Kaga carried nine more than
+          either of those two, the largest single-ship difference in the registered record;
+          no figure exists for Hiryu, so none is supplied rather than assumed to be
+          eighteen. The wave that left the decks at 0430 local on 4 June 1942 numbered 108
+          aircraft - thirty-six B5N2, thirty-six D3A1 and thirty-six A6M2 - led by
+          Lieutenant Tomonaga Joichi of Hiryu, who was killed that day and promoted to
+          commander. Earlier the same morning Kaga had also launched a single B5N2 on the
+          long-range search, recovering it at 1005.
+      src: [combinedfleet-akagi, combinedfleet-kaga, combinedfleet-soryu]
+
+    - heading: 当天上午它在甲板上做的三件事：等、收、换弹
+      text:
+        zh: >-
+          04:30 那一波出去之后，这一型在舰上的活是等待与重装。
+          苍龙 09:10 完成对中途岛队的回收，其中两架攻击机迫降，乘员被救起；
+          09:50 又落了一批九七式舰攻。加贺 10:05 收回那架搜索机。
+          与此同时，07:45 南云下令暂停第二波的对地挂弹，
+          把陆用爆弹换成对舰攻击的鱼雷——赤城与加贺的舰攻队正在做这件事。
+          这一段时间的甲板状态，就是后来那几发炸弹能一次点着三艘航母的原因。
+        en: >-
+          Once the 0430 wave was away, the work for this type was waiting and re-arming.
+          Soryu completed recovery of the Midway strike at 0910, two of her attack aircraft
+          having had to ditch with their crews rescued, and landed more B5N2s at 0950.
+          Kaga recovered her search aircraft at 1005. At the same time, at 0745, Nagumo
+          directed that the second wave's land bombs be exchanged for torpedoes for a
+          ship strike, and the B5N2 squadrons of Akagi and Kaga were in the middle of that
+          exchange. The state of the decks during those hours is why a handful of bombs set
+          three carriers alight at once.
+      src: [combinedfleet-soryu, combinedfleet-kaga]
+
+    - heading: 它是被烧在甲板上的，不是被打在空中的
+      text:
+        zh: >-
+          材料里最直接的一句写在加贺的记录里：10:22 被命中后，
+          炸弹「在机库甲板上已挂弹、已加满油的舰攻之间引发爆炸」，
+          再加上没归位的弹药，把航空汽油火点成了大火。
+          苍龙 10:25–10:26 挨两发直击（前升降机、第二升降机之后），
+          10:29 第三发穿到下层机库，起火处正是刚从中途岛队回来的飞机；
+          赤城 10:26 舯部中一发，10:29 机库甲板的火引爆了
+          已备好、等着装上舰攻的鱼雷。
+          三份记录指向同一个机制：这一型的当日损失，
+          主要不是护航不足造成的空战损失，而是随舰一起烧掉的。
+        en: >-
+          The most direct statement in the material is in Kaga's record: after the hits at
+          1022 the bombs induced explosions among armed and fuelled torpedo aircraft on the
+          hangar decks, aggravated by unstored ordnance, and started a raging aviation
+          gasoline fire. Soryu took two direct hits at 1025-1026, on the forward elevator
+          and aft of the second, and a third bomb at 1029 that penetrated to the lower
+          hangar and started fires among the aircraft just returned from the Midway strike.
+          Akagi was hit amidships at 1026, and at 1029 the hangar-deck fire detonated
+          torpedoes already prepared for loading into the attack aircraft. Three records,
+          one mechanism: the losses of this type that day were not air-combat losses from
+          inadequate escort, but aircraft burned with their ships.
+      src: [combinedfleet-akagi, combinedfleet-kaga, combinedfleet-soryu]
+
+    - heading: 珍珠港与印度洋，它出的是最大的一份
+      text:
+        zh: >-
+          1941-12-07 珍珠港第一波 183 架里，89 架是九七式舰攻，由渊田美津雄中佐率领。
+          1942-02-19 达尔文港，第一波 81 架九七式舰攻同样由渊田带队，加贺一舰出了 27 架。
+          1942-04-09 亭可马里，出击的是 91 架九七式舰攻的水平轰炸队。
+          而在 1941-12-22 的威克岛，第二航空战队的 33 架九七式舰攻各挂两枚 250 kg 炸弹——
+          同一种飞机，挂鱼雷与挂炸弹是两套完全不同的活。
+        en: >-
+          Of the 183 aircraft in the first wave at Pearl Harbor on 7 December 1941,
+          eighty-nine were B5N2s, led by Commander Fuchida Mitsuo. At Port Darwin on
+          19 February 1942 the first wave of eighty-one B5N2s was again Fuchida's, and Kaga
+          alone contributed twenty-seven. At Trincomalee on 9 April 1942 the strike was
+          ninety-one B5N2 level bombers. And at Wake Island on 22 December 1941 CarDiv 2
+          put up thirty-three of the type, each with two 250 kg bombs - the same aircraft,
+          but torpedo work and level-bombing work are two different trades.
+      src: [combinedfleet-akagi, combinedfleet-kaga, combinedfleet-soryu]
+
+    - heading: 飞龙的两次反击，是这一型当天最后的出动
+      text:
+        zh: >-
+          四舰里最后还能放飞机的是飞龙。它在 10:50 与 12:45 各出一次，
+          目标都是约克城号。17:03，它正在准备对敌方航母的下一波时
+          被十三架俯冲轰炸机击中四发，四发落点很集中：
+          前三发在飞行甲板前部排成一线，最近的一发把前升降机整个掀到舰岛边上，
+          第四发落在舯部舰桥旁。次日 09:12，它翻覆沉没。
+        en: >-
+          Hiryu was the last of the four still able to fly anything off. She launched twice,
+          at 1050 and 1245, both against Yorktown. At 1703, while preparing the next strike
+          against an American carrier, she was hit by four bombs from thirteen dive
+          bombers, all closely spaced: the first three in a row on the fore part of the
+          flight deck, the nearest flinging the forward elevator bodily against the island,
+          and the fourth amidships beside the bridge. She capsized and sank at 0912 the
+          following morning.
+      src: [combinedfleet-hiryu]
+
+history:
+  - id: first-year
+    title: { zh: 开战第一年的出击记录, en: The first year of the war }
+    range: { from: 1941-11, to: 1942-04 }
+    lead:
+      zh: >-
+        从择捉岛单冠湾到印度洋，已登记记录覆盖的几次大规模出击里，这一型都是数量最多的一档。
+      en: >-
+        From Hitokappu Bay to the Indian Ocean, in every large strike the registered record
+        covers, this type formed the largest single block.
+    events:
+      - date: 1941-11-22
+        text:
+          zh: >-
+            加贺抵达单冠湾，舰载机为 18 架零战二一型、27 架九七式舰攻、27 架九九式舰爆。
+          en: >-
+            Kaga arrived at Hitokappu Bay with an air group of eighteen A6M2 fighters,
+            twenty-seven B5N2 attack aircraft and twenty-seven D3A1 dive bombers.
+        src: [combinedfleet-kaga]
+      - date: 1941-12-07
+        text:
+          zh: >-
+            第一波 183 架（89 架九七式舰攻、51 架九九式舰爆、43 架零战）
+            由渊田美津雄中佐率领攻击珍珠港。
+          en: >-
+            The first wave of 183 aircraft - eighty-nine B5N2 attack planes, fifty-one
+            D3A1 dive bombers and forty-three A6M2 fighters - attacked Pearl Harbor under
+            Commander Fuchida Mitsuo.
+        src: [combinedfleet-akagi]
+      - date: 1941-12-22
+        text:
+          zh: >-
+            威克岛。第二航空战队放出 33 架九七式舰攻，各挂两枚 250 kg 炸弹，另 6 架零战；
+            苍龙损失两架九七式舰攻，乘员全灭。
+          en: >-
+            Wake Island. CarDiv 2 launched thirty-three B5N2s, each with two 250 kg bombs,
+            and six Zeros; Soryu lost two of the attack aircraft with their crews.
+        src: [combinedfleet-soryu]
+      - date: 1942-02-19
+        text:
+          zh: >-
+            达尔文港。第一波 81 架九七式舰攻由渊田率领，加贺出 27 架、另出 18 架九九舰爆与 9 架零战；
+            当日加贺损失 1 架九七式舰攻与 1 架九九式舰爆。
+          en: >-
+            Port Darwin. The first wave of eighty-one B5N2s was Fuchida's, with Kaga
+            providing twenty-seven of them plus eighteen D3A1s and nine Zeros in the day's
+            two waves; Kaga lost one B5N2 and one D3A1.
+        src: [combinedfleet-kaga]
+      - date: 1942-04-09
+        text:
+          zh: >-
+            亭可马里。91 架九七式舰攻与 41 架零战由渊田指挥出击，
+            港内几乎空无一船，只击沉了商船 SAGAING、击伤浅水炮舰 EREBUS，
+            另重创船坞与 China Bay 的机场。
+          en: >-
+            Trincomalee. Ninety-one B5N2 level bombers and forty-one Zeros under Fuchida
+            found the harbour nearly empty, sinking the merchant ship Sagaing and damaging
+            the monitor Erebus, while seriously damaging the dockyard and the RAF station
+            at China Bay.
+        src: [combinedfleet-akagi]
+
+  - id: midway
+    title: { zh: 中途岛, en: Midway }
+    range: { from: 1942-05, to: 1942-06 }
+    lead:
+      zh: >-
+        这一型在四艘航母上的记录只剩七天，而它的结局就写在这七天里。
+      en: >-
+        The type's record aboard the four carriers covers seven days, and its fate is
+        written inside them.
+    events:
+      - date: 1942-05-27
+        text:
+          zh: >-
+            赤城从柱岛出港，舰载机为 18 架零战、18 架九九式舰爆、18 架九七式舰攻，
+            另搭运第六航空队的 6 架零战（预定用于中途岛陆上基地）。
+          en: >-
+            Akagi sailed from Hashirajima with eighteen A6M2, eighteen D3A1 and eighteen
+            B5N2, plus six A6M2 of the 6th Air Group embarked for Midway's future garrison.
+        src: [combinedfleet-akagi]
+      - date: 1942-06-04
+        text:
+          zh: >-
+            04:30，108 架（36 架九七式舰攻、36 架九九式舰爆、36 架零战）
+            由友永丈市大尉率领攻击中途岛。同日 07:45，
+            南云下令暂停对地挂弹、把陆用爆弹换成对舰鱼雷。
+          en: >-
+            At 0430, 108 aircraft - thirty-six B5N2, thirty-six D3A1 and thirty-six A6M2 -
+            under Lieutenant Tomonaga attacked Midway. At 0745 Nagumo halted the land-bomb
+            preparations and ordered the bombs exchanged for torpedoes for a ship strike.
+        src: [combinedfleet-kaga]
+      - date: 1942-06-04
+        text:
+          zh: >-
+            回收阶段：苍龙 09:10 完成回收（两架攻击机迫降、乘员救起），09:50 再落一批九七式舰攻；
+            加贺 10:05 收回参加远程搜索的那架九七式舰攻。
+          en: >-
+            Recovery: Soryu completed it at 0910, two attack aircraft having ditched with
+            their crews rescued, and landed more B5N2s at 0950; Kaga recovered her
+            long-range search B5N2 at 1005.
+        src: [combinedfleet-soryu, combinedfleet-kaga]
+      - date: 1942-06-04
+        text:
+          zh: >-
+            10:25–10:26，苍龙与赤城相继被俯冲轰炸机命中；
+            赤城 10:29 的记录是机库甲板的火引爆了已备好待装上舰攻的鱼雷。
+            两舰当日都还在为对舰攻击做换弹准备。
+          en: >-
+            At 1025-1026 Soryu and Akagi were hit by dive bombers in succession; Akagi's
+            log at 1029 records the hangar-deck fire detonating torpedoes already prepared
+            for loading into the attack aircraft. Both ships were still re-arming for a
+            ship strike when they were hit.
+        src: [combinedfleet-akagi, combinedfleet-soryu]
+      - date: 1942-06-05
+        text:
+          zh: >-
+            飞龙 09:12 翻覆沉没，是四舰中最后一艘。
+            它前一天 10:50 与 12:45 的两次出击都以约克城号为目标，
+            17:03 正在准备下一波时被十三架俯冲轰炸机命中四发。
+          en: >-
+            Hiryu capsized and sank at 0912, the last of the four. Her two strikes of the
+            previous day, at 1050 and 1245, had both been aimed at Yorktown, and she was
+            preparing another when thirteen dive bombers hit her with four bombs at 1703.
+        src: [combinedfleet-hiryu]

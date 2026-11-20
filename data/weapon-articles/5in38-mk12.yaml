@@ -1,0 +1,428 @@
+# ============================================================================
+# 武器正文 —— 5"/38 (12.7 cm) Mark 12
+#
+# 这一篇不写参数复述（参数在 fact 里），写的是四项互相冲突的要求
+# 怎么被同一门炮同时留住：
+#  1) 分装弹（Type / Separate）换来弹与药各自可换，代价是两段装填动作；
+#  2) 装填角「任意」，这才是它能当高炮的前提，比初速更卡人；
+#  3) 射速的 12–15 与 15–22 两档，差在扬弹机，不在炮闩（德里号 25 发/分为证）；
+#  4) 炮座重量的解法是砍护盾与扬弹机，Mk 21 就在人力回转的极限上。
+# 中途岛装舰按 navweaps 的 Mount / 基数两表分层写：三艘航母 + 亚特兰大 + 驱逐舰五种炮架。
+# 弹药基数表把约克城写成 CV-6，属来源内部不一致，两说并列不裁决（同 §7.1）。
+# ============================================================================
+weapon: 5in38-mk12
+updated: 2026-11-20
+
+intro:
+  lead:
+    zh: >-
+      5"/38 (12.7 cm) Mark 12 设计于约 1932 年，1934 年随法拉格特号（DD-348）
+      进入服役，此后装在二战新建的、驱逐舰以上吨位的几乎所有美军军舰上，
+      从驱逐舰一路到战列舰。它的口径与倍径都不出奇，
+      出奇的是把几项互相冲突的要求同时留住了——同一门炮既要打飞机、
+      又要打水面目标，还要在任意仰角装填；口径只有 5 英寸，
+      最大弹道顶点却给到 37,220 英尺。下面的正文不复述参数表，
+      只讲这些数字是怎么凑到一起的。
+    en: >-
+      The 5"/38 (12.7 cm) Mark 12 was designed about 1932 and entered service in 1934
+      aboard USS Farragut (DD-348); from there it was fitted to nearly all World War
+      II-era new-construction United States warships destroyer-sized and larger, from
+      destroyers up to battleships. Neither its bore nor its length is remarkable. What
+      is remarkable is that it holds several conflicting requirements at once - the same
+      gun has to engage aircraft and surface targets and to load at any angle of
+      elevation, and a 5-inch bore still reaches a maximum ordinate of 37,220 feet.
+      What follows is not a restatement of the data tables but an account of how those
+      numbers came to sit together.
+
+  paragraphs:
+    - heading: 一条常见的评价，和本站能核对的部分
+      text:
+        zh: >-
+          这一型常被一句话概括为「二战最好的中型舰炮」。排名不是本站能核的东西，
+          能核对的是覆盖面：navweaps 记它装在二战新建的、
+          驱逐舰以上吨位的几乎所有军舰上，另有大量辅助舰、商船与小舰；
+          一战时期的老战列舰和萨拉托加号（CV-3）也用它换装过。
+          设计年份约 1932 年，1934 年随法拉格特号（DD-348）服役。
+          一条被这样广泛采纳的炮，它好在哪儿要从后面的取舍里读，
+          而不是从这句评价里读。
+        en: >-
+          The weapon is habitually summed up in one line as the best medium-calibre naval
+          gun of the Second World War. Rankings are not something this site can check.
+          What can be checked is the coverage: NavWeaps records it as fitted to nearly
+          all World War II-era new-construction warships destroyer-sized and larger, along
+          with many auxiliaries, merchant vessels and small warships, and as the battery
+          used to rearm older ships including First World War battleships and USS
+          Saratoga (CV-3). Design dates to about 1932 and service to 1934, first on
+          Farragut (DD-348). Why a gun adopted this widely was good has to be read out
+          of its trade-offs rather than out of the reputation.
+      src: [navweaps-5in38-mk12]
+
+    - heading: 分装弹：一门炮被拆成三种用法
+      text:
+        zh: >-
+          navweaps 的弹药表把这一型记作 Type / Separate：弹丸与黄铜药筒分开上膛，
+          药筒 127×679 毫米、空筒 12.31 磅（5.58 公斤），
+          全装药 15.2–15.5 磅 SPD 装在筒里，弹丸 55.18 磅（25.0 公斤）。
+          按这三个数相加，一发全重八十磅出头。取舍就在这里：整发的量级
+          是一个人要一次搬动的单件，而弹丸 55 磅、药筒连药二十几磅，
+          分成两件各在人力可控的范围内。代价是每发多一次搬运、
+          装填要两段动作；换回来的是弹与药可以各自换——弹这边从 AAC、
+          Special Common 到照明弹（Mk 27/30/44/45，54.39 磅）到 AAVT 近炸弹，
+          药这边从 15.2 磅全装药到 3.6 磅减装药。
+          换减装药，初速就从 2,600 fps 掉到 1,200 fps。
+          一门炮因此同时是高炮、爆破弹投送器和照明弹发射器，舰队只带一条弹药链。
+          这也是为什么射速那一节必须按炮架分开写。
+          navweaps 只给弹药表，没有把「分装是为了让人搬得动」写成理由；
+          上面这层是把表里的重量摆在一起读出来的，不是它的原话。
+        en: >-
+          The ammunition table records the type as "Separate": projectile and brass
+          cartridge case are loaded as two items, the case 127 x 679 mm and 12.31 lbs
+          (5.58 kg) empty, holding a full charge of 15.2 to 15.5 lbs of SPD behind a
+          55.18 lbs (25.0 kg) shell. On those three figures a complete round comes to a
+          little over eighty pounds. That is the trade. Eighty-odd pounds is the weight
+          class one man has to lift as a single item; a 55 lb shell and a case-and-charge
+          unit of under thirty pounds are two items, each inside what muscle can manage.
+          The cost is one extra handling and a two-stage loading stroke per round. What it
+          buys is freedom on both halves of the round: shells ran from AAC and Special
+          Common through illumination (Marks 27, 30, 44 and 45 at 54.39 lbs) to the AAVT
+          proximity round, and charges from the 15.2 lb full charge down to a 3.6 lb
+          reduced charge that drops muzzle velocity from 2,600 to 1,200 fps. One gun
+          therefore served as anti-aircraft piece, HE delivery and star-shell launcher off
+          a single ammunition chain. That is also why rate of fire has to be discussed per
+          mounting rather than per gun. NavWeaps gives the ammunition table and does not
+          write "separate loading so a man can lift it" as the reason; the reading above
+          comes from setting the weights side by side, and is not its wording.
+      src: [navweaps-5in38-mk12]
+
+    - heading: VT 引信：换的是引信，不是弹
+      text:
+        zh: >-
+          VT 引信在这门炮上不是一种新弹药，而是一次换引信的动作。
+          navweaps 的原句是：AAC Mk 35 与 Mk 49 的弹体可以配触发引信（PD）、
+          机械定时引信（MT）或近炸引信（VT）三种头；装 MT 或 VT 时按对空弹计，
+          装 PD 时按 HC 爆破弹计。也就是说同一条弹药链上跑的是一批弹体，
+          按任务换头。这一点与分装结构是配套的：弹丸与药筒分开，
+          弹丸进舱前换引信不影响装药，舰队不必为对空和对海各备一条供弹线。
+          分类上的界线值得写清：同一批弹体，头一换就从爆破弹变成对空弹，
+          而弹重、装药、药筒一样都没动。
+          本站只记到弹药归属与分类这一层；VT 的定名、可用性与战果统计，
+          navweaps 这一页没有给，本页也就不写。
+        en: >-
+          The VT fuze was not a new round for this gun but a change of fuze. NavWeaps
+          states that AAC Mark 35 and Mark 49 bodies could be used with point detonating,
+          mechanical time or proximity nose fuzes; issued with MT or VT they counted as
+          anti-aircraft rounds, issued with PD they counted as HC rounds. The same shell
+          body, then, changed category by its nose alone. That fits the separate-loading
+          arrangement: shell and case are separate items, so a fuze change before the
+          round goes up does not disturb the charge, and the ship does not need two supply
+          lines for surface and air work. This article stops at the ammunition accounting
+          and the classification. On the naming, availability and claimed results of the
+          VT fuze, the NavWeaps page used here says nothing, and neither does this page.
+      src: [navweaps-5in38-mk12]
+
+    - heading: 装填角「任意」，比初速更卡人
+      text:
+        zh: >-
+          俯仰表里有一行容易被跳过：装填角「任意」。
+          对一门要打飞机的炮，这一条比初速更要命。炮管抬到 60 度以上追目标时，
+          如果必须放平才能装填，每发弹都要把炮身摇下来再摇回去，
+          跟踪与射速一起废掉。navweaps 只给了这条结论，没写它是怎么实现的；
+          能对得上的是 Mk 24 那套动力：推弹单独一台 5 或 7.5 马力电机。
+          弹丸与药筒分两段推入，每段行程都短，才有可能在炮身高仰时完成装填——
+          这一段是本站按 navweaps 的两处记载连起来的推论，不是它的原话。
+          同一张表里，单装炮架的俯仰范围是 −15 到 +85 度，
+          最大弹道顶点 37,220 英尺（11,339 米）就取在 85 度上；
+          最大射程 18,200 码（16,642 米）出现在 43.3 度。
+          一门炮能同时给出这两个数，前提正是它不需要为装填把炮身放平。
+        en: >-
+          One line in the elevation table is easy to skip: loading angle, any. For a gun
+          that has to shoot at aircraft this matters more than muzzle velocity. With the
+          barrel above 60 degrees and tracking a target, a gun that must be brought down
+          to load spends every round swinging the mount down and back up, losing both
+          tracking and rate. NavWeaps gives only the conclusion and not the means; what
+          lines up is the Mark 24's power installation, with a separate 5 or 7.5 hp motor
+          for ramming. Projectile and case go in as two short strokes, and short strokes
+          are what make loading possible with the barrel high - that link is this
+          article's inference from two separate entries, not NavWeaps' own wording.
+          In the same table the single mountings run from -15 to +85 degrees, and the
+          maximum ordinate of 37,220 ft (11,339 m) is taken at 85 degrees; maximum range
+          of 18,200 yards (16,642 m) appears at 43.30 degrees. A gun that returns both
+          figures at once does so because it never has to level off to load.
+      src: [navweaps-5in38-mk12]
+
+    - heading: 射速的两档，瓶颈在供弹不在炮闩
+      text:
+        zh: >-
+          navweaps 把射速分成两档：没有整体扬弹机的基座炮架 12–15 发/分，
+          带整体扬弹机的基座环炮架 15–22 发/分。炮是同一门，炮闩也是同一套，
+          两档唯一的区别写在炮架名称里——有没有整体扬弹机。
+          也就是说，把上限从 15 抬到 22 的那个东西不在炮尾，在弹库与炮位之间。
+          这句是本站从分类本身读出来的，navweaps 没有单独下这个判断。
+          最能说明问题的是英国德里号（HMS Delhi）的个例：借调的美制炮用
+          炮位待发弹打，25 发/分；改用弹库正常供弹，掉到 15 发/分。
+          同一门炮的这两个数字，正好落在那两档的上沿与下沿。
+          这也解释了 Mk 24 为什么给推弹单独配一台 5 或 7.5 马力电机：
+          五十五磅的弹丸与二十几磅的药筒都要靠人力从待发架搬到炮尾，
+          再把它们推进膛，靠人是撑不住持续射速的。
+          顺带说清一句：把它写成「纯人力装填」不准确。待发弹段是人搬，
+          但在 Mk 24 上，推弹与随动都是电动的。
+        en: >-
+          NavWeaps splits rate of fire in two: pedestal and other mountings lacking
+          integral hoists, 12 to 15 rounds per minute; base-ring mountings with integral
+          hoists, 15 to 22. Same gun, same breech, and the only difference is written into
+          the name of the mounting - whether it has an integral hoist. Whatever lifts the
+          upper figure from 15 to 22 is therefore not at the breech but between the
+          magazine and the gun. That reading is this article's, drawn from the
+          classification itself; NavWeaps does not state it separately. The clearest
+          case is HMS Delhi: the loaned US guns fired 25 rounds per minute on the ready-use
+          ammunition stored in the handling rooms and 15 rounds per minute on the normal
+          supply from the magazines. The two figures for one and the same gun land on the
+          top and the bottom of NavWeaps' two bands. That is also why the Mark
+          24 gave ramming its own 5 or 7.5 hp motor: a 55 lb shell and a case of over
+          twenty pounds both have to be manhandled from the ready rack to the breech and
+          then rammed home, and muscle alone will not sustain the rate. One point of
+          wording: describing the system as purely hand-loaded is wrong. The ready-service
+          run is hand-carried, but on the Mark 24 both ramming and power control are
+          electric.
+      src: [navweaps-5in38-mk12]
+
+    - heading: 炮座重量的账：先砍护盾和扬弹机
+      text:
+        zh: >-
+          单装基座这一路的设计约束，navweaps 只用一句话交代：Mk 21 已经到了
+          「人力还能转得动」的极限；为了压到这个重量，军械局砍掉护盾与扬弹机，
+          并接受随之而来的射速损失。数字对得上：Mk 21 Mod 0 无护盾
+          29,260 磅（13,272 公斤），加半护盾的 Mod 1 涨到 31,520 磅（14,297 公斤），
+          改进型 Mk 24 Mod 0 是 31,200 磅（14,152 公斤）。
+          早期这些炮座用手轮俯仰与回转，一圈 5 度、10 度；战争期间补装遥控
+          （RPC）后才到约 15 度/秒与 25 度/秒，而电机只有 1.5 马力（俯仰）
+          与 2 马力（回转）。Mk 24 生来就带 RPC：一台 5 或 10 马力电机
+          兼顾俯仰与回转。再往上一层是双联封闭的 Mk 38 Mod 0，95,700 磅
+          （43,409 公斤）；单装封闭基座环的 Mk 30 Mod 0 是 40,900 磅
+          （18,552 公斤）。按表上这两个数相除，Mk 38 每根炮管摊到
+          47,850 磅，比一门 Mk 30 还重——双联座并没有把每根炮管的重量摊薄。
+          把这层意思并起来读：navweaps 那句「砍护盾与扬弹机换重量」
+          讲的是单装基座这一路，双联那座走的是另一条账。
+          以上除法是本站对表内数字的运算，不是 navweaps 的结论。
+        en: >-
+          The design constraint on the single pedestal line is stated in one sentence:
+          the Mark 21 was at the limit of turning masses that could be easily manhandled,
+          and to reach that weight BuOrd sacrificed shields and ammunition hoists and
+          accepted the resulting lower rate of fire. The figures agree. Mark 21 Mod 0
+          weighed 29,260 lbs (13,272 kg) without a shield; Mod 1 with half a shield rose
+          to 31,520 lbs (14,297 kg); the improved Mark 24 Mod 0 came in at 31,200 lbs
+          (14,152 kg). Early mountings were hand-worked, five degrees of elevation and
+          ten degrees of train per turn of the handwheel; remote power control fitted
+          during the war brought that to about 15 and 25 degrees per second, on motors of
+          only 1.5 hp for elevating and 2 hp for training. The Mark 24 had RPC as
+          designed, a single 5 or 10 hp motor working both elevation and train. One step
+          up, the twin enclosed Mark 38 Mod 0 weighed 95,700 lbs (43,409 kg), against
+          40,900 lbs (18,552 kg) for the single enclosed base-ring Mark 30 Mod 0.
+          Dividing the table's own figures, the Mark 38 works out at 47,850 lbs per
+          barrel, heavier than a whole Mark 30 - the twin did not spread the weight per
+          barrel. Read together, NavWeaps' statement that shields and hoists were
+          sacrificed to save weight describes the single pedestal line; the twin mount was
+          balancing a different set of books. That division is this article's arithmetic
+          on the table, not a conclusion of NavWeaps.
+      src: [navweaps-5in38-mk12, navweaps-5in38-mk24]
+
+    - heading: 38 倍径：navweaps 没给论证，给的是结果
+      text:
+        zh: >-
+          38 倍径这个名字配的是 190 英寸（4.826 米）的炮膛、3,990 磅（1,810 公斤）
+          的炮身（不含炮闩）与 654 立方英寸（10.72 立方分米）的药室。
+          navweaps 没有记录海军为什么停在 38 倍径而不往更长走，能核对的是这组结果：
+          全装药新炮 2,600 fps（792 米/秒），工作膛压
+          18.0 吨/平方英寸（2,835 公斤/平方厘米），弹丸出膛时转速约 208 转/秒。
+          身管寿命记的是 4,600 发，带「近似」二字；而炮管自炮口起
+          连同全部膛线镀铬——这两项在同一份记录里，说的是同一件事：
+          这门炮预期会被大量射击。
+          弹道表那头是另一组数：最大射程 18,200 码出现在 43.3 度，
+          85 度上的 37,220 英尺才是它的主业——俯仰上限本身
+          就是双用途这一定位的证据。
+        en: >-
+          The 38 in the designation goes with a 190 in (4.826 m) bore, a gun weight of
+          3,990 lbs (1,810 kg) without breech and a chamber of 654 cubic inches
+          (10.72 dm3). NavWeaps does not record why the Navy stopped at 38 calibres
+          instead of going longer; what it records is the result: 2,600 fps (792 mps)
+          with a full charge from a new gun, a barrel life of 4,600 rounds, a working
+          pressure of 18.0 tons/in2 (2,835 kg/cm2), and projectiles leaving the muzzle at
+          about 208 revolutions per second. The 4,600 rounds are given as an
+          approximation, and the barrel was plated from the muzzle to include all its
+          rifling; the two entries sit in the same record and speak to the same thing -
+          this gun was expected to be fired a great deal. The ballistic table tells the
+          other half: maximum range of 18,200 yards at 43.30 degrees, and 37,220 ft at 85
+          degrees, which is the job it was actually there to do - the elevation limit is
+          itself the evidence for the dual-purpose specification.
+      src: [navweaps-5in38-mk12]
+
+    - heading: 三个为持续射击服务的细节
+      text:
+        zh: >-
+          navweaps 在 Miscellaneous 一节里给了三条容易被忽略的：炮身自炮口起，连同全部膛线、
+          弹带坡膛与药室前段镀铬，镀层 0.00050 英寸（0.0127 毫米）；
+          每次射击后用压缩空气向炮尾吹气，把残余燃气吹出炮膛；
+          弹带直径 4.985 英寸（12.66 厘米）。
+          三条都对着一件事：这门炮要装在炮座里连续打，
+          膛线磨损与发射药烟才是它日常的对手。镀铬对应膛线寿命，
+          吹气对应打完一发就散不掉的烟，弹带直径则关系弹丸在膛内的定位。
+          navweaps 只把三条并列列出，没有连成一句因果；
+          上面这层连法是本站的读法，不是 navweaps 的结论。
+        en: >-
+          Three easily missed items sit in NavWeaps' miscellaneous section: the barrel
+          was chrome plated from the muzzle to include all rifling, the projectile band
+          slope and the forward portion of the chamber, to a thickness of 0.00050 in
+          (0.0127 mm); a gas ejector blew compressed air into the breech after each shot;
+          and the bourrelet diameter was 4.985 inches (12.66 cm). All three bear on one
+          thing: a gun that fires continuously from inside a mounting, whose daily
+          opponents are rifling wear and propellant smoke. The plating belongs with
+          barrel life, the air blast with the smoke that would otherwise hang in the
+          gunhouse after each shot, and the bourrelet diameter with how the shell seats in
+          the bore. NavWeaps lists the three side by side without drawing that
+          connection; the connection here is this article's reading, not NavWeaps'
+          conclusion.
+      src: [navweaps-5in38-mk12]
+
+    - heading: 装过哪些舰：中途岛那天能看到的层次
+      text:
+        zh: >-
+          navweaps 的装舰表可以按中途岛当天的编成分层看。三艘航母各 8 座单装：
+          约克城与企业是 Mk 21 Mod 16，大黄蜂是 Mk 24 Mod 2（1942 年 9 月前
+          改为 Mod 6）。巡洋舰里表上出现的是亚特兰大级——亚特兰大号（CL-51）
+          8 座双联 Mk 29 共 16 门，舷侧能同时射击 14 门；同页另记圣路易斯号 4 座、
+          奥克兰号 6 座、朱诺号（II）未给座数。
+          其余全是驱逐舰，型号也最杂：法拉格特级与马汉级 5 座单装 Mk 21，
+          波特级与索默斯级 4 座双联 Mk 22，格里德利级艉部 Mk 24、艏部 Mk 25，
+          本汉姆级 Mk 30（艏 Mods 0 与 2、艉 Mod 1），西姆斯级与本森/格利夫斯级
+          3 座 Mk 30 加 2 座 Mk 30 Mod 1。所以把这一型写成「护航舰的炮」是错的：
+          装它的有航母，也有轻巡，还有一整代驱逐舰。
+          编成里另外那七艘重巡，本页依据的这张装舰表里没有它们的行，
+          本页不据它下任何结论。
+        en: >-
+          The fitting table can be read in layers as of the Midway order of battle. The
+          three carriers had eight single mountings each: Mark 21 Mod 16 in Yorktown and
+          Enterprise, Mark 24 Mod 2 in Hornet, altered to Mod 6 before September 1942.
+          The only cruisers in the table are the Atlanta class - Atlanta (CL-51) with
+          eight twin Mark 29 mountings for sixteen guns, fourteen of which could fire
+          abeam, while the same entry gives St. Louis four, Oakland six and Juneau (ii)
+          no count. The rest are destroyers, and their mountings are the most varied of
+          any class: five single Mark 21 in Farragut and Mahan, four twin Mark 22 in
+          Porter and Somers, Mark 24 aft and Mark 25 forward in Gridley, Mark 30 in
+          Benham with Mods 0 and 2 forward and Mod 1 aft, and three Mark 30 plus two Mark
+          30 Mod 1 in Sims and in Benson and Gleaves. Calling this an escort's gun is
+          therefore wrong: carriers carried it, a light cruiser carried it, and a whole
+          generation of destroyers carried it. The fitting table this article relies on
+          has no row for the seven heavy cruisers in that screen, and nothing here is
+          concluded from it about them.
+      src: [navweaps-5in38-mk12, navweaps-5in38-mk24]
+
+    - heading: 弹药基数，以及一处要并列的写法
+      text:
+        zh: >-
+          每门炮的弹药基数按舰级分档：表上第一行写的是「Yorktown (CV-6)
+          与 Essex (CV-9)」450 发，
+          北卡罗来纳/南达科他/衣阿华级 450 发，亚特兰大号 450 发，
+          巴尔的摩/俄勒冈城/得梅因级 500 发；战前驱逐舰（法拉格特级至西姆斯级）
+          300 发，本森与格利夫斯级 360 发，弗莱彻级 425 发（后期舰 575 发），
+          艾伦·M·萨姆纳与基林级 460 发。第一行需要并列说明，而不是替它改判：
+          CV-6 是企业号，CV-5 才是约克城号；而同一页的炮架表把
+          「Yorktown (8) and Enterprise (8)」分开列，作者显然知道这是两条船。
+          按原句照录是一种读法，读成「约克城级」是另一种读法，
+          本站两说并列，不裁决。大黄蜂（CV-8）的基数在该表里没有对应行，记未获取。
+        en: >-
+          Rounds per gun ran by class. The first row of the table reads "Yorktown (CV-6)
+          and Essex (CV-9)", 450 rounds; then 450 for North Carolina, South Dakota and
+          Iowa, 450 for Atlanta, 500 for Baltimore, Oregon City and Des Moines; 300 for
+          the pre-war destroyers from Farragut through Sims, 360 for Benson and Gleaves,
+          425 for Fletcher with 575 in later ships, and 460 for Allen M. Sumner and
+          Gearing. That first row has to be quoted rather than corrected: CV-6 was
+          Enterprise and CV-5 was Yorktown, yet the mounting table on the same page lists
+          "Yorktown (8) and Enterprise (8)" as separate entries, so the author plainly
+          knew they were different hulls. Taking the line as written is one reading;
+          taking it as "the Yorktown class" is another. Both stand here and neither is
+          settled. Hornet (CV-8) has no row in that table, so her allowance is recorded
+          as not obtained.
+      src: [navweaps-5in38-mk12]
+
+history:
+  - id: design
+    title: { zh: 设计与定型, en: Design and acceptance }
+    range: { from: 1932, to: 1934 }
+    lead:
+      zh: >-
+        这一型从设计到服役约两年，起点是一个双用途的定位，而不是一次口径试验。
+      en: >-
+        From design to service took about two years, and the starting point was a
+        dual-purpose specification rather than a calibre experiment.
+    events:
+      - date: 1932
+        text:
+          zh: >-
+            navweaps 记的设计年份为 about 1932。这一型在弹药表上的类型是
+            双用途（DP）舰炮、分装弹药；单装炮架的俯仰范围是 −15 到 +85 度，
+            装填角任意。
+          en: >-
+            NavWeaps dates the design to about 1932. The type given in the ammunition
+            table is a dual-purpose (DP) naval gun with separate loading; the single
+            mountings run from -15 to +85 degrees and load at any angle.
+        src: [navweaps-5in38-mk12]
+      - date: 1934
+        text:
+          zh: >-
+            进入服役，首装法拉格特号（DD-348）。此后同一型炮成为新造驱逐舰
+            及更大吨位军舰的标准双用途炮，并为更老的舰换装过——
+            navweaps 举的例子是一战时期的老战列舰与萨拉托加号（CV-3）。
+          en: >-
+            The gun entered service, first aboard Farragut (DD-348). From there it became
+            the standard dual-purpose gun of new-construction destroyers and larger
+            warships, and was also used to rearm older ships - NavWeaps gives First World
+            War battleships and Saratoga (CV-3) as examples.
+        src: [navweaps-5in38-mk12]
+
+  - id: service
+    title: { zh: 战时装舰与炮座演化, en: Wartime fitting and mounting development }
+    range: { from: 1934, to: 1943 }
+    lead:
+      zh: >-
+        这一段记的是炮座这一路的变化。约克城与企业原设计用 Mk 21 Mod 1，
+        建造中发现甲板边缘周围间隙不够，改成装填平台更低的样式，
+        编号随之为 Mod 16；约克城号是带着这批炮座沉没的。
+      en: >-
+        This section follows the mountings. Yorktown and Enterprise were originally
+        designed with eight Mark 21 Mod 1 pedestal mounts; during construction it became
+        apparent that there was not enough clearance around the deck edge for that Mod,
+        so the mounts were redesigned with a lower loader's platform and redesignated
+        Mark 21 Mod 16. Yorktown was sunk with these mounts.
+    events:
+      - date: 1942-06
+        text:
+          zh: >-
+            中途岛编成中，三艘航母各 8 座单装（约克城、企业 Mk 21 Mod 16，
+            大黄蜂 Mk 24 Mod 2），亚特兰大号 8 座双联 Mk 29 共 16 门，
+            驱逐舰则分属 Mk 21、Mk 22、Mk 24、Mk 25、Mk 30 五种炮架。
+          en: >-
+            At Midway the three carriers each carried eight single mounts - Mark 21
+            Mod 16 in Yorktown and Enterprise, Mark 24 Mod 2 in Hornet - Atlanta carried
+            eight twin Mark 29 mountings for sixteen guns, and the destroyers between
+            them used five different mountings: Mark 21, 22, 24, 25 and 30.
+        src: [navweaps-5in38-mk12, navweaps-5in38-mk24]
+      - date: 1942
+        text:
+          zh: >-
+            大黄蜂号建成时装的 8 座 Mk 24 Mod 2，在 1942 年 9 月之前某时改为 Mod 6。
+            navweaps 只给了这个上限，没给具体日期，因此无法确定这次改装
+            与中途岛（6 月 4 日）的先后，本页不排这个顺序。
+          en: >-
+            The eight Mark 24 Mod 2 mounts with which Hornet was completed were altered to
+            Mod 6 sometime prior to September 1942. NavWeaps gives only that upper bound
+            and not the date, so this page cannot order the alteration against Midway on
+            4 June, and does not try.
+        src: [navweaps-5in38-mk24]
+      - date: 1943
+        text:
+          zh: >-
+            企业号在 Puget Sound 大修期间，把 Mk 21 Mod 16 全部换成 Mk 24 Mod 11。
+          en: >-
+            During her overhaul at Puget Sound, Enterprise had her Mark 21 Mod 16 mounts
+            replaced with Mark 24 Mod 11.
+        src: [navweaps-5in38-mk24]

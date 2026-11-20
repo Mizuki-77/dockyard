@@ -1,0 +1,324 @@
+# ============================================================================
+# 武器正文 —— 12.7 cm/40 八九式高角炮
+#
+# 这一型要写三件事：
+#  1) 它是日本第一门「为防空而设计」的高角炮，不是拿别的炮改的；
+#  2) 它靠换装爬满了整支舰队 —— 战列舰、巡洋舰、航母、海防舰都装；
+#  3) 它的短板在初速，而初速决定射程与射高，这是它跟美国 5"/38 差距的根。
+# 射程一项要注意：NavWeaps 的 Range 表标题写的是三式弹，通常弹射程未获取。
+# ============================================================================
+weapon: 127cm-89
+updated: 2026-11-20
+
+intro:
+  lead:
+    zh: >-
+      12.7 cm/40 八九式是日本海军第一门「为防空目的专门设计」的高角炮，
+      1929 年设计、1932 年 2 月 6 日制式采用，1931 年试制炮验收。
+      它在此后十年里成为日本海军巡洋舰以上军舰、以及松型与橘型海防舰的标准长身管高角炮，
+      一共造了 1,306 门，其中 836 门是 1941 至 1945 年造的。
+      日本海军自己认为它是一门好炮，射速快、后期的型号俯仰与回转速度也好；
+      它公认的短板只有一条 —— 初速偏低，因此射程短、射高低。
+    en: >-
+      The 12.7 cm/40 Type 89 was the first Japanese anti-aircraft weapon designed for the
+      purpose rather than adapted from something else. Designed in 1929, proved in 1931
+      and adopted for service on 6 February 1932, it became the standard long-barrel
+      high-angle gun of Japanese cruisers and larger warships as well as the Matsu and
+      Tachibana class escorts. Total production was 1,306 guns, 836 of them between 1941
+      and 1945. The Japanese regarded it as a good weapon with a fast rate of fire and,
+      in the later modifications, good elevating and training speeds; its one accepted
+      shortcoming was a relatively low muzzle velocity, and therefore short range and a
+      low anti-aircraft ceiling.
+
+  paragraphs:
+    - heading: 日本第一门为防空而造的炮
+      text:
+        zh: >-
+          NavWeaps 把这一型和 Type 88 放在同一页，先做了一个区分：Type 88 是潜艇用的武器，
+          用得不多；而「非常相似的」Type 89 才是日本第一门为防空目的设计的高角炮。
+          这句话值得停一下 —— 在此之前日本的防空火力是从别的炮改的，
+          或者干脆用 8 cm/40 四一式、8 cm/40 三年式那样的旧炮。
+          炮身构造也因此从简：自紧 monobloc 身管加炮尾环，横动式炮闩。
+          炮身全长 5.284 m，重 3.1 公吨，阴线 36 条，药室容积 9.0 dm³，
+          膛压 2,500 kg/cm²，炮身寿命 800 至 1,500 发。
+          弹药为定装式，全弹长 97.1 cm，黄铜药筒 127 × 583 mm（空重 6.9 kg），
+          发射药 3.98 kg 21 DC。
+        en: >-
+          NavWeaps covers this weapon on the same page as the Type 88 and opens with a
+          distinction: the Type 88 was a submarine weapon which was not widely used, while
+          the very similar Type 89 was the first Japanese AAA weapon designed for the
+          purpose. That sentence is worth pausing over - before it, Japanese anti-aircraft
+          fire came from converted guns or from older weapons such as the 8 cm/40 41st Year
+          Type and 3rd Year Type. The construction was correspondingly simple: an
+          autofretted monobloc barrel with a breech ring and a horizontal sliding
+          breech-block. The gun was 5.284 m long overall and weighed 3.1 tonnes, with 36
+          grooves, a chamber volume of 9.0 dm3 and a working pressure of 2,500 kg/cm2.
+          Barrel life was 800 to 1,500 rounds. Ammunition was fixed, 97.1 cm long, with a
+          brass case 127 x 583 mm weighing 6.9 kg empty and a 3.98 kg 21 DC propellant
+          charge.
+      src: [navweaps-127cm-89]
+
+    - heading: 弹药：三种用途三种弹
+      text:
+        zh: >-
+          NavWeaps 列的弹种分得很清楚。通常弹零式（高爆）弹重 23.45 kg，全弹 34.32 kg，
+          装 1.88 kg 下濑火药，配时间引信用于对空。三式弹（焼霰弹）弹重 23.0 kg，
+          内装 43 根烧霰管与 23 根支柱 —— 这是靠弹体散开的燃烧管去覆盖机群的那种弹。
+          对潜弹 20.9 kg，平头，1943 年经大量试验后配发。
+          初速按弹种分档：通常弹与三式弹 700 至 725 mps，对潜弹 250 mps，照明弹 720 mps。
+        en: >-
+          NavWeaps sets out the projectile types clearly. The Common Type 0 HE weighed
+          23.45 kg as a projectile and 34.32 kg as a complete round, with a 1.88 kg Shimose
+          filling, and was supplied with time fuzes for anti-aircraft use. The Common Type
+          3 incendiary shrapnel round weighed 23.0 kg and contained 43 incendiary tubes and
+          23 stays - the type that spreads burning tubes across a formation. The ASW
+          projectile weighed 20.9 kg, was flat-nosed, and was issued in 1943 after
+          extensive testing. Muzzle velocity varied with the round: 700 to 725 mps for the
+          common and incendiary shrapnel projectiles, 250 mps for the ASW shell and 720 mps
+          for the illuminating round.
+      src: [navweaps-127cm-89]
+
+    - heading: 射速与炮架：一门炮撑起一整支舰队
+      text:
+        zh: >-
+          射速是这一型的强项：NavWeaps 记初期 14 发/分，持续射速 8 发/分。
+          炮架按防护与装舰位置分成四型，重量从 20 吨一路加到 29 吨：
+          A1 无防盾，20 吨，装金刚级战列舰与飞龙；
+          A1 Mod 1 加防盾，24 吨，装妙高、最上、利根级；
+          A1 Mod 2 的防盾形状略改并做到气密，约 24 吨，加贺装 8 基；
+          A1 Mod 3 换厚防盾以承受大和级 46 cm 主炮的炮口爆风，29 吨。
+          全型 A1 的俯仰速度都是 12°/s，回转 6 至 7°/s，俯仰范围 −7 / +90 度
+          （另有来源记 −8 / +85 度，两说并存）。
+          舷侧炮座回转约 ±70 度，首尾炮座约 ±150 度。
+          驱动一律是电动油压，回转与俯仰都靠它；装填可在任意仰角进行，
+          送弹则用后座待发的弹簧撞锤。
+        en: >-
+          Rate of fire was the weapon's strength: NavWeaps gives 14 rounds per minute
+          initially and 8 rounds per minute sustained. The mountings came in four forms
+          distinguished by protection, their weight rising from 20 to 29 tons. The A1 was
+          unshielded at 20 tons and armed the Kongo class and Hiryu; the A1 Mod 1 added a
+          shield at 24 tons for the Myoko, Mogami and Tone classes; the A1 Mod 2 had a
+          slightly different, gas-proof shield at about 24 tons, eight of them going to
+          Kaga; the A1 Mod 3 carried a thicker shield to withstand the blast of the Yamato
+          class's 46 cm guns and weighed 29 tons. Every A1 variant elevated at 12 degrees
+          per second and trained at 6 to 7, with an elevation range of -7 / +90 degrees,
+          although one source gives -8 / +85. Amidships mounts trained about -70 / +70
+          degrees and bow and stern mounts about -150 / +150. All twin mountings used
+          electrically driven oil hydraulic gear for both training and elevation, could be
+          loaded at any angle, and used a spring rammer cocked by the recoil.
+      src: [navweaps-127cm-89]
+
+    - heading: 它是怎么把旧炮挤出舰队的
+      text:
+        zh: >-
+          这一型的历史与其说是一门炮的历史，不如说是一整支舰队换炮的历史。
+          NavWeaps 记的原因是「为了改善防空」：1930 年代的改装里，
+          它顶掉的正是那些在 1932 年以前建成的主力舰与巡洋舰上的旧防空炮 ——
+          8 cm/40 四一式、8 cm/40 三年式，以及 12 cm/45 十年式高角炮。
+          金刚、扶桑、伊势、长门四级战列舰在 1930 年代改装时，
+          把前两种旧炮全部拆掉，换上四座八九式连装炮架；
+          战争期间又有大量军舰在修理与改装时追加。
+          这条线索也能解释中途岛四艘航母的差别：加贺换上了八九式，
+          赤城没换成，两舰的防空火力从 1935 年起就不在同一条线上。
+        en: >-
+          The history of this weapon is less the history of a gun than of a fleet being
+          rearmed. NavWeaps gives the motive as improving anti-aircraft defence: during the
+          1930s rebuilds the Type 89 replaced exactly those older AA guns which had armed
+          capital ships and cruisers completed before 1932 - the 8 cm/40 41st Year Type,
+          the 8 cm/40 3rd Year Type and the 12 cm/45 10th Year Type. The Kongo, Fuso, Ise
+          and Nagato class battleships had the first two removed entirely during their
+          1930s rebuilds and replaced with four twin Type 89 mountings, and many ships had
+          more added during wartime refits and repairs. This same thread explains the
+          difference between the Midway carriers: Kaga received the Type 89 and Akagi did
+          not, and from 1935 the two ships' anti-aircraft firepower no longer stood on the
+          same line.
+      src: [navweaps-127cm-89]
+
+    - heading: 短板只有一条：初速
+      text:
+        zh: >-
+          NavWeaps 对这型的评价是分两面的。好的一面写得很明确：日本海军认为它是一门好炮，
+          射速快，俯仰与回转速度也好，后期的型号尤其如此。
+          短板也只有一条，但这一条决定了它的上限 —— 初速相对偏低，
+          因此射程短、射高也低。具体到数字：三式弹在 45 度仰角的最大射程 14,800 m，
+          75 度时最大射高 9,400 m。要注意这两个数字的前置条件不同 ——
+          NavWeaps 的射程表标题明写「Range of IS projectiles」，
+          也就是说它给的是三式弹的射程，通常弹（零式）的射程该页未获取。
+        en: >-
+          NavWeaps' assessment has two sides. The favourable side is stated plainly: the
+          Japanese considered the Type 89 to be a good AAA weapon, with a fast rate of fire
+          and good elevation and training speeds, especially on the later modifications.
+          The shortcoming is single but decisive - a relatively low muzzle velocity, and
+          therefore a short range and a low anti-aircraft ceiling. In figures, the
+          incendiary shrapnel projectile reached 14,800 m at 45 degrees and a ceiling of
+          9,400 m at 75 degrees. The condition behind those figures matters: NavWeaps heads
+          its range table "Range of IS projectiles", so what it gives is the performance of
+          the incendiary shrapnel round, and the range of the Common Type 0 HE is not given
+          on that page.
+      src: [navweaps-127cm-89]
+
+    - heading: 跟美国 5"/38 的差距在哪儿
+      text:
+        zh: >-
+          这一条要把两边的数字摆在一起才看得出差在哪儿，所以本节同时引两型的来源。
+          八九式的初速是 700 至 725 mps，弹重 23.45 kg；
+          美国 5"/38 Mark 12 的全装药新炮初速是 792 mps，弹重 25.0 kg。
+          初速高出一截，弹道就平、飞行时间就短，射程与射高跟着上去：
+          5"/38 的最大射程 16,642 m（43.30 度），最大射高 11,339 m（85 度）。
+          八九式的对应数字是三式弹 14,800 m（45 度）与 9,400 m（75 度）。
+          射速这一项八九式不吃亏：初期 14 发/分、持续 8 发/分，
+          而 5"/38 在没有整体扬弹机的基座炮架上是 12 至 15 发/分。
+          差距真正集中的地方是两个：一是初速带来的射程与射高，
+          二是持续射速 —— 八九式的 14 发/分只是初期值，持续射速掉到 8 发/分，
+          而 5"/38 的 12 至 15 发/分是可以维持的。
+          换句话说，八九式不是「设计得差」，是「起点选低了」：
+          它在 1929 年定型的弹道指标，十几年后要面对的是速度翻倍的飞机。
+        en: >-
+          This comparison only becomes visible with both sets of figures side by side, so
+          this section cites the sources for both weapons. The Type 89 fired a 23.45 kg
+          projectile at 700 to 725 mps; the US 5"/38 Mark 12 fired a 25.0 kg projectile at
+          792 mps with a full charge in a new gun. The higher velocity gave a flatter
+          trajectory and shorter time of flight, and with them reach: the 5"/38 managed
+          16,642 m at 43.30 degrees and a maximum ordinate of 11,339 m at 85 degrees. The
+          corresponding Type 89 figures are 14,800 m at 45 degrees and 9,400 m at 75, both
+          for the incendiary shrapnel round. Rate of fire is where the Type 89 holds its
+          own: 14 rounds per minute initially and 8 sustained, against 12 to 15 rounds per
+          minute for the 5"/38 in pedestal mounts lacking integral hoists. The gap is
+          really in two places: the range and ceiling that follow from muzzle velocity, and
+          sustained fire - the Type 89's 14 rounds per minute was an initial figure that
+          fell to 8, whereas the 5"/38's 12 to 15 could be maintained. Put another way, the
+          Type 89 was not badly designed; its ballistic target was simply set low, fixed in
+          1929 for aircraft whose speed would double within a decade.
+      src: [navweaps-127cm-89, navweaps-5in38-mk12]
+
+    - heading: 装过哪些舰，以及一处名单缺口
+      text:
+        zh: >-
+          NavWeaps 的炮架表把这一型摊到了几乎整个舰队：金刚级、扶桑级、伊势级、长门级战列舰，
+          大和级 6 基 A1 Mod 3；高雄、爱宕、摩耶等巡洋舰 4 基 A1；
+          妙高、最上、利根级 4 基 A1 Mod 1；航母这边飞龙 5 基 A1 加 1 基 A1 Mod 2，
+          加贺 8 基 A1 Mod 2，翔鹤 6 基 A1 加 2 基 A1 Mod 2。
+          但这份名单里没有苍龙。苍龙确实装了 6 基 12 门 ——
+          日文专题站 japanese-warship.com 的竣工要目表写着
+          「40口径12.7cm連装高角砲　6基12門」，同一栏还有「25mm連装機銃　14基28挺」。
+          只是 NavWeaps 的使用舰表没有列她，「Sôryû」在该页只出现在参考文献书目里。
+          本站对苍龙按舰级来源标注，未作同级类推，也未据此推断她的炮座型号，
+          因为原料里没有可引的型号记录。
+        en: >-
+          NavWeaps' mounting table spreads the type across almost the whole fleet: the
+          Kongo, Fuso, Ise and Nagato class battleships, six A1 Mod 3 in Yamato; four A1 in
+          Takao, Atago, Maya and other cruisers; four A1 Mod 1 in the Myoko, Mogami and
+          Tone classes; and among the carriers, five A1 plus one A1 Mod 2 in Hiryu, eight
+          A1 Mod 2 in Kaga, and six A1 plus two A1 Mod 2 in Shokaku. Soryu is not on that
+          list. She did carry six twin mounts, twelve guns, as the completed
+          characteristics table on japanese-warship.com records - six twin 40-calibre
+          12.7 cm high-angle mounts, twelve guns, listed with fourteen twin 25 mm machine
+          gun mounts - NavWeaps simply does not include her, and "Soryu" appears on that
+          page only in the bibliography. This site attributes
+          Soryu's battery to the ship-class sources rather than inferring it from a
+          sister ship, and does not state her mounting model, because the materials
+          gathered for this entry contain no quotable record of it.
+      src: [navweaps-127cm-89, japanese-warship-soryu]
+
+    - heading: 一处必须说清的空白
+      text:
+        zh: >-
+          NavWeaps 的弹药基数栏只给了两个可用的数：装 8 门炮的巡洋舰每门 200 发，
+          翔鹤 250 发，其余一律 N/A。也就是说中途岛四艘航母里，
+          只有翔鹤的基数有明确记录，而翔鹤根本没参加中途岛。
+          赤城、加贺、苍龙、飞龙各自的每门携弹量，原料里没有。
+        en: >-
+          NavWeaps' stowage line gives only two usable figures: 200 rounds per gun for
+          cruisers with eight guns, and 250 rounds for Shokaku, with everything else marked
+          N/A. Of the four Midway carriers, then, only Shokaku has a recorded allowance -
+          and Shokaku was not at Midway. The rounds-per-gun figure for Akagi, Kaga, Soryu
+          and Hiryu is not in the materials gathered for this entry.
+      src: [navweaps-127cm-89]
+
+history:
+  - id: design
+    title: { zh: 设计与定型, en: Design and adoption }
+    range: { from: 1928, to: 1932-02 }
+    lead:
+      zh: >-
+        它是日本第一门从零开始按防空要求画的炮，不是改出来的。
+      en: >-
+        It was the first Japanese gun drawn from the start to an anti-aircraft
+        requirement rather than converted to one.
+    events:
+      - date: 1929
+        text:
+          zh: >-
+            NavWeaps 的设计年份栏记为 1928 / 1929，分别对应 Type 88 与 Type 89。
+            Type 88 是潜艇用武器，用得不多；Type 89 才是为防空目的设计的这一型。
+          en: >-
+            NavWeaps gives the date of design as 1928 / 1929, for the Type 88 and Type 89
+            respectively. The Type 88 was a submarine weapon which was not widely used;
+            the Type 89 was the one designed for the anti-aircraft role.
+        src: [navweaps-127cm-89]
+      - date: 1931
+        text:
+          zh: >-
+            Type 89 试制炮验收。
+          en: >-
+            The Type 89 prototype was proved.
+        src: [navweaps-127cm-89]
+      - date: 1932-02-06
+        text:
+          zh: >-
+            制式采用。此后 1930 年代的改装中，它被用来替换战列舰与巡洋舰上原先装的
+            8 cm/40 四一式、8 cm/40 三年式与 12 cm/45 十年式高角炮。
+          en: >-
+            Adopted for service. During the 1930s rebuilds it was used to replace the
+            8 cm/40 41st Year Type, 8 cm/40 3rd Year Type and 12 cm/45 10th Year Type AA
+            guns which had armed capital ships and cruisers completed before 1932.
+        src: [navweaps-127cm-89]
+
+  - id: rearmament
+    title: { zh: 换装与战时增产, en: Rearmament and wartime production }
+    range: { from: 1932, to: 1945 }
+    lead:
+      zh: >-
+        这一型的历史不是一型炮的历史，是一整支舰队换炮的历史。
+      en: >-
+        The history of this weapon is less the history of a gun than of a fleet being
+        rearmed.
+    events:
+      - date: 1932
+        text:
+          zh: >-
+            炮架型号开始分化：A1 无防盾用于金刚级与飞龙，
+            A1 Mod 1 加防盾，A1 Mod 2 的防盾改为气密，A1 Mod 3 用厚防盾抗大和级主炮爆风。
+          en: >-
+            The mounting variants began to diverge: the unshielded A1 for the Kongo class
+            and Hiryu, the shielded A1 Mod 1, the gas-proof A1 Mod 2, and the A1 Mod 3
+            with a thicker shield against the blast of the Yamato class main battery.
+        src: [navweaps-127cm-89]
+      - date: 1935
+        text:
+          zh: >-
+            加贺改装完成，原先的连装 12 cm 十年式高角炮 6 基 12 门换成八九式 12.7 cm
+            连装 8 基 16 门，炮座也抬高了。
+          en: >-
+            Kaga's reconstruction was completed: her six twin 12 cm 10th Year Type mounts
+            gave way to eight twin Type 89 12.7 cm mounts, sixteen guns, and her sponsons
+            were raised.
+        src: [japanese-warship-kaga, navweaps-127cm-89]
+      - date: 1937-12
+        text: 
+          zh: >-
+            苍龙竣工，装 6 基 12 门。NavWeaps 的使用舰表未列该舰，
+            此处按舰级来源记录，未推断炮座型号。
+          en: >-
+            Soryu completed with six twin mounts, twelve guns. NavWeaps' list of ships
+            carrying the weapon omits her; this is recorded from the ship-class sources,
+            with no mounting model inferred.
+        src: [japanese-warship-soryu]
+      - date: 1941
+        text:
+          zh: >-
+            1941 至 1945 年间造了 836 门，是全部 1,306 门中的绝大部分。
+          en: >-
+            Between 1941 and 1945, 836 guns were manufactured - the great majority of the
+            1,306 built in total.
+        src: [navweaps-127cm-89]

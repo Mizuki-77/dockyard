@@ -1,0 +1,316 @@
+# ============================================================================
+# 武器正文 —— 九九式舰爆一一型（D3A1 Model 11）
+#
+# 四条能落到已登记来源的事实：
+#  1) 固定起落架是竞标时就定下的取舍：爱知原型「用固定起落架消除可收放起落架
+#     带来的额外重量与维护问题」，这一句是设计理由的原文；
+#  2) 俯冲减速板是难点：中岛原型那副「类似 Ju 87」的减速板在机头下压到 90 度
+#     时剧烈抖振，随俯冲速度提高必须加强，爱知原型才装上改进型；
+#  3) 印度洋是一份可量的成绩单：1942 年 4 月对 Cornwall / Dorsetshire /
+#     Hermes 的攻击中，超过 82% 的炸弹落在目标上；
+#  4) 250 kg 弹是「下摆前送后再投放」，不是直接脱钩。
+# 航程两说并列保留（795 海里 / 840 statute mi），不裁决。
+# ============================================================================
+weapon: d3a1
+updated: 2026-11-20
+
+intro:
+  lead:
+    zh: >-
+      九九式舰爆一一型是 1941 年日本航母部队的俯冲轰炸机，盟军代号 Val。
+      它是接替九六式舰爆（D1A2）的机型。海军订了两架原型，第一架 1937 年 12 月
+      完成，是中岛的设计，试飞中暴露动力不足与急转时的突然滚转，供俯冲减速的
+      那副类似 Ju 87 的减速板在机头下压到 90 度时剧烈抖振；
+      第二架是爱知的原型，改用固定起落架、加大功率与翼展、换上改进型减速板，
+      于是被选投产。
+      这一型的成绩单是可量的：1942 年 4 月在印度洋，它把超过 82% 的炸弹
+      投在了目标上。
+    en: >-
+      The D3A1 Model 11 was the dive bomber of the Japanese carrier force in 1941,
+      known to the Allies as Val. It replaced the Type 96 carrier bomber (D1A2). The
+      Navy ordered two prototypes; the first, completed in December 1937, was the
+      Nakajima design, and it proved under-powered and showed a tendency to snap-roll in
+      tight turns, while the dive brakes that governed its dive - similar to those of the
+      Ju 87 - vibrated violently when the nose was put down to 90 degrees. The second was
+      Aichi's, which adopted a fixed undercarriage, more power, a greater span and
+      improved dive brakes, and was chosen for production. Its record is measurable: in
+      the Indian Ocean in April 1942 it placed more than 82 per cent of its bombs on
+      target.
+
+  paragraphs:
+    - heading: 固定起落架是一个写明了理由的选择
+      text:
+        zh: >-
+          这一条不是「落后于时代」四个字可以带过的，来源把理由写在了句子后半截：
+          爱知的原型采用固定起落架，为的是消除可收放起落架系统带来的额外重量
+          与维护问题。这句话里有两个词值得注意——重量，以及维护。
+          对一架要在航母甲板上被反复出动、由舰上机务在有限人力下伺候的飞机来说，
+          起落架收放机构是每天都要检查的部件；对一架要压低翼载去换取低速盘旋与
+          俯冲稳定的飞机来说，那套机构的重量是直接的成本。
+          同一段里还有一组配套改动：功率从 730 hp 提到 840 hp 的金星三型，
+          换新整流罩，加大翼展，放大垂尾，装上改进型减速板。
+          固定起落架是这组取舍里的一项，不是孤立的一项。
+        en: >-
+          This is not a matter of being behind the times, and the source puts the reason
+          in the back half of the sentence: Aichi's prototype was configured with a fixed
+          landing gear to eliminate the extra weight and the maintenance problems of a
+          retractable landing gear system. Two words in that clause carry the argument -
+          weight, and maintenance. For an aircraft cycled off a carrier deck again and
+          again and serviced by ship's fitters working with limited manpower, a retraction
+          mechanism is a component inspected every day; for an aircraft trading wing
+          loading against low-speed turning and steadiness in the dive, the weight of that
+          mechanism is a direct cost. The same passage carries the rest of the package:
+          power raised to 840 hp with the Kinsei 3, a redesigned cowling, a greater span,
+          an enlarged vertical stabiliser and improved dive brakes. The fixed gear was one
+          item in that set of choices, not a thing standing alone.
+      src: [avh-d3a]
+
+    - heading: 俯冲减速板才是这一型真正的技术难点
+      text:
+        zh: >-
+          俯冲轰炸机要在两种互相矛盾的状态下工作：巡航时它得跟得上编队，
+          进入俯冲后它必须慢到让飞行员看得清目标、让瞄准线稳定。
+          解决这个矛盾靠的就是减速板。材料给的过程很清楚：中岛原型那副减速板
+          与 Ju 87 相似，在机头下压到 90 度时剧烈抖振，随着俯冲速度提高，
+          它必须被加强；爱知的原型随后换上了改进型减速板。
+          还有一处细节说明它是真的被当成结构问题处理的：
+          机翼挂架的位置，来源写明在每侧翼下、减速板的外侧。
+          也就是说减速板在这架飞机上是一个占位的实体部件，
+          不是随便贴在翼面上的薄片。
+        en: >-
+          A dive bomber has to work in two contradictory states: it must keep up with
+          formation in the cruise, and once in the dive it must be slow enough for the
+          pilot to see the target and hold an aiming line. The dive brakes are what
+          resolve that contradiction. The source's account is plain: the Nakajima
+          prototype's brakes, similar to those of the Ju 87, vibrated violently when the
+          aircraft was nosed over to 90 degrees, and they had to be strengthened as
+          diving speeds increased; Aichi's prototype then received improved brakes. One
+          further detail shows they were treated as a structural problem rather than a
+          token: the wing racks are located under each wing outboard of the dive brakes.
+          The brakes were a physical component occupying space on this aircraft, not a
+          thin plate stuck onto the wing surface.
+      src: [avh-d3a]
+
+    - heading: 从竞标到投产，以及一份可量的成绩单
+      text:
+        zh: >-
+          海军订的两架原型给出的教训不一样。中岛那架装 730 hp 的 Hikari 1，
+          试飞中被判定动力不足，急转时有突然滚转的倾向；但它机身结实、
+          总体操纵性不差，所以这个方向没有被丢掉。
+          爱知的原型把功率提到 840 hp、改整流罩、加大翼展与垂尾、换减速板，
+          最终以九九式舰爆一一型投产。产量记录是可查的：
+          470 架一一型，1939 年 12 月至 1942 年 8 月出厂，另有 1939 年的 6 架
+          服役试用机与 1937 至 1938 年的 2 架「十一试」原型。
+          而它最能说明问题的一仗不在太平洋，在印度洋：
+          1942 年 4 月对巡洋舰 Cornwall、Dorsetshire 与航母 Hermes 的攻击中，
+          超过 82% 的炸弹落在目标上。
+        en: >-
+          The two prototype entries taught different lessons. The Nakajima machine flew
+          with a 730 hp Hikari 1 and was judged under-powered in testing, with a tendency
+          to snap-roll in tight turns; but it had a strong airframe and handled well
+          overall, so the line was not abandoned. Aichi's prototype raised power to 840
+          hp, redesigned the cowling, increased span and fin area and fitted improved
+          brakes, and went into production as the Type 99 Carrier Bomber Model 11. The
+          production record is checkable: 470 Model 11 aircraft built between December
+          1939 and August 1942, alongside six service-trials aircraft in 1939 and two
+          11-Shi prototypes in 1937-38. And its most telling action was not in the Pacific
+          but in the Indian Ocean: in the April 1942 attacks on the cruisers Cornwall and
+          Dorsetshire and the carrier Hermes, more than 82 per cent of its bombs fell on
+          target.
+      src: [avh-d3a, combinedfleet-d3a]
+
+    - heading: 那一枚 250 kg 弹是怎么离开飞机的
+      text:
+        zh: >-
+          这一点容易被参数表抹平。正常挂载是一枚 250 kg 弹挂在机身下，
+          两枚 60 kg 弹挂在翼下挂架；而机身那枚不是直接脱钩——
+          来源写的是它在下摆前送的挂臂上，然后才被投放。
+          换一种说法：投放前弹体先被摆到离开机身、避开螺旋桨气流与机腹的位置。
+          美方的战斗报告从下面看到的是同一件事的另一面：
+          1942 年 6 月 4 日飞龙那一波俯冲约克城时，有日机在到达投弹点之前
+          就被打碎成至少三大块，可炸弹仍然被投出，报告特意写道这枚弹是翻滚着落下的。
+          一边是投放机构的动作，一边是被打散之后的弹道，
+          两份记录拼起来才是这一型投弹的真实样子。
+        en: >-
+          This is the sort of thing a specification table smooths away. The normal load
+          was one 250 kg bomb under the fuselage and two 60 kg bombs on the wing racks;
+          the fuselage bomb was not simply released - the source describes it as swinging
+          down and forward on arms before it was released. Put another way, the weapon was
+          first swung clear of the fuselage, out of the propeller wash and away from the
+          belly, and only then let go. An American action report saw the other side of the
+          same event from below: in Hiryu's dive on Yorktown on 4 June 1942, one Japanese
+          aircraft was cut into at least three large pieces before it reached the release
+          point, and yet the bomb was released - the report notes specifically that it was
+          seen to tumble as it fell. A release mechanism on one side, a ballistic path
+          after the aircraft broke up on the other; the two records together are what
+          delivery actually looked like.
+      src: [avh-d3a, nhhc-yorktown-midway-report]
+
+    - heading: 航程有两说，单位不同，本站并列保留
+      text:
+        zh: >-
+          这一栏必须并写。combinedfleet 的分型表给的是一一型航程 795 海里；
+          aviation-history 给的是 840 miles，并标注换算为 1,351 km。
+          795 海里等于 1,472 km，840 法定英里等于 1,351 km——两边各自的换算都是自洽的，
+          差别在于基准单位不同，不是同一个物理量被算错。
+          本站两个都写，不给它算出一个折中值。
+          顺带说清产量表的构造：combinedfleet 的全型合计 1,495 架由六项相加得出——
+          2 架「十一试」原型、6 架 1939 年服役试用机、470 架一一型（1939 年 12 月至
+          1942 年 8 月）、1 架二二型原型、815 架与 201 架二二型量产机。
+          其中 470 这个数是可以逐项加出来的，不是估值。
+        en: >-
+          This field has to be written twice. The combinedfleet type table gives the
+          Model 11 a range of 795 nautical miles; aviation-history gives 840 miles,
+          annotated as 1,351 km. 795 nautical miles is 1,472 km and 840 statute miles is
+          1,351 km - each conversion is internally consistent, and the difference is one
+          of base unit, not of arithmetic. Both are recorded here and no compromise figure
+          is manufactured. The production table deserves the same care: combinedfleet's
+          total of 1,495 is the sum of six entries - two 11-Shi prototypes, six service
+          trials aircraft of 1939, 470 Model 11 machines from December 1939 to August 1942,
+          one Model 22 prototype, and 815 plus 201 Model 22 production aircraft. The 470 is
+          an item that adds up, not an estimate.
+      src: [combinedfleet-d3a, avh-d3a]
+
+history:
+  - id: design
+    title: { zh: 竞标与定型, en: Competition and adoption }
+    range: { from: 1937, to: 1939 }
+    lead:
+      zh: >-
+        两架原型，一条路线被保留、一条被选投产。这一节只记改动项与日期。
+      en: >-
+        Two prototypes: one line kept alive, one chosen for production. This section
+        records changes and dates only.
+    events:
+      - date: 1937-12
+        text:
+          zh: >-
+            中岛原型完成。装 730 hp 荣一型，试飞中暴露动力不足与急转时突然滚转的倾向；
+            类似 Ju 87 的俯冲减速板在机头下压 90 度时剧烈抖振。
+          en: >-
+            The Nakajima prototype was completed. With a 730 hp Hikari 1 it proved
+            under-powered and showed a tendency to snap-roll in tight turns; its Ju 87-style
+            dive brakes vibrated violently when the aircraft was nosed over to 90 degrees.
+        src: [avh-d3a]
+      - date: 1938
+        text:
+          zh: >-
+            爱知原型改为固定起落架——理由写得很明确：消除可收放起落架系统的
+            额外重量与维护问题。同时把功率提到 840 hp 的金星三型，
+            换新整流罩，加大翼展、放大垂尾，装上改进型减速板。
+          en: >-
+            The Aichi prototype adopted a fixed landing gear, the stated reason being to
+            eliminate the extra weight and maintenance problems of a retractable system.
+            Power went to 840 hp with the Kinsei 3, the cowling was redesigned, span and
+            fin area increased, and improved dive brakes fitted.
+        src: [avh-d3a]
+      - date: 1939-12
+        text:
+          zh: >-
+            一一型投产。1939 年另有 6 架服役试用机；1937 至 1938 年间有 2 架
+            「十一试」原型。
+          en: >-
+            Model 11 production began. Six service-trials aircraft were also built in 1939,
+            following two 11-Shi prototypes in 1937-38.
+        src: [combinedfleet-d3a]
+
+  - id: service
+    title: { zh: 开战与印度洋, en: The opening of the war and the Indian Ocean }
+    range: { from: 1941-12, to: 1942-04 }
+    lead:
+      zh: >-
+        这一型在开战第一天就在第一批里，四个月后交出了它最可量的一份成绩。
+      en: >-
+        The type was in the first wave on the opening day, and four months later produced
+        its most measurable result.
+    events:
+      - date: 1941-12-07
+        text:
+          zh: >-
+            珍珠港。机动部队第一波 183 架中含 51 架九九式舰爆，
+            第二波 167 架中含 78 架。赤城在第二波出 18 架，
+            目标为战列舰 Maryland、轻巡 Raleigh、油船 Neosho、驱逐舰 Shaw
+            与福特岛海军航空站；加贺出 23 架，苍龙出 18 架。
+            赤城当日在两波中共损失 4 架舰爆。
+          en: >-
+            Pearl Harbor. The mobile force's first wave of 183 included 51 Type 99 dive
+            bombers, the second wave of 167 included 78. Akagi sent 18 in the second wave
+            against the battleship Maryland, the light cruiser Raleigh, the oiler Neosho,
+            the destroyer Shaw and the Naval Air Station at Ford Island; Kaga sent 23 and
+            Soryu 18. Akagi lost four dive bombers across the two waves.
+        src: [combinedfleet-akagi, combinedfleet-kaga, combinedfleet-soryu]
+      - date: 1942-04-05
+        text:
+          zh: >-
+            科伦坡以西。1300 侦察机报告机动部队以西 150 海里发现两艘敌巡洋舰。
+            1425，因鱼雷机挂弹延误，南云决定不再等，只派舰爆出击：
+            赤城与第二航空战队共 53 架，苍龙的 18 架于 1500 起飞，
+            赤城 17 架、飞龙 18 架、苍龙 18 架。
+            Cornwall 与 Dorsetshire 双双沉没，424 名英军阵亡，全部舰爆返航。
+          en: >-
+            West of Colombo. At 1300 a reconnaissance aircraft reported two enemy cruisers
+            150 nautical miles west of the force. At 1425, with torpedo arming running
+            late, Nagumo decided not to wait and sent dive bombers alone: 53 aircraft from
+            Akagi and CarDiv 2, Soryu's 18 going off at 1500, the force made up of 17 from
+            Akagi, 18 from Hiryu and 18 from Soryu. Cornwall and Dorsetshire both sank with
+            424 British officers and men killed, and every dive bomber returned.
+        src: [combinedfleet-soryu, combinedfleet-akagi]
+      - date: 1942-04-09
+        text:
+          zh: >-
+            亭可马里。1055 水上侦察机在基地以南 65 英里发现敌航母，
+            正午出动 85 架舰爆、3 架零战护航，赤城出 17 架舰爆与 3 架零战。
+            1335 至 1402 之间击沉竞技神号与澳大利亚驱逐舰吸血鬼号。
+          en: >-
+            Trincomalee. At 1055 a floatplane found an enemy carrier 65 miles south of the
+            base; at noon 85 dive bombers went out with three Zekes as escort, Akagi
+            providing 17 dive bombers and three Zekes. Between 1335 and 1402 they sank the
+            carrier Hermes and the Australian destroyer Vampire.
+        src: [combinedfleet-akagi]
+      - date: 1942-04
+        text:
+          zh: >-
+            印度洋战役的整体命中率：对 Cornwall、Dorsetshire 与 Hermes 的攻击中，
+            超过 82% 的炸弹落在目标上。
+          en: >-
+            The Indian Ocean campaign in aggregate: in the attacks on Cornwall, Dorsetshire
+            and Hermes, more than 82 per cent of the bombs fell on target.
+        src: [avh-d3a]
+
+  - id: midway
+    title: { zh: 中途岛, en: Midway }
+    range: { from: 1942-06, to: 1942-06 }
+    lead:
+      zh: >-
+        这一节只记两条：出击架数的一处口径差，以及飞龙那一波的下场。
+      en: >-
+        Two things only: one discrepancy in the sortie numbers, and what became of
+        Hiryu's strike.
+    events:
+      - date: 1942-06-04
+        text:
+          zh: >-
+            第一波 0430 起飞。这里本站两处口径不同，均保留：
+            逐舰记录为赤城 18 架、加贺 18 架、苍龙 18 架舰爆，
+            而合计口径写作第一波共 36 架舰爆、36 架舰攻、36 架零战。
+            两个数不相加，本站并列保留，不替读者算出一个「正确」的数。
+          en: >-
+            The first wave went off at 0430. Two counts exist in this project and both are
+            kept: the per-ship records give 18 dive bombers from Akagi, 18 from Kaga and 18
+            from Soryu, while the aggregate account states the first wave as 36 dive
+            bombers, 36 torpedo planes and 36 fighters. The two do not add up, and both are
+            recorded here; no "correct" figure is computed for the reader.
+        src: [combinedfleet-akagi, combinedfleet-kaga, combinedfleet-soryu]
+      - date: 1942-06-04
+        text:
+          zh: >-
+            1054 飞龙出动 18 架舰爆与 6 架零战反击，跟上来袭的美机并找到了对方的航母。
+            1208 俯冲约克城，命中 3 弹（后升降机之后、右舷烟道处、一号升降机）。
+            1215 攻击结束，来袭的 18 架舰爆无一返航。
+          en: >-
+            At 1054 Hiryu launched 18 dive bombers and six Zekes, which followed the
+            retiring American aircraft and found their carriers. At 1208 the dive bombers
+            attacked Yorktown and obtained three hits - aft of the after elevator, at the
+            starboard stack, and on the forward elevator. It was all over by 1215, and not
+            one of the bombers escaped.
+        src: [combinedfleet-i168, oni-midway-combat-narrative]

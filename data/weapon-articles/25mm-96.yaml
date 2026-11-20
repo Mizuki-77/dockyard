@@ -1,0 +1,340 @@
+# ============================================================================
+# 武器正文 —— 九六式二十五粍高角机铳（25 mm/60 Type 96）
+#
+# 这一篇的主线不是口径，是三条互相咬住的约束：
+#  1) 它是法国哈奇开斯的许可仿制，日本的改动是把机加工件改铸件、
+#     加不锈钢件（潜艇用）、换莱茵金属式消焰器——不是重新设计；
+#  2) 弹匣只有 15 发，供弹靠人力，装填无专用装置，所以射速被组织方式锁死；
+#  3) 日方自己的 O-47(N)-2 列了五条缺陷，顺序是日方排的，不是本站排的。
+# 11 基 / 14 基一条：两说并写，不裁决（原料 §10 分歧⑥）。
+# ============================================================================
+weapon: 25mm-96
+updated: 2026-11-21
+
+intro:
+  lead:
+    zh: >-
+      九六式二十五粍高角机铳是日本海军二战期间的制式轻型高炮，
+      原型是法国哈奇开斯的设计，日本买了许可后于 1936 年 8 月 6 日制式采用。
+      它一共造了约 33,000 门、约 20,000 基炮架，
+      几乎装遍了二战日本海军的每一艘军舰。
+      它也是最常被拿来与博福斯 40 mm、欧瑞康 20 mm 对比的一门炮，
+      而来源的原话是它跟这两样都「比不上」。
+      日方战后自评列的五条缺陷里，没有一条是说身管本身的：
+      排在最前的是炮架的回转俯仰速度，排第四的是供弹。
+    en: >-
+      The 25 mm/60 Type 96 was the Imperial Japanese Navy's standard light anti-aircraft
+      gun of the Second World War. It was based on a French Hotchkiss design, licensed and
+      adopted for service on 6 August 1936, and about 33,000 guns and 20,000 mountings
+      were produced, fitting almost every warship of the wartime navy. It is also the
+      weapon most often set against the Bofors 40 mm and the Oerlikon 20 mm, and the
+      source's own words are that it did not compare well with either. None of the five
+      deficiencies in the Japanese assessment is about the barrel as such: the first is
+      the speed at which the mounting could be trained and elevated, the fourth is the
+      feed.
+
+  paragraphs:
+    - heading: 它其实是法国炮，日本改的是工艺不是设计
+      text:
+        zh: >-
+          1935 年，日本决定换掉维克斯 4 cm/62「HI」（即 2 磅炮），
+          理由是射速慢、有效射程短、可靠性差、且难以制造。
+          选中的替代方案是哈奇开斯机炮的衍生设计。
+          法国造的双联装样炮在 1935 年于横须贺海军工厂试验，
+          分别给了九四式与九五式的名目，通称「Type J」——
+          这一批是按日本规格造的，所以法方原厂货也用日本名目。
+          日本国产化的改动是三条工艺性的：大量零件改用不锈钢（供潜艇用）、
+          部分机加工件改为铸件、以及换用莱茵金属式消焰器。
+          也就是说它没有脱离哈奇开斯的自动机原理，改的是可制造性与耐蚀性。
+        en: >-
+          In 1935 the Japanese decided to replace the Vickers 4 cm/62 "HI", the 2-pounder,
+          because of its slow rate of fire, short effective range, unreliable nature and
+          difficulty of manufacture. The replacement selected was a design based on the
+          French Hotchkiss machine gun. French-built twin mounts were tested at the
+          Yokosuka Navy Yard in 1935 and designated 25 mm Type 94 and Type 95, known as
+          "Type J" because they were built to Japanese specifications. The Japanese
+          modifications were manufacturing ones: many stainless steel parts for submarine
+          use, some machined parts replaced by castings, and Rheinmetall-type flash
+          suppressors. The Hotchkiss automatic mechanism was not redesigned; what changed
+          was manufacturability and corrosion resistance.
+      src: [navweaps-25mm-96]
+
+    - heading: 15 发弹匣决定了它打不出应有的射速
+      text:
+        zh: >-
+          这组数字必须放在一起看。循环射速 200–260 发/分，标准 220；
+          实战射速 110–120 发/分——落差近一半。
+          原因写得很直白：弹匣只装 15 发，换匣频繁；
+          而「所有弹匣都得靠人手装填，日本从未研制过专用装填装置」。
+          炮本身还有一处硬缺陷：高仰角时抛壳不良、卡壳频繁。
+          日方自评里与之对应的两条是：弹药供给设备的容量不足，
+          造成射击中断与操作流程大幅拖长；以及炮架（无论动力还是人力）
+          的回转与俯仰都不够快。四条合起来是一次结构性的失败，
+          而不是某一处零件的问题。
+        en: >-
+          These figures only mean anything together. Cyclic rate was 200 to 260 rounds per
+          minute, 220 standard; effective rate was 110 to 120. The reason is stated plainly:
+          the magazines held only 15 rounds, so frequent stoppages for change-outs were
+          required, and all magazines had to be loaded by hand because no specialised
+          loading equipment was ever developed. The gun itself had one hard defect:
+          cartridge ejection was a problem at high elevations and stoppages were frequent.
+          Two of the Japanese assessment's own findings match: the capacity of the
+          ammunition supply equipment was inadequate, causing interrupted fire and a
+          greatly reduced operating routine; and the multiple mounts could not be trained
+          and elevated rapidly enough, by power or by hand. Together those are a structural
+          failure, not a fault in one component.
+      src: [navweaps-25mm-96]
+
+    - heading: 日方自评的五条，顺序是日方排的
+      text:
+        zh: >-
+          USNTMJ 报告 O-47(N)-2 记录了日方自己按严重程度递减排出的五条缺陷，
+          照录如下（中译在前，原句在后）：
+          一、多联装炮架无论用动力还是人力，回转与俯仰都不够快；
+          二、对高速飞机，瞄准具不合格；
+          三、火炮振动过大，难以保持瞄准；
+          四、弹药供给设备容量不足，造成射击中断、操作流程大幅拖长；
+          五、炮口焰对炮手与设备都造成问题。
+          原文：「The multiple mounts could not be trained and elevated rapidly enough,
+          either by power or manual drive. / The gunsights were inadequate against high
+          speed aircraft. / The guns had excessive vibration, making them difficult to keep
+          on target. / The capacity of the ammunition supply equipment was inadequate,
+          causing interrupted fire and a greatly reduced operating routine. / The muzzle
+          blast caused problems for both the guncrew and equipment.」
+        en: >-
+          USNTMJ report O-47(N)-2 records the deficiencies the Japanese themselves listed
+          in decreasing order of seriousness, quoted here verbatim: "The multiple mounts
+          could not be trained and elevated rapidly enough, either by power or manual
+          drive. / The gunsights were inadequate against high speed aircraft. / The guns had
+          excessive vibration, making them difficult to keep on target. / The capacity of
+          the ammunition supply equipment was inadequate, causing interrupted fire and a
+          greatly reduced operating routine. / The muzzle blast caused problems for both
+          the guncrew and equipment." Note what the ranking implies: the power-operated
+          mount and the feed, not the barrel, come first and fourth.
+      src: [navweaps-25mm-96]
+
+    - heading: 炮架有两种驱动，但多数是人力的
+      text:
+        zh: >-
+          炮架分单装、双联、三联三种，重量分别是 785 kg、1,100 kg、1,800 kg。
+          三联装 1941 年才出现，单装到 1943 年才有——
+          所以 1942 年 6 月四艘航母上只会有双联与三联，不会有单装。
+          驱动方式：多数为人力，齿轮手轮回转与俯仰；
+          部分三联装装了 Ward-Leonard 随动系统，回转 18°/s、俯仰 12°/s，
+          由九五式机铳射击装置供给 1 hp 电机。
+          人力炮班的编成是三联装 9 人、双联装 7 人、单装 3 人。
+          冷却全为气冷：水冷方案研究过，因结构与维护更复杂被放弃，
+          炮手有时在身管上缠湿布降温。
+        en: >-
+          The mountings came in single, twin and triple, weighing 785 kg, 1,100 kg and
+          1,800 kg respectively. Triples were introduced only in 1941 and singles in 1943 -
+          so in June 1942 the four carriers could carry twins and triples but no singles.
+          Most mountings were manually operated, trained and elevated by geared
+          handwheels; some triples had Ward-Leonard RPC giving 18 degrees per second in
+          train and 12 in elevation, the 1 hp motors being supplied by the Type 95 AA fire
+          control director. A manually worked triple had nine crew, a twin seven and a
+          single three. Cooling was entirely air-cooled: water cooling was investigated and
+          rejected as more complex to build and maintain, and guncrews would sometimes wrap
+          wet cloths around the barrels.
+      src: [navweaps-25mm-96]
+
+    - heading: 11 基还是 14 基：两说并列，不裁决
+      text:
+        zh: >-
+          加贺号的 25 mm 双联装座数是本站不能定的一项，两个数字都要写：
+          11 基（22 挺）或 14 基（28 挺）。
+          已登记来源给出的就是这两说并列，并注明「資料により異同」（资料不同、说法不同），
+          没有给出哪一说成立。
+          还必须补一条与两个数都不吻合的独立记录：加贺 1940 年 11 月 18 日改装完成时，
+          另加装了四基九六式双联 25 mm，装在舷侧突出炮座上。
+          也就是「11 基 + 后来增 4 基 = 15」与「14 基」也对不上，
+          而来源并没有解释这层关系。本站不替它算。
+        en: >-
+          The number of 25 mm twin mountings aboard Kaga is something this site cannot
+          settle, so both figures stand: eleven mountings, twenty-two guns, or fourteen
+          mountings, twenty-eight guns. The registered source gives the two side by side and
+          notes only that the accounts differ, without saying which holds. A separate record
+          that agrees with neither figure also has to be carried: when Kaga's overhaul was
+          completed on 18 November 1940, four additional Type 96 twin 25 mm guns were fitted
+          on sponsons. So "eleven plus four later additions makes fifteen" does not match
+          fourteen either, and the source does not explain the relationship. This site does
+          not do the arithmetic for it.
+      src: [japanese-warship-kaga, combinedfleet-kaga]
+
+    - heading: 中途岛四舰各装多少，差别在这一项上最直观
+      text:
+        zh: >-
+          把四舰并列，这一项的差别比主炮更明显。
+          赤城：25 mm 连装 14 基 28 挺——来源的最终时装备栏里只列了连装一种。
+          苍龙：连装 14 基 28 挺，同样只列连装。
+          飞龙：三联装 7 基（21 挺）加连装 5 基（10 挺），合计 31 挺，
+          是四舰里唯一在三联装上有着落的，管数也最多。
+          加贺：11 基或 14 基，见上一段。
+          四舰没有一个统一数字，因为改装年份与来源的记法都不一样。
+        en: >-
+          Set side by side, this item separates the four ships more sharply than their main
+          batteries do. Akagi: fourteen twin mountings, twenty-eight guns - the source's
+          final-configuration list names only the twin type. Soryu: fourteen twins,
+          twenty-eight guns, again only twins listed. Hiryu: seven triples, twenty-one guns,
+          plus five twins, ten guns, for thirty-one - the only one of the four with triples
+          recorded, and the largest gun count. Kaga: eleven or fourteen, as above. There is
+          no common figure across the four, because the refit dates and the way the sources
+          record them differ.
+      src: [japanese-warship-akagi, japanese-warship-soryu, navypedia-hiryu]
+
+history:
+  - id: adoption
+    title: { zh: 仿制与制式化, en: "Licence adaptation and adoption" }
+    range: { from: 1935, to: 1936-08 }
+    lead:
+      zh: >-
+        从换装决定到制式采用只有一年多，中间夹着一次在横须贺的外国样炮试验。
+      en: >-
+        A little over a year separates the decision to re-arm from formal adoption, with a
+        trial of foreign-built guns at Yokosuka in between.
+    events:
+      - date: 1935
+        text:
+          zh: >-
+            日本决定换掉维克斯 4 cm/62「HI」（2 磅炮），
+            原因是射速慢、有效射程短、可靠性差、难以制造。
+            选中的替代方案为哈奇开斯系设计。
+          en: >-
+            The Japanese decided to replace the Vickers 4 cm/62 "HI", the 2-pounder, for its
+            slow rate of fire, short effective range, unreliable nature and difficulty of
+            manufacture. A Hotchkiss-based design was selected as the replacement.
+        src: [navweaps-25mm-96]
+      - date: 1935
+        text:
+          zh: >-
+            法国造双联装样炮在横须贺海军工厂试验，给名 25 mm 九四式与九五式，
+            通称「Type J」——按日本规格制造，故用法方名目。
+          en: >-
+            French-built twin mounts were tested at the Yokosuka Navy Yard, designated
+            25 mm Type 94 and Type 95 and known as "Type J" because they were built to
+            Japanese specifications.
+        src: [navweaps-25mm-96]
+      - date: 1936-08-06
+        text:
+          zh: >-
+            日本国产化版本制式采用。改动为：大量不锈钢件（潜艇用）、
+            部分机加工件改铸件、换用莱茵金属式消焰器。
+          en: >-
+            The Japanese-manufactured version was adopted for service. The changes were many
+            stainless steel parts for submarines, some machined parts replaced by castings,
+            and Rheinmetall-type flash suppressors.
+        src: [navweaps-25mm-96]
+
+  - id: mounts
+    title: { zh: 炮架与产量的扩张, en: Mountings and the expansion of output }
+    range: { from: 1941, to: 1945 }
+    lead:
+      zh: >-
+        三种炮架不是同时出现的：双联装最早，三联装 1941 年，单装 1943 年。
+      en: >-
+        The three mounting types did not appear together: twins first, triples in 1941,
+        singles in 1943.
+    events:
+      - date: 1941
+        text:
+          zh: >-
+            三联装炮架出现（此前只有双联装）。部分三联装装 Ward-Leonard 随动：
+            回转 18°/s、俯仰 12°/s。
+          en: >-
+            Triple mountings were introduced, twins having been the only type before. Some
+            triples had Ward-Leonard RPC giving 18 degrees per second in train and 12 in
+            elevation.
+        src: [navweaps-25mm-96]
+      - date: 1942-06-04
+        text:
+          zh: >-
+            中途岛四空母的 25 mm 编成：赤城 14 基双联 28 挺、苍龙 14 基双联 28 挺、
+            飞龙 7 基三联加 5 基双联共 31 挺；
+            加贺 11 基（22 挺）或 14 基（28 挺），两说并存。
+          en: >-
+            The 25 mm outfit of the four Midway carriers: Akagi fourteen twins for
+            twenty-eight guns, Soryu fourteen twins for twenty-eight, Hiryu seven triples
+            and five twins for thirty-one; Kaga eleven mountings (twenty-two guns) or
+            fourteen (twenty-eight), both figures standing.
+        src: [japanese-warship-akagi, japanese-warship-soryu, navypedia-hiryu, japanese-warship-kaga]
+      - date: 1943
+        text:
+          zh: >-
+            单装炮架出现，至此单、双、三联三种并存。
+          en: >-
+            Single mountings were introduced, so that all three types were in production.
+        src: [navweaps-25mm-96]
+      - date: 1945
+        text:
+          zh: >-
+            到 1945 年初，日本以每月 2,100 门单装、约 200 基双联或三联的速度生产。
+            全期炮架总产量约 20,000 基、火炮约 33,000 门；
+            这些炮多数上舰，约 2,500 门用于固定陆上炮座。
+          en: >-
+            By the start of 1945 Japan was producing at a monthly rate of 2,100 single guns
+            and about 200 dual or triple mountings. Over the whole war about 20,000 mountings
+            of all types and about 33,000 guns were built; most went aboard ship and about
+            2,500 were used in stationary land mountings.
+        src: [navweaps-25mm-96]
+
+  - id: limits
+    title: { zh: 射程、寿命与没能解决的短板, en: "Range and barrel life and the unresolved shortfalls" }
+    range: { from: 1936, to: 1945 }
+    lead:
+      zh: >-
+        这一节的三条都是「来源自己承认有分歧」或「来源自己承认没做成」的部分。
+        炮术与身管寿命两组数据来源都没有给日期，只能挂在定型年下。
+      en: >-
+        All three items here are ones the source itself flags as disputed or as never
+        solved. Neither the ballistic figures nor the barrel-life figures carry a date in
+        the source, so they sit under the year of adoption.
+    events:
+      - date: 1936
+        text:
+          zh: >-
+            弹道数据取 Lacroix & Wells《Japanese Cruisers of the Pacific War》口径：
+            45° 射程 6,800 m、50° 最大射程 7,500 m、
+            85° 有效射高 3,000 m、最大射高 5,500 m。
+            来源明言各家给出的射程与射高不一致，它选了这一组：
+            「The sources listed below disagree as to the ranges and AA ceiling for this
+            weapon. I have chosen to use those given in "Japanese Cruisers of the Pacific
+            War."」
+          en: >-
+            The ballistic figures follow Lacroix and Wells, Japanese Cruisers of the Pacific
+            War: 6,800 m at 45 degrees, a maximum of 7,500 m at 50 degrees, an effective AA
+            ceiling of 3,000 m and a maximum of 5,500 m at 85 degrees. The source states
+            plainly that the ranges and ceiling are disputed and that it has chosen this
+            set: "The sources listed below disagree as to the ranges and AA ceiling for this
+            weapon. I have chosen to use those given in 'Japanese Cruisers of the Pacific
+            War.'"
+        src: [navweaps-25mm-96]
+      - date: 1936
+        text:
+          zh: >-
+            身管寿命与镀铬。法方原估约 6,000 发，日方实测 20,000 发后弹道仍稳定；
+            按「初速损失 100 m/s」这一火力控制可接受上限折算，寿命约 12,000 发
+            （16,000 发时已损失 150 m/s、23,000 发时 220 m/s）。
+            镀铬研究过，效果不突出，开发中止。
+            击针是另一处：原型寿命只有 250 发，改进热处理、形状与加工、
+            针尖由细长改为近锥形后提高到约 4,000 发。
+          en: >-
+            Barrel life and chrome plating. The original French estimate was about 6,000
+            rounds, but Japanese testing found stable flight still obtained after 20,000;
+            reckoned against the 100 m/s velocity loss the Japanese considered the maximum
+            acceptable for fire control, life was about 12,000 rounds, the loss being
+            150 m/s at 16,000 rounds and 220 m/s at 23,000. Chrome plating of the bore was
+            investigated, gave no exceptional result, and development was abandoned. The
+            firing pin was another matter: the original design lasted only 250 rounds, and
+            improved heat treatment, shape and machining with the tip changed from a long
+            thin point to a nearly conical one raised this to about 4,000.
+        src: [navweaps-25mm-96]
+      - date: 1945
+        text:
+          zh: >-
+            来源对 1945 年状态的判断：这型炮此时打出的弹丸「太轻、射程太短」，
+            已经无法有效对付当时在役的更重更快的美国飞机。
+          en: >-
+            The source's judgement on the position in 1945: these weapons fired projectiles
+            too light and too short ranged to effectively engage the heavier and faster US
+            aircraft then in service.
+        src: [navweaps-25mm-96]

@@ -1,0 +1,252 @@
+# ============================================================================
+# 武器正文 —— Douglas TBD-1 Devastator
+#
+# 这一型要写的是一个时间差：1935 年首飞时它的折叠翼是为航母甲板算过账的，
+# 到 1942 年 6 月同一批数值还是那个样子（206 mph、挂雷 435 英里）。
+#
+# 三条口径说明，写之前先定死：
+#  1) **中途岛各中队的作战经过与损失数本文不写**。原料 §6.7 只给逐舰搭载数
+#     与战损条数，不足以支撑作战叙述；只写能追到原句的部分。
+#  2) 空重/全重、Mk XIII 鱼雷重量两组数值两个来源各有一套，并列不裁决。
+#  3) 「全金属机身」「封闭座舱」「无自封油箱」「无装甲」这些常见说法
+#     原料里一句都没有，一律不写——留空比补一段记得住的话更安全。
+# ============================================================================
+weapon: tbd-devastator
+updated: 2026-11-20
+
+intro:
+  lead:
+    zh: >-
+      TBD-1 蹂躏者（Devastator）是道格拉斯为美国海军研制的三人座舰载鱼雷轰炸机：
+      XTBD-1 于 1935 年 4 月 15 日首飞，九天后交付海军测试；
+      1937 年 6 月 25 日道格拉斯开始交付 114 架；总产量 129 架。
+      它的机翼是设计上台面的一笔账——向上折起，翼展从 50 英尺收到 26 英尺，
+      为的是在甲板与机库里省地方。1937 年这是当时的新东西；
+      1942 年 6 月它还在三艘航母的甲板上，而它自己的那个数字没有变过：
+      最大速度 206 mph，挂 Mk XIII 鱼雷时航程 435 英里。
+      中途岛之后，海军把它从战斗岗位上去掉，改派训练与联络。
+    en: >-
+      The TBD-1 Devastator was the Douglas three-seat carrier torpedo bomber built for
+      the US Navy: the XTBD-1 flew on 15 April 1935 and was delivered to the Navy for
+      testing nine days later; on 25 June 1937 Douglas began delivery of 114 TBD-1s; total
+      production came to 129 aircraft. Its wing was a design calculation in its own right,
+      folding upwards to cut the span from 50 feet to 26 and save room on deck and in the
+      hangar. In 1937 that was current practice. In June 1942 the type was still on the
+      flight decks of three carriers while its own figures had not moved: 206 mph maximum
+      speed, 435 miles of range with a Mk XIII torpedo. After Midway the Navy struck it
+      from combat roles and relegated it to training and communications.
+
+  paragraphs:
+    - heading: 折起来的机翼是一笔甲板空间账
+      text:
+        zh: >-
+          折叠翼不是装饰。原句是：它的翼展 50 英尺（15.24 m），
+          道格拉斯把机翼设计成向上折起，占用的空间降到 26 英尺（7.92 m）。
+          对航母来说这是一笔很硬的空间账——同一层甲板或机库里多塞几架，
+          决定的是一个中队能不能整队出动。
+          其余几何：机身长 35 英尺（10.69 m），机高 15 英尺 1 英寸（4.59 m），
+          机翼面积 422 平方英尺（39.2 m²）。
+        en: >-
+          The folding wing was not decoration. The sentence is that the wings spanned 50
+          feet (15.24 m), and that Douglas designed them to fold upwards, reducing the
+          space required to 26 feet (7.92 m). On a carrier that is a hard space
+          calculation: a few more aircraft in the same deck or hangar decides whether a
+          squadron can launch as a unit. The rest of the geometry: length 35 feet
+          (10.69 m), height 15 feet 1 inch (4.59 m), wing area 422 square feet (39.2 sq m).
+      src: [avh-tbd, aw-tbd1]
+
+    - heading: 一台双黄蜂，三个人，一条鱼雷
+      text:
+        zh: >-
+          动力是一台普拉特·惠特尼 R-1830-64 双黄蜂气冷星型发动机：
+          起飞 900 hp（671 kW），8,000 英尺（2,438 m）高度上 850 hp（634 kW）；
+          燃油 180 加仑（682 L）。
+          机组三人——飞行员、朝后坐的机枪手，以及夹在两人中间的卧姿投弹手。
+          这个座位安排说明它是要贴着海面投雷的飞机：投弹手需要向下看得见海面。
+        en: >-
+          Power came from one Pratt & Whitney R-1830-64 Twin Wasp air-cooled radial:
+          900 hp (671 kW) for take-off and 850 hp (634 kW) at 8,000 feet (2,438 m), with
+          180 gallons (682 L) of fuel. The crew was three - a pilot, a gunner facing aft,
+          and a bombardier who sat between them. The seating tells you what the aircraft
+          was for: a bombardier who needs to see the water below him is a bombardier in a
+          low-level torpedo aeroplane.
+      src: [avh-tbd, m42-midway1942]
+
+    - heading: 挂上鱼雷，航程掉到六成
+      text:
+        zh: >-
+          这里有一组必须并排看的数字：挂 Mk XIII 鱼雷时航程 435 英里（700 km），
+          改挂 1,000 磅（453 kg）炸弹时 716 英里（1,152 km）。
+          同一架飞机，挂上鱼雷之后能飞的距离约为挂炸弹时的六成。
+          鱼雷本体是 21 英寸（533 mm）、长 15 英尺（4.57 m）的一件大家伙，
+          而且它是挂在机身外面的。
+          其余性能：最大 206 mph（331 km/h）出现在 8,000 英尺（2,438 m），
+          巡航 128 mph（205 km/h），着舰速度 68 mph（109 km/h），
+          爬升率 720 ft/min（219 m/min），实用升限 19,700 英尺（6,004 m）。
+        en: >-
+          A set of figures has to be read together here: range was 435 miles (700 km)
+          carrying a Mk XIII torpedo, and 716 miles (1,152 km) carrying 1,000 lb (453 kg)
+          bombs. The same aeroplane with a torpedo under it could fly about six tenths as
+          far. The torpedo itself is a large object - 21 inches (533 mm) in diameter and 15
+          feet (4.57 m) long - and it hangs outside the fuselage. The rest of the
+          performance: 206 mph (331 km/h) maximum at 8,000 feet (2,438 m), 128 mph
+          (205 km/h) cruising, a landing speed of 68 mph (109 km/h), a climb of
+          720 ft/min (219 m/min) and a service ceiling of 19,700 feet (6,004 m).
+      src: [avh-tbd, aw-tbd1]
+
+    - heading: 1942 年，它比同舰的俯冲轰炸机慢 44 mph
+      text:
+        zh: >-
+          一个同场对比可以把它的处境说清：中途岛时同一条航母上的 SBD 无畏，
+          规格表报的最大速度是 250 mph（402 km/h）；鱼雷机的最大速度是 206 mph
+          （331 km/h）。差 44 mph。
+          这里要用两层限定。第一，这个 250 mph 出自海军航空博物馆对馆藏机
+          BuNo 2106 的规格表，原文本身不保证它就是 SBD-3 的原厂数值；
+          另有来源同样记 250 mph，本站两个值并列。
+          第二，两架飞机的性能不是同一条件下测的，本站只并列，不替谁下结论。
+          但 1930 年代定型的机体放到 1942 年的舰队里，这个差值确实由它的数据给出。
+        en: >-
+          One comparison from the same deck makes its position clear: the SBD Dauntless
+          aboard the same carriers is given a maximum speed of 250 mph (402 km/h) in the
+          specification table, against the torpedo bomber's 206 mph (331 km/h) - a gap of
+          44 mph. Two qualifications belong with it. First, that 250 mph comes from the
+          naval aviation museum's sheet for its preserved BuNo 2106, which does not by
+          itself guarantee factory SBD-3 figures; a second source records the same 250 mph,
+          and both are set down here. Second, the two aircraft were not measured under
+          identical conditions, so the figures are laid side by side without a verdict. But
+          an airframe finalised in the 1930s, placed in the fleet of 1942, is described by
+          that gap in its own data.
+      src: [avh-tbd, nhhc-nnam-sbd, m42-midway1942]
+
+    - heading: 129 架，以及两处对不上的重量
+      text:
+        zh: >-
+          产量是这一型最容易被忽略的参数：原句写「although Devastator production
+          totaled only 129 aircraft」，129 架。1937 年 6 月 25 日首批交付时是 114 架。
+          原料有两组对不上的数值，本站并列不裁决：
+          空重一处 6,182 磅（2,804 kg）、另一处 5,600 磅（2,539 kg），差 582 磅；
+          全重一处写 9,862 磅（4,473 kg）标为 gross、另一处写 10,194 磅（4,623 kg）
+          也标为 gross，而前一来源把同一个 10,194 磅标为最大起飞重量——
+          两家对「gross」的定义不同，因此这一栏不能直接相减。
+        en: >-
+          Production is the figure most easily passed over: "although Devastator production
+          totaled only 129 aircraft" - 129. The first batch delivered from 25 June 1937 was
+          114. Two sets of figures do not agree and are both reported here without a ruling.
+          Empty weight is 6,182 lb (2,804 kg) in one source and 5,600 lb (2,539 kg) in
+          another, a difference of 582 lb. Gross weight is 9,862 lb (4,473 kg) in the first
+          and 10,194 lb (4,623 kg) in the second, both labelled gross - except that the first
+          source labels that same 10,194 lb as maximum take-off weight. The two are using
+          different definitions of "gross", so the column cannot simply be subtracted.
+      src: [avh-tbd, aw-tbd1, m42-midway1942]
+
+    - heading: 鱼雷重量也两说
+      text:
+        zh: >-
+          Mk XIII 的重量同样是两个值：一处 1,200 磅（544 kg），
+          另一处 1,927 磅（874 kg），差 727 磅。
+          原料的分歧段给过一个背景：Mk XIII 早期型（Mod 0）约 1,400 磅，
+          Mod 1 起约 1,927 磅（装 600 磅战雷头）。
+          但两个来源都没有说明自己引的是哪一型，所以这个背景只能解释差额的可能来源，
+          不能把 1,200 与 1,927 直接消掉。本站照录两个值。
+        en: >-
+          The weight of the Mk XIII is likewise two values: 1,200 lb (544 kg) in one place
+          and 1,927 lb (874 kg) in the other, a difference of 727 lb. The material's dispute
+          section offers background - the early Mk XIII (Mod 0) ran about 1,400 lb, and from
+          Mod 1 about 1,927 lb with a 600 lb warhead - but neither source states which mark
+          it is quoting. That background explains where a difference could come from; it
+          does not reconcile 1,200 with 1,927. Both values are recorded as they stand.
+      src: [avh-tbd, m42-midway1942]
+
+    - heading: 它的一线生涯正好五年
+      text:
+        zh: >-
+          原料关于结局只有一句：中途岛之后，海军把 TBD 从战斗岗位上去掉，
+          改用于训练与联络任务。
+          时间对上来看：1937 年 6 月 25 日首批交付，1942 年 6 月 4 日它还在三艘航母上——
+          约克城 VT-3 十二架、企业号 VT-6 十四架、大黄蜂 VT-8 十五架，
+          合计四十一架（三数相加，本站算术，非原句）。
+          五年的一线生涯，机体数据一次都没改过。
+          本页不写各中队的作战经过，那一段原料没有支撑。
+        en: >-
+          The material has one sentence on the ending: after the Battle of Midway the Navy
+          struck the Douglas TBD from combat roles and relegated it to training and
+          communications. The dates line up plainly: first deliveries on 25 June 1937, and
+          on 4 June 1942 it was still aboard three carriers - twelve with VT-3 in Yorktown,
+          fourteen with VT-6 in Enterprise and fifteen with VT-8 in Hornet, forty-one in all
+          (the sum is this site's arithmetic, not a quotation). Five years in the front line,
+          and the airframe figures never changed once. This page does not narrate the
+          squadrons' attacks; the material does not support that account.
+      src: [avh-tbd, nhhc-midway-us-order-of-battle]
+
+history:
+  - id: design
+    title: { zh: 首飞与交付, en: First flight and delivery }
+    range: { from: 1935, to: 1937 }
+    lead:
+      zh: >-
+        从首飞到开始交付用了两年多，中间隔着九天的海军测试和一轮修改。
+      en: >-
+        More than two years passed between first flight and first delivery, with nine days
+        of Navy testing and a round of changes in between.
+    events:
+      - date: 1935-04-15
+        text:
+          zh: >-
+            XTBD-1 首飞，九天后交付海军测试。
+            它的机翼向上折起，翼展从 50 英尺（15.24 m）收到 26 英尺（7.92 m）。
+          en: >-
+            The XTBD-1 first flew; nine days later it was delivered to the Navy for
+            testing. Its wings folded upwards, cutting the span from 50 feet (15.24 m) to
+            26 feet (7.92 m).
+        src: [avh-tbd]
+      - date: 1937-06-25
+        text:
+          zh: >-
+            道格拉斯开始交付 114 架 TBD-1。总产量最终为 129 架。
+          en: >-
+            Douglas began delivery of 114 TBD-1s. Production ended at 129 aircraft.
+        src: [avh-tbd]
+
+  - id: service
+    title: { zh: 一线服役与撤编, en: Front-line service and withdrawal }
+    range: { from: 1937, to: 1942 }
+    lead:
+      zh: >-
+        五年一线生涯，最后一年它已经不在性能表的前面。
+      en: >-
+        Five years in the front line, the last of them spent behind the performance tables.
+    events:
+      - date: 1937
+        text:
+          zh: >-
+            进入美国海军服役，成为航母航空队的鱼雷轰炸机。
+            规格表给它的最大速度是 206 mph（331 km/h），
+            挂 Mk XIII 鱼雷时航程 435 英里（700 km）。
+          en: >-
+            The type entered US Navy service as the carriers' torpedo bomber. Its
+            specification sheet gives a maximum speed of 206 mph (331 km/h), with
+            435 miles (700 km) of range carrying a Mk XIII torpedo.
+        src: [avh-tbd]
+      - date: 1942-06-04
+        text:
+          zh: >-
+            三艘航母共搭载四十一架：约克城 VT-3 十二架、企业号 VT-6 十四架、
+            大黄蜂 VT-8 十五架。同日同舰的 SBD 无畏规格表报最大速度 250 mph，
+            比它高 44 mph；该值出自馆藏机 BuNo 2106 的规格表，
+            原文不保证等同 SBD-3 原厂数据。
+          en: >-
+            Forty-one aircraft were spread across the three carriers: twelve with VT-3 in
+            Yorktown, fourteen with VT-6 in Enterprise and fifteen with VT-8 in Hornet. The
+            SBD Dauntless aboard the same ships that day is given a maximum speed of
+            250 mph in its specification sheet, 44 mph higher - a figure from the sheet for
+            the preserved BuNo 2106, which the source does not guarantee as factory SBD-3
+            data.
+        src: [nhhc-midway-us-order-of-battle, nhhc-nnam-sbd]
+      - date: 1942-06
+        text:
+          zh: >-
+            中途岛之后，海军把 TBD 从战斗岗位上去掉，改派训练与联络任务。
+          en: >-
+            After the Battle of Midway the Navy struck the TBD from combat roles and
+            relegated it to training and communications duties.
+        src: [avh-tbd]

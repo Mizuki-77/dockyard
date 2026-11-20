@@ -1,0 +1,219 @@
+# ============================================================================
+# 武器正文 —— 12 cm/45 十年式高角炮
+#
+# 这一型真正的看点不是它自己，是「谁把它换掉了、谁没能换掉」：
+# 加贺在 1930 年代改装时换成了 12.7cm 八九式，赤城申请换装、至死没换成。
+# 结果一艘装新炮一艘装旧炮的两艘同级舰，在中途岛同一天沉没。
+# 射速与射程的两组数字（NavWeaps 与日文专题站）不一致处两边都写，不裁决。
+# ============================================================================
+weapon: 12cm-10ns
+updated: 2026-11-20
+
+intro:
+  lead:
+    zh: >-
+      12 cm/45 十年式是日本海军在大正十年（1921）设计的高角炮，1926 年服役，
+      由单用途的 12 cm/45 三年式派生，1920 年代与 1930 年代初建造的大多数巡洋舰都用它作副炮。
+      它一共造了约 3,000 门，日本海军自己评价是「非常可靠」。
+      1930 年代以后它被 12.7 cm/40 八九式高角炮逐步取代，
+      但赤城一路把它带到中途岛沉没。
+    en: >-
+      The 12 cm/45 10th Year Type was a high-angle gun designed in 1921 and introduced in
+      1926, derived from the single-purpose 12 cm/45 3rd Year Type, and used as the
+      secondary battery of most cruisers built in the 1920s and early 1930s. About 3,000
+      were manufactured and the Japanese considered them very reliable weapons. From the
+      1930s the 12.7 cm/40 Type 89 replaced them in modernized ships, but Akagi carried
+      hers to the bottom at Midway.
+
+  paragraphs:
+    - heading: 一门从单用途炮改出来的高角炮
+      text:
+        zh: >-
+          NavWeaps 对它的出身只有一句：这是一门从单用途的 12 cm/45 三年式派生出来的
+          防空武器。炮身全长 5.604 m，重 2.95 公吨；早期用 built-up 构造，
+          后期改 monobloc，全部配半自动滑动炮闩。阴线 34 条，部分炮为 36 条；
+          药室容积 10.774 dm³；膛压 2,650 kg/cm²；炮身寿命 700 至 1,000 发；
+          每门弹药基数 200 至 250 发。弹药为定装式，黄铜药筒 120 × 708R，空重 14.4 kg，
+          通常弹 20.3 kg，装药 1.7 kg。
+        en: >-
+          NavWeaps is brief about its parentage: this was an anti-aircraft weapon derived
+          from the single-purpose 12 cm/45 3rd Year Type. The gun was 5.604 m long overall
+          and weighed 2.95 tonnes; the earlier guns were of built-up construction and the
+          later ones monobloc, all with a semi-automatic sliding breech block. There were
+          34 grooves, some guns having 36; chamber volume was 10.774 dm3 and working
+          pressure 2,650 kg/cm2. Barrel life was 700 to 1,000 rounds and stowage 200 to 250
+          rounds per gun. Ammunition was fixed, with a brass case 120 x 708R weighing 14.4
+          kg empty, and a 20.3 kg common shell behind a 1.7 kg bursting charge.
+      src: [navweaps-12cm-10ns]
+
+    - heading: 射速：纸面十发，实测六发半
+      text:
+        zh: >-
+          NavWeaps 给的射速是理论 10 至 11 发/分，实战 6 至 8 发/分。
+          这个差距有实测数据支撑：1931 年妙高型四舰用这型炮做过对空射击试验，
+          航速 18 节，配八九式高射装置，目标是 1,500 至 2,000 m 高度上
+          以 60 至 70 节拖曳的靶机 —— 命中率 2.2%，
+          在 2,000 至 5,500 m 距离上的平均射速是 6.4 发/分。
+          这些炮全部人力装填，引信也靠人工设定。俯仰 −10 / +75 度，
+          连装 A2 炮架的俯仰速度 6.5°/s、回转 10°/s，采用电动-液压驱动。
+          最大射程 16,000 m（45 度），最大射高 10,000 m（75 度）。
+        en: >-
+          NavWeaps gives a maximum rate of fire of 10 to 11 rounds per minute and an
+          effective rate of 6 to 8. There is measured data behind the gap: the four Myoko
+          class cruisers ran anti-aircraft trials with these guns in 1931, steaming at 18
+          knots and using the Type 89 HA computer against targets towed at 60 to 70 knots
+          at 1,500 to 2,000 m altitude. They scored 2.2 percent hits, firing at an average
+          of 6.4 rounds per minute at ranges between 2,000 and 5,500 m. All mountings were
+          hand loaded and fuze setting was by hand. Elevation was -10 / +75 degrees, and
+          the twin A2 mounting elevated at 6.5 degrees per second and trained at 10, both
+          electro-hydraulically powered. Maximum range was 16,000 m at 45 degrees and
+          maximum ceiling 10,000 m at 75 degrees.
+      src: [navweaps-12cm-10ns]
+
+    - heading: 加贺换掉了，赤城没换成
+      text:
+        zh: >-
+          NavWeaps 把两艘航母的差别写在同一段里：加贺，以及 1930 年代后期
+          接受改装的巡洋舰，都把这种炮换成了 12.7 cm/40 八九式高角炮；
+          而赤城把这批炮一直带到中途岛沉没。加贺的两套要目表可以逐条核对：
+          竣工时一栏写「45口径12cm連装高角砲 6基12門」，
+          1935 年大改装一栏写成「40口径八九式12.7cm連装高角砲 8基16門」，
+          同一栏里的 25mm 机铳记作「11基22挺／14基28挺（資料により異同）」。
+          座数从 6 基增到 8 基，型号也从十年式换成了八九式。
+          赤城这一侧留下的是配置问题：日文专题站对赤城高角炮的评语是「配置が最悪」——
+          左右两舷的炮装在同一位置、同一高度，结果对反舷方向完全无法射击，
+          大改装之后这个布局也没有改动，防空火力在参战六艘航母里最弱。
+        en: >-
+          NavWeaps puts the two carriers' divergence in a single passage: Kaga, and the
+          cruisers modernized during the late 1930s, had these weapons replaced by the
+          12.7 cm/40 Type 89 AA gun, while Akagi carried hers to her end at Midway. Kaga's
+          two data tables can be read against each other: the as-completed column records
+          six twin 45-calibre 12 cm high-angle mounts, twelve guns, and the 1935
+          reconstruction column records eight twin 40-calibre Type 89 12.7 cm mounts,
+          sixteen guns, alongside 25 mm machine guns given as eleven twin or fourteen twin
+          mounts depending on the document. The mounting count rose from six to eight and
+          the type changed from the 10th Year Type to the Type 89. What survives on the
+          Akagi side is a layout problem: the Japanese specialist site's verdict on her
+          high-angle battery is that the arrangement was as bad as it could be - the port
+          and starboard mounts sat at the same position and the same height, so the
+          opposite side could not be engaged at all, and the layout was not changed by the
+          great reconstruction, leaving her anti-aircraft firepower the weakest of the six
+          carriers that attacked Pearl Harbor.
+      src: [navweaps-12cm-10ns, japanese-warship-kaga, japanese-warship-akagi]
+
+    - heading: 这个差异值得单独写一句
+      text:
+        zh: >-
+          赤城与加贺原本是同一批被改成航母的主力舰，装了同一批炮。
+          到 1930 年代改装时，加贺把 12 cm 换成了 12.7 cm、把座数从 6 基增到 8 基，
+          赤城则一项都没做到。就这一型炮本身而言，
+          赤城因此成了它最晚的用户之一 —— 一门 1921 年设计、1926 年服役的炮，
+          1942 年 6 月还在日本海军的一线航母上值班。
+        en: >-
+          Akagi and Kaga were both capital ships converted under the same programme and
+          both received the same guns. By the 1930s reconstruction Kaga had swapped the
+          12 cm for 12.7 cm weapons and raised her mounting count from six to eight, while
+          Akagi managed neither. As far as this weapon is concerned, that left Akagi as one
+          of its last users - a gun designed in 1921 and in service from 1926 was still
+          standing watch on a front-line Japanese carrier in June 1942.
+      src: [japanese-warship-kaga, navweaps-12cm-10ns]
+
+    - heading: 一处必须并列的数字分歧
+      text:
+        zh: >-
+          这型炮的两组常用数值在来源之间对不上，本站两组都写，不裁决。
+          NavWeaps 记：最大射程 16,000 m（45 度），最大射高 10,000 m（75 度），
+          理论射速 10 至 11 发/分。日文专题站 japanese-warship.com 在讲赤城时记的是：
+          射程 11,000 m，每分 10 发左右，人力装填。
+          两边对射速的说法一致，射程差了 5,000 m。差别可能在所引弹种与装药不同 ——
+          NavWeaps 的射程表标题写明了前提是 20.4 kg 高爆弹配 30 DC 发射药。
+        en: >-
+          Two commonly quoted sets of figures for this gun do not agree, and this site
+          gives both without adjudicating. NavWeaps records a maximum range of 16,000 m at
+          45 degrees, a maximum ceiling of 10,000 m at 75 degrees, and a maximum rate of
+          fire of 10 to 11 rounds per minute. The Japanese specialist site
+          japanese-warship.com, writing about Akagi, gives a range of 11,000 m and about
+          ten rounds per minute with hand loading. The two agree on the rate of fire and
+          differ by 5,000 m on range. The difference may lie in the projectile and charge
+          being quoted: NavWeaps heads its range table with the condition of a 20.4 kg HE
+          shell and 30 DC propellant.
+      src: [navweaps-12cm-10ns, japanese-warship-akagi]
+
+history:
+  - id: design
+    title: { zh: 设计与服役, en: Design and service entry }
+    range: { from: 1921, to: 1926 }
+    lead:
+      zh: >-
+        名号里的「十年」是大正十年，与它的设计年份一致。
+      en: >-
+        The "10th Year" in the designation is the tenth year of Taisho, which is also the
+        year of design.
+    events:
+      - date: 1921
+        text:
+          zh: >-
+            NavWeaps 的设计年份栏记为 1921，与制式名 10th Year Type (Model 1921) 相符。
+            它由单用途的 12 cm/45 三年式派生。
+          en: >-
+            NavWeaps gives the date of design as 1921, matching the designation 10th Year
+            Type (Model 1921). The weapon was derived from the single-purpose 12 cm/45
+            3rd Year Type.
+        src: [navweaps-12cm-10ns]
+      - date: 1926
+        text:
+          zh: >-
+            进入服役。1920 年代与 1930 年代初建造的大多数巡洋舰用它作副炮。
+          en: >-
+            The gun entered service; most cruisers built in the 1920s and early 1930s
+            carried it as their secondary battery.
+        src: [navweaps-12cm-10ns]
+
+  - id: replacement
+    title: { zh: 被八九式取代, en: Superseded by the Type 89 }
+    range: { from: 1931, to: 1942-06 }
+    lead:
+      zh: >-
+        这一节的主线是换装：谁换了、谁没换成。
+      en: >-
+        This section is about rearmament: who received the new gun and who did not.
+    events:
+      - date: 1931
+        text:
+          zh: >-
+            妙高型四舰用这型炮做对空射击试验：18 节航速、八九式高射装置、
+            1,500 至 2,000 m 高度上的拖靶，命中率 2.2%，平均射速 6.4 发/分。
+          en: >-
+            The four Myoko class cruisers ran anti-aircraft trials with the gun at 18
+            knots using the Type 89 HA computer against towed targets at 1,500 to 2,000 m:
+            2.2 percent hits at an average of 6.4 rounds per minute.
+        src: [navweaps-12cm-10ns]
+      - date: 1932-02-06
+        text:
+          zh: >-
+            12.7 cm/40 八九式高角炮被正式采用，成为此后替换十年式的那一型。
+          en: >-
+            The 12.7 cm/40 Type 89 was adopted for service, becoming the weapon that would
+            replace the 10th Year Type.
+        src: [navweaps-127cm-89]
+      - date: 1935
+        text:
+          zh: >-
+            加贺改装完成，连装 12 cm 高角炮 6 基 12 门换成八九式 12.7 cm 连装 8 基 16 门。
+          en: >-
+            Kaga's reconstruction was completed, her six twin 12 cm mounts giving way to
+            eight twin Type 89 12.7 cm mounts, sixteen guns.
+        src: [japanese-warship-kaga, navweaps-12cm-10ns]
+      - date: 1942-06
+        text:
+          zh: >-
+            赤城带着 6 基 12 门十年式沉没；NavWeaps 的原话是「Akagi carried them to her end
+            at Midway」。日文专题站另记她左右两舷炮位同高同位置、对反舷完全无法射击，
+            这一布局到大改装之后也没有改动。
+          en: >-
+            Akagi was lost still carrying six twin mounts, twelve guns; NavWeaps' wording
+            is that "Akagi carried them to her end at Midway." The Japanese specialist
+            site adds that her port and starboard mounts sat at the same height and the
+            same position, so the opposite side could not be engaged at all, and that this
+            layout survived the great reconstruction unchanged.
+        src: [navweaps-12cm-10ns, japanese-warship-akagi]

@@ -1,0 +1,258 @@
+# ============================================================================
+# 武器正文 —— Grumman F4F-4 Wildcat
+#
+# 这一型的正文围绕三件有原句可追的事：
+#  1) 折叠翼（Sto-Wing）是 -4 与前几型最实的分界，折叠后翼展 14 ft 4 in，
+#     而珍珠港事件时美国海军中队里还没有折叠翼野猫；
+#  2) 六挺 .50、每挺 240 发——这个配置在约克城号 1942 年 6 月的战报里
+#     被本舰写成了反对意见，这是全篇最值钱的一条；
+#  3) 三套来源对空重 / 航程 / 机高给出三组不同的数，本站并列，不裁。
+#
+# 刻意不写的：萨奇剪（Thach Weave）、格鲁曼「铁工厂」的说法、
+# 与零战的设计路线对比——原料 §4 里没有这些内容的任何出处句。
+# 折叠翼带来的重量代价也没有数字，故只写折叠后的尺寸，不写因果。
+# ============================================================================
+weapon: f4f-wildcat
+updated: 2026-11-20
+
+intro:
+  lead:
+    zh: >-
+      Grumman F4F-4 Wildcat 是美国海军 1942 年的航母战斗机主力。
+      它是野猫系列里第一种大批量生产的型号，1941 年 4 月 14 日首飞，
+      到珍珠港事件时还没有折叠翼的野猫进入美国海军中队。
+      它的标志性配置是六挺 0.50 英寸机翼机枪、每挺 240 发；
+      这个配置在 1942 年 6 月约克城号的战报里被本舰写成了反对意见。
+      供英国的对应型号称 Martlet IV。
+    en: >-
+      The Grumman F4F-4 Wildcat was the mainstay of US Navy carrier fighter strength in
+      1942. It was the first Wildcat version produced in substantial numbers, flying on
+      14 April 1941, and no folding-wing Wildcats had reached US Navy squadrons by the
+      time of the attack on Pearl Harbor. Its signature fit was six 0.50-inch wing
+      machine guns with 240 rounds per gun - a combination the Yorktown's own action
+      report argued against in June 1942. The version supplied to Britain was designated
+      Martlet IV.
+
+  paragraphs:
+    - heading: 折叠翼：写进翼展数字里的那个取舍
+      text:
+        zh: >-
+          F4F-4 与更早的野猫之间最实的一条分界在机翼：-4 用 Sto-Wing 折叠翼，
+          翼展 38 ft 0 in（11.58 m），折叠后 14 ft 4 in。
+          服役年表里还有一句可以互证的记录——珍珠港事件时，
+          美国海军中队里还没有折叠翼的野猫。这两句合起来把 -4 的到货时间
+          顶到了 1941 年 12 月以后。
+          折叠后的尺寸不是性能指标，是甲板与机库里的空间量：
+          原料只给了折叠前后的翼展这两个数，没有给机库能排几架、
+          升降机净宽多少，所以这里只落到 14 ft 4 in 为止。
+          重量一侧同样如此，原料没有给折叠机构的重量，
+          也没有给 -4 与前一型之间的空重差，这一段只写到能追到原句的地方。
+        en: >-
+          The most concrete line between the F4F-4 and earlier Wildcats is the wing: the
+          -4 used the Sto-Wing, spanning 38 ft 0 in (11.58 m) and 14 ft 4 in folded. A
+          second record corroborates the timing - no folding-wing Wildcats had reached US
+          Navy squadrons by the attack on Pearl Harbor - which places the -4's arrival in
+          squadron service after 7 December 1941. The folded figure is not a performance
+          number but a dimension of deck and hangar space: the material gives only the two
+          spans, folded and spread, and no hangar capacity or elevator width, so the
+          section stops at 14 ft 4 in. The same holds for weight - the material gives
+          neither the mass of the folding mechanism nor the empty-weight difference
+          between the -4 and its predecessor, and this section stops where the quotable
+          record stops.
+      src: [avh-f4f]
+
+    - heading: 六挺机枪与 240 发：一份舰队自己写下的反对意见
+      text:
+        zh: >-
+          -4 的火力是六挺 0.50 英寸 Browning M2 机翼机枪，每挺 240 发，
+          另可挂两枚 100 磅（45 kg）炸弹，齐射重量 8.12 磅/秒。
+          数字本身没有争议；争议在评价。1942 年 6 月约克城号的战报写道：
+          「It is also felt that it was a mistake to put 6 guns on the F4F-4
+          and thus to reduce the rounds per gun. For the opposition now being
+          encountered the combination of 4 guns and 450 rounds per gun is much
+          superior to the 6 guns with 240 rounds per gun.」
+          这条值得原样留着：它不是后人替野猫下的判词，是使用这型机的舰
+          当天写进战报的判断——六挺炮换来的是每挺备弹从 450 发掉到 240 发。
+          本站不替它裁决，也不把它抹平成「六挺火力更强」。
+        en: >-
+          The -4 mounted six 0.50-inch Browning M2 wing guns with 240 rounds per gun,
+          and could carry two 100 lb (45 kg) bombs; salvo weight was 8.12 lb/sec. The
+          figures are not in dispute - the judgement is. The Yorktown's action report of
+          June 1942 states: "It is also felt that it was a mistake to put 6 guns on the
+          F4F-4 and thus to reduce the rounds per gun. For the opposition now being
+          encountered the combination of 4 guns and 450 rounds per gun is much superior
+          to the 6 guns with 240 rounds per gun." The sentence is worth keeping verbatim:
+          it is not a later verdict on the Wildcat but the judgement of a ship flying the
+          type, written into her report that month - six guns had cost the outfit its
+          ammunition margin, from 450 rounds per gun down to 240. This site neither
+          adjudicates it nor flattens it into "six guns means more firepower".
+      src: [avh-f4f, m42-midway1942, nhhc-yorktown-midway-report]
+
+    - heading: 三套数字对不上：空重、航程、机高
+      text:
+        zh: >-
+          这一型的数值有三处来源互不一致，本站全部并列，不挑一个当准的。
+          空重：一处作 5,448 lb（2,471 kg），另一处（两个来源同值）作
+          5,758 lb（2,611 kg），差 310 lb。全重：一头写最大起飞重量
+          7,975 lb（3,617 kg），另一头写 gross 7,406 lb（3,358 kg）、
+          最大 7,952 lb（3,606 kg）——「gross」与「max T/O」在两边不是同一个口径。
+          航程：770 mi（1,239 km）与 910 mi（1,465 km）并存，
+          第三处另给战斗航程 670 nm（1,240 km）。
+          机高：11 ft 9 in（3.58 m）对「9' 21"（3.2 m）」——
+          9 ft 21 in 不成立，后者是排印错误，但原料照录原文并标注，本站同样照录。
+          差额该记在哪一档（是否含副油箱、是否按军用功率），原料没有解释。
+        en: >-
+          Three sets of figures do not agree, and all of them are reported here rather
+          than one being picked as correct. Empty weight: 5,448 lb (2,471 kg) in one
+          place, 5,758 lb (2,611 kg) in another (two sources agreeing) - a 310 lb spread.
+          Gross weight: one side gives a maximum take-off weight of 7,975 lb (3,617 kg),
+          the other a gross of 7,406 lb (3,358 kg) and a maximum of 7,952 lb (3,606 kg);
+          "gross" and "max T/O" are not the same quantity on the two sides. Range: 770 mi
+          (1,239 km) alongside 910 mi (1,465 km), with a third source giving a combat
+          range of 670 nm (1,240 km). Height: 11 ft 9 in (3.58 m) against "9' 21"
+          (3.2 m)" - nine feet twenty-one inches does not parse, so the latter is a
+          typesetting error, but the material transcribes it as printed and flags it, and
+          so does this site. The material does not explain which band the differences
+          belong to - with or without drop tanks, at which power setting.
+      src: [avh-f4f, aw-f4f4, m42-midway1942]
+
+    - heading: 动力与性能：那几组航程数字对不上油耗口径
+      text:
+        zh: >-
+          动力是一台 Pratt & Whitney R-1830-86 Twin Wasp，14 缸双排星型气冷，
+          1,200 hp（895 kW），配 Curtiss Electric 恒速桨。
+          性能一侧：最大速度 320 mph（515 km/h）@ 18,800 ft（5,730 m），
+          另一源作 318 mph（512 km/h）；巡航 148 mph（238 km/h / 128 kt）；
+          爬升率 1,950 ft/min（594 m/min）；实用升限 34,900 ft（10,638 m）。
+          燃油是主油箱 117 gal 加 27 gal 备份箱，翼下挂点可带 50 或 58 gal 副油箱。
+          麻烦在这一句：770 mi 与 910 mi 这两个航程数，原料没有交代
+          测的是机内油还是挂了副油箱，也没给挂副油箱之后的航程。
+          所以两者的差额属于口径不同还是性能不同，本站不判。
+        en: >-
+          Power came from a Pratt & Whitney R-1830-86 Twin Wasp, a fourteen-cylinder
+          twin-row air-cooled radial of 1,200 hp (895 kW), driving a Curtiss Electric
+          constant-speed propeller. On the performance side: 320 mph (515 km/h) at
+          18,800 ft (5,730 m), with a second source giving 318 mph (512 km/h); cruise
+          148 mph (238 km/h, 128 kt); climb 1,950 ft/min (594 m/min); service ceiling
+          34,900 ft (10,638 m). Fuel was 117 gallons in the main tank plus a 27-gallon
+          reserve, with wing hard points for 50- or 58-gallon drop tanks. The difficulty
+          is this: for the two range figures, 770 mi and 910 mi, the material never says
+          whether they were measured on internal fuel or with tanks, and gives no range
+          with tanks at all. Whether the gap is a difference in conditions or in
+          performance is therefore left open here.
+      src: [avh-f4f, aw-f4f4, m42-midway1942]
+
+    - heading: 1942 年 6 月 4 日，三艘航母上的编成与损失
+      text:
+        zh: >-
+          中途岛当天三艘航母的战斗机全部是 -4。
+          编制：约克城 VF-3（含 VF-42 人员）25 架，企业号 VF-6 27 架，
+          大黄蜂 VF-8 27 架。同一天中途岛岸基的 VMF-221 另有 7 架 F4F-3，
+          那是更早的型号，不在 -4 的账上。
+          损失：大黄蜂 12 架 F4F-4（6 名飞行员获救）；约克城 9 架 VF
+          （5 架被击落、2 架在甲板上摔毁、2 架随舰损失）；
+          企业号 3 日至 6 日的损失清单里有 1 架 F4F-4，机号 6F12。
+          三个数字差得很开（12 / 9 / 1），但原料没有给出可以把它们
+          并列比较的口径——各舰当日的出动架次、遭遇的敌机数与所处位置都不同。
+          本站照录这三个数，不据此排「哪一型更好」，因为它们是同一天三艘舰的记录，
+          不是同一型机的三次独立试验。
+        en: >-
+          Every fighter on the three carriers at Midway was an F4F-4. Establishment:
+          twenty-five with VF-3 (including VF-42 personnel) on Yorktown, twenty-seven
+          with VF-6 on Enterprise, twenty-seven with VF-8 on Hornet. The Marine squadron
+          VMF-221 ashore on Midway that day had seven F4F-3s - an earlier mark, not part
+          of the -4's account. Losses: twelve F4F-4s on Hornet, six pilots rescued; nine
+          VF aircraft on Yorktown, five shot down, two crashed on deck and two lost with
+          the ship; and one F4F-4, bureau number 6F12, in Enterprise's loss list for
+          3-6 June. The three figures diverge widely - twelve, nine, one - but the
+          material gives no basis on which to compare them: the sorties flown, the
+          numbers of enemy aircraft met and the positions of the ships all differed that
+          day. The figures are reported here, and no ranking of the aircraft is drawn
+          from them, because they are one day's records from three ships and not three
+          independent trials of one type.
+      src: [nhhc-midway-us-order-of-battle, nhhc-hornet-midway-report,
+            nhhc-yorktown-midway-report, nhhc-enterprise-midway-report]
+
+history:
+  - id: design
+    title: { zh: 首飞与进入中队, en: First flight and squadron service }
+    range: { from: 1941, to: 1941 }
+    lead:
+      zh: >-
+        从首飞到真的出现在航母甲板上，中间隔着一个珍珠港。
+      en: >-
+        Between the first flight and the deck of a carrier lay one attack on Pearl
+        Harbor.
+    events:
+      - date: 1941-04-14
+        text:
+          zh: >-
+            F4F-4 首飞。它是野猫系列里第一种大批量生产的型号，
+            标志性配置是六挺 0.50 英寸机翼机枪与折叠翼。
+          en: >-
+            The F4F-4 flew for the first time. It was the first Wildcat version produced
+            in substantial numbers, distinguished by six 0.50-inch wing guns and a
+            folding wing.
+        src: [avh-f4f]
+      - date: 1941
+        text:
+          zh: >-
+            供英国的型号 F4F-4B 投产，英方型号名 Martlet IV。
+          en: >-
+            The F4F-4B was produced for Britain, where it was designated the Martlet IV.
+        src: [avh-f4f]
+      - date: 1941-12-07
+        text:
+          zh: >-
+            珍珠港事件当天，美国海军中队里还没有折叠翼的野猫——
+            也就是说 -4 的到货被排到了这之后。1942 年上半年它成为
+            航母战斗机主力，中途岛时三舰的战斗机已全为 -4。
+          en: >-
+            On the day of the attack on Pearl Harbor no folding-wing Wildcats had reached
+            US Navy squadrons, which places the -4's delivery after that date. Through the
+            first half of 1942 it became the carriers' standard fighter; by Midway every
+            fighter on the three carriers was an F4F-4.
+        src: [avh-f4f, nhhc-midway-us-order-of-battle]
+
+  - id: midway
+    title: { zh: 中途岛, en: Midway }
+    range: { from: 1942-06, to: 1942-06 }
+    lead:
+      zh: >-
+        这一节只写编制与损失。空战经过属于各舰与战役条目，不塞进机型条目。
+      en: >-
+        This section records establishment and losses only. The course of the air battle
+        belongs to the ship and battle entries, not to the aircraft type.
+    events:
+      - date: 1942-06-04
+        text:
+          zh: >-
+            三舰战斗机编制：约克城 VF-3（含 VF-42 人员）25 架、企业号 VF-6 27 架、
+            大黄蜂 VF-8 27 架。同日岸基 VMF-221 另有 7 架 F4F-3。
+          en: >-
+            Fighter establishment on the three carriers: twenty-five F4F-4s with VF-3
+            (including VF-42 personnel) on Yorktown, twenty-seven with VF-6 on Enterprise
+            and twenty-seven with VF-8 on Hornet. VMF-221 ashore had seven F4F-3s.
+        src: [nhhc-midway-us-order-of-battle]
+      - date: 1942-06-04
+        text:
+          zh: >-
+            大黄蜂当日损失 12 架 F4F-4，6 名飞行员获救。
+          en: >-
+            Hornet lost twelve F4F-4s that day, with six pilots rescued.
+        src: [nhhc-hornet-midway-report]
+      - date: 1942-06-04
+        text:
+          zh: >-
+            约克城损失 9 架 VF：5 架被击落、2 架在甲板上摔毁、2 架随舰损失。
+          en: >-
+            Yorktown lost nine VF aircraft: five shot down, two crashed on deck and two
+            lost with the ship.
+        src: [nhhc-yorktown-midway-report]
+      - date: 1942-06-04
+        text:
+          zh: >-
+            企业号 3 日至 6 日的损失清单里列有 1 架 F4F-4，机号 6F12。
+          en: >-
+            Enterprise's loss list for 3-6 June includes one F4F-4, bureau number 6F12.
+        src: [nhhc-enterprise-midway-report]

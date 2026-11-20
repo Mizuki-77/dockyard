@@ -1,0 +1,319 @@
+# ============================================================================
+# 武器正文 —— 1.1"/75 (28 mm) Mark 1 四联装
+#
+# 这一型的写法有一条前提必须先立住（原料 §0.1）：
+# 它在中途岛确实是美军航母唯一的中程自动武器，但**管数最多、击落占比
+# 最高的是 20mm**，40mm 当时为 0 座。「主力中程防空炮」这半句成立，
+# 「主力防空炮」这个整体印象不成立——正文按前者写，不按后者写。
+#
+# 三条留空（原料没有，不补）：
+#  1) 「美国海军第一种专门设计的高射炮」这个说法原料里没有一句原句，
+#     正文只写 1929 年设计、1937 年装舰这两个日期，不冠「第一」；
+#  2) 弹药基数与炮管寿命，原文即 N/A；
+#  3) 三艘航母装的是 Mark 1 还是 Mark 2 四联，原文只给分配数量。
+# ============================================================================
+weapon: 11in75-mk1
+updated: 2026-11-20
+
+intro:
+  lead:
+    zh: >-
+      1.1"/75（28 mm）Mark 1 与 Mark 2 是美国海军 1930 年代的四联装高射炮，
+      1929 年设计、1937 年首次装舰，但「not available in quantity until 1940」——
+      真正成批到手是 1940 年。它在中途岛时是美军航母上唯一的中程自动武器：
+      三艘航母各装 4 座四联，16 管。
+      这门炮的账要算两面：一面是它的射速与弹道，另一面是 16 根炮管加起来
+      也就近似一挺 .50 机枪的投射量。它在战争初期口碑最差，
+      随后被 20 mm 与 40 mm 两种口径迅速替掉。
+    en: >-
+      The 1.1"/75 (28 mm) Marks 1 and 2 were the US Navy's quadruple anti-aircraft
+      mountings of the 1930s, designed in 1929 and first mounted in ships in 1937, but
+      "not available in quantity until 1940". At Midway it was the carriers' only
+      medium-range automatic weapon: four quadruple mounts apiece, sixteen barrels. Its
+      account has two sides - the rate of fire and ballistics on one, and on the other the
+      fact that sixteen barrels together approximated the output of a single .50 calibre
+      machine gun. It carried the worst reputation of any weapon in the early war and was
+      quickly displaced by the 20 mm and 40 mm calibres.
+
+  paragraphs:
+    - heading: 1929 年设计，1937 年才装上舰
+      text:
+        zh: >-
+          三个日期把它的节奏说清了：1929 年设计，1937 年首次装舰，
+          而「this weapon was not available in quantity until 1940」——
+          成批供货要等到 1940 年。也就是说从图纸到够用，中间隔了十一年。
+          同一门炮用在驱逐舰及以上舰种上，1930 至 1940 年代。
+          作为对照：20 mm Oerlikon 是 1939 年前后设计的、1941 年进入美军服役。
+          两代高炮的设计年份差十年，而 1.1 英寸这一型在太平洋战争开战时
+          正好处在「已经装舰、但已不先进」的位置上。
+        en: >-
+          Three dates settle its tempo: designed in 1929, first mounted in ships in 1937,
+          and "this weapon was not available in quantity until 1940". Eleven years from
+          drawing board to adequate supply. The weapon was used on destroyers and larger
+          ships through the 1930s and 1940s. For scale: the 20 mm Oerlikon was designed
+          around 1939 and entered US service in 1941. The two generations of automatic
+          anti-aircraft gun are ten years apart in design date, and by the time the Pacific
+          war opened the 1.1-inch was in the position of being fitted but no longer modern.
+      src: [navweaps-11in75-mk1, navweaps-20mm-oerlikon]
+
+    - heading: 四根炮管、八发一夹、三十四磅一个夹子
+      text:
+        zh: >-
+          复杂度全在供弹上。这门炮用八发弹夹供弹，每根炮管有一个能放两个弹夹的夹座，
+          装满的八发弹夹约重 34 磅（15.4 kg）。
+          弹是定装弹，全弹 1.9 磅（0.86 kg），弹丸 0.917 磅（0.416 kg），
+          内装 0.037 磅（0.017 kg）Explosive D；药筒为黄铜 28×199 mm。
+          把这些数字放在一起，就是炮位上那几个人每一轮要做的事：
+          搬三十四磅的夹子、换夹、再搬。
+          口径 1.1 英寸（28 mm）、倍径 75（实际膛长 74.55 倍），
+          炮身全长 119.6 英寸（3.037 m），炮身重 556 磅（252 kg，不含炮闩）。
+        en: >-
+          The complexity is all in the feed. The gun was loaded from eight-round clips, and
+          each barrel had a cradle holding two clips; a loaded eight-round clip weighed
+          about 34 lb (15.4 kg). The ammunition was fixed, with a complete round of 1.9 lb
+          (0.86 kg), a projectile of 0.917 lb (0.416 kg) containing 0.037 lb (0.017 kg) of
+          Explosive D, and a brass case of 28 x 199 mm. Put together, those figures describe
+          what the crew at the mount did every cycle: lift a thirty-four pound clip, change
+          clips, lift another. The bore was 1.1 inches (28 mm) at 75 calibres, actual bore
+          length 74.55 calibres; the gun was 119.6 inches (3.037 m) overall and weighed
+          556 lb (252 kg) without the breech.
+      src: [navweaps-11in75-mk1]
+
+    - heading: 射速的账：四门加起来约等于一挺 .50
+      text:
+        zh: >-
+          这是全部材料里最能说明问题的一句话，逐字照录：
+          「the combined rate of fire of the four guns approached that of a single
+          0.50" (12.7 mm) MG at roughly 500 rounds per minute」——
+          四门炮的合计射速接近一挺 .50 英寸机枪，约 500 发/分。
+          单门数据本身并不难看：理论循环射速 150 发/分，实战约 100 发/分，
+          1933 年的试验里做到过 140 发/分。
+          难看的是一乘四的结果——16 根炮管换来一个机枪量级的投射量，
+          而弹丸不过 0.917 磅。
+        en: >-
+          This is the single most telling sentence in the material and is quoted as it
+          stands: "the combined rate of fire of the four guns approached that of a single
+          0.50" (12.7 mm) MG at roughly 500 rounds per minute". The per-gun figures are not
+          in themselves poor - a cyclic 150 rounds per minute, about 100 in practice, and
+          140 achieved in the 1933 trials. What is poor is four times that: sixteen barrels
+          delivering machine-gun-scale output, with a projectile of 0.917 lb.
+      src: [navweaps-11in75-mk1]
+
+    - heading: 弹道够得着，指挥仪跟不上
+      text:
+        zh: >-
+          弹道参数其实不差：初速 2,700 fps（823 mps，新炮）/ 2,600 fps（792 mps，平均），
+          最大射程 7,400 码（6,767 m）出现在 40.88 度，最大射高（maximum ordinate）
+          19,000 英尺（5,791 m）在 90 度；曳光燃烧约 3,000 码（2,750 m）。
+          问题出在瞄准链上。四联装配的是 Mk 44 指挥仪——
+          它是美国海军第一种为自动高炮配的、不在炮座上的指挥仪，
+          但「did not have any lead angle computing elements」：没有提前量计算元件。
+          也就是说，弹道性能给到了，命中所需的提前量还得靠人。
+          对空有效射程的战时记录是很少超过 1,000 码（910 m）。
+        en: >-
+          The ballistics are not poor: muzzle velocity 2,700 fps (823 mps) new and
+          2,600 fps (792 mps) average, a maximum range of 7,400 yards (6,767 m) at 40.88
+          degrees, a maximum ordinate of 19,000 feet (5,791 m) at 90 degrees, and a tracer
+          burning for about 3,000 yards (2,750 m). The weakness is in the aiming chain. The
+          quadruple mountings worked with the Mk 44 director, the USN's first off-mount
+          director for automatic anti-aircraft weapons, but it "did not have any lead angle
+          computing elements". The ballistics were there; the deflection had to come from
+          the crew. Wartime records put the effective range against aircraft at rarely more
+          than 1,000 yards (910 m).
+      src: [navweaps-11in75-mk1]
+
+    - heading: 炮座本身也在改：抖动、加强板、取消滑移
+      text:
+        zh: >-
+          Mark 1 四联装有一个左右滑移（side-to-side slewing）机构，范围 −30 至 +30 度；
+          重量原文即 N/A。
+          用下来发现振动过大，处理办法是「adding large steel stiffening plates
+          between the carriage and the base of the mounting」——
+          在炮架与底座之间加了大块钢板加强。
+          后续的 Mark 2 把这个改动做进设计里，同时取消了滑移功能。
+          重量：Mark 2 Mod 2 为 10,500 磅（4,763 kg）；Mods 3 至 6 在 4.7 至 6.25 吨
+          （4.78 至 6.35 mt）之间。战时应动，全部 Mark 2 加装了 RPC（随动）。
+          俯仰 −15 / +110 度，速度 24 度/秒；回转 360 度，速度 30 度/秒；
+          后坐行程 3.25 英寸（82.55 mm）。
+        en: >-
+          The Mark 1 quadruple mounting had a side-to-side slewing gear covering -30 to
+          +30 degrees; its weight is given as N/A. In service the mountings were found to
+          suffer from too much vibration, and the remedy was "adding large steel stiffening
+          plates between the carriage and the base of the mounting". The later Mark 2 mounts
+          incorporated that change and deleted the slewing feature. Weights: Mark 2 Mod 2 at
+          10,500 lb (4,763 kg); Mods 3 to 6 between 4.7 and 6.25 tons (4.78 to 6.35 mt).
+          RPC was fitted to all Mark 2 mounts during the war. Elevation ran -15 to +110
+          degrees at 24 degrees per second; train was 360 degrees at 30 degrees per second;
+          gun recoil was 3.25 inches (82.55 mm).
+      src: [navweaps-11in75-mk1]
+
+    - heading: 中途岛时它到底占什么位置
+      text:
+        zh: >-
+          这一点必须按准确的口径写。三艘航母 1942 年 6 月的实际配置分三层：
+          5"/38 单装 8 座（远程）、1.1"/75 四联 4 座（中程，16 管），
+          以及数量更多的 20 mm 单装（近程）。
+          1.1 英寸是其中唯一的中程自动武器，这一层没有争议。
+          但把它称作「主力防空炮」就错了：管数最多、击落占比最高的是 20 mm，
+          而 40 mm 当时是 0 座。大黄蜂号中途岛战报把全自动武器逐项列全，
+          其中只有 20 mm 与 1.1"/75，没有 40 mm——
+          这也是「40 mm = 0」的一手证据，而不是「查不到」。
+          同期炮座分配：1941 至 1942 年的常规配赋是大型舰 4 座、驱逐舰 1 或 2 座。
+        en: >-
+          This has to be stated at the right scale. The three carriers' actual fit in June
+          1942 came in three layers: eight single 5"/38 (long range), four quadruple
+          1.1"/75 (medium range, sixteen barrels), and a larger number of single 20 mm
+          (close range). The 1.1-inch was the only medium-range automatic weapon among them,
+          and that much is not in dispute. Calling it the primary anti-aircraft weapon would
+          be wrong: the 20 mm had the most barrels and the largest share of kills, and 40 mm
+          stood at zero mounts. Hornet's Midway action report itemises the automatic weapons
+          and lists only 20 mm and 1.1"/75, with no 40 mm - evidence of a zero, not a gap in
+          the record. The allocation of the period: the normal establishment in 1941-42 was
+          four mountings for larger ships and one or two for destroyers.
+      src: [navweaps-11in75-mk1, navweaps-5in38-mk12, navweaps-20mm-oerlikon,
+            nhhc-hornet-midway-report, navsource-yorktown]
+
+    - heading: 两种评价，并列，不裁决
+      text:
+        zh: >-
+          材料里同时给了两个方向的判断，本站照录两边。
+          一边是战时与战后的使用结论：「during early service use the weapon was found to
+          be unreliable, prone to jamming and ineffective as an AA weapon.
+          Never popular, they were rapidly replaced by the superior 20 mm Oerlikon and
+          40 mm Bofors AA weapons during World War II.」
+          另一边是同一位作者的反思：「In retrospect, it would appear that these defects
+          were little more than teething problems and that the basic design of the gun
+          was sound.」——回头看，那些毛病更像初期磨合，炮的基本设计是好的。
+          这两句话不能合成一句。前者说的是它在 1942 年的实际表现，
+          后者说的是它本来可能成为什么；两者指向的不是同一个问题。
+        en: >-
+          The material carries judgements in two directions, and both are recorded. On one
+          side the service verdict: "during early service use the weapon was found to be
+          unreliable, prone to jamming and ineffective as an AA weapon. Never popular, they
+          were rapidly replaced by the superior 20 mm Oerlikon and 40 mm Bofors AA weapons
+          during World War II." On the other, the same author's retrospect: "In retrospect,
+          it would appear that these defects were little more than teething problems and
+          that the basic design of the gun was sound." The two sentences cannot be merged.
+          The first describes what the weapon did in 1942; the second describes what it
+          might have been. They are not answers to the same question.
+      src: [navweaps-11in75-mk1]
+
+history:
+  - id: design
+    title: { zh: 设计、试验与装舰, en: Design, trials and fitting }
+    range: { from: 1929, to: 1940 }
+    lead:
+      zh: >-
+        从 1929 年的图纸到 1940 年的批量供货，中间有 1933 年的一次试验和 1937 年的首次装舰。
+      en: >-
+        Between the 1929 drawings and quantity supply in 1940 lie a 1933 trial and a first
+        shipboard fitting in 1937.
+    events:
+      - date: 1929
+        text:
+          zh: >-
+            设计年份 1929。口径 1.1 英寸（28 mm），倍径 75（实际膛长 74.55 倍）。
+          en: >-
+            Date of design 1929. Bore 1.1 inches (28 mm) at 75 calibres, actual bore length
+            74.55 calibres.
+        src: [navweaps-11in75-mk1]
+      - date: 1933
+        text:
+          zh: >-
+            BuOrd 继续 Mark 1 的设计，试验中做到 140 发/分的射速。
+          en: >-
+            BuOrd continued with the Mark 1 design and a firing rate of 140 rounds per
+            minute was achieved in the trials.
+        src: [navweaps-11in75-mk1]
+      - date: 1937
+        text:
+          zh: >-
+            首次装舰。但这一型「not available in quantity until 1940」——
+            成批供货要等到 1940 年。炮座型号分 Mark 1（带左右滑移）与
+            Mark 2（取消滑移、加钢板加强）。
+          en: >-
+            First shipboard mountings. The weapon was, however, "not available in quantity
+            until 1940". The mountings came in two forms: the Mark 1 with side-to-side
+            slewing, and the Mark 2 with the slewing deleted and steel stiffening plates
+            added.
+        src: [navweaps-11in75-mk1]
+
+  - id: service
+    title: { zh: 1941–1942 年的装舰情况, en: Fitting, 1941-1942 }
+    range: { from: 1941, to: 1942 }
+    lead:
+      zh: >-
+        这一段的关键是数量与位置，不是性能。
+      en: >-
+        What matters in this stretch is numbers and placement, not performance.
+    events:
+      - date: 1941
+        text:
+          zh: >-
+            常规配赋为大型舰 4 座四联、驱逐舰 1 或 2 座。
+            一批 Porter 级驱逐舰（Balch、Moffett、Winslow、McDougal）是
+            最早装上 1.1 英寸四联装的舰只之一。
+          en: >-
+            The normal allocation was four mountings for larger ships and one or two for
+            destroyers. The Porter class destroyers Balch, Moffett, Winslow and McDougal
+            were some of the first ships to carry the 1.1-inch quadruple mounts.
+        src: [navweaps-11in75-mk1]
+      - date: 1942
+        text:
+          zh: >-
+            列克星敦号（CV-2）1942 年沉没时共装 12 座。
+            这个数字远高于大型舰 4 座的常规配赋，说明战时的实际装法
+            与纸面配赋不是一回事。
+          en: >-
+            Lexington (CV-2) carried a total of twelve mounts when she was lost in 1942 - far
+            above the four-mount establishment for larger ships, which shows that wartime
+            practice and paper allocation were not the same thing.
+        src: [navweaps-11in75-mk1]
+      - date: 1942-06-04
+        text:
+          zh: >-
+            约克城号、企业号、大黄蜂号各装 4 座四联（16 管）。
+            大黄蜂号当日的全自动武器清单里只有 20 mm 与 1.1"/75，
+            没有 40 mm——这是「40 mm = 0」的一手证据，不是「查不到」。
+            1.1 英寸是其中唯一的中程武器，但管数与击落占比都不及 20 mm。
+          en: >-
+            Yorktown, Enterprise and Hornet each carried four quadruple mounts, sixteen
+            barrels. Hornet's automatic weapons list for the day has only 20 mm and
+            1.1"/75, with no 40 mm - evidence of a nought rather than a gap in the record.
+            The 1.1-inch was the only medium-range weapon present, but neither its barrel
+            count nor its share of kills matched the 20 mm.
+        src: [navsource-yorktown, nhhc-hornet-midway-report, navweaps-11in75-mk1]
+
+  - id: replacement
+    title: { zh: 被 20 mm 与 40 mm 取代, en: Displaced by 20 mm and 40 mm }
+    range: { from: 1942, to: 1945 }
+    lead:
+      zh: >-
+        取代它的不是一门更好的同口径炮，而是两种口径的两种分工。
+      en: >-
+        What displaced it was not a better gun of the same calibre but two calibres with
+        two different jobs.
+    events:
+      - date: 1942
+        text:
+          zh: >-
+            早期使用中这型被发现不可靠、容易卡壳、作为高炮无效；
+            在二战中被性能更好的 20 mm Oerlikon 与 40 mm Bofors 迅速替掉。
+            同期 Mark 2 炮座补上了钢板加强、取消了滑移机构，并在战时全部加装 RPC。
+          en: >-
+            In early service the weapon was found unreliable, prone to jamming and
+            ineffective as an anti-aircraft weapon, and was rapidly replaced during the war
+            by the superior 20 mm Oerlikon and 40 mm Bofors. In the same period the Mark 2
+            mounting gained its steel stiffening plates, lost the slewing gear, and received
+            RPC across the fleet.
+        src: [navweaps-11in75-mk1]
+      - date: 1945
+        text:
+          zh: >-
+            战后的反思把问题归到「初期磨合」上，认为炮的基本设计是好的。
+            这一判断与上面的使用结论并列存在，两者不互相取消。
+          en: >-
+            The retrospective judgement put the defects down to teething problems and held
+            that the basic design of the gun was sound. That reading stands alongside the
+            service verdict above; neither cancels the other.
+        src: [navweaps-11in75-mk1]

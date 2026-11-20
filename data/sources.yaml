@@ -3422,6 +3422,242 @@ sources:
     fetched: 2026-11-19
     license: all_rights_reserved
     note: "**三舰的 5\"/38 炮架型号不同**：约克城 Mk 21 Mod 16、企业号 Mk 21 Mod 16、大黄蜂 Mk 24 Mod 2（后改 Mod 6）。这是同级舰最硬的装备差异之一。"
+
+  # ------------------------------------------------ 2026-11-20 补登：舰载机与 LT
+  #
+  # 这 9 条是 2026-11-19 采集 usn-weapons.md 时实际用过的来源，当时只写进了
+  # work/raw/usn-weapons.md 的 §9 表，没有回登到本表 —— 结果是那批飞机的
+  # 数值无 src 可挂，12 型武器正文因此写不出来。
+  #
+  # 「搜索时扫过但没采用的不登记」这条规矩仍然有效：下面每一条都是真正
+  # 支撑了某个数值的，不是扫过就记。
+
+  - id: avh-f4f
+    title: "The Aviation History On-Line Museum — Grumman F4F Wildcat"
+    url: http://www.aviation-history.com/grumman/f4f.html
+    type: website
+    tier: B
+    role: [data]
+    operator: The Aviation History On-Line Museum
+    lang: en
+    access: direct
+    fetched: 2026-11-19
+    license: all_rights_reserved
+    note: >
+      F4F-4 的几何、重量、性能与武装数据来源。另三型同站页面
+      （avh-sbd / avh-tbd）来源同一机构，tier 与访问方式相同。
+
+  - id: avh-sbd
+    title: "The Aviation History On-Line Museum — Douglas SBD Dauntless"
+    url: http://www.aviation-history.com/douglas/sbd.html
+    type: website
+    tier: B
+    role: [data]
+    operator: The Aviation History On-Line Museum
+    lang: en
+    access: direct
+    fetched: 2026-11-19
+    license: all_rights_reserved
+    note: SBD 各型差异与武装。
+
+  - id: avh-tbd
+    title: "The Aviation History On-Line Museum — Douglas TBD Devastator"
+    url: http://www.aviation-history.com/douglas/tbd.html
+    type: website
+    tier: B
+    role: [data]
+    operator: The Aviation History On-Line Museum
+    lang: en
+    access: direct
+    fetched: 2026-11-19
+    license: all_rights_reserved
+    note: TBD-1 全部字段。
+
+  - id: nhhc-nnam-sbd
+    title: "SBD Dauntless BuNo 2106 — National Naval Aviation Museum (NHHC)"
+    url: "https://www.history.navy.mil/content/history/museums/nnam/explore/collections/aircraft/s/sbd-dauntless-buno-2106.html"
+    type: archive
+    tier: B
+    role: [data]
+    operator: Naval History and Heritage Command
+    lang: en
+    access: direct
+    fetched: 2026-11-19
+    license: public_domain_us_gov
+    note: >
+      SBD 规格表：空重 / 全重 / 性能 / 武装。**该馆藏机的具体改型需注意**：
+      BuNo 2106 是馆藏实例，引用其规格时不应默认为 SBD-3 的原厂数据。
+
+  - id: aw-f4f4
+    title: aero-web.org — Grumman F4F-4 Wildcat
+    url: https://www.aero-web.org/specs/grumman/f4f-4.htm
+    type: website
+    tier: C
+    role: [data]
+    operator: aero-web.org
+    lang: en
+    access: direct
+    fetched: 2026-11-19
+    license: all_rights_reserved
+    note: 爬升率、航程的补充值。与 avh-f4f 交叉核对用；两处不一致时不裁决，并列保留。
+
+  - id: aw-sbd3
+    title: aero-web.org — Douglas SBD-3 Dauntless
+    url: https://www.aero-web.org/specs/douglas/sbd-3.htm
+    type: website
+    tier: C
+    role: [data]
+    operator: aero-web.org
+    lang: en
+    access: direct
+    fetched: 2026-11-19
+    license: all_rights_reserved
+    note: 全重（10,407 lb）的分步值。
+
+  - id: aw-tbd1
+    title: aero-web.org — Douglas TBD-1 Devastator
+    url: https://www.aero-web.org/specs/douglas/tbd-1.htm
+    type: website
+    tier: C
+    role: [data]
+    operator: aero-web.org
+    lang: en
+    access: direct
+    fetched: 2026-11-19
+    license: all_rights_reserved
+    note: 爬升率与航程。
+
+  - id: m42-midway1942
+    title: "Midway 1942 Visual Research — 三型机页面"
+    url: "https://midway1942.com/planes/usn_f4f.shtml"
+    type: website
+    tier: D
+    role: [data]
+    operator: midway1942.com
+    lang: en
+    access: direct
+    fetched: 2026-11-19
+    license: all_rights_reserved
+    note: >
+      二手汇编站，仅用于交叉核对爬升率、巡航、战斗航程、鱼雷重量这类
+      逐型号数值。同站另有 usn_sbd.shtml 与 usn_tbd.shtml。
+
+  - id: nhhc-yorktown-midway-report
+    title: USS Yorktown (CV-5) Action Report, Battle of Midway
+    url: "https://www.history.navy.mil/research/archives/digital-exhibits-highlights/action-reports/wwii-battle-of-midway/uss-yorktown-action-report.html"
+    type: primary_archive
+    tier: A
+    role: [data, narrative]
+    operator: Naval History and Heritage Command
+    lang: en
+    access: direct
+    fetched: 2026-11-19
+    license: public_domain_us_gov
+    note: >
+      挂弹、自动武器清单、战损。注意本报告内部有口径差：编制表写 VB-3 与 VS-5
+      各 18 架 SBD，而叙述出击时写 17 架 —— 两种数字都保留，见
+      work/raw/usn-weapons.md §7.9。
+
+  # ---------------- 2026-11-20 补登（第二批）：日军舰载机设计史与参数
+  #
+  # work/raw/ijn-weapons.md 里用 S10/S11/S13 等编号引用这三处，但当时
+  # 没回登到本表。S15/S16/S22/S23 是维基（tier E），按规矩不登记。
+  #
+  # 三条 URL 已实测 200，并verify过页面确实含有分型参数表与设计史正文
+  # （见 work/verify_srcs.py），不是空壳页面。
+
+  - id: combinedfleet-a6m
+    title: combinedfleet — Mitsubishi A6M Reisen (Zero Fighter)
+    url: http://www.combinedfleet.com/ijna/a6m.htm
+    type: website
+    tier: D
+    role: [data]
+    operator: combinedfleet.com（数据源 Francillon 1979）
+    lang: en
+    access: direct
+    fetched: 2026-11-20
+    license: all_rights_reserved
+    note: >
+      A6M 各型几何 / 重量 / 性能 / 武装，逐列分型（A6M2 Mod 21 / A6M3 Mod 32 /
+      A6M5 Mod 52 / A6M8 Mod 64）。实测页面含尺寸与重量分型表。
+
+  - id: combinedfleet-d3a
+    title: combinedfleet — Aichi D3A
+    url: http://www.combinedfleet.com/ijna/d3a.htm
+    type: website
+    tier: D
+    role: [data]
+    operator: combinedfleet.com（数据源 Francillon 1979）
+    lang: en
+    access: direct
+    fetched: 2026-11-20
+    license: all_rights_reserved
+    note: >
+      D3A1 / D3A2 双列对比的尺寸、重量、性能、武装。实测页含完整分型表。
+
+  - id: avh-d3a
+    title: "The Aviation History On-Line Museum — Aichi D3A"
+    url: https://www.aviation-history.com/aichi/d3a.html
+    type: website
+    tier: B
+    role: [data, narrative]
+    operator: The Aviation History On-Line Museum
+    lang: en
+    access: direct
+    fetched: 2026-11-20
+    license: all_rights_reserved
+    note: >
+      D3A 设计史：He 70 气动外形的影响、接替 D1A2、固定起落架为减重与省维护、
+      俯冲减速板抖振、印度洋命中率 82%、D3A1 航程 840 statute mi。
+      实测页含 Heinkel 与 dive brakes 相关段落。
+
+  - id: combinedfleet-b5n
+    title: combinedfleet — Nakajima B5N
+    url: http://www.combinedfleet.com/ijna/b5n.htm
+    type: website
+    tier: D
+    role: [data]
+    operator: combinedfleet.com（数据源 Francillon 1979）
+    lang: en
+    access: direct
+    fetched: 2026-11-20
+    license: all_rights_reserved
+    note: >
+      B5N1 / B5N2 双列对比的尺寸、重量、性能、武装。实测页含分型表
+      （B5N2 Span 15.52 m、Empty 2,106 kg）。
+
+  - id: avh-b5n
+    title: "The Aviation History On-Line Museum — Nakajima B5N"
+    url: https://www.aviation-history.com/nakajima/b5n.html
+    type: website
+    tier: B
+    role: [data]
+    operator: The Aviation History On-Line Museum
+    lang: en
+    access: direct
+    fetched: 2026-11-20
+    license: all_rights_reserved
+    note: >
+      B5N 分型规格（英制与公制并列）。实测页含 Wing span 50 ft 10-15/16 in
+      （15.518 m）等分型数据。
+
+  - id: navweaps-5in25-mk10
+    title: 'USA 5"/25 (12.7 cm) Mark 10 — NavWeaps'
+    url: https://www.navweaps.com/Weapons/WNUS_5-25_mk10.php
+    type: website
+    tier: C
+    role: [data]
+    operator: NavWeaps
+    lang: en
+    access: proxy
+    fetched: 2026-11-20
+    license: all_rights_reserved
+    note: >
+      5"/25 Mark 10。用来证明中途岛编成里部分重巡装的是这一型而不是 5"/38。
+      实测页含 5"/25 与 Mark 10 条目。注意本站此前把 navweaps 全系列记为
+      access: proxy（当时直连不通），2026-11-20 直连实测可达，但本条目
+      沿用既有惯例，不改历史记录。
+
 todo:
   - ~~抓 5 份一手档案 + 战争日志~~ **2026-11-17 已完成**：artillery-report / inclining-test / raeder-report / rodney-report / debriefing 全部抓到，另加 38cm 弹道表、flak-relocation、bs-ktb.zip（177 页 PDF 已转文本）
   - 重取 AWM / LAC / JACAR / Flickr Commons / 海自 五份条款（全部 blocked，目前对这几家的授权一无所知）

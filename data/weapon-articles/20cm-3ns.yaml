@@ -1,0 +1,294 @@
+# ============================================================================
+# 武器正文 —— 20 cm/50 三年式 No.1
+#
+# 这一型的写作难点不在参数，在三个「名不副实」：
+#  1) 「三年式」指的是大正三年（1914），可设计 1916 年才在吴海军工厂起步，
+#     1920 年才定案，1921 年试制炮验收 —— 名字比设计早两年；
+#  2) No.1 这个序号是 1931 年 4 月才补上的，因为更强的 No.2 在 4 月 6 日被采用；
+#  3) 它最后活着的地方不是巡洋舰，是赤城与加贺的炮廓。
+# 赤城竣工时到底是 6 门还是 10 门（原料 §10 分歧①）两边都写，不裁决。
+# ============================================================================
+weapon: 20cm-3ns
+updated: 2026-11-20
+
+intro:
+  lead:
+    zh: >-
+      20 cm/50 三年式 No.1 是日本海军在第一次世界大战期间于吴海军工厂起步设计的一型重巡主炮，
+      1923 年服役。它最初是为战后新一代侦察巡洋舰准备的，随后装上妙高级重巡，
+      也被赤城、加贺带上了航母甲板。到太平洋战争爆发时，全日本只剩下这艘两艘航母还装着它，
+      它们带着这批炮一直打到中途岛沉没。
+    en: >-
+      The 20 cm/50 3rd Year Type No. 1 was a heavy cruiser gun whose design began at the
+      Kure Navy Yard during the First World War and which entered service in 1923. It was
+      intended for a new generation of scout cruisers, was carried by the Myoko class, and
+      was also mounted on the aircraft carriers Akagi and Kaga. By the start of the Pacific
+      War those two carriers were the only Japanese ships still armed with it, and they
+      carried the guns until they were sunk at Midway.
+
+  paragraphs:
+    - heading: 名字比设计早两年
+      text:
+        zh: >-
+          「三年式」的「三年」指大正三年，也就是 1914 年 —— NavWeaps 给出的原始制式名正是
+          20 cm/50 (7.9") 3rd Year Type (Model 1914)。但这一型的设计并不是 1914 年做的：
+          NavWeaps 记的是 1916 年在吴海军工厂起步，直到很晚才定案，设计年份栏填 1920，
+          试制炮在 1921 年验收，1923 年才服役。同页还有一条容易被忽略的说明：
+          这批炮的 No.1（1 GÔ）序号是后来才加的，加的理由是更强的
+          20 cm/50 (8") 三年式 No.2 于 1931 年 4 月 6 日被采用，需要把两者区分开。
+          两型的实弹径也不同，No.1 是 20.0 cm，No.2 是 20.32 cm。
+        en: >-
+          The "3rd Year" in the designation refers to the third year of the Taisho era,
+          1914 - NavWeaps gives the original designation as 20 cm/50 (7.9") 3rd Year Type
+          (Model 1914). The design work was not done in 1914, however: NavWeaps records that
+          it was started in 1916 at the Kure Navy Yard and not finalized until much later,
+          with a date of design of 1920, a prototype proved in 1921 and service entry in
+          1923. The same page notes that the No. 1 (1 GO) suffix was added afterwards,
+          when the more powerful 20 cm/50 (8") 3rd Year Type No. 2 was adopted on 6 April
+          1931 and the two had to be told apart. The actual bore diameters differ as well:
+          20.0 cm for the No. 1 and 20.32 cm for the No. 2.
+      src: [navweaps-20cm-3ns]
+
+    - heading: 一门给侦察巡洋舰设计的炮
+      text:
+        zh: >-
+          NavWeaps 对这型的定位写得很直接：它是为第一次世界大战结束后不久的新一代侦察巡洋舰
+          设计的，妙高级重巡也用它。炮身全长 10.000 m，重 17.6 吨，部分长度采用线绕构造，
+          配 Welin 螺式炮闩与三动作开闭机构，阴线 48 条，初速 870 mps，
+          膛压 3,000 kg/cm²，炮身寿命约 300 发，每门弹药基数 120 发。
+          45 度仰角时射程 28,000 m；25 度时 24,000 m。
+          炮架射速 3 至 5 发/分，但古鹰级因为扬弹系统过于复杂，实战射速低于 2 发/分。
+        en: >-
+          NavWeaps states the purpose plainly: the weapon was designed for a new generation
+          of scout cruisers shortly after the First World War, and was also used by the
+          Myoko class heavy cruisers. The gun was 10.000 m long overall and weighed 17.6
+          tons, was wire wound for part of its length, and had a Welin screw breech block
+          with a three-motion mechanism, 48 grooves, a muzzle velocity of 870 mps and a
+          working pressure of 3,000 kg/cm2. Barrel life was about 300 rounds and stowage
+          was 120 rounds per gun. Range was 28,000 m at 45 degrees and 24,000 m at 25
+          degrees. The mountings gave 3 to 5 rounds per minute, although the Furutaka class
+          managed less than 2 because its ammunition supply system was so complex.
+      src: [navweaps-20cm-3ns]
+
+    - heading: 巡洋舰把它们换掉了，航母把它们留下了
+      text:
+        zh: >-
+          NavWeaps 记下了这批炮的下半生：1930 年代巡洋舰改装时，No.1 被更强的 No.2 取代，
+          换下来的炮有很多后来进了本土岛屿的海岸炮台。赤城与加贺则走的是相反的路 ——
+          两舰在 1930 年代改装时把连装炮塔拆掉了，单装炮廓炮一门没动。
+          于是到太平洋战争爆发时，这两艘航母成了全日本仅存还在用这型炮的军舰。
+          NavWeaps 另记了一条实物下落：一座连装炮架连同炮身作为纪念物保存在泰国。
+        en: >-
+          NavWeaps records the second half of the story: when the cruisers were rebuilt in
+          the 1930s the No. 1 guns were replaced by the more powerful No. 2, and many of
+          the guns taken off went into coastal batteries defending the Japanese home
+          islands. Akagi and Kaga went the other way - their twin turrets were removed
+          during the 1930s modernizations while the single casemate guns stayed. By the
+          start of the Pacific War those two carriers were the only Japanese ships still
+          armed with the weapon. NavWeaps also notes one surviving artefact: a twin
+          mounting with its guns is preserved as a memorial in Thailand.
+      src: [navweaps-20cm-3ns]
+
+    - heading: 航母为什么留着它
+      text:
+        zh: >-
+          日文专题站 japanese-warship.com 把当时的逻辑讲得比较清楚：
+          那时候舰载机的航程与续航都短，航母编队仍有可能被卷进炮击战，
+          而航母在装甲航母出现之前是「攻击全振り」的舰种，挨炮弹的能力很弱，
+          所以自己得有一点自保的火力。华盛顿海军条约对航母主炮的上限是 8 英寸，
+          也就是说重巡级别的主炮是被允许的 —— 讨论里没有人反对给航母装主炮，
+          争的只是要不要给口径设上限。赤城与加贺最终装的，
+          就是条约允许范围内那个最大口径的 20 cm 炮。
+        en: >-
+          The Japanese specialist site japanese-warship.com sets out the reasoning of the
+          time: aircraft ranges and endurance were short, carrier formations could still be
+          dragged into a gunnery action, and before armoured carriers existed a carrier was
+          an all-out attack ship with very little resistance to shellfire, so it needed some
+          means of defending itself. The Washington treaty capped carrier main armament at
+          8 inches, which meant heavy cruiser calibre was permitted; nobody in the
+          discussions objected to carriers having main guns, the argument was only over
+          whether the calibre needed a ceiling. What Akagi and Kaga received was the
+          largest calibre the treaty allowed, the 20 cm gun.
+      src: [japanese-warship-akagi]
+
+    - heading: 两种炮架，两种用法
+      text:
+        zh: >-
+          赤城与加贺的这批炮分两种炮架。连装 Model B 装在船体中段甲板两舷，
+          设计上最大仰角 +70 度，但 NavWeaps 记明它的俯仰与后座机构经不起考验，
+          实际可用仰角只到 +55 度；装填固定在 +5 度，回转与俯仰速度都低，
+          按 NavWeaps 的判断这些连装炮架用于对空防御「实际价值很小」。
+          单装 Model A1 是炮廓式，装在舰体后部两舷，俯仰 −5 / +25 度，装填角 +5 至 +9 度。
+          关键的一条限制是：赤城与加贺的单装炮为了避开炮口爆风对飞行甲板的损伤，
+          在大部分射界内仰角被限制在 20 至 23 度。NavWeaps 对这六门与十门炮的评价是
+          「装得低，用处有限」。此外，航母上的 Model A1 单装与 Model B 连装
+          都不能跨甲板射击，回转范围只有约 +20 / +160 度。
+        en: >-
+          The guns on the two carriers came in two mountings. The Model B twin turret sat
+          on the midships deck at either side of the hull; its designed maximum elevation
+          was +70 degrees, but NavWeaps records that the elevating and recoil mechanisms
+          proved fragile and +55 degrees was the practical limit. Loading was fixed at +5
+          degrees and both training and elevating speeds were low, which in NavWeaps'
+          judgement made these turrets of little real use for anti-aircraft defence. The
+          Model A1 single was a casemate mounting in the hull sides aft, with -5 / +25
+          degrees of elevation and a loading angle of +5 to +9 degrees. The critical
+          restriction is that the single guns on Akagi and Kaga had their elevation held to
+          20-23 degrees over much of the training arc to avoid blast damage; NavWeaps'
+          verdict is that they were mounted low in the ships and were of limited use.
+          Neither the Model A1 singles nor the Model B twins used on carriers could fire
+          cross-deck, their arcs being about +20 / +160 degrees.
+      src: [navweaps-20cm-3ns]
+
+    - heading: 连装炮为什么会从甲板上消失
+      text:
+        zh: >-
+          japanese-warship.com 给出了拆掉连装炮的现场理由：连装炮架就在飞行甲板几乎正下方，
+          开火时冲击从甲板背面顶上来，打起来甲板会被掀翻 —— 这门炮的存在意义
+          被它自己的炮口爆风抵消掉了。同页还记了使用上的窘迫：射程 15,000 m，
+          比高角炮远，但装填固定在 5 度仰角、每分 3 发，
+          对飞机来说只是「偶尔有一发大的飞过来」。
+          至于赤城竣工时中段甲板上到底有没有这两座连装炮，两种说法并存，本站不裁决。
+          NavWeaps 的炮架表把赤城、加贺「as built」记为单装 6 加连装 2 基（4 门），
+          合 10 门；japanese-warship.com 则明确否认，指出连装炮是昭和 3 年（1928）
+          末的工事才架设的，在此之前那个位置是空的，并拿公试照片为据 ——
+          照片上确实看不到连装炮。该站自己的技术数据表又把两者并列，记为
+          竣工时单装 6 基 6 门加连装 2 基 4 门（1928 年末工事）。
+        en: >-
+          japanese-warship.com gives the physical reason the twins were removed: the
+          mounting sat almost directly under the flight deck, so the blast of its own guns
+          came up through the deck from below and started lifting the planking - the
+          mounting cancelled out its own reason for existing. The same page records how
+          marginal the gun was in use: range 15,000 m, longer than the heavy AA guns, but
+          loading fixed at 5 degrees and three rounds a minute, which from an aircraft's
+          point of view amounted to the occasional large shell coming past. Whether the two
+          twins were aboard Akagi when she was completed is disputed and this site does not
+          adjudicate. NavWeaps' mounting table lists Akagi and Kaga "as built" with six
+          singles plus two twins, ten guns in all; japanese-warship.com denies this
+          outright, stating that the twins were only installed in work carried out at the
+          end of 1928 and that the position was empty before then, and cites trials
+          photographs in which no twin mounting appears. That site's own data table in turn
+          lists both, as six single guns at completion plus two twin mountings of four guns
+          in the 1928 work.
+      src: [japanese-warship-akagi, navweaps-20cm-3ns]
+
+    - heading: 中途岛上是它在打的最后一场
+      text:
+        zh: >-
+          1942 年 6 月，赤城与加贺带着这批炮沉没，日本海军从此再没有军舰装它。
+          需要说清的是记录的空缺：NavWeaps 只给出通用的 3 至 5 发/分，
+          没有单列赤城与加贺的实战射速。这批炮在航母上的实际使用强度，
+          现有原料里没有可引的定量记录。
+        en: >-
+          In June 1942 Akagi and Kaga went down with these guns and no Japanese warship
+          carried them again. One gap should be stated: NavWeaps gives only the general
+          figure of 3 to 5 rounds per minute and does not list a combat rate of fire for
+          Akagi or Kaga specifically. The materials gathered for this entry contain no
+          quotable quantitative record of how hard the guns were actually worked on the
+          carriers.
+      src: [navweaps-20cm-3ns]
+
+history:
+  - id: design
+    title: { zh: 设计与定型, en: Design and introduction }
+    range: { from: 1916, to: 1931 }
+    lead:
+      zh: >-
+        从吴海军工厂动笔到序号补上，这门炮的名称改了两次，设计年份跨了十七年。
+      en: >-
+        From the first drawings at Kure to the added suffix, the gun's name changed twice
+        and its design years span seventeen.
+    events:
+      - date: 1916
+        text:
+          zh: >-
+            设计在吴海军工厂起步。
+          en: >-
+            Design work began at the Kure Navy Yard.
+        src: [navweaps-20cm-3ns]
+      - date: 1920
+        text:
+          zh: >-
+            NavWeaps 的设计年份栏记为 1920。
+          en: >-
+            NavWeaps gives the date of design as 1920.
+        src: [navweaps-20cm-3ns]
+      - date: 1921
+        text:
+          zh: >-
+            试制炮验收。
+          en: >-
+            The prototype gun was proved.
+        src: [navweaps-20cm-3ns]
+      - date: 1923
+        text:
+          zh: >-
+            进入服役。
+          en: >-
+            The gun entered service.
+        src: [navweaps-20cm-3ns]
+      - date: 1931-04
+        text:
+          zh: >-
+            更强的 20 cm/50 (8") 三年式 No.2 于 4 月 6 日被采用，本型随即改称为 No.1（1 GÔ），
+            以便与 No.2 区分。
+          en: >-
+            With the adoption of the more powerful 20 cm/50 (8") 3rd Year Type No. 2 on
+            6 April, this weapon was redesignated No. 1 (1 GO) to distinguish it from the
+            newer gun.
+        src: [navweaps-20cm-3ns]
+
+  - id: carrier-service
+    title: { zh: 装上航母与最后一次出航, en: Service afloat on the carriers }
+    range: { from: 1927, to: 1942-06 }
+    lead:
+      zh: >-
+        这批炮在巡洋舰上被换掉，在航母上被留到了沉没。
+      en: >-
+        Replaced in the cruisers, retained in the carriers until they were lost.
+    events:
+      - date: 1927-03
+        text:
+          zh: >-
+            赤城竣工。NavWeaps 的炮架表把她与加贺「as built」记为单装 6 门加连装 2 基 4 门；
+            japanese-warship.com 记竣工时只有单装 6 门，并指出公试照片上中段甲板是空的。
+          en: >-
+            Akagi completed. NavWeaps lists her and Kaga "as built" with six single guns
+            plus two twin mountings of four guns; japanese-warship.com records only the six
+            singles at completion and points out that the midships deck is empty in the
+            trials photographs.
+        src: [navweaps-20cm-3ns, japanese-warship-akagi]
+      - date: 1928
+        text:
+          zh: >-
+            japanese-warship.com 记连装炮是在这一年末的工事中架设到中段甲板两舷的，
+            此后中段甲板被称为「炮塔甲板」。
+          en: >-
+            japanese-warship.com records that the twin mountings were installed on either
+            side of the midships deck in work carried out at the end of this year, after
+            which that deck was referred to as the turret deck.
+        src: [japanese-warship-akagi]
+      - date: 1930
+        text:
+          zh: >-
+            1930 年代两舰改装，连装炮塔被拆除，赤城保留单装 6 门、加贺保留单装 10 门，
+            全部改为炮廓配置。
+          en: >-
+            During the 1930s modernizations the twin turrets were removed from both ships,
+            leaving Akagi with six and Kaga with ten single guns, all in casemates.
+        src: [navweaps-20cm-3ns]
+      - date: 1941-12
+        text:
+          zh: >-
+            太平洋战争爆发时，赤城与加贺是全日本仅存仍装此炮的军舰。
+          en: >-
+            At the start of the Pacific War Akagi and Kaga were the only Japanese ships
+            still armed with the gun.
+        src: [navweaps-20cm-3ns]
+      - date: 1942-06
+        text:
+          zh: >-
+            两舰在中途岛沉没，这批炮随之从日本海军现役中消失。
+          en: >-
+            Both carriers were lost at Midway, and the gun passed out of Japanese naval
+            service with them.
+        src: [navweaps-20cm-3ns]

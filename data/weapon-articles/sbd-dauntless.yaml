@@ -1,0 +1,261 @@
+# ============================================================================
+# 武器正文 —— Douglas SBD-3 Dauntless
+#
+# 三件有原句可追的事：
+#  1) -3 是第一种「完全具备战斗条件」的型号：自封油箱、加装装甲、
+#     发动机罩内两挺 .50——这三项就是它与 -1/-2 的分界；
+#  2) 中途岛四艘日本航母的战果挂在 Dauntless 名下，这是 NHHC 的原句；
+#  3) 挂弹口径三处不一致（1,200 lb 结构上限 / 1,000 lb / 中途岛实挂），
+#     全重也有 10,400 与 9,407 两个数，并列不裁。
+#
+# 刻意不写的：诺斯罗普→道格拉斯的型号传承、穿孔襟翼与俯冲减速板的
+# 具体构造、「Slow But Deadly」这个绰号的来历——原料 §5 里
+# 只有绰号本身出现在表格中，正文没有解释，故只列绰号不作展开。
+# ============================================================================
+weapon: sbd-dauntless
+updated: 2026-11-20
+
+intro:
+  lead:
+    zh: >-
+      Douglas SBD-3 Dauntless 是美国海军 1942 年的舰载侦察／俯冲轰炸机，
+      双座，飞行员加侦察／后座机枪手。SBD-3 于 1941 年春出现，
+      是第一种完全具备战斗条件的型号：加了自封油箱、加装装甲，
+      发动机罩内改成两挺 0.50 英寸机枪，产量 585 架。
+      中途岛四艘日本航母的战果记在 Dauntless 名下。
+      飞行员管它叫 "Speedy Dee"；"Slow But Deadly" 也是它的绰号之一。
+    en: >-
+      The Douglas SBD-3 Dauntless was the US Navy's carrier-based scout and dive bomber
+      in 1942, a two-seat aircraft with a pilot and an observer/aerial gunner. The SBD-3
+      appeared in the spring of 1941 as the first fully combat-ready version, with
+      self-sealing fuel tanks, added armour and two 0.50-inch guns in the cowling;
+      production ran to 585 aircraft. The sinking of four Japanese carriers at Midway is
+      credited to the Dauntless. Its pilots called it the "Speedy Dee"; "Slow But Deadly"
+      is also recorded as a nickname.
+
+  paragraphs:
+    - heading: -3 的分界：自封油箱、装甲、两挺 .50
+      text:
+        zh: >-
+          原料把 SBD-3 的定性写在一句话里：它出现时「incorporating self-sealing
+          fuel tanks, extra armor and two .50-in. guns in the cowling」。
+          这三项就是 -3 与更早型号的分界，也是「第一种完全具备战斗条件的型号」
+          这个说法的具体内容。
+          同一份原料给了反证：SBD-2 的燃油容量增到 310 gal，
+          代价是「Armament was reduced by the removal of one forward firing
+          0.50 machine gun」——也就是 -2 时代前射炮被减到一挺。
+          从一挺回到两挺，加上自封油箱与装甲，这三件事是同一个方向上的取舍：
+          用重量与阻力换生存性和火力。
+          本页不给这个取舍打分，原料也没有给 -3 相对 -2 的性能下降幅度。
+        en: >-
+          The material defines the SBD-3 in one sentence: it appeared "incorporating
+          self-sealing fuel tanks, extra armor and two .50-in. guns in the cowling".
+          Those three items are the line between the -3 and earlier marks, and they are
+          what "the first fully combat ready version" actually consists of. The same
+          material supplies the counter-case: the SBD-2's fuel capacity was increased to
+          310 gallons at the cost that "Armament was reduced by the removal of one
+          forward firing 0.50 machine gun" - the earlier mark carried a single forward
+          gun. Going from one back to two, plus sealing the tanks and adding armour, is
+          one trade in one direction: weight and drag bought for survivability and
+          firepower. This page does not grade that trade, and the material gives no
+          figure for what the -3 lost in performance against the -2.
+      src: [nhhc-nnam-sbd, avh-sbd]
+
+    - heading: 双座：前射两挺 .50，后座双联 .30
+      text:
+        zh: >-
+          火力分两处。前射是发动机罩内的两挺 0.50 英寸（12.7 mm），飞行员操作；
+          后座是双联、弹链供弹的 0.30 英寸（7.62 mm），由侦察／后座机枪手操作——
+          从单挺改成双联弹链供弹，也是这一型相对早期型号的变化之一。
+          乘员两人是这型机的结构性事实：后座那个人既是机枪手，也是侦察员，
+          这解释了它为什么在编制表上同时挂在「轰炸中队」与「侦察中队」两栏下
+          （中途岛时企业号 VB-6 与 VS-6、大黄蜂 VB-8 与 VS-8 都是 SBD）。
+        en: >-
+          The armament sits in two places. Forward, two 0.50-inch (12.7 mm) guns in the
+          cowling, fired by the pilot; aft, twin belt-fed 0.30-inch (7.62 mm) guns
+          operated by the observer/aerial gunner - the change from a single rear gun to
+          twin belt-fed guns is itself one of the differences from earlier marks. The
+          two-man crew is structural: the man in the back seat is both gunner and scout,
+          which is why the type appears on establishment tables under both bombing and
+          scouting squadron headings - at Midway, VB-6 and VS-6 on Enterprise and VB-8
+          and VS-8 on Hornet were all SBDs.
+      src: [nhhc-nnam-sbd, avh-sbd, nhhc-midway-us-order-of-battle]
+
+    - heading: 挂弹口径：1,200 lb、1,000 lb、和中途岛实际挂的
+      text:
+        zh: >-
+          这一项的三个数字不是同一件事，混用会出错。
+          一处规格表写「1,200 lb. ordnance under fuselage and 325 lb. under wings」，
+          即机身 1,200 磅、每侧机翼 325 磅。
+          另一处写 SBD-1／SBD-2 是「One 1,000 lb fuselage bomb. Two 100 lb wing bombs.」。
+          而中途岛的实际挂弹记录是第三种口径：企业号 15 架各挂 1 枚 1,000 磅、
+          12 架各挂 1 枚 500 磅加 2 枚 100 磅、6 架各挂 1 枚 500 磅；
+          约克城 VB-3 出击的 17 架各挂 1 枚 1,000 磅（Mk 21 与 Mk 23 引信）。
+          也就是说：1,200 磅在原料里没有任何一次实战挂载记录与之对应，
+          可能是挂架的结构上限；机翼的 325 磅与 100 磅同样不是一个数。
+          本站三个数并列，不把上限当实战载荷。
+        en: >-
+          These three figures are not the same quantity and cannot be used
+          interchangeably. One specification table gives "1,200 lb. ordnance under
+          fuselage and 325 lb. under wings" - 1,200 pounds on the centreline and 325
+          pounds per wing. Another gives the SBD-1/SBD-2 as "One 1,000 lb fuselage bomb.
+          Two 100 lb wing bombs." The Midway loading records are a third thing again:
+          fifteen Enterprise aircraft with one 1,000 lb bomb each, twelve with one 500 lb
+          plus two 100 lb, six with one 500 lb; and the seventeen VB-3 aircraft that
+          attacked from Yorktown each carried one 1,000 lb bomb fused with Mk 21 and Mk
+          23 fuses. No operational load of 1,200 pounds appears anywhere in the material,
+          which makes it plausibly a structural limit of the rack; the wing figure, 325
+          pounds, likewise does not match the 100-pound wing bombs. All three are
+          reported here, with the limit not passed off as a combat load.
+      src: [nhhc-nnam-sbd, avh-sbd, nhhc-enterprise-midway-report,
+            nhhc-yorktown-midway-report]
+
+    - heading: 全重 10,400 与 9,407：差 993 磅
+      text:
+        zh: >-
+          全重两个数：一处 10,400 lb（4,717 kg），另一处 9,407 lb（4,266 kg），
+          差 993 lb。空重 6,345 lb（2,878 kg）两处一致。
+          机长也有小分歧：SBD-3 各源多用 32 ft 8 in（9.96 m），
+          而另一来源给 SBD-2 的是 32 ft 1-1/4 in（9.79 m）、给 SBD-5/6 的是
+          33 ft 1-1/4 in（10.09 m）——差在型号，不在来源对 SBD-3 的读法。
+          全重这一项则没有型号可推：原料没有说明 10,400 是不是含外挂、
+          是不是最大起飞重量，9,407 是不是标准战斗重量。故并列，不裁。
+          另需注意：10,400 这个数出自上面提到的 NHHC 规格栏，
+          而该栏的机型归属本身有矛盾（见本页最后一段），
+          所以它是「一份 SBD 规格表上的值」，不是经确认的 SBD-3 原厂数据。
+        en: >-
+          Two gross weights: 10,400 lb (4,717 kg) and 9,407 lb (4,266 kg), a spread of
+          993 pounds. Empty weight, 6,345 lb (2,878 kg), agrees in both. Length differs
+          slightly as well: most sources give the SBD-3 as 32 ft 8 in (9.96 m), while
+          another gives 32 ft 1-1/4 in (9.79 m) for the SBD-2 and 33 ft 1-1/4 in
+          (10.09 m) for the SBD-5/6 - a difference between marks, not between readings
+          of the SBD-3. The gross weight admits no such explanation: the material does
+          not say whether 10,400 includes external stores or is a maximum take-off
+          weight, nor whether 9,407 is a normal combat weight. Both are reported. One
+          caveat: the 10,400 figure comes from the NHHC specification panel mentioned
+          above, and that panel's mark attribution is itself contradictory (see the last
+          paragraph of this page), so it is "a value on an SBD specification table", not
+          confirmed SBD-3 factory data.
+      src: [nhhc-nnam-sbd, aw-sbd3, m42-midway1942]
+
+    - heading: 一份规格表里的内部矛盾
+      text:
+        zh: >-
+          原料里 NHHC 那页有个必须点出来的问题：页面正文讲的是 SBD-2
+          （BuNo 2106，属 VMSB-241），但规格栏给的是 R-1820-52 发动机
+          与「Two .50-in. forward firing guns」——这两项都是 SBD-3 的特征，
+          而 SBD-2 用的是 R-1820-32、只有一挺前射 .50。
+          原料的处理是把该页规格当作 SBD-3 规格使用，同时保留矛盾标注、不裁决。
+          本站沿用这个处理，并把矛盾写在这里，读者可以自己回去核对原页。
+        en: >-
+          The NHHC page in the material has a problem that has to be stated: its text is
+          about an SBD-2 (BuNo 2106, of VMSB-241), but its specification panel gives the
+          R-1820-52 engine and "Two .50-in. forward firing guns" - both SBD-3 features,
+          whereas the SBD-2 ran an R-1820-32 with a single forward-firing 0.50. The
+          material's handling is to use that panel as SBD-3 specification while keeping
+          the contradiction flagged and unresolved. This site follows the same course and
+          records the contradiction here so a reader can go back to the page.
+      src: [nhhc-nnam-sbd, avh-sbd]
+
+history:
+  - id: development
+    title: { zh: 型号演进与 -3 的定型, en: Mark development and the -3 }
+    range: { from: 1941, to: 1941 }
+    lead:
+      zh: >-
+        -3 不是从零开始的设计，是把 -1／-2 缺的三样东西补上。
+      en: >-
+        The -3 was not a clean-sheet design; it added the three things the -1 and -2
+        lacked.
+    events:
+      - date: 1941
+        text:
+          zh: >-
+            SBD-3 出现。相对早期型号的实质变化是自封油箱、加装装甲、
+            发动机罩内两挺 0.50 英寸机枪。它是第一种完全具备战斗条件的型号。
+          en: >-
+            The SBD-3 appeared. Its substantive changes over earlier marks were
+            self-sealing fuel tanks, added armour and two 0.50-inch guns in the cowling.
+            It was the first fully combat-ready version.
+        src: [nhhc-nnam-sbd]
+      - date: 1941
+        text:
+          zh: >-
+            产量 585 架（军用编号 A-24-DE）。对照：SBD-2 为增加燃油把前射机枪
+            减到一挺，-3 又改回两挺——同一件事的两个方向。
+          en: >-
+            Production reached 585 aircraft (as the A-24-DE). For contrast, the SBD-2 had
+            cut its forward armament to a single gun to gain fuel capacity, and the -3
+            went back to two - the same trade taken in opposite directions.
+        src: [avh-sbd, nhhc-nnam-sbd]
+      - date: 1941
+        text:
+          zh: >-
+            后座武器改为双联、弹链供弹的 0.30 英寸机枪。
+          en: >-
+            Rear armament was increased to twin, belt-fed 0.30 machine guns.
+        src: [avh-sbd]
+
+  - id: midway
+    title: { zh: 中途岛, en: Midway }
+    range: { from: 1942-06, to: 1942-06 }
+    lead:
+      zh: >-
+        这一节只写编制、挂弹与损失。逐舰的命中过程属于各舰与战役条目。
+      en: >-
+        This section records establishment, ordnance and losses only. The hit-by-hit
+        account of each attack belongs to the ship and battle entries.
+    events:
+      - date: 1942-06-04
+        text:
+          zh: >-
+            三舰 SBD 编制：约克城 VB-3 17 架、VS-5 16 架；企业号 VB-6 15 架
+            （SBD-2/SBD-3 混编）、VS-6 17 架；大黄蜂 VB-8 19 架、
+            VS-8 15 架（SBD-1/SBD-2/SBD-3 混编）。
+          en: >-
+            SBD establishment on the three carriers: seventeen with VB-3 and sixteen
+            with VS-5 on Yorktown; fifteen with VB-6 (mixed SBD-2/SBD-3) and seventeen
+            with VS-6 on Enterprise; nineteen with VB-8 and fifteen with VS-8 (mixed
+            SBD-1/SBD-2/SBD-3) on Hornet.
+        src: [nhhc-midway-us-order-of-battle]
+      - date: 1942-06-04
+        text:
+          zh: >-
+            企业号当日挂弹：15 架各 1 枚 1,000 磅、12 架各 1 枚 500 磅加 2 枚 100 磅、
+            6 架各 1 枚 500 磅。约克城 VB-3 出击 17 架各 1 枚 1,000 磅，
+            引信为 Mk 21 与 Mk 23。
+          en: >-
+            Enterprise ordnance that day: fifteen aircraft with one 1,000 lb bomb, twelve
+            with one 500 lb plus two 100 lb, six with one 500 lb. The seventeen VB-3
+            aircraft attacking from Yorktown each carried one 1,000 lb bomb, fused with
+            Mk 21 and Mk 23.
+        src: [nhhc-enterprise-midway-report, nhhc-yorktown-midway-report]
+      - date: 1942-06
+        text:
+          zh: >-
+            中途岛四艘日本航母的击沉记在 Dauntless 名下。
+            NHHC 的原句是「Dauntlesses accounted for the sinking of four Japanese
+            carriers at Midway, turning the tide of the Pacific War.」
+            本站照此写机种归属；四舰各自被命中几弹、由哪个中队投下，
+            属于各舰条目与战役条目，不在本页合并。
+          en: >-
+            The sinking of four Japanese carriers at Midway is credited to the Dauntless.
+            NHHC's sentence is "Dauntlesses accounted for the sinking of four Japanese
+            carriers at Midway, turning the tide of the Pacific War." This site records
+            the attribution at that level; how many bombs struck each ship and which
+            squadron dropped them belongs to the individual ship and battle entries and
+            is not merged here.
+        src: [nhhc-nnam-sbd]
+      - date: 1942-06-04
+        text:
+          zh: >-
+            损失：大黄蜂 4 日至 6 日共 5 架 SBD（4 名飞行员与 4 名后座获救）；
+            约克城 10 架 VSB（2 架迫降水面、8 架随舰损失，无飞行员失踪）；
+            企业号 VB-6 11 架、VS-6 9 架（3 日合计）。
+          en: >-
+            Losses: five SBDs on Hornet over 4-6 June, with four pilots and four rear
+            gunners rescued; ten VSB aircraft on Yorktown, two ditched and eight lost
+            with the ship, no pilots missing; and eleven VB-6 plus nine VS-6 aircraft on
+            Enterprise over the three days.
+        src: [nhhc-hornet-midway-report, nhhc-yorktown-midway-report,
+              nhhc-enterprise-midway-report]
