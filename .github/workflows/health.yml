@@ -6,10 +6,14 @@ name: 凭据与数据健康自检
 # 它不会「到期」，但可能因为重装系统、清空凭据管理器、换机器而失效 ——
 # 而失效的那一刻不会有任何提示，只会等到某天推送时才报错。
 #
-# 这个 workflow 每周跑一次，在 GitHub 的服务器上验证仓库本身是否健康。
-# 如果它开始失败，说明不是本机凭据的问题，而是数据层真的坏了。
+# 这个 workflow 每周跑一次，在 GitHub 的服务器上验证**数据层本身**是否健康。
+# 它替代不了本机自检（这边看不到你电脑上的凭据），两者互补：
+# 本机挂了它照跑，数据坏了它在网页上有红叉。
 #
-# 本机凭据的失效检测走 `scripts/check_auth.ps1`（见根目录 docs/40-p5-issues.md）。
+# 本机凭据自检见 scripts/check_auth.ps1 与 docs/40-p5-issues.md §3。
+#
+# 注意：validate.py 依赖 PyYAML，必须显式安装。
+# 本机早就装了，所以本地跑一直是绿的 —— 第一次上 CI 才发现漏了这一步。
 
 on:
   schedule:
@@ -23,7 +27,6 @@ on:
       - '.github/workflows/**'
 
 jobs:
-  # 数据层完整性：任何改动后都必须仍然 0 错误 0 警告
   validate:
     runs-on: ubuntu-latest
     steps:
@@ -33,7 +36,10 @@ jobs:
         with:
           python-version: '3.12'
 
-      # validate.py / selftest.py 只用标准库，不需要装任何依赖。
+      # 依赖清单见 requirements.txt（只有 PyYAML 一条）。
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
       - name: 全量校验
         run: python scripts/validate.py
 
