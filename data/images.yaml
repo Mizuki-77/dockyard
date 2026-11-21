@@ -5192,6 +5192,2874 @@ images:
     primary: true
     note: 欧根亲王号。20.3 cm SK C/34 是希佩尔海军上将级的主炮；该型在 Commons 没有独立的武器分类，只能从舰照中取，**这是舰照而不是炮座特写**。
 
+  - id: akagi-extra-1-japanese-aircraft-carrier-akagi-jpg
+    file: /img/ships/akagi-extra-1-japanese-aircraft-carrier-akagi-jpg.jpg
+    subject: ship:akagi
+    title:
+      zh: 'Japanese.aircraft.carrier.akagi'
+      en: 'Japanese.aircraft.carrier.akagi.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Donation of Kazutoshi Hando, 1970. U.S. Naval History and Heritage Command Photograph.'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Japanese.aircraft.carrier.akagi.jpg'
+    width: 5805
+    height: 3381
+    primary: false
+
+  - id: akagi-extra-2-aerial-view-of-the-japanese-aircraft-carrier
+    file: /img/ships/akagi-extra-2-aerial-view-of-the-japanese-aircraft-carrier.jpg
+    subject: ship:akagi
+    title:
+      zh: 'Aerial view of the Japanese aircraft carrier Akagi maneuvering on 4 June 1942 (USAF-57576)'
+      en: 'Aerial view of the Japanese aircraft carrier Akagi maneuvering on 4 June 1942 (USAF-57576).jpg'
+    part: aircraft_handling
+    view: overhead
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_Japanese_aircraft_carrier_Akagi_maneuvering_on_4_June_1942_(USAF-57576).jpg'
+    width: 5430
+    height: 4329
+    primary: false
+
+  - id: akagi-extra-3-japanese-aircraft-carrier-akagi-01-jpg
+    file: /img/ships/akagi-extra-3-japanese-aircraft-carrier-akagi-01-jpg.jpg
+    subject: ship:akagi
+    title:
+      zh: 'The Japanese aircraft carrier Akagi pictured underway in the Summer of 1941'
+      en: 'Japanese aircraft carrier Akagi 01.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Japanese military'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Akagi_01.jpg'
+    width: 1883
+    height: 1171
+    primary: false
+
+  - id: akagi-extra-5-akagi-2-jpg
+    file: /img/ships/akagi-extra-5-akagi-2-jpg.jpg
+    subject: ship:akagi
+    title:
+      zh: 'Akagi 2'
+      en: 'Akagi 2.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Donation of Kazutoshi Hando, 1970. U.S. Naval History and Heritage Command Photograph.'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Akagi_2.jpg'
+    width: 3271
+    height: 2444
+    primary: false
+
+  - id: akagi-extra-6-nh-73058-23540269969-jpg
+    file: /img/ships/akagi-extra-6-nh-73058-23540269969-jpg.jpg
+    subject: ship:akagi
+    title:
+      zh: 'NH 73058 (23540269969)'
+      en: 'NH 73058 (23540269969).jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1925
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'National Museum of the U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:NH_73058_(23540269969).jpg'
+    width: 3153
+    height: 2532
+    primary: false
+
+  - id: akagi-extra-7-kirishima-and-akagi-at-sukumo-bay-1939-jpg
+    file: /img/ships/akagi-extra-7-kirishima-and-akagi-at-sukumo-bay-1939-jpg.jpg
+    subject: ship:akagi
+    title:
+      zh: 'Kirishima and Akagi at Sukumo Bay 1939'
+      en: 'Kirishima and Akagi at Sukumo Bay 1939.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Shizuo Fukui'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Kirishima_and_Akagi_at_Sukumo_Bay_1939.jpg'
+    width: 3114
+    height: 2057
+    primary: false
+
+  - id: akagi-extra-8-akagi-aichi-d3a-indian-ocean-raid-jpg
+    file: /img/ships/akagi-extra-8-akagi-aichi-d3a-indian-ocean-raid-jpg.jpg
+    subject: ship:akagi
+    title:
+      zh: 'Akagi Aichi D3A Indian Ocean raid'
+      en: 'Akagi Aichi D3A Indian Ocean raid.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'not stated'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Akagi_Aichi_D3A_Indian_Ocean_raid.jpg'
+    width: 2242
+    height: 1585
+    primary: false
+
+  - id: akagi-extra-9-akagi-indian-ocean-5-april-1942-jpg
+    file: /img/ships/akagi-extra-9-akagi-indian-ocean-5-april-1942-jpg.jpg
+    subject: ship:akagi
+    title:
+      zh: 'Akagi Indian Ocean 5 April 1942'
+      en: 'Akagi Indian Ocean 5 April 1942.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'not stated'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Akagi_Indian_Ocean_5_April_1942.jpg'
+    width: 2241
+    height: 1564
+    primary: false
+
+  - id: akagi-extra-10-efvo8cfuyaa8pio-jpg
+    file: /img/ships/akagi-extra-10-efvo8cfuyaa8pio-jpg.jpg
+    subject: ship:akagi
+    title:
+      zh: 'A view taken from the stern of the Japanese aircraft carrier Akagi'
+      en: 'EFVo8CFUYAA8Pio.jpg'
+    part: aircraft_handling
+    view: stern
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:EFVo8CFUYAA8Pio.jpg'
+    width: 2048
+    height: 1427
+    primary: false
+
+  - id: akagi-extra-11-jpg
+    file: /img/ships/akagi-extra-11-jpg.jpg
+    subject: ship:akagi
+    title:
+      zh: '青岛外海的日本联合舰队'
+      en: '青岛外海的日本联合舰队.jpg'
+    part: hull_side
+    view: broadside
+    date: 1938
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: '福井静夫'
+    source_url: 'https://commons.wikimedia.org/wiki/File:%E9%9D%92%E5%B2%9B%E5%A4%96%E6%B5%B7%E7%9A%84%E6%97%A5%E6%9C%AC%E8%81%94%E5%90%88%E8%88%B0%E9%98%9F.jpg'
+    width: 2048
+    height: 733
+    primary: false
+
+  - id: akagi-extra-12-akagi-aircraft-carrier-mitsubishi-b1m-c1935
+    file: /img/ships/akagi-extra-12-akagi-aircraft-carrier-mitsubishi-b1m-c1935-.jpg
+    subject: ship:akagi
+    title:
+      zh: 'Akagi aircraft carrier &amp'
+      en: 'Akagi Aircraft Carrier & Mitsubishi B1M c1935.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1935
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Imperial Japanese Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Akagi_Aircraft_Carrier_%26_Mitsubishi_B1M_c1935.jpg'
+    width: 1687
+    height: 1079
+    primary: false
+
+  - id: bismarck-extra-1-bismarck-reconnaissance-jpg
+    file: /img/ships/bismarck-extra-1-bismarck-reconnaissance-jpg.jpg
+    subject: ship:bismarck
+    title:
+      zh: 'Aerial reconnaissance photograph taken by Flying Officer Michael Suckling on 21 May 1941 in Norway'
+      en: 'Bismarck reconnaissance.jpg'
+    part: hull_side
+    view: overhead
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Parsecboy at en.wikipedia'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Bismarck_reconnaissance.jpg'
+    width: 1952
+    height: 1772
+    primary: false
+
+  - id: bismarck-extra-2-duits-slagschip-de-bismarck-genoemd-naar-
+    file: /img/ships/bismarck-extra-2-duits-slagschip-de-bismarck-genoemd-naar-de-.jpg
+    subject: ship:bismarck
+    title:
+      zh: 'Duits slagschip ''de Bismarck '' genoemd naar de kanselier Otto von Bismarck'
+      en: 'Duits slagschip ''de Bismarck '' genoemd naar de kanselier Otto von Bismarck, SFA022801174.jpg'
+    part: hull_side
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Duits_slagschip_%27de_Bismarck_%27_genoemd_naar_de_kanselier_Otto_von_Bismarck,_SFA022801174.jpg'
+    width: 3546
+    height: 2453
+    primary: false
+
+  - id: bismarck-extra-3-hms-dorsetshire-bismarck-survivors-jpg
+    file: /img/ships/bismarck-extra-3-hms-dorsetshire-bismarck-survivors-jpg.jpg
+    subject: ship:bismarck
+    title:
+      zh: 'Survivors from the Bismarck are pulled aboard HMS Dorsetshire (40) on 27 May 1941'
+      en: 'HMS Dorsetshire Bismarck survivors.jpg'
+    part: hull_side
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Dorsetshire_Bismarck_survivors.jpg'
+    width: 2604
+    height: 3113
+    primary: false
+
+  - id: bismarck-extra-10-el-acorazado-bismarck-durante-la-batalla
+    file: /img/ships/bismarck-extra-10-el-acorazado-bismarck-durante-la-batalla-del.jpg
+    subject: ship:bismarck
+    title:
+      zh: 'El acorazado Bismarck durante la batalla del estrecho de Dinamarca'
+      en: 'El acorazado Bismarck durante la batalla del estrecho de Dinamarca.jpg'
+    part: hull_side
+    view: broadside
+    date: 1941
+    license: cc
+    license_tier: B
+    license_raw: 'CC BY-SA 3.0'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:El_acorazado_Bismarck_durante_la_batalla_del_estrecho_de_Dinamarca.jpg'
+    width: 5664
+    height: 3286
+    primary: false
+
+  - id: bismarck-extra-11-adolf-hitler-och-andra-naziledare-h-lsar
+    file: /img/ships/bismarck-extra-11-adolf-hitler-och-andra-naziledare-h-lsar-i-h.jpg
+    subject: ship:bismarck
+    title:
+      zh: 'Adolf Hitler och andra naziledare hälsas av folkmassor i Hamburg den 14 februari 1939'
+      en: 'Adolf Hitler och andra naziledare hälsar i Hamburg 1939 SLSA 1312-3 foto 7.jpg'
+    part: hull_side
+    view: broadside
+    date: 1938
+    license: cc
+    license_tier: B
+    license_raw: 'CC BY 4.0'
+    author: 'Thelma Starckjohann-Bruun'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Adolf_Hitler_och_andra_naziledare_h%C3%A4lsar_i_Hamburg_1939_SLSA_1312-3_foto_7.jpg'
+    width: 4000
+    height: 2640
+    primary: false
+
+  - id: bismarck-extra-12-the-polish-institute-and-sikorski-museum
+    file: /img/ships/bismarck-extra-12-the-polish-institute-and-sikorski-museum-241.jpg
+    subject: ship:bismarck
+    title:
+      zh: 'The Polish Institute and Sikorski Museum (24136934585)'
+      en: 'The Polish Institute and Sikorski Museum (24136934585).jpg'
+    part: hull_side
+    view: broadside
+    date: 1941
+    license: cc
+    license_tier: B
+    license_raw: 'CC BY 2.0'
+    author: 'Jake from Manchester, UK'
+    source_url: 'https://commons.wikimedia.org/wiki/File:The_Polish_Institute_and_Sikorski_Museum_(24136934585).jpg'
+    width: 3628
+    height: 4837
+    primary: false
+
+  - id: bismarck-extra-fix-el-acorazado-bismarck-y-la-bandera-nazi
+    file: /img/ships/bismarck-extra-fix-el-acorazado-bismarck-y-la-bandera-nazi-jpg.jpg
+    subject: ship:bismarck
+    title:
+      zh: 'German battleship Bismarck with Nazi flag, 1941'
+      en: 'El acorazado Bismarck y la bandera nazi.jpg'
+    part: hull_side
+    view: broadside
+    date: 1941
+    license: cc
+    license_tier: B
+    license_raw: 'CC BY-SA 3.0'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:El_acorazado_Bismarck_y_la_bandera_nazi.jpg'
+    width: 4785
+    height: 2389
+    primary: false
+
+  - id: bismarck-extra-fix-marineehrenmal-laboe-gedenktafel-f-r-di
+    file: /img/ships/bismarck-extra-fix-marineehrenmal-laboe-gedenktafel-f-r-die-bis.jpg
+    subject: ship:bismarck
+    title:
+      zh: 'Gedenktafel für die Bismarck im Marineehrenmal Laboe'
+      en: 'Marineehrenmal Laboe - Gedenktafel für die Bismarck.jpg'
+    part: hull_side
+    view: broadside
+    license: cc
+    license_tier: B
+    license_raw: 'CC BY-SA 3.0'
+    author: 'James Steakley'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Marineehrenmal_Laboe_-_Gedenktafel_f%C3%BCr_die_Bismarck.jpg'
+    width: 2178
+    height: 1741
+    primary: false
+
+  - id: enterprise-extra-1-uss-enterprise-cv-6-at-anchor-circa-194
+    file: /img/ships/enterprise-extra-1-uss-enterprise-cv-6-at-anchor-circa-1940-19-.jpg
+    subject: ship:enterprise
+    title:
+      zh: 'USS Enterprise (CV-6) at anchor, circa 1940 (19-N-29688)'
+      en: 'USS Enterprise (CV-6) at anchor, circa 1940 (19-N-29688).jpg'
+    part: aircraft_handling
+    view: deck
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:USS_Enterprise_(CV-6)_at_anchor,_circa_1940_(19-N-29688).jpg'
+    width: 5109
+    height: 3781
+    primary: false
+
+  - id: enterprise-extra-2-uss-enterprise-cv-6-and-destroyers-of-t
+    file: /img/ships/enterprise-extra-2-uss-enterprise-cv-6-and-destroyers-of-tf-16-.jpg
+    subject: ship:enterprise
+    title:
+      zh: 'USS Enterprise (CV-6) and destroyers of TF 16 maneuvering under attack during Battle of the Santa Cr'
+      en: 'USS Enterprise (CV-6) and destroyers of TF 16 maneuvering under attack during Battle of the Santa Cruz Islands 1942.jpg'
+    part: superstructure
+    view: overhead
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy, photographed from plane of USS Hornet (CV-8).'
+    source_url: 'https://commons.wikimedia.org/wiki/File:USS_Enterprise_(CV-6)_and_destroyers_of_TF_16_maneuvering_under_attack_during_Battle_of_the_Santa_Cruz_Islands_1942.jpg'
+    width: 4738
+    height: 3526
+    primary: false
+
+  - id: enterprise-extra-3-uss-english-dd-696-uss-hancock-cv-19-an
+    file: /img/ships/enterprise-extra-3-uss-english-dd-696-uss-hancock-cv-19-and-uss.jpg
+    subject: ship:enterprise
+    title:
+      zh: 'USS English (DD-696), USS Hancock (CV-19) and USS Enterprise (CV-6) underway in the Pacific Ocean, c'
+      en: 'USS English (DD-696), USS Hancock (CV-19) and USS Enterprise (CV-6) underway in the Pacific Ocean, circa in January 1945 (80-G-470281).jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Lieutenant Commander Charles Fenno Jacobs, USNR'
+    source_url: 'https://commons.wikimedia.org/wiki/File:USS_English_(DD-696),_USS_Hancock_(CV-19)_and_USS_Enterprise_(CV-6)_underway_in_the_Pacific_Ocean,_circa_in_January_1945_(80-G-470281).jpg'
+    width: 4505
+    height: 4263
+    primary: false
+
+  - id: enterprise-extra-4-bayonne-naval-supply-depot-with-uss-ent
+    file: /img/ships/enterprise-extra-4-bayonne-naval-supply-depot-with-uss-enterpri.jpg
+    subject: ship:enterprise
+    title:
+      zh: 'Aerial view of the U'
+      en: 'Bayonne Naval Supply Depot with USS Enterprise (CV-6) in July 1953.jpg'
+    part: aircraft_handling
+    view: overhead
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Bayonne_Naval_Supply_Depot_with_USS_Enterprise_(CV-6)_in_July_1953.jpg'
+    width: 4363
+    height: 4097
+    primary: false
+
+  - id: enterprise-extra-5-uss-enterprise-cv-6-at-anchor-circa-193
+    file: /img/ships/enterprise-extra-5-uss-enterprise-cv-6-at-anchor-circa-1939-nh-.jpg
+    subject: ship:enterprise
+    title:
+      zh: 'USS Enterprise (CV-6) photographed during the 1930s'
+      en: 'USS Enterprise (CV-6) at anchor, circa 1939 (NH 54226).tiff'
+    part: hull_side
+    view: broadside
+    date: 1930
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:USS_Enterprise_(CV-6)_at_anchor,_circa_1939_(NH_54226).tiff'
+    width: 4308
+    height: 3324
+    primary: false
+
+  - id: enterprise-extra-6-kamikaze-hits-water-near-uss-enterprise
+    file: /img/ships/enterprise-extra-6-kamikaze-hits-water-near-uss-enterprise-cv-6.jpg
+    subject: ship:enterprise
+    title:
+      zh: 'A kamikaze aircraft hits the water off the starboard quarter of the U'
+      en: 'Kamikaze hits water near USS Enterprise (CV-6) on 11 April 1945.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy, photographed from USS Bunker Hill (CV-17).'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Kamikaze_hits_water_near_USS_Enterprise_(CV-6)_on_11_April_1945.jpg'
+    width: 4068
+    height: 5452
+    primary: false
+
+  - id: enterprise-extra-7-uss-enterprise-cv-6-at-anchor-circa-193
+    file: /img/ships/enterprise-extra-7-uss-enterprise-cv-6-at-anchor-circa-1939-nh-.jpg
+    subject: ship:enterprise
+    title:
+      zh: 'USS Enterprise (CV-6) at anchor, circa 1939 (NH 54226)'
+      en: 'USS Enterprise (CV-6) at anchor, circa 1939 (NH 54226).jpg'
+    part: aircraft_handling
+    view: deck
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:USS_Enterprise_(CV-6)_at_anchor,_circa_1939_(NH_54226).jpg'
+    width: 3969
+    height: 2785
+    primary: false
+
+  - id: enterprise-extra-8-enterprise-cv6-aerial-starboard-bow-und
+    file: /img/ships/enterprise-extra-8-enterprise-cv6-aerial-starboard-bow-underway.jpg
+    subject: ship:enterprise
+    title:
+      zh: 'Enterprise (CV6). Aerial, starboard bow, underway, aircraft on deck'
+      en: 'Enterprise (CV6). Aerial, starboard bow, underway, aircraft on deck - NARA - 520811.jpg'
+    part: aircraft_handling
+    view: overhead
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author or not provided'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Enterprise_(CV6)._Aerial,_starboard_bow,_underway,_aircraft_on_deck_-_NARA_-_520811.jpg'
+    width: 3000
+    height: 2172
+    primary: false
+
+  - id: enterprise-extra-9-uss-enterprise-april-1939-jpg
+    file: /img/ships/enterprise-extra-9-uss-enterprise-april-1939-jpg.jpg
+    subject: ship:enterprise
+    title:
+      zh: 'USS Enterprise (April 1939)'
+      en: 'USS Enterprise (April 1939).jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'USN (official U.S. Navy photo 80-G-463246)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:USS_Enterprise_(April_1939).jpg'
+    width: 2933
+    height: 1973
+    primary: false
+
+  - id: enterprise-extra-10-sbd-5-of-vb-10-over-uss-enterprise-cv-
+    file: /img/ships/enterprise-extra-10-sbd-5-of-vb-10-over-uss-enterprise-cv-6-1944.jpg
+    subject: ship:enterprise
+    title:
+      zh: 'SBD-5 of VB-10 over USS Enterprise (CV-6) 1944'
+      en: 'SBD-5 of VB-10 over USS Enterprise (CV-6) 1944.jpg'
+    part: superstructure
+    view: broadside
+    date: 1944
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:SBD-5_of_VB-10_over_USS_Enterprise_(CV-6)_1944.jpg'
+    width: 2151
+    height: 1608
+    primary: false
+
+  - id: enterprise-extra-11-u-s-navy-reserve-ships-at-the-bayonne-
+    file: /img/ships/enterprise-extra-11-u-s-navy-reserve-ships-at-the-bayonne-naval-.jpg
+    subject: ship:enterprise
+    title:
+      zh: 'U.S. Navy reserve ships at the Bayonne Naval Supply Depot, 15 April 1953 (80-G-480262)'
+      en: 'U.S. Navy reserve ships at the Bayonne Naval Supply Depot, 15 April 1953 (80-G-480262).jpg'
+    part: stern
+    view: overhead
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:U.S._Navy_reserve_ships_at_the_Bayonne_Naval_Supply_Depot,_15_April_1953_(80-G-480262).jpg'
+    width: 4393
+    height: 4583
+    primary: false
+
+  - id: enterprise-extra-12-u-s-navy-reserve-ships-at-the-bayonne-
+    file: /img/ships/enterprise-extra-12-u-s-navy-reserve-ships-at-the-bayonne-naval-.jpg
+    subject: ship:enterprise
+    title:
+      zh: 'U.S. Navy reserve ships at the Bayonne Naval Supply Depot, 15 April 1953 (80-G-480262) (cropped)'
+      en: 'U.S. Navy reserve ships at the Bayonne Naval Supply Depot, 15 April 1953 (80-G-480262) (cropped).jpg'
+    part: stern
+    view: overhead
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:U.S._Navy_reserve_ships_at_the_Bayonne_Naval_Supply_Depot,_15_April_1953_(80-G-480262)_(cropped).jpg'
+    width: 3500
+    height: 1500
+    primary: false
+
+  - id: enterprise-extra-fix-japanese-bomb-explodes-off-the-port-s
+    file: /img/ships/enterprise-extra-fix-japanese-bomb-explodes-off-the-port-side-of-.jpg
+    subject: ship:enterprise
+    title:
+      zh: 'A Japanese bomb explodes off the port side of the U'
+      en: 'Japanese bomb explodes off the port side of USS Enterprise (CV-6) during the Battle of the Santa Cruz Islands on 26 October 1942 (80-G-30198).jpg'
+    part: superstructure
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Japanese_bomb_explodes_off_the_port_side_of_USS_Enterprise_(CV-6)_during_the_Battle_of_the_Santa_Cruz_Islands_on_26_October_1942_(80-G-30198).jpg'
+    width: 5683
+    height: 4510
+    primary: false
+
+  - id: enterprise-extra-fix-aerial-view-of-uss-enterprise-cv-6-in
+    file: /img/ships/enterprise-extra-fix-aerial-view-of-uss-enterprise-cv-6-in-march-.jpg
+    subject: ship:enterprise
+    title:
+      zh: 'Aerial view of USS Enterprise (CV-6) in March 1944'
+      en: 'Aerial view of USS Enterprise (CV-6) in March 1944.jpg'
+    part: aircraft_handling
+    view: overhead
+    date: 1944
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Aerial_view_of_USS_Enterprise_(CV-6)_in_March_1944.jpg'
+    width: 5651
+    height: 4444
+    primary: false
+
+  - id: enterprise-extra-fix-aerial-view-of-pearl-harbor-navy-yard
+    file: /img/ships/enterprise-extra-fix-aerial-view-of-pearl-harbor-navy-yard-and-fo.jpg
+    subject: ship:enterprise
+    title:
+      zh: 'Pearl Harbor, Oahu, Territory of Hawaii: Vertical aerial photograph, taken from a U'
+      en: 'Aerial view of Pearl Harbor Navy Yard and Ford Island on 26 November 1941.jpg'
+    part: superstructure
+    view: overhead
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Army Air Forces'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Aerial_view_of_Pearl_Harbor_Navy_Yard_and_Ford_Island_on_26_November_1941.jpg'
+    width: 5423
+    height: 4473
+    primary: false
+
+  - id: hiryu-extra-1-japanese-aircraft-carrier-hiryu-maneuvers-to
+    file: /img/ships/hiryu-extra-1-japanese-aircraft-carrier-hiryu-maneuvers-to.jpg
+    subject: ship:hiryu
+    title:
+      zh: 'Japanese aircraft carrier Hiryu maneuvers to avoid bombs on 4 June 1942 (USAF-3725)'
+      en: 'Japanese aircraft carrier Hiryu maneuvers to avoid bombs on 4 June 1942 (USAF-3725).jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Hiryu_maneuvers_to_avoid_bombs_on_4_June_1942_(USAF-3725).jpg'
+    width: 5024
+    height: 3740
+    primary: false
+
+  - id: hiryu-extra-2-japanese-aircraft-carrier-hiryu-dodging-bomb
+    file: /img/ships/hiryu-extra-2-japanese-aircraft-carrier-hiryu-dodging-bomb.jpg
+    subject: ship:hiryu
+    title:
+      zh: 'Japanese aircraft carrier Hiryu dodging bombs on 4 June 1942 (USAF-3725)'
+      en: 'Japanese aircraft carrier Hiryu dodging bombs on 4 June 1942 (USAF-3725).jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Hiryu_dodging_bombs_on_4_June_1942_(USAF-3725).jpg'
+    width: 4160
+    height: 5103
+    primary: false
+
+  - id: hiryu-extra-3-japanese-aircraft-carrier-hiryu-jpg
+    file: /img/ships/hiryu-extra-3-japanese-aircraft-carrier-hiryu-jpg.jpg
+    subject: ship:hiryu
+    title:
+      zh: 'The Japanese aircraft carrier Hiryu running speed trials on 28 April 1939'
+      en: 'Japanese aircraft carrier Hiryu.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Donation of Kazutoshi Hando, 1970. U.S. Naval History and Heritage Command Photograph'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Hiryu.jpg'
+    width: 3860
+    height: 2142
+    primary: false
+
+  - id: hiryu-extra-4-japanese-aircraft-carrier-hiryu-jpg
+    file: /img/ships/hiryu-extra-4-japanese-aircraft-carrier-hiryu-jpg.jpg
+    subject: ship:hiryu
+    title:
+      zh: 'Japanese aircraft carrier Hiryū running speed trials'
+      en: 'Japanese aircraft carrier hiryu.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Naval Historical Center Photograph Donation of Kazutoshi Hando, 1970.'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_hiryu.jpg'
+    width: 3852
+    height: 2155
+    primary: false
+
+  - id: hiryu-extra-5-japanese-aircraft-carrier-hiryu-burning-on-5
+    file: /img/ships/hiryu-extra-5-japanese-aircraft-carrier-hiryu-burning-on-5.jpg
+    subject: ship:hiryu
+    title:
+      zh: 'Japanese aircraft carrier Hiryu burning on 5 June 1942 (NH 73064)'
+      en: 'Japanese aircraft carrier Hiryu burning on 5 June 1942 (NH 73064).jpg'
+    part: aircraft_handling
+    view: deck
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Special Service Ensign Oniwa Kiyoshi'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Hiryu_burning_on_5_June_1942_(NH_73064).jpg'
+    width: 3846
+    height: 2473
+    primary: false
+
+  - id: hiryu-extra-6-japanese-aircraft-carrier-hiryu-adrift-and-b
+    file: /img/ships/hiryu-extra-6-japanese-aircraft-carrier-hiryu-adrift-and-b.jpg
+    subject: ship:hiryu
+    title:
+      zh: 'Japanese aircraft carrier Hiryu adrift and burning on 5 June 1942 (NH 73065)'
+      en: 'Japanese aircraft carrier Hiryu adrift and burning on 5 June 1942 (NH 73065).jpg'
+    part: aircraft_handling
+    view: deck
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Special Service Ensign Oniwa Kiyoshi'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Hiryu_adrift_and_burning_on_5_June_1942_(NH_73065).jpg'
+    width: 3683
+    height: 2446
+    primary: false
+
+  - id: hiryu-extra-7-japanese-aircraft-carrier-hiryu-1939-cropped
+    file: /img/ships/hiryu-extra-7-japanese-aircraft-carrier-hiryu-1939-cropped.jpg
+    subject: ship:hiryu
+    title:
+      zh: '日本海軍航空母艦「飛龍」横須賀軍港にて工事完了後の写真。 Hiryu, Imperial Japanese Navy''s aircraft carrier at Yokosuka, Japan'
+      en: 'Japanese aircraft carrier Hiryu 1939 cropped.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Japanese_aircraft_carrier_Hiryu_1939.jpg: 不明。 derivative work: 0607crp (talk)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Hiryu_1939_cropped.jpg'
+    width: 2525
+    height: 1515
+    primary: false
+
+  - id: hiryu-extra-8-hbz0px5amaaeb8o-jpg
+    file: /img/ships/hiryu-extra-8-hbz0px5amaaeb8o-jpg.jpg
+    subject: ship:hiryu
+    title:
+      zh: 'HBz0PX5aMAAeB8o'
+      en: 'HBz0PX5aMAAeB8o.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HBz0PX5aMAAeB8o.jpg'
+    width: 2048
+    height: 1224
+    primary: false
+
+  - id: hiryu-extra-9-gf-in-indian-ocean-1942-jpg
+    file: /img/ships/hiryu-extra-9-gf-in-indian-ocean-1942-jpg.jpg
+    subject: ship:hiryu
+    title:
+      zh: 'The Japanese strike force advancing to the Indian Ocean'
+      en: 'GF in Indian Ocean, 1942.jpg'
+    part: hull_side
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:GF_in_Indian_Ocean,_1942.jpg'
+    width: 1687
+    height: 1117
+    primary: false
+
+  - id: hornet-extra-1-uss-hornet-cv-8-steaming-in-the-coral-sea-a
+    file: /img/ships/hornet-extra-1-uss-hornet-cv-8-steaming-in-the-coral-sea-ar.jpg
+    subject: ship:hornet
+    title:
+      zh: 'USS Hornet (CV-8) steaming in the Coral Sea area on 13 May 1942'
+      en: 'USS Hornet (CV-8) steaming in the Coral Sea area on 13 May 1942.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:USS_Hornet_(CV-8)_steaming_in_the_Coral_Sea_area_on_13_May_1942.jpg'
+    width: 5728
+    height: 4484
+    primary: false
+
+  - id: hornet-extra-2-us-task-force-17-underway-during-the-battle
+    file: /img/ships/hornet-extra-2-us-task-force-17-underway-during-the-battle-.jpg
+    subject: ship:hornet
+    title:
+      zh: 'US Task Force 17 underway during the Battle of the Santa Cruz Islands 1942'
+      en: 'US Task Force 17 underway during the Battle of the Santa Cruz Islands 1942.jpg'
+    part: superstructure
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:US_Task_Force_17_underway_during_the_Battle_of_the_Santa_Cruz_Islands_1942.jpg'
+    width: 5671
+    height: 4171
+    primary: false
+
+  - id: hornet-extra-3-uss-hornet-cv-8-underway-in-hampton-roads-o
+    file: /img/ships/hornet-extra-3-uss-hornet-cv-8-underway-in-hampton-roads-on.jpg
+    subject: ship:hornet
+    title:
+      zh: 'USS Hornet (CV-8) underway in Hampton Roads on 27 October 1941'
+      en: 'USS Hornet (CV-8) underway in Hampton Roads on 27 October 1941.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy photo 80-G-463613'
+    source_url: 'https://commons.wikimedia.org/wiki/File:USS_Hornet_(CV-8)_underway_in_Hampton_Roads_on_27_October_1941.jpg'
+    width: 2934
+    height: 2201
+    primary: false
+
+  - id: hornet-extra-4-aft-view-of-the-listing-uss-hornet-cv-8-dur
+    file: /img/ships/hornet-extra-4-aft-view-of-the-listing-uss-hornet-cv-8-duri.jpg
+    subject: ship:hornet
+    title:
+      zh: 'Battle of Santa Cruz Islands, 26 October 1942: the U'
+      en: 'Aft view of the listing USS Hornet (CV-8) during the Battle of Santa Cruz Islands, 26 October 1942 (80-G-33899).jpg'
+    part: superstructure
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Aft_view_of_the_listing_USS_Hornet_(CV-8)_during_the_Battle_of_Santa_Cruz_Islands,_26_October_1942_(80-G-33899).jpg'
+    width: 2879
+    height: 2178
+    primary: false
+
+  - id: hornet-extra-5-uss-hornet-cv-8-uss-new-orleans-ca-32-uss-a
+    file: /img/ships/hornet-extra-5-uss-hornet-cv-8-uss-new-orleans-ca-32-uss-at.jpg
+    subject: ship:hornet
+    title:
+      zh: '-USS Hornet (CV-8), USS New Orleans (CA-32), USS Atlanta (CL-51) and USS Phelps (DD-360) at sea on 6'
+      en: '-USS Hornet (CV-8), USS New Orleans (CA-32), USS Atlanta (CL-51) and USS Phelps (DD-360) at sea on 6 June 1942 (80-G-7750).jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:-USS_Hornet_(CV-8),_USS_New_Orleans_(CA-32),_USS_Atlanta_(CL-51)_and_USS_Phelps_(DD-360)_at_sea_on_6_June_1942_(80-G-7750).jpg'
+    width: 2774
+    height: 2073
+    primary: false
+
+  - id: hornet-extra-6-uss-hornet-cv-8-uss-new-orleans-ca-32-and-u
+    file: /img/ships/hornet-extra-6-uss-hornet-cv-8-uss-new-orleans-ca-32-and-us.jpg
+    subject: ship:hornet
+    title:
+      zh: 'USS Hornet (CV-8), USS New Orleans (CA-32) and USS Atlanta (CL-51) at sea on 6 June 1942 (80-G-88908'
+      en: 'USS Hornet (CV-8), USS New Orleans (CA-32) and USS Atlanta (CL-51) at sea on 6 June 1942 (80-G-88908).jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy photograph'
+    source_url: 'https://commons.wikimedia.org/wiki/File:USS_Hornet_(CV-8),_USS_New_Orleans_(CA-32)_and_USS_Atlanta_(CL-51)_at_sea_on_6_June_1942_(80-G-88908).jpg'
+    width: 2533
+    height: 1885
+    primary: false
+
+  - id: hornet-extra-7-uss-northampton-ca-26-underway-near-listing
+    file: /img/ships/hornet-extra-7-uss-northampton-ca-26-underway-near-listing-.jpg
+    subject: ship:hornet
+    title:
+      zh: 'USS Northampton (CA-26) underway near listing USS Hornet (CV-8) on 26 October 1942'
+      en: 'USS Northampton (CA-26) underway near listing USS Hornet (CV-8) on 26 October 1942.jpg'
+    part: superstructure
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:USS_Northampton_(CA-26)_underway_near_listing_USS_Hornet_(CV-8)_on_26_October_1942.jpg'
+    width: 1985
+    height: 1567
+    primary: false
+
+  - id: hornet-extra-8-uss-hornet-cv-8-and-uss-enterprise-cv-6-und
+    file: /img/ships/hornet-extra-8-uss-hornet-cv-8-and-uss-enterprise-cv-6-unde.jpg
+    subject: ship:hornet
+    title:
+      zh: 'USS Hornet (CV-8) and USS Enterprise (CV-6) underway at sea in April 1942 (80-G-324201)'
+      en: 'USS Hornet (CV-8) and USS Enterprise (CV-6) underway at sea in April 1942 (80-G-324201).jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:USS_Hornet_(CV-8)_and_USS_Enterprise_(CV-6)_underway_at_sea_in_April_1942_(80-G-324201).jpg'
+    width: 1974
+    height: 1469
+    primary: false
+
+  - id: hornet-extra-9-uss-hornet-cv-8-and-uss-atlanta-cl-51-at-se
+    file: /img/ships/hornet-extra-9-uss-hornet-cv-8-and-uss-atlanta-cl-51-at-sea.jpg
+    subject: ship:hornet
+    title:
+      zh: 'USS Hornet (CV-8) and USS Atlanta (CL-51) at sea on 6 June 1942 (80-G-88908)'
+      en: 'USS Hornet (CV-8) and USS Atlanta (CL-51) at sea on 6 June 1942 (80-G-88908).jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:USS_Hornet_(CV-8)_and_USS_Atlanta_(CL-51)_at_sea_on_6_June_1942_(80-G-88908).jpg'
+    width: 1874
+    height: 1395
+    primary: false
+
+  - id: illustrious-extra-1-hms-illustrious-1940-fl2425-jpg
+    file: /img/ships/illustrious-extra-1-hms-illustrious-1940-fl2425-jpg.jpg
+    subject: ship:illustrious
+    title:
+      zh: 'HMS ILLUSTRIOUS, 1940'
+      en: 'HMS ILLUSTRIOUS, 1940. FL2425.jpg'
+    part: hull_side
+    view: broadside
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_ILLUSTRIOUS,_1940._FL2425.jpg'
+    width: 2480
+    height: 1656
+    primary: false
+
+  - id: illustrious-extra-2-the-royal-navy-during-the-second-world
+    file: /img/ships/illustrious-extra-2-the-royal-navy-during-the-second-world-war-a.jpg
+    subject: ship:illustrious
+    title:
+      zh: 'The Royal Navy during the Second World War A27998'
+      en: 'The Royal Navy during the Second World War A27998.jpg'
+    part: stern
+    view: stern
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A27998.jpg'
+    width: 2480
+    height: 1783
+    primary: false
+
+  - id: illustrious-extra-3-hms-illustrious-bow-1944-jpg
+    file: /img/ships/illustrious-extra-3-hms-illustrious-bow-1944-jpg.jpg
+    subject: ship:illustrious
+    title:
+      zh: 'HMS Illustrious bow 1944'
+      en: 'HMS Illustrious bow 1944.jpg'
+    part: aircraft_handling
+    view: bow
+    date: 1944
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy (This image is part of a photograph album kept by Commander Joseph C. Clifton, USN, during 1942-1944, which included service as Commanding Officer of Fighting Squadron (V'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Illustrious_bow_1944.jpg'
+    width: 1495
+    height: 1097
+    primary: false
+
+  - id: illustrious-extra-4-british-aircraft-carriers-at-anchor-c1
+    file: /img/ships/illustrious-extra-4-british-aircraft-carriers-at-anchor-c1945-jp.jpg
+    subject: ship:illustrious
+    title:
+      zh: 'British aircraft carriers at anchor c1945'
+      en: 'British aircraft carriers at anchor c1945.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:British_aircraft_carriers_at_anchor_c1945.jpg'
+    width: 1300
+    height: 949
+    primary: false
+
+  - id: illustrious-extra-9-hms-illustrious-87-at-the-norfolk-nava
+    file: /img/ships/illustrious-extra-9-hms-illustrious-87-at-the-norfolk-naval-ship.jpg
+    subject: ship:illustrious
+    title:
+      zh: 'HMS Illustrious (87) at the Norfolk Naval Shipyard in November 1941'
+      en: 'HMS Illustrious (87) at the Norfolk Naval Shipyard in November 1941.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Illustrious_(87)_at_the_Norfolk_Naval_Shipyard_in_November_1941.jpg'
+    width: 5705
+    height: 4115
+    primary: false
+
+  - id: illustrious-extra-10-hms-illustrious-under-attack-41-jpg
+    file: /img/ships/illustrious-extra-10-hms-illustrious-under-attack-41-jpg.jpg
+    subject: ship:illustrious
+    title:
+      zh: 'HMS Illustrious under air attack during Malta convoy in 1941'
+      en: 'HMS Illustrious under attack ''41.JPG'
+    part: hull_side
+    view: broadside
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Arthur Conry (digitised and edited by Wiki-Ed)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Illustrious_under_attack_%2741.JPG'
+    width: 2048
+    height: 1536
+    primary: false
+
+  - id: illustrious-extra-11-hms-unicorn-i72-and-carrier-1944-jpeg
+    file: /img/ships/illustrious-extra-11-hms-unicorn-i72-and-carrier-1944-jpeg.jpg
+    subject: ship:illustrious
+    title:
+      zh: 'HMS Unicorn (I72) and carrier 1944'
+      en: 'HMS Unicorn (I72) and carrier 1944.jpeg'
+    part: aircraft_handling
+    view: broadside
+    date: 1944
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Unicorn_(I72)_and_carrier_1944.jpeg'
+    width: 1874
+    height: 1483
+    primary: false
+
+  - id: illustrious-extra-12-illustriousflightdeck10jan41-jpg
+    file: /img/ships/illustrious-extra-12-illustriousflightdeck10jan41-jpg.jpg
+    subject: ship:illustrious
+    title:
+      zh: 'The flight deck of HMS Illustrious after being struck by German bombs, 10 January 1941'
+      en: 'IllustriousFlightDeck10Jan41.jpg'
+    part: aircraft_handling
+    view: deck
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Credited to the Imperial War Museum'
+    source_url: 'https://commons.wikimedia.org/wiki/File:IllustriousFlightDeck10Jan41.jpg'
+    width: 1300
+    height: 1084
+    primary: false
+
+  - id: kaga-extra-1-japanese-aircraft-carrier-kaga-jpg
+    file: /img/ships/kaga-extra-1-japanese-aircraft-carrier-kaga-jpg.jpg
+    subject: ship:kaga
+    title:
+      zh: 'The Japanese aircraft carrier Kaga at sea following her 1934-36 modernization'
+      en: 'Japanese aircraft carrier kaga.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1936
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Donation of Kazutoshi Hando, 1970. U.S. Naval History and Heritage Command Photograph.'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_kaga.jpg'
+    width: 3694
+    height: 2389
+    primary: false
+
+  - id: kaga-extra-2-kaga-reconstruction-overhead-jpg
+    file: /img/ships/kaga-extra-2-kaga-reconstruction-overhead-jpg.jpg
+    subject: ship:kaga
+    title:
+      zh: 'Imperial Japanese Navy aircraft carrier Kaga after reconstruction in 1935'
+      en: 'Kaga Reconstruction overhead.jpg'
+    part: aircraft_handling
+    view: overhead
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Not stated'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Kaga_Reconstruction_overhead.jpg'
+    width: 1858
+    height: 464
+    primary: false
+
+  - id: kaga-extra-3-kaga-type-3-fighter-pilots-jpg
+    file: /img/ships/kaga-extra-3-kaga-type-3-fighter-pilots-jpg.jpg
+    subject: ship:kaga
+    title:
+      zh: 'Kaga Type 3 fighter pilots'
+      en: 'Kaga Type 3 fighter pilots.jpg'
+    part: aircraft_handling
+    view: overhead
+    date: 1932
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Air Review'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Kaga_Type_3_fighter_pilots.jpg'
+    width: 1641
+    height: 971
+    primary: false
+
+  - id: kaga-extra-4-ikuta-air-pt-jpg
+    file: /img/ships/kaga-extra-4-ikuta-air-pt-jpg.jpg
+    subject: ship:kaga
+    title:
+      zh: 'Ikuta air pt'
+      en: 'Ikuta air pt.jpg'
+    part: aircraft_handling
+    view: overhead
+    date: 1932
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: '朝日新聞,Asahi Shimbun'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Ikuta_air_pt.jpg'
+    width: 1600
+    height: 1116
+    primary: false
+
+  - id: kaga-extra-5-air-attack-on-japanese-carriers-kagi-and-aka
+    file: /img/ships/kaga-extra-5-air-attack-on-japanese-carriers-kagi-and-aka.jpg
+    subject: ship:kaga
+    title:
+      zh: 'Air Attack on Japanese Carriers Kagi and Akagi, Midway Battle'
+      en: 'Air Attack on Japanese Carriers Kagi and Akagi, Midway Battle.jpg'
+    part: hull_side
+    view: broadside
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Air_Attack_on_Japanese_Carriers_Kagi_and_Akagi,_Midway_Battle.jpg'
+    width: 3622
+    height: 4808
+    primary: false
+
+  - id: kaga-extra-6-kokufan-1979-09-page113-jpg
+    file: /img/ships/kaga-extra-6-kokufan-1979-09-page113-jpg.jpg
+    subject: ship:kaga
+    title:
+      zh: 'Rare pictures of Japanese aircraft carrier "Kaga" while conducting air operations'
+      en: 'KokuFan 1979 09 page113.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1937
+    license: pd
+    license_tier: A
+    license_raw: 'CC0'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:KokuFan_1979_09_page113.jpg'
+    width: 4092
+    height: 6046
+    primary: false
+
+  - id: kaga-extra-7-kokufan-1979-09-page114-jpg
+    file: /img/ships/kaga-extra-7-kokufan-1979-09-page114-jpg.jpg
+    subject: ship:kaga
+    title:
+      zh: 'Left half of a rare picture of the Japanese aircraft carrier "Kaga" while conducting air operations'
+      en: 'KokuFan 1979 09 page114.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1937
+    license: pd
+    license_tier: A
+    license_raw: 'CC0'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:KokuFan_1979_09_page114.jpg'
+    width: 4076
+    height: 6048
+    primary: false
+
+  - id: kaga-extra-8-kokufan-1979-09-page115-jpg
+    file: /img/ships/kaga-extra-8-kokufan-1979-09-page115-jpg.jpg
+    subject: ship:kaga
+    title:
+      zh: 'Right half of a rare picture of the Japanese aircraft carrier "Kaga" while conducting air operations'
+      en: 'KokuFan 1979 09 page115.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1937
+    license: pd
+    license_tier: A
+    license_raw: 'CC0'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:KokuFan_1979_09_page115.jpg'
+    width: 4074
+    height: 6056
+    primary: false
+
+  - id: kaga-extra-9-kokufan-1979-09-page116-jpg
+    file: /img/ships/kaga-extra-9-kokufan-1979-09-page116-jpg.jpg
+    subject: ship:kaga
+    title:
+      zh: 'Rare pictures of Japanese aircraft carrier "Kaga" while conducting air operations'
+      en: 'KokuFan 1979 09 page116.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1937
+    license: pd
+    license_tier: A
+    license_raw: 'CC0'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:KokuFan_1979_09_page116.jpg'
+    width: 4074
+    height: 6038
+    primary: false
+
+  - id: kaga-extra-10-kaga-air-operations-full-deck-1937-jpg
+    file: /img/ships/kaga-extra-10-kaga-air-operations-full-deck-1937-jpg.jpg
+    subject: ship:kaga
+    title:
+      zh: 'Imperial Japanese Navy aircraft carrier Kaga conducts air operations in 1937'
+      en: 'Kaga air operations full deck 1937.jpg'
+    part: aircraft_handling
+    view: deck
+    date: 1937
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Shizuo Fukui'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Kaga_air_operations_full_deck_1937.jpg'
+    width: 2573
+    height: 2061
+    primary: false
+
+  - id: kaga-extra-11-japanese-navy-aircraft-carrier-kaga-jpg
+    file: /img/ships/kaga-extra-11-japanese-navy-aircraft-carrier-kaga-jpg.jpg
+    subject: ship:kaga
+    title:
+      zh: 'Imperial Japanese Navy Carrier Kaga: photo taken after her massive refitting'
+      en: 'Japanese Navy Aircraft Carrier Kaga.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1936
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Mr Fukami'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Japanese_Navy_Aircraft_Carrier_Kaga.jpg'
+    width: 2424
+    height: 1310
+    primary: false
+
+  - id: kaga-extra-12-kaga-landing-operations-1937-jpg
+    file: /img/ships/kaga-extra-12-kaga-landing-operations-1937-jpg.jpg
+    subject: ship:kaga
+    title:
+      zh: 'Imperial Japanese Navy aircraft carrier Kaga conducts air operations'
+      en: 'Kaga landing operations 1937.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1937
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Shizuo Fukui'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Kaga_landing_operations_1937.jpg'
+    width: 2367
+    height: 2150
+    primary: false
+
+  - id: king-george-v-extra-1-hms-king-george-v-and-uss-missouri-b
+    file: /img/ships/king-george-v-extra-1-hms-king-george-v-and-uss-missouri-bb-63-und.jpg
+    subject: ship:king-george-v
+    title:
+      zh: 'The British Royal Navy battleship HMS King George V at sea off Japan in company with U'
+      en: 'HMS King George V and USS Missouri (BB-63) underway off Japan on 16 August 1945 (80-G-455703).jpg'
+    part: hull_side
+    view: broadside
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_King_George_V_and_USS_Missouri_(BB-63)_underway_off_Japan_on_16_August_1945_(80-G-455703).jpg'
+    width: 5636
+    height: 4362
+    primary: false
+
+  - id: king-george-v-extra-2-hms-king-george-v-and-uss-missouri-b
+    file: /img/ships/king-george-v-extra-2-hms-king-george-v-and-uss-missouri-bb-63-und.jpg
+    subject: ship:king-george-v
+    title:
+      zh: 'The British Royal Navy battleship HMS King George V at sea off Japan in company with U'
+      en: 'HMS King George V and USS Missouri (BB-63) underway off Japan, 16 August 1945 (80-G-455703).jpg'
+    part: hull_side
+    view: broadside
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_King_George_V_and_USS_Missouri_(BB-63)_underway_off_Japan,_16_August_1945_(80-G-455703).jpg'
+    width: 5124
+    height: 3840
+    primary: false
+
+  - id: king-george-v-extra-5-hms-king-george-v-secondary-turret-s
+    file: /img/ships/king-george-v-extra-5-hms-king-george-v-secondary-turret-slv-green.jpg
+    subject: ship:king-george-v
+    title:
+      zh: 'HMS King George V in 1945, secondary QF 5'
+      en: 'HMS King George V secondary turret SLV Green.jpg'
+    part: turret
+    view: broadside
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Allan C. Green'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_King_George_V_secondary_turret_SLV_Green.jpg'
+    width: 5294
+    height: 3874
+    primary: false
+
+  - id: king-george-v-extra-6-hms-king-george-v-midships-slv-green
+    file: /img/ships/king-george-v-extra-6-hms-king-george-v-midships-slv-green-jpg.jpg
+    subject: ship:king-george-v
+    title:
+      zh: 'HMS King George V in 1945'
+      en: 'HMS King George V midships SLV Green.jpg'
+    part: hull_side
+    view: broadside
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Allan C. Green 1878 - 1954'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_King_George_V_midships_SLV_Green.jpg'
+    width: 5252
+    height: 3810
+    primary: false
+
+  - id: king-george-v-extra-7-the-archbishop-of-canterbury-in-proc
+    file: /img/ships/king-george-v-extra-7-the-archbishop-of-canterbury-in-procession-o.jpg
+    subject: ship:king-george-v
+    title:
+      zh: 'The Archbishop of Canterbury in procession on the quarterdeck of HMS KING GEORGE V during his visit'
+      en: 'The Archbishop of Canterbury in procession on the quarterdeck of HMS KING GEORGE V during his visit to the Home Fleet at Scapa Flow, 6 September 1942. A11552.jpg'
+    part: aircraft_handling
+    view: deck
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Hudson, F A (Lt), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:The_Archbishop_of_Canterbury_in_procession_on_the_quarterdeck_of_HMS_KING_GEORGE_V_during_his_visit_to_the_Home_Fleet_at_Scapa_Flow,_6_September_1942._A11552.jpg'
+    width: 2386
+    height: 1772
+    primary: false
+
+  - id: king-george-v-extra-8-allied-battleships-in-sagami-bay-28-
+    file: /img/ships/king-george-v-extra-8-allied-battleships-in-sagami-bay-28-aug-1945.jpg
+    subject: ship:king-george-v
+    title:
+      zh: 'Warships of the U'
+      en: 'Allied battleships in Sagami Bay 28 Aug 1945.jpg'
+    part: hull_side
+    view: broadside
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Official U.S. Navy Photograph'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Allied_battleships_in_Sagami_Bay_28_Aug_1945.jpg'
+    width: 4113
+    height: 3040
+    primary: false
+
+  - id: king-george-v-extra-9-admiral-tovey-and-kgvi-on-hms-kgv-iw
+    file: /img/ships/king-george-v-extra-9-admiral-tovey-and-kgvi-on-hms-kgv-iwm-a-8724.jpg
+    subject: ship:king-george-v
+    title:
+      zh: 'Admiral Tovey and KGVI on HMS KGV IWM A 8724'
+      en: 'Admiral Tovey and KGVI on HMS KGV IWM A 8724.jpg'
+    part: turret
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Priest, L C (Lt), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Admiral_Tovey_and_KGVI_on_HMS_KGV_IWM_A_8724.jpg'
+    width: 1300
+    height: 988
+    primary: false
+
+  - id: king-george-v-extra-10-inside-14-inch-turret-hms-king-geor
+    file: /img/ships/king-george-v-extra-10-inside-14-inch-turret-hms-king-george-v-iwm-.jpg
+    subject: ship:king-george-v
+    title:
+      zh: 'Inside 14 inch turret HMS King George V IWM A 15888'
+      en: 'Inside 14 inch turret HMS King George V IWM A 15888.jpg'
+    part: turret
+    view: broadside
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer : Mason, H A (Lt)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Inside_14_inch_turret_HMS_King_George_V_IWM_A_15888.jpg'
+    width: 1300
+    height: 988
+    primary: false
+
+  - id: prince-of-wales-extra-5-hms-prince-of-wales-arrives-at-sin
+    file: /img/ships/prince-of-wales-extra-5-hms-prince-of-wales-arrives-at-singapore-4-d.jpg
+    subject: ship:prince-of-wales
+    title:
+      zh: 'HMS PRINCE OF WALES arrives at Singapore, 4 December 1941'
+      en: 'HMS PRINCE OF WALES arrives at Singapore, 4 December 1941. A6784.jpg'
+    part: hull_side
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Abrahams, H J (Lieutenant), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_PRINCE_OF_WALES_arrives_at_Singapore,_4_December_1941._A6784.jpg'
+    width: 2480
+    height: 1870
+    primary: false
+
+  - id: prince-of-wales-extra-7-hms-prince-of-wales-arrives-at-sin
+    file: /img/ships/prince-of-wales-extra-7-hms-prince-of-wales-arrives-at-singapore-4-d.jpg
+    subject: ship:prince-of-wales
+    title:
+      zh: 'HMS PRINCE OF WALES arrives at Singapore, 4 December 1941'
+      en: 'HMS PRINCE OF WALES arrives at Singapore, 4 December 1941. A6784 (cropped).jpg'
+    part: hull_side
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Abrahams, H J (Lieutenant), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_PRINCE_OF_WALES_arrives_at_Singapore,_4_December_1941._A6784_(cropped).jpg'
+    width: 1577
+    height: 1056
+    primary: false
+
+  - id: prince-of-wales-extra-8-hms-prince-of-wales-opens-fire-ope
+    file: /img/ships/prince-of-wales-extra-8-hms-prince-of-wales-opens-fire-operation-hal.jpg
+    subject: ship:prince-of-wales
+    title:
+      zh: 'HMS PRINCE OF WALES opens fire, Operation HALBERD'
+      en: 'HMS PRINCE OF WALES opens fire, Operation HALBERD.jpg'
+    part: turret
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Coote, R G G (Lt), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_PRINCE_OF_WALES_opens_fire,_Operation_HALBERD.jpg'
+    width: 1447
+    height: 1080
+    primary: false
+
+  - id: prince-of-wales-extra-9-prince-of-wales-1-jpg
+    file: /img/ships/prince-of-wales-extra-9-prince-of-wales-1-jpg.jpg
+    subject: ship:prince-of-wales
+    title:
+      zh: 'Prince of Wales-1'
+      en: 'Prince of Wales-1.jpg'
+    part: hull_side
+    view: broadside
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Prince_of_Wales-1.jpg'
+    width: 1439
+    height: 482
+    primary: false
+
+  - id: prince-of-wales-extra-11-hms-prince-of-wales-in-singapore-
+    file: /img/ships/prince-of-wales-extra-11-hms-prince-of-wales-in-singapore-jpg.jpg
+    subject: ship:prince-of-wales
+    title:
+      zh: 'The Royal Navy battleship HMS Prince of Wales coming in to moor at Singapore'
+      en: 'HMS Prince Of Wales in Singapore.jpg'
+    part: hull_side
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Abrahams, H J (Lt), Royal Navy official photographer. Post-Work: User:W.wolny'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Prince_Of_Wales_in_Singapore.jpg'
+    width: 1302
+    height: 896
+    primary: false
+
+  - id: prince-of-wales-extra-fix-the-royal-navy-during-the-second
+    file: /img/ships/prince-of-wales-extra-fix-the-royal-navy-during-the-second-world-war-a.jpg
+    subject: ship:prince-of-wales
+    title:
+      zh: 'The Royal Navy during the Second World War A3898 (cropped)'
+      en: 'The Royal Navy during the Second World War A3898 (cropped).jpg'
+    part: hull_side
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Coote, R G G (Lt), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A3898_(cropped).jpg'
+    width: 1272
+    height: 973
+    primary: false
+
+  - id: prinz-eugen-extra-5-fumo-81-berlin-radar-aboard-the-german
+    file: /img/ships/prinz-eugen-extra-5-fumo-81-berlin-radar-aboard-the-german-heavy.jpg
+    subject: ship:prinz-eugen
+    title:
+      zh: 'FuMO 81 Berlin radar aboard the German heavy cruiser Prinz Eugen, in 1945 (NH 96450)'
+      en: 'FuMO 81 Berlin radar aboard the German heavy cruiser Prinz Eugen, in 1945 (NH 96450).jpg'
+    part: superstructure
+    view: broadside
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:FuMO_81_Berlin_radar_aboard_the_German_heavy_cruiser_Prinz_Eugen,_in_1945_(NH_96450).jpg'
+    width: 5711
+    height: 3711
+    primary: false
+
+  - id: prinz-eugen-extra-6-fumo-81-radar-aboard-the-german-heavy-
+    file: /img/ships/prinz-eugen-extra-6-fumo-81-radar-aboard-the-german-heavy-cruise.jpg
+    subject: ship:prinz-eugen
+    title:
+      zh: 'FuMO 81 radar aboard the German heavy cruiser Prinz Eugen, in 1945 (NH 96449)'
+      en: 'FuMO 81 radar aboard the German heavy cruiser Prinz Eugen, in 1945 (NH 96449).jpg'
+    part: superstructure
+    view: broadside
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:FuMO_81_radar_aboard_the_German_heavy_cruiser_Prinz_Eugen,_in_1945_(NH_96449).jpg'
+    width: 5710
+    height: 3664
+    primary: false
+
+  - id: prinz-eugen-extra-7-fumo-25-radar-antenna-aboard-the-germa
+    file: /img/ships/prinz-eugen-extra-7-fumo-25-radar-antenna-aboard-the-german-crui.jpg
+    subject: ship:prinz-eugen
+    title:
+      zh: 'FuMO 25 radar antenna aboard the German cruiser Prinz Eugen, in 1945 (NH 96442)'
+      en: 'FuMO 25 radar antenna aboard the German cruiser Prinz Eugen, in 1945 (NH 96442).jpg'
+    part: superstructure
+    view: overhead
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:FuMO_25_radar_antenna_aboard_the_German_cruiser_Prinz_Eugen,_in_1945_(NH_96442).jpg'
+    width: 5665
+    height: 3852
+    primary: false
+
+  - id: prinz-eugen-extra-8-cruiser-prinz-eugen-transiting-the-pan
+    file: /img/ships/prinz-eugen-extra-8-cruiser-prinz-eugen-transiting-the-panama-ca.jpg
+    subject: ship:prinz-eugen
+    title:
+      zh: 'Cruiser Prinz Eugen transiting the Panama Canal on 15 March 1946'
+      en: 'Cruiser Prinz Eugen transiting the Panama Canal on 15 March 1946.jpg'
+    part: hull_side
+    view: broadside
+    date: 1946
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Department of Defense. Department of the Navy. Naval Photographic Center photo 80-G-365075.'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Cruiser_Prinz_Eugen_transiting_the_Panama_Canal_on_15_March_1946.jpg'
+    width: 5655
+    height: 4568
+    primary: false
+
+  - id: prinz-eugen-extra-10-cruiser-prinz-eugen-anchored-in-bikin
+    file: /img/ships/prinz-eugen-extra-10-cruiser-prinz-eugen-anchored-in-bikini-lagoo.jpg
+    subject: ship:prinz-eugen
+    title:
+      zh: 'Cruiser Prinz Eugen anchored in Bikini Lagoon on 14 June 1946'
+      en: 'Cruiser Prinz Eugen anchored in Bikini Lagoon on 14 June 1946.jpg'
+    part: superstructure
+    view: broadside
+    date: 1946
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Department of Defense. Department of the Navy. Naval Photographic Center photo 80-G-627444'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Cruiser_Prinz_Eugen_anchored_in_Bikini_Lagoon_on_14_June_1946.jpg'
+    width: 5567
+    height: 4177
+    primary: false
+
+  - id: prinz-eugen-extra-11-pe-atomtest-2-jpg
+    file: /img/ships/prinz-eugen-extra-11-pe-atomtest-2-jpg.jpg
+    subject: ship:prinz-eugen
+    title:
+      zh: 'PE Atomtest 2'
+      en: 'PE Atomtest 2.jpg'
+    part: superstructure
+    view: broadside
+    date: 1946
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:PE_Atomtest_2.jpg'
+    width: 5425
+    height: 4060
+    primary: false
+
+  - id: prinz-eugen-extra-12-pe-atomtest-1-jpg
+    file: /img/ships/prinz-eugen-extra-12-pe-atomtest-1-jpg.jpg
+    subject: ship:prinz-eugen
+    title:
+      zh: 'PE Atomtest 1'
+      en: 'PE Atomtest 1.jpg'
+    part: hull_side
+    view: broadside
+    date: 1946
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:PE_Atomtest_1.jpg'
+    width: 5330
+    height: 3955
+    primary: false
+
+  - id: rodney-extra-1-rodneyfirthofforthbridge-jpg
+    file: /img/ships/rodney-extra-1-rodneyfirthofforthbridge-jpg.jpg
+    subject: ship:rodney
+    title:
+      zh: 'Sunset aboard the battleship HMS Rodney in the Firth of Forth'
+      en: 'RodneyFirthofForthBridge.jpg'
+    part: superstructure
+    view: broadside
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Reginald George Guy Coote'
+    source_url: 'https://commons.wikimedia.org/wiki/File:RodneyFirthofForthBridge.jpg'
+    width: 1300
+    height: 995
+    primary: false
+
+  - id: rodney-extra-2-the-royal-navy-during-the-second-world-war-
+    file: /img/ships/rodney-extra-2-the-royal-navy-during-the-second-world-war-a.jpg
+    subject: ship:rodney
+    title:
+      zh: 'The Royal Navy during the Second World War A15836'
+      en: 'The Royal Navy during the Second World War A15836.jpg'
+    part: hull_side
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'James, P G (Lt), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A15836.jpg'
+    width: 1300
+    height: 972
+    primary: false
+
+  - id: rodney-extra-3-the-royal-navy-during-the-second-world-war-
+    file: /img/ships/rodney-extra-3-the-royal-navy-during-the-second-world-war-a.jpg
+    subject: ship:rodney
+    title:
+      zh: 'The Royal Navy during the Second World War HMS RODNEY underway after refitting at Liverpool'
+      en: 'The Royal Navy during the Second World War A9607.jpg'
+    part: hull_side
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer, Tomlin, H W (Lt)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A9607.jpg'
+    width: 1300
+    height: 993
+    primary: false
+
+  - id: rodney-extra-9-le-hms-rodney-cuirass-britannique-cnews-btv
+    file: /img/ships/rodney-extra-9-le-hms-rodney-cuirass-britannique-cnews-btv1.jpg
+    subject: ship:rodney
+    title:
+      zh: 'Le (HMS) "Rodney" (cuirassé britannique) (CNews) - btv1b53197692k'
+      en: 'Le (HMS) "Rodney" (cuirassé britannique) (CNews) - btv1b53197692k.jpg'
+    part: hull_side
+    view: broadside
+    date: 1928
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Central News (Agence photographique). Agence photographique pour le document reproduit (commanditaire) Agence Rol. Agence photographique (commanditaire)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Le_(HMS)_%22Rodney%22_(cuirass%C3%A9_britannique)_(CNews)_-_btv1b53197692k.jpg'
+    width: 8596
+    height: 6230
+    primary: false
+
+  - id: rodney-extra-10-le-rodney-aux-indes-navire-de-guerre-btv1b
+    file: /img/ships/rodney-extra-10-le-rodney-aux-indes-navire-de-guerre-btv1b90.jpg
+    subject: ship:rodney
+    title:
+      zh: 'Le Rodney aux Indes (navire de guerre) - btv1b9048350t'
+      en: 'Le Rodney aux Indes (navire de guerre) - btv1b9048350t.jpg'
+    part: hull_side
+    view: broadside
+    date: 1931
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Agence de presse Meurisse. Agence photographique (commanditaire)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Le_Rodney_aux_Indes_(navire_de_guerre)_-_btv1b9048350t.jpg'
+    width: 7000
+    height: 5098
+    primary: false
+
+  - id: rodney-extra-11-when-a-battleship-puts-to-sea-1940-on-boar
+    file: /img/ships/rodney-extra-11-when-a-battleship-puts-to-sea-1940-on-board-.jpg
+    subject: ship:rodney
+    title:
+      zh: 'When a Battleship Puts To Sea'
+      en: 'When a Battleship Puts To Sea. 1940, on Board the British Battleship HMS Rodney. A145.jpg'
+    part: hull_side
+    view: broadside
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Reginald George Guy Coote'
+    source_url: 'https://commons.wikimedia.org/wiki/File:When_a_Battleship_Puts_To_Sea._1940,_on_Board_the_British_Battleship_HMS_Rodney._A145.jpg'
+    width: 4529
+    height: 3508
+    primary: false
+
+  - id: rodney-extra-12-hms-rodney-29-year-unknown-50151874546-jpg
+    file: /img/ships/rodney-extra-12-hms-rodney-29-year-unknown-50151874546-jpg.jpg
+    subject: ship:rodney
+    title:
+      zh: 'HMS Rodney (29) year unknown (50151874546)'
+      en: 'HMS Rodney (29) year unknown (50151874546).jpg'
+    part: hull_side
+    view: broadside
+    date: 1922
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'tormentor4555'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Rodney_(29)_year_unknown_(50151874546).jpg'
+    width: 3396
+    height: 1306
+    primary: false
+
+  - id: soryu-extra-1-japanese-aircraft-carrier-soryu-jpg
+    file: /img/ships/soryu-extra-1-japanese-aircraft-carrier-soryu-jpg.jpg
+    subject: ship:soryu
+    title:
+      zh: 'The Japanese aircraft carrier Soryu underway in January 1938'
+      en: 'Japanese aircraft carrier Soryu.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1938
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Donation of Kazutoshi Hando, 1970'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Soryu.jpg'
+    width: 3570
+    height: 1587
+    primary: false
+
+  - id: soryu-extra-2-japanese-aircraft-carrier-soryu-02-jpg
+    file: /img/ships/soryu-extra-2-japanese-aircraft-carrier-soryu-02-jpg.jpg
+    subject: ship:soryu
+    title:
+      zh: 'Japanese aircraft carrier Soryu 02'
+      en: 'Japanese aircraft carrier Soryu 02.jpg'
+    part: superstructure
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Soryu_02.jpg'
+    width: 2907
+    height: 2025
+    primary: false
+
+  - id: soryu-extra-3-aerial-view-of-the-japanese-aircraft-carrier
+    file: /img/ships/soryu-extra-3-aerial-view-of-the-japanese-aircraft-carrier.jpg
+    subject: ship:soryu
+    title:
+      zh: 'Aerial view of the Japanese aircraft carrier Sōryū evading an air attack on 4 June 1942 (fsa.8e00397'
+      en: 'Aerial view of the Japanese aircraft carrier Sōryū evading an air attack on 4 June 1942 (fsa.8e00397).jpg'
+    part: aircraft_handling
+    view: overhead
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'United States Army Air Forces (USAAF)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_Japanese_aircraft_carrier_S%C5%8Dry%C5%AB_evading_an_air_attack_on_4_June_1942_(fsa.8e00397).jpg'
+    width: 3436
+    height: 3154
+    primary: false
+
+  - id: soryu-extra-4-japanese-aircraft-carrier-soryu-02-cropped-j
+    file: /img/ships/soryu-extra-4-japanese-aircraft-carrier-soryu-02-cropped-j.jpg
+    subject: ship:soryu
+    title:
+      zh: 'Japanese aircraft carrier Soryu 02 cropped'
+      en: 'Japanese aircraft carrier Soryu 02 cropped.jpg'
+    part: superstructure
+    view: broadside
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'HIJMS_Soryu_02.jpg: User:W.wolny derivative work: 0607crp (talk)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Soryu_02_cropped.jpg'
+    width: 1850
+    height: 1138
+    primary: false
+
+  - id: soryu-extra-5-battle-of-midway-june-1942-23876649112-jpg
+    file: /img/ships/soryu-extra-5-battle-of-midway-june-1942-23876649112-jpg.jpg
+    subject: ship:soryu
+    title:
+      zh: 'USAF ID 4845: Battle of Midway, June 1942'
+      en: 'Battle of Midway, June 1942 (23876649112).jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'National Museum of the U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Battle_of_Midway,_June_1942_(23876649112).jpg'
+    width: 5587
+    height: 4461
+    primary: false
+
+  - id: soryu-extra-6-fantail-soryu-jpg
+    file: /img/ships/soryu-extra-6-fantail-soryu-jpg.jpg
+    subject: ship:soryu
+    title:
+      zh: 'Fantail Soryu'
+      en: 'Fantail Soryu.jpg'
+    part: hull_side
+    view: broadside
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Fantail_Soryu.jpg'
+    width: 3806
+    height: 2844
+    primary: false
+
+  - id: soryu-extra-7-japanese-aircraft-carrier-soryu-1937-jpg
+    file: /img/ships/soryu-extra-7-japanese-aircraft-carrier-soryu-1937-jpg.jpg
+    subject: ship:soryu
+    title:
+      zh: '蒼龍 日本海軍航空母艦。広島県呉海軍工廠にて艤装中の写真。'
+      en: 'Japanese aircraft carrier Soryu 1937.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1937
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Soryu_1937.jpg'
+    width: 3587
+    height: 2355
+    primary: false
+
+  - id: soryu-extra-8-japanese-aircraft-carrier-soryu-1938-jpg
+    file: /img/ships/soryu-extra-8-japanese-aircraft-carrier-soryu-1938-jpg.jpg
+    subject: ship:soryu
+    title:
+      zh: 'Japanese aircraft carrier Soryu 1938'
+      en: 'Japanese aircraft carrier Soryu 1938.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1938
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: '不明。Unknown'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Soryu_1938.jpg'
+    width: 3451
+    height: 1564
+    primary: false
+
+  - id: soryu-extra-9-hbz0px5amaaeb8o-jpg
+    file: /img/ships/soryu-extra-9-hbz0px5amaaeb8o-jpg.jpg
+    subject: ship:soryu
+    title:
+      zh: 'HBz0PX5aMAAeB8o'
+      en: 'HBz0PX5aMAAeB8o.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HBz0PX5aMAAeB8o.jpg'
+    width: 2048
+    height: 1224
+    primary: false
+
+  - id: soryu-extra-11-gf-in-indian-ocean-1942-jpg
+    file: /img/ships/soryu-extra-11-gf-in-indian-ocean-1942-jpg.jpg
+    subject: ship:soryu
+    title:
+      zh: 'The Japanese strike force advancing to the Indian Ocean'
+      en: 'GF in Indian Ocean, 1942.jpg'
+    part: hull_side
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:GF_in_Indian_Ocean,_1942.jpg'
+    width: 1687
+    height: 1117
+    primary: false
+
+  - id: soryu-extra-12-soryu-landing-test-jpg
+    file: /img/ships/soryu-extra-12-soryu-landing-test-jpg.jpg
+    subject: ship:soryu
+    title:
+      zh: 'The japanese aircraft carrier Soryu on trials in the Bungo strait, december 1937'
+      en: 'Soryu landing test.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1937
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Imperial Japanese Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Soryu_landing_test.jpg'
+    width: 1600
+    height: 1093
+    primary: false
+
+  - id: tirpitz-extra-1-lot-2275-60-26254455253-jpg
+    file: /img/ships/tirpitz-extra-1-lot-2275-60-26254455253-jpg.jpg
+    subject: ship:tirpitz
+    title:
+      zh: 'Lot-2275-60: German Warships, WWII'
+      en: 'Lot-2275-60 (26254455253).jpg'
+    part: hull_side
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'National Museum of the U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Lot-2275-60_(26254455253).jpg'
+    width: 3204
+    height: 1616
+    primary: false
+
+  - id: tirpitz-extra-2-lot-2275-59-26585865410-jpg
+    file: /img/ships/tirpitz-extra-2-lot-2275-59-26585865410-jpg.jpg
+    subject: ship:tirpitz
+    title:
+      zh: 'Lot-2275-59: German Warships, WWII'
+      en: 'Lot-2275-59 (26585865410).jpg'
+    part: hull_side
+    view: overhead
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'National Museum of the U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Lot-2275-59_(26585865410).jpg'
+    width: 2572
+    height: 2148
+    primary: false
+
+  - id: tirpitz-extra-3-lot-2275-61-26585863110-jpg
+    file: /img/ships/tirpitz-extra-3-lot-2275-61-26585863110-jpg.jpg
+    subject: ship:tirpitz
+    title:
+      zh: 'Lot-2275-61: German Warships, WWII'
+      en: 'Lot-2275-61 (26585863110).jpg'
+    part: hull_side
+    view: overhead
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'National Museum of the U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Lot-2275-61_(26585863110).jpg'
+    width: 2536
+    height: 2164
+    primary: false
+
+  - id: tirpitz-extra-5-tirpitz-altafjord-jpg
+    file: /img/ships/tirpitz-extra-5-tirpitz-altafjord-jpg.jpg
+    subject: ship:tirpitz
+    title:
+      zh: 'The German battleship Tirpitz in Bogen Bay in Ofotfjord, near Narvik, Norway, during World War II'
+      en: 'Tirpitz altafjord.jpg'
+    part: hull_side
+    view: broadside
+    date: 1943
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Tirpitz_altafjord.jpg'
+    width: 5770
+    height: 2181
+    primary: false
+
+  - id: tirpitz-extra-6-lot-2275-14-26820659176-jpg
+    file: /img/ships/tirpitz-extra-6-lot-2275-14-26820659176-jpg.jpg
+    subject: ship:tirpitz
+    title:
+      zh: 'Lot-2275-14: German Warships, WWII'
+      en: 'Lot-2275-14 (26820659176).jpg'
+    part: hull_side
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'National Museum of the U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Lot-2275-14_(26820659176).jpg'
+    width: 3215
+    height: 1620
+    primary: false
+
+  - id: tirpitz-extra-7-bulkhead-from-the-german-battleship-tirpit
+    file: /img/ships/tirpitz-extra-7-bulkhead-from-the-german-battleship-tirpitz-.jpg
+    subject: ship:tirpitz
+    title:
+      zh: 'Part of a bulkhead from the German battleship Tirpitz on display at RAF Museum Hendon'
+      en: 'Bulkhead from the German battleship Tirpitz at RAF Museum Hendon in November 2011.jpg'
+    part: hull_side
+    view: broadside
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Nick-D'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Bulkhead_from_the_German_battleship_Tirpitz_at_RAF_Museum_Hendon_in_November_2011.jpg'
+    width: 2512
+    height: 1886
+    primary: false
+
+  - id: tirpitz-extra-8-fleet-air-arm-attack-the-battleship-tirpit
+    file: /img/ships/tirpitz-extra-8-fleet-air-arm-attack-the-battleship-tirpitz-.jpg
+    subject: ship:tirpitz
+    title:
+      zh: 'Fleet Air Arm attack the battleship Tirpitz'
+      en: 'Fleet Air Arm attack the battleship Tirpitz.jpg'
+    part: hull_side
+    view: broadside
+    date: 1944
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'RN official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Fleet_Air_Arm_attack_the_battleship_Tirpitz.jpg'
+    width: 2457
+    height: 1772
+    primary: false
+
+  - id: tirpitz-extra-9-german-battleship-tirpitz-jpg
+    file: /img/ships/tirpitz-extra-9-german-battleship-tirpitz-jpg.jpg
+    subject: ship:tirpitz
+    title:
+      zh: 'German Battleship Tirpitz'
+      en: 'German Battleship Tirpitz.jpg'
+    part: hull_side
+    view: broadside
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'no data'
+    source_url: 'https://commons.wikimedia.org/wiki/File:German_Battleship_Tirpitz.jpg'
+    width: 1521
+    height: 2074
+    primary: false
+
+  - id: yorktown-extra-1-overhead-view-of-uss-yorktown-cv-5-in-the
+    file: /img/ships/yorktown-extra-1-overhead-view-of-uss-yorktown-cv-5-in-the-ca.jpg
+    subject: ship:yorktown
+    title:
+      zh: 'Overhead view of USS Yorktown (CV-5) in the Caribbean Sea on 17 January 1938'
+      en: 'Overhead view of USS Yorktown (CV-5) in the Caribbean Sea on 17 January 1938.jpg'
+    part: aircraft_handling
+    view: overhead
+    date: 1938
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Overhead_view_of_USS_Yorktown_(CV-5)_in_the_Caribbean_Sea_on_17_January_1938.jpg'
+    width: 5673
+    height: 4188
+    primary: false
+
+  - id: yorktown-extra-2-uss-yorktown-cv-5-being-commissioned-in-1
+    file: /img/ships/yorktown-extra-2-uss-yorktown-cv-5-being-commissioned-in-1937.jpg
+    subject: ship:yorktown
+    title:
+      zh: 'USS Yorktown (CV-5) being commissioned in 1937'
+      en: 'USS Yorktown (CV-5) being commissioned in 1937.jpg'
+    part: aircraft_handling
+    view: deck
+    date: 1937
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'USN'
+    source_url: 'https://commons.wikimedia.org/wiki/File:USS_Yorktown_(CV-5)_being_commissioned_in_1937.jpg'
+    width: 5640
+    height: 4258
+    primary: false
+
+  - id: yorktown-extra-3-uss-yorktown-cv-5-on-trials-may-1937-jpg
+    file: /img/ships/yorktown-extra-3-uss-yorktown-cv-5-on-trials-may-1937-jpg.jpg
+    subject: ship:yorktown
+    title:
+      zh: 'USS Yorktown (CV-5) on trials, May 1937'
+      en: 'USS Yorktown (CV-5) on trials, May 1937.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1937
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:USS_Yorktown_(CV-5)_on_trials,_May_1937.jpg'
+    width: 5601
+    height: 4100
+    primary: false
+
+  - id: yorktown-extra-4-yorktown-cv5-starboard-bow-underway-07-21
+    file: /img/ships/yorktown-extra-4-yorktown-cv5-starboard-bow-underway-07-21-19.jpg
+    subject: ship:yorktown
+    title:
+      zh: 'Yorktown (CV5). Starboard bow, underway, 07-21-1937'
+      en: 'Yorktown (CV5). Starboard bow, underway, 07-21-1937 - NARA - 513026.jpg'
+    part: bow
+    view: bow
+    date: 1937
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author or not provided'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Yorktown_(CV5)._Starboard_bow,_underway,_07-21-1937_-_NARA_-_513026.jpg'
+    width: 3000
+    height: 2332
+    primary: false
+
+  - id: yorktown-extra-5-uss-yorktown-cv-5-jul1937-jpg
+    file: /img/ships/yorktown-extra-5-uss-yorktown-cv-5-jul1937-jpg.jpg
+    subject: ship:yorktown
+    title:
+      zh: 'USS Yorktown (CV-5) Jul1937'
+      en: 'USS Yorktown (CV-5) Jul1937.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1937
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy photo 19-N-17424'
+    source_url: 'https://commons.wikimedia.org/wiki/File:USS_Yorktown_(CV-5)_Jul1937.jpg'
+    width: 2842
+    height: 2184
+    primary: false
+
+  - id: yorktown-extra-6-uss-yorktown-cv-5-underway-at-midway-1942
+    file: /img/ships/yorktown-extra-6-uss-yorktown-cv-5-underway-at-midway-1942-jp.jpg
+    subject: ship:yorktown
+    title:
+      zh: 'USS Yorktown (CV-5) underway at Midway 1942'
+      en: 'USS Yorktown (CV-5) underway at Midway 1942.jpg'
+    part: aircraft_handling
+    view: deck
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'USN'
+    source_url: 'https://commons.wikimedia.org/wiki/File:USS_Yorktown_(CV-5)_underway_at_Midway_1942.jpg'
+    width: 1928
+    height: 1299
+    primary: false
+
+  - id: yorktown-extra-8-uss-yorktown-cv-5-19-n-17422-tiff
+    file: /img/ships/yorktown-extra-8-uss-yorktown-cv-5-19-n-17422-tiff.jpg
+    subject: ship:yorktown
+    title:
+      zh: 'Making 17'
+      en: 'USS Yorktown (CV-5) - 19-N-17422.tiff'
+    part: stern
+    view: stern
+    date: 1937
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:USS_Yorktown_(CV-5)_-_19-N-17422.tiff'
+    width: 5992
+    height: 4922
+    primary: false
+
+  - id: yorktown-extra-9-uss-yorktown-cv-5-loading-aircraft-at-nav
+    file: /img/ships/yorktown-extra-9-uss-yorktown-cv-5-loading-aircraft-at-naval-.jpg
+    subject: ship:yorktown
+    title:
+      zh: 'USS Yorktown (CV-5) loading aircraft at Naval Air Station North Island in June 1940'
+      en: 'USS Yorktown (CV-5) loading aircraft at Naval Air Station North Island in June 1940.jpg'
+    part: superstructure
+    view: deck
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:USS_Yorktown_(CV-5)_loading_aircraft_at_Naval_Air_Station_North_Island_in_June_1940.jpg'
+    width: 5727
+    height: 4267
+    primary: false
+
+  - id: yorktown-extra-10-uss-yorktown-cv-5-embarking-aircraft-at-
+    file: /img/ships/yorktown-extra-10-uss-yorktown-cv-5-embarking-aircraft-at-nava.jpg
+    subject: ship:yorktown
+    title:
+      zh: 'USS Yorktown (CV-5) embarking aircraft at Naval Air Station North Island, in June 1940 (80-G-651042)'
+      en: 'USS Yorktown (CV-5) embarking aircraft at Naval Air Station North Island, in June 1940 (80-G-651042).jpg'
+    part: superstructure
+    view: deck
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:USS_Yorktown_(CV-5)_embarking_aircraft_at_Naval_Air_Station_North_Island,_in_June_1940_(80-G-651042).jpg'
+    width: 5723
+    height: 4455
+    primary: false
+
+  - id: yorktown-extra-11-tbds-on-yorktown-june-1940-jpg
+    file: /img/ships/yorktown-extra-11-tbds-on-yorktown-june-1940-jpg.jpg
+    subject: ship:yorktown
+    title:
+      zh: 'TBDs on Yorktown June 1940'
+      en: 'TBDs on Yorktown June 1940.jpg'
+    part: superstructure
+    view: deck
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:TBDs_on_Yorktown_June_1940.jpg'
+    width: 5720
+    height: 4555
+    primary: false
+
+  - id: yorktown-extra-fix-aerail-view-of-pearl-harbor-on-3-may-19
+    file: /img/ships/yorktown-extra-fix-aerail-view-of-pearl-harbor-on-3-may-1940-jp.jpg
+    subject: ship:yorktown
+    title:
+      zh: 'Aerail view of Pearl Harbor on 3 May 1940'
+      en: 'Aerail view of Pearl Harbor on 3 May 1940.jpg'
+    part: hull_side
+    view: overhead
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Aerail_view_of_Pearl_Harbor_on_3_May_1940.jpg'
+    width: 5660
+    height: 4433
+    primary: false
+
+  - id: yorktown-extra-fix-uss-yorktown-cv-5-is-hit-by-a-torpedo-o
+    file: /img/ships/yorktown-extra-fix-uss-yorktown-cv-5-is-hit-by-a-torpedo-on-4-j.jpg
+    subject: ship:yorktown
+    title:
+      zh: 'USS Yorktown (CV-5) is hit by a torpedo on 4 June 1942'
+      en: 'USS Yorktown (CV-5) is hit by a torpedo on 4 June 1942.jpg'
+    part: aircraft_handling
+    view: overhead
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'USN, photographed from USS Pensacola (CA-24)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:USS_Yorktown_(CV-5)_is_hit_by_a_torpedo_on_4_June_1942.jpg'
+    width: 5660
+    height: 4467
+    primary: false
+
+  - id: akagi-extra-r1-japanese-aircraft-carrier-akagi-jpg
+    file: /img/ships/akagi-extra-r1-japanese-aircraft-carrier-akagi-jpg.jpg
+    subject: ship:akagi
+    title:
+      zh: 'Japanese.aircraft.carrier.akagi'
+      en: 'Japanese.aircraft.carrier.akagi.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Donation of Kazutoshi Hando, 1970. U.S. Naval History and Heritage Command Photograph.'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Japanese.aircraft.carrier.akagi.jpg'
+    width: 5805
+    height: 3381
+    primary: false
+
+  - id: bismarck-extra-r1-bismarck-reconnaissance-jpg
+    file: /img/ships/bismarck-extra-r1-bismarck-reconnaissance-jpg.jpg
+    subject: ship:bismarck
+    title:
+      zh: 'Aerial reconnaissance photograph taken by Flying Officer Michael Suckling on 21 May 1941 in Norway'
+      en: 'Bismarck reconnaissance.jpg'
+    part: hull_side
+    view: overhead
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Parsecboy at en.wikipedia'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Bismarck_reconnaissance.jpg'
+    width: 1952
+    height: 1772
+    primary: false
+
+  - id: bismarck-extra-r2-duits-slagschip-de-bismarck-genoemd-naar
+    file: /img/ships/bismarck-extra-r2-duits-slagschip-de-bismarck-genoemd-naar-de-.jpg
+    subject: ship:bismarck
+    title:
+      zh: 'Duits slagschip ''de Bismarck '' genoemd naar de kanselier Otto von Bismarck'
+      en: 'Duits slagschip ''de Bismarck '' genoemd naar de kanselier Otto von Bismarck, SFA022801174.jpg'
+    part: hull_side
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Duits_slagschip_%27de_Bismarck_%27_genoemd_naar_de_kanselier_Otto_von_Bismarck,_SFA022801174.jpg'
+    width: 3546
+    height: 2453
+    primary: false
+
+  - id: bismarck-extra-r5-german-battleship-bismarck-in-the-grimst
+    file: /img/ships/bismarck-extra-r5-german-battleship-bismarck-in-the-grimstadfj.jpg
+    subject: ship:bismarck
+    title:
+      zh: 'Bismarck in a Norwegian fjord, 21 May 1941, shortly before departing for her Atlantic sortie'
+      en: 'German Battleship Bismarck in the Grimstadfjord.jpg'
+    part: hull_side
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Paul S. Schmalenbach'
+    source_url: 'https://commons.wikimedia.org/wiki/File:German_Battleship_Bismarck_in_the_Grimstadfjord.jpg'
+    width: 1149
+    height: 614
+    primary: false
+
+  - id: bismarck-extra-r6-the-royal-navy-during-the-second-world-w
+    file: /img/ships/bismarck-extra-r6-the-royal-navy-during-the-second-world-war-a.jpg
+    subject: ship:bismarck
+    title:
+      zh: 'The Royal Navy during the Second World War HMS RODNEY underway at sea off the coast near Liverpool'
+      en: 'The Royal Navy during the Second World War A9606.jpg'
+    part: hull_side
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer, Tomlin, H W (Lt)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A9606.jpg'
+    width: 800
+    height: 604
+    primary: false
+
+  - id: hiryu-extra-r1-japanese-aircraft-carrier-hiryu-maneuvers-t
+    file: /img/ships/hiryu-extra-r1-japanese-aircraft-carrier-hiryu-maneuvers-to.jpg
+    subject: ship:hiryu
+    title:
+      zh: 'Japanese aircraft carrier Hiryu maneuvers to avoid bombs on 4 June 1942 (USAF-3725)'
+      en: 'Japanese aircraft carrier Hiryu maneuvers to avoid bombs on 4 June 1942 (USAF-3725).jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Hiryu_maneuvers_to_avoid_bombs_on_4_June_1942_(USAF-3725).jpg'
+    width: 5024
+    height: 3740
+    primary: false
+
+  - id: hiryu-extra-r2-japanese-aircraft-carrier-hiryu-dodging-bom
+    file: /img/ships/hiryu-extra-r2-japanese-aircraft-carrier-hiryu-dodging-bomb.jpg
+    subject: ship:hiryu
+    title:
+      zh: 'Japanese aircraft carrier Hiryu dodging bombs on 4 June 1942 (USAF-3725)'
+      en: 'Japanese aircraft carrier Hiryu dodging bombs on 4 June 1942 (USAF-3725).jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Hiryu_dodging_bombs_on_4_June_1942_(USAF-3725).jpg'
+    width: 4160
+    height: 5103
+    primary: false
+
+  - id: hiryu-extra-r3-japanese-aircraft-carrier-hiryu-jpg
+    file: /img/ships/hiryu-extra-r3-japanese-aircraft-carrier-hiryu-jpg.jpg
+    subject: ship:hiryu
+    title:
+      zh: 'Japanese aircraft carrier Hiryū running speed trials'
+      en: 'Japanese aircraft carrier hiryu.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Naval Historical Center Photograph Donation of Kazutoshi Hando, 1970.'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_hiryu.jpg'
+    width: 3852
+    height: 2155
+    primary: false
+
+  - id: hornet-extra-r1-uss-hornet-cv-8-steaming-in-the-coral-sea-
+    file: /img/ships/hornet-extra-r1-uss-hornet-cv-8-steaming-in-the-coral-sea-ar.jpg
+    subject: ship:hornet
+    title:
+      zh: 'USS Hornet (CV-8) steaming in the Coral Sea area on 13 May 1942'
+      en: 'USS Hornet (CV-8) steaming in the Coral Sea area on 13 May 1942.jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:USS_Hornet_(CV-8)_steaming_in_the_Coral_Sea_area_on_13_May_1942.jpg'
+    width: 5728
+    height: 4484
+    primary: false
+
+  - id: hornet-extra-r2-us-task-force-17-underway-during-the-battl
+    file: /img/ships/hornet-extra-r2-us-task-force-17-underway-during-the-battle-.jpg
+    subject: ship:hornet
+    title:
+      zh: 'US Task Force 17 underway during the Battle of the Santa Cruz Islands 1942'
+      en: 'US Task Force 17 underway during the Battle of the Santa Cruz Islands 1942.jpg'
+    part: superstructure
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:US_Task_Force_17_underway_during_the_Battle_of_the_Santa_Cruz_Islands_1942.jpg'
+    width: 5671
+    height: 4171
+    primary: false
+
+  - id: hornet-extra-r3-uss-hornet-cv-8-underway-in-the-southern-p
+    file: /img/ships/hornet-extra-r3-uss-hornet-cv-8-underway-in-the-southern-pac.jpg
+    subject: ship:hornet
+    title:
+      zh: 'USS Hornet (CV-8) underway in the Southern Pacific on 15 May 1942 (80-G-14866)'
+      en: 'USS Hornet (CV-8) underway in the Southern Pacific on 15 May 1942 (80-G-14866).jpg'
+    part: aircraft_handling
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:USS_Hornet_(CV-8)_underway_in_the_Southern_Pacific_on_15_May_1942_(80-G-14866).jpg'
+    width: 5605
+    height: 4185
+    primary: false
+
+  - id: illustrious-extra-r1-hms-illustrious-awm-302415-jpg
+    file: /img/ships/illustrious-extra-r1-hms-illustrious-awm-302415-jpg.jpg
+    subject: ship:illustrious
+    title:
+      zh: 'AWM Caption: "c'
+      en: 'HMS Illustrious (AWM 302415).jpg'
+    part: superstructure
+    view: overhead
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Australian armed forces'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Illustrious_(AWM_302415).jpg'
+    width: 5905
+    height: 4526
+    primary: false
+
+  - id: illustrious-extra-r2-hms-illustrious-1940-fl2425-jpg
+    file: /img/ships/illustrious-extra-r2-hms-illustrious-1940-fl2425-jpg.jpg
+    subject: ship:illustrious
+    title:
+      zh: 'HMS ILLUSTRIOUS, 1940'
+      en: 'HMS ILLUSTRIOUS, 1940. FL2425.jpg'
+    part: hull_side
+    view: broadside
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_ILLUSTRIOUS,_1940._FL2425.jpg'
+    width: 2480
+    height: 1656
+    primary: false
+
+  - id: illustrious-extra-r3-the-royal-navy-during-the-second-worl
+    file: /img/ships/illustrious-extra-r3-the-royal-navy-during-the-second-world-war-a.jpg
+    subject: ship:illustrious
+    title:
+      zh: 'The Royal Navy during the Second World War HMS RODNEY underway at sea off the coast near Liverpool'
+      en: 'The Royal Navy during the Second World War A9606.jpg'
+    part: hull_side
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer, Tomlin, H W (Lt)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A9606.jpg'
+    width: 800
+    height: 604
+    primary: false
+
+  - id: illustrious-extra-r4-hms-illustrious-bow-1944-jpg
+    file: /img/ships/illustrious-extra-r4-hms-illustrious-bow-1944-jpg.jpg
+    subject: ship:illustrious
+    title:
+      zh: 'HMS Illustrious bow 1944'
+      en: 'HMS Illustrious bow 1944.jpg'
+    part: aircraft_handling
+    view: bow
+    date: 1944
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy (This image is part of a photograph album kept by Commander Joseph C. Clifton, USN, during 1942-1944, which included service as Commanding Officer of Fighting Squadron (V'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Illustrious_bow_1944.jpg'
+    width: 1495
+    height: 1097
+    primary: false
+
+  - id: king-george-v-extra-r1-hms-king-george-v-and-uss-missouri-
+    file: /img/ships/king-george-v-extra-r1-hms-king-george-v-and-uss-missouri-bb-63-und.jpg
+    subject: ship:king-george-v
+    title:
+      zh: 'The British Royal Navy battleship HMS King George V at sea off Japan in company with U'
+      en: 'HMS King George V and USS Missouri (BB-63) underway off Japan, 16 August 1945 (80-G-455703).jpg'
+    part: hull_side
+    view: broadside
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_King_George_V_and_USS_Missouri_(BB-63)_underway_off_Japan,_16_August_1945_(80-G-455703).jpg'
+    width: 5124
+    height: 3840
+    primary: false
+
+  - id: king-george-v-extra-r2-hms-king-george-v-and-uss-missouri-
+    file: /img/ships/king-george-v-extra-r2-hms-king-george-v-and-uss-missouri-bb-63-und.jpg
+    subject: ship:king-george-v
+    title:
+      zh: 'The British Royal Navy battleship HMS King George V at sea off Japan in company with U'
+      en: 'HMS King George V and USS Missouri (BB-63) underway off Japan, 16 August 1945 (80-G-455703).jpg'
+    part: hull_side
+    view: broadside
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_King_George_V_and_USS_Missouri_(BB-63)_underway_off_Japan,_16_August_1945_(80-G-455703).jpg'
+    width: 5124
+    height: 3840
+    primary: false
+
+  - id: prince-of-wales-extra-s3-hms-prince-of-wales-arrives-at-si
+    file: /img/ships/prince-of-wales-extra-s3-hms-prince-of-wales-arrives-at-singapore.jpg
+    subject: ship:prince-of-wales
+    title:
+      zh: 'HMS PRINCE OF WALES arrives at Singapore, 4 December 1941'
+      en: 'HMS PRINCE OF WALES arrives at Singapore, 4 December 1941. A6784 (cropped).jpg'
+    part: hull_side
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Abrahams, H J (Lieutenant), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_PRINCE_OF_WALES_arrives_at_Singapore,_4_December_1941._A6784_(cropped).jpg'
+    width: 1577
+    height: 1056
+    primary: false
+
+  - id: prince-of-wales-extra-s4-hms-prince-of-wales-arrives-at-si
+    file: /img/ships/prince-of-wales-extra-s4-hms-prince-of-wales-arrives-at-singapore.jpg
+    subject: ship:prince-of-wales
+    title:
+      zh: 'HMS PRINCE OF WALES arrives at Singapore, 4 December 1941'
+      en: 'HMS PRINCE OF WALES arrives at Singapore, 4 December 1941. A6784 (cropped).jpg'
+    part: hull_side
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Abrahams, H J (Lieutenant), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_PRINCE_OF_WALES_arrives_at_Singapore,_4_December_1941._A6784_(cropped).jpg'
+    width: 1577
+    height: 1056
+    primary: false
+
+  - id: prince-of-wales-extra-s5-hms-prince-of-wales-opens-fire-op
+    file: /img/ships/prince-of-wales-extra-s5-hms-prince-of-wales-opens-fire-operation.jpg
+    subject: ship:prince-of-wales
+    title:
+      zh: 'HMS PRINCE OF WALES opens fire, Operation HALBERD'
+      en: 'HMS PRINCE OF WALES opens fire, Operation HALBERD.jpg'
+    part: turret
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Coote, R G G (Lt), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_PRINCE_OF_WALES_opens_fire,_Operation_HALBERD.jpg'
+    width: 1447
+    height: 1080
+    primary: false
+
+  - id: prince-of-wales-extra-s6-prince-of-wales-1-jpg
+    file: /img/ships/prince-of-wales-extra-s6-prince-of-wales-1-jpg.jpg
+    subject: ship:prince-of-wales
+    title:
+      zh: 'Prince of Wales-1'
+      en: 'Prince of Wales-1.jpg'
+    part: hull_side
+    view: broadside
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Prince_of_Wales-1.jpg'
+    width: 1439
+    height: 482
+    primary: false
+
+  - id: prinz-eugen-extra-s1-admiral-scheer-1942-jpg
+    file: /img/ships/prinz-eugen-extra-s1-admiral-scheer-1942-jpg.jpg
+    subject: ship:prinz-eugen
+    title:
+      zh: 'Admiral Scheer 1942'
+      en: 'Admiral Scheer 1942.jpg'
+    part: turret
+    view: deck
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Naval Historical Center Photograph.'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Admiral_Scheer_1942.jpg'
+    width: 5687
+    height: 3015
+    primary: false
+
+  - id: prinz-eugen-extra-s4-fumo-81-berlin-radar-aboard-the-germa
+    file: /img/ships/prinz-eugen-extra-s4-fumo-81-berlin-radar-aboard-the-german-h.jpg
+    subject: ship:prinz-eugen
+    title:
+      zh: 'FuMO 81 Berlin radar aboard the German heavy cruiser Prinz Eugen, in 1945 (NH 96450)'
+      en: 'FuMO 81 Berlin radar aboard the German heavy cruiser Prinz Eugen, in 1945 (NH 96450).jpg'
+    part: superstructure
+    view: broadside
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:FuMO_81_Berlin_radar_aboard_the_German_heavy_cruiser_Prinz_Eugen,_in_1945_(NH_96450).jpg'
+    width: 5711
+    height: 3711
+    primary: false
+
+  - id: prinz-eugen-extra-s5-fumo-81-radar-aboard-the-german-heavy
+    file: /img/ships/prinz-eugen-extra-s5-fumo-81-radar-aboard-the-german-heavy-cr.jpg
+    subject: ship:prinz-eugen
+    title:
+      zh: 'FuMO 81 radar aboard the German heavy cruiser Prinz Eugen, in 1945 (NH 96449)'
+      en: 'FuMO 81 radar aboard the German heavy cruiser Prinz Eugen, in 1945 (NH 96449).jpg'
+    part: superstructure
+    view: broadside
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:FuMO_81_radar_aboard_the_German_heavy_cruiser_Prinz_Eugen,_in_1945_(NH_96449).jpg'
+    width: 5710
+    height: 3664
+    primary: false
+
+  - id: rodney-extra-s1-the-royal-navy-during-the-second-world-w
+    file: /img/ships/rodney-extra-s1-the-royal-navy-during-the-second-world-w.jpg
+    subject: ship:rodney
+    title:
+      zh: 'The Royal Navy during the Second World War HMS RODNEY underway at sea off the coast near Liverpool'
+      en: 'The Royal Navy during the Second World War A9606.jpg'
+    part: hull_side
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer, Tomlin, H W (Lt)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A9606.jpg'
+    width: 800
+    height: 604
+    primary: false
+
+  - id: rodney-extra-s2-the-royal-navy-during-the-second-world-w
+    file: /img/ships/rodney-extra-s2-the-royal-navy-during-the-second-world-w.jpg
+    subject: ship:rodney
+    title:
+      zh: 'The Royal Navy during the Second World War HMS RODNEY underway at sea off the coast near Liverpool'
+      en: 'The Royal Navy during the Second World War A9606.jpg'
+    part: hull_side
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer, Tomlin, H W (Lt)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A9606.jpg'
+    width: 800
+    height: 604
+    primary: false
+
+  - id: rodney-extra-s3-hms-rodney-after-refitting-at-liverpool
+    file: /img/ships/rodney-extra-s3-hms-rodney-after-refitting-at-liverpool-.jpg
+    subject: ship:rodney
+    title:
+      zh: 'HMS RODNEY underway after refitting at Liverpool'
+      en: 'HMS Rodney after refitting at Liverpool.jpg'
+    part: hull_side
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Official photographer, Tomlin H W (Lt)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Rodney_after_refitting_at_Liverpool.jpg'
+    width: 1241
+    height: 776
+    primary: false
+
+  - id: tirpitz-extra-s1-lot-2275-60-26254455253-jpg
+    file: /img/ships/tirpitz-extra-s1-lot-2275-60-26254455253-jpg.jpg
+    subject: ship:tirpitz
+    title:
+      zh: 'Lot-2275-60: German Warships, WWII'
+      en: 'Lot-2275-60 (26254455253).jpg'
+    part: hull_side
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'National Museum of the U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Lot-2275-60_(26254455253).jpg'
+    width: 3204
+    height: 1616
+    primary: false
+
+  - id: tirpitz-extra-s2-lot-2275-59-26585865410-jpg
+    file: /img/ships/tirpitz-extra-s2-lot-2275-59-26585865410-jpg.jpg
+    subject: ship:tirpitz
+    title:
+      zh: 'Lot-2275-59: German Warships, WWII'
+      en: 'Lot-2275-59 (26585865410).jpg'
+    part: hull_side
+    view: overhead
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'National Museum of the U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Lot-2275-59_(26585865410).jpg'
+    width: 2572
+    height: 2148
+    primary: false
+
   - id: a6m2-primary
     file: /img/weapons/a6m2-primary.jpg
     subject: weapon:a6m2
