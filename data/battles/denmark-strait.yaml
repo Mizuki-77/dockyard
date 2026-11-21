@@ -37,13 +37,16 @@ belligerents:
         role: { zh: 战列舰 · 编队旗舰, en: Battleship · flagship }
       - name: Prinz Eugen
         role: { zh: 重巡洋舰, en: Heavy cruiser }
+        note: 本站尚未收录该舰单页（希佩尔海军上将级）。
   - side: allies
     label: { zh: 英国, en: United Kingdom }
     ships:
       - name: HMS Hood
+        ship_id: hood
         role: { zh: 战列巡洋舰 · 分舰队旗舰, en: Battlecruiser · squadron flagship }
       - name: HMS Prince of Wales
         role: { zh: 战列舰 · 服役不足两个月, en: Battleship · in service less than two months }
+        note: 本站尚未收录该舰单页（英王乔治五世级，该级已有单页）。
 
 # 双方兵力以「当时实际能开火的武器」计，不是编制表数字 ——
 # 英舰迎头接敌只能用前主炮，这是理解战果的前提。

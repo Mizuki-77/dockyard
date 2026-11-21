@@ -49,6 +49,7 @@ belligerents:
     en: United Kingdom (with Polish destroyer Piorun)
   ships:
   - name: HMS King George V
+    ship_id: king-george-v
     role:
       zh: 战列舰 · 本土舰队旗舰
       en: Battleship · Home Fleet flagship
@@ -56,38 +57,57 @@ belligerents:
     role:
       zh: 战列舰 · 原定赴波士顿修理
       en: Battleship · en route to Boston for repairs
+    note: 本站尚未收录该舰单页（纳尔逊级）。
   - name: HMS Norfolk
     role:
       zh: 重巡洋舰 · 整夜绕至东北做 flank marking
       en: Heavy cruiser
+    note: 本站尚未收录该舰单页（诺福克级）。
   - name: HMS Dorsetshire
     role:
       zh: 重巡洋舰 · 执行最后雷击
       en: Heavy cruiser · delivered the final torpedoes
+    note: 本站尚未收录该舰单页（诺福克级）。
   - name: HMS Sheffield
     role:
       zh: 轻巡洋舰 · 5-26 跟踪
       en: Light cruiser · shadower on 26 May
+    note: 本站尚未收录该舰单页（城级）。
   - name: HMS Ark Royal
     role:
       zh: 航空母舰 · Force H
       en: Aircraft carrier · Force H
+    note: 本站尚未收录该舰单页（皇家方舟级）。
   - name: HMS Victorious
     role:
       zh: 航空母舰 · 5-24 空袭（5-26 已脱离、不在战场，见文首更正）
       en: Aircraft carrier · 24 May strike only; detached well before 26–27 May
+    note: 本站尚未收录该舰单页（光辉级，该级已有单页）。
   - name: HMS Cossack
     role:
       zh: 驱逐舰 · 第 4 驱逐舰分队旗舰
-      en: Destroyer · Captain (D)
-      4th Flotilla: null
+      en: Destroyer · Captain (D), 4th Flotilla
+    note: 本站尚未收录该舰单页。
   - name: HMS Maori
+    role:
+      zh: 驱逐舰 · 毛利人号
+      en: Destroyer
+    note: 本站尚未收录该舰单页。
   - name: HMS Zulu
+    role:
+      zh: 驱逐舰 · 祖鲁人号
+      en: Destroyer
+    note: 本站尚未收录该舰单页。
   - name: HMS Sikh
+    role:
+      zh: 驱逐舰 · 锡克人号
+      en: Destroyer
+    note: 本站尚未收录该舰单页。
   - name: ORP Piorun
     role:
       zh: 驱逐舰 · 波兰海军
       en: Destroyer · Polish Navy
+    note: 本站尚未收录该舰单页。
 forces:
 - side: axis
   guns:

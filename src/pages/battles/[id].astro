@@ -196,6 +196,7 @@ const usedSources = [...srcIds].map((s) => getSource(s)).filter(Boolean);
                     <span class="side__name side__name--plain">{x.name}</span>
                   )}
                   {x.role && <span class="side__role">{x.role.zh}</span>}
+                  {x.note && <span class="side__note">{x.note}</span>}
                 </div>
               ))}
             </div>
@@ -814,6 +815,15 @@ const usedSources = [...srcIds].map((s) => getSource(s)).filter(Boolean);
   .side__role {
     font-size: 11.5px;
     color: var(--ink-400);
+  }
+  /* 「本站尚未收录该舰单页」之类的补充说明 —— 比 role 更弱，
+     它的作用是解释「为什么这个名字点不开」，不该抢主信息的视觉权重。 */
+  .side__note {
+    display: block;
+    margin-top: 1px;
+    font-size: 10.5px;
+    line-height: 1.5;
+    color: var(--ink-300);
   }
   .side__guns {
     margin: 11px 0 0;

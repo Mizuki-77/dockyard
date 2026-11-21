@@ -151,8 +151,15 @@ export interface ImageRegFile {
 
 export interface BattleShip {
   name: string;
+  /** 指向 data/ships/<id>.yaml。没有这一项时战役页只显示纯文本，不可点 */
   ship_id?: string;
   role?: BiText;
+  /**
+   * 关于这场战斗里这一艘舰的补充说明。
+   * 目前主要用来写「本站尚未收录该舰单页」，让读者知道那不是漏做了链接，
+   * 而不是看到一个点不开的舰名去猜。
+   */
+  note?: string;
 }
 
 export interface Belligerent {
