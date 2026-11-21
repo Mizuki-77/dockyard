@@ -527,7 +527,12 @@ export interface MountEntity {
   weaponId?: string;
 }
 
-/** 从某舰级文件里抽出 weapon / mount 实体。 */
+/**
+ * 从某舰级的文件里抽出 weapon / mount 实体。
+ *
+ * @deprecated 只读舰级，会漏掉武器数据挂在单舰上的那一半舰。
+ *             新代码请用 getShipEntities()，它同时吃单舰和舰级。
+ */
 export function getEntities(cls: ClassFile | undefined) {
   const weapons = new Map<string, ResolvedFact[]>();
   const mounts = new Map<string, ResolvedFact[]>();
@@ -578,6 +583,75 @@ function mkMount(id: string, facts: ResolvedFact[]): MountEntity {
     typeof desig?.value === 'string' ? desig.value : null,
   ].filter(Boolean);
   return { id, label: parts.join(' · '), facts: sortFacts(facts) };
+}
+
+/**
+ * 单舰页专用：把「单舰自己的」和「舰级继承的」weapon / mount 实体合并。
+ *
+ * 为什么需要这一层（2026-11-21 修的 bug）：
+ *
+ * 本项目里武器数据的存放位置**不统一**，这是历史遗留：
+ *   - 俾斯麦级 / 光辉级 / KGV 级：武器写在 data/classes/*.yaml（舰级）
+ *   - 赤城 / 加贺 / 苍龙 / 飞龙：武器写在 data/ships/*.yaml（单舰）
+ *   - 约克城级：舰级；企业号 / 约克城 / 大黄蜂三舰：单舰
+ *
+ * 旧的 getEntities(cls) 只读舰级，于是 12 艘舰里有 8 艘的「武器配置」区
+ * **整块没有渲染** —— 页面不报错，只是那一段消失了。直到做「舰→武器」
+ * 跳转时统计链接数才发现：赤城页 0 个武器链接，而它明明有 6 个武器实体。
+ *
+ * 合并规则与 fact 继承一致（框架 §3.6）：单舰层命中即覆盖舰级层，
+ * 不与舰级值构成分歧。这里按 weapon id 合并，同 id 时单舰 fact 优先。
+ */
+export function getShipEntities(
+  ship: ShipFile | undefined,
+  cls: ClassFile | undefined,
+) {
+  const weapons = new Map<string, ResolvedFact[]>();
+  const mounts = new Map<string, ResolvedFact[]>();
+
+  // 先吃舰级，再吃单舰 —— 后写入的同 id 会覆盖先写入的（Map.set 语义），
+  // 于是「单舰覆盖舰级」自动成立，不需要额外的去重逻辑。
+  const sources: { facts: Fact[]; origin: 'ship' | 'class' }[] = [];
+  if (cls) sources.push({ facts: cls.facts ?? [], origin: 'class' });
+  if (ship) sources.push({ facts: ship.facts ?? [], origin: 'ship' });
+
+  for (const { facts, origin } of sources) {
+    for (const raw of facts) {
+      const f = toResolved(raw, origin);
+      const about = f.about ?? '';
+      if (about.startsWith('weapon:')) {
+        const id = about.slice(7);
+        const arr = weapons.get(id) ?? [];
+        arr.push(f);
+        weapons.set(id, arr);
+      } else if (about.startsWith('mount:')) {
+        const id = about.slice(6);
+        const arr = mounts.get(id) ?? [];
+        arr.push(f);
+        mounts.set(id, arr);
+      }
+    }
+  }
+
+  const mountToWeapon = new Map<string, string>();
+  for (const [id, facts] of mounts) {
+    const w = facts.find((f) => f.field === 'mount.weapon');
+    if (w && typeof w.value === 'string') mountToWeapon.set(id, w.value);
+  }
+
+  const weaponEntities: WeaponEntity[] = [...weapons.entries()].map(([id, facts]) => {
+    const desig = facts.find((f) => f.field === 'weapon.designation');
+    return {
+      id,
+      label: typeof desig?.value === 'string' ? desig.value : id,
+      facts: sortFacts(facts),
+      mounts: [...mounts.entries()]
+        .filter(([mid]) => mountToWeapon.get(mid) === `weapon:${id}`)
+        .map(([mid, mf]) => mkMount(mid, mf)),
+    };
+  });
+
+  return { weapons: weaponEntities.sort((a, b) => a.label.localeCompare(b.label)) };
 }
 
 /** fact 列表按字段注册顺序排，页面表格才不会乱序。 */

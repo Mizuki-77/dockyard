@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import SideNav from '../../components/SideNav.astro';
 import ReportIssue from '../../components/ReportIssue.astro';
+import WeaponLink from '../../components/WeaponLink.astro';
 import {
   getClasses,
   getClass,
@@ -181,8 +182,14 @@ const navItems = [
           {entities.weapons.map((w) => (
             <div class="card">
               <div class="card__head">
-                <h3 class="card__title">{w.label}</h3>
+                <h3 class="card__title">
+                  <WeaponLink id={w.id} label={w.label} />
+                </h3>
                 <span class="tag tag--ghost">{w.facts.length} 条参数</span>
+                <a class="card__more" href={`/weapons/${w.id}/`}>
+                  武器详情
+                  <span aria-hidden="true">→</span>
+                </a>
               </div>
               <div class="card__body">
                 {w.facts.map((f) => {

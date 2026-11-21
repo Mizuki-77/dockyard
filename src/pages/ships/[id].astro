@@ -8,6 +8,7 @@
 import Base from '../../layouts/Base.astro';
 import SideNav from '../../components/SideNav.astro';
 import ReportIssue from '../../components/ReportIssue.astro';
+import WeaponLink from '../../components/WeaponLink.astro';
 import {
   buildShipView,
   buildTimelinePayload,
@@ -17,6 +18,8 @@ import {
   getField,
   getGroups,
   getShips,
+  getShip,
+  getShipEntities,
   getEntities,
   getClass,
   getSource,
@@ -37,7 +40,10 @@ const { id } = Astro.params;
 const view = buildShipView(id!)!;
 const cls = view.classId ? getClass(view.classId) : undefined;
 const payload = buildTimelinePayload(view);
-const entities = getEntities(cls);
+// 必须同时传单舰与舰级：武器数据在本项目里存放位置不统一，
+// 赤城/加贺/苍龙/飞龙与三艘美军航母把武器写在 ships/ 下，
+// 只读舰级会让这些舰的「武器配置」区整块消失（2026-11-21 修的 bug）。
+const entities = getShipEntities(getShip(id!), cls);
 const narratives = getNarratives(view.id);
 const article = getArticle(view.id);
 const groups = getGroups();
@@ -224,8 +230,14 @@ const nation = primaryValue(view.id, 'identity.nation');
           {entities.weapons.map((w) => (
             <div class="weapon">
               <div class="weapon__head">
-                <h3 class="weapon__title">{w.label}</h3>
+                <h3 class="weapon__title">
+                  <WeaponLink id={w.id} label={w.label} />
+                </h3>
                 <span class="tag tag--ghost">{w.facts.length} 条参数</span>
+                <a class="weapon__more" href={`/weapons/${w.id}/`}>
+                  武器详情
+                  <span aria-hidden="true">→</span>
+                </a>
               </div>
               <div class="weapon__body">
                 <div class="weapon__facts">
@@ -266,10 +278,11 @@ const nation = primaryValue(view.id, 'identity.nation');
                   <div class="mountbox">
                     <div class="mountbox__title">炮位</div>
                     {w.mounts.map((m) => (
-                      <div class="mountbox__row">
+                      <a class="mountbox__row" href={`/weapons/${w.id}/#mounts`}>
                         <span class="mountbox__name">{m.label}</span>
                         <span class="mountbox__n">{m.facts.length} 条</span>
-                      </div>
+                        <span class="mountbox__arrow" aria-hidden="true">→</span>
+                      </a>
                     ))}
                   </div>
                 )}
@@ -925,6 +938,25 @@ const nation = primaryValue(view.id, 'identity.nation');
     color: var(--ink-900);
     margin: 0;
   }
+  /* 「武器详情 →」放在标题栏最右，和计数标签拉开 */
+  .weapon__more {
+    margin-left: auto;
+    font-size: 11.5px;
+    color: var(--blue-700);
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 2px 7px;
+    border: 1px solid var(--blue-200);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .weapon__more:hover,
+  .weapon__more:focus-visible {
+    background: var(--blue-50);
+    border-color: var(--blue-400);
+    outline: none;
+  }
   .weapon__body {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 190px;
@@ -957,6 +989,25 @@ const nation = primaryValue(view.id, 'identity.nation');
     padding: 5px 0;
     border-bottom: 1px dashed var(--line);
     font-size: 12px;
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .mountbox__row:hover,
+  .mountbox__row:focus-visible {
+    color: var(--blue-700);
+    outline: none;
+  }
+  .mountbox__arrow {
+    color: var(--ink-300);
+    opacity: 0;
+    transition: opacity 0.15s, transform 0.15s;
+  }
+  .mountbox__row:hover .mountbox__arrow,
+  .mountbox__row:focus-visible .mountbox__arrow {
+    opacity: 1;
+    transform: translateX(2px);
+    color: var(--blue-600);
   }
   .mountbox__row:last-child {
     border-bottom: 0;

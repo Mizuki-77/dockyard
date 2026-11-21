@@ -1,0 +1,101 @@
+---
+/**
+ * 武器名 → 武器详情页的链接。
+ *
+ * 为什么单独做成组件：同一个跳转要在三个地方出现
+ *   - 单舰页「武器配置」的型号标题
+ *   - 舰级页「武备系统」的卡片标题
+ *   - 武器页自身（不加链接，用 variant="plain" 走纯文本）
+ *
+ * 如果只是「有 href 就渲染成 <a>」，那 URL 拼错的代价是静默 404 ——
+ * 实测 build 不会报错，页面会正常生成，只是点进去 404。
+ * 所以这里在构建期做一次存在性校验：id 不在 getWeaponIndex() 里时
+ * 降级成纯文本并打警告，宁可不可点，也不给一个死链。
+ */
+import { getWeaponIndex } from '../lib/data';
+
+interface Props {
+  id: string;
+  /** 显示文字。不传就用武器实体的 label（designation 的首个值） */
+  label?: string;
+  /** link = 可点；plain = 纯文本（目标不存在，或本页就是它） */
+  variant?: 'link' | 'plain';
+  /** 是否显示尾部的 → 箭头 */
+  arrow?: boolean;
+  class?: string;
+}
+
+const { id, label, variant = 'link', arrow = false, class: cls } = Astro.props;
+
+const idx = getWeaponIndex();
+const target = idx.get(id);
+
+// 目标不存在 → 降级成纯文本。
+// 这种情况理论上不该发生（fact 的 about 引用的 id 应该都是真的），
+// 但数据层没有强制约束，所以在这里兜一次，并在构建日志里留痕。
+let usable = variant === 'link' && !!target;
+if (variant === 'link' && !target) {
+  console.warn(`[WeaponLink] 找不到武器实体 "${id}"，降级为纯文本`);
+}
+
+const text = label ?? target?.label ?? id;
+---
+
+{
+  usable ? (
+    <a class:list={['wlink', cls]} href={`/weapons/${id}/`} title={`${text} · 武器详情`}>
+      <span class="wlink__t">{text}</span>
+      {arrow && (
+        <span class="wlink__arrow" aria-hidden="true">
+          →
+        </span>
+      )}
+    </a>
+  ) : (
+    <span class:list={['wlink', 'wlink--plain', cls]}>{text}</span>
+  )
+}
+
+<style>
+  .wlink {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* 只有真正可点的才给下划线与悬停反馈 */
+  a.wlink {
+    border-bottom: 1px solid transparent;
+    transition:
+      color 0.15s,
+      border-color 0.15s;
+  }
+  a.wlink:hover,
+  a.wlink:focus-visible {
+    color: var(--blue-700);
+    border-bottom-color: var(--blue-300);
+    outline: none;
+  }
+
+  .wlink--plain {
+    color: inherit;
+  }
+
+  .wlink__arrow {
+    margin-left: 6px;
+    color: var(--ink-300);
+    transition: transform 0.15s, color 0.15s;
+    display: inline-block;
+  }
+  a.wlink:hover .wlink__arrow,
+  a.wlink:focus-visible .wlink__arrow {
+    color: var(--blue-600);
+    transform: translateX(2px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    a.wlink,
+    .wlink__arrow {
+      transition: none;
+    }
+  }
+</style>

@@ -505,6 +505,30 @@ hr {
   color: var(--ink-900);
 }
 
+/* 「武器详情 →」：卡片标题栏最右的跳转入口。
+   用在舰级页的武备卡片上，和单舰页的 .weapon__more 是同一个意图，
+   但两者处在不同的组件壳里（card vs weapon），所以分开写。 */
+.card__more {
+  margin-left: auto;
+  font-size: 11.5px;
+  color: var(--blue-700);
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 2px 7px;
+  border: 1px solid var(--blue-200);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+.card__more:hover,
+.card__more:focus-visible {
+  background: var(--blue-50);
+  border-color: var(--blue-400);
+  outline: none;
+}
+
 .card--pad {
   padding: 20px 22px;
 }
