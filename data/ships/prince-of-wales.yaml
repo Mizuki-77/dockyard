@@ -1,0 +1,188 @@
+# ============================================================================
+# 单舰：HMS Prince of Wales（威尔士亲王号战列舰，舷号 53）
+# ----------------------------------------------------------------------------
+# 挂靠舰级类：king-george-v（176 条 fact 已存在，主尺度/排水量/装甲/主炮
+# 性能参数一律不重复，只写本舰差异）。
+# 解析顺序（docs/00-framework.md §3.6）：单舰 fact -> 舰级 fact -> 未记载。
+#
+# 调研底稿：work/raw/prince-of-wales-tech.md（872 行，2026-11-21）
+#
+# 【这一舰的三个关键事实，都容易被搞错】
+#
+# 1) 「1941-03-31 服役」是错的。
+#    1941-01-19 才是服役（commissioned, incomplete, and with only half
+#    her crew, for trials）；1941-03-31 是**完工**（classified as completed），
+#    而且这个「完工」是靠豁免多项关键试验换来的，服役时武器系统尚未完全可用。
+#    navypedia 那一格表头是 Comp（完工），不是服役。
+#
+# 2) 1941-05-24 没继续追击，理由不是燃油。
+#    05-24 当天的理由是战备状态（一门炮不能用、舰桥被打坏），
+#    燃油要到 05-25 才成为理由，而且那天真正缺油的是英王乔治五世号
+#    （剩 1,200 t / 32%），本舰的油量来源根本没记。
+#
+# 3) 沉没原因不是「鱼雷 vs 抽水泵」二选一。
+#    这是三条独立的破坏链：鱼雷破口 → 螺旋桨轴把舱壁铰穿
+#    （Garzke 2012 残骸法证的发现）→ 电力丧失导致泵失效。
+#    泵失效是第三条链的下游症状，不是并列选项。
+# ============================================================================
+
+id: prince-of-wales
+name:
+  zh: 威尔士亲王号
+  en: HMS Prince of Wales
+class: king-george-v
+open_ended_note: >
+  英王乔治五世级五号舰。服役不足两个月就参加丹麦海峡海战并击伤俾斯麦；
+  1941-12-10 在马来亚海域被日军航空鱼雷击沉，与反击号同时。
+  它是本站目前唯一一艘串起大西洋与远东两个战场的舰。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: HMS Prince of Wales
+    src: [naval-history-pow]
+    valid: { from: 1939-05-03 }
+    confidence: C
+
+  - field: identity.name_zh
+    value: 威尔士亲王号
+    src: [naval-history-pow]
+    valid: { from: 1939-05-03 }
+    confidence: C
+
+  - field: identity.pennant_number
+    value: '53'
+    src: [naval-history-pow, navypedia-kgv]
+    valid: { from: 1941-01-19, to: 1941-12-10 }
+    confidence: C
+
+  - field: identity.ship_type
+    value: battleship
+    src: [naval-history-pow]
+    valid: { from: 1941-01-19, to: 1941-12-10 }
+    confidence: A
+
+  - field: identity.nation
+    value: united_kingdom
+    src: [naval-history-pow]
+    valid: { from: 1941-01-19, to: 1941-12-10 }
+    confidence: A
+
+  - field: identity.operator
+    value: Royal Navy
+    src: [naval-history-pow]
+    valid: { from: 1941-01-19, to: 1941-12-10 }
+    confidence: A
+
+  - field: identity.era
+    value: ww2
+    src: [naval-history-pow]
+    valid: { from: 1939-09-03, to: 1941-12-10 }
+    confidence: A
+
+  # ============================================================ 建造
+  - field: construction.builder
+    value: Cammell Laird
+    src: [naval-history-pow, navypedia-kgv]
+    valid: { from: 1937-01-01 }
+    confidence: C
+
+  - field: construction.builder_location
+    value: Birkenhead
+    src: [navypedia-kgv]
+    valid: { from: 1937-01-01 }
+    confidence: C
+
+  - field: construction.laid_down
+    value: 1937-01-01
+    unit: date
+    src: [navypedia-kgv]
+    valid: { from: 1937-01-01 }
+    confidence: C
+
+  - field: construction.launched
+    value: 1939-05-03
+    unit: date
+    src: [naval-history-pow, navypedia-kgv]
+    valid: { from: 1939-05-03 }
+    confidence: A
+
+  - field: construction.commissioned
+    value: 1941-01-19
+    unit: date
+    src: [naval-history-pow]
+    valid: { from: 1941-01-19 }
+    confidence: A
+    note: >
+      **不是 1941-03-31。** 那天是**完工**（classified as completed），
+      且是靠豁免多项关键试验换来的，服役时武器系统尚未完全可用。
+
+      本舰 1941-01-19 服役时状态很差：未完工、只有半数舰员、仅作试航性质。
+      首任舰长 Louis Henry Keppel Hamilton。
+
+      对照首舰：两舰「服役 → 完工」的间隔**恰好都是 71 天**，
+      说明这是本级制度化的两段式流程，不是本舰特有的混乱。
+
+  - field: construction.building_time_days
+    value: 1479
+    unit: count
+    src: [navypedia-kgv]
+    valid: { from: 1937-01-01, to: 1941-03-31 }
+    confidence: C
+    note: 从开工 1937-01-01 到完工 1941-03-31，共 1,479 天（本站按日期差计算）。
+
+  - field: construction.fate_date
+    value: 1941-12-10
+    unit: date
+    src: [naval-history-pow, london-gazette-force-z]
+    valid: { from: 1941-12-10 }
+    confidence: A
+    note: 在马来亚海域关丹附近被日军航空鱼雷击沉，与反击号同一场战斗。
+
+  - field: construction.fate_type
+    value: sunk_by_enemy
+    src: [naval-history-pow]
+    valid: { from: 1941-12-10 }
+    confidence: A
+
+  # ============================================================ 服役
+  - field: service.commander
+    value: Captain Louis Henry Keppel Hamilton（首任，1941-01-19 任职）
+    src: [naval-history-pow]
+    valid: { from: 1941-01-19 }
+    confidence: C
+
+  # ============================================================ 丹麦海峡（1941-05-24）
+  - field: armament.mount.summary
+    value: >-
+      1941-05-24 丹麦海峡时：本舰是英方唯一能持续射击的主力舰，
+      前后共发射 18 次齐射、应发 74 发、实发 55 发（损失率 25.65%）。
+      同日击伤俾斯麦的命中中有本舰的贡献，其中一发击穿舰首燃油舱。
+    src: [hoodadm234-guns]
+    valid: { from: 1941-05-24, to: 1941-05-24 }
+    confidence: A
+    note: >
+      齐射与发数出自 ADM 234/509 的 Enclosure I 汇总。
+
+      **注意「7 门可用」这个说法在本项目里欠缺出处。**
+      项目原有的 denmark-strait 数据里写过「A 塔 3、B 塔 2、Y 塔 2，仅 7 门可用」，
+      但通读 ADM 234/509 全文定位不到这句。方向（不是满 10 门）大概率对，
+      但具体数字目前只有二手支撑，故本 fact 不写「7 门」。
+
+  # ============================================================ 沉没（1941-12-10）
+  - field: service.fate_category
+    value: >-
+      1941-12-10 被日军航空鱼雷击沉。沉没是三条独立破坏链叠加：
+      鱼雷破口进水 → 螺旋桨轴旋转把舱壁铰穿 → 电力丧失导致排水泵失效。
+    src: [garzke-pow-wreck-2012, london-gazette-force-z]
+    valid: { from: 1941-12-10, to: 1941-12-10 }
+    confidence: C
+    note: >
+      **这不是「鱼雷直接命中 vs 抽水泵失效」的二选一。**
+      泵失效是第三条链的下游症状，不是并列选项。
+      「螺旋桨轴把舱壁铰穿」这一发现来自 Garzke 2012 年的残骸法证报告，
+      是本舰沉没机制研究的关键进展。
+
+      由于注册表里没有专门的「沉没机制」字段，本条用 service.fate_category
+      记录这段说明。数值型的死因分类已在 construction.fate_type 里写为
+      sunk_in_action。

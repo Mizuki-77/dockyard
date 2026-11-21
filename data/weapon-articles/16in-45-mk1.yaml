@@ -1,0 +1,105 @@
+# ============================================================================
+# 武器正文 —— 16"/45 (40.6 cm) Mark I
+#
+# 英国唯一装过 16 英寸主炮的战列舰用炮。它的故事很特别：
+# 这门炮原本是给从未建成的 G3 战列巡洋舰设计的，
+# 华盛顿条约取消了 G3，炮就转给了纳尔逊级。
+# ============================================================================
+weapon: 16in-45-mk1
+updated: 2026-11-22
+
+intro:
+  lead:
+    zh: >-
+      这是英国海军唯一装舰服役过的 16 英寸（40.6 cm）主炮。
+      它原本不是为纳尔逊级设计的：这批炮与炮塔本属于一战末期
+      设计但从未建成的 G3 战列巡洋舰，华盛顿条约取消了 G3，
+      已经造好的炮便转给了条约型的新战列舰。
+    en: >-
+      This was the only 16-inch (40.6 cm) gun the Royal Navy ever took to sea
+      in a completed warship. It was not designed for the Nelson class: the
+      guns and mountings belonged to the G3 battlecruisers of the post-First
+      World War design programme, which were cancelled under the Washington
+      Treaty, and the completed guns were transferred to the new treaty
+      battleships instead.
+
+  paragraphs:
+    - heading: 炮是现成的，所以舰只能围着炮设计
+      text:
+        zh: >-
+          这一点决定了纳尔逊级的整个形制。炮与炮塔已经存在，
+          重量与尺寸不可改，于是设计不是「为舰选炮」而是「为炮造舰」。
+          要把九门 16 英寸塞进条约给的 35,000 吨，唯一可行的办法是
+          把三座三联炮塔全部前置，让弹药库集中、装甲堡缩短，
+          把省下的重量堆到装甲上。
+        en: >-
+          This fact shaped the entire Nelson class. The guns and mountings
+          already existed and their weight and dimensions could not be
+          changed, so the design was not a matter of choosing guns for a ship
+          but of building a ship around guns. Getting nine 16-inch pieces into
+          the treaty's 35,000 tons left only one workable answer: all three
+          triple turrets forward, magazines concentrated, the length of
+          armoured citadel shortened, and the saved weight put into armour.
+      src: [navweaps-16in-45-mk1, washington-treaty-1922]
+
+    - heading: 全前置的代价写在射界上
+      text:
+        zh: >-
+          第三座炮塔（X 塔）的射界只剩约 60 到 130 度，正前正后都不能开火。
+          三门炮塔排成一线还有另一个后果：任意一座开火，另外两座就在
+          炮口冲击波的范围里。这一点在实战中的具体影响，
+          各来源没有给出量化数据，本站不作推断。
+        en: >-
+          The third turret, X, was left with an arc of roughly 60 to 130
+          degrees: it could not fire either directly ahead or directly astern.
+          Stacking three turrets in line had a second consequence - when any
+          one fired, the other two sat inside the blast envelope. No source
+          quantifies the practical effect of this, and none is inferred here.
+      src: [navweaps-16in-45-mk1]
+
+    - heading: 打得很准，但炮管寿命短
+      text:
+        zh: >-
+          这门炮在实战里以精度著称，1941 年 5 月 27 日罗德尼号在极远的
+          距离上取得了跨射，用的是这套火控与这门炮的组合。
+          代价是炮管寿命：大约 200 到 250 发有效全装药射弹。
+          这个数字比同时期很多大口径炮都要低，是大装药高初速方案
+          必然的交换。
+        en: >-
+          The gun earned a reputation for accuracy in service; on 27 May 1941
+          Rodney straddled at extreme range with this weapon and fire-control
+          combination. The price was barrel life: roughly 200 to 250 rounds of
+          effective full charge. That is low against many contemporary heavy
+          guns, and is the necessary trade of a high-velocity, large-charge
+          design.
+      src: [navweaps-16in-45-mk1, kbismarck-rodney-report]
+
+history:
+  - id: design
+    title: { zh: 从 G3 转来, en: Inherited from the G3 }
+    range: { from: 1921, to: 1927 }
+    lead:
+      zh: 这门炮没有自己的设计史，它的身世就是 G3 的取消。
+      en: This gun has no design history of its own; its history is the cancellation of the G3.
+    events:
+      - date: 1921
+        text:
+          zh: >-
+            G3 战列巡洋舰设计案确定采用 16 英寸主炮，炮与炮塔随之设计。
+          en: >-
+            The G3 battlecruiser design settled on 16-inch guns, and the guns
+            and mountings were designed for it.
+        src: [navweaps-16in-45-mk1]
+      - date: 1922
+        text:
+          zh: >-
+            华盛顿条约签订，G3 取消。已造好的炮与炮塔转用于纳尔逊级。
+          en: >-
+            The Washington Treaty was signed and the G3 was cancelled. The
+            completed guns and mountings went to the Nelson class.
+        src: [washington-treaty-1922, navweaps-16in-45-mk1]
+      - date: 1927
+        text:
+          zh: 随纳尔逊级两舰服役。
+          en: Entered service with the two Nelson-class ships.
+        src: [navypedia-nelson]

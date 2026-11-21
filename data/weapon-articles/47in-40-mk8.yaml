@@ -1,0 +1,89 @@
+# ============================================================================
+# 武器正文 —— 4.7"/40 (12 cm) QF Mark VIII
+#
+# 这一型的设计源头很有意思：它也是为 G3 战列巡洋舰准备的。
+# 加上 16"/45 与 6"/50 Mk XXII，纳尔逊级全套主副炮都来自 G3 —
+# 这在国内关于纳尔逊级的介绍里几乎从不提及。
+# ============================================================================
+weapon: 47in-40-mk8
+updated: 2026-11-22
+
+intro:
+  lead:
+    zh: >-
+      4.7"/40 QF Mark VIII 是纳尔逊级与英王乔治五世级都装过的高射炮。
+      它同样是 G3 战列巡洋舰项目的遗产 —— 于是纳尔逊级的
+      主炮、副炮、高炮三套东西，全部来自那艘从未建成的船。
+    en: >-
+      The 4.7"/40 QF Mark VIII was the anti-aircraft gun carried by both the
+      Nelson and King George V classes. It too was a legacy of the G3
+      battlecruiser programme - so the Nelson class's main battery, secondary
+      battery and anti-aircraft armament all came from a ship that was never
+      built.
+
+  paragraphs:
+    - heading: 一门原本为战列巡洋舰准备的高炮
+      text:
+        zh: >-
+          navweaps 的原文说得很直接：这型炮「原本是为从未建成的 G3
+          战列巡洋舰设计的」。G3 取消后，已经造好的炮转给了纳尔逊级。
+          六座单装炮全部布置在上层建筑两舷的平台上。
+        en: >-
+          NavWeaps puts it plainly: the gun "was originally designed for the
+          never-built G3 battlecruisers". After the G3 was cancelled the
+          completed guns went to the Nelson class, where six single mounts were
+          placed on platforms along either side of the superstructure.
+      src: [navweaps-4-7in-40-mk8]
+
+    - heading: 1941 年 5 月 27 日，它一发未放
+      text:
+        zh: >-
+          这一点值得单独写：罗德尼号的炮术战报里记着，这六座 4.7 英寸高炮
+          在整场对俾斯麦的战斗中「全程未开火」。
+          战报只记了没开火，没有说明原因。本站不推测原因 ——
+          它可能是射界、可能是目标分配、也可能是当时没有空中威胁。
+          这一条与「高炮无效」是两件事，不能混着写。
+        en: >-
+          This deserves its own paragraph: Rodney's gunnery report records that
+          the six 4.7-inch mounts were "not fired during the action with the
+          BISMARCK" at all. The report records only that they did not fire, and
+          gives no reason. None is inferred here - it could have been arcs,
+          target allocation, or simply the absence of an air threat. That is a
+          different statement from "the guns were ineffective", and the two
+          must not be merged.
+      src: [kbismarck-rodney-report]
+
+    - heading: 它在英王乔治五世级上的服役
+      text:
+        zh: >-
+          这型炮也装在英王乔治五世级上，但在那一级上是作为
+          5.25 英寸两用炮之外的补充或者过渡。随着战争推进，
+          它逐步被 40 mm Bofors 等更有效的近程武器取代。
+        en: >-
+          The same gun also served in the King George V class, as a supplement
+          to or stopgap alongside the 5.25-inch dual-purpose battery. As the
+          war went on it was progressively displaced by more effective
+          close-range weapons such as the 40 mm Bofors.
+      src: [navweaps-4-7in-40-mk8, navypedia-kgv]
+
+history:
+  - id: origin
+    title: { zh: 从 G3 转来, en: Inherited from the G3 }
+    range: { from: 1921, to: 1927 }
+    events:
+      - date: 1921
+        text:
+          zh: 为 G3 战列巡洋舰设计。
+          en: Designed for the G3 battlecruisers.
+        src: [navweaps-4-7in-40-mk8]
+      - date: 1922
+        text:
+          zh: G3 取消，炮转用于纳尔逊级。
+          en: >-
+            The G3 was cancelled and the guns were used on the Nelson class.
+        src: [navweaps-4-7in-40-mk8, washington-treaty-1922]
+      - date: 1927
+        text:
+          zh: 随纳尔逊级两舰服役。
+          en: Entered service with the two Nelson-class ships.
+        src: [navypedia-nelson]

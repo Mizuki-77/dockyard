@@ -1,0 +1,107 @@
+# ============================================================================
+# 武器正文 —— 20.3 cm/60 (8") SK C/34
+#
+# 希佩尔海军上将级的主炮，欧根亲王号用的就是它。
+# 本型的资料状况：NavWeaps 有完整页（200），但舰体侧的配套细节、
+# 逐座炮塔的实测数据在大面积缺 —— 与欧根亲王号本身的情况一致。
+# ============================================================================
+weapon: 20-3cm-sk-c34
+updated: 2026-11-22
+
+intro:
+  lead:
+    zh: >-
+      20.3 cm/60 SK C/34 是希佩尔海军上将级重巡洋舰的主炮，
+      也是二战德国海军口径最大的巡洋舰炮。欧根亲王号装四座双联共八门。
+      它比同期英美的 8 英寸炮身管更长（60 倍径对 50 倍径），
+      换来的初速与射程优势，代价是炮管寿命。
+    en: >-
+      The 20.3 cm/60 SK C/34 was the main battery of the Admiral Hipper class
+      and the largest cruiser gun the Kriegsmarine took to sea. Prinz Eugen
+      carried four twin mountings, eight guns in all. Its barrel was longer
+      than the contemporary British and American 8-inch guns - 60 calibres
+      against 50 - which bought muzzle velocity and range at the cost of
+      barrel life.
+
+  paragraphs:
+    - heading: 60 倍径这个选择的含义
+      text:
+        zh: >-
+          同期英美重巡的 8 英寸炮大多是 50 倍径。德国这一门做到了 60 倍径，
+          弹道更平、初速更高，在远距离上落到甲板的角度更小 ——
+          对重巡来说这是一个有实际意义的选择。
+          代价是炮管寿命被削短，这是高初速方案绕不开的交换。
+        en: >-
+          Most British and American 8-inch cruiser guns of the period were 50
+          calibres. The German design went to 60, giving a flatter trajectory
+          and higher velocity, so that at long range the shell arrives on the
+          deck at a shallower angle - a choice with real meaning for a heavy
+          cruiser. The price is shorter barrel life, the trade that
+          high-velocity designs cannot avoid.
+      src: [navweaps-20-3cm-sk-c34]
+
+    - heading: 在丹麦海峡，它先于俾斯麦开火
+      text:
+        zh: >-
+          1941 年 5 月 24 日，欧根亲王号与俾斯麦号一同参加丹麦海峡海战。
+          谁先开火这件事，来源互相矛盾：KBismarck 的丹麦海峡页说俾斯麦先，
+          而欧根亲王号的战争日志与 Bonomi 的逐齐射分析都说欧根亲王先。
+          欧根亲王号火控官 Jasper 的报告只说「接到许可后立即开火」，
+          不比较先后。本站两条都保留。
+        en: >-
+          On 24 May 1941 Prinz Eugen fought at the Denmark Strait alongside
+          Bismarck. Sources disagree on which ship opened fire first:
+          KBismarck's page on the action says Bismarck, while Prinz Eugen's own
+          war diary and Bonomi's salvo-by-salvo analysis both say Prinz Eugen.
+          Her gunnery officer Jasper records only that he opened fire as soon
+          as permission came, without comparing. Both readings are kept here.
+      src: [kbismarck-prinz-eugen-ktb, kbismarck-ds-bonomi]
+
+    - heading: 她那天打了多少发，三个数
+      text:
+        zh: >-
+          本型在 1941 年 5 月 24 日的发射弹数有三种说法：157、179、183。
+          三说各有档案依据、互相矛盾，本站不作裁决。
+          这种「同一数字三个值」的情况在本站是常态：
+          它不代表其中两个是错的，可能是统计口径或者记录时点的差别。
+        en: >-
+          Three figures are given for the rounds this gun fired on 24 May 1941:
+          157, 179 and 183. Each rests on archival material, they contradict
+          one another, and no adjudication is made here. Three values for one
+          number is normal on this site: it does not mean two of them are
+          wrong, only that what was counted, or when, may differ.
+      src: [kbismarck-prinz-eugen-ktb, kbismarck-ds-bonomi]
+
+    - heading: 同级舰的动力配置不同，炮座却是同一型
+      text:
+        zh: >-
+          希佩尔海军上将级五舰的动力装置是故意做成对比试验的：
+          锅炉数与汽轮机承造厂各舰不同。但主炮是同一型 ——
+          四座双联、前二后二，这个炮座布置五舰一致。
+          换句话说，这一级在「怎么跑」上各不相同，在「怎么打」上是一致的。
+        en: >-
+          The five ships of the Admiral Hipper class had deliberately different
+          machinery - differing boiler counts and turbine builders - as a
+          comparative experiment. The main battery, by contrast, was identical:
+          four twin mountings, two forward and two aft, in every ship. The
+          class differed in how it moved and did not differ in how it fought.
+      src: [navypedia-hipper, navweaps-20-3cm-sk-c34]
+
+history:
+  - id: design
+    title: { zh: 设计, en: Design }
+    range: { from: 1934, to: 1940 }
+    events:
+      - date: 1934
+        text:
+          zh: >-
+            随希佩尔海军上将级的设计工作展开，主炮选定 20.3 cm 口径。
+          en: >-
+            The 20.3 cm calibre was settled as the main battery during design
+            work on the Admiral Hipper class.
+        src: [navweaps-20-3cm-sk-c34]
+      - date: 1940-08-01
+        text:
+          zh: 随欧根亲王号服役进入现役。
+          en: Entered service with the commissioning of Prinz Eugen.
+        src: [kbismarck-prinz-eugen]

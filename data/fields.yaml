@@ -204,6 +204,7 @@ fields:
   - { id: armament.mine.capacity,          label: { zh: 载雷量, en: Mine capacity },                   type: integer, unit: count, group: armament, compare: false, better: none, note: 全库暂无数据（现收录的 5 舰均非布雷舰），暂不参与对比。 }
   - { id: armament.broadside_weight,       label: { zh: 舷侧齐射重量, en: Broadside weight },           type: number, unit: kg, group: armament, compare: true, better: higher, note: 对比器最好用的一项，可派生但建议显式记录来源值。 }
   - { id: armament.total_weight,           label: { zh: 武备总重, en: Armament weight },               type: number, unit: t, group: armament, compare: false, better: none }
+  - { id: armament.gun_failures,           label: { zh: 炮术故障记录, en: Gun failures in action },    type: string, unit: null, group: armament, compare: false, better: none, note: 逐条记录某一场战斗中的炮塔/火炮失效情况，含失效次数、原因与原文措辞。用于把一手战报里的故障清单结构化落库，而不是塞进 armament.broadside_weight（那字段是数值型，塞文本会被校验器拒绝）。2026-11-22 为罗德尼号最终战新增。 }
 
   # ===== weapon（武器本体，applies_to: weapon） =====
   - { id: weapon.designation,              label: { zh: 型号, en: Designation },                       type: string, unit: null, group: weapon, compare: false, better: none, applies_to: [weapon] }

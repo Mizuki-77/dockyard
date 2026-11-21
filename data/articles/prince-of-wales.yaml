@@ -1,0 +1,193 @@
+# ============================================================================
+# 舰艇正文 —— 威尔士亲王号
+#
+# 本舰正文的抓手是「一艘还没准备好的舰被推上战场」。
+# 项目里其他舰的正文讲设计与战史，这一艘最值得讲的是时间：
+# 服役、完工、参加丹麦海峡、被派往远东、沉没，全挤在 11 个月里。
+# ============================================================================
+ship: prince-of-wales
+updated: 2026-11-22
+
+intro:
+  lead:
+    zh: >-
+      威尔士亲王号的一生只有十一个月。1941 年 1 月 19 日服役时它是未完工的，
+      只有半数舰员；3 月 31 日宣布「完工」是靠豁免多项关键试验换来的；
+      5 月 24 日它就在丹麦海峡与俾斯麦交火，是英方唯一能持续射击的主力舰；
+      12 月 10 日它被日军航空鱼雷击沉在马来亚海域。
+    en: >-
+      Prince of Wales lived for eleven months. She commissioned on 19 January
+      1941 incomplete and with only half her crew; her "completion" on 31 March
+      was achieved by waiving a number of vital tests; on 24 May she was in
+      action against Bismarck at the Denmark Strait, the only British capital
+      ship able to keep firing; and on 10 December she was sunk by Japanese
+      aerial torpedoes off Malaya.
+
+  paragraphs:
+    - heading: 「服役」和「完工」是两件事
+      text:
+        zh: >-
+          1941 年 1 月 19 日服役时的原始记录写得很直白：未完工、只有半数
+          舰员、仅作试航。3 月 31 日才正式被列为完工，而这个「完工」是靠
+          豁免多项关键试验换来的，当时武器系统还没有完全可用。
+          这不是这一艘舰特有的混乱：同级首舰英王乔治五世号从服役到完工
+          的间隔恰好也是 71 天，说明这是本级制度化的两段式流程。
+        en: >-
+          The record of her commissioning on 19 January 1941 is blunt:
+          completed incomplete, with only half her crew, for trials. She was
+          formally classified as completed on 31 March, and that completion
+          was achieved by waiving various vital tests, before her armament was
+          fully operational. Nor was this disorder unique to her: the interval
+          between commissioning and completion for the class leader, King
+          George V, was also exactly 71 days, which suggests an institutional
+          two-stage process rather than a ship in chaos.
+      src: [naval-history-pow, navypedia-kgv]
+
+    - heading: 丹麦海峡：服役四个月就上阵
+      text:
+        zh: >-
+          1941 年 5 月 24 日，服役刚过四个月、完工不足两个月的威尔士亲王号
+          与胡德号一同拦截俾斯麦。胡德号在开火后几分钟内被弹药库殉爆击沉，
+          此后本舰成了英方唯一还能持续射击的主力舰。它当天打了 18 次齐射、
+          应发 74 发、实发 55 发，损失率约 25.65%。
+        en: >-
+          On 24 May 1941, four months after commissioning and less than two
+          months after completion, Prince of Wales joined Hood in intercepting
+          Bismarck. Hood blew up within minutes of opening fire, after which
+          Prince of Wales was the only British capital ship still able to keep
+          firing. She fired 18 salvoes that day, 74 rounds expected and 55
+          actually fired - a loss rate of about 25.65 per cent.
+      src: [hoodadm234-guns]
+
+    - heading: 它打中了，而且那一发很关键
+      text:
+        zh: >-
+          本舰的命中里有一发击穿了俾斯麦号的舰首燃油舱。这一发不会立刻
+          让一艘战列舰失去战力，但它让俾斯麦号损失了相当一部分燃油，
+          四天后那次著名的航向选择与此直接相关。
+        en: >-
+          Among her hits was one that pierced Bismarck's forward oil tank.
+          That hit would not disable a battleship at once, but it cost
+          Bismarck a substantial part of her fuel, and is directly connected
+          to the famous course decision four days later.
+      src: [hoodadm234-guns, kbismarck-denmark-strait]
+
+    - heading: 没有继续追击，理由不是燃油
+      text:
+        zh: >-
+          常见的说法是本舰因为缺油而没有追击。当天的记录不支持这个因果。
+          5 月 24 日的理由是战备状态：一门炮不能使用，舰桥被打坏。
+          燃油要到 5 月 25 日才成为理由，而那时任务已经从追击变成了搜索。
+          更能说明问题的是，当天真正缺油的是英王乔治五世号——它只剩
+          1,200 吨、约 32%；而威尔士亲王号当时的油量，来源里根本没有记。
+        en: >-
+          It is often said that she broke off because she was short of fuel.
+          The records for that day do not support that chain of cause. The
+          reason given on 24 May was material state: one gun out of action and
+          her bridge wrecked. Fuel only becomes a reason on 25 May, by which
+          time the task had changed from pursuit to search. More tellingly,
+          the ship actually short of fuel that day was King George V, down to
+          1,200 tons, about 32 per cent; Prince of Wales's own fuel state is
+          simply not recorded in the sources.
+      src: [hoodadm234-guns, naval-history-pow]
+
+    - heading: 沉没：不是二选一
+      text:
+        zh: >-
+          关于它怎么沉的，常见的提法是「鱼雷直接命中」还是「抽水泵失效」。
+          这个提法本身有问题。2012 年的残骸法证给出了三条独立的破坏链：
+          鱼雷破口造成进水；螺旋桨轴在旋转中把舱壁「铰」穿，扩大了进水；
+          电力丧失使排水泵无法工作。泵失效是第三条链的结果，
+          不是与前两条并列的选项。
+        en: >-
+          How she sank is often framed as a choice between torpedo hits and
+          pump failure. The framing itself is the problem. Forensic work on
+          the wreck published in 2012 identified three independent chains of
+          damage: flooding through the torpedo holes; the turning propeller
+          shafts acting as a hinge that tore open bulkheads and let flooding
+          spread; and loss of electrical power leaving the pumps unable to
+          run. Pump failure is the outcome of the third chain, not an option
+          ranked against the first two.
+      src: [garzke-pow-wreck-2012, london-gazette-force-z]
+
+    - heading: 一处需要说明的记录不完整
+      text:
+        zh: >-
+          navypedia 给本舰记的雷达是 279 型与 284 型。这不完整：
+          本舰舰长 1941 年 6 月 12 日的炮术报告里明写，281 型与 284 型
+          都没有取得效果。一份一手文件不会提到舰上并不存在的型号，
+          所以 281 型当时应该在舰上。这一条以一手报告为准。
+        en: >-
+          Navypedia records her radar as Types 279 and 284. That is
+          incomplete: her commanding officer's gunnery report of 12 June 1941
+          states that no results were obtained from either Type 281 or Type
+          284. A primary document would not name a set the ship did not carry,
+          so Type 281 must have been aboard. The primary report governs here.
+      src: [hoodadm234-guns, navypedia-kgv]
+
+history:
+  - id: build
+    title: { zh: 建造, en: Building }
+    range: { from: 1937, to: 1941 }
+    events:
+      - date: 1937-01-01
+        text:
+          zh: 在 Cammell Laird（Birkenhead）开工。
+          en: Laid down at Cammell Laird, Birkenhead.
+        src: [navypedia-kgv]
+      - date: 1939-05-03
+        text:
+          zh: 下水。
+          en: Launched.
+        src: [naval-history-pow]
+      - date: 1941-01-19
+        text:
+          zh: >-
+            未完工服役，只有半数舰员，仅作试航。首任舰长 Louis Henry Keppel
+            Hamilton。
+          en: >-
+            Commissioned incomplete and with only half her crew, for trials.
+            First commanding officer Captain Louis Henry Keppel Hamilton.
+        src: [naval-history-pow]
+      - date: 1941-03-31
+        text:
+          zh: 正式被列为完工，靠豁免多项关键试验达成。
+          en: >-
+            Officially classified as completed, achieved by waiving various
+            vital tests.
+        src: [naval-history-pow]
+
+  - id: action
+    title: { zh: 丹麦海峡与地中海, en: Denmark Strait and the Mediterranean }
+    range: { from: 1941-05, to: 1941-11 }
+    events:
+      - date: 1941-05-24
+        text:
+          zh: >-
+            与胡德号一同拦截俾斯麦。胡德号被弹药库殉爆击沉后，本舰成为
+            英方唯一能持续射击的主力舰。18 次齐射、实发 55 发。
+          en: >-
+            Intercepted Bismarck with Hood. After Hood blew up, she was the
+            only British capital ship still able to keep firing: 18 salvoes,
+            55 rounds actually fired.
+        src: [hoodadm234-guns]
+      - date: 1941-08
+        text:
+          zh: 载丘吉尔赴纽芬兰参加《大西洋宪章》会谈。
+          en: >-
+            Carried Churchill to Newfoundland for the Atlantic Charter
+            conference.
+        src: [naval-history-pow]
+
+  - id: loss
+    title: { zh: 远东与沉没, en: The Far East and loss }
+    range: { from: 1941-12, to: 1941-12 }
+    events:
+      - date: 1941-12-10
+        text:
+          zh: >-
+            与反击号同属 Z 舰队，在马来亚海域关丹附近被日军航空鱼雷击沉。
+          en: >-
+            With Repulse in Force Z, sunk by Japanese aerial torpedoes off
+            Kuantan, Malaya.
+        src: [london-gazette-force-z]

@@ -1,0 +1,158 @@
+# ============================================================================
+# 舰级：Admiral Hipper class（希佩尔海军上将级重巡洋舰）
+# ----------------------------------------------------------------------------
+# 同级五舰：Admiral Hipper / Blücher / Prinz Eugen / Lützow（ex-Seydlitz）/
+#           Seydlitz（未完工）。
+# 本站目前只入库三号舰 Prinz Eugen。
+#
+# 调研底稿：work/raw/hipper-class.md（602 行，2026-11-21）
+#
+# 【⚠️ 这一级有个容易抹掉的核心工程特征】
+#   五舰的动力配置**故意不同**，是对比试验：
+#   Admiral Hipper 用 Blohm+Voss 汽轮机，Prinz Eugen 用 Brown-Boveri，
+#   等等。更特殊的是 Seydlitz 与 Lützow 只有 9 台锅炉，
+#   而且原设计是 150 mm 轻巡洋舰，中途改成重巡。
+#   **按「一级三艘同型」处理会抹掉这个特征。**
+#
+# 【⚠️ 资料状况：本级的舰体数据大面积未获取】
+#   实测失败:kbismarck 无舰级页；德语维基被封；德文海军站直连失败；
+#   Bundesarchiv 站内搜不到舰船档案。
+#   可用来源主要是 navypedia 的级页与 NavWeaps 的武器页。
+#   以下是明确「未获取」的项，不要用别级数据填充：
+#     垂线间长、型深、干舷、水线面积、三个系数、GM、
+#     空船/设计/Typverdrängung/建造排水量、蒸汽温度、汽轮机级数、
+#     螺旋桨直径、**装甲总重**（全项目空白）、逐段装甲厚度（只有级通述）、
+#     机库尺寸、弹射器型号、航空燃油量、雷达波长/功率/探距。
+# ============================================================================
+
+id: hipper
+name:
+  zh: 希佩尔海军上将级重巡洋舰
+  en: Admiral Hipper-class heavy cruiser
+class_of: [prinz-eugen]
+open_ended_note: >
+  同级五舰。本站入库三号舰欧根亲王号。
+  Admiral Hipper 1939-04 服役；Blücher 1939-09 服役，1940-04 在奥斯陆峡湾
+  被岸防鱼雷击沉；Lützow（ex-Seydlitz）未完工，1940 年售予苏联；
+  Seydlitz 未完工，曾计划改装为航母 Weser 但未成。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: Admiral Hipper class
+    src: [navypedia-hipper]
+    valid: { from: 1935-07-06 }
+    confidence: C
+    note: >
+      级名取自首舰希佩尔海军上将号，纪念一战公海舰队战列巡洋舰分队司令
+      弗朗茨·冯·希佩尔（Franz von Hipper）。
+
+  - field: identity.ship_type
+    value: heavy_cruiser
+    src: [navypedia-hipper]
+    valid: { from: 1935-07-06 }
+    confidence: C
+    note: >
+      德方分类 Schwerer Kreuzer（重巡洋舰）。
+      按伦敦条约定义属重巡（8 英寸主炮）。
+      实际排水量远超条约的 10,000 t 上限 —— 这一点与同时期各国重巡相同，
+      属普遍违约，不是本级特有。
+
+  - field: identity.nation
+    value: germany
+    src: [navypedia-hipper]
+    valid: { from: 1935-07-06 }
+    confidence: A
+
+  - field: identity.operator
+    value: Kriegsmarine
+    src: [navypedia-hipper]
+    valid: { from: 1939-04-29 }
+    confidence: A
+
+  - field: identity.era
+    value: ww2
+    src: [navypedia-hipper]
+    valid: { from: 1939-09-03, to: 1945-05-08 }
+    confidence: A
+
+  # ============================================================ 主尺度
+  # ⚠️ navypedia 给的是首批舰（Admiral Hipper）的值，Prinz Eugen 更长
+  - field: dimensions.length.oa
+    value: 205.9
+    unit: m
+    src: [navypedia-hipper]
+    valid: { from: 1939-04-29, to: 1945-05-08 }
+    confidence: C
+    note: >
+      **这是首批舰 Admiral Hipper 的值。本舰级内各舰不同：**
+      Prinz Eugen 全长 212.5 m，比首舰长约 6.6 m。
+      舰级字段登记首舰值，各舰差异写进各自的 ships/ 文件。
+      不要把 205.9 m 套到欧根亲王号上 —— 这是一个实测过的坑。
+
+  - field: dimensions.length.wl
+    value: 199.5
+    unit: m
+    src: [navypedia-hipper]
+    valid: { from: 1939-04-29, to: 1945-05-08 }
+    confidence: C
+    note: 水线长。单源，仅首舰值。
+
+  # ============================================================ 排水量
+  - field: displacement.standard
+    value: 14240
+    unit: t
+    src: [navypedia-hipper]
+    valid: { from: 1939-04-29, to: 1945-05-08 }
+    confidence: C
+    comparable: false
+    note: >
+      **两说冲突未决，差 2,730 t，标 comparable: false 不参与对比。**
+
+      14,240 mt 出自 navypedia；另有 16,970 t 一说。
+      这个差额无法用口径差异解释，且两个值在别的来源里都有出现。
+      **本站不裁决，两个都不当成定论。**
+
+      另注：这个 14,240 mt 与 KB 的 PrinzEugen 页数值逐字相同，
+      但本舰战争日志记载实测油量 3,233 m³（上限 3,250 t），
+      与 KB 给的 4,250 mt 差约 1,000 t —— 说明 KB 那页有复制痕迹，
+      不能直接套用到后续舰。
+
+  # ============================================================ 武备
+  # 各武器本体参数与正文见 data/weapon-articles/
+  - field: armament.mount.summary
+    value: >-
+      8 × 20.3 cm/60 SK C/34（4 座双联，前二后二）
+      + 12 × 10.5 cm SK C/33（6 座双联高炮）
+      + 12 × 3.7 cm SK C/30（6 座双联）
+      + 8 × 2 cm C/30（单装）
+      + 12 × 533 mm 鱼雷发射管（4 座三联）
+      + 3 × Arado Ar 196 水上飞机
+    src: [navypedia-hipper, navweaps-20-3cm-sk-c34, navweaps-10_5cm-sk-c33]
+    valid: { from: 1939-04-29, to: 1945-05-08 }
+    confidence: C
+    note: >
+      建成时基准配置，各舰与各时期有差异，逐年改装写进各自的 ships/ 文件。
+
+      **高炮数量是战争期间变化最大的一项**，后期大幅增加 2 cm 与 3.7 cm
+      的数量并部分改为 Flakvierling 四联装。本表只写建成时口径。
+
+  # ============================================================ 动力（本级的特殊性）
+  - field: propulsion.boiler.count
+    value: 12
+    unit: count
+    src: [navypedia-hipper]
+    valid: { from: 1939-04-29, to: 1945-05-08 }
+    confidence: C
+    note: >
+      **本级五舰的动力配置是故意做成对比试验的**，不是统一规格：
+
+      锅炉数：前三舰（Admiral Hipper / Blücher / Prinz Eugen）各 12 台
+      La Mont 高压锅炉；**Seydlitz 与 Lützow 只有 9 台** —— 因为这两舰
+      原设计是 150 mm 轻巡洋舰，中途才改成重巡。
+
+      汽轮机承造厂也各舰不同：Admiral Hipper 用 Blohm+Voss，
+      Prinz Eugen 用 Brown-Boveri（两说见 naval-encyclopedia，
+      另有 Germania 一说，本站并列不裁）。
+
+      按「一级五艘同型」处理会抹掉这段工程史。

@@ -1,0 +1,223 @@
+# ============================================================================
+# 舰级：Nelson class（纳尔逊级战列舰）
+# ----------------------------------------------------------------------------
+# 同级两舰：Nelson（28，1927-08-15 服役）/ Rodney（29，1927-12-07 服役）。
+# 本站入库 Rodney，Nelson 未入库。
+#
+# 调研底稿：work/raw/nelson-class.md（814 行，2026-11-21）
+#
+# 【这一级为什么长成这样 —— 本级的定义性特征】
+# 华盛顿条约给了 35,000 t 与 16 英寸主炮两个上限。英国要把 9 门 16 英寸
+# 塞进 35,000 t，唯一可行解是把三座三联炮塔**全部前置**、上层建筑后移 ——
+# 弹药库集中一处，装甲堡缩短，省下的重量堆厚装甲。
+#
+# 而英国还钻了条约的一个定义空子：条约的「标准排水量」不含燃油与锅炉给水，
+# 于是防雷系统做成**内部注水舱**而不是外置防雷突出部 —— 不占「干重」，
+# 也不增加航行阻力。防雷与航速两头都赚了。
+#
+# 【哪些数据没查到 —— 必须如实留着】
+#   装甲总重、装甲占比、重量分配表、型深、方形系数、水线面积、干舷数值、
+#   蒸汽温度、发电机台数/功率、螺旋桨直径、舵面积、舱段划分、统一口径造价。
+#   其中「装甲总重与占比」是最大空洞：KGV 级有 RMG 给的 12,413 t / 32.5%，
+#   本级一个数都没有。不要用别级的值填充。
+# ============================================================================
+
+id: nelson
+name:
+  zh: 纳尔逊级战列舰
+  en: Nelson-class battleship
+class_of: [rodney]
+open_ended_note: >
+  同级两舰：Nelson（舷号 28）与 Rodney（舷号 29）。
+  两舰均参加二战：Rodney 在 1941-05-27 参与击沉俾斯麦；Nelson 1945 年参加冲绳作战。
+  战后分别于 1948-1949 年拆解。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: Nelson class
+    src: [navypedia-nelson]
+    valid: { from: 1922-12-28 }
+    confidence: C
+    note: >
+      级名取自首舰纳尔逊号，纪念特拉法加海战的特拉法加伯爵霍雷肖·纳尔逊。
+      两舰：Nelson / Rodney。
+
+  - field: identity.ship_type
+    value: battleship
+    src: [navypedia-nelson]
+    valid: { from: 1922-12-28 }
+    confidence: C
+    note: >
+      英国官方分类 battleship。本级是华盛顿条约后第一级按条约设计的主力舰，
+      也是英国唯一一级装 16 英寸主炮的战列舰。
+
+  - field: identity.nation
+    value: united_kingdom
+    src: [navypedia-nelson]
+    valid: { from: 1922-12-28 }
+    confidence: A
+
+  - field: identity.operator
+    value: Royal Navy
+    src: [navypedia-nelson]
+    valid: { from: 1927-08-15 }
+    confidence: A
+
+  - field: identity.era
+    value: ww2
+    src: [naval-history-rodney]
+    valid: { from: 1939-09-03, to: 1945-09-02 }
+    confidence: A
+    note: >
+      设计并开工于一战后的 1922 年，但按服役与作战期定位在 ww2。
+      Rodney 1948-03 列入报废、1948-03-26 抵 Inverkeithing 拆解。
+
+  - field: identity.building_program
+    value: 华盛顿海军条约（1922）后的第一级条约型主力舰
+    src: [washington-treaty-1922, navypedia-nelson]
+    valid: { from: 1922-02-06 }
+    confidence: A
+    note: >
+      1922-02-06 华盛顿条约签订，主力舰上限 35,000 t、主炮 16 英寸。
+      本级为该条约的直接产物，有两个关键设计后果：
+
+      一是三座三联全前置 —— 弹药库集中、装甲堡缩短、省下的重量堆厚装甲；
+      代价是射界受限（X 塔约 60–130 度，正前正后都不能打）与重心集中。
+
+      二是防雷系统做成**内部注水舱**而非外置突出部。原因是条约的
+      「标准排水量」定义不含燃油与锅炉给水，于是内部注水舱不占「干重」
+      也不超条约吨位，同时不增加航行阻力。
+
+  # ============================================================ 主尺度
+  # ⚠️ 两舰略有差异，舰级取首舰值，Rodney 的单舰值在 ships/rodney.yaml 覆盖
+  - field: dimensions.length.oa
+    value: 216.4
+    unit: m
+    src: [navypedia-nelson]
+    valid: { from: 1927-08-15, to: 1948-03-26 }
+    confidence: C
+    note: >
+      纳尔逊号 216.4 m / 709 ft 10 in；罗德尼号 216.5 m / 710 ft 3 in。
+      navypedia 只给单一值 216.4 未区分两舰，故本字段按舰级登记首舰值。
+
+  - field: dimensions.length.pp
+    value: 201.2
+    unit: m
+    src: [navypedia-nelson]
+    valid: { from: 1927-08-15, to: 1948-03-26 }
+    confidence: C
+    note: 660 ft。
+
+  - field: dimensions.beam.max
+    value: 32.3
+    unit: m
+    src: [navypedia-nelson]
+    valid: { from: 1927-08-15, to: 1948-03-26 }
+    confidence: C
+    note: 106 ft。
+
+  - field: dimensions.draught.mean
+    value: 9.2
+    unit: m
+    src: [navypedia-nelson]
+    valid: { from: 1927-08-15, to: 1948-03-26 }
+    confidence: C
+    comparable: false
+    note: >
+      **两说并列，不裁决。** 9.2 m 出自舰级页「30 ft 4 in at mean standard load」；
+      navypedia 给 8.56 m（mean）与 10.2 m（extra deep load），未注状态。
+      差 0.64 m 无法用取整解释，故标 comparable: false 不参与对比器高低判定。
+
+  - field: dimensions.metacentric_height
+    value: 3.1
+    unit: m
+    src: [navypedia-nelson]
+    valid: { from: 1927-08-15, to: 1948-03-26 }
+    confidence: C
+    note: 深载状态。10.2 ft。
+
+  # ============================================================ 排水量
+  - field: displacement.standard
+    value: 33800
+    unit: t
+    src: [navypedia-nelson]
+    valid: { from: 1927-08-15, to: 1948-03-26 }
+    confidence: C
+    note: >
+      纳尔逊号 33,300 lt = 33,800 t（navypedia 另给 33,313 t，口径略异）。
+      罗德尼号 33,730 lt = 34,270 t，其单舰值在 ships/rodney.yaml 覆盖。
+      原值以长吨计，本站按规矩换算为公吨登记。
+
+  - field: displacement.full
+    value: 38390
+    unit: t
+    src: [navypedia-nelson]
+    valid: { from: 1927-08-15, to: 1948-03-26 }
+    confidence: C
+    comparable: false
+    note: >
+      **口径陷阱，务必注意。** 本条 37,780 lt = 38,390 t 是纳尔逊号建成时 full load。
+
+      navypedia 另给 41,250 t 一值，但它明确注 "with buoyancy spaces filled" ——
+      把防雷系统的注水舱算进了排水量，**不是满载**，比深载高约 3,820 t。
+      这个值不能与满载并列，也不能用来算载重储备，故整条标 comparable: false。
+
+  # ============================================================ 防护
+  - field: protection.armor.thickness
+    value: 330
+    unit: mm
+    qual: { part: belt, region: main }
+    src: [navypedia-nelson]
+    valid: { from: 1927-08-15, to: 1948-03-26 }
+    confidence: C
+    note: >
+      主装甲带。本条只记厚度，倾角与分布需另立 fact 或进正文。
+      **装甲总重与占比未获取** —— 不要用 KGV 级的 12,413 t / 32.5% 填充。
+
+  # ============================================================ 武备
+  # 各武器本体的详细参数与正文见 data/weapon-articles/ 下的单独文件：
+  #   16in-45-mk1（主炮）/ 6in-50-mk22（副炮）/ 47in-40-mk8（高炮）
+  - field: armament.mount.summary
+    value: >-
+      9 × 16 in/45 BL Mk I（3 座三联，全部前置：A、B、X）
+      + 12 × 6 in/50 BL Mk XXII（6 座双联，全部后置、分两舷金字塔形）
+      + 6 × 4.7 in/40 QF Mk VIII（6 座单装）
+      + 2 × 24.5 in 水下鱼雷发射管
+    src: [navweaps-16in-45-mk1, navweaps-6in-50-mk22, navweaps-4-7in-40-mk8]
+    valid: { from: 1927-08-15, to: 1948-03-26 }
+    confidence: A
+    note: >
+      建成时的基准配置，逐年改装见 data/ships/rodney.yaml。
+
+      **三个必须说清的形制后果：**
+
+      一、主炮全部前置。X 塔（第三座）射界仅约 60–130 度，正前正后都不能开火。
+      这是「缩短装甲堡换取更厚的装甲」的直接代价。
+
+      二、副炮全部后置。因为前部空间被主炮塔占满了。
+      这种金字塔形布置在实战中有一个致命弱点，navweaps 原文称之为
+      "a major disadvantage" —— 具体问题写在 6in-50-mk22 的正文里。
+
+      三、4.7 英寸高炮在罗德尼号的最终战里**全程未开火**（其炮术战报原文
+      "These guns were not fired during the action"）。这是该战一个
+      容易被忽略的细节，不能写成「高炮无效」——记录只说了没开火，没说原因。
+
+  - field: armament.torpedo.tubes
+    value: 2
+    unit: count
+    src: [navypedia-nelson]
+    valid: { from: 1927-08-15, to: 1948-03-26 }
+    confidence: C
+    note: >
+      2 具水下发射管，**不是 0**。
+      罗德尼号在 1941-05-27 的最终战里实际发射了鱼雷，
+      这是史上首次战列舰对战列舰发射鱼雷（见 ships/rodney.yaml）。
+
+  - field: armament.torpedo.diameter
+    value: 622
+    unit: mm
+    src: [navypedia-nelson]
+    valid: { from: 1927-08-15, to: 1948-03-26 }
+    confidence: C
+    note: 24.5 英寸。

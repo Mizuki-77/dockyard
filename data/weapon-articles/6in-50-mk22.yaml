@@ -1,0 +1,93 @@
+# ============================================================================
+# 武器正文 —— 6"/50 (15.2 cm) Mark XXII
+#
+# ⚠️ 本文件最重要的一句话：**这是 Mark XXII，不是 Mark XXIII。**
+#    2026-11-21，本项目曾把 Mark XXIII 登记成「Rodney 副炮」，
+#    那是错的 —— Mark XXIII 是 Leander / Town 等巡洋舰的炮。
+#    错因是两型弹重巧合相同（112 lbs / 50.8 kg），当初按弹重对号
+#    没核「装舰」栏。
+# ============================================================================
+weapon: 6in-50-mk22
+updated: 2026-11-22
+
+intro:
+  lead:
+    zh: >-
+      6"/50 Mark XXII 是纳尔逊级战列舰的副炮。与主炮一样，
+      它也是从被取消的舰上继承来的：原本为从未建成的 G3
+      战列巡洋舰设计，G3 取消后炮与炮座转给了纳尔逊级。
+    en: >-
+      The 6"/50 Mark XXII was the secondary armament of the Nelson class.
+      Like the main battery, it was inherited from a cancelled ship: it had
+      been designed for the never-built G3 battlecruisers, and when those were
+      cancelled the guns and mountings passed to the Nelson class.
+
+  paragraphs:
+    - heading: 必须先分清 Mark XXII 与 Mark XXIII
+      text:
+        zh: >-
+          这两型很容易混，而混淆的代价是把一艘巡洋舰的炮装到一艘战列舰上。
+          Mark XXII 装的是纳尔逊级；Mark XXIII 装的是 Leander、Perth、
+          Arethusa、Southampton 系、Edinburgh、Fiji、Ceylon 与 Swiftsure
+          等巡洋舰。两型的弹重巧合相同（1942 年型均为 112 磅 / 50.8 公斤），
+          但初速不同：Mark XXII 是 898 米/秒，Mark XXIII 是 841 米/秒。
+        en: >-
+          The two marks are easily confused, and the cost of confusing them is
+          fitting a cruiser's gun to a battleship. Mark XXII armed the Nelson
+          class; Mark XXIII armed the Leander, Perth, Arethusa, Southampton
+          ("Town"), Edinburgh, Fiji, Ceylon and Swiftsure classes of cruiser.
+          The two marks happen to share a shell weight - 112 lb / 50.8 kg in
+          the 1942 pattern - but their muzzle velocities differ: 898 m/s for
+          Mark XXII against 841 m/s for Mark XXIII.
+      src: [navweaps-6in-50-mk22, navweaps-6in-50-mk23]
+
+    - heading: 全部堆在后部，是主炮布局逼出来的
+      text:
+        zh: >-
+          纳尔逊级的主炮占满了前部空间，六座双联副炮只能全部放在后部，
+          并且分两舷叠成金字塔形。这种布置在实战里有一个明确的弱点：
+          同一舷的多座炮塔排得太近，一发命中可能同时影响相邻几座。
+          navweaps 原文把这种布置称为一个「重大缺陷」。
+        en: >-
+          With the Nelson class's main turrets occupying the whole forward
+          end, all six twin secondary mounts had to go aft, stacked in pyramids
+          on either beam. The arrangement has a definite weakness in action:
+          mounts on the same beam sit so close together that a single hit can
+          affect several at once. NavWeaps calls it "a major disadvantage".
+      src: [navweaps-6in-50-mk22, navypedia-nelson]
+
+    - heading: 在最终战里它打得比主炮还多
+      text:
+        zh: >-
+          1941 年 5 月 27 日，罗德尼号的 6 英寸炮打了 706 发，16 英寸打 378 发。
+          706 这个数可以逐塔核对：六座炮塔分别 128、93、154、97、160、74，
+          加起来正好。这也是本项目里唯一一组能精确平账的弹药记录。
+        en: >-
+          On 27 May 1941 Rodney's 6-inch battery fired 706 rounds against 378
+          of 16-inch. The 706 can be checked turret by turret: 128, 93, 154,
+          97, 160 and 74, which sum exactly. It is the only ammunition figure
+          in this project that reconciles perfectly.
+      src: [kbismarck-rodney-report]
+
+history:
+  - id: origin
+    title: { zh: 从 G3 转来, en: Inherited from the G3 }
+    range: { from: 1921, to: 1927 }
+    events:
+      - date: 1921
+        text:
+          zh: 为 G3 战列巡洋舰设计。
+          en: Designed for the G3 battlecruisers.
+        src: [navweaps-6in-50-mk22]
+      - date: 1922
+        text:
+          zh: G3 因华盛顿条约取消，炮与炮座转用于纳尔逊级。
+          en: >-
+            The G3 was cancelled under the Washington Treaty and the guns and
+            mountings were used on the Nelson class instead.
+        src: [navweaps-6in-50-mk22, washington-treaty-1922]
+      - date: 1927
+        text:
+          zh: 随纳尔逊级两舰服役。
+          en: Entered service with the two Nelson-class ships.
+        src: [navypedia-nelson]

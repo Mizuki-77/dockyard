@@ -1,0 +1,262 @@
+# ============================================================================
+# 单舰：Prinz Eugen（欧根亲王号重巡洋舰）
+# ----------------------------------------------------------------------------
+# 挂靠舰级类：hipper（希佩尔海军上将级）。
+# 解析顺序（docs/00-framework.md §3.6）：单舰 fact -> 舰级 fact -> 未记载。
+#
+# 调研底稿：work/raw/prinz-eugen-tech.md（1304 行，2026-11-21）
+# 一手材料：本舰战争日志全译本（kbismarck-prinz-eugen-ktb，122 页 PDF，A 级）
+#
+# 【本舰的特殊地位】
+#   它是俾斯麦在丹麦海峡唯一的僚舰。两舰的涂装、开火顺序、命中归属
+#   都容易搞混，写作时必须分清。
+#
+# 【三条容易搞错的事实】
+#
+# 1) 它没有在「1942 年瑟堡空袭」中受损。
+#    实际是 1941-07-02 在**布列斯特**干船坞被英军炸中，60 人死亡（含副舰长）。
+#
+# 2) 它不是「1960 年代倾覆」。
+#    1946-12-22 就倾覆于夸贾林环礁的 Enubuj 礁，四源一致。
+#    1960 年代大概是和 1978 年拆螺旋桨那次混了。
+#
+# 3) 丹麦海峡它一雷未发，而且这不是装备故障。
+#    OKM 专门出了调查文件，结论是鱼雷官训练不足 + 火控雷达分配不当。
+#    中文资料普遍漏掉这一条。
+#
+# 【资料状况：比预想好得多】
+#   kbismarck 有本舰完整页面（prinzeugen.html，注意无连字符），
+#   并挂着 122 页战争日志全译本的入口。本舰的一手档案并不缺。
+#   但舰体细节（垂线间长、干舷、系数、GM、装甲总重）仍然大面积未获取。
+# ============================================================================
+
+id: prinz-eugen
+name:
+  zh: 欧根亲王号
+  en: Prinz Eugen
+class: hipper
+open_ended_note: >
+  希佩尔海军上将级三号舰。1941-05-24 丹麦海峡海战时是俾斯麦唯一的僚舰。
+  战后 1945 年移交美国，1946 年被用作比基尼环礁核试验靶船，
+  同年 12-22 倾覆于夸贾林，至今仍在原处。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: Prinz Eugen
+    src: [kbismarck-prinz-eugen]
+    valid: { from: 1938-08-22 }
+    confidence: C
+    note: >
+      舰名取自萨伏依的欧根亲王（Prinz Eugen von Savoyen，1663-1736），
+      奥地利哈布斯堡王朝的军事统帅。
+
+  - field: identity.name_zh
+    value: 欧根亲王号
+    src: [kbismarck-prinz-eugen]
+    valid: { from: 1938-08-22 }
+    confidence: C
+
+  - field: identity.name_note
+    value: >
+      德方完整舰名为 "Schwerer Kreuzer Prinz Eugen"。
+      日文资料常译作「プリンツ・オイゲン」，中文有「欧根亲王」「欧根王子」
+      「普林茨·欧根」等多种译法，本站统一用「欧根亲王号」。
+    src: [kbismarck-prinz-eugen]
+    valid: { from: 1938-08-22 }
+    confidence: C
+
+  - field: identity.ship_type
+    value: heavy_cruiser
+    src: [kbismarck-prinz-eugen, navypedia-hipper]
+    valid: { from: 1940-08-01, to: 1946-12-22 }
+    confidence: B
+    note: 德方分类 Schwerer Kreuzer。
+
+  - field: identity.nation
+    value: germany
+    src: [kbismarck-prinz-eugen]
+    valid: { from: 1940-08-01, to: 1946-12-22 }
+    confidence: A
+
+  - field: identity.operator
+    value: Kriegsmarine
+    src: [kbismarck-prinz-eugen]
+    valid: { from: 1940-08-01, to: 1945-05-08 }
+    confidence: A
+
+  - field: identity.era
+    value: ww2
+    src: [kbismarck-prinz-eugen]
+    valid: { from: 1939-09-03, to: 1945-05-08 }
+    confidence: A
+
+  # ============================================================ 建造
+  - field: construction.builder
+    value: Krupp Germaniawerft
+    src: [kbismarck-prinz-eugen, german-navy-prinz-eugen]
+    valid: { from: 1936-04-23 }
+    confidence: A
+    note: 船台 2（Slipway 2），建造编号 G 564。
+
+  - field: construction.builder_location
+    value: Kiel
+    src: [kbismarck-prinz-eugen, german-navy-prinz-eugen]
+    valid: { from: 1936-04-23 }
+    confidence: A
+
+  - field: construction.yard_number
+    value: G 564
+    src: [kbismarck-prinz-eugen]
+    valid: { from: 1936-04-23 }
+    confidence: C
+    note: 另记作 hull number 564 / "Kreuzer J"。
+
+  - field: construction.order_date
+    value: 1935-11-16
+    unit: date
+    src: [kbismarck-prinz-eugen]
+    valid: { from: 1935-11-16 }
+    confidence: C
+
+  - field: construction.laid_down
+    value: 1936-04-23
+    unit: date
+    src: [kbismarck-prinz-eugen, german-navy-prinz-eugen]
+    valid: { from: 1936-04-23 }
+    confidence: A
+    note: 四源一致（KB / german-navy / DANFS 仅到年份 / naval-encyclopedia）。
+
+  - field: construction.launched
+    value: 1938-08-22
+    unit: date
+    src: [kbismarck-prinz-eugen, german-navy-prinz-eugen]
+    valid: { from: 1938-08-22 }
+    confidence: A
+    note: >
+      **两说并列，不裁决。** 08-22 出自 KB / german-navy / naval-encyclopedia
+      （三源）；08-20 出自 DANFS（美国海军官方舰史，B 级）。
+      三比一，但 DANFS 不是随手抄的站点，故并列不裁，标 comparable: false。
+
+      由匈牙利摄政霍尔蒂的妻子 Magda von Horthy 掷瓶。
+
+  - field: construction.commissioned
+    value: 1940-08-01
+    unit: date
+    src: [kbismarck-prinz-eugen, german-navy-prinz-eugen]
+    valid: { from: 1940-08-01 }
+    confidence: A
+    note: >
+      首任舰长 Helmuth Brinkmann。
+
+      ⚠️ **服役前两次被炸**:1940-07 服役前夕，本舰在基尔的 Germaniawerft
+      船厂被英国炸弹两次命中（german-navy 页原文）。
+
+  - field: construction.building_time_days
+    value: 1561
+    unit: count
+    src: [kbismarck-prinz-eugen]
+    valid: { from: 1936-04-23, to: 1940-08-01 }
+    confidence: C
+    note: 从开工到服役约 1,561 天（本站按日期差计算）。
+
+  - field: construction.fate_date
+    value: 1946-12-22
+    unit: date
+    src: [kbismarck-prinz-eugen, german-navy-prinz-eugen]
+    valid: { from: 1946-12-22 }
+    confidence: C
+    note: >
+      **不是「1960 年代倾覆」。** 1946-12-22 倾覆于夸贾林环礁的 Enubuj 礁，
+      四源一致。1960 年代那个说法大概是与 1978 年拆螺旋桨的事混了。
+
+  - field: construction.fate_type
+    value: expended_as_target
+    src: [kbismarck-prinz-eugen]
+    valid: { from: 1946-12-22 }
+    confidence: C
+    note: >
+      完整链条：1945-05 向英国投降 → 移交美国 → 1946 年被选为比基尼环礁
+      核试验（Operation Crossroads）靶船，经历 ABLE 与 BAKER 两次试验
+      （均未沉）→ 拖往夸贾林 → 1946-12-22 倾覆。
+
+  # ============================================================ 服役
+  - field: service.commander
+    value: Captain Helmuth Brinkmann（首任，1940-08-01 任职）
+    src: [kbismarck-prinz-eugen]
+    valid: { from: 1940-08-01 }
+    confidence: C
+
+  # ============================================================ 丹麦海峡（1941-05-24）
+  - field: armament.mount.summary
+    value: >-
+      1941-05-24 丹麦海峡：本舰在编队前方，参与对胡德号与威尔士亲王号的炮击。
+      主炮发射弹数 157 / 179 / 183 三说并存（来源互相矛盾，本站不裁决）。
+      同日**一雷未发**。
+    src: [kbismarck-prinz-eugen-ktb, kbismarck-ds-bonomi]
+    valid: { from: 1941-05-24, to: 1941-05-24 }
+    confidence: A
+    note: >
+      **弹数三说并列**：157（一说）/ 179（一说）/ 183（一说）。
+      来源互相矛盾且各自都有档案依据，本站不做裁决。
+
+      **一雷未发这件事值得单说**：OKM（德国海军最高统帅部）为此专门出了
+      调查文件，结论是鱼雷官训练不足 + 火控雷达分配不当，**不是装备故障**。
+      中文资料普遍漏掉这一条，容易被误写成「鱼雷管故障」。
+
+      ⚠️ 时间基准：本舰战争日志正文用 DSZ（UTC+2），
+      而 Jasper 炮术报告用 MEZ（UTC+1），差整 1 小时。
+      本站 denmark-strait.yaml 用 DSZ 是对的；引用 Jasper 报告的
+      「0455 开火／0509 停火」必须 +1 小时换算。
+
+  - about: weapon:20-3cm-sk-c34
+    field: weapon.designation
+    value: 20.3 cm/60 SK C/34
+    src: [navweaps-20-3cm-sk-c34]
+    valid: { from: 1940-08-01, to: 1946-12-22 }
+    confidence: C
+
+  - about: weapon:20-3cm-sk-c34
+    field: weapon.nation
+    value: germany
+    src: [navweaps-20-3cm-sk-c34]
+    valid: { from: 1940-08-01, to: 1946-12-22 }
+    confidence: C
+
+  - about: weapon:20-3cm-sk-c34
+    field: mount.count
+    value: 4
+    unit: count
+    src: [navweaps-20-3cm-sk-c34]
+    valid: { from: 1940-08-01, to: 1946-12-22 }
+    confidence: C
+    note: 四座双联，共 8 门。前二后二。
+
+  - about: weapon:10_5cm-sk-c33
+    field: weapon.designation
+    value: 10.5 cm SK C/33
+    src: [navweaps-10_5cm-sk-c33]
+    valid: { from: 1940-08-01, to: 1946-12-22 }
+    confidence: C
+
+  - about: weapon:10_5cm-sk-c33
+    field: mount.count
+    value: 6
+    unit: count
+    src: [navweaps-10_5cm-sk-c33]
+    valid: { from: 1940-08-01, to: 1946-12-22 }
+    confidence: C
+    note: 六座双联 10.5 cm 高炮。
+
+  # ============================================================ 后续生涯
+  - field: service.unit
+    value: >-
+      1941-05 丹麦海峡后转往布列斯特。1941-07-02 在布列斯特干船坞被英军
+      空袭炸中，60 人死亡（含副舰长）。1942-02 参加瑟布鲁斯行动
+      （Channel Dash，三舰从布列斯特穿越英吉利海峡返回德国）。
+    src: [kbismarck-prinz-eugen, german-navy-prinz-eugen]
+    valid: { from: 1941-05-24, to: 1945-05-08 }
+    confidence: B
+    note: >
+      ⚠️ **常见的错误说法是「1942 年瑟堡空袭受损」** —— 不对。
+      实际是 **1941-07-02 在布列斯特**的干船坞被炸，不是瑟堡，也不是 1942 年。

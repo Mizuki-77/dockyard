@@ -1825,8 +1825,31 @@ sources:
     fetched: 2026-11-17
     license: all_rights_reserved
     note: >
-      Rodney 副炮。弹重 50.8 kg、初速 841 m/s、6–8 发/分。
-      **只是 Rodney 的副炮，不要拿它冒充 Sheffield（Town 级轻巡）的 6 英寸炮型号**——本次未取 Sheffield 炮型。
+      **不是 Rodney 副炮**（2026-11-21 更正，原登记写错了）。
+      本页装舰栏列的是 Leander / Perth / Arethusa / Southampton(Town) /
+      Edinburgh / Fiji / Ceylon / Swiftsure 等**巡洋舰**，通篇没有 Nelson class。
+      Rodney 的 12 门 6 英寸副炮是 **Mk XXII**，见 navweaps-6in-50-mk22。
+      当初误标的推测原因：两型弹重巧合都是 112 lbs（50.8 kg），
+      但初速不同（Mk XXII 898 mps / Mk XXIII 841 mps），按弹重对号没核装舰栏。
+      **Sheffield 属 Town 级，它的 6 英寸炮确实在本页**——但这个站的来源表里
+      此前把它误记成了 Rodney 的炮，所以那一条仍未取 Sheffield 炮型。
+
+  - id: navweaps-6in-50-mk22
+    title: 'British 6"/50 (15.2 cm) Mark XXII'
+    url: https://www.navweaps.com/Weapons/WNBR_6-50_mk22.php
+    type: website
+    tier: D
+    role: [data]
+    operator: NavWeaps
+    lang: en
+    access: proxy
+    fetched: 2026-11-21
+    license: all_rights_reserved
+    note: >
+      **Rodney 副炮**（纳尔逊级）。实测装舰栏写 "Ship Class Used On — Nelson Class"，
+      且原文说明这批炮原是给未建成的 G3 战列巡洋舰设计的，
+      G3 因华盛顿条约取消后**炮与炮座转用于纳尔逊级**。
+      弹重 50.8 kg、初速 898 mps。
 
   # ---- 提尔皮茨专用（tirpitz-tech，2026-11-17） ----
 
@@ -3657,6 +3680,244 @@ sources:
       实测页含 5"/25 与 Mark 10 条目。注意本站此前把 navweaps 全系列记为
       access: proxy（当时直连不通），2026-11-20 直连实测可达，但本条目
       沿用既有惯例，不改历史记录。
+
+  # ---------------- 2026-11-21 补登：欧根亲王号主炮
+  #
+  # 欧根亲王 / 希佩尔级的主炮。德制 10.5 cm 与 3.7 cm 高炮页此前已登记
+  # （navweaps-10_5cm-sk-c33 / navweaps-37mm-sk-c30），只有这一门缺。
+
+  - id: navweaps-20-3cm-sk-c34
+    title: 'Germany 20.3 cm/60 (8") SK C/34 — NavWeaps'
+    url: https://www.navweaps.com/Weapons/WNGER_8-60_skc34.php
+    type: website
+    tier: C
+    role: [data]
+    operator: NavWeaps
+    lang: en
+    access: proxy
+    fetched: 2026-11-21
+    license: all_rights_reserved
+    note: >
+      希佩尔海军上将级主炮。实测 200，len 17109，命中 "SK C/34" ×7。
+      欧根亲王号的主炮数据来源。
+
+  # ---------------- 2026-11-22 补登：三艘新舰（威尔士亲王 / 欧根亲王 / 罗德尼）
+  #
+  # 全部实测 200 后才登记。⚠️ 一个教训：kbismarck 的欧根亲王页是
+  # prinzeugen.html（**无连字符**），此前试 prinz-eugen.html 与
+  # prinz_eugen.html 都 404，差点误判成「该站没有本舰页面」。
+
+  - id: kbismarck-prinz-eugen
+    title: kbismarck — Prinz Eugen
+    url: https://www.kbismarck.com/prinzeugen.html
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: KBismarck.com
+    lang: en
+    access: direct
+    fetched: 2026-11-22
+    license: all_rights_reserved
+    note: >
+      **注意 URL 的拼写**：`prinzeugen`，不是 `prinz-eugen` 也不是 `prinz_eugen`
+      （后两者实测 404）。该页是本舰的完整单舰页，并挂着本舰战争日志全译本的入口。
+
+  - id: kbismarck-prinz-eugen-ktb
+    title: Kriegstagebuch des Schweren Kreuzers Prinz Eugen（战争日志全译本，PDF）
+    url: https://www.kbismarck.com/archives/pg-ktb.zip
+    type: primary_archive
+    tier: A
+    role: [data, narrative]
+    operator: KBismarck.com（德方原档英译）
+    lang: en
+    access: direct
+    fetched: 2026-11-22
+    license: all_rights_reserved
+    note: >
+      本舰战争日志全文英译，122 页 PDF，约 2.3 MB。**本舰最重要的一手材料。**
+      ⚠️ 时间基准有两套：正文用 DSZ（UTC+2），Jasper 炮术报告用 MEZ（UTC+1），
+      差整 1 小时。本站 denmark-strait.yaml 用 DSZ 是对的；
+      引用 Jasper 报告里的「0455 开火／0509 停火」必须 +1 小时换算。
+
+  - id: kbismarck-prinz-eugen-medical
+    title: Prinz Eugen — Medical Report（军医战斗报告）
+    url: https://www.kbismarck.com/pg-medical-report.html
+    type: primary_archive
+    tier: A
+    role: [data, narrative]
+    operator: KBismarck.com
+    lang: en
+    access: direct
+    fetched: 2026-11-22
+    license: all_rights_reserved
+    note: 本舰军医报告，含伤亡与伤情分类。
+
+  - id: kbismarck-torpedo-pg
+    title: OKM 关于 Prinz Eugen 鱼雷未使用的调查
+    url: https://www.kbismarck.com/torpedowaffe-pg.html
+    type: primary_archive
+    tier: A
+    role: [data, narrative]
+    operator: KBismarck.com（OKM 原件英译）
+    lang: en
+    access: direct
+    fetched: 2026-11-22
+    license: all_rights_reserved
+    note: >
+      丹麦海峡时本舰一雷未发，OKM（德国海军最高统帅部）为此专门出了调查文件。
+      结论是鱼雷官训练不足 + 火控雷达分配不当，**不是装备故障**。
+      中文资料普遍漏掉这一条。
+
+  - id: kbismarck-ds-bonomi
+    title: Bonomi — 丹麦海峡逐齐射分析（PDF）
+    url: https://www.kbismarck.com/ds-barticle.pdf
+    type: document
+    tier: C
+    role: [data, narrative]
+    operator: KBismarck.com / Enrico Bonomi
+    lang: en
+    access: direct
+    fetched: 2026-11-22
+    license: all_rights_reserved
+    note: >
+      19 页逐齐射分析，是丹麦海峡弹道研究里最细的一份。
+      ⚠️ 文内对「欧根 vs 俾斯麦击中威尔士亲王数」自相矛盾（3 说 / 4 说并列），
+      引用时必须标出。
+
+  - id: german-navy-prinz-eugen
+    title: German Navy.de — Prinz Eugen
+    url: https://www.german-navy.de/kriegsmarine/ships/heavycruiser/prinzeugen/index.html
+    type: website
+    tier: D
+    role: [data]
+    operator: german-navy.de
+    lang: en
+    access: direct
+    fetched: 2026-11-22
+    license: all_rights_reserved
+    note: 德舰专题站。同站另有 admiralhipper / blucher / seydlitz / lutzow 页。
+
+  - id: navypedia-hipper
+    title: Navypedia — Admiral Hipper class heavy cruisers
+    url: https://www.navypedia.org/ships/germany/ger_cr_hipper.htm
+    type: website
+    tier: D
+    role: [data]
+    operator: navypedia.org
+    lang: en
+    access: direct
+    fetched: 2026-11-22
+    license: all_rights_reserved
+    note: >
+      舰级页（该站没有欧根亲王独立页，实测 404）。
+      ⚠️ 该页部分数值是**首批舰（Admiral Hipper）的值**，例如全长 205.9 m，
+      而欧根亲王是 212.5 m。套用到后续舰会错。
+
+  - id: navweaps-4-7in-40-mk8
+    title: 'British 4.7"/40 (12 cm) QF Mark VIII — NavWeaps'
+    url: https://www.navweaps.com/Weapons/WNBR_47-40_mk8.php
+    type: website
+    tier: D
+    role: [data]
+    operator: NavWeaps
+    lang: en
+    access: proxy
+    fetched: 2026-11-22
+    license: all_rights_reserved
+    note: 纳尔逊级与 KGV 级的高炮。纳尔逊级在最终战里这型高炮全程未开火（见罗德尼战报）。
+
+  - id: naval-history-rodney
+    title: Naval-History.Net — HMS Rodney（逐日年表）
+    url: https://www.naval-history.net/xGM-Chrono-01BB-HMS_Rodney.htm
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: Naval-History.Net
+    lang: en
+    access: direct
+    fetched: 2026-11-22
+    license: all_rights_reserved
+    note: 本舰逐日行动年表，覆盖全生涯。舰体尺寸等参数不在该页，需另找。
+
+  - id: naval-history-pow
+    title: Naval-History.Net — HMS Prince of Wales（逐日年表）
+    url: https://www.naval-history.net/xGM-Chrono-01BB-HMS_Prince_of_Wales.htm
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: Naval-History.Net
+    lang: en
+    access: direct
+    fetched: 2026-11-22
+    license: all_rights_reserved
+    note: >
+      本舰唯一覆盖全生涯的 D 级来源。⚠️ 该页记 1941-05-08 做了全功率试航
+      但**不给任何数值**；网传的 111,600 shp / 28 kn 只有 E 级支撑，不可用。
+
+  - id: navypedia-nelson
+    title: Navypedia — Nelson class battleships
+    url: https://www.navypedia.org/ships/uk/brit_bb1_nelson.htm
+    type: website
+    tier: D
+    role: [data]
+    operator: navypedia.org
+    lang: en
+    access: direct
+    fetched: 2026-11-22
+    license: all_rights_reserved
+    note: >
+      纳尔逊级舰级页，含两舰建造数据、逐次改装时序、主尺度与排水量。
+      实测 200，len 32,145。
+      ⚠️ 该页的 41,250 t 排水量注的是 "with buoyancy spaces filled"
+      （含防雷注水舱），**不是满载**，不能与 full load 并列。
+
+  - id: washington-treaty-1922
+    title: 华盛顿海军条约（1922）— 条约全文
+    url: https://www.ibiblio.org/pha/pre-war/1922/nav_lim.html
+    type: primary_archive
+    tier: A
+    role: [data, narrative]
+    operator: ibiblio.org（条约原文转录）
+    lang: en
+    access: direct
+    fetched: 2026-11-22
+    license: public_domain
+    note: >
+      主力舰 35,000 t 上限与 16 英寸主炮上限的原文。
+      纳尔逊级是这份条约的直接产物。实测 200，len 38,601。
+
+  - id: london-gazette-force-z
+    title: London Gazette — Force Z 作战纪事（1941-12）
+    url: https://www.britain-at-war.org.uk/ww2/London_Gazette/Force_Z/html/body_narrative_of_operations_of_for.htm
+    type: primary_archive
+    tier: A
+    role: [data, narrative]
+    operator: London Gazette（英国政府公报）
+    lang: en
+    access: direct
+    fetched: 2026-11-22
+    license: public_domain
+    note: >
+      威尔士亲王号与反击号 1941-12-10 沉没的官方作战纪事。
+      一手档案，实测 200，len 22,729。
+
+  - id: garzke-pow-wreck-2012
+    title: Garzke — Death of a Battleship（威尔士亲王号残骸法证报告 2012 修订版，PDF）
+    url: https://pacificwrecks.com/ship/hms/prince-of-wales/death-of-a-battleship-2012-update.pdf
+    type: document
+    tier: C
+    role: [data, narrative]
+    operator: William H. Garzke Jr. 等 / pacificwrecks.com 托管
+    lang: en
+    access: direct
+    fetched: 2026-11-22
+    license: all_rights_reserved
+    note: >
+      80 页残骸法证报告，约 4 MB。**本舰沉没机制研究的关键文献。**
+
+      核心发现：沉没不是「鱼雷直接命中 vs 抽水泵失效」的二选一，
+      而是三条独立破坏链叠加 —— 鱼雷破口、螺旋桨轴旋转把舱壁铰穿、
+      电力丧失导致排水泵失效。泵失效是第三条链的下游症状。
 
 todo:
   - ~~抓 5 份一手档案 + 战争日志~~ **2026-11-17 已完成**：artillery-report / inclining-test / raeder-report / rodney-report / debriefing 全部抓到，另加 38cm 弹道表、flak-relocation、bs-ktb.zip（177 页 PDF 已转文本）

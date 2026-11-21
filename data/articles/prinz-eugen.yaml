@@ -1,0 +1,211 @@
+# ============================================================================
+# 舰艇正文 —— 欧根亲王号
+#
+# 本舰正文的抓手是「一艘活了很久、死法很特别的船」：
+# 它在二战里几乎没受过大伤，却在战后被核弹炸了两次、拖到热带珊瑚礁上
+# 翻了身，今天还有人潜水去看它。
+#
+# ⚠️ 时间基准提醒：本舰战争日志正文用 DSZ（UTC+2），
+#    Jasper 炮术报告用 MEZ（UTC+1），差整 1 小时。
+#    本站战役数据用 DSZ，引用 Jasper 的钟点必须换算。
+# ============================================================================
+ship: prinz-eugen
+updated: 2026-11-22
+
+intro:
+  lead:
+    zh: >-
+      欧根亲王号是希佩尔海军上将级三号舰，1940 年 8 月服役。它最出名的一刻
+      是 1941 年 5 月 24 日：作为俾斯麦唯一的僚舰参加丹麦海峡海战。
+      它的结局比任何一艘德国大型水面舰都奇特——没在战斗中被击沉，
+      在比基尼环礁挨了两次核爆还浮着，最后在夸贾林的珊瑚礁上翻了身，
+      到今天还躺在那里。
+    en: >-
+      Prinz Eugen was the third of the Admiral Hipper class, commissioned in
+      August 1940. Her most famous moment came on 24 May 1941, as Bismarck's
+      only consort at the Denmark Strait. Her end was stranger than that of
+      any other large German surface ship: she was not sunk in action,
+      survived two nuclear tests at Bikini still afloat, and finally capsized
+      onto a coral reef at Kwajalein, where she remains today.
+
+  paragraphs:
+    - heading: 在编队最前面，而且先开火
+      text:
+        zh: >-
+          丹麦海峡那天本舰在编队前方。关于两舰谁先开火，来源互相矛盾：
+          KBismarck 的丹麦海峡页说俾斯麦先，而本舰战争日志与 Bonomi 的
+          逐齐射分析都说本舰先。本舰火控官 Jasper 的报告只写「接到许可后
+          立即开火」，不比较先后。本站两条都保留。
+        en: >-
+          At the Denmark Strait that day she was ahead of Bismarck in the
+          line. Sources disagree on which ship opened fire first: KBismarck's
+          Denmark Strait page says Bismarck did, while the ship's own war
+          diary and Bonomi's salvo-by-salvo analysis both say Prinz Eugen did.
+          Her gunnery officer Jasper's report records only that he opened fire
+          as soon as permission came, without comparing. Both readings are
+          kept here.
+      src: [kbismarck-prinz-eugen-ktb, kbismarck-ds-bonomi]
+
+    - heading: 她打出的弹数，三个来源三个数
+      text:
+        zh: >-
+          那天本舰主炮发射的弹数有三种说法：157、179、183。三说各有档案
+          依据，互相矛盾，本站不作裁决。这种情况在本站是常态：
+          同一个数字对不上，不等于其中两个是错的，可能是统计口径
+          或者记录时点的差别。
+        en: >-
+          Three different figures are given for the main battery rounds she
+          fired that day: 157, 179 and 183. Each rests on archival material,
+          they contradict one another, and no adjudication is made here. That
+          is normal for this site: two numbers disagreeing does not make one
+          of them wrong; it may be a difference in what was counted, or when.
+      src: [kbismarck-prinz-eugen-ktb, kbismarck-ds-bonomi]
+
+    - heading: 一雷未发，而且这不是装备故障
+      text:
+        zh: >-
+          那天本舰没有发射一条鱼雷。这一点值得单独说，因为它常被当成
+          鱼雷管故障，实际不是：德国海军最高统帅部（OKM）为此专门出了
+          一份调查文件，结论是鱼雷官训练不足，加上火控雷达的分配不当——
+          也就是人和组织的问题，不是装备的问题。
+        en: >-
+          She fired no torpedoes that day. This is worth stating separately,
+          because it is often put down to a torpedo failure, and it was not:
+          the Oberkommando der Marine produced a dedicated investigation whose
+          conclusions were inadequate training of the torpedo officer and
+          poor allocation of fire-control radar - a problem of men and
+          organisation, not of hardware.
+      src: [kbismarck-torpedo-pg]
+
+    - heading: 1941 年 7 月 2 日，布列斯特，不是瑟堡
+      text:
+        zh: >-
+          丹麦海峡后本舰转往法国布列斯特。1941 年 7 月 2 日它在干船坞里
+          被英军空袭炸中，60 人死亡，其中包括副舰长。常见的错误说法是
+          「1942 年在瑟堡被空袭受损」——地点和时间都不对。
+          1942 年 2 月它参加的是瑟布鲁斯行动，与沙恩霍斯特号、
+          格奈森瑙号一同从布列斯特穿越英吉利海峡返回德国。
+        en: >-
+          After the Denmark Strait she went to Brest in France. On 2 July 1941
+          she was hit in dry dock by a British air raid; sixty men were
+          killed, including her executive officer. The common version - damaged
+          by an air raid at Cherbourg in 1942 - has both the place and the year
+          wrong. What happened in February 1942 was Operation Cerberus, the
+          Channel Dash back to Germany alongside Scharnhorst and Gneisenau.
+      src: [kbismarck-prinz-eugen, german-navy-prinz-eugen]
+
+    - heading: 战后：两次核爆，然后翻身
+      text:
+        zh: >-
+          1945 年 5 月本舰向英国投降，随后移交美国。1946 年它被选为
+          比基尼环礁核试验的靶船，经历了 ABLE 与 BAKER 两次试验，
+          两次都没沉。之后被拖往夸贾林，1946 年 12 月 22 日在 Enubuj 礁
+          倾覆。常有人说它「1960 年代倾覆」，那是把它与 1978 年
+          拆螺旋桨的事混在了一起。
+        en: >-
+          She surrendered to the British in May 1945 and passed to the United
+          States. In 1946 she was chosen as a target for the Bikini Atoll
+          nuclear tests, came through both ABLE and BAKER without sinking, was
+          towed to Kwajalein, and capsized onto Enubuj reef on 22 December
+          1946. It is sometimes said that she capsized in the 1960s; that
+          confuses her with the removal of her propellers in 1978.
+      src: [kbismarck-prinz-eugen, german-navy-prinz-eugen]
+
+    - heading: 资料状况要说明白
+      text:
+        zh: >-
+          本舰的一手档案其实不缺：它的战争日志有 122 页英译本，
+          军医报告与 OKM 的鱼雷调查都在。缺的是舰体细节——垂线间长、干舷、
+          方形系数、稳心高、装甲总重这些，各来源都没有给出。
+          本站对这几项一律标「未获取」，不用姊妹舰希佩尔号或布吕歇尔号的
+          数据填充。
+        en: >-
+          Primary material for this ship is not actually scarce: her war diary
+          survives as a 122-page English translation, and both the medical
+          report and the OKM torpedo investigation are available. What is
+          missing is hull detail - length between perpendiculars, freeboard,
+          block coefficient, metacentric height, total armour weight. None of
+          the sources give them. This site marks them as not obtained rather
+          than filling them in from her sisters Hipper or Blücher.
+      src: [kbismarck-prinz-eugen-ktb, navypedia-hipper, kbismarck-prinz-eugen-medical]
+
+history:
+  - id: build
+    title: { zh: 建造, en: Building }
+    range: { from: 1935, to: 1940 }
+    events:
+      - date: 1935-11-16
+        text:
+          zh: 签订建造合同。
+          en: Building contract placed.
+        src: [kbismarck-prinz-eugen]
+      - date: 1936-04-23
+        text:
+          zh: 在基尔的 Krupp Germaniawerft 开工，船台 2，建造编号 G 564。
+          en: >-
+            Laid down at Krupp Germaniawerft, Kiel, on slipway 2, yard number
+            G 564.
+        src: [kbismarck-prinz-eugen, german-navy-prinz-eugen]
+      - date: 1938-08-22
+        text:
+          zh: >-
+            下水，由匈牙利摄政霍尔蒂的妻子 Magda von Horthy 掷瓶。
+            下水日另有 08-20 一说（DANFS），两说并列。
+          en: >-
+            Launched, christened by Magda von Horthy, wife of the Hungarian
+            Regent. DANFS gives 20 August instead; both dates are kept.
+        src: [kbismarck-prinz-eugen, german-navy-prinz-eugen]
+      - date: 1940-08-01
+        text:
+          zh: 服役，首任舰长 Helmuth Brinkmann。服役前夕曾在基尔船厂两次被炸。
+          en: >-
+            Commissioned under Captain Helmuth Brinkmann, having been hit
+            twice by bombs at the Kiel yard shortly before.
+        src: [kbismarck-prinz-eugen, german-navy-prinz-eugen]
+
+  - id: action
+    title: { zh: 丹麦海峡与瑟布鲁斯, en: Denmark Strait and Cerberus }
+    range: { from: 1941-05, to: 1942-02 }
+    events:
+      - date: 1941-05-24
+        text:
+          zh: >-
+            作为俾斯麦唯一的僚舰参加丹麦海峡海战。主炮弹数三说
+            （157 / 179 / 183），一雷未发。
+          en: >-
+            Fought at the Denmark Strait as Bismarck's only consort. Main
+            battery rounds given as 157, 179 or 183; no torpedoes fired.
+        src: [kbismarck-prinz-eugen-ktb, kbismarck-ds-bonomi]
+      - date: 1941-07-02
+        text:
+          zh: 在布列斯特干船坞被英军空袭炸中，60 人死亡（含副舰长）。
+          en: >-
+            Hit in dry dock at Brest by a British air raid; sixty killed,
+            including the executive officer.
+        src: [kbismarck-prinz-eugen, german-navy-prinz-eugen]
+      - date: 1942-02
+        text:
+          zh: 参加瑟布鲁斯行动，与沙恩霍斯特号、格奈森瑙号一同穿越英吉利海峡。
+          en: >-
+            Took part in Operation Cerberus, the Channel Dash with Scharnhorst
+            and Gneisenau.
+        src: [german-navy-prinz-eugen]
+
+  - id: end
+    title: { zh: 战后与结局, en: Postwar and end }
+    range: { from: 1945, to: 1946 }
+    events:
+      - date: 1945-05
+        text:
+          zh: 向英国投降，随后移交美国。
+          en: Surrendered to the British, then transferred to the United States.
+        src: [kbismarck-prinz-eugen]
+      - date: 1946-12-22
+        text:
+          zh: >-
+            经历比基尼环礁 ABLE 与 BAKER 两次核试验后未沉，拖往夸贾林，
+            当日倾覆于 Enubuj 礁。
+          en: >-
+            Survived the ABLE and BAKER tests at Bikini, was towed to
+            Kwajalein, and capsized onto Enubuj reef.
+        src: [kbismarck-prinz-eugen, german-navy-prinz-eugen]

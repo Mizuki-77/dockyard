@@ -395,8 +395,8 @@ forces:
 
   - side: allies
     guns:
-      zh: 罗德里号 9 × 40.6 cm（16"/45 Mark I，三座三联全在舰前部）+ 12 × 15.2 cm（6"/50 Mark XXIII，六座双联）；英王乔治五世号 10 × 35.6 cm（14"/45 Mark VII）+ 16 × 13.3 cm（5.25 英寸）；诺福克号、多塞特郡号各 8 × 20.3 cm（8"/50 Mark VIII）
-      en: Rodney 9 × 40.6 cm (16"/45 Mk I, all forward) + 12 × 15.2 cm (6"/50 Mk XXIII); KGV 10 × 35.6 cm (14"/45 Mk VII) + 16 × 13.3 cm; Norfolk and Dorsetshire 8 × 20.3 cm (8"/50 Mk VIII) each
+      zh: 罗德里号 9 × 40.6 cm（16"/45 Mark I，三座三联全在舰前部）+ 12 × 15.2 cm（6"/50 Mark XXII，六座双联）；英王乔治五世号 10 × 35.6 cm（14"/45 Mark VII）+ 16 × 13.3 cm（5.25 英寸）；诺福克号、多塞特郡号各 8 × 20.3 cm（8"/50 Mark VIII）
+      en: Rodney 9 × 40.6 cm (16"/45 Mk I, all forward) + 12 × 15.2 cm (6"/50 Mk XXII); KGV 10 × 35.6 cm (14"/45 Mk VII) + 16 × 13.3 cm; Norfolk and Dorsetshire 8 × 20.3 cm (8"/50 Mk VIII) each
     state:
       zh: 罗德里号最高航速 21 节，已被英王乔治五世号追越、编在其后；炮术报告中 X 炮塔在前 25 次齐射中只有 6 次能瞄准目标，25 次后又有 9 次不能（合计 28 次）；战斗结束时 A 塔右炮因 tilting tray 卡死完全失效、B 塔左炮因下发射药提升机 double loaded 极短暂失效、B 塔中炮因两发弹无发射药暂时失效；4.7 英寸高炮全程未开火。英王乔治五世号 A 塔失效近 30 分钟、Y 塔 7 分钟、B 塔短暂失效，R.D/F 受损，有时一次 14 英寸齐射只有 1–2 门能打，只好改用全舷射。
       en: Rodney's best speed was 21 knots and she had been overhauled by KGV. Her report records that X turret could bear on only 6 of the first 25 salvoes and failed 9 more times; at the end A turret's right gun was out (jammed tilting tray), B's left gun briefly out (double-loaded hoist) and B's centre gun temporarily out. The 4.7-inch AA never fired. KGV had A turret out for nearly 30 minutes, Y for 7 minutes, B briefly, her R.D/F damaged, and sometimes only one or two 14-inch guns per salvo.
@@ -682,7 +682,7 @@ losses:
 | `[NAV16]` | `navweaps-16in-45-mk1` | D | navweaps.com（走代理） | 16"/45 Mark I：弹重 929 kg、初速 788/797 m/s、备弹 95+10 |
 | `[NAV14]` | `navweaps-14in-45-mk7` | D | navweaps.com（走代理） | 14"/45 Mark VII：弹重 721 kg、初速 757/732 m/s、备弹 100 |
 | `[NAV8]` | `navweaps-8in-50-mk8` | D | navweaps.com（走代理） | 8"/50 Mark VIII：弹重 116.1 kg、初速 855 m/s |
-| `[NAV6]` | `navweaps-6in-50-mk23` | D | navweaps.com（走代理） | 6"/50 Mark XXIII：弹重 50.8 kg、初速 841 m/s、6–8 发/分 |
+| `[NAV6]` | `navweaps-6in-50-mk22` | D | navweaps.com（走代理） | 6"/50 Mark XXII：**Rodney 副炮**，弹重 50.8 kg、初速 898 mps。装舰栏写 Nelson Class |
 | `[WP]` | `wiki-en-last-battle` | E | https://en.wikipedia.org/wiki/Last_battle_of_Bismarck | **仅作线索，不作 fact src** |
 
 ## 4.2 待登记（本次新抓，全部已落地为纯文本，在 `work/raw/` 下）
@@ -717,5 +717,5 @@ losses:
 | Mearns 2001 年残骸调查报告原文 | **未获取** | 只在 `bismarck-last-battle` 的参考文献里见到转述。未尝试第三方镜像，因版权不明 |
 | de.wikipedia「Letztes Gefecht der Bismarck」 | **未抓** | 代理可用但未抓（英方一手材料已足够；德方口径已由 KTB 与官方公告覆盖）。若需德方民间叙述可补 |
 | 英方对获救者的审讯报告 ADM 267/137 全文（PDF） | **未抓** | 索引里有 `https://www.kbismarck.com/archives/survivor-reports.pdf`，本次未下载（PDF 需额外解析）。**但其内容已由 `https://www.uboatarchive.net/Int/BismarckINT.htm`（C.B. 4051 (24) 全文，229,668 字符）覆盖并已并入本文——这份是同一份英方审讯报告的纯文本版**。 |
-| Sheffield 的火炮配置（本次来源未覆盖） | **未获取** | 本次抓取的 navweaps 页面只有 16"/14"/8"/6" Mark XXIII（Rodney 副炮）。Sheffield 属 Town 级轻巡，其 6 英寸炮型号**本文不作断言** |
+| Sheffield 的火炮配置 | **可补**（2026-11-21 更正） | 原记「未获取」已过期：Sheffield 属 Town 级，其 6 英寸炮**正是 Mark XXIII**（`navweaps-6in-50-mk23`，装舰栏列 Leander/Perth/Arethusa/Town/Edinburgh/Fiji/Ceylon/Swiftsure）。当初把这页误标成了「Rodney 副炮」，所以一直以为手上没有 Sheffield 的炮。**Rodney 的副炮则是 Mark XXII**，已另立来源 `navweaps-6in-50-mk22` |
 | Rodney 赴波士顿修理的具体故障 | **未获取** | 只知「on her way to Boston for repairs」（`lb-chase.txt`）与「最高航速 21 节」「已被 KGV 追越」；具体是舵机、主机还是锅炉，`lb-chase` / `tovey` / `lb-lb` 均未写。**不得猜。** |

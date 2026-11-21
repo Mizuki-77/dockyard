@@ -1,0 +1,285 @@
+# ============================================================================
+# 单舰：HMS Rodney（罗德尼号战列舰，舷号 29）
+# ----------------------------------------------------------------------------
+# 与 tirpitz.yaml 同一套约定：只写本舰差异，舰级共有的设计数据不重复。
+# 解析顺序（docs/00-framework.md §3.6）：单舰 fact -> 舰级 fact -> 未记载。
+#
+# 调研底稿：work/raw/rodney-tech.md（737 行，2026-11-21）
+# 一手材料：work/raw/kb-rodney-report.txt（本舰炮术战报原文）
+#
+# 【本舰最硬的一块：最终战有一手战报】
+#   她自己的《Preliminary Gunnery Report》已抓在本地并登记为
+#   kbismarck-rodney-report（tier A）。弹药消耗、齐射构成、逐塔失效全部
+#   来自这份原件，不是二手转述。
+#
+# 【但战报本身有三处瑕疵，引用时必须带着】
+#   1) B 塔三管分计 45+44+52 = 141，塔总计却写 144，差 3 发
+#   2) 齐射统计不平账：按次数×炮数得 371 发，与 §1 的 378 差 7 发
+#   3) §2(a) 标题写「16" rounds fired」，但两个 Total 实际是齐射/舷射次数
+#   这些是原件的问题，不是转录的问题。写进 note，不改数字。
+# ============================================================================
+
+id: rodney
+name:
+  zh: 罗德尼号
+  en: HMS Rodney
+class: nelson
+open_ended_note: >
+  纳尔逊级二号舰。1941-05-27 参与击沉俾斯麦，是当日开火最久、
+  弹药消耗最多的一艘；也是史上首次以战列舰对战列舰发射鱼雷的舰。
+  战后 1948-03 列入报废、1948-03-26 抵 Inverkeithing 拆解。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: HMS Rodney
+    src: [naval-history-rodney]
+    valid: { from: 1925-12-17 }
+    confidence: C
+
+  - field: identity.name_zh
+    value: 罗德尼号
+    src: [naval-history-rodney]
+    valid: { from: 1925-12-17 }
+    confidence: C
+
+  - field: identity.namesake
+    value: 海军上将 George Brydges Rodney（1718-1792），圣文森特角海战与桑特海峡海战的胜利者
+    src: [naval-history-rodney]
+    valid: { from: 1922-12-28 }
+    confidence: C
+
+  - field: identity.pennant_number
+    value: '29'
+    src: [naval-history-rodney]
+    valid: { from: 1927-12-07, to: 1948-03-26 }
+    confidence: C
+
+  - field: identity.ship_type
+    value: battleship
+    src: [naval-history-rodney]
+    valid: { from: 1927-12-07, to: 1948-03-26 }
+    confidence: A
+
+  - field: identity.nation
+    value: united_kingdom
+    src: [naval-history-rodney]
+    valid: { from: 1927-12-07, to: 1948-03-26 }
+    confidence: A
+
+  - field: identity.operator
+    value: Royal Navy
+    src: [naval-history-rodney]
+    valid: { from: 1927-12-07, to: 1948-03-26 }
+    confidence: A
+
+  - field: identity.era
+    value: ww2
+    src: [naval-history-rodney]
+    valid: { from: 1939-09-03, to: 1945-09-02 }
+    confidence: A
+
+  # ============================================================ 建造
+  - field: construction.builder
+    value: Cammell Laird
+    src: [naval-history-rodney]
+    valid: { from: 1922-12-28 }
+    confidence: C
+
+  - field: construction.builder_location
+    value: Birkenhead
+    src: [naval-history-rodney]
+    valid: { from: 1922-12-28 }
+    confidence: C
+
+  - field: construction.order_date
+    value: 1922-12-11
+    unit: date
+    src: [naval-history-rodney]
+    valid: { from: 1922-12-11 }
+    confidence: C
+
+  - field: construction.laid_down
+    value: 1922-12-28
+    unit: date
+    src: [naval-history-rodney, navypedia-nelson]
+    valid: { from: 1922-12-28 }
+    confidence: A
+    note: 三源（navypedia / naval-history / 维基）完全一致，无分歧。
+
+  - field: construction.launched
+    value: 1925-12-17
+    unit: date
+    src: [naval-history-rodney, navypedia-nelson]
+    valid: { from: 1925-12-17 }
+    confidence: A
+    note: >
+      由玛丽长公主（HRH The Princess Royal）掷瓶下水。
+      维基补了一个细节：掷瓶试了三次才砸碎那瓶帝国勃艮第葡萄酒。
+
+  - field: construction.commissioned
+    value: 1927-12-07
+    unit: date
+    src: [naval-history-rodney]
+    valid: { from: 1927-12-07 }
+    confidence: A
+    note: >
+      **注意这个日期，不是 1927-11-10**（那个常见说法是错的）。
+      1927-12-07 在德文波特正式服役、编入大西洋舰队，首任舰长 Henry Kitson。
+      另有一个「正式进入现役」节点 1928-03-28，两者不是同一件事 ——
+      本舰 1927-12 服役时仍带一半舰员做着试航性质的值勤。
+
+  - field: construction.fate_date
+    value: 1948-03-26
+    unit: date
+    src: [naval-history-rodney]
+    valid: { from: 1948-03-26 }
+    confidence: C
+    note: >
+      **拆解要分三段说，不要写成「1948 年拆解」一句话：**
+      1948-03 列入报废 → 1948-03-19 售予 BISCO → 1948-03-26 抵 Inverkeithing。
+      本条取最后一环（抵达拆解地）作日期。
+
+  - field: construction.fate_type
+    value: scrapped
+    src: [naval-history-rodney]
+    valid: { from: 1948-03-26 }
+    confidence: C
+    note: 1948-03-19 售予 BISCO（英国钢铁公司拆船部）。
+
+  # ============================================================ 服役
+  - field: service.commander
+    value: Captain Henry Kitson（首任，1927-12-07 任职）
+    src: [naval-history-rodney]
+    valid: { from: 1927-12-07 }
+    confidence: C
+
+  # ============================================================ 单舰实测值
+  # 舰级值见 classes/nelson.yaml；此处只写本舰与之不同的部分
+  - field: dimensions.length.oa
+    value: 216.5
+    unit: m
+    src: [navypedia-nelson]
+    valid: { from: 1927-12-07, to: 1948-03-26 }
+    confidence: C
+    note: >
+      本舰 216.5 m / 710 ft 3 in，比首舰纳尔逊号长 5 英寸。
+      navypedia 只给舰级单一值 216.4，故本条数值与舰级相同，
+      差异记在本 note 里 —— 这不是「单舰覆盖舰级」，是同一来源的分舰说明。
+
+  - field: displacement.standard
+    value: 34270
+    unit: t
+    src: [navypedia-nelson]
+    valid: { from: 1927-12-07, to: 1948-03-26 }
+    confidence: C
+    note: >
+      本舰标准排水量 33,730 lt = 34,270 t，比首舰重约 470 t。
+      原值长吨，按规矩换算为公吨。
+
+  # ============================================================ 最终战（1941-05-27）
+  # 以下数据全部来自本舰炮术战报原件（kbismarck-rodney-report，tier A）
+  # 挂 weapon 实体，让武器页的「装在哪几艘船」能找到本舰
+  - about: weapon:16in-45-mk1
+    field: weapon.designation
+    value: 16"/45 BL Mark I
+    src: [navweaps-16in-45-mk1]
+    valid: { from: 1927-12-07, to: 1948-03-26 }
+    confidence: A
+
+  - about: weapon:16in-45-mk1
+    field: weapon.nation
+    value: united_kingdom
+    src: [navweaps-16in-45-mk1]
+    valid: { from: 1927-12-07, to: 1948-03-26 }
+    confidence: A
+
+  - about: weapon:16in-45-mk1
+    field: mount.count
+    value: 3
+    unit: count
+    src: [navweaps-16in-45-mk1]
+    valid: { from: 1927-12-07, to: 1948-03-26 }
+    confidence: A
+    note: 三座三联，全部前置。
+
+  - about: weapon:6in-50-mk22
+    field: weapon.designation
+    value: 6"/50 BL Mark XXII
+    src: [navweaps-6in-50-mk22]
+    valid: { from: 1927-12-07, to: 1948-03-26 }
+    confidence: C
+
+  - about: weapon:6in-50-mk22
+    field: weapon.nation
+    value: united_kingdom
+    src: [navweaps-6in-50-mk22]
+    valid: { from: 1927-12-07, to: 1948-03-26 }
+    confidence: C
+
+  - about: weapon:6in-50-mk22
+    field: mount.count
+    value: 6
+    unit: count
+    src: [navweaps-6in-50-mk22]
+    valid: { from: 1927-12-07, to: 1948-03-26 }
+    confidence: C
+    note: 六座双联，全部后置、分两舷金字塔形布置。
+
+  - about: weapon:47in-40-mk8
+    field: weapon.designation
+    value: 4.7"/40 QF Mark VIII
+    src: [navweaps-4-7in-40-mk8]
+    valid: { from: 1927-12-07, to: 1948-03-26 }
+    confidence: C
+
+  - about: weapon:47in-40-mk8
+    field: weapon.nation
+    value: united_kingdom
+    src: [navweaps-4-7in-40-mk8]
+    valid: { from: 1927-12-07, to: 1948-03-26 }
+    confidence: C
+
+  - about: weapon:47in-40-mk8
+    field: mount.count
+    value: 6
+    unit: count
+    src: [navweaps-4-7in-40-mk8]
+    valid: { from: 1927-12-07, to: 1948-03-26 }
+    confidence: C
+    note: 六座单装。**最终战里全程未开火**（本舰炮术战报原文）。
+
+  # 最终战的弹药消耗（本舰战绩，不属于任何单一武器实体）
+  - field: armament.mount.summary
+    value: >-
+      1941-05-27 最终战弹药消耗：16 英寸 378 发、6 英寸 706 发；
+      0916 与 0956 各射鱼雷。
+    src: [kbismarck-rodney-report]
+    valid: { from: 1941-05-27, to: 1941-05-27 }
+    confidence: A
+    note: >
+      **16 英寸 378 发 vs Admiralty War Diary 记 380 发，两说并列不裁决。**
+      差 2 发可能是统计口径（是否含哑火）。
+
+      **6 英寸 706 发这一项是平账的**：六座炮塔分计
+      128+93+154+97+160+74 = 706，与总计精确吻合。
+
+      鱼雷：**史上首次以战列舰对战列舰发射鱼雷。**
+      0916 第一次（一说可能 1 雷命中左舷），0956 再射 2 雷（2,700 m）。
+      战报只记「发射」，是否命中三说并列，本站不裁决。
+      另注：0850 一发德弹在左舷首外水中爆炸，冲击波卡死了左舷鱼雷管门 ——
+      这可能是后来只从右舷射击的原因，但来源未明言因果。
+
+  - field: armament.gun_failures
+    value: >-
+      X 炮塔在前 25 次齐射中只有 6 次能瞄准；25 次后又有 9 次不能（合计 28 次）。
+      战斗结束时 A 塔右炮因 tilting tray 卡死；B 塔左炮因下发射药提升机
+      double loaded 极短暂失效；B 塔中炮因两发弹无发射药暂时失效。
+    src: [kbismarck-rodney-report]
+    valid: { from: 1941-05-27, to: 1941-05-27 }
+    confidence: A
+    note: >
+      逐条来自战报 §2 NOTE 与 §3，**原样引用，数字未改写**。
+
+      X 塔射界本来就窄（60–130 度），但战报记的是「无法瞄准」，
+      与射界限制不是一回事，不要混为一谈。

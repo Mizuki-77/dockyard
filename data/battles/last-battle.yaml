@@ -54,10 +54,10 @@ belligerents:
       zh: 战列舰 · 本土舰队旗舰
       en: Battleship · Home Fleet flagship
   - name: HMS Rodney
+    ship_id: rodney
     role:
       zh: 战列舰 · 原定赴波士顿修理
       en: Battleship · en route to Boston for repairs
-    note: 本站尚未收录该舰单页（纳尔逊级）。
   - name: HMS Norfolk
     role:
       zh: 重巡洋舰 · 整夜绕至东北做 flank marking
@@ -123,9 +123,9 @@ forces:
   - hmshood-tovey-dispatch
 - side: allies
   guns:
-    zh: 罗德里号 9 × 40.6 cm（16"/45 Mark I，三座三联全在舰前部）+ 12 × 15.2 cm（6"/50 Mark XXIII，六座双联）；英王乔治五世号 10 × 35.6
+    zh: 罗德里号 9 × 40.6 cm（16"/45 Mark I，三座三联全在舰前部）+ 12 × 15.2 cm（6"/50 Mark XXII，六座双联）；英王乔治五世号 10 × 35.6
       cm（14"/45 Mark VII）+ 16 × 13.3 cm（5.25 英寸）；诺福克号、多塞特郡号各 8 × 20.3 cm（8"/50 Mark VIII）
-    en: Rodney 9 × 40.6 cm (16"/45 Mk I, all forward) + 12 × 15.2 cm (6"/50 Mk XXIII); KGV 10 × 35.6 cm
+    en: Rodney 9 × 40.6 cm (16"/45 Mk I, all forward) + 12 × 15.2 cm (6"/50 Mk XXII); KGV 10 × 35.6 cm
       (14"/45 Mk VII) + 16 × 13.3 cm; Norfolk and Dorsetshire 8 × 20.3 cm (8"/50 Mk VIII) each
   state:
     zh: 罗德里号最高航速 21 节，已被英王乔治五世号追越、编在其后；炮术报告中 X 炮塔在前 25 次齐射中只有 6 次能瞄准目标，25 次后又有 9 次不能（合计 28 次）；战斗结束时 A
@@ -142,7 +142,7 @@ forces:
   - navweaps-16in-45-mk1
   - navweaps-14in-45-mk7
   - navweaps-8in-50-mk8
-  - navweaps-6in-50-mk23
+  - navweaps-6in-50-mk22
 - side: allies
   air:
     zh: 5-26 两波各 15 架 Swordfish（皇家方舟号 810/818/820 中队）；5-27 09:20 再起飞 12 架，抵达时未能攻击。**必须更正一个常见误解** —— 胜利号（HMS

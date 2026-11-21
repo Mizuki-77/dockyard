@@ -5112,6 +5112,86 @@ images:
       1942 年 5 月，大黄蜂号（CV-8）上的四联 28 mm（1.1"/75）Mk 1 高炮正在射击，
       与本项目收录的大黄蜂号直接对应。这是全站分辨率最低的一张主图（原图仅 795x609），
       找不到更高分辨率的该型在舰上使用的照片。
+  - id: 16in-45-mk1-primary
+    file: /img/weapons/16in-45-mk1-primary.jpg
+    subject: weapon:16in-45-mk1
+    title:
+      zh: 纳尔逊号 16 英寸主炮齐射
+      en: 'HMS Nelson firing her 16-inch guns'
+    part: turret
+    view: three_quarter
+    date: 1920s-1930s
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Priest, L C (Lt), Royal Navy official photographer.'
+    credit: 'Imperial War Museums / Wikimedia Commons'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Nelson_during_gunnery_trials.jpg'
+    width: 950
+    height: 712
+    primary: true
+    note: 纳尔逊号在炮术试射与演习中齐射 16 英寸主炮。三座三联全前置的形制在这张图上看得最清楚。
+
+  - id: 6in-50-mk22-primary
+    file: /img/weapons/6in-50-mk22-primary.jpg
+    subject: weapon:6in-50-mk22
+    title:
+      zh: 罗德尼号双联 6 英寸副炮塔
+      en: 'Twin 6-inch gun turrets of HMS Rodney'
+    part: turret
+    view: detail
+    date: 1940s
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Coote, R G G (Lt), Royal Navy official photographer'
+    credit: 'Imperial War Museums / Wikimedia Commons'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Rodney_6_inch_gun_turrets_IWM_A_95.jpg'
+    width: 1280
+    height: 976
+    primary: true
+    note: 罗德尼号双联 6"/50 Mark XXII 副炮塔，舰员正在给防破片护板擦油。注意这是 Mark XXII，不是巡洋舰用的 Mark XXIII。
+
+  - id: 47in-40-mk8-primary
+    file: /img/weapons/47in-40-mk8-primary.jpg
+    subject: weapon:47in-40-mk8
+    title:
+      zh: 罗德尼号 4.7 英寸高炮实弹射击
+      en: '4.7-inch AA gun firing aboard HMS Rodney'
+    part: mount
+    view: three_quarter
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Coote, R G G (Lt)'
+    credit: 'Imperial War Museums / Wikimedia Commons'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Rodney_4.7-inch_AA_gun_firing_1940_IWM_A_85.jpg'
+    width: 800
+    height: 609
+    primary: true
+    note: 罗德尼号 4.7"/40 Mark VIII 高炮实弹射击训练。**该型在 1941-05-27 的最终战里全程未开火** —— 这张图拍的是训练，不是那场战斗。
+
+  - id: 20-3cm-sk-c34-primary
+    file: /img/weapons/20-3cm-sk-c34-primary.jpg
+    subject: weapon:20-3cm-sk-c34
+    title:
+      zh: 欧根亲王号（20.3 cm 主炮所在的重巡）
+      en: 'German heavy cruiser Prinz Eugen'
+    part: turret
+    view: side
+    date: 1940s
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'National Museum of the U.S. Navy'
+    credit: 'Imperial War Museums / Wikimedia Commons'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Lot-2275-66_(26254695173).jpg'
+    width: 1280
+    height: 670
+    primary: true
+    note: 欧根亲王号。20.3 cm SK C/34 是希佩尔海军上将级的主炮；该型在 Commons 没有独立的武器分类，只能从舰照中取，**这是舰照而不是炮座特写**。
+
   - id: a6m2-primary
     file: /img/weapons/a6m2-primary.jpg
     subject: weapon:a6m2

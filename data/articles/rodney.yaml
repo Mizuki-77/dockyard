@@ -1,0 +1,242 @@
+# ============================================================================
+# 舰艇正文 —— 罗德尼号
+#
+# 本舰正文的抓手是「一手战报」：它是本项目里少有的、能把一整场战斗的
+# 火力数字精确到个位的舰。素材来自本舰《Preliminary Gunnery Report》。
+#
+# 硬规则（validate.py 的 check_article 会拦）：
+#   1. 每段必须带 src，且 src 全部已登记、不是 tier E
+#   2. lead 必须有；paragraphs 至少一段
+#   3. history 每段 events 的 date 必须是 YYYY / YYYY-MM / YYYY-MM-DD
+#   4. 正文里不写「据说」「有人认为」这类模糊归属
+# ============================================================================
+ship: rodney
+updated: 2026-11-22
+
+intro:
+  lead:
+    zh: >-
+      罗德尼号是纳尔逊级二号舰，1927 年服役时已经落后于时代：23 节航速
+      追不上新式战列舰，三座炮塔全前置的形制又限制了射界。它的一生大部分
+      时间在干最苦的活——护航、掩护、两栖支援。唯一一次高光是
+      1941 年 5 月 27 日：那一天它打了 378 发 16 英寸炮弹，
+      还成了史上第一艘向战列舰发射鱼雷的战列舰。
+    en: >-
+      Rodney was the second of the Nelson class, and already obsolete when
+      she commissioned in 1927: 23 knots could not catch the new fast
+      battleships, and the all-forward turret arrangement limited her arcs.
+      Most of her career was spent on the least glamorous work - convoy
+      escort, covering forces, shore bombardment support. Her one great day
+      came on 27 May 1941, when she fired 378 rounds of 16-inch and became
+      the first battleship in history to fire torpedoes at another battleship.
+
+  paragraphs:
+    - heading: 为什么三座主炮塔全在前面
+      text:
+        zh: >-
+          华盛顿条约给了 35,000 吨与 16 英寸主炮两个上限。英国要把 9 门
+          16 英寸塞进这个框里，唯一可行的办法是把三座三联炮塔全部前置：
+          弹药库集中到一处，需要装甲保护的舱段缩短，省下来的重量可以
+          堆到装甲厚度上。
+        en: >-
+          The Washington Treaty set a 35,000-ton limit and a 16-inch gun
+          limit. Fitting nine 16-inch guns inside that box left the British
+          only one practical answer: put all three triple turrets forward,
+          concentrating the magazines so that the length of hull requiring
+          armour could be shortened, and spend the saved weight on thicker
+          armour instead.
+      src: [navweaps-16in-45-mk1, washington-treaty-1922]
+
+    - heading: 这个方案的代价
+      text:
+        zh: >-
+          代价直接写在射界上。第三座炮塔（X 塔）只能在约 60 到 130 度之间
+          回转，正前正后都不能开火。副炮也全被挤到后部，分两舷做成金字塔形
+          布置，navweaps 原话把这称为一个「重大缺陷」。
+          还有一个不常被提到的后果：全舰重心集中在舯前，
+          横摇周期只有 11.2 到 13.6 秒，是一种又急又硬的摇晃。
+        en: >-
+          The cost is written directly in the arcs. The third turret, X, could
+          only train between roughly 60 and 130 degrees - it could not fire
+          either directly ahead or directly astern. The secondary battery was
+          pushed aft entirely and arranged in pyramids on either beam, an
+          arrangement NavWeaps calls "a major disadvantage". A less often
+          mentioned consequence: with the weight concentrated forward of
+          midships, the ship rolled quickly and stiffly, with a period of only
+          11.2 to 13.6 seconds.
+      src: [navweaps-16in-45-mk1, navweaps-6in-50-mk22, navypedia-nelson]
+
+    - heading: 英国人还钻了条约的一个定义空子
+      text:
+        zh: >-
+          条约的「标准排水量」不含燃油与锅炉给水。英国主张自己要在全球
+          维持存在、必须多带这两样，把这个定义固定了下来。结果之一是本级的
+          防雷系统做成了舰体内部的注水舱，而不是外挂的防雷突出部——
+          它不占「干重」，也不增加航行阻力。防雷和航速两头都赚了。
+        en: >-
+          The treaty definition of standard displacement excluded both fuel
+          and boiler feed water. Britain argued that maintaining a worldwide
+          presence required carrying more of both, and got that definition
+          fixed. One result was that the class's torpedo defence was built as
+          internal water-filled compartments rather than external bulges -
+          they did not count toward the "dry" weight and did not add
+          hydrodynamic drag. Britain gained on both the protection and the
+          speed side.
+      src: [washington-treaty-1922, navypedia-nelson]
+
+    - heading: 1941 年 5 月 27 日：一份能精确到个位的战报
+      text:
+        zh: >-
+          这场战斗留下的最硬材料，是罗德尼号自己的《Preliminary Gunnery
+          Report》。它记下了当天 16 英寸打 378 发、6 英寸打 706 发。
+          6 英寸这个数字可以逐塔核对：六座炮塔分别打了 128、93、154、97、
+          160、74 发，加起来正好 706。
+        en: >-
+          The hardest evidence from the action is Rodney's own Preliminary
+          Gunnery Report. It records 378 rounds of 16-inch and 706 rounds of
+          6-inch fired that day. The 6-inch figure can be checked turret by
+          turret: the six mounts fired 128, 93, 154, 97, 160 and 74 rounds
+          respectively, which sums to exactly 706.
+      src: [kbismarck-rodney-report]
+
+    - heading: 同一份战报也记下了这场战斗有多勉强
+      text:
+        zh: >-
+          战报里没有任何胜利者的语气。它记着 X 炮塔在前 25 次齐射中只有
+          6 次能瞄准目标，25 次之后又有 9 次不能，合计 28 次。战斗结束时
+          A 塔右炮因为装填托盘卡死完全失效，B 塔左炮因为下发射药提升机
+          重复装填短暂失效，B 塔中炮因为两发炮弹没有发射药暂时失效。
+          4.7 英寸高炮全程一发未放。
+        en: >-
+          The report carries no note of triumph. It records that X turret
+          could bear on only 6 of the first 25 salvoes, and failed a further
+          9 times after that - 28 in all. By the end of the action A turret's
+          right gun was out of action with a jammed tilting tray, B turret's
+          left gun had briefly failed from a double-loaded hoist, and B
+          turret's centre gun was temporarily out because two projectiles had
+          no charges. The 4.7-inch AA guns never fired a round.
+      src: [kbismarck-rodney-report]
+
+    - heading: 这份战报本身有三处毛病
+      text:
+        zh: >-
+          引用它的时候必须带着这三点。第一，B 塔三管分计为 45、44、52，
+          实为 141，但塔总计写成 144，差 3 发。第二，按齐射次数乘炮数
+          得 371 发，与第一节的 378 发差 7 发。第三，第 2(a) 节的标题写的是
+          「16 英寸发数」，但两个 Total 数字实际是齐射与舷射的次数，
+          不是弹数。这些是原件的问题，不是转录的问题。
+        en: >-
+          Three defects have to travel with any citation of it. First, B
+          turret's three guns are listed as 45, 44 and 52 rounds - 141 - but
+          the turret total is given as 144, a discrepancy of three rounds.
+          Second, multiplying salvoes by guns gives 371 rounds against the
+          378 stated in section 1, a difference of seven. Third, the heading
+          of section 2(a) says "16-inch rounds fired", but the two Total
+          figures are actually counts of salvoes and broadsides, not rounds.
+          These are defects in the original document, not in the transcript.
+      src: [kbismarck-rodney-report]
+
+    - heading: 它确实向另一艘战列舰发射了鱼雷
+      text:
+        zh: >-
+          0916 与 0956，罗德尼号两次发射鱼雷，这是史上第一次有战列舰
+          向另一艘战列舰发射鱼雷。战报只记了发射，是否命中则三说并存。
+          一个容易被忽略的细节：0850 有一发德弹在左舷首外水中爆炸，
+          冲击波卡死了左舷鱼雷发射管的门。这可能是后来只从右舷射击的
+          原因之一，但来源没有明说因果。
+        en: >-
+          At 0916 and again at 0956 Rodney fired torpedoes - the first time in
+          history that a battleship had fired torpedoes at another battleship.
+          The report records only that they were fired; whether they hit is
+          given in three different ways. One detail easily missed: at 0850 a
+          German shell burst in the water off the port bow and the blast
+          jammed the port torpedo tube door. That may be why later shots came
+          only from the starboard side, but no source states the causal link.
+      src: [kbismarck-rodney-report, naval-history-rodney]
+
+history:
+  - id: build
+    title: { zh: 建造与服役, en: Building and commissioning }
+    range: { from: 1922, to: 1928 }
+    lead:
+      zh: >-
+        从开工到服役用了五年，从服役到真正进入现役又多用了四个月。
+      en: >-
+        Five years from laying down to commissioning, and a further four
+        months before she formally entered service.
+    events:
+      - date: 1922-12-28
+        text:
+          zh: >-
+            在 Cammell Laird（Birkenhead）开工。建造合同在 12-11 签订。
+          en: >-
+            Laid down at Cammell Laird, Birkenhead. The building contract had
+            been placed on 11 December.
+        src: [naval-history-rodney, navypedia-nelson]
+      - date: 1925-12-17
+        text:
+          zh: >-
+            由玛丽长公主掷瓶下水。掷瓶试了三次才砸碎那瓶帝国勃艮第葡萄酒。
+          en: >-
+            Launched by HRH The Princess Royal, after three attempts at
+            cracking the bottle of Imperial Burgundy.
+        src: [naval-history-rodney]
+      - date: 1927-12-07
+        text:
+          zh: >-
+            在德文波特正式服役，编入大西洋舰队，首任舰长 Henry Kitson。
+            注意这与常见的 1927-11-10 说法不同。
+          en: >-
+            Commissioned at Devonport for service in the Atlantic Fleet under
+            Captain Henry Kitson - not the often-quoted 10 November 1927.
+        src: [naval-history-rodney]
+      - date: 1928-03-28
+        text:
+          zh: >-
+            试航结束后正式进入现役。这是与「服役」分开的第二个节点。
+          en: >-
+            Formally entered service after trials - a second milestone,
+            distinct from commissioning.
+        src: [naval-history-rodney]
+
+  - id: last-battle
+    title: { zh: 最终战, en: The final action }
+    range: { from: 1941-05, to: 1941-05 }
+    lead:
+      zh: >-
+        她原定赴波士顿修理，是中途被召回来参加追击的。
+      en: >-
+        She had been due to sail for Boston for repairs and was recalled to
+        join the chase.
+    events:
+      - date: 1941-05-27
+        text:
+          zh: >-
+            与英王乔治五世号一同交战。16 英寸打 378 发、6 英寸打 706 发。
+            Admiralty War Diary 记 16 英寸为 380 发，两说并列。
+          en: >-
+            In action alongside King George V. 378 rounds of 16-inch and 706
+            of 6-inch fired. The Admiralty War Diary records 380 rounds of
+            16-inch; both figures are given here.
+        src: [kbismarck-rodney-report]
+      - date: 1941-05-27
+        text:
+          zh: >-
+            0916 与 0956 两次发射鱼雷，为史上首次战列舰对战列舰发射鱼雷。
+          en: >-
+            Fired torpedoes at 0916 and 0956, the first occasion on which a
+            battleship fired torpedoes at another battleship.
+        src: [naval-history-rodney, kbismarck-last-battle]
+
+  - id: end
+    title: { zh: 战后与拆解, en: Postwar and scrapping }
+    range: { from: 1945, to: 1948 }
+    events:
+      - date: 1948-03
+        text:
+          zh: >-
+            列入报废。03-19 售予 BISCO，03-26 抵 Inverkeithing 拆解。
+          en: >-
+            Placed on the disposal list in March. Sold to BISCO on 19 March
+            and arrived at Inverkeithing for breaking up on 26 March.
+        src: [naval-history-rodney]
