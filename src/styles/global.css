@@ -67,7 +67,10 @@ body {
   font-size: 15px;
   line-height: 1.65;
   color: var(--ink-700);
-  background: var(--paper);
+  /* 2026-11-22：背景交给 PageDecor（浅蓝海面 + 两侧装饰）。
+     body 自己必须透明，否则会把装饰层整个盖住 —— 这是这次美化
+     最容易踩的一处：写了 background 就白做了。 */
+  background: transparent;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }

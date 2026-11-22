@@ -104,7 +104,7 @@ intro:
           1943 年 12 月 26 日北角海战是对这型炮最完整的一次检验。约克公爵号
           前段 52 次齐射有 31 次夹中，后段 25 次齐射有 21 次夹中，全战 80 次齐射
           打出 446 发；但因为机械与操作失误，该舰在这场战斗中只发挥出不到
-          可能输出的 70%。**这里必须两说并列**：navweaps 在来源说明里明写，
+          可能输出的 70%。这里必须两说并列：navweaps 在来源说明里明写，
           关于约克公爵号此战到底打了多少发弹、射了多少次齐射，各参考文献之间
           存在冲突，它采用的是 A.J. Watts《Loss of Scharnhorst》第二部分
           统计表里的数字。本站照录这个取舍，但不把它的数字当成唯一答案。
@@ -112,8 +112,8 @@ intro:
           The Battle of North Cape on 26 December 1943 was the fullest test this gun
           got. Duke of York straddled with 31 of 52 salvos in the first phase and 21 of
           25 later, firing 446 rounds in 80 salvos overall, yet mechanical and
-          drill errors kept her below 70 per cent of her possible output. **Both
-          readings have to stand here**: NavWeaps states in its source note that
+          drill errors kept her below 70 per cent of her possible output. Both
+          readings have to stand here: NavWeaps states in its source note that
           references conflict over how many rounds and salvos Duke of York actually
           fired, and that it follows the statistical tables in A.J. Watts' "Loss of
           Scharnhorst", Part II. This article records that choice without treating its
@@ -235,15 +235,15 @@ history:
           zh: >-
             北角海战。约克公爵号前段 52 次齐射 31 次夹中、后段 25 次齐射 21 次夹中，
             全战 80 次齐射打出 446 发，但因机械与操作失误只发挥不到可能输出的 70%。
-            **navweaps 明写：关于此战的弹数与齐射数，各参考文献互相冲突，
-            它采用的是 A.J. Watts 的统计表——数字并列，本站不裁决。**
+            navweaps 明写：关于此战的弹数与齐射数，各参考文献互相冲突，
+            它采用的是 A.J. Watts 的统计表——数字并列，本站不裁决。
           en: >-
             The Battle of North Cape. Duke of York straddled with 31 of 52 salvos and
             then 21 of 25, firing 446 rounds in 80 salvos, but mechanical and drill
-            errors capped her output below 70 per cent of what was possible. **NavWeaps
+            errors capped her output below 70 per cent of what was possible. NavWeaps
             states that references conflict on the rounds and salvos fired and that it
             follows A.J. Watts' tables - the figures stand side by side here without
-            adjudication.**
+            adjudication.
         src: [navweaps-14in-45-mk7]
 
   - id: ashore

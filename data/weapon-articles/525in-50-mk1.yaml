@@ -69,15 +69,15 @@ intro:
           这型炮座的最大仰角，navweaps 与 navypedia 都写 70 度，
           而英国皇家博物馆格林威治的研究指南写 80 度；对空升限上，
           navweaps 给 70 度时 46,500 英尺（14,170 米），
-          格林威治那份材料给 80 度时 29,544 英尺。**两组数字量级不同，
-          本站两说并列，不替来源裁决。**需要指出的是，单靠仰角差
+          格林威治那份材料给 80 度时 29,544 英尺。两组数字量级不同，
+          本站两说并列，不替来源裁决。需要指出的是，单靠仰角差
           解释不了这么大的升限差。
         en: >-
           The mountings' maximum elevation is given as 70 degrees by both NavWeaps and
           navypedia, and as 80 degrees by the Royal Museums Greenwich research guide.
           On ceiling, NavWeaps gives 46,500 feet (14,170 m) at 70 degrees while the
-          Greenwich material gives 29,544 feet at 80 degrees. **The two sets differ by
-          an order of magnitude and both are reported here without adjudication.** An
+          Greenwich material gives 29,544 feet at 80 degrees. The two sets differ by
+          an order of magnitude and both are reported here without adjudication. An
           elevation difference alone cannot explain a ceiling gap that large.
       src: [navweaps-525in-50-mk1, rmg-kgv-guide, navypedia-kgv]
 

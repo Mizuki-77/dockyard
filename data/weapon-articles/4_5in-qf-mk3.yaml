@@ -69,14 +69,14 @@ intro:
         zh: >-
           这项预判在服役中应验了。navweaps 的原话是：这个定装弹在服役使用中
           被证明过重，正常搬运时弹头有与药筒分离的倾向；这些问题导致长时间射击时
-          射速迅速下降。后来为皇家方舟号与鹰号设计的 Mark II*** BD 双联座
+          射速迅速下降。后来为皇家方舟号与鹰号设计的 Mark II* BD 双联座
           改用了分装弹药——这是一次事后的修正。
         en: >-
           The prediction was borne out. NavWeaps states that the fixed round "proved to
           be too heavy in service use and there was a tendency for the projectiles to
           separate from the cartridge cases during normal handling", with the result
           that "a rapidly decreasing rate of fire during prolonged firing periods".
-          The Mark II*** BD twin mountings later designed for Ark Royal and Eagle used
+          The Mark II* BD twin mountings later designed for Ark Royal and Eagle used
           separate ammunition instead - a correction after the fact.
       src: [navweaps-45in-45-mk1]
 
@@ -194,13 +194,13 @@ history:
           zh: >-
             光辉级实战报告（ADM 3363/0197）：八门 4.5 英寸炮在约三十分钟里
             打出约 3,000 发高爆弹，平均射速 12 发/分，报告称之为「remarkable」。
-            **这一条与 navweaps 关于长时间射击时射速下降的说法并列，不裁决。**
+            这一条与 navweaps 关于长时间射击时射速下降的说法并列，不裁决。
           en: >-
             The Illustrious class action report (ADM 3363/0197): eight 4.5-inch guns
             fired about 3,000 rounds of HE in roughly thirty minutes at an average of 12
-            rounds per minute, which the report called "remarkable". **This stands
+            rounds per minute, which the report called "remarkable". This stands
             alongside NavWeaps' account of rate of fire falling off in prolonged firing;
-            neither is adjudicated here.**
+            neither is adjudicated here.
         src: [naval-history-illustrious]
       - date: 1941-05-08
         text:

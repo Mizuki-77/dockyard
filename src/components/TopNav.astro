@@ -1,10 +1,27 @@
 ---
+// ============================================================================
+// 顶部导航
+// ----------------------------------------------------------------------------
+// 2026-11-22 改：
+//   ① 站徽从「坞」字方块换成 Logo.astro（黑/红/蓝的水线涂装徽章）
+//   ② 新增「战舰指挥官」入口（/commanders）
+//
+// 「战舰指挥官」这个站名为什么这么定：
+//   页面的内容是「某艘舰在某段时间由谁指挥」，一手材料是各舰的
+//   commanding officer 名录。叫「指挥官」比叫「舰长」准 —— 因为
+//   驱逐舰的 CO 军衔是 Cdr.（中校），轻巡及以上是 Capt.，德语还有
+//   Kpt.z.S.，中文统一叫「舰长」会把这些差别抹掉；「指挥官」是通称，
+//   且与本项目「人—舰—时段」的三元结构对得上。
+// ============================================================================
+import Logo from './Logo.astro';
+
 const path = Astro.url.pathname;
 const items = [
   { href: '/', label: '主页' },
   { href: '/ships', label: '战舰信息' },
   { href: '/battles', label: '海战历史' },
   { href: '/weapons', label: '武器与装备' },
+  { href: '/commanders', label: '战舰指挥官' },
   { href: '/compare', label: '对比器' },
   { href: '/sources', label: '资料来源' },
   { href: '/help', label: '帮助及反馈' },
@@ -19,7 +36,7 @@ function isActive(href: string): boolean {
 <header class="topnav">
   <div class="topnav__inner">
     <a class="brand" href="/" aria-label="船坞 Dockyard 首页">
-      <span class="brand__mark" aria-hidden="true">坞</span>
+      <Logo size={32} />
       <span class="brand__text">
         <span class="brand__zh">船坞</span>
         <span class="brand__en">Dockyard</span>
@@ -40,7 +57,8 @@ function isActive(href: string): boolean {
       }
     </nav>
 
-    <form class="navsearch" role="search" action="/ships" method="get">      <svg
+    <form class="navsearch" role="search" action="/ships" method="get">
+      <svg
         width="14"
         height="14"
         viewBox="0 0 24 24"

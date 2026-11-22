@@ -1,0 +1,516 @@
+---
+// ============================================================================
+// 战舰指挥官
+// ----------------------------------------------------------------------------
+// 这一页回答一个问题：**某艘舰在某段时间，由谁指挥。**
+//
+// 数据源：各舰 data/ships/<id>.yaml 里的 service.commander fact。
+// 每条的 valid 窗口就是任期，这是本站「时间维度」在设计上的直接产物：
+// 同一条字段在不同时间窗里有不同的值，本来就是为这种查询准备的。
+//
+// 为什么不叫「舰长」：
+//   英舰 CO 的军衔随舰种不同（驱逐舰 Cdr.、巡洋舰 Capt.），
+//   德舰是 Kpt.z.S. / K.Kpt.，波舰是 kmdr / kmdr por.。
+//   中文「舰长」会把军衔差别抹平，「指挥官」是通称，更准。
+//
+// ⚠️ 数据诚实性：只有 15 / 25 艘舰有 commander fact，且多数只记了
+//    「某一任」而不是全任期名录。页面必须把覆盖率写在头上，不能让人
+//    以为这是完整名录。这是本项目红线「查不到就写查不到」的延长线。
+// ============================================================================
+import Base from '../layouts/Base.astro';
+import { getShips, getClass } from '../lib/data';
+import { allFacts } from '../lib/resolve';
+
+interface Row {
+  shipId: string;
+  shipZh: string;
+  shipEn: string;
+  pennant?: string;
+  nation?: string;
+  /** 原始 string，含军衔与可能的括号注释 */
+  raw: string;
+  /** 拆出来的纯人名 */
+  name: string;
+  /** 拆出来的军衔前缀 */
+  rank: string;
+  from?: string;
+  to?: string;
+  src: string[];
+  confidence?: string;
+  note?: string;
+  /** 该条注记里提到的「阵亡」「沉没」等情况，用于标红 */
+  fate?: string;
+}
+
+/** 从「Capt. Philip Louis Vian, DSO, RN（1940-05-21 至 1941-07-10，第二任）」里拆出各段。 */
+function parseCommander(raw: string): { name: string; rank: string; paren: string } {
+  let s = String(raw || '').trim();
+
+  // 括号里的补充说明（中英文括号都收）
+  let paren = '';
+  const m = s.match(/[（(]([^）)]*)[）)]\s*$/);
+  if (m) {
+    paren = m[1].trim();
+    s = s.slice(0, m.index).trim();
+  }
+
+  // 军衔前缀：英/德/波三套制式
+  const RANKS = [
+    'Kapitän zur See', 'Kpt.z.S.', 'Korvettenkapitän', 'K.Kpt.',
+    'kmdr por.', 'kmdr ppor.', 'kmdr',
+    'Captain', 'Capt.', 'Commander', 'Cdr.', 'Lieutenant', 'Lt.',
+    'Admiral', 'Adm.',
+  ];
+  let rank = '';
+  for (const r of RANKS) {
+    if (s.startsWith(r + ' ') || s.startsWith(r + '.')) {
+      rank = r.replace(/\.$/, '');
+      s = s.slice(r.length).trim().replace(/^\.\s*/, '');
+      break;
+    }
+  }
+
+  // 去掉末尾的勋衔串（, DSO*, DSC, RN / VC, DSO …）
+  s = s.replace(/(,\s*(?:[A-Z]{2,4}\*?|[A-Z][a-z]{1,3}\*?)\s*)+$/, '').trim();
+  s = s.replace(/,\s*$/, '').trim();
+
+  return { name: s, rank, paren };
+}
+
+/** 从 note 或的补充文字里认出「这任指挥官后来怎么样了」。 */
+function fateOf(text: string): string | undefined {
+  const s = String(text || '');
+  if (/阵亡|战死|killed/i.test(s)) return '阵亡';
+  if (/随舰沉没|沉没时|sunk/i.test(s)) return '随舰沉没';
+  if (/代理|acting|i\.V\./i.test(s)) return '代理';
+  return undefined;
+}
+
+/**
+ * 舷号只取「主舷号」，不把来回改号的整段历史塞进表格。
+ *
+ * 数据里真实存的是：
+ *   victorious → '38（1948 年短暂为 R23，1949 年起 R38）'
+ *   cossack    → 'L03 / F03 / G03'
+ *   sikh       → 'L82 / F82 / G82'
+ * 这些在单舰页要看全（改号史本身是信息），但在指挥官表的「舰」列里
+ * 会撑到 200px 以上，把姓名列挤扁。这里取第一个 token 即可。
+ */
+function mainPennant(v?: string): string {
+  if (!v) return '';
+  const s = String(v);
+  // 括号里的整段说明直接丢
+  const noParen = s.replace(/[（(][^）)]*[）)]/g, '').trim();
+  // 多值取第一个（L03 / F03 / G03 → L03）
+  const first = noParen.split(/[\/、,，]/)[0].trim();
+  return first;
+}
+
+const ships = getShips();
+
+const rows: Row[] = [];
+for (const sh of ships) {
+  const cls = sh.class ? getClass(sh.class) : undefined;
+  const facts = allFacts(sh, cls);
+  const cmds = facts.filter((f) => f.field === 'service.commander');
+  if (!cmds.length) continue;
+
+  const pennant = facts.find((f) => f.field === 'identity.pennant_number');
+  const nation = facts.find((f) => f.field === 'identity.nation');
+
+  for (const f of cmds) {
+    const parsed = parseCommander(String(f.value ?? ''));
+    const joinedNote = `${f.note ?? ''} ${parsed.paren}`;
+    rows.push({
+      shipId: sh.id,
+      shipZh: sh.name.zh,
+      shipEn: sh.name.en ?? sh.name.zh,
+      pennant: pennant ? mainPennant(String(pennant.value)) : undefined,
+      nation: nation ? String(nation.value) : undefined,
+      raw: String(f.value ?? ''),
+      name: parsed.name || String(f.value ?? ''),
+      rank: parsed.rank,
+      from: f.from,
+      to: f.to,
+      src: f.src ?? [],
+      confidence: f.confidence,
+      note: f.note,
+      fate: fateOf(joinedNote),
+    });
+  }
+}
+
+// 按任期起点倒序（新时代在上），没有起点的排最后
+rows.sort((a, b) => {
+  const ak = a.from ?? '';
+  const bk = b.from ?? '';
+  if (!ak && !bk) return a.shipZh.localeCompare(b.shipZh, 'zh');
+  if (!ak) return 1;
+  if (!bk) return -1;
+  return bk.localeCompare(ak);
+});
+
+const covered = new Set(rows.map((r) => r.shipId)).size;
+const total = ships.length;
+const missing = ships.filter((s) => !rows.some((r) => r.shipId === s.id));
+
+// 军衔统计：让读者一眼看出命名体系
+const rankCount: Record<string, number> = {};
+for (const r of rows) {
+  const k = r.rank || '未标注';
+  rankCount[k] = (rankCount[k] ?? 0) + 1;
+}
+const rankTop = Object.entries(rankCount).sort((a, b) => b[1] - a[1]);
+
+function shortDate(d?: string): string {
+  if (!d) return '—';
+  return d.length === 10 ? d : d;
+}
+---
+
+<Base title="战舰指挥官" variant="full">
+  <div class="pagehead">
+    <div class="pagehead__kicker">Commanders</div>
+    <h1 class="pagehead__title">战舰指挥官</h1>
+    <p class="pagehead__sub">
+      某艘舰在某段时间由谁指挥。每条任期都带着它在一手材料里的时间窗，
+      与全站其他数据一样可以追溯到具体来源。
+    </p>
+    <div class="pagehead__meta">
+      <span class="tag tag--ghost">{rows.length} 条任期记录</span>
+      <span class="tag tag--ghost">覆盖 {covered} / {total} 艘舰</span>
+      <span class="tag tag--ghost">{rankTop.length} 种军衔制式</span>
+    </div>
+  </div>
+
+  <!-- 覆盖率声明：这是本项目最不能省的一段 -->
+  <section class="cmdr-notice">
+    <div class="cmdr-notice__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="M12 7.5v5.5"></path>
+        <circle cx="12" cy="16.6" r="0.9" fill="currentColor" stroke="none"></circle>
+      </svg>
+    </div>
+    <div>
+      <strong>这不是完整名录。</strong>
+      目前 {total} 艘舰里只有 {covered} 艘收录了指挥官记录，
+      且多数只记了其中一两任，而不是从服役到退役的逐任名单。
+      没有记录的舰不会出现在下面的表里，也不会用推测补齐 ——
+      查不到就是查不到。若某任任期你手上有来源，欢迎从页面底部的纠错入口提交。
+    </div>
+  </section>
+
+  <!-- 军衔制式速查 -->
+  <section class="section">
+    <div class="section__head">
+      <h2 class="section__title">军衔制式</h2>
+      <span class="section__en">Ranks in the records</span>
+    </div>
+    <div class="rankchips">
+      {
+        rankTop.map(([rank, n]) => (
+          <span class="rankchip">
+            <span class="rankchip__name">{rank}</span>
+            <span class="rankchip__n">{n}</span>
+          </span>
+        ))
+      }
+    </div>
+    <p class="ranknote">
+      同一页里会同时出现英制（Capt. / Cdr.）、德制（Kpt.z.S.）、
+      波制（kmdr）三套军衔，本站**不统一翻译**：军衔本身是信息，
+      把它统一成「上校/中校」会丢掉该国海军的实际编制差别。
+    </p>
+  </section>
+
+  <!-- 主表 -->
+  <section class="section">
+    <div class="section__head">
+      <h2 class="section__title">任期记录</h2>
+      <span class="section__en">By date</span>
+    </div>
+
+    <div class="cmdr-table-wrap">
+      <table class="cmdr-table">
+        <thead>
+          <tr>
+            <th scope="col">任期</th>
+            <th scope="col">军衔</th>
+            <th scope="col">姓名</th>
+            <th scope="col">舰</th>
+            <th scope="col">备注</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            rows.map((r) => (
+              <tr>
+                <td class="cmdr-date">
+                  <span class="cmdr-date__from">{shortDate(r.from)}</span>
+                  <span class="cmdr-date__arrow">→</span>
+                  <span class="cmdr-date__to">{r.to ? shortDate(r.to) : '—'}</span>
+                </td>
+                <td class="cmdr-rank">{r.rank || '—'}</td>
+                <td class="cmdr-name">
+                  {r.name}
+                  {r.fate && (
+                    <span class:list={['cmdr-fate', r.fate === '阵亡' && 'cmdr-fate--dead',
+                                       r.fate === '随舰沉没' && 'cmdr-fate--dead']}>
+                      {r.fate}
+                    </span>
+                  )}
+                </td>
+                <td class="cmdr-ship">
+                  <a href={`/ships/${r.shipId}`}>{r.shipZh}</a>
+                  {r.pennant && <span class="cmdr-pennant">{r.pennant}</span>}
+                </td>
+                <td class="cmdr-note">
+                  {r.note ? (
+                    <span class="cmdr-note__text" title={r.note}>
+                      {r.note.length > 34 ? r.note.slice(0, 32) + '…' : r.note}
+                    </span>
+                  ) : (
+                    '—'
+                  )}
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 未收录清单：明着列出来，比让人翻不到强 -->
+  <section class="section">
+    <div class="section__head">
+      <h2 class="section__title">尚未收录的舰</h2>
+      <span class="section__en">No commander records yet</span>
+    </div>
+    <div class="misslist">
+      {
+        missing.map((s) => (
+          <a class="missitem" href={`/ships/${s.id}`}>
+            <span class="missitem__name">{s.name.zh}</span>
+            <span class="missitem__en">{s.name.en}</span>
+          </a>
+        ))
+      }
+    </div>
+    <p class="ranknote">
+      这 {missing.length} 艘舰的指挥官信息在已采集的来源里没有找到。
+      不是忘了做，是没查到 —— 本项目的规矩是宁可空着，也不从
+      「某某号舰长」这类流传说法里抄一个名字。
+    </p>
+  </section>
+
+  <style>
+    /* ------------------------------------------------ 覆盖率声明 */
+    .cmdr-notice {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, #fdf8ee, #fdf4e7);
+      border: 1px solid var(--warn-line);
+      color: #6d4a17;
+      font-size: 13.5px;
+      line-height: 1.7;
+    }
+    .cmdr-notice__icon {
+      flex-shrink: 0;
+      color: var(--warn);
+      margin-top: 1px;
+    }
+    .cmdr-notice strong {
+      color: #5a3a0d;
+    }
+
+    /* ------------------------------------------------ 军衔 chips */
+    .rankchips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .rankchip {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-1);
+    }
+    .rankchip__name {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      color: var(--ink-700);
+      font-weight: 600;
+    }
+    .rankchip__n {
+      font-size: 11px;
+      color: var(--blue-600);
+      font-weight: 700;
+    }
+    .ranknote {
+      margin: 12px 0 0;
+      font-size: 12.5px;
+      color: var(--ink-400);
+      line-height: 1.7;
+    }
+
+    /* ------------------------------------------------ 主表 */
+    .cmdr-table-wrap {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-1);
+    }
+    .cmdr-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+    .cmdr-table thead th {
+      text-align: left;
+      padding: 11px 14px;
+      font-size: 11.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-400);
+      font-weight: 600;
+      background: var(--blue-50);
+      border-bottom: 1px solid var(--line);
+      white-space: nowrap;
+    }
+    .cmdr-table tbody td {
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--line-soft);
+      vertical-align: top;
+    }
+    .cmdr-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .cmdr-table tbody tr:hover {
+      background: #f7fbfe;
+    }
+
+    .cmdr-date {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--ink-500);
+      white-space: nowrap;
+    }
+    .cmdr-date__arrow {
+      color: var(--ink-300);
+      margin: 0 5px;
+    }
+    .cmdr-date__to {
+      color: var(--ink-400);
+    }
+
+    .cmdr-rank {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--blue-700);
+      white-space: nowrap;
+    }
+
+    .cmdr-name {
+      color: var(--ink-900);
+      font-weight: 550;
+      min-width: 180px;
+    }
+    .cmdr-fate {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 1px 7px;
+      border-radius: 999px;
+      font-size: 10.5px;
+      font-weight: 600;
+      background: var(--blue-100);
+      color: var(--blue-700);
+      vertical-align: 1px;
+    }
+    .cmdr-fate--dead {
+      background: #fdeaea;
+      color: #a8202b;
+    }
+
+    .cmdr-ship {
+      white-space: nowrap;
+    }
+    .cmdr-ship a {
+      font-weight: 550;
+    }
+    .cmdr-pennant {
+      margin-left: 6px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ink-400);
+      padding: 0 5px;
+      border-radius: 4px;
+      background: var(--blue-50);
+    }
+
+    .cmdr-note {
+      color: var(--ink-400);
+      font-size: 12px;
+      max-width: 300px;
+      line-height: 1.5;
+      cursor: help;
+    }
+    .cmdr-note__text {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* ------------------------------------------------ 未收录 */
+    .misslist {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(158px, 1fr));
+      gap: 8px;
+    }
+    .missitem {
+      display: flex;
+      flex-direction: column;
+      padding: 9px 12px;
+      border-radius: var(--radius-sm);
+      background: #fff;
+      border: 1px dashed var(--line-strong);
+      text-decoration: none;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+    .missitem:hover {
+      background: var(--blue-50);
+      border-color: var(--blue-300);
+      text-decoration: none;
+    }
+    .missitem__name {
+      font-size: 13.5px;
+      color: var(--ink-700);
+      font-weight: 550;
+    }
+    .missitem__en {
+      font-size: 11px;
+      color: var(--ink-300);
+    }
+
+    @media (max-width: 860px) {
+      .cmdr-table thead th:nth-child(5),
+      .cmdr-table tbody td:nth-child(5) {
+        display: none;
+      }
+      .cmdr-note {
+        display: none;
+      }
+    }
+  </style>
+</Base>

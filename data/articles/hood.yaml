@@ -127,7 +127,7 @@ history:
         text: { zh: 改版设计批准：主装甲带从 9 英寸增至 12 英寸，水平甲板加厚，排水量随之上升。协会原话「Hood was in many respects a larger version of the ships that had been sunk」。 }
         src: [hmshood-construction]
       - date: 1916-09-01
-        text: { zh: 在 Clydebank 的 John Brown 船厂铺龙骨。**注意：常被引用的 1916-05-31 不被船厂记录支持**，协会明确写「this date is NOT supported by the construction yard records」，navypedia 同时保留「31.5.1916, again 1.9.1916」两种说法（首次铺设与重铺）。 }
+        text: { zh: 在 Clydebank 的 John Brown 船厂铺龙骨。注意：常被引用的 1916-05-31 不被船厂记录支持，协会明确写「this date is NOT supported by the construction yard records」，navypedia 同时保留「31.5.1916, again 1.9.1916」两种说法（首次铺设与重铺）。 }
         src: [hmshood-construction, navypedia-hood]
       - date: 1917-03-09
         text: { zh: 三艘同级舰停工，等待设计改版结论。 }
@@ -160,7 +160,7 @@ history:
         text: { zh: 在 Arran 的一英里测速段做全功率试航，实测 151,000 轴马力、32.07 节（排水量 42,000 吨、6 级风）。设计值是 144,000 轴马力、32 节。 }
         src: [hmshood-construction]
       - date: 1920-03-29
-        text: { zh: 正式服役，当时舰员 967 人。**流传甚广的 1920-05-15 是误传**——那是它出坞赴普利茅斯的日期；依舰志 ADM53/78910，服役日为 3 月 29 日。 }
+        text: { zh: 正式服役，当时舰员 967 人。流传甚广的 1920-05-15 是误传——那是它出坞赴普利茅斯的日期；依舰志 ADM53/78910，服役日为 3 月 29 日。 }
         src: [hmshood-timeline]
 
   - id: interwar
@@ -181,7 +181,7 @@ history:
         text: { zh: 至 1924-09-28 参加帝国巡游（Cruise of the Special Service Squadron），随行 Delhi、Dragon、Repulse、Danae、Dauntless。这次巡游是「The Mighty Hood」名号的直接来源。 }
         src: [hmshood-timeline]
       - date: 1929-06-03
-        text: { zh: 至 1931-03-10 在朴茨茅斯做服役期最大一次改装：加防雷鼓包、油舱扩至 4,615 吨、两座八联 2-pdr、F-IV-H 弹射器与水机、拆鱼雷火控台、15 英寸备弹从 4,341 发压缩至约 944 发（省 203 吨）。**水平防护没有动。** }
+        text: { zh: 至 1931-03-10 在朴茨茅斯做服役期最大一次改装：加防雷鼓包、油舱扩至 4,615 吨、两座八联 2-pdr、F-IV-H 弹射器与水机、拆鱼雷火控台、15 英寸备弹从 4,341 发压缩至约 944 发（省 203 吨）。水平防护没有动。 }
         src: [hmshood-timeline, navypedia-hood]
       - date: 1931-06-26
         text: { zh: 损失一架 Fairey IIIF 水上飞机。次年 6 月拆掉弹射器，1933 年 12 月前全部航空设备拆完。 }
@@ -190,7 +190,7 @@ history:
         text: { zh: 与声望号相撞（位置 42°06′N 09°23′W），舰艏受损。 }
         src: [hmshood-timeline]
       - date: 1936
-        text: { zh: 至 1939 年在地中海舰队服役，涂装是 507C 浅灰——**这是模型制作者最常画错的地方**，1941 年 5 月时它早已换回本土舰队的深灰。 }
+        text: { zh: 至 1939 年在地中海舰队服役，涂装是 507C 浅灰——这是模型制作者最常画错的地方，1941 年 5 月时它早已换回本土舰队的深灰。 }
         src: [hoodpaint]
 
   - id: war
@@ -250,7 +250,7 @@ history:
         text: { zh: 05:37 发出战斗电报，位置 63-20 N, 31-50 W；随即右转 40 度至 280 度，威尔士亲王号在其右后方 800 码。 }
         src: [hoodadm116pow]
       - date: 1941-05-24
-        text: { zh: 05:49 再右转 20 度至 300 度；05:50 下达目标指示 G.S.B. 337 L1，指向左侧德舰——**那实际是欧根亲王号**，英方按「战列舰在前」的惯例误判。 }
+        text: { zh: 05:49 再右转 20 度至 300 度；05:50 下达目标指示 G.S.B. 337 L1，指向左侧德舰——那实际是欧根亲王号，英方按「战列舰在前」的惯例误判。 }
         src: [hoodadm116, hooddenmark2]
       - date: 1941-05-24
         text: { zh: 05:52½ 开火（调查委员会记为 approximately 0553）。05:55 俾斯麦号开始还击，胡德号左转 20 度打开 A 炮塔射界，同时起火——ADM116/4351 记「caused by a hit from BISMARCK's third salvo」。 }
@@ -259,7 +259,7 @@ history:
         text: { zh: 05:59 至 06:00 被第五次齐射命中，艉部弹药库爆炸。生还者 Leach 描述「a very fierce upward rush of flame the shape of a funnel」。 }
         src: [hoodadm116, hooddenmark2]
       - date: 1941-05-24
-        text: { zh: 06:00 舰体断为两截沉没，全过程不到三分钟。在舰 1,418 人，只有 3 人生还（Ted Briggs、William Dundas、Robert Tilburn），由 Electra 号救起，当晚送抵雷克雅未克，05-29 在格里诺克下船。**所有一手正文都写 0600，没有任何一处写 0601。** }
+        text: { zh: 06:00 舰体断为两截沉没，全过程不到三分钟。在舰 1,418 人，只有 3 人生还（Ted Briggs、William Dundas、Robert Tilburn），由 Electra 号救起，当晚送抵雷克雅未克，05-29 在格里诺克下船。所有一手正文都写 0600，没有任何一处写 0601。 }
         src: [hoodadm116, hmshood-timeline, hooddenmark3]
       - date: 1941-05-24
         text: { zh: 06:02 至 06:03 威尔士亲王号放烟幕退出战斗；德方记录海战于 06:09 结束，06:20 防空炮停止射击。 }

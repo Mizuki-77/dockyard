@@ -2,7 +2,7 @@
 # 武器正文 —— Fairey Albacore
 #
 # ⚠️ 本篇的核心问题：Albacore 到底上过皇家方舟号没有？
-#    **结论：上过，但只是 1941 年 10 月一次转场搭载，不是作战中队在舰上服役。**
+#    结论：上过，但只是 1941 年 10 月一次转场搭载，不是作战中队在舰上服役。
 #
 #    证据链（三条独立来源，互相吻合）：
 #      naval-history（逐日年表）：
@@ -37,7 +37,7 @@ intro:
       1940 年 3 月随 826 中队进入服役。它确实取代了 Swordfish
       在大型舰队航母上的位置，但不如 Swordfish 适应性强，
       1944 年就从一线撤出 —— 比它本该替换掉的 Swordfish 还早一年。
-      关于皇家方舟号：**它上过本舰，但那是一次转场搭载，不是作战服役。**
+      关于皇家方舟号：它上过本舰，但那是一次转场搭载，不是作战服役。
       1941 年 10 月，828 中队的 Albacore 由 Argus 号转来本舰，
       10 月 18 日全部飞往马耳他，本舰在四周后沉没。
     en: >-
@@ -45,8 +45,8 @@ intro:
       Swordfish, entering service with No. 826 Squadron in March 1940. It did supplant
       the Swordfish on the large fleet carriers, but it was less adaptable and was
       withdrawn from the front line in 1944 - a year before the aircraft it was meant to
-      replace. As for Ark Royal: **the type was aboard, but as a ferry lift, not as an
-      operational squadron.** In October 1941 No. 828 Squadron's Albacores came across to
+      replace. As for Ark Royal: the type was aboard, but as a ferry lift, not as an
+      operational squadron. In October 1941 No. 828 Squadron's Albacores came across to
       the ship from HMS Argus and flew off to Malta on 18 October; the ship sank four
       weeks later.
   paragraphs:
@@ -67,8 +67,8 @@ intro:
           两舰在港内并靠以转移飞机。第三层，它们待了多久：
           10 月 18 日 01:40，本舰在 37-28N 06-00E 位置
           飞送 11 架 Albacore 与 2 架 Swordfish 前往马耳他 Hal Far 机场，
-          随后返航直布罗陀。所以答案是：**上过，作为转场搭载，
-          在舰时间约十天，没有执行过作战任务。**
+          随后返航直布罗陀。所以答案是：上过，作为转场搭载，
+          在舰时间约十天，没有执行过作战任务。
         en: >-
           The answer has three layers, and omitting one misreads it. First, was there a
           window at all: the Albacore only entered service with No. 826 Squadron in March
@@ -83,8 +83,8 @@ intro:
           lay stern to stern to transfer aircraft. Third, how long they stayed: at 0140 on
           18 October the ship, at 37-28N 06-00E, flew off eleven Albacores and two
           Swordfish for Hal Far airfield in Malta and then shaped course back for
-          Gibraltar. The answer is therefore: **aboard, as a ferry lift, for about ten
-          days, with no operational sortie flown from the ship.**
+          Gibraltar. The answer is therefore: aboard, as a ferry lift, for about ten
+          days, with no operational sortie flown from the ship.
       src: [historyofwar-albacore, naval-history-arkroyal, faa-arkroyal-archive]
     - heading: 另一种写法的出处，以及它为什么容易误导
       text:

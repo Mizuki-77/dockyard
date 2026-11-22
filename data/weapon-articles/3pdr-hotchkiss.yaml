@@ -1,7 +1,7 @@
 # ============================================================================
 # 武器正文 —— 47 mm/40 3-pdr Hotchkiss Mk I（礼炮）
 #
-# ⚠️ 这一篇必须先说清楚一件事：**它不是作战武器。**
+# ⚠️ 这一篇必须先说清楚一件事：它不是作战武器。
 #    在 data/ 里它的 weapon.category 填的是 naval_gun，那是注册表没有
 #    「礼炮」这一类目造成的，不代表它在本舰上打过飞机或打过船。
 #    皇家方舟号上的四门，来源写的就是「3pdr saluting guns」。
@@ -19,14 +19,14 @@ intro:
   lead:
     zh: >-
       Hotchkiss 3-pdr（1.85 英寸 / 47 mm，40 倍径）是 1886 年进入英国海军服役的
-      老式速射炮。它在皇家方舟号上的身份**不是作战武器，是礼炮** ——
+      老式速射炮。它在皇家方舟号上的身份不是作战武器，是礼炮 ——
       本舰装了四门单装，用途是鸣放礼炮，来源原文写作「3pdr saluting guns」。
       本页记录的因此不是一门防空炮或反舰炮的性能，而是这门 1886 年的炮
       怎么在半个世纪里从反鱼雷艇炮退成礼炮、又被战争拉回去当炮用。
     en: >-
       The Hotchkiss 3-pdr (1.85 inch / 47 mm, 40 calibres) was an old quick-firing gun
-      that entered British naval service in 1886. Aboard HMS Ark Royal it was **not a
-      combat weapon but a saluting gun**: the ship carried four single mountings, and the
+      that entered British naval service in 1886. Aboard HMS Ark Royal it was not a
+      combat weapon but a saluting gun: the ship carried four single mountings, and the
       sources describe them as "3pdr saluting guns". What this page records is therefore
       not the performance of an anti-aircraft or anti-ship gun, but how an 1886 weapon
       declined into a saluting piece over half a century and was then pulled back into

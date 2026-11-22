@@ -72,7 +72,7 @@ intro:
           合计每分钟 23 到 25 发，也就是每门炮 3 发/分——但同一份报告同时写明
           扬弹机的设计缺陷在评估中造成过两次严重故障和长时间的供弹中断。
           另一头是实战记录：丹麦海峡那 13 分钟里俾斯麦号一共打掉 93 发，
-          摊到每门炮不到 1 发/分。**三种口径都能追到出处，本站不合并成一个数字。**
+          摊到每门炮不到 1 发/分。三种口径都能追到出处，本站不合并成一个数字。
         en: >-
           Two sets of figures in the archives disagree on how fast the gun actually
           fired, and both are reported here rather than adjudicated. Krupp's own
@@ -83,7 +83,7 @@ intro:
           breakdowns and long interruptions of supply during the evaluation. Against
           that stands the action record: 93 rounds in thirteen minutes at the Denmark
           Strait, under one round per gun per minute.
-          **All three figures trace to a source; none is averaged away here.**
+          All three figures trace to a source; none is averaged away here.
       src: [navweaps-38cm-sk-c34, kbismarck-armament]
 
     - heading: 从舰炮变成岸炮

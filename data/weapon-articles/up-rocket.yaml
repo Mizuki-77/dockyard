@@ -75,7 +75,7 @@ intro:
           二是胡德号的幸存者证词（ADM116/4351）：炮术军官 Tilburn 认为
           第一处火源起于舯部 UP 发射器附近，他的原话是
           「My idea was the U.P. ammunition had caught fire」。
-          **但这是幸存者的推测，不是调查结论**；本站把两条并列，
+          但这是幸存者的推测，不是调查结论；本站把两条并列，
           不把它写成已证实的起火原因。
           UP 弹确实存放在发射器旁边的即用柜里，这是它的固有风险。
         en: >-
@@ -84,7 +84,7 @@ intro:
           were rather flammable." Second, the survivor testimony in ADM116/4351:
           gunnery officer Tilburn believed the first fire started near the midships UP
           launcher, saying "My idea was the U.P. ammunition had caught fire".
-          **That is a survivor's conjecture, not a finding of the inquiry**, and both
+          That is a survivor's conjecture, not a finding of the inquiry, and both
           are reported here without promoting it to established cause. UP rounds were
           indeed kept in ready lockers beside the projectors, which is the inherent
           risk.
@@ -96,14 +96,14 @@ intro:
           每座二十管，全部产量约六十座。装舰清单包括主力舰
           胡德号（5 座）、英王乔治五世号、威尔士亲王号、纳尔逊号、巴勒姆号（各若干），
           以及巡洋舰曙光号、伯明翰号、格拉斯哥号、纽卡斯尔号、诺福克号、苏塞克斯号。
-          **但这里有一处来源打架**：navweaps 记英王乔治五世号为 3 座，
+          但这里有一处来源打架：navweaps 记英王乔治五世号为 3 座，
           navypedia 与皇家博物馆格林威治的研究指南都记 4 座。本站两说并列，不裁决；
           至于这 4 座分别装在哪里，本站没有找到已登记的来源，因此不写。
         en: >-
           Twenty tubes per mounting and about sixty mountings built in total. The list
           of ships includes the capital ships Hood (5), King George V, Prince of Wales,
           Nelson and Barham, and the cruisers Aurora, Birmingham, Glasgow, Newcastle,
-          Norfolk and Sussex. **One conflict has to be flagged**: NavWeaps gives King
+          Norfolk and Sussex. One conflict has to be flagged: NavWeaps gives King
           George V three mountings, while both navypedia and the Royal Museums
           Greenwich research guide give four. Both are reported here without
           adjudication; where exactly those four stood is not something a registered
@@ -202,12 +202,12 @@ history:
         text:
           zh: >-
             胡德号在丹麦海峡被击沉。navweaps 认为这次沉没表明 UP 储存弹相当易燃；
-            幸存炮术军官 Tilburn 认为起火点在舯部 UP 附近。**前者是概括判断，
-            后者是幸存者推测，两者并列，均不等同于调查结论。**
+            幸存炮术军官 Tilburn 认为起火点在舯部 UP 附近。前者是概括判断，
+            后者是幸存者推测，两者并列，均不等同于调查结论。
           en: >-
             Hood was sunk at the Denmark Strait. NavWeaps reads the loss as showing that
             UP storage was rather flammable; the surviving gunnery officer Tilburn
-            believed the fire started near the midships UP launcher. **One is a summary
+            believed the fire started near the midships UP launcher. One is a summary
             judgement, the other a survivor's conjecture; both are reported and neither
-            is a finding of the inquiry.**
+            is a finding of the inquiry.
         src: [navweaps-up-rockets, hoodaaa]

@@ -1,0 +1,242 @@
+---
+// ============================================================================
+// 页面装饰层（背景 + 两侧纹样）
+// ----------------------------------------------------------------------------
+// 参考的是碧蓝航线 wiki 的**版式骨架**，不是它的图：
+//   ① 浅蓝底 + 一条水平方向的海面渐变
+//   ② 内容居中窄栏，两侧留白
+//   ③ 左右两侧各挂一组竖向装饰，跟随滚动（position: fixed）
+//   ④ 顶部下沿一圈细密的浪花线
+//
+// 装饰全部用**内联 SVG 自绘**，理由：
+//   - 零额外请求、零版权风险、缩到任何尺寸都清晰
+//   - 本站是资料站不是游戏站，装饰必须弱到「看得见但不抢内容」
+//
+// 为什么装饰是「海图罗经 + 水深线」而不是舰船剪影：
+//   舰船剪影会和页面里的真实军舰照片打架，读者分不清哪个是内容。
+//   罗经星与等深线是**制图元素**，正好呼应本站「测量/记录」的定位。
+//
+// 移动端（<1180px）两侧装饰直接隐藏 —— 那里窄栏已经贴边，装饰会压字。
+// ============================================================================
+interface Props {
+  /** 是否显示两侧竖排装饰。首页与列表页开，正文页关（避免干扰阅读） */
+  sides?: boolean;
+}
+const { sides = true } = Astro.props;
+---
+
+<div class="deco" aria-hidden="true">
+  <!-- 底色与海面渐变 -->
+  <div class="deco__sky"></div>
+  <div class="deco__sea"></div>
+
+  <!-- 顶部浪花线 -->
+  <svg class="deco__crest" viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path
+      d="M0 42 q30 -13 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0
+         t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0
+         t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 V60 H0 Z"
+      fill="rgba(255,255,255,0.55)"></path>
+    <path
+      d="M0 42 q30 -13 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0
+         t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0
+         t60 0 t60 0 t60 0 t60 0 t60 0 t60 0"
+      fill="none"
+      stroke="rgba(60,140,195,0.22)"
+      stroke-width="1.4"></path>
+  </svg>
+
+  {
+    sides && (
+      <>
+        <!-- 左侧：罗经星 + 等深线 -->
+        <div class="deco__side deco__side--left">
+          <svg viewBox="0 0 120 620" class="deco__art">
+            {/* 罗经星 */}
+            <g transform="translate(60 92)" opacity="0.5">
+              <circle r="46" fill="none" stroke="rgba(60,140,195,0.30)" stroke-width="1.2" />
+              <circle r="38" fill="none" stroke="rgba(60,140,195,0.20)" stroke-width="0.8"
+                stroke-dasharray="3 5" />
+              {[0, 45, 90, 135].map((a) => (
+                <path
+                  d="M0 -38 L7 0 L0 38 L-7 0 Z"
+                  fill="rgba(60,140,195,0.13)"
+                  transform={`rotate(${a})`}
+                />
+              ))}
+              {[22.5, 67.5, 112.5, 157.5].map((a) => (
+                <path
+                  d="M0 -30 L4 0 L0 30 L-4 0 Z"
+                  fill="rgba(60,140,195,0.07)"
+                  transform={`rotate(${a})`}
+                />
+              ))}
+              <circle r="3.4" fill="rgba(60,140,195,0.45)" />
+            </g>
+
+            {/* 等深线：一圈圈不规则闭合曲线，模拟海图 */}
+            <g fill="none" stroke="rgba(60,140,195,0.16)" stroke-width="1">
+              <path d="M18 250 q22 -26 46 -8 t34 26 q-16 30 -46 22 t-34 -40 Z" />
+              <path d="M12 262 q26 -32 54 -10 t38 32 q-20 36 -54 26 t-38 -48 Z" />
+              <path d="M6 274 q30 -38 62 -12 t42 38 q-24 42 -62 30 t-42 -56 Z" />
+            </g>
+
+            {/* 纬线格 */}
+            <g stroke="rgba(60,140,195,0.10)" stroke-width="1">
+              <path d="M14 430 H106" />
+              <path d="M14 452 H106" />
+              <path d="M14 474 H106" />
+              <path d="M60 418 V486" />
+            </g>
+
+            {/* 底部小锚 */}
+            <g
+              transform="translate(60 545) scale(0.62)"
+              opacity="0.22"
+              stroke="rgba(60,140,195,1)"
+              stroke-width="4"
+              fill="none"
+              stroke-linecap="round"
+            >
+              <circle cx="0" cy="-30" r="8" stroke-width="3" />
+              <path d="M0 -22 V26" />
+              <path d="M-16 -8 H16" />
+              <path d="M-24 6 C-24 30 -12 38 0 38 C12 38 24 30 24 6" />
+            </g>
+          </svg>
+        </div>
+
+        <!-- 右侧：测深点阵 + 六分仪弧 -->
+        <div class="deco__side deco__side--right">
+          <svg viewBox="0 0 120 620" class="deco__art">
+            {/* 六分仪弧 */}
+            <g opacity="0.42">
+              <path
+                d="M18 150 A86 86 0 0 1 102 150"
+                fill="none"
+                stroke="rgba(60,140,195,0.30)"
+                stroke-width="1.4"
+              />
+              <path
+                d="M26 150 A78 78 0 0 1 94 150"
+                fill="none"
+                stroke="rgba(60,140,195,0.18)"
+                stroke-width="0.9"
+                stroke-dasharray="2 4"
+              />
+              {[0, 15, 30, 45, 60, 75, 90].map((deg) => {
+                const rad = ((180 - deg) * Math.PI) / 180;
+                const x1 = 60 + Math.cos(rad) * 78;
+                const y1 = 150 - Math.sin(rad) * 78;
+                const x2 = 60 + Math.cos(rad) * 68;
+                const y2 = 150 - Math.sin(rad) * 68;
+                return (
+                  <path
+                    d={`M${x1.toFixed(1)} ${y1.toFixed(1)} L${x2.toFixed(1)} ${y2.toFixed(1)}`}
+                    stroke="rgba(60,140,195,0.32)"
+                    stroke-width="1"
+                  />
+                );
+              })}
+              <circle cx="60" cy="150" r="2.6" fill="rgba(60,140,195,0.35)" />
+            </g>
+
+            {/* 测深点阵：疏密不均，像海图上的数字分布 */}
+            <g fill="rgba(60,140,195,0.20)">
+              {[
+                [26, 300], [48, 300], [70, 300], [92, 300],
+                [36, 322], [58, 322], [80, 322],
+                [26, 344], [48, 344], [70, 344], [92, 344],
+                [36, 366], [58, 366], [80, 366],
+                [26, 388], [48, 388], [70, 388], [92, 388],
+                [36, 410], [80, 410],
+              ].map(([cx, cy]) => (
+                <circle cx={cx} cy={cy} r="1.9" />
+              ))}
+            </g>
+
+            {/* 竖排罗经刻度 */}
+            <g stroke="rgba(60,140,195,0.16)" stroke-width="1">
+              {Array.from({ length: 16 }, (_, i) => (
+                <path d={`M92 ${452 + i * 10} H${i % 4 === 0 ? 106 : 99}`} />
+              ))}
+            </g>
+          </svg>
+        </div>
+      </>
+    )
+  }
+</div>
+
+<style>
+  /* 整个装饰层在内容之下、页面背景之上 */
+  .deco {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  /* 天空：上浅下略深，模拟海面反照 */
+  .deco__sky {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(120% 90% at 50% -10%, #ffffff 0%, #f2f8fd 38%, #e4f0fa 72%, #d9eaf7 100%);
+  }
+
+  /* 海面：只占底部一条，很淡，不抢字 */
+  .deco__sea {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 260px;
+    background:
+      linear-gradient(180deg, rgba(90, 170, 220, 0) 0%, rgba(90, 170, 220, 0.10) 55%, rgba(70, 155, 210, 0.16) 100%);
+    mask-image: linear-gradient(180deg, transparent, #000 40%);
+    -webkit-mask-image: linear-gradient(180deg, transparent, #000 40%);
+  }
+
+  /* 顶栏下沿的浪花 */
+  .deco__crest {
+    position: absolute;
+    top: var(--nav-h);
+    left: 0;
+    width: 100%;
+    height: 60px;
+    opacity: 0.85;
+  }
+
+  .deco__side {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 120px;
+    height: 620px;
+    opacity: 0.95;
+  }
+  .deco__side--left {
+    left: max(18px, calc(50vw - var(--page-w) / 2 - 132px));
+  }
+  .deco__side--right {
+    right: max(18px, calc(50vw - var(--page-w) / 2 - 132px));
+  }
+  .deco__art {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* 屏幕不够宽时（内容 + 两侧装饰放不下）就隐藏装饰 */
+  @media (max-width: 1240px) {
+    .deco__side {
+      display: none;
+    }
+  }
+  @media (max-width: 780px) {
+    .deco__crest {
+      display: none;
+    }
+  }
+</style>

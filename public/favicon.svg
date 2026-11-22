@@ -1,6 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="7" fill="#0b2740"/>
-  <path d="M6 21.5h20" stroke="#b3d7ec" stroke-width="1.7" stroke-linecap="round"/>
-  <path d="M9 21.5c0-4.2 3.1-6.6 7-6.6s7 2.4 7 6.6" stroke="#b3d7ec" stroke-width="1.7" fill="none" stroke-linecap="round"/>
-  <path d="M16 7.5v7.4M12.3 11.2h7.4" stroke="#86c0e2" stroke-width="1.6" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Dockyard">
+  <defs>
+    <linearGradient id="h" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#22364a"/><stop offset="0.5" stop-color="#0f1a24"/><stop offset="1" stop-color="#070d13"/>
+    </linearGradient>
+    <linearGradient id="p" x1="0" y1="0" x2="1" y2="0.4">
+      <stop offset="0" stop-color="#a81c26"/><stop offset="0.5" stop-color="#d32a34"/><stop offset="1" stop-color="#a81c26"/>
+    </linearGradient>
+    <linearGradient id="s" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a9dd1"/><stop offset="1" stop-color="#19527f"/>
+    </linearGradient>
+    <linearGradient id="w" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d8eefb"/>
+    </linearGradient>
+    <clipPath id="c"><rect x="2" y="2" width="44" height="44" rx="11"/></clipPath>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect x="2" y="2" width="44" height="44" fill="url(#h)"/>
+    <rect x="2" y="30" width="44" height="6.4" fill="url(#p)"/>
+    <rect x="2" y="36.4" width="44" height="9.6" fill="url(#s)"/>
+    <path d="M16 11 H24 A13 13 0 0 1 24 37 H16 Z M20 15.5 H24 A8.5 8.5 0 0 1 24 32.5 H20 Z"
+          fill="url(#w)" fill-rule="evenodd"/>
+  </g>
+  <rect x="2" y="2" width="44" height="44" rx="11" fill="none" stroke="rgba(255,255,255,0.18)"/>
 </svg>

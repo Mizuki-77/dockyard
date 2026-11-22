@@ -2,15 +2,18 @@
 import '../styles/global.css';
 import TopNav from '../components/TopNav.astro';
 import Footer from '../components/Footer.astro';
+import PageDecor from '../components/PageDecor.astro';
 
 interface Props {
   title: string;
   description?: string;
   /** full = 不加左侧导航栏；tree = 左侧是一棵较宽的层级树 */
   variant?: 'default' | 'full' | 'tree';
+  /** 两侧竖排装饰。正文页（单舰/单武器/单战役）建议关掉，避免干扰阅读 */
+  decorSides?: boolean;
 }
 
-const { title, description, variant = 'default' } = Astro.props;
+const { title, description, variant = 'default', decorSides = true } = Astro.props;
 const pageTitle = title === '首页' ? title : `${title} · 船坞`;
 const desc =
   description ??
@@ -50,6 +53,7 @@ const ogImage = `${site}/img/ships/bismarck-1940-grimstadfjord.jpg`;
   </head>
   <body>
     <a href="#main" class="skip">跳到主要内容</a>
+    <PageDecor sides={decorSides} />
     <TopNav />
     <main id="main" class:list={['page']}>
       <div

@@ -61,16 +61,16 @@ intro:
     - heading: 炮是 Mark XVI，座是 Mark XIX，别写成一个东西
       text:
         zh: >-
-          这一条是最容易被写错的地方。Mark XVI 是**炮身**（而且分 XVI 与 XVI* 两个亚型），
-          **双联装炮座**叫 Mark XIX。NavWeaps 的装舰表把「Town Cruisers:
+          这一条是最容易被写错的地方。Mark XVI 是炮身（而且分 XVI 与 XVI* 两个亚型），
+          双联装炮座叫 Mark XIX。NavWeaps 的装舰表把「Town Cruisers:
           Southampton class (4)」列在 Twin HA/LA Mount、Mark XIX 之下，
           括号里的 4 是炮座数，即 4 座双联共 8 门 ——
           navypedia 的城级装备栏写的也是「4 x 2 - 102/45 QF Mk XVI」，两源一致。
           Edinburgh 子级是 6 座。写成「Mk XVI 炮塔」是把炮身与炮座混为一谈。
         en: >-
           This is where the type is most often misdescribed. The Mark XVI is the
-          **gun** - and it exists in Mark XVI and Mark XVI* forms - while the **twin
-          mounting** is the Mark XIX. NavWeaps's ship-class table lists "Town Cruisers:
+          gun - and it exists in Mark XVI and Mark XVI* forms - while the twin
+          mounting is the Mark XIX. NavWeaps's ship-class table lists "Town Cruisers:
           Southampton class (4)" under the Twin HA/LA Mount, Mark XIX, where the
           figure in brackets is the number of mountings, i.e. four twins and eight
           guns; Navypedia's armament line for the class reads "4 x 2 - 102/45 QF Mk
@@ -109,11 +109,11 @@ intro:
     - heading: 四个炮身亚型，以及装舰范围
       text:
         zh: >-
-          编号体系比参数更容易抄错。**Mark XVI** 用 A 管、炮箍从炮口延伸到可拆炮尾环，
-          配下开式炮闩；**Mark XVI*** 是产量最大的版本，把 A 管换成自紧式活动身管、
+          编号体系比参数更容易抄错。Mark XVI 用 A 管、炮箍从炮口延伸到可拆炮尾环，
+          配下开式炮闩；Mark XVI* 是产量最大的版本，把 A 管换成自紧式活动身管、
           炮箍前端加密封环，Mark XVI 磨损后送修时也一律改成这个标准；
-          **Mark XVIII** 只是 Mark XVI 改进型的原编号，服役验收前就改称 XVI*，从未以此名服役。
-          真正绕路的是 **Mark XVII**：它专为部分郡级巡洋舰设计，
+          Mark XVIII 只是 Mark XVI 改进型的原编号，服役验收前就改称 XVI*，从未以此名服役。
+          真正绕路的是 Mark XVII：它专为部分郡级巡洋舰设计，
           目的是把两座单装 4"/45 Mark V 换成双联装而不超条约吨位限制 ——
           Campbell 把这次设计称为「荒谬的拘泥」（ridiculous punctiliousness），
           这门炮只造了 12 门，后来全部改回 Mark XVI 标准。
@@ -125,14 +125,14 @@ intro:
           部族级的防空炮位、多数单桅护卫舰与辅助防空舰；
           荷兰的 Jacob van Heemskerck 与波兰的 Blyskawica（改装后）、Dragon、Conrad 也用它。
         en: >-
-          The mark system is easier to get wrong than the data. The **Mark XVI** had an
+          The mark system is easier to get wrong than the data. The Mark XVI had an
           A tube with a jacket running from the muzzle to a removable breech ring and a
-          down-sliding breech block; the **Mark XVI***, the most produced version,
+          down-sliding breech block; the Mark XVI*, the most produced version,
           replaced the A tube with an autofretted loose barrel and a sealing collar at the
           front of the jacket, and worn-out Mark XVIs were converted to that standard on
-          repair; the **Mark XVIII** was merely the original designation for an improved
+          repair; the Mark XVIII was merely the original designation for an improved
           Mark XVI, redesignated Mark XVI* before acceptance and never serving under that
-          name. The real detour was the **Mark XVII**, designed for some County class
+          name. The real detour was the Mark XVII, designed for some County class
           cruisers to replace two single 4"/45 Mark V mountings with twins without
           exceeding the Treaty weight limits - an exercise Campbell called "ridiculous
           punctiliousness"; twelve guns were made and all were later converted back to
