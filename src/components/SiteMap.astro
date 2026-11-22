@@ -1,0 +1,599 @@
+---
+/**
+ * 首页左侧的「站内地图」。
+ *
+ * 为什么不用 SideNav（2026-11-22 重设计）：
+ * 旧的 SideNav 在首页放了 8 项，其中 6 项（战舰信息 / 海战历史 / 武器与装备 /
+ * 资料来源 / 帮助及反馈 / 主页）与顶部导航栏完全重复。读者已经看过顶栏，
+ * 左侧再列一遍等于浪费了一整栏。而且它硬编码，站里已有 15 舰却只列了俾斯麦。
+ *
+ * 新设计换了个定位：左侧栏的优势是**常驻可见**，那就该回答「站里有什么」，
+ * 而不是再做一遍「去哪一栏」。三条轴：
+ *
+ *   ① 舰艇清单 —— 按国家分组，直接落到单舰页。条目由 data 现算，不硬编码。
+ *   ② 战役与行动 —— 带参战收录进度（3/13 这种），诚实标出缺口。
+ *   ③ 横切入口 —— 按舰种 / 按时代 / 武器分类，顶栏没有的二级入口。
+ *
+ * 移动端（<1080px）折叠成一个可展开的抽屉：点标题展开/收起，
+ * 默认收起，避免占满手机首屏。
+ */
+import {
+  getShips,
+  getBattles,
+  getWeaponIndex,
+  operationOf,
+  enumLabel,
+} from '../lib/data';
+
+// ---------------------------------------------------------------- 舰艇清单
+interface ShipEntry {
+  id: string;
+  name: string;
+  type: string;
+  nation: string;
+}
+
+const ships = getShips();
+const entries: ShipEntry[] = ships.map((s) => {
+  const facts = s.facts ?? [];
+  const pick = (field: string) => {
+    const f = facts.find((x) => x.field === field);
+    return f && typeof f.value === 'string' ? f.value : '';
+  };
+  return {
+    id: s.id,
+    name: s.name.zh,
+    type: pick('identity.ship_type'),
+    nation: pick('identity.nation'),
+  };
+});
+
+// 国家顺序：按这个项目的重心排，不是字母序
+const NATION_ORDER = ['united_kingdom', 'germany', 'japan', 'united_states'];
+
+const byNation = NATION_ORDER.map((nat) => ({
+  nation: nat,
+  label: enumLabel(nat, 'zh') || nat,
+  ships: entries.filter((e) => e.nation === nat),
+})).filter((g) => g.ships.length > 0);
+
+// 兜底：任何没被 NATION_ORDER 覆盖的国家也要出现，不能悄悄丢舰
+const known = new Set(NATION_ORDER);
+const extra = [...new Set(entries.map((e) => e.nation))].filter(
+  (n) => n && !known.has(n),
+);
+for (const nat of extra) {
+  byNation.push({
+    nation: nat,
+    label: enumLabel(nat, 'zh') || nat,
+    ships: entries.filter((e) => e.nation === nat),
+  });
+}
+
+const totalShips = entries.length;
+
+// ---------------------------------------------------------------- 战役与行动
+interface BattleEntry {
+  id: string;
+  name: string;
+  total: number;
+  linked: number;
+  opName?: string;
+}
+
+const battles: BattleEntry[] = getBattles().map((b) => {
+  let total = 0;
+  let linked = 0;
+  for (const side of b.belligerents ?? []) {
+    for (const s of side.ships ?? []) {
+      total += 1;
+      if (s.ship_id) linked += 1;
+    }
+  }
+  return {
+    id: b.id,
+    name: b.name.zh,
+    total,
+    linked,
+    opName: operationOf(b.id)?.name.zh,
+  };
+});
+
+// 按上级行动分组成两段：有行动的归到行动下，没有的单独一组
+const opGroups = new Map<string, BattleEntry[]>();
+const standalone: BattleEntry[] = [];
+for (const b of battles) {
+  if (b.opName) {
+    const arr = opGroups.get(b.opName) ?? [];
+    arr.push(b);
+    opGroups.set(b.opName, arr);
+  } else {
+    standalone.push(b);
+  }
+}
+
+// ---------------------------------------------------------------- 横切入口
+const weaponIdx = getWeaponIndex();
+const weaponCount = weaponIdx.size;
+
+// 舰种分布（用于「按舰种浏览」后面显示数字）
+const typeCount = new Map<string, number>();
+for (const e of entries) {
+  if (e.type) typeCount.set(e.type, (typeCount.get(e.type) ?? 0) + 1);
+}
+const typeList = [...typeCount.entries()].sort((a, b) => b[1] - a[1]);
+
+// 武器类别分布
+const weaponCats = new Map<string, number>();
+for (const w of weaponIdx.values()) {
+  for (const c of w.categories ?? []) {
+    weaponCats.set(c, (weaponCats.get(c) ?? 0) + 1);
+  }
+}
+const topWeaponCats = [...weaponCats.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5);
+
+const path = Astro.url.pathname;
+function isActive(href: string): boolean {
+  if (href === '/') return path === '/';
+  return path === href || path.startsWith(href + '/');
+}
+---
+
+<aside class="sitemap" aria-label="站内地图">
+  <button class="sitemap__toggle" type="button" aria-expanded="false" aria-controls="sitemap-body">
+    <span class="sitemap__toggle-main">
+      <span class="sitemap__kicker">Site map</span>
+      <span class="sitemap__toggle-title">站内地图</span>
+    </span>
+    <span class="sitemap__chev" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m6 9 6 6 6-6"></path>
+      </svg>
+    </span>
+  </button>
+
+  <div class="sitemap__body" id="sitemap-body">
+    <!-- ============================================ ① 舰艇清单 -->
+    <section class="sitemap__sec">
+      <div class="sitemap__sechead">
+        <span class="sitemap__sectitle">舰艇</span>
+        <span class="sitemap__count">{totalShips}</span>
+      </div>
+
+      {
+        byNation.map((g) => (
+          <div class="smgroup">
+            <div class="smgroup__head">
+              <span class="smgroup__nation">{g.label}</span>
+              <span class="smgroup__n">{g.ships.length}</span>
+            </div>
+            <ul class="smgroup__list">
+              {g.ships.map((s) => (
+                <li>
+                  <a
+                    class="smlink"
+                    href={`/ships/${s.id}`}
+                    aria-current={isActive(`/ships/${s.id}`) ? 'page' : undefined}
+                  >
+                    {s.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </section>
+
+    <!-- ============================================ ② 战役与行动 -->
+    <section class="sitemap__sec">
+      <div class="sitemap__sechead">
+        <span class="sitemap__sectitle">战役</span>
+        <span class="sitemap__count">{battles.length}</span>
+      </div>
+
+      {
+        [...opGroups.entries()].map(([opName, list]) => (
+          <div class="smgroup">
+            <div class="smgroup__head">
+              <span class="smgroup__nation">{opName}</span>
+            </div>
+            <ul class="smgroup__list">
+              {list.map((b) => (
+                <li>
+                  <a class="smlink smlink--row" href={`/battles/${b.id}`}>
+                    <span>{b.name}</span>
+                    <span
+                      class:list={['smprog', { 'smprog--full': b.linked === b.total }]}
+                      title={`参战 ${b.total} 艘，本站收录 ${b.linked} 艘`}
+                    >
+                      {b.linked}/{b.total}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+
+      {
+        standalone.length > 0 && (
+          <div class="smgroup">
+            <div class="smgroup__head">
+              <span class="smgroup__nation">独立战役</span>
+            </div>
+            <ul class="smgroup__list">
+              {standalone.map((b) => (
+                <li>
+                  <a class="smlink smlink--row" href={`/battles/${b.id}`}>
+                    <span>{b.name}</span>
+                    <span
+                      class:list={['smprog', { 'smprog--full': b.linked === b.total }]}
+                      title={`参战 ${b.total} 艘，本站收录 ${b.linked} 艘`}
+                    >
+                      {b.linked}/{b.total}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+    </section>
+
+    <!-- ============================================ ③ 横切入口 -->
+    <section class="sitemap__sec">
+      <div class="sitemap__sechead">
+        <span class="sitemap__sectitle">按类别浏览</span>
+      </div>
+
+      <ul class="sitemap__cuts">
+        {
+          typeList.map(([t, n]) => (
+            <li>
+              <a class="smcut" href="/ships/by-type">
+                <span class="smcut__label">{enumLabel(t, 'zh') || t}</span>
+                <span class="smcut__n">{n}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="sitemap__rowlinks">
+        <a class="smrowlink" href="/ships/by-type">按舰种浏览 →</a>
+        <a class="smrowlink" href="/ships/by-era">按时代浏览 →</a>
+        <a class="smrowlink" href="/weapons">
+          武器与装备 <span class="smrowlink__n">{weaponCount}</span> 型 →
+        </a>
+      </div>
+
+      {
+        topWeaponCats.length > 0 && (
+          <ul class="sitemap__wcats">
+            {topWeaponCats.map(([c, n]) => (
+              <li>
+                <span class="smwcat">
+                  {enumLabel(c, 'zh') || c}
+                  <span class="smwcat__n">{n}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </section>
+  </div>
+</aside>
+
+<script>
+  // 移动端抽屉：<1080px 时收起，点标题展开。
+  // 用 localStorage 记住偏好，桌面端不受影响（CSS 在宽屏强制展开）。
+  const KEY = 'wa.sitemap.open.v1';
+  const toggle = document.querySelector<HTMLButtonElement>('.sitemap__toggle');
+  const aside = document.querySelector<HTMLElement>('.sitemap');
+
+  if (toggle && aside) {
+    let stored: string | null = null;
+    try {
+      stored = localStorage.getItem(KEY);
+    } catch {
+      /* 隐私模式忽略 */
+    }
+    if (stored === '1') {
+      aside.classList.add('sitemap--open');
+      toggle.setAttribute('aria-expanded', 'true');
+    }
+
+    toggle.addEventListener('click', () => {
+      const open = aside.classList.toggle('sitemap--open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      try {
+        localStorage.setItem(KEY, open ? '1' : '0');
+      } catch {
+        /* 忽略 */
+      }
+    });
+  }
+</script>
+
+<style>
+  .sitemap {
+    position: sticky;
+    top: calc(var(--nav-h) + 30px);
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-1);
+    font-size: 13px;
+  }
+
+  /* ---------------------------------------------------------- 抽屉开关 */
+  .sitemap__toggle {
+    display: none; /* 桌面端隐藏，宽屏永远展开 */
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 13px 16px;
+    border: 0;
+    border-bottom: 1px solid transparent;
+    background: linear-gradient(180deg, var(--blue-50), var(--white));
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+    color: var(--ink-900);
+  }
+  .sitemap__toggle-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sitemap__kicker {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--blue-600);
+    font-weight: 700;
+  }
+  .sitemap__toggle-title {
+    font-size: 14px;
+    font-weight: 650;
+  }
+  .sitemap__chev {
+    color: var(--ink-400);
+    transition: transform 0.18s ease;
+    display: grid;
+    place-items: center;
+  }
+  .sitemap--open .sitemap__chev {
+    transform: rotate(180deg);
+  }
+  .sitemap--open .sitemap__toggle {
+    border-bottom-color: var(--line-soft);
+  }
+
+  /* ---------------------------------------------------------- 区块 */
+  .sitemap__sec {
+    padding: 13px 14px 12px;
+  }
+  .sitemap__sec + .sitemap__sec {
+    border-top: 1px solid var(--line-soft);
+  }
+
+  .sitemap__sechead {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+    margin-bottom: 9px;
+  }
+  .sitemap__sectitle {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue-700);
+    font-weight: 700;
+  }
+  .sitemap__count {
+    font-size: 10.5px;
+    color: var(--ink-300);
+    font-family: var(--font-mono);
+  }
+
+  /* ---------------------------------------------------------- 分组 */
+  .smgroup + .smgroup {
+    margin-top: 9px;
+  }
+  .smgroup__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 6px;
+    margin-bottom: 3px;
+  }
+  .smgroup__nation {
+    font-size: 11.5px;
+    color: var(--ink-500);
+    font-weight: 600;
+  }
+  .smgroup__n {
+    font-size: 10px;
+    color: var(--ink-300);
+    font-family: var(--font-mono);
+  }
+  .smgroup__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px 5px;
+  }
+
+  .smlink {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 4px;
+    color: var(--ink-700);
+    text-decoration: none;
+    font-size: 12.5px;
+    line-height: 1.6;
+    transition: background 0.13s, color 0.13s;
+  }
+  .smlink:hover,
+  .smlink:focus-visible {
+    background: var(--blue-50);
+    color: var(--blue-700);
+    outline: none;
+  }
+  .smlink[aria-current='page'] {
+    background: var(--blue-50);
+    color: var(--blue-700);
+    font-weight: 620;
+  }
+
+  /* 战役行：左名右进度 */
+  .smlink--row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    padding: 3px 7px;
+  }
+
+  /* 参战收录进度。3/13 这种不全的用暖色提示，
+     全通的用蓝 —— 目的是让「还有多少没做」一眼可见，而不是藏起来。 */
+  .smprog {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--warn);
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-line);
+    border-radius: 3px;
+    padding: 0 4px;
+    flex-shrink: 0;
+  }
+  .smprog--full {
+    color: var(--blue-700);
+    background: var(--blue-50);
+    border-color: var(--blue-200);
+  }
+
+  /* ---------------------------------------------------------- 横切 */
+  .sitemap__cuts {
+    list-style: none;
+    margin: 0 0 9px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .smcut {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 7px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    font-size: 11.5px;
+    color: var(--ink-700);
+    text-decoration: none;
+    background: var(--white);
+    transition: border-color 0.13s, background 0.13s;
+  }
+  .smcut:hover,
+  .smcut:focus-visible {
+    border-color: var(--blue-300);
+    background: var(--blue-50);
+    color: var(--blue-700);
+    outline: none;
+  }
+  .smcut__n {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--ink-300);
+  }
+  .smcut:hover .smcut__n {
+    color: var(--blue-600);
+  }
+
+  .sitemap__rowlinks {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+  .smrowlink {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 7px;
+    border-radius: 4px;
+    font-size: 12.5px;
+    color: var(--blue-700);
+    text-decoration: none;
+  }
+  .smrowlink:hover,
+  .smrowlink:focus-visible {
+    background: var(--blue-50);
+    outline: none;
+  }
+  .smrowlink__n {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--ink-300);
+  }
+
+  .sitemap__wcats {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 8px 0 0;
+    border-top: 1px dashed var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px 8px;
+  }
+  .smwcat {
+    font-size: 11px;
+    color: var(--ink-400);
+    display: inline-flex;
+    align-items: baseline;
+    gap: 3px;
+  }
+  .smwcat__n {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    color: var(--ink-300);
+  }
+
+  /* ---------------------------------------------------------- 移动端抽屉 */
+  @media (max-width: 1080px) {
+    .sitemap {
+      position: static;
+    }
+    .sitemap__toggle {
+      display: flex;
+    }
+    /* 默认收起。展开由 .sitemap--open 控制，
+       这样 JS 没跑（禁用脚本）时也只会看不到列表，不会撑爆首屏。 */
+    .sitemap__body {
+      display: none;
+    }
+    .sitemap--open .sitemap__body {
+      display: block;
+    }
+    .smgroup__list {
+      gap: 3px 4px;
+    }
+  }
+
+  /* 宽屏永远显示列表，抽屉开关不出现 */
+  @media (min-width: 1081px) {
+    .sitemap__body {
+      display: block;
+    }
+  }
+</style>

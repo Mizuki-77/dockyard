@@ -1,10 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
-import SideNav from '../components/SideNav.astro';
-import { stats, getNarratives, getFields, getImage, primaryImage, imageCredit } from '../lib/data';
+import SiteMap from '../components/SiteMap.astro';
+import { stats, getFields, getImage, primaryImage, imageCredit } from '../lib/data';
 
 const s = stats();
-const narratives = getNarratives('bismarck');
 const fields = getFields();
 
 // 首页主视觉用真实的俾斯麦号照片，不用示意图。
@@ -15,16 +14,6 @@ const fields = getFields();
 const hero =
   getImage('akagi-1942-06-04-aerial') ?? primaryImage('ship:bismarck');
 const heroCredit = hero ? imageCredit(hero) : '';
-
-const navItems = [
-  { href: '/ships', label: '战舰信息' },
-  { href: '/ships/bismarck', label: '俾斯麦号' },
-  { href: '/classes/bismarck', label: '俾斯麦级' },
-  { href: '/battles', label: '海战历史' },
-  { href: '/weapons', label: '武器与装备' },
-  { href: '/sources', label: '资料来源' },
-  { href: '/help', label: '帮助及反馈' },
-];
 
 const modules = [
   {
@@ -76,13 +65,7 @@ const latest = [
 ---
 
 <Base title="首页">
-  <SideNav
-    slot="sidenav"
-    kicker="Quick access"
-    title="主页"
-    items={navItems}
-    note="左侧为快捷导航：常用舰艇与模块的直达入口。"
-  />
+  <SiteMap slot="sidenav" />
 
   <!-- ======================================================= 档案更新 -->
   <section class="section">
@@ -135,16 +118,14 @@ const latest = [
   </section>
 
   <!-- ========================================================== 统计 -->
+  <!--
+    2026-11-22 重排：舰艇数、舰级数、武器数已经由左侧「站内地图」覆盖，
+    这里再列一遍是重复。改成只列「侧栏给不了的规模感」——
+    数据量、来源数、争议数、字段数。这四项才是本站区别于普通资料站的地方：
+    它衡量的是「能追到出处的数据有多少」。
+  -->
   <section class="section">
     <div class="stats">
-      <div class="stat">
-        <div class="stat__n">{s.ships}</div>
-        <div class="stat__label">艘单舰</div>
-      </div>
-      <div class="stat">
-        <div class="stat__n">{s.classes}</div>
-        <div class="stat__label">个舰级</div>
-      </div>
       <div class="stat">
         <div class="stat__n">{s.facts.toLocaleString('en-US')}</div>
         <div class="stat__label">条事实记录</div>

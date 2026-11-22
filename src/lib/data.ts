@@ -756,7 +756,12 @@ export function getWeaponIndex(): Map<string, WeaponSummary> {
     const cls = s.class ? getClass(s.class) : undefined;
     // 单舰也放武器：有些武器（如胡德的 15 in、提尔皮茨的鱼雷）直接写在单舰文件里，
     // 只读 classes/ 会漏掉它们。
-    add(s.id, s.name.zh, 'ship', getEntities(s as unknown as ClassFile).weapons);
+    //
+    // 2026-11-22：原来这里写的是 getEntities(s as unknown as ClassFile)，
+    // 用强制类型转换把 ShipFile 冒充 ClassFile —— 字段恰好同名所以能跑，
+    // 但语义是错的，也没法复用「单舰覆盖舰级」的合并逻辑。
+    // 改用 getShipEntities(s, cls)：同时读两边，同 id 时单舰优先。
+    add(s.id, s.name.zh, 'ship', getShipEntities(s, cls).weapons);
   }
 
   _weaponIdx = idx;

@@ -265,6 +265,12 @@ const ENUM_LABEL: Record<string, BiText> = {
   depth_charge: { zh: '深水炸弹', en: 'Depth charge' },
   mine: { zh: '水雷', en: 'Mine' },
   rocket: { zh: '火箭', en: 'Rocket' },
+  // 以下三个是 weapon.category 的取值，2026-11-22 补：
+  // 首页站内地图按武器类别分组时才发现它们没有中文标签，
+  // 页面上会直接显示 radar / aircraft / fire_control 三个英文枚举名。
+  radar: { zh: '雷达', en: 'Radar' },
+  fire_control: { zh: '火控系统', en: 'Fire control' },
+  aircraft: { zh: '舰载机', en: 'Aircraft' },
   twin_turret: { zh: '双联装炮塔', en: 'Twin turret' },
   triple_turret: { zh: '三联装炮塔', en: 'Triple turret' },
   quad_turret: { zh: '四联装炮塔', en: 'Quadruple turret' },
