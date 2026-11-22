@@ -1,140 +1,110 @@
 ---
 // ============================================================================
-// Dockyard 站徽
+// Dockyard 字标（横排艺术字，不是方框图标）
 // ----------------------------------------------------------------------------
-// **E1 方案：白色几何 D + 底部水线双带（红/蓝）**
+// 2026-11-22 第三版（定稿）。
 //
-// 设计依据：黑红蓝是军舰的**水线涂装规矩**——
-//   水线以上的舰体刷黑（深灰），水线以下是红色防污漆，海面是蓝。
-//   三个色带本身就是「一艘船」的剖面，不是装饰性配色。
+// 构成（两层）：
+//   ① 左侧一枚罗经星（细线，红蓝双色针）—— 唯一的图形元素，代表「定位」
+//   ② DOCKYARD 全大写，粗黑，字距 2.6，整体斜切 -8°
 //
-// 为什么是字母 D 而不是锚或舰影（2026-11-22 五轮返工后的结论）：
-//   ① 第一版「六边形 + 细锚」：30px 下锚环与双臂糊成笑脸，红色只用了一小条。
-//   ② 第二版「舰艏正视梯形」：缩到 32px 像垃圾桶 —— 顶宽底窄，读不出船。
-//   ③ 第三版「三道横带 + 粗锚」：横杆正好落在锚环半径内，被环吃掉，
-//      结果剩下「一个圆点 + 一道弧」，还是笑脸。
-//   ④ 第四版「舰艏破浪侧影」「战舰俯视」「V 形艏波」：96px 尚可，
-//      24px 以下全部退化成色块。
-//   ⑤ **第五版「字母 D」：16px 下依然是清晰的 D。**
+// 试过但被否掉的方向，留档免得下次重做：
+//   · 方框图标（正方形）：用户明确否掉，「不要正方形的，要一排艺术字」。
+//     方形 D 还试过 5 版：细锚 / 舰艏正视梯形 / 三道横带 + 粗锚 /
+//     舰艏侧影 / 战舰俯视 —— 16–32px 下全部糊成色块或笑脸。
+//   · W1「横带切字」：字被水线切成上下两半，小尺寸比例失真。
+//   · W3「字内嵌水线渐变」：好看，但深色背景中段黑字消失。
+//   · W4「纯斜体 + 三条速度线」：速度感最好，但深色背景黑字消失。
+//   · 速度线（红/灰/蓝三根）：在 30px 高度下只有 2.6px 粗，
+//     红蓝两根几乎看不见，剩一根灰的像误留的下划线 —— 用户选了去掉。
 //
-//   规律：**图标不是插图。** 物体（锚、舰艏、俯视舰）要靠轮廓识别，
-//   而轮廓在 16–32px 只有 2–3 个像素宽的笔画，必然糊掉。
-//   字母靠的是**结构记忆**：人眼认「D」不需要细节，只需要「一竖 + 一弧」。
-//   这也是为什么几乎所有技术站（GitHub、Vercel、Linear）都用字母或极简几何。
+// 保留下来的：罗经星 + 斜切字（取 W2 的图形 + W4 的斜切）。
+// 字与罗经用 currentColor，红蓝针保持固有色 —— 那两个颜色是「船」的
+// 一部分，不该跟着主题走。
 //
-// 为什么 D 要压在水线上：
-//   让字母和水线产生关系，而不是「字母 + 装饰条」两块拼在一起。
-//   D 的下缘刚好被红色水线切过，读起来是船体跨在水线上的样子，
-//   同时 D 本身完整可辨 —— 这是 E1 比 E2（字母与色带分离）强的地方。
+// 尺寸：height 为渲染高度，宽按 262:44 自适应。
 // ============================================================================
 interface Props {
-  size?: number;
-  /** 是否同时输出 DOCKYARD 字标（只在大尺寸下有意义） */
-  wordmark?: boolean;
+  /** 字标高度（px）。宽高比约 5.6:1 */
+  height?: number;
   class?: string;
 }
 
-const { size = 30, wordmark = false, class: klass = '' } = Astro.props;
-const uid = Math.random().toString(36).slice(2, 8);
+const { height = 34, class: klass = '' } = Astro.props;
+// 2026-11-22 第三次改：用户选了「去掉速度线」。
+// 去掉后 viewBox 可以收紧 —— 原来留 50 的高度是为了容纳 y=43 的三条线，
+// 现在字基线在 33，字高约 27，上留 6 下留 6 就够，H 收到 44。
+// 宽度也跟着收：原来 276 是给速度线（到 x=253）留的，
+// 现在字到 x≈252 结束（斜切后右移），留一点余量取 262。
+const W = 262;
+const H = 44;
+const width = Math.round((height * W) / H);
 ---
 
-<svg
-  class:list={['logo', klass]}
-  width={size}
-  height={size}
-  viewBox="0 0 48 48"
+<span
+  class:list={['wm', klass]}
   role="img"
   aria-label="Dockyard 船坞"
-  xmlns="http://www.w3.org/2000/svg"
+  style={`--wm-h:${height}px`}
 >
-  <defs>
-    <linearGradient id={`hull-${uid}`} x1="0.2" y1="0" x2="0.8" y2="1">
-      <stop offset="0" stop-color="#22364a"></stop>
-      <stop offset="0.5" stop-color="#0f1a24"></stop>
-      <stop offset="1" stop-color="#070d13"></stop>
-    </linearGradient>
-    <linearGradient id={`paint-${uid}`} x1="0" y1="0" x2="1" y2="0.4">
-      <stop offset="0" stop-color="#a81c26"></stop>
-      <stop offset="0.5" stop-color="#d32a34"></stop>
-      <stop offset="1" stop-color="#a81c26"></stop>
-    </linearGradient>
-    <linearGradient id={`sea-${uid}`} x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#4a9dd1"></stop>
-      <stop offset="1" stop-color="#19527f"></stop>
-    </linearGradient>
-    <linearGradient id={`steel-${uid}`} x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#ffffff"></stop>
-      <stop offset="1" stop-color="#d8eefb"></stop>
-    </linearGradient>
-    <clipPath id={`clip-${uid}`}>
-      <rect x="2" y="2" width="44" height="44" rx="11"></rect>
-    </clipPath>
-  </defs>
+  <svg
+    width={width}
+    height={height}
+    viewBox={`0 0 ${W} ${H}`}
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <defs>
+      <linearGradient id="wmR" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#e0414b"></stop>
+        <stop offset="1" stop-color="#a81c26"></stop>
+      </linearGradient>
+      <linearGradient id="wmB" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#7cc0e8"></stop>
+        <stop offset="1" stop-color="#2a72a8"></stop>
+      </linearGradient>
+    </defs>
 
-  <g clip-path={`url(#clip-${uid})`}>
-    <!-- 舰体：黑 -->
-    <rect x="2" y="2" width="44" height="44" fill={`url(#hull-${uid})`}></rect>
+    <!-- ① 罗经星：外环 + 内环 + 四向针 -->
+    <g transform="translate(20 24)" fill="none">
+      <circle r="14.5" stroke="currentColor" stroke-width="1.7" opacity="0.82"></circle>
+      <circle r="7.4" stroke="#3f93c9" stroke-width="1.15" opacity="0.9"></circle>
+      <!-- 南北针（红） -->
+      <path d="M0 -14.5 L2.9 0 L0 14.5 L-2.9 0 Z" fill="#c8262f" opacity="0.95"></path>
+      <!-- 东西针（蓝） -->
+      <path d="M-14.5 0 L0 -2.9 L14.5 0 L0 2.9 Z" fill="#3f93c9" opacity="0.95"></path>
+      <circle r="2" fill="currentColor"></circle>
+    </g>
 
-    <!-- 水线下防污漆：红 -->
-    <rect x="2" y="30" width="44" height="6.4" fill={`url(#paint-${uid})`}></rect>
-
-    <!-- 海面：蓝 -->
-    <rect x="2" y="36.4" width="44" height="9.6" fill={`url(#sea-${uid})`}></rect>
-
-    <!-- 字母 D：一竖 + 一弧，用 evenodd + 內挖做空心。
-         几何刻意做成方角矩形 + 半圆，不用字体 —— 字体在 SVG 里
-         依赖系统装了什么字，跨平台会变形。 -->
-    <path
-      d="M16 11 H24 A13 13 0 0 1 24 37 H16 Z
-         M20 15.5 H24 A8.5 8.5 0 0 1 24 32.5 H20 Z"
-      fill={`url(#steel-${uid})`}
-      fill-rule="evenodd"></path>
-  </g>
-
-  <!-- 外沿一圈极淡描边，保证在浅色背景下也有边界 -->
-  <rect
-    x="2"
-    y="2"
-    width="44"
-    height="44"
-    rx="11"
-    fill="none"
-    stroke="rgba(255,255,255,0.18)"
-    stroke-width="1"></rect>
-</svg>
-
-{
-  wordmark && (
-    <span class="logo__word">
-      <span class="logo__word-main">DOCKYARD</span>
-      <span class="logo__word-sub">船坞 · 二战战舰资料库</span>
-    </span>
-  )
-}
+    <!-- ② 字：斜切 -8°，速度感 -->
+    <g transform="skewX(-8) translate(6 0)">
+      <text
+        x="46"
+        y="33"
+        font-family="Inter, 'Helvetica Neue', Arial, 'Noto Sans SC', sans-serif"
+        font-size="27"
+        font-weight="900"
+        letter-spacing="2.6"
+        fill="currentColor">DOCKYARD</text>
+    </g>
+  </svg>
+</span>
 
 <style>
-  .logo {
-    display: block;
-    flex-shrink: 0;
-    border-radius: 23%;
-    box-shadow:
-      0 1px 3px rgba(6, 12, 20, 0.22),
-      0 0 0 1px rgba(11, 39, 64, 0.08);
-  }
-  .logo__word {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.1;
-  }
-  .logo__word-main {
-    font-size: 17px;
-    font-weight: 800;
-    letter-spacing: 0.16em;
+  .wm {
+    display: inline-flex;
+    align-items: center;
     color: var(--ink-900);
+    line-height: 0;
   }
-  .logo__word-sub {
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    color: var(--ink-400);
+  .wm svg {
+    display: block;
+    height: var(--wm-h);
+    width: auto;
+    /* 速度线末端是 round 的，overflow 必须可见，否则外圈被裁 */
+    overflow: visible;
   }
+  /* 深色背景下调用方给 color: #fff 即可，字与罗经跟着变白，
+     只有红/蓝两根针与速度线保持固有色 —— 这是刻意的：
+     那两个颜色是「船」的一部分，不该跟着主题走。 */
 </style>
