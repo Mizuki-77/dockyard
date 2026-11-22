@@ -9,6 +9,15 @@
 
 ship: akagi
 slices:
+  - code: A00
+    title: 订购与建造
+    from: 1920
+    to: 1927-03-24
+    note: >-
+      1920 订购；1920-12-06 开工；承造 呉海軍工廠（Kure Naval Arsenal）（広島県呉（Kure, Hiroshima））；1925-04-22 下水。
+      这一段此前在时间轴上没有切片，拖动滑块时下方是空白的；
+      补上后切片范围与 fact 的实际时间范围对齐。
+
   - code: A0
     title: 竣工·三段甲板
     from: 1927-03-25

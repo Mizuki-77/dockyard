@@ -462,10 +462,20 @@ const usedSources = [...srcIds].map((s) => getSource(s)).filter(Boolean);
         // 事件流详略切换。默认「概览」——读者先要骨架，需要细节再展开。
         // 纯前端，无需重渲染：靠父容器上的 data-density 属性控制 CSS 显隐。
         (function () {
-          const wrap = document.querySelector('.btl');
-          const btns = document.querySelectorAll('.density__btn');
-          if (!wrap || !btns.length) return;
-          function apply(mode) {
+          // querySelector 的返回类型是 Element，Element 上没有 dataset ——
+          // 必须显式收窄成 HTMLElement 才能读 data-*。
+          // （2026-11-22 修：此前 astro check 报 3 处 dataset 不存在）
+          const found = document.querySelector<HTMLElement>('.btl');
+          const btns = document.querySelectorAll<HTMLElement>('.density__btn');
+          if (!found || !btns.length) return;
+
+          // 赋给 const 再进闭包：TS 的控制流分析不会把 `if (!found) return`
+          // 之后的收窄带进闭包，直接闭包引用 found 会报 possibly 'null'。
+          const wrap: HTMLElement = found;
+
+          type Density = 'major' | 'all';
+
+          function apply(mode: Density) {
             wrap.dataset.density = mode;
             btns.forEach((b) => {
               const on = b.dataset.density === mode;
@@ -478,11 +488,18 @@ const usedSources = [...srcIds].map((s) => getSource(s)).filter(Boolean);
               /* 隐私模式禁用存储，忽略即可 */
             }
           }
+
+          // dataset 读出来是 string | undefined，收窄后再交给 apply，
+          // 否则 apply 会收到 undefined，data-density 变成字符串 "undefined"。
           btns.forEach((b) => {
-            b.addEventListener('click', () => apply(b.dataset.density));
+            b.addEventListener('click', () => {
+              const d = b.dataset.density;
+              if (d === 'major' || d === 'all') apply(d);
+            });
           });
+
           // 记住上次选择，跨战斗页生效——读者偏好是稳定的。
-          let saved = null;
+          let saved: string | null = null;
           try {
             saved = localStorage.getItem('dockyard-btl-density');
           } catch (e) {}

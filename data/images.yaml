@@ -264,6 +264,9 @@ images:
 
   - id: yamato-explosion-1945
     file: /img/ships/yamato-1945-explosion.jpg
+    # PRELOAD：大和号（未入库）的素材，该舰尚未入库。
+    # 现在没有任何页面会渲染它；等该舰入库后 ship:yamato 即可自动生效。
+    # 不要因为「没有页面引用」就把它当成孤儿数据删掉。
     subject: ship:yamato
     title: { zh: 大和号主弹药库爆炸（1945-04-07）, en: Explosion of Yamato, 7 April 1945 }
     view: other
@@ -385,6 +388,9 @@ images:
 
   - id: yamato-trials-1941
     file: /img/ships/yamato-1941-trials-sukumo.jpg
+    # PRELOAD：大和号（未入库）的素材，该舰尚未入库。
+    # 现在没有任何页面会渲染它；等该舰入库后 ship:yamato 即可自动生效。
+    # 不要因为「没有页面引用」就把它当成孤儿数据删掉。
     subject: ship:yamato
     title: { zh: 大和号在宿毛湾试航（1941-10-30）, en: Yamato running trials in Sukumo Bay }
     part: hull_side
@@ -403,6 +409,9 @@ images:
 
   - id: yamato-under-attack-1945
     file: /img/ships/yamato-1945-under-attack.jpg
+    # PRELOAD：大和号（未入库）的素材，该舰尚未入库。
+    # 现在没有任何页面会渲染它；等该舰入库后 ship:yamato 即可自动生效。
+    # 不要因为「没有页面引用」就把它当成孤儿数据删掉。
     subject: ship:yamato
     title: { zh: 大和号在东海遭受空袭（1945-04-07）, en: Yamato under attack, 7 April 1945 }
     view: other
@@ -419,6 +428,9 @@ images:
 
   - id: yamato-samar-1944
     file: /img/ships/yamato-1944-samar.jpg
+    # PRELOAD：大和号（未入库）的素材，该舰尚未入库。
+    # 现在没有任何页面会渲染它；等该舰入库后 ship:yamato 即可自动生效。
+    # 不要因为「没有页面引用」就把它当成孤儿数据删掉。
     subject: ship:yamato
     title: { zh: 大和号在萨马岛海战中（1944-10-25）, en: Yamato during the Battle off Samar }
     part: hull_side
@@ -532,6 +544,9 @@ images:
 
   - id: iowa-broadside-1944
     file: /img/ships/iowa-1944-broadside.jpg
+    # PRELOAD：衣阿华号（未入库）的素材，该舰尚未入库。
+    # 现在没有任何页面会渲染它；等该舰入库后 ship:iowa 即可自动生效。
+    # 不要因为「没有页面引用」就把它当成孤儿数据删掉。
     subject: ship:iowa
     title: { zh: 衣阿华号战列舰（1944）, en: USS Iowa (BB-61), 1944 }
     part: hull_side
@@ -548,6 +563,9 @@ images:
 
   - id: missouri-pacific-1945
     file: /img/ships/missouri-1945-pacific.jpg
+    # PRELOAD：密苏里号（未入库）的素材，该舰尚未入库。
+    # 现在没有任何页面会渲染它；等该舰入库后 ship:missouri 即可自动生效。
+    # 不要因为「没有页面引用」就把它当成孤儿数据删掉。
     subject: ship:missouri
     title: { zh: 密苏里号在太平洋（1945 年初）, en: USS Missouri at sea in the Pacific }
     part: hull_side

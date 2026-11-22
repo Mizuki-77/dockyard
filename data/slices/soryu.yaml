@@ -3,6 +3,15 @@
 
 ship: soryu
 slices:
+  - code: S00
+    title: 订购与建造
+    from: 1934-11-20
+    to: 1937-12-28
+    note: >-
+      1934-11-20 开工；承造 呉海軍工廠（Kure Naval Arsenal）（広島県呉（Kure, Hiroshima））；1935-12-23 下水。
+      这一段此前在时间轴上没有切片，拖动滑块时下方是空白的；
+      补上后切片范围与 fact 的实际时间范围对齐。
+
   - code: S0
     title: 服役至珍珠港前
     from: 1937-12-29

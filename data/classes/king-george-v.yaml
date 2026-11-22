@@ -200,19 +200,12 @@ facts:
     confidence: A
     note: RMG 记 1940 年 deep load 42,237 t，与设计满载差 161 t。
 
-  - field: displacement.standard
-    value: 39100
-    unit: t
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1945-01-01 }
-    confidence: B
-    note: 1945 年状态（经 1944 年改装增重）。navypedia 把同一组数挂在 Prince of Wales 12/1941 条目下，实为该级后期状态。
-
-  - field: displacement.deep
-    value: 44460
-    unit: t
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1945-01-01 }
+  # 注：1945 年状态（39,100 t / 44,460 t）不写在舰级里。
+  # 本级五舰的结局差异极大：Prince of Wales 1941-12 沉没、
+  # King George V 活到 1957、Duke of York 1949 退役。
+  # 把「1945 年状态」当全级通用会污染早已沉没的舰
+  # （2026-11-22 排查发现：PoW 页面曾显示一条它沉没三年后才存在的排水量）。
+  # 该数据已移到 data/ships/king-george-v.yaml。
     confidence: B
     note: >
       1945 年 deep load。kbismarck 的最终战参战表另给 44,400 mt，

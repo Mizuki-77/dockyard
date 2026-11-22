@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import SiteMap from '../components/SiteMap.astro';
-import { stats, getFields, getImage, primaryImage, imageCredit } from '../lib/data';
+import { stats, getFields, getImage, primaryImage, imageCredit, getShips } from '../lib/data';
 
 const s = stats();
 const fields = getFields();
@@ -42,24 +42,37 @@ const modules = [
   },
 ];
 
+// 「最近增补」原来是一段硬编码的 11-17 文案，说「来源扩至 80 条」——
+// 站里现在 237 条来源、15 艘舰，这段一直没跟着更新，等于在首页挂假数据。
+// 2026-11-22 改成从数据层现算：按舰艇的最新年份倒序取前若干，
+// 至少保证永远和实际内容一致。
+const latestShips = [...getShips()]
+  .map((s) => {
+    const facts = s.facts ?? [];
+    const dates = facts
+      .map((f) => String(f.valid?.from ?? ''))
+      .filter((d) => /^\d{4}/.test(d))
+      .map((d) => d.slice(0, 4))
+      .sort();
+    const last = dates.length ? dates[dates.length - 1] : '';
+    const factCount = facts.length;
+    return { id: s.id, name: s.name.zh, last, factCount };
+  })
+  .sort((a, b) => (a.last < b.last ? 1 : a.last > b.last ? -1 : 0))
+  .slice(0, 4);
+
 const latest = [
+  ...latestShips.map((x) => ({
+    date: x.last || '—',
+    who: x.name,
+    href: `/ships/${x.id}`,
+    text: `${x.factCount} 条事实记录`,
+  })),
   {
-    date: '11-17',
-    ship: '俾斯麦',
-    href: '/ships/bismarck',
-    text: '全字段落库：舰级 221 条、单舰 56 条事实，含 7 个状态切片',
-  },
-  {
-    date: '11-17',
-    ship: '俾斯麦',
-    href: '/ships/bismarck#narrative',
-    text: '新增 5 条叙述性争议，沉没原因五种说法并列保留',
-  },
-  {
-    date: '11-17',
-    ship: '通用',
+    date: String(new Date().getFullYear()),
+    who: '数据层',
     href: '/sources',
-    text: '来源登记表扩至 80 条，其中一手档案 8 份已归档',
+    text: `来源登记表 ${s.sources} 条，每条可追到具体档案或专题页`,
   },
 ];
 ---
@@ -67,12 +80,22 @@ const latest = [
 <Base title="首页">
   <SiteMap slot="sidenav" />
 
+  <!-- ======================================================= 站名（h1） -->
+  <!-- 首页此前没有 h1：从 hero 直接跳到各 section 的 h2，屏幕阅读器和
+       SEO 都拿不到「这个页面是什么」。补一个视觉上轻、语义上正的 h1。 -->
+  <h1 class="home-h1">
+    <span class="home-h1__zh">船坞</span>
+    <span class="home-h1__en">Dockyard</span>
+    <span class="home-h1__sub">
+      二战战舰资料库 · 每条数据可追溯到来源，有争议的说法并列保留
+    </span>
+  </h1>
+
   <!-- ======================================================= 档案更新 -->
   <section class="section">
     <div class="section__head">
       <h2 class="section__title">档案更新</h2>
       <span class="section__en">Latest records</span>
-      <span class="section__aside">2026-11-17</span>
     </div>
 
     <div class="hero">
@@ -178,7 +201,7 @@ const latest = [
           latest.map((l) => (
             <a class="feed" href={l.href}>
               <span class="feed__date mono">{l.date}</span>
-              <span class="feed__who">{l.ship}</span>
+              <span class="feed__who">{l.who}</span>
               <span class="feed__text">{l.text}</span>
               <span class="feed__arrow" aria-hidden="true">
                 →

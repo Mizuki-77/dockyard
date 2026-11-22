@@ -42,6 +42,7 @@ const branches = tree.map((r) => ({
       leaves: n.weapons.map((w) => ({
         label: w.label,
         href: w.href,
+        // tree.ts 的 leaf.sources 已经是数字（= w.sources.length），别再点 .length
         meta: w.sources > 1 ? `${w.sources} 个来源` : '',
       })),
     })),
@@ -131,7 +132,7 @@ const nationsTotal = new Set(tree.flatMap((r) => r.nations.map((n) => n.key))).s
                                 </span>
                               )}
                               {w.sources.length > 1 && (
-                                <span class="tag tag--ghost tiny">{w.sources} 个来源</span>
+                                <span class="tag tag--ghost tiny">{w.sources.length} 个来源</span>
                               )}
                             </span>
                           </span>

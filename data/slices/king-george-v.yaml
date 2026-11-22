@@ -16,6 +16,15 @@
 ship: king-george-v
 
 slices:
+  - code: K00
+    title: 订购与建造
+    from: 1936-07-29
+    to: 1936-12-31
+    note: >-
+      1936-07-29 订购；1937-01-01 开工；承造 Vickers-Armstrong, Walker Navy Yard（维克斯-阿姆斯特朗，沃克海军船厂）（Newcastle-upon-Tyne）；1939-02-21 下水。
+      这一段此前在时间轴上没有切片，拖动滑块时下方是空白的；
+      补上后切片范围与 fact 的实际时间范围对齐。
+
   - code: K0
     title: 建造与舾装
     from: 1937-01-01

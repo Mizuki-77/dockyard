@@ -26,7 +26,6 @@ import {
   getImagesFor,
   primaryImage,
   imageCredit,
-  getClasses,
   getShips,
 } from '../../lib/data';
 import { roleOf, ROLE_LABEL, nationLabel, roleIsCurated } from '../../lib/catalog';
@@ -64,13 +63,13 @@ const branches = tree.map((r) => ({
       leaves: n.weapons.map((x) => ({
         label: x.label,
         href: x.href,
+        // tree.ts 的 leaf.sources 已经是数字（w.sources.length），不要再点 .length
         meta: x.sources > 1 ? `${x.sources} 个来源` : '',
       })),
     })),
 }));
 
 // ---- 装在哪几艘船上：class → 该级的单舰 ----
-const classByShip = new Map(getShips().map((s) => [s.id, s.class]));
 const shipNameById = new Map(getShips().map((s) => [s.id, s.name.zh]));
 
 /** 某来源（舰级或单舰）对应的「实际装着这型炮的船」列表。 */
@@ -105,14 +104,14 @@ void disambiguate;
   <div class="crumbs">
     <a href="/weapons">武器与装备</a>
     <span aria-hidden="true">/</span>
-    <span>{ROLE_LABEL[role as never].zh}</span>
+    <span>{ROLE_LABEL[role].zh}</span>
     <span aria-hidden="true">/</span>
     <span>{w.label}</span>
   </div>
 
   <div class="pagehead">
     <div class="pagehead__kicker">
-      {ROLE_LABEL[role as never].en}
+      {ROLE_LABEL[role].en}
       {w.categories.length > 0 && <span class="pagehead__raw"> · {w.categories.join(' / ')}</span>}
     </div>
     <h1 class="pagehead__title">{w.label}</h1>

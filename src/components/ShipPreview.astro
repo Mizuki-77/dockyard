@@ -71,7 +71,7 @@ const historyCount = (article?.history ?? []).reduce((n, s) => n + (s.events?.le
         <div class="preview__kicker">
           {cls?.name.zh ?? '单舰'} · {ship.name.en ?? ''}
         </div>
-        <h1 class="preview__title">{ship.name.zh}</h1>
+        <h2 class="preview__title">{ship.name.zh}</h2>
         <div class="preview__meta">
           {era && <span class="tag tag--ghost">{enumLabel(era, 'zh')}</span>}
           {shipType && <span class="tag tag--ghost">{enumLabel(shipType, 'zh')}</span>}
@@ -113,11 +113,11 @@ const historyCount = (article?.history ?? []).reduce((n, s) => n + (s.events?.le
 
       {article?.intro?.lead && (
         <section class="preview__sec">
-          <h2 class="preview__h">简介</h2>
+          <h3 class="preview__h">简介</h3>
           <p class="preview__lead">{article.intro.lead.zh}</p>
           {(article.intro.paragraphs ?? []).slice(0, 2).map((p) => (
             <div class="preview__para">
-              {p.heading && <h3 class="preview__h3">{p.heading}</h3>}
+              {p.heading && <h4 class="preview__h3">{p.heading}</h4>}
               <p>{p.text.zh}</p>
             </div>
           ))}
@@ -132,7 +132,7 @@ const historyCount = (article?.history ?? []).reduce((n, s) => n + (s.events?.le
 
       {firstSection && (
         <section class="preview__sec">
-          <h2 class="preview__h">历史</h2>
+          <h3 class="preview__h">历史</h3>
           <div class="preview__histhead">
             <span class="preview__histtitle">{firstSection.title.zh}</span>
             {firstSection.range && (

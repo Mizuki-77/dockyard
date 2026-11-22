@@ -314,28 +314,15 @@ const payload = {
           : '');
     }
 
-    function cellHtml(shipId, field, t) {
-      if (!alive(shipId, t)) {
-        return '<td class="cmp-td cmp-td--dead"><span class="cmp-void">—</span></td>';
-      }
-      const ws = windowsAt(shipId, field.id, t);
-      const p = pickOne(ws);
-      if (!p) {
-        return '<td class="cmp-td cmp-td--none"><span class="cmp-void">未记载</span></td>';
-      }
-      const classes = ['cmp-td'];
-      if (p.incomparable) classes.push('cmp-td--inc');
-      if (isDisputed(ws)) classes.push('cmp-td--disp');
-      const bits = [`<span class="cmp-val">${esc(p.text)}</span>`];
-      if (p.incomparable) {
-        bits.push('<span class="cmp-tag cmp-tag--inc" title="口径存疑：不参与高低判定">口径存疑</span>');
-      }
-      if (isDisputed(ws)) {
-        bits.push('<span class="cmp-tag cmp-tag--disp">多种说法</span>');
-      }
-      if (p.conf === 'C') bits.push('<span class="cmp-tag cmp-tag--conf">C</span>');
-      return `<td class="${classes.join(' ')}"${p.note ? ` title="${esc(p.note)}"` : ''}>${bits.join(' ')}</td>`;
-    }
+    /* 2026-11-22 删除：这里原本有一个 cellHtml(shipId, field, t) 函数，
+       30 行，负责把一格拼成字符串。后来渲染改成在 render() 里内联组装
+       （因为要按行收集 vals 做最值高亮），这个函数就没人调用了。
+
+       删之前核对了它独有的逻辑：
+         - cmp-td--disp（整格争议底纹）→ 内联版本用 cmp-tag--disp 表达，
+           更精确（只标标签不染色整格），无需搬
+         - cmp-tag--conf（C 档角标）→ 内联版本确实漏了，已补回去
+       所以删掉是安全的。 */
 
     /** 一行里的最值高亮。只在：
      *   - 字段 better 是 higher / lower（context / none 不着色）
@@ -453,6 +440,16 @@ const payload = {
               }
             }
             const title = p.note ? ` title="${esc(p.note)}"` : '';
+            // 置信度 C 的角标。
+            //
+            // 2026-11-22 补：这段逻辑原先只存在于上面那个已经没人调用的
+            // cellHtml() 死函数里，内联渲染重写时漏搬了，导致对比器上
+            // C 档数据没有可见标记 —— 而本站的核心承诺就是「一眼看出这个
+            // 数字有多可信」。不标等于把 C 档伪装成 A 档。
+            if (p.conf === 'C') {
+              bits.push('<span class="cmp-tag cmp-tag--conf" title="置信度 C：二手转述或口径不明">C</span>');
+            }
+
             // 每格一个纠错入口：对比器是「同一字段横向比」的地方，
             // 发现某舰某个值不对，这里是最近的落点。
             const shipName = SHIPS.get(id)?.name?.zh ?? id;

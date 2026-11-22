@@ -288,9 +288,20 @@ export function buildShipView(shipId: string): ShipView | null {
   // 时间轴上下界只看「有意义的日期」，不看 to 为空（无限延续）造成的哨兵值。
   // 上界取 max(所有 from) 与 max(所有显式 to)，因为一条 to 为空的记录
   // 并不代表历史延续到 9999 年——它只代表「此后无新记载」。
-  // identity.* 组排除在外：设计案（Plan Z / Ersatz Hannover）的日期是文书日期，
-  // 不是舰的状态起始，把它算进去时间轴会从建造计划那年就开始，谎报两年空白期。
-  const dated = facts.filter((f) => !f.field.startsWith('identity.'));
+  //
+  // 两类排除在外：
+  //   identity.*  设计案（Plan Z / Ersatz Hannover）的日期是文书日期，
+  //               不是舰的状态起始，算进去会从建造计划那年开始。
+  //   带 about 的  weapon.* / mount.* 挂在 `about: weapon:x` / `mount:x` 上，
+  //               它们的 valid 窗口说的是「这型武器/这个炮位何时存在」，
+  //               不是「这艘舰何时是那样」。
+  //               2026-11-22 修：飞龙与光辉的武器 fact 带 1932/1930 的日期，
+  //               把舰的时间轴起点拉到了开工之前十多年。
+  //               判据用 f.about 而非字段名前缀 —— 舰自身的武备状态字段
+  //               （armament.mount.summary 等）没有 about，仍要参与。
+  const dated = facts.filter(
+    (f) => !f.field.startsWith('identity.') && !f.about,
+  );
   let lo = Infinity;
   let hi = -Infinity;
   for (const f of dated) {
@@ -528,10 +539,17 @@ export interface MountEntity {
 }
 
 /**
- * 从某舰级的文件里抽出 weapon / mount 实体。
+ * 从某**舰级**文件里抽出 weapon / mount 实体。
  *
- * @deprecated 只读舰级，会漏掉武器数据挂在单舰上的那一半舰。
- *             新代码请用 getShipEntities()，它同时吃单舰和舰级。
+ * ⚠️ 只读舰级。舰级页（/classes/[id]）用它是对的 —— 那里本来就只展示
+ *    这一级共有的武器。但**单舰页不能用它**：本项目的武器数据存放位置
+ *    不统一，赤城/加贺/苍龙/飞龙与三艘美军航母把武器写在 ships/ 下，
+ *    只读舰级会让那些舰的「武器配置」区整块消失。
+ *    单舰请用 getShipEntities(ship, cls)。
+ *
+ * 2026-11-22 注：这里原本带废弃标记，但舰级页是合法调用方，
+ * 标废弃会在每个调用点产生噪音警告，掩盖真正的类型错误。
+ * 改成注释说明用错场景，不标废弃。
  */
 export function getEntities(cls: ClassFile | undefined) {
   const weapons = new Map<string, ResolvedFact[]>();

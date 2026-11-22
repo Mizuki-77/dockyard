@@ -21,6 +21,15 @@
 ship: illustrious
 
 slices:
+  - code: I00
+    title: 订购与建造
+    from: 1936-07-08
+    to: 1940-05-24
+    note: >-
+      1937-04-27 开工；承造 Vickers-Armstrong, Barrow（维克斯-阿姆斯特朗，巴罗船厂）（Barrow-in-Furness）；1939-04-05 下水。
+      这一段此前在时间轴上没有切片，拖动滑块时下方是空白的；
+      补上后切片范围与 fact 的实际时间范围对齐。
+
   - code: I0
     title: 建成与试航
     from: 1940-05-25

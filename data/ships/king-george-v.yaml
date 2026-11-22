@@ -554,3 +554,25 @@ facts:
     src: [navypedia-kgv]
     valid: { from: 1944-07-01 }
     confidence: B
+
+  # ============================================================ 战后状态
+  # 这一组只对本舰成立，所以写在单舰文件而不是舰级文件。
+  # 本级五舰结局差异极大（PoW 1941-12 沉没 / Duke of York 1949 退役 /
+  # 本舰活到 1957），把 1945 年状态放进 classes/ 会污染早已沉没的舰。
+  - field: displacement.standard
+    value: 39100
+    unit: t
+    src: [rmg-kgv-guide, navypedia-kgv]
+    valid: { from: 1945-01-01 }
+    confidence: B
+    note: >
+      1945 年状态（经 1944 年改装增重）。navypedia 把同一组数挂在
+      Prince of Wales 12/1941 条目下，实为本级后期状态 —— 那是来源的归类错误，
+      本舰才是它该去的地方。
+
+  - field: displacement.deep
+    value: 44460
+    unit: t
+    src: [rmg-kgv-guide, navypedia-kgv]
+    valid: { from: 1945-01-01 }
+    confidence: B
