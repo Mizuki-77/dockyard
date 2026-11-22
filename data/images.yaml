@@ -584,7 +584,7 @@ images:
     file: /img/battles/bismarck-survivors-dorsetshire.jpg
     subject: ship:bismarck
     title: { zh: 俾斯麦号生还者被多塞特郡号救起（1941-05-27）, en: Bismarck survivors rescued by HMS Dorsetshire }
-    view: other
+    view: detail
     date: 1941-05-27
     license: pd
     license_tier: A
@@ -594,8 +594,10 @@ images:
     source_url: "https://commons.wikimedia.org/wiki/File:HMS_Dorsetshire_Bismarck_survivors.jpg"
     width: 1280
     height: 1530
-    note: 约 114 人获救，另有数人被 U-74 与德国气象船 Sachsenwald 救起；数量各源在 110–116 之间不等，本站按并列处理。原件藏帝国战争博物馆（IWM ZZZ 3130C），作品本身已属公有领域。
+    note: >-
+      人物照（幸存者被救起），不是舰体照片。part 标 other、view 标 detail，切片配图会排除它 —— 时间轴要的是能看出舰型的整舰照。
 
+    part: other
   - id: rodney-broadside-1928
     file: /img/ships/rodney-1928-broadside.jpg
     subject: ship:rodney
@@ -5432,8 +5434,8 @@ images:
     title:
       zh: 'Survivors from the Bismarck are pulled aboard HMS Dorsetshire (40) on 27 May 1941'
       en: 'HMS Dorsetshire Bismarck survivors.jpg'
-    part: hull_side
-    view: broadside
+    part: other
+    view: detail
     date: 1941
     license: pd
     license_tier: A
@@ -8058,6 +8060,96 @@ images:
     source_url: 'https://commons.wikimedia.org/wiki/File:Lot-2275-59_(26585865410).jpg'
     width: 2572
     height: 2148
+    primary: false
+
+  - id: prinz-eugen-early-1942-prinz-eugen-oni-204-48-jpg
+    file: /img/ships/prinz-eugen-early-1942-prinz-eugen-oni-204-48-jpg.jpg
+    subject: ship:prinz-eugen
+    title:
+      zh: 'Silhouette of Prinz Eugen heavy cruiser according to Division of Naval Intelligence'
+      en: 'Prinz Eugen ONI-204-48.JPG'
+    part: hull_side
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'US Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Prinz_Eugen_ONI-204-48.JPG'
+    width: 1819
+    height: 1148
+    primary: false
+
+  - id: prinz-eugen-early-1938-bundesarchiv-dvm-10-bild-23-63-14-k
+    file: /img/ships/prinz-eugen-early-1938-bundesarchiv-dvm-10-bild-23-63-14-kiel-k.jpg
+    subject: ship:prinz-eugen
+    title:
+      zh: 'Bundesarchiv DVM 10 Bild-23-63-14, Kiel, Kreuzer "Prinz Eugen", Stapellauf'
+      en: 'Bundesarchiv DVM 10 Bild-23-63-14, Kiel, Kreuzer "Prinz Eugen", Stapellauf.jpg'
+    part: hull_side
+    view: broadside
+    date: 1938
+    license: cc
+    license_tier: B
+    license_raw: 'CC BY-SA 3.0 de'
+    author: 'UnknownUnknown'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Bundesarchiv_DVM_10_Bild-23-63-14,_Kiel,_Kreuzer_%22Prinz_Eugen%22,_Stapellauf.jpg'
+    width: 800
+    height: 527
+    primary: false
+
+  - id: prinz-eugen-early-1942-cruisers-admiral-scheer-and-prinz-e
+    file: /img/ships/prinz-eugen-early-1942-cruisers-admiral-scheer-and-prinz-eugen-.jpg
+    subject: ship:prinz-eugen
+    title:
+      zh: 'Cruisers Admiral Scheer and Prinz Eugen at Lofjord 1942'
+      en: 'Cruisers Admiral Scheer and Prinz Eugen at Lofjord 1942.jpg'
+    part: hull_side
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'No. 1 PRU; post-work: Cobatfor'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Cruisers_Admiral_Scheer_and_Prinz_Eugen_at_Lofjord_1942.jpg'
+    width: 791
+    height: 660
+    primary: false
+
+  - id: kaga-early-1930-nh-97786-japanese-warships-in-harbor-jpg
+    file: /img/ships/kaga-early-1930-nh-97786-japanese-warships-in-harbor-jpg.jpg
+    subject: ship:kaga
+    title:
+      zh: 'NH 97786 Japanese warships in harbor'
+      en: 'NH 97786 Japanese warships in harbor.jpg'
+    part: hull_side
+    view: broadside
+    date: 1930
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Presumed official USN or IJN photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:NH_97786_Japanese_warships_in_harbor.jpg'
+    width: 4962
+    height: 3674
+    primary: false
+
+  - id: kaga-early-1935-aircraft-carrier-kaga-sideview-ijn-jpg
+    file: /img/ships/kaga-early-1935-aircraft-carrier-kaga-sideview-ijn-jpg.jpg
+    subject: ship:kaga
+    title:
+      zh: 'Aircraft carrier Kaga sideview of the Imperial Japanese Navy (circa 1935)'
+      en: 'Aircraft carrier Kaga sideview IJN.jpg'
+    part: hull_side
+    view: broadside
+    date: 1935
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Aircraft_carrier_Kaga_sideview_IJN.jpg'
+    width: 1638
+    height: 632
     primary: false
 
   - id: a6m2-primary

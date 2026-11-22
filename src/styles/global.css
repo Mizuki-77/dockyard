@@ -1357,9 +1357,13 @@ table.data tbody tr:hover {
 .tl-chip__pic {
   display: block;
   width: 100%;
-  height: 74px;
+  /* 74px 时整舰侧舷图会被 cover 裁成一条横带 —— 船身只剩中间一细条，
+     看不出舰型。提到 96px 并把裁切锚点上移到 38%（舰体通常在中上），
+     模型玩家才能从缩略图上认出这是哪一级舰。
+     2026-11-22 用户反馈「时间轴该放全景/侧舷图」时一并调整。 */
+  height: 96px;
   object-fit: cover;
-  object-position: center 42%;
+  object-position: center 38%;
   background: var(--navy-800);
   filter: saturate(0.94);
 }

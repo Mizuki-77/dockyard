@@ -919,14 +919,65 @@ function spanGap(a: [number, number], b: [number, number]): number {
   return a[1] < b[0] ? b[0] - a[1] : a[0] - b[1];
 }
 
+/**
+ * 切片缩略图的构图分类。
+ *
+ * 为什么需要这个（2026-11-22 用户反馈）：
+ * 时间轴每片只有 74px 高，object-fit: cover 会居中裁一条横带。
+ * 挂一张「炮塔特写」或「雷达天线」进去，裁完只剩一块钢板；
+ * 挂一张「飞行甲板作业」进去，看到的是甲板和飞机，不是这艘舰。
+ *
+ * 用户的话：「时间轴上最好放的是战舰的全景图或侧舷图，放武器照片
+ * 或太小的局部图没有太多意义」。
+ *
+ * 所以切片配图必须优先整舰构图。这里把「什么算整舰」写死一份，
+ * 不依赖 part/view 的字面值 —— 那两列是登记时逐条判断的，
+ * 有 None、有 other、有各种拼写。
+ */
+const WHOLE_SHIP_PARTS = new Set(['hull_side', 'deck', 'bow', 'stern', 'other']);
+const LOCAL_PARTS = new Set([
+  'turret', 'superstructure', 'bridge', 'propeller', 'catapult',
+  'aircraft_handling', 'weapon', 'radar',
+]);
+
+/** 这张图能不能体现「整艘舰的外形」。 */
+function isWholeShipShot(im: ImageRec): boolean {
+  const part = String(im.part ?? '');
+  const view = String(im.view ?? '');
+  // detail 一律视为局部：它表达的正是「只拍了某个部件」
+  if (view === 'detail') return false;
+  if (LOCAL_PARTS.has(part)) return false;
+  if (view === 'deck') return true; // 俯视甲板仍能看出整舰轮廓
+  return WHOLE_SHIP_PARTS.has(part) || part === '' || part === 'undefined';
+}
+
 export function sliceImages(shipId: string, slices: Slice[]): SliceImage[] {
-  const imgs = getImagesFor(`ship:${shipId}`).filter((i) => i.file);
-  const byId = new Map(imgs.map((i) => [i.id, i]));
+  const all = getImagesFor(`ship:${shipId}`).filter((i) => i.file);
+  const byId = new Map(all.map((i) => [i.id, i]));
+
+  // 切片配图只在「整舰构图」里挑。手工指定的 slice.image 不受此限 ——
+  // 那是作者刻意选的具体某张，可能就是要那个细节。
+  const imgs = all.filter(isWholeShipShot);
+
+  /**
+   * 已分配给前几个切片的图，用于尽量让相邻切片不撞图。
+   *
+   * 为什么需要（2026-11-22 发现）：俾斯麦 S2 / S3 / S5 三片都挂了同一张
+   * 「英军侦察机航拍」—— 因为那张图日期覆盖范围宽、又是 primary。
+   * 时间轴上连续三格是同一张图，读者以为图没加载出来。
+   *
+   * 规则不是禁止重复（图池小的舰做不到），而是**优先选没用过的**：
+   * 用过的只在没有别的可选时才回退。
+   */
+  const used = new Set<string>();
 
   return slices.map((slice) => {
     if (slice.image) {
       const hit = byId.get(slice.image);
-      if (hit) return { slice, image: hit, how: 'explicit' as const };
+      if (hit) {
+        used.add(hit.id);
+        return { slice, image: hit, how: 'explicit' as const };
+      }
       // 手工填了 id 但图不在本舰名下：不悄悄忽略，退到自动并把 how 标成 none，
       // 页面会因此显示「该时期无影像」，比挂错图好查。
     }
@@ -953,22 +1004,49 @@ export function sliceImages(shipId: string, slices: Slice[]): SliceImage[] {
           if (ta !== tb) return ta - tb;
           return Math.abs(a.sp[0] - mid) - Math.abs(b.sp[0] - mid);
         });
-        return { slice, image: inRange[0]!.im, how: 'in_range' as const };
+        // 优先挑本舰还没用过的
+        const fresh = inRange.find((x) => !used.has(x.im.id));
+        const pick = fresh ?? inRange[0]!;
+        used.add(pick.im.id);
+        return { slice, image: pick.im, how: 'in_range' as const };
       }
 
-      // 没有相交的：找时间上最近的一张，但只接受 1 年以内。
+      // 没有相交的：找时间上最近的一张。
       //
-      // 这个上限从 3 年收到 1 年，是因为 3 年真的会挂错：
-      // KGV 的 1942 那一片曾经挂上 1945-08 的日本投降照——那两天的舰上
-      // 多了一整套雷达和防空平台，外形差得远。宁可显示「该时期无影像」，
-      // 不要让模型制作者照着一张不属于这个时期的照片去改模型。
+      // 容差分两档，按图片日期的精度决定 —— 这是 2026-11-22 的修正：
+      //
+      //  - 图片只有年份（date: 1942）：按「同一年内」接受，即切片窗口与该年
+      //    有交集就可用。理由：早期舰照的原始档案往往只标到年，甚至只有
+      //    一个「1930s」。严格按天数算，加贺 1928-1935 那几片永远无图，
+      //    因为那年代的照片没有精确日期。
+      //
+      //  - 图片有月或日（date: 1942-06-04）：仍要求 365 天内。
+      //    这条保留是因为它防的是真实错误：KGV 的 1942 那一片曾经挂上
+      //    1945-08 的日本投降照——那两天的舰上多了一整套雷达和防空平台，
+      //    外形差得远。宁可显示「该时期无影像」，也不要让模型制作者
+      //    照着一张不属于这个时期的照片去改模型。
       const cand = imgs
         .map((im) => ({ im, sp: dateSpan(im.date) }))
         .filter((x): x is { im: ImageRec; sp: [number, number] } => Boolean(x.sp))
         .map((x) => ({ ...x, gap: spanGap(win, x.sp) }))
-        .filter((x) => x.gap <= 365)
+        .filter((x) => {
+          if (x.gap <= 365) return true;
+          const precision = String(x.im.date ?? '').trim().length;
+          if (precision === 4) {
+            const imgYear = Math.floor(x.sp[0] / 10000);
+            const wFrom = Math.floor(win[0] / 10000);
+            const wTo = Math.floor(win[1] / 10000);
+            return imgYear >= wFrom && imgYear <= wTo;
+          }
+          return false;
+        })
         .sort((a, b) => a.gap - b.gap);
-      if (cand.length > 0) return { slice, image: cand[0]!.im, how: 'nearest' as const };
+      if (cand.length > 0) {
+        const fresh = cand.find((x) => !used.has(x.im.id));
+        const pick = fresh ?? cand[0]!;
+        used.add(pick.im.id);
+        return { slice, image: pick.im, how: 'nearest' as const };
+      }
     }
 
     return { slice, how: 'none' as const };
