@@ -1,0 +1,427 @@
+# ============================================================================
+# 单舰：HMS Sheffield（谢菲尔德号轻巡洋舰，舷号 24 / 战后 C24）
+# ----------------------------------------------------------------------------
+# 属 Town class 的 Southampton 子级（5 艘中的第 3 艘）。舰级设计值见
+# data/classes/town.yaml，本文件只写本舰特有的：建造、改装、战历、编制变化。
+# 解析顺序（docs/00-framework.md §3.6）：单舰 fact -> 舰级 fact -> 未记载。
+#
+# 【本舰最常被写错的三处，本文件逐条锁定】
+#   1) 1941-05-26 被皇家方舟的 Swordfish 误击这件事，**不是本舰认错目标**：
+#      是她被派去跟踪俾斯麦，而飞行员没被告知附近有友舰。她一枚没打、
+#      一颗雷没中（11 雷：2 入水即爆、3 横穿尾迹时爆、6 被规避）。
+#   2) 同日晚 2140 左右，俾斯麦向她打了 6 次齐射，**未直接命中**，
+#      但破片打坏雷达、伤 12 人、3 人后来死亡。这一条与误击是两件事。
+#   3) 1967 年拆解要分三段：1964 列入处置清单 → 1967 在 Rosyth 拆除设备
+#      → 1967-09-18 拖抵 Faslane 交 Shipbreaking Industries 拆毁。
+# ============================================================================
+
+id: sheffield
+name:
+  zh: 谢菲尔德号
+  en: HMS Sheffield
+class: town
+open_ended_note: >
+  Southampton 子级（城级第一组）第 3 艘。二战中在北海、大西洋、地中海、
+  北极四个战场均有作战记录，获 12 项战功表彰（battle honours）。
+  战后长期担任美洲与西印度群岛站旗舰，1959 年转入预备役，
+  1967 年在 Faslane 拆解。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: HMS Sheffield
+    src: [naval-history-sheffield]
+    valid: { from: 1934-12-17 }
+    confidence: A
+    note: 皇家海军第 1 艘以此命名的军舰（第 2 艘是 1982 年战沉的 42 型驱逐舰）。
+
+  - field: identity.name_zh
+    value: 谢菲尔德号
+    src: [naval-history-sheffield]
+    valid: { from: 1934-12-17 }
+    confidence: C
+
+  - field: identity.name_en
+    value: HMS Sheffield
+    src: [naval-history-sheffield]
+    valid: { from: 1934-12-17 }
+    confidence: A
+
+  - field: identity.pennant_number
+    value: '24（战后改 C24）'
+    src: [navypedia-town]
+    valid: { from: 1937-08-25, to: 1967-09-18 }
+    confidence: C
+    note: >
+      navypedia 的 Ships 表两栏并写「24, 1948- C24」——1937 年服役时为 24，
+      1948 年起改为 C 前缀编号。两段并列在同一格里，本值如实转录。
+
+  - field: identity.namesake
+    value: 英国约克郡谢菲尔德市（该市与这两代同名舰的渊源自 1936 年下水延续至今）
+    src: [naval-history-sheffield]
+    valid: { from: 1934-12-17 }
+    confidence: C
+    note: >
+      原句「This ship had a well established association with the civil
+      community of the city of Sheffield which has endured since launch」。
+      舰徽为蓝底上八支交叉银箭（该市的 steel arrows 标志）。
+
+  - field: identity.ship_type
+    value: light_cruiser
+    src: [naval-history-sheffield]
+    valid: { from: 1937-08-25, to: 1967-09-18 }
+    confidence: A
+    note: naval-history 页标题即「HMS SHEFFIELD - Town-type Light Cruiser」。
+
+  - field: identity.nation
+    value: united_kingdom
+    src: [naval-history-sheffield]
+    valid: { from: 1937-08-25 }
+    confidence: A
+
+  - field: identity.operator
+    value: Royal Navy
+    src: [naval-history-sheffield]
+    valid: { from: 1937-08-25, to: 1967-09-18 }
+    confidence: A
+
+  - field: identity.era
+    value: ww2
+    src: [naval-history-sheffield]
+    valid: { from: 1939-09-03, to: 1945-09-02 }
+    confidence: A
+    note: >
+      本舰 1937-08-25 服役、1967 年拆解，跨 ww2 与 cold_war 两个时代。
+      按「服役与作战期」定位取 ww2；冷战期的服役另见切片与正文。
+
+  # ============================================================ 建造
+  - field: construction.builder
+    value: Vickers Armstrong
+    src: [naval-history-sheffield, navypedia-town]
+    valid: { from: 1934-12-17 }
+    confidence: A
+    note: 两源一致。naval-history 原文「ordered from Vickers Armstrong at Newcastle」。
+
+  - field: construction.builder_location
+    value: Newcastle upon Tyne（High Walker 船台）
+    src: [navypedia-town]
+    valid: { from: 1934-12-17 }
+    confidence: C
+
+  - field: construction.yard_number
+    value: '5'
+    src: [navypedia-town]
+    valid: { from: 1934-12-17 }
+    confidence: C
+    note: navypedia Ships 表的 Yard No 列为 5。
+
+  - field: construction.order_date
+    value: 1934-12-17
+    unit: date
+    src: [naval-history-sheffield]
+    valid: { from: 1934-12-17 }
+    confidence: A
+    note: 原句「Cruiser ordered from Vickers Armstrong at Newcastle on 17th December 1934」。
+
+  - field: construction.laid_down
+    value: 1935-01-31
+    unit: date
+    src: [naval-history-sheffield, navypedia-town]
+    valid: { from: 1935-01-31 }
+    confidence: A
+    note: 两源完全一致（navypedia 记 31.1.1935）。
+
+  - field: construction.launched
+    value: 1936-07-23
+    unit: date
+    src: [naval-history-sheffield, navypedia-town]
+    valid: { from: 1936-07-23 }
+    confidence: A
+    note: 两源一致（navypedia 记 23.7.1936）。
+
+  - field: construction.commissioned
+    value: 1937-08-25
+    unit: date
+    src: [naval-history-sheffield, navypedia-town]
+    valid: { from: 1937-08-25 }
+    confidence: A
+    note: >
+      两源一致（navypedia 的 Comp 列记 25.8.1937）。
+      naval-history 原文「Build was completed on 25th August 1937 and the
+      ship was commissioned for service in the 2nd Cruiser Squadron」——
+      完工与服役同日，编入本土舰队第 2 巡洋舰分队。
+      **注意**：navypedia 表头那一列叫 Comp（完工），本站把完工日与服役日
+      分开对待的规矩见 nelson / rodney 文件；本舰两者同日，故一条覆盖。
+
+  - field: construction.fate_date
+    value: 1967-09-18
+    unit: date
+    src: [naval-history-sheffield]
+    valid: { from: 1967-09-18 }
+    confidence: C
+    note: >
+      **拆解要分三段说，不要写成「1967 年拆解」一句话：**
+      1964 列入处置清单（Disposal List）→ 1967 拖至 Rosyth 拆除设备
+      → 1967-09-18 拖抵 Faslane 交 Shipbreaking Industries 拆毁。
+      本条取最后一环。
+
+  - field: construction.fate_type
+    value: scrapped
+    src: [naval-history-sheffield, navypedia-town]
+    valid: { from: 1967-09-18 }
+    confidence: A
+    note: >
+      两源一致。navypedia 的 Fate 列记「stricken 9.1964」——那是列入处置清单
+      的月份，不是拆解，故不进本字段。
+
+  # ============================================================ 服役编队（按时间分条）
+  - field: service.unit
+    value: 本土舰队第 2 巡洋舰分队（2nd Cruiser Squadron, Home Fleet）
+    src: [naval-history-sheffield]
+    valid: { from: 1937-08-25, to: 1939-08-31 }
+    confidence: C
+
+  - field: service.unit
+    value: 本土舰队第 18 巡洋舰分队（18th Cruiser Squadron, Home Fleet）
+    src: [naval-history-sheffield]
+    valid: { from: 1939-09-01, to: 1940-07-31 }
+    confidence: C
+    note: 1939-09 转入 18 CS；1940 年 4 月该分队编成为 Manchester（旗舰）、Southampton、Glasgow、Birmingham。
+
+  - field: service.unit
+    value: H 舰队（Force H，直布罗陀，Somerville 中将）
+    src: [naval-history-sheffield]
+    valid: { from: 1940-08-29, to: 1941-05-29 }
+    confidence: C
+    note: >
+      1940-08-29 抵直布罗陀接替 Arethusa，编入 Force H；
+      1941-06-10 由 Hermione 接替后离开。
+
+  - field: service.unit
+    value: 本土舰队第 10 巡洋舰分队（10th Cruiser Squadron, Home Fleet）
+    src: [naval-history-sheffield]
+    valid: { from: 1941-08-12, to: 1941-09-12 }
+    confidence: C
+    note: 1941-07 Rosyth 改装完成后在斯卡帕湾完成训练，编入第 10 巡洋舰分队。
+
+  - field: service.unit
+    value: 北极护航编队 / 第 18 巡洋舰分队（冰岛方向）
+    src: [naval-history-sheffield]
+    valid: { from: 1941-11-03, to: 1942-10-23 }
+    confidence: C
+    note: >
+      1941-11-03 起以冰岛为基地担任俄国护航的掩护（原文「Deployed with
+      18th Cruiser Squadron in Iceland for defence of Russian Convoys」）。
+
+  - field: service.unit
+    value: 地中海第 15 巡洋舰分队（15th Cruiser Squadron）
+    src: [naval-history-sheffield]
+    valid: { from: 1943-09-01, to: 1943-11-20 }
+    confidence: C
+    note: 1943-09 调地中海参加萨勒诺（Operation AVALANCHE）炮击支援，驻阿尔及尔。
+
+  - field: service.unit
+    value: 本土舰队第 10 巡洋舰分队（第二次）
+    src: [naval-history-sheffield]
+    valid: { from: 1943-12-07, to: 1944-07-18 }
+    confidence: C
+    note: 1943-12-07 归建第 10 巡洋舰分队，随即参加北角海战。
+
+  - field: service.unit
+    value: 预备舰队旗舰（Flagship, Reserve Fleet, Portsmouth）
+    src: [naval-history-sheffield]
+    valid: { from: 1959-01-01, to: 1964-09-30 }
+    confidence: C
+    note: >
+      1959 年在朴次茅斯转入预备役，接替 Vanguard 任预备舰队旗舰；
+      1964 年 9 月列入处置清单。
+
+  # ============================================================ 雷达（按时间分条）
+  # sensors.radar.installed 是注册表里的 multi 字段，同舰多条并存是设计如此。
+  - field: sensors.radar.installed
+    value: Type 79Y 对空警戒雷达（试装型）
+    src: [naval-history-sheffield, navypedia-town]
+    valid: { from: 1938-08-01, to: 1942-04-01 }
+    confidence: C
+    note: >
+      **这是本舰一个不大但确实的「第一」**：naval-history 原文
+      「This ship was fitted with a development model of aircraft warning
+      radar Type 79Y and was the third RN warship fitted with this new device
+      before the outbreak of war」——战前第 3 艘装此雷达的军舰。
+      navypedia 记装舰时间为 8/1938，两源月份一致。
+
+  - field: sensors.radar.installed
+    value: Type 284 主炮火控雷达（前部 6 英寸）＋ Type 285 高炮火控雷达
+    src: [naval-history-sheffield, navypedia-town]
+    valid: { from: 1941-07-01, to: 1944-07-18 }
+    confidence: C
+    note: >
+      **两说并列，不裁决。** naval-history 把 Type 284（前部主炮）与 Type 285
+      （副炮对空）记在 1941 年 7 月 Rosyth 那次改装；navypedia 的 Modernizations
+      台账把「+ type 284」记在 9/1941。差两个月，来源各记各的，本站不合并。
+      本值取 1941-07，navypedia 的 1941-09 单独成条见下。
+
+  - field: sensors.radar.installed
+    value: Type 284 主炮火控雷达（按 navypedia 台账记 1941-09）
+    src: [navypedia-town]
+    valid: { from: 1941-09-01, to: 1942-04-01 }
+    confidence: C
+    note: >
+      与上一条并列：navypedia 记 9/1941「9/1941, Sheffield: - 2 x 4 - 12.7/62,
+      type 79Y radar; + 6 x 1 - 20/70 Oerlikon Mk II/IV, type 284 radar」。
+      注意这一条同时说拆了 79Y，而同一页 7/1942 那条又说拆了一次 79Y ——
+      **同源自相矛盾**，故本舰的 79Y 拆除时间只按 naval-history 的记述
+      （1942 年 4 月被 281 取代）登记，navypedia 这条的拆雷达部分不采信。
+
+  - field: sensors.radar.installed
+    value: Type 273 水面警戒 ＋ Type 281 对空警戒 ＋ Type 284（后部主炮）＋ Type 285 高炮火控
+    src: [naval-history-sheffield]
+    valid: { from: 1942-04-02, to: 1945-05-31 }
+    confidence: C
+    note: >
+      1942-04-02 起在 Tyne 的 Palmer's Yard（Hebburn）大修，原文：
+      「Radar Type 284 radar fitted for after 6" turret fire control. Radar
+      Type 285 sets fitted AA fire-control. Radar Type 273 surface warning
+      radar added and Type 79Y air warning radar replaced by new design Type
+      281. IFF equipment added and US manufactured VHF radio telephone outfit
+      (TBS) installed」。
+      navypedia 把同一批（273 / 281 / 285）记在 7/1942，月份不同，并列不裁。
+
+  - field: sensors.radar.installed
+    value: Type 277 对空/对海警戒雷达（取代 Type 273）
+    src: [navypedia-town]
+    valid: { from: 1945-05-01 }
+    confidence: C
+    note: >
+      navypedia 台账：「5/1945, Sheffield: - 1 x 3 - 152/50 ("X"), 15 x 1 - 20/70,
+      type 273 radar; + 4 x 4 - 40/56 Bofors Mk 1.2, 10 x 2 - 20/70 Oerlikon
+      Mk II/IV, type 277 radar」。
+      naval-history 对此只写「new design fire control radars, target
+      acquisition outfit and new air warning radar」，未给型号，
+      故型号一项以 navypedia 为唯一来源。
+
+  # ============================================================ 近程高炮（按时间分条）
+  - field: armament.aa_20mm.count
+    value: 6
+    unit: count
+    src: [naval-history-sheffield, navypedia-town]
+    valid: { from: 1941-07-01, to: 1942-03-31 }
+    confidence: C
+    note: >
+      6 门单装 20 mm Oerlikon。两源数字一致、月份不一致：naval-history 记在
+      1941 年 7 月 Rosyth 改装（原文「Six 20mm Oerlikon guns fitted for Close
+      Range defence」），navypedia 记 9/1941。取较早的 7 月，差两个月不影响该窗口。
+      同时拆除 2 座四联 0.5 英寸（12.7 mm）机枪。
+
+  - field: armament.aa_20mm.count
+    value: 9
+    unit: count
+    src: [navypedia-town]
+    valid: { from: 1942-07-01, to: 1943-05-31 }
+    confidence: C
+    note: >
+      navypedia 台账 7/1942 一条：拆 type 79Y 雷达、加 3 门单装 20 mm Oerlikon。
+      6 + 3 = 9，与本条数值对应。
+
+  - field: armament.aa_20mm.count
+    value: 14
+    unit: count
+    src: [navypedia-town, naval-history-sheffield]
+    valid: { from: 1943-06-01, to: 1944-03-31 }
+    confidence: C
+    note: >
+      navypedia「6/1943, Sheffield: + 5 x 1 - 20/70 Oerlikon」——9 + 5 = 14；
+      naval-history 在 1943 年 4–5 月 Clyde 改装一条里写「Additional 20mm
+      Oerlikon weapons fitted」，未给数，两条互不冲突。
+
+  - field: armament.aa_20mm.count
+    value: 22
+    unit: count
+    src: [naval-history-sheffield]
+    valid: { from: 1944-04-21, to: 1944-07-17 }
+    confidence: C
+    note: >
+      naval-history 原文（1944-04-21 于 Greenock 改装）「Further 20mm
+      Oerlikon weapons added making total of 22」——**22 是来源直接给的总数，
+      不是我把几个月的增量加起来得的**。navypedia 的 1/1944 条目记「+8 x 1」，
+      14 + 8 = 22，与这个总数吻合，构成交叉印证。
+
+  # ============================================================ 武备状态变化
+  - field: armament.mount.summary
+    value: >-
+      建成时：12 × 6 in（4 座三联，A/B/X/Y）＋ 8 × 4 in（4 座双联）
+      ＋ 16 × 2-pdr（2 座八联）＋ 8 × 0.5 in（2 座四联）
+      ＋ 6 具 21 in 鱼雷管（2 座三联，水上）＋ 3 架水上飞机、1 具弹射器
+    src: [navypedia-town]
+    valid: { from: 1937-08-25, to: 1941-06-30 }
+    confidence: C
+    note: >
+      建成即此配置，但**弹射器与水上飞机是 1938 年才补装的**：navypedia 的
+      Modernizations 台账第一条即「1938, Sheffield: received her catapult with
+      seaplanes (she was commissioned without it)」。服役时没有航空设施。
+
+  - field: armament.mount.summary
+    value: >-
+      1945 年状态：9 × 6 in（3 座三联，X 塔已拆）
+      ＋ 8 × 4 in（4 座双联）＋ 16 × 2-pdr（2 座八联 pom-pom）
+      ＋ 16 × 40 mm Bofors（4 座四联）＋ 20 mm Oerlikon 若干（双联为主）
+      ＋ 6 具 21 in 鱼雷管
+    src: [navypedia-town]
+    valid: { from: 1945-05-01, to: 1946-01-31 }
+    confidence: C
+    note: >
+      **「X 塔拆除」要精确到时段，不要写成「1944 年拆了」就算完。**
+      navypedia 把「- 1 x 3 - 152/50 ("X")」记在 5/1945，即波士顿海军船厂
+      大修（1944-07-25 进厂，1945-05 完成）结束那一刻；也就是说拆除动作发
+      生在这次大修期内，来源没给具体日期。1945-05 之后她在英国继续改装到
+      1946-07，故本条的窗口止于 1946-01（navypedia 给了 1/1946 的完整清单）。
+      拆 X 塔的理由是给高炮腾位置与配重 —— 同级的 Belfast 是全级唯一
+      全程保留四座 6 英寸炮塔的一艘。
+
+  # ============================================================ 伤亡
+  # 注册表没有「战损」字段，故战损叙述放切片与正文；这里只登记有据可查的人数。
+  - field: service.casualties
+    value: 3
+    unit: persons
+    src: [kbismarck-chase, hmshood-tovey-dispatch, kbismarck-admiralty-war-diary]
+    valid: { from: 1941-05-26, to: 1941-05-28 }
+    confidence: A
+    note: >
+      **这是 1941-05-26 夜被俾斯麦号炮击造成的死亡数，不是全舰战历总和。**
+      俾斯麦在约 9 英里距离上向她打了 6 次齐射，无直接命中；破片打坏雷达
+      与上层甲板结构，伤 12 人，其中 3 人后来死亡。
+      Admiralty War Diary 原文「At 2140 the enemy fired 6 accurate salvoes at
+      her and caused some casualties and slight damage」；
+      kbismarck 原文「some splinters disabled her radar and injured twelve men
+      of whom three died later」。
+
+      三名死者（kbismarck 脚注 9 逐名给出）：
+      Ordinary Seaman David T. George 1941-05-26 阵亡、
+      Able Seaman Ambrose Ling 1941-05-27 阵亡（伤重不治）、
+      Able Seaman Raymond C. Taylor 1941-05-28 阵亡（伤重不治）。
+
+      **必须与当日更早那次「被自己人雷击」分开**：那次 11 枚鱼雷全部落空，
+      本舰无一伤亡，也一炮未还。两件事不要混成一件。
+
+  - field: service.casualties
+    value: 1
+    unit: persons
+    src: [naval-history-sheffield]
+    valid: { from: 1942-03-04, to: 1942-03-04 }
+    confidence: C
+    note: >
+      1942-03-04 在冰岛东北触雷，原文「Major damage was sustained aft and a
+      RM sentry was killed」——一名皇家海军陆战队哨兵阵亡。艉部重创，
+      以 6 节航速驶抵冰岛，此后进 Tyne 的 Palmer's Yard 大修。
+
+  # ============================================================ 编制
+  - field: service.complement.standard
+    value: 748
+    unit: persons
+    src: [navypedia-town]
+    valid: { from: 1937-08-25, to: 1946-12-31 }
+    confidence: C
+    note: >
+      navypedia 给全级单一值 748，未单列本舰。**战时编制未获取**：
+      另有叙述称 1942 年增至 796 人，但只见于百科层，本站不取，
+      故本字段只到 1946 年（战后编制另算）。

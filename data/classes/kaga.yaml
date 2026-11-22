@@ -17,8 +17,8 @@
 
 id: kaga
 name:
-  zh: 加贺（单舰）
-  en: Kaga (single ship)
+  zh: 加贺级
+  en: Kaga class
 class_of:
   - kaga
 

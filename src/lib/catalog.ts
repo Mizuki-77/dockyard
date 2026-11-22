@@ -100,16 +100,30 @@ const ROLE_BY_WEAPON: Record<string, WeaponRole> = {
   // ---- 德国 ----
   '38cm-sk-c34': 'main_battery',
   '15cm-sk-c28': 'secondary_battery',
+  '20-3cm-sk-c34': 'main_battery', // 希佩尔级重巡主炮（欧根亲王）
   '10_5cm-sk-c33': 'anti_aircraft', // 重型高炮，双联 LC/37 炮座
   '37mm-sk-c30': 'anti_aircraft',
   '20mm-c30': 'anti_aircraft',
   '20mm-c38': 'anti_aircraft', // 含四联 Vierling
   'g7a-t1': 'torpedo',
 
+  // ---- 美国 ----
+  '5in38-mk12': 'secondary_battery', // 约克城级等美军航母的 5 英寸高平两用炮
+
+  // ---- 日本 ----
+  '20cm-3ns': 'secondary_battery', // 赤城/加贺的 20 cm 炮廓炮
+
   // ---- 英国 ----
   '15in-42-mk1': 'main_battery', // 胡德
   '14in-45-mk7': 'main_battery', // 英王乔治五世级
+  '16in-45-mk1': 'main_battery', // 纳尔逊级
+  '8in-50-mk8': 'main_battery', // 郡级重巡
+  '6in-50-mk23': 'main_battery', // 城级轻巡
+  '6in-50-mk22': 'secondary_battery', // 纳尔逊级副炮
+  '47in-45-mk12': 'main_battery', // 部族级 / N 级驱逐舰主炮
+  '47in-40-mk8': 'secondary_battery', // 纳尔逊级的 4.7 英寸高炮（对舰为辅、对空为主）
   '525in-50-mk1': 'secondary_battery', // 高平两用副炮
+  '45in-45-mk1': 'secondary_battery', // 皇家方舟号双用途炮
   '4_5in-qf-mk3': 'anti_aircraft', // 光辉级舷台炮，主要对空
   '4in-bofors': 'anti_aircraft',
   '2pdr-mk8': 'anti_aircraft', // 八联 pom-pom

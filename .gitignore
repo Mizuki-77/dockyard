@@ -47,3 +47,10 @@ work/raw/**/*.txt
 
 # 唯一例外：sources.yaml 引用的德国海军战争日志原文
 !work/raw/ktb/bs-ktb.txt
+
+# ── 分片协作的原始抓取（2026-11-22 十舰入库那一轮起）────────
+# 派 subagent 时它们会把抓到的页面存 _raw/（或 _src/），
+# 这些和 work/raw/ 里的一样是原料，不进 git。
+# 保留的是同目录下的 *.yaml（分片本体）与 *.md（RESEARCH-NOTES.md，带英文原句）。
+work/staging/**/_raw/**
+work/staging/**/_src/**

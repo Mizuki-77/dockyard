@@ -1,0 +1,208 @@
+# ============================================================================
+# 来源分片 —— g3-county 组（郡级：Norfolk / Dorsetshire）
+# ----------------------------------------------------------------------------
+# 只登记本组新采的来源。**已存在的不重复登记**，直接引用：
+#   navweaps-8in-50-mk8         data/sources.yaml:1802（主炮，已登记）
+#   hmshood-tovey-dispatch      data/sources.yaml:1099（Tovey 战报）
+#   admiralty-bismarck-interrogation  data/sources.yaml:1264（英方一手审讯）
+#   kbismarck-last-battle       data/sources.yaml:192
+#   kbismarck-histoperi         data/sources.yaml:167
+#
+# 【本轮抓取方式的重要说明】
+#   web_fetch 工具对下列站点全部返回 SSRF 拦截（解析到 198.18.x.x 私有地址）：
+#     navypedia.org / naval-history.net / navweaps.com / en.wikipedia.org /
+#     uboat.net / kbismarck.com / ww2db.com / battleships-cruisers.co.uk /
+#     navyhistory.au / sahistory.org.za
+#   改用 PowerShell 的 Invoke-WebRequest 直连才取到正文，
+#   故 access 一律记 direct（正文确实抓到了），但这一轮的「直连」是本机 shell
+#   直连而非工具代理，取证环境与其它组不同，主会话合并时请注意这一点。
+# ============================================================================
+
+sources:
+  # ---------------------------------------------------------------- 主尺度与设计
+  - id: navypedia-norfolk
+    title: NORFOLK heavy cruisers (2, 1930) — Navypedia
+    url: https://www.navypedia.org/ships/uk/brit_cr_norfolk.htm
+    type: database
+    tier: D
+    role: [data]
+    operator: navypedia.org
+    lang: en
+    access: direct
+    fetched: 2026-11-22
+    license: all_rights_reserved
+    note: >
+      Norfolk 子级（Norfolk / Dorsetshire）的技术数据主表 + 逐次改装清单。
+      本轮主尺度、排水量、动力、装甲的主力来源。
+      **口径提示：**
+      ① 标准排水量写的是区间「9925 - 9975」，未逐舰标注，本站按区间下沿登记；
+      ② 长度写的区间「192.9 - 193.7 oa」上沿与本级两舰实际值对不上，
+         疑混入 Kent 子级的 193.7 m；
+      ③ 装甲行「box protection to magazines: 102 - 25, belt: 25, barbettes: 25,
+         turrets: 25, deck: 38 - 25」中的「belt: 25」是防破片板，
+         **不是主装甲带**，正文段另称弹药库为「111 (102mm armour on 9mm plating)」；
+      ④ 改装表用「+/-」记增减，逐月标注，是本轮重建两舰状态切片的主要依据。
+
+  - id: combinedfleet-cornwall-dorsetshire
+    title: A Detailed Analysis of the Loss of Cornwall and Dorsetshire（Robert Stuart, 2019）
+    url: https://www.combinedfleet.com/CornwallDorsetshireX-RStuart-Adobe.pdf
+    type: paper
+    tier: C
+    role: [data, narrative]
+    operator: combinedfleet.com（作者 Robert Stuart）
+    lang: en
+    access: direct
+    fetched: 2026-11-22
+    license: all_rights_reserved
+    note: >
+      45 页专题论文，专门分析 1942-04-05 两舰被击沉的全过程。
+      **本轮质量最高的单一来源**：有一手战报（Agar 报告）的逐句转述、
+      逐分钟时间线、以及一张六国条约巡洋舰横向对比表（表 1）。
+      本站用到的关键数：
+      ① 表 1：Dorsetshire 实际标准排水量「9,830?」（带问号）、
+         满载 13,290 t、装甲重量 1,060 t、设计航速 32.25 节；
+      ② 防护构造：「horizontal armour ... only over the magazines and shell rooms
+         (from 1 to 3 inches), the machinery spaces (1⅜ inches), and the steering
+         gear (1½ inches)」，弹药库侧 4⅜ in = 111 mm；
+      ③ 1937 年 Dorsetshire 改装「No additional armour was fitted」——
+         这是否定维基「本级加过 3.5 英寸带」一说的最直接证据；
+      ④ 沉没过程逐条命中位置（照译进 ships/dorsetshire.yaml 的 armament.gun_failures）。
+      注意：它把两舰都归入 County 级，并明确 Norfolk 子级只有 Norfolk 与 Dorsetshire 两艘。
+
+  - id: combinedfleet-appendex-dorsetshire
+    title: Appendix 1 – The Evolution of HMS Dorsetshire / Appendix 2 – Timeline（Robert Stuart）
+    url: https://www.combinedfleet.com/Appendex_1-4_Notes-RStuart-Adobe.pdf
+    type: paper
+    tier: C
+    role: [data, narrative]
+    operator: combinedfleet.com（作者 Robert Stuart）
+    lang: en
+    access: direct
+    fetched: 2026-11-22
+    license: all_rights_reserved
+    note: >
+      32 页附录：本舰逐阶段外观演变 + 1941-12 至 1942-04 的逐日时间线。
+      本站用到两处：
+      ① 1942-04-05 复原图的标注，是全站唯一写明本舰装「Type 290 Radar」的地方
+         （故该 fact 只给 C）；
+      ② 1942-03-26 至 04-16 的逐时时间线（27 March 入坞、31 March 1900 离科伦坡），
+         用于核对本舰沉没前的位置是被反复调令造成的。
+
+  # ---------------------------------------------------------------- 服役年表
+  - id: naval-history-norfolk
+    title: HMS Norfolk — County-type Heavy Cruiser（Service Histories of the Royal Navy in World War 2）
+    url: https://www.naval-history.net/xGM-Chrono-06CA-Norfolk.htm
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: Naval-History.net（Lt Cdr Geoffrey B. Mason 撰，Gordon Smith 编）
+    lang: en
+    access: direct
+    fetched: 2026-11-22
+    license: all_rights_reserved
+    note: >
+      逐月服役年表 + 船团护航表（Don Kindell 编）。
+      **URL 注意**：实际路径是 `xGM-Chrono-06CA-Norfolk.htm`（06CA，非 10CA），
+      SCHEMA 与主会话给的 `xGM-Chrono-10CA-HMS_Norfolk.htm` 是 404。
+      口径提示：
+      ① 完工日写「1st May 1930」，与 navypedia 的 4 月 30 日差一天；
+      ② 1940-03-16 空袭记命中「port side of quarterdeck」，
+         与英文维基的「starboard side below the waterline」冲突；
+      ③ 北角海战阵亡记 7 人、伤 5 人，与英文维基的 6 人冲突；
+      ④ 雷达条目比 navypedia 细（286M 的到装时间、1944-11 的 277/293）。
+
+  - id: naval-history-dorsetshire
+    title: HMS Dorsetshire — County-type Heavy Cruiser（Service Histories of the Royal Navy in World War 2）
+    url: https://www.naval-history.net/xGM-Chrono-06CA-Dorsetshire.htm
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: Naval-History.net（Lt Cdr Geoffrey B. Mason 撰，Gordon Smith 编）
+    lang: en
+    access: direct
+    fetched: 2026-11-22
+    license: all_rights_reserved
+    note: >
+      逐月服役年表 + 船团护航表。**URL 同为 06CA 而非 10CA**。
+      口径提示：
+      ① 完工日写「30th September 1929」，与它自己的下水年及另两源冲突，
+         判为笔误（应为 1930）；
+      ② 阵亡 234 人、两舰合计生还 1,122 人，是本轮唯一给出本舰单独阵亡数的来源；
+      ③ 1941-05-27 记「Rescued 110 survivors」，
+         与它自己 1942 年条的「1,122 from both cruisers」不是同一口径（前者单舰）；
+      ④ 对 Atlantis / Python 两件事分得很清，是本轮纠正「Dorsetshire 击沉 Atlantis」
+         这一常见错误的依据。
+
+  - id: uboat-dorsetshire
+    title: HMS Dorsetshire (40) — Allied Warships of WWII
+    url: https://www.uboat.net/allies/warships/ship/1185.html
+    type: database
+    tier: D
+    role: [data, narrative]
+    operator: uboat.net（Guðmundur Helgason）
+    lang: en
+    access: direct
+    fetched: 2026-11-22
+    license: all_rights_reserved
+    note: >
+      逐日事件年表（比 naval-history 更细，含每日位置与同行舰只）+ 舰长任期表。
+      口径提示：
+      ① 沉没细节引官方汇编《H.M. Ships Damaged or Sunk by Enemy Action》：
+         「sunk ... in about 8 minutes by 10 hits from 250 - 550 pound bombs」、
+         「The HA magazine exploded」——这是本站沉没叙述的一手口径来源；
+      ② 建造厂栏自相矛盾（Portsmouth Dockyard 与 Cammell Laird 并列），
+         本站取 Portsmouth（另三源一致），Cammell Laird 一说见争议清单；
+      ③ 舰长任期：Martin 1939-07-31 至 1941-08-08、Agar 1941-08-18 至沉没；
+      ④ 沉没位置 01°54'N 77°45'E。
+
+  - id: rohwer-1940-06
+    title: Seekrieg 1940, Juni（Rohwer/Hümmelchen 海战年表）
+    url: https://www.historisches-marinearchiv.de/projekte/rohwer_chronik/40-06.htm
+    type: database
+    tier: C
+    role: [data]
+    operator: Historisches Marinearchiv（Jürgen Rohwer / Gerhard Hümmelchen）
+    lang: de
+    access: direct
+    fetched: 2026-11-22
+    license: all_rights_reserved
+    note: >
+      Rohwer《Chronology of the War at Sea》德文原版逐日年表。
+      本站用它确认三件事：法舰 Richelieu 1940-06-18 离布雷斯特赴达喀尔、
+      06-23 抵港；本舰同日从弗里敦出航并在达喀尔外与 Hermes 会合；
+      06-25 Richelieu 出港赴卡萨布兰卡、本舰跟踪、随后被达尔朗召回。
+
+  - id: rohwer-1940-07
+    title: Seekrieg 1940, Juli（Rohwer/Hümmelchen 海战年表）
+    url: https://www.historisches-marinearchiv.de/projekte/rohwer_chronik/40-07.htm
+    type: database
+    tier: C
+    role: [data]
+    operator: Historisches Marinearchiv（Jürgen Rohwer / Gerhard Hümmelchen）
+    lang: de
+    access: direct
+    fetched: 2026-11-22
+    license: all_rights_reserved
+    note: >
+      确认 1940-07 本舰在达喀尔外海执行监视，且法国潜艇 Le Héros 与 Le Glorieux
+      奉命出击本舰、本舰以高速机动规避（原文「dieser kann den Booten mit
+      Manövern bei hoher Geschwindigkeit ausweichen」）。
+
+  # ---------------------------------------------------------------- 武器
+  - id: navweaps-4in-45-mk16
+    title: 'British 4"/45 (10.2 cm) QF Mark XVI and XVI*'
+    url: https://www.navweaps.com/Weapons/WNBR_4-45_mk16.php
+    type: website
+    tier: C
+    role: [data]
+    operator: NavWeaps（Tony DiGiulian）
+    lang: en
+    access: direct
+    fetched: 2026-11-22
+    license: all_rights_reserved
+    note: >
+      本级 1937 年换装的副炮/高炮。用到两处：
+      ① 「County Cruisers: ... Norfolk class (4)」——确认本级装 4 座双联 Mk XIX；
+      ② Mk XVII 是为守条约吨位做的减重版（仅造 12 门、后全部改回 Mk XVI），
+         Campbell 评价为「ridiculous punctiliousness」——
+         这是本级「为守吨位抠重量抠到什么程度」的直接证据。

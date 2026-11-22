@@ -12,6 +12,1219 @@ note: |
   width / height 记的是站内落盘文件的实际像素，不是源图尺寸。
 
 images:
+  - id: 'wpn-albacore-02'
+    file: '/img/weapons/albacore-02-15-fairey-albacore-15837361162.jpg'
+    subject: weapon:albacore
+    title:
+      zh: 'Albacore 的侧面特写，能看清折叠翼与挂架。'
+      en: '15 Fairey Albacore (15837361162).jpg'
+    part: aircraft_handling
+    view: detail
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'San Diego Air &amp; Space Museum Archives'
+    source_url: 'https://commons.wikimedia.org/wiki/File:15_Fairey_Albacore_(15837361162).jpg'
+    width: 1717
+    height: 875
+    note: 'Albacore 的侧面特写，能看清折叠翼与挂架。'
+  - id: 'wpn-albacore-01'
+    file: '/img/weapons/albacore-01-a-fairey-albacore-mk-i-of-no.-820-naval-air-sq.jpg'
+    subject: weapon:albacore
+    title:
+      zh: '820 中队的一架 Albacore Mk I，1942-11 北非登陆时从可畏号起飞。皇家方舟号 1941-10 曾转场搭载该型机 11 架（送马耳他，未作战）。'
+      en: 'A Fairey Albacore Mk I of No. 820 Naval Air Squadron operating from HMS FORMIDABLE during the North African landings, November 1942. TR296.jpg'
+    part: aircraft_handling
+    view: detail
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:A_Fairey_Albacore_Mk_I_of_No._820_Naval_Air_Squadron_operating_from_HMS_FORMIDABLE_during_the_North_African_landings,_November_1942._TR296.jpg'
+    width: 2453
+    height: 1772
+    note: '820 中队的一架 Albacore Mk I，1942-11 北非登陆时从可畏号起飞。皇家方舟号 1941-10 曾转场搭载该型机 11 架（送马耳他，未作战）。'
+    primary: true
+  - id: 'wpn-roc-01'
+    file: '/img/weapons/roc-01-15-blackburn-roc-bristol-perseus-engine-156509.jpg'
+    subject: weapon:roc
+    title:
+      zh: 'Roc 战斗机（布里斯托尔 Perseus 发动机）。这型机性能很差，基本没打过胜仗，但它确实在皇家方舟号的编制里。'
+      en: '15 Blackburn Roc Bristol Perseus Engine (15650907050).jpg'
+    part: aircraft_handling
+    view: detail
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'San Diego Air &amp; Space Museum Archives'
+    source_url: 'https://commons.wikimedia.org/wiki/File:15_Blackburn_Roc_Bristol_Perseus_Engine_(15650907050).jpg'
+    width: 1506
+    height: 875
+    note: 'Roc 战斗机（布里斯托尔 Perseus 发动机）。这型机性能很差，基本没打过胜仗，但它确实在皇家方舟号的编制里。'
+    primary: true
+  - id: 'wpn-skua-02'
+    file: '/img/weapons/skua-02-the-royal-navy-during-the-second-world-war-a82.jpg'
+    subject: weapon:skua
+    title:
+      zh: '四架岸基 Skua 编队。用于看清机型轮廓与涂装。'
+      en: 'The Royal Navy during the Second World War A8218.jpg'
+    part: aircraft_handling
+    view: deck
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Coote, R G G (Lt), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A8218.jpg'
+    width: 2297
+    height: 1772
+    note: '四架岸基 Skua 编队。用于看清机型轮廓与涂装。'
+  - id: 'wpn-skua-01'
+    file: '/img/weapons/skua-01-blackburn-skua-landing-on-hms-ark-royal.jpg'
+    subject: weapon:skua
+    title:
+      zh: '一架 Skua 正在皇家方舟号上降落。**这张图同时是「武器」与「本舰」的素材**，因为它拍的就是皇家方舟号的飞行甲板。'
+      en: 'Blackburn Skua landing on HMS Ark Royal.jpg'
+    part: aircraft_handling
+    view: deck
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Priest, L C (Lt), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Blackburn_Skua_landing_on_HMS_Ark_Royal.jpg'
+    width: 2480
+    height: 1628
+    note: '一架 Skua 正在皇家方舟号上降落。**这张图同时是「武器」与「本舰」的素材**，因为它拍的就是皇家方舟号的飞行甲板。'
+    primary: true
+  - id: 'wpn-3pdr-hotchkiss-01'
+    file: '/img/weapons/3pdr-hotchkiss-01-47-mm-hotchkiss-lennusadam-1.jpg'
+    subject: weapon:3pdr-hotchkiss
+    title:
+      zh: '塔林水上飞机港博物馆藏 47 mm 霍奇基斯炮。皇家方舟号上的 3 磅礼炮属同一型火炮的礼炮版本（礼炮型与作战型结构相同，只是用途不同）。'
+      en: '47 mm Hotchkiss Lennusadam 1.JPG'
+    part: turret
+    view: detail
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'MKFI'
+    source_url: 'https://commons.wikimedia.org/wiki/File:47_mm_Hotchkiss_Lennusadam_1.JPG'
+    width: 5184
+    height: 3456
+    note: '塔林水上飞机港博物馆藏 47 mm 霍奇基斯炮。皇家方舟号上的 3 磅礼炮属同一型火炮的礼炮版本（礼炮型与作战型结构相同，只是用途不同）。'
+    primary: true
+  - id: 'wpn-vickers-50-01'
+    file: '/img/weapons/vickers-50-01-hr.-ms.-flores.-de-snelvuurkanonnen-pom-poms-w.jpg'
+    subject: weapon:vickers-50
+    title:
+      zh: '荷属东印度炮舰 Flores 号上的速射炮组昼夜值守。Vickers .50 四联机枪在二战初期是英联邦军舰的标准近程防空武器，皇家方舟号装了 32 挺。'
+      en: 'Hr. Ms. Flores. De snelvuurkanonnen pom-poms worden dag en nacht bemand, Bestanddeelnr 934-9988.jpg'
+    part: turret
+    view: detail
+    license: cc0
+    license_tier: A
+    license_raw: 'CC0'
+    author: 'Anefo'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Hr._Ms._Flores._De_snelvuurkanonnen_pom-poms_worden_dag_en_nacht_bemand,_Bestanddeelnr_934-9988.jpg'
+    width: 2875
+    height: 1800
+    note: '荷属东印度炮舰 Flores 号上的速射炮组昼夜值守。Vickers .50 四联机枪在二战初期是英联邦军舰的标准近程防空武器，皇家方舟号装了 32 挺。'
+    primary: true
+  - id: 'wpn-4in-45-mk16-01'
+    file: '/img/weapons/4in-45-mk16-01-gunners-with-4-inch-rounds-hms-vivien-1940-iwm.jpg'
+    subject: weapon:4in-45-mk16
+    title:
+      zh: 'V 级驱逐舰上的 4 英寸炮组展示炮弹。Mk XVI 是双联高平两用炮座，城级轻巡的副炮就是它。'
+      en: 'Gunners with 4 inch rounds HMS Vivien 1940 IWM A 1770.jpg'
+    part: turret
+    view: detail
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Sidney James Beadell'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Gunners_with_4_inch_rounds_HMS_Vivien_1940_IWM_A_1770.jpg'
+    width: 1300
+    height: 979
+    note: 'V 级驱逐舰上的 4 英寸炮组展示炮弹。Mk XVI 是双联高平两用炮座，城级轻巡的副炮就是它。'
+    primary: true
+  - id: 'wpn-6in-50-mk23-02'
+    file: '/img/weapons/6in-50-mk23-02-bl-6-inch-mk-xxiii-gun-breech-open-hms-belfast.jpg'
+    subject: weapon:6in-50-mk23
+    title:
+      zh: '同型炮的炮闩开启状态。城级（含谢菲尔德号）装的就是这型炮。'
+      en: 'BL 6 inch Mk XXIII gun breech open HMS Belfast.jpg'
+    part: turret
+    view: detail
+    license: cc_by
+    license_tier: B
+    license_raw: 'CC BY 2.0'
+    author: 'Flickr user "Andrew Mason" : https://www.flickr.com/photos/a_mason'
+    source_url: 'https://commons.wikimedia.org/wiki/File:BL_6_inch_Mk_XXIII_gun_breech_open_HMS_Belfast.jpg'
+    width: 3648
+    height: 2736
+    note: '同型炮的炮闩开启状态。城级（含谢菲尔德号）装的就是这型炮。'
+  - id: 'wpn-6in-50-mk23-01'
+    file: '/img/weapons/6in-50-mk23-01-hms-belfast-gun-turret-1.jpg'
+    subject: weapon:6in-50-mk23
+    title:
+      zh: '贝尔法斯特号的 6 英寸 Mk XXIII 炮塔内部。该舰作为博物馆舰保存至今，这是本型炮现存最完整的实物参照。'
+      en: 'HMS Belfast - Gun turret 1.jpg'
+    part: turret
+    view: detail
+    license: cc_by_sa
+    license_tier: B
+    license_raw: 'CC BY-SA 3.0'
+    author: 'Rémi Kaupp'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Belfast_-_Gun_turret_1.jpg'
+    width: 3888
+    height: 2592
+    note: '贝尔法斯特号的 6 英寸 Mk XXIII 炮塔内部。该舰作为博物馆舰保存至今，这是本型炮现存最完整的实物参照。'
+    primary: true
+  - id: 'wpn-8in-50-mk8-02'
+    file: '/img/weapons/8in-50-mk8-02-hmas-australia-8-inch.jpg'
+    subject: weapon:8in-50-mk8
+    title:
+      zh: 'HMAS 澳大利亚号的 8 英寸炮塔特写。与上一条是同级舰的另一个角度。'
+      en: 'HMAS Australia 8 inch.JPG'
+    part: turret
+    view: detail
+    license: cc_by_sa
+    license_tier: B
+    license_raw: 'CC BY-SA 3.0'
+    author: 'Original uploader was Nick Dowling at en.wikipedia'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMAS_Australia_8_inch.JPG'
+    width: 709
+    height: 532
+    note: 'HMAS 澳大利亚号的 8 英寸炮塔特写。与上一条是同级舰的另一个角度。'
+  - id: 'wpn-8in-50-mk8-01'
+    file: '/img/weapons/8in-50-mk8-01-hmas-canberra-8-inch-gun-turrets-slv-h98.105-3.jpg'
+    subject: weapon:8in-50-mk8
+    title:
+      zh: 'HMAS 堪培拉号的双联 8 英寸炮塔。郡级装的就是这型炮（Mark VIII），澳舰与英舰同型。这张能看清炮塔外形与两门炮的间距，是模型制作者要的角度。'
+      en: 'HMAS Canberra 8-inch gun turrets SLV H98.105 3229.jpeg'
+    part: turret
+    view: detail
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'not stated'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMAS_Canberra_8-inch_gun_turrets_SLV_H98.105_3229.jpeg'
+    width: 710
+    height: 1000
+    note: 'HMAS 堪培拉号的双联 8 英寸炮塔。郡级装的就是这型炮（Mark VIII），澳舰与英舰同型。这张能看清炮塔外形与两门炮的间距，是模型制作者要的角度。'
+    primary: true
+  - id: 'piorun-05-w-adys-aw-sikorski-decorates-crew-members-of'
+    file: '/img/ships/piorun-05-w-adys-aw-sikorski-decorates-crew-members-of-o.jpg'
+    subject: ship:piorun
+    title:
+      zh: '西科尔斯基将军为本舰舰员授勋。'
+      en: 'Władysław Sikorski decorates crew members of ORP Piorun.jpg'
+    part: hull_side
+    view: other
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:W%C5%82adys%C5%82aw_Sikorski_decorates_crew_members_of_ORP_Piorun.jpg'
+    width: 925
+    height: 586
+    note: '西科尔斯基将军为本舰舰员授勋。'
+  - id: 'piorun-04-the-polish-navy-during-the-second-world-war'
+    file: '/img/ships/piorun-04-the-polish-navy-during-the-second-world-war-a2.jpg'
+    subject: ship:piorun
+    title:
+      zh: '鱼雷出管瞬间。五联装发射管是 N 级的标准配置。'
+      en: 'The Polish Navy during the Second World War A2520.jpg'
+    part: torpedo
+    view: detail
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Coote, R G G (Lt), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:The_Polish_Navy_during_the_Second_World_War_A2520.jpg'
+    width: 800
+    height: 586
+    note: '鱼雷出管瞬间。五联装发射管是 N 级的标准配置。'
+  - id: 'piorun-03-orp-piurun-4-7-inch-guns-firing-1940-iwm-a-2'
+    file: '/img/ships/piorun-03-orp-piurun-4.7-inch-guns-firing-1940-iwm-a-254.jpg'
+    subject: ship:piorun
+    title:
+      zh: '4.7 英寸 QF Mk IX 主炮开火。'
+      en: 'ORP Piurun 4.7 inch guns firing 1940 IWM A 2542.jpg'
+    part: turret
+    view: detail
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer Coote, R G G (Lt) (Photographer)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:ORP_Piurun_4.7_inch_guns_firing_1940_IWM_A_2542.jpg'
+    width: 800
+    height: 600
+    note: '4.7 英寸 QF Mk IX 主炮开火。'
+  - id: 'piorun-02-the-polish-navy-during-the-second-world-war'
+    file: '/img/ships/piorun-02-the-polish-navy-during-the-second-world-war-a2.jpg'
+    subject: ship:piorun
+    title:
+      zh: '波兰水兵在甲板上。原为 HMS Nerissa，刚转交波兰海军。'
+      en: 'The Polish Navy during the Second World War A2491.jpg'
+    part: hull_side
+    view: deck
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Reginald George Guy Coote'
+    source_url: 'https://commons.wikimedia.org/wiki/File:The_Polish_Navy_during_the_Second_World_War_A2491.jpg'
+    width: 800
+    height: 602
+    note: '波兰水兵在甲板上。原为 HMS Nerissa，刚转交波兰海军。'
+  - id: 'piorun-01-orp-piorun2'
+    file: '/img/ships/piorun-01-orp-piorun2.jpg'
+    subject: ship:piorun
+    title:
+      zh: '1941 年与俾斯麦交火后返回普利茅斯。**这场战斗就是它存在的理由。**'
+      en: 'ORP Piorun2.jpg'
+    part: hull_side
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Polish government in Exile Ministry of Information War Photo Service'
+    source_url: 'https://commons.wikimedia.org/wiki/File:ORP_Piorun2.jpg'
+    width: 815
+    height: 572
+    note: '1941 年与俾斯麦交火后返回普利茅斯。**这场战斗就是它存在的理由。**'
+    primary: true
+  - id: 'sikh-04-hms-sikh-pom-pom-crew-rangefinding-during-ex'
+    file: '/img/ships/sikh-04-hms-sikh-pom-pom-crew-rangefinding-during-exer.jpg'
+    subject: ship:sikh
+    title:
+      zh: 'pom-pom 炮组测距射击训练。'
+      en: 'HMS Sikh Pom-pom crew rangefinding during exercise 1942 IWM A 8650.jpg'
+    part: turret
+    view: detail
+    date: 1942-04-15
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Lt J.L. Heddon'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Sikh_Pom-pom_crew_rangefinding_during_exercise_1942_IWM_A_8650.jpg'
+    width: 800
+    height: 609
+    note: 'pom-pom 炮组测距射击训练。'
+  - id: 'sikh-03-the-royal-navy-during-the-second-world-war-a'
+    file: '/img/ships/sikh-03-the-royal-navy-during-the-second-world-war-a86.jpg'
+    subject: ship:sikh
+    title:
+      zh: '首次齐射夹叉目标。'
+      en: 'The Royal Navy during the Second World War A8651.jpg'
+    part: hull_side
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Heddon, J L (Lt), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A8651.jpg'
+    width: 800
+    height: 604
+    note: '首次齐射夹叉目标。'
+  - id: 'sikh-02-the-royal-navy-during-the-second-world-war-a'
+    file: '/img/ships/sikh-02-the-royal-navy-during-the-second-world-war-a72.jpg'
+    subject: ship:sikh
+    title:
+      zh: '率领船队进入瓦莱塔大港。马耳他护航的典型场景。'
+      en: 'The Royal Navy during the Second World War A7269.jpg'
+    part: hull_side
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer, Russell, J E (Lt)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A7269.jpg'
+    width: 800
+    height: 605
+    note: '率领船队进入瓦莱塔大港。马耳他护航的典型场景。'
+  - id: 'sikh-01-hms-sikh-f82'
+    file: '/img/ships/sikh-01-hms-sikh-f82.jpg'
+    subject: ship:sikh
+    title:
+      zh: '完工时航行照。'
+      en: 'HMS Sikh (F82).jpg'
+    part: hull_side
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Sikh_(F82).jpg'
+    width: 789
+    height: 551
+    note: '完工时航行照。'
+    primary: true
+  - id: 'zulu-04-admiral-sir-henry-harwood-kcb-obe-commander'
+    file: '/img/ships/zulu-04-admiral-sir-henry-harwood-kcb-obe-commander-in.png'
+    subject: ship:zulu
+    title:
+      zh: '1942-09-19 地中海总司令检阅本舰幸存者。它 5 天前刚沉没。'
+      en: 'Admiral Sir Henry Harwood, KCB, OBE, Commander-in-Chief, Mediterranean, inspecting survivors of HMS ZULU, lost off Tobruk.png'
+    part: hull_side
+    view: other
+    date: 1942-09-19
+    license: cc0
+    license_tier: A
+    license_raw: 'CC0'
+    author: 'Zimmerman, E A (Lt)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Admiral_Sir_Henry_Harwood,_KCB,_OBE,_Commander-in-Chief,_Mediterranean,_inspecting_survivors_of_HMS_ZULU,_lost_off_Tobruk.png'
+    width: 2886
+    height: 2174
+    note: '1942-09-19 地中海总司令检阅本舰幸存者。它 5 天前刚沉没。'
+  - id: 'zulu-03-hms-zulu-gunners-at-practice-wwii-iwm-a-914'
+    file: '/img/ships/zulu-03-hms-zulu-gunners-at-practice-wwii-iwm-a-914.jpg'
+    subject: ship:zulu
+    title:
+      zh: '4 英寸高角炮装填训练。'
+      en: 'HMS Zulu gunners at practice WWII IWM A 914.jpg'
+    part: turret
+    view: detail
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer : Beadell, S J (Lt)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Zulu_gunners_at_practice_WWII_IWM_A_914.jpg'
+    width: 800
+    height: 590
+    note: '4 英寸高角炮装填训练。'
+  - id: 'zulu-02-2-pounder-multiple-pom-pom-and-crew-on-hms-z'
+    file: '/img/ships/zulu-02-2-pounder-multiple-pom-pom-and-crew-on-hms-zul.jpg'
+    subject: ship:zulu
+    title:
+      zh: '四联装 2 磅 pom-pom 及炮手。'
+      en: '2-pounder multiple pom-pom and crew on HMS Zulu WWII IWM A 911.jpg'
+    part: turret
+    view: detail
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Beadell, S J (Lt), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:2-pounder_multiple_pom-pom_and_crew_on_HMS_Zulu_WWII_IWM_A_911.jpg'
+    width: 800
+    height: 592
+    note: '四联装 2 磅 pom-pom 及炮手。'
+  - id: 'zulu-01-hms-zulu-fl21966'
+    file: '/img/ships/zulu-01-hms-zulu-fl21966.jpg'
+    subject: ship:zulu
+    title:
+      zh: '1941-42 年航行中，主机倒转。本舰唯一的完整外观照。'
+      en: 'HMS Zulu FL21966.jpg'
+    part: hull_side
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Zulu_FL21966.jpg'
+    width: 791
+    height: 579
+    note: '1941-42 年航行中，主机倒转。本舰唯一的完整外观照。'
+    primary: true
+  - id: 'maori-02-hms-maori-sinking-malta-1942-iwm-a-9512'
+    file: '/img/ships/maori-02-hms-maori-sinking-malta-1942-iwm-a-9512.jpg'
+    subject: ship:maori
+    title:
+      zh: '1942-02-12 在瓦莱塔港被炸沉，半没状态。本舰的另一张存世照片就是它沉没时。'
+      en: 'HMS Maori sinking Malta 1942 IWM A 9512.jpg'
+    part: hull_side
+    view: broadside
+    date: 1942-02-12
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Lt. J.E. Russell'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Maori_sinking_Malta_1942_IWM_A_9512.jpg'
+    width: 800
+    height: 607
+    note: '1942-02-12 在瓦莱塔港被炸沉，半没状态。本舰的另一张存世照片就是它沉没时。'
+  - id: 'maori-01-hms-maori-f24'
+    file: '/img/ships/maori-01-hms-maori-f24.jpg'
+    subject: ship:maori
+    title:
+      zh: '建成后航行照。这是本舰唯一的完好外观照。'
+      en: 'HMS Maori (F24).jpg'
+    part: hull_side
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Maori_(F24).jpg'
+    width: 792
+    height: 422
+    note: '建成后航行照。这是本舰唯一的完好外观照。'
+    primary: true
+  - id: 'cossack-03-the-royal-navy-during-the-second-world-war-a'
+    file: '/img/ships/cossack-03-the-royal-navy-during-the-second-world-war-a15.jpg'
+    subject: ship:cossack
+    title:
+      zh: '鱼雷训练中，小艇正在打捞一枚操雷。'
+      en: 'The Royal Navy during the Second World War A1588.jpg'
+    part: hull_side
+    view: deck
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Beadell, S J (Lt), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A1588.jpg'
+    width: 800
+    height: 602
+    note: '鱼雷训练中，小艇正在打捞一枚操雷。'
+  - id: 'cossack-02-hms-cossack-returns-to-leith-17-february-194'
+    file: '/img/ships/cossack-02-hms-cossack-returns-to-leith-17-february-1940.jpg'
+    subject: ship:cossack
+    title:
+      zh: '1940-02-17 从阿尔特马克号营救战俘后返回利斯港。**它一生最有名的一天**。'
+      en: 'HMS-Cossack-returns-to-Leith-17-February-1940.jpg'
+    part: hull_side
+    view: other
+    date: 1940-02-17
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS-Cossack-returns-to-Leith-17-February-1940.jpg'
+    width: 1709
+    height: 1271
+    note: '1940-02-17 从阿尔特马克号营救战俘后返回利斯港。**它一生最有名的一天**。'
+  - id: 'cossack-01-hms-cossack'
+    file: '/img/ships/cossack-01-hms-cossack.jpg'
+    subject: ship:cossack
+    title:
+      zh: '完工时航行照。部族级驱逐舰的标准外观。'
+      en: 'HMS Cossack.jpg'
+    part: hull_side
+    view: broadside
+    date: 1938
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Cossack.jpg'
+    width: 785
+    height: 560
+    note: '完工时航行照。部族级驱逐舰的标准外观。'
+    primary: true
+  - id: 'sheffield-07-british-warships-of-the-second-world-war-a56'
+    file: '/img/ships/sheffield-07-british-warships-of-the-second-world-war-a5645.jpg'
+    subject: ship:sheffield
+    title:
+      zh: '地中海「支石墓」行动期间航行。'
+      en: 'British Warships of the Second World War A5645.jpg'
+    part: hull_side
+    view: broadside
+    date: 1942
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer, Beadell, S J (Lt)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:British_Warships_of_the_Second_World_War_A5645.jpg'
+    width: 1300
+    height: 1015
+    note: '地中海「支石墓」行动期间航行。'
+  - id: 'sheffield-06-a-warship-which-took-part-in-the-action-off'
+    file: '/img/ships/sheffield-06-a-warship-which-took-part-in-the-action-off-the-no.jpg'
+    subject: ship:sheffield
+    title:
+      zh: '1943 年 1 月在格里诺克。北角海战（击沉沙恩霍斯特）的参战舰。'
+      en: 'A Warship Which Took Part in the Action Off the North Cape on 31 December 1942. HMS Sheffield, at Greenock, 10 January 1943. A13973.jpg'
+    part: hull_side
+    view: broadside
+    date: 1943-01-10
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Beadell, S J (Lt)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:A_Warship_Which_Took_Part_in_the_Action_Off_the_North_Cape_on_31_December_1942._HMS_Sheffield,_at_Greenock,_10_January_1943._A13973.jpg'
+    width: 2329
+    height: 1772
+    note: '1943 年 1 月在格里诺克。北角海战（击沉沙恩霍斯特）的参战舰。'
+  - id: 'sheffield-05-hms-sheffield-6-inch-turret-1941-iwm-a-4401'
+    file: '/img/ships/sheffield-05-hms-sheffield-6-inch-turret-1941-iwm-a-4401.jpg'
+    subject: ship:sheffield
+    title:
+      zh: '两座前主炮塔。1941 年击沉德国气象船后拍摄。'
+      en: 'HMS Sheffield 6 inch turret 1941 IWM A 4401.jpg'
+    part: turret
+    view: detail
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Beadell, S J (Lt), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Sheffield_6_inch_turret_1941_IWM_A_4401.jpg'
+    width: 1300
+    height: 990
+    note: '两座前主炮塔。1941 年击沉德国气象船后拍摄。'
+  - id: 'sheffield-04-hms-sheffield'
+    file: '/img/ships/sheffield-04-hms-sheffield.jpg'
+    subject: ship:sheffield
+    title:
+      zh: '1944 年俯拍。'
+      en: 'HMS Sheffield.jpg'
+    part: hull_side
+    view: overhead
+    date: 1944
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Sheffield.jpg'
+    width: 1300
+    height: 976
+    note: '1944 年俯拍。'
+  - id: 'sheffield-03-hms-sheffield-c24-at-sea-c1944'
+    file: '/img/ships/sheffield-03-hms-sheffield-c24-at-sea-c1944.jpg'
+    subject: ship:sheffield
+    title:
+      zh: '1944 年在海上。波士顿海军船厂修理之后。'
+      en: 'HMS Sheffield (C24) at sea c1944.jpg'
+    part: hull_side
+    view: broadside
+    date: 1944
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Department of the Navy. First Naval District. Office of the Assistant Chief of Staff for Administration. Office of the Historical Officer.'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Sheffield_(C24)_at_sea_c1944.jpg'
+    width: 3443
+    height: 2577
+    note: '1944 年在海上。波士顿海军船厂修理之后。'
+  - id: 'sheffield-02-hms-sheffield-c24-underway-in-scapa-flow-194'
+    file: '/img/ships/sheffield-02-hms-sheffield-c24-underway-in-scapa-flow-1941.jpg'
+    subject: ship:sheffield
+    title:
+      zh: '同一天的侧视。'
+      en: 'HMS Sheffield (C24) underway in Scapa Flow 1941.jpg'
+    part: hull_side
+    view: broadside
+    date: 1941-10-28
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Lt. R.G.G. Coote, Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Sheffield_(C24)_underway_in_Scapa_Flow_1941.jpg'
+    width: 770
+    height: 568
+    note: '同一天的侧视。'
+  - id: 'sheffield-01-hms-sheffield-underway-near-scapa-flow-28-oc'
+    file: '/img/ships/sheffield-01-hms-sheffield-underway-near-scapa-flow-28-october-.jpg'
+    subject: ship:sheffield
+    title:
+      zh: '1941 年 10 月斯卡帕湾外俯拍。与本舰参与围歼俾斯麦的时间接近。'
+      en: 'HMS SHEFFIELD underway near Scapa Flow, 28 October 1941. A6163.jpg'
+    part: hull_side
+    view: overhead
+    date: 1941-10-28
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Coote, R G G (Lt), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_SHEFFIELD_underway_near_Scapa_Flow,_28_October_1941._A6163.jpg'
+    width: 2392
+    height: 1772
+    note: '1941 年 10 月斯卡帕湾外俯拍。与本舰参与围歼俾斯麦的时间接近。'
+    primary: true
+  - id: 'dorsetshire-06-dorsetshire-cornwall'
+    file: '/img/ships/dorsetshire-06-dorsetshire-cornwall.jpg'
+    subject: ship:dorsetshire
+    title:
+      zh: '1942-04-05 与康沃尔号一同遭日本航母机群攻击。它沉没当天的影像。'
+      en: 'Dorsetshire&Cornwall.jpg'
+    part: hull_side
+    view: broadside
+    date: 1942-04-05
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Photo taken from a Japanese aircraft'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Dorsetshire%26Cornwall.jpg'
+    width: 720
+    height: 501
+    note: '1942-04-05 与康沃尔号一同遭日本航母机群攻击。它沉没当天的影像。'
+  - id: 'dorsetshire-05-hms-dorsetshire-bismarck-survivors'
+    file: '/img/ships/dorsetshire-05-hms-dorsetshire-bismarck-survivors.jpg'
+    subject: ship:dorsetshire
+    title:
+      zh: '1941-05-27 从海中捞起俾斯麦号幸存者。这是它最有历史重量的一张。'
+      en: 'HMS Dorsetshire Bismarck survivors.jpg'
+    part: hull_side
+    view: other
+    date: 1941-05-27
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Dorsetshire_Bismarck_survivors.jpg'
+    width: 2604
+    height: 3113
+    note: '1941-05-27 从海中捞起俾斯麦号幸存者。这是它最有历史重量的一张。'
+  - id: 'dorsetshire-04-le-croiseur-dorsetshire-cn---btv1b53275685g'
+    file: '/img/ships/dorsetshire-04-le-croiseur-dorsetshire-cn-btv1b53275685g.jpg'
+    subject: ship:dorsetshire
+    title:
+      zh: '1933 年，法国国家图书馆藏新闻社照片。'
+      en: 'Le croiseur Dorsetshire (CN) - btv1b53275685g.jpg'
+    part: hull_side
+    view: broadside
+    date: 1933
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Central News (Agence photographique). Agence photographique pour le document reproduit (commanditaire) Agence Rol. Agence photographique (commanditaire)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Le_croiseur_Dorsetshire_(CN)_-_btv1b53275685g.jpg'
+    width: 8944
+    height: 6567
+    note: '1933 年，法国国家图书馆藏新闻社照片。'
+  - id: 'dorsetshire-03-le-croiseur-dorsetshire-cnews---btv1b5324443'
+    file: '/img/ships/dorsetshire-03-le-croiseur-dorsetshire-cnews-btv1b53244433g.jpg'
+    subject: ship:dorsetshire
+    title:
+      zh: '1931 年，法国新闻社照片。服役初期的原貌。'
+      en: 'Le (croiseur) Dorsetshire (CNews) - btv1b53244433g.jpg'
+    part: hull_side
+    view: broadside
+    date: 1931
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Central News (Agence photographique). Agence photographique pour le document reproduit (commanditaire) Agence Rol. Agence photographique (commanditaire)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Le_(croiseur)_Dorsetshire_(CNews)_-_btv1b53244433g.jpg'
+    width: 8502
+    height: 6134
+    note: '1931 年，法国新闻社照片。服役初期的原貌。'
+  - id: 'dorsetshire-02-hms-dorsetshire-40'
+    file: '/img/ships/dorsetshire-02-hms-dorsetshire-40.jpg'
+    subject: ship:dorsetshire
+    title:
+      zh: '1938 年在悉尼。建成状态，与战时相比少了雷达与大量高炮。'
+      en: 'HMS Dorsetshire (40).jpg'
+    part: hull_side
+    view: broadside
+    date: 1938
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Photographer not identified'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Dorsetshire_(40).jpg'
+    width: 800
+    height: 524
+    note: '1938 年在悉尼。建成状态，与战时相比少了雷达与大量高炮。'
+  - id: 'dorsetshire-01-hms-dorsetshire'
+    file: '/img/ships/dorsetshire-01-hms-dorsetshire.jpg'
+    subject: ship:dorsetshire
+    title:
+      zh: '1941 年 8 月在斯卡帕湾锚泊。这是它战时的标准外观。'
+      en: 'HMS Dorsetshire.jpg'
+    part: hull_side
+    view: broadside
+    date: 1941-08
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Dorsetshire.jpg'
+    width: 1919
+    height: 998
+    note: '1941 年 8 月在斯卡帕湾锚泊。这是它战时的标准外观。'
+    primary: true
+  - id: 'norfolk-08-admiral-mcgrigor-on-hms-norfolk-1945-iwm-a-2'
+    file: '/img/ships/norfolk-08-admiral-mcgrigor-on-hms-norfolk-1945-iwm-a-294.jpg'
+    subject: ship:norfolk
+    title:
+      zh: '8 英寸主炮炮塔特写，炮管下站人为比例参照。模型制作者会要这张。'
+      en: 'Admiral McGrigor on HMS Norfolk 1945 IWM A 29405.jpg'
+    part: turret
+    view: detail
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Zimmerman, E A (Lt), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Admiral_McGrigor_on_HMS_Norfolk_1945_IWM_A_29405.jpg'
+    width: 463
+    height: 779
+    note: '8 英寸主炮炮塔特写，炮管下站人为比例参照。模型制作者会要这张。'
+  - id: 'norfolk-07-hms-norfolk-at-vancouver-1934'
+    file: '/img/ships/norfolk-07-hms-norfolk-at-vancouver-1934.jpg'
+    subject: ship:norfolk
+    title:
+      zh: '1934 年在温哥华。'
+      en: 'HMS Norfolk at Vancouver 1934.jpg'
+    part: hull_side
+    view: broadside
+    date: 1934-08-27
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Frost, Walter Edwin (Photographer)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Norfolk_at_Vancouver_1934.jpg'
+    width: 3000
+    height: 1623
+    note: '1934 年在温哥华。'
+  - id: 'norfolk-06-hms-norfolk-convoy'
+    file: '/img/ships/norfolk-06-hms-norfolk-convoy.jpg'
+    subject: ship:norfolk
+    title:
+      zh: '北极护航途中。与上一条同一批，构图更宽。'
+      en: 'HMS Norfolk convoy.jpg'
+    part: hull_side
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'John Alfred Hampton'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Norfolk_convoy.jpg'
+    width: 736
+    height: 467
+    note: '北极护航途中。与上一条同一批，构图更宽。'
+  - id: 'norfolk-05-the-royal-navy-during-the-second-world-war-a'
+    file: '/img/ships/norfolk-05-the-royal-navy-during-the-second-world-war-a15.jpg'
+    subject: ship:norfolk
+    title:
+      zh: '在俄国港口，与驱逐舰、商船同框——北极护航的典型场景。'
+      en: 'The Royal Navy during the Second World War A15366.jpg'
+    part: hull_side
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'John Alfred Hampton'
+    source_url: 'https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A15366.jpg'
+    width: 800
+    height: 607
+    note: '在俄国港口，与驱逐舰、商船同框——北极护航的典型场景。'
+  - id: 'norfolk-04-hms-norfolk-fl1864'
+    file: '/img/ships/norfolk-04-hms-norfolk-fl1864.jpg'
+    subject: ship:norfolk
+    title:
+      zh: '航行中。'
+      en: 'HMS Norfolk FL1864.jpg'
+    part: hull_side
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Norfolk_FL1864.jpg'
+    width: 800
+    height: 485
+    note: '航行中。'
+  - id: 'norfolk-03-the-royal-navy-during-the-second-world-war-a'
+    file: '/img/ships/norfolk-03-the-royal-navy-during-the-second-world-war-a28783.jpg'
+    subject: ship:norfolk
+    title:
+      zh: '二战期间的诺福克号，停泊状态。与 1933 年相比已加装雷达与高炮。'
+      en: 'The Royal Navy during the Second World War A28783.jpg'
+    part: hull_side
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A28783.jpg'
+    width: 2480
+    height: 1486
+    note: '二战期间的诺福克号，停泊状态。与 1933 年相比已加装雷达与高炮。'
+  - id: 'norfolk-02-hms-norfolk-78-in-hampton-roads-on-29-septem'
+    file: '/img/ships/norfolk-02-hms-norfolk-78-in-hampton-roads-on-29-september-19.jpg'
+    subject: ship:norfolk
+    title:
+      zh: '1933 年在汉普顿锚地。与上一条同属间战期巡航。'
+      en: 'HMS Norfolk (78) in Hampton Roads on 29 September 1933.jpg'
+    part: hull_side
+    view: broadside
+    date: 1933-09-29
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Norfolk_(78)_in_Hampton_Roads_on_29_September_1933.jpg'
+    width: 5626
+    height: 4217
+    note: '1933 年在汉普顿锚地。与上一条同属间战期巡航。'
+  - id: 'norfolk-01-hms-norfolk-78-underway-on-15-march-1933'
+    file: '/img/ships/norfolk-01-hms-norfolk-78-underway-on-15-march-1933.jpg'
+    subject: ship:norfolk
+    title:
+      zh: '1933 年在新奥尔良外海航行中。建成状态。'
+      en: 'HMS Norfolk (78) underway on 15 March 1933.jpg'
+    part: hull_side
+    view: broadside
+    date: 1933-03-15
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Norfolk_(78)_underway_on_15_March_1933.jpg'
+    width: 5622
+    height: 4161
+    note: '1933 年在新奥尔良外海航行中。建成状态。'
+    primary: true
+  - id: 'victorious-10-hms-victorious-r38-underway-in-the-pacific-o'
+    file: '/img/ships/victorious-10-hms-victorious-r38-underway-in-the-pacific-ocean-c.jpg'
+    subject: ship:victorious
+    title:
+      zh: '1964 年在太平洋。重建后的最终形态。'
+      en: 'HMS Victorious (R38) underway in the Pacific Ocean c1964.jpg'
+    part: hull_side
+    view: broadside
+    date: 1964
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Victorious_(R38)_underway_in_the_Pacific_Ocean_c1964.jpg'
+    width: 1417
+    height: 558
+    note: '1964 年在太平洋。重建后的最终形态。'
+  - id: 'victorious-09-hms-victorious-bow-shot-1959'
+    file: '/img/ships/victorious-09-hms-victorious-bow-shot-1959.jpg'
+    subject: ship:victorious
+    title:
+      zh: '1959 年重建后的舰艏。与上面 1941 年的样子完全是两条船。'
+      en: 'HMS Victorious bow shot 1959.jpg'
+    part: hull_side
+    view: bow
+    date: 1959-07
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Victorious_bow_shot_1959.jpg'
+    width: 1497
+    height: 1841
+    note: '1959 年重建后的舰艏。与上面 1941 年的样子完全是两条船。'
+  - id: 'victorious-08-three-aircraft-carriers-of-the-british-pacif'
+    file: '/img/ships/victorious-08-three-aircraft-carriers-of-the-british-pacific.jpg'
+    subject: ship:victorious
+    title:
+      zh: '1945 年 7 月，与不倦号、可畏号的舰载机一同出现在日本外海。'
+      en: 'Three aircraft carriers of the British Pacific Fleet off Japan on 10 July 1945.jpg'
+    part: hull_side
+    view: overhead
+    date: 1945-07-10
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unidentified Royal Navy photographer - item is listed as being part of the Admiralty Official Collection on the IWM database'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Three_aircraft_carriers_of_the_British_Pacific_Fleet_off_Japan_on_10_July_1945.jpg'
+    width: 800
+    height: 617
+    note: '1945 年 7 月，与不倦号、可畏号的舰载机一同出现在日本外海。'
+  - id: 'victorious-07-hms-victorious-uss-saratoga-noumea-1943'
+    file: '/img/ships/victorious-07-hms-victorious-uss-saratoga-noumea-1943.jpg'
+    subject: ship:victorious
+    title:
+      zh: '与萨拉托加号并泊努美阿。借调美军的直接物证。'
+      en: 'HMS Victorious USS Saratoga Noumea 1943.jpg'
+    part: hull_side
+    view: broadside
+    date: 1943
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown authorUnknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Victorious_USS_Saratoga_Noumea_1943.jpg'
+    width: 912
+    height: 342
+    note: '与萨拉托加号并泊努美阿。借调美军的直接物证。'
+  - id: 'victorious-06-hms-victorious-r38-at-noumea-in-1943'
+    file: '/img/ships/victorious-06-hms-victorious-r38-at-noumea-in-1943.jpg'
+    subject: ship:victorious
+    title:
+      zh: '1943 年在新喀里多尼亚努美阿，与美军 TF 36 协同作战时期。'
+      en: 'HMS Victorious (R38) at Noumea in 1943.jpg'
+    part: hull_side
+    view: broadside
+    date: 1943
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'U.S. Navy'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Victorious_(R38)_at_Noumea_in_1943.jpg'
+    width: 1181
+    height: 522
+    note: '1943 年在新喀里多尼亚努美阿，与美军 TF 36 协同作战时期。'
+  - id: 'victorious-05-hms-victorious-off-hvalfjord-iceland-ww-ii-i'
+    file: '/img/ships/victorious-05-hms-victorious-off-hvalfjord-iceland-ww-ii-iwm.jpg'
+    subject: ship:victorious
+    title:
+      zh: '冰岛 Hvalfjord，甲板上排满 Albacore。'
+      en: 'HMS Victorious off Hvalfjord Iceland WW II IWM A 9304.jpg'
+    part: hull_side
+    view: overhead
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Parnall, C H (Lt), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Victorious_off_Hvalfjord_Iceland_WW_II_IWM_A_9304.jpg'
+    width: 800
+    height: 616
+    note: '冰岛 Hvalfjord，甲板上排满 Albacore。'
+  - id: 'victorious-04-the-royal-navy-during-the-second-world-war-a'
+    file: '/img/ships/victorious-04-the-royal-navy-during-the-second-world-war-a59.jpg'
+    subject: ship:victorious
+    title:
+      zh: '冰岛外海遇大浪，能看出这级舰的干舷与耐波性。'
+      en: 'The Royal Navy during the Second World War A5947.jpg'
+    part: hull_side
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer, Ware, C J (Lt)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A5947.jpg'
+    width: 800
+    height: 564
+    note: '冰岛外海遇大浪，能看出这级舰的干舷与耐波性。'
+  - id: 'victorious-03-hms-victorious-at-sea-a5977'
+    file: '/img/ships/victorious-03-hms-victorious-at-sea-a5977.jpg'
+    subject: ship:victorious
+    title:
+      zh: '挪威行动准备期间在海上。'
+      en: 'HMS Victorious at sea A5977.jpg'
+    part: hull_side
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer, Ware, C J (Lt)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Victorious_at_sea_A5977.jpg'
+    width: 800
+    height: 594
+    note: '挪威行动准备期间在海上。'
+  - id: 'victorious-02-aerial-photography-of-hms-victorious'
+    file: '/img/ships/victorious-02-aerial-photography-of-hms-victorious.jpg'
+    subject: ship:victorious
+    title:
+      zh: '同一天的俯拍，蒸汽从弹射器喷出。与上一条是两个角度。'
+      en: 'Aerial photography of HMS Victorious.jpg'
+    part: hull_side
+    view: overhead
+    date: 1941-10-28
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'RN official photographer Coote, R G G (Lt)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Aerial_photography_of_HMS_Victorious.jpg'
+    width: 784
+    height: 604
+    note: '同一天的俯拍，蒸汽从弹射器喷出。与上一条是两个角度。'
+  - id: 'victorious-01-hms-victorious-underway-at-near-scapa-flow-2'
+    file: '/img/ships/victorious-01-hms-victorious-underway-at-near-scapa-flow-28-octo.jpg'
+    subject: ship:victorious
+    title:
+      zh: '1941 年 10 月斯卡帕湾外，俯拍。建成初期的外观。'
+      en: 'HMS VICTORIOUS underway at near Scapa Flow, 28 October 1941. A6153.jpg'
+    part: hull_side
+    view: overhead
+    date: 1941-10-28
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Coote, R G G (Lt), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_VICTORIOUS_underway_at_near_Scapa_Flow,_28_October_1941._A6153.jpg'
+    width: 2391
+    height: 1772
+    note: '1941 年 10 月斯卡帕湾外，俯拍。建成初期的外观。'
+    primary: true
+  - id: 'ark-royal-10-hms-ark-royal-and-hms-renown-firing-at-itali'
+    file: '/img/ships/ark-royal-10-hms-ark-royal-and-hms-renown-firing-at-italian-tor.jpg'
+    subject: ship:ark-royal
+    title:
+      zh: '与声望号一同对空射击。'
+      en: 'HMS ARK ROYAL and HMS RENOWN firing at Italian torpedo bombers during an attack on a British convoy off Sicily, April 1941. A4017.jpg'
+    part: hull_side
+    view: broadside
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Royal Navy official photographer, Beadell, S J (Lt)'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_ARK_ROYAL_and_HMS_RENOWN_firing_at_Italian_torpedo_bombers_during_an_attack_on_a_British_convoy_off_Sicily,_April_1941._A4017.jpg'
+    width: 2344
+    height: 1772
+    note: '与声望号一同对空射击。'
+  - id: 'ark-royal-09-bismarck-aircrew-rewarded'
+    file: '/img/ships/ark-royal-09-bismarck-aircrew-rewarded.jpg'
+    subject: ship:ark-royal
+    title:
+      zh: 'Somerville 登舰表彰击伤俾斯麦之功。'
+      en: 'Bismarck aircrew rewarded.jpg'
+    part: hull_side
+    view: other
+    date: 1941-10
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Beadell, S J (Lt), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Bismarck_aircrew_rewarded.jpg'
+    width: 800
+    height: 595
+    note: 'Somerville 登舰表彰击伤俾斯麦之功。'
+  - id: 'ark-royal-08-bombs-falling-astern-of-hms-ark-royal-a2298'
+    file: '/img/ships/ark-royal-08-bombs-falling-astern-of-hms-ark-royal-a2298.jpg'
+    subject: ship:ark-royal
+    title:
+      zh: '意大利机投下的炸弹在舰尾后方爆炸。'
+      en: 'Bombs falling astern of HMS Ark Royal A2298.jpg'
+    part: hull_side
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Leslie Cornish Priest'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Bombs_falling_astern_of_HMS_Ark_Royal_A2298.jpg'
+    width: 1300
+    height: 893
+    note: '意大利机投下的炸弹在舰尾后方爆炸。'
+  - id: 'ark-royal-07-hms-ark-royal-swordfish'
+    file: '/img/ships/ark-royal-07-hms-ark-royal-swordfish.jpg'
+    subject: ship:ark-royal
+    title:
+      zh: '剑鱼机低空返回。追击俾斯麦时就是这种飞机打坏了它的舵。'
+      en: 'HMS Ark Royal Swordfish.jpg'
+    part: aircraft_handling
+    view: deck
+    date: 1941-05
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Beadell, S J (Lt) Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Ark_Royal_Swordfish.jpg'
+    width: 996
+    height: 771
+    note: '剑鱼机低空返回。追击俾斯麦时就是这种飞机打坏了它的舵。'
+  - id: 'ark-royal-06-hms-ark-royal-planes'
+    file: '/img/ships/ark-royal-06-hms-ark-royal-planes.jpg'
+    subject: ship:ark-royal
+    title:
+      zh: '800 中队六架 Skua 在甲板上列队待发。'
+      en: 'HMS Ark Royal planes.jpg'
+    part: aircraft_handling
+    view: deck
+    date: 1941-04
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Priest, L C (Lt) Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Ark_Royal_planes.jpg'
+    width: 1300
+    height: 866
+    note: '800 中队六架 Skua 在甲板上列队待发。'
+  - id: 'ark-royal-05-the-royal-navy-during-the-second-world-war-a'
+    file: '/img/ships/ark-royal-05-the-royal-navy-during-the-second-world-war-a4074-c.jpg'
+    subject: ship:ark-royal
+    title:
+      zh: 'A4074 的裁剪版，构图更紧凑，适合做卡片缩略图。'
+      en: 'The Royal Navy during the Second World War A4074 (cropped).jpg'
+    part: hull_side
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Beadell, S J (Lt), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A4074_(cropped).jpg'
+    width: 1740
+    height: 775
+    note: 'A4074 的裁剪版，构图更紧凑，适合做卡片缩略图。'
+  - id: 'ark-royal-04-the-royal-navy-during-the-second-world-war-a'
+    file: '/img/ships/ark-royal-04-the-royal-navy-during-the-second-world-war-a4074.jpg'
+    subject: ship:ark-royal
+    title:
+      zh: '航行中。注意舰艏与飞行甲板两端的弹射器——这是它区别于光辉级的地方。'
+      en: 'The Royal Navy during the Second World War A4074.jpg'
+    part: hull_side
+    view: broadside
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Beadell, S J (Lt), Royal Navy official photographer'
+    source_url: 'https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A4074.jpg'
+    width: 2327
+    height: 1772
+    note: '航行中。注意舰艏与飞行甲板两端的弹射器——这是它区别于光辉级的地方。'
+  - id: 'ark-royal-03-hms-ark-royal-91-just-after-launching'
+    file: '/img/ships/ark-royal-03-hms-ark-royal-91-just-after-launching.jpg'
+    subject: ship:ark-royal
+    title:
+      zh: '下水后立即拍摄，舰体尚未舾装，能看清双层机库开口的位置。'
+      en: 'HMS Ark Royal (91) just after launching.jpg'
+    part: hull_side
+    view: broadside
+    date: 1937-04-13
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Ark_Royal_(91)_just_after_launching.jpg'
+    width: 740
+    height: 583
+    note: '下水后立即拍摄，舰体尚未舾装，能看清双层机库开口的位置。'
+  - id: 'ark-royal-02-hms-ark-royal-h85716'
+    file: '/img/ships/ark-royal-02-hms-ark-royal-h85716.jpg'
+    subject: ship:ark-royal
+    title:
+      zh: '舰载 Swordfish 机群飞越上空，是它最广为人知的一张宣传照。'
+      en: 'HMS Ark Royal h85716.jpg'
+    part: hull_side
+    view: broadside
+    date: 1939
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'United Kingdom Government'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Ark_Royal_h85716.jpg'
+    width: 5678
+    height: 3279
+    note: '舰载 Swordfish 机群飞越上空，是它最广为人知的一张宣传照。'
+  - id: 'ark-royal-01-hms-ark-royal-19sb2j1'
+    file: '/img/ships/ark-royal-01-hms-ark-royal-19sb2j1.jpg'
+    subject: ship:ark-royal
+    title:
+      zh: '完工后不久，右舷正侧面。这是它建成时的原貌，与 1941 年加装雷达后的样子差别明显。'
+      en: 'HMS Ark Royal 19sb2j1.jpg'
+    part: hull_side
+    view: broadside
+    date: 1938
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'USN'
+    source_url: 'https://commons.wikimedia.org/wiki/File:HMS_Ark_Royal_19sb2j1.jpg'
+    width: 5626
+    height: 3513
+    note: '完工后不久，右舷正侧面。这是它建成时的原貌，与 1941 年加装雷达后的样子差别明显。'
+    primary: true
   - id: 10_5cm-sk-c33-prinz-eugen
     file: /img/weapons/10_5cm-sk-c33-twin-mount.jpg
     subject: weapon:10_5cm-sk-c33

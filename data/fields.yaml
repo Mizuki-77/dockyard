@@ -167,7 +167,10 @@ fields:
   - { id: propulsion.electrical.output,    label: { zh: 发电机总功率, en: Electrical output },         type: number, unit: kW, group: propulsion, compare: false, better: none }
 
   # ===== protection =====
-  - { id: protection.scheme,               label: { zh: 装甲体系, en: Protection scheme },             type: enum,   unit: null, group: protection, compare: false, better: none, values: [all_or_nothing, incremental, turtle_back, other] }
+  # 2026-11-22 加 none：起因是 N 级驱逐舰。驱逐舰没有装甲带，不给这个值就只能留空，
+  # 留空在页面上显示「未记载」，读者会误以为没查完。写成 0 mm 更糟——那会被读成
+  # 「有装甲但厚度为零」。none 表达的是「该舰设计上就没有装甲防护」。
+  - { id: protection.scheme,               label: { zh: 装甲体系, en: Protection scheme },             type: enum,   unit: null, group: protection, compare: false, better: none, values: [all_or_nothing, incremental, turtle_back, none, other], note: none = 该舰无装甲防护（多数驱逐舰、护航舰）。厚度字段在这种情况下不写，不要填 0 }
   - { id: protection.armor.thickness,      label: { zh: 装甲厚度, en: Armour thickness },              type: number, unit: mm, group: protection, compare: false, better: context,
                                                                                                          qual_keys: [part, region],
                                                                                                          qual_values: { part: [belt, upper_belt, lower_belt, deck, slope, bulkhead, turret, barbette, conning_tower, funnel_uptake, splinter_belt, main_belt_aft, flight_deck, hangar_side, hangar_deck, magazine], region: [main, fore, aft, upper, lower, face, side, rear, roof, top, bottom, torpedo, splinter] },
@@ -298,7 +301,14 @@ fields:
   - { id: aviation.elevator.count,         label: { zh: 升降机数, en: Elevators },                     type: integer, unit: count, group: aviation, compare: true, better: higher }
   - { id: aviation.hangar.count,           label: { zh: 机库数, en: Hangars },                         type: integer, unit: count, group: aviation, compare: false, better: none }
   - { id: aviation.hangar.height,          label: { zh: 机库净高, en: Hangar clear height },          type: number, unit: m, group: aviation, compare: true, better: higher, note: 装甲航母的核心代价就写在这一个数上：机库越矮，能塞进去的飞机越小。日后换装更大机型的瓶颈通常不是甲板长度而是机库高度 }
-  - { id: aviation.hangar.length,          label: { zh: 机库总长, en: Hangar length },                  type: number, unit: m, group: aviation, compare: true, better: higher }
+  - { id: aviation.hangar.length,          label: { zh: 机库总长, en: Hangar length },                  type: number, unit: m, group: aviation, compare: true, better: higher, note: 单层机库写这一项。双层机库（如皇家方舟号）改写 aviation.hangar.upper.length 与 aviation.hangar.lower.length，不写总长——两层长度不同，合成一个数必然失真 }
+  # 2026-11-22 新增：双层机库的分层长度。
+  # 起因是皇家方舟号：上层 173.1 m、下层 137.8 m，两层差 35 m。
+  # 只写 hangar.length 一条会让下层凭空消失；写两条又会被校验器判成
+  # 「同一时间窗有两个值 = 两源打架」（其实不是分歧，是两个不同的物理对象）。
+  # 与 aviation.deck.upper/middle/lower 是同一个模式，照它办。
+  - { id: aviation.hangar.upper.length,    label: { zh: 上层机库长, en: Upper hangar length },          type: number, unit: m, group: aviation, compare: false, better: none, note: 双层机库的上层长度。单层机库不写此项 }
+  - { id: aviation.hangar.lower.length,    label: { zh: 下层机库长, en: Lower hangar length },          type: number, unit: m, group: aviation, compare: false, better: none, note: 双层机库的下层长度。多数双层机库的下层比上层短，因为要避开后部动力舱 }
   - { id: aviation.hangar.width,           label: { zh: 机库宽, en: Hangar width },                     type: number, unit: m, group: aviation, compare: true, better: higher }
   - { id: aviation.elevator.dimensions,    label: { zh: 升降机尺寸, en: Elevator dimensions },          type: string, unit: null, group: aviation, compare: false, better: none, note: 写成长×宽，如 45 x 22 ft。升降机尺寸常常比机库高度更早成为换装的限制 }
   - { id: aviation.fuel.volume,           label: { zh: 航空汽油容量（体积）, en: Aviation fuel capacity (volume) }, type: number, unit: dm3, group: aviation, compare: false, better: none,

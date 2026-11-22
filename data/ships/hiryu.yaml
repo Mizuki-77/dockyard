@@ -18,7 +18,7 @@
 
 id: hiryu
 name:
-  zh: 飞龙
+  zh: 飞龙号
   en: Hiryū
 class: soryu
 note: >-
@@ -40,7 +40,7 @@ facts:
     confidence: C
 
   - field: identity.name_zh
-    value: 飞龙
+    value: 飞龙号
     src: [japanese-warship-soryu]
     valid: { from: 1935-11-22 }
     confidence: C

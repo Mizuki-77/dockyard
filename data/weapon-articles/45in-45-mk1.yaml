@@ -1,0 +1,292 @@
+# ============================================================================
+# 武器正文 —— 4.5"/45 (11.4 cm) QF Mark I
+#
+# ⚠️ 与已有的 4_5in-qf-mk3.yaml 是同一门炮的不同 Mark，不是同一篇：
+#    那一篇写的是 Mark III（光辉级 / 怨仇级），本篇写 Mark I 与皇家方舟号。
+#    两型可互换，差别只在击发机构细节 —— 但装舰对象与炮座完全不同，
+#    所以分两篇写，不合并。
+#
+# 本篇的主线不是「定装弹太重」（那条已在 Mark III 篇写透），而是：
+#   1. 它原本是为 1930 年代新建航母设计的，后来才变成驱逐舰标准炮；
+#   2. 皇家方舟号装的是 Mark I 炮 + Mark III UD 炮座这个特殊组合；
+#   3. 「4.5 英寸」是英国海军里少数几个实际口径与名义口径不一致的炮。
+# ============================================================================
+weapon: 45in-45-mk1
+updated: 2026-11-22
+
+intro:
+  lead:
+    zh: >-
+      4.5"/45 (11.4 cm) QF Mark I 是英国 1930 年代为新建航母选定的双用途炮，
+      皇家方舟号（1937）的八座双联主炮座装的就是它。
+      它原本是一项「航母专用」的方案，到战争末期却成了皇家海军驱逐舰的
+      标准主炮口径 —— 这个口径一直用到今天。
+    en: >-
+      The 4.5"/45 (11.4 cm) QF Mark I was the dual-purpose gun chosen in the 1930s
+      for Britain's new carriers, and it armed all eight of HMS Ark Royal's twin
+      mountings. It began as a carrier-specific solution and ended the war as the
+      standard Royal Navy destroyer calibre - a calibre still in use today.
+
+  paragraphs:
+    - heading: 它是 5.1 英寸那门失败的炮的替补
+      text:
+        zh: >-
+          navweaps 把来龙去脉写得很清楚：5.1"/50 (13 cm) QF Mark I 计划失败之后，
+          英国在 1930 年代中期选定 4.5 英寸作为航母的新双用途炮。
+          选择的依据是一个判断：这是「人工装填定装弹所能使用的最大口径」——
+          这型炮的整发弹重 85 磅（38.6 公斤），而 5.1 英寸那门是 108 磅（49 公斤）。
+          换句话说，口径不是按弹道需求定的，是按人的体力定的。
+        en: >-
+          NavWeaps sets out the sequence: following the failure of the 5.1"/50
+          (13 cm) QF Mark I programme, the 4.5-inch calibre was selected in the
+          mid-1930s as the new dual-purpose weapon for carriers. The reasoning was
+          a judgement that this was the largest calibre usable with a manually
+          handled fixed round - the complete round weighed 85 lb (38.6 kg) against
+          108 lb (49 kg) for the 5.1-inch. The calibre was set by human strength,
+          not by ballistic requirement.
+      src: [navweaps-45in-45-mk1]
+
+    - heading: 主要参数
+      text:
+        zh: >-
+          名义口径 4.5 英寸，实际膛径 4.45 英寸（11.3 厘米）——
+          英国所有 4.5 英寸舰炮都是这个实际尺寸。
+          身管全长 5.131 米，膛线长 4.341 米，药室 9.83 立方分米；
+          Mark I 与 Mark III 炮重 2,859 公斤（含炮闩）。
+          弹重：高爆弹 55 磅（24.95 公斤）、半穿甲弹 58.25 磅（26.4 公斤）；
+          整发定装弹重 87 磅（39.5 公斤）与 91.75 磅（41.6 公斤）。
+          初速：新炮 746 米/秒，平均 716 米/秒。身管寿命约 650 发。
+          射程：43 度 19,900 码（18,200 米），45 度 20,750 码（18,970 米）；
+          仰角 80 度时射高 41,000 英尺（12,500 米）。
+        en: >-
+          Nominal calibre 4.5 inches, actual bore 4.45 inches (11.3 cm) - the true
+          dimension of every British 4.5-inch naval gun. Gun length overall 5.131 m
+          with 4.341 m of rifling and a 9.83 dm3 chamber; the Mark I and Mark III
+          guns weighed 2,859 kg including the breech mechanism. Projectiles: HE 55
+          lb (24.95 kg), SAP 58.25 lb (26.4 kg); complete fixed rounds 87 lb
+          (39.5 kg) and 91.75 lb (41.6 kg). Muzzle velocity 746 m/s new gun, 716 m/s
+          average. Barrel life about 650 rounds. Range 19,900 yards (18,200 m) at
+          43 degrees and 20,750 yards (18,970 m) at 45 degrees; AA ceiling 41,000
+          feet (12,500 m) at 80 degrees.
+      src: [navweaps-45in-45-mk1]
+
+    - heading: 皇家方舟号装的是 Mark I 炮，配 Mark III UD 炮座
+      text:
+        zh: >-
+          这一条容易写错，必须分清炮与炮座：皇家方舟号（1937）装八座双联
+          Mark III UD 炮座，共 16 门 Mark I 炮，每门备弹 400 发。
+          「UD」是 Upper Deck（露天甲板），这种炮座与后来光辉级用的
+          Mark II BD（Between Deck，两甲板之间）不是一回事：
+          Mark III UD 有开背式防盾，滚道直径 93 英寸（2.36 米），
+          而 Mark II BD 是 113 英寸（2.87 米）。
+          皇家方舟号的弹药供应是两级电动链式扬弹机，
+          第一级从转运室到上甲板，第二级从上甲板到炮位。
+        en: >-
+          This is easy to get wrong, so gun and mounting must be kept apart: Ark
+          Royal (1937) carried eight twin Mark III UD mountings, sixteen Mark I
+          guns, with 400 rounds per gun. "UD" means Upper Deck, and this mounting is
+          not the Mark II BD (Between Deck) used later in the Illustrious class: the
+          Mark III UD had open-backed shields and a 93-inch (2.36 m) roller path
+          against 113 inches (2.87 m) for the Mark II BD. Ark Royal's ammunition
+          supply ran on two-stage electrically driven chain hoists, the first stage
+          from the handling rooms to the upper deck and the second from the upper
+          deck to the gun positions.
+      src: [navweaps-45in-45-mk1]
+
+    - heading: Mark I 与 Mark III 只差击发机构，装哪一型看手头有什么
+      text:
+        zh: >-
+          这两型炮只用于双联炮座，且可以互换，唯一差别在击发机构细节：
+          Mark I 同时有击针击发与电击发，Mark III 按全电击发设计，
+          Mark I 后来也改成了只能电击发。
+          值得注意的是装舰的实际状况：有舰同时装了两型炮，
+          取决于建造或改装时手头有什么。
+          产量上 Mark I 只造了 46 门，Mark III 造了 524 门 ——
+          也就是说这一型是少数派，主力是它的姊妹型。
+        en: >-
+          Both marks were used only in twin mountings and were interchangeable, the
+          only difference being in details of the firing mechanism: the Mark I had
+          both percussion and electric firing while the Mark III was designed for
+          all-electric firing, and the Mark I was later modified to permit electric
+          firing only. What matters in service is that several ships actually
+          carried both types, depending on what was available when they were built
+          or modernised. Production settled the question: 46 Mark I guns were made
+          against 524 Mark III, so this mark was the minority and its sibling was
+          the workhorse.
+      src: [navweaps-45in-45-mk1]
+
+    - heading: 定装弹选错了这件事，这里只记结论
+      text:
+        zh: >-
+          navweaps 对这一型最重要的批评是弹药形式，详细论证写在 Mark III 那一篇里，
+          此处只留结论：这个 85 磅的定装弹「在服役使用中被证明过重」，
+          正常搬运时弹头有与药筒分离的倾向，结果是长时间射击时射速迅速下降。
+          换言之，选口径时用的那个前提（85 磅是人力上限）在服役中被推翻了。
+        en: >-
+          NavWeaps' central criticism of this weapon concerns the ammunition, and
+          the full argument belongs with the Mark III entry; the conclusion is
+          recorded here: the 85 lb fixed round "proved to be too heavy in service
+          use", with a tendency for projectiles to separate from the cartridge cases
+          during normal handling and a rapidly decreasing rate of fire during
+          prolonged firing. The premise on which the calibre was chosen - that 85 lb
+          was the limit of manual handling - was overturned in service.
+      src: [navweaps-45in-45-mk1]
+
+    - heading: 它最后变成了驱逐舰的标准炮
+      text:
+        zh: >-
+          1944 年，用遍了 1918 年以来几乎每一艘英国驱逐舰的 4.7 英寸炮，
+          让位给了新的 4.5 in QF Mark IV —— 后者有单装与双联两种炮座。
+          navweaps 记录的这个转折有一层讽刺：新驱逐舰炮座原计划也用定装弹，
+          但斯库拉号与卡律布狄斯号的报告说大浪中装填因弹药过重出了问题；
+          这两艘是六千吨级巡洋舰，更轻的驱逐舰只会更糟。
+          这件事皇家海军本该在十多年前就明白。最终新炮座改用分装弹药。
+          这个口径战后的优势是明确的：它成了皇家海军驱逐舰的标准口径，
+          一直沿用至今。
+        en: >-
+          In 1944 the 4.7-inch, which had armed nearly every British destroyer built
+          since 1918, gave way to the new 4.5 in QF Mark IV in single and twin
+          mountings. NavWeaps records an irony in the transition: the new destroyer
+          mountings were also to have used fixed ammunition, but reports from the
+          cruisers Scylla and Charybdis described loading problems in rough weather
+          from the weight of the ammunition. Those were 6,000-ton ships, so the
+          lighter destroyers would obviously be worse - a conclusion the Royal Navy
+          should have reached more than a decade earlier. The new mountings were
+          designed for separate ammunition instead. The post-war advantage was
+          clear: this calibre became the standard for Royal Navy destroyers and
+          continues in use.
+      src: [navweaps-45in-45-mk1]
+
+history:
+  - id: origin
+    title: { zh: 从 5.1 英寸的失败到 4.5 英寸定型, en: From the 5.1-inch failure to the 4.5-inch }
+    range: { from: 1935, to: 1938 }
+    lead:
+      zh: >-
+        一门为航母选的炮，选它的理由是「人能搬得动」。
+      en: >-
+        A gun chosen for carriers on the grounds that a man could still lift the round.
+    events:
+      - date: 1935
+        text:
+          zh: >-
+            5.1"/50 QF Mark I 计划失败后，4.5 英寸被选定为航母的新双用途炮。
+            navweaps 给出的设计时间为「约 1935 年」。
+            选择的依据是它被认定为人工装填定装弹可用的最大口径。
+          en: >-
+            Following the failure of the 5.1"/50 QF Mark I programme, the 4.5-inch
+            was selected as the carriers' new dual-purpose weapon. NavWeaps gives
+            the design date as "about 1935", the choice resting on its being judged
+            the largest calibre workable with a manually handled fixed round.
+        src: [navweaps-45in-45-mk1]
+      - date: 1938
+        text:
+          zh: >-
+            进入服役。Mark I 与 Mark III 只用于双联炮座、可互换，
+            差别仅在击发机构细节；有舰同时装两型，取决于建造或改装时手头有什么。
+          en: >-
+            Entered service. The Mark I and Mark III were used only in twin
+            mountings and were interchangeable, differing only in firing mechanism
+            detail; some ships carried both, depending on what was available when
+            they were built or modernised.
+        src: [navweaps-45in-45-mk1]
+
+  - id: ark-royal
+    title: { zh: 皇家方舟号上的服役, en: Service in HMS Ark Royal }
+    range: { from: 1938, to: 1941-11 }
+    lead:
+      zh: >-
+        皇家方舟号的八座双联炮座是这型炮最集中的一处装置。
+      en: >-
+        Ark Royal's eight twin mountings were the most concentrated installation of
+        this weapon.
+    events:
+      - date: 1938
+        text:
+          zh: >-
+            皇家方舟号装八座双联 Mark III UD 炮座，共 16 门 Mark I 炮，
+            每门备弹 400 发。炮座为露天甲板式，有开背防盾，
+            滚道直径 93 英寸（2.36 米）；弹药由两级电动链式扬弹机输送。
+          en: >-
+            Ark Royal carried eight twin Mark III UD mountings, sixteen Mark I guns,
+            with 400 rounds per gun. The mounting was an upper-deck type with
+            open-backed shields and a 93-inch (2.36 m) roller path; ammunition came
+            up on two-stage electrically driven chain hoists.
+        src: [navweaps-45in-45-mk1]
+      - date: 1939
+        text:
+          zh: >-
+            同一型炮也装在辅助舰与几艘主力舰上：母舰福斯号、梅德斯通号，
+            以及伊丽莎白女王号（3 门）、英勇号（5 门）、声望号（4 门）、
+            巡洋舰斯库拉号与卡律布狄斯号、以及泰恩号、赫克拉号、亚当特号。
+            这就是「Mark I 只有 46 门」这个数字的去处 —— 摊得很散。
+          en: >-
+            The same mark also went to auxiliary vessels and a few capital ships: the
+            depot ships Forth and Maidstone, Queen Elizabeth (3 guns), Valiant (5),
+            Renown (4), the cruisers Scylla and Charybdis, and Tyne, Hecla and
+            Adamant. That is where the total of only 46 Mark I guns went - spread
+            very thin.
+        src: [navweaps-45in-45-mk1]
+      - date: 1941-05-08
+        text:
+          zh: >-
+            声望号在与意大利鱼雷机交战时，失效保护锁定装置失灵，
+            P3 炮座向 P2 炮座的后方开火，6 人死亡、26 人受伤。
+            舰员在炮座周围架起角铁架防止重演，同年晚些在罗塞斯翻修了该装置。
+            navweaps 未说明当时这几座炮座里装的是 Mark I 还是 Mark III 炮，
+            本站因此不把这起事故归到某个炮型上。
+          en: >-
+            While Renown was engaging Italian torpedo bombers, a fail-safe lockout
+            malfunctioned and P3 fired into the back of P2, killing six and wounding
+            twenty-six. The crew erected angle-iron frames around the mountings and
+            the gear was overhauled at Rosyth later that year. NavWeaps does not say
+            whether the guns in those mountings were Mark I or Mark III, so the
+            accident is not attributed here to either mark.
+        src: [navweaps-45in-45-mk1]
+      - date: 1941-11-13
+        text:
+          zh: >-
+            皇家方舟号在地中海被击沉。军团号（HMS Legion）救起落水舰员时，
+            她仍是装 Mark I 炮与 Mark III UD 炮座的配置 ——
+            这型炮随该舰一起沉没，没有经历后来的改装。
+          en: >-
+            Ark Royal was sunk in the Mediterranean. When HMS Legion rescued her
+            survivors she was still in her Mark I guns and Mark III UD mountings, so
+            this weapon went down with the ship and never underwent later
+            modification aboard her.
+        src: [navweaps-45in-45-mk1]
+
+  - id: succession
+    title: { zh: 被 Mark IV 取代, en: Superseded by the Mark IV }
+    range: { from: 1944, to: 1950 }
+    lead:
+      zh: >-
+        同一个口径换了一种炮、一种弹药，最后成了驱逐舰的标准。
+      en: >-
+        The same calibre, in a new gun and a new ammunition form, became the
+        destroyer standard.
+    events:
+      - date: 1944
+        text:
+          zh: >-
+            4.7 英寸炮让位给 4.5 in QF Mark IV（单装与双联两种炮座）。
+            新炮座原计划用定装弹，但斯库拉号与卡律布狄斯号的报告说
+            大浪中装填因弹药过重出问题，遂改用分装弹药。
+          en: >-
+            The 4.7-inch gave way to the 4.5 in QF Mark IV in single and twin
+            mountings. The new mountings were to have used fixed ammunition, but
+            reports from Scylla and Charybdis described loading problems in rough
+            weather from the weight, so separate ammunition was adopted.
+        src: [navweaps-45in-45-mk1]
+      - date: 1950
+        text:
+          zh: >-
+            1950 年代英国武器编号制度从「按炮编号」改为「按炮座编号」，
+            罗马数字改为阿拉伯数字，导致同一批炮与炮座出现了两套名字。
+            这一改动是后来关于「某舰到底装了什么炮」的混乱的主要来源之一。
+          en: >-
+            In the 1950s the British designation system changed from per-gun to
+            per-mounting, with arabic numerals replacing roman ones, so the same guns
+            and mountings carried two sets of names. That change is one of the main
+            sources of later confusion over what a given ship actually mounted.
+        src: [navweaps-45in-45-mk1]

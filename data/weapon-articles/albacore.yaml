@@ -1,0 +1,334 @@
+# ============================================================================
+# 武器正文 —— Fairey Albacore
+#
+# ⚠️ 本篇的核心问题：Albacore 到底上过皇家方舟号没有？
+#    **结论：上过，但只是 1941 年 10 月一次转场搭载，不是作战中队在舰上服役。**
+#
+#    证据链（三条独立来源，互相吻合）：
+#      naval-history（逐日年表）：
+#        10 月初 —— 本舰「flew off 810 Sqd Swordfish to North Front airfield,
+#                  this was so she could accommodate the Albacores of 828 Sqd」；
+#        Argus 1941-09-30 自克莱德出航，载 12 架装远程油箱的 Albacore I
+#                  与 828 中队 2 架 Swordfish，10-05 脱离编队赴直布罗陀；
+#        「The 11 Albacores & 2 Swordfish were to be transferred to ARK ROYAL
+#                  for flying off to Malta」（行动代号 CALLBOY）；
+#        10-18 0140 ——「flew off 11 Albacores ... and two Swordfish for Hal Far
+#                  airfield, Malta」。
+#      Fleet Air Arm Archive 中队表：828 中队「Oct 1941, Albacore I/Swordfish I」。
+#      historyofwar（本舰页）：「No.828's Albacores were briefly on the Ark Royal
+#                  after transferring from the Argus in early October 1941.
+#                  Flew off to Hal Far, Malta on 18 October.」
+#
+#    与此并列的另一种写法：historyofwar 的机型页把本舰列进
+#    「serving on HMS Ark Royal, HMS Formidable, ...」的名单里。
+#    那句话不算错，但「serving on」会被读成作战服役。正文把两者分开写清。
+#
+#    时间线也支持这一点：Albacore 1940-03 才随 826 中队服役，
+#    1940-11-26 才第一次上舰（Formidable）；本舰 1941-11-13 中雷、
+#    次日沉没 —— 中间只有 1941 年 10 月这一段窗口。
+# ============================================================================
+weapon: albacore
+updated: 2026-11-22
+
+intro:
+  lead:
+    zh: >-
+      Fairey Albacore 是设计用来替换 Swordfish 的双翼鱼雷轰炸机，
+      1940 年 3 月随 826 中队进入服役。它确实取代了 Swordfish
+      在大型舰队航母上的位置，但不如 Swordfish 适应性强，
+      1944 年就从一线撤出 —— 比它本该替换掉的 Swordfish 还早一年。
+      关于皇家方舟号：**它上过本舰，但那是一次转场搭载，不是作战服役。**
+      1941 年 10 月，828 中队的 Albacore 由 Argus 号转来本舰，
+      10 月 18 日全部飞往马耳他，本舰在四周后沉没。
+    en: >-
+      The Fairey Albacore was the biplane torpedo bomber designed to replace the
+      Swordfish, entering service with No. 826 Squadron in March 1940. It did supplant
+      the Swordfish on the large fleet carriers, but it was less adaptable and was
+      withdrawn from the front line in 1944 - a year before the aircraft it was meant to
+      replace. As for Ark Royal: **the type was aboard, but as a ferry lift, not as an
+      operational squadron.** In October 1941 No. 828 Squadron's Albacores came across to
+      the ship from HMS Argus and flew off to Malta on 18 October; the ship sank four
+      weeks later.
+  paragraphs:
+    - heading: 先把「上没上过」这件事说清楚
+      text:
+        zh: >-
+          结论有三层，缺一层就会被读错。
+          第一层，时间上有没有窗口：Albacore 1940 年 3 月才随 826 中队服役，
+          1940 年 11 月 26 日才第一次上舰（Formidable 号，826 与 829 两中队）；
+          皇家方舟号 1941 年 11 月 13 日中雷、次日沉没。
+          两者重叠的窗口只有 1941 年下半年这一段。
+          第二层，那一段里发生了什么：1941 年 10 月，
+          本舰先把 810 中队的 Swordfish 飞送上岸（North Front 机场），
+          「以便腾出位置接收 828 中队的 Albacore」；
+          这批 Albacore 是 Argus 号 9 月 30 日从克莱德带出来的
+          12 架装远程油箱的 Albacore I 与 828 中队的 2 架 Swordfish，
+          Argus 于 10 月 5 日 17:00 脱离编队赴直布罗陀，
+          两舰在港内并靠以转移飞机。第三层，它们待了多久：
+          10 月 18 日 01:40，本舰在 37-28N 06-00E 位置
+          飞送 11 架 Albacore 与 2 架 Swordfish 前往马耳他 Hal Far 机场，
+          随后返航直布罗陀。所以答案是：**上过，作为转场搭载，
+          在舰时间约十天，没有执行过作战任务。**
+        en: >-
+          The answer has three layers, and omitting one misreads it. First, was there a
+          window at all: the Albacore only entered service with No. 826 Squadron in March
+          1940 and first went to sea on 26 November 1940, when Nos. 826 and 829 Squadrons
+          embarked in HMS Formidable; Ark Royal was torpedoed on 13 November 1941 and sank
+          the next day. The only overlap is the second half of 1941. Second, what happened
+          in that window: in October 1941 the ship first flew off 810 Squadron's Swordfish
+          to North Front airfield "so she could accommodate the Albacores of 828
+          Squadron". Those Albacores were the twelve long-range-tank Albacore Is and two
+          828 Squadron Swordfish that HMS Argus had sailed from the Clyde with on 30
+          September; Argus detached for Gibraltar at 1700 on 5 October, and the two ships
+          lay stern to stern to transfer aircraft. Third, how long they stayed: at 0140 on
+          18 October the ship, at 37-28N 06-00E, flew off eleven Albacores and two
+          Swordfish for Hal Far airfield in Malta and then shaped course back for
+          Gibraltar. The answer is therefore: **aboard, as a ferry lift, for about ten
+          days, with no operational sortie flown from the ship.**
+      src: [historyofwar-albacore, naval-history-arkroyal, faa-arkroyal-archive]
+    - heading: 另一种写法的出处，以及它为什么容易误导
+      text:
+        zh: >-
+          必须把这一点写出来，因为它就是「Albacore 在皇家方舟号服役过」这种说法的来源。
+          historyofwar 的机型页写：「此后一年里，Albacore 逐渐取代了
+          大型舰队航母上的 Swordfish，曾在皇家方舟号、Formidable 号、
+          Furious 号、Illustrious 号、Indomitable 号与 Victorious 号上服役。」
+          这句话不算错 —— 那批飞机确实在本舰上待过。
+          但「serving on」这个词会被读成「编入本舰的作战中队」。
+          同一站的本舰页把同一件事写得准确得多：「828 中队的 Albacore
+          在 1941 年 10 月初由 Argus 号转来后曾短暂在皇家方舟号上，
+          10 月 18 日飞往马耳他 Hal Far。」
+          「briefly」与「flew off to Hal Far」两个说法，才是这件事的准确形态。
+          本站把两者并列写出，不把「曾在皇家方舟号服役」写成作战服役。
+        en: >-
+          This has to be set out, because it is where the claim that the Albacore "served
+          aboard Ark Royal" comes from. historyofwar's type page states: "Over the next
+          year the Albacore gradually replaced the Swordfish on the larger fleet carriers,
+          serving on HMS Ark Royal, HMS Formidable, HMS Furious, HMS Illustrious, HMS
+          Indomitable and HMS Victorious." That sentence is not wrong - those aircraft
+          were aboard. But "serving on" reads as an operational squadron of the ship's
+          own. The same site's page for the ship puts the same event far more precisely:
+          "No.828's Albacores were briefly on the Ark Royal after transferring from the
+          Argus in early October 1941. Flew off to Hal Far, Malta on 18 October." The
+          words "briefly" and "flew off to Hal Far" describe the actual shape of the
+          event. Both are recorded here, and "served aboard Ark Royal" is not presented as
+          operational service.
+      src: [historyofwar-albacore, historyofwar-arkroyal]
+    - heading: 它为什么要替换 Swordfish，又为什么替不掉
+      text:
+        zh: >-
+          它是按空军部 S.41/36 号规范设计的。与 Swordfish 一样是单发双翼机，
+          但「与 Swordfish 不同的是它有一个舒适、封闭、带加热的乘员舱，
+          液压襟翼、更强劲的发动机与变距螺旋桨」。
+          原型机装 1,065 马力的 Taurus II，1938-12-12 首飞；
+          随后是第二架原型机与 798 架量产机，量产型装 1,130 马力的 Taurus XII，
+          800 架全部在 Fairey 的 Hayes 工厂生产，1939 到 1943 年间交付。
+          结果是：它确实在大型航母上换掉了 Swordfish，
+          但「它不如 Swordfish 适应性强」，1944 年从一线撤出。
+          原因不是它更差，而是尺寸与重量：Swordfish 后来去了护航航母，
+          而那些航母「常常太小，应付不了更快、更重的 Albacore」。
+          所以这段替换关系的最终形态是：大航母用 Albacore，小航母用 Swordfish。
+        en: >-
+          It was designed to Air Ministry Specification S.41/36. Like the Swordfish it was
+          a single-engined biplane, but "unlike the Swordfish it had a comfortable enclosed
+          and heated crew cabin, hydraulic flaps, a more powerful engine and a
+          variable-pitch propeller". The prototype, powered by a 1,065 hp Taurus II, first
+          flew on 12 December 1938; a second prototype and 798 production aircraft
+          followed, the production machines with the 1,130 hp Taurus XII, all 800 built at
+          Fairey's Hayes factory and delivered between 1939 and 1943. The outcome: it did
+          replace the Swordfish on the large carriers, but it "was not as adaptable as the
+          Swordfish" and left the front line in 1944. The reason was not that it was worse
+          but that it was bigger and heavier: the Swordfish went on to the escort carriers,
+          which were "often too small to cope with the faster, heavier Albacore". The final
+          shape of the replacement was therefore large carriers with Albacores, small ones
+          with Swordfish.
+      src: [historyofwar-albacore]
+    - heading: 主要参数
+      text:
+        zh: >-
+          按 historyofwar 给的数：发动机 Bristol Taurus XII，1,130 马力；
+          翼展 48 英尺 11 英寸，机长 39 英尺 11 英寸，
+          机高 12 英尺 6 英寸或 15 英尺 3 英寸（该页并列两个值）；
+          正常载重 10,365 磅，最大重量 12,500 磅；
+          最大速度 161 mph；实用升限 20,700 英尺或 18,800 英尺（同样并列两值）；
+          正常航程 710 英里，最大航程 930 英里。
+          武器：右翼下单挺 0.303 英寸机枪，加后座一或两挺 0.303 英寸机枪；
+          挂载为 2,000 磅炸弹、或一枚鱼雷、或四枚 Mk VII 深水炸弹。
+          该页对两个并列数值未作取舍，本站照录，不代选。
+        en: >-
+          On historyofwar's figures: Bristol Taurus XII engine of 1,130 hp; wing span 48 ft
+          11 in, length 39 ft 11 in, height 12 ft 6 in or 15 ft 3 in (the page gives both);
+          normal loaded weight 10,365 lb and maximum weight 12,500 lb; maximum speed 161
+          mph; service ceiling 20,700 ft or 18,800 ft (again both are given); normal range
+          710 miles and maximum range 930 miles. Armament: one 0.303 inch machine gun in
+          the starboard lower wing plus one or two 0.303 inch guns in the rear cockpit;
+          bomb load 2,000 lb of bombs, or one torpedo, or four Mk VII depth charges. The
+          page does not choose between the paired figures and neither does this article.
+      src: [historyofwar-albacore]
+    - heading: 它的第一次作战出动不是鱼雷攻击
+      text:
+        zh: >-
+          这一点与「鱼雷轰炸机」这个标签不太一样，值得记下。
+          826 中队 1940 年 3 月接收该型，1940-05-31 首次作战出动 ——
+          那一次是「在西线德军闪击战期间」，任务是
+          「对 Westende 的德国公路与铁路交通实施常规轰炸，
+          并结合对泽布吕赫 E 艇的攻击」。
+          该年余下的时间里，这个中队执行的是夜间轰炸与护航任务的混合。
+          1940 年内成立的另外三个 Albacore 中队里，有两个也是当岸基飞机用的。
+          也就是说：一型为航母设计的鱼雷轰炸机，
+          服役后头一年多主要是在岸上扔炸弹。
+        en: >-
+          This sits oddly with the "torpedo bomber" label and is worth recording. No. 826
+          Squadron received the type in March 1940 and made its operational debut on 31 May
+          1940 - "during the German blitzkrieg in the west", tasked with "a conventional
+          bombing attack on German road and rail communications at Westende, combined with
+          an attack on E-boats at Zeebrugge". For the rest of that year the squadron flew a
+          mix of night bombing raids and convoy escort. Two of the three other Albacore
+          squadrons formed during 1940 were also used as land-based aircraft. A torpedo
+          bomber designed for carriers thus spent its first year and more dropping bombs
+          from ashore.
+      src: [historyofwar-albacore]
+history:
+  - id: origin
+    title: { zh: 设计、首飞与服役, en: Design, first flight and service entry }
+    range: { from: 1936, to: 1940-11 }
+    lead:
+      zh: >-
+        1936 年的规范，1938 年的首飞，1940 年 3 月的服役，1940 年 11 月的第一次上舰。
+      en: >-
+        A 1936 specification, a 1938 first flight, service in March 1940 and a first
+        embarkation in November 1940.
+    events:
+      - date: 1936
+        text:
+          zh: >-
+            按空军部 S.41/36 号规范设计，目标是替换 Swordfish。
+            设计要求包括封闭加热乘员舱、液压襟翼、变距螺旋桨与更强发动机 ——
+            这些正是它与 Swordfish 的区别所在。
+          en: >-
+            Designed to Air Ministry Specification S.41/36 as a replacement for the
+            Swordfish. The requirements included an enclosed and heated crew cabin,
+            hydraulic flaps, a variable-pitch propeller and a more powerful engine - the
+            very points on which it differed from the Swordfish.
+        src: [historyofwar-albacore]
+      - date: 1938-12-12
+        text:
+          zh: >-
+            装 1,065 马力 Taurus II 的原型机首飞。1939 年出现第二架原型机，
+            随后是 798 架量产机（量产型装 1,130 马力 Taurus XII），
+            合计 800 架，全部在 Fairey 的 Hayes 工厂制造，1939 至 1943 年交付。
+          en: >-
+            The prototype, powered by a 1,065 hp Taurus II, made its maiden flight. A
+            second prototype followed in 1939, then the first of 798 production aircraft
+            with the 1,130 hp Taurus XII - 800 in all, every one built at Fairey's Hayes
+            factory and delivered between 1939 and 1943.
+        src: [historyofwar-albacore]
+      - date: 1940-03
+        text:
+          zh: >-
+            随 826 中队进入服役。1940-05-31 首次作战出动：
+            轰炸 Westende 的德国公路与铁路目标，并攻击泽布吕赫的 E 艇。
+          en: >-
+            Entered service with No. 826 Squadron. Its operational debut came on 31 May
+            1940 with a bombing attack on German road and rail communications at Westende
+            combined with an attack on E-boats at Zeebrugge.
+        src: [historyofwar-albacore]
+      - date: 1940-11-26
+        text:
+          zh: >-
+            第一次上舰：826 与 829 两中队登上 Formidable 号。
+            这是这型机从岸基轰炸机转为舰载鱼雷轰炸机的起点。
+          en: >-
+            First embarkation at sea: Nos. 826 and 829 Squadrons went aboard HMS
+            Formidable. This is where the type turns from a shore-based bomber into a
+            carrier torpedo bomber.
+        src: [historyofwar-albacore]
+  - id: arkroyal
+    title: { zh: 皇家方舟号：1941 年 10 月的转场搭载, en: Ark Royal - the October 1941 ferry lift }
+    range: { from: 1941-10, to: 1941-10 }
+    lead:
+      zh: >-
+        本舰与这型机唯一的交集是 1941 年 10 月十天左右的转场，不是作战服役。
+      en: >-
+        The ship's only contact with the type was a ferry lift of about ten days in
+        October 1941, not operational service.
+    events:
+      - date: 1941-09-30
+        text:
+          zh: >-
+            Argus 号自克莱德出航，载 12 架装远程油箱的 Albacore I
+            与 828 中队的 2 架 Swordfish，随 WS 12 船队出航，
+            1941-10-05 17:00 脱离编队赴直布罗陀。
+            这批飞机的任务不是作战，是「转给皇家方舟号、再由本舰飞送马耳他，
+            以加强该岛的鱼雷轰炸兵力」，行动代号 CALLBOY。
+          en: >-
+            HMS Argus sailed from the Clyde with twelve long-range-tank Albacore Is and two
+            828 Squadron Swordfish, sailing with convoy WS 12 and detaching for Gibraltar at
+            1700 on 5 October 1941. The aircraft's task was not operational: they were "to
+            be transferred to ARK ROYAL for flying off to Malta where they were to reinforce
+            the Islands torpedo bomber force", under the codename CALLBOY.
+        src: [naval-history-arkroyal]
+      - date: 1941-10-08
+        text:
+          zh: >-
+            Argus 号约 04:00 抵达直布罗陀，与本舰艉对艉并靠以便转移飞机。
+            本舰在入港前先把 810 中队的 Swordfish 飞送上 North Front 机场，
+            「以便腾出位置接收 828 中队的 Albacore」。
+            转入本舰的是 11 架 Albacore 与 2 架 Swordfish ——
+            Argus 出发时带的是 12 架 Albacore，实际转来的是 11 架，
+            来源未交代第 12 架的去向，本站不写。
+          en: >-
+            Argus arrived at Gibraltar around 0400 and moored stern on to Ark Royal to
+            facilitate the transfer. Before entering harbour the ship flew off 810
+            Squadron's Swordfish to North Front airfield "so she could accommodate the
+            Albacores of 828 Sqd". Eleven Albacores and two Swordfish were transferred to
+            the ship; Argus had sailed with twelve Albacores and eleven were actually
+            transferred, and the source does not say what became of the twelfth, so
+            nothing is written about it here.
+        src: [naval-history-arkroyal]
+      - date: 1941-10-16
+        text:
+          zh: >-
+            16:00，Force H（战列舰 RODNEY、本舰、轻巡 HERMIONE 与驱逐舰
+            COSSACK、FORESTER、FORESIGHT、FURY、LEGION、SIKH、ZULU）
+            自直布罗陀出航东进地中海，执行 CALLBOY。
+          en: >-
+            At 1600 Force H - the battleship RODNEY, this ship, the light cruiser HERMIONE
+            and the destroyers COSSACK, FORESTER, FORESIGHT, FURY, LEGION, SIKH and ZULU -
+            sailed from Gibraltar eastward into the Mediterranean on Operation CALLBOY.
+        src: [naval-history-arkroyal]
+      - date: 1941-10-18
+        text:
+          zh: >-
+            01:40，本舰在 37-28N 06-00E 位置飞送 11 架 Albacore
+            （其中 T/Sub Lt (A) T. G. Davison RNVR 驾驶的一架起飞失败，稍后自行加入编队）
+            与 2 架 Swordfish 前往马耳他 Hal Far 机场。
+            一架 Swordfish 途中损失，飞行员 T/Sub Lt (A) D M Muller RNVR
+            与观察员 T/Sub Lt (A) A S Denby RNVR 阵亡。
+            飞送完成后 Force H 转向西返直布罗陀。
+            这就是 Albacore 与皇家方舟号关系的全部：约十天搭载，一次飞送，无作战出动。
+          en: >-
+            At 0140 the ship, at 37-28N 06-00E, flew off eleven Albacores - the aircraft
+            piloted by T/Sub Lt (A) T G Davison RNVR failed to take off and joined the
+            squadron later - and two Swordfish for Hal Far airfield in Malta. One Swordfish
+            was lost en route, with T/Sub Lt (A) D M Muller RNVR and observer T/Sub Lt (A)
+            A S Denby RNVR killed. With the fly-off complete Force H shaped course west for
+            Gibraltar. That is the whole of the Albacore's relationship with Ark Royal: some
+            ten days embarked, one fly-off, no operational sortie.
+        src: [naval-history-arkroyal]
+      - date: 1941-10
+        text:
+          zh: >-
+            与上面这段并列的另一份记录：Fleet Air Arm Archive 的中队表把
+            828 中队 1941 年 10 月的机型记作「Albacore I/Swordfish I」；
+            historyofwar 的本舰页写「828 中队的 Albacore 在 1941 年 10 月初
+            由 Argus 号转来后曾短暂在皇家方舟号上，10 月 18 日飞往马耳他 Hal Far」。
+            三条来源在时间、单位、去向三项上一致。
+          en: >-
+            Two further records sit alongside the account above: the Fleet Air Arm
+            Archive's squadron table gives No. 828 Squadron's type for October 1941 as
+            "Albacore I/Swordfish I", and historyofwar's ship page states that "No.828's
+            Albacores were briefly on the Ark Royal after transferring from the Argus in
+            early October 1941. Flew off to Hal Far, Malta on 18 October." The three
+            sources agree on the date, the unit and the destination.
+        src: [faa-arkroyal-archive, historyofwar-arkroyal]

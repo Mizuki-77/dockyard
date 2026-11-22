@@ -1,0 +1,929 @@
+# ============================================================================
+# 舰级：N class（N 级驱逐舰）
+# ----------------------------------------------------------------------------
+# 本站新登记舰级。同级八舰：Napier（RAN）/ Nizam（RAN）/ Nestor（RAN）/
+# Norman（RAN）/ Nepal（ex-Norseman，RAN）/ Noble（→荷兰 Van Galen）/
+# Nonpareil（→荷兰 Tjerk Hiddes）/ Nerissa（→波兰 Piorun）。
+#
+# 本站目前只入库其中一艘：ORP Piorun（原 HMS Nerissa，舷号 G65）。
+# N 级本身是「J/K 级的第三次重复」——不是新设计，而是 1939 年应急追加的一批，
+# 目的是在 L/M 级因主炮塔供应延误而拖期时保住驱逐舰数量。
+#
+# 【本级最容易写错的一件事：主炮是 3 座双联，不是 4 座双联】
+#   J/K/N 三级一律 3 座双联 4.7 英寸（6 门），布置为 A、B 在前（B 为超越射击），
+#   X 在后。部族级才是 4 座双联（8 门）。
+#   N 级相对 J/K 的唯一设计改动是把 X 炮位的 20° 射击盲区从正后方改到正前方——
+#   这个改动正是「N 级与 J/K 级不是同一批」的判据。
+#
+# 【本级最容易被漏掉的一件事：建成时的鱼雷管只有 1 座五联，不是 2 座】
+#   J/K 级设计是 2 座五联（10 管）。N 级在**建造期间**就按 1940 年的战时改装
+#   改掉了：拆掉后部鱼雷管，换成 1 门 4 英寸 QF Mk V 高平两用炮；
+#   舰桥两翼的四联 0.5 英寸机枪也换成了 20 mm 厄利孔。
+#   所以 N 级「建成即改装完毕」，没有「原始 10 管状态」这一段历史。
+#
+# 调研底稿：work/staging/g6-piorun/RESEARCH-NOTES.md
+# ============================================================================
+
+id: n-class
+name:
+  zh: N 级驱逐舰
+  en: N class destroyer
+class_of: [piorun]
+open_ended_note: |
+  本文件绝大多数 fact 的 valid.to 都留空，这是结构性的，不是漏填：
+  舰级设计参数的生效期从设计定案/服役起，到该级最后一艘损失或拆解为止，
+  期间不因改装而改变；实际战备状态随时间的变化写在 data/ships/<id>.yaml 的
+  状态切片里，由单舰 fact 覆盖。因此这里的 open 时间窗表示「无已知终止事件」。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: N class
+    src: [navypedia-jkn]
+    valid: { from: 1939-04-15 }
+    confidence: C
+    note: >
+      级名按英国驱逐舰字母序列取 "N"。本级八舰全部以 N 开头命名
+      （Napier / Nizam / Nestor / Norman / Nepal / Noble / Nonpareil / Nerissa）。
+      本级用驱逐舰通行的字母序命名法，八舰同批同字母，故级名直接取字母。
+
+  - field: identity.ship_type
+    value: destroyer
+    src: [navypedia-jkn]
+    valid: { from: 1939-04-15 }
+    confidence: C
+    note: >
+      英国官方分类 "fleet destroyer"。本级无专门的 flotilla leader 加大舰体，
+      Napier 作为领舰与其余七舰同尺度，只是编制人数较多（218 对 183）。
+
+  - field: identity.nation
+    value: united_kingdom
+    src: [navypedia-jkn]
+    valid: { from: 1939-04-15 }
+    confidence: A
+    note: >
+      舰级本身登记为英国。N 级是皇家海军 1939 年造舰计划的一批，
+      八舰由英国政府出资、英国船厂建造、产权属英国政府。
+      其中 Nerissa 自 1940-10 起借给波兰海军并改名 Piorun，
+      该舰的单舰文件把 nation 按时间窗覆盖为 poland（借调期）。
+      两处不矛盾：舰级记设计归属，单舰记实际服役国籍。
+
+  - field: identity.operator
+    value: Royal Navy
+    src: [navypedia-jkn]
+    valid: { from: 1939-04-15 }
+    confidence: A
+    note: >
+      八舰建成后分属皇家海军（Noble / Nonpareil 建成即转荷兰）、
+      澳大利亚皇家海军（Napier / Nizam / Nestor / Norman / Nepal）与波兰海军（Piorun）。
+      荷兰、澳大利亚两处转交都不改变产权归属英国政府这一事实。
+
+  - field: identity.era
+    value: ww2
+    src: [navypedia-jkn]
+    valid: { from: 1939-09-03, to: 1945-09-02 }
+    confidence: A
+    note: >
+      按服役与作战期定位在 ww2。本级设计定案于 1939-04，全部八舰在 1940-1942 年间建成。
+
+  - field: identity.building_program
+    value: 1939 年造舰计划（1939-04-15 下订 8 艘），J/K 级设计的第三次重复
+    src: [navypedia-jkn]
+    valid: { from: 1939-04-15 }
+    confidence: C
+    note: >
+      **这一级存在的理由不是技术进步，是排期。** 1937 与 1939 年度计划里的
+      L/M 级因主炮塔供应跟不上而普遍拖期，海军部于是回头追加一批已经成熟的
+      J/K 级设计，用「不需要新炮塔」换取「能在战争爆发前完工」。
+      navypedia 的原话是：most of "N" class of 1939 Programme were completed
+      earlier than ships of "L" and "M" classes —— 结果证明这个判断是对的。
+      本级首舰 Napier 1940-12 建成，而 L 级首舰 1941 年才陆续完工。
+
+  # ============================================================ 主尺度
+  # 本级八舰主尺度基本一致；单舰实测差异见 ships/piorun.yaml。
+  - field: dimensions.length.oa
+    value: 108.7
+    unit: m
+    src: [navypedia-jkn]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: 356 ft 6 in。舰级页给 108.7 m，Piorun 专页亦给 108.7 m。
+
+  - field: dimensions.length.pp
+    value: 103.5
+    unit: m
+    src: [navypedia-jkn]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: 339 ft 6 in（垂线间长）。
+
+  - field: dimensions.beam.wl
+    value: 10.9
+    unit: m
+    src: [navypedia-jkn]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: 35 ft 8-9 in。navypedia 给 10.9 m（水线宽），与最大宽同值。
+
+  - field: dimensions.draught.max
+    value: 4.16
+    unit: m
+    src: [navypedia-jkn]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    comparable: false
+    note: >
+      **口径提示，本条不参与高低比较。** navypedia 单列 "Draught, m" 一栏给 4.16，
+      舰级页另注区间 4.16-4.22（后期 4.34），未说明是哪一个装载状态。
+      另有 9 ft（2.7 m，轻载）与 12 ft 6 in（3.8 m，深载）两个常见数字
+      来自百科类资料，本站无法用 D 级以上来源核到，故不登记为 fact。
+      由于装载状态不明，标 comparable: false。
+
+  # ============================================================ 排水量
+  - field: displacement.standard
+    value: 1773
+    unit: t
+    src: [navypedia-jkn]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    comparable: false
+    note: >
+      **单位陷阱，务必注意。** navypedia 把本栏标为 "Displacement standard, t"，
+      数值 1773。但各级文献一律把这 1773 写作**长吨**（1,773 lt = 1,801 t），
+      navypedia 自己在同一页的 J/K 栏写的是 1760，也属同一口径混用。
+      两读法差 28 t，无法判定 navypedia 的 "t" 是换算后的公吨还是原样的长吨，
+      故标 comparable: false 不参与对比器高低判定。
+
+  - field: displacement.full
+    value: 2350
+    unit: t
+    src: [navypedia-jkn]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    comparable: false
+    note: >
+      navypedia 舰级页给 2330-2384（后期 2540-2555），Piorun 专页给 2350。
+      文献通行的满载值是 2,384 长吨（2,422 t）。与标准排水量同属单位口径
+      不明的一栏，标 comparable: false。
+
+  # ============================================================ 防护
+  # 2026-11-22 主会话补：原分片在这个字段上留空，理由是「枚举里没有『无装甲』
+  # 选项，硬填会误导」。那个顾虑是对的，但解法是加枚举值而不是留空 ——
+  # 已往 data/fields.yaml 的 protection.scheme 加了 none。
+  # 留空在页面上显示「未记载」，读者会以为没查完；而这艘舰是真的没有装甲。
+  # 不写 protection.armor.thickness：那会让「没有装甲」变成「装甲厚度 0」。
+  - field: protection.scheme
+    value: none
+    src: [navypedia-jkn]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: >
+      N 级（含 J/K 级）是 1930 年代英国标准驱逐舰，**设计上就没有装甲带**，
+      只有船壳与局部防破片隔板。navypedia 的 armor 栏对本级为空白。
+      这里写 none 而不是留空，是为了区分「确认无装甲」与「未查到」——
+      本站对这两件事用不同的值表达，页面上也不一样。
+      这条 confidence 只到 C：它是「D 级来源没有记载装甲」这个事实，
+      不是从一手设计书里读到的「无装甲」明确陈述。
+
+  # ============================================================ 动力
+  - field: propulsion.plant_type
+    value: steam_turbine
+    src: [navypedia-jkn]
+    valid: { from: 1940-11-04 }
+    confidence: A
+
+  - field: propulsion.shafts
+    value: 2
+    unit: count
+    src: [navypedia-jkn]
+    valid: { from: 1940-11-04 }
+    confidence: A
+
+  - field: propulsion.boiler.count
+    value: 2
+    unit: count
+    src: [navypedia-jkn]
+    valid: { from: 1940-11-04 }
+    confidence: A
+    note: >
+      **两锅炉舱并排布置，就是本级「一根烟囱 + 低矮舯部」这条外形来源。**
+      这是皇家海军驱逐舰设计上的一次刻意倒退：从 F 级起一直是三锅炉舱，
+      本级减到两舱、两炉左右并列，换来更短的舰体与更小的受弹轮廓、
+      同时腾出 20 mm 高炮的射界。
+      代价写死在设计里：相邻两个大舱，一发命中可能同时淹掉两个锅炉舱、
+      动力全失。海军部当时判断这个概率低到值得冒险。
+
+  - field: propulsion.boiler.type
+    value: Admiralty 三鼓式水管锅炉（Admiralty 3-drum）
+    src: [navypedia-jkn]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - field: propulsion.turbine.count
+    value: 2
+    unit: count
+    src: [navypedia-jkn]
+    valid: { from: 1940-11-04 }
+    confidence: A
+
+  - field: propulsion.turbine.type
+    value: Parsons 齿轮传动蒸汽轮机（双轴，每轴一台）
+    src: [navypedia-jkn]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - field: propulsion.power.design
+    value: 40000
+    unit: hp
+    src: [navypedia-jkn, navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: >
+      两源一致给 40,000 hp。**注意 J/K/N 合页另有一处写 44,000 shp**，
+      那是 J/K 级的数值，N 级三处来源（navypedia 舰级、navypedia 单舰、
+      navypedia J/K/N 合页的 "Power, h.p. 40000"）都写 40,000，故取 40,000。
+
+  - field: propulsion.speed.design
+    value: 36
+    unit: kn
+    src: [navypedia-jkn, navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: >
+      设计航速。**36 节是试航排水量下的指标**，满载时实际只能跑到约 32 节
+      （后者出自百科类资料，本站未用 D 级以上来源核到，不登记为 fact）。
+
+  - field: propulsion.fuel.capacity
+    value: 464
+    unit: t
+    src: [navypedia-jkn, navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: >
+      两源一致：oil 464 t。文献另有 491 与 484 两个数字（同样来源于百科类资料），
+      与 464 差 20-27 t，未能核到口径差别，故只登记 navypedia 值。
+
+  - field: propulsion.range.max
+    value: 5500
+    unit: nmi
+    src: [navypedia-jkn, navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: 15 节航速下。
+
+  - field: propulsion.range.at_speed
+    value: 15
+    unit: kn
+    src: [navypedia-jkn]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: 上一条续航力对应的航速。
+
+  # ============================================================ 武备概览
+  - field: armament.mount.summary
+    value: >-
+      6 × 4.7 in/45 QF Mk XII（3 座双联 CPXIX，A、B 前置、X 后置）
+      + 1 × 4 in/45 QF Mk V 高平两用炮（单装，原后部鱼雷管位置）
+      + 4 × 40 mm 2-pdr「pom-pom」（1 座四联）
+      + 4 × 20 mm 厄利孔（单装）
+      + 2 × 四联 0.5 in 维克斯机枪（后甲板）
+      + 1 × 五联 21 in 鱼雷发射管
+    src: [navypedia-piorun, navypedia-jkn, navweaps-4-7in-45-mk9]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: >
+      建成时（1940-11）的配置，也是本级 N 级的**建成标准态**，不是改装结果。
+
+      **三处必须说清：**
+
+      一、主炮只有 6 门。N 级是 3 座双联，不是部族级的 4 座双联 8 门。
+      navweaps 在 CPXIX 双联装座一栏明确列 "Abdiel (3), Tribal (4), J (3), K (3)
+      and N (3): CPXIX" —— 括注就是座数。
+
+      二、鱼雷管只有 1 座五联 5 管。J/K 级设计是 2 座五联 10 管，
+      N 级在建造期间就把后部那一座拆掉换了 4 英寸高炮。
+      所以本级不存在「建成时 10 管」的阶段。
+
+      三、设计图纸上的 2 座四联 0.5 英寸机枪**没有装在舰桥两翼**，
+      而是改到后甲板；舰桥两翼换成了 20 mm 厄利孔。
+
+      本级的具体改装沿革（1942 年换回第二座鱼雷管等）写在单舰文件里。
+
+  - field: armament.torpedo.tubes
+    value: 5
+    unit: count
+    src: [navypedia-piorun, navypedia-jkn]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: >
+      1 座五联装，5 管。**不是 10 管。** 设计值 2 座 × 5 管 = 10 管在建造期间
+      即改为 1 座，用于换装 4 英寸高炮。1942 年本级多数舰又装回第二座五联，
+      恢复到 10 管——但那已经是改装后的状态，见单舰切片。
+
+  - field: armament.torpedo.diameter
+    value: 533
+    unit: mm
+    src: [navypedia-piorun, navypedia-jkn]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: 21 英寸。本级用 Mark IX 鱼雷。
+
+  - field: armament.aa_20mm.count
+    value: 4
+    unit: count
+    src: [navypedia-piorun, navypedia-jkn]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: >
+      建成时 4 门单装 20 mm 厄利孔 Mk II/IV。1944 年部分舰改为双联装，
+      数量与型制都会变，见单舰切片。
+
+  - field: armament.depth_charge.count
+    value: 20
+    unit: count
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: >
+      建成时 2 座深弹投射器 + 1 条滑轨，备弹 20 枚（navypedia 单舰页原文
+      "2 DCT, 1 DCR (20 DC)"）。1943-44 年本级备弹增至 45 枚。
+      文献另有 42 枚（D 型深弹）一说，未能核到口径差别，未登记。
+
+  # ============================================================ 探测
+  - field: sensors.radar.installed
+    value: Type 285（主炮炮术雷达）+ Type 286/P（对海搜索雷达）
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: >
+      navypedia 单舰页给 "type 285, type 286/P radars, type 124 sonar"。
+      1943-44 年本级以 Type 271/293（目标指示）与 Type 291（对空警戒）
+      替换 Type 286/P，见单舰切片。
+
+  - field: sensors.sonar.type
+    value: Type 124（ASDIC）
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  # ================================================================ 武器实体
+  # 本级只新建一件武器实体（4.7 in/45 Mk XII）；2-pdr 与 20 mm 厄利孔
+  # 已在 data/weapons 的既有舰级里登记，此处只建炮位、不重复登记武器本体。
+
+  - about: weapon:47in-45-mk12
+    field: weapon.designation
+    value: 4.7"/45 (12 cm) QF Mark XII
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1930 }
+    confidence: C
+    note: >
+      Mark XII 是 Mark IX 的双联装专用型，为装进 CPXIX 双联装座而略加长加重，
+      其余与 Mark IX 基本相同。两型共用同一页 navweaps 数据。
+      本级用 Mark XII；Mark IX 用于 A-I、O、Q-W 等单装舰。
+
+  - about: weapon:47in-45-mk12
+    field: weapon.nation
+    value: united_kingdom
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1930 }
+    confidence: C
+
+  - about: weapon:47in-45-mk12
+    field: weapon.category
+    value: naval_gun
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1930 }
+    confidence: C
+    note: >
+      **不是高平两用炮。** navweaps 原文：The lack of a DP function for these
+      weapons was keenly felt throughout the war as more British destroyers were
+      sunk by air attack than from any other cause。最大仰角 40°，
+      又缺高平两用指挥仪与自动定时引信装定，对空效能很有限。
+
+  - about: weapon:47in-45-mk12
+    field: weapon.bore
+    value: 120
+    unit: mm
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1930 }
+    confidence: C
+    note: 标称 4.7 in，实际膛径 4.724 in（120 mm）。
+
+  - about: weapon:47in-45-mk12
+    field: weapon.caliber_length
+    value: 45
+    unit: ratio
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1930 }
+    confidence: C
+    note: 膛线长 179.3 in（4.552 m）。
+
+  - about: weapon:47in-45-mk12
+    field: weapon.length.oa
+    value: 5.692
+    unit: m
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1930 }
+    confidence: C
+    note: Mark XII 全長 224.08 in。Mark IX 为 220.62 in（5.604 m），略短。
+
+  - about: weapon:47in-45-mk12
+    field: weapon.weight
+    value: 3293
+    unit: kg
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1930 }
+    confidence: C
+    note: >
+      Mark XII 炮身 3.238-3.245 长吨（3,290-3,297 kg），取中值 3,293 kg。
+      Mark IX 为 3,011-3,032 kg，比 Mark XII 轻约 270 kg。
+
+  - about: weapon:47in-45-mk12
+    field: weapon.projectile_weight
+    value: 22.68
+    unit: kg
+    qual: { shell_type: he }
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1930 }
+    confidence: C
+    note: 50 lbs。SAP 弹同为 50 lbs（22.68 kg）。
+
+  - about: weapon:47in-45-mk12
+    field: weapon.projectile_weight
+    value: 22.68
+    unit: kg
+    qual: { shell_type: sap }
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1930 }
+    confidence: C
+    note: >
+      SAP 弹 50 lbs，长约 15 in（38 cm）。本级对俾斯麦号射击用的就是这一型，
+      而它只能打掉无防护的高炮，打不穿主装甲带。
+
+  - about: weapon:47in-45-mk12
+    field: weapon.muzzle_velocity
+    value: 808
+    unit: mps
+    qual: { shell_type: he }
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1930 }
+    confidence: C
+    note: 2,650 fps。工作膛压 20 tons/in²。
+
+  - about: weapon:47in-45-mk12
+    field: weapon.charge.weight
+    value: 5.25
+    unit: kg
+    qual: { charge_part: single, propellant: other }
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1930 }
+    confidence: C
+    note: >
+      SC 109 装药 11.58 lbs（5.25 kg）。另一型号 NF/S 164-048 为 13.13 lbs
+      （5.96 kg），两种装药并存，本条登记前者。
+      整装药筒（含发射药）30.5 lbs（13.8 kg），黄铜壳 120 × 785 mm。
+      注：本站 propellant 枚举只有德制 RP 系列，英制 SC 系列无对应值，
+      故按规则填 other。
+
+  - about: weapon:47in-45-mk12
+    field: weapon.charge.chamber_volume
+    value: 10.29
+    unit: dm3
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1930 }
+    confidence: C
+    note: 628 in³。
+
+  - about: weapon:47in-45-mk12
+    field: weapon.range.max
+    value: 15545
+    unit: m
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1930 }
+    confidence: C
+    note: HE 弹 40° 时 17,000 yd（15,545 m）；30° 时 15,800 yd（14,450 m）。
+
+  - about: weapon:47in-45-mk12
+    field: weapon.range.max_elevation
+    value: 40
+    unit: deg
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1930 }
+    confidence: C
+    note: 即 CPXIX 双联装座的最大仰角。缺了仰角，上面那个射程没有意义。
+
+  - about: weapon:47in-45-mk12
+    field: weapon.rate_of_fire
+    value: 11
+    unit: rpm
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1930 }
+    confidence: C
+    note: >
+      CPXIX 双联装座 10-12 发/分（取中值 11）。其余单装座 7-10 发/分。
+      navweaps 另注：这些炮座全为敞开式，北大西洋与北极护航时的恶劣海况
+      会把射速压到远低于此值。
+
+  - about: weapon:47in-45-mk12
+    field: weapon.barrel_life
+    value: 1400
+    unit: count
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1930 }
+    confidence: C
+
+  - about: weapon:47in-45-mk12
+    field: weapon.ammo_outfit
+    value: 250
+    unit: count
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1930 }
+    confidence: C
+    note: >
+      **口径警告：这是整舰备弹数，不是每门炮的备弹数。**
+      navweaps 原文只给部族级的每舰配弹（200 发 SAP + 50 发 HE + 50 发照明弹），
+      并注 "Others: N/A, but probably similar to Tribals"。
+      250 是 200 + 50 之和，全舰 6 门摊下来约 42 发/门。
+      引用时不要把 250 当成单炮备弹量 —— 那是部族级 8 门炮的记录口径。
+
+  - about: weapon:47in-45-mk12
+    field: weapon.in_service_from
+    value: 1930
+    unit: date
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1930 }
+    confidence: C
+    note: >
+      navweaps 的 "Date In Service 1930" 是这一炮族（Mark IX）的服役年；
+      Mark XII 双联型随 CPXIX 装座在 1930 年代中期才上舰。
+      本字段登记炮族值，不表示 Mark XII 具体上舰年份。
+
+  # ================================================================ 炮位实体
+  # A / B / X 三座主炮塔。A 与 B 前置、B 超越 A；X 后置。
+  # 三座的装座型号、仰角、回转都一样，差别只在位置与射界。
+
+  - about: mount:n-class-47in-a
+    field: mount.label_name
+    value: A
+    src: [navypedia-piorun, navweaps-4-7in-45-mk9]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: 英国驱逐舰按 A/B/X/Y 标注炮位，X 为最后一个字母位置。
+
+  - about: mount:n-class-47in-a
+    field: mount.weapon
+    value: weapon:47in-45-mk12
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-47in-a
+    field: mount.turret_designation
+    value: CPXIX
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: >
+      CPXIX 是英国第一种专为驱逐舰设计的动力炮座。
+      J/K/N 三级的每一座各自配一台 70 hp 电动机与油泵；
+      部族级是两座一组共用一台 140 hp 蒸汽涡轮驱动的油泵。
+
+  - about: mount:n-class-47in-a
+    field: mount.type
+    value: twin_turret
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: >
+      严格说不是「炮塔」而是敞开式双联动力炮座（有炮盾、无封闭炮室），
+      但本站 mount.type 枚举里 twin_turret 是唯一合适的双联装选项。
+
+  - about: mount:n-class-47in-a
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-47in-a
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: 同名炮位仅一座；全舰三座双联见 armament.mount.summary。
+
+  - about: mount:n-class-47in-a
+    field: mount.position
+    value: fore
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: 最前一座，在舰桥之前，无超越射击对象。
+
+  - about: mount:n-class-47in-a
+    field: mount.weight
+    value: 25500
+    unit: kg
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: CPXIX 装座 25.09 长吨（25.50 t），即 25,500 kg。
+
+  - about: mount:n-class-47in-a
+    field: mount.elevation.max
+    value: 40
+    unit: deg
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-47in-a
+    field: mount.traverse
+    value: +160° / −160°
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: >
+      仰角速率与回转速率均 10°/s。CPXIX 双联装座无 RPC（遥控动力）装置，
+      动力只用于随动，瞄准数据靠指挥仪传令。
+
+  - about: mount:n-class-47in-b
+    field: mount.label_name
+    value: B
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-47in-b
+    field: mount.weapon
+    value: weapon:47in-45-mk12
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-47in-b
+    field: mount.turret_designation
+    value: CPXIX
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-47in-b
+    field: mount.type
+    value: twin_turret
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-47in-b
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-47in-b
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-47in-b
+    field: mount.position
+    value: superfiring_fore
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: 高于 A 座，可越过 A 座向正前方射击。
+
+  - about: mount:n-class-47in-b
+    field: mount.weight
+    value: 25500
+    unit: kg
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-47in-b
+    field: mount.elevation.max
+    value: 40
+    unit: deg
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-47in-x
+    field: mount.label_name
+    value: X
+    src: [navypedia-piorun, navypedia-jkn]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: 后部单座，位于后部上层建筑上。
+
+  - about: mount:n-class-47in-x
+    field: mount.weapon
+    value: weapon:47in-45-mk12
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-47in-x
+    field: mount.turret_designation
+    value: CPXIX
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-47in-x
+    field: mount.type
+    value: twin_turret
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-47in-x
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-47in-x
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-47in-x
+    field: mount.position
+    value: aft
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-47in-x
+    field: mount.weight
+    value: 25500
+    unit: kg
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-47in-x
+    field: mount.elevation.max
+    value: 40
+    unit: deg
+    src: [navweaps-4-7in-45-mk9]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-47in-x
+    field: mount.traverse
+    value: +160° / −160°，正前方有 20° 射击盲区
+    src: [navweaps-4-7in-45-mk9, navypedia-jkn]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: >
+      **这一条是本级与 J/K 级唯一的设计差别，别写漏。**
+      J/K 级的 X 座建成时把中间位置定在正前方，结果是**正后方**有 20° 打不到，
+      目标横穿舰尾时炮座得绕着走一大圈。
+      战争初期 J/K 级把中间位置改到正后方；**N 级建成时就是改好的状态**，
+      盲区在正前方（本来也被上层建筑挡住）。
+
+  - about: mount:n-class-2pdr-quad
+    field: mount.weapon
+    value: weapon:2pdr-mk8
+    src: [navweaps-2pdr-mk8, navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-2pdr-quad
+    field: mount.type
+    value: quad_turret
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: 四联装，位于烟囱之后、鱼雷管之前的抬升平台上。
+
+  - about: mount:n-class-2pdr-quad
+    field: mount.barrels
+    value: 4
+    unit: count
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-2pdr-quad
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-2pdr-quad
+    field: mount.position
+    value: midships
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-torpedo-quintuple
+    field: mount.label_name
+    value: 五联装 21 in 鱼雷发射管
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: >
+      本条只登记装座数量与位置，**不登记 mount.weapon** ——
+      weapon:torpedo-* 实体全站尚未建立，写 ref 会造成悬空链接。
+      口径与管数分别记在 armament.torpedo.diameter / armament.torpedo.tubes。
+
+  - about: mount:n-class-torpedo-quintuple
+    field: mount.type
+    value: tube
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-torpedo-quintuple
+    field: mount.barrels
+    value: 5
+    unit: count
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: 五联装，5 管。
+
+  - about: mount:n-class-torpedo-quintuple
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: >
+      建成时 1 座。1942 年本级多数舰装回第二座，变 2 座 10 管，
+      见单舰切片。本条只记建成态。
+
+  - about: mount:n-class-torpedo-quintuple
+    field: mount.position
+    value: midships
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: 位于舰体中线，pom-pom 之后。
+
+  # 后部单装 4 in/45 QF Mk V 高平两用炮与五联装鱼雷发射管：
+  # 本站**尚未**为这两件武器实体建 id（4 in Mk V 属武器组 g7 的范围，
+  # 英制鱼雷实体全站还没有）。按「炮位必须写 mount.weapon」的规则，
+  # 此处不建炮位实体，避免引用不存在的 weapon:* 造成悬空链接。
+  # 这两件装备的数量与位置记在 armament.mount.summary 与
+  # armament.torpedo.tubes / armament.torpedo.diameter 里。
+  - about: mount:n-class-20mm-oerlikon
+    field: mount.weapon
+    value: weapon:20mm-oerlikon
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-20mm-oerlikon
+    field: mount.type
+    value: open_mount
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-20mm-oerlikon
+    field: mount.barrels
+    value: 1
+    unit: count
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+
+  - about: mount:n-class-20mm-oerlikon
+    field: mount.count
+    value: 4
+    unit: count
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: 建成时 4 门单装。1944 年部分改为双联装，数量与型制见单舰切片。
+
+  - about: mount:n-class-20mm-oerlikon
+    field: mount.position
+    value: midships
+    src: [navypedia-piorun]
+    valid: { from: 1940-11-04 }
+    confidence: C
+    note: 两门在舰桥两翼（原设计四联 0.5 in 机枪的位置），两门在探照灯平台附近。

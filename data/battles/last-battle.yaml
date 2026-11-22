@@ -59,55 +59,55 @@ belligerents:
       zh: 战列舰 · 原定赴波士顿修理
       en: Battleship · en route to Boston for repairs
   - name: HMS Norfolk
+    ship_id: norfolk
     role:
       zh: 重巡洋舰 · 整夜绕至东北做 flank marking
       en: Heavy cruiser
-    note: 本站尚未收录该舰单页（诺福克级）。
   - name: HMS Dorsetshire
+    ship_id: dorsetshire
     role:
       zh: 重巡洋舰 · 执行最后雷击
       en: Heavy cruiser · delivered the final torpedoes
-    note: 本站尚未收录该舰单页（诺福克级）。
   - name: HMS Sheffield
+    ship_id: sheffield
     role:
       zh: 轻巡洋舰 · 5-26 跟踪
       en: Light cruiser · shadower on 26 May
-    note: 本站尚未收录该舰单页（城级）。
   - name: HMS Ark Royal
+    ship_id: ark-royal
     role:
       zh: 航空母舰 · Force H
       en: Aircraft carrier · Force H
-    note: 本站尚未收录该舰单页（皇家方舟级）。
   - name: HMS Victorious
+    ship_id: victorious
     role:
       zh: 航空母舰 · 5-24 空袭（5-26 已脱离、不在战场，见文首更正）
       en: Aircraft carrier · 24 May strike only; detached well before 26–27 May
-    note: 本站尚未收录该舰单页（光辉级，该级已有单页）。
   - name: HMS Cossack
+    ship_id: cossack
     role:
       zh: 驱逐舰 · 第 4 驱逐舰分队旗舰
       en: Destroyer · Captain (D), 4th Flotilla
-    note: 本站尚未收录该舰单页。
   - name: HMS Maori
+    ship_id: maori
     role:
       zh: 驱逐舰 · 毛利人号
       en: Destroyer
-    note: 本站尚未收录该舰单页。
   - name: HMS Zulu
+    ship_id: zulu
     role:
       zh: 驱逐舰 · 祖鲁人号
       en: Destroyer
-    note: 本站尚未收录该舰单页。
   - name: HMS Sikh
+    ship_id: sikh
     role:
       zh: 驱逐舰 · 锡克人号
       en: Destroyer
-    note: 本站尚未收录该舰单页。
   - name: ORP Piorun
+    ship_id: piorun
     role:
-      zh: 驱逐舰 · 波兰海军
-      en: Destroyer · Polish Navy
-    note: 本站尚未收录该舰单页。
+      zh: 驱逐舰 · 波兰海军。5-26 深夜与俾斯麦交火后，5-27 05:00 因燃油受命返航，最终战开始时已不在场
+      en: Destroyer · Polish Navy. Engaged Bismarck late on 26 May; ordered home at 0500 on 27 May for fuel and was clear of the area before the final action opened
 forces:
 - side: axis
   guns:

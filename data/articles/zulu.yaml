@@ -1,0 +1,325 @@
+# ============================================================================
+# 舰艇正文 —— 祖鲁人号
+#
+# 本舰正文的抓手是「与锡克人号成对的那一艘」。
+# 同一场行动（托布鲁克，1942-09-13/14）、同一天沉没，死因却相反：
+# Sikh 死于岸防炮，Zulu 死于空袭。把两艘放一起讲，这一天才有意义。
+#
+# 另一条值得单独讲的是它被定为该级 lead ship 的理由 —— 建造速度。
+# ============================================================================
+ship: zulu
+updated: 2026-11-22
+
+intro:
+  lead:
+    zh: >-
+      祖鲁人号是部族级的 lead ship，理由是它造得最快：下水时锅炉和烟囱
+      已经装好。它的一生几乎覆盖了这一级打过的每一片海 —— 地中海、
+      北海、大西洋，1941 年 5 月追击俾斯麦，1942 年在地中海为马耳他护航。
+      1942 年 9 月 14 日，在托布鲁克突袭后返航途中，
+      一枚炸弹从舷侧穿入机舱，它在拖带中翻沉。
+      同一天同一场行动里沉没的还有它的姊妹舰锡克人号 ——
+      一艘死于岸防炮，一艘死于空袭。
+    en: >-
+      Zulu was the Tribal class's lead ship, and the reason was speed of
+      building: she was launched with her boilers and funnels already in place.
+      Her career covered almost every sea the class fought in - the
+      Mediterranean, the North Sea and the Atlantic, the pursuit of Bismarck in
+      May 1941, and the Malta convoys of 1942. On 14 September 1942, returning
+      from the Tobruk raid, a bomb pierced her side and exploded in the engine
+      room, and she capsized under tow. Her sister Sikh sank the same day in the
+      same operation - one to shore batteries, one to aircraft.
+
+  paragraphs:
+    - heading: 造得快，所以成了首舰
+      text:
+        zh: >-
+          这一级的 lead ship 不是按开工顺序定的，也不是按服役顺序定的，
+          而是因为建造速度。naval-history 的原话是：由于建造速度快，
+          本舰被指定为该级的 lead ship。它 1937 年 9 月 23 日下水时
+          锅炉与烟囱已经装好，uboat.net 对此的评论是「也许带着锅炉和烟囱
+          下水会让一艘船变得快乐」。合同价 351,135 英镑。
+        en: >-
+          The class's lead ship was not chosen by order of laying down or of
+          completion, but by speed of building: Naval-History records that
+          because of the speedy construction achieved she was nominated as lead
+          ship for the class. When she was launched on 23 September 1937 her
+          boilers and funnels were already fitted, of which Uboat.net observes
+          that perhaps being launched with boilers and funnels in place makes a
+          happy ship. Contract price was £351,135.
+      src: [naval-history-zulu, uboat-zulu]
+
+    - heading: 八门炮换来的东西，和换掉的东西
+      text:
+        zh: >-
+          部族级的设计取舍可以一句话说完：用八门 120 毫米炮、四座双联
+          动力炮座，换掉了英国驱逐舰传统的鱼雷兵力和对空能力。
+          四座 CPXIX 炮座是英国第一个专门为驱逐舰设计的动力炮座，
+          但它只能仰到 40 度；鱼雷发射管只有一座四联，比同期英国驱逐舰
+          少一半。这两笔账在 1941 年 5 月 26 日夜里同时到期：
+          本舰在 5,000 码上把四条鱼雷一次打光，之后就没有第二次机会了。
+        en: >-
+          The Tribal design trade can be stated in one sentence: eight 120 mm
+          guns in four twin power mountings, bought at the cost of the Royal
+          Navy destroyer's traditional torpedo battery and anti-aircraft
+          capability. The four CPXIX mountings were the first British power
+          mountings designed specifically for destroyers, but they could only
+          elevate to 40 degrees, and there was a single quadruple torpedo tube
+          set, half the contemporary British establishment. Both debts came due
+          on the night of 26 May 1941: at 5,000 yards she fired all four
+          torpedoes at once and had no second chance.
+      src: [navypedia-tribal, navweaps-4-7in-45-mk12, uboat-cossack]
+
+    - heading: 1941 年 5 月 26 日夜里
+      text:
+        zh: >-
+          那天夜里第 4 驱逐舰分队的四艘部族级围着俾斯麦转。二十三时五十分，
+          俾斯麦的十五英寸主炮向本舰开火，前三群夹叉，一名军官和两名士兵受伤，
+          大幅规避使它失去了接触。零时它重新发现俾斯麦（航向 340），
+          零时二十一分从 5,000 码齐射四条鱼雷 —— 未见命中，
+          判断是从舰首前方通过。随后它北撤，以脱离其他驱逐舰。
+          四条雷打光，这一次攻击就结束了。
+        en: >-
+          That night the four Tribals of the 4th Destroyer Flotilla circled
+          Bismarck. At 2350 Bismarck's 15-inch guns opened on Zulu; the first
+          three salvoes straddled, an officer and two ratings were wounded, and
+          the drastic avoiding action cost her contact. At 0100 she regained
+          Bismarck on a course of 340, and at 0121 fired four torpedoes from
+          5,000 yards - no hits were seen and they are believed to have missed
+          ahead. She then ran out to the northward to clear the other
+          destroyers. Four torpedoes gone, and that attack was over.
+      src: [naval-history-zulu, uboat-cossack]
+
+    - heading: 1942 年 3 月 22 日：船体自己先出了问题
+      text:
+        zh: >-
+          第二次锡尔特湾海战里，本舰与优势的意大利舰队周旋了一整夜，
+          结果是意方主动撤退 —— naval-history 称之为「处理得极为漂亮的
+          战术夜战」。但战斗结束后本舰因为高速机动产生了结构损伤，
+          4 月进亚历山大船厂修理。这不是孤例：navypedia 在总结这一级的
+          缺点时，明确把「沿用前一代的内部布置与传统骨架」列为主要问题。
+          船体强度不足在实战里就是这样表现出来的 —— 不是被打坏，是自己先变形。
+        en: >-
+          In the Second Battle of Sirte the ship manoeuvred all night against a
+          superior Italian fleet and the Italians withdrew - Naval-History calls
+          it a brilliantly handled tactical night engagement. But afterwards she
+          had sustained structural damage from high-speed manoeuvring and went
+          into an Alexandria yard in April. She was not alone in this: Navypedia,
+          summarising the class's faults, names the retention of the previous
+          generation's internal arrangement and traditional framing as the main
+          one. Insufficient hull strength shows up in action exactly like this -
+          not beaten in, but deformed by her own speed.
+      src: [naval-history-zulu, navypedia-tribal]
+
+    - heading: 1942 年 9 月 13/14 日：与锡克人号共同的一天
+      text:
+        zh: >-
+          托布鲁克突袭（Operation Agreement）是一次事先就被判定冒险的行动。
+          两艘部族级各载一支皇家海军陆战队分队，夜里用小艇送人上岸。
+          锡克人号在接运部队时被岸上探照灯照住，岸防炮随即开火。
+          本舰先以舰首切入探照灯光束吸引火力，随后靠上去接拖锡克人号；
+          拖缆两次被 88 毫米炮弹打断，最后一次是在本舰准备起拖的时候。
+          锡克人号的舰长最终下令引爆破舱阀，弃舰。
+          同一天，轻巡洋舰考文垂号被炸起火后被放弃，由本舰击沉 ——
+          那是执行自沉，不是战果。
+        en: >-
+          The Tobruk raid, Operation Agreement, was an operation whose risk was
+          recognised beforehand. Two Tribals each carried a detachment of Royal
+          Marines and put them ashore by boat at night. Sikh was caught in a
+          shore searchlight while recovering troops and the coastal batteries
+          opened fire. Zulu first came in bow first into the searchlight beam to
+          draw fire, then closed to take Sikh in tow; the towline was severed
+          twice by 88 mm shells, the last time as Zulu was getting under way.
+          Sikh's captain finally fired the scuttling charges and abandoned ship.
+          The same day the light cruiser Coventry was set on fire and abandoned,
+          and Zulu sank her - that was a scuttling, not a kill.
+      src: [naval-history-zulu, uboat-sikh, uboat-zulu]
+
+    - heading: 十六时到十九时
+      text:
+        zh: >-
+          本舰的舰员从 13 日黄昏起就一直在全值更状态，14 日天亮也没有得到休息。
+          当天它挺过了多轮轰炸，但十六时被一枚炸弹从舷侧穿入机舱爆炸 ——
+          机舱、三号锅炉舱与齿轮舱同时进水，舰立即停车、下沉两英尺。
+          Croome 靠帮接走了除拖带组以外的全部人员，Hursley 接拖。
+          到十九时，离亚历山大还有一百海里，它已经在快速下沉；
+          拖带组在敌机扫射后获救，舰随即向右翻沉，位置 32°00'N 28°56'E。
+          两次攻击合计 12 人阵亡、1 人受伤；失踪数两个来源不一致
+          （27 人 / 24 人），两说并列。
+        en: >-
+          Her crew had been at full watch since dusk on the 13th and daylight on
+          the 14th brought no rest. She survived several bomb attacks that day,
+          but at 1600 a bomb pierced her side and exploded in the engine room:
+          the engine room, No. 3 boiler room and gear room flooded together, and
+          she stopped dead in the water and settled two feet deeper. Croome came
+          alongside and took off everyone except a towing party, and Hursley took
+          her in tow. By 1900, still a hundred miles from Alexandria, she was
+          sinking fast; the towing party was rescued after a strafing pass and
+          she rolled to starboard and sank at 32°00'N 28°56'E. The two attacks
+          together cost 12 killed and one wounded; the two sources disagree on
+          the missing (27 against 24) and both are kept.
+      src: [naval-history-zulu, uboat-zulu]
+
+history:
+  - id: build
+    title: { zh: 建造, en: Building }
+    range: { from: 1936, to: 1938 }
+    events:
+      - date: 1936-03-10
+        text:
+          zh: 向 A. Stephen & Sons（Govan）下单。
+          en: Ordered from A. Stephen & Sons, Govan.
+        src: [uboat-zulu]
+      - date: 1936-08-10
+        text:
+          zh: 开工。
+          en: Laid down.
+        src: [naval-history-zulu, uboat-zulu]
+      - date: 1937-09-23
+        text:
+          zh: 下水，锅炉与烟囱已装好。
+          en: Launched, with boilers and funnels already fitted.
+        src: [naval-history-zulu, uboat-zulu]
+      - date: 1938-09-07
+        text:
+          zh: 完工服役，编入第 2 部族驱逐舰分队，舷号 L18。
+          en: >-
+            Completed and commissioned into the 2nd Tribal Destroyer Flotilla,
+            pennant L18.
+        src: [naval-history-zulu, uboat-zulu]
+
+  - id: home
+    title: { zh: 本土海域, en: Home waters }
+    range: { from: 1939, to: 1941 }
+    events:
+      - date: 1940-02
+        text:
+          zh: 汽轮机故障，在英格兰 Leigh 入干船坞修理并消磁，3 月 9 日回到现役。
+          en: >-
+            Turbine trouble; dry-docked for repairs and degaussed at Leigh,
+            England, returning to service on 9 March.
+        src: [uboat-zulu]
+      - date: 1941-03-11
+        text:
+          zh: 与 Cossack 一同为北方拦阻布雷的辅助布雷舰护航（行动 SN68B）。
+          en: >-
+            With Cossack, escorted the 1st Minelaying Squadron during a Northern
+            Barrage lay (Operation SN68B).
+        src: [naval-history-zulu]
+      - date: 1941-05-22
+        text:
+          zh: 在西部海口加入运兵船队 WS8B 担任近程护航。
+          en: Joined troopship convoy WS8B as local escort in the Western Approaches.
+        src: [naval-history-zulu, uboat-zulu]
+      - date: 1941-06-10
+        text:
+          zh: >-
+            入法尔茅斯商业船厂调查过度振动，同时改装：主桅换新结构、
+            舰桥两舷加装单装 20 mm、装 285 型炮术雷达、深弹投射器移到艉甲板。
+          en: >-
+            Taken in hand at a Falmouth commercial yard to investigate excessive
+            vibration, with a refit as well: new mainmast structure, single 20 mm
+            Oerlikons on the bridge wings, Type 285 gunnery radar, and depth
+            charge throwers re-sited on the quarterdeck.
+        src: [naval-history-zulu]
+
+  - id: bismarck
+    title: { zh: 俾斯麦追击, en: The pursuit of Bismarck }
+    range: { from: 1941-05, to: 1941-05 }
+    events:
+      - date: 1941-05-26
+        text:
+          zh: 奉命脱离船队，接替英王乔治五世号原有的驱逐舰屏卫。
+          en: >-
+            Detached from the convoy to relieve the existing destroyer escort of
+            King George V.
+        src: [naval-history-zulu, uboat-zulu]
+      - date: 1941-05-26
+        text:
+          zh: >-
+            2350 遭俾斯麦 15 英寸主炮射击，前三群夹叉，一名军官与两名士兵受伤，
+            被迫大幅规避并失去接触。
+          en: >-
+            At 2350 came under heavy fire from Bismarck's 15-inch guns; the first
+            three salvoes straddled, an officer and two ratings were wounded, and
+            drastic avoiding action cost her contact.
+        src: [naval-history-zulu, uboat-cossack]
+      - date: 1941-05-27
+        text:
+          zh: >-
+            0121 于 5,000 码齐射四条鱼雷，未见命中，判断从舰首前方通过；
+            四条雷全部打光。
+          en: >-
+            At 0121 fired four torpedoes from 5,000 yards; no hits were seen and
+            they are believed to have missed ahead. All four torpedoes expended.
+        src: [naval-history-zulu, uboat-cossack]
+
+  - id: mediterranean
+    title: { zh: 地中海与锡尔特, en: The Mediterranean and Sirte }
+    range: { from: 1941-09, to: 1942-06 }
+    events:
+      - date: 1941-09-24
+        text:
+          zh: 参加 Halberd 行动，为马耳他运输船队护航通过西西里海峡。
+          en: >-
+            Took part in Operation Halberd, escorting the Malta supply convoy
+            through the Sicilian Narrows.
+        src: [naval-history-zulu]
+      - date: 1942-02-07
+        text:
+          zh: 与 Lively 一同巡逻，在西西里以西击沉两艘小型货船。
+          en: >-
+            On patrol with Lively, sank two small freighters west of Sicily.
+        src: [naval-history-zulu]
+      - date: 1942-03-22
+        text:
+          zh: >-
+            第二次锡尔特湾海战：与优势意舰队周旋整夜，意方撤退；
+            本舰因高速机动产生结构损伤，4 月入厂修理。
+          en: >-
+            Second Battle of Sirte: manoeuvred all night against a superior
+            Italian fleet, which withdrew; sustained structural damage from
+            high-speed manoeuvring and went into dockyard hands in April.
+        src: [naval-history-zulu]
+      - date: 1942-08-04
+        text:
+          zh: 与 Sikh、Croome、Tetcott 及 RAF 221 中队一架飞机分享击沉 U-372 的战果。
+          en: >-
+            Shared credit with Sikh, Croome, Tetcott and an RAF 221 Squadron
+            aircraft for sinking U-372.
+        src: [naval-history-zulu, naval-history-sikh]
+
+  - id: loss
+    title: { zh: 托布鲁克与沉没, en: Tobruk and loss }
+    range: { from: 1942-09, to: 1942-09 }
+    events:
+      - date: 1942-09-12
+        text:
+          zh: >-
+            与 Sikh、Aldenham、Beaufort、Exmoor、Hurworth 一同载皇家海军陆战队
+            航向托布鲁克（Operation Agreement）。
+          en: >-
+            With Sikh, Aldenham, Beaufort, Exmoor and Hurworth, carrying Royal
+            Marines for the Tobruk raid, Operation Agreement.
+        src: [naval-history-zulu]
+      - date: 1942-09-14
+        text:
+          zh: >-
+            以舰首切入探照灯光束吸引岸防火力，随后接拖受重创的 Sikh；
+            拖缆两次被 88 mm 炮弹打断。同日击沉被放弃的轻巡洋舰 Coventry。
+          en: >-
+            Came in bow first into the searchlight to draw shore fire, then
+            closed to take the badly damaged Sikh in tow; the towline was severed
+            twice by 88 mm shellfire. The same day she sank the abandoned light
+            cruiser Coventry.
+        src: [naval-history-zulu, uboat-sikh]
+      - date: 1942-09-14
+        text:
+          zh: >-
+            1600 被一枚炸弹从舷侧穿入机舱爆炸，失去动力；由 Hursley 拖带，
+            1900 在 32°00'N 28°56'E 翻沉。12 人阵亡、1 人受伤。
+          en: >-
+            At 1600 a bomb pierced her side and exploded in the engine room,
+            leaving her without power; taken in tow by Hursley, she capsized and
+            sank at 32°00'N 28°56'E by 1900. Twelve killed and one wounded.
+        src: [naval-history-zulu, uboat-zulu]

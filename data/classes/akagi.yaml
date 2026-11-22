@@ -14,8 +14,8 @@
 
 id: akagi
 name:
-  zh: 赤城（单舰）
-  en: Akagi (single ship)
+  zh: 赤城级
+  en: Akagi class
 class_of:
   - akagi
 

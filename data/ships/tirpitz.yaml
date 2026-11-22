@@ -16,7 +16,7 @@
 
 id: tirpitz
 name:
-  zh: 提尔皮茨
+  zh: 提尔皮茨号
   en: Tirpitz
 class: bismarck
 
@@ -34,7 +34,7 @@ facts:
     note: 两源一致。建造代号 Schlachtschiff G，名义为替换旧舰 Schleswig-Holstein。
 
   - field: identity.name_zh
-    value: 提尔皮茨
+    value: 提尔皮茨号
     src: [kbismarck-tirpitz]
     valid: { from: 1936-06-14 }
     confidence: B

@@ -1,0 +1,374 @@
+# ============================================================================
+# 单舰：HMS Sikh（锡克人号，L82 → F82 → G82）
+# ----------------------------------------------------------------------------
+# 部族级第五艘。本舰的结局是本组最容易被讲错的一条：
+#   **1942-09-14 在托布鲁克（Tobruk）外海被德军岸防炮击沉，不是 1944 年，
+#   不在的黎波里，也与圣纳泽尔突袭（Operation Chariot）无关。**
+# 主会话下发的任务表在这一点上写错了三处，核实过程见 RESEARCH-NOTES.md。
+#
+# 实况：1942-09-13/14 的托布鲁克突袭（Operation Agreement）中，
+# 本舰运送皇家海军陆战队登岸，被岸上探照灯照住后遭 88 mm 岸炮连续命中六发，
+# 拖带失败，舰长下令自沉并弃舰，全舰生还者被俘。
+#
+# 本舰另有一处战功：1941-12-13 邦角夜战，与 Maori / Legion / Isaac Sweers
+# 一同击沉两艘意大利轻巡洋舰。
+# ============================================================================
+
+id: sikh
+name:
+  zh: 锡克人号
+  en: HMS Sikh
+class: tribal
+open_ended_note: >
+  部族级第五艘。1941-12-13 邦角夜战击沉两艘意大利轻巡洋舰；
+  1942-09-14 托布鲁克突袭中被德军岸防炮击沉，生还者全部被俘。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: HMS Sikh
+    src: [naval-history-sikh]
+    valid: { from: 1936-06-19 }
+    confidence: B
+
+  - field: identity.name_zh
+    value: 锡克人号
+    src: [naval-history-sikh]
+    valid: { from: 1936-06-19 }
+    confidence: C
+
+  - field: identity.name_en
+    value: HMS Sikh
+    src: [naval-history-sikh]
+    valid: { from: 1936-06-19 }
+    confidence: B
+
+  - field: identity.namesake
+    value: 锡克人（印度次大陆民族/宗教群体，其社群可追溯至 14 世纪）
+    src: [naval-history-sikh]
+    valid: { from: 1936-06-19 }
+    confidence: C
+    note: >
+      naval-history 原句："the 2nd RN warship to carry this name that had
+      previously been used by a destroyer sold in 1927 and is that of a Hindi
+      community dating back to the 14th century."
+      原文写 "Hindi community"，从上下文（Sikh）看应为 Sikh community 的
+      笔误，本条按语义写「锡克人」。舰训 "Sicut leonis: 'Be like the lions'"。
+
+  - field: identity.pennant_number
+    value: L82 / F82 / G82
+    src: [naval-history-sikh, uboat-sikh]
+    valid: { from: 1938-10-12, to: 1942-09-14 }
+    confidence: B
+    note: >
+      uboat.net 逐段："L 82 August 1938 - December 1938 / F 82 January 1939 -
+      Autumn 1940 / G 82 Autumn 1940 - September 1942."
+
+  - field: identity.ship_type
+    value: destroyer
+    src: [naval-history-sikh]
+    valid: { from: 1938-10-12, to: 1942-09-14 }
+    confidence: A
+
+  - field: identity.nation
+    value: united_kingdom
+    src: [naval-history-sikh]
+    valid: { from: 1938-10-12, to: 1942-09-14 }
+    confidence: A
+
+  - field: identity.operator
+    value: Royal Navy
+    src: [naval-history-sikh]
+    valid: { from: 1938-10-12, to: 1942-09-14 }
+    confidence: A
+
+  - field: identity.era
+    value: ww2
+    src: [naval-history-sikh]
+    valid: { from: 1939-09-03, to: 1942-09-14 }
+    confidence: A
+
+  - field: identity.building_program
+    value: 1936 年造舰计划（1936-06-19 下单）
+    src: [naval-history-sikh, uboat-sikh]
+    valid: { from: 1936-06-19 }
+    confidence: B
+    note: >
+      naval-history 原句："ordered from Stephens of Govan on 19th June 1936
+      under the 1936 Build Programme"。**注意是 1936 年计划，
+      与另外三艘（1935 年计划）不同批** —— 本级 16 艘分两批下单，
+      首批 7 艘 1936-03-10、后批 9 艘 1936-06-09（uboat.net 舰级页原句）。
+
+  # ============================================================ 建造
+  - field: construction.order_date
+    value: 1936-06-19
+    unit: date
+    src: [naval-history-sikh, uboat-sikh]
+    valid: { from: 1936-06-19 }
+    confidence: B
+
+  - field: construction.builder
+    value: A. Stephen & Sons Ltd.
+    src: [naval-history-sikh, uboat-sikh, navypedia-tribal]
+    valid: { from: 1936-06-19 }
+    confidence: B
+
+  - field: construction.builder_location
+    value: Linthouse, Govan, Glasgow, Scotland
+    src: [naval-history-sikh, uboat-sikh, navypedia-tribal]
+    valid: { from: 1936-06-19 }
+    confidence: B
+
+  - field: construction.laid_down
+    value: 1936-09-24
+    unit: date
+    src: [naval-history-sikh, uboat-sikh]
+    valid: { from: 1936-09-24 }
+    confidence: B
+    note: naval-history 与 uboat.net 均为 1936-09-24；navypedia 记 9.1936。
+
+  - field: construction.launched
+    value: 1937-12-17
+    unit: date
+    src: [naval-history-sikh, uboat-sikh, navypedia-tribal]
+    valid: { from: 1937-12-17 }
+    confidence: A
+    note: 三源一致。
+
+  - field: construction.commissioned
+    value: 1938-10-12
+    unit: date
+    src: [naval-history-sikh, uboat-sikh]
+    valid: { from: 1938-10-12 }
+    confidence: B
+    note: >
+      **本舰的「服役」与「完工」相差一个月，必须分清。**
+      naval-history 原句："Commissioned for service in 1st TRIBAL Destroyer
+      Flotilla, Mediterranean Fleet ... 12th Build completion and commenced
+      Acceptance Trials."
+      uboat.net 原句："she was completed on 2 November 1938 even though she had
+      been commissioned a month earlier."
+      即 1938-10-12 服役（早于完工），1938-11-02 完工。本条取服役日。
+
+  - field: construction.cost
+    value: 337704
+    unit: count
+    src: [naval-history-sikh]
+    valid: { from: 1938-10-12 }
+    confidence: B
+    note: >
+      币种英镑。原句："Build was completed on 12 October 1938 at a cost of
+      £337,704 5s."（12 October 这个日期是该页把「服役」写作「完工」的口径差，
+      见上一条 note；金额本身无争议）
+
+  - field: construction.fate_date
+    value: 1942-09-14
+    unit: date
+    src: [naval-history-sikh, uboat-sikh, navypedia-tribal]
+    valid: { from: 1942-09-14 }
+    confidence: A
+    note: >
+      三源一致（naval-history / uboat.net / navypedia 均记 1942-09-14）。
+      位置：navypedia 与 uboat.net 的舰页记 32°05'N 24°00'E；
+      naval-history 的该页误写为 "32.05N 42.00E"（经度 42 度在托布鲁克以东
+      远入埃及内陆，明显是 24 之误）。
+      **本条采用 24°00'E，42°00'E 记为转录错误，见 RESEARCH-NOTES.md。**
+
+  - field: construction.fate_type
+    value: sunk_by_enemy
+    src: [naval-history-sikh, uboat-sikh]
+    valid: { from: 1942-09-14 }
+    confidence: A
+    note: >
+      **德国岸防炮（88 mm），不是空袭、不是 1944 年、不在的黎波里。**
+      naval-history 的 eBook 分册原句："SIKH, 14th September 1942, Eastern
+      Mediterranean, off Tobruk, eastern Libya - by German shore batteries.
+      Landing Royal Marines for British combined operations raid on Tobruk."
+
+      navypedia 原句："Sikh was sunk by German coastal battery at Tobruk
+      14.9.1942."
+
+      uboat.net 原句："Shore batteries opened fire. One 88mm shell exploded in
+      Sikh's Gear Room..."
+
+      沉没方式：拖带失败后由舰长下令引爆自沉阀（scuttling charges），
+      舰体向右倾覆沉没。**虽属自沉动作，但起因是敌火损伤，
+      故 fate_type 取 sunk_by_enemy 而非 sunk_by_scuttling。**
+
+  # ============================================================ 服役
+  - field: service.unit
+    value: 第 1 部族驱逐舰分队（1938-10 起）→ 第 4 驱逐舰分队（1939-04 改称）
+    src: [naval-history-sikh]
+    valid: { from: 1938-10-12, to: 1941-12 }
+    confidence: B
+    note: >
+      服役时为该分队资深军官舰（Senior Officer's ship）。
+      naval-history 原句："Commissioned for service in 1st TRIBAL Destroyer
+      Flotilla, Mediterranean Fleet ... to work-up for service with Flotilla as
+      Senior Officer's ship."
+
+  - field: service.unit
+    value: 第 14 驱逐舰分队（地中海舰队，1941-12 起）→ 第 22 驱逐舰分队（马耳他，1942-01 起）
+    src: [naval-history-sikh, uboat-maori]
+    valid: { from: 1941-12, to: 1942-09-14 }
+    confidence: B
+
+  - field: service.complement.standard
+    value: 190
+    unit: persons
+    src: [uboat-tribal-class]
+    valid: { from: 1938-10-12, to: 1942-09-14 }
+    confidence: C
+
+  - field: service.commander
+    value: Cdr. John Agnew Giffard, RN（1938-09-05 至 1940-10-25）
+    src: [uboat-sikh]
+    valid: { from: 1938-09-05, to: 1940-10-25 }
+    confidence: C
+    note: 任期起点早于服役日，系建造期任命。
+
+  - field: service.commander
+    value: Cdr. Graham Henry Stokes, RN（1940-10-25 至 1942-02-03）
+    src: [uboat-sikh, naval-history-cossack]
+    valid: { from: 1940-10-25, to: 1942-02-03 }
+    confidence: C
+    note: 1941-05-26/27 夜袭俾斯麦与 1941-10-16 Callboy 行动时本舰舰长。
+
+  - field: service.commander
+    value: Lt. David Edmund Cole-Hamilton, DSC, RN（1942-02-03 至 1942-02-21，代理）
+    src: [uboat-sikh]
+    valid: { from: 1942-02-03, to: 1942-02-21 }
+    confidence: C
+
+  - field: service.commander
+    value: Capt. St. John Aldrich Micklethwait, DSO*, RN（1942-02-21 至 1942-09-14）
+    src: [uboat-sikh, naval-history-sikh]
+    valid: { from: 1942-02-21, to: 1942-09-14 }
+    confidence: B
+    note: 沉没时的舰长。自沉令由他下达；他做完最后一次全舰巡查后离舰，被俘。
+
+  # 阵亡数：**未获取，故不写 fact**。
+  # 两个主力来源（naval-history / uboat.net）都只说 "All the survivors were
+  # taken as prisoner of war"，不给阵亡数；maritimefindings.com 的搜索摘要
+  # 提到 "115 of her 190 crew were lost"，但该站实测返回 403，原页未取到，
+  # 按项目规矩（查不到就写查不到）不据此入库。见 RESEARCH-NOTES.md。
+
+  # ============================================================ 1938-39
+  # ============================================================ 俾斯麦夜袭（1941-05-26/27）
+  - field: armament.torpedo.tubes
+    value: 4
+    unit: count
+    src: [navypedia-tribal]
+    valid: { from: 1938-10-12, to: 1942-09-14 }
+    confidence: B
+    note: >
+      1 座四联装。本舰在 1941-05-26/27 夜战中 0218/27 一次齐射 4 条
+      （对已停车的俾斯麦），据信 1 条命中 —— 一次打光全部鱼雷。
+
+  # ============================================================ 邦角海战（1941-12-13）
+  # ============================================================ 托布鲁克（1942-09-13/14）
+  - field: armament.gun_failures
+    value: >-
+      1942-09-13/14 托布鲁克突袭（Operation Agreement）：本舰运送皇家海军陆战队
+      登岸。0505 在用小艇接运部队时被岸上探照灯照住，随即遭岸防炮射击。
+      第一发 88 mm 炮弹在齿轮舱爆炸，损坏润滑供油系统与操舵装置；
+      第二发在前部爆炸，引燃 A 炮的待发弹药架，正在登舰的陆战队员
+      死伤殆尽，并困住更多在住舱甲板待命的陆战队员；
+      第三发击中测距指挥仪，此后全部火炮只能本地控制；
+      第四发在拖带中引爆 Y 炮座周围的发射药；第五发击中 B 炮座杀死炮组；
+      第六发在拖带准备阶段击毁舰桥，舰长 Micklethwait 当时正在前甲板
+      监督拖带作业。最终拖缆被 88 mm 炮弹打断，舰长下令引爆自沉阀，
+      弃舰，生还者全部被俘。
+    src: [naval-history-sikh, uboat-sikh]
+    valid: { from: 1942-09-13, to: 1942-09-14 }
+    confidence: B
+    note: >
+      uboat.net 原句（逐条命中记录）："One 88mm shell exploded in Sikh's Gear
+      Room, damaging the lubrication feed system and the steering gear. A second
+      hit forward, blew up the ready-use ammunition locker for 'A' gun ...
+      A third shell struck her range finder director and from then on, all her
+      guns had to fire under local control ... a forth shell hit the unlucky
+      destroyer setting off the charges around Sikh's 'Y' mounting ...
+      a fifth shell struck 'B' mounting killing the gun crew ... a sixth shell
+      smashed the bridge ... another 88mm shell hit the towline and severed it."
+
+      以及 "Captain Micklethwait fired the scuttling charges which flooded the
+      engine and boiler rooms. He made a final tour of his ship and left.
+      Sikh took a long time to die, heeling over to starboard as she sank in
+      position 32º05'N, 24º00'E while shells continued to hit.
+      All the survivors were taken as prisoner of war."
+
+      naval-history 简记："During attempts to land Royal Marines came under fire
+      from shore batteries. ... Sustained major damage and taken in tow by
+      HMS ZULU. Sank in position 32.05N 42.00E after further damage by 88mm
+      shore fire."（经度 42 为 24 之误，见 construction.fate_date 的 note）
+
+  # ============================================================ 改装与设备（逐次）
+  - field: armament.mount.summary
+    value: >-
+      建成：8 × 4.7 in/45 QF Mk XII（4 座双联）+ 4 × 40 mm 2-pdr（1 座四联）
+      + 8 × 12.7 mm 机枪 + 1 座四联 21 in 鱼雷发射管 + 深弹 30 枚。
+      1941-01 至 03 利斯（Leith）修理兼改装：X 炮座的双联 4.7 in 换为
+      双联 4 in 高平两用炮座（主炮减为 6 门），装 286M 型雷达。
+      1941-06-13 前后（普利茅斯）：舰桥两舷各加 1 门单装 2-pdr，用于打 E 艇。
+      1941-08-18 至 09 法尔茅斯改装：加装 285 型炮术火控雷达与
+      2 门单装 20 mm Oerlikon。
+    src: [naval-history-sikh, navypedia-tribal]
+    valid: { from: 1938-10-12, to: 1942-09-14 }
+    confidence: B
+    note: >
+      1941 年初改装原句（naval-history）："Work carried out included
+      replacement of single 4.7in gun by twin 4in mounting to improve AA
+      defence. Modified RAF air-surface radar fitted (Naval Type 286M.)"
+
+      **注意原文写 "replacement of single 4.7in gun"，与本级实际配置
+      （4 座双联，无单装 4.7 in）不符** —— 应为 "twin 4.7in mounting" 之误。
+      同级 Cossack / Maori 的同一改装，naval-history 均写作
+      "Twin 4.7in mounting in X position was replaced by twin 4in HA mounting"。
+      本条按「X 炮座换装」登记，并在 RESEARCH-NOTES.md 记录该处笔误。
+
+      1941-06 普利茅斯加 2-pdr 原句："Taken in hand for fit of two additional
+      2Pdr mountings in Bridge wings to carry out attacks on E-Boats in defence
+      of coastal convoys."
+
+      1941-08 法尔茅斯原句："Work included fit of fire control radar Type 285
+      and two single 20mm Oerlikon guns for close range AA defence."
+
+  - field: sensors.radar.installed
+    value: 286M 型（对空/对海搜索）
+    src: [naval-history-sikh]
+    valid: { from: 1941-03, to: 1941-09 }
+    confidence: B
+    note: >
+      1941-01-06 与 Mashona 相撞受损，入 Henry Robb（利斯）修理并改装。
+      原句："Modified RAF air-surface radar fitted (Naval Type 286M.) This had
+      an aerial fixed to ship structure and was of limited value."
+      1941-09 法尔茅斯改装加装 285 后，286M 的去留来源未记，故 valid.to 取
+      下一次改装完成月，表示「此后配置另有记载」。
+
+  - field: sensors.radar.installed
+    value: 285 型（炮术火控雷达，主炮用）
+    src: [naval-history-sikh]
+    valid: { from: 1941-09, to: 1942-09-14 }
+    confidence: B
+
+  - field: armament.aa_20mm.count
+    value: 2
+    unit: count
+    src: [naval-history-sikh]
+    valid: { from: 1941-09, to: 1942-09-14 }
+    confidence: B
+    note: >
+      1941-09 法尔茅斯改装加「2 门单装 20 mm Oerlikon」。
+      **但 navypedia 的 1941 年初表格把本舰列为「+ 2 门单装 2-pdr」
+      而不是 20 mm**，且 uboat.net 记 1941-07 四艘部族级都是舰桥 2-pdr。
+      三源不一致，两说并列，见 armament.mount.summary 的 note。
+
+  # ============================================================ 与舰级不同的本舰值
+  - field: displacement.standard
+    value: 1959
+    unit: t
+    src: [navypedia-tribal]
+    valid: { from: 1938-10-12, to: 1942-09-14 }
+    confidence: C
+    note: 本舰与舰级同值，navypedia 未给逐舰排水量。

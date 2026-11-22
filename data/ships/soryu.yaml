@@ -15,7 +15,7 @@
 
 id: soryu
 name:
-  zh: 苍龙
+  zh: 苍龙号
   en: Sōryū
 class: soryu
 note: >-
@@ -37,7 +37,7 @@ facts:
     confidence: C
 
   - field: identity.name_zh
-    value: 苍龙
+    value: 苍龙号
     src: [japanese-warship-soryu]
     valid: { from: 1935-12-23 }
     confidence: C

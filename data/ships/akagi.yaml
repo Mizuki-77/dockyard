@@ -16,7 +16,7 @@
 
 id: akagi
 name:
-  zh: 赤城
+  zh: 赤城号
   en: Akagi
 class: akagi
 note: >-
@@ -39,7 +39,7 @@ facts:
     note: 日文原名为「赤城」，假名「あかぎ」。
 
   - field: identity.name_zh
-    value: 赤城
+    value: 赤城号
     src: [combinedfleet-akagi]
     valid: { from: 1925-04-22 }
     confidence: C

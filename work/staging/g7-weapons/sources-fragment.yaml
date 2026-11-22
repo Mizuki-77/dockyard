@@ -1,0 +1,58 @@
+# ============================================================================
+# 来源分片 —— g7-weapons（4 型英国海军武器正文用）
+#
+# 只登记 1 条新来源：navweaps-4-7in-45-mk12。
+# 其余三条（8in-50-mk8 / 6in-50-mk23 / 45in-45-mk1）已在 data/sources.yaml 登记，
+# 本分片不重复登记；两份正文里另外引用的既有来源见文末「引用到的既有来源」清单。
+# ============================================================================
+sources:
+  - id: navweaps-4-7in-45-mk12
+    title: 'British 4.7"/45 (12 cm) QF Mark IX and Mark XII'
+    url: https://www.navweaps.com/Weapons/WNBR_47-45_mk9.php
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: NavWeaps（Tony DiGiulian 编辑）
+    lang: en
+    access: proxy
+    fetched: 2026-11-22
+    license: all_rights_reserved
+    note: |
+      部族级 / J / K / N 级驱逐舰与阿布迪尔级布雷舰的主炮。
+      **URL 与本项目登记时下发的地址不一致，必须记下**：
+      任务下发的 http://www.navweaps.com/Weapons/WNBR_47-45_mk12.php
+      实测返回 404；NavWeaps 把 Mark IX 与 Mark XII 放在同一页
+      WNBR_47-45_mk9.php（标题即 "Mark IX and Mark XII"）。
+      正文数据全部取自后者，url 字段填实际抓到的这一页。
+
+      该页同时覆盖两型，引用时必须限定 Mark：
+      Mark XII 炮重 3,290–3,297 kg、身管全长 5.692 m（Mark IX：3,011–3,032 kg / 5.604 m）；
+      弹重 50 磅（22.68 kg）、初速 808 mps、身管寿命 1,400 发；
+      射程 30 度 15,800 码 / 40 度 17,000 码；
+      射速 CPXIX 双联装 10–12 发/分、其他炮座 7–10 发/分。
+      Mark XII 各型合计 372 门。
+
+      关键原句（正文直接引用处）：
+      "The lack of a DP function for these weapons was keenly felt throughout the
+      war as more British destroyers were sunk by air attack than from any other
+      cause."
+      "The CPXIX twin mounting was the first British power mounting specifically
+      designed for destroyers."
+
+      注意：任务下发的 URL 里写的是 47-45_mk12，本项目的来源 id 也定为
+      navweaps-4-7in-45-mk12（沿用 navweaps-<口径> 命名），
+      id 与 url 的差异是刻意的，不要「修正」成一致。
+
+# ---------------------------------------------------------------------------
+# 引用到的既有来源（不要重复登记；此处只列出，供合并时核对）
+# ---------------------------------------------------------------------------
+# navweaps-8in-50-mk8          data/sources.yaml:1802   8in-50-mk8.yaml 全篇
+# navweaps-6in-50-mk23         data/sources.yaml:1816   6in-50-mk23.yaml 全篇
+# navweaps-45in-45-mk1         data/sources.yaml:2202   45in-45-mk1.yaml 全篇
+# navweaps-4-7in-40-mk8        data/sources.yaml:3816   47in-45-mk12.yaml（对空能力对比段）
+# washington-treaty-1922       data/sources.yaml        8in-50-mk8.yaml（条约第十二条原文）
+#
+# ⚠️ 45in-45-mk1 页的既有来源 note 里写着「必须加 -L 并走代理」，
+#    本轮实测 http://www.navweaps.com/Weapons/WNBR_45-45_mk1.php 直连即 200，
+#    未加 -L、未走代理，内容完整（本页 Mark I / III / IV 家族页，60,868 字节）。
+#    见 RESEARCH-NOTES.md「卡住的地方」一节。

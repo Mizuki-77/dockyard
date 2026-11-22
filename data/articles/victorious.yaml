@@ -1,0 +1,606 @@
+# ============================================================================
+# 舰艇正文：Victorious（胜利号，38）
+#
+# 硬规则（scripts/validate.py 的 check_article 会拦）：
+#   1. 每个 paragraph / event 都要带 src，且 src 全部已登记、不是 tier E
+#   2. lead 必须有；paragraphs 至少一段
+#   3. history 每段 events 的 date 必须是 YYYY / YYYY-MM / YYYY-MM-DD
+#   4. 正文里不写「据说」「有人认为」这类模糊归属
+#
+# 本文件与 work/staging/g1-victorious/slices/victorious.yaml 的 V0–V8 对齐；
+# 两者若有一天冲突，以 fact 的 valid 窗口为准，切片与正文一起改。
+#
+# 一条必须守住的史实线（本站 data/battles/last-battle.yaml 文首已有更正）：
+#   **胜利号参加的是 1941-05-24 深夜至 05-25 凌晨对俾斯麦的空袭，
+#   她 05-26 已奉命赴克莱德湾加油，不在 05-26/27 的最终战场。**
+#   最终那两轮空袭来自皇家方舟号。本文件不把两者混成一次。
+# ============================================================================
+ship: victorious
+updated: 2026-11-22
+
+intro:
+  lead:
+    zh: >-
+      胜利号（HMS Victorious, 38）是光辉级装甲航母的二号舰。
+      它没有挨过同级首舰那种重创，却反过来把「改装」变成了自己的主业：
+      1943 年借调美国太平洋舰队，被美方按自己的标准从飞行甲板改到雷达；
+      1944 年参加对提尔皮茨的钨作战；1945 年在冲绳外海挨了两次神风，
+      两次都是擦边，两次都当场恢复作战。战后它是本级唯一活下来、
+      并且做了大规模重建的一艘——1958 年重新服役时已经几乎不是同一条船，
+      最后在 1969 年拆解。
+    en: >-
+      HMS Victorious was the second of the Illustrious-class armoured carriers.
+      She never took the kind of damage her name ship did, and instead made
+      refitting her speciality: lent to the US Pacific Fleet in 1943 and
+      rebuilt to American standards from flight deck to boiler rooms; she flew
+      in Operation Tungsten against Tirpitz in 1944; and off Okinawa in 1945
+      she survived two kamikaze strikes that both glanced off and both left her
+      operational. She was the only ship of the class to survive the war and be
+      extensively reconstructed - by 1958 she was barely the same ship - and
+      was broken up in 1969.
+
+  paragraphs:
+    - heading: 舰名与它在同级里的位置
+      text:
+        zh: >-
+          这是皇家海军第 5 艘用 Victorious 命名的军舰。该名 1783 年首次启用，
+          上一任是 1895 年下水、1923 年出售的一艘战列舰。
+          在本级四艘舰里，它的位置有点特别：光辉号是首舰、战果最大、
+          也伤得最重；可畏号在 1941 年 5 月克里特外海被重创；
+          不倦号是加了一层矮机库的改型。只有胜利号在战争的开幕几年里
+          一次重创都没受过——注意这不是它运气好，而是它那几年主要在北冰洋
+          和挪威海跑船团，那里能伤到它的东西不是俯冲轰炸机，是天气和 U 艇。
+      src: [naval-history-victorious, ac-vic-kamikaze]
+
+    - heading: 1941 年 5 月 24 日：一次打中了、却没改变结局的空袭
+      text:
+        zh: >-
+          1941 年 5 月 22 日，它刚服役不到两个月、机群训练还没完成，
+          就被抽调去追俾斯麦——当时本土水域没有别的航母可用。
+          5 月 24 日 22:10，825 中队的全部 9 架 Swordfish 起飞，其中 3 架
+          装着新的 ASV 对海搜索雷达；一架在云层里与友机失散，
+          实际只有 8 架在午夜前后发起攻击，命中 1 条 18 英寸鱼雷。
+          这一雷打在俾斯麦的舯部装甲带上，损伤极小。
+          更值得记住的是后半句：**它没有留在战场上。**
+          5 月 26 日它已奉命赴克莱德湾加油，那天夜里和次日由皇家方舟号
+          的 Swordfish 打出真正决定命运的那一轮（打坏舵机）。
+          这次空袭的价值不在战果，而在于它是皇家海军航母第一次
+          在北大西洋的恶劣海况下完成夜间雷击——证明这套东西在北极能用。
+      src: [naval-history-victorious, wc-victorious, kbismarck-last-battle]
+
+    - heading: 1943 年：三个月的「USS Robin」
+      text:
+        zh: >-
+          1942 年底，美国太平洋舰队被打得只剩萨拉托加号一艘能打的航母。
+          金恩上将在反复催英国出船，丘吉尔和罗斯福之间的电报来回了几轮，
+          最后成交的是胜利号：1942 年 12 月 20 日它从克莱德河出航，
+          12 月 31 日进诺福克海军船厂。
+          接下来一个月里，美方按自己的标准把它改了一遍：把舰尾的气动
+          round-down 填平、甲板加长 10 英尺，好让美国飞行员那种「高进低接」
+          的着舰方式有地方落；在艉悬下面加一层平台塞进 8 门 20 mm；
+          换美制 TBS 电台、YB 归航信标和雷达；装 36 架 Martlet 与 16 架 Avenger；
+          全机改涂白星。到珍珠港又加了双联和四联 40 mm、空调，
+          整条船刷成美制蓝灰单色，甲板中央还漆了一个假升降机的方框——
+          让日机瞄准装甲最厚的部位。
+          它在南太平洋干了三个月，一次真正的交战都没有：连续海上 28 天、
+          12,233 海里、614 架次、只有 8 次事故。它带过去的是英国人那套
+          战斗机管制室，美方后来把这套布局吸收进了自己的 CIC。
+          「USS Robin」是它过巴拿马运河时对美军战列舰报出的无线电呼号，
+          不是改名——白船旗一直挂着。
+      src: [ac-pacops, wc-victorious, naval-history-victorious]
+
+    - heading: 1944–45：从挪威的空目标到冲绳的两次擦边
+      text:
+        zh: >-
+          1944 年 4 月 3 日的钨作战是它一生里最像样的一次攻击行动：
+          与暴怒号分担两波各 21 架 Barracuda，两舰互换中队，使每个机群
+          都能整体上舰；它自己另出 Corsair 护航。三条 Barracuda 没回来，
+          提尔皮茨修了一个多月。此后半年它一直在挪威海扑空——
+          计划、起飞、返航，目标被云遮住。
+          1945 年它转到太平洋，在冲绳外海挨了两次神风。
+          4 月 1 日那架被舰长丹尼一个大舵角甩开，右翼撞在甲板左缘，
+          整架翻进海里，炸弹在舷外 80 英尺水下炸开，甲板上 8 架飞机基本没伤。
+          5 月 9 日那两架是真的撞上了：第一架砸在 B2 炮座与弹射器之间的甲板上，
+          炸开一个 12 英尺的洞、把炮组打死、弹射器报废到战争结束；
+          六分钟后第二架擦着左舷滑进海里，毁了一道拦阻索和四架 Corsair。
+          两次都是当天就恢复起降。这不是运气——3 英寸装甲甲板加
+          60 磅结构钢板的下陷与撕裂，正是「装甲盒」设计想要的结果。
+      src: [ac-vic-kamikaze, ac-kami-co, wc-tungsten, naval-history-victorious]
+
+    - heading: 战后：唯一被重建的一艘
+      text:
+        zh: >-
+          光辉级四艘里，只有胜利号撑到了可以做大规模重建的时候。
+          1950 至 1957 年，它在船厂被切开、加长、加宽、加深，
+          锅炉整批换掉，装上两部 44 米蒸汽弹射器和 8.75° 斜角甲板，
+          雷达换成 Type 984 三维对空，4.5 英寸主炮全部拆掉改 76 毫米。
+          最要紧的一项是机库净高从 4.9 米抬到 5.25 米——
+          这 35 厘米就是喷气机上舰的门槛，也是本级「16 英尺天花板」
+          这个批评唯一被真正解决的一次。
+          代价是它变成了一条极贵的船：飞行甲板同时是机库顶板，
+          改一处要动全身。1967 年 11 月改装期间的一场火让继续投入不再划算，
+          当年 11 月 27 日国防大臣在下院宣布退役拆解，1969 年 7 月 13 日
+          拖抵 Faslane。
+      src: [navypedia-illustrious, naval-history-victorious, wc-victorious]
+
+history:
+  - id: build
+    title: { zh: 建造与服役, en: Building and commissioning }
+    range: { from: 1937-01-13, to: 1941-05-15 }
+    lead:
+      zh: >-
+        它在泰恩河畔的 Walker 船厂建造，从下单到服役用了四年两个月，
+        其中近一半时间耗在战争的第一个冬天里。
+    events:
+      - date: 1937-01-13
+        text:
+          zh: 向 Vickers-Armstrong（泰恩河畔 Newcastle 的 Walker 船厂）下单。
+        src: [naval-history-victorious]
+      - date: 1937-05-04
+        text:
+          zh: >-
+            铺设龙骨，船台号 11。开工日期有两说：navypedia 记 5 月 4 日，
+            naval-history 记 5 月 5 日，本站取前者并并列后者。
+        src: [navypedia-illustrious, naval-history-victorious]
+      - date: 1939-09-14
+        text:
+          zh: >-
+            下水，掷瓶人是国防大臣之妻 Lady Inskip。十一天后战争爆发，
+            舾装工作随即被战备需求挤压。
+        src: [naval-history-victorious]
+      - date: 1941-03-29
+        text:
+          zh: >-
+            服役，编入本土舰队。此时舾装尚未全部完成——离正式完工还有
+            一个半月。
+        src: [naval-history-victorious, ac-vic-charcard]
+      - date: 1941-05-15
+        text:
+          zh: >-
+            完工，造价 405 万英镑。当日完成最终验收试航。
+            注意「服役日 03-29」与「完工日 05-15」是两个事件，不要混用。
+        src: [naval-history-victorious, navypedia-illustrious]
+
+  - id: bismarck-and-arctic
+    title: { zh: 俾斯麦追击与北极船团, en: The Bismarck chase and the Arctic convoys }
+    range: { from: 1941-05-22, to: 1942-07-31 }
+    lead:
+      zh: >-
+        这一年的主题是「跑船团」。它在新服役的第一个夏天里同时干了两件事：
+        追一艘德国战列舰，和给驶往苏联的运输船队当保镖。
+    events:
+      - date: 1941-05-22
+        text:
+          zh: >-
+            从本土舰队抽调，与战列舰 King George V 一同出航搜寻俾斯麦。
+            此时机上训练尚未完成，但本土水域没有第二艘可用航母。
+        src: [naval-history-victorious]
+      - date: 1941-05-24
+        text:
+          zh: >-
+            22:10 起飞 825 中队全部 9 架 Swordfish（其中 3 架装 ASV 雷达），
+            由巡洋舰 Aurora、Kenya、Hermione 掩护。一架在云层中与友机失散，
+            8 架在午夜前后发起攻击，命中 1 条 18 英寸鱼雷，
+            打在舯部装甲带上，损伤极小；全部飞机返航，无一被击落。
+            归航信标故障影响了回收。
+        src: [naval-history-victorious, wc-victorious, kbismarck-last-battle]
+      - date: 1941-05-26
+        text:
+          zh: >-
+            已奉命赴克莱德湾加油，位置远在战场之外。
+            **5 月 26 日夜至 27 日的两轮决定性空袭来自皇家方舟号**，
+            本舰不在此次行动中——本站 data/battles/last-battle.yaml 文首
+            就此留有专门更正。
+        src: [kbismarck-last-battle, naval-history-victorious]
+      - date: 1941-06-13
+        text:
+          zh: >-
+            参加 Operation Tracer：与皇家方舟号一同向马耳他运送飓风战斗机，
+            48 架中 45 架安全抵达。
+        src: [naval-history-victorious]
+      - date: 1941-07-30
+        text:
+          zh: >-
+            EF 行动：与暴怒号分头空袭挪威北部的 Kirkenes 与 Petsamo。
+            本舰一次损失 11 架 Albacore 与 2 架 Fulmar。
+        src: [naval-history-victorious]
+      - date: 1941-08-26
+        text:
+          zh: >-
+            掩护开往阿尔汉格尔斯克的第一支船团（Operation Dervish），
+            同行的有巡洋舰 Devonshire、Suffolk 与三艘驱逐舰。
+        src: [naval-history-victorious]
+      - date: 1941-09-03
+        text:
+          zh: 空袭 Tromso，09-07 再次空袭同地，09-12 袭击 Bodo 外海航运与 Vestfjord 岸上目标。
+        src: [naval-history-victorious]
+      - date: 1941-11-05
+        text:
+          zh: >-
+            与 King George V 一同进入丹麦海峡巡逻，会合美舰 Idaho、Mississippi
+            与巡洋舰 Wichita、Tuscaloosa，准备拦截舍尔号与提尔皮茨。
+            德军行动取消后于 11-13 撤回雷克雅未克。
+        src: [naval-history-victorious]
+      - date: 1942-03-06
+        text:
+          zh: >-
+            与 King George V、Duke of York、声望号及两艘巡洋舰一同为
+            PQ12 与 QP8 提供掩护，起因是提尔皮茨 03-06 从特隆赫姆出航。
+        src: [naval-history-victorious]
+      - date: 1942-03-09
+        text:
+          zh: >-
+            对提尔皮茨发起 Albacore 雷击，未获战果，损失 2 架。
+            这是本舰第一次、也是唯一一次对德国主力舰的实弹攻击机会。
+        src: [naval-history-victorious]
+      - date: 1942-06-30
+        text:
+          zh: >-
+            参加 PQ17 / QP13 的远距掩护。此后 7 月被抽调准备马耳他运输，
+            北极船团这一段到此结束。
+        src: [naval-history-victorious]
+
+  - id: pedestal-and-robin
+    title: { zh: 马耳他、北非，然后是美国的三个月, en: Malta, North Africa, and three months with the US Navy }
+    range: { from: 1942-08-03, to: 1943-09-26 }
+    lead:
+      zh: >-
+        1942 年 8 月的 Pedestal 是本舰第一次真正的高强度防空作战；
+        四个月后它被借给美国海军，在太平洋上度过了没有战斗的三个月。
+    events:
+      - date: 1942-08-08
+        text:
+          zh: >-
+            与不倦号、暴怒号、鹰号、百眼巨人号一同进行 Exercise Berserk
+            多航母协同演练——这是 Pedestal 前唯一一次合练，
+            舰长在报告里说，没有这次演练，战斗中的管制「将完全无效」。
+        src: [naval-history-victorious, ac-pedestal-co]
+      - date: 1942-08-10
+        text:
+          zh: >-
+            随 Force Z 掩护 WS21S 进入西西里海峡（Operation Pedestal）。
+            本舰被指定负责**低空掩护**：Fulmar 爬升率差，巡逻高度只能压到
+            10,000 英尺；舰队战斗机管制由本舰的管制室统一指挥，
+            配有防空巡洋舰 Sirius 作为专属护卫。
+        src: [ac-pedestal, ac-pedestal-co]
+      - date: 1942-08-11
+        text:
+          zh: >-
+            13:16 鹰号被鱼雷命中、13:25 沉没；随后有鱼雷从本舰舰首前方穿过，
+            十分钟后第二枚在右舷被发现。当日全舰报告目击 6 艘潜艇与 2 枚鱼雷，
+            均以规避动作避过。
+        src: [ac-pedestal-co]
+      - date: 1942-08-12
+        text:
+          zh: >-
+            13:46 两架 Re.2001 从右舷低空突入——外形酷似飓风，
+            在开火前被误认为友机。一枚炸弹落在左舷舰首近处，
+            另一枚命中飞行甲板中线（舰岛后端），未爆炸即解体翻入海中，
+            无人员伤亡。当日全舰打出 4.5 英寸炮弹 1,056 发、
+            2-pdr 5,673 发、20 mm 1,553 发。
+        src: [ac-pedestal-co, ac-worthwhile]
+      - date: 1942-09-10
+        text:
+          zh: >-
+            在本土改装，装入一台**原型机 Aircraft Direction Room**
+            （飞机管制室）。这套东西后来成了它被美军看中的原因。
+        src: [naval-history-victorious]
+      - date: 1942-11-08
+        text:
+          zh: >-
+            编入 Force H 参加北非登陆（Operation Torch），
+            空袭阿尔及尔，四架 Martlet 降落在 Blida 机场接受守军投降。
+        src: [naval-history-victorious]
+      - date: 1942-12-20
+        text:
+          zh: >-
+            从克莱德河出航，护航为巡洋舰 Phoebe 与三艘驱逐舰。
+            出航后舰长才通过广播宣布本舰已脱离本土舰队、正驶向百慕大。
+            横渡途中遇 9 级大风，飞行甲板上浪、机库进水数英寸。
+        src: [ac-pacops]
+      - date: 1943-01-01
+        text:
+          zh: >-
+            进诺福克海军船厂。一个月的改装由美方完成：填平舰尾 round-down
+            延长甲板 10 英尺、在艉悬下加平台装 8 门 20 mm（全舰 30 门）、
+            拆前部探照灯换 2 门 20 mm、加垂直绘图板、换 YE 归航信标、
+            加 3 台柴油消防泵与雾状灭火系统、加机库调度席、加 2 台密码机。
+        src: [ac-pacops]
+      - date: 1943-02-11
+        text:
+          zh: >-
+            抵巴拿马运河东口 San Cristobal。过闸时拆掉部分火炮、吊车与
+            桅杆；一艘美军战列舰问「what ship?」，本舰答「USS Robin」——
+            呼号由此而来，白船旗始终在挂。过闸时碰坏左舷一处潜艇瞭望位。
+        src: [ac-pacops]
+      - date: 1943-03-04
+        text:
+          zh: >-
+            抵珍珠港，机群飞上岸进驻 Ford Island。舰上再加双联与四联 40 mm
+            （装在水上飞机吊车前方）、在 1 号拦阻索之后加两道美制索、
+            加空调与新的甲板着舰指挥官平台，全舰改刷美制蓝灰。
+            04-29 尼米兹登舰检阅。
+        src: [naval-history-victorious, ac-pacops]
+      - date: 1943-06-27
+        text:
+          zh: >-
+            随 TG 36.3 出海支援新乔治亚登陆（Operation Cartwheel），
+            连续海上 28 天，12,233 海里、614 架次、8 次事故。
+            本舰作为「战斗机航母」带 58～60 架 Martlet/Wildcat
+            （两源一说 60、一说 58，并列），自己的 Avenger 借给萨拉托加号；
+            这是英美航母第一次跨甲板混编。
+        src: [ac-pacops, naval-history-victorious]
+      - date: 1943-09-26
+        text:
+          zh: >-
+            返抵克莱德河，随后进利物浦 Gladstone 船坞改装至 1944-03-04。
+            美制电台、密码机与雷达全部拆除；第二次过巴拿马运河时的新损伤
+            一并修复，另装一部美制 SG 雷达。
+        src: [ac-pacops]
+
+  - id: tungsten
+    title: { zh: 钨作战与挪威海的空目标, en: Operation Tungsten and the empty Norwegian Sea }
+    range: { from: 1944-03-28, to: 1944-06-12 }
+    lead:
+      zh: >-
+        1944 年春天它做了两件事：参与一次成功的空袭，和参与四次被天气取消的空袭。
+    events:
+      - date: 1944-03-28
+        text:
+          zh: >-
+            与本土舰队各航母进行针对提尔皮茨的全装彩排。
+            两舰互换中队，使每个受训机群能整体上舰作战。
+        src: [naval-history-victorious, wc-tungsten]
+      - date: 1944-04-03
+        text:
+          zh: >-
+            钨作战（Operation Tungsten）：两波各 21 架 Barracuda，
+            每波本舰出 12 架、暴怒号出 9 架；本舰另出 Corsair 护航。
+            提尔皮茨当时正准备出港试航，被多次命中，
+            3 架 Barracuda 因密集高炮损失，德方修复花了一个多月。
+        src: [naval-history-victorious, wc-tungsten]
+      - date: 1944-04-24
+        text:
+          zh: >-
+            Planet 行动因天气取消，改为攻击 Bodo 一带航运，
+            击沉船团中 3 艘船，损失 6 架飞机。
+        src: [naval-history-victorious]
+      - date: 1944-05-15
+        text:
+          zh: >-
+            Brawn 行动：再次空袭提尔皮茨，因 Kåfjord 上空云层遮住目标而返航。
+        src: [naval-history-victorious, wc-victorious]
+      - date: 1944-05-28
+        text:
+          zh: >-
+            Tiger Claw 行动：第三次因目标区天气放弃，改为攻击航运。
+        src: [naval-history-victorious]
+      - date: 1944-05-30
+        text:
+          zh: U-957 发射声导鱼雷（GNAT）攻击本舰，未命中。
+        src: [naval-history-victorious]
+      - date: 1944-06-01
+        text:
+          zh: >-
+            Lombard 行动：空袭挪威沿海航运，击沉 1 艘扫雷舰与 1 艘商船。
+        src: [naval-history-victorious]
+
+  - id: eastern-fleet
+    title: { zh: 东方舰队与反复发作的舵机, en: The Eastern Fleet and a recurring rudder }
+    range: { from: 1944-06-12, to: 1945-02-11 }
+    lead:
+      zh: >-
+        在印度洋的这半年，它打的空袭不少，但真正贯穿全程的是舵机——
+        从 1944 年 8 月第一次卡死，到 1945 年 2 月离开时都没有彻底修好。
+    events:
+      - date: 1944-06-12
+        text:
+          zh: 与不倦号一同经地中海赴锡兰，07 月抵 Colombo 加入东方舰队。
+        src: [naval-history-victorious]
+      - date: 1944-07-25
+        text:
+          zh: >-
+            Crimson 行动：与光辉号一同空袭苏门答腊 Sabang 附近机场，
+            由巡洋舰 Phoebe 掩护。
+        src: [naval-history-victorious]
+      - date: 1944-08-20
+        text:
+          zh: >-
+            参加空袭苏门答腊后返航 Trincomalee 途中，**舵机突然卡死**，
+            一度失去控制；轮机部门抢修 30 分钟后恢复。这是此后反复发作的
+            一系列舵机故障的第一次。
+        src: [ac-vic-kamikaze]
+      - date: 1944-08-29
+        text:
+          zh: >-
+            Banquet 行动：与光辉号、不倦号一同空袭 Padang、Indaroeng 与
+            Emmahaven，由战列舰 Howe 掩护。
+        src: [naval-history-victorious]
+      - date: 1944-09-18
+        text:
+          zh: >-
+            Light 行动：与不倦号空袭苏门答腊 Sigli 铁路场并对 Nicobar 群岛
+            照相侦察。舰载机误击英潜艇 Spirit，未造成伤亡；
+            本次行动中出现操舵问题。
+        src: [naval-history-victorious]
+      - date: 1944-10-17
+        text:
+          zh: >-
+            Millet 行动：与不倦号空袭 Nicobar 与 Nancowry 港，由战列巡洋舰
+            Renown 掩护。日机反击中本舰损失 4 架、伤 5 架；舵机再次故障，
+            但尚不影响起降。
+        src: [naval-history-victorious, ac-vic-kamikaze]
+      - date: 1944-11-16
+        text:
+          zh: 在 Bombay 入坞修理舵机，直至 12 月恢复作战。
+        src: [naval-history-victorious]
+      - date: 1944-11-22
+        text:
+          zh: 英国太平洋舰队成立当日，本舰转隶该舰队。
+        src: [naval-history-victorious]
+      - date: 1945-01-24
+        text:
+          zh: >-
+            Meridian I：与光辉号、不倦号一同空袭苏门答腊 Pladjoe 炼油厂，
+            日机抵抗微弱。
+        src: [naval-history-victorious]
+      - date: 1945-01-29
+        text:
+          zh: >-
+            Meridian II：空袭 Soengi Gerong 炼油设施未获预期效果，
+            多架飞机受损；日军神风机在机群着舰时反击被击退。
+        src: [naval-history-victorious]
+      - date: 1945-02-11
+        text:
+          zh: >-
+            抵悉尼，本可休整 16 天。因为光辉号更急需船坞，本舰的舵机
+            没有得到彻底检查——这个问题会一直带到冲绳。
+        src: [ac-vic-kamikaze]
+
+  - id: pacific
+    title: { zh: 太平洋：TF 57、两次神风与战争结束, en: The Pacific, two kamikazes, and the end of the war }
+    range: { from: 1945-03-14, to: 1945-08-31 }
+    lead:
+      zh: >-
+        它在太平洋只打了五个月，其中两次被神风直接命中，
+        两次都在当天恢复起降——这一段是「装甲甲板到底值不值」
+        这个问题最干净的实验记录。
+    events:
+      - date: 1945-03-14
+        text:
+          zh: >-
+            在 Manus 与舰队合练时，15:25 中央锅炉房起火并发生爆炸，
+            损管队在半小时内控制住火势，本舰当日归队。
+        src: [ac-vic-kamikaze]
+      - date: 1945-03-25
+        text:
+          zh: >-
+            抵 Ulithi，编入美军第五舰队，改称 TF 57。
+            编成内的机群为 849 中队 14 架 Avenger、1834 与 1836 中队
+            共 37 架 Corsair，另带 2 架 Walrus 救援机。
+        src: [naval-history-victorious, ac-tf57]
+      - date: 1945-03-26
+        text:
+          zh: >-
+            Iceberg I 开始：与光辉号、不挠号、不倦号一同压制
+            Sakishima 群岛机场。
+        src: [naval-history-victorious]
+      - date: 1945-04-01
+        text:
+          zh: >-
+            17:30 雷达发现目标；一架低空神风从右舷后方跃升后俯冲。
+            舰长丹尼下令满舵加速旋回，日机跟着转弯但没能跟上，
+            右翼撞在飞行甲板左缘后整架翻入海中，炸弹在舷外 80 英尺水下爆炸，
+            把大量海水、汽油和碎片抛上甲板。甲板上 8 架飞机基本无损，
+            2 名甲板人员受伤。
+        src: [ac-vic-kamikaze, ac-kami-vian]
+      - date: 1945-05-09
+        text:
+          zh: >-
+            16:45 起连续四架神风突入。16:56 第一架撞在 B2 4.5 英寸炮座
+            与弹射器之间的甲板（Frame 31，3 英寸与 1.5 英寸 D 级甲板板交接处），
+            500 磅炸弹引爆：炸开 12 英尺直径的洞、甲板下陷 3 英寸、
+            横舱壁屈曲、弹射器报废（余战未修复）、B2 炮座炮组阵亡、
+            前升降机一台电机失效。6 分钟后第二架擦过左舷 Frame 135 落海，
+            毁 1 道拦阻索、1 部 40 mm 指挥仪、4 架 Corsair。
+            当日 3 死 20 伤（另有 4 死一说，两说并列）。
+        src: [ac-kami-co, ac-vic-kamikaze]
+      - date: 1945-05-17
+        text:
+          zh: >-
+            一架被高炮打伤的 Corsair 高速着舰，撞断 6 号与 8 号拦阻索，
+            撞上前甲板停放的另一架 Corsair 后坠海，3 人死亡（含飞行员）。
+            飞行甲板停摆近 3 小时，临时拦阻索刚架好又发生第二次撞击，
+            在空的 20 架飞机被迫降落到其它航母。
+        src: [ac-vic-kamikaze, naval-history-victorious]
+      - date: 1945-06-05
+        text:
+          zh: >-
+            抵悉尼，修 6 天：重做拦阻装置与新拦阻索、更换前升降机的
+            受损电机。06-11 启程返 Manus。
+        src: [ac-vic-kamikaze]
+      - date: 1945-06-16
+        text:
+          zh: 随可畏号、不倦号一同转隶美军第三舰队的 TF 37。
+        src: [naval-history-victorious]
+      - date: 1945-07-17
+        text:
+          zh: 空袭东京地区机场。次日因航母汽油补给系统污染，出动受限。
+        src: [naval-history-victorious]
+      - date: 1945-07-24
+        text:
+          zh: 空袭大阪期间，舰载机在 Shido 湾击沉一艘日本护航航母。
+        src: [naval-history-victorious]
+      - date: 1945-08-09
+        text:
+          zh: 空袭北本州与北海道的机场与航运。
+        src: [naval-history-victorious]
+      - date: 1945-08-31
+        text:
+          zh: >-
+            舰员参加悉尼胜利游行。此前 08-12 已随 TF 37 返回 Manus、
+            随后转悉尼——英国太平洋舰队撤离战区的原因是英方油源不足，
+            只留一支象征性兵力在美军第三舰队编内。
+        src: [naval-history-victorious]
+
+  - id: postwar
+    title: { zh: 战后：运兵、预备役与重建, en: Postwar trooping, reserve, and reconstruction }
+    range: { from: 1945-09-01, to: 1969-07-13 }
+    lead:
+      zh: >-
+        战后二十四年里它做了三件不同的事：把军人运回国、在船厂被改造成
+        另一条船、然后因为一场火而被放弃。
+    events:
+      - date: 1945-10-27
+        text:
+          zh: 自澳洲返抵英国。随后执行三轮远东运兵任务，接运复员军人回国。
+        src: [naval-history-victorious]
+      - date: 1947-10
+        text:
+          zh: 第三轮运兵结束后转入预备役。
+        src: [naval-history-victorious]
+      - date: 1948
+        text:
+          zh: 编入本土舰队训练中队。
+        src: [naval-history-victorious]
+      - date: 1950
+        text:
+          zh: >-
+            进入船厂开始大规模重建（1950–1957）：船体切开加长加宽加深、
+            锅炉整批换 Foster Wheeler、两部 44 米蒸汽弹射器、
+            两部新式快速升降机、8.75° 斜角甲板、机库净高抬到 5.25 米、
+            发电容量翻倍。
+        src: [navypedia-illustrious]
+      - date: 1958-01-14
+        text:
+          zh: >-
+            重建后重新服役。武备换成 6 座双联 76 mm/50 Mk 33，
+            4.5 英寸主炮全部拆除；雷达换成 Type 984 三维对空 +
+            963 + 974 + 293Q + Mk 34 ×3。标准排水量 30,530 t、
+            全长 238.0 m。
+        src: [navypedia-illustrious, naval-history-victorious]
+      - date: 1961
+        text:
+          zh: 参加 Operation Vantage，支援科威特危机。
+        src: [naval-history-victorious]
+      - date: 1963-08
+        text:
+          zh: 加固斜角甲板并作其它改进，以适配更重的舰载机。
+        src: [navypedia-illustrious]
+      - date: 1967-11-11
+        text:
+          zh: >-
+            在朴次茅斯改装期间舱室起火，1 名水兵死亡。
+            火灾使继续改装在经济上不再可行。
+        src: [wc-victorious, naval-history-victorious]
+      - date: 1967-11-27
+        text:
+          zh: 国防大臣 Healey 在下院宣布该舰将退役并作为废钢处置。
+        src: [wc-victorious]
+      - date: 1969-07-13
+        text:
+          zh: >-
+            售予 British Shipbreakers，当日拖抵 Faslane 拆解。
+            除籍日另有 1968-03 一说（navypedia 记「stricken 3.1968」），
+            与 1969 年的出售拖走不是同一事件，并列不裁决。
+        src: [naval-history-victorious, navypedia-illustrious]

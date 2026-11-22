@@ -1,0 +1,508 @@
+# ============================================================================
+# 单舰：HMS Norfolk（诺福克号重巡洋舰，舷号 78）
+# ----------------------------------------------------------------------------
+# 只写本舰与郡级（Norfolk 子级）不同的值与本舰特有的事实。
+# 解析顺序（docs/00-framework.md §3.6）：单舰 fact -> 舰级 fact -> 未记载。
+#
+# 【本舰与姊妹舰 Dorsetshire 的分野 —— 这份文件最该说清的事】
+#   两舰同级同型，但一生走了完全相反的两条路：
+#     Norfolk  —— 打满全场六年，五轮改装，1950 年拆解；
+#     Dorsetshire —— 1942-04-05 被日本舰爆击沉，连 1944 年那轮大改装都没等到。
+#   所以「哪一艘最终装了什么」这件事不能互相顶替：
+#   Norfolk 1944 年拆掉 X 炮塔时 Dorsetshire 已经沉了两年多。
+#
+# 【最有据的一块：1941-05-27 最终战的射击数据】
+#   527 发 8 英寸弹这个数字有两个独立来源：
+#   ① navweaps 引本舰舰长 A.J.L. Phillips 的战报评语（一手口径转述）；
+#   ② kbismarck 全战弹药统计表。
+#   两条独立且吻合，故 confidence 给 A。
+#   但**X 炮塔右炮只打了 8 发**这件事只有 navweaps 一处，
+#   且它给的原因带 probably，照原样保留，不写成定论。
+# ============================================================================
+
+id: norfolk
+name:
+  zh: 诺福克号
+  en: HMS Norfolk
+class: county
+
+open_ended_note: >
+  Norfolk 子级首舰（舷号 78，1948 年改 C78）。一生打满二战全程：
+  丹麦海峡与最终战（1941）、北极护航（1941–43）、北角海战（1943）、
+  挪威沿岸作战（1945）。经五轮改装，1944 年拆 X 炮塔。
+  1950-01-03 售予 BISCO，1950-02-19 抵 Newport 拆解。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: HMS Norfolk
+    src: [navypedia-norfolk]
+    valid: { from: 1927-07-08 }
+    confidence: A
+
+  - field: identity.name_zh
+    value: 诺福克号
+    src: [naval-history-norfolk]
+    valid: { from: 1927-07-08 }
+    confidence: C
+
+  - field: identity.name_en
+    value: HMS Norfolk
+    src: [navypedia-norfolk]
+    valid: { from: 1927-07-08 }
+    confidence: A
+
+  - field: identity.namesake
+    value: 英格兰诺福克郡（Norfolk）
+    src: [naval-history-norfolk]
+    valid: { from: 1927-07-08 }
+    confidence: C
+    note: >
+      本级全部以英格兰郡名命名。这是英国皇家海军第三艘取名 Norfolk 的舰
+      （britainsnavy 记「the third ship to carry the name HMS Norfolk」）。
+
+  - field: identity.pennant_number
+    value: '78'
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+    note: >
+      navypedia 记「78, 1948- C78」，即 1948 年改为 C78。
+      本条只记主舷号 78；C78 见 note，不另立 fact（避免同一字段两值被误判为分歧）。
+
+  - field: identity.ship_type
+    value: heavy_cruiser
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+
+  - field: identity.nation
+    value: united_kingdom
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+
+  - field: identity.operator
+    value: Royal Navy
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+
+  - field: identity.era
+    value: ww2
+    src: [naval-history-norfolk]
+    valid: { from: 1939-09-03, to: 1945-09-02 }
+    confidence: A
+
+  # ============================================================ 建造
+  - field: construction.builder
+    value: Fairfield Shipbuilding & Engineering Co. Ltd
+    src: [navypedia-norfolk, naval-history-norfolk]
+    valid: { from: 1927-07-08 }
+    confidence: A
+    note: naval-history 写「built by Fairfield shipyard at Govan, Glasgow」。
+
+  - field: construction.builder_location
+    value: Govan, Glasgow
+    src: [navypedia-norfolk]
+    valid: { from: 1927-07-08 }
+    confidence: A
+    note: navypedia 另给船台号 628（Yard No 628）。
+
+  - field: construction.yard_number
+    value: '628'
+    src: [navypedia-norfolk]
+    valid: { from: 1927-07-08 }
+    confidence: C
+
+  - field: construction.laid_down
+    value: 1927-07-08
+    unit: date
+    src: [navypedia-norfolk, naval-history-norfolk]
+    valid: { from: 1927-07-08 }
+    confidence: A
+    note: 两源一致（navypedia 8.7.1927；naval-history 与维基均 1927-07-08）。
+
+  - field: construction.launched
+    value: 1928-12-12
+    unit: date
+    src: [navypedia-norfolk, naval-history-norfolk]
+    valid: { from: 1928-12-12 }
+    confidence: A
+    note: 两源一致（navypedia 12.12.1928；naval-history「launched on 12th December 1928」）。
+
+  - field: construction.commissioned
+    value: 1930-04-30
+    unit: date
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30 }
+    confidence: B
+    note: >
+      **本舰有一对容易混的日期，必须写清。**
+      navypedia 的 Comp（完工）栏写 30.4.1930，英文维基 Norfolk 条目亦写
+      commissioned 30 April 1930。
+      但 naval-history 写「The completion date was 1st May 1930」，
+      英文维基 County 级条目的舰表也写 Completed 1 May 1930。
+      差一天，两说并列不裁决；本条取 4 月 30 日（三处中的两处），
+      5 月 1 日一说记在此 note。
+
+  - field: construction.fate_date
+    value: 1950-02-19
+    unit: date
+    src: [naval-history-norfolk]
+    valid: { from: 1950-02-19 }
+    confidence: B
+    note: >
+      **拆解要分四段说，不要写成「1950 年拆解」一句话：**
+      1949-05-03 抵德文波特 → 退入预备役、封存于 Falmouth →
+      1950-01-03 售予 BISCO（Cashmore, Newport）→ 1950-02-19 拖抵拆船厂。
+      本条取最后一环（抵达拆解地）作日期。
+
+  - field: construction.fate_type
+    value: scrapped
+    src: [navypedia-norfolk, naval-history-norfolk]
+    valid: { from: 1950-02-19 }
+    confidence: A
+    note: navypedia 记「sold for BU 1.1950」；naval-history 记售予 BISCO 于 1950-01-03。
+
+  # ============================================================ 服役
+  - field: service.unit
+    value: 第 8 巡洋舰中队（8th Cruiser Squadron）· 本土舰队
+    src: [naval-history-norfolk]
+    valid: { from: 1939-09-06, to: 1939-10 }
+    confidence: B
+    note: >
+      naval-history 记 1939-09-06「On completion of refit joined 8th Cruiser Squadron
+      in Home Fleet」；1940-01-10 又记「Rejoined 1st Cruiser Squadron」，
+      说明 1939 年 10–11 月间曾随中队转隶地中海又调回。
+      本条只记第一个有明确日期的编队。
+
+  - field: service.unit
+    value: 第 1 巡洋舰中队（1st Cruiser Squadron）· 本土舰队
+    src: [naval-history-norfolk]
+    valid: { from: 1940-01-10, to: 1945 }
+    confidence: B
+    note: >
+      1940-01-10 自 Rosyth 出海执行北方巡逻时已在 1st CS。
+      1941 年 5 月丹麦海峡时该中队由 Rear-Admiral W. F. Wake-Walker 指挥、
+      本舰为旗舰 —— 依据是英方一手审讯报告
+      「H.M.S. "Norfolk" ... wearing the flag of Rear-Admiral W. F. Wake-Walker, C.B., O.B.E.」
+      （admiralty-bismarck-interrogation）。
+
+  - field: service.commander
+    value: Captain A. J. L. Phillips
+    src: [admiralty-bismarck-interrogation, navweaps-8in-50-mk8]
+    valid: { from: 1941-05, to: 1941-05 }
+    confidence: B
+    note: >
+      **必须注意：本舰舰长在现有 tier D/C 来源里几乎无记录。**
+      naval-history 的 Norfolk 年表通篇未提舰长姓名；uboat.net 的 Norfolk 页面
+      本轮取到的 ID 对不上（返回的是另一艘舰），无法用作来源。
+      目前只有两处能确证 1941-05 当时是 Phillips：
+      ① 英方一手审讯报告（tier A）：「H.M.S. "Norfolk" (Captain A. J. L. Phillips, R.N.),
+         wearing the flag of Rear-Admiral W. F. Wake-Walker」；
+      ② navweaps 引述其战报时的称呼「Her Commander, Capt. A.J.L. Phillips」。
+      任期的起止日在所有已抓来源里都没有给出，故 valid 只写 1941-05 这一段时间点。
+
+  # ============================================================ 本舰实测值（覆盖舰级）
+  # 本舰精确全长 192.81 m（632 ft 7 in）只有 tier E 的维基条目给出，
+  # 而 navypedia 给的是两舰共用的区间 192.9–193.7 m（未逐舰标注）。
+  # 按红线 §2.1「来源 tier E 不能当 fact 的来源」，这条不写 fact，
+  # 只在这里留一句给正文与对比器：舰级值 192.9 m 对本舰是近似值。
+  - field: dimensions.draught.max
+    value: 6.91
+    unit: m
+    src: [navypedia-norfolk]
+    valid: { from: 1944-11, to: 1950-02-19 }
+    confidence: C
+    note: >
+      navypedia 装甲/尺度行注「Draught 6.37 deep load (Norfolk finally 6.91)」——
+      即本舰 1944 年大改装后吃水加深到 6.91 m，与同期排水量涨到
+      10,900 / 14,600 t 相对应。舰级值是 6.37 m。
+
+  - field: displacement.standard
+    value: 10900
+    unit: t
+    src: [navypedia-norfolk]
+    valid: { from: 1944-11, to: 1950-02-19 }
+    confidence: C
+    note: >
+      navypedia 在 1944 年 11 月改装项后注明「displacement was 10900/14600t」，
+      即本舰生命末期比建成时增重约 975 t（标准）。
+      增重来源写在同一句里：拆 X 炮塔与弹射器，换来 6 座四联 2-pdr 与 11 座双联 20 mm、
+      以及一整套新型雷达。这是「本级防护薄、只能靠加装电子设备与近程炮补课」的直接证据。
+
+  - field: displacement.full
+    value: 14600
+    unit: t
+    src: [navypedia-norfolk]
+    valid: { from: 1944-11, to: 1950-02-19 }
+    confidence: C
+    note: 同上一条，满载值。
+
+  # ============================================================ 1940-03-16 空袭受损
+  # 【伤亡数字未入库的理由】
+  #   4 阵亡 / 6 受伤 这一组数只出现在英文维基 Norfolk 条目（tier E），
+  #   naval-history 的年表**只记损伤不记伤亡**。按红线 §2.1「来源 tier E 不能当
+  #   fact 的来源」，这组数不写成 fact，只在此留档，正文也不引用具体伤亡数。
+  #   命中与损伤部分有 naval-history（tier D）支撑，写在下面的 fact 里。
+
+  - field: armament.mount.summary
+    value: >-
+      1940-03-16 斯卡帕湾空袭中后甲板 Y 炮塔附近被一枚 250 kg 炸弹命中，
+      弹体穿透上/主/下三层甲板，在 Y 弹药提升井附近爆炸，X 与 Y 弹药库进水。
+    src: [naval-history-norfolk]
+    valid: { from: 1940-03-16, to: 1940-06-24 }
+    confidence: B
+    note: >
+      naval-history 原文：「came under air attack and hit on port side of quarterdeck
+      abreast Y turret. Sustained damaged by bomb which exploded in Shell Room.」
+      **命中舷别两源打架，两说并列不裁决**：
+      naval-history 记左舷（port side of quarterdeck）；
+      英文维基记右舷水线下（「blowing a hole in the starboard side below the waterline」）。
+      其余细节（250 kg、Ju 88、穿透三层甲板、修理约三个月）两源一致。
+      **伤亡数字不入库**：4 阵亡 / 6 伤只见于 tier E，见本节首注。
+
+  # ============================================================ 1941-05-27 最终战
+  # 以下事实全部锚定在这一天，valid 窗口故意写死成单日，
+  # 避免与其它时段的武备/战绩混淆。
+  - field: armament.mount.summary
+    value: >-
+      1941-05-27 最终战：08:54 加入射击，全天发射 8 英寸弹 527 发；
+      至少两次发射鱼雷（合计 4 枚以上，均未命中）。
+    src: [navweaps-8in-50-mk8, kbismarck-last-battle, hmshood-tovey-dispatch]
+    valid: { from: 1941-05-27, to: 1941-05-27 }
+    confidence: A
+    note: >
+      **527 发这个数有两个独立来源且吻合，故 A。**
+      ① navweaps 引本舰舰长 Phillips 战报：「HMS Norfolk in about 90 minutes
+      fired 527 rounds with minor problems」；
+      ② kbismarck 全战统计表：「527 of 20.3 cm from Norfolk」。
+      对照：同战 Rodney 380 发 16 英寸、KGV 339 发 14 英寸、
+      Dorsetshire 254 发 20.3 cm。四舰合计 2,876 发。
+
+      加入时间与角色：Tovey 战报记 0735 时本舰「shadowing from the north-westward,
+      prepared to carry out flank marking for the battleships」，
+      0820 与战列线建立目视联系，0948「stopped flank marking and had joined in the action」。
+      **注意时间口径不一致**：navweaps／英文维基记 0854 加入，
+      Tovey 战报记 0948 才停止 flank marking 转入射击 —— 两者说的不是同一个事件
+      （前者是第一轮开火，后者是角色转换），不要合并成一个时间点。
+
+      鱼雷：两次记录口径不同，并列不裁。
+      navweaps／英文维基：09:10 自 16,000 码（约 15,000 m）发射 4 枚，全部落空；
+      kbismarck：1000 之后自约 3,600 m 发射 4 枚，可能 1 发命中右舷（无确证）。
+
+  - field: armament.gun_failures
+    value: >-
+      X 炮塔右炮全天只发射 8 发（同期 B 炮塔右炮发射 103 发），
+      原因可能是药包双次推弹（double ramming of the cordite charges）。
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1941-05-27, to: 1941-05-27 }
+    confidence: B
+    note: >
+      **原话照译，不做定论。** navweaps 原文：
+      「although the right gun in "X" turret only fired eight rounds
+      (compared to 103 rounds from the right gun in "B" turret),
+      probably because of double ramming of the cordite charges」。
+      「probably」是来源自己留的余地，故本条 confidence 降 B。
+      出处是 navweaps 转述本舰舰长战报，不是战报原件（未取得）。
+
+  # ============================================================ 1943-12-26 北角海战
+  - field: service.casualties
+    value: 7
+    unit: persons
+    src: [naval-history-norfolk]
+    valid: { from: 1943-12-26, to: 1943-12-26 }
+    confidence: B
+    note: >
+      **两说并列，不裁决；fact 取有 tier D 支撑的那个数。**
+      naval-history 原文：「Twice hit by enemy fire which damaged X turret and
+      radar equipment. Seven of ships company were killed and five wounded.」
+      英文维基 Norfolk 条目记「killed six men」。差 1 人，
+      可能是「当场阵亡」与「含伤重不治」的口径差，但两源均未说明，故不合并。
+      取 7 的理由只有一条：7 有 tier D 来源，6 只出现在 tier E
+      （按红线 §2.1，tier E 不能当 fact 来源）。
+
+      命中细节（两源一致的部分）：第一发使 X 炮塔失效；
+      第二发在舯部主甲板下方爆炸。本舰亦以 6 次齐射命中 Scharnhorst 两发，
+      打掉了德舰的后部雷达。
+
+  - field: armament.gun_failures
+    value: >-
+      1943-12-26 北角海战：X 炮塔被 Scharnhorst 的 283 mm 弹命中失效，
+      随后送修并于 1944 年 8 月装回；全舰其它修理直到 11 月才完工。
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1943-12-26, to: 1944-11-30 }
+    confidence: A
+    note: >
+      navweaps 原文：「"X" turret on HMS Norfolk was also removed for repairs
+      after being badly damaged in her fight with Scharnhorst in December 1943.
+      It was reinstalled in August 1944, although her other repairs took until
+      November to complete」。
+      **这条与「1944 年 11 月改装时拆除 X 炮塔」不是同一件事**，
+      时间上前后相接、很容易混：先拆去修（1944-08 装回），
+      再在大改装中连炮塔带弹射器一起永久拆除。两件事都记，不许合并。
+
+  # ============================================================ 雷达（本舰逐年，覆盖舰级）
+  - field: sensors.radar.installed
+    value: Type 286M
+    src: [naval-history-norfolk]
+    valid: { from: 1940-10, to: 1941-09 }
+    confidence: B
+    note: >
+      本舰第一部雷达，1940 年 10 月在泰恩河船厂修理期间装上。
+      naval-history 原文：「This was Type 286M and RAF Air/Surface Vessel (ASV)
+      modified with a fixed aerial」。**固定天线**这一点很关键：
+      它不能旋转，只能随舰体转向覆盖一个扇面 ——
+      这正是 1941-05-25 失去俾斯麦接触的技术原因之一（见切片 P3）。
+    multi: true
+
+  - field: sensors.radar.installed
+    value: Type 273（水面搜索）
+    src: [navypedia-norfolk]
+    valid: { from: 1941-09, to: 1944-11 }
+    confidence: B
+    multi: true
+
+  - field: sensors.radar.installed
+    value: Type 281（对空警戒）
+    src: [navypedia-norfolk]
+    valid: { from: 1941-09, to: 1944-11 }
+    confidence: B
+    multi: true
+
+  - field: sensors.radar.installed
+    value: Type 284（主炮火控）
+    src: [navypedia-norfolk]
+    valid: { from: 1941-09, to: 1944-11 }
+    confidence: B
+    multi: true
+
+  - field: sensors.radar.installed
+    value: Type 285（高炮火控）
+    src: [navypedia-norfolk]
+    valid: { from: 1941-09, to: 1945 }
+    confidence: B
+    note: >
+      1944 年 11 月改装后本舰雷达型号整批更换为
+      Type 274 / 277 / 282 / 283 / 293（navypedia 1944-11 条），
+      其中 282/283/285 并存，故本条到 1945 年仍有效。
+    multi: true
+
+  - field: sensors.radar.installed
+    value: Type 277（水面警戒）
+    src: [navypedia-norfolk, naval-history-norfolk]
+    valid: { from: 1944-11, to: 1950-02-19 }
+    confidence: B
+    note: naval-history 记 1944 年 11 月「New Surface Warning radars Type 277 and 293 fitted」。
+    multi: true
+
+  - field: sensors.radar.installed
+    value: Type 293（目标指示）
+    src: [navypedia-norfolk, naval-history-norfolk]
+    valid: { from: 1944-11, to: 1950-02-19 }
+    confidence: B
+    multi: true
+
+  - field: sensors.radar.installed
+    value: Type 274（主炮火控）
+    src: [navypedia-norfolk, naval-history-norfolk]
+    valid: { from: 1944-11, to: 1950-02-19 }
+    confidence: B
+    note: naval-history 1944 年 2–11 月改装项：「Gunnery fire control radars fitted (Type 274, 282, 283 and 285)」。
+    multi: true
+
+  - field: sensors.radar.installed
+    value: Type 282（近程高炮火控）
+    src: [navypedia-norfolk, naval-history-norfolk]
+    valid: { from: 1944-11, to: 1950-02-19 }
+    confidence: B
+    multi: true
+
+  - field: sensors.radar.installed
+    value: Type 283（弹幕射击指挥）
+    src: [navypedia-norfolk, naval-history-norfolk]
+    valid: { from: 1944-11, to: 1950-02-19 }
+    confidence: B
+    note: >
+      型号本身来自 navypedia 的 1944-11 改装项（「+ type 274, type 277, type 282,
+      type 283, type 293 radars」）与 naval-history 的「Type 274, 282, 283 and 285」，
+      两源吻合，故 B。
+      下面这段**是英文维基 County 级条目 Norfolk 子级节的原文**（tier E，只作叙述旁证，
+      **不支撑 fact**）：「An extra superstructure was added aft to carry barrage
+      directors, fitted with radar Type 283, which finally allowed the main armament
+      to serve in its intended anti-aircraft role」。
+      这段之所以值得抄在这里：它是全级最有讽刺意味的一笔 —— 设计时就想要的
+      「8 英寸炮打飞机」，要到 1944 年靠一部雷达加一座指挥仪才真正实现。
+    multi: true
+
+  # ============================================================ 防空武备逐年
+  - field: armament.aa_20mm.count
+    value: 6
+    unit: count
+    src: [navypedia-norfolk]
+    valid: { from: 1941-09, to: 1942-10 }
+    confidence: B
+    note: >
+      navypedia 改装表：1941-09「- 2 x 4 - 12.7/62, 2 x 20 - 178 UP;
+      + 6 x 1 - 20/70 Oerlikon Mk II/IV」。即拆掉 8 挺 12.7 mm 机枪与
+      两组 UP 火箭发射器，换上 6 门 20 mm。
+      UP 火箭的拆除是本级值得一提的一笔：这一型武器实战表现极差，
+      1941 年后各舰陆续拆除。
+
+  - field: armament.aa_20mm.count
+    value: 9
+    unit: count
+    src: [navypedia-norfolk]
+    valid: { from: 1942-10, to: 1943-05 }
+    confidence: B
+    note: 1942-10「+ 3 x 1 - 20/70 Oerlikon」，累计 9 门。
+
+  - field: armament.aa_20mm.count
+    value: 22
+    unit: count
+    src: [navypedia-norfolk]
+    valid: { from: 1944-11, to: 1945-09 }
+    confidence: B
+    note: >
+      1944-11 大改装「+ 11 x 2 - 20/70 Oerlikon」= 11 座双联，共 22 门。
+      同期拆 X 炮塔、拆弹射器与水机、拆 2 座八联 2-pdr，
+      换取 6 座四联 2-pdr（24 门）。
+      **这是全舰武备结构变化最大的一次**：主炮从 8 门降到 6 门，
+      换取近程防空火力翻倍。代价写在排水量上（+975 t）。
+
+  - field: armament.aa_40mm.count
+    value: 10
+    unit: count
+    src: [navypedia-norfolk]
+    valid: { from: 1945-09, to: 1950-02-19 }
+    confidence: B
+    note: >
+      1945-09「- 10 x 1 - 20/70; + 10 x 1 - 40/56 Bofors Mk I/III」，
+      即拆 10 门单装 20 mm、换 10 门单装 40 mm Bofors。
+      1946-01 的最终配置为：3 座双联 8 英寸（X 塔已拆）+ 4 座双联 4 英寸
+      + 10 门单装 40 mm + 6 座四联 2-pdr + 11 座双联 20 mm + 2 座四联鱼雷管。
+      **注意 1946 年鱼雷管又回来了** —— 该舰 1944 年改装没拆鱼雷，
+      navypedia 1944-11 条也没列拆鱼雷项。
+
+  # ============================================================ 航空（本舰）
+  - field: aviation.catapult.count
+    value: 0
+    unit: count
+    src: [navypedia-norfolk]
+    valid: { from: 1943-05, to: 1950-02-19 }
+    confidence: B
+    note: >
+      1943-05 改装「- catapult with seaplane」，即拆除弹射器与水上飞机。
+      这是战时减重与避火的常见做法。**Dorsetshire 一直带到沉没，两舰在此分野。**
+
+  # ============================================================ 结局
+  - field: service.fate_category
+    value: 战后退役拆解
+    src: [naval-history-norfolk]
+    valid: { from: 1950-02-19 }
+    confidence: B
+    note: >
+      战后本舰先在马耳他试航（1945-10），12 月起任东印度群岛第 5 巡洋舰中队旗舰，
+      驻防至 1949 年；1949-05-03 返抵德文波特，退入预备役，
+      封存于 Falmouth，1950-01-03 售予 BISCO。

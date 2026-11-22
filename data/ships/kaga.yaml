@@ -18,7 +18,7 @@
 
 id: kaga
 name:
-  zh: 加贺
+  zh: 加贺号
   en: Kaga
 class: kaga
 note: >-
@@ -40,7 +40,7 @@ facts:
     confidence: C
 
   - field: identity.name_zh
-    value: 加贺
+    value: 加贺号
     src: [japanese-warship-kaga]
     valid: { from: 1928-03-31 }
     confidence: C

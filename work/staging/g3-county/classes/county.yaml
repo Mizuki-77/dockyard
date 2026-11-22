@@ -1,0 +1,946 @@
+# ============================================================================
+# 舰级：County class（郡级重巡洋舰）—— 本文件只建 Norfolk 子级
+# ----------------------------------------------------------------------------
+# 【重要：County 级有三个子级，本站只建 county 一个 class 文件】
+#   Kent   —— Suffolk / Cornwall / Cumberland / Kent / Berwick（+ RAN Australia / Canberra）
+#   London —— London / Devonshire / Sussex / Shropshire
+#   Norfolk —— **Norfolk / Dorsetshire**（13 艘里的最后两艘，1926–27 年计划）
+# 本文件写的是 Norfolk 子级两名成员共有的设计值；Kent / London 两个子级不入库。
+# 判据见 SCHEMA §5：换一艘同级舰就变的值写 data/ships/<id>.yaml
+# （两舰的雷达配置、防空炮数、实测排水量因此都在单舰文件里，不在这里）。
+#
+# 【这一级为什么长成这样 —— 本级的定义性特征】
+# 华盛顿条约（1922）把重巡卡在 10,000 t 标准排水量与 8 英寸主炮。
+# 英国要的是能守殖民地贸易航线的远洋巡洋舰 —— 要航程、要航速、要独立战斗力，
+# 于是只能拿出**长舰体 + 4 座双联**这一组合（美国用三联装缩短舰体换装甲，
+# 英国反过来：留长舰体保航速与航程，装甲几乎全放弃）。
+# 直接后果就是本级只有「弹药库装甲盒 + 25 mm 防破片板」，舷侧没有主装甲带。
+# 1942-04-05 Dorsetshire 被 250 kg 炸弹在 8 分钟内击沉，就是这套防护的账单。
+#
+# 【哪些数据没查到 —— 必须如实留着】
+#   装甲总重（Norfolk 无值）、装甲占比、重量分配表、型深、方形系数、水线面积、
+#   干舷、蒸汽温度、发电机台数/功率、螺旋桨直径、舵面积、舱段划分、造价、
+#   水下防护纵深（本级无防雷突出部，且没有任何纵深数值）。
+#   本级与 Nelson 级同样是「装甲总重缺失」的老问题，不要用别级的值填充。
+# ============================================================================
+
+id: county
+name:
+  zh: 郡级重巡洋舰（Norfolk 子级）
+  en: County-class heavy cruiser (Norfolk sub-class)
+class_of: [norfolk, dorsetshire]
+
+open_ended_note: |
+  本文件绝大多数 fact 的 valid.to 都留空，这是结构性的，不是漏填：
+  舰级设计参数的生效期从设计定案/服役起，到该级最后一艘损失或拆解为止，
+  期间不因改装而改变；实际战备状态随时间的变化写在 data/ships/<id>.yaml 的
+  状态切片里，由单舰 fact 覆盖。因此这里的 open 时间窗表示「无已知终止事件」。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: County class (Norfolk sub-class)
+    src: [navypedia-norfolk]
+    valid: { from: 1926 }
+    confidence: C
+    note: >
+      英国官方与资料来源都把这 13 艘统称 County class（因全部以英格兰郡名命名），
+      Norfolk 与 Dorsetshire 是其中的 Norfolk 子级，共两艘。
+      子级划分依据：navypedia 的分页方式、combinedfleet 专题文（Robert Stuart 2019）
+      与英文维基三处一致。本站只建 county 一个 class 文件，子级名写进 name 与 note。
+
+  - field: identity.name_zh
+    value: 郡级
+    src: [navypedia-norfolk]
+    valid: { from: 1926 }
+    confidence: C
+    note: >
+      本文件代表的成员为 Norfolk 子级两舰：HMS Norfolk（78）与 HMS Dorsetshire（40）。
+      「郡级」是中文资料的通行译法。
+
+  - field: identity.ship_type
+    value: heavy_cruiser
+    src: [navypedia-norfolk]
+    valid: { from: 1927-07-08 }
+    confidence: A
+    note: >
+      英国官方分类是 cruiser（8 英寸炮的「A 型巡洋舰」）。
+      「重巡洋舰 heavy cruiser」这个类目本身要到 1930 年伦敦海军条约才定义，
+      故本值是按后世通称归类。navypedia 页头写 "NORFOLK heavy cruisers"。
+
+  - field: identity.nation
+    value: united_kingdom
+    src: [navypedia-norfolk]
+    valid: { from: 1927-07-08 }
+    confidence: A
+
+  - field: identity.operator
+    value: Royal Navy
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30 }
+    confidence: A
+    note: >
+      两舰均属英国皇家海军；County 级另有 2 艘属澳大利亚海军（Australia / Canberra），
+      但那是 Kent 子级，不在本文件范围内。
+
+  - field: identity.era
+    value: ww2
+    src: [naval-history-norfolk]
+    valid: { from: 1939-09-03, to: 1945-09-02 }
+    confidence: A
+    note: >
+      按服役与作战期定位，不是按设计年份。本级设计于 1920 年代（interwar），
+      但两舰的实战记录全部落在二战期间。
+
+  - field: identity.building_program
+    value: 1926–27 年造舰计划；华盛顿海军条约（1922）10,000 t / 8 英寸上限下的条约型巡洋舰
+    src: [navypedia-norfolk, combinedfleet-cornwall-dorsetshire]
+    valid: { from: 1926 }
+    confidence: A
+    note: >
+      navypedia 原文「Ships of 1926 Programme repeated cruisers of London class
+      but had new Mk II turrets」——即 London 子级的重复设计，只换了新炮塔。
+      Norfolk 子级原计划 5 艘，后 3 艘（拟名 Surrey / Northumberland 及 1 艘未命名）
+      于 1929-05-15 订购、1929-08-23 停工、1930-01-14 正式取消。
+      combinedfleet 专题文把原因归给 1929 年上台的工党政府裁减造舰
+      （省钱 + 给 1930 年伦敦海军会议做姿态）。
+
+  # ============================================================ 主尺度
+  - field: dimensions.length.oa
+    value: 192.9
+    unit: m
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: C
+    note: >
+      navypedia 给的是一个区间「192.9 - 193.7 oa」，未逐舰标注。
+      按两舰实际值：Norfolk 192.81 m（632 ft 7 in）、Dorsetshire 192.86 m（632 ft 9 in），
+      都在区间下沿附近；上沿 193.7 m 与这两艘对不上，
+      疑为 navypedia 把 Kent 子级的 193.7 m 混入同级页，故此处存区间下沿。
+      单舰值见各自 ships 文件。
+
+  - field: dimensions.length.pp
+    value: 181.4
+    unit: m
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: C
+    note: >
+      181.4 m。英文维基 County 级条目给 Norfolk 子级 595 ft 1 in = 181.38 m，
+      与 navypedia 一致（同一数换单位）。
+
+  - field: dimensions.beam.wl
+    value: 20.1
+    unit: m
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: C
+    note: >
+      66 ft。注意 Kent 子级因有防雷突出部，最大宽 21 m（68 ft across bulges）；
+      Norfolk 子级无突出部，20.1 m 即最大宽。
+
+  - field: dimensions.draught.max
+    value: 6.37
+    unit: m
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: C
+    note: >
+      deep load 状态。navypedia 另注「Norfolk finally 6.91」——
+      该舰 1944 年大改装后排水量涨到 10,900 / 14,600 t，吃水随之加大，
+      单舰值写在 ships/norfolk.yaml。
+
+  # ============================================================ 排水量
+  - field: displacement.standard
+    value: 9925
+    unit: t
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: B
+    note: >
+      **本条是区间下沿，不是单一确定值。** navypedia 原文
+      「Displacement standard, t 9925 - 9975」，即两舰略有差异，未逐舰标注。
+      另有两个不可忽略的口径问题，两说并列，不裁决：
+      ① combinedfleet 专题文表 1 给 Dorsetshire 实际标准排水量「9,830?」（原文带问号）；
+      ② 英文维基 Dorsetshire 条目给 10,035 lt = 10,196 t。
+      三值互差最多约 270 t，来源都未说明是否含条约定义的排除项，故不合并。
+      原值单位是长吨，已按本站规矩换算为公吨。
+
+  - field: displacement.full
+    value: 13425
+    unit: t
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: B
+    note: >
+      navypedia 单一值 13,425 t，注「Norfolk finally 14,600」。
+      combinedfleet 表 1 给 Dorsetshire 满载 13,290 t，与 13,425 差 135 t，
+      属两源口径差异，并列不裁。
+
+  # ============================================================ 动力
+  - field: propulsion.plant_type
+    value: steam_turbine
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+
+  - field: propulsion.shafts
+    value: 4
+    unit: count
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+
+  - field: propulsion.boiler.count
+    value: 8
+    unit: count
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+
+  - field: propulsion.boiler.type
+    value: Admiralty 三鼓式水管锅炉（Admiralty 3-drum）
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+
+  - field: propulsion.turbine.count
+    value: 4
+    unit: count
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+    note: 「4 sets Parsons geared steam turbines」——四组齿轮传动汽轮机，每组带一根轴。
+
+  - field: propulsion.turbine.type
+    value: Parsons 齿轮传动蒸汽轮机（同级部分舰为 Brown-Curtis）
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: B
+    note: >
+      navypedia 只写 Parsons；英文维基 Norfolk 条目写「4 × Parsons Brown-Curtis
+      geared steam turbines」、Dorsetshire 条目写「4 × Parsons geared or Brown Curtis
+      steam turbines」。两型在 County 级内部混用是事实，但**这两艘具体装的是哪一型，
+      现有来源没有一本说清**，故本条只写主型并降 B，不替两舰指定。
+
+  - field: propulsion.power.design
+    value: 80000
+    unit: hp
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: B
+    note: >
+      设计值（80,000 shp），两舰通用。这是本级的**设计妥协点**：
+      Kent 子级为省 400 t 重量，从原先想要的 100,000 shp 降到 80,000 shp，
+      设计航速因此从 33 节降到 31.5 节（combinedfleet 专题文原文）。
+      无试航实测功率来源。
+
+  - field: propulsion.speed.design
+    value: 32.3
+    unit: kn
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: B
+    note: >
+      **三说并列，不裁决。** navypedia 页头「Max speed, kts 32.3」；
+      combinedfleet 表 1 给 Norfolk 子级「Designed max speed 32.25」；
+      英文维基 Norfolk 条目写 32.25 节、Dorsetshire 条目写 31.5 节，
+      而同篇 Dorsetshire 正文又称 32.3 节 —— 维基内部自相矛盾。
+      32.3 与 32.25 只差 0.05 节，属取整；31.5 是 Kent 子级设计值，
+      疑为维基跨子级串值。无试航实测航速来源。
+
+  - field: propulsion.fuel.capacity
+    value: 3210
+    unit: t
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: B
+    note: >
+      燃油 3,210 t（navypedia 注「later 3005」）。载油量后期下降的原因来源未解释，
+      可能与加装高炮与雷达后的重量补偿有关，属推断，不写进 fact。
+
+  - field: propulsion.range.max
+    value: 12500
+    unit: nmi
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: B
+    note: >
+      12 节时 12,500 nm（navypedia「Endurance, nm(kts) 12500(12)」）。
+      **必须与下一行 propulsion.range.at_speed 成对读。**
+      另说：combinedfleet 表 1 给 Dorsetshire 9,300 nm，英文维基 Norfolk 条目给
+      12,370 nm @ 12 kn —— 三源区间 9,300–12,500 nm，均未说明载油状态，
+      并列不裁，存 navypedia 值。
+
+  - field: propulsion.range.at_speed
+    value: 12
+    unit: kn
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: B
+    note: 上一行续航力对应的航速。
+
+  - field: propulsion.propeller.count
+    value: 4
+    unit: count
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: B
+    note: 由「No of shafts 4」推得，navypedia 未单列螺旋桨数，故降 B。
+
+  # ============================================================ 防护
+  - field: protection.scheme
+    value: incremental
+    src: [navypedia-norfolk, combinedfleet-cornwall-dorsetshire]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: B
+    note: >
+      **属归纳判定，不是来源原话。** 本级防护不是 all-or-nothing：
+      只有弹药库/弹药提升井有「装甲盒」（侧 102 mm、顶 76 mm），
+      机舱只有 25 mm 舱壁 + 32 mm 甲板，舵机 38 mm，
+      其余全舰靠 25 mm 防破片板。combinedfleet 专题文原话：
+      「horizontal armour, some of it rather thin, was provided only over the
+      magazines and shell rooms (from 1 to 3 inches), the machinery spaces
+      (1⅜ inches), and the steering gear (1½ inches)」。
+      「要害局部加厚 + 全舰薄板」的叠加式防护归入 incremental。
+
+  - field: protection.armor.thickness
+    value: 25
+    unit: mm
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: B
+    qual: { part: belt, region: main }
+    note: >
+      **必须说清：本级建成时舷侧没有主装甲带，25 mm 是防破片船壳板。**
+      navypedia 装甲行原文「belt: 25」；combinedfleet 专题文对 1935–37 年
+      加装 4.5 英寸带的说法**只针对 Kent 子级**，并明确 Dorsetshire 1937 年改装
+      「No additional armour was fitted」。
+      **争议点**：英文维基 Norfolk 条目声称本级「a 3.5 in (89 mm) belt was added
+      before the war」，与 navypedia、combinedfleet 及维基自己的 County 级条目
+      （加带仅限 Berwick / Cumberland / Suffolk / Kent / Cornwall，London 1938）
+      冲突。因只有维基一说且无法互证，本条只记 navypedia 的 25 mm，
+      89 mm 一说记入 RESEARCH-NOTES 的争议清单，不写成 fact。
+
+  - field: protection.armor.thickness
+    value: 102
+    unit: mm
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: B
+    qual: { part: magazine, region: side }
+    note: >
+      主炮弹药库侧面。navypedia 装甲行「box protection to magazines: 102 - 25」；
+      同页防护段更细：「Magazines were protected by 111 (102mm armour on 9mm plating)
+      - 25mm sides and 76 - 25mm platform deck」，即 102 mm 装甲板 + 9 mm 底板
+      合计 111 mm。combinedfleet 给主弹药库侧 4⅜ in = 111 mm（同一口径）。
+
+  - field: protection.armor.thickness
+    value: 76
+    unit: mm
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: B
+    qual: { part: magazine, region: roof }
+    note: >
+      弹药库装甲盒顶部。navypedia 原文写「76 - 25mm platform deck」，
+      即 76 mm 段与 25 mm 段并存，本条存上限。
+
+  - field: protection.armor.thickness
+    value: 38
+    unit: mm
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: B
+    qual: { part: deck, region: main }
+    note: >
+      舵机上方水平装甲（navypedia「Steering gear had 38 - 25mm horizontal protection」）。
+      弹药库段平台甲板亦为 38 mm，机舱段减为 32 mm（navypedia「32mm deck」），
+      机舱段的 32 mm 记在本 note 里，不另立 fact 以免与「主甲板」重复。
+
+  - field: protection.armor.thickness
+    value: 25
+    unit: mm
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: B
+    qual: { part: turret, region: face }
+    note: >
+      主炮塔各面、顶、背一律 25 mm。combinedfleet 专题文亦记
+      「Turrets: 1-inch faces, sides, rears, crowns & barbettes」。
+      **英文维基 Dorsetshire 条目另记炮塔 1.5–2 in（38–51 mm）**，与上述两源冲突，
+      两说并列不裁 —— 存 25 mm。
+
+  - field: protection.armor.thickness
+    value: 25
+    unit: mm
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: B
+    qual: { part: barbette, region: main }
+    note: 炮座同样 25 mm（combinedfleet「& barbettes」）。
+
+  - field: protection.armor.thickness
+    value: 25
+    unit: mm
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: B
+    qual: { part: bulkhead, region: main }
+    note: 机舱纵向舱壁（navypedia「Machinery was protected by 25mm bulkheads」）。
+
+  # ============================================================ 武备概览
+  - field: armament.mount.summary
+    value: >-
+      8 × 8 in/50 BL Mk VIII（4 座双联 Mk II 炮塔，前二后二背负式；A/B/X/Y 各 1 座，共 8 门）
+      + 4 × 4 in/45 QF Mk V（4 座单装；1937 年改装为 8 门双联 Mk XVI）
+      + 4 × 2-pdr 40 mm（单装；1937 年改装为 16 门八联装）
+      + 2 × 四联 21 in 鱼雷发射管（8 管）
+    src: [navypedia-norfolk, navweaps-8in-50-mk8, navweaps-4in-45-mk16]
+    valid: { from: 1930-04-30, to: 1942-04-05 }
+    confidence: A
+    note: >
+      建成时配置（navypedia 原文「4 x 2 - 203/50 BL Mk VIII, 4 x 1 - 102/45 QF Mk V,
+      4 x 1 - 47/40 Hotchkiss Mk I, 4 x 1 - 40/39 2pdr QF Mk II, 2 x 4 - 533 TT」）。
+      本条**省略了 4 门 47 mm 礼炮**（Hotchkiss Mk I），因为 navypedia 自己在
+      1939 年改装项里把它们拆了，写进概览会与后续切片打架 —— 逐舰增减见各舰切片。
+
+      三个必须说清的形制后果：
+
+      一、主炮塔为 Mk II，比前两个子级的 Mk I 简化了装填但**更重**
+      （Mk II 建成时 220.3 吨 / 224 t，Mk I 205 吨 / 208 t，navweaps 原值
+      220.3 tons / 205 tons 为英吨），为守条约吨位只能在别处继续抠重量。
+
+      二、副炮单装 4 in Mk V 只有 4 门，且位置被挪到前部以免挡住弹射器 ——
+      这是与 London 子级的差别之一。
+
+      三、鱼雷管是四联装两座（8 管），不是双联。navypedia 的「2 x 4」是
+      「两座四联」，不是「两管」。
+
+  - field: armament.torpedo.tubes
+    value: 8
+    unit: count
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1942-04-05 }
+    confidence: A
+    note: >
+      **8 管，不是 2 管。** navypedia「2 x 4 - 533 TT」= 两座四联装，共 8 管。
+      舷侧各一座。两舰都有实际发射记录（1941-05-27 各自向俾斯麦射过鱼雷），
+      是能查到使用记录的一条武器。
+
+  - field: armament.torpedo.diameter
+    value: 533
+    unit: mm
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1942-04-05 }
+    confidence: A
+    note: 21 英寸。
+
+  # ============================================================ 编制
+  - field: service.complement.standard
+    value: 710
+    unit: persons
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: B
+    note: >
+      平时编制 710 人（navypedia「Complement 710」）。
+      英文维基 County 级条目给 Norfolk 子级「710 standard, 819 wartime」，
+      战时 819 一说未见于其他来源，故只记平时值，战时编制不入库。
+
+  # ============================================================ 航空
+  - field: aviation.aircraft.types
+    value: Supermarine Walrus（1934 年前为 Hawker Osprey / Fairey Flycatcher）
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1943-05 }
+    confidence: C
+    note: >
+      navypedia 改装表逐条给了机种更迭：1931 年加 1 架 Flycatcher（水上起飞）→
+      1932 年加 S-II-L 弹射器 → 1934 年 Osprey 替换 Flycatcher →
+      1937 年换 E-IV-H 弹射器与 1 架 Walrus。
+      Norfolk 1943 年 5 月拆除弹射器与水机；Dorsetshire 一直带到 1942 年沉没。
+      建成时本级其实**没有**弹射器与水上飞机（为守吨位先砍掉了）。
+
+  - field: aviation.catapult.count
+    value: 1
+    unit: count
+    src: [navypedia-norfolk]
+    valid: { from: 1932, to: 1943-05 }
+    confidence: B
+    note: 1932 年加 1 座 S-II-L，1937 年换 E-IV-H。两舰同型。
+
+  # ============================================================ 武器实体
+  # 8 in/50 Mk VIII：同级共享，武器本体写在这里。
+  # 注意：about: weapon:* 的 fact 不参与舰的时间轴计算（SCHEMA §4），
+  # 所以「这舰哪年装了什么炮」另用 armament.mount.summary 记。
+
+  - about: weapon:8in-50-mk8
+    field: weapon.designation
+    value: 8"/50 (20.3 cm) Mark VIII
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1927 }
+    confidence: A
+
+  - about: weapon:8in-50-mk8
+    field: weapon.nation
+    value: united_kingdom
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1927 }
+    confidence: A
+
+  - about: weapon:8in-50-mk8
+    field: weapon.category
+    value: naval_gun
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1927 }
+    confidence: A
+    note: >
+      炮塔有 70° 仰角、设计时要求具备对空能力，但 navweaps 明确写
+      「the training and elevation gear was inefficient and both the elevation and
+      training rates were too slow to allow these mountings to be useful in that role」——
+      故归 naval_gun 而非 anti_aircraft_gun，尽管它名义上能打飞机。
+      6 门同型炮（Mark VIII**）在二战中被当作岸防炮用在 Dover–Folkestone 一带，
+      属另一用途，不另立实体。
+
+  - about: weapon:8in-50-mk8
+    field: weapon.bore
+    value: 203
+    unit: mm
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1927 }
+    confidence: A
+
+  - about: weapon:8in-50-mk8
+    field: weapon.caliber_length
+    value: 50
+    unit: ratio
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1927 }
+    confidence: A
+    note: 8 英寸 × 50 倍径。
+
+  - about: weapon:8in-50-mk8
+    field: weapon.caliber_method
+    value: usa_uk_method
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1927 }
+    confidence: A
+    note: >
+      英制算法。navweaps 同时给出炮身全长 413.1 in、Bore Length 400.0 in、
+      Rifling Length 346.3 in，三者互不混用。
+
+  - about: weapon:8in-50-mk8
+    field: weapon.length.oa
+    value: 10.493
+    unit: m
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1927 }
+    confidence: A
+    note: 413.1 in。
+
+  - about: weapon:8in-50-mk8
+    field: weapon.length.bore
+    value: 10.160
+    unit: m
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1927 }
+    confidence: A
+    note: >
+      400.0 in（navweaps 的 Bore Length）。另有 Rifling Length 346.3 in = 8.796 m，
+      那是另一口径，不要混用。
+
+  - about: weapon:8in-50-mk8
+    field: weapon.weight
+    value: 17476
+    unit: kg
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1927 }
+    confidence: A
+    note: >
+      Mark VIII 与 VIII* 同重 38,528 lbs（17,476 kg）；Mark VIII** 为 38,640 lbs
+      （17,527 kg）。存 VIII 值。三者炮身可互换。
+
+  - about: weapon:8in-50-mk8
+    field: weapon.projectile_weight
+    value: 116.1
+    unit: kg
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1927 }
+    confidence: A
+    qual: { shell_type: sap }
+    note: >
+      SAPC Mark Ib，256 lbs，装药 5.2 kg TNT，弹长 91.4 cm。
+      本级弹药基数以 SAPC 为主，每炮另配 20 发 HE（navweaps 脚注 4）。
+      英国文件里 SAPC 与 SAP 是同一类的不同写法，按注册表枚举取 sap。
+
+  - about: weapon:8in-50-mk8
+    field: weapon.projectile_weight
+    value: 115.7
+    unit: kg
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1927 }
+    confidence: A
+    qual: { shell_type: he }
+    note: HE Mark IIIb，255 lbs，装药约 10 kg TNT。
+
+  - about: weapon:8in-50-mk8
+    field: weapon.muzzle_velocity
+    value: 855
+    unit: mps
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1927 }
+    confidence: A
+    qual: { shell_type: sap }
+    note: >
+      **必须带这条注释：初速是降过级的。** navweaps 原文
+      「The original muzzle velocity was 2,900 fps (884 mps) with a 72.25 lbs. (32.77 kg)
+      SC charge, but this was derated to the figure given above in order to reduce
+      dispersion and increase liner life」。
+      任何拿 884 m/s 去算本级射程或穿深的推论都是错的。
+
+  - about: weapon:8in-50-mk8
+    field: weapon.charge.weight
+    value: 29.94
+    unit: kg
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1927 }
+    confidence: A
+    qual: { charge_part: single, propellant: other }
+    note: >
+      66.0 lbs SC 205，分两半装填（navweaps 脚注 2「Propellant was in halves」）。
+      propellant 填 other：SC 205 是英国发射药编号，不在注册表的
+      rp_c32 / rp_c38 / rp_c40（德制 RP 系列）词表内，不能硬套。
+
+  - about: weapon:8in-50-mk8
+    field: weapon.charge.chamber_volume
+    value: 59.75
+    unit: dm3
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1927 }
+    confidence: A
+    note: 3,646 in³。
+
+  - about: weapon:8in-50-mk8
+    field: weapon.range.max
+    value: 28030
+    unit: m
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1927 }
+    confidence: A
+    note: >
+      45° 仰角、SAPC、初速 831 m/s 条件下 30,650 码 = 28,030 m。
+      注意射程表用的初速是 831 m/s 而非 855 m/s，两者差 24 m/s，
+      navweaps 在射程表头单独标注了这个条件，不能与上面的 855 混用。
+      中途参考点：25,000 码（22,860 m）需 26.7° 仰角。
+
+  - about: weapon:8in-50-mk8
+    field: weapon.range.max_elevation
+    value: 45
+    unit: deg
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1927 }
+    confidence: A
+    note: 上一条射程对应 45°。炮塔机械上限 70°，但 45° 才是最大射程点。
+
+  - about: weapon:8in-50-mk8
+    field: weapon.rate_of_fire
+    value: 4
+    unit: rpm
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1927 }
+    confidence: B
+    note: >
+      **理论 3–6 发/分，实战 3–4 发/分，本条存实战上限。**
+      navweaps 原文：「"British Cruisers of World War Two" states that this rate was
+      never reached during wartime service and that the maximum sustained ROF in
+      action was actually 3 to 4 rounds per minute」；
+      参谋部最初要求 12 发/分，被认作「an impossibly high figure for the time」，
+      后降到 6 发；试航中 HMS Kent 短时达到 5 发/分。存 4 因它是有据的实战上限。
+
+  - about: weapon:8in-50-mk8
+    field: weapon.elevation.min
+    value: -3
+    unit: deg
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1927 }
+    confidence: A
+
+  - about: weapon:8in-50-mk8
+    field: weapon.elevation.max
+    value: 70
+    unit: deg
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1927 }
+    confidence: A
+    note: >
+      Mark I / I* / II 都是 −3 / +70°；只有 York 用的 Mark II* 降到 +50°。
+      70° 的对空能力是设计时的产物：本级没有配套的高炮火控，
+      这个仰角在实战中基本没用上。
+
+  - about: weapon:8in-50-mk8
+    field: weapon.barrel_life
+    value: 550
+    unit: count
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1927 }
+    confidence: A
+
+  - about: weapon:8in-50-mk8
+    field: weapon.ammo_outfit
+    value: 150
+    unit: count
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1930-04-30 }
+    confidence: A
+    note: >
+      **每炮 150 发**（navweaps「Magazine capacity per gun: Dorsetshire class -
+      150 rounds」——注意它用「Dorsetshire class」这个叫法指 Norfolk 子级）。
+      全舰即 8 门 × 150 = 1,200 发。
+      对照：Kent 子级 130 发/炮、London 子级 150、York 级 172.5。
+
+  - about: weapon:8in-50-mk8
+    field: weapon.in_service_from
+    value: 1927
+    unit: date
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1927 }
+    confidence: B
+    note: 设计年份 1923，服役起 1927 年。
+
+  # ================================================================ 炮位实体
+  # 四座双联 Mk II，A / B 在前（背负），X / Y 在后（背负）。
+  # RN 四炮塔巡洋舰的命名惯例是 A/B/X/Y；navweaps 与维基都以「X」指第三座，
+  # 可作命名依据（navweaps：「the right gun in "X" turret only fired eight rounds」；
+  # 维基 Norfolk：「the third ("X") twin 8 inch turret was landed in 1944」）。
+  # 逐座的重量/射界/仰角来源未逐塔给出，故不填，避免推算。
+
+  - about: mount:county-a-turret
+    field: mount.label_name
+    value: A
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: C
+    note: 前部第一座（背负）。命名惯例依据见本节首注。
+
+  - about: mount:county-a-turret
+    field: mount.weapon
+    value: weapon:8in-50-mk8
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+    note: >-
+      本级主炮塔型号为 Mk II（navweaps「Norfolk (4) and York (3): Mark II」）。
+
+  - about: mount:county-a-turret
+    field: mount.turret_designation
+    value: Mark II
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+    note: >
+      **这是与 Kent / London 子级的核心差别。** Kent 用 Mk I、London 用 Mk I*、
+      Norfolk 子级用 Mk II。navweaps 说 Mk II 把药库与弹库合并在同一防护容积内、
+      简化了弹药提升，但**建成重量由原估 168.8 吨涨到 220.3 吨**，
+      比 Mk I 的 205 吨还重 —— 本想减重，结果相反。
+
+  - about: mount:county-a-turret
+    field: mount.type
+    value: twin_turret
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+
+  - about: mount:county-a-turret
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+
+  - about: mount:county-a-turret
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+    note: >
+      **本条只数 A 座本身（1 座）。** 全舰四座、共 8 门，写在
+      armament.mount.summary 里，不在这里累加 ——
+      否则 A/B/X/Y 四条各记 1，再有一条记 4，会被误读成 7 座。
+
+  - about: mount:county-a-turret
+    field: mount.position
+    value: superfiring_fore
+    src: [combinedfleet-cornwall-dorsetshire]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: B
+    note: >
+      「two superfiring pairs forward and aft」（英文维基 Dorsetshire 条目同此），
+      即前二后二皆为背负式。A 为前部背负座（另一座为 B）。
+
+  - about: mount:county-b-turret
+    field: mount.label_name
+    value: B
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: C
+
+  - about: mount:county-b-turret
+    field: mount.weapon
+    value: weapon:8in-50-mk8
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+
+  - about: mount:county-b-turret
+    field: mount.turret_designation
+    value: Mark II
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+
+  - about: mount:county-b-turret
+    field: mount.type
+    value: twin_turret
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+
+  - about: mount:county-b-turret
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+
+  - about: mount:county-b-turret
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+    note: 本条目只数 B 座本身；全舰 4 座见 A 塔条目的 mount.count。
+
+  - about: mount:county-b-turret
+    field: mount.position
+    value: fore
+    src: [combinedfleet-cornwall-dorsetshire]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: B
+
+  - about: mount:county-x-turret
+    field: mount.label_name
+    value: X
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: B
+    note: >
+      navweaps 与维基都以「X」指第三座（后部第一座）：
+      「the right gun in "X" turret only fired eight rounds」、
+      「X turret was also removed for repairs after being badly damaged in her
+      fight with Scharnhorst in December 1943」。故 X 的命名有直接来源，升 B。
+
+  - about: mount:county-x-turret
+    field: mount.weapon
+    value: weapon:8in-50-mk8
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+
+  - about: mount:county-x-turret
+    field: mount.turret_designation
+    value: Mark II
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+
+  - about: mount:county-x-turret
+    field: mount.type
+    value: twin_turret
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+
+  - about: mount:county-x-turret
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+
+  - about: mount:county-x-turret
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+
+  - about: mount:county-x-turret
+    field: mount.position
+    value: superfiring_aft
+    src: [combinedfleet-cornwall-dorsetshire]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: B
+    note: >
+      后部第一座，向艉方向越射 Y 塔。
+      **这一座在本级两舰上都有非典型结局**：Norfolk 1943-12-26 北角海战被击中损坏、
+      1944 年 11 月大改装时拆除；Dorsetshire 则带着它沉没。
+      逐舰事实见各自 ships 文件。
+
+  - about: mount:county-y-turret
+    field: mount.label_name
+    value: Y
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: C
+    note: 后部第二座（最靠艉）。Y 的命名是 A/B/X/Y 惯例的推论，无直接来源，故 C。
+
+  - about: mount:county-y-turret
+    field: mount.weapon
+    value: weapon:8in-50-mk8
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+
+  - about: mount:county-y-turret
+    field: mount.turret_designation
+    value: Mark II
+    src: [navweaps-8in-50-mk8]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+
+  - about: mount:county-y-turret
+    field: mount.type
+    value: twin_turret
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+
+  - about: mount:county-y-turret
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+
+  - about: mount:county-y-turret
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navypedia-norfolk]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: A
+
+  - about: mount:county-y-turret
+    field: mount.position
+    value: aft
+    src: [combinedfleet-cornwall-dorsetshire]
+    valid: { from: 1930-04-30, to: 1950-02-19 }
+    confidence: B

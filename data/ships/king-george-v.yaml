@@ -25,7 +25,7 @@
 
 id: king-george-v
 name:
-  zh: 英王乔治五世
+  zh: 英王乔治五世号
   en: HMS King George V
 class: king-george-v
 
@@ -46,7 +46,7 @@ facts:
       （前一艘是 1911 年级战列舰，1926 年出售）。
 
   - field: identity.name_zh
-    value: 英王乔治五世
+    value: 英王乔治五世号
     src: [rmg-kgv-guide]
     valid: { from: 1936-07-29 }
     confidence: B

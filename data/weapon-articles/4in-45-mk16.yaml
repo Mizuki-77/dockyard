@@ -1,0 +1,293 @@
+# ============================================================================
+# 武器正文 —— 4"/45 (10.2 cm) QF Mark XVI
+#
+# 主线三条：
+#   1. 它是英国巡洋舰在 1930 年代换掉旧 4"/45 Mark V 的那门炮 ——
+#      「换炮」这件事在 NavWeaps 的原文里写得很清楚，不是本站推断；
+#   2. 炮是 Mark XVI，炮座是双联 Mark XIX —— 这两者不是一个东西，
+#      城级（Southampton 子级）是 4 座双联；
+#   3. 它的口碑是「好用」，但两个硬指标不好：身管寿命短、精度不高，
+#      而原因被 Campbell 归到弹丸的平行段太短上。
+#
+# ⚠️ 来源说明：本文件统一引用 navweaps-4in-45-mk16。
+#    data/sources.yaml 里另有一条 navweaps-45in-45-mk16，url 指向同一页
+#    但标题写成 4.5"/45 —— 标题是错的，本文件不引用那一条。
+#
+# ⚠️ 日期口径：NavWeaps 这一页只给了两个年份（设计约 1934、服役 1936），
+#    亚型与产量都没有年份。所以亚型与产量写在 intro 段落里（不需要日期），
+#    history 只保留有年份的两条。这是刻意的，不是漏写。
+# ============================================================================
+weapon: 4in-45-mk16
+updated: 2026-11-22
+
+intro:
+  lead:
+    zh: >-
+      4"/45 (10.2 cm) QF Mark XVI 是英国 1930 年代为巡洋舰设计的高平两用炮，
+      1936 年服役，用来替换旧的 4"/45 Mark V。它装在双联 Mark XIX 炮座上，
+      城级轻巡（Southampton 子级）每舰 4 座共 8 门。
+      它是一门「好用但不算出色」的炮：射击循环可靠、产量大、装舰极广，
+      同时身管寿命只有 600 发，精度也不被看好。
+    en: >-
+      The 4"/45 (10.2 cm) QF Mark XVI was the dual-purpose gun designed in the 1930s
+      to replace the older 4"/45 Mark V in British cruisers, entering service in 1936.
+      It was mounted in the twin Mark XIX mounting, four mountings and eight guns per
+      ship in the Southampton group of the Town class. It was a good rather than an
+      outstanding weapon: a reliable firing cycle, huge production and very wide
+      fitting, against a barrel life of only 600 rounds and accuracy that drew
+      criticism.
+
+  paragraphs:
+    - heading: 它的本职是「把旧的 4 英寸换掉」
+      text:
+        zh: >-
+          NavWeaps 对它的定位只有一句，但这一句就够了：这型炮
+          「在 1930 年代的新造巡洋舰上取代了 4"/45 (10.2 cm) Mark V HA 炮」，
+          此外许多较老的巡洋舰与主力舰在改装时也把 Mark V 换成了它，
+          因为它是「更有力的武器」。所以城级的副炮不是凭空选出来的新型号，
+          而是一次代际替换的结果 —— 被换掉的那门 Mark V 是 1914 年的设计，
+          一直到 1930 年代末都还是英国远程高射火力的主力。
+        en: >-
+          NavWeaps states its position in a single sentence, and that is enough: this
+          weapon "superseded the 4"/45 (10.2 cm) Mark V HA gun on new cruiser
+          construction during the 1930s", and in addition many older cruisers and
+          capital ships had their Mark V guns replaced with these "more powerful
+          weapons" during refits. The Town class's secondary battery was therefore not
+          a new type chosen in isolation but the result of a generational replacement -
+          and the gun replaced, the Mark V, was a 1914 design that had remained the
+          main British long-range anti-aircraft weapon into the late 1930s.
+      src: [navweaps-4in-45-mk16, navweaps-4in-45-mk5]
+
+    - heading: 炮是 Mark XVI，座是 Mark XIX，别写成一个东西
+      text:
+        zh: >-
+          这一条是最容易被写错的地方。Mark XVI 是**炮身**（而且分 XVI 与 XVI* 两个亚型），
+          **双联装炮座**叫 Mark XIX。NavWeaps 的装舰表把「Town Cruisers:
+          Southampton class (4)」列在 Twin HA/LA Mount、Mark XIX 之下，
+          括号里的 4 是炮座数，即 4 座双联共 8 门 ——
+          navypedia 的城级装备栏写的也是「4 x 2 - 102/45 QF Mk XVI」，两源一致。
+          Edinburgh 子级是 6 座。写成「Mk XVI 炮塔」是把炮身与炮座混为一谈。
+        en: >-
+          This is where the type is most often misdescribed. The Mark XVI is the
+          **gun** - and it exists in Mark XVI and Mark XVI* forms - while the **twin
+          mounting** is the Mark XIX. NavWeaps's ship-class table lists "Town Cruisers:
+          Southampton class (4)" under the Twin HA/LA Mount, Mark XIX, where the
+          figure in brackets is the number of mountings, i.e. four twins and eight
+          guns; Navypedia's armament line for the class reads "4 x 2 - 102/45 QF Mk
+          XVI", and the two agree. The Edinburgh sub-class had six. Writing "Mk XVI
+          turret" conflates gun and mounting.
+      src: [navweaps-4in-45-mk16, navypedia-town]
+
+    - heading: 主要参数
+      text:
+        zh: >-
+          名义口径 4 英寸，膛径 10.2 厘米；身管全长 190.5 英寸（4.839 米），
+          膛线长 149.5 英寸（3.798 米），药室 511.8 立方英寸（8.387 立方分米）；
+          炮重 Mark XVI 2,039 公斤、Mark XVI* 2,042 公斤、更轻的 Mark XXI 1,541 公斤。
+          弹药为整装式：高爆弹 Mark 19 重 15.88 公斤、半穿甲弹 17.35 公斤，
+          整装弹分别 28.8 与 30.28 公斤；标准装药初速 811 米/秒，减装药 610 米/秒；
+          膛压 20.5 吨/平方英寸；身管寿命 600 发；射速 15 到 20 发/分。
+          射程：45 度 19,850 码（18,150 米），对空 80 度射高 39,000 英尺（11,890 米）。
+          双联 Mark XIX 炮座重 16,816 公斤，俯仰 -10 到 +80 度，回旋 340 度，
+          两炮炮轴间距 21 英寸（53.3 厘米）。
+          备弹：多数巡洋舰每门 200 发，Edinburgh 250 发。
+        en: >-
+          Nominal calibre 4 inches, bore 10.2 cm; gun length overall 190.5 in (4.839 m)
+          with 149.5 in (3.798 m) of rifling and a chamber of 511.8 in3 (8.387 dm3);
+          gun weight 2,039 kg for the Mark XVI, 2,042 kg for the Mark XVI* and 1,541 kg
+          for the lighter Mark XXI. Ammunition was fixed: the HE Mark 19 projectile
+          weighed 15.88 kg and the SAP 17.35 kg, with complete rounds of 28.8 and
+          30.28 kg; muzzle velocity 811 m/s with the standard charge and 610 m/s
+          reduced; working pressure 20.5 tons/in2; barrel life 600 rounds; rate of fire
+          15 to 20 rounds per minute. Range 19,850 yards (18,150 m) at 45 degrees and
+          an AA ceiling of 39,000 feet (11,890 m) at 80 degrees. The twin Mark XIX
+          mounting weighed 16,816 kg, elevated from -10 to +80 degrees and trained
+          through 340 degrees, with gun axes 21 in (53.3 cm) apart. Magazine capacity
+          was 200 rounds per gun in most cruisers and 250 in Edinburgh.
+      src: [navweaps-4in-45-mk16]
+
+    - heading: 四个炮身亚型，以及装舰范围
+      text:
+        zh: >-
+          编号体系比参数更容易抄错。**Mark XVI** 用 A 管、炮箍从炮口延伸到可拆炮尾环，
+          配下开式炮闩；**Mark XVI*** 是产量最大的版本，把 A 管换成自紧式活动身管、
+          炮箍前端加密封环，Mark XVI 磨损后送修时也一律改成这个标准；
+          **Mark XVIII** 只是 Mark XVI 改进型的原编号，服役验收前就改称 XVI*，从未以此名服役。
+          真正绕路的是 **Mark XVII**：它专为部分郡级巡洋舰设计，
+          目的是把两座单装 4"/45 Mark V 换成双联装而不超条约吨位限制 ——
+          Campbell 把这次设计称为「荒谬的拘泥」（ridiculous punctiliousness），
+          这门炮只造了 12 门，后来全部改回 Mark XVI 标准。
+          产量方面：英国造 2,555 门（XVI 与 XVI*）、Mark XXI 238 门，
+          加拿大造 XVI* 504 门、XXI 135 门，澳大利亚另造 XVI* 45 门。
+          装舰表读下来几乎是一部舰种名录：主力舰、浅水重炮舰、航母、
+          除 Canberra 与 York 之外的所有 8 英寸巡洋舰、1930 年后建造的 6 英寸巡洋舰、
+          改装为防空巡洋舰的 C 级、阿布迪尔级布雷舰、狩猎级与武器级驱逐舰、
+          部族级的防空炮位、多数单桅护卫舰与辅助防空舰；
+          荷兰的 Jacob van Heemskerck 与波兰的 Blyskawica（改装后）、Dragon、Conrad 也用它。
+        en: >-
+          The mark system is easier to get wrong than the data. The **Mark XVI** had an
+          A tube with a jacket running from the muzzle to a removable breech ring and a
+          down-sliding breech block; the **Mark XVI***, the most produced version,
+          replaced the A tube with an autofretted loose barrel and a sealing collar at the
+          front of the jacket, and worn-out Mark XVIs were converted to that standard on
+          repair; the **Mark XVIII** was merely the original designation for an improved
+          Mark XVI, redesignated Mark XVI* before acceptance and never serving under that
+          name. The real detour was the **Mark XVII**, designed for some County class
+          cruisers to replace two single 4"/45 Mark V mountings with twins without
+          exceeding the Treaty weight limits - an exercise Campbell called "ridiculous
+          punctiliousness"; twelve guns were made and all were later converted back to
+          Mark XVI standard. On production, 2,555 Mark XVI and XVI* guns plus 238 Mark XXI
+          were built in Britain, 504 Mark XVI* and 135 Mark XXI in Canada, and 45 more
+          Mark XVI* in Australia. The ship-class table reads almost as a roster of the
+          Navy: capital ships, monitors, carriers, all 8-inch cruisers except Canberra and
+          York, 6-inch cruisers built after 1930, the C class as converted to AA cruisers,
+          the Abdiel class minelayers, Hunt and Weapon class destroyers, the Tribal class
+          in the AA position, most sloops and auxiliary AA ships; the Netherlands' Jacob
+          van Heemskerck and Poland's Blyskawica as rearmed, Dragon and Conrad carried it
+          too.
+      src: [navweaps-4in-45-mk16]
+
+    - heading: 它被批评的两处，以及那个战后的冷水数字
+      text:
+        zh: >-
+          这型炮的口碑是「受欢迎」，但 NavWeaps 引 Campbell 的话给了两条硬批评：
+          它「既没有长的身管寿命，也没有特别高的精度」。
+          原因没有被含糊带过，而是归到一个可以检查的细节上 ——
+          所用弹丸的平行段（parallel section）太短，导致弹丸出膛时定心不良。
+          正面记录要并列：改装成防空巡洋舰的卡莱尔号用这型炮打落 11 架飞机，
+          是英国巡洋舰里的最高战果；辅助防空舰 Alynbank 打落 6 架。
+          同一页还有一个战后的冷水数字：战前皇家海军把「弹丸在 100 英尺内爆炸」
+          当作有效，但战后试验显示，炮弹在 45 英尺（14 米）处爆炸时
+          击落概率只有 15%，而且只在很窄的距离区间内成立。
+          这不是对这型炮的特别批评 —— 近炸引信成熟之前，中口径高炮都面对同一个问题。
+        en: >-
+          The weapon's reputation is that it was popular, yet NavWeaps quotes Campbell
+          for two hard criticisms: it had "neither long barrel life nor particularly high
+          accuracy". The cause is not left vague but pinned to a checkable detail - the
+          projectiles used had too short a parallel section, which led to poor centring at
+          the muzzle. The positive record stands alongside it: HMS Carlisle, a converted
+          AA cruiser armed with these guns, shot down eleven aircraft, the highest score
+          among British cruisers, and the auxiliary AA ship Alynbank six. The same page
+          adds a cold postwar figure: before the war the Royal Navy regarded bursts within
+          100 feet as "effective", but postwar experiments showed that a 4-inch shell
+          bursting at 45 feet (14 m) had only a 15 per cent chance of a kill, and only over
+          quite narrow zones. This is not a criticism specific to this gun - until the VT
+          fuze matured, every medium-calibre AA gun faced the same limit.
+      src: [navweaps-4in-45-mk16]
+
+    - heading: 城级内部的两处差异：备弹分档与 Edinburgh 的传送带
+      text:
+        zh: >-
+          备弹常被笼统写成「200 发」，但来源给的是分档数：Hood、Barham、Malaya、
+          Warspite 每门 250 到 280 发，另加全舰合计 250 发照明弹；
+          多数巡洋舰每门 200 发；Edinburgh 每门 250 发（250 发高爆、
+          65 发对空练习弹、4 发对舰练习弹、4 发目标烟幕弹、12.5 发照明弹）；
+          Roberts 级浅水重炮舰最多，每门 400 发。
+          注意「每门」与「全舰」是两个口径，抄数字时别混。
+          另一处差异属于 Edinburgh 子级：它的 4 英寸炮被放在离副炮弹药库很远的位置，
+          弹药库在飞行甲板下面，于是舰上装了一套 110 英尺（33.5 米）长的传送系统，
+          由类似轨道上的小车组成，把炮弹从扬弹机送到炮位。
+          《British Cruisers of World War Two》对这套装置的评价是
+          「一套复杂的布置，战斗中很容易被打断」。
+          也就是说：同一门炮，装在 Southampton 子级上是常规布局，
+          装在 Edinburgh 子级上就要额外背一套容易出故障的搬运链。
+        en: >-
+          Magazine capacity is often flattened into "200 rounds", but the source gives a
+          graded set: 250 to 280 rounds per gun in Hood, Barham, Malaya and Warspite plus
+          250 star shell per ship in total; 200 per gun in most cruisers; 250 per gun in
+          Edinburgh (250 HE, 65 practice HA, 4 practice LA, 4 target smoke and 12.5 star
+          shells); and up to 400 per gun in the Roberts class monitors. "Per gun" and "per
+          ship" are two different measures and should not be mixed. A second difference
+          belongs to the Edinburgh sub-class: its 4-inch guns sat well back from the
+          secondary magazines, which were under the flight deck, so the ships were fitted
+          with a 110-foot (33.5 m) conveyor system of trolleys on a sort of railway to
+          carry ammunition from the hoists back to the guns. "British Cruisers of World War
+          Two" describes it as "a complicated arrangement which in action could easily be
+          disrupted". The same gun thus sat in a conventional layout in the Southampton
+          group and dragged a fragile extra handling chain around with it in the Edinburgh
+          group.
+      src: [navweaps-4in-45-mk16]
+
+history:
+  - id: origin
+    title: { zh: 设计定型与替换 Mark V, en: Design and the replacement of the Mark V }
+    range: { from: 1934, to: 1936 }
+    lead:
+      zh: >-
+        从设计到服役只有两年，但它替换的那门炮已经用了二十年。
+      en: >-
+        Two years from design to service, against a gun that had been in use for twenty.
+    events:
+      - date: 1934
+        text:
+          zh: >-
+            完成设计（NavWeaps 记「约 1934 年」）。设计定位是高平两用（DP），
+            NavWeaps 的评语是「作为高射炮相当不错，尽管许多人认为它用于对舰太小」。
+          en: >-
+            Design completed; NavWeaps gives "about 1934". It was intended as a DP
+            weapon and NavWeaps judges it "a reasonably good AAA gun although many
+            considered it as being too small for the anti-ship role".
+        src: [navweaps-4in-45-mk16]
+      - date: 1936
+        text:
+          zh: >-
+            进入服役，随即在 1930 年代的新造巡洋舰上取代 4"/45 Mark V HA，
+            较老的巡洋舰与主力舰也在改装中换装。
+            被替换的 Mark V 是 1914 年的设计 —— 也就是说这次换装
+            把一门一战前夕的炮换成了三十年代的新炮，间隔整整二十年。
+          en: >-
+            Entered service and superseded the 4"/45 Mark V HA on new cruiser
+            construction, while older cruisers and capital ships took it in place of the
+            Mark V during refits. The gun replaced was a 1914 design, so the change
+            substituted a pre-First-World-War weapon with a 1930s one - twenty years
+            apart.
+        src: [navweaps-4in-45-mk16, navweaps-4in-45-mk5]
+
+  - id: service
+    title: { zh: 战时使用与遥控改装, en: Wartime service and RPC conversion }
+    range: { from: 1939-09, to: 1946-01 }
+    lead:
+      zh: >-
+        它打满了整个战争，最大的问题不是性能，是产量跟不上需求；本舰一直留到最后。
+      en: >-
+        It served through the whole war; its biggest problem was not performance but
+        production failing to keep up with demand, and the Town class kept it to the end.
+    events:
+      - date: 1939-09
+        text:
+          zh: >-
+            开战时绝大多数双联炮座是纯人力操作 —— 没有动力回旋与俯仰。
+            这一点在战争中被逐步补上，方式是三种 Metadyne 遥控（RPC）改装：
+            RP 50 俯仰与回旋均为 15 度/秒，RP 51 与 RP 52 均为 20 度/秒；
+            动力组安装位置也不同（RP 50 与 RP 52 在固定结构上，
+            RP 51 在旋转部分）。RP 51 与 RP 52 装有本地操纵摇杆。
+            NavWeaps 的 RP 52 改造名单里，Glasgow、Sheffield、Liverpool、
+            Bermuda、Kenya、Mauritius、Ceylon 等一批巡洋舰都在其中 ——
+            谢菲尔德号即属这一档。
+          en: >-
+            At the outbreak of war almost all twin mountings were manually operated,
+            with no power training or elevation. This was progressively made good by
+            three Metadyne RPC conversions: RP 50 at 15 degrees per second in both
+            elevation and training, RP 51 and RP 52 at 20 degrees per second, the last
+            two with joysticks for local control, and differing in where the Metadyne
+            sets sat (on the fixed structure for RP 50 and RP 52, on the rotating mass
+            for RP 51). NavWeaps's RP 52 list includes Glasgow, Sheffield, Liverpool,
+            Bermuda, Kenya, Mauritius and Ceylon among a batch of cruisers - Sheffield
+            is in that group.
+        src: [navweaps-4in-45-mk16]
+      - date: 1946-01
+        text:
+          zh: >-
+            到战后初期，城级仍在用这型炮：navypedia 的改装台账在 1946 年 1 月
+            一栏记 Birmingham 的装备为「3 座三联 152/50 Mk XXII、
+            4 座双联 102/45 Mk XIX、4 座四联 40/60 Mk 2、2 座四联 40/39 Mk VII、
+            10 座双联 20/70 Mk V、9 座单装 20/70……」。
+            同一份台账里，城级各舰从 1941 到 1945 年的改装条目中
+            没有任何一条拆减 4 英寸炮座。
+          en: >-
+            Into the postwar period the Town class was still carrying the gun: Navypedia's
+            modernisation ledger for January 1946 lists Birmingham's armament as "3 x 3 -
+            152/50 Mk XXII, 4 x 2 - 102/45 Mk XIX, 4 x 4 - 40/60 Mk 2, 2 x 4 - 40/39 Mk
+            VII, 10 x 2 - 20/70 Mk V, 9 x 1 - 20/70" and so on. In the same ledger, none of
+            the Town class refit entries from 1941 to 1945 removes 4-inch mountings.
+        src: [navypedia-town]

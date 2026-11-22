@@ -1,0 +1,1087 @@
+# ============================================================================
+# 舰级：Ark Royal class（皇家方舟级航空母舰）
+# ----------------------------------------------------------------------------
+# 这一级只建成一艘（HMS Ark Royal，舷号 91），所以本文件同时承担两个角色：
+#   1. 「这一级本来应该长什么样」——1931 年起研制的设计意图、图纸值
+#   2. 「皇家方舟号继承了哪些参数」——凡属设计值而不随战历改变的都写在这里
+# 单舰独有的东西（建造日期、战历、编制、损失过程、逐期舰载机）写
+# work/staging/g5-arkroyal/ships/ark-royal.yaml。
+#
+# 解析顺序（docs/00-framework.md §3.6）：单舰 fact → 舰级 fact → 未记载。
+# 单舰命中即覆盖舰级，**不算分歧**。
+#
+# 【本级在皇家海军航母谱系里的位置】
+# 它是皇家海军第一艘「从铺龙骨起就按航母设计」的大型舰队航母（此前六艘都是
+# 战巡/客船改装）。两个技术决定影响了此后全部英国航母：
+#   ① 飞行甲板成为船体的**结构组成部分**，兼作上层强度甲板——而不是架在船体上；
+#   ② 舷侧板一直包到飞行甲板，形成全封闭舰艏（此后英国航母的标志性外形）。
+# 但它**没有**装甲飞行甲板：真正把装甲甲板当强度甲板的是后来的光辉级。
+# 本级的取舍是「高干舷 + 双层大机库 + 60 架载机」，
+# 代价是机库侧壁只有结构钢、只有局部装甲带，以及最后那条致命的设计缺陷：
+# 三组锅炉房排成一列横贯全船，烟道从下层机库底下穿过。
+#
+# 【本文件不重复的东西】
+# 逐月战历、每次改装的防空炮增减、舰载机编制的逐期变化，都在单舰文件里。
+# ============================================================================
+
+id: ark-royal
+name:
+  zh: 皇家方舟级航空母舰
+  en: Ark Royal-class aircraft carrier
+class_of: [ark-royal]
+
+open_ended_note: >
+  本文件绝大多数 fact 的 valid.to 都留空，这是结构性的，不是漏填：
+  舰级设计参数的生效期从设计定案/服役起，到该级最后一艘损失或拆解为止，
+  期间不因改装而改变；实际战备状态随时间的变化写在
+  work/staging/g5-arkroyal/ships/ark-royal.yaml 的状态切片里，由单舰 fact 覆盖。
+  因此这里的 open 时间窗表示「无已知终止事件」。
+  另请注意这些数字的「时间底色」：它们主要是 1935-1938 年的设计值与建成状态，
+  不是「这艘船任何时刻的参数」——1941-05 加装两座 pom-pom 之后防空配置就变过。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: Ark Royal class
+    src: [navypedia-arkroyal, uboatnet-arkroyal-class]
+    valid: { from: 1935-09-16 }
+    confidence: B
+    note: >
+      级名沿用 1587 年以来的舰名。本级只建成一艘；两级后来的同名舰
+      （1950 年下水的 R09 与 1981 年的 R07）不属于本级。
+
+  - field: identity.name_zh
+    value: 皇家方舟级航空母舰
+    src: [navypedia-arkroyal]
+    valid: { from: 1935-09-16 }
+    confidence: B
+    note: 中文通行译名「皇家方舟」。舰名本身取「方舟」的宗教/纹章意象，见单舰文件的 namesake 条。
+
+  - field: identity.name_en
+    value: Ark Royal-class fleet aircraft carrier
+    src: [navypedia-arkroyal]
+    valid: { from: 1935-09-16 }
+    confidence: B
+
+  - field: identity.ship_type
+    value: aircraft_carrier
+    src: [navypedia-arkroyal, uboatnet-arkroyal-class]
+    valid: { from: 1935-09-16 }
+    confidence: A
+    note: >
+      皇家海军官方分类是 fleet aircraft carrier（舰队航母），不是护航航母。
+      uboat.net 同页把它记作 Aircraft Carrier，类型口径一致。
+
+  - field: identity.nation
+    value: united_kingdom
+    src: [navypedia-arkroyal]
+    valid: { from: 1935-09-16 }
+    confidence: A
+
+  - field: identity.operator
+    value: Royal Navy
+    src: [naval-history-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: A
+
+  - field: identity.era
+    value: ww2
+    src: [naval-history-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+    note: >
+      按服役期定位：1938-11-16 服役至 1941-11 沉没，全部实战记录都在二战。
+      设计始于 1931 年，属战间期产物。
+
+  - field: identity.building_program
+    value: 1934 年造舰计划（1931 年起开始设计）
+    src: [naval-history-arkroyal]
+    valid: { from: 1934-01-01 }
+    confidence: A
+    note: >
+      naval-history 原话：「ARK ROYAL Class Fleet Aircraft Carrier ordered from
+      Cammell Laird of Birkenhead under the 1934 estimates」，同页另写
+      「ordered in the 1934 Build Programme」。设计起点是 1931 年：
+      「In 1931 work commenced on the design of a new Fleet Aircraft Carrier
+      which would be the first of a new generation of this type of warship」。
+
+  - field: identity.name_note
+    value: >-
+      本级只有一艘建成舰：HMS Ark Royal（舷号 91）。同名的后续两艘
+      （R09 与 R07）是战后另立的舰级，与本级无设计继承关系。
+    src: [navypedia-arkroyal, uboatnet-arkroyal-class]
+    valid: { from: 1938-11-16 }
+    confidence: B
+
+  # ============================================================ 主尺度
+  - field: dimensions.length.oa
+    value: 243.8
+    unit: m
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: >
+      原值 800 ft（navypedia 直接给 243.8 oa；naval-history 写 800 feet overall，
+      FAA Archive 写 800 oa）。含极长的舰艉飞行甲板悬伸段——navypedia 原文
+      「the big aft overhang of a flight deck which at the expense of it
+      significantly exceeded a hull length」。所以 243.8 m 是**含悬伸段**的长度，
+      模型上量船体本身会短一截。
+
+  - field: dimensions.length.pp
+    value: 208.8
+    unit: m
+    src: [navypedia-arkroyal, faa-arkroyal-archive]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: 原值 685 ft（FAA Archive），navypedia 给 208.8 pp，两者一致（685 ft = 208.8 m）。
+
+  - field: dimensions.length.wl
+    value: 219.9
+    unit: m
+    src: [faa-arkroyal-archive]
+    valid: { from: 1938-11-16 }
+    confidence: C
+    note: >
+      原值 721.5 ft，本报告换算为 219.9 m。水线长介于垂线间长与全长之间，
+      与全长 243.8 m 差 24 m —— 这个差额就是舰艉甲板悬伸段。
+
+  - field: dimensions.beam.wl
+    value: 28.9
+    unit: m
+    src: [navypedia-arkroyal, faa-arkroyal-archive]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: >
+      navypedia 原文「Breadth, m 28.9 wl 29.0 deck」——29.0 m 是飞行甲板宽
+      （见 aviation.deck.width），不是最大船宽，不要混用。
+      FAA Archive 的 94.75 ft = 28.88 m，与 28.9 m 实质相同。
+
+  - field: dimensions.draught.mean
+    value: 7.01
+    unit: m
+    src: [naval-history-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+    note: >
+      原值 mean draught of 23 feet，本报告换算为 7.01 m。这是**平均吃水**口径；
+      深载吃水另有一条 8.46 m（见 dimensions.draught.max），两个口径不要混用。
+
+  - field: dimensions.draught.max
+    value: 8.46
+    unit: m
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+    note: navypedia 原文「Draught, m 8.46 deep load」——深载吃水口径。
+
+  - field: dimensions.freeboard
+    value: 17.1
+    unit: m
+    src: [navypedia-arkroyal, historyofwar-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: >
+      到飞行甲板的干舷 17.1 m（56 ft）。navypedia 原文「Prominent features of
+      architecture of Ark Royal were extremely high freeboard (17.1m)」；
+      historyofwar 原文「The flight deck was 56ft above the deep load waterline
+      (compared to 38ft on the Illustrious class)」。
+      对照：继承它的光辉级只有 11.6 m —— 这 5.5 m 的差额是本级与装甲航母路线
+      最直观的外观差别，也是它在大西洋海况下飞行作业条件较好的原因。
+
+  # ============================================================ 排水量
+  - field: displacement.standard
+    value: 22000
+    unit: t
+    src: [navypedia-arkroyal, historyofwar-arkroyal, uboatnet-arkroyal-class]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: >
+      标准排水量 22,000 t。uboat.net 类页记 22000 BRT（同一数值，但用了 BRT
+      这个商船吨位单位，是专题站的写法习惯，不是真的以容积吨计量）。
+
+  - field: displacement.standard
+    value: 22352
+    unit: t
+    src: [faa-arkroyal-archive]
+    valid: { from: 1938-11-16 }
+    confidence: C
+    note: >
+      与 22,000 t 并列，不裁决。FAA Archive 原文「Displacement: 22,352 tons
+      standard ; 28,143 tons full load」。这一组数比 navypedia/historyofwar
+      的 22,000/27,720 各高约 400 t，可能是「建成时实测」与「设计值」的区别，
+      但该来源没有说明口径 —— 引用时注明出自哪一源。
+
+  - field: displacement.full
+    value: 27720
+    unit: t
+    src: [navypedia-arkroyal, historyofwar-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: historyofwar 原文「27,720t deep load」——注意它把这档叫作 deep load 而不是 full。
+
+  - field: displacement.full
+    value: 28143
+    unit: t
+    src: [faa-arkroyal-archive]
+    valid: { from: 1938-11-16 }
+    confidence: C
+    note: 与 27,720 t 并列，不裁决，见 displacement.standard 的 22,352 t 条说明。
+
+  # ============================================================ 动力
+  - field: propulsion.plant_type
+    value: steam_turbine
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: A
+
+  - field: propulsion.boiler.count
+    value: 6
+    unit: count
+    src: [navypedia-arkroyal, faa-arkroyal-archive]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: >
+      6 座锅炉，但**分装在三个锅炉房里、三组排成一列横贯全船**
+      （naval-history 原文「Three Boiler Rooms with separate but adjacent
+      boiler rooms were used」；historyofwar 原文「She had three boilers and
+      three engine rooms, carried in a row across the ship」）。
+      historyofwar 写的是「three boilers」，与 6 座的说法并存 —— 按「三组、每组两台」
+      理解则两说不冲突，但没有任何一份来源把每组的台数写清，故并列不裁决。
+
+  - field: propulsion.boiler.type
+    value: Admiralty 三鼓锅炉（Admiralty 3-drum）
+    src: [navypedia-arkroyal, faa-arkroyal-archive]
+    valid: { from: 1938-11-16 }
+    confidence: B
+    note: 锅炉工作压力与蒸汽温度：**未获取**。
+
+  - field: propulsion.turbine.count
+    value: 3
+    unit: count
+    src: [navypedia-arkroyal, faa-arkroyal-archive]
+    valid: { from: 1938-11-16 }
+    confidence: A
+
+  - field: propulsion.turbine.type
+    value: Parsons 齿轮传动汽轮机
+    src: [navypedia-arkroyal, faa-arkroyal-archive]
+    valid: { from: 1938-11-16 }
+    confidence: A
+
+  - field: propulsion.shafts
+    value: 3
+    unit: count
+    src: [navypedia-arkroyal, uboatnet-arkroyal-class]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: 三轴。uboat.net 原文「Geared turbines, 3 shafts」。
+
+  - field: propulsion.power.design
+    value: 102000
+    unit: hp
+    src: [navypedia-arkroyal, naval-history-arkroyal, uboatnet-arkroyal-class]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: naval-history 原文「three propellers driven by steam turbines giving 102,000 shaft horsepower」。
+
+  - field: propulsion.speed.design
+    value: 30.75
+    unit: kn
+    src: [naval-history-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+    note: >
+      设计值。naval-history 原文「to provide a designed speed of 30.75 knots
+      which was exceeded on trials」。
+
+  - field: propulsion.speed.max
+    value: 31
+    unit: kn
+    src: [navypedia-arkroyal, faa-arkroyal-archive, uboatnet-arkroyal-class]
+    valid: { from: 1938-11-16 }
+    confidence: B
+    note: >
+      建成后的最大值 31 kt（三源一致）。与设计值 30.75 kt 不是矛盾 ——
+      naval-history 明写试航时超过了设计航速。
+      **试航实测的精确值未获取**（该页只说 "exceeded on trials"，没给数字）。
+
+  - field: propulsion.range.max
+    value: 10300
+    unit: nmi
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+    note: >
+      navypedia 原文「Endurance, nm(kts) 10300(16)」。**续航力是本级最不一致的
+      一组数据**：另有 7,600 nm @ 20 kt（FAA Archive）与 11,200 miles @ 11 kt
+      （historyofwar），三条并列，不裁决。三者相差可达 30%，很可能分别对应
+      「设计值」「实战经济航速」「宣传口径」。
+
+  - field: propulsion.range.at_speed
+    value: 16
+    unit: kn
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+
+  - field: propulsion.fuel.capacity
+    value: 4620
+    unit: t
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+    note: navypedia 原文「Fuel, t 4620 oil」。全燃油专烧，无煤。
+
+  # ============================================================ 防护
+  - field: protection.scheme
+    value: incremental
+    src: [navypedia-arkroyal, uboatnet-arkroyal-class]
+    valid: { from: 1938-11-16 }
+    confidence: B
+    note: >
+      逐段防护（incremental），不是 all-or-nothing，也不是光辉级那种装甲盒。
+      构造为三层叠加：① 水线主装甲带，舯部向上延伸到下层机库甲板、
+      烟囱前后降到上甲板、弹药库段降到下甲板；② 一层 3.5 in 装甲甲板；
+      ③ 舷侧「三明治」式水下防护（空舱 + 燃油舱 + 防雷纵舱壁）。
+      **机库侧壁本身没有装甲** —— 这是它与光辉级的根本差别。
+      uboat.net 原文：「The belt was taken to the lower hangar deck abreast
+      the funnel, to the upper deck fore and aft of this and to the lower deck
+      by the forward and aft 4.5in magazines; there was a 3½in armour deck at
+      the various levels of the upper edge and over the steering gear」。
+
+  - field: protection.armor.thickness
+    value: 114
+    unit: mm
+    qual: { part: belt, region: main }
+    src: [navypedia-arkroyal, historyofwar-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: >
+      主装甲带 4.5 in（114 mm）。navypedia 原文「Armour, mm belt: 114」；
+      historyofwar 原文「Armour - belt 4.5in」。
+      覆盖范围 navypedia 原文：「Main belt protected 45% of length by waterline」
+      —— 只护住不到一半的水线长度，这是它与「装甲盒」设计的关键差距。
+
+  - field: protection.armor.thickness
+    value: 76
+    unit: mm
+    qual: { part: bulkhead, region: main }
+    src: [navypedia-arkroyal, historyofwar-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+    note: >
+      横舱壁取上限 76 mm。navypedia 原文「bulkheads: 76 - 64」，
+      historyofwar 原文「bulkheads 3in-2.5in」= 76-64 mm，两源一致。
+      下限 64 mm 不单列一条 fact，避免把「同一块舱壁的厚度区间」
+      伪造成两种说法。
+
+  - field: protection.armor.thickness
+    value: 89
+    unit: mm
+    qual: { part: hangar_deck, region: lower }
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+    note: >
+      navypedia 原文「lower hangar deck: 89 over engines, magazines and
+      aviation fuel tanks」——89 mm 只覆盖动力舱、弹药库与航空汽油舱上方，
+      不是整层甲板。这一层与下一条的 3.5 in 装甲甲板（= 88.9 mm）应是同一层，
+      但两源描述的位置口径不同，故分两条并列。
+
+  - field: protection.armor.thickness
+    value: 89
+    unit: mm
+    qual: { part: deck, region: main }
+    src: [uboatnet-arkroyal-class]
+    valid: { from: 1938-11-16 }
+    confidence: B
+    note: >
+      uboat.net 原文「there was a 3½in armour deck at the various levels of the
+      upper edge and over the steering gear」——3.5 in = 88.9 mm，
+      铺在装甲带上缘所在的各个高度上，并覆盖舵机。
+      与上一条 89 mm（下层机库甲板）数值吻合，但位置描述不同，并列保留。
+
+  - field: protection.armor.thickness
+    value: 38
+    unit: mm
+    qual: { part: bulkhead, region: torpedo }
+    src: [navypedia-arkroyal, uboatnet-arkroyal-class]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: >
+      防鱼雷纵舱壁 38 mm（1.5 in）。navypedia 原文「there were 38mm
+      anti-torpedo bulkheads」；uboat.net 原文「a sandwich type underwater
+      protection with a 1½in protective bulkhead 13ft 4½in from the side
+      amidships」——距舷侧 13 ft 4.5 in（4.08 m），与下一条水下防护纵深吻合。
+
+  - field: protection.underwater.depth
+    value: 4.08
+    unit: m
+    src: [navypedia-arkroyal, uboatnet-arkroyal-class, historyofwar-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+    note: >
+      navypedia 原文「Underwater protection depth was 4.08m … This protection
+      could resist exploding of 380kg TNT」。设计指标是抵御 750 lb 装药
+      （historyofwar 原文「This was designed to protect against a 750lb charge」），
+      750 lb ≈ 340 kg，与 380 kg 同一量级但不是同一数字，两说并列。
+      注意 uboat.net 还记了一处改动：「trials while Ark Royal was building
+      showed that the bulkhead stiffeners had to be modified」——
+      这套防护在建成前就返修过加强筋。
+
+  # ============================================================ 航空设施
+  - field: aviation.deck.length
+    value: 219.5
+    unit: m
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: >
+      navypedia 原文「Flight deck: 219.5 (useful length)x29.0m」。
+      **注意这是「可用长度」，不是甲板全长**：飞行甲板结构长度与船体全长
+      243.8 m 相当（舰艉有长悬伸），但可用起降段只有 219.5 m。
+      uboat.net 的口径是「usable area of 720ft x 95 ft」= 219.5 x 28.9 m，与之一致。
+
+  - field: aviation.deck.width
+    value: 29.0
+    unit: m
+    src: [navypedia-arkroyal, uboatnet-arkroyal-class]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: uboat.net 原文「usable area of 720ft x 95 ft」——95 ft = 28.96 m。
+
+  - field: aviation.hangar.count
+    value: 2
+    unit: count
+    src: [navypedia-arkroyal, uboatnet-arkroyal-class, faa-arkroyal-archive]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: >
+      双层机库。FAA Archive 原文「a full length two level hangar which gave the
+      ship a distinctive tall look」——这个「两层贯通全长」的机库就是它外观
+      比光辉级高出一大截的直接原因。
+
+  # 2026-11-22 主会话改：原本只写 aviation.hangar.length 一条 + 在 note 里交代
+  # 下层，理由是「该字段没有 qual 限定词，两条会被判成分歧」。这个判断对了一半：
+  # 确实会被判成分歧，但正确的解法是**加字段**而不是把数据塞进 note。
+  # 已往 data/fields.yaml 补了 aviation.hangar.upper.length / lower.length
+  # （与 deck.upper/middle/lower 同一个模式），所以这里拆成两条正式 fact。
+  # 注意：拆开后**不再写 aviation.hangar.length**，那个字段留给单层机库的航母。
+  - field: aviation.hangar.upper.length
+    value: 173.1
+    unit: m
+    src: [navypedia-arkroyal, uboatnet-arkroyal-class]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: >-
+      上层机库。navypedia 原文「Upper hangar: 173.1x18.3x4.9m」；
+      uboat.net 原文「two hangars measuring 568ft upper, 452ft lower」。
+      568 ft = 173.1 m，两源一致。
+      【需更正一处流传的说法】：常被写成「上层 173 ft、下层 150 ft」，
+      但两源给的是 **568 ft（173.1 m）与 452 ft（137.8 m）**——
+      173 这个数字的单位是**米**不是英尺，150 ft 也与 452 ft 对不上。
+      本站以两源原值为准。
+
+  - field: aviation.hangar.lower.length
+    value: 137.8
+    unit: m
+    src: [uboatnet-arkroyal-class]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: >-
+      下层机库。452 ft = 137.8 m，只有 uboat.net 明给这一个数，
+      navypedia 只记上层，故本条的 src 只有一条，confidence 仍为 A
+      （uboat.net 是逐舰技术数据的专题站，且这个数值与上层 568 ft 成对出现）。
+      下层比上层短 35 m，是因为要避开后部动力舱。
+
+  - field: aviation.hangar.width
+    value: 18.3
+    unit: m
+    src: [navypedia-arkroyal, uboatnet-arkroyal-class]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: 60 ft（uboat.net）与 18.3 m（navypedia）同一数值。
+
+  - field: aviation.hangar.height
+    value: 4.9
+    unit: m
+    src: [navypedia-arkroyal, uboatnet-arkroyal-class]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: >
+      16 ft（4.9 m），当时英国航母的标准机库高度，两层都是这个高度。
+      对照：这一高度比美国同期航母（Yorktown 17 ft 3 in、Essex 17 ft 6 in）低，
+      但比后来光辉级的单层 16 ft 是同一水平 —— 本级的优势在**层数**不在高度。
+
+  - field: aviation.elevator.count
+    value: 3
+    unit: count
+    src: [navypedia-arkroyal, uboatnet-arkroyal-class, naval-history-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: >
+      三部矩形升降机，中线布置。naval-history 原文「Three lifts were fitted for
+      transfer of aircraft to and from hangar level」。
+
+  - field: aviation.elevator.dimensions
+    value: 2 × 13.7 × 6.7 m（45 × 22 ft）+ 1 × 13.7 × 7.6 m（45 × 25 ft）
+    src: [navypedia-arkroyal, uboatnet-arkroyal-class]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: >
+      navypedia 原文「3 lifts for both hangars each (2 lifts: 13.7x6.7m,
+      1 lift: 13.7x7.6m)」；uboat.net 原文「three rectangular lifts,
+      two measuring 45ft x 22ft and one 45ft x 25ft」。
+      **本级的升降机是双层平台结构**（uboat.net：「These each had two platforms,
+      of which the upper one travelled between the flight deck and the upper
+      hangar and the lower one between the two hangars」）——上平台跑
+      飞行甲板↔上层机库，下平台跑上、下机库之间。所以把一架飞机从下层机库
+      送到飞行甲板要**三次动作**，这是本级效率上被批评得最多的一处设计。
+
+  - field: aviation.catapult.count
+    value: 2
+    unit: count
+    src: [navypedia-arkroyal, uboatnet-arkroyal-class, historyofwar-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: >
+      **飞行甲板两端各一部弹射器**，建成即装。uboat.net 原文「It was provided
+      with two catapults that could launch 12.000lb at 66kts」；
+      historyofwar 原文「The Ark Royal had two catapults, each capable of
+      launching a 12,000lb aircraft at 66kts」；navypedia 原文
+      「2 catapults (5.4t plane was launched at 122 km/h)」。
+      12,000 lb = 5.44 t，66 kt = 122 km/h —— 三源的弹射能力其实是同一个数。
+      **这是它与光辉级早期状态的区别之一**：光辉级建成时只有一部。
+      弹射器型号：**未获取**，故不写 aviation.catapult.type。
+
+  - field: aviation.fuel.volume
+    value: 454600
+    unit: dm3
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+    note: >
+      navypedia 原文「Aircraft fuel stowage: 454,600l」。uboat.net 的口径是
+      「Petrol stowage was 100.000gal」= 454,609 L，两源实质一致
+      （差 9 L，属加仑换算取整）。
+
+  - field: aviation.aircraft.capacity
+    value: 60
+    unit: count
+    src: [navypedia-arkroyal, uboatnet-arkroyal-class, historyofwar-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: >
+      建成设计载机量 60 架（三源一致）。但设计要求原本是 72 架：
+      naval-history 原文「Although the original aircraft requirement asked for
+      72 aircraft to be carried only 60 were allowed for for in the finished
+      design and this was reduced to 54 when modern heavier types were embarked」。
+      所以「72 架」是纸面要求，「60 架」是建成值，「54 架」是换装更重的机型后的
+      实际运作数 —— 三个数字对应三个阶段，不是三种说法。
+
+  # ============================================================ 编制（设计值）
+  - field: service.complement.standard
+    value: 1580
+    unit: persons
+    src: [navypedia-arkroyal, historyofwar-arkroyal, uboatnet-arkroyal-class]
+    valid: { from: 1938-11-16 }
+    confidence: B
+    note: >
+      三源一致（uboat.net 记 1,570，差 10 人）。naval-history 给的是
+      「original complement was about 1,600」，且注明开战后随雷达与近程高炮
+      的增加而上升。逐期实际编制数字见单舰文件。
+
+  # ============================================================ 武备概览
+  - field: armament.mount.summary
+    value: >-
+      8 × 2 - 114 mm/45 QF Mk I（Mark III UD 双联座，两舷飞行甲板高度，共 16 门）+
+      4 × 8 - 40 mm/39 2-pdr QF Mk VIII（八联 pom-pom，1941-05 起增至 6 座共 48 门）+
+      8 × 4 - 12.7 mm/62 维克斯高射机枪（32 挺）+ 4 × 1 - 47 mm/40 3-pdr 礼炮；
+      舰载机 60 架
+    src: [navypedia-arkroyal, historyofwar-arkroyal, uboatnet-arkroyal-class]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: >
+      建成状态。本级**没有鱼雷发射管** —— 航空鱼雷是舰载机弹药，不是舰载武器。
+      4.5 in 是主副两用炮：布置在两舷飞行甲板高度的炮座上，
+      **炮座是开放式（open-backed）的，必要时可以越过飞行甲板向另一舷目标开火**
+      （historyofwar 原文：「carried in open-backed mountings at flight deck level,
+      meaning that they could fire across the flight deck to hit targets on the
+      opposite side of the ship」；uboat.net 同义：「apart from blast effects
+      could fire across the flight deck」）。
+      12.7 mm 维克斯与 3-pdr 礼炮在 navypedia 原文为
+      「4 x 1 - 47/40 3pdr Hotchkiss Mk I, … 8 x 4 - 12.7/62」；
+      本站没有为这两种小口径建武器实体（无对应 navweaps 页可引），故只在此字符串中记录。
+
+  # ============================================================ 4.5 in QF Mk I 火炮
+  #
+  # 注意：本舰装的是 **Mark I 炮身**，配 **Mark III UD 双联座**。
+  # 与光辉级装的 Mark III 炮身 + Mark II BD 座是同一族里的不同组合
+  # （NavWeaps：Mark I 与 Mark III「were interchangeable with each other,
+  # the only difference being in details of the firing mechanism」）。
+  # 所以本站为它单独立一个武器实体 weapon:45in-45-mk1，不并在
+  # weapon:4_5in-qf-mk3（那一实体记的是 Mark III 炮身 / Mark II BD 座）。
+
+  - about: weapon:45in-45-mk1
+    field: weapon.designation
+    value: 4.5"/45 (11.4 cm) QF Mark I
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: A
+    note: >
+      NavWeaps 家族页标题为「4.5"/45 (11.4 cm) QF Marks I, III and IV」。
+      本舰用的是 Mark I（炮身）配 Mark III UD（座）。
+      同页明确 Mk I 装舰名单的第一位就是本舰：
+      「Mark I … Ark Royal (1937), Forth, Maidstone and Illustrious class」。
+
+  - about: weapon:45in-45-mk1
+    field: weapon.nation
+    value: united_kingdom
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: A
+
+  - about: weapon:45in-45-mk1
+    field: weapon.category
+    value: naval_gun
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: B
+    note: >
+      注册表没有「双用途炮」类目，按 naval_gun 记；
+      它的对空性能见 range.aa_max 与 elevation.max 两条。
+
+  - about: weapon:45in-45-mk1
+    field: weapon.bore
+    value: 114
+    unit: mm
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: A
+    note: >
+      NavWeaps 原文「All British 4.5" naval guns have an actual bore diameter of
+      4.45" (11.3 cm)」—— 标称 4.5 in（114 mm），实际膛径 11.3 cm。
+
+  - about: weapon:45in-45-mk1
+    field: weapon.caliber_length
+    value: 45
+    unit: ratio
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: A
+    note: 炮身全长 202 in（5.131 m），膛线长 170.9 in（4.341 m）。
+
+  - about: weapon:45in-45-mk1
+    field: weapon.weight
+    value: 2859
+    unit: kg
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: A
+    note: >
+      NavWeaps 原文「Marks I and III: 6,304 lbs. (2,859 kg)」，含炮闩。
+      对照 Mark IV 的 6,179 lbs（2,803 kg）。
+
+  - about: weapon:45in-45-mk1
+    field: weapon.projectile_weight
+    value: 24.95
+    unit: kg
+    qual: { shell_type: he }
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: A
+    note: >
+      **这一条极易被抄错，本站特别核对过。** NavWeaps 同一页有两组数：
+      「Weight of complete round (with SC charges) HE - 87 lbs. (39.5 kg)」
+      是**整装弹全重**（含药筒），而「Projectile Types and Weights HE - 55 lbs.
+      (24.95 kg), SAP - 58.25 lbs. (26.4 kg)」才是**弹丸**重量。
+      projectile_weight 这个字段问的是弹丸，所以取 24.95 kg。
+      药筒本身：黄铜 114 x 695 mm R，空重约 28 lbs（12.7 kg）。
+
+  - about: weapon:45in-45-mk1
+    field: weapon.projectile_weight
+    value: 26.4
+    unit: kg
+    qual: { shell_type: sap }
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: A
+    note: 弹丸 58.25 lbs（26.4 kg）。**航空母舰只带 HE，不带 SAP** ——
+      NavWeaps 脚注原文「SAP and HE were carried by all except aircraft
+      carriers, which had HE only」，所以本舰实际只装 HE 弹。
+
+  - about: weapon:45in-45-mk1
+    field: weapon.muzzle_velocity
+    value: 746
+    unit: mps
+    qual: { shell_type: he }
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: A
+    note: >
+      NavWeaps 原文「New gun: 2,449 fps (746 mps) / Average gun: 2,350 fps
+      (716 mps)」。取新炮值 746 m/s；炮管磨损后降到 716 m/s。
+
+  - about: weapon:45in-45-mk1
+    field: weapon.range.max
+    value: 18970
+    unit: m
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: A
+    note: 45° 仰角 20,750 码（18,970 m）；43° 时 19,900 码（18,200 m）。
+
+  - about: weapon:45in-45-mk1
+    field: weapon.range.max_elevation
+    value: 45
+    unit: deg
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: A
+
+  - about: weapon:45in-45-mk1
+    field: weapon.range.aa_max
+    value: 12500
+    unit: m
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: A
+    note: >
+      80° 仰角时 41,000 ft（12,500 m）—— 这是双联座的最大仰角下的射高。
+      50° 时降到 29,910 ft（9,120 m）。
+
+  - about: weapon:45in-45-mk1
+    field: weapon.elevation.max
+    value: 80
+    unit: deg
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: A
+    note: 双联座 -5 / +80 度。
+
+  - about: weapon:45in-45-mk1
+    field: weapon.rate_of_fire
+    value: 12
+    unit: rpm
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: B
+    note: >
+      12 发/分/门（二战期间的联装座，除 RP10 Mark IV* 外）。
+      **持续射击会掉射速**：NavWeaps 原文「this fixed round proved to be too
+      heavy in service use … These problems resulted in a rapidly decreasing
+      rate of fire during prolonged firing periods」。
+
+  - about: weapon:45in-45-mk1
+    field: weapon.barrel_life
+    value: 650
+    unit: count
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: B
+    note: NavWeaps 原文「Approximate Barrel Life 650 rounds」。换炮管必须把炮整个拆下来。
+
+  - about: weapon:45in-45-mk1
+    field: weapon.ammo_outfit
+    value: 400
+    unit: count
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: A
+    note: >
+      NavWeaps 原文「Ammunition stowage per gun … Ark Royal (1937),
+      Illustrious and Implacable classes: 400 rounds」。每门 400 发。
+      其中 25% 的 HE 应配 VT 近炸引信，随产量提高升到 50%。
+
+  - about: weapon:45in-45-mk1
+    field: weapon.in_service_from
+    value: 1938
+    unit: date
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938 }
+    confidence: A
+    note: 设计约 1935 年（NavWeaps「Date Of Design about 1935」），1938 年服役 ——
+      与本舰服役同年，本舰是该炮的首装舰之一。
+
+  # ── 4.5 in 炮位 ──────────────────────────────────────────────────────────
+  - about: mount:ark-royal-45in-twin
+    field: mount.label_name
+    value: 4.5 in 双联两用炮座（两舷飞行甲板高度，每舷四座）
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938-11-16 }
+    confidence: A
+
+  - about: mount:ark-royal-45in-twin
+    field: mount.weapon
+    value: weapon:45in-45-mk1
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938-11-16 }
+    confidence: A
+
+  - about: mount:ark-royal-45in-twin
+    field: mount.turret_designation
+    value: Mark III UD
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: >
+      NavWeaps 原文「Twin Mounts … Ark Royal (1937) (8), Forth (4), Maidstone (4),
+      Tyne (4), Hecla (4) and Adamant (4): Mark III UD」。
+      UD = Upper Deck（露天甲板座），即没有炮塔外壳的开放式炮座 ——
+      与光辉级的 Mark II BD（Between Deck，座体大部分在甲板以下）不是同一种座。
+
+  - about: mount:ark-royal-45in-twin
+    field: mount.type
+    value: open_mount
+    src: [navweaps-45in-45-mk1, historyofwar-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+    note: >
+      注册表按 open_mount 记。依据是 historyofwar 的「open-backed mountings」
+      与 uboat.net 的「in open-backed mountings」，加上 UD 这个座型代号本身
+      就表示露天甲板座（无炮塔）。**没有炮塔装甲**，只靠防盾挡炮口风暴。
+
+  - about: mount:ark-royal-45in-twin
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938-11-16 }
+    confidence: A
+
+  - about: mount:ark-royal-45in-twin
+    field: mount.count
+    value: 8
+    unit: count
+    src: [navypedia-arkroyal, navweaps-45in-45-mk1]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: >
+      8 座共 16 门，两舷各四座（navypedia 原文「8 x 2 - 114/45 QF Mk I」）。
+      布置在飞行甲板高度，炮座顶与甲板基本齐平以减少对飞行作业的干扰，
+      这与光辉级把炮座沉入舷台（countersunk into sponsons）的做法一致。
+
+  - about: mount:ark-royal-45in-twin
+    field: mount.position
+    value: wing
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+    note: 注册表 position 枚举没有「两舷舷台」，按 wing（舷侧）记。
+
+  - about: mount:ark-royal-45in-twin
+    field: mount.weight
+    value: 30215
+    unit: kg
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: >
+      NavWeaps 原文「Mark III UD: 29.738 tons (30.215 mt)」。
+      **明显轻于光辉级的 Mark II BD（38.56 t）** —— 差的 8 t 就是炮塔外壳
+      与座体结构的重量，这直接印证了 open_mount 与炮塔座的区别。
+
+  - about: mount:ark-royal-45in-twin
+    field: mount.elevation.max
+    value: 80
+    unit: deg
+    src: [navweaps-45in-45-mk1]
+    valid: { from: 1938-11-16 }
+    confidence: A
+    note: >-
+      双联座 -5 / +80 度。俯仰速率 NavWeaps 未给 Mark III UD 的数值
+      （原文「Others N/A, mainly hand-worked」），故不写 fact。
+
+  - about: mount:ark-royal-45in-twin
+    field: mount.installed
+    value: 1938-11-16
+    unit: date
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+
+  # ============================================================ 40 mm 2-pdr 八联 pom-pom
+  #
+  # 火炮实体复用 weapon:2pdr-mk8（光辉级文件里已有完整参数）。
+  # 这里只补型号身份三条，让本舰页面上的武器清单能解析出名称。
+
+  - about: weapon:2pdr-mk8
+    field: weapon.designation
+    value: QF 2-pdr Mk VIII（40 mm/39）
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+    note: 实体参数（炮身重、射速、射程等）见 data/classes/illustrious.yaml，此处不重复。
+
+  - about: weapon:2pdr-mk8
+    field: weapon.nation
+    value: united_kingdom
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+
+  - about: weapon:2pdr-mk8
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+
+  - about: mount:ark-royal-2pdr-octuple
+    field: mount.label_name
+    value: 八联 2-pdr pom-pom
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+
+  - about: mount:ark-royal-2pdr-octuple
+    field: mount.weapon
+    value: weapon:2pdr-mk8
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: A
+
+  - about: mount:ark-royal-2pdr-octuple
+    field: mount.type
+    value: open_mount
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: C
+    note: 注册表没有「八联座」枚举，按 open_mount 记（八联 pom-pom 座本身无装甲围罩）。
+
+  - about: mount:ark-royal-2pdr-octuple
+    field: mount.barrels
+    value: 8
+    unit: count
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: A
+
+  - about: mount:ark-royal-2pdr-octuple
+    field: mount.count
+    value: 4
+    unit: count
+    src: [navypedia-arkroyal, historyofwar-arkroyal, uboatnet-arkroyal-class]
+    valid: { from: 1938-11-16, to: 1941-04-30 }
+    confidence: A
+    note: >
+      建成时 4 座 32 门。uboat.net 原文「32 2pdr AA (4x8)」，
+      historyofwar 原文「Thirty two 2pdr pompons in four eight-gun mountings」。
+      1941-05 增加两座，见单舰文件里同一 mount id 下的另一条。
+
+  - about: mount:ark-royal-2pdr-octuple
+    field: mount.installed
+    value: 1938-11-16
+    unit: date
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+
+  - about: mount:ark-royal-2pdr-octuple
+    field: mount.position
+    value: wing
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: C
+    note: 分散布置在舰体四周舷台，不是单一位置，按 wing 记。
+
+  # ============================================================ 舰载机
+  #
+  # 型号身份三条一组，装舰窗口写在本文件的 aviation.aircraft.types
+  # 与单舰文件的逐期编制里（about: weapon:* 不参与时间轴计算）。
+
+  - about: weapon:swordfish
+    field: weapon.designation
+    value: Fairey Swordfish 鱼雷轰炸机
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+    note: 实体参数见 data/ships/illustrious.yaml，此处不重复。
+
+  - about: weapon:swordfish
+    field: weapon.nation
+    value: united_kingdom
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+
+  - about: weapon:swordfish
+    field: weapon.category
+    value: aircraft
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+
+  - about: weapon:fulmar
+    field: weapon.designation
+    value: Fairey Fulmar 战斗侦察机
+    src: [navypedia-arkroyal]
+    valid: { from: 1940-10-01 }
+    confidence: B
+    note: 实体参数见 data/ships/illustrious.yaml，此处不重复。
+
+  - about: weapon:fulmar
+    field: weapon.nation
+    value: united_kingdom
+    src: [navypedia-arkroyal]
+    valid: { from: 1940-10-01 }
+    confidence: B
+
+  - about: weapon:fulmar
+    field: weapon.category
+    value: aircraft
+    src: [navypedia-arkroyal]
+    valid: { from: 1940-10-01 }
+    confidence: B
+
+  - about: weapon:skua
+    field: weapon.designation
+    value: Blackburn Skua 战斗俯冲轰炸机
+    src: [navypedia-arkroyal, naval-history-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+    note: >
+      本站新建的武器实体 —— 此前项目里没有 Skua。
+      naval-history 附了它的性能：最大速度 225 mph（6,700 ft）/ 204 mph（海平面）、
+      最大航程约 760 英里、翼内 4 挺 .303 in 勃朗宁（每挺 600 发）、
+      后座 1 挺 .303 in 刘易斯、挂弹 500 lb。
+
+  - about: weapon:skua
+    field: weapon.nation
+    value: united_kingdom
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+
+  - about: weapon:skua
+    field: weapon.category
+    value: aircraft
+    src: [navypedia-arkroyal]
+    valid: { from: 1938-11-16 }
+    confidence: B
+
+  - about: weapon:roc
+    field: weapon.designation
+    value: Blackburn Roc 战斗轰炸机
+    src: [navypedia-arkroyal, naval-history-arkroyal]
+    valid: { from: 1940-04-01 }
+    confidence: B
+    note: >
+      本站新建的武器实体。Skua 的后座版改型，性能相近但航程更短，
+      **最大的特征是后座那个 Bolton Paul 电动旋转炮塔，装 4 挺 .303 in 勃朗宁**
+      （naval-history 原文「fitted with a Bolton Paul rotating electrically
+      powered turret mounting four Browning .303" machine-guns」），挂弹 250 lb。
+
+  - about: weapon:roc
+    field: weapon.nation
+    value: united_kingdom
+    src: [navypedia-arkroyal]
+    valid: { from: 1940-04-01 }
+    confidence: B
+
+  - about: weapon:roc
+    field: weapon.category
+    value: aircraft
+    src: [navypedia-arkroyal]
+    valid: { from: 1940-04-01 }
+    confidence: B

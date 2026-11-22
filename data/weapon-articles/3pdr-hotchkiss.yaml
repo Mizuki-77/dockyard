@@ -1,0 +1,242 @@
+# ============================================================================
+# 武器正文 —— 47 mm/40 3-pdr Hotchkiss Mk I（礼炮）
+#
+# ⚠️ 这一篇必须先说清楚一件事：**它不是作战武器。**
+#    在 data/ 里它的 weapon.category 填的是 naval_gun，那是注册表没有
+#    「礼炮」这一类目造成的，不代表它在本舰上打过飞机或打过船。
+#    皇家方舟号上的四门，来源写的就是「3pdr saluting guns」。
+#    正文第一段必须交代这一点，后面的历史才讲得通 ——
+#    这门炮的身世正好是「从反鱼雷艇炮 → 降为训练/礼炮 → 再被拉回去打仗」。
+#
+# 来源：navweaps-vickers-50 与本篇无关。本篇用 navweaps-3pdr-hotchkiss。
+#    NavWeaps 实际页为 WNBR_3pounder_H_mk1.php
+#    （标题 "Hotchkiss 3-pdr (1.4 kg) [1.85"/40 (47 mm)] QF Marks I and II"）。
+# ============================================================================
+weapon: 3pdr-hotchkiss
+updated: 2026-11-22
+
+intro:
+  lead:
+    zh: >-
+      Hotchkiss 3-pdr（1.85 英寸 / 47 mm，40 倍径）是 1886 年进入英国海军服役的
+      老式速射炮。它在皇家方舟号上的身份**不是作战武器，是礼炮** ——
+      本舰装了四门单装，用途是鸣放礼炮，来源原文写作「3pdr saluting guns」。
+      本页记录的因此不是一门防空炮或反舰炮的性能，而是这门 1886 年的炮
+      怎么在半个世纪里从反鱼雷艇炮退成礼炮、又被战争拉回去当炮用。
+    en: >-
+      The Hotchkiss 3-pdr (1.85 inch / 47 mm, 40 calibres) was an old quick-firing gun
+      that entered British naval service in 1886. Aboard HMS Ark Royal it was **not a
+      combat weapon but a saluting gun**: the ship carried four single mountings, and the
+      sources describe them as "3pdr saluting guns". What this page records is therefore
+      not the performance of an anti-aircraft or anti-ship gun, but how an 1886 weapon
+      declined into a saluting piece over half a century and was then pulled back into
+      service as a gun by the war.
+  paragraphs:
+    - heading: 它在本舰上是礼炮，这一点不能含糊
+      text:
+        zh: >-
+          navypedia 对皇家方舟号的装备栏写的是「4 x 1 - 47/40 3pdr Hotchkiss Mk I」，
+          historyofwar 的装备清单写得更直白：「Four 3pdr saluting guns」。
+          「saluting」是鸣放礼炮的意思 —— 也就是说这四门炮在编制上属于礼仪用途，
+          不参与防空或对舰射击。本站的 weapon.category 字段没有「礼炮」这一类目，
+          只能填 naval_gun，那是注册表的限制，不是对这四门炮用途的判定。
+          本页以下讲的全是这型炮本身的历史与参数，它在本舰上的实际角色就是礼炮。
+        en: >-
+          Navypedia's armament line for Ark Royal reads "4 x 1 - 47/40 3pdr Hotchkiss Mk
+          I", while historyofwar's list is plainer still: "Four 3pdr saluting guns".
+          Saluting is exactly what it says - these four guns were carried for ceremonial
+          purposes and took no part in anti-aircraft or surface firing. This project's
+          weapon.category field has no "saluting gun" value and can only take
+          naval_gun, which is a limitation of the registry rather than a judgement about
+          what these four guns did. Everything below concerns the type's own history and
+          data; aboard this ship its actual role was saluting.
+      src: [navypedia-arkroyal, historyofwar-arkroyal]
+    - heading: 它本来是打鱼雷艇的，后来才变成礼炮
+      text:
+        zh: >-
+          NavWeaps 把这门炮的一生写得很完整，而且顺序恰好是它降级的过程。
+          1886 年它被引入，用在「6 磅炮被认为太重」的位置上；
+          一次大战前建造的多数小型巡洋舰用它作反鱼雷艇炮。
+          然后是一战后的转折：「与其它国家一样，英国人发现这些小口径弹丸
+          太轻、不足以有效，一战后许多炮被改装为次口径训练炮与礼炮。」
+          最后一句是关键：「最后这项用途使相当数量的炮一直存留到二战，
+          那时它们又被改回能射击的炮，用在摩托艇（ML）和其它小型辅助军舰上。」
+          所以「礼炮」这个身份不是它的起点，也不是它的终点 ——
+          是它在一战后被降级到的那一层。
+        en: >-
+          NavWeaps tells the gun's whole life, and the order of events is precisely its
+          descent. Introduced in 1886 for positions where the 6-pdr was considered too
+          heavy, it served as the anti-torpedo-boat gun of most small cruisers built
+          before the First World War. Then came the post-1914-18 turn: "As did other
+          nations, the British found that these small-caliber projectiles were too light
+          to be effective and many guns were converted following World War I to
+          sub-caliber training and saluting guns." The last sentence is the key one:
+          "This last use meant that a number of these guns survived until World War II
+          when they were converted back to shooting guns and used on MLs and other minor
+          auxiliary warships." The saluting role was therefore neither where the type
+          began nor where it ended - it was the level to which the type was demoted after
+          the First World War.
+      src: [navweaps-3pdr-hotchkiss]
+    - heading: 主要参数
+      text:
+        zh: >-
+          名义口径 3 磅（弹重计）／1.85 英寸（47 毫米），40 倍径；
+          身管全长 80.6 英寸（2.048 米），膛长 74.1 英寸（1.881 米），
+          药室 43 立方英寸（0.705 立方分米）；炮重 240 公斤。
+          弹药为整装式：高爆弹丸 1.5 公斤，整装弹 2.6 公斤，全弹长 21.4 英寸（54.2 厘米）。
+          发射药三期不同：一战 0.24 公斤 MD；二战 0.211 公斤 HSCT 134-055
+          或 0.273 公斤 NF 029。初速：新炮 574 米/秒，平均 571 米/秒。
+          身管寿命约 6,000 发；射速 20 发/分。
+          射程：20.7 度 6,500 码（5,944 米），45 度 7,900 码（7,200 米）；
+          最大对空射高约 10,000 英尺（3,000 米），有效对空射程约 1,200 码（1,100 米）。
+          单装炮座重 0.7 吨，回旋 360 度，俯仰与回旋全部人力操作。
+        en: >-
+          Nominal calibre 3-pounder by projectile weight, 1.85 inch (47 mm) at 40
+          calibres; gun length overall 80.6 in (2.048 m) with 74.1 in (1.881 m) of bore
+          and a chamber of 43 in3 (0.705 dm3); gun weight 240 kg. Ammunition was fixed,
+          with a 1.5 kg HE projectile in a 2.6 kg round 21.4 in (54.2 cm) long. The
+          propellant charge changed across three periods: 0.24 kg MD in the First World
+          War, and in the Second either 0.211 kg HSCT 134-055 or 0.273 kg NF 029. Muzzle
+          velocity 574 m/s from a new gun and 571 m/s average; barrel life about 6,000
+          rounds; rate of fire 20 rounds per minute. Range 6,500 yards (5,944 m) at 20.7
+          degrees and 7,900 yards (7,200 m) at 45 degrees; maximum AA ceiling about
+          10,000 feet (3,000 m) with an effective AA range of about 1,200 yards (1,100
+          m). The single mounting weighed 0.7 tons, trained through 360 degrees, and both
+          elevation and training were manually operated only.
+      src: [navweaps-3pdr-hotchkiss]
+    - heading: Mk I 与 Mk II 的差别在制造工艺，1939 年剩下的几乎全是 Mk I
+      text:
+        zh: >-
+          这一型的编号差别不在口径、不在弹道，在炮身怎么做出来的：
+          Mark I 是单层整体式（monobloc）结构，Mark II 是分层套合式（built-up）结构。
+          NavWeaps 补了一句对存世状态的判断：「1939 年存留下来的炮几乎全是 Mark I。」
+          这解释了为什么皇家方舟号的装备栏记的是 Mk I 而不是笼统的「3-pdr」。
+          另外一个数字能说明这门炮当年有多普遍：海军服役过的总数约 2,950 门，
+          到 1939 年仍有约 1,950 门可用 —— 也就是说，一门 1886 年的炮，
+          在 1939 年还有近两千门躺在库存或炮架上。
+        en: >-
+          The mark numbers of this type differ not in calibre or ballistics but in how
+          the barrel was made: the Mark I was of monobloc construction and the Mark II a
+          built-up design. NavWeaps adds a judgement on what survived: "Almost all
+          surviving guns in 1939 were Mark I." That is why Ark Royal's armament line
+          records Mark I rather than a loose "3-pdr". Another figure shows how common the
+          gun once was: an approximate total of 2,950 were in naval service, with about
+          1,950 still available in 1939 - an 1886 weapon with nearly two thousand still on
+          mountings or in store on the eve of the Second World War.
+      src: [navweaps-3pdr-hotchkiss]
+    - heading: 它作为高射炮的那一面，是后来才补上的
+      text:
+        zh: >-
+          这一条要写清楚，因为它与「礼炮」不矛盾：炮座比炮身晚得多才出现高角型。
+          单装低角炮座是 Mark I 与 Mark I*，俯仰 -5 到 +25 度；
+          高角炮座是 Mark IV HA、Mark V HA 与 Mark VI HA，
+          其中 Marks I、I* 与 IV 是战前与一战炮座，
+          Marks V 与 VI 是二战期间才生产的，Mark VI 用橡胶后坐缓冲器。
+          另有部分 Mark I 炮座被改成高角型，改后编号 Mark IC HA，俯仰 -8 到 +60 度。
+          也就是说：同一门 1886 年的炮身，装在不同炮座上可以是礼炮、
+          也可以是打过飞机的轻型高炮 —— 决定它干什么的不是炮，是炮座。
+        en: >-
+          This has to be stated because it is not in conflict with the saluting role: the
+          high-angle mountings came much later than the gun. The single low-angle
+          mountings were the Mark I and Mark I*, elevating from -5 to +25 degrees; the
+          high-angle mountings were the Mark IV HA, Mark V HA and Mark VI HA, of which
+          Marks I, I* and IV were pre-war and First World War mountings, while Marks V
+          and VI were produced during the Second World War, the Mark VI using rubber
+          recoil buffers. Some Mark I mountings were converted to HA types and
+          redesignated Mark IC HA, with an elevation range of -8 to +60 degrees. The same
+          1886 barrel could therefore be a saluting gun or a light anti-aircraft gun
+          depending on what it sat in - the mounting, not the gun, decided the job.
+      src: [navweaps-3pdr-hotchkiss]
+history:
+  - id: origin
+    title: { zh: 从反鱼雷艇炮到一战后降级, en: From anti-torpedo-boat gun to post-war demotion }
+    range: { from: 1885, to: 1930 }
+    lead:
+      zh: >-
+        它服役时是主力的小型速射炮，四十年后成了鸣礼炮的工具。
+      en: >-
+        It entered service as a front-line light quick-firer and forty years later was
+        firing salutes.
+    events:
+      - date: 1885
+        text:
+          zh: >-
+            完成设计（NavWeaps 记「约 1885 年」）。设计目的是给
+            「6 磅炮被认为太重」的位置提供一门更轻的炮。
+          en: >-
+            Design completed; NavWeaps gives "about 1885". The purpose was to provide a
+            lighter gun for positions where the 6-pdr was considered too heavy.
+        src: [navweaps-3pdr-hotchkiss]
+      - date: 1886
+        text:
+          zh: >-
+            进入服役，随后成为一次大战前建造的多数小型巡洋舰的反鱼雷艇炮。
+          en: >-
+            Entered service and went on to serve as the anti-torpedo-boat gun of most
+            small cruisers built before the First World War.
+        src: [navweaps-3pdr-hotchkiss]
+      - date: 1919
+        text:
+          zh: >-
+            一战后大批炮被改装为次口径训练炮与礼炮，原因写在原文里：
+            这些小口径弹丸「太轻、不足以有效」。
+            这次降级是它后来出现在主力舰礼炮位置上的直接原因。
+          en: >-
+            After the First World War many guns were converted to sub-caliber training
+            and saluting guns, for the reason given in the source: these small-calibre
+            projectiles "were too light to be effective". This demotion is the direct
+            reason the type later turns up in the saluting position of major warships.
+        src: [navweaps-3pdr-hotchkiss]
+  - id: service
+    title: { zh: 二战：又被打回去当炮, en: The Second World War - pressed back into service }
+    range: { from: 1938-11, to: 1945 }
+    lead:
+      zh: >-
+        一门 1886 年的炮在 1939 年还有近两千门可用，其中一部分又被拉回去打仗。
+      en: >-
+        An 1886 gun still had about 1,950 available in 1939, and some of them were pulled
+        back into action.
+    events:
+      - date: 1938-11
+        text:
+          zh: >-
+            皇家方舟号建成，装四门单装 3-pdr 礼炮。同一份来源的装备清单
+            把它与 16 门 4.5 英寸高平两用炮、32 门 2-pdr 并列，并明确标为
+            「saluting」。也就是说，本舰的防空火力与它无关。
+          en: >-
+            Ark Royal completed with four single 3-pdr saluting guns. The same source's
+            armament list sets them alongside sixteen 4.5-inch HA/LA guns and thirty-two
+            2-pdrs and marks them explicitly as saluting, so the ship's anti-aircraft
+            fire did not depend on them.
+        src: [historyofwar-arkroyal, navypedia-arkroyal]
+      - date: 1939
+        text:
+          zh: >-
+            到这一年，这型炮在海军中曾有约 2,950 门，仍有约 1,950 门可用；
+            存留者几乎全是 Mark I。同一年，城级巡洋舰的改装台账里
+            出现了「- 4 x 1 - 47/40」的记录 —— 也就是这批礼炮被拆掉了。
+            皇家方舟号的记载里没有对应的拆除条目。
+          en: >-
+            By this year about 2,950 of the type had seen naval service with roughly
+            1,950 still available, almost all of them Mark I. In the same year the Town
+            class modernisation ledger records "- 4 x 1 - 47/40", i.e. these saluting
+            guns being removed. Ark Royal's record contains no corresponding removal
+            entry.
+        src: [navweaps-3pdr-hotchkiss, navypedia-town, navypedia-arkroyal]
+      - date: 1940
+        text:
+          zh: >-
+            战争让这门炮重新当炮用：一部分被「改回能射击的炮」，
+            装在摩托艇（ML）和其它小型辅助军舰上；同时二战期间
+            新造了高角炮座 Mark V HA（-5 到 +70 度）与 Mark VI HA（-5 到 +60 度）。
+            一门 1886 年设计、一战后降为礼炮的炮，就这样在二战里
+            同时以两种身份存在：在主力舰上鸣礼炮，在辅助舰艇上当炮。
+          en: >-
+            The war put the gun back to work as a gun: some were "converted back to
+            shooting guns" and used on MLs and other minor auxiliary warships, while the
+            high-angle Mark V HA (-5 to +70 degrees) and Mark VI HA (-5 to +60 degrees)
+            mountings were produced new during the war. A gun designed in 1886 and
+            demoted to saluting after the First World War thus existed in two roles at
+            once during the Second: firing salutes in major warships and firing in
+            earnest from auxiliary craft.
+        src: [navweaps-3pdr-hotchkiss]

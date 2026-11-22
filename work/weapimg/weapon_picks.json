@@ -1,0 +1,186 @@
+{
+  "8in-50-mk8": [
+    {
+      "file": "/img/weapons/8in-50-mk8-01-hmas-canberra-8-inch-gun-turrets-slv-h98.105-3.jpg",
+      "title": "HMAS Canberra 8-inch gun turrets SLV H98.105 3229.jpeg",
+      "part": "turret",
+      "view": "detail",
+      "note": "HMAS 堪培拉号的双联 8 英寸炮塔。郡级装的就是这型炮（Mark VIII），澳舰与英舰同型。这张能看清炮塔外形与两门炮的间距，是模型制作者要的角度。",
+      "license": "pd",
+      "tier": "A",
+      "license_raw": "Public domain",
+      "artist": "not stated",
+      "page": "https://commons.wikimedia.org/wiki/File:HMAS_Canberra_8-inch_gun_turrets_SLV_H98.105_3229.jpeg",
+      "w": 710,
+      "h": 1000
+    },
+    {
+      "file": "/img/weapons/8in-50-mk8-02-hmas-australia-8-inch.jpg",
+      "title": "HMAS Australia 8 inch.JPG",
+      "part": "turret",
+      "view": "detail",
+      "note": "HMAS 澳大利亚号的 8 英寸炮塔特写。与上一条是同级舰的另一个角度。",
+      "license": "cc_by_sa",
+      "tier": "B",
+      "license_raw": "CC BY-SA 3.0",
+      "artist": "Original uploader was Nick Dowling at en.wikipedia",
+      "page": "https://commons.wikimedia.org/wiki/File:HMAS_Australia_8_inch.JPG",
+      "w": 709,
+      "h": 532
+    }
+  ],
+  "6in-50-mk23": [
+    {
+      "file": "/img/weapons/6in-50-mk23-01-hms-belfast-gun-turret-1.jpg",
+      "title": "HMS Belfast - Gun turret 1.jpg",
+      "part": "turret",
+      "view": "detail",
+      "note": "贝尔法斯特号的 6 英寸 Mk XXIII 炮塔内部。该舰作为博物馆舰保存至今，这是本型炮现存最完整的实物参照。",
+      "license": "cc_by_sa",
+      "tier": "B",
+      "license_raw": "CC BY-SA 3.0",
+      "artist": "Rémi Kaupp",
+      "page": "https://commons.wikimedia.org/wiki/File:HMS_Belfast_-_Gun_turret_1.jpg",
+      "w": 3888,
+      "h": 2592
+    },
+    {
+      "file": "/img/weapons/6in-50-mk23-02-bl-6-inch-mk-xxiii-gun-breech-open-hms-belfast.jpg",
+      "title": "BL 6 inch Mk XXIII gun breech open HMS Belfast.jpg",
+      "part": "turret",
+      "view": "detail",
+      "note": "同型炮的炮闩开启状态。城级（含谢菲尔德号）装的就是这型炮。",
+      "license": "cc_by",
+      "tier": "B",
+      "license_raw": "CC BY 2.0",
+      "artist": "Flickr user \"Andrew Mason\" : https://www.flickr.com/photos/a_mason",
+      "page": "https://commons.wikimedia.org/wiki/File:BL_6_inch_Mk_XXIII_gun_breech_open_HMS_Belfast.jpg",
+      "w": 3648,
+      "h": 2736
+    }
+  ],
+  "4in-45-mk16": [
+    {
+      "file": "/img/weapons/4in-45-mk16-01-gunners-with-4-inch-rounds-hms-vivien-1940-iwm.jpg",
+      "title": "Gunners with 4 inch rounds HMS Vivien 1940 IWM A 1770.jpg",
+      "part": "turret",
+      "view": "detail",
+      "note": "V 级驱逐舰上的 4 英寸炮组展示炮弹。Mk XVI 是双联高平两用炮座，城级轻巡的副炮就是它。",
+      "license": "pd",
+      "tier": "A",
+      "license_raw": "Public domain",
+      "artist": "Sidney James Beadell",
+      "page": "https://commons.wikimedia.org/wiki/File:Gunners_with_4_inch_rounds_HMS_Vivien_1940_IWM_A_1770.jpg",
+      "w": 1300,
+      "h": 979
+    }
+  ],
+  "vickers-50": [
+    {
+      "file": "/img/weapons/vickers-50-01-hr.-ms.-flores.-de-snelvuurkanonnen-pom-poms-w.jpg",
+      "title": "Hr. Ms. Flores. De snelvuurkanonnen pom-poms worden dag en nacht bemand, Bestanddeelnr 934-9988.jpg",
+      "part": "turret",
+      "view": "detail",
+      "note": "荷属东印度炮舰 Flores 号上的速射炮组昼夜值守。Vickers .50 四联机枪在二战初期是英联邦军舰的标准近程防空武器，皇家方舟号装了 32 挺。",
+      "license": "cc0",
+      "tier": "A",
+      "license_raw": "CC0",
+      "artist": "Anefo",
+      "page": "https://commons.wikimedia.org/wiki/File:Hr._Ms._Flores._De_snelvuurkanonnen_pom-poms_worden_dag_en_nacht_bemand,_Bestanddeelnr_934-9988.jpg",
+      "w": 2875,
+      "h": 1800
+    }
+  ],
+  "3pdr-hotchkiss": [
+    {
+      "file": "/img/weapons/3pdr-hotchkiss-01-47-mm-hotchkiss-lennusadam-1.jpg",
+      "title": "47 mm Hotchkiss Lennusadam 1.JPG",
+      "part": "turret",
+      "view": "detail",
+      "note": "塔林水上飞机港博物馆藏 47 mm 霍奇基斯炮。皇家方舟号上的 3 磅礼炮属同一型火炮的礼炮版本（礼炮型与作战型结构相同，只是用途不同）。",
+      "license": "pd",
+      "tier": "A",
+      "license_raw": "Public domain",
+      "artist": "MKFI",
+      "page": "https://commons.wikimedia.org/wiki/File:47_mm_Hotchkiss_Lennusadam_1.JPG",
+      "w": 5184,
+      "h": 3456
+    }
+  ],
+  "skua": [
+    {
+      "file": "/img/weapons/skua-01-blackburn-skua-landing-on-hms-ark-royal.jpg",
+      "title": "Blackburn Skua landing on HMS Ark Royal.jpg",
+      "part": "aircraft_handling",
+      "view": "deck",
+      "note": "一架 Skua 正在皇家方舟号上降落。**这张图同时是「武器」与「本舰」的素材**，因为它拍的就是皇家方舟号的飞行甲板。",
+      "license": "pd",
+      "tier": "A",
+      "license_raw": "Public domain",
+      "artist": "Priest, L C (Lt), Royal Navy official photographer",
+      "page": "https://commons.wikimedia.org/wiki/File:Blackburn_Skua_landing_on_HMS_Ark_Royal.jpg",
+      "w": 2480,
+      "h": 1628
+    },
+    {
+      "file": "/img/weapons/skua-02-the-royal-navy-during-the-second-world-war-a82.jpg",
+      "title": "The Royal Navy during the Second World War A8218.jpg",
+      "part": "aircraft_handling",
+      "view": "deck",
+      "note": "四架岸基 Skua 编队。用于看清机型轮廓与涂装。",
+      "license": "pd",
+      "tier": "A",
+      "license_raw": "Public domain",
+      "artist": "Coote, R G G (Lt), Royal Navy official photographer",
+      "page": "https://commons.wikimedia.org/wiki/File:The_Royal_Navy_during_the_Second_World_War_A8218.jpg",
+      "w": 2297,
+      "h": 1772
+    }
+  ],
+  "roc": [
+    {
+      "file": "/img/weapons/roc-01-15-blackburn-roc-bristol-perseus-engine-156509.jpg",
+      "title": "15 Blackburn Roc Bristol Perseus Engine (15650907050).jpg",
+      "part": "aircraft_handling",
+      "view": "detail",
+      "note": "Roc 战斗机（布里斯托尔 Perseus 发动机）。这型机性能很差，基本没打过胜仗，但它确实在皇家方舟号的编制里。",
+      "license": "pd",
+      "tier": "A",
+      "license_raw": "Public domain",
+      "artist": "San Diego Air &amp; Space Museum Archives",
+      "page": "https://commons.wikimedia.org/wiki/File:15_Blackburn_Roc_Bristol_Perseus_Engine_(15650907050).jpg",
+      "w": 1506,
+      "h": 875
+    }
+  ],
+  "albacore": [
+    {
+      "file": "/img/weapons/albacore-01-a-fairey-albacore-mk-i-of-no.-820-naval-air-sq.jpg",
+      "title": "A Fairey Albacore Mk I of No. 820 Naval Air Squadron operating from HMS FORMIDABLE during the North African landings, November 1942. TR296.jpg",
+      "part": "aircraft_handling",
+      "view": "detail",
+      "note": "820 中队的一架 Albacore Mk I，1942-11 北非登陆时从可畏号起飞。皇家方舟号 1941-10 曾转场搭载该型机 11 架（送马耳他，未作战）。",
+      "license": "pd",
+      "tier": "A",
+      "license_raw": "Public domain",
+      "artist": "Royal Navy official photographer",
+      "page": "https://commons.wikimedia.org/wiki/File:A_Fairey_Albacore_Mk_I_of_No._820_Naval_Air_Squadron_operating_from_HMS_FORMIDABLE_during_the_North_African_landings,_November_1942._TR296.jpg",
+      "w": 2453,
+      "h": 1772
+    },
+    {
+      "file": "/img/weapons/albacore-02-15-fairey-albacore-15837361162.jpg",
+      "title": "15 Fairey Albacore (15837361162).jpg",
+      "part": "aircraft_handling",
+      "view": "detail",
+      "note": "Albacore 的侧面特写，能看清折叠翼与挂架。",
+      "license": "pd",
+      "tier": "A",
+      "license_raw": "Public domain",
+      "artist": "San Diego Air &amp; Space Museum Archives",
+      "page": "https://commons.wikimedia.org/wiki/File:15_Fairey_Albacore_(15837361162).jpg",
+      "w": 1717,
+      "h": 875
+    }
+  ]
+}

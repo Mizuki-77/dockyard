@@ -27,7 +27,7 @@
 
 id: illustrious
 name:
-  zh: 光辉
+  zh: 光辉号
   en: Illustrious
 class: illustrious
 
@@ -46,7 +46,7 @@ facts:
     confidence: A
 
   - field: identity.name_zh
-    value: 光辉
+    value: 光辉号
     src: [navypedia-illustrious]
     valid: { from: 1937-04-13 }
     confidence: B

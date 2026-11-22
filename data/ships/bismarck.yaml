@@ -15,7 +15,7 @@
 
 id: bismarck
 name:
-  zh: 俾斯麦
+  zh: 俾斯麦号
   en: Bismarck
 class: bismarck
 
@@ -33,7 +33,7 @@ facts:
     note: 两源一致。建造代号 Schlachtschiff F，后改 Ersatz Hannover。
 
   - field: identity.name_zh
-    value: 俾斯麦
+    value: 俾斯麦号
     src: [kbismarck-genedata]
     valid: { from: 1936-07-01 }
     confidence: B

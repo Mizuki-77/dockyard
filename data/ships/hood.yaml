@@ -22,7 +22,7 @@
 
 id: hood
 name:
-  zh: 胡德
+  zh: 胡德号
   en: HMS Hood
 class: admiral
 open_ended_note: >
@@ -45,7 +45,7 @@ facts:
       （timeline1 原话「Admiralty informed John Brown that their ship is to be named Hood」）。
 
   - field: identity.name_zh
-    value: 胡德
+    value: 胡德号
     unit: null
     src: [hmshood-construction]
     valid: { from: 1916-07-14 }
