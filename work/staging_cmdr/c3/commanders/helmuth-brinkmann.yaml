@@ -1,0 +1,137 @@
+id: helmuth-brinkmann
+name:
+  zh: 赫尔穆特·布林克曼
+  en: Helmuth Brinkmann
+  full: Helmuth Brinkmann
+
+life:
+  born: 1895-03-12
+  born_place: 吕贝克（Lübeck）
+  died: 1983-09-26
+  died_place: 迪森（Dießen，巴伐利亚）
+
+rank_final: Vizeadmiral
+rank_at_post: 'Captain'
+nation: germany
+
+summary_zh: 欧根亲王号首任舰长，丹麦海峡打出精度，后升中将
+
+intro:
+  - heading: 一位记笔记的舰长
+    text: >-
+      布林克曼给欧根亲王号留下了一份别人没法比的东西：他的战争日志。这份日志不只是流水账，
+      里面夹着大量他在页边写下的批注，讨论雷达该不该常开、超短波电台报航向有多危险、
+      编队该不该靠在一起。战争日志本是公文，但他的那几页读起来像一个指挥官在自问自答。
+      要判断他在 1941 年 5 月那几天的处境，这份文件比任何战后追述都更接近现场。
+  - heading: 丹麦海峡的精度
+    text: >-
+      5 月 24 日 04:45 战斗警报响起时，该舰在编队前导、俾斯麦号在其后。按舰上炮术部门的战斗报告，
+      射击时把对手当成了巡洋舰而不是战列舰，因此选用带底延引信的榴弹——白色水柱在混战中更好辨认。
+      这个判断错了，但射击效果没打折：该舰首轮即形成夹叉，05:57 命中胡德号后桅附近，引燃甲板上的备用弹药。
+      全战该舰打出 179 发 203 毫米弹、66 发 105 毫米弹，自身毫发无损——弹片确实落到了甲板上，但无人伤亡。
+  - heading: 独自航行
+    text: >-
+      当天下午他收到吕特晏斯的信号：本舰获释，单独行动。此后是他自己的战争。
+      他原本打算往北插进 HX 航线的南段碰运气，侦察船却还没到位；5 月 28 日至 29 日机械部门报上来
+      三台主机接连出问题——一台螺旋桨叶片带伤、一台靠超负荷的泵撑着、一台因涡轮异响功率大减。
+      他在日志里写：作为一艘没有伪装、唯一武器是速度的袭击舰，速度被削掉两成，任务就无法完成。
+      于是决定回法国。6 月 1 日，欧根亲王号进布雷斯特。
+  - heading: 之后
+    text: >-
+      布雷斯特并非安全港。1941 年 7 月 2 日夜间一枚炸弹击中舷侧，六十人死，大副施托斯阵亡。
+      1942 年 2 月，该舰随沙恩霍斯特号、格奈森瑙号穿过英吉利海峡回到德国。
+      他在 1942 年 8 月交出舰职，随后任南方海军集群参谋长，1943 年 11 月出任黑海海军司令，
+      1944 年 2 月升中将，同年 5 月获骑士铁十字。1945 年至 1947 年在英军战俘营。
+
+timeline:
+  - date: 1895-03-12
+    text: 生于吕贝克。
+    src: [wiki-de-brinkmann, wiki-en-brinkmann]
+  - date: 1913-04-01
+    text: 高中毕业后以海军候补生身份加入帝国海军，先在大型巡洋舰菲内塔号上完成舰上实训至 1914 年 3 月。
+    src: [wiki-de-brinkmann]
+  - date: 1915-10-29
+    text: 由无线电技术军官转调鱼雷兵种，此后至战争结束在多艘鱼雷艇上担任值更官，获二级、一级铁十字。
+    src: [wiki-de-brinkmann]
+  - date: 1920-07-31
+    text: 出任 T 144 号供应舰舰长，至 1922 年 9 月；其后指挥第一鱼雷艇分队的三艘鱼雷艇。
+    src: [wiki-de-brinkmann]
+  - date: 1935-05-20
+    text: 出任通信舰格里勒号（Grille）舰长，至 1938 年 5 月 6 日；该舰在战时被用作希特勒的国家游艇。
+    src: [wiki-de-brinkmann, wiki-en-brinkmann]
+  - date: 1938-05-09
+    text: 调海军总司令部（OKM），1938 年 10 月起任新设海军防卫局局长，10 月 1 日晋升海军上校（Kapitän zur See）。
+    src: [wiki-de-brinkmann]
+  - date: 1940-08-01
+    text: 出任重巡洋舰欧根亲王号首任舰长，主持该舰服役。
+    src: [kbismarck-prinz-eugen, deutsches-marinearchiv-prinz-eugen]
+  - date: 1941-05-23
+    text: 23 日至 24 日凌晨随编队穿越丹麦海峡；德舰射击时俾斯麦号前雷达失效，欧根亲王号被调至编队前导以提供前向雷达覆盖。
+    src: [kbismarck-denmark-strait, kbismarck-prinz-eugen-ktb]
+  - date: 1941-05-24
+    text: 04:45 战斗警报；舰上炮术报告称把对手误判为巡洋舰并选用底延引信榴弹。该舰 179 发 203 毫米弹与 66 发 105 毫米弹，05:57 命中胡德号后桅附近，自身无损。德舰于 05:55 还击。
+    src: [kbismarck-prinz-eugen-ktb, kbismarck-prinz-eugen, kbismarck-denmark-strait]
+    note: 「英舰先开火」的时刻两源相差一分钟（kbismarck.com 记 05:52，该舰战争日志记 05:53），两说并列，不裁决。
+  - date: 1941-05-24
+    text: 09:50 收到俾斯麦号信号灯通报的受损情况；18:14 编队分离，该舰获释单独执行破交。
+    src: [kbismarck-prinz-eugen-ktb, kbismarck-chase]
+  - date: 1941-05-24
+    text: 战斗结束后的战术总结中，该舰日志主张不该为每一次航向变化都用超短波通报、再补一道「执行」命令；布林克曼在页边批了「对！」。
+    src: [kbismarck-prinz-eugen-ktb, wiki-en-luetjens]
+  - date: 1941-05-29
+    text: 机械部门报告三台主机接连故障（螺旋桨叶片损伤、冷却水泵轴承损坏、涡轮异响），最高速度被削约两成；布林克曼据此决定放弃破交、驶往法国西海岸港口。
+    src: [kbismarck-prinz-eugen-ktb]
+  - date: 1941-06-01
+    text: 欧根亲王号进入布雷斯特。
+    src: [kbismarck-prinz-eugen, kbismarck-last-battle]
+  - date: 1941-07-02
+    text: 空袭中一枚炸弹命中该舰舷侧第十舱段，六十人死，大副（I. Offizier）施托斯海军上校阵亡。
+    src: [kbismarck-prinz-eugen, wiki-de-prinz-eugen]
+  - date: 1942-02-11
+    text: 随沙恩霍斯特号、格奈森瑙号执行「刻耳柏洛斯」行动，穿过英吉利海峡返回德国。
+    src: [kbismarck-prinz-eugen, wiki-de-prinz-eugen]
+  - date: 1942-08-04
+    text: 交出欧根亲王号指挥权（德文维基与 kbismarck.com 对交接日的记载略有出入），随后任南方海军集群参谋长。
+    src: [wiki-de-brinkmann, kbismarck-prinz-eugen]
+    note: 交接日期两源不一致，不裁决。
+  - date: 1943-11-22
+    text: 出任黑海海军司令，接替基泽里茨基，负责东线南段陆军的海上补给。
+    src: [wiki-de-brinkmann]
+  - date: 1944-02-01
+    text: 晋升中将（Vizeadmiral）；同年 5 月 17 日获骑士铁十字。
+    src: [wiki-de-brinkmann, wiki-en-brinkmann]
+  - date: 1945-05-31
+    text: 被英军俘获，拘押至 1947 年 11 月 29 日。
+    src: [wiki-de-brinkmann, wiki-en-brinkmann]
+  - date: 1983-09-26
+    text: 卒于巴伐利亚迪森。
+    src: [wiki-de-brinkmann, wiki-en-brinkmann]
+
+relations:
+  ships:
+    - ship: prinz-eugen
+      role: 舰长（Kommandant）
+      from: 1940-08-01
+      to: 1942-08-04
+      note: 欧根亲王号首任舰长。
+  battles:
+    - battle: denmark-strait
+      role: 欧根亲王号舰长，该舰在战斗中命中胡德号并击伤威尔士亲王号
+
+src:
+  - kbismarck-prinz-eugen
+  - kbismarck-prinz-eugen-ktb
+  - kbismarck-denmark-strait
+  - kbismarck-chase
+  - kbismarck-last-battle
+  - deutsches-marinearchiv-prinz-eugen
+  - wlb-1941-05
+  - wiki-en-luetjens
+  - wiki-en-brinkmann
+  - wiki-de-brinkmann
+  - wiki-de-prinz-eugen
+
+note: >-
+  欧根亲王号未参加 5 月 27 日的最终战——该舰 5 月 24 日 18:14 与俾斯麦号分离后单独行动，
+  6 月 1 日进布雷斯特，因此 relations.battles 只填 denmark-strait。生卒已由英文维基与德文维基
+  交叉核对一致（1895-03-12 吕贝克 / 1983-09-26 迪森）。舰长交接日期两源相差数日，已并列标注。

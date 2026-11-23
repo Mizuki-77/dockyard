@@ -12,6 +12,116 @@ note: |
   width / height 记的是站内落盘文件的实际像素，不是源图尺寸。
 
 images:
+  - id: 'cmdr-michael-denny'
+    file: '/img/commanders/michael-denny.jpg'
+    subject: commander:michael-denny
+    title:
+      zh: '迈克尔·丹尼海军元帅'
+      en: 'Admiral Sir Michael Maynard Denny'
+    part: other
+    view: detail
+    date: 1945
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: ''
+    width: 599
+    height: 800
+    primary: true
+    note: '单人肖像。'
+  - id: 'cmdr-louis-hamilton'
+    file: '/img/commanders/louis-hamilton.jpg'
+    subject: commander:louis-hamilton
+    group_shot: true
+    title:
+      zh: '乔治六世在约克公爵号上接见本土舰队将官（1943-08-16，左起第二人为汉密尔顿）'
+      en: 'HM King George VI greeting Flag Officers of the Home Fleet'
+    part: other
+    view: detail
+    date: 1943-08-16
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: ''
+    width: 1200
+    height: 916
+    primary: true
+    note: '这张是合影。汉密尔顿是**左起第二人**（与国王握手者为伯内特）。 帝国战争博物馆藏（A18577）。Commons 图注原句写明「left to right: Rear Admiral I G Glennie, Rear Admiral L H K Hamilton…」。'
+  - id: 'cmdr-eugeniusz-plawski'
+    file: '/img/commanders/eugeniusz-plawski.jpg'
+    subject: commander:eugeniusz-plawski
+    group_shot: true
+    title:
+      zh: '闪电号军官在会议室取暖（右起最远处为普瓦夫斯基舰长）'
+      en: 'Officers of ORP Piorun in the wardroom'
+    part: other
+    view: detail
+    date: 1941
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Reginald George Guy Coote'
+    source_url: 'https://commons.wikimedia.org/wiki/File:The_Polish_Navy_during_the_Second_World_War_A2491.jpg'
+    width: 800
+    height: 602
+    primary: true
+    note: '这张是合影。普瓦夫斯基舰长在画面中**离镜头最远的位置**（后排、壁炉左上方那位）。 帝国战争博物馆藏（A2491）。官方图注原句：「The Captain, Eugeniusz Pławski, is farthest from the camera」。之所以用合影：这位波兰舰长没有留下单人肖像照。'
+  - id: 'cmdr-arthur-power'
+    file: '/img/commanders/arthur-power.jpg'
+    subject: commander:arthur-power
+    title:
+      zh: '阿瑟·鲍尔海军元帅（1945 年 3 月）'
+      en: 'Admiral Sir Arthur John Power'
+    part: other
+    view: detail
+    date: 1945-03
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: ''
+    width: 346
+    height: 340
+    primary: true
+    note: '单人半身像，帝国战争博物馆藏（IWM A 26998 系列）。'
+  - id: 'cmdr-ernst-lindemann'
+    file: '/img/commanders/ernst-lindemann.jpg'
+    subject: commander:ernst-lindemann
+    title:
+      zh: '恩斯特·林德曼海军上校，俾斯麦号舰长'
+      en: 'Kapitän zur See Ernst Lindemann'
+    part: other
+    view: detail
+    date: 1940
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: ''
+    width: 509
+    height: 800
+    primary: true
+    note: '德国联邦档案馆藏（Bundesarchiv Bild 101II-MN-1361-21A）。本图为 CC BY-SA 3.0 de 授权，非公有领域，页面上保留署名。'
+  - id: 'cmdr-philip-vian'
+    file: '/img/commanders/philip-vian.jpg'
+    subject: commander:philip-vian
+    title:
+      zh: '菲利普·维安海军元帅（约 1943 年）'
+      en: 'Admiral of the Fleet Sir Philip Vian'
+    part: other
+    view: detail
+    date: 1943
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: ''
+    width: 282
+    height: 320
+    primary: true
+    note: '单人肖像。'
   - id: 'wpn-albacore-02'
     file: '/img/weapons/albacore-02-15-fairey-albacore-15837361162.jpg'
     subject: weapon:albacore

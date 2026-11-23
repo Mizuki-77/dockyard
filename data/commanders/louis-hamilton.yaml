@@ -1,0 +1,97 @@
+id: louis-hamilton
+name:
+  zh: 路易斯·汉密尔顿
+  en: Louis Henry Keppel Hamilton
+  full: Admiral Sir Louis Henry Keppel Hamilton, KCB, DSO & Bar
+nation: united_kingdom
+rank_final: Admiral
+rank_at_post: 'Captain'
+summary_zh: 威尔士亲王号首任舰长，接手时该舰尚未完工
+life:
+  born: 1890-12-31
+  born_place: St George Hanover Square, London
+  died: 1957-06-27
+intro:
+  - heading: 海军世家
+    text: 1890 年 12 月 31 日生于伦敦圣乔治汉诺威广场。父亲是海军上将 Sir Frederick Tower Hamilton（一战期间任第二海务大臣），母亲 Maria Walpole 是海军元帅 Sir Henry Keppel 的女儿——他的两个中间名就是为了纪念这位外祖父。1903 年入海军，1908 年 5 月从 HMS Cumberland 出校，拿 King's Medal 并提前两个半月计算资历。
+  - heading: 喀麦隆与尼日尔河
+    text: 一战他不在大舰队，而在西非。他指挥尼日尔河的小舰队，1914 年 12 月底把德军逐出 Dehane；随后带一支分队把从 HMS Challenger 拆下的一门 12 磅海军炮沿尼日尔河上溯 160 英里、再沿贝努埃河上溯 480 英里、最后陆运 60 英里，送到围攻加鲁阿的部队手里，该城 1915 年 6 月 10 日投降，他因此获 DSO。
+  - heading: 战间期到挪威
+    text: 战间期他轮过战列舰、皇家游艇、三条驱逐舰，1935 年起任东印度舰队总司令的旗舰长兼参谋长，1937 年 9 月起任格林尼治皇家海军学院院长。1939 年 8 月接轻巡洋舰 HMS Delhi，1940 年 1 月改任 HMS Aurora。挪威战役里 Aurora 全程在场：4 月 18 日、22 日两度炮击 Rombaksfjord，5 月 7 日在空袭中被打坏两座炮塔，他因纳尔维克一段获 DSO 加勋。
+  - heading: 接手一艘没完工的舰
+    text: 1940 年 10 月 5 日，他被派到还在伯肯黑德的威尔士亲王号，名义挂在利物浦的 HMS Eaglet 下，实际是「在建期间指挥」。1941 年 1 月 19 日该舰未完工服役，舰员只配了一半，用途只是试航。1 月 28 日他从默西河把她开出去做炮术试射，30 日进罗塞斯继续舾装——舰上还带着两家船厂的工人，边装边试。2 月 15 日他把舰交给 John Catterall Leach。
+  - heading: 之后的路线
+    text: 交舰后他于 1941 年 2 月 28 日任本土舰队驱逐舰分队司令，1942 年 2 月起指挥第 1 巡洋舰分队——PQ 17 那趟船团他就在这条指挥链上。1943 年 9 月起任马耳他海军司令，1944 年 6 月获 KCB；1945 年 6 月起任澳大利亚联邦海军委员会第一海军委员兼海军参谋长，1947 年 5 月升 admiral，1948 年 9 月退役，1957 年 6 月 27 日卒。
+timeline:
+  - date: 1890-12-31
+    text: 生于伦敦圣乔治汉诺威广场，父为海军上将 Sir Frederick Tower Hamilton，母为海军元帅 Sir Henry Keppel 之女 Maria Walpole。
+    src: [unithistories-hamilton, uboatnet-cmdr-hamilton]
+  - date: 1908-05-15
+    text: 自 HMS Cumberland 出校，得 King's Medal，资历提前两个半月（1903 年 9 月 15 日入海军）。
+    src: [unithistories-hamilton]
+  - date: 1914-12
+    text: 率尼日尔河小舰队把德军逐出 Dehane；1915 年 6 月 10 日，他组织的 12 磅炮（水运 640 英里、陆运 60 英里）到位后，加鲁阿守军投降。
+    src: [unithistories-hamilton]
+  - date: 1915-09-24
+    text: 因喀麦隆作战获 DSO。
+    src: [unithistories-hamilton, uboatnet-cmdr-hamilton]
+  - date: 1916
+    text: 转哈里奇部队，先后指挥驱逐舰 HMS Moorsum、HMS Taurus，至 1918 年。
+    src: [unithistories-hamilton]
+  - date: 1935-01-22
+    text: 任东印度舰队总司令旗舰长（旗舰 HMS Norfolk）兼参谋长，至 1937 年 2 月；1937 年 9 月 20 日起任格林尼治皇家海军学院院长至 1939 年 8 月 24 日。
+    src: [unithistories-hamilton]
+  - date: 1939-08-25
+    text: 任轻巡洋舰 HMS Delhi 舰长，至 1939 年 12 月 16 日。任内在冰岛与法罗群岛之间参与截停德国商船。
+    src: [unithistories-hamilton, uboatnet-cmdr-hamilton]
+  - date: 1940-01-22
+    text: 改任轻巡洋舰 HMS Aurora 舰长，参加挪威战役；4 月 18 日与 22 日两度炮击 Rombaksfjord，5 月 7 日在空袭中被打坏两座炮塔。
+    src: [unithistories-hamilton, naval-history-aurora]
+  - date: 1940-09-26
+    text: 因 1940 年 4 至 6 月纳尔维克作战获 DSO 加勋（Bar）。
+    src: [unithistories-hamilton, uboatnet-cmdr-hamilton]
+  - date: 1940-10-05
+    text: 受命指挥在建的 HMS Prince of Wales，名义编制挂在利物浦的 HMS Eaglet 下（在建期间指挥）。
+    src: [unithistories-hamilton, uboatnet-cmdr-hamilton]
+  - date: 1941-01-15
+    text: 升 rear admiral。
+    src: [unithistories-hamilton, uboatnet-cmdr-hamilton]
+  - date: 1941-01-19
+    text: 威尔士亲王号在伯肯黑德未完工服役，舰员只配半数，用途是试航；舰长即 L. H. K. Hamilton。
+    src: [naval-history-pow, uboatnet-cmdr-hamilton]
+  - date: 1941-01-28
+    text: 率该舰自默西河出航，在利物浦湾与愤怒角外海做炮术试射，1 月 30 日抵罗塞斯继续舾装。舰上载有 Cammell Laird 与 Vickers Armstrong 的工人。
+    src: [naval-history-pow]
+  - date: 1941-02-15
+    text: 将威尔士亲王号交给 John Catterall Leach。该舰 3 月 31 日才被「正式」列为完工，5 月 24 日由 Leach 带进丹麦海峡。
+    src: [naval-history-pow]
+  - date: 1941-02-28
+    text: 任本土舰队驱逐舰分队司令（Rear-Admiral (D)），至 1941 年 12 月 21 日；1942 年 1 月 4 日复任至 2 月 18 日。
+    src: [unithistories-hamilton]
+  - date: 1942-02-24
+    text: 任第 1 巡洋舰分队司令（旗舰 HMS Norfolk，1943 年 2 月 24 日起 HMS Kent），至 1943 年 9 月 28 日。其间经历 PQ 17 船团。
+    src: [unithistories-hamilton, uboatnet-cmdr-hamilton]
+  - date: 1943-09-29
+    text: 任马耳他海军司令（HMS St Angelo）；1943 年 12 月 28 日起改称马耳他海军中将兼中地中海海军司令，至 1945 年 4 月 1 日。
+    src: [unithistories-hamilton]
+  - date: 1945-06-01
+    text: 任澳大利亚联邦海军委员会第一海军委员兼海军参谋长，1947 年 5 月 16 日升 admiral，1948 年 9 月 26 日退役。
+    src: [unithistories-hamilton, uboatnet-cmdr-hamilton]
+  - date: 1957-06-27
+    text: 卒。
+    src: [uboatnet-cmdr-hamilton, unithistories-hamilton]
+relations:
+  ships:
+    - ship: prince-of-wales
+      role: 舰长（首任，含舾装期与试航）
+      from: 1940-10-05
+      to: 1941-02-15
+      note: 1940-10-05 至 1941-01-19 为「在建期间指挥」，1941-01-19 该舰未完工服役后转为海上舰长，1941-02-15 交接给 Leach。
+  battles: []
+src: [unithistories-hamilton, uboatnet-cmdr-hamilton, naval-history-pow, naval-history-aurora]
+note: |
+  relations.battles 留空是有意的，也是任务书需要更正的一处：任务书写「丹麦海峡海战当天（1941-05-24）他就是舰长」，
+  与来源不符。unit histories 与 uboat.net 都把他在威尔士亲王号的任期断在 1941-02-15，naval-history 的逐日年表
+  亦写「February 15th - The PRINCE OF WALES new CO Captain John Catterall Leach MVO RN took command」。
+  1941-05-24 当天舰桥上的舰长是 Leach——Bismarck 首轮齐射的炮弹穿过罗经平台，除 Leach 与值更军士长外全数阵亡。
+  因此不填 denmark-strait，避免造出错误的双向跳转。

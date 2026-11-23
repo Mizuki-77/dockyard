@@ -241,6 +241,22 @@ facts:
       阿尔特马克事件的指挥者。Vian 在本舰任内有两次任期
       （另一次 1940-05-21 至 1941-07-10），中间短暂由 Sherbrooke 接任。
 
+  # 2026-11-23 补录：Vian 两任之间的空档（1940-03-29 至 05-21）由
+  # Sherbrooke 第二次接掌本舰。原文只在上一条 note 里提了一句「中间短暂由
+  # Sherbrooke 接任」，没有单独立 fact —— 结果是时间轴上这段没人，
+  # 读者会以为 Vian 连着干到 1941 年。
+  # 依据：uboat.net 的 Commanding Officers 表；另见
+  # work/staging_cmdr/c1/commanders/robert-sherbrooke.yaml 的推导。
+  - field: service.commander
+    value: Cdr. Robert St. Vincent Sherbrooke, RN（1940-03-29 至 1940-05-21，第二度接掌本舰）
+    src: [uboat-cossack]
+    valid: { from: 1940-03-29, to: 1940-05-21 }
+    confidence: C
+    note: >
+      Sherbrooke 在本舰上共有两段任期（首段 1939-12-29 至 1940-01-18，
+      与 Afridi 舰长 Vian 对调而来）。这一段是第二度接掌。
+      他把舰交给 Vian 后转任 Afridi，并因 1940-04-13 第二次纳尔维克海战获 DSO。
+
   - field: service.commander
     value: Capt. Philip Louis Vian, DSO, RN（1940-05-21 至 1941-07-10，第二任）
     src: [uboat-cossack]

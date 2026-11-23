@@ -115,6 +115,94 @@ export interface ClassFile {
   facts: Fact[];
 }
 
+// ---------------------------------------------------------------- 指挥官
+
+/**
+ * 指挥官（2026-11-23 新增实体层）。
+ *
+ * 为什么单独建一层而不复用 fact：
+ *   本站的 fact 是「某字段在某时间窗的值」。指挥官这个实体承载的东西
+ *   （传记、生卒、照片、履历年表、与舰/战役的多对多关系）不是某个字段
+ *   的取值，塞进 fact 会让 service.commander 那条记录变成一坨字典。
+ *
+ * 与舰的关系是**多对多**：一个人可能指挥过多艘舰（Vian 两任哥萨克号），
+ * 一艘舰有多任指挥官。关系存在指挥官这边（relation.ships），
+ * 由 data.ts 反向建索引，舰页就不必自己维护指挥官列表。
+ */
+export interface CommanderTenure {
+  /** 本站舰 id（必须存在于 data/ships/） */
+  ship: string;
+  /** 在这艘舰上的职务，如「舰长」「第 4 驱逐舰分队指挥官」 */
+  role: string;
+  from?: string;
+  to?: string;
+  note?: string;
+}
+
+export interface CommanderBattleLink {
+  /** 本站战役 id（必须存在于 data/battles/） */
+  battle: string;
+  /** 在这场战役中的身份/作为 */
+  role: string;
+  note?: string;
+}
+
+export interface CommanderIntroPara {
+  heading: string;
+  text: string;
+}
+
+export interface CommanderTimelineEvent {
+  date: string;
+  text: string;
+  src: string[];
+  note?: string;
+}
+
+export interface CommanderFile {
+  id: string;
+  name: {
+    zh: string;
+    en: string;
+    /** 全名含勋衔（英文原式） */
+    full?: string;
+  };
+  /** 最终军衔，保留原制式（Admiral of the Fleet / Kpt.z.S. / kmdr por.） */
+  rank_final?: string;
+  /**
+   * 担任本站所录舰长职务时的军衔（2026-11-23 加）。
+   *
+   * 为什么需要两个字段：这个栏目叫「战舰指挥官」，读者关心的是
+   * 「他指挥那艘舰时是什么身份」。Topp 当提尔皮茨舰长时是
+   * Kapitän zur See，后来才升 Vizeadmiral —— 卡片上只显示后者，
+   * 会让人误以为他以上将身份在舰上待过。
+   *
+   * 卡片优先显示 rank_at_post，没有才退回 rank_final。
+   */
+  rank_at_post?: string;
+  /** 国籍/海军：united_kingdom / germany / poland */
+  nation?: string;
+  /** 卡片用的一句话身份（30 字内） */
+  summary_zh?: string;
+  /** 生卒。查不到就整块不写，不填 approx */
+  life?: {
+    born?: string;
+    born_place?: string;
+    died?: string;
+    died_place?: string;
+  };
+  intro?: CommanderIntroPara[];
+  timeline?: CommanderTimelineEvent[];
+  relations?: {
+    ships?: CommanderTenure[];
+    battles?: CommanderBattleLink[];
+  };
+  /** 传记资料来源（不计入 fact，但页面要列出来） */
+  src?: string[];
+  /** 备注：数据缺口的诚实声明 */
+  note?: string;
+}
+
 // ---------------------------------------------------------------- 图片
 
 export interface ImageRec {
@@ -136,6 +224,19 @@ export interface ImageRec {
   width?: number;
   height?: number;
   note?: string;
+  /**
+   * 合影标记（2026-11-23 加，指挥官肖像用）。
+   *
+   * 有些历史人物没留下单人肖像，只有合影。用户的要求是
+   * 「合影也行，只要清楚能看到就行，标注就好」—— 所以合影可以用，
+   * 但必须让读者知道画面里哪个是他。
+   * 标了这个字段的记录，note 开头必须是「这张是合影。××是…」，
+   * 人物页会把那一段单独渲染成提示条。
+   *
+   * 依据要求：标注方位必须来自图片的官方图注（如 IWM 的
+   * "left to right: ..."），不能凭看脸猜。
+   */
+  group_shot?: boolean;
   /** 人工指定为门面图。不给就按 A 档优先 + 落盘顺序退化。 */
   primary?: boolean;
 }

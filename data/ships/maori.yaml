@@ -231,10 +231,16 @@ facts:
     note: 1941-05-26/27 夜袭俾斯麦时本舰舰长（uboat.net 战役叙述里记作 Cdr. H.T. Armstrong）。
 
   - field: service.commander
-    value: Cdr. Rafe Edward Courage, DSO, DSC, RN（1941-07-09 至 1942-02-12 沉没）
+    value: Cdr. Rafe Edward Courage, DSO, DSC, RN（1941-07-09 任职，任期至本舰 1942-02-12 沉没）
     src: [uboat-maori, naval-history-maori]
     valid: { from: 1941-07-09, to: 1942-02-12 }
     confidence: B
+    note: >-
+      任期终点 1942-02-12 是**本舰沉没日**，不是他的死亡日。
+      毛利人号当日是在瓦莱塔大港内锚泊时被德机炸沉，不是海上交战中沉没，
+      舰员伤亡远小于后者。
+      本站没有查到 Courage 本人的阵亡记录，因此**不写他随舰阵亡**。
+      原写法「…至 1942-02-12 沉没」易被读成人也没了，2026-11-23 改。
 
   - field: service.casualties
     value: 1

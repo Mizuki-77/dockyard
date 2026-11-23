@@ -1,0 +1,251 @@
+{
+  "A. J. L. Phillips": {
+    "query": "A. J. L. Phillips Norfolk cruiser captain",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "Arthur John Power": {
+    "query": "Arthur John Power Ark Royal captain admiral",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "Augustus Willington Shelton Agar": {
+    "query": "Augustus Willington Shelton Agar Dorsetshire captain VC",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "B. B. Schofield": {
+    "query": "B. B. Schofield King George V battleship captain",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "Benjamin Charles Stanley Martin": {
+    "query": "Benjamin Charles Stanley Martin Dorsetshire captain",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "D. G. Clark": {
+    "query": "D. G. Clark King George V commander",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "Daniel de Pass": {
+    "query": "Daniel de Pass Cossack destroyer captain",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "David Edmund Cole-Hamilton": {
+    "query": "David Edmund Cole-Hamilton Sikh destroyer",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "Edward Lyon Berthon": {
+    "query": "Edward Lyon Berthon Cossack captain",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "Ernst Lindemann": {
+    "query": "Ernst Lindemann Bismarck captain",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "Eugeniusz Józef Stanisław Pławski": {
+    "query": "Eugeniusz Józef Stanisław Pławski Piorun Polish navy commander",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "Godfrey Noel Brewer": {
+    "query": "Godfrey Noel Brewer Maori destroyer captain",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "Graham Henry Stokes": {
+    "query": "Graham Henry Stokes Sikh destroyer captain",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "H. C. Bovell": {
+    "query": "H. C. Bovell Victorious captain",
+    "hits": [
+      "File:The Royal Navy during the Second World War A7516.jpg"
+    ],
+    "picked": [],
+    "has": false
+  },
+  "H. Dalrymple-Smith": {
+    "query": "H. Dalrymple-Smith King George V captain",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "Hans Meyer": {
+    "query": "Hans Meyer Tirpitz captain",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "Harold Thomas Armstrong": {
+    "query": "Harold Thomas Armstrong Maori destroyer",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "Harry Robert Graham": {
+    "query": "Harry Robert Graham Zulu destroyer captain",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "Helmuth Brinkmann": {
+    "query": "Helmuth Brinkmann Prinz Eugen admiral",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "Henry Kitson": {
+    "query": "Henry Kitson Rodney captain",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "John Agnew Giffard": {
+    "query": "John Agnew Giffard Sikh destroyer",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "John Stuart Crawford": {
+    "query": "John Stuart Crawford Zulu destroyer",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "Karl Topp": {
+    "query": "Karl Topp Tirpitz captain",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "L. D. Mackintosh, DSO DSC": {
+    "query": "L. D. Mackintosh, DSO DSC",
+    "hits": [
+      "File:Rear Admiral L D Mackintosh WWII IWM A 26912.jpg"
+    ],
+    "picked": [],
+    "has": false
+  },
+  "Louis Henry Keppel Hamilton": {
+    "query": "Louis Henry Keppel Hamilton Prince of Wales captain",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "Michael Maynard Denny": {
+    "query": "Michael Maynard Denny Victorious captain",
+    "hits": [
+      "File:Captain M Denny, Cb, Cbe, Rn, of HMS Victorious. March 1945. A28079.jpg",
+      "File:Admiral of the Fleet Earl Mountbatten of Burma A27317.jpg"
+    ],
+    "picked": [
+      "File:Captain M Denny, Cb, Cbe, Rn, of HMS Victorious. March 1945. A28079.jpg"
+    ],
+    "has": true
+  },
+  "P. J. Mack": {
+    "query": "P. J. Mack King George V captain",
+    "hits": [
+      "File:On Board HMS King George V, November 1942 TR329.jpg",
+      "File:On Board HMS King George V, November 1942 TR316.jpg",
+      "File:Admiral Sir John Tovey and Members of His Staff. 4 February 1943, on Board Home Fleet Flagship HMS King George V. A14839.jpg",
+      "File:Rear Admiral I G Glennie New Rad Home Fleet Visits C-in-c Home Fleet. 13 January 1943, Scapa Flow. A14180.jpg",
+      "File:Rear Admiral I G Glennie Rad Home Fleet Visits C-in-c Home Fleet. 13 January 1943, Scapa Flow. A14179.jpg",
+      "File:Breeder and sportsman (1887) (19786290104).jpg"
+    ],
+    "picked": [
+      "File:On Board HMS King George V, November 1942 TR329.jpg",
+      "File:On Board HMS King George V, November 1942 TR316.jpg",
+      "File:Admiral Sir John Tovey and Members of His Staff. 4 February 1943, on Board Home Fleet Flagship HMS King George V. A14839.jpg"
+    ],
+    "has": true
+  },
+  "Philip Louis Vian": {
+    "query": "Philip Louis Vian admiral Cossack",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "Rafe Edward Courage": {
+    "query": "Rafe Edward Courage Maori destroyer",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "Richard Taylor White": {
+    "query": "Richard Taylor White Zulu destroyer",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "Robert St. Vincent Sherbrooke": {
+    "query": "Robert St. Vincent Sherbrooke Cossack captain admiral",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "Robert Weber": {
+    "query": "Robert Weber Tirpitz",
+    "hits": [
+      "File:Robert Weber Tirpitz.jpg"
+    ],
+    "picked": [
+      "File:Robert Weber Tirpitz.jpg"
+    ],
+    "has": true
+  },
+  "St. John Aldrich Micklethwait": {
+    "query": "St. John Aldrich Micklethwait Sikh destroyer captain",
+    "hits": [],
+    "picked": [],
+    "has": false
+  },
+  "T. E. Halsey": {
+    "query": "T. E. Halsey King George V captain",
+    "hits": [
+      "File:British Home Fleet C-in-c Leaves To Take Up New Appointment. April 1943, Scapa Flow, British Home Fleet Command Change Over. the New Commander in Chief, Home Fleet, Admiral Sir Bruce a Fraser, Kbe, Cb, Took Ove A16495.jpg"
+    ],
+    "picked": [],
+    "has": false
+  },
+  "W. R. Patterson": {
+    "query": "W. R. Patterson King George V captain",
+    "hits": [
+      "File:Pennsylvania at Gettysburg - ceremonies at the dedication of the monuments erected by the Commonwealth of Pennsylvania to Major General George G. Meade, Major General Winfield S. Hancock, Major (14596452468).jpg",
+      "File:Wotton under Edge, War Memorial, Gloucestershire.jpg",
+      "File:Lisburn Cathedral 1914-1918 War Memorial.jpg",
+      "File:Hillsborough War Memorial County Down Northern Ireland.jpg"
+    ],
+    "picked": [
+      "File:Pennsylvania at Gettysburg - ceremonies at the dedication of the monuments erected by the Commonwealth of Pennsylvania to Major General George G. Meade, Major General Winfield S. Hancock, Major (14596452468).jpg"
+    ],
+    "has": true
+  },
+  "Wolf Junge": {
+    "query": "Wolf Junge Tirpitz captain",
+    "hits": [],
+    "picked": [],
+    "has": false
+  }
+}

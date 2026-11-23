@@ -1,0 +1,661 @@
+---
+// ============================================================================
+// 指挥官详情页 /commanders/[id]
+// ----------------------------------------------------------------------------
+// 页面结构按「一个人怎么被认识」的顺序排，不是按数据字段顺序：
+//   1. 头部：照片 + 姓名 + 军衔 + 生卒 + 一句话身份
+//   2. 简介：3-5 段，讲他的处境与判断
+//   3. 与本站的连接：他指挥过的舰（图卡，可点进舰页）+ 参加过的战役
+//   4. 生平年表
+//   5. 资料来源
+//
+// 双向跳转的落点就在第 3 段：这里点舰进 /ships/<id>，
+// 舰页那边有对应的「历任指挥官」区块点回来。
+//
+// 照片缺失是常态（13 人里 7 人有照片），所以照片位必须能优雅空着：
+// 不留破图标，改成一块带姓名首字母的占位牌。
+// ============================================================================
+import Base from '../../layouts/Base.astro';
+import { getCommanders, getCommander, resolveCommanderShips, resolveCommanderBattles, imageCredit, getImagesFor } from '../../lib/data';
+
+export function getStaticPaths() {
+  return getCommanders().map((c) => ({ params: { id: c.id } }));
+}
+
+const { id } = Astro.params;
+const found = getCommander(id!);
+
+if (!found) {
+  throw new Error(`指挥官 ${id} 不存在`);
+}
+
+// TS 在闭包与后续函数里不认上面的 throw 收窄，显式赋一个非 undefined 的常量
+const c = found;
+const ships = resolveCommanderShips(c);
+const battles = resolveCommanderBattles(c);
+
+// 照片：先找 subject=commander:<id> 的图，再退到 primary
+const imgs = getImagesFor(`commander:${c.id}`);
+const portrait = imgs.find((i) => i.primary) ?? imgs[0];
+const portraitCredit = portrait ? imageCredit(portrait) : '';
+// 合影：图注里点名了「哪一位是他」。有这个标记就必须在页面上显眼说明，
+// 否则读者在四五个人里找不到主角，等于没放图。
+const isGroup = Boolean(portrait?.group_shot);
+
+const NATION = {
+  united_kingdom: { zh: '英国', en: 'United Kingdom', flag: '🇬🇧' },
+  germany: { zh: '德国', en: 'Germany', flag: '🇩🇪' },
+  poland: { zh: '波兰', en: 'Poland', flag: '🇵🇱' },
+  united_states: { zh: '美国', en: 'United States', flag: '🇺🇸' },
+  japan: { zh: '日本', en: 'Japan', flag: '🇯🇵' },
+} as Record<string, { zh: string; en: string; flag: string }>;
+
+const nat = NATION[c.nation ?? ''] ?? { zh: '未标注', en: 'Unspecified', flag: '' };
+
+function fmtDate(d?: string): string {
+  if (!d) return '';
+  // 只有年份时原样显示，别硬补月日
+  return d;
+}
+
+function lifeLine(): string {
+  const b = c.life?.born;
+  const d = c.life?.died;
+  if (!b && !d) return '';
+  if (b && d) return `${b.slice(0, 4)} – ${d.slice(0, 4)}`;
+  if (b) return `${b.slice(0, 4)} –`;
+  return `– ${d!.slice(0, 4)}`;
+}
+
+// 出生地/逝世地：只有同时有年份和地点才拼
+function placeLine(): string {
+  const parts: string[] = [];
+  if (c.life?.born_place) parts.push(`生于 ${c.life.born_place}`);
+  if (c.life?.died_place) parts.push(`卒于 ${c.life.died_place}`);
+  return parts.join(' · ');
+}
+
+// 头像占位用姓名首字母
+function initials(n: string): string {
+  return n
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((w) => w[0]?.toUpperCase() ?? '')
+    .join('');
+}
+---
+
+<Base title={c.name.zh} variant="full" decorSides={false}>
+  <div class="pagehead">
+    <div class="pagehead__kicker">Commander</div>
+    <h1 class="pagehead__title">{c.name.zh}</h1>
+    <div class="pagehead__meta">
+      {c.rank_at_post && <span class="tag">{c.rank_at_post}</span>}
+      {c.rank_final && c.rank_final !== c.rank_at_post && (
+        <span class="tag tag--ghost">最终 {c.rank_final}</span>
+      )}
+      {c.nation && <span class="tag tag--ghost">{nat.flag} {nat.zh}</span>}
+      {lifeLine() && <span class="tag tag--ghost">{lifeLine()}</span>}
+    </div>
+  </div>
+
+  <!-- ============================================ 头部：照片 + 身份 -->
+  <section class="cmdr-hero">
+    <div class="cmdr-hero__photo">
+      {
+        portrait && portrait.file ? (
+          <a href={portrait.source_url ?? '#'} target="_blank" rel="noopener">
+            <img src={portrait.file} alt={portrait.title.zh} loading="eager" />
+          </a>
+        ) : (
+          <div class="cmdr-hero__ph">
+            <span class="cmdr-hero__ph-init">{initials(c.name.en)}</span>
+            <span class="cmdr-hero__ph-note">暂无照片</span>
+          </div>
+        )
+      }
+      {
+        portrait && portrait.file && (
+          <div class="cmdr-hero__credit">
+            {isGroup && <span class="cmdr-hero__grouptag">合影</span>}
+            {portraitCredit}
+            {portrait.license_tier === 'A' ? ' · 公有领域' : ' · 授权见图源'}
+          </div>
+        )
+      }
+      {/* 合影的定位说明：单独一条，不从 note 里截 —— 
+          页面需要一眼看到「哪个是他」，不该让人去读小字。 */}
+      {isGroup && portrait?.note && (
+        <div class="cmdr-hero__where">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            aria-hidden="true">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 8.2v.2M12 11v5" />
+          </svg>
+          <span>{portrait.note.split('。')[0]}。</span>
+        </div>
+      )}
+    </div>
+
+    <div class="cmdr-hero__body">
+      <div class="cmdr-hero__en">{c.name.full || c.name.en}</div>
+      {c.summary_zh && <p class="cmdr-hero__sum">{c.summary_zh}</p>}
+      {placeLine() && <p class="cmdr-hero__place">{placeLine()}</p>}
+
+      {!portrait?.file && (
+        <p class="cmdr-hero__miss">
+          这一位没有找到可信的肖像照。本站不用他人照片或生成图代替 ——
+          查不到就空着。
+        </p>
+      )}
+    </div>
+  </section>
+
+  <!-- ================================================ 简介 -->
+  {
+    (c.intro?.length ?? 0) > 0 && (
+      <section class="section">
+        <div class="section__head">
+          <h2 class="section__title">简介</h2>
+          <span class="section__en">Biography</span>
+        </div>
+        <div class="cmdr-bio">
+          {c.intro!.map((p) => (
+            <div class="cmdr-bio__para">
+              <h3 class="cmdr-bio__h">{p.heading}</h3>
+              <p class="cmdr-bio__t">{p.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <!-- ============================================ 与本站的连接 -->
+  {
+    (ships.length > 0 || battles.length > 0) && (
+      <section class="section">
+        <div class="section__head">
+          <h2 class="section__title">与本站的连接</h2>
+          <span class="section__en">Links in this archive</span>
+        </div>
+
+        {ships.length > 0 && (
+          <>
+            <h3 class="cmdr-sub">指挥过的舰</h3>
+            <div class="cmdr-ships">
+              {ships.map(({ ship, tenure }) => {
+                const img = getImagesFor(`ship:${ship.id}`).find((i) => i.primary) ??
+                  getImagesFor(`ship:${ship.id}`)[0];
+                return (
+                  <a class="cmdr-shipcard" href={`/ships/${ship.id}`}>
+                    <div class="cmdr-shipcard__img">
+                      {img && img.file ? (
+                        <img src={img.file} alt={ship.name.zh} loading="lazy" />
+                      ) : (
+                        <span class="cmdr-shipcard__nophoto">{ship.name.zh}</span>
+                      )}
+                    </div>
+                    <div class="cmdr-shipcard__body">
+                      <span class="cmdr-shipcard__name">{ship.name.zh}</span>
+                      <span class="cmdr-shipcard__role">{tenure.role}</span>
+                      <span class="cmdr-shipcard__span">
+                        {fmtDate(tenure.from) || '—'} → {fmtDate(tenure.to) || '—'}
+                      </span>
+                    </div>
+                  </a>
+                );
+              })}
+            </div>
+          </>
+        )}
+
+        {battles.length > 0 && (
+          <>
+            <h3 class="cmdr-sub">参加过的战役</h3>
+            <div class="cmdr-battles">
+              {battles.map(({ battle, link }) => (
+                <a class="cmdr-battlecard" href={`/battles/${battle.id}`}>
+                  <span class="cmdr-battlecard__name">{battle.name.zh}</span>
+                  <span class="cmdr-battlecard__role">{link.role}</span>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+      </section>
+    )
+  }
+
+  <!-- ================================================== 年表 -->
+  {
+    (c.timeline?.length ?? 0) > 0 && (
+      <section class="section">
+        <div class="section__head">
+          <h2 class="section__title">生平年表</h2>
+          <span class="section__en">Timeline</span>
+        </div>
+        <ol class="cmdr-tl">
+          {c.timeline!.map((ev) => (
+            <li class="cmdr-tl__item">
+              <time class="cmdr-tl__date">{ev.date}</time>
+              <div class="cmdr-tl__body">
+                <p class="cmdr-tl__text">{ev.text}</p>
+                {ev.note && <p class="cmdr-tl__note">{ev.note}</p>}
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )
+  }
+
+  <!-- ================================================ 来源 -->
+  {
+    (c.src?.length ?? 0) > 0 && (
+      <section class="section">
+        <div class="section__head">
+          <h2 class="section__title">资料来源</h2>
+          <span class="section__en">Sources</span>
+        </div>
+        <ul class="cmdr-srcs">
+          {c.src!.map((s) => (
+            <li><code>{s}</code></li>
+          ))}
+        </ul>
+        <p class="cmdr-srcnote">
+          来源的处理规则与其他栏目一致：每条结论能追到出处；
+          百科类（E 级）只用于搭骨架与找线索，关键事实另有一手或专题站支撑。
+        </p>
+      </section>
+    )
+  }
+
+  {c.note && (
+    <section class="section">
+      <div class="cmdr-note">{c.note}</div>
+    </section>
+  )}
+
+  <p class="cmdr-back">
+    <a href="/commanders">← 返回全部指挥官</a>
+  </p>
+
+  <style>
+    /* ------------------------------------------------ 头部 */
+    .cmdr-hero {
+      display: grid;
+      grid-template-columns: 240px minmax(0, 1fr);
+      gap: 26px;
+      align-items: start;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow-1);
+    }
+    .cmdr-hero__photo {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .cmdr-hero__photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line-soft);
+      background: #f6f9fc;
+    }
+    .cmdr-hero__ph {
+      aspect-ratio: 4 / 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: var(--radius-sm);
+      background:
+        repeating-linear-gradient(
+          45deg,
+          #f4f8fc,
+          #f4f8fc 8px,
+          #eef4fa 8px,
+          #eef4fa 16px
+        );
+      border: 1px dashed var(--line-strong);
+    }
+    .cmdr-hero__ph-init {
+      font-size: 40px;
+      font-weight: 800;
+      color: var(--blue-300);
+      letter-spacing: 0.04em;
+    }
+    .cmdr-hero__ph-note {
+      font-size: 11.5px;
+      color: var(--ink-300);
+    }
+    .cmdr-hero__credit {
+      font-size: 11px;
+      color: var(--ink-300);
+      line-height: 1.5;
+    }
+    .cmdr-hero__grouptag {
+      display: inline-block;
+      margin-right: 6px;
+      padding: 0 6px;
+      border-radius: 999px;
+      background: var(--blue-100);
+      color: var(--blue-700);
+      font-size: 10px;
+      font-weight: 700;
+      vertical-align: 1px;
+    }
+    .cmdr-hero__where {
+      display: flex;
+      gap: 7px;
+      align-items: flex-start;
+      margin-top: 8px;
+      padding: 8px 10px;
+      border-radius: var(--radius-sm);
+      background: #fff8e8;
+      border: 1px solid var(--warn-line);
+      font-size: 12px;
+      line-height: 1.6;
+      color: #6d4a17;
+    }
+    .cmdr-hero__where svg {
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: var(--warn);
+    }
+
+    .cmdr-hero__body {
+      padding-top: 4px;
+    }
+    .cmdr-hero__en {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      color: var(--ink-400);
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    .cmdr-hero__sum {
+      margin: 0 0 10px;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--ink-900);
+      font-weight: 520;
+    }
+    .cmdr-hero__place {
+      margin: 0 0 10px;
+      font-size: 13px;
+      color: var(--ink-500);
+    }
+    .cmdr-hero__miss {
+      margin: 12px 0 0;
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      background: var(--blue-50);
+      border: 1px solid var(--blue-100);
+      font-size: 12.5px;
+      color: var(--ink-500);
+      line-height: 1.65;
+    }
+
+    /* ------------------------------------------------ 简介 */
+    .cmdr-bio {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .cmdr-bio__para {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+    }
+    .cmdr-bio__h {
+      margin: 0 0 8px;
+      font-size: 14px;
+      font-weight: 680;
+      color: var(--blue-700);
+      letter-spacing: 0.02em;
+    }
+    .cmdr-bio__h::before {
+      content: "";
+      display: inline-block;
+      width: 3px;
+      height: 12px;
+      border-radius: 2px;
+      background: var(--blue-500);
+      margin-right: 8px;
+      vertical-align: -1px;
+    }
+    .cmdr-bio__t {
+      margin: 0;
+      font-size: 14.5px;
+      line-height: 1.85;
+      color: var(--ink-700);
+    }
+
+    /* ------------------------------------------------ 连接 */
+    .cmdr-sub {
+      margin: 6px 0 10px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-400);
+    }
+    .cmdr-sub:not(:first-of-type) {
+      margin-top: 22px;
+    }
+    .cmdr-ships {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 12px;
+    }
+    .cmdr-shipcard {
+      display: flex;
+      gap: 12px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      text-decoration: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .cmdr-shipcard:hover {
+      border-color: var(--blue-300);
+      box-shadow: var(--shadow-2);
+      text-decoration: none;
+    }
+    .cmdr-shipcard__img {
+      width: 96px;
+      flex-shrink: 0;
+      background: var(--blue-50);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    .cmdr-shipcard__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .cmdr-shipcard__nophoto {
+      font-size: 11px;
+      color: var(--ink-300);
+      text-align: center;
+      padding: 4px;
+    }
+    .cmdr-shipcard__body {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 10px 12px 10px 0;
+      min-width: 0;
+    }
+    .cmdr-shipcard__name {
+      font-size: 14px;
+      font-weight: 620;
+      color: var(--ink-900);
+    }
+    .cmdr-shipcard__role {
+      font-size: 12px;
+      color: var(--blue-700);
+    }
+    .cmdr-shipcard__span {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ink-400);
+    }
+
+    .cmdr-battles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .cmdr-battlecard {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 10px 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--blue-500);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+    .cmdr-battlecard:hover {
+      background: var(--blue-50);
+      text-decoration: none;
+    }
+    .cmdr-battlecard__name {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--ink-900);
+    }
+    .cmdr-battlecard__role {
+      font-size: 12px;
+      color: var(--ink-500);
+    }
+
+    /* ------------------------------------------------ 年表 */
+    .cmdr-tl {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+    .cmdr-tl::before {
+      content: "";
+      position: absolute;
+      left: 92px;
+      top: 6px;
+      bottom: 6px;
+      width: 1px;
+      background: var(--line);
+    }
+    .cmdr-tl__item {
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr);
+      gap: 18px;
+      padding: 0 0 16px;
+      position: relative;
+    }
+    .cmdr-tl__item::before {
+      content: "";
+      position: absolute;
+      left: 88.5px;
+      top: 6px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid var(--blue-400);
+    }
+    .cmdr-tl__date {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--ink-400);
+      text-align: right;
+      padding-top: 1px;
+    }
+    .cmdr-tl__text {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--ink-700);
+    }
+    .cmdr-tl__note {
+      margin: 4px 0 0;
+      font-size: 12px;
+      color: var(--ink-400);
+      line-height: 1.6;
+    }
+
+    /* ------------------------------------------------ 来源 */
+    .cmdr-srcs {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .cmdr-srcs code {
+      font-size: 11.5px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: var(--blue-50);
+      border: 1px solid var(--blue-100);
+      color: var(--blue-700);
+    }
+    .cmdr-srcnote {
+      margin: 10px 0 0;
+      font-size: 12px;
+      color: var(--ink-400);
+      line-height: 1.7;
+    }
+
+    .cmdr-note {
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      background: #fdf8ee;
+      border: 1px solid var(--warn-line);
+      font-size: 13px;
+      color: #6d4a17;
+      line-height: 1.7;
+    }
+
+    .cmdr-back {
+      margin: 4px 0 0;
+    }
+
+    @media (max-width: 760px) {
+      .cmdr-hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .cmdr-hero__photo {
+        max-width: 220px;
+      }
+      .cmdr-tl::before,
+      .cmdr-tl__item::before {
+        display: none;
+      }
+      .cmdr-tl__item {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2px;
+      }
+      .cmdr-tl__date {
+        text-align: left;
+      }
+    }
+  </style>
+</Base>

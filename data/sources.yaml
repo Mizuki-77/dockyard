@@ -4843,6 +4843,658 @@ sources:
     本页不可替代的三段：\n① 服役与首次作战：1940-03 随 826 中队服役，1940-05-31 首次出动\n   （轰炸 Westende 与泽布吕赫 E 艇，不是鱼雷攻击）；\n② 首次上舰：1940-11-26，826 与 829 中队登 Formidable 号；\n③ 「不如 Swordfish 适应性强」的真正原因（护航航母太小，\n   装不下更快更重的 Albacore）。\n\
     \n口径提示：\n① 两个并列值不要替作者取舍：机高「12ft 6in or 15ft 3in」、\n   升限「20,700ft or 18,800ft」；\n② 产量口径同一段内出现两个数：「798 production aircraft」与\n   「All 800 Albacores were produced」—— 差额是两架原型机，\n   正文按「原型机 + 798 量产 = 800」表述并保留原文用词；\n\
     ③ 服役年份 1940-03 与首次上舰 1940-11-26 相差八个月，\n   这解释了为什么本舰（1941-11 沉没）与它的重叠窗口只有 1941 年下半年。\n"
+- id: unithistories-vian
+  title: Royal Navy (RN) Officers 1939–1945 — Vian, Sir Philip Louis
+  url: https://www.unithistories.com/officers/RN_officersV.html#Vian_PL
+  type: database
+  tier: D
+  role:
+  - data
+  operator: J.N. Houterman
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 逐条给到任免起止日、晋升日、勋衔授予以日与理由、历任舰职。 本站 Vian 年表的骨架来源。注意它把 1940-05 回任哥萨克号记为 05.05.1940， 而 uboat.net 记 1940-05-21，两者相差 16 天，见 NOTES。
+- id: unithistories-agar
+  title: Royal Navy (RN) Officers 1939–1945 — Agar, Augustus Willington Shelton
+  url: https://www.unithistories.com/officers/RN_officersA2.html#Agar_AWS
+  type: database
+  tier: D
+  role:
+  - data
+  operator: J.N. Houterman
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 晋升日、勋衔授予日与理由（VC 22.08.1919、DSO 11.11.1919）、 历任舰职。条目内附 VC 与 DSO 的 citation 原文摘录。 记多塞特郡号任期 08.08.1941 至 05.04.1942，与 uboat.net 的 18.08.1941 差 10 天。
+- id: unithistories-sherbrooke
+  title: Royal Navy (RN) Officers 1939–1945 — Sherbrooke, Robert St Vincent
+  url: https://www.unithistories.com/officers/RN_officersS1b.html#Sherbrooke_RStV
+  type: database
+  tier: D
+  role:
+  - data
+  operator: J.N. Houterman
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 生卒地、晋升日、勋衔（VC/CB/DSO/挪威自由十字）、历任舰职。 注意：它把哥萨克号第二任期记成 04.1940 至 1940（无月）， 而 uboat.net 记 29.03.1940 至 21.05.1940，两者口径不同，见 NOTES。
+- id: naval-history-naiad
+  title: HMS Naiad — service history, Naval-History.Net
+  url: https://www.naval-history.net/xGM-Chrono-06CL-HMS_Naiad.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: Gordon Smith / Lt Cdr G.B. Mason RN (Rtd)
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 1942-03-11 被 U-565 于索卢姆外雷击，35 分钟翻沉，86 人亡， 第 15 巡洋舰队旗舰转移至 HMS Dido。Vian 在地中海一段的关键时间锚点。
+- id: naval-history-afridi
+  title: HMS Afridi — service history, Naval-History.Net
+  url: https://www.naval-history.net/xGM-Chrono-10DD-34Tribal-HMS_Afridi.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: Gordon Smith / Lt Cdr G.B. Mason RN (Rtd)
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 1940-05-03 纳姆索斯撤运时被两枚炸弹命中翻沉，100 人亡， 沉没位置 66.14N 05.45E。Vian 与 Sherbrooke 都在这条舰上待过， 是两人履历交叉的节点。
+- id: naval-history-emerald
+  title: HMS Emerald — service history, Naval-History.Net
+  url: https://www.naval-history.net/xGM-Chrono-06CL-HMS_Emerald.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: Gordon Smith / Lt Cdr G.B. Mason RN (Rtd)
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 1939-10-07 随战列舰 Revenge、巡洋舰 Enterprise、Caradoc 运金条赴哈利法克斯， 10-17 卸下。Agar 当时是翡翠号舰长，Operation Fish 一段的日期依据。
+- id: bbc-altmark
+  title: The Altmark Incident — BBC WW2 People's War（HMS Cossack Association 供稿）
+  url: https://www.bbc.co.uk/history/ww2peopleswar/stories/72/a4507472.shtml
+  type: website
+  tier: D
+  role:
+  - narrative
+  operator: BBC / HMS Cossack Association
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 亲历者团体供稿，不是官方档案。给出丘吉尔经第一海军大臣名义发给 Vian 的 指令全文要点（提议联合押送→拒绝即登船→挪威舰艇只可警告→对方开火才还击 且以必要为限），以及 22:00 入峡湾、23:12 靠帮、23:55 出峡湾的时刻。 时序细节用它，法律结论不用它。
+- id: historyofwar-altmark
+  title: The Altmark incident, 16 February 1940 — HistoryOfWar.org（J. Rickard）
+  url: https://www.historyofwar.org/articles/battles_altmark.html
+  type: website
+  tier: D
+  role:
+  - narrative
+  operator: John Rickard
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 与 bbc-altmark 互为独立复述，同样记「挪威拒绝联合押送即登船」的授权结构、 299 名战俘、Altmark 搁浅。两源在细节上一致，故并列引用。
+- id: victoriacross-sherbrooke
+  title: Robert St Vincent Sherbrooke VC — Victoria Cross Research（Alfred J. Askin 遗稿）
+  url: https://victoriacross.co.uk/recipients/robert-st-vincent-sherbrooke/
+  type: website
+  tier: D
+  role:
+  - narrative
+  operator: Askin / Adams families
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 按《The Register of the Victoria Cross》(1997) 体例记录：宪报日 1943-01-12、 生卒地、墓葬、citation 摘要、勋章现藏不明。citation 措辞与 unithistories 所摘一致，互为校验。
+- id: notts-sherbrooke-vc
+  title: Captain Robert St. Vincent Sherbrooke V.C. — Nottinghamshire County Council
+  url: https://www.nottinghamshire.gov.uk/culture-leisure/heritage/remembering-ww1/the-victoria-cross/captain-robert-st-vincent-sherbrooke-vc
+  type: website
+  tier: D
+  role:
+  - narrative
+  operator: Nottinghamshire County Council
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 地方政府的纪念页。生卒（1901-01-08 / 1972-06-13）、宪报日、墓葬地点。
+- id: enwiki-philip-vian
+  title: Philip Vian — Wikipedia
+  url: https://en.wikipedia.org/wiki/Philip_Vian
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: 仅用于搭骨架与找线索。注意其 infobox 的 death date 模板把出生日写成 1894-06-14（正文与 unithistories 都是 06-15），是模板笔误，不采。
+- id: enwiki-augustus-agar
+  title: Augustus Agar — Wikipedia
+  url: https://en.wikipedia.org/wiki/Augustus_Agar
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: 唯一给出多塞特郡号沉没前后决策链（科伦坡电台被毁、会合点、继续南驶） 的叙述来源，属 E 级，只作线索，正文相应段落已注明其等级。
+- id: enwiki-robert-sherbrooke
+  title: Robert Sherbrooke — Wikipedia
+  url: https://en.wikipedia.org/wiki/Robert_Sherbrooke
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: 巴伦支海 citation 全文、希特勒 1943 年初停用水面舰队的因果说法、 战后职务（Aurora 舰长、Gentleman Usher）。citation 与 unithistories 互校； 停用令一条只有 E 级来源，见 NOTES。
+- id: unithistories-power
+  title: Royal Navy (RN) Officers 1939-1945 — P（Power, Sir Arthur John）
+  url: https://www.unithistories.com/officers/RN_officersP2.html
+  type: database
+  tier: D
+  role:
+  - data
+  operator: unithistories.com（Hans Houterman & Jeroen Koppes）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 'P 姓分三页（RN_officersP.html / P1a / P2），Power 在 **P2**，不在首页。 条目按「家属 / 生卒 / 军衔晋升 / 勋衔 / 教育 / 逐条任命」排列。口径提示： ① Lt.Cdr. 晋升日记作「31.04.1918」，4 月无 31 日，明显笔误（uboat.net 作 15.04.1918）； ② 生卒只给「12.04.1889 - 28.01.1960
+    Gosport district, Hampshire」，**不给出生地**； ③ 1940-04-20 与 1940-05-03 两个交舰口径在本页与 naval-history 之间不一致，已并列。 '
+- id: unithistories-hamilton
+  title: Royal Navy (RN) Officers 1939-1945 — H（Hamilton, Sir Louis Henry Keppel）
+  url: https://www.unithistories.com/officers/RN_officersH.html
+  type: database
+  tier: D
+  role:
+  - data
+  operator: unithistories.com（Hans Houterman & Jeroen Koppes）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '条目在 H 首页（RN_officersH.html），锚点 Hamilton_LHK 附近。**这是本组三人里 信息最完整的一份**：1915 年喀麦隆行动的 DSO 授勋理由整段引用（尼日尔河 160 英里 + 贝努埃河 480 英里 + 陆运 60 英里、加鲁阿 1915-06-10 投降）。关键口径： ① 威尔士亲王号任期写作「05.10.1940 - 14.02.1941
+    HMS Eaglet (additional; for HMS Prince of Wales ... and in command while under construction)」，即**先在建期间指挥、 后转海上**，不是 1941-01-19 一天开始的； ② 「15.02.1941 - 27.02.1941 HMS President (additional; whilst unemployed)」——
+    离舰后有三周空档，说明 02-15 是硬交接日； ③ 未婚（Unmarried），与维基「probate granted to Miss Jean Hamilton」不冲突。 '
+- id: unithistories-denny
+  title: Royal Navy (RN) Officers 1939-1945 — D（Denny, Sir Michael Maynard）
+  url: https://www.unithistories.com/officers/RN_officersD3.html
+  type: database
+  tier: D
+  role:
+  - data
+  operator: unithistories.com（Hans Houterman & Jeroen Koppes）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 'D 姓分六页（RN_officersD ~ D6），Denny 在 **D3**。口径提示： ① 胜利号任期作「08.12.1943 - 15.08.1945 Commanding Officer, HMS Victorious」， 与 armouredcarriers 的「1944-03-04 大修结束才换人」不一致，两说并列； ② 军衔止于 Adm.（22.04.1952，1959-07-28
+    退役），**没有 Admiral of the Fleet**； ③ 勋衔是 CB(1940) / CBE(1944) / DSO(1945) / KCB(1950) / GCB(1954)， **不是 KBE**——多处二手资料写错，本站按本页与 uboat.net 记； ④ 生卒给全了出生地 Kempley, Gloucestershire 与卒地 Down Ampney。 '
+- id: uboatnet-cmdr-power
+  title: Arthur John Power, RN — Allied Warship Commanders, uboat.net
+  url: https://uboat.net/allies/commanders/2036.html
+  type: database
+  tier: D
+  role:
+  - data
+  operator: uboat.net（Guðmundur Helgason）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '**本页与 unit histories 有一处硬冲突**：uboat.net 记「Born 12 Apr 1899」， unit histories 记 12.04.1889，维基亦作 1889-04-12。1899 会使他 1904 年 15 岁入 Britannia、1909 年 10 岁任 sub-lieutenant，不可能成立，故本站采 1889。 「Warship Commands」表给
+    HMS Ark Royal (91)，Capt.，17 Jan 1938 - 20 Apr 1940； 军衔晋升表与 unit histories 完全吻合（15.01.1909 / 15.04.1910 / 15.04.1918 / 31.12.1922 / 30.06.1929 / 25.06.1940 / 04.08.1943 / 06.05.1946 / 22.04.1952）。 '
+- id: uboatnet-cmdr-hamilton
+  title: Louis Henry Keppel Hamilton, DSO, RN — Allied Warship Commanders, uboat.net
+  url: https://uboat.net/allies/commanders/1095.html
+  type: database
+  tier: D
+  role:
+  - data
+  operator: uboat.net（Guðmundur Helgason）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '生卒 31 Dec 1890 - 27 Jun 1957（标 age 66），与 unit histories 一致。 Warship Commands 三条：HMS Delhi 1939-08-24 至 1939-12-16、HMS Aurora 1940-01-22 至 1940-10-01、**HMS Prince of Wales 1940-10-05 至 1941-02-15**。
+    这条 1941-02-15 是本组最关键的一个日期：它推翻了「他是丹麦海峡海战当天舰长」的说法。 另给出退役日 26 Sep 1948。注意本页把 1941-01-19 服役当天的他误标为「Rear Admiral」 （他 1941-01-15 才升 Rear-Admiral，服役日在任内，标法可通但易误读）。 '
+- id: uboatnet-cmdr-denny
+  title: Michael Maynard Denny, RN — Allied Warship Commanders, uboat.net
+  url: https://uboat.net/allies/commanders/717.html
+  type: database
+  tier: D
+  role:
+  - data
+  operator: uboat.net（Guðmundur Helgason）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '生 3 Oct 1896（**不给卒日**，卒日只在 unit histories 有：07.04.1972 Down Ampney）。 Warship Commands 两条：HMS Kenya 1940-07-18 至 1942-04-01、HMS Victorious 1943-12-08 至 1945-08-15。军衔晋升表与 unit histories 吻合至 Admiral
+    （22 Apr 1952），退役 28 Jul 1959。勋衔列 CB / CBE / MID / DSO / KCB / GCB， 同样**无 KBE**。页内逐日事件极多（Kenya 段尤其密），是交叉核对任期起止的好材料。 '
+- id: kbismarck-crew-lindemann
+  title: Ernst Lindemann — Bismarck Crew
+  url: https://www.kbismarck.com/crew/lindemann.html
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: KBismarck (José M. Rico)
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 舰员页，篇幅很短（约 870 字符正文）但字段密：生卒、逝世年龄 47、殉职时军衔 Kpt.z.S.、 逐级晋升表（1915 Oberleutnant zur See / 1925 KptLt / 1932 KKpt / 1936 FKpt / 1938 Kpt.z.S.）、 追授骑士铁十字日期 1941-12-27，以及「舰体倾覆前不久在前部区域最后一次被看到生还」。 注意：本站与全站其它页面的晋升年份并不完全一致（本页
+    1915 年记 Oberleutnant zur See， 德文维基记 1915-09-18 为 Leutnant zur See、1920-01-07 升 Oberleutnant zur See），引用时说明来源。
+- id: kbismarck-seamanship
+  title: Battleship Bismarck and Seamanship（Schulze-Hinrichs, MOV-Nachrichten 1968）
+  url: https://www.kbismarck.com/bismarck-seamanship.html
+  type: article
+  tier: D
+  role:
+  - narrative
+  operator: KBismarck (reprint)
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 退役海军上校 Alfred Schulze-Hinrichs 1968 年发表于海军军官协会通讯的技术复盘， 逐项论证 1941-05-26 艉部中雷后俾斯麦号为何无法靠螺旋桨操舵： 应急舵具只适用于小艇、水下爆破舵杆无成功可能、潜艇拖带质量比不成立。 用于「最终战之前的处境」段落，不作战果数据来源。
+- id: nhhc-cruise-of-bismarck
+  title: Bismarck — The Cruise of the Bismarck（US Navy, Office of Naval Intelligence 战时叙述）
+  url: https://www.history.navy.mil/research/library/online-reading-room/title-list-alphabetically/s/sinking-of-the-bismarck/the-cruise-of-the-bismarck.html
+  type: official_publication
+  tier: B
+  role:
+  - narrative
+  operator: Naval History and Heritage Command
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain_us_gov
+  note: 战时美军情报部门的叙述性小册，非一手档案但属同期官方出版物。 **唯一明确记录「林德曼主张立即退回卑尔根」这一方向性分歧**，并记录吕特晏斯向全体舰员讲话后 「参谋与舰上军官之间产生摩擦」。措辞谨慎（「There appears then to have been a dispute」）， 引用时必须保留这层不确定性。注意其中部分战术细节（如命中弹数）与后来的研究有出入， 只用于分歧本身，不用于战果数字。
+- id: wiki-en-lindemann
+  title: Ernst Lindemann — Wikipedia (en)
+  url: https://en.wikipedia.org/wiki/Ernst_Lindemann
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: 仅用于找线索与搭建年表骨架，不单独支撑任何 fact。其价值在于汇总了德文一手文献的引注： 舰桥上的「我不让人把我的船从我屁股底下打掉」一语引自 Müllenheim-Rechberg； 舵手 Heinz Staat 对 Oels 电话的回忆、传令兵的「dicke Luft」； Paul Hillen 与 Rudolf Römer 关于舰艏白帽军官的证词。
+- id: wiki-de-lindemann
+  title: Ernst Lindemann (Marineoffizier) — Wikipedia (de)
+  url: https://de.wikipedia.org/wiki/Ernst_Lindemann_(Marineoffizier)
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  lang: de
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: 德文版比英文版更细，尤其晋升日期（1913-04-01 Seekadett、1915-09-18 Lt.z.S.、1920-01-07 Oblt.z.S.、 1925-01-01 KptLt、1932-04-01 KKpt、1936-10-01 FKpt、1938-04-01 Kpt.z.S.）与舰职起止。 关于他死亡的两说，de 版直接并列并给出出处（Marineoffizier als
+    Führer im Gefecht 1984； Afflerbach, Mit wehender Fahne untergehen, VfZ 2001），是本篇并列处理的依据。 同页记录了「战斗中擅自下达开火许可、越过吕特晏斯，而吕特晏斯未予追究」这一判断。
+- id: wiki-en-brinkmann
+  title: Helmuth Brinkmann — Wikipedia (en)
+  url: https://en.wikipedia.org/wiki/Helmuth_Brinkmann
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: 用于莱茵演习段落的骨架与授勋清单（金质德意志十字 1942-03-25、骑士铁十字 1944-05-17）。不单独支撑 fact。
+- id: wiki-de-brinkmann
+  title: Helmuth Brinkmann — Wikipedia (de)
+  url: https://de.wikipedia.org/wiki/Helmuth_Brinkmann
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  lang: de
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: 逐段履历最全的一版，生卒精确到日（1895-03-12 吕贝克 / 1983-09-26 迪森）， 并记有战后交卸舰职回布雷斯特述职时「除一名军官外全体参谋告假」这一细节（引自 Schmalenbach 1978）。 舰长交接日记为 1942-08-04，与 kbismarck.com 的「至 1942-08-04」一致，但与同站另一处「7 月」有出入。
+- id: wiki-de-prinz-eugen
+  title: Prinz Eugen (Schiff, 1940) — Wikipedia (de)
+  url: https://de.wikipedia.org/wiki/Prinz_Eugen_(Schiff,_1940)
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  lang: de
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: 用于 1941-07-02 空袭伤亡（60 人死、副舰长 Stooß 阵亡）与「刻耳柏洛斯」行动日期的交叉核对。
+- id: wiki-de-topp
+  title: Karl Topp — Wikipedia (de)
+  url: https://de.wikipedia.org/wiki/Karl_Topp
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  lang: de
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: 生卒与战俘营起止（1945-10-15 至 1946-12-02）、舰船建造委员会职务由此页核对。
+- id: wiki-en-topp
+  title: Karl Topp — Wikipedia (en)
+  url: https://en.wikipedia.org/wiki/Karl_Topp
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: 极短的存根条目。唯一独有信息是「1941-01-15 至 1943-02-24 任提尔皮茨号首任舰长」， 与德文来源的服役日 1941-02-25 不一致，已按两说并列处理。
+- id: wiki-en-luetjens
+  title: Günther Lütjens — Wikipedia (en)
+  url: https://en.wikipedia.org/wiki/G%C3%BCnther_L%C3%BCtjens
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: 用于两位舰长与舰队司令之间的沟通问题。该页记载：吕特晏斯在 5 月 22 日前未向林德曼与布林克曼 说明意图；布林克曼在欧根亲王号战争日志中记下对「每次改向都通报岸上并要回令」的批评； 以及两舰交错时「俾斯麦号电动按钮舵机卡死、直冲欧根亲王号，布林克曼当机立断避免相撞」。 最后这一条未在战争日志原文中直接找到对应表述，正文未采用，仅记录在此。
+- id: deutsches-marinearchiv-prinz-eugen
+  title: Schwerer Kreuzer Prinz Eugen — Deutsches Marinearchiv
+  url: http://www.deutsches-marinearchiv.de/Archiv/1935-1945/Schiffe/schwere-kreuzer/prinzeugen.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: Deutsches Marinearchiv
+  lang: de
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 技术数据与舰长序列（08.40–07.42 Kpt.z.S. Helmuth Brinkmann）。该站 TLS 证书链不完整， 抓取时需跳过证书校验。注意其舰长任期写作「08.40–07.42」，与 kbismarck.com 的「08-01 至 08-04」精度不同。
+- id: wlb-1941-02
+  title: Seekrieg 1941, Februar（Rohwer/Hümmelchen 海战年表，符腾堡州立图书馆版）
+  url: https://www.wlb-stuttgart.de/seekrieg/41-02.htm
+  type: website
+  tier: C
+  role:
+  - data
+  operator: Württembergische Landesbibliothek Stuttgart
+  lang: de
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: Rohwer/Hümmelchen《海战年表》的网页版，逐日体。本条目只用到 1941-02-25 「Indienststellung des Schlachtschiffes Tirpitz (52.600 t) in Wilhelmshaven」一句。 该站首页返回 403，但月份页可直接抓取；TLS 证书链不完整，需跳过校验。
+- id: wlb-1941-05
+  title: Seekrieg 1941, Mai（Rohwer/Hümmelchen 海战年表）
+  url: https://www.wlb-stuttgart.de/seekrieg/41-05.htm
+  type: website
+  tier: C
+  role:
+  - data
+  - narrative
+  operator: Württembergische Landesbibliothek Stuttgart
+  lang: de
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 莱茵演习全段的德方年表，逐日列出航向、命令与交战。**关键价值：它以德文原制式同时标注两位舰长的军衔** ——「Schlachtschiff Bismarck (Kpt.z.S. Lindemann †) und des Schweren Kreuzers Prinz Eugen (Kpt.z.S. Brinkmann)」——可直接支撑本站「军衔保留德制」的写法。 另记 5 月 27
+    日「2106 人及全体舰队参谋阵亡」，与 kbismarck.com 的 116 人获救可互补。
+- id: wlb-1942-01
+  title: Seekrieg 1942, Januar（Rohwer/Hümmelchen 海战年表）
+  url: https://www.wlb-stuttgart.de/seekrieg/42-01.htm
+  type: website
+  tier: C
+  role:
+  - data
+  operator: Württembergische Landesbibliothek Stuttgart
+  lang: de
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 1942-01-14 至 17「极夜」行动（提尔皮茨号由威廉港转往特隆赫姆，四艘驱逐舰护航）的德方记载。
+- id: wlb-1942-07
+  title: Seekrieg 1942, Juli（Rohwer/Hümmelchen 海战年表）
+  url: https://www.wlb-stuttgart.de/seekrieg/42-07.htm
+  type: website
+  tier: C
+  role:
+  - data
+  - narrative
+  operator: Württembergische Landesbibliothek Stuttgart
+  lang: de
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 「骑士跳跃」行动与 PQ-17 的德方记载。**原文以「Tirpitz (Kpt.z.S. Karl Topp)」标注舰长军衔与姓名**， 是托普任内这条时间线上最直接的非 E 级佐证；并明确记「编队最终未与敌交战， 但 Luftwaffe 与 U-Boot 击沉 22 艘商船，载 430 辆坦克、210 架飞机、3 350 辆车辆、逾 99 000 吨物资」。
+- id: unithistories-rn-w3
+  title: Royal Navy (RN) Officers 1939-1945 — W（WHITE, Richard Taylor 条）
+  url: https://www.unithistories.com/officers/RN_officersW3.html
+  type: database
+  tier: D
+  role:
+  - data
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  operator: J.N. Houterman
+  note: 逐任职务表 + 军衔晋升日 + 勋奖授与日 + 生卒地与家族，颗粒度比维基细一个量级。 数据编纂自 Navy List 一类官方名录，属二手编纂，故记 D 不记 A。 用于 White 的任免、晋升、勋奖与生卒核对。
+- id: unithistories-rn-m2
+  title: Royal Navy (RN) Officers 1939-1945 — M（MARTIN, [Sir] Benjamin Charles Stanley 条）
+  url: https://www.unithistories.com/officers/RN_officersM2.html
+  type: database
+  tier: D
+  role:
+  - data
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  operator: J.N. Houterman
+  note: 与 W3 同源同体例。Education 一栏明写「RN Hospital School, Greenwich」， 是本站 Martin「医院学校出身第一人」说法的直接出处之一。
+- id: uboat-cdr-white
+  title: Cdr. Richard Taylor White, DSO, RN — Allied Warship Commanders of WWII
+  url: https://uboat.net/allies/commanders/2643.html
+  type: database
+  tier: D
+  role:
+  - data
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: uboat.net 的舰长条目：任期表 + 军衔 + 勋奖 + 家属提供的生涯小传。 舰长任期与 unithistories 逐条吻合，但 uboat.net 退役年写 1955-07-07（Ventaxia 说法见维基），两源一致。
+- id: uboat-cdr-martin
+  title: Rear-Admiral (Retired) Benjamin Charles Stanley Martin, DSO, RN — Allied Warship Commanders of WWII
+  url: https://uboat.net/allies/commanders/1632.html
+  type: database
+  tier: D
+  role:
+  - data
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 只有任期与勋奖，无传记正文（该站自述「We currently have no career information」）， 故 Martin 的年表另靠 unithistories-rn-m2 与 naval-history-dorsetshire。
+- id: uboat-u41
+  title: U-41 — German U-boat, uboat.net
+  url: https://uboat.net/boats/u41.htm
+  type: database
+  tier: D
+  role:
+  - data
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 记 U-41 于 1940-02-05 在爱尔兰西南被 HMS Antelope 深弹击沉、49 人全损。 注意：U-41 的击沉在各站偶有记在英国驱逐舰 Antelope 与另舰合击名下，此页单独归 Antelope。
+- id: uboat-u31
+  title: U-31 — German U-boat, uboat.net
+  url: https://uboat.net/boats/u31.htm
+  type: database
+  tier: D
+  role:
+  - data
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 记 U-31 于 1940-11-02 在爱尔兰西北被 HMS Antelope 深弹击沉，2 死 44 生还。 同页另记该艇 1940-03-11 已被 RAF 炸沉一次、后打捞修复，是同一艇的两次沉没。
+- id: pamietam-plawski
+  title: kmdr Pławski Eugeniusz — Pamietam.eu（波兰西方武装力量阵亡/安葬者名录）
+  url: http://www.pamietam.eu/details-209.php
+  type: database
+  tier: D
+  role:
+  - data
+  lang: pl
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 名录条目，只给生卒与墓位（格丁尼亚奥克维西海军公墓，alleja 第 12 位）， 并注明该墓已录入波兰「独立战争老兵墓」登记册。用于核对卒地与迁葬地， 不用其任何生平常叙述。
+- id: polska-zbrojna-plawski
+  title: Komandor, który podjął walkę z „Bismarckiem” — Polska Zbrojna
+  url: https://www.polska-zbrojna.pl/home/articleshow/18911
+  type: website
+  tier: D
+  role:
+  - data
+  lang: pl
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  operator: Wojskowy Instytut Wydawniczy
+  note: 波兰军方出版机构旗下刊物的人物稿，直接引用格丁尼亚海军博物馆副馆长 Lech Trawicki 的口述与馆藏照片。三发齐射口令、木材厂与翻译工作、 家族离散细节均出此篇，为一手访谈性质的报道。
+- id: wns-martin-obituary
+  title: Vice-Admiral Sir B. Martin（讣闻转载）— World Naval Ships Forums Archive
+  url: https://www.worldnavalships.com/forums/thread.php?threadid=5240
+  type: website
+  tier: D
+  role:
+  - data
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 1957 年讣闻全文转载，未标原刊。内容是「医院学校出身第一个到将官」 「下甲板出身 87 年来第一个现役将官」「日德兰时任准尉」的同期表述， 用于印证维基的那两句「第一」，不作年表主源。
+- id: plwiki-plawski
+  title: Eugeniusz Pławski — Wikipedia (pl)
+  url: https://pl.wikipedia.org/wiki/Eugeniusz_P%C5%82awski
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  lang: pl
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: 波兰语版比英语版长得多，含晋升表与勋章清单，且注明《Polski Słownik Biograficzny》 卷 26 页 773 与 Kadry Morskie Tom II 为底本。仅用于搭骨架与找线索。
+- id: enwiki-plawski
+  title: Eugeniusz Pławski — Wikipedia (en)
+  url: https://en.wikipedia.org/wiki/Eugeniusz_P%C5%82awski
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: 「1940-10-24 任 Piorun 舰长」与本站采信的 1940-11-05（波方命令 + uboat.net） 差 12 天，见 NOTES.md。
+- id: dewiki-junge
+  title: Wolf Junge — Wikipedia (de)
+  url: https://de.wikipedia.org/wiki/Wolf_Junge
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  lang: de
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: 德文版是三人中唯一有完整青年与战后经历的版本，底本为 WASt 人事档案与 Grützner《Ernst Lindemann》页 223-224。Junge 的生日、赴舰日、调离日、 战后履历只此一处成文，故其年表 E 级比重偏高。
+- id: enwiki-junge
+  title: Wolf Junge — Wikipedia (en)
+  url: https://en.wikipedia.org/wiki/Wolf_Junge
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: 正文引 Koop & Schmolke 2014 页 67 与 Bishop 2012，可循此上溯专著。 信息框写生日 1903-01-03，与正文及德文版的 1 月 5 日矛盾，见 NOTES.md。
+- id: dewiki-tirpitz
+  title: Tirpitz (Schiff, 1941) — Wikipedia (de)
+  url: https://de.wikipedia.org/wiki/Tirpitz_(Schiff,_1941)
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  lang: de
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: Junge 任期内提尔皮茨号的舰况背景（X 艇后的修复期、巴拉万的一弹命中位置、 移泊特罗姆瑟的航速）以此页核对措辞。同页的「Kommandanten」名单与 kbismarck、Deutsches Marinearchiv 三源一致。
+- id: enwiki-white
+  title: Richard Taylor White — Wikipedia (en)
+  url: https://en.wikipedia.org/wiki/Richard_Taylor_White
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: 唯一给出祖鲁人号沉没逐小时经过（0310 放艇至 2000 弃舰）的成文叙述， 与 naval-history-zulu 的逐日条目在时点上互相印证。
+- id: enwiki-martin
+  title: Benjamin Martin (Royal Navy officer) — Wikipedia (en)
+  url: https://en.wikipedia.org/wiki/Benjamin_Martin_(Royal_Navy_officer)
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: 「第一个从医院学校到将官」与「下甲板出身 87 年来第一人」两句的出处。 其 DSO 的 Gazette 期号标作 1942-10-14，与 unithistories 的 1941-10-14 冲突，见 NOTES.md。
 todo:
 - ~~抓 5 份一手档案 + 战争日志~~ **2026-11-17 已完成**：artillery-report / inclining-test / raeder-report / rodney-report / debriefing 全部抓到，另加 38cm 弹道表、flak-relocation、bs-ktb.zip（177 页 PDF 已转文本）
 - 重取 AWM / LAC / JACAR / Flickr Commons / 海自 五份条款（全部 blocked，目前对这几家的授权一无所知）

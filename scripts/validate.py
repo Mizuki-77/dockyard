@@ -647,6 +647,170 @@ def path_stem(s):
     return str(s or "")
 
 
+# ---------------------------------------------------------------- 指挥官
+#
+# 2026-11-23 新增实体层。校验目标与 fact / article 都不同：
+#   · 它不是「字段取值」，所以不校验 unit / qual / confidence
+#   · 但它有**结构**：简介段落、年表事件、与舰/战役的引用
+#   · 最要命的是 relations 里的 ship / battle 必须真实存在，
+#     否则人物页上会出现指向 404 的链接
+COMMANDER_REQUIRED = {"id", "name"}
+VALID_NATIONS = {
+    "united_kingdom", "germany", "poland", "united_states", "japan",
+    "italy", "france", "soviet_union", "other",
+}
+
+
+def check_commander(path, sources, rep, ship_ids=None, battle_ids=None):
+    try:
+        rel = path.relative_to(ROOT).as_posix()
+    except ValueError:
+        rel = path.as_posix()
+    d = load(path)
+    if d is None:
+        rep.err(rel, LAST_LOAD_ERROR.get(str(path), "文件读不出来（YAML 解析失败）"), "")
+        return
+
+    for k in sorted(COMMANDER_REQUIRED):
+        if k not in d:
+            rep.err(rel, f"缺顶层键 {k}", "")
+
+    cid = d.get("id")
+    if cid and path.stem != cid:
+        rep.err(rel, f"文件名 {path.stem!r} 与 id {cid!r} 不一致", "按 id 命名")
+
+    # name: 必须有 zh 与 en
+    nm = d.get("name")
+    if not isinstance(nm, dict):
+        rep.err(rel, "name 必须是映射 {zh, en}", "")
+    else:
+        for k in ("zh", "en"):
+            if not nm.get(k):
+                rep.err(f"{rel}#name", f"缺 {k}", "")
+
+    # nation
+    nat = d.get("nation")
+    if nat is not None and nat not in VALID_NATIONS:
+        rep.err(rel, f"nation {nat!r} 不在合法集合内", f"合法值：{sorted(VALID_NATIONS)}")
+
+    # life：生卒日期格式
+    life = d.get("life") or {}
+    for k in ("born", "died"):
+        v = life.get(k)
+        if v is None:
+            continue
+        if not DATE_RE.match(str(v)):
+            rep.err(f"{rel}#life.{k}", f"{v!r} 不是 YYYY / YYYY-MM / YYYY-MM-DD", "")
+    pb, pd_ = life.get("born"), life.get("died")
+    if pb and pd_ and str(pb) > str(pd_):
+        rep.err(f"{rel}#life", f"born({pb}) 晚于 died({pd_})", "")
+
+    # intro：段落数组，每段 heading + text
+    intro = d.get("intro")
+    if intro is not None:
+        if not isinstance(intro, list) or not intro:
+            rep.err(rel, "intro 必须是非空列表", "")
+        else:
+            for i, pa in enumerate(intro):
+                w = f"{rel}#intro[{i}]"
+                if not isinstance(pa, dict):
+                    rep.err(w, "不是映射", "")
+                    continue
+                if not pa.get("heading"):
+                    rep.warn(w, "缺 heading", "人物简介分节要有小标题")
+                txt = pa.get("text")
+                if not txt:
+                    rep.err(w, "缺 text", "")
+                else:
+                    m = VAGUE_RE.search(str(txt))
+                    if m:
+                        rep.warn(w, f"出现模糊归属词「{m.group()}」",
+                                 "写明是谁说的，或删掉")
+
+    # timeline：事件数组，每条 date + text + src
+    tl = d.get("timeline")
+    if tl is not None:
+        if not isinstance(tl, list) or not tl:
+            rep.err(rel, "timeline 必须是非空列表", "")
+        else:
+            prev = None
+            for i, ev in enumerate(tl):
+                w = f"{rel}#timeline[{i}]"
+                if not isinstance(ev, dict):
+                    rep.err(w, "不是映射", "")
+                    continue
+                dt = ev.get("date")
+                if dt is None:
+                    rep.err(w, "缺 date", "")
+                elif not DATE_RE.match(str(dt)):
+                    rep.err(w, f"date {dt!r} 不是 YYYY / YYYY-MM / YYYY-MM-DD", "")
+                else:
+                    if prev is not None and str(dt) < str(prev):
+                        rep.warn(w, f"日期 {dt} 早于上一条 {prev}", "年表应按时间升序")
+                    prev = dt
+                if not ev.get("text"):
+                    rep.err(w, "缺 text", "")
+                sr = ev.get("src")
+                if not sr:
+                    rep.err(w, "缺 src", "年表每条都要能追到来源")
+                elif isinstance(sr, str):
+                    rep.err(w, "src 必须是列表", "")
+                else:
+                    for s in sr:
+                        if s not in sources:
+                            rep.err(w, f"来源 {s!r} 未登记", "")
+
+                m = VAGUE_RE.search(str(ev.get("text") or ""))
+                if m:
+                    rep.warn(w, f"出现模糊归属词「{m.group()}」", "")
+
+    # relations：引用的舰与战役必须存在
+    rel_ = d.get("relations") or {}
+    for i, t in enumerate(rel_.get("ships") or []):
+        w = f"{rel}#relations.ships[{i}]"
+        if not isinstance(t, dict):
+            rep.err(w, "不是映射", "")
+            continue
+        sid = t.get("ship")
+        if not sid:
+            rep.err(w, "缺 ship", "")
+        elif ship_ids is not None and sid not in ship_ids:
+            rep.err(w, f"ship {sid!r} 没有对应的 data/ships/{sid}.yaml",
+                    "先在 ships/ 建该舰，或删掉这条关联")
+        if not t.get("role"):
+            rep.warn(w, "缺 role", "写清他在这艘舰上的职务")
+        for k in ("from", "to"):
+            v = t.get(k)
+            if v is not None and not DATE_RE.match(str(v)):
+                rep.err(w, f"{k} {v!r} 不是 YYYY / YYYY-MM / YYYY-MM-DD", "")
+        if t.get("from") and t.get("to") and str(t["from"]) > str(t["to"]):
+            rep.err(w, "from 晚于 to", "")
+
+    for i, b in enumerate(rel_.get("battles") or []):
+        w = f"{rel}#relations.battles[{i}]"
+        if not isinstance(b, dict):
+            rep.err(w, "不是映射", "")
+            continue
+        bid = b.get("battle")
+        if not bid:
+            rep.err(w, "缺 battle", "")
+        elif battle_ids is not None and bid not in battle_ids:
+            rep.err(w, f"battle {bid!r} 没有对应的 data/battles/{bid}.yaml", "")
+        if not b.get("role"):
+            rep.warn(w, "缺 role", "写清他在这场战役里的身份")
+
+    # 顶层 src 若写了，也必须已登记
+    for s in d.get("src") or []:
+        if s not in sources:
+            rep.err(f"{rel}#src", f"来源 {s!r} 未登记", "")
+
+    n_ten = len(rel_.get("ships") or [])
+    n_bt = len(rel_.get("battles") or [])
+    n_tl = len(tl or [])
+    rep.info(f"{rel}: 简介 {len(intro or [])} 段，年表 {n_tl} 条，"
+             f"关联 {n_ten} 舰 / {n_bt} 战役")
+
+
 ARTICLE_REQUIRED = {"ship", "intro", "history"}
 # 武器正文与舰艇正文规则完全一样，只有顶层键从 ship 换成 weapon。
 # 分开定义一个集合而不是把两个键都塞进 ARTICLE_REQUIRED，
@@ -1128,6 +1292,17 @@ def main():
     all_battles = [load(p) for p in sorted(battle_dir.glob("*.yaml"))] if battle_dir.exists() else []
     all_ops = [load(p) for p in sorted(op_dir.glob("*.yaml"))] if op_dir.exists() else []
     check_operation_links([b for b in all_battles if b], [o for o in all_ops if o], rep)
+
+    # 指挥官（2026-11-23 新增实体层）
+    # --ship 模式下不查：指挥官与舰不是一对一，查起来会带上全库。
+    if not args.ship:
+        cmdr_dir = DATA / "commanders"
+        if cmdr_dir.exists():
+            targets_c = sorted(cmdr_dir.glob("*.yaml"))
+            for p in targets_c:
+                check_commander(p, sources, rep, ship_ids, battle_ids)
+            if targets_c:
+                rep.info(f"指挥官档案：{len(targets_c)} 人")
 
     # 对比器覆盖度：compare: true 但全库一条 fact 都没有 = 注册表和现实脱节。
     # 2026-11-18 P3 开工时清过一轮 5 个空字段（mine.capacity / speed.cruise /

@@ -1,0 +1,433 @@
+---
+// ============================================================================
+// 战舰指挥官总览 /commanders
+// ----------------------------------------------------------------------------
+// 2026-11-23 重做。上一版只有一张 37 行的表，这一版分三层：
+//
+//   ① 有完整档案的 13 人 —— 卡片，可点进详情页
+//   ② 仅有名字的 24 条任期 —— 紧凑表，诚实标注「无传记资料」
+//   ③ 一个可视化：谁指挥过哪艘舰、覆盖了本站多少舰
+//
+// 分层的理由：数据本来就分两档。把 37 条平铺成一张表，
+// 读者点进去 24 次都是空页；分层之后，能读的东西一眼可见，
+// 读不到的东西也明说是为什么。
+// ============================================================================
+import Base from '../../layouts/Base.astro';
+import {
+  getCommanders,
+  getShips,
+  getRawCommanderFacts,
+  getImagesFor,
+  resolveCommanderShips,
+} from '../../lib/data';
+
+const commanders = getCommanders();
+const allShips = getShips();
+
+// 24 条「没有档案」的任期：从原始 fact 里剔掉已被档案覆盖的
+const covered = new Set<string>();
+for (const c of commanders) {
+  for (const t of c.relations?.ships ?? []) covered.add(t.ship);
+}
+
+const rawFacts = getRawCommanderFacts();
+
+// 用舰名做轻量解析：原始 fact 的 value 里带军衔与人名
+function parseRaw(v: string): { rank: string; name: string; extra: string } {
+  let s = String(v || '').trim();
+  let extra = '';
+  if (s.includes('→')) {
+    const [a, b] = s.split('→');
+    s = a.trim();
+    extra = `→ ${b.trim()}`;
+  }
+  const m = s.match(/[（(]([^）)]*)[）)]/);
+  if (m && m.index !== undefined) {
+    extra = extra || m[1].trim();
+    s = (s.slice(0, m.index) + ' ' + s.slice(m.index + m[0].length)).trim();
+  }
+  const RANKS = [
+    'Kapitän zur See', 'Kpt.z.S.', 'kmdr por.', 'kmdr',
+    'Captain', 'Capt.', 'Commander', 'Cdr.', 'Lieutenant', 'Lt.',
+  ];
+  let rank = '';
+  for (const r of RANKS) {
+    if (s.startsWith(r + ' ') || s.startsWith(r + '.')) {
+      rank = r.replace(/\.$/, '');
+      s = s.slice(r.length).trim().replace(/^\.\s*/, '');
+      break;
+    }
+  }
+  let name = s.replace(/(,\s*(?:[A-Z]{2,4}\*?|[A-Z][a-z]{1,3}\*?)\s*)+$/, '').trim();
+  name = name.replace(/[,\s]+$/, '');
+  return { rank, name, extra };
+}
+
+const shipZh = new Map(allShips.map((s) => [s.id, s.name.zh]));
+
+const bareRows = rawFacts
+  .map((r) => ({ ...r, parsed: parseRaw(r.raw) }))
+  .filter((r) => {
+    // 只保留「这个舰 + 这个人」都没被档案覆盖的
+    const nm = r.parsed.name;
+    return !commanders.some(
+      (c) =>
+        c.name.en === nm ||
+        (c.name.full ?? '').includes(nm) ||
+        nm.split(' ').every((w) => (c.name.full ?? c.name.en).includes(w)),
+    );
+  })
+  .sort((a, b) => String(a.from ?? '').localeCompare(String(b.from ?? '')));
+
+const coveredShips = allShips.filter((s) => covered.has(s.id)).length;
+const withPhoto = commanders.filter((c) => {
+  const im = getImagesFor(`commander:${c.id}`);
+  return im.some((i) => i.file);
+}).length;
+
+const byNation: Record<string, { zh: string; list: typeof commanders }> = {};
+const NAT: Record<string, string> = {
+  united_kingdom: '英国',
+  germany: '德国',
+  poland: '波兰',
+};
+for (const c of commanders) {
+  const k = c.nation ?? 'other';
+  if (!byNation[k]) byNation[k] = { zh: NAT[k] ?? '其他', list: [] };
+  byNation[k].list.push(c);
+}
+---
+
+<Base title="战舰指挥官" variant="full">
+  <div class="pagehead">
+    <div class="pagehead__kicker">Commanders</div>
+    <h1 class="pagehead__title">战舰指挥官</h1>
+    <p class="pagehead__sub">
+      某艘舰在某段时间由谁指挥，以及那个人本身。本站把「人」也做成了独立实体 ——
+      人物页连着舰、连着战役，舰页也连回人物。
+    </p>
+    <div class="pagehead__meta">
+      <span class="tag tag--ghost">{commanders.length} 位有档案例</span>
+      <span class="tag tag--ghost">{withPhoto} 位有肖像照</span>
+      <span class="tag tag--ghost">{bareRows.length} 条仅有姓名</span>
+      <span class="tag tag--ghost">覆盖 {coveredShips} / {allShips.length} 舰</span>
+    </div>
+  </div>
+
+  <!-- 数据诚实性声明 -->
+  <section class="cmdr-notice">
+    <div class="cmdr-notice__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="M12 7.5v5.5"></path>
+        <circle cx="12" cy="16.6" r="0.9" fill="currentColor" stroke="none"></circle>
+      </svg>
+    </div>
+    <div>
+      <strong>这一页分两层，因为数据本来就分两层。</strong>
+      本站共采集到 {commanders.length + 0} 位有可靠资料的指挥官档案（他们有人物页），
+      另有 {bareRows.length} 条任期只知道「谁在某段时间指挥某舰」，查不到生平，
+      因此只列姓名、不建人物页 —— 给一个只有名字的人编 500 字简历，
+      会毁掉整站「每条数据都能追溯到来源」的信誉。
+    </div>
+  </section>
+
+  <!-- ============================================ 有档案的人 -->
+  {
+    Object.entries(byNation).map(([, grp]) => (
+      <section class="section">
+        <div class="section__head">
+          <h2 class="section__title">{grp.zh}</h2>
+          <span class="section__en">{grp.list.length} commanders</span>
+        </div>
+        <div class="cmdr-grid">
+          {grp.list.map((c) => {
+            const imgs = getImagesFor(`commander:${c.id}`);
+            const portrait = imgs.find((i) => i.primary) ?? imgs[0];
+            const ships = resolveCommanderShips(c);
+            const ini = c.name.en
+              .split(/\s+/)
+              .filter(Boolean)
+              .slice(0, 2)
+              .map((w) => w[0]?.toUpperCase() ?? '')
+              .join('');
+            return (
+              <a class="ccard" href={`/commanders/${c.id}`}>
+                <div class="ccard__pic">
+                  {portrait && portrait.file ? (
+                    <img src={portrait.file} alt={c.name.zh} loading="lazy" />
+                  ) : (
+                    <span class="ccard__ini">{ini}</span>
+                  )}
+                  {/* 合影：缩略图上压一个小角标。人物页有详细说明，
+                      但列表页也得让人一眼知道「这不是单人照」。 */}
+                  {portrait?.group_shot && <span class="ccard__grouptag">合影</span>}
+                </div>
+                <div class="ccard__body">
+                  <span class="ccard__name">{c.name.zh}</span>
+                  {/* 卡片显示「当舰长时的军衔」，不是最终军衔 ——
+                      这是「战舰指挥官」栏目，读者关心他指挥那艘舰时的身份。
+                      最终军衔放在后面，信息不丢但别挤断行。 */}
+                  <span class="ccard__rank" title={`当职 ${c.rank_at_post ?? c.rank_final}${c.rank_final ? ` / 最终 ${c.rank_final}` : ''}`}>
+                    {c.rank_at_post ?? c.rank_final}
+                    {c.rank_at_post && c.rank_final && c.rank_at_post !== c.rank_final && (
+                      <span class="ccard__rank2"> ↑{c.rank_final}</span>
+                    )}
+                  </span>
+                  {c.summary_zh && <span class="ccard__sum">{c.summary_zh}</span>}
+                  <span class="ccard__ships">
+                    {ships.slice(0, 2).map((s) => s.ship.name.zh).join(' · ')}
+                    {ships.length > 2 ? ` 等 ${ships.length} 舰` : ''}
+                  </span>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    ))
+  }
+
+  <!-- ============================================ 仅有姓名 -->
+  <section class="section">
+    <div class="section__head">
+      <h2 class="section__title">仅有姓名的任期</h2>
+      <span class="section__en">Names only</span>
+    </div>
+    <p class="cmdr-sub">
+      以下 {bareRows.length} 条任期，本站只掌握「姓名 + 军衔 + 哪艘舰 + 哪段时间」，
+      查不到可写的生平。不建人物页，但留在这里 —— 记录本身就是信息。
+    </p>
+
+    <div class="cmdr-table-wrap">
+      <table class="cmdr-table">
+        <thead>
+          <tr>
+            <th scope="col">任期</th>
+            <th scope="col">军衔</th>
+            <th scope="col">姓名</th>
+            <th scope="col">舰</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            bareRows.map((r) => (
+              <tr>
+                <td class="cmdr-date">
+                  <span>{r.from || '—'}</span>
+                  <span class="cmdr-date__arrow">→</span>
+                  <span class="cmdr-date__to">{r.to || '—'}</span>
+                </td>
+                <td class="cmdr-rank">{r.parsed.rank || '—'}</td>
+                <td class="cmdr-name">{r.parsed.name || r.raw}</td>
+                <td class="cmdr-ship">
+                  <a href={`/ships/${r.shipId}`}>{shipZh.get(r.shipId) ?? r.shipId}</a>
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <style>
+    .cmdr-notice {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, #fdf8ee, #fdf4e7);
+      border: 1px solid var(--warn-line);
+      color: #6d4a17;
+      font-size: 13.5px;
+      line-height: 1.7;
+    }
+    .cmdr-notice__icon {
+      flex-shrink: 0;
+      color: var(--warn);
+      margin-top: 1px;
+    }
+    .cmdr-notice strong {
+      color: #5a3a0d;
+    }
+
+    /* ------------------------------------------------ 人物卡 */
+    .cmdr-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+      gap: 14px;
+    }
+    .ccard {
+      display: flex;
+      gap: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 12px;
+      text-decoration: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+    }
+    .ccard:hover {
+      border-color: var(--blue-300);
+      box-shadow: var(--shadow-2);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+    .ccard__pic {
+      width: 84px;
+      height: 104px;
+      flex-shrink: 0;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      position: relative;
+      background:
+        repeating-linear-gradient(
+          45deg,
+          #f4f8fc,
+          #f4f8fc 7px,
+          #eef4fa 7px,
+          #eef4fa 14px
+        );
+      display: grid;
+      place-items: center;
+    }
+    .ccard__grouptag {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      padding: 1px 5px;
+      border-radius: 0 var(--radius-sm) 0 0;
+      background: rgba(180, 110, 20, 0.88);
+      color: #fff;
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .ccard__pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 18%;
+      display: block;
+    }
+    .ccard__ini {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--blue-300);
+    }
+    .ccard__body {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      min-width: 0;
+      padding-top: 2px;
+    }
+    .ccard__name {
+      font-size: 15px;
+      font-weight: 650;
+      color: var(--ink-900);
+      line-height: 1.3;
+    }
+    .ccard__rank {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: var(--blue-700);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .ccard__rank2 {
+      color: var(--ink-300);
+      font-size: 10px;
+    }
+    .ccard__sum {
+      font-size: 12.5px;
+      color: var(--ink-500);
+      line-height: 1.55;
+      margin-top: 2px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .ccard__ships {
+      font-size: 11.5px;
+      color: var(--ink-400);
+      margin-top: auto;
+      padding-top: 4px;
+    }
+
+    /* ------------------------------------------------ 裸表 */
+    .cmdr-sub {
+      margin: 0 0 14px;
+      font-size: 13px;
+      color: var(--ink-500);
+      line-height: 1.7;
+    }
+    .cmdr-table-wrap {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-1);
+    }
+    .cmdr-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+    .cmdr-table thead th {
+      text-align: left;
+      padding: 10px 14px;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-400);
+      font-weight: 600;
+      background: var(--blue-50);
+      border-bottom: 1px solid var(--line);
+      white-space: nowrap;
+    }
+    .cmdr-table tbody td {
+      padding: 9px 14px;
+      border-bottom: 1px solid var(--line-soft);
+      vertical-align: top;
+    }
+    .cmdr-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .cmdr-table tbody tr:hover {
+      background: #f7fbfe;
+    }
+    .cmdr-date {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--ink-500);
+      white-space: nowrap;
+    }
+    .cmdr-date__arrow {
+      color: var(--ink-300);
+      margin: 0 5px;
+    }
+    .cmdr-date__to {
+      color: var(--ink-400);
+    }
+    .cmdr-rank {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--blue-700);
+      white-space: nowrap;
+    }
+    .cmdr-name {
+      color: var(--ink-900);
+      font-weight: 540;
+      min-width: 170px;
+    }
+    .cmdr-ship {
+      white-space: nowrap;
+    }
+  </style>
+</Base>

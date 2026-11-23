@@ -224,10 +224,17 @@ facts:
     note: 1941-05-26/27 夜袭俾斯麦时本舰舰长。
 
   - field: service.commander
-    value: Cdr. Richard Taylor White, DSO*, RN（1942-04-28 至 1942-09-14 沉没）
+    value: Cdr. Richard Taylor White, DSO*, RN（1942-04-28 任职，任期至本舰 1942-09-14 沉没）
     src: [uboat-zulu, naval-history-zulu]
     valid: { from: 1942-04-28, to: 1942-09-14 }
     confidence: B
+    note: >-
+      **他没有随舰阵亡。** 2026-11-23 核实：1942-09-14 20:00 本舰在托布鲁克
+      外海遭空袭后，White 留下两名军官与九名水兵在船上试图抢救，
+      这 12 人最后由 HMS Hursley 与 HMS Hurworth 救起。
+      他此后继续服役至 1955 年退役。
+      任期终点 1942-09-14 是**本舰沉没日**，不是他的死亡日 ——
+      本条只记「他指挥这艘舰到舰沉为止」。
 
   - field: service.casualties
     value: 12

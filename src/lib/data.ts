@@ -11,6 +11,9 @@ import type {
   BattleFile,
   BiText,
   ClassFile,
+  CommanderBattleLink,
+  CommanderFile,
+  CommanderTenure,
   Fact,
   FieldDef,
   ImageRec,
@@ -43,6 +46,13 @@ export type { BattleFile, BiText, ClassFile, Fact, FieldDef, ImageRec, Lang, Nar
 export type { ArticleFile, ArticleSection, ArticleEvent, ArticlePara } from './types';
 export type { WeaponArticleFile } from './types';
 export type { OperationFile, OperationPhase } from './types';
+export type {
+  CommanderFile,
+  CommanderTenure,
+  CommanderBattleLink,
+  CommanderIntroPara,
+  CommanderTimelineEvent,
+} from './types';
 
 const ROOT = process.cwd();
 const DATA = path.join(ROOT, 'data');
@@ -229,6 +239,149 @@ export function resolvePhases(op: OperationFile): ResolvedPhase[] {
     phase: p,
     battle: p.battle ? getBattle(p.battle) : undefined,
   }));
+}
+
+// ---------------------------------------------------------------- 指挥官
+
+/**
+ * 全部指挥官档案。
+ *
+ * 排序：先按国家（英 / 德 / 波），再按姓氏字母 —— 这样同国的人聚在一起，
+ * 页面按国分组时不用再排一次。
+ */
+export function getCommanders(): CommanderFile[] {
+  const list = readDir<CommanderFile>('commanders');
+  const nationRank = (n?: string) =>
+    ({ united_kingdom: 0, germany: 1, poland: 2 } as Record<string, number>)[n ?? ''] ?? 9;
+  return list.sort((a, b) => {
+    const d = nationRank(a.nation) - nationRank(b.nation);
+    if (d !== 0) return d;
+    return String(a.name.en).localeCompare(String(b.name.en));
+  });
+}
+
+export function getCommander(id: string): CommanderFile | undefined {
+  return getCommanders().find((c) => c.id === id);
+}
+
+/**
+ * 某艘舰的指挥官列表（反查）。
+ *
+ * 数据只在指挥官文件里写 relation.ships，舰文件不知道谁指挥过它。
+ * 这个函数就是反向索引 —— 舰页要显示「历任指挥官」时调它。
+ * 返回按任期起点排序，早的在前。
+ */
+export interface ShipCommanderEntry {
+  commander: CommanderFile;
+  tenure: CommanderTenure;
+}
+
+export function getCommandersOfShip(shipId: string): ShipCommanderEntry[] {
+  const out: ShipCommanderEntry[] = [];
+  for (const c of getCommanders()) {
+    for (const t of c.relations?.ships ?? []) {
+      if (t.ship === shipId) out.push({ commander: c, tenure: t });
+    }
+  }
+  return out.sort((a, b) => String(a.tenure.from ?? '').localeCompare(String(b.tenure.from ?? '')));
+}
+
+/**
+ * 某场战役的指挥官（反查）。
+ *
+ * 注意：这里只返回「指挥官文件里显式写了这场战役」的人。
+ * 一艘舰参战不等于它的舰长一定在指挥官文件里被关联到这场战役 ——
+ * 若某人在战役当天的确指挥某艘参战舰，那是数据的事，不是这里补齐。
+ */
+export interface BattleCommanderEntry {
+  commander: CommanderFile;
+  link: CommanderBattleLink;
+}
+
+export function getCommandersOfBattle(battleId: string): BattleCommanderEntry[] {
+  const out: BattleCommanderEntry[] = [];
+  for (const c of getCommanders()) {
+    for (const b of c.relations?.battles ?? []) {
+      if (b.battle === battleId) out.push({ commander: c, link: b });
+    }
+  }
+  return out;
+}
+
+/**
+ * 指挥官在本站指挥过的舰，解析成完整 ShipFile（用于人物页上的舰卡）。
+ * 引用了不存在的舰 id 时返回 undefined 并跳过 —— 构建期不该因此崩，
+ * 但 validate 会把它当错误报出来。
+ */
+export interface CommanderShipRef {
+  ship: ShipFile;
+  tenure: CommanderTenure;
+}
+
+export function resolveCommanderShips(c: CommanderFile): CommanderShipRef[] {
+  const out: CommanderShipRef[] = [];
+  for (const t of c.relations?.ships ?? []) {
+    const sh = getShip(t.ship);
+    if (sh) out.push({ ship: sh, tenure: t });
+  }
+  return out;
+}
+
+export interface CommanderBattleRef {
+  battle: BattleFile;
+  link: CommanderBattleLink;
+}
+
+export function resolveCommanderBattles(c: CommanderFile): CommanderBattleRef[] {
+  const out: CommanderBattleRef[] = [];
+  for (const b of c.relations?.battles ?? []) {
+    const bt = getBattle(b.battle);
+    if (bt) out.push({ battle: bt, link: b });
+  }
+  return out;
+}
+
+/**
+ * 某艘舰上**没有**被收录成指挥官档案的 commander fact。
+ *
+ * 为什么需要：data/ships 的 service.commander 记录了 37 条，
+ * 但只有 13 人被建成了完整档案（有维基条目、能写出实质内容）。
+ * 剩下 24 条也要在舰页显示出来，否则读者会以为这艘舰只有那几个人当过舰长。
+ * 这个函数把「有档案的」剔掉，剩下的留给页面用一行简表呈现。
+ */
+export interface RawCommanderNote {
+  shipId: string;
+  /** 原始 fact 的 value（含军衔与括号注记） */
+  raw: string;
+  from?: string;
+  to?: string;
+  src: string[];
+  note?: string;
+}
+
+export function getRawCommanderFacts(): RawCommanderNote[] {
+  const covered = new Set<string>();
+  for (const c of getCommanders()) {
+    for (const t of c.relations?.ships ?? []) {
+      covered.add(`${t.ship}|${c.id}`);
+    }
+  }
+  const out: RawCommanderNote[] = [];
+  for (const sh of getShips()) {
+    const cls = sh.class ? getClass(sh.class) : undefined;
+    for (const f of allFacts(sh, cls)) {
+      if (f.field !== 'service.commander') continue;
+      out.push({
+        shipId: sh.id,
+        raw: String(f.value ?? ''),
+        from: f.from,
+        to: f.to,
+        src: f.src ?? [],
+        note: f.note,
+      });
+    }
+  }
+  return out;
 }
 
 // ------------------------------------------------------- 单舰视图装配

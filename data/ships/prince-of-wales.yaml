@@ -147,10 +147,19 @@ facts:
 
   # ============================================================ 服役
   - field: service.commander
-    value: Captain Louis Henry Keppel Hamilton（首任，1941-01-19 任职）
-    src: [naval-history-pow]
-    valid: { from: 1941-01-19 }
+    value: Captain Louis Henry Keppel Hamilton（首任，1941-01-19 至 1941-02-15）
+    src: [naval-history-pow, uboatnet-cmdr-hamilton]
+    valid: { from: 1941-01-19, to: 1941-02-15 }
     confidence: C
+    note: >-
+      **他不是丹麦海峡海战（1941-05-24）当天的舰长。**
+      2026-11-23 核实，三源一致：unithistories 记 1940-10-05 至 1941-02-15；
+      uboat.net 舰长表记 1941-02-15 交接；naval-history-pow 明写
+      「February 15th … new CO Captain John Catterall Leach MVO RN took command」。
+      05-24 在舰桥上的是 **Leach** —— 俾斯麦首轮齐射的炮弹穿过罗经平台，
+      除 Leach 与值更军士长外全数阵亡。
+      本条原写作「首任，1941-01-19 任职」且 to 留空，读起来像他指挥到
+      1941-12 沉没；实际只带了 27 天。已补 to 与说明。
 
   # ============================================================ 丹麦海峡（1941-05-24）
   - field: armament.mount.summary

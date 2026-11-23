@@ -1,0 +1,159 @@
+id: augustus-agar
+name:
+  zh: 奥古斯都·阿加
+  en: Augustus Agar
+  full: Captain Augustus Willington Shelton Agar, VC, DSO, RN
+
+life:
+  born: 1890-01-04
+  born_place: Kandy, Ceylon
+  died: 1968-12-30
+  died_place: Alton, Hampshire, England
+
+rank_final: Captain
+rank_at_post: 'Captain'
+nation: united_kingdom
+
+summary_zh: 驾五吨鱼雷艇闯喀琅施塔得击沉巡洋舰的 VC 得主，晚年随舰沉没
+
+intro:
+  - heading: 第十三个孩子
+    text: >-
+      1890 年生于锡兰康提，父亲是从凯里郡移民过去的爱尔兰茶商，他排行第十三。八岁被送回英国读书，十二岁父亲死于霍乱，
+      此后由长兄决定他的去向：进海军。1905 年入 Britannia 号受训，1912 年升上尉。
+      他早年的强项不是炮术而是小艇操纵——1913 年被派去学飞行，摔了三架飞机才拿到执照。这段经历与后来的鱼雷艇生涯关系不大，
+      但说明他对「小而快的机器」有手感。
+
+  - heading: 喀琅施塔得：一艘五吨艇对一支舰队
+    text: >-
+      1918 年底，他以鱼雷与布雷军官身份加入海岸摩托艇（CMB）部队，随后被秘密情报局招募去波罗的海接送间谍。
+      1919 年 6 月 17 日他自行动手：两艘艇出发，一艘中途返航，他驾 CMB4 突入喀琅施塔得湾，穿过驱逐舰警戒线，
+      在接近内港一艘大舰时艇体被炮火打坏，被迫靠上防波堤修理，在敌军视野里停了二十分钟。
+      修好后他继续攻击，击沉 6,645 吨的巡洋舰 Oleg，然后在猛烈射击下退出海湾。8 月 22 日颁授 VC。
+
+  - heading: 从 Emerald 到 Dorsetshire
+    text: >-
+      1937 年 1 月起他任轻巡洋舰 Emerald 舰长，开战当天就在舰上。1939 年 10 月他随战列舰 Revenge 一行把一批金条运到加拿大哈利法克斯，
+      卸货后转入北大西洋护航，1940 年 6 月交卸。此后是驱逐舰 Malcolm 的舰长，兼第 4 驱逐舰分队指挥官，只做了两个月；
+      11 月起任海岸部队少将的主任参谋，管英吉利海峡与东岸近海船队的反水雷、反 E 艇作战，直到 1941 年 8 月接掌重巡洋舰 Dorsetshire。
+
+  - heading: 1942 年 4 月 5 日：八分钟
+    text: >-
+      Dorsetshire 当时正在锡兰整修，4 日奉东方舰队总司令之召回队，与 Cornwall 一同出海。
+      5 日上午两舰在锡兰以南被日本巡洋舰利根号的水侦发现，随之遭俯冲轰炸；Dorsetshire 中 10 弹，
+      在第一枚命中后八分钟沉没，234 人阵亡。他本人在沉没中受伤，与幸存者在水里等到约三十小时后
+      被企业号与驱逐舰帕拉丁号、豹号救起。伤势使他不再适合海上勤务，1943 年 1 月列入退役名册。
+      1943 年 11 月授二级准将衔，任格林尼治皇家海军学院院长至 1946 年。
+
+timeline:
+  - date: 1890-01-04
+    text: 生于锡兰康提，父 John Shelton Agar（1842–1902），母 Emily Cruwell（卒于 1891）。
+    src: [unithistories-agar]
+
+  - date: 1905-05-15
+    text: 入海军，先在 Britannia 号受训。
+    src: [unithistories-agar]
+
+  - date: 1912-06-30
+    text: 晋升上尉。
+    src: [unithistories-agar]
+
+  - date: 1918-05-03
+    text: 调奥西岛海岸摩托艇基地，任鱼雷与布雷军官。
+    src: [unithistories-agar]
+
+  - date: 1919-06-17
+    text: >-
+      驾 CMB4 突入喀琅施塔得湾，击沉 6,645 吨巡洋舰 Oleg。艇体被炮火击伤后曾靠防波堤修理二十分钟，全程在敌军视野内。
+    src: [unithistories-agar]
+
+  - date: 1919-08-18
+    text: >-
+      参与对喀琅施塔得港的第二次攻击，为另外两艘艇引航穿过炮台与雷区，随后在港口外巡逻掩护其撤退；
+      这次行动另行授 DSO（宪报 1919-11-11）。
+    src: [unithistories-agar]
+
+  - date: 1919-08-22
+    text: 因 6 月 17 日击沉 Oleg 获颁 VC（宪报 1919-08-22）。
+    src: [unithistories-agar]
+
+  - date: 1926-04-22
+    text: 任驱逐舰 Witch 舰长，地中海舰队；此后转入参谋与岸职，1933-12-31 晋上校。
+    src: [unithistories-agar]
+
+  - date: 1937-01-15
+    text: 任轻巡洋舰 Emerald 舰长；1937-09-18 至 1939-07-30 兼东印度舰队总司令的旗舰舰长与参谋长。
+    src: [unithistories-agar]
+
+  - date: 1939-10-07
+    text: >-
+      Emerald 随战列舰 Revenge、巡洋舰 Enterprise 与 Caradoc 把金条运往加拿大，10-17 在哈利法克斯卸下；
+      随后转入北大西洋护航。
+    src: [naval-history-emerald]
+
+  - date: 1940-06-25
+    text: 任驱逐舰 Malcolm 舰长，暂兼第 4 驱逐舰分队指挥官。
+    src: [unithistories-agar]
+
+  - date: 1940-11-25
+    text: 任海岸部队少将的主任参谋，主管英吉利海峡与东岸近海船队的反水雷与反 E 艇作战。
+    src: [unithistories-agar]
+
+  - date: 1941-08-18
+    text: >-
+      任重巡洋舰 Dorsetshire 舰长。uboat.net 记接任日 1941-08-18；
+      unithistories 与 naval-history 记 1941-08-08，两者差 10 天，并列不裁。
+    src: [uboat-dorsetshire, unithistories-agar]
+
+  - date: 1941-12-01
+    text: >-
+      Dorsetshire 在南大西洋发现德国潜艇补给船 Python，鸣炮示警后德舰自沉；
+      因附近可能有潜艇，未停留打捞幸存者。
+    src: [naval-history-dorsetshire]
+
+  - date: 1942-04-05
+    text: >-
+      Dorsetshire 与 Cornwall 在锡兰以南被日本巡洋舰利根号的水侦发现，遭俯冲轰炸；Dorsetshire 中 10 弹，
+      8 分钟内沉没，234 人阵亡。约三十小时后 Enterprise 与驱逐舰 Paladin、Panther 救起两舰共 1,122 名幸存者。
+    src: [naval-history-dorsetshire, uboat-dorsetshire]
+
+  - date: 1942-09-08
+    text: 因上述战斗中的表现获通令嘉奖（Mentioned in Despatches），宪报 1942-09-08。
+    src: [unithistories-agar]
+
+  - date: 1943-01-12
+    text: 因伤列入退役名册（医疗原因不宜继续服役）。
+    src: [unithistories-agar]
+
+  - date: 1943-11-15
+    text: >-
+      授二级准将衔（退休名册），任格林尼治皇家海军学院院长至 1946-09-30；任满后回为上校实衔。
+    src: [unithistories-agar]
+
+  - date: 1968-12-30
+    text: 卒于汉普郡奥尔顿，葬于奥尔顿公墓。
+    src: [unithistories-agar]
+
+relations:
+  ships:
+    - ship: dorsetshire
+      role: 舰长
+      from: 1941-08-18
+      to: 1942-04-05
+      note: >-
+        沉没时的舰长。本站沿用 uboat.net 的接任日 1941-08-18；
+        unithistories 与 naval-history 记 1941-08-08，两说并列不裁决。
+  battles: []
+
+src:
+  - unithistories-agar
+  - enwiki-augustus-agar
+  - uboat-dorsetshire
+  - naval-history-dorsetshire
+  - naval-history-emerald
+
+note: >-
+  最终军衔按实衔记为 Captain（上校）。他 1943-11-15 授二级准将（Commodore 2nd class）属退休名册上的晋衔，
+  任满即回为上校实衔，故不以准将为最终军衔。
+  Dorsetshire 沉没前那一段决策（会合点选择、是否继续南驶）目前只有英文维基给出叙述，属 E 级；
+  能为 D 级来源确证的只有：4 日奉命归队、5 日被利根号水侦发现、8 分钟沉没、234 人阵亡、约 30 小时后获救。

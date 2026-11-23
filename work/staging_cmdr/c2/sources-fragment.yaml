@@ -1,0 +1,129 @@
+# 英国皇家海军舰长 3 人（Power / Hamilton / Denny）的来源登记
+# 2026-11-23 · c2 组
+#
+# 分工：
+#   unithistories-*  逐条列出任命起止、军衔晋升、勋衔与家属——本组三篇的年表骨架
+#   uboatnet-cmdr-*  同一批事实的第二份独立登记，用来交叉核对（两份会打架的已并列）
+#   naval-history-*  舰的逐日年表，提供「他在这条舰上具体遇到什么」的现场细节
+#   ac-*             armouredcarriers 的原始报告与汇编，Denny 神风那一段的一手材料
+#
+# 其中 naval-history-arkroyal / naval-history-pow / naval-history-victorious /
+# naval-history-aurora / ac-vic-kamikaze / ac-kami-co / ac-pacops / ac-tf57 已在
+# data/sources.yaml 登记，这里不重复，只登记新增的 6 条。
+
+sources:
+  - id: unithistories-power
+    title: Royal Navy (RN) Officers 1939-1945 — P（Power, Sir Arthur John）
+    url: https://www.unithistories.com/officers/RN_officersP2.html
+    type: database
+    tier: D
+    role: [data]
+    operator: unithistories.com（Hans Houterman & Jeroen Koppes）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: 'P 姓分三页（RN_officersP.html / P1a / P2），Power 在 **P2**，不在首页。
+      条目按「家属 / 生卒 / 军衔晋升 / 勋衔 / 教育 / 逐条任命」排列。口径提示：
+      ① Lt.Cdr. 晋升日记作「31.04.1918」，4 月无 31 日，明显笔误（uboat.net 作 15.04.1918）；
+      ② 生卒只给「12.04.1889 - 28.01.1960 Gosport district, Hampshire」，**不给出生地**；
+      ③ 1940-04-20 与 1940-05-03 两个交舰口径在本页与 naval-history 之间不一致，已并列。
+      '
+
+  - id: unithistories-hamilton
+    title: Royal Navy (RN) Officers 1939-1945 — H（Hamilton, Sir Louis Henry Keppel）
+    url: https://www.unithistories.com/officers/RN_officersH.html
+    type: database
+    tier: D
+    role: [data]
+    operator: unithistories.com（Hans Houterman & Jeroen Koppes）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: '条目在 H 首页（RN_officersH.html），锚点 Hamilton_LHK 附近。**这是本组三人里
+      信息最完整的一份**：1915 年喀麦隆行动的 DSO 授勋理由整段引用（尼日尔河 160 英里 +
+      贝努埃河 480 英里 + 陆运 60 英里、加鲁阿 1915-06-10 投降）。关键口径：
+      ① 威尔士亲王号任期写作「05.10.1940 - 14.02.1941 HMS Eaglet (additional; for HMS
+      Prince of Wales ... and in command while under construction)」，即**先在建期间指挥、
+      后转海上**，不是 1941-01-19 一天开始的；
+      ② 「15.02.1941 - 27.02.1941 HMS President (additional; whilst unemployed)」——
+      离舰后有三周空档，说明 02-15 是硬交接日；
+      ③ 未婚（Unmarried），与维基「probate granted to Miss Jean Hamilton」不冲突。
+      '
+
+  - id: unithistories-denny
+    title: Royal Navy (RN) Officers 1939-1945 — D（Denny, Sir Michael Maynard）
+    url: https://www.unithistories.com/officers/RN_officersD3.html
+    type: database
+    tier: D
+    role: [data]
+    operator: unithistories.com（Hans Houterman & Jeroen Koppes）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: 'D 姓分六页（RN_officersD ~ D6），Denny 在 **D3**。口径提示：
+      ① 胜利号任期作「08.12.1943 - 15.08.1945 Commanding Officer, HMS Victorious」，
+      与 armouredcarriers 的「1944-03-04 大修结束才换人」不一致，两说并列；
+      ② 军衔止于 Adm.（22.04.1952，1959-07-28 退役），**没有 Admiral of the Fleet**；
+      ③ 勋衔是 CB(1940) / CBE(1944) / DSO(1945) / KCB(1950) / GCB(1954)，
+      **不是 KBE**——多处二手资料写错，本站按本页与 uboat.net 记；
+      ④ 生卒给全了出生地 Kempley, Gloucestershire 与卒地 Down Ampney。
+      '
+
+  - id: uboatnet-cmdr-power
+    title: Arthur John Power, RN — Allied Warship Commanders, uboat.net
+    url: https://uboat.net/allies/commanders/2036.html
+    type: database
+    tier: D
+    role: [data]
+    operator: uboat.net（Guðmundur Helgason）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: '**本页与 unit histories 有一处硬冲突**：uboat.net 记「Born 12 Apr 1899」，
+      unit histories 记 12.04.1889，维基亦作 1889-04-12。1899 会使他 1904 年 15 岁入
+      Britannia、1909 年 10 岁任 sub-lieutenant，不可能成立，故本站采 1889。
+      「Warship Commands」表给 HMS Ark Royal (91)，Capt.，17 Jan 1938 - 20 Apr 1940；
+      军衔晋升表与 unit histories 完全吻合（15.01.1909 / 15.04.1910 / 15.04.1918 /
+      31.12.1922 / 30.06.1929 / 25.06.1940 / 04.08.1943 / 06.05.1946 / 22.04.1952）。
+      '
+
+  - id: uboatnet-cmdr-hamilton
+    title: Louis Henry Keppel Hamilton, DSO, RN — Allied Warship Commanders, uboat.net
+    url: https://uboat.net/allies/commanders/1095.html
+    type: database
+    tier: D
+    role: [data]
+    operator: uboat.net（Guðmundur Helgason）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: '生卒 31 Dec 1890 - 27 Jun 1957（标 age 66），与 unit histories 一致。
+      Warship Commands 三条：HMS Delhi 1939-08-24 至 1939-12-16、HMS Aurora 1940-01-22
+      至 1940-10-01、**HMS Prince of Wales 1940-10-05 至 1941-02-15**。
+      这条 1941-02-15 是本组最关键的一个日期：它推翻了「他是丹麦海峡海战当天舰长」的说法。
+      另给出退役日 26 Sep 1948。注意本页把 1941-01-19 服役当天的他误标为「Rear Admiral」
+      （他 1941-01-15 才升 Rear-Admiral，服役日在任内，标法可通但易误读）。
+      '
+
+  - id: uboatnet-cmdr-denny
+    title: Michael Maynard Denny, RN — Allied Warship Commanders, uboat.net
+    url: https://uboat.net/allies/commanders/717.html
+    type: database
+    tier: D
+    role: [data]
+    operator: uboat.net（Guðmundur Helgason）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: '生 3 Oct 1896（**不给卒日**，卒日只在 unit histories 有：07.04.1972 Down Ampney）。
+      Warship Commands 两条：HMS Kenya 1940-07-18 至 1942-04-01、HMS Victorious
+      1943-12-08 至 1945-08-15。军衔晋升表与 unit histories 吻合至 Admiral
+      （22 Apr 1952），退役 28 Jul 1959。勋衔列 CB / CBE / MID / DSO / KCB / GCB，
+      同样**无 KBE**。页内逐日事件极多（Kenya 段尤其密），是交叉核对任期起止的好材料。
+      '

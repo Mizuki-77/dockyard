@@ -1,0 +1,120 @@
+id: benjamin-martin
+name:
+  zh: 本杰明·马丁
+  en: Benjamin Charles Stanley Martin
+  full: Vice-Admiral Sir Benjamin Charles Stanley Martin, KBE, DSO, RN
+rank_final: Vice-Admiral（退役名册）
+rank_at_post: 'Captain'
+nation: united_kingdom
+summary_zh: 皇家海军医院学校出身的第一位现役将官，多塞特郡号执行最后雷击时的舰长
+life:
+  born: 1891-07-18
+  born_place: 赖德（Ryde，怀特岛）
+  died: 1957-06-03
+  died_place: 纳塔尔（Natal，南非）
+intro:
+  - heading: 一个从医院学校出来的男孩
+    text: >-
+      1891 年 7 月 18 日，Martin 生于怀特岛的赖德。他父亲是皇家海军一等下士，
+      在他两岁前就死了——1893 年 6 月 22 日，战列舰维多利亚号在演习中被同队的坎珀当号
+      撞沉，他父亲是随舰溺亡者之一。他这条路因此没有别的分支：进格林尼治的皇家海军医院学校，
+      也就是海军自己办的孤儿与贫寒子弟学校，1907 年以一等少年兵的身份出海。
+      从他那一届往上数，这所学校还没有出过一位将官。他是第一个。
+  - heading: 下甲板走到哪里为止
+    text: >-
+      战列舰时代，英国海军军官大致分两条路：一条是 13 岁进达特茅斯，一条是从水兵做起，
+      靠准尉、军官候补一路往上。后一条路的天花板长期压在上校附近。
+      1915 年 5 月，Martin 升到准尉（鱼雷炮术长）；次年日德兰海战时，他在马来亚号上，
+      军衔还是准尉。1916 年 10 月他被任命为 Mate——这是当时专为从下甲板提拔的人
+      设的军官衔——才真正跨过那条线。此后 28 年，他一级一级走完了从少尉到少将的全部台阶。
+  - heading: 1941 年 5 月 26 日的那次判断
+    text: >-
+      1941 年 5 月，多塞特郡号在西非外海护航 SL 74 船队。26 日上午收到俾斯麦号的
+      目击报告时，本舰离德舰还有约 360 海里。Martin 把护航任务交给武装商船巡洋舰
+      Bulolo 号，自行转向北上——这一交接没有伦敦的授权，属于舰长自担责任的现场决定。
+      27 日 08:30 他望见俾斯麦号，09:02 开火，10:22 与 10:36 两次鱼雷攻击命中两舷。
+      他事后因「mastery, determination and skill」获 DSO。
+  - heading: 之后十六年
+    text: >-
+      1942 年起他在德班任海军设施司令，1944 年新年获 CBE；同年 7 月 7 日晋升海军少将
+      并退出现役，成为 87 年来第一位从下甲板起步、走到现役将官的人。
+      1945 年他在东印度舰队指挥 Bulolo 号上的登陆部队，参加兰里岛与仰光方向的行动，
+      1946 年 6 月获 KBE，1948 年 10 月在退役名册上晋升海军中将。
+      他 1957 年 6 月 3 日卒于南非纳塔尔，年 65。
+timeline:
+  - date: 1891-07-18
+    text: 生于怀特岛赖德，父 Benjamin S. Martin 为皇家海军一等下士。
+    src: [unithistories-rn-m2, enwiki-martin]
+  - date: 1893-06-22
+    text: >-
+      父 Martin 在维多利亚号被撞沉事故中身亡；该事故为皇家海军和平时期最严重的单舰损失。
+    src: [enwiki-martin]
+  - date: 1907
+    text: 自格林尼治皇家海军医院学校毕业入海军，为一等少年兵。
+    src: [unithistories-rn-m2, wns-martin-obituary]
+  - date: 1915-05-28
+    text: 升准尉，任鱼雷炮术长（gunner, torpedo）。
+    src: [unithistories-rn-m2, enwiki-martin]
+  - date: 1916-05
+    text: 日德兰海战，在马来亚号（第 5 战列舰中队）服役，军衔为准尉。
+    src: [wns-martin-obituary, enwiki-martin]
+  - date: 1916-10-13
+    text: 被任命为 Mate（当时由下甲板提拔者进入军官层的专门衔），时年 25。
+    src: [unithistories-rn-m2, enwiki-martin]
+  - date: 1931-06-30
+    text: 晋升中校（Commander），在地中海第 1 驱逐舰纵队任 Voyager 号分队长。
+    src: [unithistories-rn-m2, enwiki-martin]
+  - date: 1939-07-31
+    text: 任多塞特郡号重巡洋舰舰长，属中国舰队第 5 巡洋舰中队。
+    src: [uboat-dorsetshire, unithistories-rn-m2, uboat-cdr-martin]
+  - date: 1941-05-26
+    text: >-
+      11:00 前后将 SL 74 船队护航任务移交武装商船巡洋舰 Bulolo 号，转向北上追击俾斯麦号；
+      交接未获海军部授权。
+    src: [naval-history-dorsetshire, uboat-dorsetshire, enwiki-martin]
+  - date: 1941-05-27
+    text: >-
+      08:30 望见俾斯麦号，09:02 开火；10:22 向右舷射两雷、10:36 向左舷射一雷，均命中；
+      随后救起德舰落水者，因发现疑似潜望镜而中止救援。
+    src: [kbismarck-last-battle, kbismarck-histoperi, naval-history-dorsetshire]
+  - date: 1941-10-14
+    text: >-
+      因俾斯麦号作战中的表现获 DSO（伦敦公报公告日）。
+    src: [unithistories-rn-m2, uboat-cdr-martin, wns-martin-obituary]
+  - date: 1942-02-14
+    text: 任二级准将（Cdre. 2nd cl.），4 月起任德班海军设施司令，至 1943-12。
+    src: [unithistories-rn-m2]
+  - date: 1944-07-07
+    text: >-
+      晋升海军少将（Rear-Admiral）并退出现役；为 87 年来首位从下甲板起步而达到现役将官者。
+    src: [unithistories-rn-m2, uboat-cdr-martin, wns-martin-obituary]
+  - date: 1946-06-11
+    text: 获 KBE（表彰远东战功）；1945 年 1 月起任东印度舰队先遣部队「W」高级军官，旗舰 Bulolo 号。
+    src: [unithistories-rn-m2, uboat-cdr-martin, wns-martin-obituary]
+  - date: 1948-10-02
+    text: 在退役名册上晋升海军中将（Vice-Admiral, retired）。
+    src: [unithistories-rn-m2, enwiki-martin]
+  - date: 1957-06-03
+    text: 卒于南非纳塔尔，年 65。
+    src: [unithistories-rn-m2, wns-martin-obituary]
+relations:
+  ships:
+    - ship: dorsetshire
+      role: 舰长（Captain），1941-05-27 最终战时在舰
+      from: 1939-07-31
+      to: 1941-08-08
+      note: >-
+        本站 data/ships/dorsetshire.yaml 记该任期，uboat.net 与 naval-history 的逐日条目吻合。
+        继任 Agar 的到舰日两源相差十天（uboat.net 记 08-18 接任，naval-history 记 08-08 交接），
+        见该舰条目的注记。
+  battles:
+    - battle: last-battle
+      role: 多塞特郡号舰长，执行对俾斯麦号的最后鱼雷攻击
+      note: >-
+        本站 last-battle 的 05-27 09:04、10:22、10:36 三条事件均点名 Captain Benjamin C. S. Martin。
+src: [unithistories-rn-m2, uboat-cdr-martin, uboat-dorsetshire, naval-history-dorsetshire, enwiki-martin, wns-martin-obituary, kbismarck-last-battle, kbismarck-histoperi]
+note: >-
+  「第一」的两句须分开读：其一，他是格林尼治皇家海军医院学校出身者中第一个达到将官的人；
+  其二，他是近代第一个从下甲板升到现役少将的人，且是同一时期继 Sir Thomas Spence Lyne 之后
+  第二个以这种方式达到将官的人。两句同时见于 1957 年讣闻与英文维基，本站照录其原意，
+  未合并成一句更强的说法。

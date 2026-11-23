@@ -1,0 +1,133 @@
+id: karl-topp
+name:
+  zh: 卡尔·托普
+  en: Karl Topp
+  full: Friedrich Karl Topp
+
+life:
+  born: 1895-09-29
+  born_place: 弗尔德（Voerde，莱茵省）
+  died: 1981-04-24
+  died_place: 耶弗尔（Jever，下萨克森）
+
+rank_final: Vizeadmiral
+rank_at_post: 'Kpt.z.S'
+nation: germany
+
+summary_zh: 提尔皮茨号首任舰长，指挥一艘从不需要开炮的主力舰
+
+intro:
+  - heading: 一个造船出身的人，去当舰长
+    text: >-
+      托普不是从炮术或航海一路升上来的。1936 年到 1939 年他是海军造船事务的军事总管，
+      随后任海军总司令部舰船建造处军事部门主管——一个没有技术学历却在管技术的位置。
+      1941 年 1 月他被派去做提尔皮茨号的监造与接舰准备，2 月 25 日该舰在威廉港服役，他成为首任舰长。
+      让一个管造舰的人去指挥这艘船，本身就说明了这艘船在海军心里的定位：
+      它先是一件必须完好的战略资产，然后才是一艘军舰。
+  - heading: 两年里没打过一场海战
+    text: >-
+      从 1941 年 2 月到 1943 年 2 月，托普指挥提尔皮茨号整整两年，这两年里它没向敌舰打过一炮。
+      1941 年在波罗的海试航、射击，只当过一次旗舰去威慑列宁格勒；
+      1942 年 1 月转移到特隆赫姆，3 月出海去找 QP8、PQ12 两条护航队，没找到，返航途中挨了
+      胜利号十二架青花鱼式鱼雷机的攻击，全部规避并击落两架；7 月随「骑士跳跃」行动出海，
+      苏联潜艇 K-21 射了鱼雷，没命中。这是他两年任期的全部内容。
+  - heading: 威胁本身就是战果
+    text: >-
+      PQ-17 是这种战争最纯粹的样子。1942 年 7 月 4 日，英国第一海务大臣庞德预计德国水面舰艇
+      将以优势兵力出击，下令护航队解散、巡洋舰群西撤，各船自行前往苏联。
+      7 月 5 日提尔皮茨号真的出港了，随即又因态势不利返航，全程没有和任何敌舰照面。
+      但那支已经散开的船队被潜艇和飞机逐个吃掉：二十二艘商船，四百三十辆坦克、
+      二百一十架飞机、三千三百五十辆车辆沉入北冰洋。一艘从不开火的战列舰，把整条航线逼停了。
+  - heading: 他离开之后
+    text: >-
+      1943 年 2 月 24 日交卸舰职，回到海军总司令部，随后主持舰船建造委员会，直接向施佩尔汇报，
+      最终军衔中将。提尔皮茨号此后的历史属于别人：1943 年 9 月被英国袖珍潜艇炸伤，
+      1944 年被舰载机反复轰炸，同年 11 月 12 日被兰开斯特投下的高脚柜炸弹掀翻，九百七十一人死。
+      战后英军留用他几个月处理德国船厂事务，1946 年 12 月获释，此后近十年做商务代表，住在耶弗尔。
+
+timeline:
+  - date: 1895-09-29
+    text: 生于莱茵省弗尔德。
+    src: [wiki-en-topp, wiki-de-topp]
+  - date: 1914-04-01
+    text: 以海军候补生身份加入帝国海军。
+    src: [wiki-de-topp]
+  - date: 1916-07-13
+    text: 晋升海军少尉（Leutnant zur See）；一战期间在战列舰图林根号上服役，参加日德兰海战。
+    src: [wiki-de-topp]
+  - date: 1917-09-10
+    text: 至 11 月 14 日接受潜艇训练，随后编入地中海第一潜艇分队，最终任 SM UC-67 号大副，艇长为马丁·尼默勒。
+    src: [wiki-de-topp, wiki-en-topp]
+  - date: 1936
+    text: 出任海军造船事务军事总管（Generalreferent），至 1939 年；其后任海军总司令部舰船建造处军事部门主管。
+    src: [wiki-de-topp, wiki-en-topp]
+  - date: 1939-04-01
+    text: 晋升海军上校（Kapitän zur See）。
+    src: [deutsches-marinearchiv-tirpitz]
+  - date: 1941-01-15
+    text: 受命担任提尔皮茨号监造与接舰指挥官（该日期为任命日；正式随舰服役为 2 月 25 日）。
+    src: [wiki-en-topp, deutsches-marinearchiv-tirpitz]
+    note: 英文维基作 1 月 15 日起任舰长，德文来源以 2 月 25 日服役日为准；两说并列，不裁决。
+  - date: 1941-02-25
+    text: 11:40 提尔皮茨号在威廉港服役，排水量五万二千六百吨，托普任首任舰长；德方年表当日即以「服役」条目记下该舰。
+    src: [kbismarck-tirpitz, german-navy-tirpitz, deutsches-marinearchiv-tirpitz, wlb-1941-02]
+  - date: 1941-09-23
+    text: 作为「波罗的海舰队」旗舰（司令齐利亚克斯中将）在奥兰群岛海域驻泊，与舍尔号等舰一起压制列宁格勒的苏联舰队。
+    src: [kbismarck-tirpitz]
+  - date: 1942-01-14
+    text: 执行「极夜」行动，由四艘驱逐舰护航，从威廉港转移至特隆赫姆，16 日进入法埃滕峡湾。
+    src: [kbismarck-tirpitz, wlb-1942-01, deutsches-marinearchiv-tirpitz]
+  - date: 1942-03-06
+    text: 出港拦截护航队 QP8 与 PQ12，未找到目标；8 日行动取消，9 日返航途中遭胜利号十二架青花鱼式攻击，全部规避并击落两架。
+    src: [kbismarck-tirpitz, german-navy-tirpitz, deutsches-marinearchiv-tirpitz]
+  - date: 1942-03-30
+    text: 30 至 31 日及 4 月下旬，英军多次以哈利法克斯、兰开斯特机群空袭法埃滕峡湾，均未命中，轰炸机损失惨重。
+    src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz]
+  - date: 1942-07-04
+    text: 英第一海务大臣庞德在预期德国水面舰艇将以优势兵力出击的情况下，下令护航队解体、巡洋舰群西撤；PQ-17 于当晚解散。
+    src: [wlb-1942-07]
+  - date: 1942-07-05
+    text: 「骑士跳跃」行动：提尔皮茨号率编队出阿尔塔峡湾，苏联潜艇 K-21 发射鱼雷未命中；当日雷德尔下令中止行动，编队返航，全程未与敌舰交火。
+    src: [kbismarck-tirpitz, wlb-1942-07, german-navy-tirpitz]
+  - date: 1942-07-05
+    text: 已解散的 PQ-17 船队随后被潜艇与飞机逐个击破；德方战果记为二十二艘商船，载四百三十辆坦克、二百一十架飞机、三千三百五十辆车辆，逾九万九千吨物资。提尔皮茨号未发一炮。
+    src: [kbismarck-tirpitz, wlb-1942-07]
+  - date: 1943-02-01
+    text: 晋升少将（Konteradmiral）。
+    src: [deutsches-marinearchiv-tirpitz]
+  - date: 1943-02-24
+    text: 交卸提尔皮茨号指挥权，由海军上校汉斯·迈尔接任；随后回到海军总司令部任职。
+    src: [kbismarck-tirpitz, deutsches-marinearchiv-tirpitz, wiki-de-topp]
+  - date: 1945-01-01
+    text: 晋升中将（Vizeadmiral）；战争末期主持帝国军备与战争生产部舰船建造委员会，直接向施佩尔汇报。
+    src: [deutsches-marinearchiv-tirpitz, wiki-de-topp]
+  - date: 1945-10-15
+    text: 进入英军战俘营，1946 年 12 月 2 日获释；战后数月被英军留用处理德国船厂事务。
+    src: [wiki-de-topp, wiki-en-topp]
+  - date: 1981-04-24
+    text: 卒于下萨克森耶弗尔。
+    src: [wiki-de-topp, deutsches-marinearchiv-tirpitz, wiki-en-topp]
+
+relations:
+  ships:
+    - ship: tirpitz
+      role: 舰长（Kommandant），首任
+      from: 1941-02-25
+      to: 1943-02-24
+      note: 提尔皮茨号首任舰长，任内该舰未与敌舰交火。
+
+src:
+  - kbismarck-tirpitz
+  - german-navy-tirpitz
+  - deutsches-marinearchiv-tirpitz
+  - wlb-1941-02
+  - wlb-1942-01
+  - wlb-1942-07
+  - wiki-en-topp
+  - wiki-de-topp
+
+note: >-
+  提尔皮茨号从未与敌舰交火，故 relations.battles 留空——本站收录的三场战役它一场都没参加。
+  任免日期以 kbismarck.com 与 deutsches-marinearchiv.de 的 1941-02-25 至 1943-02-24 为准，
+  英文维基另作「1941 年 1 月 15 日起」，已在年表并列标注。生卒 1895-09-29 / 1981-04-24
+  经德文维基与德国海军档案网两源核对一致。

@@ -54,3 +54,6 @@ work/raw/**/*.txt
 # 保留的是同目录下的 *.yaml（分片本体）与 *.md（RESEARCH-NOTES.md，带英文原句）。
 work/staging/**/_raw/**
 work/staging/**/_src/**
+# 2026-11-23 加：指挥官分片用的另一套 staging 目录，规则同上。
+work/staging_cmdr/**/_raw/**
+work/staging_cmdr/**/_src/**

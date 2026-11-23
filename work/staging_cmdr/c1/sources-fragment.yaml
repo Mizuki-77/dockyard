@@ -1,0 +1,207 @@
+# 来源分片 · c1（Philip Vian / Augustus Agar / Robert Sherbrooke）
+#
+# 2026-11-23 抓取。全部用 urllib 直连（web_fetch 在本机被 SSRF 拦）。
+# 已抓到的原始文件在 work/staging_cmdr/c1/_raw/。
+sources:
+  # ---------------------------------------------------------------- 人物简历
+  - id: unithistories-vian
+    title: "Royal Navy (RN) Officers 1939–1945 — Vian, Sir Philip Louis"
+    url: https://www.unithistories.com/officers/RN_officersV.html#Vian_PL
+    type: database
+    tier: D
+    role: [data]
+    operator: J.N. Houterman
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      逐条给到任免起止日、晋升日、勋衔授予以日与理由、历任舰职。
+      本站 Vian 年表的骨架来源。注意它把 1940-05 回任哥萨克号记为 05.05.1940，
+      而 uboat.net 记 1940-05-21，两者相差 16 天，见 NOTES。
+
+  - id: unithistories-agar
+    title: "Royal Navy (RN) Officers 1939–1945 — Agar, Augustus Willington Shelton"
+    url: https://www.unithistories.com/officers/RN_officersA2.html#Agar_AWS
+    type: database
+    tier: D
+    role: [data]
+    operator: J.N. Houterman
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      晋升日、勋衔授予日与理由（VC 22.08.1919、DSO 11.11.1919）、
+      历任舰职。条目内附 VC 与 DSO 的 citation 原文摘录。
+      记多塞特郡号任期 08.08.1941 至 05.04.1942，与 uboat.net 的 18.08.1941 差 10 天。
+
+  - id: unithistories-sherbrooke
+    title: "Royal Navy (RN) Officers 1939–1945 — Sherbrooke, Robert St Vincent"
+    url: https://www.unithistories.com/officers/RN_officersS1b.html#Sherbrooke_RStV
+    type: database
+    tier: D
+    role: [data]
+    operator: J.N. Houterman
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      生卒地、晋升日、勋衔（VC/CB/DSO/挪威自由十字）、历任舰职。
+      注意：它把哥萨克号第二任期记成 04.1940 至 1940（无月），
+      而 uboat.net 记 29.03.1940 至 21.05.1940，两者口径不同，见 NOTES。
+
+  # ---------------------------------------------------------------- 舰艇战史
+  - id: naval-history-naiad
+    title: HMS Naiad — service history, Naval-History.Net
+    url: https://www.naval-history.net/xGM-Chrono-06CL-HMS_Naiad.htm
+    type: website
+    tier: D
+    role: [data]
+    operator: Gordon Smith / Lt Cdr G.B. Mason RN (Rtd)
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      1942-03-11 被 U-565 于索卢姆外雷击，35 分钟翻沉，86 人亡，
+      第 15 巡洋舰队旗舰转移至 HMS Dido。Vian 在地中海一段的关键时间锚点。
+
+  - id: naval-history-afridi
+    title: HMS Afridi — service history, Naval-History.Net
+    url: https://www.naval-history.net/xGM-Chrono-10DD-34Tribal-HMS_Afridi.htm
+    type: website
+    tier: D
+    role: [data]
+    operator: Gordon Smith / Lt Cdr G.B. Mason RN (Rtd)
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      1940-05-03 纳姆索斯撤运时被两枚炸弹命中翻沉，100 人亡，
+      沉没位置 66.14N 05.45E。Vian 与 Sherbrooke 都在这条舰上待过，
+      是两人履历交叉的节点。
+
+  - id: naval-history-emerald
+    title: HMS Emerald — service history, Naval-History.Net
+    url: https://www.naval-history.net/xGM-Chrono-06CL-HMS_Emerald.htm
+    type: website
+    tier: D
+    role: [data]
+    operator: Gordon Smith / Lt Cdr G.B. Mason RN (Rtd)
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      1939-10-07 随战列舰 Revenge、巡洋舰 Enterprise、Caradoc 运金条赴哈利法克斯，
+      10-17 卸下。Agar 当时是翡翠号舰长，Operation Fish 一段的日期依据。
+
+  # ---------------------------------------------------------------- 阿尔特马克
+  - id: bbc-altmark
+    title: "The Altmark Incident — BBC WW2 People's War（HMS Cossack Association 供稿）"
+    url: https://www.bbc.co.uk/history/ww2peopleswar/stories/72/a4507472.shtml
+    type: website
+    tier: D
+    role: [narrative]
+    operator: BBC / HMS Cossack Association
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      亲历者团体供稿，不是官方档案。给出丘吉尔经第一海军大臣名义发给 Vian 的
+      指令全文要点（提议联合押送→拒绝即登船→挪威舰艇只可警告→对方开火才还击
+      且以必要为限），以及 22:00 入峡湾、23:12 靠帮、23:55 出峡湾的时刻。
+      时序细节用它，法律结论不用它。
+
+  - id: historyofwar-altmark
+    title: "The Altmark incident, 16 February 1940 — HistoryOfWar.org（J. Rickard）"
+    url: https://www.historyofwar.org/articles/battles_altmark.html
+    type: website
+    tier: D
+    role: [narrative]
+    operator: John Rickard
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      与 bbc-altmark 互为独立复述，同样记「挪威拒绝联合押送即登船」的授权结构、
+      299 名战俘、Altmark 搁浅。两源在细节上一致，故并列引用。
+
+  # ---------------------------------------------------------------- VC 传记
+  - id: victoriacross-sherbrooke
+    title: "Robert St Vincent Sherbrooke VC — Victoria Cross Research（Alfred J. Askin 遗稿）"
+    url: https://victoriacross.co.uk/recipients/robert-st-vincent-sherbrooke/
+    type: website
+    tier: D
+    role: [narrative]
+    operator: Askin / Adams families
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      按《The Register of the Victoria Cross》(1997) 体例记录：宪报日 1943-01-12、
+      生卒地、墓葬、citation 摘要、勋章现藏不明。citation 措辞与 unithistories
+      所摘一致，互为校验。
+
+  - id: notts-sherbrooke-vc
+    title: "Captain Robert St. Vincent Sherbrooke V.C. — Nottinghamshire County Council"
+    url: https://www.nottinghamshire.gov.uk/culture-leisure/heritage/remembering-ww1/the-victoria-cross/captain-robert-st-vincent-sherbrooke-vc
+    type: website
+    tier: D
+    role: [narrative]
+    operator: Nottinghamshire County Council
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: 地方政府的纪念页。生卒（1901-01-08 / 1972-06-13）、宪报日、墓葬地点。
+
+  # ---------------------------------------------------------------- E 级线索
+  - id: enwiki-philip-vian
+    title: Philip Vian — Wikipedia
+    url: https://en.wikipedia.org/wiki/Philip_Vian
+    type: encyclopedia
+    tier: E
+    role: [lead]
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: cc_by_sa
+    note: >-
+      仅用于搭骨架与找线索。注意其 infobox 的 death date 模板把出生日写成
+      1894-06-14（正文与 unithistories 都是 06-15），是模板笔误，不采。
+
+  - id: enwiki-augustus-agar
+    title: Augustus Agar — Wikipedia
+    url: https://en.wikipedia.org/wiki/Augustus_Agar
+    type: encyclopedia
+    tier: E
+    role: [lead]
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: cc_by_sa
+    note: >-
+      唯一给出多塞特郡号沉没前后决策链（科伦坡电台被毁、会合点、继续南驶）
+      的叙述来源，属 E 级，只作线索，正文相应段落已注明其等级。
+
+  - id: enwiki-robert-sherbrooke
+    title: Robert Sherbrooke — Wikipedia
+    url: https://en.wikipedia.org/wiki/Robert_Sherbrooke
+    type: encyclopedia
+    tier: E
+    role: [lead]
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: cc_by_sa
+    note: >-
+      巴伦支海 citation 全文、希特勒 1943 年初停用水面舰队的因果说法、
+      战后职务（Aurora 舰长、Gentleman Usher）。citation 与 unithistories 互校；
+      停用令一条只有 E 级来源，见 NOTES。

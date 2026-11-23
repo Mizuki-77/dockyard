@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import CatalogTree from '../../components/CatalogTree.astro';
 import ReportIssue from '../../components/ReportIssue.astro';
-import { getBattles, getBattle, getSource, getImagesFor, primaryImage, imageCredit, operationOf } from '../../lib/data';
+import { getBattles, getBattle, getSource, getImagesFor, primaryImage, imageCredit, operationOf, getCommandersOfBattle } from '../../lib/data';
 import { buildBattleTree } from '../../lib/tree';
 
 export function getStaticPaths() {
@@ -23,6 +23,10 @@ const siblings = op
       .map((p) => ({ phase: p, battle: getBattle(p.battle!) }))
       .filter((x): x is { phase: typeof x.phase; battle: NonNullable<typeof x.battle> } => Boolean(x.battle))
   : [];
+
+/* 参战指挥官（2026-11-23）：反过来查 data/commanders 里
+   有谁把这场战役写进了 relations.battles。 */
+const battleCommanders = getCommandersOfBattle(b.id);
 
 /* ---- 左树：与「海战历史」列表页同构的三层树（海区 → 年份 → 战斗），
         选中当前这场。战斗页上保留完整索引，是为了让读者
@@ -327,6 +331,32 @@ const usedSources = [...srcIds].map((s) => getSource(s)).filter(Boolean);
             </li>
           ))}
         </ul>
+      </section>
+    )
+  }
+
+  <!-- 指挥官（2026-11-23 新增，与 /commanders 双向跳转） -->
+  {
+    battleCommanders.length > 0 && (
+      <section class="section" id="commanders">
+        <div class="section__head">
+          <h2 class="section__title">参战指挥官</h2>
+          <span class="section__en">Commanders</span>
+        </div>
+        <div class="bcmdr">
+          {battleCommanders.map(({ commander, link }) => (
+            <a class="bcmdr__row" href={`/commanders/${commander.id}`}>
+              <span class="bcmdr__name">{commander.name.zh}</span>
+              <span class="bcmdr__rank">{commander.rank_at_post ?? commander.rank_final}</span>
+              <span class="bcmdr__role">{link.role}</span>
+              <span class="bcmdr__arrow" aria-hidden="true">→</span>
+            </a>
+          ))}
+        </div>
+        <p class="bcmdr__note">
+          只列出本站已建成人物页、且在这场战役里有过明确作为的指挥官。
+          参战舰只的历任舰长未必都在这份名单里 —— 没有传记资料的人不补进来。
+        </p>
       </section>
     )
   }
@@ -967,6 +997,70 @@ const usedSources = [...srcIds].map((s) => getSource(s)).filter(Boolean);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 12px;
+  }
+
+  /* ---------------------------------------------------- 参战指挥官 */
+  .bcmdr {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .bcmdr__row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.4fr) 18px;
+    gap: 14px;
+    align-items: center;
+    padding: 11px 14px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--blue-500);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .bcmdr__row:hover {
+    background: var(--blue-50);
+    border-color: var(--blue-300);
+    border-left-color: var(--blue-600);
+    text-decoration: none;
+  }
+  .bcmdr__name {
+    font-size: 14px;
+    font-weight: 620;
+    color: var(--ink-900);
+  }
+  .bcmdr__rank {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--blue-700);
+    white-space: nowrap;
+  }
+  .bcmdr__role {
+    font-size: 12.5px;
+    color: var(--ink-500);
+    line-height: 1.5;
+  }
+  .bcmdr__arrow {
+    color: var(--ink-300);
+    font-size: 13px;
+  }
+  .bcmdr__note {
+    margin: 10px 0 0;
+    font-size: 11.5px;
+    color: var(--ink-400);
+    line-height: 1.7;
+  }
+  @media (max-width: 760px) {
+    .bcmdr__row {
+      grid-template-columns: minmax(0, 1fr) 16px;
+      gap: 3px 10px;
+    }
+    .bcmdr__rank {
+      grid-column: 1 / -1;
+    }
+    .bcmdr__role {
+      grid-column: 1 / -1;
+    }
   }
   .losscard {
     border: 1px solid var(--line);

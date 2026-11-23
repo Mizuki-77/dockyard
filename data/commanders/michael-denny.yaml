@@ -1,0 +1,101 @@
+id: michael-denny
+name:
+  zh: 迈克尔·丹尼
+  en: Michael Maynard Denny
+  full: Admiral Sir Michael Maynard Denny, GCB, KCB, CBE, DSO
+nation: united_kingdom
+rank_final: Admiral
+rank_at_post: 'Captain'
+summary_zh: 胜利号舰长，任内顶住两次神风；后任第三海务大臣
+life:
+  born: 1896-10-03
+  born_place: Kempley, Gloucestershire
+  died: 1972-04-07
+  died_place: Down Ampney, Cirencester, Gloucestershire
+intro:
+  - heading: 出身与早期
+    text: 1896 年 10 月 3 日生于格洛斯特郡肯普利，是 Canon Edward Denny 的幼子。奥斯本与达特茅斯两所海军学院出身，1909 年以 cadet 身份入海军。一战在北海的 HMS Neptune 与 HMS Royal Sovereign 上度过，1917 年 10 月升 lieutenant。1920 年他专攻炮术，拿了 Egerton Memorial Prize。
+  - heading: 炮术与军械
+    text: 1932 年 10 月起任地中海舰队总司令的舰队炮术军官，1934 年 11 月起任巡洋舰 HMS Shropshire 副长。1937 年 6 月调海军部任海军军械助理处长，次年升副处长。1936 年 12 月 31 日他已升 captain——所以到战争爆发时，他是个拿着炮术与军械双份履历的舰长级军官，不是刚出海的少壮派。
+  - heading: 挪威与敦刻尔克
+    text: 1940 年他先在岸上：挪威 Åndalsnes 登陆的海军高级军官，接着是敦刻尔克撤退的首席参谋军官，这两段让他 1940 年 6 月 7 日拿到 CB。1940 年 6 月 3 日起他任轻巡洋舰 HMS Kenya 舰长兼第 10 巡洋舰分队参谋长——马耳他与俄国船团、1941 年 Vaagso 突袭都在这条线上。1942 年 4 月他升 commodore 一级，回本土舰队任总司令的参谋长。
+  - heading: 胜利号
+    text: 1943 年 12 月 8 日他接过胜利号，接的是刚结束太平洋借调、进利物浦大修的那条舰。此后一年半他没离开过她：1944 年 4 月 3 日攻击提尔皮茨（Tungsten，他因此获 MID），7 月起转东印度舰队打苏门答腊，11 月随英国太平洋舰队成立转入太平洋编制。1945 年 3 月 25 日抵乌利西编入美军第 57 特混舰队，随即投入冲绳战役。这一任的性质不是「某一仗的舰长」，是「持续作战条件下的舰长」。
+  - heading: 神风与战后
+    text: 4 月 1 日一架神风机从右舷后方俯冲，他下令满舵加速旋回，日机跟不上转向，翼尖擦过飞行甲板边缘后翻入海中，炸弹在舷侧 80 英尺外水下爆炸。5 月 9 日两次神风用的是同一套办法：等对方锁定俯冲再打舵。第一次日机撞上甲板，B2 炮位炮组阵亡；第二次被 20 毫米炮打得起火后侧滑入海。他因 Iceberg 作战获 DSO。战后历任海军人事助理参谋长、地中海舰队驱逐舰部队将官，1949 至 1953 年任第三海务大臣兼海军总监。
+timeline:
+  - date: 1896-10-03
+    text: 生于格洛斯特郡肯普利，Canon Edward Denny 的幼子。
+    src: [unithistories-denny, uboatnet-cmdr-denny]
+  - date: 1909-09-15
+    text: 自奥斯本、达特茅斯海军学院出身，以 cadet 身份入皇家海军。一战期间在北海的 HMS Neptune 与 HMS Royal Sovereign 上服役，1917 年 10 月 15 日升 lieutenant。
+    src: [unithistories-denny, uboatnet-cmdr-denny]
+  - date: 1920
+    text: 专攻炮术，获 Egerton Memorial Prize；此后长期在朴茨茅斯 HMS Excellent 炮术实验部门任职。
+    src: [unithistories-denny]
+  - date: 1930-06-30
+    text: 升 commander。此前任战列舰 HMS Emperor of India 炮术军官、HMS Nelson 炮术军官。
+    src: [unithistories-denny]
+  - date: 1934-11-29
+    text: 任巡洋舰 HMS Shropshire 副长（地中海），至 1936 年 2 月；此前自 1932 年 10 月起任地中海舰队总司令（Adm. Sir W. W. Fisher）的舰队炮术军官，旗舰 HMS Queen Elizabeth。1936 年 12 月 31 日升 captain。
+    src: [unithistories-denny, uboatnet-cmdr-denny]
+  - date: 1937-06-14
+    text: 任海军部海军军械助理处长，1938 年 7 月 22 日升副处长，至 1940 年。
+    src: [unithistories-denny]
+  - date: 1940-06-03
+    text: 任轻巡洋舰 HMS Kenya 舰长，兼第 10 巡洋舰分队参谋长，至 1942 年 3 月 26 日。此前任挪威 Åndalsnes 登陆的海军高级军官与敦刻尔克撤退首席参谋军官。
+    src: [unithistories-denny, uboatnet-cmdr-denny]
+  - date: 1940-06-07
+    text: 因 Åndalsnes 与敦刻尔克获 CB。
+    src: [unithistories-denny, uboatnet-cmdr-denny]
+  - date: 1942-04-07
+    text: 升 commodore 一级，任本土舰队总司令参谋长（旗舰先后为 HMS King George V、HMS Duke of York），至 1943 年 11 月 8 日。
+    src: [unithistories-denny]
+  - date: 1943-12-08
+    text: 任 HMS Victorious 舰长，至 1945 年 8 月 15 日。
+    note: unit histories 与 uboat.net 都作 1943-12-08 至 1945-08-15；armouredcarriers 的叙事只写「利物浦大修期间（至 1944-03-04）Mackintosh 离舰、Denny 接任」，不给确切日期。本站 data/ships/victorious.yaml 采用 1944-03-04 起，两说并列。
+    src: [unithistories-denny, uboatnet-cmdr-denny, ac-pacops]
+  - date: 1944-04-03
+    text: 以胜利号参加对阿尔滕峡湾提尔皮茨的空袭（Operation Tungsten），Barracuda 机群在密集防空火力下命中数弹，该舰因此获 MID（1944 年 5 月 30 日）；同年 7 月 25 日转东印度舰队，与光辉号空袭苏门答腊沙璜一带机场（Operation Crimson）。
+    src: [naval-history-victorious, unithistories-denny]
+  - date: 1944-11-22
+    text: 英国太平洋舰队成立，胜利号转入该编制；1945 年 3 月 25 日抵乌利西环礁，编入美军第 5 舰队第 57 特混舰队（TF 57）。
+    src: [naval-history-victorious, ac-tf57]
+  - date: 1945-04-01
+    text: 一架神风机自右舷后方俯冲。丹尼下令满舵加速旋回，日机追不上转向，翼尖撞上飞行甲板左缘后翻入海中，炸弹在舷侧约 80 英尺处水下爆炸，甲板两名地勤受伤。
+    src: [ac-vic-kamikaze, naval-history-victorious]
+  - date: 1945-05-04
+    text: 编队遭集中神风攻击。胜利号未中弹，但同队的 HMS Formidable 被命中；一架日机在胜利号舷侧爆炸，震坏锅炉蒸汽管路，航速一度降至 19 节，8 小时后恢复飞行作业。
+    src: [naval-history-victorious]
+  - date: 1945-05-09
+    text: 当日两次被神风选为攻击目标。16:56 第一架撞上飞行甲板加速器附近，B2 4.5 英寸炮位炮组阵亡；16:59 第二架被 20 毫米炮打得起火，侧滑撞上左舷后坠入舷外 200 码的海面。他 5 月 10 日的报告逐分钟记下 16:47 至 17:03 共四次来袭，其中两次针对胜利号。
+    src: [ac-kami-co, ac-vic-kamikaze]
+  - date: 1945-08-15
+    text: 交卸胜利号指挥权；1945 年 10 月 23 日因冲绳（Operation Iceberg）作战获 DSO。同年 11 月 27 日起任海军人事助理参谋长兼人事服务处长，至 1947 年。
+    src: [unithistories-denny, uboatnet-cmdr-denny]
+  - date: 1949
+    text: 任海务委员、第三海务大臣兼海军总监，至 1953 年；此前 1947 年起任地中海舰队驱逐舰部队将官。
+    src: [unithistories-denny]
+  - date: 1952-04-22
+    text: 升 admiral。
+    src: [unithistories-denny, uboatnet-cmdr-denny]
+  - date: 1954
+    text: 任本土舰队总司令兼东大西洋（北约）总司令至 1955 年；1956 年起任英国驻华盛顿联合军种代表团主席、北约军事委员会常设小组英方代表，至 1959 年 7 月 28 日退役。
+    src: [unithistories-denny, uboatnet-cmdr-denny]
+  - date: 1972-04-07
+    text: 卒于格洛斯特郡唐安普尼。
+    src: [unithistories-denny, uboatnet-cmdr-denny]
+relations:
+  ships:
+    - ship: victorious
+      role: 舰长
+      from: 1943-12-08
+      to: 1945-08-15
+      note: 任期起止依 unit histories 与 uboat.net（1943-12-08 至 1945-08-15）。本站 data/ships/victorious.yaml 采用 armouredcarriers 的口径（1944-03-04 起，即利物浦大修结束、Mackintosh 离舰之日），两者并列不裁决。1945-05-10 的 Iceberg 第 7、8 期战斗报告（含 5 月 9 日神风逐分钟记录）由他签署。
+  battles: []
+src: [unithistories-denny, uboatnet-cmdr-denny, naval-history-victorious, ac-vic-kamikaze, ac-kami-co, ac-pacops]
+note: |
+  relations.battles 留空：他任内胜利号在太平洋参加的是冲绳（Operation Iceberg）以及对苏门答腊的 Crimson / Banquet /
+  Light / Millet 等行动，本站 battles/ 目录里没有这些条目（只有 denmark-strait / last-battle / midway），故不连。
+  rank_final 取 Admiral（1952-04-22 升）：uboat.net 与 unit histories 均止于此，未见更高的 Admiral of the Fleet。
+  他获的是 KCB（1950）与 GCB（1954），不是 KBE——任务书把勋衔写成 KBE 与实际不符。
