@@ -1,0 +1,982 @@
+# ============================================================================
+# 利根级重巡洋舰（Tone class heavy cruisers）—— 利根 / 筑摩
+#
+# 2026-11-23 建级（技术数据分片，切片/正文/配图由主会话另行安排）。
+#
+# 【本级的技术身份只有一句话：把全部主炮搬到舰艏，把整个舰尾让给航空兵装】
+#   四座双联 20 cm 炮塔全部在前部、舰尾无一门主炮，后部是水侦甲板与弹射器。
+#   这不是审美选择：日方要的是给机动部队当长程侦察舰（每舰 6 机编制）。
+#   因此本文件里 aviation.* 的权重不低于 armament.*。
+#
+# 【主炮是 No.2 炮，不是 No.1 炮】
+#   NavWeaps 原话："the design of the Tone class was altered during construction
+#   to use these guns"，且该页 Ship Class Used On 栏把它列在
+#   "As Completed: Takao and Tone classes"。实弹径 20.32 cm、初速 840 mps。
+#   本站已有的 weapon:20cm-3ns 记的是 No.1 炮（20.0 cm、870 mps），
+#   两者不是一门炮，故本级另立 weapon:20cm-3ns-no2，见该实体各条的 note。
+#
+# 【本级几乎所有「差异」都是两源口径差，不是史料打架】
+#   长度 201.6 / 201.50、吃水 6.47 / 6.45、载油 2,690 / 2,163、
+#   续航 8,000 / 9,000、司令塔 100/50 与 130-70/40。
+#   每条都保留、各带 src、各带 note，不裁决（SCHEMA §1.2）。
+#   全部 6 处两说并列与 3 处「tier E 独有、故不采用」的数字，
+#   单列在 RESEARCH-NOTES.md 的「有争议的记载」与「未获取」两节。
+#
+# 调研底稿：work/staging/tone/RESEARCH-NOTES.md
+# 原始页面：work/staging/tone/_raw/
+# ============================================================================
+
+id: tone
+name:
+  zh: 利根级
+  en: Tone class
+
+class_of:
+  - tone
+  - chikuma
+
+open_ended_note: |
+  本文件绝大多数 fact 的 valid.to 都留空，这是结构性的，不是漏填：
+  舰级设计参数的生效期从设计定案/服役起，到该级最后一艘损失或拆解为止，
+  期间不因改装而改变；实际战备状态随时间的变化写在 data/ships/<id>.yaml 的
+  状态切片里，由单舰 fact 覆盖。因此这里的 open 时间窗表示「无已知终止事件」。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: Tone class
+    src: [navypedia-tone]
+    valid: { from: 1934-12-01 }
+    confidence: C
+    note: >
+      navypedia 页标题原文 "TONE heavy cruisers (1938 - 1939)"。
+      日文正式级名「利根型巡洋艦」仅见于百科类来源（tier E），本站不作 fact 来源，
+      故 name_original 只登记英文级名。
+
+  - field: identity.name_zh
+    value: 利根级
+    src: [navypedia-tone]
+    valid: { from: 1934-12-01 }
+    confidence: C
+    note: navypedia 舰名栏并列给出汉字：利根 [Tone] / 筑摩 [Chikuma]。
+
+  - field: identity.name_en
+    value: Tone class
+    src: [navypedia-tone]
+    valid: { from: 1934-12-01 }
+    confidence: C
+
+  - field: identity.ship_type
+    value: heavy_cruiser
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      navypedia 页标题 "TONE heavy cruisers"，归入其 CRUISERS 分类。
+      注意本级设计阶段是轻巡（15.5 cm 三联装 5 座），建造中途改主炮后成重巡，
+      这一点写进 building_program 与 RESEARCH-NOTES，不改 ship_type 的判定。
+
+  - field: identity.nation
+    value: japan
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+
+  - field: identity.operator
+    value: Imperial Japanese Navy（大日本帝国海軍）
+    src: [combinedfleet-tone-trom]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      combinedfleet TROM 原文："20 November 1938: Completed and registered in the IJN.
+      Attached to Yokosuka Naval District."
+
+  - field: identity.era
+    value: ww2
+    src: [combinedfleet-tone-trom, navypedia-tone]
+    valid: { from: 1939-09-03, to: 1945-09-02 }
+    confidence: C
+    note: 按作战期定位。利根 1938-11-20 服役、筑摩 1939-05-20 服役，两舰全生涯在战时。
+
+  - field: identity.building_program
+    value: ②計画（第二次補充計画，1934 年度）；原案为 8,450 t 级巡洋舰
+    src: [navypedia-tone]
+    valid: { from: 1934-12-01 }
+    confidence: C
+    note: >
+      navypedia 原文："Building of two 8450t cruisers was provided by
+      2nd Supplementary Programme of 1934."
+      本级原计划是「最上型第 5、6 号舰」，因最上型舰体问题与友鹤事件改为新设计，
+      同一段原文："Staff requirement to Tone and Chikuma originally differed from
+      shown to Mogami by only speed decreased on 1kt. However experience of designing
+      of first 155mm cruisers, and also tragedy of overturned torpedo boat Tomozuru
+      and mass newest ships damages during a typhoon have compelled to redesign cruisers."
+
+  # ============================================================ 排水量
+  # 四口径分开记：standard / full 有来源；trial 与 declared 均未获取（见 NOTES）。
+  - field: displacement.standard
+    value: 11215
+    unit: t
+    src: [navypedia-tone, pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      两源同值 11,215。navypedia 原文 "Displacement standard, t 11215"；
+      pwe 原文 "Tonnage | 11,215 tons standard displacement"。
+      **11,213 这个数字不在本文件里**：它只出现在百科类来源（tier E），
+      tier E 不能作 fact 来源，差异记在 RESEARCH-NOTES「有争议的记载」。
+
+  - field: displacement.full
+    value: 15200
+    unit: t
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      navypedia 原文 "Displacement full, t 15200"。
+      另一说 15,443 t（"final"）只见于百科类来源，tier E 不采用，记进 NOTES。
+
+  # displacement.trial 未获取：唯一给出公试排水量 13,320 t 的来源是日文百科（tier E）。
+  # displacement.declared 未获取：对条约的申报值 8,636 t 同样只见于 tier E。
+
+  # ============================================================ 尺度
+  - field: dimensions.length.oa
+    value: 201.6
+    unit: m
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: navypedia 原文 "Length, m 190.3 pp 198.8 wl 201.6 oa"。两说并列见下一条。
+
+  - field: dimensions.length.oa
+    value: 201.5
+    unit: m
+    src: [pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      **两说并列，不裁决。** pwe 原文 "Dimensions | 661'1" by 60'8" by 21'2" /
+      201.50m by 18.49m by 6.45m"。与 navypedia 的 201.6 差 0.1 m，
+      属取整/量取口径差，两条各带自己的来源保留。
+
+  - field: dimensions.length.wl
+    value: 198.8
+    unit: m
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: navypedia 原文同上 "198.8 wl"。
+
+  - field: dimensions.length.pp
+    value: 190.3
+    unit: m
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: navypedia 原文同上 "190.3 pp"。
+
+  - field: dimensions.beam.max
+    value: 19.4
+    unit: m
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      navypedia 原文 "Breadth, m 19.4"，是单一船宽栏，本站按最大宽登记。
+      pwe 给 60'8"（18.49 m），与 19.4 相差 0.9 m；两者口径（水线宽 vs 最大宽）
+      来源均未写明，故不另立 beam.wl，只在本 note 保留 pwe 的原值。
+
+  - field: dimensions.draught.mean
+    value: 6.47
+    unit: m
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      navypedia 原文 "Draught, m 6.47"。pwe 给 21'2"（6.45 m），差 2 cm。
+      两者的排水量状态均未标注，故不拆成两条。公试吃水 6.23 m 只见于 tier E，不采用。
+
+  # ============================================================ 动力
+  - field: propulsion.plant_type
+    value: steam_turbine
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: navypedia 原文 "Machinery 4 sets Kampon geared steam turbines, 8 Kampon boilers"。
+
+  - field: propulsion.shafts
+    value: 4
+    unit: count
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: navypedia 原文 "No of shafts 4"。
+
+  - field: propulsion.boiler.count
+    value: 8
+    unit: count
+    src: [navypedia-tone, pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: navypedia "8 Kampon boilers"；pwe "8 Kampon boilers"，两源一致。
+
+  - field: propulsion.boiler.type
+    value: Kampon（艦本式）
+    src: [navypedia-tone, pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      两源都写 "Kampon boilers"。更细的型式（ロ号艦本式缶）只见于日文百科（tier E），
+      不作 fact 来源，故本条不写具体番号型式。
+
+  - field: propulsion.turbine.count
+    value: 4
+    unit: count
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: navypedia "4 sets Kampon geared steam turbines"。
+
+  - field: propulsion.turbine.type
+    value: Kampon geared steam turbine（艦本式ギヤード・タービン）
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+
+  - field: propulsion.power.design
+    value: 152000
+    unit: hp
+    src: [navypedia-tone, pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      navypedia "Power, h. p. 152000"；pwe "4-shaft geared turbine (152,000 shp)"。
+      **试航实测功率未获取**：唯一给出 152,189 / 152,915 马力（利根 / 筑摩公试成绩）
+      的来源是日文百科（tier E）。
+
+  - field: propulsion.speed.design
+    value: 35
+    unit: kn
+    src: [navypedia-tone, pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      navypedia "Max speed, kts 35"；pwe "Maximum speed | 35 knots"。
+      **试航实测航速未获取**：35.55 kn（利根公试）/ 35.44 kn（筑摩全力公试）
+      只见于日文百科（tier E），不作事实登记。
+
+  - field: propulsion.fuel.capacity
+    value: 2690
+    unit: t
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: navypedia 原文 "Fuel, t oil 2690"。与 pwe 的 2,163 t 并列，见下一条。
+
+  - field: propulsion.fuel.capacity
+    value: 2163
+    unit: t
+    src: [pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      **两说并列，不裁决。** pwe 原文 "Bunkerage | 2163 tons fuel oil"。
+      与 navypedia 的 2,690 t 差 527 t，两源均未说明是设计值还是实测值、
+      是否含备用油舱，故两条都留。
+
+  - field: propulsion.range.max
+    value: 8000
+    unit: nmi
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: navypedia 原文 "Endurance, nm(kts) 8000(18)"，即 18 kn 下 8,000 海里。
+
+  - field: propulsion.range.max
+    value: 9000
+    unit: nmi
+    src: [pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      **两说并列，不裁决。** pwe 原文 "Range | 9000 nautical miles (17,000 km)
+      at 18 knots"。与 navypedia 的 8,000 差 1,000 海里，两源对应航速相同（18 kn），
+      差异原因两源均未交代。
+
+  - field: propulsion.range.at_speed
+    value: 18
+    unit: kn
+    src: [navypedia-tone, pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: 两源的续航力都绑定在 18 kn，本行与上面两条 range.max 成对解读。
+
+  # ============================================================ 防护
+  # 装甲方案的分类（all_or_nothing / incremental / turtle_back / other）没有来源
+  # 直接给出，故只写 other，具体厚度按部位逐条记，判断权交给读者。
+  - field: protection.scheme
+    value: other
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      **来源没有给出体系名称，本条取 other 是分类上的保守取值，不是史实结论。**
+      navypedia 对方案的描述原文："Protection scheme of Tone class repeated accepted
+      on Mogami, differing some better protection of magazines: to 145mm of waterline
+      belt abreast and to 55mm of a deck above."
+      结构特征是「内侧倾斜主装带 + 主装甲甲板 + 20° 斜板 + 纵隔壁」，
+      既非纯 all-or-nothing 也非纯 incremental，故不硬套。
+
+  - field: protection.armor.thickness
+    value: 100
+    unit: mm
+    qual: { part: belt, region: upper }
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      机舱段主装带上缘。navypedia 原文："Its thickness was 100mm on upper edge,
+      tapering to 65mm on lower edge, connected with 65mm upper edge of
+      longitudinal bulkhead."
+
+  - field: protection.armor.thickness
+    value: 65
+    unit: mm
+    qual: { part: belt, region: lower }
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: 同一段装带的下缘（原文见上条）。pwe 把机舱段装带写作 100 mm 至 18 mm，见下方争议说明。
+
+  - field: protection.armor.thickness
+    value: 145
+    unit: mm
+    qual: { part: magazine, region: upper }
+    src: [navypedia-tone, pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      弹药库段装带上缘。navypedia："Magazines were protected by narrower belt
+      (4.0m in height summary with longitudinal bulkhead, upper edge of belt was under wl).
+      Its thickness changed from 145mm at upper edge to 55mm near double bottom."
+      pwe 记 "5.7" to 2.2" (145mm to 55mm) NVNC magazine belt"，两源一致。
+
+  - field: protection.armor.thickness
+    value: 55
+    unit: mm
+    qual: { part: magazine, region: lower }
+    src: [navypedia-tone, pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: 弹药库段装带近内底处，两源一致 55 mm。
+
+  - field: protection.armor.thickness
+    value: 31
+    unit: mm
+    qual: { part: deck, region: main }
+    src: [navypedia-tone, pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      navypedia："Main belt was connected with main 31mm deck by 20°-inclined 65mm slopes."
+      pwe 记 "2.6" to 1.2" (65mm to 31mm) CNC middle deck"，即中层甲板 65–31 mm，
+      本行取 navypedia 明写的 31 mm 主甲板；65 mm 一端见 deck/slope 两条。
+
+  - field: protection.armor.thickness
+    value: 56
+    unit: mm
+    qual: { part: deck, region: lower }
+    src: [navypedia-tone, pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      弹药库上方平甲板。navypedia："Magazines were protected by flat 56mm lower deck."
+      pwe："2.2" (56mm) lower deck over magazines"，两源一致。
+
+  - field: protection.armor.thickness
+    value: 65
+    unit: mm
+    qual: { part: slope, region: main }
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: 连接主装带与主甲板的 65 mm 斜板（原文见 deck/main 条）。
+
+  - field: protection.armor.angle
+    value: 20
+    unit: deg
+    qual: { part: slope, region: main }
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: navypedia "20°-inclined 65mm slopes"。
+
+  - field: protection.armor.angle
+    value: 20
+    unit: deg
+    qual: { part: belt, region: main }
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      主装带内倾 20°。navypedia："Inner 20°-inclined 110.5m-long main belt protected
+      machinery spaces, connecting with anti-torpedo bulkhead by lower edge."
+      pwe 亦记 "machinery belt sloped 20 degrees"。
+
+  - field: protection.armor.thickness
+    value: 105
+    unit: mm
+    qual: { part: bulkhead, region: main }
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      机舱段装带的横向封闭隔壁上缘。navypedia："Belt was closed by 105-67mm
+      transverse bulkheads." **pwe 对同一部位给 175–67 mm，两说并列不裁决**，
+      差异与来源口径写在 RESEARCH-NOTES。
+
+  - field: protection.armor.thickness
+    value: 175
+    unit: mm
+    qual: { part: bulkhead, region: fore }
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      弹药库段装带的横向封闭隔壁上缘。navypedia："this belt also was closed by
+      175-130mm bulkhead." 与 pwe 的 175–67 mm 在 175 这一端一致、下端不一致，
+      下端差异见 RESEARCH-NOTES。
+
+  - field: protection.armor.thickness
+    value: 25
+    unit: mm
+    qual: { part: turret, region: face }
+    src: [navypedia-tone, pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      navypedia："Guns had 25mm turrets and 25mm barbettes."
+      pwe："1" (25mm) NVNC turret"。两源一致。
+      注意这是日本重巡里极薄的一档，主炮塔只防破片与炮口暴风。
+
+  - field: protection.armor.thickness
+    value: 25
+    unit: mm
+    qual: { part: barbette, region: main }
+    src: [navypedia-tone, pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: navypedia "25mm barbettes"；pwe "1" (25mm) NVNC barbette"，两源一致。
+
+  - field: protection.armor.thickness
+    value: 100
+    unit: mm
+    qual: { part: conning_tower, region: side }
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      navypedia："CT had 100mm sides and 50mm roof."
+      **pwe 对同一部位给侧 130–70 mm、顶 40 mm，两说并列不裁决**（见 NOTES）。
+
+  - field: protection.armor.thickness
+    value: 50
+    unit: mm
+    qual: { part: conning_tower, region: roof }
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: navypedia "50mm roof"；pwe 给 40 mm overhead。
+
+  - field: protection.armor.material
+    value: NVNC（非渗碳均质装甲）
+    qual: { part: belt, region: main }
+    src: [pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      pwe 原文："4" to 0.7" (100mm to 18mm) NVNC and Dücol machinery belt sloped 20 degrees"。
+      材质栏只有 pwe 给出，navypedia 未写材质。
+
+  - field: protection.armor.material
+    value: NVNC
+    qual: { part: magazine, region: upper }
+    src: [pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: pwe 原文 "5.7" to 2.2" (145mm to 55mm) NVNC magazine belt"。
+
+  - field: protection.armor.material
+    value: CNC
+    qual: { part: deck, region: main }
+    src: [pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      pwe 原文 "2.6" to 1.2" (65mm to 31mm) CNC middle deck"。
+      注意材质与舷侧不同（甲板用 CNC 均质、舷侧用 NVNC），pwe 是唯一区分二者的来源。
+
+  - field: protection.armor.weight
+    value: 2073
+    unit: t
+    src: [pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      pwe 原文 "Protection | 2073 tons"。来源未说明这是设计值还是实测值，
+      也未说明是否含炮座与司令塔，引用时须带此注。
+
+  - field: protection.underwater.depth
+    value: 3.3
+    unit: m
+    src: [navypedia-tone, pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      navypedia："Underwater protection consisted of bulges and longitudinal bulkhead,
+      its deep was about 3.3m." pwe："Torpedo system depth 10'10" (3.3m)"。两源一致。
+
+  - field: protection.torpedo_bulge.type
+    value: 突出部 + 纵向防雷隔壁（多层液舱）
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      navypedia 原文："Underwater protection consisted of bulges and longitudinal bulkhead"
+      以及 "Lower 20°-inclined 110.5m-long main belt ... connecting with anti-torpedo
+      bulkhead by lower edge."
+      日文百科另有「以重油层夹装甲的复层液层防御」之说，属 tier E，不作事实。
+
+  # ============================================================ 武备（装载层）
+  - field: armament.mount.summary
+    value: >-
+      主炮 4 座双联 20 cm/50 三年式 No.2 共 8 门，全部集中在舰艏，舰尾无一门主炮；
+      高角炮 4 座双联 12.7 cm/40 八九式共 8 门；
+      轻高炮竣工时 6 座双联 25 mm 九六式共 12 挺；
+      鱼雷 4 座三联 61 cm 发射管共 12 门。
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      以上全部来自 navypedia 一行原文："Armament 4 x 2 - 203/50 3-shiki,
+      4 x 2 - 127/40 89-shiki, 6 x 2 - 25/60 96-shiki, 4 x 3 - 610 TT (24),
+      6 seaplanes (3 E7K1, 3 E8N1), 2 catapults"。
+      **括号里的 (24) 来源没有解释**：它可能是携雷总数，也可能是备用雷数，
+      两种读法会导致「12 门管 + 12 枚备雷」或「24 枚备雷」两种不同结果。
+      本站不做选择，故 armament.torpedo.tubes 只记 12（"4 x 3" 直接读得），
+      不另立「携雷总数」fact。**「是否可再装填」的机构细节两源都没写，不推断。**
+      四座炮塔全部前置、舰尾无主炮这一点由 combinedfleet 独立佐证：
+      "with four dual turrets forward (some of which suffered from very poor firing arcs),
+      and none aft"（来源 combinedfleet-tone-class，见 NOTES）。
+
+  - field: armament.torpedo.tubes
+    value: 12
+    unit: count
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: navypedia "4 x 3 - 610 TT"，4 座三联 = 12 门。
+
+  - field: armament.torpedo.diameter
+    value: 610
+    unit: mm
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      navypedia 写 610 TT（公制）。日文来源写作 61 cm 三年式（九〇式）发射管，
+      型号只见于 tier E，不作事实。
+
+  - field: armament.aa_25mm.count
+    value: 12
+    unit: count
+    src: [navypedia-tone, pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      竣工时 6 座双联 = 12 挺。navypedia "6 x 2 - 25/60 96-shiki"；
+      pwe "6x2 25mm AA guns"，两源一致。
+      **本条不带 valid.to，是舰级口径的「竣工状态」值**（依据文件顶层 open_ended_note），
+      实际战时的逐次加装写在 ships/tone.yaml 与 ships/chikuma.yaml 的
+      带时间窗记录里，由单舰 fact 覆盖。两舰改装节点不同（利根 1943-12-14、
+      筑摩 1944-02-01 各达 20 挺），故此处不设统一的终止日。
+
+  # ============================================================ 航空
+  - field: aviation.aircraft.capacity
+    value: 6
+    unit: count
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      navypedia 原文 "6 seaplanes (3 E7K1, 3 E8N1)"，即设计编制 6 机。
+      **同页另一来源给的设计上限是 8 机，与 6 冲突**：pwe 原文 "Though designed to
+      carry up to eight seaplanes, it appears that the ships never carried more than
+      five, and this was reduced to four later in the war."
+      两个数字（编制 6 / 上限 8）都是来源原话，不裁决，并列记进 RESEARCH-NOTES 争议节。
+      实战实载从未超过 5 机，见下一条。
+
+  - field: aviation.aircraft.capacity
+    value: 5
+    unit: count
+    src: [pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      **这是「实战从未超过 5 机」的实载上限，不是编制值，也不带起始日。**
+      pwe 原文只给了一个贯穿全生涯的判断："it appears that the ships never carried
+      more than five, and this was reduced to four later in the war"，
+      **没有给「从哪一天起是 5 机」**。故 valid.from 取本级服役起点（不是 pwe 说的日期，
+      本站也没有把它当成 pwe 的说法），含义是「本条适用于整段服役期」。
+      本条的下限 4 机同样出自该句，本站不另立一条，因为 4 机没有对应的起始日期。
+
+  - field: aviation.aircraft.types
+    value: 三座水侦 3 机（E7K1「Alf」）+ 双座水侦 3 机（E8N1「Dave」）
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: navypedia 原文 "6 seaplanes (3 E7K1, 3 E8N1)"。后续换装见下一条。
+
+  - field: aviation.catapult.count
+    value: 2
+    unit: count
+    src: [navypedia-tone, pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: navypedia "2 catapults"；pwe "Aircraft | 2 / Kure Type 2 Model 5 catapults"，一致。
+
+  - field: aviation.catapult.type
+    value: 呉式二号五型（Kure Type 2 Model 5）
+    src: [pwe-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      pwe 原文 "2 / Kure Type 2 Model 5 catapults"。navypedia 只写数量，未给型号。
+      注意「二号五型」是型号名，不代表只有 2 座。
+
+  # aviation.hangar.count 故意不登记。
+  # 「本级没有机库」这一条只有 tier E（日文/英文百科）正面写过
+  # （日文原文「艦載機は露天繋止で格納庫はない」），而 tier E 不能作 fact 来源。
+  # navypedia 与 pwe 都只写「机数与弹射器」，没有一句正面说「无机库」。
+  # 所以本站不填 0（0 是「设计上就没有」，需要来源直说），改记进 RESEARCH-NOTES
+  # 的「未获取」一节，请主会话按 E 级线索处理或补一手来源。
+
+  # ============================================================ 编制
+  - field: service.complement.standard
+    value: 850
+    unit: persons
+    src: [navypedia-tone, pwe-tone-class, combinedfleet-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      三源同值 850：navypedia "Complement 850"；pwe "Complement | 850"；
+      combinedfleet "Crew | 850"。
+      另一说 869 名（利根竣工时定员）、874 名只见于 tier E，不作事实，记进 NOTES。
+
+  # ============================================================ 武器实体：主炮
+  # 与已有 weapon:20cm-3ns（No.1 炮）分开，理由见文件头。
+  - about: weapon:20cm-3ns-no2
+    field: weapon.designation
+    value: 20 cm/50 (8") 3rd Year Type No. 2 / 50口径三年式20.3cm砲
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1932 }
+    confidence: C
+    note: >
+      navweaps 原文："20 cm/50 (8") 3rd Year Type No. 2 / Official Designation:
+      50 caliber 3rd Year Type No. 2 20 cm Gun"。
+      **No.2（2 GÔ）这个序号是为了与旧的 No.1 炮区别**：
+      "The No. 2 (2 GÔ) designation was used to distinguish these guns from the older
+      20 cm (7.9") 3rd Year Type No. 1 (1 GÔ) guns."
+
+  - about: weapon:20cm-3ns-no2
+    field: weapon.category
+    value: naval_gun
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1932 }
+    confidence: C
+
+  - about: weapon:20cm-3ns-no2
+    field: weapon.nation
+    value: japan
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1932 }
+    confidence: C
+
+  - about: weapon:20cm-3ns-no2
+    field: weapon.bore
+    value: 203.2
+    unit: mm
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1932 }
+    confidence: C
+    note: >
+      navweaps 原文："Actual bore diameter was 20.32 cm (8.0")."
+      **与 No.1 炮的 20.0 cm 不同**，这是两型不能混用的直接证据。
+
+  - about: weapon:20cm-3ns-no2
+    field: weapon.caliber_length
+    value: 50
+    unit: ratio
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1932 }
+    confidence: C
+    note: >
+      按 navweaps 的命名 "20 cm/50" 与 "50 caliber 3rd Year Type No. 2 20 cm Gun"。
+      倍径计算法（日本按膛线长还是全长）来源未声明，不填 caliber_method。
+
+  - about: weapon:20cm-3ns-no2
+    field: weapon.length.oa
+    value: 10.31
+    unit: m
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1932 }
+    confidence: C
+    note: navweaps "Gun Length oa 405.9 in (10.310 m)"。
+
+  - about: weapon:20cm-3ns-no2
+    field: weapon.length.bore
+    value: 10.0
+    unit: m
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1932 }
+    confidence: C
+    note: navweaps "Bore Length 393.70 in (10.000 m)"。
+
+  - about: weapon:20cm-3ns-no2
+    field: weapon.weight
+    value: 19000
+    unit: kg
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1932 }
+    confidence: C
+    note: >
+      navweaps "Gun Weight 18.7 tons (19 mt)"。取公制 19 t = 19,000 kg
+      （原文给的是整数量级，不是精确到 kg 的值，引用时须带此注）。
+
+  - about: weapon:20cm-3ns-no2
+    field: weapon.projectile_weight
+    value: 125.85
+    unit: kg
+    qual: { shell_type: ap }
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1932 }
+    confidence: C
+    note: >
+      navweaps "Projectile Types and Weights — AP Type 91 2a: 277.4 lbs. (125.85 kg)"。
+      同一页注明这些 Type 91 弹**没有被帽**（"These 20 cm (8") Type 91 shells were not
+      true "APC" projectiles as they lacked a cap"），故 shell_type 记 ap 而非 apc。
+
+  - about: weapon:20cm-3ns-no2
+    field: weapon.muzzle_velocity
+    value: 840
+    unit: mps
+    qual: { shell_type: ap }
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1932 }
+    confidence: C
+    note: >
+      navweaps "Muzzle Velocity — All except Illum: 2,756 fps (840 mps)"。
+      照明弹为 710 mps，不在本条范围。
+
+  - about: weapon:20cm-3ns-no2
+    field: weapon.range.max
+    value: 29400
+    unit: m
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1932 }
+    confidence: C
+    note: >
+      navweaps 射表 "45.0 degrees / 32,150 yards (29,400 m)"。
+      **必须与仰角成对解读**（见下一条）；40° 时是 28,900 m。
+
+  - about: weapon:20cm-3ns-no2
+    field: weapon.range.max_elevation
+    value: 45
+    unit: deg
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1932 }
+    confidence: C
+    note: 29,400 m 对应 45° 仰角（原文见上条）。
+
+  - about: weapon:20cm-3ns-no2
+    field: weapon.rate_of_fire
+    value: 4
+    unit: rpm
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1932 }
+    confidence: C
+    note: >
+      navweaps "Rate Of Fire 3 to 4 rounds per minute"，并注明这是供弹系统上限：
+      "the ammunition supply system ... for the later classes could provide a maximum
+      of four complete rounds per gun per minute"。高仰角时降到 2-3 发/分。
+
+  - about: weapon:20cm-3ns-no2
+    field: weapon.ammo_outfit
+    value: 126
+    unit: count
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1932 }
+    confidence: C
+    note: >
+      navweaps "Ammunition stowage per gun 120 - 126 rounds"，本条取上限 126。
+      区间是原文给的，不是推算。
+
+  - about: weapon:20cm-3ns-no2
+    field: weapon.barrel_life
+    value: 400
+    unit: count
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1932 }
+    confidence: C
+    note: navweaps "Approximate Barrel Life 320 - 400 rounds"，本条取上限 400。
+
+  - about: weapon:20cm-3ns-no2
+    field: weapon.in_service_from
+    value: 1932
+    unit: date
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1932 }
+    confidence: C
+    note: navweaps "Date In Service 1932"；设计年 1930。
+
+  # ============================================================ 炮位实体：主炮
+  - about: mount:tone-class-main
+    field: mount.label_name
+    value: No.1 – No.4（前部集中配置，四座双联）
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      编号采用来源惯用的 No.1–No.4；**没有采用英式 A/B/X/Y 命名**，
+      因为日方来源本身用番号。
+      本实体代表「本级四座主炮塔」这一组，逐座细节见 RESEARCH-NOTES 的未获取清单。
+
+  - about: mount:tone-class-main
+    field: mount.weapon
+    value: weapon:20cm-3ns-no2
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      navweaps 的 Ship Class Used On 栏原文把本级列在 As Completed 之下：
+      "Takao and Tone classes"，用的就是本页的 No.2 炮。
+
+  - about: mount:tone-class-main
+    field: mount.turret_designation
+    value: Model E3
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      navweaps 原文："Tone (4) and Ibuki (5): Model E3"。
+      同一页说明 E3 的炮座圈比 15.5 cm 三联装小，导致已建成的炮座顶部改成锥形：
+      "the design for the top of the barbettes was altered to a conical shape with a
+      diameter of 18.7 feet (5.70 m) at the lower level and 16.4 feet (5.00 m) at the
+      upper level."
+
+  - about: mount:tone-class-main
+    field: mount.type
+    value: twin_turret
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: navypedia "4 x 2 - 203/50 3-shiki"。
+
+  - about: mount:tone-class-main
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+
+  - about: mount:tone-class-main
+    field: mount.count
+    value: 4
+    unit: count
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      四座全部在舰艏。combinedfleet 的旁证原文："with four dual turrets forward
+      (some of which suffered from very poor firing arcs), and none aft"。
+
+  - about: mount:tone-class-main
+    field: mount.position
+    value: fore
+    src: [combinedfleet-tone-class]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      combinedfleet 原文 "four dual turrets forward ... and none aft"。
+      **逐座的高低错层关系（哪一座背负、哪两座朝后）本站未获取到非 tier E 的表述，
+      故不写 superfiring_fore，也不拆成四座实体。** 见 NOTES 未获取清单。
+
+  - about: mount:tone-class-main
+    field: mount.elevation.max
+    value: 55
+    unit: deg
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      navweaps "Elevation — Model E1, E2, Modified E2 and E3: -5 / +55 degrees"。
+      最低仰角 -5° 见 RESEARCH-NOTES（同一句原文）。
+
+  # ============================================================ 炮位实体：高角炮
+  - about: mount:tone-class-127
+    field: mount.weapon
+    value: weapon:127cm-89
+    src: [navweaps-127cm-89]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      navweaps 的炮座型号栏原文："Myôkô (4), Mogami (4), Tone (4) and Ibuki (4): A1 Mod 1"，
+      即本级装 4 座 A1 Mod 1 双联座。
+
+  - about: mount:tone-class-127
+    field: mount.turret_designation
+    value: A1 Mod 1
+    src: [navweaps-127cm-89]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      navweaps 区别各型："The A1 mount was unshielded. The A1 Mod 1 added a shield."
+      即本级这四座带炮盾。
+
+  - about: mount:tone-class-127
+    field: mount.type
+    value: twin_turret
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: navypedia "4 x 2 - 127/40 89-shiki"；navweaps 同页按 "Type 89 Twin Mounts" 归类。
+
+  - about: mount:tone-class-127
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [navypedia-tone]
+    valid: { from: 1938-11-20 }
+    confidence: C
+
+  - about: mount:tone-class-127
+    field: mount.count
+    value: 4
+    unit: count
+    src: [navypedia-tone, navweaps-127cm-89]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: 两源都写 4 座（navypedia "4 x 2"；navweaps "Tone (4)"）。
+
+  # ============================================================ 探测
+  - field: sensors.rangefinder.baseline
+    value: 8
+    unit: m
+    src: [navweaps-20cm-3ns]
+    valid: { from: 1938-11-20 }
+    confidence: C
+    note: >
+      navweaps 原文："The Modified E2 and the Model E3 mountings had 315 inch (8 m)
+      rangefinders, the other Models had 236 inch (6 m) rangefinders."
+      本条是**主炮塔内**测距仪的基线长，不是舰桥测距仪；本站无更细字段区分，故带此注。

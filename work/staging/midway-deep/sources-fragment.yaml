@@ -1,0 +1,399 @@
+﻿# ============================================================================
+# 中途岛深度补强 · 新登记来源
+#
+# 2026-11-23 · 采集员 midway-deep
+# 已先搜 data/sources.yaml 去重：oni-japanese-story-midway / jm93-midway-operations /
+# nhhc-h006-2-isr-midway / nhhc-h006-3-victory-barely / combinedfleet-i168 /
+# combinedfleet-akagi|kaga|soryu|hiryu / ussbs-aoki-akagi / ussbs-midway-interrogations /
+# nhhc-enterprise|hornet|yorktown-midway-report / parshall-midway-brief 均已存在，
+# 本文件**不重复登记**，正文直接复用其 id。
+#
+# 下面 17 条为本轮新增。tier 沿用 SCHEMA §8 定义：
+#   A 一手档案 / B 同期官方出版物 / C 权威二次文献 / D 专题网站 / E 百科（不作 fact 来源）
+# ============================================================================
+
+sources:
+  # ---------------------------------------------------------------- A 级：一手
+  - id: navweaps-midway-oob
+    title: Orders of Battle — Battle of Midway and Aleutians, 3-7 June 1942 (NavWeaps)
+    url: https://www.navweaps.com/index_oob/OOB_WWII_Pacific/OOB_WWII_Midway.php
+    type: website
+    tier: C
+    role:
+      - data
+    operator: NavWeaps（contributed by Mark Horan, Richard Worth, David Williams, Richard Leonard）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      全站唯一**逐 Buntai（分队）列出日方航空队编制**的中途岛战斗序列，同时给出美方各中队
+      「编制数（operational 数）」双数。关键口径提示：
+      （a）每个航空队单列一行「Unit commander … 1 x B5N2/D3A1」，该行与 Buntai 行是否重复计
+      未明说；按分队相加后与 combinedfleet TROM 一致，但属结构解读，不可写成来源断言。
+      （b）约克城 VS-5 19 / VB-3 18 与行动报告 18/18、出击 17 冲突，两说并列。
+      （c）VMSB-241 SB2U-3 标「21 (14 operational)，Only 12 crews」——飞机比机组多，是中途岛
+      岸基航空兵的真实窘境。
+      （d）本页同时收录阿留申作战，检索时必须分段（见 docs/51-midway-oob-verification.md）。
+
+  - id: ussbs-ijo-1-amagi-kaga
+    title: USSBS Interrogation Nav No. 1 — Captain Amagai Takahisa, Air Officer of Kaga at Midway
+    url: https://www.ibiblio.org/hyperwar/AAF/USSBS/IJO/IJO-1.html
+    type: primary_archive
+    tier: A
+    role:
+      - data
+      - narrative
+    operator: US Strategic Bombing Survey, 1945-10-06
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: public_domain_us_gov
+    note: >-
+      加贺飞行长一手证言。三处关键：
+      （1）加贺航空队编制「21 fighters (0) Type: 27 VB (99 Type); 18 VT (97 Type); **same as all
+      other carriers**」——与其他来源（18/18/27）不一致，属受访者记忆偏差，**不可作编制依据**，
+      只作旁证。
+      （2）加贺阵亡「About 800 lost. About 1000 saved.」；飞行员「About 40 pilots. About 50% pilots saved.」
+      （3）**雷达矛盾的关键来源**：先说「By radar. It was an experiment at MIDWAY」，又说「Did the
+      Kaga have it? No, island too small」。两句都引，不裁决。
+      另有加贺被弹 4 发逐发部位、CAP 常态 28 机（每两舰 8/8/6/6）等。
+
+  - id: ussbs-ijo-2-kawaguchi-hiryu
+    title: USSBS Interrogation Nav No. 2 — Captain Kawaguchi Susumu, Air Officer of Hiryu at Midway
+    url: https://www.ibiblio.org/hyperwar/AAF/USSBS/IJO/IJO-2.html
+    type: primary_archive
+    tier: A
+    role:
+      - data
+      - narrative
+    operator: US Strategic Bombing Survey, 1945-10-10
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: public_domain_us_gov
+    note: >-
+      飞龙航空参谋一手证言。**飞龙飞行员阵亡「About 60 pilots and a total of 500 men of crew of
+      1500」的唯一出处**。另有两句决定性的：
+      （1）飞龙被弹「hit **six** times during the fourth attack」（与详报/ TROM 的 4 弹冲突，并列）。
+      （2）**日方雷达时间点**："No, not any. As soon as we got back they put them on the carriers.
+      **July 1942** both battleships and carriers received them."
+      注意：该页把山本座舰记作「Third Fleet / Third Task Force, commanded by Vice Admiral NAGUMO」，
+      部队番号有误（应为第一航空舰队），引用时不要照抄番号。
+
+  - id: ussbs-ijo-13-watanabe
+    title: USSBS Interrogation Nav No. 13 — Captain Watanabe Yasuji, Gunnery Officer on Yamamoto's Staff
+    url: https://www.ibiblio.org/hyperwar/AAF/USSBS/IJO/IJO-13.html
+    type: primary_archive
+    tier: A
+    role:
+      - data
+      - narrative
+    operator: US Strategic Bombing Survey, 1945-10-15
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: public_domain_us_gov
+    note: >-
+      山本幕僚视角。三处可用：
+      （1）日方总损失估计「**The total lost was about 4,500**」（与 ONI 的 4,800 并列）。
+      （2）战后盘点「**Many planes and a number of pilots were lost in the action, which, weakened
+      the Navy Air Force, requiring training to replace them.**」
+      （3）雷达「No, about **August 1942** it was installed.」（与川口的「7 月」冲突，并列。）
+      该访谈把山本记作在 YAMATO 上指挥「entire operation」，且说「Admiral NAGANO commanded carrier
+      forces」——后者有误（南云，非永野），引用时需剔除。
+
+  - id: ussbs-ijo-31-katsumata-attrition
+    title: USSBS Interrogation Nav No. 31 — Rear Admiral Katsumata Seizo, Aircraft Ferrying and Pilot Attrition, JNAF
+    url: https://www.ibiblio.org/hyperwar/AAF/USSBS/IJO/IJO-31.html
+    type: primary_archive
+    tier: A
+    role:
+      - data
+      - narrative
+    operator: US Strategic Bombing Survey, 1945-10-25
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: public_domain_us_gov
+    note: >-
+      **「中途岛不是飞行员损耗率修订主因」这条反证的原句出处**：
+      "I believe the Battle of GUADALCANAL and the actions at RABAUL had more to do with the revision
+      than the Battle of MIDWAY." 另给训练体系崩坏路径：损耗率假设 20-30% → 1943 上调 50%；
+      1943 年末因汽油短缺废弃中级训练阶段，"This increased operational losses."
+
+  - id: ussbs-ijo-39-ohara-soryu
+    title: USSBS Interrogation Nav No. 39 — Captain Ohara Hisashi, Executive Officer of Soryu at Midway
+    url: https://www.ibiblio.org/hyperwar/AAF/USSBS/IJO/IJO-39.html
+    type: primary_archive
+    tier: A
+    role:
+      - data
+      - narrative
+    operator: US Strategic Bombing Survey
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: public_domain_us_gov
+    note: >-
+      苍龙副长一手证言。苍龙阵亡「About 700 were lost **including about 30 pilots**」；被弹 3 发逐发
+      部位；「About 250 planes were lost. Some were lost in the attack on the island, some at the
+      American carriers, the remainder were lost on the Japanese carriers.」——这是 44（空中）与 248
+      （编制）两个口径之间唯一讲清「损失去哪了」的一手说法。
+      另有「The planes were delayed while changing bombs to attack the carriers.」——换弹影响出击的
+      日方原始表述。
+
+  - id: ussbs-ijo-50-aircraft-wastage
+    title: USSBS Interrogation Nav No. 50 — Commander Fukamizu, Aircraft Availability and Loss Reports
+    url: https://www.ibiblio.org/hyperwar/AAF/USSBS/IJO/IJO-50.html
+    type: primary_archive
+    tier: A
+    role:
+      - data
+    operator: US Strategic Bombing Survey, 1945-10-31 / 11-01
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: public_domain_us_gov
+    note: >-
+      **Annex B 是唯一一份逐月「生产 / 损耗」双列的海军航空兵力表**，脚注 7 把 1942 年 6 月标注为
+      "Midway, Aleutians"。
+      ⚠️ 该页**没有给 `a/b` 的图例**，按表头 "Number of Planes Expended = Combat Losses/Operational
+      Losses" 与列位推断为「生产/损耗」，**属推断，不是来源断言**。除非先核对原表图例，否则只引
+      「6 月标注为 Midway/Aleutians」这一事实，不引具体数字。
+
+  - id: ussbs-ijo-64-takata-planning
+    title: USSBS Interrogation Nav No. 64 — Rear Admiral Takata Toshitane, Japanese Naval Planning after Midway
+    url: https://www.ibiblio.org/hyperwar/AAF/USSBS/IJO/IJO-64.html
+    type: primary_archive
+    tier: A
+    role:
+      - data
+      - narrative
+    operator: US Strategic Bombing Survey, 1945-11-01
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: public_domain_us_gov
+    note: >-
+      第三舰队参谋，负责中途岛后的航空队重建。三处关键：
+      （1）飞行员「**30% of the pilots were killed and 40% were injured**」（唯一按比例给出的口径）。
+      （2）生还者去向：「30% came back to JAPAN to convalesce, 40% were shifted to the Third Fleet,
+      at KYUSHU」，随后「forced to send these pilots prematurely to RABAUL」，最终「most of them were
+      killed in action at PORT MORESBY, BUNA and SANTA CRUZ」——**「长期损失」的真实路径**。
+      （3）「**I think failure of the MIDWAY Campaign was the beginning of total failure.**」
+
+  - id: ussbs-ijo-66-midway-solomons
+    title: USSBS Interrogation Nav No. 66 — Midway, Eastern Solomons, Philippines
+    url: https://www.ibiblio.org/hyperwar/AAF/USSBS/IJO/IJO-66.html
+    type: primary_archive
+    tier: A
+    role:
+      - narrative
+    operator: US Strategic Bombing Survey
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: public_domain_us_gov
+    note: >-
+      补强用的旁证访谈（中途岛→东所罗门→菲律宾一线的连续性）。本轮未逐句引用，登记备用。
+
+  # ---------------------------------------------------------------- B 级：官方战史/综述
+  - id: nhhc-h006-1-battle-of-midway
+    title: 'NHHC H-gram 006-1: The Battle of Midway (S. J. Cox)'
+    url: https://www.history.navy.mil/about-us/leadership/director/directors-corner/h-grams/h-gram-006/h-006-1.html
+    type: official_publication
+    tier: A
+    role:
+      - data
+      - narrative
+    operator: Naval History and Heritage Command
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: public_domain_us_gov
+    note: >-
+      **本轮最重要的一份**，因为它同时给出三组此前拿不到的数字：
+      （1）**日方飞行员阵亡「only 36 were lost on the carriers and 74 in the air, mostly from Hiryu」**
+      —— 这就是常被引用的 110。
+      （2）「All 248 carrier aircraft were lost」；「Over 3,000 Japanese sailors were killed …
+      including **over 700 aircraft technicians/maintainers**」。
+      （3）**决定性的反证句**："**It was not the loss of pilots at Midway** that crippled Japan's
+      ability to wage offensive naval operations, but rather the loss of … **the irreplaceable
+      aircraft carriers**."
+      另有美方空勤「Well over 150 U.S. aviators」；鱼雷机「Of the 99 men in the 42 torpedo planes
+      that were lost, only three survived」。
+      该页直连 TLS 握手失败（history.navy.mil 全线），**本次经 Wayback 抓取**：
+      http://web.archive.org/web/20251208122218id_/https://www.history.navy.mil/about-us/leadership/director/directors-corner/h-grams/h-gram-006/h-006-1.html
+
+  - id: nhhc-h006-4-flight-to-nowhere
+    title: 'NHHC H-gram 006-4: The Flight to Nowhere (S. J. Cox)'
+    url: https://www.history.navy.mil/about-us/leadership/director/directors-corner/h-grams/h-gram-006/h-006-4.html
+    type: official_publication
+    tier: A
+    role:
+      - narrative
+    operator: Naval History and Heritage Command
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: public_domain_us_gov
+    note: >-
+      大黄蜂航空团「flight to nowhere」（Ring 的 265° 航向）专题。含 2019 年作者自注：该说法
+      「differs from the traditional view [and Samuel Eliot Morison's] and provokes heated dissent」，
+      反证是大黄蜂两名战斗机飞行员称途中见到库雷环礁。**争议本身要写明**，不要单方面采用。
+      本轮仅登记，未作为正文主依据。
+      直连 TLS 失败，经 Wayback：20251208121820id_
+
+  # ---------------------------------------------------------------- C 级：权威二次文献/专题
+  - id: ethw-radar-fighter-directors-midway
+    title: 'Midway — Chapter 7 of Radar and the Fighter Directors (Engineering and Technology History Wiki)'
+    url: https://ethw.org/Midway_-_Chapter_7_of_Radar_and_the_Fighter_Directors
+    type: website
+    tier: C
+    role:
+      - data
+      - narrative
+    operator: ETHW / IEEE（章节作者引 [5][9][11][15][32][33] 页码）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      **美方 CXAM 四次接触的唯一逐次叙述来源**：0815 利根 4 号机（30 mi / 185°）、1159 飞龙第一波
+      （46 mi / 250°，ONI 同）、约 1430 飞龙第二波（45 mi）、1615 利根 3 号机。另有反事实判断
+      「If the Japanese carriers had radar equivalent to the American CXAM they most likely would not
+      have been surprised」——C 级作者判断，引用须标层级。
+      ⚠️ 该页称中途岛岸基雷达是「SCR-270, a close cousin of the CXAM」，与 ONI 只说「Midway radar」
+      不同，型号归属存疑，不要写成定论。
+
+  - id: hw-japanese-story-midway-nagumo
+    title: HyperWar — The Japanese Story of the Battle of Midway (ONI P32-1002 全文，含 7 张附表)
+    url: https://www.ibiblio.org/hyperwar/Japan/IJN/rep/Midway/Nagumo/
+    type: official_publication
+    tier: A
+    role:
+      - data
+      - narrative
+    operator: ONI 译（南云一手战斗详报），HyperWar 转录
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: public_domain_us_gov
+    note: >-
+      与 `ng-nagumo-detailed-report` 同源同址——**两条 id 指向同一 URL 是重复，合并时请保留
+      `hw-japanese-story-midway-nagumo` 这一条，删除 `ng-nagumo-detailed-report`**。
+      保留理由：该 id 命名与既有 `oni-japanese-story-midway` 形成「NHHC 版 / HyperWar 版」对照，
+      便于区分「有表 / 无表」。
+
+  - id: ss-introduction-shattered-sword
+    title: Shattered Sword — Introduction (free sample PDF, Potomac Books)
+    url: https://www.shatteredswordbook.com/ShatteredSwordIntroduction.pdf
+    type: document
+    tier: C
+    role:
+      - narrative
+    operator: Jonathan Parshall & Anthony Tully / Potomac Books
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      正式出版物的导言（非讲稿），比已登记的 `parshall-midway-brief`（2006 Historicon 讲义）更适合作
+      正文依据。**核心价值：把「精英飞行员全灭」明确列为谬见**：
+      "• Japan's elite carrier aviators were all but wiped out during the battle. All of these are
+      **fallacious**." 另有「after six months of war, Japan's naval aviation arm was already balanced
+      on a knife's edge」等战略判断。
+      ⚠️ 仅导言 7 页，无页码级附录，引用时不得冒充全书数据。
+
+  - id: usni-messaging-after-midway
+    title: 'Timeless Lessons From the Messaging After Midway (Naval History, June 2025)'
+    url: https://www.usni.org/magazines/naval-history/2025/june/timeless-lessons-messaging-after-midway
+    type: paper
+    tier: C
+    role:
+      - narrative
+    operator: Lieutenant Jack Tribolet, USN / U.S. Naval Institute
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      **日方宣传口径分阶段释放的唯一成体系叙述**：6/11 Japan Times 头条「Navy Scores Another Epochal
+      Victory」自称击沉 2 艘美航母、**同时承认损失 2 艘**；6/21 才承认另 2 艘「因不明损伤无法运作」。
+      另有对轴心盟友说谎→意大利在阿拉曼后公开归咎日本海军；以及「把生还者隔离一年以上，反而自损
+      经验」这条长期后果。
+      ⚠️ **该文自身有硬伤**：称美国头条「7 July 1942, hitting the stands three days after the battle」，
+      但中途岛是 6/4-7，距 7/7 已一个月。**「三天后」这句不可引用。**
+      直连 403，经 Wayback：20260604112236id_
+
+  - id: kyoto-shimbun-midway-daiseika
+    title: 【京都戦時新聞を読む】ミッドウェー海戦「大戦果」 嘘の「勝利」、どう伝えたのか（京都新聞）
+    url: https://www.kyoto-np.co.jp/articles/-/1734498
+    type: website
+    tier: C
+    role:
+      - narrative
+    operator: 京都新聞（引《京都戦時新聞》第 4 号，1942-06-11 掲載）
+    lang: ja
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      **大本営発表（1942-06-10 15:30）的日文原文转引**，是本轮唯一拿到日文原始措辞的来源：
+      「米航空母艦エンタープライズ型１隻とホーネット型１隻撃沈▽飛行機約１２０機撃墜」。
+      并附现代表述「大本営は虚構の戦果を発表し、京都新聞など全国の新聞は追従して「大戦果」と報道」。
+      ⚠️ 这是**报纸引大本営発表**，不是大本営发表原件；引用层级应写「转引自《京都戦時新聞》第 4 号」。
+
+  - id: nw-japanese-torpedoes-wwii
+    title: NavWeaps — Japanese Torpedoes of World War II
+    url: https://www.navweaps.com/Weapons/WTJAP_WWII.php
+    type: website
+    tier: C
+    role:
+      - data
+    operator: NavWeaps（Tony DiGiulian）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      九一式（Type 91）航空鱼雷各改型数据页。**中途岛可用的一条是图注**："Type 91 mod 2 Torpedoes
+      on the carrier Akagi in November 1941"——1941-11 赤城带的是 Mod 2。
+      ⚠️ **该图为 1941 年 11 月（珍珠港前），不是 1942-06 中途岛当日**；中途岛当日具体改型未获取，
+      写作时不可断言是 Mod 2 还是 Mod 3。
+
+  # ---------------------------------------------------------------- D 级：专题站/导航
+  - id: nw-us-radar-wwii
+    title: NavWeaps — US Radar of World War II
+    url: https://www.navweaps.com/Weapons/WNUS_Radar_WWII.php
+    type: website
+    tier: C
+    role:
+      - data
+    operator: NavWeaps（Tony DiGiulian）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      CXAM 的型号学定位原句："The prefixes 'X' and 'CX' were reserved for the Navy (NRL) and
+      commercially produced experimental or preproduction sets, eg **CXAM, the first US naval radar**."
+      本页**只有型号沿革与设备参数，没有中途岛战役数据**——战役接触记录须用
+      `ethw-radar-fighter-directors-midway` 与 `oni-midway-combat-narrative`。
+
+# ============================================================================
+# 合并提示（给主会话）
+#
+# 1. 有 1 组重复：`ng-nagumo-detailed-report` 与 `hw-japanese-story-midway-nagumo` 同 URL，
+#    建议只留后者。
+# 2. 以下 id 已存在，本文件未重复登记，但本轮大量复用了它们，正文里会直接出现：
+#    oni-midway-combat-narrative（ONI 战斗叙述，Zone +12，本轮抓到 ch4-13 全文）
+#    oni-japanese-story-midway / jm93-midway-operations / nhhc-h006-2-isr-midway /
+#    nhhc-h006-3-victory-barely / nhhc-midway-overview / combinedfleet-akagi|kaga|soryu|hiryu /
+#    combinedfleet-i168 / ussbs-aoki-akagi / ussbs-midway-interrogations /
+#    nhhc-enterprise-midway-report / nhhc-hornet-midway-report / nhhc-yorktown-midway-report /
+#    parshall-midway-brief
+# 3. 本轮为 ONI 战斗叙述补抓了 ch4/5/6/7/8/9/11/12/13（原登记只到 index），
+#    **建议在原 source note 里补一句「ch4-13 全文已抓，存 work/staging/midway-deep/_raw/」**。
+# ============================================================================

@@ -1,0 +1,399 @@
+# ============================================================================
+# 武器正文 —— 5"/25 (12.7 cm) Marks 10, 11, 13 and 17（美国）
+#
+# 这一篇要防两个混淆：
+#  ① 5"/25 ≠ 5"/38。同是 5 英寸，倍径 25 对 38，初速 2,155 fps 对 2,600 fps，
+#     炮座驱动一边是手动一边是动力。中途岛七艘重巡装的是 5"/25，
+#     只有亚特兰大装 5"/38（她那 8 座双联不在本篇范围）。
+#  ② 5"/25 的「25 倍径」不是省料，是为了减重：navweaps 的原句把因果写反着来的 ——
+#     炮座要轻 → 转动惯量小 → 人力能跟得上 → 于是炮管必须短 → 初速只好低。
+#     短炮管是手段，不是目的，这一层要写出来。
+#
+# 另一条容易压平的事：射速 15–20 发/分是炮本身的数；
+# 能不能打出来取决于炮座 —— Mark 19 是纯人力，Mark 23/27 才是动力。
+# 战争期间 Mark 19 补了 1 马力俯仰电机与 1 或 1.5 马力旋回电机。
+# ============================================================================
+weapon: 5in25-mk10
+updated: 2026-11-24
+
+intro:
+  lead:
+    zh: >-
+      5"/25 (12.7 cm) Marks 10, 11, 13 and 17 是美国海军第一型专门设计的舰载重型高射炮，
+      1921 年设计、1926 年服役，装在 1926 到 1940 年间建成或改装的大部分主力舰与巡洋舰上。
+      中途岛编成里的七艘重巡，副炮/高炮都是它 —— 只有亚特兰大号装的是 5"/38，
+      那是另一门炮。它的 25 倍径短炮管、2,155 英尺/秒的低初速，
+      不是设计上的省事，而是一整套「炮座要轻到人能转得动」的取舍倒推出来的结果。
+    en: >-
+      The 5"/25 (12.7 cm) Marks 10, 11, 13 and 17 was the first USN heavy anti-aircraft
+      gun designed for the purpose, designed in 1921 and in service from 1926, and fitted
+      to most capital ships and cruisers built or modernised between 1926 and 1940. All
+      seven heavy cruisers at Midway carried it as secondary and AA battery; only Atlanta
+      mounted the 5"/38, which is a different weapon. Its 25-calibre barrel and 2,155 fps
+      muzzle velocity were not shortcuts but the far end of a chain that began with "the
+      mounting must be light enough to be turned by hand".
+
+  paragraphs:
+    - heading: 短炮管是结果，不是原因
+      text:
+        zh: >-
+          navweaps 把这条因果写得比一般资料清楚：这一型炮座造得很轻，
+          为的是把转动惯量压到最低，从而让手动的旋回与俯仰能达到尽可能高的速度；
+          作为对照，它在旋回方向的转动惯量只有 5"/51 反鱼雷艇炮座的三分之一左右。
+          这个要求「导致炮管做短，以压低重量，而炮管一短，初速就相对低」——
+          navweaps 紧接着写了一句判断：对一门高射炮来说，这是可以接受的。
+          把这条读成技术路线就明白了：5"/25 的设计目标不是弹道性能，
+          而是「两个人靠手轮跟得上飞机」。它的俯仰上限 +85 度、下限 −15 度，
+          +85 度上的最大弹道顶点是 27,400 英尺（8,252 米）——
+          这个高度才是它存在的理由。
+        en: >-
+          NavWeaps states the causal chain more plainly than most references: these
+          mountings were lightly built in order to give them the lowest possible moment of
+          inertia and thus the highest possible speeds for manual training and elevation,
+          with about one-third the moment of inertia for train as the 5"/51 anti-torpedo
+          boat mountings. That requirement led to a short barrel to keep the weight down,
+          which in turn produced a relatively low muzzle velocity - and NavWeaps adds the
+          judgement that for an AAA weapon this was considered acceptable. Read as a
+          design route it is clear: the 5"/25 was not aiming at ballistics but at "two men
+          on handwheels can keep up with an aeroplane". It ran from -15 to +85 degrees, and
+          at 85 degrees the maximum ordinate was 27,400 ft (8,252 m) - that height is what
+          the weapon was for.
+      src: [navweaps-5in25-mk10]
+
+    - heading: 与 5"/38 的分界：不在仰角，在炮座的驱动方式
+      text:
+        zh: >-
+          两门炮都能抬到 +85 度，所以「有没有高射角」不能用来区分它们。
+          能区分的是这四项：倍径 25 对 38；膛长 125 英寸（3.175 米）对 190 英寸（4.826 米）；
+          初速 2,155 fps（657 米/秒）对 2,600 fps（792 米/秒）；
+          以及最要紧的一项 —— 重巡这一级用的 Mark 19 炮座，
+          navweaps 在俯仰速率与旋回速率两栏写的都是同一句：
+          「Manual operation, only」（纯人力操作）。
+          对照亚特兰大级用的 Mark 29（5"/38 双联）是 15 度/秒的动力驱动。
+          这两行字摆在一起，就是亚特兰大级存在的理由：
+          手动炮座跟不上 1942 年的高速目标。
+          弹重上两者差别很小（5"/25 的 HC Mark 36 是 53.85 磅／24.43 公斤，
+          5"/38 的 AAC Mk 34 是 55.18 磅／25.0 公斤），
+          所以「5"/38 的弹更重」不是它更强的理由 —— 理由在炮座与初速。
+        en: >-
+          Both guns elevate to +85 degrees, so high-angle capability cannot separate them.
+          Four things can: 25 calibres against 38; a 125 in (3.175 m) bore against 190 in
+          (4.826 m); 2,155 fps (657 mps) against 2,600 fps (792 mps); and most importantly
+          the mounting - for the heavy cruiser Mark 19, NavWeaps writes the same words in
+          both the elevation-rate and train-rate lines: manual operation, only. Atlanta's
+          Mark 29 twin 5"/38 mountings were power-driven at 15 degrees per second. Set
+          those two lines side by side and you have the reason the Atlanta class existed:
+          a hand-worked mounting could not keep up with 1942 targets. Projectile weight
+          barely differs (HC Mark 36 at 53.85 lbs / 24.43 kg against AAC Mark 34 at
+          55.18 lbs / 25.0 kg), so "the 5"/38 threw a heavier shell" is not why it was
+          better - the mounting and the muzzle velocity are.
+      src: [navweaps-5in25-mk10, navweaps-5in38-mk12]
+
+    - heading: 定装弹：一发八十磅，一个人搬不动，但一套动作能打完
+      text:
+        zh: >-
+          弹药型式是定装（Fixed）：全弹约 80 磅（36.3 公斤），
+          弹丸 53.85–54 磅，黄铜药筒 127×626 毫米、空筒 11.40 或 14.44 磅，
+          装药 9.6 磅（4.35 公斤）SPD 或 SPDN。
+          这一条与 5"/38 的分装路线正好相反 —— 那边弹与药分两件上膛，
+          这边是一发整件。代价是单件重量大，收益是每发少一次搬运、
+          装填动作单一，而 15–20 发/分的射速要的正是这个。
+          另有一处细节能看出这门炮的定位：弹丸有专门的一型照明弹
+          （Illum Mark 25/27/45，53.65–54.5 磅），
+          说明它在舰队里的活不只是打飞机。
+          VT 引信在这一型上同样是一次换头：AAC Mark 28 与 Mark 36 的弹体
+          可配触发、机械定时或近炸三种头；配触发时按 HC 爆破弹计。
+          因为 VT 头比别的头大，只有部分弹型改得上 —— 这一条 navweaps 写明了，
+          5"/38 那一页没有这句限制。
+        en: >-
+          The ammunition type is fixed: a complete round of about 80 lbs (36.3 kg), with a
+          53.85 to 54 lb projectile, a 127 x 626 mm brass case weighing 11.40 or 14.44 lbs
+          empty, and a 9.6 lbs (4.35 kg) charge of SPD or SPDN. That is the opposite of the
+          5"/38's separate-loading route - there the shell and charge go in as two items,
+          here the round is one piece. The cost is a heavier single item; what it buys is
+          one less handling per round and a single loading stroke, which is what a 15 to 20
+          round rate needs. One detail shows the weapon's role: the projectile list
+          includes dedicated illumination rounds (Illum Marks 25, 27 and 45 at 53.65 to
+          54.5 lbs), so shooting at aircraft was not its only job. The VT fuze is again a
+          nose change rather than a new round: AAC Mark 28 and Mark 36 bodies could take
+          point detonating, mechanical time or proximity fuzes, counting as HC rounds when
+          fitted with PD. Because the VT fuze was larger than the others, only certain
+          projectile mods could use it - a limit NavWeaps states here and does not state on
+          the 5"/38 page.
+      src: [navweaps-5in25-mk10]
+
+    - heading: 炮座分三档，装哪一档决定这门炮能干什么
+      text:
+        zh: >-
+          navweaps 把装这一型炮的炮座按舰级分开列，读出来的是一张很干净的分配表：
+          巡洋舰一栏是「Pensacola (4)、Northampton (8)、Portland (8) 与
+          New Orleans（Quincy 与 Vincennes 除外）(8)：Mark 19」，
+          另一栏是「Quincy (8)、Vincennes (8) 与 Brooklyn (8)：Mark 23」。
+          两档的差别写在 navweaps 的注里：Mark 19 是第一型上舰的炮座，
+          加了装填平台、把耳轴高度提到 66 英寸（168 厘米）、
+          配的是带装填托盘与气动推弹的 Mark 10 Mod 2/Mod 3 炮；
+          Mark 23 则是改进的动力驱动炮座，可配 Mark 33 指挥仪。
+          所以「庞萨科拉级与布鲁克林级装的是同一种 5 英寸高炮」这句话，
+          在炮这一层成立，在炮座这一层不成立。
+          括注里的座数也有时间含义：彭萨科拉那栏的 4 是建成时的座数，
+          navypedia 记该级 1941 年初拆掉 8 挺 12.7 毫米机枪、加装 4 座 127/25，
+          座数因而变成 8。本站两个数分开写，不合并成一个「8 座」。
+        en: >-
+          NavWeaps lists the mountings by ship class, and what comes out is a clean
+          allocation table: under cruisers, "Pensacola (4), Northampton (8), Portland (8)
+          and New Orleans (except Quincy and Vincennes) (8): Mark 19", and in another line
+          "Quincy (8), Vincennes (8) and Brooklyn (8): Mark 23". The difference is in
+          NavWeaps' note: the Mark 19 was the first ship-borne mounting, adding a loader's
+          platform, raising trunnion height to 66 in (168 cm) and taking the Mark 10 Mod 2
+          and Mod 3 guns with loading tray and pneumatic ramming; the Mark 23 was an
+          improved power-driven mounting usable with the Mark 33 director. So "Pensacola
+          and Brooklyn carried the same 5-inch AA gun" holds at the gun level and fails at
+          the mounting level. The parenthetical counts also carry time: the 4 against
+          Pensacola is the as-commissioned figure, and navypedia records that in early 1941
+          the class removed eight 12.7 mm machine guns and added four 127/25 mountings,
+          bringing the count to 8. The two figures are kept apart here, not merged into "8".
+      src: [navweaps-5in25-mk10, navypedia-pensacola]
+
+    - heading: 中途岛那天：七艘重巡都是它
+      text:
+        zh: >-
+          按 navweaps 的中途岛战斗序列，七艘重巡分属两个巡洋舰群：
+          TG 16.2 有明尼阿波利斯（CA-36）、新奥尔良（CA-32）、文森斯（CA-44）、
+          北安普敦（CA-26）、彭萨科拉（CA-24）；TG 17.2 有阿斯托里亚（CA-34）
+          与波特兰（CA-33）。这七艘的高炮栏都是 5"/25，
+          差别只在炮座（文森斯是 Mark 23，其余是 Mark 19）。
+          同一编成里的亚特兰大号（CL-51）不在此列：她是轻巡，
+          主炮是 8 座双联 5"/38（16 门），没有 5"/25。
+          写这一段时最容易出的错是把两型炮并成一句「美军 5 英寸炮」，
+          于是「七艘重巡装 5"/38」这种说法就出来了 —— 那是亚特兰大号的炮。
+        en: >-
+          On the NavWeaps Midway order of battle the seven heavy cruisers fall into two
+          cruiser groups: TG 16.2 with Minneapolis (CA-36), New Orleans (CA-32), Vincennes
+          (CA-44), Northampton (CA-26) and Pensacola (CA-24), and TG 17.2 with Astoria
+          (CA-34) and Portland (CA-33). All seven carried the 5"/25 in the AA battery, and
+          the only difference is the mounting - Mark 23 in Vincennes, Mark 19 in the rest.
+          Atlanta (CL-51), in the same screen, is not among them: she was a light cruiser
+          whose main battery was eight twin 5"/38 mountings for sixteen guns, with no
+          5"/25 at all. The commonest error here is to fold the two weapons into "US
+          5-inch gun", from which "the seven heavy cruisers carried 5"/38" follows - and
+          that gun belonged to Atlanta.
+      src: [navweaps-midway-oob, navweaps-5in25-mk10, navweaps-5in38-mk12]
+
+history:
+  - id: origin
+    title: { zh: 从一门被截短的 Mark 3 开始, en: Beginning with a cut-down Mark 3 }
+    range: { from: 1921, to: 1926 }
+    lead:
+      zh: >-
+        这一型炮的起点不是一张干净的图纸，而是一根被切短的旧炮管：
+        原型是 Mark 3 Mod 0 截到 25 倍径，改称 Mark 3 Mod 3。
+      en: >-
+        The family did not begin with a clean sheet but with an old barrel cut shorter: the
+        prototype was a Mark 3 Mod 0 cut down to 25 calibres and redesignated Mark 3 Mod 3.
+    events:
+      - date: 1921
+        text:
+          zh: >-
+            navweaps 记的设计年份为 1921。同一栏把这一族定为
+            「5"/25 (12.7 cm) Marks 10, 11, 13 and 17」，
+            并写明它是美国海军第一型专门设计的高射炮。
+          en: >-
+            NavWeaps dates the design to 1921. The same table names the family as
+            5"/25 (12.7 cm) Marks 10, 11, 13 and 17 and states that this was the first USN
+            heavy AA gun designed for the purpose.
+        src: [navweaps-5in25-mk10]
+
+      - date: 1926
+        text:
+          zh: >-
+            进入服役。早期各型都是单筒（monobloc）炮身；
+            Mark 10 Mod 0 用自紧炮身、套筒为螺纹热套，配垂直半自动滑动炮闩，
+            没有装填托盘。Mod 1 把炮身改为螺纹并与套筒用键连接；
+            Mod 2 加装填托盘与气动推弹；Mod 3 把左侧套筒切去一部分以便装填。
+          en: >-
+            Entered service. All early models were built with a monobloc barrel; the
+            Mark 10 Mod 0 had an autofretted barrel with a threaded and shrunk-on housing
+            and used a vertical semi-automatic sliding breech block with no loading tray.
+            Mod 1 used a threaded barrel keyed to the housing, Mod 2 added a loading tray
+            and pneumatic ramming, and Mod 3 had part of the left housing cut away to ease
+            loading.
+        src: [navweaps-5in25-mk10]
+
+      - date: 1926
+        text:
+          zh: >-
+            炮身数据：炮管重 2,105 磅（955 公斤），带套筒约 4,270 磅（1,937 公斤）；
+            全长 142.25 英寸（3.613 米），膛长 125 英寸（3.175 米），
+            膛线长 98.1 英寸（2.492 米），药室 431 立方英寸（7.06 立方分米）；
+            工作膛压 16.7 吨/平方英寸（2,630 公斤/平方厘米）；炮管寿命 3,000 发，
+            navweaps 另注此数当为非镀铬膛线版本，镀铬者约高 20%。
+          en: >-
+            Barrel data: 2,105 lbs (955 kg) for the barrel, about 4,270 lbs (1,937 kg) with
+            housing; 142.25 in (3.613 m) overall, 125 in (3.175 m) bore, 98.1 in (2.492 m)
+            of rifling, chamber of 431 cubic inches (7.06 dm3); working pressure 16.7
+            tons/in2 (2,630 kg/cm2); barrel life 3,000 rounds, which NavWeaps notes is
+            probably the non-plated bore figure, with chromium-plated bores about 20 per
+            cent higher.
+        src: [navweaps-5in25-mk10]
+
+  - id: interwar
+    title: { zh: 装舰、被考虑当驱逐舰主炮、又被否掉, en: "Fitting out, near-miss on destroyers" }
+    range: { from: 1926, to: 1941 }
+    lead:
+      zh: >-
+        这十五年是这一型炮装遍主力舰与巡洋舰的时期，也是它差一点成为新一代驱逐舰
+        主炮的时期 —— 那一次它输给了 5"/38。
+      en: >-
+        These fifteen years saw the weapon fitted across capital ships and cruisers, and
+        also saw it come close to becoming the new destroyer gun - a competition it lost
+        to the 5"/38.
+    events:
+      - date: 1926
+        text:
+          zh: >-
+            navweaps 的装舰栏列出这一型炮的搭载对象：列克星敦号（CV-2）、
+            突击者号（CV-4），内华达（BB-36）、宾夕法尼亚（BB-38）、
+            新墨西哥（BB-40）、田纳西（BB-43）、科罗拉多（BB-45）五级战列舰，
+            以及彭萨科拉（CA-24）、北安普敦（CA-26）、新奥尔良（CA-32）、
+            波特兰（CA-33）与布鲁克林（CL-40）五级巡洋舰，另加 1940 年代的潜艇。
+            一句话概括范围：1926 到 1940 年间建成或改装的大部分主力舰与巡洋舰。
+          en: >-
+            NavWeaps' fitting list gives the recipients: Lexington (CV-2) and Ranger (CV-4),
+            the Nevada (BB-36), Pennsylvania (BB-38), New Mexico (BB-40), Tennessee (BB-43)
+            and Colorado (BB-45) classes, the Pensacola (CA-24), Northampton (CA-26),
+            New Orleans (CA-32), Portland (CA-33) and Brooklyn (CL-40) classes, plus
+            submarines in the 1940s. In one line: most capital ships and cruisers built or
+            modernised between 1926 and 1940.
+        src: [navweaps-5in25-mk10]
+
+      - date: 1930
+        text:
+          zh: >-
+            1930 年代初期，这一型炮曾被短暂考虑用来武装新建驱逐舰，
+            最终被否，改采新设计的 5"/38 (12.7 cm) Mark 12。
+            navweaps 的原句把它写成一次选型：它们「最终被拒绝，
+            转而支持一个新设计，即著名的 5"/38」。
+            此后 5"/38 成为美军新造驱逐舰及更大吨位军舰的标准双用途炮，
+            两型炮在舰队里长期并存。
+          en: >-
+            In the early 1930s these guns were briefly considered for arming new
+            construction destroyers, but were ultimately rejected in favour of a new
+            design, the famous 5"/38 (12.7 cm) Mark 12. NavWeaps frames it as a selection:
+            they were rejected in favour of a new design. From then on the 5"/38 became the
+            standard dual-purpose gun of new destroyers and larger warships, and the two
+            weapons served side by side for the rest of the war.
+        src: [navweaps-5in25-mk10]
+
+      - date: 1941
+        text:
+          zh: >-
+            彭萨科拉级在 1941 年初拆掉 8 挺 12.7 毫米机枪、加装 4 座单装 127/25，
+            5 英寸高炮座数由建成时的 4 座变成 8 座。
+            这一条是座数的变化，不涉及炮型本身 —— 炮仍是 5"/25。
+          en: >-
+            In early 1941 the Pensacola class removed eight 12.7 mm machine guns and added
+            four single 127/25 mountings, taking the 5-inch AA mounting count from the
+            as-commissioned 4 to 8. This is a change in the number of mountings, not in the
+            gun - the weapon remains the 5"/25.
+        src: [navypedia-pensacola, navweaps-5in25-mk10]
+
+  - id: wartime
+    title: { zh: 战时：补电机、换炮座、上潜艇, en: "Wartime - motors, new mountings, submarines" }
+    range: { from: 1942, to: 1945 }
+    lead:
+      zh: >-
+        战争期间这门炮本身没有大变，变的是它的炮座：手动的那一批补上了电机，
+        动力驱动的新炮座 Mark 23 与 Mark 27 接了上来，
+        另有一路是潜艇用的湿式炮架。
+      en: >-
+        The gun itself changed little during the war; its mountings did. The hand-worked
+        batch acquired motors, the power-driven Mark 23 and Mark 27 arrived, and a separate
+        line went to submarines as a wet mounting.
+    events:
+      - date: 1942-02-15
+        text:
+          zh: >-
+            休斯敦号（CA-30）在帝汶附近护航时遭 9 架川西 H6K 九七式大型飞行艇
+            与 36 架三菱 Ki-21 九七式双发轰炸机攻击；本舰宣称以 5"/25 击落其中 7 架，
+            45 分钟战斗中共发射 930 发。
+            「宣称」与「发射数」是来源自己的措辞与数字，战绩核定不在本站可核范围内。
+          en: >-
+            While escorting a convoy near Timor, Houston (CA-30) was attacked by nine
+            Kawanishi H6K Type 97 flying boats and thirty-six Mitsubishi Ki-21 Type 97
+            twin-engine bombers. Houston claimed to have shot down seven of these aircraft
+            with her 5"/25 guns, firing a total of 930 rounds during the 45-minute action.
+            Both the claim and the round count are the source's own, and credit
+            adjudication is outside what this site can check.
+        src: [navweaps-5in25-mk10]
+
+      - date: 1942
+        text:
+          zh: >-
+            战争期间多数 Mark 19 炮座补装了 1 马力俯仰电机与 1 或 1.5 马力旋回电机，
+            并保留气动推弹；部分舰上加装了轻型护盾。
+            这一条是理解「手动炮座」这个标签的关键：
+            Mark 19 出厂时是纯人力，但 1942 年的 Mark 19 未必还是。
+            navweaps 把这两件事分写在两处，本站并列，不压成一句。
+          en: >-
+            During World War II most Mark 19 mounts had a 1 hp elevating motor and a 1 or
+            1.5 hp training motor added and retained pneumatic ramming, and light shields
+            were added on some ships. This is the key to reading the "manual mounting" label
+            correctly: the Mark 19 left the factory hand-worked, but a Mark 19 in 1942 was
+            not necessarily still so. NavWeaps writes the two facts in two places; they
+            stand side by side here rather than being flattened into one sentence.
+        src: [navweaps-5in25-mk10]
+
+      - date: 1942
+        text:
+          zh: >-
+            炮座分配的另一半在这一年清楚起来：昆西号（CA-39）与文森斯号（CA-44）
+            以及布鲁克林级用的是 Mark 23。navweaps 说明它是改进的动力驱动炮座，
+            可配 Mark 33 指挥仪，并把这几处 Mark 23 的归属建立在
+            「这些舰装有 Mark 33 指挥仪系统」这一前提上。
+            新奥尔良级其余各舰仍是 Mark 19 —— 同一级里两种炮座并存。
+          en: >-
+            The other half of the mounting allocation becomes clear this year: Quincy
+            (CA-39), Vincennes (CA-44) and the Brooklyn class used the Mark 23. NavWeaps
+            describes it as an improved power-driven mounting usable with the Mark 33
+            director, and bases those Mark 23 allocations on the premise that these ships
+            had the Mark 33 director system. The rest of the New Orleans class stayed on the
+            Mark 19 - two mountings coexisting within one class.
+        src: [navweaps-5in25-mk10]
+
+      - date: 1944
+        text:
+          zh: >-
+            潜艇用的湿式炮架 Mark 40 进入使用：navweaps 记多数潜艇在战争中
+            把 3"/50 换成 5"/25，首艘建成即装 5"/25 的是 Spadefish（SS-411），
+            1944 年 3 月 9 日服役；1945 年 1 月 Sennet（SS-408）成为首艘装两门的潜艇。
+            Mark 40 的俯仰只有 −10 到 +40 度，比水面舰的 +85 度低得多 ——
+            所以潜艇上这一门炮不是高炮，是水面炮。
+          en: >-
+            The Mark 40 wet mounting for submarines came into use: NavWeaps records that
+            many submarines had their 3"/50 replaced by a 5"/25 during the war, that
+            Spadefish (SS-411), commissioned 9 March 1944, was the first submarine with a
+            5"/25 as commissioned, and that in January 1945 Sennet (SS-408) became the
+            first boat fitted with two. The Mark 40 elevated only from -10 to +40 degrees,
+            far short of the surface ships' +85 - so the submarine version was a surface
+            gun, not an anti-aircraft one.
+        src: [navweaps-5in25-mk10]
+
+      - date: 1945
+        text:
+          zh: >-
+            晚期的动力炮座 Mark 27 出现，一般带遥控（RPC）；
+            其俯仰与旋回速率在自动（指挥仪）模式下为 30 与 20 度/秒，
+            本控模式下为 32.6 与 22.0 度/秒。
+            布鲁克林级部分舰上的 Mark 27 另用 3 马力俯仰与旋回电机，
+            液压推弹机由一台 5 马力电机驱动。
+            同一门炮在这里给出了与 Mark 19 完全不同的数字 ——
+            所以这一型炮的性能不能被压成一个射速加一个初速。
+          en: >-
+            The late-war power-driven Mark 27 appeared, generally with RPC; its elevation
+            and training speeds were 30 and 20 degrees per second in automatic (director)
+            mode and 32.6 and 22.0 in local mode. The Mark 27 mounts used on some Brooklyn
+            (CL-40) class cruisers had 3 hp elevating and training motors and a hydraulic
+            rammer driven from a 5 hp motor. The same gun now returns figures completely
+            unlike the Mark 19's - which is why this weapon's performance cannot be
+            compressed into one rate of fire and one muzzle velocity.
+        src: [navweaps-5in25-mk10]

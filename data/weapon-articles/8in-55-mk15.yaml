@@ -1,0 +1,375 @@
+# ============================================================================
+# 武器正文 —— 8"/55 (20.3 cm) Mark 15（美国，1945 年 CA-36 换装的炮身）
+#
+# 这一篇只写一件东西：Mk 15 炮身本身，以及它为什么能装进一座为 Mk 9 造的炮塔。
+# 答案在「适配套筒（adapter sleeves）」：navweaps 原句
+#   "The Mark 12 Mod 2 and Mark 15 Mod 1 had adapter sleeves which allowed them
+#    to replace the older 8"/55 (20.3 cm) guns."
+# 也就是说 Mk 15 不是一种新炮座，是一种能顶替老炮管的炮管。
+#
+# 谱系必须写清（极易写错）：
+#   Mk 14 = Mk 9 重新镗线 + 全膛镀铬 + 缩小药室，为的是能打 Mk 12/15 的发射药
+#   Mk 15 = 新造炮身，结构与 Mk 12 同类（更轻、外径更小），
+#           但药室形状不同、膛线与 Mk 14 相同 —— 所以它与 Mk 14 是同一套弹道账
+# 全站唯一确记装 Mk 15 的老舰是明尼阿波利斯号（CA-36），1945 年。
+#
+# 两处必须并列不裁决：
+#  ① 换装年份：navweaps 记 1945；navypedia 改装表记 "Minneapolis, 1944"。
+#  ② 换的是什么：navweaps 记 "regunned with Mark 15 Mod 1"；
+#     DANFS 记该舰 1945 年在 Bremerton "replaced the linings of her gun barrels"
+#     （换衬管）。两种措辞不同，本站不替它们统一。
+# ============================================================================
+weapon: 8in-55-mk15
+updated: 2026-11-24
+
+intro:
+  lead:
+    zh: >-
+      8"/55 (20.3 cm) Mark 15 是美国重巡主炮的最后一型炮身，1933 年设计、
+      1939 年服役，炮身 17.11–17.17 吨，比它所替代的 Mk 9 族（30.0 吨）轻了近 13 吨。
+      它装在巴尔的摩级其余各舰与俄勒冈城级上；而在老一代条约重巡里，
+      有记载装过它的只有明尼阿波利斯号（CA-36），1945 年。
+      它能装进为 Mk 9 造的炮塔，靠的是一对适配套筒 ——
+      这是本篇要讲的核心：Mk 15 不是一种新炮座，是一种能顶替老炮管的炮管。
+    en: >-
+      The 8"/55 (20.3 cm) Mark 15 was the last barrel mark of the US heavy cruiser
+      main battery, designed in 1933 and in service from 1939, weighing 17.11 to 17.17
+      tons against the 30.0 tons of the Mark 9 family it replaced - nearly thirteen tons
+      lighter. It armed the later Baltimore class ships and the Oregon City class, and
+      among the older treaty cruisers exactly one is recorded as having been regunned
+      with it: Minneapolis (CA-36), in 1945. That it could go into mountings built for
+      the Mark 9 is down to a pair of adapter sleeves, and that is this article's point:
+      the Mark 15 is not a new mounting but a barrel that can replace an older one.
+
+  paragraphs:
+    - heading: 一门更轻的炮，装的是同一种弹
+      text:
+        zh: >-
+          先把「轻」这件事的账算清。Mk 15 与 Mk 12 同列一页，炮身重
+          17.11–17.17 吨（17.38–17.45 公吨），这一栏两型不分，navweaps 没有分别给值。
+          对照 Mk 9 族的 30.0 吨（30.48 公吨），差的是 12 吨以上。
+          navweaps 对这一代的描述是：结构与此前的 Mk 14 相似，但用料轻得多、
+          外径也小得多。轻下来的部分没有换成更大的药室 ——
+          Mk 15 的药室是 4,860 立方英寸（79.6 立方分米），
+          反而比 Mk 9 族的 5,300 立方英寸（86.8 立方分米）小。
+          药室变小是为了配合新一档发射药：全装药 85 磅 SPD，
+          而 Mk 9 族是 89 磅。初速因此从 2,800 fps 降到 2,700 fps（823 米/秒）。
+          一门更轻、药室更小、初速更低的炮，换来的是炮身寿命与适装性 ——
+          715 发的炮管寿命与 Mk 9 族持平，但整根炮管轻了四成。
+        en: >-
+          Start with what "lighter" actually buys. The Mark 15 shares a page with the
+          Mark 12, and the gun weight line - 17.11 to 17.17 tons (17.38 to 17.45 mt) -
+          covers both marks without splitting the figure. Against the Mark 9 family's
+          30.0 tons (30.48 mt) that is over twelve tons. NavWeaps describes this
+          generation as similar in construction to the preceding Mark 14 but of much
+          lighter construction and smaller overall diameter. The weight did not go into
+          a bigger chamber: the Mark 15's chamber is 4,860 cubic inches (79.6 dm3),
+          smaller than the Mark 9 family's 5,300 (86.8 dm3). The smaller chamber matches a
+          new charge - 85 lbs of SPD against 89 lbs - and muzzle velocity therefore drops
+          from 2,800 to 2,700 fps (823 mps). A lighter gun with a smaller chamber and lower
+          velocity buys barrel life and fit: 715 rounds, the same as the Mark 9 family,
+          out of a barrel some forty per cent lighter.
+      src: [navweaps-8in-55-mk12, navweaps-8in-55-mk9]
+
+    - heading: 适配套筒：老炮塔不必拆，炮管可以直接换
+      text:
+        zh: >-
+          navweaps 在这一页上把「为什么老舰能换新炮」写成了两句：
+          Mark 12 与 Mark 15 的结构描述之后，
+          「Mark 12 Mod 2 与 Mark 15 Mod 1 带适配套筒，使它们可以替换更老的
+          8"/55 炮」。
+          这一句解释了明尼阿波利斯号的事：它的三座炮塔是为 Mk 9 族造的
+          （新奥尔良级 CA-32/34/36 的那一档 triple turret，294 吨），
+          1945 年换炮身时并没有把炮塔一起换掉。
+          对照另一处限制就看得更清楚：这一代炮虽然能用 335 磅的超重弹，
+          但那套供弹设备是巴尔的摩级与俄勒冈城级才有的新机构；
+          更老的重巡「继续使用此前的 260 磅 AP 弹」。
+          所以 Mk 15 装进老炮塔这件事，改变的是炮管与弹道，
+          不改变弹药链 —— 老舰换上新炮管之后，打的仍是 260 磅的 AP Mark 19。
+        en: >-
+          NavWeaps states the reason an old ship could take a new gun in two sentences:
+          after describing the construction of the Mark 12 and Mark 15, it notes that the
+          Mark 12 Mod 2 and Mark 15 Mod 1 had adapter sleeves which allowed them to
+          replace the older 8"/55 guns. That sentence explains Minneapolis: her three
+          turrets were built for the Mark 9 family - the triple turret of the New Orleans
+          CA-32/34/36 type, 294 tons - and the 1945 regunning did not replace the turrets
+          with them. A second limit makes the point sharper: although this generation
+          could use the 335 lbs super-heavy projectile, the shell-handling gear for it
+          existed only in Baltimore and Oregon City, and the older cruisers continued to
+          use the previous 260 lbs AP projectile. So fitting a Mark 15 into an old turret
+          changed the barrel and the ballistics, not the ammunition chain - an old ship
+          with a new barrel still fired the 260 lbs AP Mark 19.
+      src: [navweaps-8in-55-mk12, navweaps-8in-55-mk9]
+
+    - heading: 三联炮座三档重量：250 / 303 / 314 吨
+      text:
+        zh: >-
+          这一代炮装过两种炮座，navweaps 分得比 Mk 9 那一页更细。
+          Tuscaloosa 子级（CA-37/38/39/44）用的是 triple turrets，250 吨（254 公吨），
+          navweaps 说它「与此前新奥尔良级（CA-32）用的相似，只在不同尺寸与重量上」。
+          Wichita（CA-45）、Baltimore（CA-68）与 Oregon City（CA-122）
+          用的叫 three-gun turrets，Wichita 314 吨（319 公吨），
+          后两级 303 吨（307.7 公吨）。
+          后两级的炮「各自独立套筒、间距更大」，散布特性因此更好；
+          炮轴间距约 67 英寸（170 厘米）。俯仰上限三级同为 −10/+41 度，
+          装填角 +9 度，但速率不同：Tuscaloosa 8 度/秒、Wichita 10.1、
+          Baltimore 与 Oregon City 10.6；旋回 Tuscaloosa 约 3 度/秒，其余 5.3 度/秒。
+          一节炮座需约 66 人操作。
+        en: >-
+          This generation went into two kinds of mounting, and NavWeaps splits them more
+          finely than the Mark 9 page does. The Tuscaloosa sub-class (CA-37/38/39/44)
+          used triple turrets at 250 tons (254 mt), which NavWeaps says resembled the
+          earlier ones used on New Orleans (CA-32) with some dimensional and weight
+          differences. Wichita (CA-45), Baltimore (CA-68) and Oregon City (CA-122) used
+          what are called three-gun turrets: 314 tons (319 mt) in Wichita and 303 tons
+          (307.7 mt) in the other two. In the latter the guns were individually sleeved
+          and mounted further apart, allowing better shell dispersion, with gun axes
+          about 67 in (170 cm) apart. All three ran from -10 to +41 degrees and loaded at
+          +9, but the rates differ: 8 degrees per second in elevation for Tuscaloosa,
+          10.1 for Wichita and 10.6 for the other two; train about 3 degrees per second
+          for Tuscaloosa and 5.3 for the rest. Each mounting required a crew of about 66.
+      src: [navweaps-8in-55-mk12]
+
+    - heading: 换装年份的两说：1945 与 1944
+      text:
+        zh: >-
+          Mk 15 与老舰只有一条交集，而这条交集本身在两份来源里不一致。
+          navweaps 的原句是：「Minneapolis (CA-36) was regunned with Mark 15 Mod 1
+          in 1945」；同一族的 Mk 9 页换了个说法：
+          「至少明尼阿波利斯号（CA-36）在 1945 年换装了 Mark 15 Mod 1，
+          该型带适配套筒，可以替换更老的炮」。
+          navypedia 的改装表却记在 1944 年：
+          「Minneapolis, 1944: - 3 x 3 - 203/55; + 3 x 3 - 203/55 Mk 12.15」——
+          型号写的是「Mk 12.15」，这是把 Mk 12 与 Mk 15 记在一格的写法，
+          不是第三个型号。两个年份都留在本站，不裁决。
+          另有一层措辞差别要单列：DANFS 记该舰在冲绳之后于 Bremerton
+          「repaired and replaced the linings of her gun barrels」（修复并更换炮管衬管），
+          那是重新镗线的动作；navweaps 说的是「regunned with Mark 15 Mod 1」，
+          是换炮身。两种措辞指向的工艺不同，来源没有互相解释，本站并列。
+        en: >-
+          The Mark 15 intersects the older ships at exactly one point, and that point is
+          not consistent across the sources. NavWeaps states that Minneapolis (CA-36)
+          was regunned with Mark 15 Mod 1 in 1945; the Mark 9 page of the same family
+          puts it as at least USS Minneapolis being regunned in 1945 with the Mark 15
+          Mod 1, which had adapter sleeves that allowed it to replace the older guns.
+          Navypedia's modernisation list, however, dates it to 1944: "Minneapolis, 1944:
+          - 3 x 3 - 203/55; + 3 x 3 - 203/55 Mk 12.15" - the mark is written "Mk 12.15",
+          a single cell covering Marks 12 and 15, not a third model. Both years stay on
+          this page and neither is settled. A difference in wording has to be listed
+          separately: DANFS records that after Okinawa she repaired and replaced the
+          linings of her gun barrels at Bremerton, which describes relining, while
+          NavWeaps says regunned with Mark 15 Mod 1, which describes new barrels. The two
+          words point at different processes and the sources do not explain each other;
+          they stand side by side here.
+      src: [navweaps-8in-55-mk12, navweaps-8in-55-mk9, navypedia-neworleans, danfs-ca36]
+
+    - heading: 谁装它：巴尔的摩级后半、俄勒冈城级全部
+      text:
+        zh: >-
+          navweaps 的装舰栏把两型分得很干净：
+          「Mark 12: Tuscaloosa (CA-37) sub-class、Wichita (CA-45) 与 Baltimore (CA-68)；
+          Mark 15: 其余巴尔的摩级各舰与 Oregon City (CA-122) 级」。
+          也就是说 Mk 15 是「后期型号」，装在新造舰上；
+          而这一族里唯一被点名换装的老舰仍是明尼阿波利斯号。
+          超重弹的归属也要跟着写清：335 磅（152 公斤）的 AP Mark 21
+          「显然只发给了巴尔的摩级（CA-68）与俄勒冈城级（CA-122）」，
+          Tuscaloosa 子级与 Wichita 用的是与老 8"/55 相同的 AP Mark 19。
+          所以「装 Mk 12/15 的舰就能打超重弹」这句话是错的：
+          决定这件事的是舰上的供弹机构，不是炮的型号。
+          战后这一族还有两处结局值得记：波士顿号（CA-69）与堪培拉号（CA-70）
+          在 1950 年代把艉部 8"/55 炮座换成了两座双联 Terrier 导弹发射装置；
+          奥尔巴尼号（CA-123）、芝加哥号（CA-136）与哥伦布号（CA-74）
+          则拆光火炮、改建成全导弹巡洋舰。
+        en: >-
+          The fitting line separates the two marks cleanly: Mark 12 for the Tuscaloosa
+          (CA-37) sub-class, Wichita (CA-45) and Baltimore (CA-68); Mark 15 for all other
+          Baltimore class ships and the Oregon City (CA-122) class. The Mark 15 is
+          therefore the late mark, fitted to new construction, and the only older ship
+          named as regunned with it remains Minneapolis. The super-heavy projectile has to
+          be assigned alongside: the 335 lbs (152 kg) AP Mark 21 was apparently issued
+          only to the Baltimore and Oregon City classes, while the Tuscaloosa sub-class
+          and Wichita used the same AP Mark 19 as the older 8"/55 guns. "A ship with
+          Mark 12/15 can fire super-heavy" is therefore wrong: what decides it is the
+          ship's shell-handling gear, not the gun mark. Two post-war endings belong here:
+          Boston (CA-69) and Canberra (CA-70) traded their stern 8"/55 mounting for two
+          twin Terrier launchers in the 1950s, while Albany (CA-123), Chicago (CA-136)
+          and Columbus (CA-74) had all gun armament removed and were rebuilt as
+          all-missile cruisers.
+      src: [navweaps-8in-55-mk12]
+
+history:
+  - id: design
+    title: { zh: 从 Mk 12 派生出来的一根新炮管, en: A new barrel derived from the Mark 12 }
+    range: { from: 1933, to: 1939 }
+    lead:
+      zh: >-
+        Mk 12 与 Mk 15 是同一代的两根炮管，设计 1933 年、服役 1939 年；
+        两者的差别不在结构路线上，在药室形状与膛线。
+      en: >-
+        The Mark 12 and Mark 15 are two barrels of one generation, designed in 1933 and
+        in service from 1939; what separates them is not the structural route but the
+        chamber shape and the rifling.
+    events:
+      - date: 1933
+        text:
+          zh: >-
+            设计年份。navweaps 对 Mk 12 的结构记载是：自紧的 A 管、
+            热套（shrunk on）的套筒、螺旋炮尾衬套、对开式的轭环，
+            以及下摆式 Welin 炮闩。Mk 15「相似，但药室形状不同、
+            膛线与 Mark 14 相同」。两型的膛线都镀铬。
+          en: >-
+            Design year. NavWeaps records the Mark 12 as having an autofretted A tube, a
+            shrunk-on jacket, a screw box liner, a yoke ring in halves and a down-swinging
+            Welin breech block. The Mark 15 was similar but had a differently shaped
+            chamber and rifling identical to the Mark 14. Both marks had chromium-plated
+            bores.
+        src: [navweaps-8in-55-mk12]
+
+      - date: 1939
+        text:
+          zh: >-
+            进入服役。缠度上两型不同：Mark 12 为等齐右旋 1 比 35，
+            Mark 15 为 1 比 25；Mk 14 也是 1 比 25 ——
+            这就是「Mk 15 的膛线与 Mk 14 相同」这句话在数据上的落点。
+            膛线长 373.65 英寸（9.491 米），膛长 440.1 英寸（11.179 米），
+            全长 449.0 英寸（11.405 米），工作膛压 18.2 吨/平方英寸
+            （2,870 公斤/平方厘米）。
+          en: >-
+            Entered service. The twist differs between the two: uniform right-hand 1 in 35
+            for the Mark 12 and 1 in 25 for the Mark 15, which is also the Mark 14's figure
+            - that is where "Mark 15 rifling identical to the Mark 14" lands in the data.
+            Rifling length is 373.65 in (9.491 m), bore 440.1 in (11.179 m), overall
+            length 449.0 in (11.405 m), and working pressure 18.2 tons/in2
+            (2,870 kg/cm2).
+        src: [navweaps-8in-55-mk12]
+
+  - id: ammunition
+    title: { zh: 弹药：两档装药与两种弹, en: Ammunition - two charges and two projectiles }
+    range: { from: 1939, to: 1945 }
+    lead:
+      zh: >-
+        这一代的弹药表上有两种口径相同的弹、两档装药，以及一个只有两艘新造级
+        才拿得到的超重弹。
+      en: >-
+        This generation's ammunition table carries two projectiles of the same bore, two
+        charge levels, and a super-heavy round that only two new-construction classes
+        could draw.
+    events:
+      - date: 1939
+        text:
+          zh: >-
+            弹药型式与 Mk 9 族相同，是药包装填（Bag）。全装药 85 磅（38.6 公斤）SPD，
+            全无焰装药 89 磅（40.4 公斤）SPCG；减装药 55 磅（24.9 公斤）SPDN。
+            发射药分两半装。
+          en: >-
+            The ammunition type is the same as the Mark 9 family's: bag. Full charge 85 lbs
+            (38.6 kg) SPD, full flashless charge 89 lbs (40.4 kg) SPCG, reduced charge
+            55 lbs (24.9 kg) SPDN. The propellant charges were in halves.
+        src: [navweaps-8in-55-mk12]
+
+      - date: 1942
+        text:
+          zh: >-
+            初速按弹种与装药分开列，这一点容易被压成一个数。全装药新炮：
+            AP Mark 21 超重弹 2,500 fps（762 米/秒），AP Mark 19、SP Common、
+            HC 均为 2,700 fps（823 米/秒）。减装药新炮：AP Mark 21 为 2,000 fps，
+            其余 2,220 fps。也就是说同一门炮上，两种弹的初速差 200 fps，
+            这不是误差，是弹重与药室的对应关系。
+            炮管寿命 715 发，每炮备弹 150 发。
+          en: >-
+            Muzzle velocity is listed separately by projectile and charge, which is easily
+            flattened into one number. Full charge, new gun: AP Mark 21 super-heavy at
+            2,500 fps (762 mps), AP Mark 19, SP Common and HC all at 2,700 fps (823 mps).
+            Reduced charge, new gun: AP Mark 21 at 2,000 fps, the rest at 2,220. So within
+            one gun the two projectiles differ by 200 fps - not an error but the
+            projectile-to-chamber relationship. Barrel life 715 rounds, magazine capacity
+            150 rounds per gun.
+        src: [navweaps-8in-55-mk12]
+
+      - date: 1943
+        text:
+          zh: >-
+            超重弹的归属有明确记载：AP Mark 21（335 磅／152 公斤）
+            「显然只发给了巴尔的摩级（CA-68）与俄勒冈城级（CA-122）」。
+            Tuscaloosa 子级与 Wichita 用的是与老 8"/55 相同的 AP Mark 19
+            （260 磅／118 公斤）。因此「Mk 12/15 的炮 = 超重弹」不成立。
+          en: >-
+            The super-heavy round's assignment is recorded explicitly: the AP Mark 21
+            (335 lbs / 152 kg) was apparently issued only to the Baltimore (CA-68) and
+            Oregon City (CA-122) classes. The Tuscaloosa sub-class and Wichita used the
+            same AP Mark 19 (260 lbs / 118 kg) as the older 8"/55 guns. "Mark 12/15 gun
+            therefore super-heavy projectile" does not hold.
+        src: [navweaps-8in-55-mk12]
+
+  - id: minneapolis
+    title: { zh: 唯一的老舰换装：CA-36, en: The one old ship - CA-36 }
+    range: { from: 1944, to: 1946-01 }
+    lead:
+      zh: >-
+        这一族与 1920 年代那批重巡的唯一接口是明尼阿波利斯号。
+        它 1945 年在冲绳打坏了炮管，回国处理；处理的是「换衬管」还是「换炮」，
+        两份来源的措辞不同。
+      en: >-
+        The only interface between this generation and the 1920s cruisers is Minneapolis.
+        She wore out her barrels at Okinawa in 1945 and went home to have them dealt with,
+        and the sources disagree on whether what happened was relining or regunning.
+    events:
+      - date: 1945-04-12
+        text:
+          zh: >-
+            DANFS 记：在冲绳连续数月射击后，她的炮管磨损到必须更换，
+            本舰准备于 4 月 12 日启航；当天因冲绳战役中规模最大的一次空袭而推迟，
+            期间击落四架，另有三架坠海。入夜后启航前往华盛顿州 Bremerton，
+            「在那里修理并更换了炮管的衬管」。
+          en: >-
+            DANFS records that after months of firing at Okinawa her gun barrels were worn
+            so badly as to need replacement and she prepared to sail on 12 April; departure
+            was delayed that day by the largest air attack yet of the Okinawa operation,
+            during which she splashed four and watched three others crash harmlessly into
+            the sea. At nightfall she sailed for Bremerton, Washington, where she repaired
+            and replaced the linings of her gun barrels.
+        src: [danfs-ca36]
+
+      - date: 1945-06-27
+        text:
+          zh: >-
+            navsource 的两条图注记该舰在华盛顿州 Bremerton 试航，
+            日期为 1945 年 6 月 27 日，「running trials after overhaul」。
+            这条只能作为时间参考：它说明大修在 6 月底已完成，
+            但图注本身不给换装内容，也不能用来判定换的是衬管还是整根炮管。
+          en: >-
+            Two NavSource captions record the ship running trials at Bremerton, Washington,
+            on 27 June 1945, "after overhaul". This serves only as a timing reference: it
+            shows the overhaul was finished by the end of June, but the captions say
+            nothing about what was changed and cannot decide relining against new barrels.
+        src: [navsource-ca36]
+
+      - date: 1945
+        text:
+          zh: >-
+            navweaps 对这一件事的表述是明确的：明尼阿波利斯号（CA-36）
+            在 1945 年换装 Mark 15 Mod 1；换装能成立靠的是适配套筒。
+            它与上一条 DANFS 的「换衬管」不构成同一句话，
+            两者并列，不互相解释。换装的具体月份，navweaps 没有给。
+          en: >-
+            NavWeaps is explicit about the event: Minneapolis (CA-36) was regunned with
+            Mark 15 Mod 1 in 1945, and the regunning worked because of the adapter sleeves.
+            That is not the same statement as DANFS' replacement of the linings; the two
+            stand side by side and do not explain each other. NavWeaps gives no month.
+        src: [navweaps-8in-55-mk12, navweaps-8in-55-mk9]
+
+      - date: 1946-01
+        text:
+          zh: >-
+            navypedia 把她 1946 年 1 月的炮型记为「3 x 3 - 203/55 Mk 15」，
+            同一份表里新奥尔良号是 Mk 14、Tuscaloosa 与旧金山是 Mk 12。
+            也就是说到战争结束时，这一族在老舰上出现了三种并存状态；
+            而按 navypedia 自己的改装表，这次换装被记在 1944 年，
+            与 navweaps 的 1945 年不一致，两说并列。
+          en: >-
+            Navypedia records her January 1946 outfit as "3 x 3 - 203/55 Mk 15", while the
+            same table gives New Orleans the Mark 14 and Tuscaloosa and San Francisco the
+            Mark 12. By the end of the war, then, three states coexisted in this family
+            aboard the older ships; and by navypedia's own modernisation list the regunning
+            is dated 1944, against NavWeaps' 1945. Both stand.
+        src: [navypedia-neworleans]

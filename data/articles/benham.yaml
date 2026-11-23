@@ -1,0 +1,382 @@
+# ============================================================================
+# 舰艇正文 —— 本汉号（USS Benham, DD-397）
+#
+# 抓手：一艘在瓜达尔卡纳尔被打掉整个舰艏、却没有任何人随她沉没的驱逐舰。
+#
+# 【三条必须守住的东西】
+#   1) 她属于本汉级（FY1935 计划，巴格利级的改进型），不是西姆斯级、
+#      不是法拉格特级。三舰三个舰级是这批稿子的基本前提。
+#   2) 结局不是「自沉」。是 1942-11-14 2338 被日军鱼雷炸掉 1 号炮位
+#      以前的整个舰艏，舰体在拖带途中自行裂成两段，两个浮体由友舰的
+#      5 英寸炮火击沉。全员生还 —— 包括一个被打下海、后来由 Meade 号
+#      救起的人。
+#   3) DANFS 同一段内部时序矛盾：先说人员「15 日晚些时候」转到 Gwin，
+#      后说两个浮体「14 日 1938」被击沉。两说并列，不裁断。
+#
+# 【另有一处需要说明的记载冲突】
+#   DANFS 在 1942-06-06 段把击沉哈曼号的潜艇写作 I-58；I-168 战历与
+#   哈曼号自己的行动报告都指向 I-168。正文两说并列。
+# ============================================================================
+ship: benham
+updated: 2026-11-24
+
+intro:
+  lead:
+    zh: >-
+      本汉号是本汉级的首舰，1939 年 2 月服役。1942 年 11 月 14 日夜里，
+      她在瓜达尔卡纳尔海战中被一条日本鱼雷炸掉了 1 号炮位以前的整个舰艏，
+      拖着断裂的舰体往后退，第二天舰体自行裂成两段，两个浮体由友舰的
+      5 英寸炮火击沉。全舰无一人随她死亡。
+    en: >-
+      Benham was the name ship of her class, commissioned in February 1939.
+      On the night of 14 November 1942, in the Naval Battle of Guadalcanal,
+      a Japanese torpedo blew off her entire bow forward of gun mount No. 1.
+      She retired with the wreck of a hull, split in half the next day, and
+      her two floating sections were sunk by 5-inch gunfire from friendly
+      destroyers. Not one of her crew died with her.
+
+  paragraphs:
+    - heading: 巴格利级改了动力
+      text:
+        zh: >-
+          本汉级是 1935 财年计划下的十艘舰，整体沿用巴格利级，改的是动力：
+          锅炉由巴格利的四座 400 psi 改为三座更大的 565 psi 锅炉，
+          蒸汽参数提高后出力升到 50,000 轴马力。三座锅炉的烟道并入一座
+          烟囱，所以这一级只有一个烟囱，外形比前一级清爽。主炮全部改用
+          环形炮座，是相对前几级唯一明显的武备差别，但只有前部两座做成
+          全封闭式。建成武备为四门 127 毫米/38 倍径、四座四联 533 毫米
+          鱼雷发射管（十六管）、编制 184 人。
+
+          航速一栏两源不同：navypedia 与 NavSource 记 38.5 节，
+          Destroyer History Foundation 记 36.5 节。锅炉数也有分歧：
+          同一份 Destroyer History 的技术行写「四座 Babcock & Wilcox、
+          400 psi」，同页正文却写「三座 565 psi」，本站取三座与 565 psi，
+          与 navypedia 的两处独立记载一致。
+        en: >-
+          The Benham class were ten ships of the FY1935 programme, repeating
+          the Bagley design with new machinery: three larger boilers at 565 psi
+          in place of the Bagley's four at 400 psi, and the higher steam
+          conditions raised output to 50,000 shp. The uptakes of the three
+          boilers were trunked into a single funnel, so the class had one stack
+          and a cleaner silhouette than her predecessors. All main guns went
+          onto ring mounts, the one clear armament difference from earlier
+          classes, but only the two forward mounts were fully enclosed. As
+          completed the ships carried four 127 mm/38 calibre guns, four
+          quadruple 533 mm torpedo mounts — sixteen tubes — and 184 men.
+
+          The speed is given two ways: navypedia and NavSource record 38.5
+          knots, the Destroyer History Foundation 36.5. The boiler count is
+          disputed within a single page: that foundation's data line says four
+          Babcock & Wilcox boilers at 400 psi while its own text says three at
+          565 psi. This site takes three and 565 psi, matching navypedia's two
+          independent statements.
+      src: [navypedia-benham, destroyerhistory-benham, nhhc-danfs-benham, navsource-benham]
+
+    - heading: 中途岛：先打飞机，再救人
+      text:
+        zh: >-
+          1942 年 6 月 4 日下午，本汉号随 Balch 与文森斯号、彭萨科拉号
+          一起被派去支援刚挨了日本俯冲轰炸的约克城号，1522 加入第 17
+          特混舰队，在 2,000 码距离、20 节速度上补进屏护圈。此后八分钟里
+          她用 20 毫米炮向从飞龙号来的九七式舰攻射击，与友舰共同击落
+          五架。一枚误击的高射炮弹落在本舰上，枪炮官 Walter E. Pierce
+          少尉阵亡，四人受伤——这是她整场战争里第一批战斗伤亡。
+
+          约克城号 1700 前后弃舰，本舰靠上去，用仅有的一条摩托艇、
+          救生索、救生筏与担架，从航母上救起约 725 名官兵。当天七艘
+          驱逐舰合计救起约 2,270 人，本舰是其中最多的一艘（Balch 544、
+          Russell 499、Anderson 204、Morris 193、Hammann 85、Hughes 24）。
+          NavSource 同一天的照片图注记 720 人，两说并列。次日她又与
+          哈曼号一起向约克城号转运抢修队；哈曼号被鱼雷打断后，本舰
+          第二次展开救援，从水里拉起约 200 人，6 月 9 日把幸存者
+          送回珍珠港。
+        en: >-
+          On the afternoon of 4 June 1942 Benham was sent with Balch,
+          Vincennes and Pensacola to aid Yorktown, just hit by Japanese dive
+          bombers, and at 1522 joined Task Force 17, augmenting the screen at
+          2,000 yards and 20 knots. Over the next eight minutes her 20 mm guns
+          fired at the Type 97 torpedo planes from Hiryu and helped splash five.
+          A stray anti-aircraft shell hit the ship, killing Ensign Walter E.
+          Pierce and wounding four men — her first combat losses of the war.
+
+          Yorktown was abandoned about 1700; Benham closed and, with her single
+          motor whaleboat, lifelines, rafts and stretchers, took about 725
+          officers and men off the carrier. The seven destroyers rescued about
+          2,270 men that day and Benham took the largest share (Balch 544,
+          Russell 499, Anderson 204, Morris 193, Hammann 85, Hughes 24); a
+          NavSource photo caption of the same day gives 720, and both figures
+          are recorded here. The next day she helped Hammann transfer repair
+          parties to the carrier; after Hammann was broken in two she went into
+          rescue a second time, pulled about 200 men from the water, and
+          delivered the survivors to Pearl Harbor on 9 June.
+      src: [nhhc-dessron6-action-report, nhhc-danfs-benham, navsource-benham]
+
+    - heading: 十一月十四日夜里
+      text:
+        zh: >-
+          1942 年 11 月 14 日入夜，第 64 特混舰队驶入「铁底湾」，任务是
+          阻止日军炮击亨德森机场。2316 两艘美国战列舰先向日军轻巡与驱逐舰
+          开火，把最北面那一群赶走；美军不知道对方分成四群。2322 Walke
+          发现沿萨沃岛南岸摸进来的两艘驱逐舰并开火，Preston 与本舰随即
+          跟上。十分钟内，除本舰以外的美国驱逐舰上部结构都被打烂，
+          Preston 起火下沉。2338 日本鱼雷开始命中：一条打中 Walke 舰艏，
+          同一条齐射里的另一条命中本舰右舷，把 1 号炮位以前的舰艏整个掀掉。
+          爆炸激起的水柱浇在舰上，把一个人冲下海。
+
+          本舰没有沉，与 Gwin 一起向瓜岛东南方向退出战斗。舰艏没了、
+          前方全是残骸，她几乎走不动；损管做到极限，恶劣海况还是一点点
+          削弱舰体，最后舰体自行裂成两段。人员转到 Gwin 上。两个浮体
+          由友舰的 5 英寸炮火击沉。DANFS 这一段自身时序矛盾：先说人员
+          「15 日晚些时候」转移，后说两个浮体「14 日 1938」被击沉；
+          NavSource 与 navypedia 都把损失日记作 11 月 15 日。两说并列，
+          不裁断。那个被冲下海的人后来由 Meade 号救起，所以本舰全员生还。
+        en: >-
+          At nightfall on 14 November 1942 Task Force 64 entered Ironbottom
+          Sound to stop the Japanese from bombarding Henderson Field. At 2316
+          the two American battleships opened on the light cruiser and destroyer
+          of the northernmost group and drove them off; the Americans did not
+          know the enemy was in four groups. At 2322 Walke sighted two
+          destroyers creeping along the south shore of Savo and opened fire,
+          Preston and Benham following. Within ten minutes every American
+          destroyer but Benham had been wrecked topside, Preston burning and
+          sinking. At 2338 the Japanese torpedoes began to score: one took
+          Walke forward, and another from the same spread hit Benham on the
+          starboard side and blew off her bow back to gun mount No. 1. The
+          column of water thrown up cascaded over the ship and washed one man
+          overboard.
+
+          She did not sink. She retired south-east around Guadalcanal with Gwin.
+          With her bow gone and heavy debris forward she could barely make
+          headway; damage control was exhausted, the worsening seas progressively
+          weakened the hull, and she slowly split in half. The crew transferred
+          to Gwin and the two floating sections were sunk by 5-inch gunfire from
+          friendly ships. DANFS contradicts itself here: it has the crew
+          transferring "late on the 15th" and the two sections sunk "at 1938 on
+          14 November 1942", while NavSource and navypedia both give 15 November
+          as the date of loss. The two accounts are given side by side and not
+          adjudicated. The man washed overboard was later rescued by Meade, so
+          Benham's entire crew survived her sinking.
+      src: [nhhc-danfs-benham, navsource-benham, navypedia-benham]
+
+history:
+  - id: build
+    title: { zh: 建造与服役, en: Building and commissioning }
+    range: { from: 1936, to: 1939 }
+    events:
+      - date: 1936-09-01
+        text:
+          zh: 在 Kearny 的 Federal Shipbuilding and Drydock 船厂开工，船台号 138。
+          en: >-
+            Laid down at the Federal Shipbuilding and Drydock Co., Kearny, New
+            Jersey, yard number 138.
+        src: [nhhc-danfs-benham, navypedia-benham]
+      - date: 1938-04-16
+        text:
+          zh: 下水，由 Mrs. Albert I. Dorr 主持命名仪式。
+          en: Launched, sponsored by Mrs. Albert I. Dorr.
+        src: [nhhc-danfs-benham, navypedia-benham]
+      - date: 1939-02-02
+        text:
+          zh: >-
+            在纽约海军船厂服役，Thomas F. Darden 少校任舰长。装舾后
+            8 月 11 日完成最终验收试航；9 月 1 日（德国入侵波兰当天）
+            到罗得岛纽波特向大西洋舰队第 18 驱逐舰分队报到。
+            原定的欧洲试航因欧洲局势取消。
+          en: >-
+            Commissioned at the New York Navy Yard under Lieutenant Commander
+            Thomas F. Darden. After fitting out she completed her final
+            acceptance trials on 11 August, and on 1 September — the day
+            Germany invaded Poland — reported to Destroyer Division 18 of the
+            Atlantic Squadron at Newport, Rhode Island. The planned European
+            shakedown cruise had been cancelled because of the crisis.
+        src: [nhhc-danfs-benham, navsource-benham]
+
+  - id: neutrality
+    title: { zh: 中立巡逻（1939-1941）, en: Neutrality patrol, 1939-41 }
+    range: { from: 1939-09, to: 1941-12 }
+    events:
+      - date: 1939-10-08
+        text:
+          zh: >-
+            与 Davis 号一起加入海岸警卫队炮舰坎贝尔号，为载有 566 名
+            美国乘客的邮轮 Iroquois 护航。该船据柏林海军武官转述雷德尔
+            的说法，可能被以「雅典娜号的方式」击沉；该船安抵纽约。
+          en: >-
+            With Davis she joined the Coast Guard cutter Campbell to convoy the
+            liner Iroquois, carrying 566 American passengers, which the naval
+            attaché in Berlin reported — on Raeder's own account — might be
+            sunk "under Athenia circumstances". The ship reached New York
+            without incident.
+        src: [nhhc-danfs-benham]
+      - date: 1939-12-14
+        text:
+          zh: >-
+            在墨西哥湾巡逻时先尾随德国货船 Arauca，中午发现德国邮轮
+            Columbus（德国商船队第二大船）也出港，即转向全速追踪这艘
+            更大的目标，最近时距其右后方 3,000 码。15 日由 Jouett 号接替。
+            Arauca 最终逃入美国港口避捕；Columbus 被英国驱逐舰 Hyperion
+            逼住后自沉。
+          en: >-
+            Patrolling the Gulf of Mexico she first trailed the German freighter
+            Arauca, then at noon sighted the German liner Columbus, the second
+            largest ship in the German merchant marine, also putting to sea, and
+            turned at full speed to trail the bigger target, closing to 3,000
+            yards off her starboard quarter. Jouett relieved her on the 15th.
+            Arauca eventually took refuge in an American port; Columbus
+            scuttled herself when trapped by the British destroyer Hyperion.
+        src: [nhhc-danfs-benham]
+      - date: 1941-11-28
+        text:
+          zh: >-
+            编入哈尔西中将的第 8 特混舰队，与企业号、三艘巡洋舰及第 6
+            驱逐舰中队的另外八艘驱逐舰一起，向威克岛运送海军陆战队
+            第 211 战斗机的 F4F-3。
+          en: >-
+            Assigned to Vice Admiral Halsey's Task Force 8 and sailed with
+            Enterprise, three cruisers and the eight other destroyers of
+            Destroyer Squadron 6 to deliver the F4F-3 Wildcats of Marine
+            Fighting Squadron 211 to Wake Island.
+        src: [nhhc-danfs-benham]
+      - date: 1941-12-07
+        text:
+          zh: >-
+            返航途中收到太平洋舰队总司令的电报「对日战争以珍珠港遭空袭
+            开始」。当夜在瓦胡岛以南屏护企业号，8 日中午进入珍珠港加油，
+            次日再出海巡逻六天。12 月下旬参加威克岛救援行动（未成），
+            之后在珍珠港加装深弹投射器与高炮。
+          en: >-
+            Homeward bound, the task force received CincPac's message that
+            hostilities with Japan had begun with an air raid on Pearl Harbor.
+            She screened Enterprise south of Oahu that night, entered Pearl
+            Harbor around noon on the 8th, and was back at sea the next morning
+            for six days of patrol. In late December she covered the approaches
+            during the unsuccessful attempt to relieve Wake, and afterwards
+            received depth charge projectors and additional anti-aircraft guns
+            at Pearl Harbor.
+        src: [nhhc-danfs-benham]
+
+  - id: pacific
+    title: { zh: 太平洋战历与沉没（1942）, en: The Pacific, 1942 }
+    range: { from: 1942-01, to: 1942-11 }
+    events:
+      - date: 1942-01-13
+        text:
+          zh: >-
+            11 日深夜得知萨拉托加号在瓦胡岛西南约 500 海里处被鱼雷命中，
+            即出海，13 日与该航母会合，护送其返回珍珠港。
+          en: >-
+            Warned late on the 11th that Saratoga had been torpedoed some 500
+            miles south-west of Oahu, she put to sea, made rendezvous with the
+            damaged carrier on the 13th and escorted her back to Pearl Harbor.
+        src: [nhhc-danfs-benham]
+      - date: 1942-04-18
+        text:
+          zh: >-
+            随企业号编队参加杜立特空袭东京。4 月 17 日航母与巡洋舰
+            脱离驱逐舰西进，本舰与其他驱逐舰留守警戒舰队油船；
+            19 日机群返回后全队于 25 日返珍珠港。
+          en: >-
+            Sailed with the Enterprise group for the Halsey-Doolittle raid on
+            Tokyo. On 17 April the carriers and cruisers left the destroyers
+            behind to launch, and Benham guarded the fleet oilers; the force
+            returned to Pearl Harbor on 25 April after the aircraft came back on
+            the 19th.
+        src: [nhhc-danfs-benham]
+      - date: 1942-06-04
+        text:
+          zh: >-
+            1335 受命保护已失去动力的约克城号，加入第 17 特混舰队并
+            补进防空屏护圈。八分钟内以 20 毫米炮与友舰共同击落五架
+            九七式舰攻；一枚误击的高射炮弹落在本舰，Pierce 少尉阵亡、
+            四人受伤。1700 前后约克城号弃舰，本舰救起约 725 名官兵
+            （NavSource 图注记 720）。
+          en: >-
+            At 1335 she was ordered to protect the now drifting Yorktown,
+            joined Task Force 17 and helped form the anti-aircraft screen. Over
+            eight minutes her 20 mm guns helped splash five Type 97 torpedo
+            bombers; a stray anti-aircraft shell hit the ship, killing Ensign
+            Pierce and wounding four men. When Yorktown was abandoned about
+            1700 she rescued some 725 officers and men, the NavSource caption
+            giving 720.
+        src: [nhhc-danfs-benham, nhhc-dessron6-action-report]
+      - date: 1942-06-06
+        text:
+          zh: >-
+            与哈曼号一起向约克城号转运抢修队。日本潜艇突入屏护圈发射
+            四条鱼雷：一条把哈曼号打成两段，两条击中航母。本舰两天内
+            第二次展开救援，从水里拉起约 200 人；7 日晨约克城号翻沉后
+            高速返珍珠港，9 日把幸存者送岸。
+            DANFS 这段把该潜艇写作 I-58；I-168 战历与哈曼号行动报告
+            均指向 I-168（I-168 于当日 1331 自 1,900 码发射四条鱼雷，
+            第一枚击中哈曼号）。两说并列。
+          en: >-
+            With Hammann she helped transfer repair parties to Yorktown. A
+            Japanese submarine penetrated the screen and fired four torpedoes:
+            one broke Hammann in two and two hit the carrier. Benham went into
+            rescue for the second time in two days and pulled about 200 men from
+            the water; after Yorktown capsized on the morning of the 7th she ran
+            at high speed to Pearl Harbor and landed the survivors on the 9th.
+            DANFS names the submarine here as I-58, while the I-168 record of
+            movement and Hammann's own action report both point to I-168, which
+            fired four torpedoes from 1,900 yards at 1331 that day, the first
+            hitting Hammann. The two accounts are given side by side.
+        src: [nhhc-danfs-benham, combinedfleet-i168, navsource-benham]
+      - date: 1942-08-24
+        text:
+          zh: >-
+            东所罗门群岛海战。约 1500 翔鹤、瑞鹤放出的机群突破战斗空中
+            巡逻扑向企业号；本舰随屏护圈全炮射击，贡献 109 发 5 英寸与
+            510 发 20 毫米炮弹，大部分来袭九九式舰爆被击落，但航母仍中
+            三弹。
+          en: >-
+            The Battle of the Eastern Solomons. Around 1500 aircraft from
+            Shokaku and Zuikaku broke through the combat air patrol and went for
+            Enterprise; Benham's batteries contributed 109 5-inch and 510 20 mm
+            rounds to the barrage that splashed most of the attacking Type 99
+            dive bombers, though the carrier still took three bomb hits.
+        src: [nhhc-danfs-benham]
+      - date: 1942-10-30
+        text:
+          zh: >-
+            随第 64.2 特混大队炮击瓜岛特纳鲁河以西的日军阵地，自 0638
+            起持续近两小时，仅本舰就打出 696 发 5 英寸炮弹。
+          en: >-
+            With Task Group 64.2 she bombarded Japanese positions west of the
+            Tenaru River on Guadalcanal, opening at 0638 and firing for close to
+            two hours; Benham alone expended 696 rounds of 5-inch ammunition.
+        src: [nhhc-danfs-benham]
+      - date: 1942-11-14
+        text:
+          zh: >-
+            瓜达尔卡纳尔海战。2316 两艘美国战列舰先向最北一群日舰开火；
+            2322 Walke、Preston 与本舰先后向萨沃岛南岸的两艘驱逐舰射击。
+            2338 日本鱼雷命中：一条重创 Walke，另一条打在本舰右舷，
+            把 1 号炮位以前的整个舰艏炸掉，激起的水柱把一人冲下海。
+            本舰未沉，与 Gwin 一起向瓜岛东南退出。
+          en: >-
+            The Naval Battle of Guadalcanal. At 2316 the two American
+            battleships opened on the northernmost Japanese group; at 2322
+            Walke, then Preston and Benham, fired at two destroyers creeping
+            along the south shore of Savo. At 2338 the Japanese torpedoes
+            landed: one mortally damaged Walke, another struck Benham to
+            starboard and blew off her bow back to gun mount No. 1, the column
+            of water washing one man overboard. She stayed afloat and retired
+            south-east around Guadalcanal with Gwin.
+        src: [nhhc-danfs-benham]
+      - date: 1942-11-15
+        text:
+          zh: >-
+            舰艏尽失、前方全是残骸，本舰几乎无法前进；损管已做到极限，
+            海况继续恶化，舰体最终自行裂成两段，人员转到 Gwin 上。
+            两个浮体由友舰 5 英寸炮火击沉于瓜岛南岸外。
+            被冲下海的那名舰员后来由 Meade 号救起，本舰全员生还。
+            本舰在二战中获五枚战星。
+          en: >-
+            With her bow gone and heavy debris forward she could scarcely make
+            headway; damage control was exhausted and the worsening seas kept
+            weakening the hull until she slowly split in half, and the crew
+            transferred to Gwin. The two floating sections were sunk by 5-inch
+            gunfire off the south coast of Guadalcanal. The man washed
+            overboard was later rescued by Meade, so her entire crew survived
+            her sinking. Benham received five battle stars.
+        src: [nhhc-danfs-benham, navypedia-benham, navsource-benham]

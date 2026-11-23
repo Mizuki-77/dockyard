@@ -1,0 +1,243 @@
+ship: portland
+updated: 2026-11-24
+
+intro:
+  lead:
+    zh: "波特兰号（CA-33）与阿斯托里亚号在中途岛同属 TG 17.2，两舰并不是同级：波特兰级只有两艘，炮塔正面 64 mm、炮座 38 mm，用的是没有旋转 stalk 的 triple mount。它真正的战功在 1942 年 11 月 13 日——一条鱼雷打掉两个内侧螺旋桨、把舵卡在右 5 度，它靠右转兜圈继续开火，打沉了一艘日本驱逐舰。"
+    en: >-
+      Portland (CA-33) shared TG 17.2 with Astoria at Midway but was not of the same
+      class: the Portland class had only two ships, with 64 mm turret faces, 38 mm
+      barbettes and triple mounts lacking a rotating stalk. Her real action came on
+      13 November 1942, when a torpedo took off both inboard propellers and jammed
+      her rudder five degrees right; she steamed in circles and kept firing, sinking
+      a Japanese destroyer.
+  paragraphs:
+    - heading: "减掉鱼雷管，翻倍副炮"
+      text:
+        zh: "navypedia 对波特兰级的概括只有一句，但这句把它与前一组的界线划得很清楚：「本级与前任的区别在于没有鱼雷发射管、127 mm 高炮数量翻倍」。建成时它一门鱼雷管都没有，这一点与北安普敦级（建成时 2 座三联、1931 年拆除）和彭萨科拉级（1930 年代中期拆除）都不同。另一个常被提到、但容易被说过头的说法是「首获免疫区」——navypedia 的说法是「美国军舰第一次在 203 mm 炮弹下拥有免疫区」，随即自己限定：真正成立的只是弹药库段（前弹药库 60 至 115 缆、后弹药库 60 至 102 缆）。"
+        en: >-
+          Navypedia's summary of the class is one sentence but draws a clean line: the
+          Portland class differed from its predecessors by the absence of torpedo tubes
+          and a doubled number of 127 mm AA guns. She carried no torpedo tubes at all,
+          unlike the Northamptons (two triple mounts, removed in 1931) or the Pensacolas
+          (removed in the mid-1930s). The often-quoted claim of a first immune zone
+          needs narrowing: navypedia says these were the first USN ships with an immune
+          zone under 203 mm fire, then limits it to the magazines - 60 to 115 cables
+          forward, 60 to 102 cables aft.
+      src: [navypedia-portland]
+    - heading: "阿克伦号沉没那晚，它是第一艘赶到现场的军舰"
+      text:
+        zh: "服役才一个多月，1933 年 4 月 4 日夜它收到飞艇阿克伦号坠海的通报，36 分钟后即出港，是最先到达现场的军舰，因此搜救协调由它负责。那次事故 73 人罹难，包括航空局局长 William Moffett 少将。1942 年 5 月珊瑚海，列克星敦号沉没时它接下 722 名生还者。"
+        en: >-
+          Barely a month after commissioning, on the night of 3 April 1933, she got word
+          that the airship Akron was down at sea, was underway 36 minutes later, and was
+          the first naval vessel on the scene, so search and rescue coordination fell to
+          her. Seventy-three men died, including Rear Admiral William Moffett, chief of
+          the Bureau of Aeronautics. At the Coral Sea in May 1942 she took on 722
+          survivors of Lexington.
+      src: [danfs-portland]
+    - heading: "瓜岛登陆时她不在萨沃岛"
+      text:
+        zh: "1942 年 8 月 7 日至 9 日，波特兰号确实在掩护图拉吉与瓜岛的登陆，所以很容易顺着「中途岛同属 17.2」推成「萨沃岛也在一起」。实际不是。DANFS 只写「provide cover and support」，不给编队号；编队号在海军战争学院 1950 年的萨沃岛分析报告第 3 章兵力编成表里：阿斯托里亚号在 TG 62.3（火力支援群 LOVE），而波特兰号在 TG 61.1.2——企业号那一群。这就是 8 月 9 日损失名单里没有它的原因。"
+        en: >-
+          Portland did cover the Tulagi and Guadalcanal landings from 7 to 9 August
+          1942, which makes it easy to assume she was at Savo Island too. She was not.
+          DANFS gives no task group; the Naval War College's 1950 Savo analysis does:
+          Astoria was in TG 62.3 (Fire Support Group LOVE) while Portland was in TG
+          61.1.2, the Enterprise group. That is why she is absent from the loss list of
+          9 August.
+      src: [danfs-portland, savo-nwc-3]
+    - heading: "1942-11-13：舵卡死了，就转圈打"
+      text:
+        zh: "0158，一条鱼雷命中右舷尾部，炸掉两个内侧螺旋桨，把舵卡在右 5 度，3 号炮塔的方向与俯仰同时卡死。4 度横倾靠调压载很快纠正，操舵故障却无法排除，舰只能向右兜圈。第一圈走完时，它用前炮塔向一艘被燃烧的军舰与照明弹照亮的日本战列舰开火，四组六发齐射把对方打出火；0630 仍在兜圈，它在六英里距离上向一艘日本驱逐舰开火，第六次齐射时该舰爆炸、翻覆，五分钟内沉没。"
+        en: >-
+          At 0158 a torpedo hit the starboard quarter, blew off both inboard propellers,
+          jammed the rudder five degrees right, and jammed No. 3 turret in both train
+          and elevation. A four-degree list was corrected by shifting ballast, but the
+          steering casualty could not be overcome and the ship had to steam in circles
+          to starboard. At the end of the first circle her forward turrets fired four
+          six-gun salvoes at a Japanese battleship lit by burning ships and flares and
+          started fires in her; at 0630, still circling, she opened on a destroyer at
+          six miles and blew her up on the sixth salvo.
+      src: [danfs-portland]
+history:
+  - id: build
+    title: { zh: "建造与阿克伦号救援", en: "Building and the Akron rescue" }
+    range: { from: 1929, to: 1933 }
+    events:
+      - date: 1929-02-13
+        text:
+          zh: "国会授权建造。同日授权的还有阿斯托里亚号所在的一批重巡。"
+          en: >-
+            Authorized by Congress, on the same date as the batch that included Astoria.
+        src: [danfs-portland, navsource-portland]
+      - date: 1930-02-17
+        text:
+          zh: "在麻萨诸塞州昆西的伯利恒钢铁公司造船部开工。"
+          en: >-
+            Laid down by Bethlehem Steel Co., Shipbuilding Div., Quincy, Massachusetts.
+        src: [danfs-portland, navypedia-portland]
+      - date: 1932-05-21
+        text:
+          zh: "下水，掷瓶人为波特兰市的 Ralph D. Brooks 夫人。"
+          en: >-
+            Launched, sponsored by Mrs. Ralph D. Brooks of Portland.
+        src: [danfs-portland, navsource-portland]
+      - date: 1933-02-23
+        text:
+          zh: "服役，首任舰长 H. F. Leary 上校。比阿斯托里亚号早一年两个月。"
+          en: >-
+            Commissioned, Captain H. F. Leary in command - fourteen months before Astoria.
+        src: [danfs-portland, navsource-portland]
+      - date: 1933-04-04
+        text:
+          zh: "当晚收到飞艇阿克伦号坠海通报，36 分钟后出港，最先抵达现场，由它负责搜救协调；事故 73 人死亡。"
+          en: >-
+            Received word that the airship Akron was down, was underway 36 minutes later,
+            was first on the scene and took charge of the search; 73 lives were lost.
+        src: [danfs-portland]
+  - id: coral-midway
+    title: { zh: "珊瑚海与中途岛", en: "Coral Sea and Midway" }
+    range: { from: 1942, to: 1942 }
+    events:
+      - date: 1942-05-04
+        text:
+          zh: "编入金凯德少将的突击群参加珊瑚海海战，至 5 月 8 日。"
+          en: >-
+            Served in Rear Admiral Kinkaid's Attack Group through the Coral Sea battle, 4
+            to 8 May.
+        src: [danfs-portland]
+      - date: 1942-05-08
+        text:
+          zh: "列克星敦号沉没，本舰接下该舰 722 名生还者。"
+          en: >-
+            Took on 722 survivors when Lexington (CV-2) was lost.
+        src: [danfs-portland]
+      - date: 1942-06-04
+        text:
+          zh: "中途岛。属弗莱彻少将 TF 17 的巡洋舰群 TG 17.2，与阿斯托里亚号同群；中午前与阿斯托里亚号及屏卫驱逐舰合击，打下 2 架突入的九九舰爆。当天 40 mm Bofors 为 0，防空靠 1.1\"/75 与 20 mm——本级的 40 mm 换装是 1943 年 5 月那次大改装。"
+          en: >-
+            At Midway, in TG 17.2 of Fletcher's TF 17 alongside Astoria; helped splash two
+            of the dive bombers that broke through the combat air patrol before noon. She
+            had no 40 mm Bofors that day, her anti-aircraft armament being 1.1-inch and 20
+            mm; the class's 40 mm refit came in May 1943.
+        src: [danfs-portland, navweaps-oob-midway]
+      - date: 1942-08-07
+        text:
+          zh: "为图拉吉与瓜岛的陆战队登陆提供掩护与支援，7 日至 9 日；此时它在 TG 61.1.2（企业号群），不在萨沃岛夜战的 TG 62.3 里。"
+          en: >-
+            Provided cover and support for the Marine landings at Tulagi and Guadalcanal,
+            7 to 9 August, while in TG 61.1.2 with Enterprise rather than in the TG 62.3
+            that fought at Savo.
+        src: [danfs-portland, savo-nwc-3]
+      - date: 1942-10-26
+        text:
+          zh: "参加圣克鲁斯海战，为企业号号的护航舰之一。"
+          en: >-
+            Fought at Santa Cruz, 26 to 27 October, as one of Enterprise's escorts.
+        src: [danfs-portland]
+  - id: guadalcanal
+    title: { zh: "1942-11-13 瓜岛海战", en: "The Naval Battle of Guadalcanal" }
+    range: { from: 1942-11, to: 1942-11 }
+    events:
+      - date: 1942-11-12
+        text:
+          zh: "参加瓜岛海战（12 至 15 日）。双方均受重创，但日方打乱美军登陆、炮击亨德森机场并输送增援的企图被打破。"
+          en: >-
+            Took part in the Naval Battle of Guadalcanal, 12 to 15 November: both sides
+            were heavily damaged, but the Japanese effort to disrupt the landing, bombard
+            Henderson Field and land reinforcements was broken up.
+        src: [danfs-portland]
+      - date: 1942-11-13
+        text:
+          zh: "0158 右舷尾部中雷，两个内侧螺旋桨被打掉，舵卡右 5 度，3 号炮塔方向与俯仰双双卡死；4 度横倾靠调压载纠正，操舵故障无解，此后只能向右兜圈航行。"
+          en: >-
+            At 0158 a torpedo hit the starboard quarter: both inboard propellers gone,
+            rudder jammed five degrees right, No. 3 turret jammed in train and elevation.
+            The list was corrected by shifting ballast; the steering casualty was not, and
+            she had to steam in circles.
+        src: [danfs-portland]
+      - date: 1942-11-13
+        text:
+          zh: "第一圈走完时，用前炮塔向一艘被燃烧军舰与照明弹照亮的日本战列舰开火，对方还击的齐射全部从本舰上方掠过；本舰四组六发齐射在对方舰上引起火灾。"
+          en: >-
+            At the end of the first circle her forward turrets took a Japanese battleship
+            under fire; the enemy's salvos all passed over her, while her four six-gun
+            salvoes started fires in the Japanese ship.
+        src: [danfs-portland]
+      - date: 1942-11-13
+        text:
+          zh: "0630 仍在兜圈，在六英里距离向一艘日本驱逐舰开火，第六次齐射时对方爆炸、翻覆，五分钟内沉没。"
+          en: >-
+            At 0630, still circling, she opened on an enemy destroyer at six miles; on the
+            sixth salvo the destroyer exploded, rolled over and sank within five minutes.
+        src: [danfs-portland]
+      - date: 1942-11-14
+        text:
+          zh: "在 Higgins 登陆艇、一艘 YP 与一艘拖船协助下，于图拉吉下锚；随后被拖往悉尼作初步修理。"
+          en: >-
+            Anchored at Tulagi with the help of Higgins boats, a YP and a tug, then was
+            towed to Sydney for preliminary repairs.
+        src: [danfs-portland]
+  - id: late-war
+    title: { zh: "1943-1945：阿留申到冲绳与战后", en: "The Aleutians to Okinawa, and after" }
+    range: { from: 1943, to: 1959 }
+    events:
+      - date: 1943-07-26
+        text:
+          zh: "炮击基斯卡岛；8 月 17 日掩护对小基斯卡岛的侦察登陆。"
+          en: >-
+            Bombarded Kiska on 26 July and covered a reconnaissance landing on Little
+            Kiska on 17 August.
+        src: [danfs-portland]
+      - date: 1943-11
+        text:
+          zh: "1943 年 11 月至 1944 年 2 月，参加吉尔伯特与马绍尔群岛战役。"
+          en: >-
+            Took part in the Gilbert and Marshall Islands campaigns from November 1943
+            through February 1944.
+        src: [danfs-portland]
+      - date: 1944-09-15
+        text:
+          zh: "支援帕劳佩莱利乌岛登陆，此后四天以炮火压制威胁盟军推进的日军阵地。"
+          en: >-
+            Supported the landing on Peleliu on 15 September and for four days afterwards
+            blasted positions threatening the Allied advance.
+        src: [danfs-portland]
+      - date: 1944-10-24
+        text:
+          zh: "苏里高海峡夜战：日方两支战列舰、一艘重巡、四艘驱逐舰闯入，本舰与僚舰横在海峡北口形成 T 字横队，日方损失两艘战列舰与三艘驱逐舰。"
+          en: >-
+            At Surigao Strait the Japanese force of two battleships, a heavy cruiser and
+            four destroyers ran into the American line crossing its T; it lost two
+            battleships and three destroyers.
+        src: [danfs-portland]
+      - date: 1945-02-15
+        text:
+          zh: "进入马尼拉湾，炮击科雷希多岛南岸，为登陆做准备。"
+          en: >-
+            Entered Manila Bay and bombarded the south shore of Corregidor in preparation
+            for the landings there.
+        src: [danfs-portland]
+      - date: 1945-09-02
+        text:
+          zh: "战争结束后被指定为马里亚纳方面军司令 George D. Murray 中将的旗舰，驶往特鲁克环礁，由 Murray 代表尼米兹在舰上接受加罗林群岛日军投降。"
+          en: >-
+            Designated flagship of Vice Admiral George D. Murray, Commander Marianas, she
+            steamed to Truk where Murray, acting for Fleet Admiral Nimitz, accepted the
+            formal capitulation of the Carolines in ceremonies aboard her.
+        src: [danfs-portland]
+      - date: 1946-07-12
+        text:
+          zh: "在费城退役，转入预备役。"
+          en: >-
+            Decommissioned at Philadelphia and placed in reserve.
+        src: [danfs-portland, navsource-portland]
+      - date: 1959-10-06
+        text:
+          zh: "1959-03-01 从海军舰艇名录除籍，同年 10 月 6 日售予纽约 Union Mineral and Alloys 公司拆解。实际拆解完成日期来源未给。"
+          en: >-
+            Struck from the Navy List on 1 March 1959 and sold to Union Mineral and Alloys
+            Corp., New York, on 6 October 1959 for scrapping; no source gives a completion
+            date for the breaking up.
+        src: [danfs-portland, navsource-portland]

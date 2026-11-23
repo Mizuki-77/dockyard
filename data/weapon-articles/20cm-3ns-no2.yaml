@@ -1,0 +1,281 @@
+weapon: 20cm-3ns-no2
+updated: 2026-11-23
+intro:
+  lead:
+    zh: 20 cm/50 三年式 No.2 是日本海军在 1930 至 1931 年为条约上限重新设计的一型重巡主炮， 1932 年服役。它的实弹径 20.32 cm、初速 840 mps，比旧的 No.1 炮更重更强， 从高雄级、利根级这样新造的重巡，到妙高、最上、古鹰、青叶这些改装过的旧舰， 太平洋战争开战时日本重巡的主炮统一成了这一型。
+    en: The 20 cm/50 3rd Year Type No. 2 was a heavy cruiser gun redesigned in 1930-1931 to reach the maximum calibre the naval treaties allowed, and it entered service in 1932. With an actual bore of 20.32
+      cm and a muzzle velocity of 840 mps it was heavier and more powerful than the older No. 1 gun, and by the start of the Pacific War it was the single main battery of the Japanese heavy cruiser force,
+      from new ships such as the Takao and Tone classes to the rebuilt Myoko, Mogami, Furutaka and Aoba classes.
+  paragraphs:
+  - heading: 名字叫三年式，炮是 1930 年才画的
+    text:
+      zh: NavWeaps 把这一型的双重身份写在同一行里：制式名是 20 cm/50 (8") 3rd Year Type (Model 1914) No. 2，官方制式名是 50 caliber 3rd Year Type No. 2 20 cm Gun，可设计年份栏填的是 「1930 (actual design date)」，服役年份 1932。该页另有一条命名注记把话说透： 这两型炮是
+        1930 至 1931 年开发的，却仍然挂着三年式（1914 年型）的名号。 也就是说，「三年式」记的是命名所依据的那个年份，不是图纸的年份。 设计目的写得同样直接 —— 就是为了做到当时海军限制条约允许巡洋舰使用的最大口径。
+      en: 'NavWeaps carries both halves of the weapon''s identity on one line: the designation is 20 cm/50 (8") 3rd Year Type (Model 1914) No. 2, the official designation is 50 caliber 3rd Year Type No.
+        2 20 cm Gun, and yet the date of design is given as 1930 (actual design date) with service entry in 1932. A nomenclature note on the same page states the point plainly: even though the guns were
+        developed in 1930 to 1931 they were still designated as 3rd Year Type (Model 1914). The "3rd Year" records the year the naming convention refers to, not the year of the drawings. The purpose is
+        stated just as directly - the guns were developed in order to achieve the maximum calibre allowed for cruisers under the Naval Limitation Treaties of the time.'
+    src:
+    - navweaps-20cm-3ns
+  - heading: 它和 No.1 是两门炮，不是一门炮的两批
+    text:
+      zh: 两型的差别是可量出来的。实弹径：No.2 是 20.32 cm（8.0 英寸）， No.1 是 20.0 cm（7.87 英寸）。初速：No.2 是 840 mps（2,756 fps）， No.1 是 870 mps（2,854 fps）—— 弹更重的这一型反而打得更慢。 膛压：No.2 是 3,130 kg/cm²，No.1 是 3,000 kg/cm²。炮身重：No.2 是
+        18.7 吨， No.1 是 17.6 吨。No.1 那一页还留下一条辨识方法：两型可以用炮管外径上 那道明显的台阶区分开。序号也不是天生的 —— No.1 页记明， No.1（1 GÔ）这个序号是在更强的 No.2（2 GÔ）于 1931 年 4 月 6 日被采用之后， 才回头补给旧炮的。
+      en: 'The difference between the two is measurable. Actual bore: 20.32 cm (8.0 in) for the No. 2 against 20.0 cm (7.87 in) for the No. 1. Muzzle velocity: 840 mps (2,756 fps) for the No. 2 against
+        870 mps (2,854 fps) for the No. 1 - the heavier shell of the newer gun left the barrel more slowly. Working pressure: 3,130 kg/cm2 for the No. 2 against 3,000 kg/cm2 for the No. 1. Gun weight: 18.7
+        tons against 17.6 tons. The No. 1 page also leaves a way to tell them apart by eye: the two can be distinguished by the marked step in the chase diameter. Nor was the numbering original - the No.
+        1 page records that the No. 1 (1 GO) designation was added to the older guns only after the more powerful No. 2 (2 GO) gun was adopted on 6 April 1931.'
+    src:
+    - navweaps-20cm-3ns
+    - navweaps-20cm-3ns
+  - heading: 到 1940 年，全日本重巡都换成了它
+    text:
+      zh: NavWeaps 的装舰栏把这一型分成三档写。竣工即装的：高雄级与利根级。 改装换上的：古鹰级、青叶级、妙高级、最上级。计划装上但没成的：伊吹。 该页补了一句时间点：太平洋战争开战时换装已经完成，日本重巡全部用的是这一型； 脚注给的期限更紧 —— 所有旧重巡到 1940 年都已换成它。 最上级的换装是设计阶段就留好后路的：五座 15.5 cm 三联装改成五座 20 cm 双联装。
+        利根级则是建造中途改的 —— 该页原文说利根级的设计在建造期间被改动，改成用这一型炮。
+      en: 'NavWeaps splits the ship classes into three columns. As completed: the Takao and Tone classes. As rearmed: the Furutaka, Aoba, Myoko and Mogami classes. As planned: Ibuki. The same page adds
+        the timing - by the start of the Pacific War the changeover was complete and all Japanese heavy cruisers were armed with these weapons - and a footnote tightens the deadline further, stating that
+        all older heavy cruisers were rearmed with these guns by 1940. For the Mogami class the swap was designed in from the start: five triple 15.5 cm turrets became five twin 20 cm turrets. For the Tone
+        class it happened during construction - the page records that the design of the Tone class was altered during construction to use these guns.'
+    src:
+    - navweaps-20cm-3ns
+  - heading: 一门炮，七种炮架
+    text:
+      zh: 同一门炮配了七种双联炮架，NavWeaps 把型号和装舰一一对上： 青叶级是 Modified Model C，妙高级是 Modified Model D，高雄级除摩耶外是 Model E， 摩耶是 Model E1，古鹰级是 Model E2，最上级是 Mogami Model（又称 Modified E2）， 利根级与伊吹是 Model E3。七种里仰角分三档： C 型与 D
+        型 −5 至 +40 度，E 型 −5 至 +70 度， E1、E2、Modified E2 与 E3 都是 −5 至 +55 度。 俯仰速度同样分档：C、D 型每秒钟 6 度，E、E1 型每秒钟 12 度， E2、Modified E2 与 E3 型每秒钟 6 度。共通的数字是回转范围约 ±120 度、 回转速度每秒钟 4 度、装填角固定 +5 度、炮座重 163 至 172 吨。
+        所以妙高级的 +40 度与利根级的 +55 度不是一回事，两者也不是同一种炮架； 利根级的 E3 与最上级的 Modified E2 还独占一项：8 米测距仪，其余各型是 6 米。
+      en: 'One gun was fitted with seven different twin mountings, and NavWeaps pairs each with its class: Modified Model C on the Aoba class, Modified Model D on the Myoko, Model E on the Takao class except
+        Maya, Model E1 on Maya, Model E2 on the Furutaka, the Mogami Model (also known as Modified E2) on the Mogami class, and Model E3 on the Tone class and Ibuki. Elevation falls into three bands: -5
+        to +40 degrees for the C and D models, -5 to +70 for the E, and -5 to +55 for the E1, E2, Modified E2 and E3. Elevation rate is banded as well: 6 degrees per second for the C and D, 12 for the E
+        and E1, and 6 for the E2, Modified E2 and E3. What they share is a train of about +120 / -120 degrees, a train rate of 4 degrees per second, a fixed loading angle of +5 degrees and a mounting weight
+        of 163 to 172 tons. The Myoko''s +40 degrees and the Tone''s +55 degrees are therefore not the same thing and not the same mounting, and the Tone''s E3 shares with the Mogami''s Modified E2 one
+        feature the rest lack: an 8 m rangefinder, where the other models had 6 m.'
+    src:
+    - navweaps-20cm-3ns
+  - heading: 为什么利根级把四座炮塔全堆在舰艏
+    text:
+      zh: 这是本级最容易看一眼就记住、也最容易写错的地方。combinedfleet 的舰级页写得很直： 四座双联炮塔全在舰艏、舰尾一座都没有，其中有些炮塔的射界非常差； 整个舰尾甲板给了防空炮与水侦作业，本级带 5 架水侦， 而当时多数日本重巡只带 3 架，这让它们成了航母编队里很好用的侦察舰。 navypedia 从舰体设计那一侧给理由：主炮塔数量压到四座、集中到舰艏， 主机相对原准舰后移，结果是装甲带可以缩短、上部重量得到控制、舰艏舰艉变轻，
+        航海性能因此改善；腾出来的舰尾则容得下六架水侦的大航空组。 pwe 多给了一条前两家没写的动机：把主炮全挤到舰体前部，用意之一是减小弹着散布； 同一段也承认代价 —— 这种炮塔布置带来了难看的舰容与很差的射界。 三条理由不冲突，一并记在这里。
+      en: 'This is the feature of the class that is remembered at a glance and mis-written most often. The combinedfleet class page puts it plainly: four dual turrets forward, some of which suffered from
+        very poor firing arcs, and none aft; the whole of the aft deck was devoted to anti-aircraft and floatplane operations, and the ships carried five floatplanes where most Japanese heavy cruisers carried
+        three, which made them very useful as scouting ships for carrier battle groups. Navypedia argues it from the hull side: the number of main turrets was cut to four and they were grouped at the fore
+        end, machinery was moved aft compared with the prototype, and as a result the armoured belt could be shortened, upper weight moderated and the ship ends made lighter, which improved seaworthiness;
+        the freed aft end then allowed a large air group of six floatplanes. Pwe adds a motive the other two do not state: crowding all the main guns onto the forward part of the ship was a measure intended
+        to reduce dispersion of shot, and the same passage concedes the price - the unusual turret arrangement yielded an ugly profile and poor firing arcs. The three explanations do not conflict and are
+        recorded together.'
+    src:
+    - combinedfleet-tone-class
+    - navypedia-tone
+    - pwe-tone-class
+history:
+- id: design
+  title:
+    zh: 设计与定型
+    en: Design and introduction
+  range:
+    from: 1930
+    to: 1932
+  lead:
+    zh: 从画图到服役只有两年，但这两年里它顺手把上一代 20 cm 炮改了名。
+    en: Barely two years separate the drawings from service, and in that time the weapon also forced a new name onto the 20 cm gun that came before it.
+  events:
+  - date: 1930
+    text:
+      zh: NavWeaps 记设计年份为 1930，并注明这是实际设计日期。 设计目的是做到当时海军限制条约允许巡洋舰使用的最大口径。
+      en: NavWeaps gives the date of design as 1930 and marks it as the actual design date. The purpose was to achieve the maximum calibre allowed for cruisers under the Naval Limitation Treaties of the
+        time.
+    src:
+    - navweaps-20cm-3ns
+  - date: 1931-04-06
+    text:
+      zh: 更强的 20 cm/50 (8") 三年式 No.2 被采用。旧的 20 cm 炮在这一天之后才被改称 No.1（1 GÔ），以便与新型区分。
+      en: The more powerful 20 cm/50 (8") 3rd Year Type No. 2 was adopted. Only after this date was the older 20 cm gun redesignated No. 1 (1 GO) so that the two could be told apart.
+    src:
+    - navweaps-20cm-3ns
+  - date: 1932
+    text:
+      zh: 进入服役。炮身全长 10.310 m、重 18.7 吨，阴线 48 条，药室容积 68.0 dm³， 装药为 33.80 kg 的 53 DC，分装两药包、逐包推入。
+      en: The gun entered service. It was 10.310 m long overall and weighed 18.7 tons, had 48 grooves and a chamber volume of 68.0 dm3, and fired a 33.80 kg 53 DC charge loaded as two bags rammed one at
+        a time.
+    src:
+    - navweaps-20cm-3ns
+  - date: 1933
+    text:
+      zh: 散布是服役初期最头疼的问题。NavWeaps 记高雄在 1933 年报出的散布界为 483 米， 对应平均射击距离 19,300 米。
+      en: Dispersion was the worst problem of the early service years. NavWeaps records Takao in 1933 reporting patterns of 483 metres at a mean firing range of 19,300 metres.
+    src:
+    - navweaps-20cm-3ns
+  - date: 1935
+    text:
+      zh: 夏天，足柄的第二号炮塔在一次回火中报废，41 人死伤。 NavWeaps 用这件事给 1930 年代换装药扬弹机的决定作证：火焰没有下窜到弹药库， 军舰保住了。
+      en: 'In the summer a flareback wrecked Turret No. 2 on Ashigara, killing or injuring 41 men. NavWeaps cites the accident as vindication of the 1930s switch to bucket hoists: the flash did not penetrate
+        down into the magazines and the ship was saved.'
+    src:
+    - navweaps-20cm-3ns
+- id: rearmament
+  title:
+    zh: 换装与扩膛的旧炮管
+    en: Rearmament and the rebored barrels
+  range:
+    from: 1936
+    to: 1940
+  lead:
+    zh: 换装不是简单地把旧炮拆掉换新炮，古鹰与加贺两处都留了例外。
+    en: The changeover was not simply a matter of pulling old guns and dropping in new ones; two cases left exceptions on record.
+  events:
+  - date: 1936
+    text:
+      zh: 妙高级在这一年通过加强舰体结构把散布压了下来。NavWeaps 记该级在 20,000 至 22,000 米距离上把散布界收到 280 至 330 米。
+      en: The Myoko class brought dispersion down this year by stiffening the hull structure. NavWeaps records the class achieving patterns of 280 to 330 metres at ranges of 20,000 to 22,000 metres.
+    src:
+    - navweaps-20cm-3ns
+  - date: 1937
+    text:
+      zh: navypedia 记海军军令部在这一年初决定把利根级的主炮从 15.5 cm 三联装换成 203 mm， 轻巡由此变成重巡；因为原设计已预留换装余地，图纸不需要大改， 但建造被拖慢，部分原因是 203 mm 炮塔供应不足。
+      en: Navypedia records the Naval Staff deciding early this year to replace the Tone class's 155 mm guns with 203 mm, which converted the light cruisers into heavy ones. The design had provided for
+        the swap, so the drawings needed no serious correction, but the building was slowed, partly by a shortage of 203 mm turrets.
+    src:
+    - navypedia-tone
+  - date: 1938
+    text:
+      zh: 利根级两舰下水时炮座已按 20 cm 双联装设计。NavWeaps 记明一件事： 主炮从 15.5 cm 三联装改成 20 cm 双联装时，舰体与炮座在装甲甲板以上已经建完， 而双联 20 cm 需要的滚道直径比三联 15.5 cm 小，已建成的炮座圈反而太大， 装不上标准炮座。补救办法是把炮座顶部改成锥形，下径 5.70 米、上径 5.00 米。
+      en: 'Both Tone class ships were launched with their barbettes already designed for twin 20 cm guns. NavWeaps records one consequence: the hull and barbettes had already been completed above the armoured
+        deck when the armament changed from triple 15.5 cm to twin 20 cm, and because the twin 20 cm turret needed a smaller roller path than the triple 15.5 cm turret, the completed barbette was now too
+        large for the standard race. The remedy was to alter the top of the barbettes to a conical shape, 5.70 m in diameter at the lower level and 5.00 m at the upper level.'
+    src:
+    - navweaps-20cm-3ns
+  - date: 1938
+    text:
+      zh: 古鹰与加贺两舰换装时遇到的是另一种麻烦：为它们准备的 No.2 炮因生产困难交不了货。 NavWeaps 记日本人的处置办法 —— 不等新炮，把从羽黑与足柄上拆下来的 No.1 炮 重新扩膛、换衬，改成 20.32 cm，然后装到古鹰与加贺上。 也就是说，这两舰一度装的是「旧炮身、新口径」。
+      en: 'Furutaka and Kako ran into a different problem at their rearming: production difficulties held up deliveries of the No. 2 guns intended for them. NavWeaps records what was done instead of waiting
+        - No. 1 guns removed from Haguro and Ashigara were rebored and relined to 20.32 cm and then installed in Furutaka and Kako. For a period those two ships therefore carried old barrels in the new
+        calibre.'
+    src:
+    - navweaps-20cm-3ns
+  - date: 1940
+    text:
+      zh: 换装收尾。NavWeaps 的脚注记明：所有旧的重巡到这一年都已换成这一型炮。 同一页的装舰栏另记伊吹计划装这一型，但该舰未成。
+      en: The changeover was completed. NavWeaps' footnote records that all older heavy cruisers had been rearmed with these guns by this year. The ship-class column on the same page lists Ibuki as planned
+        to carry the weapon, a ship that was never finished.
+    src:
+    - navweaps-20cm-3ns
+- id: tone-layout
+  title:
+    zh: 利根级的四座前置
+    en: The all-forward layout of the Tone class
+  range:
+    from: 1934
+    to: 1939
+  lead:
+    zh: 本级把全部主炮搬到舰艏，换来的是一整条舰尾的航空甲板 —— 这是「航空重巡」的账。
+    en: The class moved its entire main battery forward and bought a whole afterdeck of aviation space with it - that is the bargain an aviation cruiser makes.
+  events:
+  - date: 1934
+    text:
+      zh: navypedia 记本级建造由 1934 年的第二次补充计划提供，最初是两艘 8,450 吨级巡洋舰； 对利根与筑摩的参谋要求与最上级相比只差航速降 1 节， 但设计第一代 155 mm 巡洋舰的经验、友鹤事件与台风中新舰的大批损伤， 迫使本级重新设计。
+      en: Navypedia records that building of two 8,450-ton cruisers was provided by the 2nd Supplementary Programme of 1934, and that the staff requirement for Tone and Chikuma differed from the Mogami
+        design only by one knot of speed. Experience of designing the first 155 mm cruisers, the Tomozuru capsizing and the mass damage to the newest ships in a typhoon compelled a redesign.
+    src:
+    - navypedia-tone
+  - date: 1936
+    text:
+      zh: pwe 把改主炮的时点记在条约体系崩掉之后：裁军条约在 1936 年底被废弃， 本级随后以 8 英寸炮完工，完工之快甚至让人怀疑它们从一开始就是按 8 英寸设计的。 navypedia 记的是 1937 年初军令部才作出决定 —— 两说并列，不裁决。
+      en: 'Pwe dates the change of armament to after the treaty system collapsed: the naval disarmament treaties were repudiated at the end of 1936, and the ships were completed with 8-inch guns quickly
+        enough to raise suspicions that they had been designed for such guns from the start. Navypedia instead puts the Naval Staff decision in early 1937. The two accounts are recorded side by side and
+        not adjudicated.'
+    src:
+    - pwe-tone-class
+    - navypedia-tone
+  - date: 1938-11-20
+    text:
+      zh: 利根竣工。四座双联 20 cm 炮塔全部在舰艏，舰尾无一门主炮， 后部整片甲板用于防空炮与水侦作业。
+      en: Tone was completed. All four twin 20 cm turrets stood forward and no main gun was mounted aft, the afterdeck being given over to anti-aircraft armament and floatplane operations.
+    src:
+    - combinedfleet-tone-class
+    - navypedia-tone
+  - date: 1939-05-20
+    text:
+      zh: 筑摩竣工，与利根同为四座全前置。combinedfleet 记同一级后续的伊吹级 最终没有照抄这个布局 —— 战争经验否定了「全前置」的思路，伊吹级改回按最上级来。
+      en: Chikuma was completed with the same all-forward arrangement of four turrets. The combinedfleet class page records that the follow-on Ibuki class, never built, would have copied the Mogami rather
+        than the Tone, because war lessons had rejected the concept of an all-forward armament layout.
+    src:
+    - combinedfleet-tone-class
+    - navypedia-tone
+- id: war-and-fate
+  title:
+    zh: 战争与结局
+    en: War service and the end
+  range:
+    from: 1941-12
+    to: 1948-09
+  lead:
+    zh: 这一型炮跟着日本重巡打完了整场战争，最后随舰沉的沉、被拆的拆，一门没留下现役。
+    en: The gun went through the whole war aboard the Japanese heavy cruisers, and ended it with the ships - sunk or broken up, none left in service.
+  events:
+  - date: 1941-12
+    text:
+      zh: 太平洋战争开战时换装已经完成，日本重巡的主炮统一为这一型。
+      en: At the start of the Pacific War the changeover was complete and the main battery of the Japanese heavy cruiser force was this weapon throughout.
+    src:
+    - navweaps-20cm-3ns
+  - date: 1942-06
+    text:
+      zh: 中途岛，最上级的三隈沉没，最上重伤后改装为航空巡洋舰： 拆掉第 4、第 5 炮塔换成飞行甲板与机库，改完后只余六门 20 cm No.2 炮。 NavWeaps 记下一处细节：原计划搭载十一架 E16A1，机体不到位，先给了七架旧式水侦。
+      en: 'At Midway the Mogami class lost Mikuma, and the damaged Mogami was converted into a seaplane carrier: turrets 4 and 5 came out in favour of a flight deck and hangar, and she emerged with six
+        20 cm No. 2 guns. NavWeaps records one detail - the plan called for eleven E16A1 floatplanes, and as these were unavailable she was given seven older aircraft instead.'
+    src:
+    - navweaps-20cm-3ns
+  - date: 1943-11-05
+    text:
+      zh: 摩耶在拉包尔被机攻击成重伤，回日本修理时改成防空巡洋舰： 拆掉第三号炮塔与全部 12 cm 高角炮，主炮减为八门 20 cm No.2 炮（四座双联）。 NavWeaps 另记同级的鸟海也计划照此改装，但没有做。 navypedia 记摩耶在这次改装中标准排水量升到 13,350 吨、航速降到 34.3 节。
+      en: 'Maya was badly damaged by aircraft at Rabaul, and on returning to Japan for repairs was converted into an anti-aircraft cruiser: turret No. 3 and all 12 cm AA guns came out and she was left with
+        eight 20 cm No. 2 guns in four twin mountings. NavWeaps notes that a similar conversion was planned for her sister Chokai but never carried out. Navypedia records that the conversion raised her
+        standard displacement to 13,350 tons and cut her speed to 34.3 knots.'
+    src:
+    - navweaps-20cm-3ns
+  - date: 1944-10
+    text:
+      zh: 莱特湾一战，装这一型炮的重巡成批损失。navypedia 记：爱宕与摩耶在 10 月 23 日 于锡布延海分别被美军潜艇 Darter 与 Dace 的鱼雷击沉；鸟海 10 月 25 日在萨马岛外 被机攻击成重伤、舰上鱼雷自爆，由驱逐舰藤波击沉； 最上级的铃谷、最上、熊野与利根级的筑摩同月损失， 熊野是在 11 月 25 日于吕宋圣克鲁斯港被机攻击沉。
+      en: The Battle of Leyte Gulf destroyed the gun's ships in batches. Navypedia records that Atago and Maya were sunk in the Sibuyan Sea on 23 October by torpedoes from the US submarines Darter and Dace
+        respectively; that Chokai was badly damaged by aircraft off Samar on 25 October, had some of her own torpedoes detonate aboard and was sunk by the destroyer Fujinami; and that the Mogami class lost
+        Suzuya, Mogami and Kumano that month, Kumano going down on 25 November to carrier aircraft in Santa Cruz harbour, Luzon.
+    src:
+    - navypedia-takao
+    - navypedia-mogami
+  - date: 1944-10-25
+    text:
+      zh: 筑摩在萨马岛外被机攻击成重伤后失去航行能力，当日倾覆沉没。 利根在同一场战斗里向多艘目标射击，combinedfleet 记它当天共打出主炮 408 发。
+      en: Chikuma was reduced to a wreck by air attack off Samar and capsized that day. Tone engaged several targets in the same action, and combinedfleet records that she fired a total of 408 main battery
+        rounds during the battle.
+    src:
+    - combinedfleet-chikuma-trom
+    - combinedfleet-tone-trom
+    - navypedia-tone
+  - date: 1945-03-19
+    text:
+      zh: 吴港空袭，停泊中的利根被一枚直击弹打中，第三号炮塔在回转方向被卡死。
+      en: In the raid on Kure a direct hit on the moored Tone jammed her No. 3 turret in train.
+    src:
+    - combinedfleet-tone-trom
+  - date: 1945-07-24
+    text:
+      zh: 利根在吴港被美军航母机攻击毁，中三枚直击弹；7 月 28 日再中两枚， 左倾 21 度；7 月 29 日在浅水中坐沉。这一级最后一门 20 cm No.2 炮到此退出战列。
+      en: Tone was wrecked by US carrier aircraft at Kure, taking three direct hits; two more hits on 28 July produced a 21-degree list to port; on 29 July she settled on the bottom in shallow water. With
+        her, the last 20 cm No. 2 guns in the class left the order of battle.
+    src:
+    - combinedfleet-tone-trom
+    - navypedia-tone
+  - date: 1946-10-29
+    text:
+      zh: 高雄是装这一型炮的重巡里最后一艘还浮着的。它 1944 年 10 月被潜艇重创后 只做了应急修理，此后在新加坡当防空浮动炮台用；1945 年 7 月 31 日被英国袖珍潜艇 XE3 重创，9 月 21 日被英军接收，之后当兵营船用到 1946 年 10 月 29 日自沉。
+      en: Takao was the last of the gun's cruisers still afloat. Badly damaged by submarine torpedoes in October 1944, she received only temporary repairs and was used at Singapore as an anti-aircraft floating
+        battery; on 31 July 1945 she was severely damaged by the British midget submarine XE3, taken over by British troops on 21 September and used as a barracks ship until she was scuttled on 29 October
+        1946.
+    src:
+    - navypedia-takao
+  - date: 1948-09-30
+    text:
+      zh: 利根的舰体在 1947 年 4 月由播磨造船所开始拆解上层建筑与炮塔， 1948 年 5 月 4 日浮起，同年 9 月 30 日拆解完毕。这一型炮至此没有任何一门留在现役， 也没有任何一座炮架作为纪念物保存下来。
+      en: Tone's hull had her superstructure and turrets removed from April 1947 by the Harima Shipyard, was refloated on 4 May 1948 and broken up by 30 September of that year. No gun of this type remained
+        in service, and no mounting of it is preserved as a memorial.
+    src:
+    - combinedfleet-tone-trom

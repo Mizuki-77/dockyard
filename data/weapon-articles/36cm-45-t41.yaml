@@ -1,0 +1,460 @@
+# ============================================================================
+# 武器正文 —— 36 cm/45 四十一式（45 口径四一式 36 cm 炮 / 14"/45 41st Year Type）
+#
+# 这一篇要小心的三件事：
+#  1) 同一门炮有三个名字：维克斯内部叫 12-in Mark "J"（为了藏口径），
+#     英造称 14-in Vickers Mark "A" / 日方称 43 年式，日产称 41 年式；
+#     1917 年改公制后统一叫 36 cm，但实弹径始终是 35.6 cm。
+#     金刚装英造 43 年式，榛名/雾岛/比叡装日产 41 年式 —— 性能相近，型号不可互换。
+#  2) 仰角有三个阶段（25 / 33 / 43 度），每一次提升的动因都记在来源里：
+#     1920 年榛名一号炮塔炸膛后修好了炮门开口，1930 年代大改装则是加深炮井、
+#     把回旋部分下沉。伊势与日向因舰尾两座炮井深度不足，最后一步只改了前四座。
+#  3) 发射药是四药包合计 142.3 kg，不是单包 —— 单包 142.3 kg 会把这门炮
+#     的药室算大一倍。
+# ============================================================================
+weapon: 36cm-45-t41
+updated: 2026-11-24
+
+intro:
+  lead:
+    zh: >-
+      36 cm/45 四十一式是金刚级、伊势级与扶桑级的主炮。NavWeaps 对它的评价是
+      「可以说是日本造得最好的一门战列舰炮」，理由是精度与可靠性都好。
+      它的设计来自维克斯，1910 年 11 月提交给日本；英造炮先装金刚号，
+      日本造炮称 41 年式。同一门炮在档案里至少有三个名字，
+      而 1917 年改公制后统一称 36 cm 时，实弹径并没有变，仍是 35.6 cm。
+      它的服役史里有一个绕不开的事件：1920 年 9 月 12 日，榛名一号炮塔右炮炸膛，
+      炮身被炸成两段，炮塔顶盖被掀掉，塔内七人死亡、八人受伤。
+    en: >-
+      The 36 cm/45 41st Year Type was the main battery of the Kongo, Ise and Fuso
+      classes. NavWeaps' verdict on it is that it "could well be said to be the best
+      battleship gun built by Japan, as it was quite accurate and reliable." The design
+      came from Vickers, submitted to Japan in November 1910; British-built guns armed
+      the Kongo first, and Japanese-built guns were designated the 41st Year Type. The
+      same weapon carries at least three names in the record, and when the Japanese
+      converted to metric in 1917 and redesignated it 36 cm, the bore did not change: it
+      remained 35.6 cm. One event cannot be left out of its service history: on
+      12 September 1920 the starboard gun of Haruna's No. 1 turret burst, tearing the
+      barrel in half and blowing off the turret roof, killing seven men inside and
+      wounding eight.
+
+  paragraphs:
+    - heading: 一门炮的三个名字，以及为什么口径是「假的」
+      text:
+        zh: >-
+          NavWeaps 把命名的来龙去脉写得比一般条目长，因为这一段本身就是史料。
+          原始设计由维克斯于 1910 年 11 月提交给日本。为了掩盖真实口径，
+          维克斯在自己的内部文件里把这些炮称作 12-in Vickers Mark "J"，
+          日方文件里则记作 12-in 明治 43 年式（明治 43 年即 1910 年）。
+          后来维克斯造的炮被称为 14-in Vickers Mark "A"，日方称 14-in 43 年式（1910 年型）；
+          日本国内造的称为 14-in 41 年式（1908 年型）。
+          1917 年日本改用公制，这批炮全部改称 36 cm（14.2 英寸），
+          但来源紧接着补一句：实弹径未变，仍是 14.0 英寸（35.6 cm）。
+          制式名为 45 caliber 41st Year Type 36 cm Gun。
+          数量与产地：除金刚号上的那批，维克斯还在最初几年向日本供应了若干整炮与单独锻件，
+          但多数炮由吴工厂与日本制钢所室兰工厂制造；各种来源合计约生产 100 门。
+          日本型有若干版本，但与维克斯炮性能相近，来源认为可以合并看待。
+          构造上的沿革：维克斯炮是传统的全长线绕型，在炮管肩部用开槽环减小「钢 choke」问题；
+          早期 41 年式与之相似，后期各炮的内层 A 管改为径向扩张到位 ——
+          来源对这一点的原话是 are believed to have had，即根据现有材料判断，
+          来源自己未给出实物依据，本站照录并标明这一保留。
+          炮闩一律是维克斯的「pure couple」机构配 Welin 炮闩块，与同年代英国炮相同。
+        en: >-
+          NavWeaps treats the nomenclature at greater length than most entries, because
+          this passage is itself source material. The original design was submitted by
+          Vickers to the Japanese in November 1910. In an effort to hide the true size,
+          Vickers designated the guns on their internal documents as the 12-in Vickers
+          Mark "J" and the Japanese documented them as the 12-in Meiji 43 Type, the 43rd
+          year of the Meiji era being 1910. Later the guns built by Vickers were known as
+          the 14-in Vickers Mark "A" and to the Japanese as the 14-in 43rd Year Type
+          (Model 1910); guns manufactured in Japan were known as the 14-in 41st Year Type
+          (Model 1908). In 1917, when the Japanese converted to metric, all of these guns
+          were designated 36 cm (14.2 inches) - and the source adds at once that their
+          bores remained unchanged at 14.0 inches (35.6 cm). The official designation is
+          45 caliber 41st Year Type 36 cm Gun. On numbers and origin: besides those on
+          Kongo, Vickers supplied a number of complete guns and individual forgings to
+          Japan for a few years, but most guns were built by Kure Arsenal and by Japan
+          Steel Works at Muroran, about 100 guns in all from every source. There were
+          several versions of the Japanese type, but they and the Vickers guns had similar
+          performance and can be considered together. In construction, the Vickers guns
+          were the customary full-length wire-wound type using cannelured rings at the tube
+          shoulders to reduce steel choke problems; the early 41st Year Type guns were
+          similar, but later ones are believed to have had the inner A tube radially
+          expanded into position - the source's own wording is "are believed to have had",
+          a judgement on the available material without physical evidence given, and it is
+          quoted here with that reservation attached. Vickers' "pure couple" breech
+          mechanism with a Welin block was used on all of them, as in British guns of the
+          same era.
+      src: [navweaps-36cm-45-t41]
+
+    - heading: 尺寸、弹与药包：一组必须分弹种读的数字
+      text:
+        zh: >-
+          炮身重 86,000 kg，全长 16.469 m，膛线长 13.737 m，阴线 84 条，
+          缠度 RH 1/28，药室 294.9 dm³。射速 2 发/分，身管寿命 250 至 280 发。
+          膛压 3,000 至 3,020 kg/cm²。
+          发射药这一项最容易读错：313.8 磅 / 142.3 kg，牌号 85 DC，
+          而来源另注「装药为四个药包」—— 142.3 kg 是四包合计，不是单包。
+          弹丸要分年份读，不能混：
+          一战时期的 APC Type 3 与 Common Type 3 HE 来源标注为 N/A，
+          但估计同为 1,400 磅（635 kg）；1925 年的 APC Type 5 同为估计 635 kg；
+          1928 年 APC No. 6 确定 635 kg，1931 年 4 月 6 日改称 Type 88，
+          同日采用改进的 APC Type 91，673.5 kg。
+          二战期间的三种：APC Type 91 为 673.5 kg、初速 770 至 775 mps；
+          Common Type 0 HE 为 625 kg、初速 805 mps；Common Type 3 IS 为 622 kg、初速 805 mps。
+          三种弹的装药与长度另记：Type 91 装药 11.1 kg、弹长 152.5 cm；
+          Type 0 HE 装药 29.5 kg、弹长 120.0 cm；Type 3 IS 弹长 140 cm。
+          弹药基数：平时设计 80 发/炮，开战时多数舰提高到约 110 发/炮，
+          来源说明其中一部分是把「待发弹」存放在炮塔与转运室内实现的。
+          另有一条 1941 年起实施的识别措施：穿甲弹加装染料，
+          用染料者称 Type 1，各舰颜色为金刚红、榛名黑、雾岛蓝、比叡无（白）、
+          伊势橙、扶桑与山城及日向未列。
+        en: >-
+          Gun weight 86,000 kg, length overall 16.469 m, rifling length 13.737 m,
+          84 grooves, uniform right-hand twist of 1 in 28 and a chamber volume of
+          294.9 dm3. Rate of fire 2 rounds per minute and barrel life 250 to 280 rounds,
+          with a working pressure of 3,000 to 3,020 kg/cm2. The propellant entry is the
+          one most easily misread: 313.8 lbs (142.3 kg) of 85 DC, with the source noting
+          separately that the charge was in four bags - 142.3 kg is the total of four, not
+          one. The projectiles must be read by year and not mixed: for the World War I APC
+          Type 3 and Common Type 3 HE the source marks the weight N/A and gives its own
+          estimate of 1,400 lbs (635 kg); for the 1925 APC Type 5 it estimates 635 kg; the 1928 APC No. 6 is a firm 635 kg,
+          redesignated Type 88 on 6 April 1931, the same date on which the improved APC
+          Type 91 of 673.5 kg was adopted. The three rounds of the Second World War:
+          APC Type 91 at 673.5 kg and 770 to 775 mps, Common Type 0 HE at 625 kg and
+          805 mps, Common Type 3 IS at 622 kg and 805 mps. Bursting charge and length are
+          recorded separately: Type 91 with 11.1 kg and 152.5 cm, Type 0 HE with 29.5 kg
+          and 120.0 cm, Type 3 IS at 140 cm. Ammunition stowage was 80 rounds per gun as
+          the peacetime design figure; when the war started the outfit was increased to
+          about 110 rounds per gun in most ships, at least partly by stowing ready rounds
+          in the turrets and handling rooms. One identification measure dates from 1941:
+          dye was introduced for AP shells and the rounds using it were designated Type 1,
+          the colours being Kongo red, Haruna black, Kirishima blue, Hiei none (white),
+          Ise orange, with Fuso, Yamashiro and Hyuga not listed.
+      src: [navweaps-36cm-45-t41]
+
+    - heading: 仰角的三级台阶，每一级都有它自己的理由
+      text:
+        zh: >-
+          来源把仰角分成三段写：竣工时 −5/+25 度，1920 年代改装后 −5/+33 度，
+          1930 年代大改装后 −5/+43 度。三个阶段后面各挂一条脚注，说明是怎么上去的。
+          第一次提升的动因是事故：1920 年 9 月榛名一号炮塔炸膛后，
+          修理时把所有炮塔的炮门开口扩大，仰角因此提高；
+          其姊妹舰与后来的主力舰在 1920 年代也做了同样的改动。
+          第二次是靠结构改动：1930 年代的重建中加深炮井（gun wells）、
+          把回旋部分下沉进舰体，从而再取得一段仰角。
+          伊势与日向因舰尾两座炮塔的舰体深度不足，无法做这最后一步改动，
+          所以只有前部与中部四座炮塔获得了更大的仰角。
+          来源另补一句比较：即便是最初那 +25 度，也已经超过同年代英国设计 ——
+          后者一般限制在 +15 或 +20 度。
+          炮塔重量的差别来源单独注明：金刚的炮塔约 654 吨，伊势与扶桑约 688 吨，
+          差别主要来自战列舰炮塔更厚的装甲。
+          回转范围：前后炮塔约 ±150 度；中部的 Q 炮塔射界受限，
+          来源说它在舷侧向前约 60 度、向后约 90 度可用，
+          但在仰角低于约 10 度时不能直接向正后方射击。
+          回转速度每秒 3 度、俯仰每秒 5 度。装填角除扶桑为固定 +5 度外，
+          其余各舰为 −5 至 +20 度。
+          炮塔设计与英国 13.5 英寸 Marks II/III 相似，仅有小幅改进；
+          两炮轴线间距 229 cm。炮塔用 Kenyon 门把弹丸送到炮座筒上，
+          并配有辅助电力；1920 年代的重建中加了压缩空气复进。
+        en: >-
+          The source sets elevation out in three stages: -5/+25 degrees as commissioned,
+          -5/+33 as modified in the 1920s and -5/+43 as rebuilt in the 1930s, each with a
+          footnote explaining how it was reached. The first increase came out of an
+          accident: after the 1920 breech explosion in Haruna's 'A' turret, repairs
+          enlarged the gun port openings in all her turrets, raising elevation, and her
+          sisters and later capital ships were similarly modified during the 1920s. The
+          second came from structure: the 1930 rebuilds deepened the gun wells and lowered
+          the revolving structure down into the ships. Ise and Hyuga lacked sufficient
+          depth in the aftmost two turrets to allow that last change, so only their four
+          forward and amidships turrets were modified for greater elevation. The source
+          adds a comparison: even the original +25 degrees was greater than contemporary
+          British designs, which were generally limited to +15 or +20. Turret weights are
+          given separately - about 654 tons for Kongo and about 688 tons for Ise and Fuso -
+          the difference being mainly the thicker armour of the battleship turrets. Train:
+          about +150/-150 degrees for forward and aft turrets; Q turret was restricted,
+          with the source giving about 60 degrees before the beam and 90 abaft it on
+          either side, though it could not fire directly aft at elevations below about
+          10 degrees. Train rate 3 degrees per second, elevation rate 5. Loading angle was
+          -5 to +20 degrees for all except Fuso, which loaded at a fixed +5. The turrets
+          were similar in design to the British 13.5-inch Marks II and III with small
+          improvements; gun axes were 229 cm apart; Kenyon doors transferred projectiles
+          onto the turret stalks, auxiliary electric power was provided, and compressed air
+          runout was added in the 1920s rebuilds.
+      src: [navweaps-36cm-45-t41]
+
+    - heading: 射程表：43 度那一行才是炮塔的极限，不是炮的极限
+      text:
+        zh: >-
+          穿甲弹射程表按仰角给出，本站照录七行：
+          2.6 度 5,000 m（落速 670 mps、落角 3.5 度）、6.1 度 10,000 m（576 mps、7.5 度）、
+          9.9 度 15,000 m（510 mps、12.4 度）、14.4 度 20,000 m（459 mps、18.9 度）、
+          20.0 度 25,000 m（420 mps、27.5 度）、28.7 度 30,000 m（414 mps、35.9 度）、
+          43.0 度 35,450 m。
+          最后一行来源自己加了括注：43.0 度是炮塔的最大仰角 ——
+          也就是说 35,450 m 是这套炮塔在 1930 年代改装后能打到的极限，
+          不是这门炮在更大仰角下的能力。
+          高爆弹另给一行：43.0 度 28,025 m。
+          另有一条与射程无关但同属炮术的记录：1940 至 1941 年的改装中，
+          至少金刚级加装了自动空气吹洗（automatic air purging），
+          用于射击后清除炮膛内的残渣与余烬。
+        en: >-
+          The APC range table runs by elevation and is reproduced here in seven rows:
+          5,000 m at 2.6 degrees (striking velocity 670 mps, angle of fall 3.5), 10,000 m
+          at 6.1 (576 mps, 7.5), 15,000 m at 9.9 (510 mps, 12.4), 20,000 m at 14.4
+          (459 mps, 18.9), 25,000 m at 20.0 (420 mps, 27.5), 30,000 m at 28.7 (414 mps,
+          35.9) and 35,450 m at 43.0 degrees. Against that last row the source adds a
+          parenthesis of its own: 43.0 degrees is the maximum elevation of the turret - so
+          35,450 m is the limit of this mounting as rebuilt in the 1930s, not the reach of
+          the gun at some greater angle. HE has a single row: 28,025 m at 43.0 degrees.
+          One further record belongs to gunnery rather than range: automatic air purging
+          was added during refits in 1940-1941 on at least the Kongo class.
+      src: [navweaps-36cm-45-t41]
+
+    - heading: 装英造炮的那一艘，与装日产炮的那三艘
+      text:
+        zh: >-
+          这是本级最容易被写成「同级同型」的一处，而型号名不可互换。
+          navypedia 的装甲/武备栏按舰分开写：金刚为 4 × 2 门 356/45 43 年式，
+          其余各舰为 4 × 2 门 356/45 41 年式。
+          NavWeaps 记同一件事的另一面：维克斯造的那批炮先用来武装在巴罗船厂建造的金刚号。
+          也就是说，四艘里只有金刚装英造炮，另三艘装国产炮；
+          两种炮性能相近（来源原话可与维克斯炮合并看待），但名字不同。
+          撤除与改装这条线上，本型炮没有发生过换装：
+          日文来源的 1934 年与 1944 年十月五日两份装备表，主炮栏都是
+          「45 口径 35.6 cm 连装炮 4 基 8 门」，前后一致。
+          1943 年伊势与日向改为航空战列舰时撤掉的是舰尾两座炮塔及其炮座，
+          与本型在金刚级上的服役无关，但同属这一型炮的拆改记录。
+        en: >-
+          This is the point at which the class is most easily written as one uniform type,
+          and the mark names cannot be swapped. Navypedia's armament rows separate them:
+          Kongo with 4 x 2 - 356/45 43-shiki, all the others with 4 x 2 - 356/45
+          41-shiki. NavWeaps records the other side of the same fact: the guns
+          manufactured by Vickers were first used to arm the Kongo, built at the
+          Vickers-Armstrong yard at Barrow. So of the four ships only Kongo carried
+          British-built guns and the other three carried Japanese-built ones; the two had
+          similar performance - the source's words are that they can be considered
+          together - but they do not share a name. On the removal side, this weapon was
+          never re-armed: the Japanese source's 1934 and 5 October 1944 armament tables
+          both list the main battery as four twin 35.6 cm/45 mountings for eight guns.
+          When Ise and Hyuga became hybrid battleship-carriers in 1943 it was the two aft
+          turrets and their barbettes that came off, which does not bear on the Kongo
+          class but is part of this weapon's record of dismantling.
+      src: [navypedia-kongo, navweaps-36cm-45-t41, japanese-warship-haruna]
+
+history:
+  - id: design
+    title: { zh: 设计、命名与国产化, en: Design, nomenclature and production }
+    range: { from: 1910, to: 1931 }
+    lead:
+      zh: >-
+        从 1910 年 11 月的图纸到 1931 年 4 月的新弹，这门炮的名字比它的弹道改得还多。
+      en: >-
+        From the drawings of November 1910 to the new projectile of April 1931, this gun
+        changed its name more often than its ballistics.
+    events:
+      - date: 1910-11
+        text:
+          zh: >-
+            维克斯把原始设计提交给日本。维克斯在内部文件里把炮称作 12-in Mark "J"，
+            日方记作 12-in 明治 43 年式，两边都在藏真实口径。
+          en: >-
+            Vickers submitted the original design to the Japanese. On their internal
+            documents Vickers called the guns the 12-in Mark "J" and the Japanese recorded
+            them as the 12-in Meiji 43 Type; both were hiding the true calibre.
+        src: [navweaps-36cm-45-t41]
+      - date: 1913
+        text:
+          zh: >-
+            进入服役。金刚号同年竣工于英国巴罗的维克斯-阿姆斯特朗船厂，
+            是四艘里唯一装英造 43 年式主炮的一艘。
+          en: >-
+            Entered service. Kongo completed the same year at the Vickers-Armstrong yard
+            at Barrow, the only one of the four armed with British-built 43rd Year Type
+            main guns.
+        src: [navweaps-36cm-45-t41, navypedia-kongo]
+      - date: 1917
+        text:
+          zh: >-
+            日本改公制，这批炮全部改称 36 cm（14.2 英寸），但实弹径未变，仍是 35.6 cm。
+            同年 APC Type 3 采用。
+          en: >-
+            Under the Japanese conversion to metric all these guns were redesignated
+            36 cm (14.2 inches), their bores remaining unchanged at 35.6 cm. The APC
+            Type 3 was adopted the same year.
+        src: [navweaps-36cm-45-t41]
+      - date: 1931-04-06
+        text:
+          zh: >-
+            炮弹谱系在此收口，三个节点都记在这一条里：1925 年 6 月 15 日 APC Type 5 采用
+            （一战后日本取得若干德国穿甲弹、1924 年又购入英国 Hadfield 穿甲弹，
+            加上自身射击试验的结果而成）；1928 年 11 月 17 日 APC No. 6 取代之，
+            穿甲性能与 Type 5 大体相当但更不易早炸、水下性能更好；
+            本日 APC No. 6 改称 Type 88，同日采用改进的 APC Type 91（673.5 kg）。
+            这一天因此也是弹重的分界：此前是 635 kg 一级，此后是 673.5 kg 一级。
+          en: >-
+            The projectile lineage closes on this date, all three steps recorded here:
+            APC Type 5 was adopted on 15 June 1925 (after the First World War the
+            Japanese obtained some German AP shells and in 1924 purchased British
+            Hadfield AP shells, combining examination of those with their own firing
+            trials); APC No. 6 superseded it on 17 November 1928, essentially similar in
+            armour penetration but better protected from premature detonation and with
+            enhanced underwater performance; and on this date APC No. 6 was redesignated
+            the Type 88 while the improved APC Type 91 of 673.5 kg was adopted. That day
+            is also the division in shell weight: 635 kg before, 673.5 kg after.
+        src: [navweaps-36cm-45-t41]
+
+  - id: accident
+    title: { zh: 榛名炸膛与仰角的第一次提升, en: "The Haruna burst and the first elevation increase" }
+    range: { from: 1920, to: 1925 }
+    lead:
+      zh: >-
+        这一次事故的直接后果不是停用，而是把四艘舰所有炮塔的炮门都开大了一圈。
+      en: >-
+        The immediate consequence of the accident was not to suspend the weapon but to
+        enlarge the gun ports of every turret in all four ships.
+    events:
+      - date: 1920-09-12
+        text:
+          zh: >-
+            北海道茂津多岬外海，榛名在进行射击训练。一号炮塔右炮突然炸膛，
+            14 英寸炮身被炸成两段，装甲炮塔顶盖被掀掉，塔内七人死亡、八人受伤。
+            榛名驶往横须贺，第二舰队司令长官旗转至比叡、后又转至金刚。
+            事后的调查结论是：射击时一枚有缺陷的八年式二号信管引燃了炮闩处的药包，
+            导致弹丸在炮管内爆炸。
+          en: >-
+            Off Cape Motsuta, Hokkaido, Haruna was engaged in gunnery practice when a
+            breech explosion tore the starboard 14-inch gun barrel of No. 1 turret in half
+            and blew off the armoured turret roof. Seven men in the turret were killed and
+            eight wounded. Haruna proceeded to Yokosuka, and the flag of the CinC, Second
+            Fleet was transferred to Hiei and later to Kongo. The subsequent investigation
+            concluded that during firing a faulty 8th Year Type No. 2 fuse ignited the
+            powder bags in the breech and caused the shell to go off in the barrel.
+        src: [combinedfleet-haruna]
+      - date: 1920-12-01
+        text:
+          zh: >-
+            榛名转入横须贺第二预备。随后的修理、改装与第一次近代化使她在之后八年里
+            实际脱离现役。就在这一段里，14 英寸炮的仰角从 25 度提高到 33 度，
+            主炮弹药基数提高到每门 100 发，弹库防火措施升级。
+          en: >-
+            Haruna was placed in second reserve at Yokosuka. The subsequent repairs,
+            refits and first modernisation effectively removed her from active service for
+            the next eight years. Within that work the elevation of the 14-inch guns was
+            increased from 25 to 33 degrees, main battery ammunition stowage was increased
+            to 100 rounds per gun, and the fire precautions of the magazines were upgraded.
+        src: [combinedfleet-haruna]
+      - date: 1923
+        text:
+          zh: >-
+            navypedia 对全级的记法：1923 至 1925 年间，四艘舰的主炮最大仰角
+            都从 25 度提高到 33 度。NavWeaps 的脚注给出技术手段 ——
+            扩大炮门开口，其姊妹舰与后来的主力舰在 1920 年代同样照做。
+          en: >-
+            Navypedia's class-level record: between 1923 and 1925 the maximum elevation of
+            the main guns in all four ships was increased from 25 to 33 degrees. NavWeaps'
+            footnote supplies the means - enlarging the gun port openings - and notes that
+            the sisters and later capital ships were similarly modified during the 1920s.
+        src: [navypedia-kongo, navweaps-36cm-45-t41]
+
+  - id: rebuild
+    title: { zh: 1930 年代改装与 43 度, en: The 1930s rebuild and 43 degrees }
+    range: { from: 1933, to: 1944 }
+    lead:
+      zh: >-
+        最后一段仰角是靠把炮塔往舰体里沉下去换来的，而伊势级有两座炮塔沉不下去。
+      en: >-
+        The last increment of elevation was bought by sinking the turrets into the hull,
+        and two of Ise's turrets could not be sunk far enough.
+    events:
+      - date: 1933-04
+        text:
+          zh: >-
+            榛名在吴工厂改装（1933 年 4 至 5 月），先于第二次大改装：
+            主炮仰角从 33 度提到 43 度，副炮仰角从 15 度提到 30 度。
+          en: >-
+            Haruna refitted at Kure in April-May 1933 ahead of the second reconstruction:
+            main battery elevation went from 33 to 43 degrees and secondary elevation from
+            15 to 30.
+        src: [combinedfleet-haruna, navypedia-kongo]
+      - date: 1933-08
+        text:
+          zh: >-
+            手段是结构性的：加深炮井、把回旋部分下沉进舰体。
+            navypedia 记第二次大改装逐舰进行的时间为榛名 1933 年 8 月至 1934 年 9 月（吴）、
+            雾岛 1934 年 11 月至 1936 年 6 月（佐世保）、金刚 1935 年 6 月至 1937 年 1 月（横须贺）、
+            比叡 1936 年 4 月至 1940 年 1 月（吴）。
+          en: >-
+            The means was structural: the gun wells were deepened and the revolving
+            structure lowered into the ship. Navypedia dates the second reconstruction
+            ship by ship - Haruna August 1933 to September 1934 at Kure, Kirishima
+            November 1934 to June 1936 at Sasebo, Kongo June 1935 to January 1937 at
+            Yokosuka, Hiei April 1936 to January 1940 at Kure.
+        src: [navweaps-36cm-45-t41, navypedia-kongo]
+      - date: 1934
+        text:
+          zh: >-
+            伊势与日向的例外：两舰舰尾两座炮塔的舰体深度不足，无法做加深炮井的改动，
+            因此只有前部与中部四座炮塔获得 43 度仰角。
+          en: >-
+            The exception: Ise and Hyuga lacked sufficient depth in the aftmost two turrets
+            to allow the change, so only their four forward and amidships turrets were
+            modified for the greater elevation.
+        src: [navweaps-36cm-45-t41]
+      - date: 1940
+        text:
+          zh: >-
+            1940 至 1941 年的改装中，至少金刚级加装了自动空气吹洗（automatic air purging）。
+            同期还引入另一项识别措施：穿甲弹加装染料，用染料者称 Type 1。
+            各舰颜色为金刚红、榛名黑、雾岛蓝、比叡无（白）、伊势橙；
+            扶桑、山城、日向未列。
+          en: >-
+            Automatic air purging was added during refits in 1940-1941 on at least the
+            Kongo class. In the same period a second identification measure came in: dye
+            for AP shells, the projectiles using it being designated Type 1. The colours
+            assigned were Kongo red, Haruna black, Kirishima blue, Hiei none (white) and
+            Ise orange; Fuso, Yamashiro and Hyuga were not listed.
+        src: [navweaps-36cm-45-t41]
+      - date: 1941-12
+        text:
+          zh: >-
+            开战时多数舰的弹药基数从平时设计的 80 发/炮提高到约 110 发/炮，
+            部分靠把待发弹存放在炮塔与转运室内实现。
+          en: >-
+            When the war started the outfit was increased from the peacetime design of
+            80 rounds per gun to about 110 in most ships, at least partly by stowing ready
+            rounds in the turrets and handling rooms.
+        src: [navweaps-36cm-45-t41]
+      - date: 1942-05-05
+        text:
+          zh: >-
+            日向五号炮塔左炮炮闩发生灾难性破裂，随之的爆炸与火灾造成 51 名官兵死亡。
+            在吴修理的数周内，五号炮塔被整体拆除，炮座上方改以圆形装甲板封闭，
+            板上装四座三联 25 mm 机炮。本条属同型炮塔的失效记录，
+            发生在本型炮的另一艘装舰上。
+          en: >-
+            During gunnery practice the left gun breech of Turret No. 5 on Hyuga suffered
+            a catastrophic failure, and the resulting explosion and fire killed fifty-one
+            officers and crewmen. During repairs at Kure over the following weeks Turret
+            No. 5 was removed and replaced with a circular armour plate atop the barbette,
+            on which four triple 25 mm gun mounts were placed. This is a failure record for
+            the same turret type aboard another ship carrying this weapon.
+        src: [navweaps-36cm-45-t41]
+      - date: 1943
+        text:
+          zh: >-
+            伊势与日向改装为航空战列舰，舰尾两座炮塔及炮座被拆除。
+          en: >-
+            Ise and Hyuga were converted into hybrid battleship-carriers and their two aft
+            turrets and barbettes were removed.
+        src: [navweaps-36cm-45-t41]
+      - date: 1944-10-05
+        text:
+          zh: >-
+            日文来源的兵装表在此日状态栏仍记主炮为「45 口径 35.6 cm 连装炮 4 基 8 门」——
+            与 1934 年那一栏一字不差，说明这一型炮在榛名身上从未换装。
+          en: >-
+            The Japanese source's armament table for this date still lists the main battery
+            as four twin 35.6 cm/45 mountings for eight guns, identical to the 1934 entry:
+            the weapon was never re-armed aboard Haruna.
+        src: [japanese-warship-haruna]

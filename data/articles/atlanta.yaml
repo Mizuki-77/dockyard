@@ -1,0 +1,269 @@
+ship: atlanta
+updated: 2026-11-24
+
+intro:
+  lead:
+    zh: "亚特兰大号（CL-51）在中途岛一炮未发。DANFS 的原话是它当时在企业号与大黄蜂号的屏卫圈里，「but these ships did not come under attack」。它的战功从 1942 年 8 月 24 日东所罗门海战才开始算；11 月 13 日夜战里它先被日舰的鱼雷与炮弹打瘫，随后被旧金山号的 8 英寸弹误击，天亮后由舰长下令爆破凿沉。"
+    en: >-
+      Atlanta (CL-51) fired not a shot at Midway. DANFS records that she was in the
+      screen for Enterprise and Hornet, "but these ships did not come under attack".
+      Her war record starts on 24 August 1942 in the Eastern Solomons; in the night
+      action of 13 November she was first crippled by Japanese torpedoes and
+      shellfire, then hit by 8-inch fire from San Francisco, and was scuttled with a
+      demolition charge after daylight.
+  paragraphs:
+    - heading: "8 座双联，16 门"
+      text:
+        zh: "亚特兰大级的主炮是 5\"/38，但不是重巡那种单装炮座：本级装 8 座双联，共 16 门。NavWeaps 的炮座表写得很清楚——双联封闭基座环炮座里「St. Louis (4), Atlanta (8), Oakland (6) and Juneau (ii) (6): Mark 29」；navypedia 独立印证「Armament CL51, 52: 8 x 2 - 127/38 Mk 12」。DANFS 题头写的「a. 16 5\"」是门数，不是座数。把 16 门读成 8 门会少算一半火力，把 8 座读成 16 座会多算一倍。"
+        en: >-
+          The class's main battery was the 5"/38, but not in the single mounts of the
+          heavy cruisers: Atlanta carried eight twin mounts, sixteen guns. NavWeaps'
+          table is explicit - in twin enclosed base ring mounts, "St. Louis (4), Atlanta
+          (8), Oakland (6) and Juneau (ii) (6): Mark 29" - and navypedia corroborates
+          with "Armament CL51, 52: 8 x 2 - 127/38 Mk 12". The "16 5-inch" in the DANFS
+          data line counts guns, not mounts.
+      src: [navweaps-5in38-mk12, navypedia-atlanta, danfs-atlanta]
+    - heading: "它为什么存在：手动炮座跟不上目标"
+      text:
+        zh: "重巡的 5\"/25 副炮看着仰角够（Mark 17/19/23/27 都能到 +85 度），但 NavWeaps 在该型炮座栏里的原话是「Mark 19: Manual operation, only」——俯仰与旋回全靠人手摇。亚特兰大级的 Mark 29 是动力驱动的双联炮座。两门炮的口径差别也摆在那里：5\"/25 初速 2,155 英尺/秒、5\"/38 新炮 2,600 英尺/秒。真正拉开差距的是驱动方式与射速，而这两样决定了一艘舰能不能跟住 1942 年的高速目标。代价是超重：navypedia 记首舰 CL-51 超重 700 吨以上，「设计的 35 节从未达到」。"
+        en: >-
+          The heavy cruisers' 5"/25 looked adequate on elevation - Marks 17, 19, 23 and
+          27 all reached +85 degrees - but NavWeaps' entry for that mounting reads "Mark
+          19: Manual operation, only", elevation and train both by hand. Atlanta's Mark
+          29 was a power-driven twin mounting. The ballistic gap is there too, 2,155
+          ft/s for the 5"/25 against 2,600 ft/s for a new 5"/38, but the decisive
+          differences are power traverse and rate of fire, which decide whether a ship
+          can hold a 1942 target. The cost was overweight: navypedia records more than
+          700 tons on the lead ship and notes that "designed 35kts speed was never
+          reached".
+      src: [navweaps-5in25-mk10, navweaps-5in38-mk12, navypedia-atlanta]
+    - heading: "1942-08-24：第一次真正开火"
+      text:
+        zh: "东所罗门海战那天，日机从西北偏北方向进入，1710 开始攻击。舰长 Jenkins 上校估计来袭的至少 18 架九九舰爆；接下来的 11 分钟里，本舰的 5 英寸、1.1 英寸与 20 mm 炮火都加入了企业号上空的弹幕，同时紧跟着企业号规避的动作。企业号被命中 1 弹、另有 5 发近失弹破片损伤；Jenkins 事后报告本舰可能击落 5 架。副舰长 Campbell D. Emery 的评语是：本舰虽然经历了中途岛战役，但「这是舰员第一次有机会真正与敌人交战」。"
+        en: >-
+          In the Eastern Solomons the Japanese came in from north-northwest and attacked
+          at 1710. Capt. Jenkins estimated at least eighteen Type 99 dive bombers; over
+          the next eleven minutes Atlanta's 5-inch, 1.1-inch and 20 mm batteries joined
+          the barrage over Enterprise while conforming to the carrier's violent
+          manoeuvring. Enterprise took one hit and shrapnel damage from about five near
+          misses, and Jenkins reported his ship may have shot down five of the
+          attackers. Her executive officer, Cdr. Campbell D. Emery, wrote that although
+          the ship had been through the Midway campaign, "this was the first opportunity
+          the crew has had to actively join the enemy in battle".
+      src: [danfs-atlanta]
+    - heading: "1942-11-13：自己人打的那些弹"
+      text:
+        zh: "那一夜本舰排在美方纵队的首位，先被日舰晓号用探照灯照住，在约 1,600 码距离开火。中雷之前它已被日舰打中 13 发 5.5 英寸弹与若干 3 英寸弹（多落在舰桥区）、以及驱逐舰打来的 12 发 5 英寸弹。中雷后除辅助柴油发电机外全部动力丧失，舵卡在左满舵。紧接着旧金山号向它开火，DANFS 用「估计 19 发 8 英寸弹」来描述这一阵；弹几乎全部穿透薄壳未爆，绿色染剂撒满全舰，但破片打死了许多人，其中包括就在本舰上的斯科特少将及其参谋。DANFS 简史页另给一个更大的口径：「至少一条鱼雷与约 50 发大口径命中，包括数发来自战列舰比叡」——两说统计范围不同，本页并列不裁。"
+        en: >-
+          That night she led the American column, was lit by the Japanese destroyer
+          Akatsuki's searchlight and opened fire at about 1,600 yards. Before the
+          torpedo hit she had already taken thirteen 5.5-inch and some 3-inch hits,
+          mostly in the bridge area, plus twelve 5-inch from destroyers. The torpedo
+          left her with only auxiliary diesel power and the rudder jammed left. Then San
+          Francisco fired into her - DANFS calls it "what was estimated as 19 8-inch
+          hits"; almost all passed through the thin skin without detonating and
+          scattered green dye, but fragments killed many men including Rear Admiral
+          Scott and members of his staff. The DANFS brief history gives a wider count,
+          "at least one torpedo and approximately 50 major-caliber hits including
+          several from battleship Hiei"; the two figures cover different scopes and both
+          are recorded.
+      src: [oni-guadalcanal, danfs-atlanta, danfs-atlanta-brief]
+history:
+  - id: build
+    title: { zh: "建造与服役", en: "Building and commissioning" }
+    range: { from: 1940, to: 1941 }
+    events:
+      - date: 1940-04-22
+        text:
+          zh: "在新泽西州科尔尼的联邦造船与干船坞公司开工。"
+          en: >-
+            Laid down at Kearny, New Jersey, by the Federal Shipbuilding and Drydock Co.
+        src: [danfs-atlanta, navypedia-atlanta]
+      - date: 1941-09-06
+        text:
+          zh: "下水，掷瓶人是《飘》的作者玛格丽特·米切尔（Mrs. John R. Marsh）。"
+          en: >-
+            Launched, sponsored by Mrs. John R. Marsh - Margaret Mitchell, author of Gone
+            With the Wind.
+        src: [danfs-atlanta, danfs-atlanta-brief]
+      - date: 1941-12-24
+        text:
+          zh: "在纽约海军船厂服役，舰长 Samuel P. Jenkins 上校。他将成为本舰自始至终唯一的一任舰长。"
+          en: >-
+            Commissioned at the New York Navy Yard, Capt. Samuel P. Jenkins in command -
+            the ship's only commanding officer.
+        src: [danfs-atlanta, danfs-atlanta-brief, navsource-atlanta]
+      - date: 1942-03-31
+        text:
+          zh: "试航与试航后修整结束，被判定「可担负远洋任务」。"
+          en: >-
+            Post-shakedown work completed; adjudged "ready for distant service".
+        src: [danfs-atlanta]
+      - date: 1942-04-23
+        text:
+          zh: "经巴拿马运河、途中侦察克利珀顿岛后抵珍珠港。"
+          en: >-
+            Reached Pearl Harbor after transiting the Panama Canal and reconnoitring
+            Clipperton Island on the way.
+        src: [danfs-atlanta]
+      - date: 1942-05-16
+        text:
+          zh: "护送两艘辅助船至努美阿后，加入哈尔西中将的第 16 特混舰队（企业号与大黄蜂号）。"
+          en: >-
+            After seeing two auxiliaries to Noumea, joined Vice Admiral Halsey's TF 16,
+            formed around Enterprise and Hornet.
+        src: [danfs-atlanta]
+  - id: midway
+    title: { zh: "中途岛：在场，但没挨打", en: "Midway: present, but not engaged" }
+    range: { from: 1942-05, to: 1942-06 }
+    events:
+      - date: 1942-05-28
+        text:
+          zh: "随第 16 特混舰队再次出港，赴中途岛西北海域。"
+          en: >-
+            Sailed with TF 16 again for the waters northwest of Midway.
+        src: [danfs-atlanta]
+      - date: 1942-06-04
+        text:
+          zh: "中途岛海战。本舰在大黄蜂号的屏卫圈内进入战备，但当天日机的两次反击全部落在独立行动的第 17 特混舰队头上，本舰一炮未发。本舰到沉没都没有装过 40 mm Bofors——本级的 40 mm 是 1943 年以后在 CL-95 起的改进型上换装的。"
+          en: >-
+            At Midway she cleared for action screening Hornet, but both Japanese
+            counter-strikes fell on the independently operating TG 17 and she fired no
+            shots. She never carried 40 mm Bofors; the class's 40 mm armament belongs to
+            the improved ships from CL-95 onward, after 1943.
+        src: [danfs-atlanta, danfs-atlanta-brief]
+      - date: 1942-06-06
+        text:
+          zh: "企业号战报把大黄蜂组列为「HORNET, MINNEAPOLIS, NEW ORLEANS, ATLANTA, WORDEN, MAURY, ELLET and CONYNGHAM」，1828 时本舰担任编队基准舰。"
+          en: >-
+            The Enterprise war diary lists the HORNET group as "HORNET, MINNEAPOLIS, NEW
+            ORLEANS, ATLANTA, WORDEN, MAURY, ELLET and CONYNGHAM", with Atlanta assuming
+            formation guide at 1828.
+        src: [enterprise-war-diary-midway]
+      - date: 1942-06-11
+        text:
+          zh: "本舰一直留在第 16 特混舰队的屏卫圈内至 6 月 11 日，当日编队接到返珍珠港的命令。"
+          en: >-
+            She remained in TF 16's screen until 11 June, when the task force received
+            orders to return to Pearl Harbor.
+        src: [danfs-atlanta]
+      - date: 1942-06-13
+        text:
+          zh: "随第 16 特混舰队返抵珍珠港，此后在夏威夷海域进行炮术与岸轰训练。"
+          en: >-
+            Returned to Pearl Harbor with TF 16 and trained in Hawaiian waters with drone
+            targets, high-speed sleds and shore bombardment.
+        src: [danfs-atlanta]
+  - id: solomons
+    title: { zh: "1942-08 至 10：东所罗门、护航、炮击克鲁兹角", en: "August to October 1942" }
+    range: { from: 1942-08, to: 1942-10 }
+    events:
+      - date: 1942-08-07
+        text:
+          zh: "瓜岛登陆当天起为航母提供屏护，至 8 月 9 日航母编队撤离。"
+          en: >-
+            Screened the carriers supporting the initial Guadalcanal landings until the
+            carrier task forces withdrew on 9 August.
+        src: [danfs-atlanta]
+      - date: 1942-08-24
+        text:
+          zh: "东所罗门海战。1710 起 11 分钟内以 5 英寸、1.1 英寸与 20 mm 炮火为企业号撑起弹幕，舰长报告可能击落 5 架来袭日机。"
+          en: >-
+            Eastern Solomons: for eleven minutes from 1710 her 5-inch, 1.1-inch and 20 mm
+            batteries contributed to the barrage over Enterprise; Capt. Jenkins reported
+            his ship may have shot down five attackers.
+        src: [danfs-atlanta]
+      - date: 1942-08-31
+        text:
+          zh: "萨拉托加号被日本潜艇伊-26 击中，本舰为其提供屏护，直到明尼阿波利斯号系上拖缆把它带离危险区。"
+          en: >-
+            When I-26 torpedoed Saratoga, Atlanta screened the stricken flagship while
+            Minneapolis rigged a towline and took her clear.
+        src: [danfs-atlanta]
+      - date: 1942-10-28
+        text:
+          zh: "从旧金山号接下斯科特少将，成为新编成的第 64.2 特混大队旗舰。"
+          en: >-
+            Brought Rear Admiral Norman Scott aboard from San Francisco and became
+            flagship of the newly designated TG 64.2.
+        src: [danfs-atlanta]
+      - date: 1942-10-30
+        text:
+          zh: "0629 开始炮击克鲁兹角（Point Cruz）日军阵地，日方未还击。"
+          en: >-
+            Commenced bombardment of Point Cruz at 0629; the Japanese made no return fire.
+        src: [danfs-atlanta, oni-guadalcanal]
+      - date: 1942-11-11
+        text:
+          zh: "作为斯科特少将的旗舰，率四艘驱逐舰掩护运输舰 Zeilin 与货船 Libra、Betelgeuse 在隆加角卸货；当天上午两次空袭警报，一次九架「九九」、一次 27 架「一式陆攻」，运输船仅受近失弹轻伤。"
+          en: >-
+            As Scott's flagship, with four destroyers, screened the transport Zeilin and
+            the cargo ships Libra and Betelgeuse unloading at Lunga Point; two air raid
+            alerts that morning, nine dive bombers and then 27 Bettys, left the
+            auxiliaries with only near-miss damage.
+        src: [danfs-atlanta, oni-guadalcanal]
+  - id: night-battle
+    title: { zh: "1942-11-13 夜战与凿沉", en: "The night action of 13 November" }
+    range: { from: 1942-11, to: 1942-11 }
+    events:
+      - date: 1942-11-12
+        text:
+          zh: "仍在隆加角外掩护卸货，此时属卡拉汉少将（坐镇旧金山号）的第 67 特混舰队；1410 前后 25 架「一式陆攻」来袭，本舰与 Juneau 号先后开火，报称在鱼雷投放后击落 2 架。"
+          en: >-
+            Still screening the unloading off Lunga Point, now in Rear Admiral Callaghan's
+            TF 67; when about 25 Bettys attacked around 1410 she and Juneau opened fire
+            and claimed two shot down just after they dropped their torpedoes.
+        src: [danfs-atlanta]
+      - date: 1942-11-13
+        text:
+          zh: "夜战开始，本舰排在美方纵队首位，被日本驱逐舰晓号用探照灯照住，在约 1,600 码距离开火；晓号后来被击沉，全舰无人生还。"
+          en: >-
+            In the night action she led the American column, was lit by Akatsuki's
+            searchlight and opened fire at about 1,600 yards; Akatsuki was sunk with all
+            hands.
+        src: [danfs-atlanta]
+      - date: 1942-11-13
+        text:
+          zh: "被晓号至少一条鱼雷从左侧打进前机舱，除辅助柴油机外全部动力丧失，射击中断，操舵改由艉部操舵机舱控制；此前已被日舰打中 13 发 5.5 英寸弹、若干 3 英寸弹与 12 发 5 英寸弹。"
+          en: >-
+            At least one of Akatsuki's torpedoes entered the forward engine room from
+            port; she lost all power but the auxiliary diesel, her gunfire was interrupted
+            and steering shifted aft. Before that she had taken thirteen 5.5-inch and some
+            3-inch hits plus twelve 5-inch from destroyers.
+        src: [oni-guadalcanal, danfs-atlanta]
+      - date: 1942-11-13
+        text:
+          zh: "旧金山号在「战斗的急迫、黑暗与敌我混杂」中向本舰开火，DANFS 记「估计 19 发 8 英寸弹」；弹几乎全部穿透未爆，破片炸死多人，包括斯科特少将与他的参谋。舰长脚部受轻伤。"
+          en: >-
+            San Francisco fired into her "in the urgency of battle, darkness, and confused
+            intermingling of friend or foe" - DANFS records "what was estimated as 19
+            8-inch hits". Almost all passed through without detonating; fragments killed
+            many, including Admiral Scott and his staff. Her captain suffered a minor
+            wound in the foot.
+        src: [danfs-atlanta]
+      - date: 1942-11-13
+        text:
+          zh: "0930 拖船 Bobolink 抵达并开始拖带（本舰此时还拖着自己的锚，拖带很困难），1400 抵库库姆。舰长判断已无法挽救，经南太平洋部队司令授权后下令弃舰并用爆破装药凿沉；2015 在隆加角以西三英里、30 拓深处沉没。"
+          en: >-
+            Bobolink arrived at 0930 and took her in tow - made harder by the cruiser
+            dragging her anchor - reaching Kukum about 1400. Judging the ship past saving,
+            and authorized by Commander, South Pacific Forces, to act at his discretion,
+            the captain ordered her abandoned and sunk with a demolition charge; she went
+            down at 2015, three miles west of Lunga Point, in 30 fathoms.
+        src: [danfs-atlanta]
+      - date: 1942-11-13
+        text:
+          zh: "伤亡：172 人随舰阵亡、79 人受伤。这个数字只有 DANFS 简史页给出，长稿页只写「三分之一的舰员阵亡或失踪」。"
+          en: >-
+            Casualties: 172 men died with the ship and 79 were wounded. The figure appears
+            only in the DANFS brief history; the long entry says only that a third of the
+            crew was dead or missing.
+        src: [danfs-atlanta-brief, danfs-atlanta]
+      - date: 1943-01-13
+        text:
+          zh: "从海军舰艇名录除籍。本舰获 5 颗战斗之星，并因 1942-11-13 瓜岛外海一战获总统单位嘉奖——是二战中唯一获此嘉奖的轻巡洋舰。"
+          en: >-
+            Struck from the Navy List. She received five battle stars and the Presidential
+            Unit Citation for the action off Guadalcanal on 13 November 1942, the only
+            light cruiser so decorated in the war.
+        src: [danfs-atlanta, danfs-atlanta-brief]

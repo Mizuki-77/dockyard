@@ -1,0 +1,534 @@
+# ============================================================================
+# 舰艇正文 —— 雾岛号（战列巡洋舰 → 高速战列舰）
+#
+# 这一条要纠正的两处：
+#   1. 它不是英国造的。金刚级四舰里只有金刚在英国。雾岛在三菱合资会社长崎
+#      造船所建造，且建造所用部件大部分是日本制造。
+#   2. 1942 年 11 月 15 日那一夜是太平洋战争第一场战列舰对战列舰的交战，
+#      击沉它的是华盛顿号（BB-56），不是南达科他号。
+#
+# 另有一处必须写进去的否定性记载：它沉没时没有雷达。combinedfleet 专门立注
+# 驳斥「1942 年 8 月装了 21 号电探」这个流行说法。
+# ============================================================================
+ship: kirishima
+updated: 2026-11-24
+
+intro:
+  lead:
+    zh: >-
+      雾岛是金刚型战列巡洋舰的四号舰，1915 年 4 月 19 日竣工，与三号舰榛名同一天。
+      它在三菱合资会社长崎造船所建造，是日本第一批由民间船厂建造的战列舰之一，
+      且建造所用部件大部分为日本制造——金刚级四艘里只有金刚是英国造。
+      1942 年 11 月 15 日凌晨，它在瓜达尔卡纳尔岛第二次夜战中被华盛顿号
+      战列舰击沉于萨沃岛西北 7.5 海里，212 人阵亡。这是太平洋战争中
+      第一场战列舰对战列舰的交战，也是山本五十六为瓜岛设想的「决战」的终点。
+    en: >-
+      Kirishima was the fourth Kongo-class battlecruiser, completed on 19 April 1915,
+      the same day as her sister Haruna. She was built at Mitsubishi Zosen Kaisha in
+      Nagasaki and was among the first battleships built in a Japanese private yard,
+      most of her parts manufactured in Japan — of the four ships of the class only
+      Kongo was British-built. In the early hours of 15 November 1942 she was sunk by
+      the battleship Washington 7.5 miles northwest of Savo Island, with 212 men lost.
+      It was the first battleship-versus-battleship action of the Pacific War and the
+      end of Yamamoto's "decisive battle" for Guadalcanal.
+
+  paragraphs:
+    - heading: 三菱长崎造，不是英国造
+      text:
+        zh: >-
+          四舰的建造地必须分开记：金刚在维克斯（Barrow，船台号 414）、
+          比叡在横须贺海军工厂、榛名在川崎造船所神户（第 4 船台）、
+          雾岛在三菱合资会社长崎造船所（船台号 225）。四舰共用的是设计——
+          维克斯-阿姆斯特朗的乔治·瑟斯顿爵士为金刚所作的那份。日文资料把
+          榛名与雾岛的意义点明了：它们是日本第一批由民间船厂建造的战列舰，
+          承建的川崎与三菱长崎因此展开了激烈竞争。combinedfleet 对雾岛
+          另有一条更进一步的记载：其建造所用部件大部分是日本制造的。
+          这也是两舰常被并称「双子」的原因之一——同日开工（相差一天）、
+          同日竣工，都是民间船厂的首例。
+        en: >-
+          The four building yards must be kept apart: Kongo at Vickers in Barrow (yard
+          number 414), Hiei at Yokosuka Navy Yard, Haruna on No. 4 slip at Kawasaki in
+          Kobe, and Kirishima at Mitsubishi Zosen Kaisha in Nagasaki (yard number 225).
+          What the four shared was the design — Sir George Thurston's work at
+          Vickers-Armstrong for Kongo. Japanese sources spell out what Haruna and
+          Kirishima meant: they were the first battleships built in Japanese private
+          yards, and Kawasaki and Mitsubishi Nagasaki competed hard over them. For
+          Kirishima, combinedfleet adds that most of the parts used in her construction
+          were manufactured in Japan.
+      src: [navypedia-kongo, combinedfleet-kirishima, japanese-warship-kirishima]
+
+    - heading: 8 座锅炉、唯一有试航实测的一艘
+      text:
+        zh: >-
+          雾岛的两次改装比榛名各晚约 20 个月：第一次 1927 年 5 月在吴开始、
+          1930 年 4 月 16 日完成，36 座 Yarrow 锅炉全部换成 10 座新型锅炉，
+          烟囱由三根减到两根，撤掉 4 具鱼雷发射管；第二次 1934 年 11 月 18 日
+          在佐世保开始、1936 年 6 月 8 日完成，舰尾延长 26 英尺、锅炉换成 8 座
+          舰本式、换新齿轮传动涡轮、14 英寸炮仰角提到 43 度、6 英寸炮提到 30 度。
+          8 座这个数字是四舰分组依据：榛名与比叡是 11 座。
+          它也是四舰里唯一留下试航实测数据的一艘：第二次改装后的公试运转为
+          公试全力 29.80 节、136,940 轴马力，过荷全力 30.08 节、144,500 轴马力，
+          出处是《军舰雾岛第二回改装公试运转成绩》。榛名没有对应记录，
+          因此不能拿这组数字去填榛名。
+        en: >-
+          Kirishima's two reconstructions ran about twenty months behind Haruna's. The
+          first began at Kure in May 1927 and finished on 16 April 1930: all 36 Yarrow
+          boilers replaced with 10 newer boilers, funnels cut from three to two, four
+          torpedo tubes removed. The second began at Sasebo on 18 November 1934 and
+          finished on 8 June 1936: stern lengthened by 26 feet, boilers replaced with
+          eight Kampon boilers, new geared turbines, 14-inch gun elevation raised to
+          43 degrees and 6-inch to 30. The boiler count of eight is the class's dividing
+          line — Haruna and Hiei came out with eleven. She is also the only one of the
+          four with recorded trials: after the second reconstruction she made 29.80 knots
+          at 136,940 shaft horsepower at full-power trials and 30.08 knots at 144,500 on
+          overload, from the recorded trial results of the second reconstruction.
+      src: [combinedfleet-kirishima, navypedia-kongo, japanese-warship-kirishima]
+
+    - heading: 沉没时没有雷达
+      text:
+        zh: >-
+          这一条是必须写清的否定性记载。combinedfleet 专门立注驳斥一种流行说法：
+          有若干资料称雾岛在 1942 年 8 月初装了「二一号一型」电探，
+          这不对——雾岛原计划装二一号电探，但它是没装就走了。
+          同一条注也说明了它在防空上的处境：1936 年第二次改装后它的 25 mm 机铳
+          是 10 座双联 20 挺，此后直到沉没只做过一次位置调整（1942-05-11 在佐世保
+          入坞，把 7、8 号机铳从上甲板移到前烟囱附近以改善射界），
+          从未获得大幅增装。12.7 cm 高角炮终生只有 4 座 8 门——
+          榛名在 1943 与 1944 年各加 2 座，雾岛在 1942 年 11 月就已经不在了。
+        en: >-
+          This is a negative record that has to be stated. Combinedfleet devotes a
+          specific note to rejecting a common claim: several sources suggest Kirishima
+          was fitted with a "Type 21 Model 1" radar in early August 1942, which is not
+          correct — she was scheduled to receive a Type 21 but departed without it. The
+          same record sets out her anti-aircraft position: after the 1936 reconstruction
+          she carried twenty 25 mm barrels in ten twin mounts, and until her loss the
+          only change was a relocation (dry-docked at Sasebo on 11 May 1942, mounts 7
+          and 8 moved from the upper deck to the vicinity of the forward funnel for
+          better arcs). She never received a major augmentation. Her 12.7 cm battery
+          stayed at four twin mounts, eight guns, for her whole career — Haruna gained
+          two more mounts in 1943 and 1944, but Kirishima was gone by November 1942.
+      src: [combinedfleet-kirishima, navypedia-kongo, japanese-warship-kirishima]
+
+    - heading: 1942 年 11 月 15 日：第一场战列舰对轰
+      text:
+        zh: >-
+          那一夜的前半段是阿部弘毅的部队在打。13 日凌晨比叡被打瘫，
+          雾岛在混战中打出 27 发一式穿甲弹、22 发三式烧霰弹、8 发零式烧霰弹
+          与 313 发副炮弹，命中旧金山号 3 发三式弹，自己也中了旧金山号 1 发
+          8 英寸弹、被机枪打死 7 人。14 日夜近藤健男重新编组部队，
+          以雾岛、爱宕、高雄为核心去炮击亨德森机场。2353 前后雾岛与爱宕
+          用探照灯照亮南达科他号后开火，随后高雄加入；接下来几分钟里
+          雾岛一共打出 117 发 14 英寸弹（68 发三式、22 发零式通常弹、
+          27 发一式穿甲弹），其中 1 发一式穿甲弹在南达科他号 3 号炮塔座圈上爆炸。
+          然后华盛顿号在未被发现的情况下接近到 5,800 码，约 0000 开火。
+          雾岛还击，但前部炮塔很快被打哑、前部无线电室起火。它没有沉于炮火本身——
+          在连续进水、舵卡在右 10 度、多次试图用主机操舵失败之后，
+          0325 突然向左翻覆，沉于萨沃岛西北 7.5 海里、09-05S、159-42E。
+          太平洋战争第一场战列舰对战列舰的交战到此结束。
+        en: >-
+          The first half of that night belonged to Abe Hiroaki's force. Hiei was crippled
+          early on the 13th while Kirishima, in the melee, fired 27 Type 1 AP, 22 Type 3
+          and 8 Type 0 incendiary 14-inch shells plus 313 secondary rounds, hitting San
+          Francisco three times with Type 3 shells and taking one 8-inch hit from her and
+          losing seven men to machine-gun fire. On the night of the 14th Kondo Nobutake
+          reorganised, with Kirishima, Atago and Takao as the bombardment core. Around
+          2353 Kirishima and Atago illuminated South Dakota with searchlights and opened
+          fire, Takao following; over the next few minutes Kirishima fired 117 14-inch
+          shells (68 Type 3, 22 Type 0 common, 27 Type 1 APC), one of which burst against
+          South Dakota's No. 3 turret barbette. Then Washington, undetected, closed to
+          5,800 yards and opened fire at about 0000. Kirishima attempted to reply but her
+          forward turrets were quickly disabled and a fire broke out in the forward
+          wireless station. She did not sink from the gunfire itself: after progressive
+          flooding, rudders jammed at 10 degrees starboard and repeated failures to steer
+          on engines, she suddenly rolled over and capsized to port at 0325, 7.5 miles
+          northwest of Savo Island at 09-05S, 159-42E. The first battleship-versus-
+          battleship action of the Pacific War was over.
+      src: [combinedfleet-kirishima]
+
+history:
+  - id: build
+    title: { zh: 建造与两次大改装, en: Construction and the two reconstructions }
+    range: { from: 1912-03, to: 1936-06 }
+    lead:
+      zh: >-
+        它是四舰里最后开工、却与榛名同日竣工的一艘。
+        两次改装各比榛名晚约 20 个月，这也是它的参数时间窗与舰级文件不一致的原因。
+    events:
+      - date: 1912-03-17
+        text:
+          zh: >-
+            在三菱合资会社长崎造船所起工，船台号 225，基于维克斯-阿姆斯特朗的
+            乔治·瑟斯顿爵士为金刚所作的设计建造。combinedfleet 记：其建造所用
+            部件大部分是日本制造的。
+          en: >-
+            Laid down at Mitsubishi Zosen Kaisha's Nagasaki shipyard, yard number 225,
+            to the Kongo design prepared by Sir George Thurston of Vickers-Armstrong.
+            Combinedfleet records that most of the parts used in her construction were
+            manufactured in Japan.
+        src: [combinedfleet-kirishima, navypedia-kongo, japanese-warship-kirishima]
+
+      - date: 1913-12-01
+        text:
+          zh: >-
+            下水并命名「雾岛」，比榛名早 13 天。
+          en: >-
+            Launched and named Kirishima, thirteen days before Haruna.
+        src: [combinedfleet-kirishima, navypedia-kongo]
+
+      - date: 1915-04-19
+        text:
+          zh: >-
+            竣工服役，与三号舰榛名同一天。日文资料记：按计划本应雾岛先竣工，
+            但榛名完成前发现缺陷、工期延后 6 天，结果两舰把竣工日凑成了同一天。
+          en: >-
+            Completed and commissioned, the same day as Haruna. The Japanese account
+            records that Kirishima was due to finish first, but a defect found just
+            before Haruna's completion delayed her by six days and the two ships were
+            brought to a common date.
+        src: [combinedfleet-kirishima, japanese-warship-kirishima]
+
+      - date: 1930-04-16
+        text:
+          zh: >-
+            第一次改装在吴完成（1927 年 5 月开始）：弹药库与机舱上方水平装甲加厚、
+            加防雷鼓包、36 座 Yarrow 锅炉全部换成 10 座新型锅炉、烟囱由三根减到两根、
+            前桅改成塔式、撤掉 4 具鱼雷发射管与防雷网吊杆。
+            锅炉构成在日文来源里自己并列了两说：重油专烧 10 座，或重油专烧 4 座
+            加混烧 6 座，脚注指向两本不同的书。两说并列不裁决。
+          en: >-
+            The first reconstruction was completed at Kure (begun in May 1927):
+            horizontal armour over magazines and machinery thickened, anti-torpedo
+            bulges added, all 36 Yarrow boilers replaced with 10 newer boilers, funnels
+            cut from three to two, foremast rebuilt as a pagoda, four torpedo tubes and
+            the torpedo-net booms removed. The Japanese source itself gives two accounts
+            of the boiler mix — ten oil-only, or four oil-only plus six mixed-firing —
+            citing two different books. Both are recorded here.
+        src: [combinedfleet-kirishima, japanese-warship-kirishima]
+
+      - date: 1932-11
+        text:
+          zh: >-
+            至 1933 年春在佐世保做防空改装：3 英寸炮换成 4 座双联 5 英寸炮
+            与 4 门 40 mm 维克斯炮。navypedia 在同一时点记的是 13.2 mm 机枪而非
+            40 mm，两说并列不裁决。
+          en: >-
+            Anti-aircraft upgrade at Sasebo from November 1932 to spring 1933: the 3-inch
+            guns were replaced by four twin 5-inch mounts and four 40 mm Vickers guns.
+            Navypedia records 13.2 mm machine guns rather than 40 mm at the same point;
+            both are recorded here.
+        src: [combinedfleet-kirishima, navypedia-kongo]
+
+      - date: 1936-06-08
+        text:
+          zh: >-
+            第二次改装在佐世保完成（1934-11-18 开始）：舰尾延长 26 英尺、
+            前桅改造以容纳新的主炮指挥仪、锅炉全部换成 8 座舰本式、
+            换新齿轮传动涡轮、航速提到 30 节、14 英寸炮仰角提到 43 度、
+            6 英寸炮提到 30 度；舰载机改为 2 架九五式（E8N1）与 1 架九四式（E7K1）。
+            这次改装把它从战列巡洋舰变成「高速战列舰」。
+          en: >-
+            The second reconstruction was completed at Sasebo (begun 18 November 1934):
+            stern lengthened by 26 feet, foremast rebuilt to take a new main gun
+            director, all boilers replaced with eight Kampon boilers, new geared
+            turbines, speed raised to 30 knots, 14-inch gun elevation to 43 degrees and
+            6-inch to 30; aircraft changed to two Type 95 (E8N1) and one Type 94 (E7K1).
+            The rebuild turned her from a battlecruiser into a fast battleship.
+        src: [combinedfleet-kirishima, navypedia-kongo]
+
+  - id: carrier-war
+    title: { zh: 开战到印度洋, en: From Pearl Harbor to the Indian Ocean }
+    range: { from: 1941-11, to: 1942-04 }
+    lead:
+      zh: >-
+        开战后的头四个月它一直跟着航母。它在中途岛和印度洋各留下一条记录：
+        一条是替航母挡鱼雷，一条是水侦替舰队找到了目标。
+    events:
+      - date: 1941-11-26
+        text:
+          zh: >-
+            第三战队第一小队（雾岛与比叡）自择捉岛单冠湾出击，编入三川军一的
+            支援部队，随南云的第一航空舰队行动，位置在机动部队后方，
+            以 13 节向东航行。
+          en: >-
+            BatDiv 3's section 1 — Kirishima and Hiei — sortied from Hitokappu Bay in
+            the Kuriles with Mikawa Gunichi's Support Force, accompanying Nagumo's First
+            Air Fleet, stationed to the rear of the carrier force and steaming east at
+            13 knots.
+        src: [combinedfleet-kirishima]
+
+      - date: 1941-12-07
+        text:
+          zh: >-
+            0630 弹射九五式（E8N）水侦，担任机动部队以南的哨戒。
+            攻击珍珠港期间本舰未直接参战；返航途中因连续大浪涌上甲板而受损较重，
+            12-24 抵吴，12-27 入坞。
+          en: >-
+            At 0630 she launched an E8N floatplane to picket south of the striking force.
+            She took no direct part in the Pearl Harbor attack; on the return passage she
+            was seriously damaged after being swamped by successive waves, reaching Kure
+            on 24 December and docking on the 27th.
+        src: [combinedfleet-kirishima]
+
+      - date: 1942-01-17
+        text:
+          zh: >-
+            随机动部队自特鲁克出击参加「R」作战（拉包尔与卡维恩攻略），
+            为航母的空袭提供掩护、并对登陆部队做远程支援；01-27 返回特鲁克。
+          en: >-
+            Sortied from Truk with the carrier force for Operation R, the invasions of
+            Rabaul and Kavieng, covering the carriers' air attacks and providing distant
+            support to the landings; returned to Truk on 27 January.
+        src: [combinedfleet-kirishima]
+
+      - date: 1942-03-01
+        text:
+          zh: >-
+            1550 机动部队在 14-25S、106-50E 以 16 节航行时，赤城号一架战斗巡逻机
+            发现一艘「马布尔黑德级轻巡洋舰」——实为美军驱逐舰埃兹尔号。
+            1552 南云令第三战队第二小队与第八战队追击；1718 雾岛加入射击，
+            主炮副炮一起打，1730 停火。全战雾岛打出 87 发 14 英寸弹与 62 发 6 英寸弹，
+            1731 埃兹尔号尾部下沉于 13-45S、106-47E。当日另有一架雾岛的
+            九五式（E8N2）水侦向一艘逃跑的同盟国商船投下 2 发 60 kg 炸弹。
+          en: >-
+            At 1550, with the mobile force steaming at 16 knots in 14-25S, 106-50E, a
+            combat air patrol from Akagi sighted a "Marblehead-class light cruiser" —
+            actually the destroyer Edsall. At 1552 Nagumo ordered BatDiv 3's section 2 and
+            CruDiv 8 to chase her down; at 1718 Kirishima joined in with main and
+            secondary armament and checked fire at 1730. In all she fired 87 14-inch and
+            62 6-inch shells, and at 1731 Edsall sank by the stern at 13-45S, 106-47E.
+            Earlier that day one of Kirishima's E8N2 floatplanes dropped two 60-kg bombs
+            on a fleeing Allied merchant ship.
+        src: [combinedfleet-kirishima]
+
+      - date: 1942-04-09
+        text:
+          zh: >-
+            印度洋作战。0755 榛名号一架九五式水侦在亭可马里以南 65 海里发现
+            一艘英国航母，0843 至 0853 机动部队派出 85 架九九式舰爆将其击沉
+            （旧式轻航母竞技神号，306 人阵亡）。当日英国皇家空军第 11 中队
+            9 架布伦海姆轰炸机攻击金刚号，未命中，自身损失 4 架。
+          en: >-
+            The Indian Ocean raid. At 0755 an E8N2 floatplane from Haruna spotted a
+            British carrier 65 miles south of Trincomalee, and between 0843 and 0853 the
+            striking force launched 85 D3A1 dive-bombers which sank her — the old light
+            carrier Hermes, with 306 men killed. That day nine Bristol Blenheims of RAF
+            No. 11 Squadron attacked Kongo, scored no hits and lost four of their number.
+        src: [combinedfleet-kirishima, combinedfleet-haruna]
+
+  - id: midway-guadalcanal
+    title: { zh: 中途岛与瓜岛两次夜战, en: Midway and the two nights off Guadalcanal }
+    range: { from: 1942-05, to: 1942-11 }
+    lead:
+      zh: >-
+        中途岛它一弹未中，瓜岛的第一夜它替比叡挡了光，
+        第二夜它自己成了被照亮的那一艘。
+    events:
+      - date: 1942-05-27
+        text:
+          zh: >-
+            与榛名一起自柱岛出发参加「MI」作战（中途岛），编在阿部弘毅少将的
+            支援部队第三战队第二小队。榛名页把同一件事记作 05-29，同站两页
+            差两天，两说并列。
+          en: >-
+            With Haruna, departed Hashirajima for Operation MI, assigned to Rear Admiral
+            Abe Hiroaki's Support Group, BatDiv 3 Section 2. Haruna's TROM on the same
+            site dates the same departure to 29 May; both dates are recorded here.
+        src: [combinedfleet-kirishima, combinedfleet-haruna]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            与赤城号并航时，机动部队遭美军第 38 轰炸机大队第 69 中队 4 架
+            B-26 鱼雷机攻击，雾岛以主炮协助反击，2 架 B-26 被击落。
+            0825 潜艇鹦鹉螺号（SS-168）在 4,500 码外向雾岛发射 1 条 Mk.14 鱼雷，
+            未命中；第二发在管内故障未能射出。雾岛以右舷炮群向潜望镜射击，未果，
+            随后以 25 节离开该海域。1730 岩渊三次舰长受命准备拖带飞龙号，
+            因担心潜艇攻击正在燃烧的航母旁被照亮的本舰，请示南云后放弃，
+            1837 奉命归队。当夜收容了由第 10 水雷战队救起的航母幸存者。
+          en: >-
+            While steaming abreast of Akagi, the striking force was attacked by four B-26
+            torpedo-bombers of the 69th Squadron, 38th Bombardment Group; Kirishima helped
+            beat off the attack with her main armament and two B-26s were shot down. At
+            0825 Nautilus (SS-168) fired one Mark 14 torpedo at her from 4,500 yards and
+            missed; a second malfunctioned in the tube and never left it. Kirishima fired
+            her starboard batteries at the periscope without success and left the area at
+            25 knots. At 1730 Captain Iwabuchi was ordered to stand by to tow Hiryu;
+            concerned about a submarine attack on his battleship, now illuminated beside
+            the burning carrier, he asked Nagumo for permission to abandon her, and at
+            1837 was ordered to rejoin. That night she took aboard an unknown number of
+            carrier survivors rescued earlier by DesRon 10's destroyers.
+        src: [combinedfleet-kirishima]
+
+      - date: 1942-07-14
+        text:
+          zh: >-
+            雾岛与比叡自第一舰队转隶南云忠一的第三舰队，编成阿部弘毅的新第十一战队；
+            同日榛名与金刚编入第三战队。这是两舰分道扬镳的节点，
+            此后直到雾岛沉没再未同队。同日两舰舰载机改为 1 架零式水侦（E13A1）
+            与 2 架零式观测机（F1M2），尾码 CIII-x（红色）。
+          en: >-
+            Kirishima and Hiei were reassigned from the First Fleet to Nagumo's Third
+            Fleet in Rear Admiral Abe Hiroaki's new BatDiv 11, while Haruna and Kongo
+            formed BatDiv 3. This was the point at which the two sisters parted, never to
+            serve together again. The same day their air group changed to one E13A1
+            reconnaissance floatplane and two F1M2 observation floatplanes, tail codes
+            CIII-x in red.
+        src: [combinedfleet-kirishima, combinedfleet-haruna]
+
+      - date: 1942-10-26
+        text:
+          zh: >-
+            南太平洋海战。第三战队（此时为近藤的前卫部队）当日在恩尼韦托克附近
+            遭企业号与大黄蜂号的俯冲轰炸机与鱼雷机攻击；3 架 SBD 攻击雾岛，
+            未造成损伤，而筑摩号被若干发 1,000 磅炸弹命中。
+          en: >-
+            The Battle of Santa Cruz. The Vanguard Force was attacked that day by
+            dive-bombers and torpedo planes from Enterprise and Hornet; three SBDs
+            attacked Kirishima without doing damage, while several 1,000-lb bombs hit
+            Chikuma.
+        src: [combinedfleet-kirishima]
+
+      - date: 1942-11-10
+        text:
+          zh: >-
+            0530 第十一战队与第 27 驱逐队不知火、白露、夕暮自布干维尔岛肖特兰锚地出发，
+            执行近藤计划中的瓜岛增援：把陆军第 38 师团与第 8 特别陆战队的
+            14,500 人、重装备与补给送上岛。运送由田中赖三的第 2 水雷战队
+            12 艘驱逐舰护航 11 艘高速运输船；登陆前须再炮击亨德森机场一次。
+          en: >-
+            At 0530 BatDiv 11, with DesDiv 27's Shigure, Shiratsuyu and Yugure, left the
+            Shortland anchorage off Bougainville to carry out Kondo's planned reinforcement
+            of Guadalcanal: 14,500 men of the Army's 38th Division and the 8th Special
+            Naval Landing Force, with heavy equipment and supplies. Tanaka Raizo's DesRon
+            2 destroyers would escort eleven fast transports, and the landing was to be
+            preceded by another bombardment of Henderson Field.
+        src: [combinedfleet-kirishima]
+
+      - date: 1942-11-13
+        text:
+          zh: >-
+            瓜岛第一次夜战。0150 比叡与晓号打开探照灯照亮亚特兰大号，
+            混战开始。雾岛当夜打出 27 发一式穿甲弹、22 发三式烧霰弹、
+            8 发零式烧霰弹与 313 发副炮弹；以三式弹命中旧金山号左舷装甲带 3 发，
+            造成轻微进水与洗衣房起火，并声称将其击沉。自身被旧金山号 1 发
+            8 英寸弹命中，另被机枪打死 7 人；随后转移火力射击海伦娜号命中 1 发，
+            并击伤拉菲号、蒙森号等驱逐舰。0154 比叡被命中 2 发 8 英寸弹、舵机失灵，
+            阿部令雾岛脱离比叡北上。0200 阿部放弃炮击任务退出战斗。
+          en: >-
+            The first night off Guadalcanal. At 0150 Hiei and Akatsuki switched on their
+            searchlights to illuminate Atlanta and the melee began. That night Kirishima
+            fired 27 Type 1 AP, 22 Type 3 and 8 Type 0 incendiary 14-inch shells plus 313
+            secondary rounds; three Type 3 shells hit San Francisco's port armour belt,
+            causing minor flooding and a fire in the laundry, and she claimed her target
+            sunk. She took one 8-inch hit from San Francisco and lost seven men to machine
+            gun fire, then shifted fire to Helena and hit her once, also damaging the
+            destroyers Laffey, Monssen and possibly Aaron Ward. At 0154 Hiei was hit by two
+            8-inch shells and lost her steering; Abe ordered Kirishima to detach from Hiei
+            and head north, and at 0200 abandoned the bombardment mission and withdrew.
+        src: [combinedfleet-kirishima]
+
+      - date: 1942-11-14
+        text:
+          zh: >-
+            2210 近藤健男把部队分成几路以便同时从多个方向攻击美军。
+            当夜在萨沃岛外海，美军第 64 特混舰队以单纵阵北上：沃尔克、本汉、
+            普雷斯顿、格温四艘驱逐舰在前，华盛顿号与南达科他号在其后 5,000 码。
+            2316 华盛顿号以 16 英寸主炮向川内号与浦波号开火；普雷斯顿号与
+            沃尔克号被击沉，本汉号重创后于次夜由格温号以炮火处分。
+            2353 前后本舰与爱宕号照亮南达科他号并开火，随后高雄号加入；
+            接下来几分钟雾岛打出 117 发 14 英寸弹（68 发三式、22 发零式通常弹、
+            27 发一式穿甲弹），1 发一式穿甲弹在南达科他号 3 号炮塔座圈上爆炸。
+          en: >-
+            At 2210 Kondo split his force so as to attack from several directions at once.
+            That night off Savo Island TF 64 came north in line ahead — Walke, Benham,
+            Preston and Gwin ahead, Washington and South Dakota 5,000 yards behind. At
+            2316 Washington opened fire on Sendai and Uranami with her 16-inch battery;
+            Preston and Walke were sunk and Benham was so badly damaged that she was
+            scuttled by Gwin the following evening. Around 2353 Kirishima and Atago
+            illuminated South Dakota and opened fire, Takao following, and over the next
+            few minutes Kirishima fired 117 14-inch shells (68 Type 3, 22 Type 0 common,
+            27 Type 1 APC), one of which burst against South Dakota's No. 3 turret
+            barbette.
+        src: [combinedfleet-kirishima]
+
+      - date: 1942-11-15
+        text:
+          zh: >-
+            约 0000 华盛顿号在未被发现的情况下接近到 5,800 码开火，第一次齐射即
+            跨射。雾岛试图还击，但前部炮塔很快被打哑、前部无线电室起火；
+            0002 华盛顿号因报告目标已被击沉而停火，0004 恢复射击并在随后三分钟
+            取得新的命中，又打出 36 发主炮弹。舰上中部与尾部多处起火，
+            后部两座炮塔因液压系统受损失效，操舵室部分进水、舵卡在右 10 度，
+            水下多处破口使右倾不断加大；为防止爆炸，岩渊下令前部弹药库注水。
+            舰体仍能维持航速但已基本无法操舵，多次尝试用主机转向均失败，
+            派去操舵室的潜水员没能打开相邻舱壁的水密盖。0249 整个操舵室进水，
+            舰体开始漂移。长良号短暂尝试拖带失败。0325 突然向左翻覆，
+            沉于萨沃岛西北 7.5 海里、09-05S、159-42E；212 人阵亡，
+            朝云、照月、五月雨救起岩渊舰长、小野航副舰长与 1,098 名幸存者，
+            天皇御真影移交朝云号。
+          en: >-
+            At about 0000 Washington, undetected, closed to 5,800 yards and opened fire,
+            straddling with her first salvo. Kirishima attempted to reply but her forward
+            turrets were quickly disabled and a fire broke out in the forward wireless
+            station; at 0002 Washington checked fire when her target was reported sunk,
+            resumed at 0004 and scored further hits over the next three minutes, firing 36
+            more main battery rounds. Fires burned amidships and aft, both after turrets
+            failed when their hydraulic system was damaged, the steering compartment
+            partially flooded with the rudders jammed at 10 degrees starboard, and
+            multiple underwater hits increased the list to starboard; to prevent an
+            explosion Captain Iwabuchi ordered the forward magazines flooded. The ship
+            could still make speed but was practically unnavigable, repeated attempts to
+            steer on the engines failed, and divers sent to the steering compartment could
+            not open the watertight scuttles in the adjacent bulkhead. By 0249 the
+            compartment was fully flooded and she began to drift. Nagara's attempt to tow
+            her failed. At 0325 she suddenly rolled over and capsized to port 7.5 miles
+            northwest of Savo Island at 09-05S, 159-42E; 212 men were lost and Asagumo,
+            Teruzuki and Samidare rescued Captain Iwabuchi, his executive officer and
+            1,098 survivors, the Emperor's portrait being transferred to Asagumo.
+        src: [combinedfleet-kirishima]
+
+  - id: aftermath
+    title: { zh: 除籍、被弹数与残骸, en: The Navy List, the hit count and the wreck }
+    range: { from: 1942-11, to: 1992-08 }
+    lead:
+      zh: >-
+        它挨了多少发，至今没有定论。三份材料的数字差一倍以上，
+        但三份材料都是认真做的，所以三条都记。
+    events:
+      - date: 1942-12-20
+        text:
+          zh: >-
+            第十一战队解队，雾岛从海军籍除籍。
+          en: >-
+            BatDiv 11 was deactivated and Kirishima was removed from the Navy List.
+        src: [combinedfleet-kirishima]
+
+      - date: 1943
+        text:
+          zh: >-
+            关于当夜被弹数，三说并存。美国战略轰炸调查团战后根据近百名日本海军
+            军官的访谈推断：9 发 16 英寸弹、40 发 5 英寸弹。这与李中将战报里
+            「8 发 16 英寸弹」的估计一致。而海军研究员 Robert Lundgren 依据
+            雾岛炮术助理池田鹤城少佐文章中的一张战后果图重做分析，
+            认为实际可能是约 20 发大口径弹与 17 发小口径弹。
+            本站不采用任何单一数字，三说并列。
+          en: >-
+            Three figures exist for the hits she took that night. The USSBS postwar
+            analysis, based on interviews with almost a hundred Japanese naval officers,
+            suggests nine 16-inch and forty 5-inch hits, consistent with Admiral Lee's
+            estimate of eight 16-inch hits in his action report. Naval researcher Robert
+            Lundgren, working from a post-action sketch in an article by LtCdr Ikeda
+            Tsuruki, Kirishima's assistant gunnery officer, concluded the real number
+            might be some 20 major-calibre and 17 smaller-calibre hits. This site adopts
+            no single figure; all three are recorded.
+        src: [combinedfleet-kirishima]
+
+      - date: 1992-08
+        text:
+          zh: >-
+            海洋学家 Robert D. Ballard 在约 4,000 英尺深处发现雾岛残骸，
+            舰体倒扣、舰艏已炸断。
+          en: >-
+            The oceanographer Robert D. Ballard found the wreck of Kirishima in about
+            4,000 feet of water, resting upside down with her bow blown off.
+        src: [combinedfleet-kirishima]

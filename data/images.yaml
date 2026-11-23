@@ -9573,9 +9573,12 @@ images:
     primary: true
     note: >-
       北京军事博物馆藏九六式二十五粍高角机铳。这一型通常以三连装或单装炮座出现，本图所见为单装形态。它在二战中被公认是同期最差的舰载高炮之一：15 发弹匣需频繁更换、射速低、炮口焰大、瞄准具跟不上目标速度，但日本海军因产能与组织惯性一直未换装。
+  # 2026-11-24 修正：本条原挂 weapon:20cm-3ns（No.1），但图是高雄号炮塔，
+  # 而高雄级装的是 No.2 炮（20.32 cm / 840 mps）；No.1（20.0 cm / 870 mps）
+  # 装在赤城与加贺的炮廓。故改归 weapon:20cm-3ns-no2。
   - id: 20cm-3ns-primary
     file: /img/weapons/20cm-3ns-primary.jpg
-    subject: weapon:20cm-3ns
+    subject: weapon:20cm-3ns-no2
     title:
       zh: 高雄号前部 20 cm 主炮塔
       en: 'Forward 20 cm turrets of the heavy cruiser Takao'
@@ -9712,3 +9715,123 @@ images:
     height: 852
     primary: true
     note: 约 1939 年，企业号（CV-6）第 6 鱼雷机中队（VT-6）的 TBD-1 编队飞行（NHHC NH 77104）。
+
+  # ===== 2026-11-24 新增：本轮武器的配图（人眼逐张确认过题材） =====
+  # 判定依据见 work/add_weapon_images.py 顶部注释。
+  # 被否决的 4 张（8in-55-mk9 的破损舰首、14cm-50-3ns 的塔拉瓦岸炮、
+  # 21in-mk15 的 1953 年照片、重复的 20cm 炮图）没有登记，文件也已删除。
+
+  - id: 'weapon-5in25-mk10-northampton'
+    file: '/img/weapons/5in25-mk10.jpg'
+    subject: weapon:5in25-mk10
+    title:
+      zh: '北安普敦号的 5 英寸/25 倍径炮向韦贾环礁射击（1942-02-01）'
+      en: '127 mm guns aboard USS Northampton (CA-26) firing on Wotje, 1 February 1942'
+    part: mount
+    view: side
+    date: '1942-02-01'
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'US Navy'
+    credit: '美国国家档案馆'
+    source_url: 'https://commons.wikimedia.org/wiki/File:127_mm_guns_aboard_USS_Northampton_(CA-26)_firing_on_Wotje_on_1_February_1942.jpg'
+    width: 1280
+    height: 947
+    primary: true
+    note: '舰上实拍，可清楚看到 5"/25 的单装开放式炮座与装填手位置。中途岛时七艘美军重巡装的都是这一型。'
+
+  - id: 'weapon-a5m4-claude'
+    file: '/img/weapons/a5m4.jpg'
+    subject: weapon:a5m4
+    title:
+      zh: '九六式舰战 A5M（9-122 涂装）'
+      en: 'Mitsubishi A5M Claude fighter, coded 9-122'
+    part: aircraft
+    view: three_quarter
+    date: '1930s'
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: '日本海軍'
+    source_url: 'https://commons.wikimedia.org/wiki/File:A5M_Claude.jpg'
+    width: 421
+    height: 195
+    primary: true
+    note: '九六式舰战实机。凤翔号在中途岛前后搭载过这一型。'
+
+  - id: 'weapon-b4y1-jean'
+    file: '/img/weapons/b4y1.jpg'
+    subject: weapon:b4y1
+    title:
+      zh: '九六式舰攻 B4Y1'
+      en: 'Yokosuka B4Y1 Jean carrier attack aircraft'
+    part: aircraft
+    view: three_quarter
+    date: '1930s'
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: '日本海軍'
+    source_url: 'https://commons.wikimedia.org/wiki/File:96siki-kankou.jpg'
+    width: 570
+    height: 300
+    primary: true
+    note: '九六式舰攻。凤翔号 1942-06 中途岛时载 8 架，全部用于搜索。'
+
+  - id: 'weapon-8cm-40-3ns-museum'
+    file: '/img/weapons/8cm-40-3ns.jpg'
+    subject: weapon:8cm-40-3ns
+    title:
+      zh: '8 cm/40 三年式高炮（博物馆实物）'
+      en: 'Japanese Type 3 Navy 80 mm AA gun, museum example'
+    part: mount
+    view: three_quarter
+    date: '1940s'
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Japanese_Type_3_Navy_80mm_AA_Gun.jpg'
+    width: 690
+    height: 898
+    primary: true
+    note: '博物馆保存的实物，可见炮身、驻退复进机与基座结构。旁边的炮弹是同型弹药。'
+
+  - id: 'weapon-15cm-50-t41-yamato-aft'
+    file: '/img/weapons/15cm-50-t41.jpg'
+    subject: weapon:15cm-50-t41
+    title:
+      zh: '大和号舰尾 15.5 cm 三联装炮塔'
+      en: 'Aft 155 mm gun turret of the battleship Yamato'
+    part: turret
+    view: rear
+    date: '1940s'
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:Aft_155_mm_gun_turret_Yamato_300px.jpg'
+    width: 300
+    height: 222
+    primary: true
+    note: '大和号舰尾的 15.5 cm 三联装炮塔。同一型号也装在金刚级与最上级上，本图仅示炮塔外形，不代表某一具体装舰。'
+
+  - id: 'weapon-47in-45-mk12-diagram'
+    file: '/img/weapons/47in-45-mk12.jpg'
+    subject: weapon:47in-45-mk12
+    title:
+      zh: 'QF 4.7 英寸 Mk IX 炮与 CP Mk XVIII 炮座图'
+      en: 'QF 4.7 inch Mk IX gun in CP Mk XVIII mounting, diagram'
+    part: mount
+    view: side
+    date: '1940s'
+    license: pd
+    license_tier: A
+    license_raw: 'Public domain'
+    author: 'Unknown author'
+    source_url: 'https://commons.wikimedia.org/wiki/File:QF_4.7_inch_Mk_IX_gun_CP_Mk_XVIII_mounting_diagrams.jpg'
+    width: 960
+    height: 720
+    primary: true
+    note: '这是技术图纸，不是照片。可清楚看到炮座与装填机构的结构，对模型制作者比照片更有用。'

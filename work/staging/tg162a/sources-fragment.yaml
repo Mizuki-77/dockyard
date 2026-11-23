@@ -1,0 +1,488 @@
+# ============================================================================
+# 来源分片 —— tg162a 组（新奥尔良级三舰：CA-36 / CA-32 / CA-44）
+# 抓取日期 2026-11-23，全部经 Python urllib 直连（history.navy.mil 主站被
+# TLS 层拦断，改用 ibiblio.org 的 HyperWar 镜像与 archive 上的 PDF）。
+# ============================================================================
+
+sources:
+  - id: danfs-ca36
+    title: Minneapolis II (CA-36) — Dictionary of American Naval Fighting Ships（HyperWar 转录）
+    url: http://www.ibiblio.org/hyperwar/USN/ships/danfs/CA/ca36.html
+    type: official_publication
+    tier: B
+    role: [data, narrative]
+    operator: Naval History Division, Office of the Chief of Naval Operations（Patrick Clancey / HyperWar Foundation 转录）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      DANFS 词条，舰历叙述的骨架。**已知排印错误**：开工日写成
+      「laid down 27 June 1921」——1921 年本级尚未设计（本级首舰 1931 年才开工），
+      navypedia 与 navsource 均为 1931-06-27，故此处按 1931 采用，
+      并在 RESEARCH-NOTES 的「待核实/纠错」一节记明。技术行给
+      dp. 9,950 / l. 588'2" / b. 61'9" / dr. 19'5" / s. 32.7 k. / cpl. 708。
+      **该行未标排水量口径**，不得直接当标准排水量引用。
+
+  - id: danfs-ca32
+    title: New Orleans II (CA-32) — Dictionary of American Naval Fighting Ships（HyperWar 转录）
+    url: http://www.ibiblio.org/hyperwar/USN/ships/danfs/CA/ca32.html
+    type: official_publication
+    tier: B
+    role: [data, narrative]
+    operator: Naval History Division, Office of the Chief of Naval Operations（HyperWar 转录）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      技术行与 CA-36 同（dp. 9,950 / 588'2" / 61'9" / 19'5" / 32.7 k. / cpl. 708）。
+      给「formerly CL 32」——建造时按轻巡编号 CL-32 起造、后改 CA-32。
+      服役日 1934-02-15，与 navsource 一致，与 navypedia 的 18.4.1934 冲突。
+
+  - id: danfs-ca44
+    title: Vincennes II (CA-44) — Dictionary of American Naval Fighting Ships（HyperWar 转录）
+    url: http://www.ibiblio.org/hyperwar/USN/ships/danfs/CA/ca44.html
+    type: official_publication
+    tier: B
+    role: [data, narrative]
+    operator: Naval History Division, Office of the Chief of Naval Operations（HyperWar 转录）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      技术行与另两舰**不同**：dp. 9,400 / l. 588'0" / b. 61'10" / dr. 18'8" /
+      cpl. 952；武备多列「2 3 pdrs」与「ac. 4」。萨沃岛沉没过程是逐分钟叙述，
+      含 Riefkohl 的沉没时刻原话。
+
+  - id: navypedia-neworleans
+    title: NEW ORLEANS heavy cruisers (1934 - 1937) — Navypedia
+    url: https://www.navypedia.org/ships/usa/us_cr_new_orleans.htm
+    type: website
+    tier: D
+    role: [data]
+    operator: navypedia.org
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      **本组的主数据表**，也是唯一按子级（CA32/34/36、CA37/38、CA39/44）
+      分列装甲与主炮 Mk 号的一页——新奥尔良级三批的差别全靠这一页拆开。
+      局限：主尺度只给一个口径（179.2 oa / 176.2 wl），不逐舰；
+      轮机只给 class 级「Westinghouse」；服役日 CA32 记 18.4.1934、
+      CA36 记 20.6.1934，与 DANFS/navsource 均差一到两个月（见 RESEARCH-NOTES）。
+
+  - id: navsource-ca36
+    title: Cruiser Photo Index CA-36 USS MINNEAPOLIS — NavSource Naval History
+    url: https://navsource.net/archives/04/036/04036.htm
+    type: website
+    tier: D
+    role: [data, image, narrative]
+    operator: NavSource Naval History（Paul R. Yarnall / Tom Bateman / Michael Mohl）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      口径统一栏：Displacement 9,950 Tons / 588'0"(oa) × 61'9" × 22'6"(Max) /
+      107,000 SHP / 32.0 Knots / Crew 800 / Armor 5"-8"-2 1/4"-5"。
+      含逐任舰长表（含任期日）与 War Damage Report No.36 的图注，
+      是塔萨法隆加损伤细节的可用素材。
+
+  - id: navsource-ca32
+    title: Cruiser Photo Index CL/CA-32 USS NEW ORLEANS — NavSource Naval History
+    url: https://navsource.net/archives/04/032/04032.htm
+    type: website
+    tier: D
+    role: [data, image, narrative]
+    operator: NavSource Naval History
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      技术栏与 CA-36 同。含逐任舰长表；1945-03-08 马雷岛照片注明
+      「The port catapult has been removed」，可支撑「末期拆一座弹射器」。
+
+  - id: navsource-ca44
+    title: Cruiser Photo Index CA-44 USS VINCENNES — NavSource Naval History
+    url: https://navsource.net/archives/04/044/04044.htm
+    type: website
+    tier: D
+    role: [data, image, narrative]
+    operator: NavSource Naval History
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      技术栏直接把本级写成 9,950 t / 32.0 kn / 800 人（与 DANFS 的 9,400/952 冲突）。
+      含 Riefkohl 任期（04/23/1941 - 08/09/1942）与残骸照片说明
+      （RV Petrel，水深 3,000 英尺以上）。
+
+  - id: navweaps-8in-55-mk9
+    title: USA 8"/55 (20.3 cm) Marks 9, 10, 11, 13 and 14 — NavWeaps
+    url: https://www.navweaps.com/Weapons/WNUS_8-55_mk9.php
+    type: website
+    tier: D
+    role: [data]
+    operator: Tony DiGiulian
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      **拆三舰主炮差别的关键页**。原文「Ship Class Used On: Lexington (CV-2),
+      Pensacola (CA-24), Northampton (CA-26), New Orleans (CA-32, 34 and 36 only)
+      and Portland (CA-33) classes」——即 CA-32/34/36 用 Mk 9 族，
+      CA-37 以后的 Tuscaloosa 子级用另一页的 Mk 12。
+      另给：炮身 30.0 tons、膛线长 373.65 in、药室 5,300 in³、初速 2,800 fps、
+      炮管寿命 715 发、每炮 150 发；炮座为「triple turret」并注明
+      「the later mountings used on New Orleans (CA-32), Astoria (CA-34) and
+      Minneapolis (CA-36) were classified as "triple turrets" as they did have
+      a rotating stalk」；「RPC was used in the New Orleans class as built」。
+
+  - id: navweaps-8in-55-mk12
+    title: USA 8"/55 (20.3 cm) Marks 12 and 15 — NavWeaps
+    url: https://www.navweaps.com/Weapons/WNUS_8-55_mk12.php
+    type: website
+    tier: D
+    role: [data]
+    operator: Tony DiGiulian
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      原文「Mark 12: Tuscaloosa (CA-37) sub-class …」，脚注明确
+      「The Tuscaloosa sub-class consisted of Tuscaloosa (CA-37), San Francisco
+      (CA-38), Quincy (CA-39) and Vincennes (CA-44)」——**文森斯属这一批，
+      主炮是 Mk 12，不是 Mk 9**。另给「Minneapolis (CA-36) was regunned with
+      Mark 15 Mod 1 in 1945」。炮身 17.11–17.17 tons、药室 4,860 in³、
+      初速 2,700 fps。
+
+  - id: historyofwar-neworleans-class
+    title: New Orleans Class Cruisers — History of War（J. Rickard）
+    url: https://www.historyofwar.org/articles/weapons_new_orleans_class_cruisers.html
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: John Rickard
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      同级设计沿革最清楚的一页：说明 1929 年计划、伦敦条约如何砍掉 CA-40/41、
+      为何 CA-32/34/36 是「第一批」（海军船厂建造、改动成本低）。
+      装甲给的是另一套口径：belt 5in 至 3.25in over 0.75in STS、
+      magazines 4in-3in side、barbettes 6in-5in、deck 2.25in。
+      与 navypedia 的 127/76、102、127、57 mm 数值可直接对照。
+
+  - id: historyofwar-ca36
+    title: USS Minneapolis (CA-36) — History of War（J. Rickard）
+    url: https://www.historyofwar.org/articles/weapons_USS_Minneapolis_CA36.html
+    type: website
+    tier: D
+    role: [narrative, data]
+    operator: John Rickard
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      战历叙述。改装段给逐次防空炮数：1942 年 12 门单装 20 mm、1943 年增至
+      24 门单装、1945-06 改为 9 座双联并加 1 座双联 40 mm。
+
+  - id: historyofwar-ca32
+    title: USS New Orleans (CA-32) — History of War（J. Rickard）
+    url: https://www.historyofwar.org/articles/weapons_USS_New_Orleans_CA32.html
+    type: website
+    tier: D
+    role: [narrative, data]
+    operator: John Rickard
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: 战历叙述，含塔萨法隆加断艏与椰木假艏的经过。
+
+  - id: historyofwar-ca44
+    title: USS Vincennes (CA-44) — History of War（J. Rickard）
+    url: https://www.historyofwar.org/articles/weapons_USS_Vincennes_CA44.html
+    type: website
+    tier: D
+    role: [narrative, data]
+    operator: John Rickard
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      技术栏对文森斯单列：turret face 6in（与同级 8in 不同）、
+      中部岛防空为「5in guns, single 20mm guns and quad mounted 1.1in」。
+      战历含「hit by at least 57 8in and 5in shells, losing 332 crewmen」。
+      **该页有两处日期明显笔误**（「shot down two Japanese aircraft on 7 June」
+      应为 8 月 7 日；「On the afternoon of 8 June」应为 8 月 8 日），
+      引用时按上下文改正并记入 RESEARCH-NOTES。
+
+  - id: pwencycl-neworleans
+    title: New Orleans Class, U.S. Heavy Cruisers — The Pacific War Online Encyclopedia
+    url: http://pwencycl.kgbudge.com/N/e/New_Orleans_class.htm
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: Kent G. Budge
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      按 ONI 222 识别手册口径给的规格表，是本组唯一给出**装甲总重**的来源
+      （「Protection 1520 tons」）与免疫区（12,000–24,000 码对 8 英寸弹）。
+      其 magazine 侧面 4.7in（119 mm）、conning tower 2.5in（64 mm）
+      与 navypedia 的 102 mm / 127 mm 冲突，按规矩并列不裁。
+
+  - id: ibiblio-midway-oob
+    title: 'Battle of Midway: 4-7 June 1942 — Composition of U. S. Forces（HyperWar 转录）'
+    url: http://www.ibiblio.org/hyperwar/PTO/TideTurns/Midway/Midway-OOB.html
+    type: official_publication
+    tier: B
+    role: [data]
+    operator: HyperWar Foundation（转录美方官方战斗序列）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      原文「Task Group 16.2 (TG 16.2) / Cruiser Group / Rear Admiral Thomas C.
+      Kinkaid, USN / Commander Cruiser Division 6 (Comcrudiv 6)」，下辖
+      New Orleans、Minneapolis、Vincennes、Northampton、Pensacola、Atlanta。
+      这一页确定「三舰同属 TG 16.2」与「Kinkaid 的编队司令身份」。
+
+  - id: navweaps-midway-oob
+    title: Orders of Battle — Battle of Midway and Aleutians — NavWeaps
+    url: https://www.navweaps.com/index_oob/OOB_WWII_Pacific/OOB_WWII_Midway.php
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: Mark Horan / Richard Worth / David Williams / Richard Leonard（NavWeaps 托管）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      比 HyperWar 版细：给每舰舰长与**分派去向**——「USS Minneapolis (CA-36)
+      … Notes: Escorting Hornet」「USS New Orleans (CA-32) … Escorting Hornet」
+      「USS Vincennes (CA-44) … Escorting Enterprise; joined TF-17」。
+      即中途岛当天文森斯已随企业号分队，并在 6-04 下午被派去支援约克城。
+
+  - id: kinkaid-bio
+    title: Kinkaid of the Seventh Fleet — A Biography of Admiral Thomas C. Kinkaid, USN（HyperWar 全文 PDF）
+    url: https://www.ibiblio.org/hyperwar/NHC/NewPDFs/USN/USN,%20KINKAID%20OF%20THE%20SEVENTH%20FLEET%20(Bio).pdf
+    type: document
+    tier: C
+    role: [data, narrative]
+    operator: Gerald E. Wheeler（Naval Historical Center / HyperWar 数字化）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      传记（538 页 PDF）。**中途岛编成表的原始出处**：第 208 页表把
+      TG 16.2 拆成 CTU 16.2.1（Chandler：Northampton/Pensacola/Atlanta）与
+      CTU 16.2.2（Kinkaid：Minneapolis/New Orleans/Vincennes），
+      并标「CTG 16.2 Cruiser Group RADM Thomas C. Kinkaid」——即
+      Kinkaid 本人坐镇明尼阿波利斯号指挥整个 TG 16.2。
+      同页注明资料来源为 Forrestel《Spruance》与两舰队的 Report of Action。
+      另记 1942-05-16 Kinkaid 巡洋舰部队并入 TF 16 后「Vincennes was added
+      to Kinkaid's charges, now TG 16.2.2」。
+
+  - id: oni-combat-narrative-savo
+    title: The Battle of Savo Island, 9 August 1942 — ONI Combat Narrative（HyperWar 转录）
+    url: http://www.ibiblio.org/hyperwar/USN/USN-CN-Savo/index.html
+    type: official_publication
+    tier: B
+    role: [data, narrative]
+    operator: Office of Naval Intelligence, Navy Department（HyperWar 转录）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      第 5 章「The Northern Group」是本组写文森斯沉没有关的唯一官方逐分钟叙述，
+      引 Riefkohl、Mullan、Adams、Craighill 等人的原始报告。
+      含「Vincennes replied with an 8-inch salvo, using a radar range of 8,250
+      yards」、命中计数表（Vincennes hit on bridge/hangar/Battle II、
+      torpedo hits on port side）等。
+
+  - id: oni-combat-narrative-tassafaronga
+    title: Battle of Tassafaronga, 30 November 1942 — ONI Combat Narrative（HyperWar 转录）
+    url: http://www.ibiblio.org/hyperwar/USN/USN-CN-Tassafaronga/index.html
+    type: official_publication
+    tier: B
+    role: [data, narrative]
+    operator: Office of Naval Intelligence, Navy Department（HyperWar 转录）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      塔萨法隆加官方叙述。给编成（Minneapolis (FF) Capt. Charles K. Rosendahl /
+      New Orleans Capt. Clifford H. Roper / Northampton / Pensacola / Honolulu /
+      4 DD，Rear Admiral Carleton H. Wright 接替 Kinkaid 指挥）、
+      逐分钟时刻（2327 Minneapolis 中雷、2328 New Orleans 中雷、2339 Pensacola、
+      2348 Northampton）与两舰断艏的细节。
+
+  - id: oni-combat-narrative-midway
+    title: The Battle of Midway, 3-6 June 1942 — ONI Combat Narrative（HyperWar 转录）
+    url: http://www.ibiblio.org/hyperwar/USN/USN-CN-Midway/index.html
+    type: official_publication
+    tier: B
+    role: [data, narrative]
+    operator: Office of Naval Intelligence, Navy Department（HyperWar 转录）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      第 8 章「The attack on the Yorktown」给文森斯在中途岛的实际位置：
+      「they were joined by the Vincennes」「the Vincennes, Pensacola, Balch,
+      and Benham, which had been sent from Task Force SUGAR after the first
+      attack on the carrier」。即 6-04 下午文森斯已编入约克城的掩护圈。
+
+  - id: wdr-29
+    title: 'War Damage Report No. 29: U.S.S. Quincy (CA-39), U.S.S. Astoria (CA-34) and U.S.S. Vincennes (CA-44), Gunfire and Torpedo Damage, Savo Island, 9 August 1942'
+    url: http://www.ibiblio.org/hyperwar/USN/rep/WDR/U.S.S.%20QUINCY%20(CA-39),%20U.S.S.%20ASTORIA%20(CA-34)%20and%20U.S.S.%20VINCENNES%20(CA-44),%20GUNFIRE%20AND%20TORPEDO%20D.pdf
+    type: primary_archive
+    tier: A
+    role: [data, narrative]
+    operator: Preliminary Design Branch, Bureau of Ships, Navy Department（HyperWar 数字化）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      一手战损报告（26 页，本地 work/staging/tg162a/_raw/wdr29-quincy-astoria-vincennes.pdf）。
+      **命中的权威计数**：「ASTORIA received at least 65 known hits. QUINCY
+      received at least 36 known hits as well as two torpedo hits …
+      VINCENNES received 57 known hits as well as one torpedo hit (possibly two)
+      on the port side in way of the forward magazine group」。
+      另有装甲实效评估：8 英寸 AP 对 Class "B" 炮塔面板的穿透表现、
+      火势致沉的因果分析。**注意**：本报告标题把 Quincy 误印成 CA-30，
+      正文与其余文件均为 CA-39。
+
+  - id: wdr-36
+    title: 'War Damage Report No. 36: U.S.S. Chester (CA-27) Torpedo Damage 20 October 1942 & U.S.S. Minneapolis (CA-36) Torpedo Damage 30 November 1942'
+    url: http://www.ibiblio.org/hyperwar/USN/rep/WDR/U.S.S.%20CHESTER%20(CA-27),%20TORPEDO%20DAMAGE%20-Solomon%20Islands,%20October%2020,%201942%20U.S.S.%20MINNEAPOLIS%20(CA-.pdf
+    type: primary_archive
+    tier: A
+    role: [data, narrative]
+    operator: Preliminary Design Branch, Bureau of Ships, Navy Department（HyperWar 数字化）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      一手战损报告（18 页，本地 wdr36-chester-minneapolis.pdf）。
+      **扫描质量差、OCR 只出 8,647 字符**，正文段落基本读不出，
+      可用部分只有图注（「USS MINNEAPOLIS - View of damaged bow before it was
+      cut away」「View of log breakwater」「View of temporary bow」）与报告封面。
+      故本组对明尼阿波利斯的损伤细节改用 WDR-38（同批、同型、可读）与
+      ONI 叙述支撑，**不拿这份报告里读不出的数字充数**。
+
+  - id: wdr-38
+    title: 'War Damage Report No. 38: U.S.S. New Orleans (CA-32) Torpedo Damage, Lunga Point, 30 November 1942'
+    url: http://www.ibiblio.org/hyperwar/USN/rep/WDR/U.S.S.%20NEW%20ORLEANS%20(CA-32),%20TORPEDO%20DAMAGE%20-Lunga%20Point,%20November%2030,%201942.pdf
+    type: primary_archive
+    tier: A
+    role: [data, narrative]
+    operator: Preliminary Design Branch, Bureau of Ships, Navy Department（HyperWar 数字化）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      一手战损报告（11 页，文本可读，本地 wdr38-neworleans.pdf / .txt）。
+      **本组最有价值的一份**：给出「ailure」因果链——鱼雷在航空炸弹库旁边爆炸，
+      引爆 160 lb 拆除装药与 49 枚 100 lb 炸弹，才是断艏的真正原因
+      （「this Bureau is of the opinion that the severe damage to NEW ORLEANS was
+      the result of the combined effects of the torpedo detonation and a mass
+      detonation of aircraft bombs and demolition charge」）。
+      扉页给该舰战前尺度：Length (W.L.) 578'-5/16"、Beam (W.L.) 60'-1-3/8"、
+      Draft 23'-9" (Before Damage)。
+
+  - id: nhc-photo-ca36
+    title: USS Minneapolis (CA-36), 1934-1959 — Naval Historical Center Online Library of Selected Images
+    url: https://www.ibiblio.org/hyperwar/OnlineLibrary/photos/sh-usn/usnsh-m/ca36.htm
+    type: archive
+    tier: B
+    role: [narrative, image]
+    operator: Department of the Navy, Naval Historical Center（HyperWar 镜像）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      官方图像页附的舰史摘要。原文「On 30 November 1942, Minneapolis was
+      flagship of a cruiser-destroyer force … in the ensuing Battle of
+      Tassafaronga, she was one of four U.S. cruisers knocked out of action by
+      enemy torpedoes」。与 ONI 叙述一致，可作叙述来源。
+
+  - id: ibiblio-ships-ca
+    title: Ships of the U.S. Navy, 1940-1945 — Cruisers (CA)（HyperWar）
+    url: http://www.ibiblio.org/hyperwar/USN/ships/ships-ca.html
+    type: website
+    tier: D
+    role: [data]
+    operator: HyperWar Foundation
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      本级在最概括一层给的组值：「Displacement: 9375-9973 tons (normal) /
+      12,411 tons (full load)」「Length: 588'2"」「Beam: 61'9"-61'10"」
+      「Draft: 24'4"」「Speed: 32.5 knots」「Complement: 1042-1121」
+      「Propulsion: Steam turbines, 8 boilers, 4 shafts, 107,000 hp」。
+      **complement 1,042–1,121 与 DANFS 的 708 / navypedia 的 868 三方全不同**，
+      只能说明「编制随年份大幅变动」，不能取任一个当唯一值。
+
+  - id: ibiblio-wdr-index
+    title: War Damage Reports — Index（HyperWar）
+    url: http://www.ibiblio.org/hyperwar/USN/rep/WDR/index.html
+    type: website
+    tier: D
+    role: [lead]
+    operator: HyperWar Foundation
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      仅用于定位 War Damage Report 的 PDF 真地址（文件名含空格与括号，
+      必须 [uri]::EscapeUriString 后再取，否则 404）。
+
+  - id: navypedia-northampton
+    title: NORTHAMPTON heavy cruisers (1930) — Navypedia
+    url: https://www.navypedia.org/ships/usa/us_cr_northampton.htm
+    type: website
+    tier: D
+    role: [data]
+    operator: navypedia.org
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      **本组只用于「与北安普敦级的对比」**，不用于本级任何参数。
+      关键原句：「Under 203mm shells immune zone was absent」「During designing it was
+      offered to strengthen armour, ensuring protection at least of magazines against
+      203mm shells, but works were limited only by splinterproof protection of
+      ammunition elevators」（说明前一级的弹药库防护停在哪一步）；
+      「Armour, mm belt: 95 - 76, deck: 51 - 25, barbettes: 38, turrets: 64 - 19, CT: 32」
+      （前一级的装甲全套值，可直接与 navypedia-neworleans 的对应段对比）；
+      「2 х 3 - 533mm TTs」（前一级有鱼雷发射管，本级没有）。
+
+  - id: navypedia-portland
+    title: PORTLAND heavy cruisers (1932) — Navypedia
+    url: https://www.navypedia.org/ships/usa/us_cr_portland.htm
+    type: website
+    tier: D
+    role: [lead]
+    operator: navypedia.org
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: 抓取备查（本级设计谱系的前一型），本组未用它支撑任何 fact。
+
+  - id: ussvincennes-ca44-data
+    title: USS Vincennes CA-44 — Ship's Data（USS Vincennes Association）
+    url: http://www.ussvincennes.org/vincennes/ca-44/44_data.htm
+    type: website
+    tier: D
+    role: [data]
+    operator: USS Vincennes Association
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    note: >
+      舰友会抄录的规格页，与 ibiblio 的 CA 组值完全同源（9,375-9,973 normal /
+      12,411 full / 588'2" / 61'10" / 32.5 kn / 1,042-1,121 人 / 3 planes）。
+      **该页 Draft 栏写成「2 feet 4 inches」，明显是 22'4" 或类似值的错录**，
+      不作事实来源，仅作旁证。

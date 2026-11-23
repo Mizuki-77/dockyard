@@ -1,0 +1,723 @@
+# ============================================================================
+# 舰级：Benham class（本汉级驱逐舰，DD-397 – DD-408）
+# ----------------------------------------------------------------------------
+# 十舰：Benham / Ellet / Lang / Mayrant / Trippe / Rhind / Rowan / Stack /
+#       Sterett / Wilson
+# 本组只入库其中一艘：USS Benham (DD-397)。
+#
+# 【本级的三条关键判据】
+#
+# 一、**本级是最后一级名义 1,500 吨的美军驱逐舰，但实际严重超重。**
+#    destroyerhistory 原文："the Benhams were also the last class to displace a nominal
+#    1500 tons, though they proved overweight by as much as ten per cent."
+#    navypedia 原文："Though nominally Benham class concerned to a series of so-called
+#    1500t destroyers (Mahan, Bagley and Gridley classes), their actual standard
+#    displacement was significant more than official 1500t."
+#    —— navypedia 给的实测标准排水量是 1,657 t，比 1,500 长吨（1,524 t）高 133 t。
+#
+# 二、**本级是「三锅炉汇入一根烟囱」，不是四烟囱也不是三烟囱。**
+#    navypedia 原文："Thanks to presence of only three smoke pipes trunked to a funnel,
+#    its size was less, in comparison with previous class."
+#    即三个烟道管汇入一个烟囱。destroyerhistory 同页正文也说 "three boilers at 565 psi
+#    instead of the Bagley class' four at 400 psi, and thus did not need the Bagleys'
+#    prominent boiler uptakes"。
+#    **但 destroyerhistory 的技术行同一页写 "4 x Babcock & Wilcox boilers; 400 psi"，
+#    与它自己的正文矛盾**——本站采用与 navypedia 一致的三锅炉说，冲突记录在案。
+#
+# 三、**主炮 4 门，不是 5 门。** 前二封闭（Mk 30 Mods 0/2）、后二敞开（Mk 30 Mod 1）。
+#    navweaps 原文分两行给出："Benham (2) 11e: Mark 30 Mods 0 and 2 [bow mounts]"
+#    与 "Benham (2) 11e: Mark 30 Mod 1 [stern mounts]"。
+#    相比 Sims 级的 5 门，本级少一门而多两座鱼雷管——这是两级最核心的取舍差别。
+#
+# 调研底稿：work/staging/us-dd/RESEARCH-NOTES.md
+# ============================================================================
+
+id: benham
+name:
+  zh: 本汉级驱逐舰
+  en: Benham class destroyer
+# 注意：舰级 id 与单舰 id 同名（都叫 benham），这是任务书指定的文件名所致。
+# 两者靠目录区分（data/classes/ 与 data/ships/）。合并前请主会话确认
+# 加载器是否用 (kind, id) 作键；若只用 id 作键，建议把舰级改成 benham-class。
+class_of: [benham]
+open_ended_note: |
+  本文件绝大多数 fact 的 valid.to 都留空，这是结构性的，不是漏填：
+  舰级设计参数的生效期从设计定案/服役起，到该级最后一艘损失或拆解为止，
+  期间不因改装而改变；实际战备状态随时间的变化写在 data/ships/<id>.yaml 的
+  状态切片里，由单舰 fact 覆盖。因此这里的 open 时间窗表示「无已知终止事件」。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: Benham class
+    src: [navypedia-benham, destroyerhistory-benham]
+    valid: { from: 1939 }
+    confidence: C
+
+  - field: identity.name_zh
+    value: 本汉级
+    src: [navypedia-benham]
+    valid: { from: 1939 }
+    confidence: C
+
+  - field: identity.name_en
+    value: Benham class
+    src: [navypedia-benham, destroyerhistory-benham]
+    valid: { from: 1939 }
+    confidence: C
+
+  - field: identity.ship_type
+    value: destroyer
+    src: [navypedia-benham]
+    valid: { from: 1939 }
+    confidence: A
+
+  - field: identity.nation
+    value: united_states
+    src: [navypedia-benham]
+    valid: { from: 1939 }
+    confidence: A
+
+  - field: identity.operator
+    value: United States Navy
+    src: [navypedia-benham]
+    valid: { from: 1939 }
+    confidence: A
+
+  - field: identity.era
+    value: ww2
+    src: [navypedia-benham]
+    valid: { from: 1939-02-02, to: 1946-07-01 }
+    confidence: A
+    note: >
+      按服役期定位。首舰 Benham 1939-02-02 服役，末舰 Wilson 1939-07 服役。
+      本级在二战中损失两艘：Benham（1942-11 瓜达尔卡纳尔）与 Rowan（1943-09），
+      其余八舰 1945-1948 年间拆解或作为比基尼靶舰处理（navypedia 逐舰结局表齐全）。
+
+  - field: identity.building_program
+    value: FY1935 造舰计划（10 艘），大体重复 Bagley 级设计，改进动力装置
+    src: [navypedia-benham, destroyerhistory-benham]
+    valid: { from: 1935 }
+    confidence: C
+    note: >
+      navypedia 原文："Benham class destroyers were built under the FY1935 program and as a
+      whole repeated Bagley class, but with improved machinery with changed structure,
+      with three bigger boilers."
+      设计方是 Gibbs & Cox（destroyerhistory 原文 "Designed by Gibbs & Cox, the Benhams..."）。
+
+  # ============================================================ 排水量
+  - field: displacement.standard
+    value: 1657
+    unit: t
+    src: [navypedia-benham]
+    valid: { from: 1939 }
+    confidence: C
+    comparable: false
+    note: >
+      **三个口径并存，本条不参与高低比较。**
+      (a) navypedia "Displacement standard, t | 1657"
+      (b) destroyerhistory "Displacement: 1,500 long tons design; 1,702 long tons
+          to design waterline."（1,500 lt 是条约设计上限，1,702 lt = 1,729 t 到设计水线）
+      (c) nhhc-danfs-benham 页首技术行 "dp. 1,500"（沿用官方设计值，非实测）
+      三者基准不同，无法对齐，故标 comparable: false 并保留三方原值。
+
+  - field: displacement.full
+    value: 2250
+    unit: t
+    src: [navypedia-benham, navsource-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      两源一致。navypedia "Displacement full, t | 2250"；
+      navsource-benham "Displacement 2250 Tons (Full)"。
+
+  # ============================================================ 主尺度
+  - field: dimensions.length.oa
+    value: 103.9
+    unit: m
+    src: [navypedia-benham, destroyerhistory-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      navypedia "Length, m | 101.8 wl 103.9 oa"；destroyerhistory
+      "Length: 341' 2" overall"（= 103.99 m）。
+      **第三个值并列，不裁决**：navsource-benham 尺寸行写 "340' 9" (oa)"（= 103.86 m），
+      与 341'2" 差 5 英寸。
+
+  - field: dimensions.length.wl
+    value: 101.8
+    unit: m
+    src: [navypedia-benham, destroyerhistory-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      navypedia "101.8 wl"；destroyerhistory "333' 11-1/2" design waterline"（= 101.79 m）。
+
+  - field: dimensions.beam.wl
+    value: 10.8
+    unit: m
+    src: [navypedia-benham, destroyerhistory-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      navypedia "Breadth, m | 10.8"。
+      destroyerhistory 给 "Beam: 35' 5" molded maximum; 35' 6-1/8" outside of plating at
+      design waterline."（型宽 10.80 m / 含板厚 10.82 m）。
+
+  - field: dimensions.draught.mean
+    value: 3.49
+    unit: m
+    src: [destroyerhistory-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      **装载状态已绑定：平均。** 原文 "Draft: 11' 5-1/2" mean; 13' 2-1/4" full load."
+      （11'5.5" = 3.492 m，平均；13'2.25" = 4.018 m，满载），脚注 3 指向 Friedman。
+      **第二个值并列，不裁决**：navypedia "Draught, m | 3.91 full load"（= 12'10"），
+      与 destroyerhistory 的 13'2.25" 满载吃水差 4 英寸。
+      本条登记 mean 值（状态明确），满载值另见 draught.max。
+
+  - field: dimensions.draught.max
+    value: 4.02
+    unit: m
+    src: [destroyerhistory-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      destroyerhistory "13' 2-1/4" full load"（= 4.018 m）。与 navypedia 的 3.91 m
+      满载吃水并列，**两说并列，不裁决**。
+
+  # ============================================================ 动力
+  - field: propulsion.plant_type
+    value: steam_turbine
+    src: [navypedia-benham, destroyerhistory-benham]
+    valid: { from: 1939 }
+    confidence: A
+
+  - field: propulsion.shafts
+    value: 2
+    unit: count
+    src: [navypedia-benham, navsource-benham]
+    valid: { from: 1939 }
+    confidence: A
+
+  - field: propulsion.boiler.count
+    value: 3
+    unit: count
+    src: [navypedia-benham, destroyerhistory-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      **采用 3，理由是两源在此互相印证，而 destroyerhistory 自己的技术行与正文矛盾。**
+      navypedia 技术行 "3 Babcock & Wilcox boilers"；
+      navypedia 项目史 "with three bigger boilers" 与 "only three smoke pipes trunked to a funnel"；
+      destroyerhistory 正文 "three boilers at 565 psi instead of the Bagley class'
+      four at 400 psi"。
+      **不采用的值**：destroyerhistory 技术行同页写 "4 x Babcock & Wilcox boilers; 400 psi" ——
+      这一行与它自己正文矛盾，本站判为排版错误，记录在案不作 fact。
+      若日后有一手来源（如 BuC&R General Information book 原页）出现 4，应翻回。
+
+  - field: propulsion.boiler.type
+    value: Babcock & Wilcox 三鼓式水管锅炉
+    src: [navypedia-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      navypedia "3 Babcock & Wilcox boilers"。
+      destroyerhistory 技术行亦写 Babcock & Wilcox（但锅炉数写 4），正文只给压力 565 psi。
+
+  - field: propulsion.boiler.pressure
+    value: 38.45
+    unit: atm
+    src: [destroyerhistory-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      原文（正文，非技术行）"three boilers at 565 psi"。565 psi ÷ 14.6959 = 38.45 atm。
+      **不与技术行的 "400 psi" 混用**——400 psi 那一行同时把锅炉数写成 4，
+      整行判为排版错误。565 psi 也与 navypedia「三台更大的锅炉」的措辞一致。
+
+  - field: propulsion.turbine.count
+    value: 2
+    unit: count
+    src: [navypedia-benham, navsource-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: 双轴、每轴一套齿轮传动汽轮机。
+
+  - field: propulsion.turbine.type
+    value: Westinghouse 齿轮传动蒸汽轮机
+    src: [navypedia-benham, navsource-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      两源一致。navypedia "2 sets Westinghouse geared steam turbines"；
+      navsource-benham "Westinghouse Geared Turbines, 2 screws"。
+
+  - field: propulsion.power.design
+    value: 50000
+    unit: hp
+    src: [navypedia-benham, destroyerhistory-benham, navsource-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      三源一致。navypedia "Power, h. p. | 50000" 并在项目史里说明
+      "Machinery power has been raised to 50000hp for achievement of 38.5kts speed,
+      as on Gridley class."
+
+  - field: propulsion.speed.design
+    value: 38.5
+    unit: kn
+    src: [navypedia-benham, navsource-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      navypedia "Max speed, kts | 38.5"；navsource-benham "Speed, 38.5 Knots"。
+      **第三个值并列，不裁决**：destroyerhistory "Designed speed: 36.5 knots."（脚注 2 = Bauer and Roberts）。
+      38.5 是设计最大值（本级是当时美军最快的驱逐舰之一），36.5 可能是
+      设计合同值或战役航速，来源未说明，两说并列。
+
+  - field: propulsion.speed.design
+    value: 36.5
+    unit: kn
+    src: [destroyerhistory-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      与上一条并列，**两说并列，不裁决**。destroyerhistory 原文 "Designed speed: 36.5 knots."
+
+  - field: propulsion.fuel.capacity
+    value: 484
+    unit: t
+    src: [navypedia-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      navypedia 给区间 "Fuel, t | oil 194 - 484"，本条登记上界 484，
+      **区间两端都保留，不推算中间值**。
+      destroyerhistory 另给 "Fuel bunkerage: 490.01 tons full load (95% of capacity)."
+      （490.01 lt = 497.9 t），与 484 差约 14 t，两值并列不作裁断。
+
+  - field: propulsion.range.max
+    value: 6500
+    unit: nmi
+    src: [navypedia-benham, navsource-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      navypedia "Endurance, nm(kts) | 6500 (12)"；navsource-benham "Range 6500 NM@ 12 Knots"。
+      **第三个值并列，不裁决**：destroyerhistory "Endurance: 7,800 nm at 12 knots."（脚注 3 = Friedman）。
+      6500 与 7800 差 1,300 nm，是本组三舰里分歧最大的一项。
+
+  - field: propulsion.range.at_speed
+    value: 12
+    unit: kn
+    src: [navypedia-benham, navsource-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: 上一条续航力对应的航速条件，两源均写作 @12 knots。
+
+  # ============================================================ 编制
+  - field: service.complement.standard
+    value: 184
+    unit: persons
+    src: [navypedia-benham, navsource-benham, nhhc-danfs-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      三源一致。navypedia "Complement | 184"；navsource-benham "Crew 184"；
+      nhhc-danfs-benham 技术行 "cpl. 184"。
+      destroyerhistory 拆分给 "Designed complement: 13 officers; 193 enlisted."（13 + 193 = 206），
+      与 184 差 22 人 —— **两说并列，不裁决**，184 取三源一致值。
+
+  - field: service.complement.wartime
+    value: 206
+    unit: persons
+    src: [destroyerhistory-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      destroyerhistory 原文 "Designed complement: 13 officers; 193 enlisted."（合计 206，脚注 3 = Friedman）。
+      本站把它的「设计编制」记进 wartime 一栏，是因为与另三源的 184 相差 22 人，
+      更可能是战时加装防空武器后的人数，但**来源本身没这么说，这属本站的分类处理，
+      不是史料分类**。并列于此备查。
+
+  - field: service.complement.officers
+    value: 13
+    unit: persons
+    src: [destroyerhistory-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: '原文 "Designed complement: 13 officers; 193 enlisted."'
+
+  # ============================================================ 武备概览
+  - field: armament.mount.summary
+    value: >-
+      建成态：4 × 5"/38（12.7 cm）Mk 12 单装（前二为封闭式 Mk 30 Mods 0/2，
+      后二为敞开式 Mk 30 Mod 1）
+      + 4 × 12.7 mm（0.5 in）机枪
+      + 4 座四联 21 in 鱼雷管（16 管，两舷翼式布置）
+      + 2 座深弹滑轨（10 枚）
+    src: [navypedia-benham, navweaps-5in38-mk12, destroyerhistory-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      **这是建成态。** 1941 年与 1942 年初各有一次改装，Benham 本舰的 1942 年状态
+      写在她自己的单舰文件里。
+
+      炮位型号的直接出处是 navweaps-5in38-mk12 的 Mount/Turret Data 表，原文两行：
+      "Single Enclosed Base Ring Mounts ... Benham (2) 11e: Mark 30 Mods 0 and 2 [bow mounts]"
+      与 "Single Open Base Ring Mounts ... Benham (2) 11e: Mark 30 Mod 1 [stern mounts]"。
+      —— 4 门炮里前二封闭、后二敞开，与 Sims 级的 5 门（前三封闭含艉部一座）不同。
+
+      鱼雷管数的第三个值并列：navsource-benham 技术行写 "16 x 21" tt.(4x4)"（16 管），
+      与 navypedia 的 "4 x 4 - 533 TT" 一致；但 destroyerhistory 说
+      "Sixteen x 21-inch trainable torpedo tubes: two quadruple wing mounts on each side
+      of the main deck abaft the stack, later reduced." —— 强调是**舷侧翼式**四座，
+      而 navypedia 改装年表显示 1941 年多数舰已减为 2 座。
+
+  - field: armament.torpedo.tubes
+    value: 16
+    unit: count
+    src: [navypedia-benham, navsource-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      建成态 4 座四联 = 16 管。navypedia "4 x 4 - 533 TT"；navsource-benham "16 x 21" tt.(4x4)"。
+      **1941 年起多数舰减为 2 座 8 管**（navypedia 改装年表
+      "1941, Lang, Mayrant, Trippe, Rhind, Rowan, Stack, Sterett, Wilson: - 2 x 4 - 533 TT"），
+      **但 Benham 与 Ellet 走的是另一条线**（见下一句），故本舰的 16 管状态维持到 1942 年初。
+      逐段见单舰切片。
+
+  - field: armament.torpedo.diameter
+    value: 533
+    unit: mm
+    src: [navypedia-benham, navweaps-us-torpedoes]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      21 in。本级发射 Mark 15 鱼雷，navweaps-us-torpedoes 原文
+      "21" (53.3 cm) Mark 15 ... The standard destroyer weapon of World War II."
+
+  - field: armament.depth_charge.count
+    value: 10
+    unit: count
+    src: [navypedia-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      建成态。navypedia "2 DCR (10)"（2 座滑轨，10 枚）。
+      nhhc-danfs-benham 技术行亦写 "2 dct."（2 座投射器），与滑轨的表述不同但数目相当。
+      1941 年多数舰改为 "4 DCT (46 DC at all)"，1942 年初 Benham/Ellet 改为 "4 DCT (44 DC at all)"。
+
+  # ============================================================ 探测
+  - field: sensors.sonar.type
+    value: QCE
+    src: [navypedia-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      navypedia "Electronic equipment | QCE sonar"。建成态无雷达；
+      navypedia 改装年表 "1942 - 1944, almost all survived: + SC, SG, Mk 12.22 radars"。
+
+  # ============================================================ 炮位：4 × 5"/38
+  - about: mount:benham-5in-1
+    field: mount.label_name
+    value: "1"
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+
+  - about: mount:benham-5in-1
+    field: mount.weapon
+    value: weapon:5in38-mk12
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+
+  - about: mount:benham-5in-1
+    field: mount.turret_designation
+    value: Mark 30 Mods 0 and 2
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      navweaps 原文 "Benham (2) 11e: Mark 30 Mods 0 and 2 [bow mounts]"。
+      括注 (2) 是座数，11e 是 navweaps 的脚注号。
+
+  - about: mount:benham-5in-1
+    field: mount.type
+    value: single_turret
+    src: [navweaps-5in38-mk12, destroyerhistory-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: 对应 navweaps "Single Enclosed Base Ring Mounts"。
+
+  - about: mount:benham-5in-1
+    field: mount.barrels
+    value: 1
+    unit: count
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+
+  - about: mount:benham-5in-1
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+
+  - about: mount:benham-5in-1
+    field: mount.position
+    value: fore
+    src: [destroyerhistory-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: destroyerhistory "2 forward in enclosed base ring mounts"。
+
+  - about: mount:benham-5in-1
+    field: mount.elevation.max
+    value: 85
+    unit: deg
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      navweaps "Single Mounts — All with the following exceptions -15 / +85 degrees"，
+      本级所用 Mark 30（非 Mod 51/80）不在例外之列。
+
+  - about: mount:benham-5in-1
+    field: mount.weight
+    value: 18552
+    unit: kg
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+    note: 'navweaps "Single Enclosed Base Ring Mounts — Mark 30 Mod 0: 40,900 lbs. (18,552 kg)"。'
+
+  - about: mount:benham-5in-2
+    field: mount.label_name
+    value: "2"
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+
+  - about: mount:benham-5in-2
+    field: mount.weapon
+    value: weapon:5in38-mk12
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+
+  - about: mount:benham-5in-2
+    field: mount.turret_designation
+    value: Mark 30 Mods 0 and 2
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+
+  - about: mount:benham-5in-2
+    field: mount.type
+    value: single_turret
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+
+  - about: mount:benham-5in-2
+    field: mount.barrels
+    value: 1
+    unit: count
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+
+  - about: mount:benham-5in-2
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+
+  - about: mount:benham-5in-2
+    field: mount.position
+    value: superfiring_fore
+    src: [destroyerhistory-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: 前二座中较高的一座，可越过 1 号炮位向前射击。
+
+  - about: mount:benham-5in-3
+    field: mount.label_name
+    value: "3"
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+
+  - about: mount:benham-5in-3
+    field: mount.weapon
+    value: weapon:5in38-mk12
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+
+  - about: mount:benham-5in-3
+    field: mount.turret_designation
+    value: Mark 30 Mod 1
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      navweaps 原文 "Benham (2) 11e: Mark 30 Mod 1 [stern mounts]"。
+
+  - about: mount:benham-5in-3
+    field: mount.type
+    value: open_mount
+    src: [navweaps-5in38-mk12, destroyerhistory-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: 对应 navweaps "Single Open Base Ring Mounts"。
+
+  - about: mount:benham-5in-3
+    field: mount.barrels
+    value: 1
+    unit: count
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+
+  - about: mount:benham-5in-3
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+
+  - about: mount:benham-5in-3
+    field: mount.position
+    value: aft
+    src: [destroyerhistory-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: destroyerhistory "2 aft in open base ring mounts"。
+
+  - about: mount:benham-5in-3
+    field: mount.weight
+    value: 15195
+    unit: kg
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+    note: 'navweaps "Single Open Base Ring Mounts — Mark 30 Mod 1: 33,500 lbs. (15,195 kg)"。'
+
+  - about: mount:benham-5in-4
+    field: mount.label_name
+    value: "4"
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      destroyerhistory 记录本级后期在本炮位加了一个炮室（gunhouse）、
+      在 3 号炮位加了半炮盾加帆布顶：
+      "A gunhouse was added to the No. 4 5-inch gun aft and a half-gun shield with
+      canvas top was added to No. 3." —— 但这是大西洋编队（DesDiv 16）的做法，
+      太平洋各舰后来做的是同一套改装（"Eventually, these Pacific ships received the same
+      5-inch and 40mm mount modifications as the Atlantic ships."）。具体到 Benham 本舰，
+      她 1942-11 就沉了，**是否完成这套改装未获取**。
+
+  - about: mount:benham-5in-4
+    field: mount.weapon
+    value: weapon:5in38-mk12
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+
+  - about: mount:benham-5in-4
+    field: mount.turret_designation
+    value: Mark 30 Mod 1
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+
+  - about: mount:benham-5in-4
+    field: mount.type
+    value: open_mount
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+
+  - about: mount:benham-5in-4
+    field: mount.barrels
+    value: 1
+    unit: count
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+
+  - about: mount:benham-5in-4
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1939 }
+    confidence: C
+
+  - about: mount:benham-5in-4
+    field: mount.position
+    value: aft
+    src: [destroyerhistory-benham]
+    valid: { from: 1939 }
+    confidence: C
+
+  # ============================================================ 炮位：鱼雷
+  - about: mount:benham-torpedo-quad
+    field: mount.label_name
+    value: 四联装 21 in 鱼雷发射管
+    src: [navypedia-benham, destroyerhistory-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      只登记装座，**不写 mount.weapon**：美制鱼雷实体（Mark 15）全站尚未建 id，
+      写 ref 会造成悬空链接。口径与管数分别记在
+      armament.torpedo.diameter / armament.torpedo.tubes。
+
+  - about: mount:benham-torpedo-quad
+    field: mount.type
+    value: tube
+    src: [navypedia-benham]
+    valid: { from: 1939 }
+    confidence: C
+
+  - about: mount:benham-torpedo-quad
+    field: mount.barrels
+    value: 4
+    unit: count
+    src: [navypedia-benham]
+    valid: { from: 1939 }
+    confidence: C
+
+  - about: mount:benham-torpedo-quad
+    field: mount.count
+    value: 4
+    unit: count
+    src: [navypedia-benham, navsource-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      建成态 4 座。**1941 年除 Benham 与 Ellet 外的八舰减为 2 座**；
+      Benham 与 Ellet 在 1942 年初减为 2 座（navypedia
+      "early 1942, Benham, Ellet: - 4 x 1 - 12.7/90, 2 x 4 - 533 TT"）。逐段见单舰切片。
+
+  - about: mount:benham-torpedo-quad
+    field: mount.position
+    value: midships
+    src: [destroyerhistory-benham]
+    valid: { from: 1939 }
+    confidence: C
+    note: >
+      destroyerhistory 原文 "two quadruple wing mounts on each side of the main deck
+      abaft the stack" —— 即两舷各两座翼式布置，全部在烟囱之后的主甲板上。
+      本站 mount.position 枚举无「舷侧翼位」单值，按主体位置记 midships。

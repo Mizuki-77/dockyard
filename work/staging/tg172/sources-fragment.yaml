@@ -1,0 +1,383 @@
+# ============================================================================
+# tg172 组新登记来源 —— 2026-11-23
+#
+# 复用（已在 data/sources.yaml 登记，本文件不重复登记，不在此列）：
+#   navweaps-5in25-mk10        USA 5"/25 Mark 10            （已有）
+#   navweaps-11in75-mk1        USA 1.1"/75 Mark 1           （已有）
+#   navweaps-20mm-oerlikon     USA 20 mm/70 Oerlikon        （已有）
+#   navweaps-40mm-bofors       USA Bofors 40 mm             （已有）
+#
+# 本文件新登记 8 条。
+# ============================================================================
+
+sources:
+  - id: navweaps-8in55-mk9
+    title: USA 8"/55 (20.3 cm) Marks 9, 10, 11, 13 and 14 — NavWeaps
+    url: https://www.navweaps.com/Weapons/WNUS_8-55_mk9.php
+    type: website
+    tier: C
+    role: [data]
+    operator: NavWeaps（Tony DiGiulian 编）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >
+      单页覆盖 8"/55 的五个 Mark（9/10/11/13/14），是「Astoria 中途岛时装的是
+      Mk 9 不是 Mk 14」这条结论的唯一直接依据。关键原句：
+      「Mark 9 was the original design and was used on ships built in the 1920s」
+      「The Mark 14 was used for most regunnings during World War II」。
+      炮座数据同页，且明分 twin mount / triple mount / triple turret 三档，
+      其中「Triple Turrets: New Orleans (CA-32, 34 and 36 only) (3)」正是本组
+      阿斯托里亚号那一档，与波特兰号的「Triple Mounts」在重量上差 45 吨。
+      **口径提示**：同页「Ship Class Used On」一行写
+      「New Orleans (CA-32, 34 and 36 only)」，不要理解成整级 7 艘。
+
+  - id: navweaps-oob-midway
+    title: Battle of Midway, 4-7 June 1942 — Orders of Battle（NavWeaps Order of Battle Archive）
+    url: https://www.navweaps.com/index_oob/OOB_WWII_Pacific/OOB_WWII_Midway.htm
+    type: website
+    tier: D
+    role: [data]
+    operator: NavWeaps（Order of Battle 档案）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >
+      **TG 17.2 编成的直接来源**，实测 178,648 bytes。原文块：
+      「Task Group 17.2 Cruiser Group / RA William Ward Smith /
+       Position: ComCruTF-17 / Notes: USNA09 [95] /
+       USS Astoria (CA-34) (flagship)
+       Commanding officer: Capt. Francis Worth Scanland (Notes: USN09 [216].) /
+       USS Portland (CA-33)
+       Commanding officer: Capt. Laurance T. DuBose」。
+      任务书里「RA William W. Smith / 阿斯托里亚为旗舰 / 两舰同属 17.2」
+      三点由此页全部坐实，**无需修正**。
+      口径提示：它只给编成与舰长姓名，**不给任何装备、雷达或排水量数据**；
+      舰长姓名后的「USN09 [216]」一类方括号是编者标注的毕业年级与档案号，
+      不是舰上职务。
+
+  - id: savo-nwc-3
+    title: >
+      The Battle of Savo Island, August 9th, 1942: Strategical and Tactical
+      Analysis, Part I — Chapter 3（Allied Arrangements）
+    url: https://www.ibiblio.org/hyperwar/USN/rep/Savo/NWC/NWC-Savo-3.html
+    type: document
+    tier: C
+    role: [data, narrative]
+    operator: Naval War College（Richard W. Bates, 1950），HyperWar 转录
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: public_domain_us_gov
+    note: >
+      **它是本组唯一给出「1942-08 瓜岛登陆时波特兰号到底在哪一群」的来源。**
+      该页兵力编成表原文（节选）：
+      「(b) TG 61.2, Amphibious Force (TF 62 plus SW Pac TF 44)
+       (1) TG 62.1, Transport Group XRAY ...
+       (2) TG 62.2, Transport Group YOKE ...
+       (3) TG 62.3 Fire Support Group LOVE
+       Quincy, Vincennes, Astoria, Hull, Dewey, Ellet, Wilson 4 DD
+       (4) TG S62.4 Fire Support Group MIKE
+       San Juan 1 CL (AA) / Monssen, Buchanan 2 DD」
+      而在它上面的另一段：
+      「(2) TG 61.1.2 (Pacific Fleet Task Force 16)
+       Enterprise (38 VF, 36 VD, 10 VT) 1 CV
+       North Carolina 1 BB / Portland 1 CA / Atlanta 1 CL (AA)
+       Balch, Maury, Gwin, Benham, Grayson 5 DD」
+      ——**波特兰号在 TG 61.1.2（企业号群），不在 TG 62.3，所以萨沃岛夜战里
+      没有她。** 这条推翻了「两舰中途岛同属 17.2，所以瓜岛也在一起」的想当然。
+      口径提示：该报告是战后（1950）海军战争学院的分析著作，
+      属权威二次文献记 C，不是一手战报；本章其余内容（航空搜索、日军编成）
+      与本组两舰无直接关系，未使用。
+
+  - id: navypedia-neworleans
+    title: New Orleans class — Navypedia（CA32/34/36 与 CA37-44 分组同页）
+    url: https://www.navypedia.org/ships/usa/us_cr_new_orleans.htm
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: Navypedia
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >
+      本组主尺度、排水量、动力、装甲、武备的主要骨架来源。**它的价值在于
+      把本级 7 艘按装甲与主炮分成三组写**，这是「阿斯托里亚不是和昆西一样」
+      这条判据的来源。关键原句：
+      「CA32, 34, 36: belt: 127 - 76 ... barbettes: 127 ...
+       CA37, 38: ... barbettes: 152 ... CA39, 44: ... barbettes: 133」
+      「Armament | CA32, 34, 36: 3 x 3 - 203/55 Mk 9.11.13/14」
+      口径提示：
+      ① 船舶表的服役日把 Astoria 写成「1.6.1934」，与 DANFS/navsource 的
+         1934-04-28 冲突，判为本页笔误（同页下水日 16.12.1933 与另两源一致）；
+      ② 装甲与武备全部是级表，不是某一天的实况；逐期变化看 Modernizations 段；
+      ③ 「CA37-39, 44: 3 x 3 - 203/55 Mk 12.15」里的 12/15 是另两组的炮，
+         **不要填给 CA32/34/36**。
+
+  - id: navypedia-portland
+    title: Portland class — Navypedia
+    url: https://www.navypedia.org/ships/usa/us_cr_portland.htm
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: Navypedia
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >
+      本级主尺度、排水量、动力、装甲、武备的骨架来源。
+      关键原句：「Portland class differed from predecessors by absence of TTs and
+      doubled number of 127mm AA guns.」（无鱼雷管的直接依据）
+      「for the first time USN ships had immune zone under 203mm shells, the
+      truth, it concerned magazines only」。
+      口径提示：
+      ① 船舶表给「CA33 ... 17.2.1930 / 21.5.1932 / 23.2.1933」，与 DANFS
+         完全一致，是本组建造节点最干净的一份；
+      ② 满载吃水 6.40 m 明确标了「full load」，与 DANFS 未标状态的 17'1"
+         不是同一口径，不能互换；
+      ③ 改装表用「both」指本级两艘，逐舰差异要另找来源（波特兰 2 机 /
+         印第安纳波利斯 3 机这一条是它自己给的）。
+
+  - id: danfs-astoria
+    title: Astoria II (CA-34) — Dictionary of American Naval Fighting Ships
+    url: https://www.ibiblio.org/hyperwar/USN/ships/danfs/CA/ca34.html
+    type: official_publication
+    tier: B
+    role: [data, narrative]
+    operator: Naval History Division, Office of the Chief of Naval Operations
+              （HyperWar 转录，Patrick Clancey 编）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: public_domain_us_gov
+    note: >
+      **本文件的 URL 是 ibiblio 的转录版，不是 history.navy.mil 原站。**
+      原因：history.navy.mil 在本机 TLS 握手阶段即被断开（Python urllib
+      报 SSL UNEXPECTED_EOF，curl 报 schannel failed to receive handshake，
+      Invoke-WebRequest 报「基础连接已经关闭」），三次尝试均不通，故改用
+      HyperWar 的官方转录本。转录本页脚写明「Transcribed and formatted for
+      HTML by Patrick Clancey」，内容与 NHHC 版一致。
+      价值：本舰全生涯叙事的最完整单一来源，含中途岛逐时刻、萨沃岛逐分钟、
+      舰长姓名、伤亡与弃舰过程。舰首数据行
+      「(CA-34: dp. 9.950; l. 588'0"; b. 61'9" (l.); dr. 19'5" (mean);
+       s. 32.7 k.; cpl. 899; a. 9 8", 8 5", 2 3-pdrs., 8 .50-cal. mg.;
+       cl. New Orleans)」是骨架字段的主要来源。
+      口径提示：DANFS 不给伤亡总数，也不给雷达型号——这两项要从别处找。
+
+  - id: danfs-portland
+    title: Portland I (CA-33) — Dictionary of American Naval Fighting Ships
+    url: https://www.ibiblio.org/hyperwar/USN/ships/danfs/CA/ca33.html
+    type: official_publication
+    tier: B
+    role: [data, narrative]
+    operator: Naval History Division, Office of the Chief of Naval Operations
+              （HyperWar 转录，Patrick Clancey 编）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: public_domain_us_gov
+    note: >
+      同样是 HyperWar 转录本（理由见 danfs-astoria 条）。
+      价值：本舰全生涯最完整单一来源，从 1933 年阿克伦飞艇救援一直写到
+      1959 年拆解，含珊瑚海接收列克星敦号 722 名生还者、中途岛、瓜岛中雷后
+      「steam in circles to starboard」、苏里高海峡、冲绳、特鲁克受降。
+      舰首数据行「(CA-33: dp. 9,950; l. 610'3", b. 66'1"; dr. 17'1";
+      s. 32.7 k.; cpl. 848; a. 9 8", 8 5", 8 .50 cal.; cl. Indanapolis)」。
+      口径提示：
+      ① 舰级栏写「cl. Indanapolis」是 DANFS 原文的拼写错误（应为
+         Indianapolis），不是另一个舰级；
+      ② 吃水 17'1" 未标状态，与 navypedia 的满载 6.40 m 差 1.2 m，不可互换；
+      ③ 全条不给伤亡数、不给雷达型号。
+
+  - id: navsource-astoria
+    title: Cruiser Photo Index CA-34 USS ASTORIA — NavSource Online
+    url: https://web.archive.org/web/20210120073955/https://www.navsource.org/archives/04/034/04034.htm
+    type: website
+    tier: D
+    role: [data, image]
+    operator: NavSource Naval History（Paul R. Yarnall / Tom Bateman 编）
+    lang: en
+    access: proxy
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >
+      **必须记 Wayback 快照 URL，不能记原站 URL。** 原站
+      www.navsource.org 在本机返回 502（直连与 https 均不通），
+      只能用 web.archive.org 的 2021-01-20 快照。
+      价值：
+      ① 舰级数据行「CLASS - NEW ORLEANS / Displacement 9,950 Tons,
+         Dimensions, 588' 0" (oa) x 61' 9" x 22' 6" (Max) / Armament 9 x
+         8"/55, 8 x 5"/25, 8 x 0.5" 4 Aircraft / Armor, 5" Belt, 8" Turrets,
+         2 1/4" Deck, 5" Conning Tower / Machinery, 107,000 SHP;
+         Geared Turbines, 4 screws / Speed, 32.0 Knots, Crew 800」；
+      ② 完整历任舰长表（含 Scanland 与 Greenman 的精确任期）；
+      ③ 大量带日期与档案号的照片图注，是本组涂装（Measure 1）与
+         1941-07 改装（1.1 英寸炮）的旁证。
+      口径提示：它是照片索引站，技术数据是二手汇总，不给来源；
+      凡与 DANFS 冲突处（船速 32.0 vs 32.7、编制 800 vs 899）本文件并列不裁。
+
+  - id: navsource-portland
+    title: Cruiser Photo Index CA-33 USS PORTLAND — NavSource Online
+    url: https://web.archive.org/web/20210120073807/https://www.navsource.org/archives/04/033/04033.htm
+    type: website
+    tier: D
+    role: [data, image]
+    operator: NavSource Naval History（Paul R. Yarnall 编）
+    lang: en
+    access: proxy
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >
+      同为 Wayback 快照（原站 502，见 navsource-astoria 条）。
+      价值：
+      ① 舰级数据行「CLASS - PORTLAND / Displacement 9,950 Tons,
+         Dimensions, 610' 3" (oa) x 66' 1" x 24' (Max) / Armament 9 x
+         8"/55, 8 x 5"/25, 8 x 0.5" 4 Aircraft / Armor, 5" Belt, 2 1/2 Turrets,
+         2 1/2" Deck, 1 1/4 Conning Tower / Machinery, 107,000 SHP;
+         Geared Turbines, 4 screws / Speed, 32.7 Knots, Crew 621」；
+      ② **本舰最有价值的一批图注是关于 1942-11-13 鱼雷损伤的**，
+         但那些图注逐字引用 DANFS 同一段文字（「To quote DANFS - "..."」），
+         故不能当独立来源用；
+      ③ 1941-12 的 Life 杂志照片图注明确写出「SOC-1 Seagull of Cruiser
+         Scouting Squadron 4」，是中途岛时期机型的证据；
+      ④ 1944-07-30 图注给出涂装名「Measure 32, Design 7d」。
+      口径提示：船速 32.7 与 navypedia 的 32.5 冲突；编制 621 与
+      DANFS 848、navypedia 807 三个数并列，无一口径说明。
+
+  - id: nhhc-wdr29
+    title: >
+      USS Quincy (CA39), USS Astoria (CA34) & USS Vincennes (CA44)
+      Loss In Action — Battle of Savo Island 9 August 1942
+      （Navy Department, Preliminary Design Branch, Bureau of Ships,
+      War Damage Report No. 29）
+    url: https://web.archive.org/web/2021id_/https://www.history.navy.mil/research/library/online-reading-room/title-list-alphabetically/w/war-damage-reports/uss-quincy-ca39-astoria-ca34-vincennes-ca44-war-damage-report-no29.html
+    type: primary_archive
+    tier: A
+    role: [data, narrative]
+    operator: Bureau of Ships（BuShips），Navy Department
+    lang: en
+    access: proxy
+    fetched: 2026-11-23
+    license: public_domain_us_gov
+    note: >
+      **本组唯一 A 级来源，也是「阿斯托里亚怎么沉的」最硬的一手依据。**
+      history.navy.mil 原站在本机 TLS 握手即断（见 danfs-astoria 条说明），
+      只能用 web.archive.org 的 2021 快照；实测 183,753 bytes。
+      价值（逐条可引）：
+      ① 三舰当晚编制与航态：「U.S.S. VINCENNES, U.S.S. QUINCY and
+         U.S.S. ASTORIA, plus two destroyers on the night of August 8-9, 1942
+         comprised Task Group 62.3」；
+      ② 阿斯托里亚中弹与失能的逐分钟过程（0155 开火、0200 副炮全失、
+         0202 航速降到 9 节、0215 全舰失电、1215 翻沉）；
+      ③ 逐条炮位失效清单（本文件 armament.gun_failures 的来源）；
+      ④ 舰载机实数：「The five airplanes on each ship except QUINCY had been
+         drained of all gasoline.」——**5 架，不是级表的 4 架**；
+      ⑤ 报告自身承认的局限：「there is a great deal of information which,
+         naturally, is contradictory in many instances. The times and even the
+         sequence of events differ to such an extent in the various reports
+         that it has been impossible to construct an account in which all the
+         details agree」——引用时刻数据时必须带上这句。
+      口径提示：全报告**不给伤亡总数**，只到「Personnel casualties were heavy」
+      这一层；也不给任何雷达型号。
+
+  - id: ussastoria-org
+    title: USS ASTORIA CA-34 — 舰史专题站（The Official Home of 'Nasty Asty'）
+    url: https://web.archive.org/web/20210120073955/http://ussastoria.org/The_Pineapple_Fleet.html
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: USS Astoria Reunion Association / Brent Jones（站主）
+    lang: en
+    access: proxy
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >
+      **本组唯一给出阿斯托里亚号伤亡明细与 1942-06/07 改装细节的来源，
+      但它同时是最需要注意口径的一个。**
+      原站 ussastoria.org 现已跳到域名停放页（返回 114 bytes 的
+      「window.location.href="/lander"」跳转），只能走 Wayback 快照。
+      本文件实际用到该站 6 个页面，全部经 2021-01-20 前后快照：
+        · The_Pineapple_Fleet.html（1941-04/07 改装：1.1 英寸四联、桅顶截短、
+          雷达基座、Measure 1 涂装）
+        · Offensive_Preparations.html（1942-06-14 换舰长、Mk 3 火控雷达、
+          Measure 21 涂装、1942-07 炮术演习）
+        · Iron_Bottom_Sound.html（萨沃岛，**含 CAPT Greenman 战报的转录**）
+        · Construction_Shakedown.html（建造：干船坞建造、捞瓶下水）
+        · Lines_of_Advance.html（珍珠港至中途岛）
+        · Home.php（站主页）
+      关键原句（战报转录）：
+      「Out of a total of 83 officers, 990 enlisted men, and one civilian
+       newspaper correspondent, Joe J. Custer, on board, incomplete information
+       now at hand indicated 61 officers, the news correspondent and 629 men
+       were rescued. ... 20 officers known dead, 2 unaccounted for.
+       138 enlisted men are known to be dead.」
+      「ASTORIA FC [fire control] radar range gave 5640 yards.」
+      口径提示：
+      ① 站主是老兵后人与研究者，非官方机构；战报是**转录**不是影像，
+         无法逐字核对原件，故凡出自此页的一手内容一律按 D 级站记 C
+         （SCHEMA §2.1：「来源是 D 级主题站，confidence 填 C」）；
+      ② 该站照片图注里的日期与档案号（NARA 80-G-xxxxx、NH xxxxx）
+         可与 NHHC 藏品号交叉核对，这部分可信度高于其正文叙述。
+
+  - id: navalenc-portland
+    title: Portland class heavy cruisers (1931) — naval encyclopedia
+    url: https://naval-encyclopedia.com/ww2/us/portland-class-heavy-cruisers-1931.php
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: naval-encyclopedia.com
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >
+      本组唯一**独立于 navypedia** 给出波特兰级雷达与防空改装序列的来源，
+      因此被用来交叉核对 navypedia 的改装表。关键原句：
+      「The Portland class started the war without radar. They were however
+       fitted in early 1942 with an SC, Mk 3, and Mk 4 radars. By May 1943,
+       they received SK radars in addition.」
+      「starting in early 1942: Four quadruple 1.1in were fitted abreast the
+       bridge and close to the 5in guns. Later, twelve 20mm guns were added
+       instead of the twin 0.5 in cal HMGs.」
+      「The AA saw four extra quadruple and four twin 40 mm Bofors, plus 12
+       supplementary 20 mm Oerlikon guns.」
+      口径提示：
+      ① 该页「autumn 1944 ... both were installed Mk 3, Mk 4 radars and
+         Mk 8, Mk 18 radars」一句自身矛盾（同一句既说拆 Mk3/4 又说装
+         Mk3/4），按 navypedia 的「- Mk 3, Mk 4; + Mk 8, Mk 18」处理；
+      ② 该页把本级 40 mm 总数写成一串（四联 ×4 + 双联 ×4），
+         与 navypedia 只记「4 x 4」不一致，两说并列；
+      ③ 该站是新近（2021 起）建立的大型专题站，但其正文不逐句标出处，
+         故与 navypedia 同级记 D，不作裁决依据。
+
+  - id: navweaps-8in55-mk12-15
+    title: 'USA 8"/55 (20.3 cm) Marks 12 and 15 — NavWeaps'
+    url: https://www.navweaps.com/Weapons/WNUS_8-55_mk12-15.php
+    type: website
+    tier: C
+    role: [data]
+    operator: NavWeaps（Tony DiGiulian 编）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >
+      **用来证明「阿斯托里亚与波特兰的主炮从没装过 Mk 12/15」这一否定命题。**
+      关键原句（三句连读才能得出这个结论）：
+      「Mark 12: Tuscaloosa (CA-37) sub-class, Wichita (CA-45) and
+       Baltimore (CA-68)」
+      「Mark 15: All other Baltimore class and Oregon City (CA-122) class」
+      「Minneapolis (CA-36) was regunned with Mark 15 Mod 1 in 1945」
+      另注「The Tuscaloosa sub-class consisted of Tuscaloosa (CA-37),
+      San Francisco (CA-38), Quincy (CA-39) and Vincennes (CA-44).」
+      ——即 Mk 12/15 的装舰名单里，新奥尔良级只有 CA-37/38/39/44 这四艘，
+      CA-32/34/36 一艘都不在其中；CA-36 明尼阿波利斯是 1945 年单独换装的，
+      而 CA-34 阿斯托里亚 1942-08 已沉没。
+      因此「中途岛时两舰主炮是 Mk 9 系列」有正面（navweaps-8in55-mk9）与
+      反面（本条）双重依据。
+      口径提示：本页只给炮本身（含药室 79.6 dm3、初速与 Mk 9 系列同表另列），
+      炮座数据在 navweaps-8in55-mk9 那一页。

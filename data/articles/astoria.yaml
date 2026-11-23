@@ -1,0 +1,273 @@
+ship: astoria
+updated: 2026-11-24
+
+intro:
+  lead:
+    zh: "阿斯托里亚号（CA-34）在中途岛护的是约克城号，不是企业号：1942 年 6 月 4 日 1310，弗莱彻少将从被炸伤的约克城号把将旗移到这艘舰上，它于是同时是 TG 17.2 与 TF 17 的旗舰，一直当到 6 月 8 日中午。两个月后，它在萨沃岛被炮火烧到失去全部动力，1215 向左翻覆沉没。"
+    en: >-
+      Astoria (CA-34) screened Yorktown, not Enterprise, at Midway: at 1310 on 4
+      June 1942 Rear Admiral Fletcher shifted his flag to her from the damaged
+      Yorktown, which made her flagship of both TG 17.2 and TF 17 until noon on 8
+      June. Two months later she was burnt out at Savo Island, lost all power, and
+      capsized to port at 1215.
+  paragraphs:
+    - heading: "同一级，两套炮座"
+      text:
+        zh: "阿斯托里亚号属新奥尔良级，但新奥尔良级七艘不是一套设计。按 navypedia 的分组，CA-32/34/36 这一组舷侧主装 127 mm、炮座 127 mm、炮塔正面 203 mm；CA-37/38 一组把炮座加到 152 mm；CA-39/44 一组又减回 133 mm。更硬的一处差别在炮座本身：navweaps 把新奥尔良号、阿斯托里亚号、明尼阿波利斯号这三艘的炮座单列为「triple turret」，重 294 吨、带旋转 stalk，而彭萨科拉、北安普敦、印第安纳波利斯用的是 247–250 吨的「triple mount」。同一门 8\"/55 Mk 9 炮，装在差了约 45 吨的两种炮座上。"
+        en: >-
+          Astoria belonged to the New Orleans class, and that class was not one design.
+          Navypedia splits the seven ships into three groups: 127 mm barbettes for
+          CA-32/34/36, 152 mm for CA-37/38 and 133 mm for CA-39/44, with 203 mm turret
+          faces throughout. The harder difference is the mounting: NavWeaps lists New
+          Orleans, Astoria and Minneapolis as carrying "triple turrets" of 294 tons with
+          a rotating stalk, while Pensacola, Northampton and Indianapolis carried
+          247-250 ton "triple mounts" - a difference of roughly 45 tons for the same
+          8"/55 Mark 9 gun.
+      src: [navypedia-neworleans, navweaps-8in55-mk9]
+    - heading: "1939 年那趟送骨灰的航行"
+      text:
+        zh: "战前的阿斯托里亚号有过一次不带火药味的远航。1939 年 3 月，它从安纳波利斯载上已故日本驻美大使斋藤博的骨灰横渡太平洋，4 月 17 日以半旗、舰艏挂日本国旗的礼仪驶入横滨，鸣 21 响，由轻巡木曾号还礼，次日上午参加葬礼。此后它经上海、香港、菲律宾，5 月 21 日抵关岛，协助把搁浅的陆军运输舰 U.S. Grant 拖出浅滩，随后加入对作家 Richard Halliburton 那艘中国帆船「Sea Dragon」的搜索，搜遍中太平洋一大片海域，5 月 28 日停止。"
+        en: >-
+          Before the war Astoria made one cruise that had nothing to do with gunnery. In
+          March 1939 she embarked the ashes of the late Japanese ambassador Hirosi Saito
+          at Annapolis and carried them across the Pacific, entering Yokohama on 17
+          April at half staff with the Japanese flag at the fore, firing a 21-gun salute
+          answered by the light cruiser Kiso, and attending the funeral the next
+          morning. She went on via Shanghai, Hong Kong and the Philippines, reached Guam
+          on 21 May where she helped refloat the grounded Army transport U.S. Grant, and
+          then joined the search for Richard Halliburton's junk Sea Dragon, combing a
+          wide area of the central Pacific before giving up on 28 May.
+      src: [danfs-astoria]
+    - heading: "中途岛：她护的是约克城"
+      text:
+        zh: "1942 年 6 月 4 日，阿斯托里亚号是 TF 17 巡洋舰群 TG 17.2 的旗舰，司令 William Ward Smith 少将，舰长 Francis W. Scanland 上校；同群还有波特兰号。编号 17.2 的另一侧是 TG 16.2——金凯德少将的群，旗舰是明尼阿波利斯号，那边的重巡护的是企业号与大黄蜂号。中午前日机来袭，18 架九九舰爆里 10 架被 VF-3 拦下，突入的 8 架中阿斯托里亚号与波特兰号及屏卫驱逐舰合击打下 2 架；剩下 6 架投弹，3 弹命中约克城号，其中一弹穿进烟囱，把弗莱彻从舰上的旗舰指挥所里熏了出来，1310 他把将旗移到了本舰。"
+        en: >-
+          On 4 June 1942 Astoria was flagship of TG 17.2, the cruiser group of TF 17
+          under Rear Admiral William Ward Smith, with Portland in company. The other
+          half of the cruiser force was TG 16.2, Kinkaid's group with his flag in
+          Minneapolis, screening Enterprise and Hornet. When the Japanese dive bombers
+          came in before noon, VF-3 caught ten of eighteen; Astoria, Portland and the
+          screening destroyers combined to splash two more, and six got through to hit
+          Yorktown three times. One bomb went down the stack and smoked Fletcher out of
+          flag plot; at 1310 he shifted his flag to Astoria.
+      src: [navweaps-oob-midway, danfs-astoria, enterprise-war-diary-midway]
+    - heading: "萨沃岛：不是被打沉的，是被烧沉的"
+      text:
+        zh: "1942 年 8 月 8 日深夜，阿斯托里亚号在萨沃岛以东、以纵队跟在文森斯号与昆西号之后巡逻。0150 前后日舰对这群舰开火，它立即还击，中途因为舰长一时把日舰认成友舰而短暂停火。前四次齐射没有命中，第五次把上层建筑打成一片火海；随后 1 号炮塔被打哑，机库里的飞机与甲板上的艇烧起来，反倒成了敌舰的照明目标。0200 时两舷副炮除 1 号炮外全部失效，0202 前机舱放弃、航速降到 9 节，0225 舰桥失去操舵改由中央站操舰，随后全舰失电。白天救援队一度登舰，1130 前后前部 5 英寸弹药库爆炸，左倾从 10 度涨到 15 度，1215 翻覆沉没。中弹数两说：战损报告写「约 63 发」，DANFS 写「至少 65 发」，此处并列。"
+        en: >-
+          Late on 8 August 1942 Astoria was patrolling east of Savo Island in column
+          behind Vincennes and Quincy. The Japanese opened fire around 0150 and she
+          replied at once, checking fire briefly when her captain took the enemy for
+          friendly ships. The first four salvoes missed; the fifth turned her
+          superstructure into an inferno, No. 1 turret was put out of action, and the
+          burning aircraft in her hangar lit her up for the enemy. By 0200 every
+          secondary mount but No. 1 was out of action, at 0202 the forward engine room
+          was abandoned and speed fell to nine knots, at 0225 the bridge lost steering
+          and control moved to central station, and then all power went. A salvage party
+          got back aboard in daylight; around 1130 the forward 5-inch magazine exploded,
+          the list went from 10 to 15 degrees, and she capsized at 1215. The damage
+          report counts "about 63" hits, DANFS says "at least 65"; both are recorded.
+      src: [nhhc-wdr29, danfs-astoria]
+history:
+  - id: build
+    title: { zh: "建造与试航", en: "Building and shakedown" }
+    range: { from: 1930, to: 1934 }
+    events:
+      - date: 1930-09-01
+        text:
+          zh: "在普吉特湾海军船厂开工，此时编号还是 CL-34。"
+          en: >-
+            Laid down at Puget Sound Navy Yard, then numbered CL-34.
+        src: [danfs-astoria, navypedia-neworleans]
+      - date: 1931-07-01
+        text:
+          zh: "由轻巡 CL-34 改类为重巡 CA-34。"
+          en: >-
+            Reclassified from light cruiser CL-34 to heavy cruiser CA-34.
+        src: [danfs-astoria]
+      - date: 1933-12-16
+        text:
+          zh: "下水，掷瓶人是阿斯特远征队合伙人后裔 Leila C. McKay。"
+          en: >-
+            Launched, sponsored by Miss Leila C. McKay.
+        src: [danfs-astoria, navsource-astoria]
+      - date: 1934-04-28
+        text:
+          zh: "服役，首任舰长 Edmund S. Root 上校。"
+          en: >-
+            Commissioned, Capt. Edmund S. Root in command.
+        src: [danfs-astoria, navsource-astoria]
+      - date: 1934-09-25
+        text:
+          zh: "结束横跨太平洋的试航，返抵旧金山。途中访问过夏威夷、萨摩亚、斐济、悉尼与努美阿。"
+          en: >-
+            Returned to San Francisco from a long Pacific shakedown that had taken her to
+            Hawaii, Samoa, Fiji, Sydney and Noumea.
+        src: [danfs-astoria]
+  - id: prewar
+    title: { zh: "战前：舰队演习与横滨之行", en: "Fleet problems and the voyage to Yokohama" }
+    range: { from: 1937, to: 1941 }
+    events:
+      - date: 1937-02
+        text:
+          zh: "由第 7 巡洋舰分队改隶第 6 巡洋舰分队，仍属侦察部队，母港圣佩德罗。"
+          en: >-
+            Reassigned from Cruiser Division 7 to Cruiser Division 6, still in the
+            Scouting Force and still based at San Pedro.
+        src: [danfs-astoria]
+      - date: 1939-03-18
+        text:
+          zh: "从安纳波利斯启航，载已故日本驻美大使斋藤博的骨灰赴日。"
+          en: >-
+            Sailed from Annapolis carrying the ashes of the late Japanese ambassador
+            Hirosi Saito to Japan.
+        src: [danfs-astoria]
+      - date: 1939-04-17
+        text:
+          zh: "驶入横滨，半旗、舰艏挂日本国旗，鸣 21 响，由轻巡木曾号还礼；次日上午举行葬礼。"
+          en: >-
+            Entered Yokohama at half staff with the Japanese flag at the fore, fired a
+            21-gun salute answered by the light cruiser Kiso, and attended the funeral the
+            following morning.
+        src: [danfs-astoria]
+      - date: 1941-07-11
+        text:
+          zh: "出马雷岛海军船厂。这次改装装上四联 1.1\"/75 高炮，并在前桅建好对空搜索雷达的安装基座——基座建好了，雷达型号的来源没有给出。40 mm Bofors 一门都没有：本级 40 mm 换装记录要到 1943 年底，而本舰 1942 年 8 月就已沉没。"
+          en: >-
+            Emerged from Mare Island Navy Yard with quadruple 1.1-inch AA mounts and a
+            pedestal on the foremast for the air-search radar to come. She carried no 40
+            mm Bofors at all: the class's 40 mm refit is recorded in late 1943, and she
+            was lost in August 1942.
+        src: [danfs-astoria, ussastoria-org]
+      - date: 1939-10
+        text:
+          zh: "编入夏威夷分遣队，母港由圣佩德罗改为珍珠港；次年春参加第 21 次舰队演习，此后大批舰艇随本舰把珍珠港作为基地。"
+          en: >-
+            Assigned to the Hawaiian Detachment and changed home port from San Pedro to
+            Pearl Harbor; the following spring she took part in Fleet Problem XXI, after
+            which much of the fleet joined her in basing on Pearl Harbor.
+        src: [danfs-astoria]
+  - id: war-1942
+    title: { zh: "1941-12 至 1942-06：从威克岛到中途岛", en: "December 1941 to Midway" }
+    range: { from: 1941, to: 1942 }
+    events:
+      - date: 1941-12-05
+        text:
+          zh: "随 Newton 少将的第 12 特混舰队（核心是列克星敦号）出港。"
+          en: >-
+            Put to sea in the screen of Rear Admiral John H. Newton's TF 12, built around
+            Lexington (CV-2).
+        src: [danfs-astoria]
+      - date: 1941-12-07
+        text:
+          zh: "珍珠港遇袭时，本舰在夏威夷以西约 700 海里，正驶向中途岛。"
+          en: >-
+            Was about 700 miles west of Hawaii, steaming toward Midway, when the Japanese
+            attacked Pearl Harbor.
+        src: [danfs-astoria]
+      - date: 1942-01-11
+        text:
+          zh: "日本潜艇伊-6 击中萨拉托加号；本舰与编队于 13 日把受伤的航母护送进港。"
+          en: >-
+            I-6 torpedoed Saratoga; Astoria and the task force saw the crippled carrier
+            safely into port on 13 January.
+        src: [danfs-astoria]
+      - date: 1942-03-10
+        text:
+          zh: "约克城号与列克星敦号共 104 架飞机空袭莱城与萨拉莫阿，本舰此时在 Crace 少将的分队里掩护航母右翼。"
+          en: >-
+            While 104 aircraft from Yorktown and Lexington raided Lae and Salamaua,
+            Astoria operated in Rear Admiral Crace's force covering the carriers' right
+            flank.
+        src: [danfs-astoria]
+      - date: 1942-05-07
+        text:
+          zh: "珊瑚海：屏护约克城号，该舰飞机参与搜歼并击沉日本轻航母祥凤号。"
+          en: >-
+            At the Coral Sea, screened Yorktown as her aircraft helped find and sink the
+            Japanese light carrier Shoho.
+        src: [danfs-astoria]
+      - date: 1942-05-08
+        text:
+          zh: "珊瑚海海战。本舰先为列克星敦号、两群分开后转为约克城号撑起防空伞，舰上炮手报称至少击落 4 架日机。"
+          en: >-
+            In the Coral Sea action her gunners claimed at least four enemy aircraft,
+            first over Lexington and then over Yorktown after the two task forces
+            separated.
+        src: [danfs-astoria]
+      - date: 1942-06-04
+        text:
+          zh: "中途岛。屏护约克城号；中午前与波特兰号及驱逐舰合击打下 2 架突入的九九舰爆，1310 弗莱彻把将旗移上本舰，此后它兼作 TF 17 旗舰。"
+          en: >-
+            At Midway, screened Yorktown, helped splash two of the dive bombers that broke
+            through, and at 1310 received Admiral Fletcher and his flag, becoming TF 17
+            flagship as well.
+        src: [danfs-astoria, navweaps-oob-midway]
+      - date: 1942-06-08
+        text:
+          zh: "中午过后第 11 特混舰队赶到，弗莱彻把将旗转往萨拉托加号。"
+          en: >-
+            Shortly after midday, when TF 11 arrived, Fletcher shifted his flag to
+            Saratoga.
+        src: [danfs-astoria]
+  - id: savo
+    title: { zh: "萨沃岛：0140 到 1215", en: "Savo Island, 0140 to 1215" }
+    range: { from: 1942-08, to: 1942-08 }
+    lead:
+      zh: "战损报告自己写明了这份叙述的限度：各份报告的時刻「甚至事件顺序」差异太大，不可能编出一份所有细节都吻合的记录。以下时刻取自该报告。"
+      en: >-
+        The damage report states its own limit: the times and even the sequence of
+        events differ so much between the source reports that no single account can be
+        made to agree with all of them. The times below are the report's own.
+    events:
+      - date: 1942-08-07
+        text:
+          zh: "瓜岛登陆当天凌晨进入瓜岛与佛罗里达岛之间的水域，全天支援陆战队，7 日与 8 日两次协助击退日机对运输船的袭击。"
+          en: >-
+            Entered the waters between Guadalcanal and Florida Island early on 7 August to
+            support the landings, and helped defend the transports against Japanese air
+            attacks on the 7th and 8th.
+        src: [danfs-astoria]
+      - date: 1942-08-09
+        text:
+          zh: "0155 炮术官发现日舰，方位约 230 度相对，距离 5,500 码；随后日方探照灯照亮本群。0150 前后日舰已开始对昆西号与本舰这一群射击，本舰立即还击。"
+          en: >-
+            At 0155 her gunnery officer sighted an enemy cruiser force at about 5,500
+            yards; the Japanese searchlights came on shortly afterwards. The enemy had
+            opened on her group around 0150 and she returned fire at once.
+        src: [nhhc-wdr29, danfs-astoria]
+      - date: 1942-08-09
+        text:
+          zh: "日方第六次 8 英寸齐射打中 1 号炮塔的面板与炮座，塔内与炮座内人员全部阵亡；2 号炮虽未被直接命中，因 2 号炮塔爆炸与前部 20 mm 弹药室起火而失效。"
+          en: >-
+            The sixth 8-inch salvo hit the face plate and barbette of turret I, killing
+            everyone inside; gun No. 2 went out of action from the explosion and fire in
+            turret II and the forward 20 mm clipping room.
+        src: [nhhc-wdr29]
+      - date: 1942-08-09
+        text:
+          zh: "0200 时两舷副炮除 1 号炮外全部失效；0202 前机舱因上方中弹灌烟而放弃，航速降到 9 节；0206 2 号指挥仪被打坏，此时第 103 号肋骨以前的消防总管支管全部破裂，没有水可以救火。"
+          en: >-
+            By 0200 every secondary mount but No. 1 was out of action; at 0202 the forward
+            engine room was abandoned and speed dropped to nine knots; at 0206 director II
+            was hit and every fire-main riser forward of frame 103 had been ruptured,
+            leaving no water to fight the fires.
+        src: [nhhc-wdr29]
+      - date: 1942-08-09
+        text:
+          zh: "0225 舰桥失去操舵，改由中央站操舰，向南走之字；随后全舰失电。日舰恰在此时撤退。0300 前约 400 人（含约 70 名伤员与不少阵亡者）集中到艏楼甲板。"
+          en: >-
+            At 0225 the bridge lost steering, control shifted to central station and the
+            ship steered a zig-zag south until all power failed. The Japanese chose that
+            moment to withdraw; by 0300 nearly 400 men, including about 70 wounded, were
+            assembled on the forecastle.
+        src: [danfs-astoria]
+      - date: 1942-08-09
+        text:
+          zh: "1130 前后左舷前部 5 英寸弹药库发生大爆炸，左倾由 10 度增至 15 度；中午左舷排水沟已浸水，舰长 Greenman 下令弃舰；1215 向左翻覆、尾部下坐沉没。救援队无一人死亡。"
+          en: >-
+            Around 1130 a heavy explosion on the port side in way of the forward 5-inch
+            magazines took the list from 10 to 15 degrees; at noon the port waterway was
+            awash and Capt. Greenman ordered abandon ship. She turned over on her port
+            beam and disappeared by 1215. No man from the salvage crew was lost.
+        src: [nhhc-wdr29, danfs-astoria]

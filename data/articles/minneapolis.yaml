@@ -1,0 +1,286 @@
+ship: minneapolis
+updated: 2026-11-23
+
+intro:
+  lead:
+    zh: >-
+      明尼阿波利斯号（CA-36）是新奥尔良级三号舰，也是 1942 年 6 月中途岛海战中
+      TG 16.2 巡洋舰群的旗舰——海军少将 Thomas C. Kinkaid 的将旗就挂在这艘舰上。
+      它最被记住的却是五个月后的另一夜：塔萨法隆加，两条鱼雷把它的舰艏整段撕掉，
+      它没有沉。
+    en: >-
+      USS Minneapolis (CA-36) was the third New Orleans-class heavy cruiser and
+      flew the flag of Rear Admiral Thomas C. Kinkaid as commander of Task Group
+      16.2 at Midway in June 1942. She is remembered above all for another night
+      five months later: at Tassafaronga two torpedoes tore her bow off, and she
+      did not sink.
+
+  paragraphs:
+    - heading: 一艘把「欠重」变成装甲的条约巡洋舰
+      text:
+        zh: >-
+          华盛顿条约给重巡洋舰划了两条线：标准排水量一万长吨、主炮八英寸。
+          美国海军前三批条约重巡（Pensacola、Northampton、Portland）造下来
+          普遍比上限轻了将近一千吨，这笔余量在新奥尔良级上被拿去换装甲。
+          手法不是加厚舷侧，而是把动力舱从「交替布置」改成「纵列布置」，
+          舰体因此缩短、装甲带跟着缩短，同样的重量就能摊到更厚的甲上。
+          结果是本级成为美国第一条弹药库与动力舱都有独立装甲盒的条约重巡，
+          炮塔面板 203 mm、炮座 127 mm、舷侧主装带 127 mm，
+          对 8 英寸弹的免疫区在 12,000 至 24,000 码之间。
+        en: >-
+          The Washington Treaty capped heavy cruisers at 10,000 tons standard and
+          8-inch guns. The three earlier US treaty classes came in nearly a
+          thousand tons under the limit, and the New Orleans class spent that
+          margin on protection. The method was not a thicker side but a
+          rearranged machinery plant - unit system abandoned, spaces placed in
+          line - which shortened the hull, shortened the belt, and let the same
+          weight buy thicker armour. The result was the first American treaty
+          cruiser with separate armoured boxes for both magazines and machinery:
+          203 mm turret faces, 127 mm barbettes, a 127 mm main belt, and an
+          immune zone against 8-inch fire between 12,000 and 24,000 yards.
+      src: [navypedia-neworleans, historyofwar-neworleans-class, pwencycl-neworleans]
+
+    - heading: 中途岛：将旗在这艘舰上
+      text:
+        zh: >-
+          1942 年 6 月 4 日，太平洋舰队的巡洋舰分成两群：TF 17 那边是
+          Astoria 与 Portland，TF 16 这边是 TG 16.2，司令 Kinkaid 少将坐镇本舰。
+          编成表把 TG 16.2 又切成两个战术单元：Chandler 上校带 Northampton、
+          Pensacola、Atlanta；Kinkaid 自己带 Minneapolis、New Orleans、Vincennes。
+          本舰与 New Orleans 掩护大黄蜂号，Vincennes 掩护企业号。
+          本舰从 1942 年 1 月起就是第 6 巡洋舰分队的常任旗舰，
+          Kinkaid 把将旗从 Astoria 移过来之后一直没离开，直到 7 月转去企业号。
+        en: >-
+          On 4 June 1942 the Pacific Fleet's cruisers were split: Astoria and
+          Portland with TF 17, and TG 16.2 with TF 16, where Rear Admiral Kinkaid
+          flew his flag in Minneapolis. The order of battle divided TG 16.2 again
+          into two tactical units - Chandler with Northampton, Pensacola and
+          Atlanta; Kinkaid himself with Minneapolis, New Orleans and Vincennes.
+          Minneapolis and New Orleans screened Hornet; Vincennes screened
+          Enterprise. Minneapolis had been the regular flagship of Cruiser
+          Division 6 since January 1942, and Kinkaid never shifted his flag out
+          of her until July, when he moved to Enterprise.
+      src: [ibiblio-midway-oob, kinkaid-bio, navweaps-midway-oob]
+
+    - heading: 塔萨法隆加：舰艏断了，船还在
+      text:
+        zh: >-
+          1942 年 11 月 30 日夜，本舰作为 TF 67 旗舰率四艘重巡、一艘轻巡、
+          四艘驱逐舰在瓜岛北岸拦截日军「东京快车」。本舰的 SG 雷达是编队里
+          最先发现日舰的，23:20 后率先开火，两分钟内打沉一艘运输舰。
+          23:27，两条鱼雷几乎同时命中：一条在 1 号炮塔前方航空汽油舱旁，
+          一条在 2 号锅炉舱。舰艏在 frame 22 处整段撕裂、折下垂挂，
+          1、2、3 号锅炉舱相继进水，全舰炮塔失电，射击停止。
+          舰长 Rosendahl 上校的损管队把 4 度左倾靠向舷外排油与抛弃重物压回一半，
+          天亮前以自身动力驶入图拉吉。12 月 6 日制作用椰木防浪堤时气割引燃
+          汽油蒸汽，舰艏又损失七英尺干舷——这一条只有一份来源记载。
+        en: >-
+          On the night of 30 November 1942 Minneapolis led four heavy cruisers,
+          one light cruiser and four destroyers against the Tokyo Express off
+          Guadalcanal. Her SG radar made the first contact in the formation and
+          she opened fire after 23:20, sinking a transport within two minutes.
+          At 23:27 two torpedoes struck almost together - one forward of turret I
+          by the aviation gasoline compartment, one in No. 2 fireroom. The bow
+          tore loose at frame 22 and hung down; firerooms 1, 2 and 3 flooded;
+          power failed in every turret and the ship ceased firing. Commander
+          Rosendahl's damage-control parties halved a four-degree list by pumping
+          oil overboard and jettisoning weight, and she reached Tulagi under her
+          own power before daylight. On 6 December a vapour-torch fire while
+          building the coconut-log breakwater cost another seven feet of
+          freeboard at the bow - a detail carried by a single source.
+      src: [oni-combat-narrative-tassafaronga, danfs-ca36, navsource-ca36]
+
+    - heading: 换炮身，然后打完
+      text:
+        zh: >-
+          1943 年 4 月至 9 月在马雷岛换新艏、修复 2 号锅炉舱，并涂上
+          「伪装成驱逐舰」的迷彩。此后二十个月它几乎打满太平洋：
+          威克岛、马金、马绍尔、特鲁克、帕劳、塞班、菲律宾海、关岛、
+          苏里高海峡、林加延湾、冲绳。1945 年 4 月 12 日因炮管磨损离队返美，
+          当日还击落四架自杀机。在布雷默顿它换上了 8"/55 Mk 15 Mod 1 炮身——
+          借适配套筒直接替换旧炮，不必换炮塔，这是本级唯一一例。
+          战后它在 1945 年 9 月 9 日载着 Kinkaid 上将接受朝鲜日军投降，
+          1947 年 2 月 10 日退役，1959 年 8 月 14 日售拆。十六枚战斗之星。
+        en: >-
+          Between April and September 1943 she was given a new bow, her No. 2
+          fireroom was repaired, and she was painted in a scheme meant to make her
+          look like a destroyer. Over the next twenty months she fought through
+          nearly the whole Pacific war: Wake, Makin, the Marshalls, Truk, the
+          Palaus, Saipan, the Philippine Sea, Guam, Surigao Strait, Lingayen Gulf
+          and Okinawa. On 12 April 1945, her barrels worn out, she left the line -
+          after shooting down four kamikazes that same day. At Bremerton she was
+          re-gunned with 8"/55 Mark 15 Mod 1 weapons, which used adapter sleeves
+          to replace the older guns without changing the turrets; she is the only
+          ship of her class with that record. In September 1945 she carried
+          Admiral Kinkaid as he took the Japanese surrender of Korea. She
+          decommissioned on 10 February 1947 and was sold for scrap on 14 August
+          1959, with sixteen battle stars.
+      src: [danfs-ca36, navsource-ca36, navweaps-8in-55-mk12]
+
+history:
+  - id: build
+    title: { zh: 建造与战前, en: Building and pre-war years }
+    range: { from: 1931, to: 1941 }
+    events:
+      - date: 1931-06-27
+        text:
+          zh: 在费城海军船厂开工。
+          en: Laid down at Philadelphia Navy Yard.
+        src: [navypedia-neworleans, navsource-ca36]
+      - date: 1933-09-06
+        text:
+          zh: 下水，掷瓶人为明尼阿波利斯市的 Grace L. Newton 小姐。
+          en: Launched, sponsored by Miss Grace L. Newton of Minneapolis.
+        src: [danfs-ca36]
+      - date: 1934-05-19
+        text:
+          zh: 服役，首任舰长 Gordon W. Haines 上校。
+          en: Commissioned, Captain Gordon W. Haines in command.
+        src: [danfs-ca36, navsource-ca36]
+      - date: 1935-04-18
+        text:
+          zh: 经巴拿马运河抵圣迭戈，加入侦察舰队第 7 巡洋舰分队。
+          en: Arrived San Diego via the Panama Canal to join Cruiser Division 7, Scouting Force.
+        src: [danfs-ca36]
+      - date: 1941-11
+        text:
+          zh: 完成一轮防空改装，加装四座四联装 1.1 英寸（28 mm）高炮。
+          en: Received four quadruple 1.1-inch (28 mm) AA mountings in a refit.
+        src: [navypedia-neworleans]
+
+  - id: midway
+    title: { zh: 开战至中途岛, en: From Pearl Harbor to Midway }
+    range: { from: 1941, to: 1942 }
+    events:
+      - date: 1941-12-07
+        text:
+          zh: 日军袭击珍珠港时本舰正在港外约 20 英里处打靶，未受损，随即转入巡逻。
+          en: >-
+            Was at sea about 20 miles from Pearl Harbor for gunnery practice when
+            the attack came, and was undamaged; took up patrol at once.
+        src: [danfs-ca36]
+      - date: 1942-02-01
+        text:
+          zh: 掩护列克星敦号期间协助击退空袭，击落三架「贝蒂」陆攻。
+          en: Helped turn back an air attack while screening Lexington, splashing three "Bettys".
+        src: [danfs-ca36]
+      - date: 1942-05-04
+        text:
+          zh: 参加珊瑚海海战，掩护列克星敦号并击落三架日机；该舰沉没后救助生还者。
+          en: >-
+            Fought at the Coral Sea screening Lexington, shot down three Japanese
+            bombers and rescued survivors when the carrier was lost.
+        src: [danfs-ca36]
+      - date: 1942-05-16
+        text:
+          zh: 所率巡洋舰部队并入第 16 特混舰队，受斯普鲁恩斯少将直接指挥；文森斯号加入其建制（TG 16.2.2）。
+          en: >-
+            His cruiser force joined the TF 16 screen under Rear Admiral Spruance;
+            Vincennes was added to his charges, now TG 16.2.2.
+        src: [kinkaid-bio]
+      - date: 1942-06-04
+        text:
+          zh: 参加中途岛海战，作为 TG 16.2 旗舰掩护大黄蜂号与企业号。
+          en: Fought at Midway as flagship of TG 16.2, screening Hornet and Enterprise.
+        src: [danfs-ca36, ibiblio-midway-oob]
+
+  - id: tassafaronga
+    title: { zh: 瓜岛与塔萨法隆加, en: Guadalcanal and Tassafaronga }
+    range: { from: 1942, to: 1943 }
+    events:
+      - date: 1942-08-07
+        text:
+          zh: 掩护瓜达尔卡纳尔与图拉吉登陆。
+          en: Covered the landings on Guadalcanal and Tulagi.
+        src: [danfs-ca36]
+      - date: 1942-08-30
+        text:
+          zh: 萨拉托加号被潜艇雷击后，本舰将其拖离危险海域。
+          en: Towed Saratoga clear after the carrier took a submarine torpedo.
+        src: [danfs-ca36]
+      - date: 1942-11-27
+        text:
+          zh: 编成第 67 特混舰队（ONI 代字 Task Force WILLIAM），本舰为赖特少将旗舰。
+          en: >-
+            Task Force WILLIAM was constituted with Minneapolis as flagship under
+            Rear Admiral Carleton H. Wright.
+        src: [oni-combat-narrative-tassafaronga]
+      - date: 1942-11-30
+        text:
+          zh: 塔萨法隆加夜战，以 SG 雷达率先发现日舰并首先开火，两分钟内击沉一艘运输舰。
+          en: >-
+            At Tassafaronga her SG radar made first contact and she opened the
+            action, sinking a Japanese transport within two minutes.
+        src: [oni-combat-narrative-tassafaronga]
+      - date: 1942-11-30
+        text:
+          zh: 23:27 被两条鱼雷命中，舰艏在 frame 22 处整段撕裂，三个锅炉舱进水，全炮塔失电。
+          en: >-
+            At 2327 she took two torpedo hits; the bow tore loose at frame 22,
+            three firerooms flooded, and power failed in all turrets.
+        src: [oni-combat-narrative-tassafaronga]
+      - date: 1942-12-01
+        text:
+          zh: 靠自身动力驶入图拉吉，用棕榈叶伪装，由本舰舰员与岛上工兵队临时修补。
+          en: >-
+            Reached Tulagi under her own power, was camouflaged with palm fronds,
+            and was patch-repaired by her crew with a Seabee unit.
+        src: [danfs-ca36, navsource-ca36]
+      - date: 1942-12-06
+        text:
+          zh: 制作用椰木防浪堤时气割引燃汽油蒸汽发生爆炸，舰艏又失去七英尺干舷。
+          en: >-
+            A vapour-torch explosion while building the log breakwater cost seven
+            feet of freeboard at the bow.
+        src: [navsource-ca36]
+      - date: 1943-04-22
+        text:
+          zh: 进马雷岛海军船厂大修，装新艏并修复战损，至 9 月 10 日完工。
+          en: Entered Mare Island Navy Yard for a new bow and battle-damage repairs, completed 10 September.
+        src: [navsource-ca36]
+
+  - id: late-war
+    title: { zh: 太平洋反攻与结局, en: The advance across the Pacific }
+    range: { from: 1943, to: 1959 }
+    events:
+      - date: 1943-10-05
+        text:
+          zh: 炮击威克岛，为重返前线后的第一次作战。
+          en: Bombarded Wake Island, her first action after returning to the line.
+        src: [danfs-ca36]
+      - date: 1944-06-19
+        text:
+          zh: 参加菲律宾海海战，掩护航母并提供防空火力；一枚炸弹近失造成轻伤。
+          en: >-
+            Screened the carriers and provided AA fire at the Battle of the
+            Philippine Sea; a near-miss bomb caused minor damage.
+        src: [danfs-ca36]
+      - date: 1944-10-24
+        text:
+          zh: 参加苏里高海峡夜战，随奥尔登多夫的战列线以集中火力跨射日军队列。
+          en: >-
+            Fought in the night action of Surigao Strait, crossing the Japanese T
+            with Oldendorf's line.
+        src: [danfs-ca36]
+      - date: 1945-04-12
+        text:
+          zh: 因炮管磨损严重准备撤离冲绳，当日击落四架自杀机、另三架擦舰落海。
+          en: >-
+            Prepared to leave Okinawa with worn barrels, after splashing four
+            kamikazes and watching three more crash harmlessly.
+        src: [danfs-ca36]
+      - date: 1945-09-09
+        text:
+          zh: 挂金凯德上将将旗，在舰上接受朝鲜日军投降。
+          en: Flew the flag of Admiral Kincaid as he accepted the Japanese surrender of Korea.
+        src: [danfs-ca36]
+      - date: 1947-02-10
+        text:
+          zh: 退役。
+          en: Decommissioned.
+        src: [danfs-ca36, navsource-ca36]
+      - date: 1959-08-14
+        text:
+          zh: 售予 Union Metals and Alloys 公司拆解。
+          en: Sold for scrapping to Union Metals and Alloys Corp.
+        src: [danfs-ca36, navsource-ca36]

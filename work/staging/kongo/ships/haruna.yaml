@@ -1,0 +1,789 @@
+# ============================================================================
+# 榛名（はるな / Haruna）—— 金刚型三番舰，川崎神户建造
+#
+# 2026-11-23 建。舰级共用数据见 classes/kongo.yaml，本文件只写与舰级不同的、
+# 本舰特有的、以及随时间变化的部分。
+#
+# **本舰三个必须记住的识别点：**
+#   1. 唯一在**川崎造船所（神户）**建造的金刚型，也是日本**民间船厂建造的
+#      第一艘战列舰**之一（与雾岛同为民间船厂首例）。原文：「初の超弩級戦艦
+#      【金剛】、初の国産超弩級戦艦【比叡】、そしてこの【榛名】は、四番艦
+#      【霧島】とともに、初の民間造船所建造の戦艦となりました。」
+#   2. 第二次改装**四舰中最早**完成（1934-09-30），且是唯一保留**垂直后部
+#      舰桥**的一艘：「3隻では【榛名】だけが、後部艦橋が垂直に立っていて、
+#      残り3隻は後部煙突と距離を離すために少し後ろに倒れています。」
+#      → 这是模型制作者区分榛名与另三舰的第一处外形特征。
+#   3. 1930 年代大改装后**锅炉 11 座**（重油专烧），而同期的金刚/雾岛只有
+#      8 座；炮塔侧板是**曲面**（金刚/比叡为平面）。
+#
+# 结局：1945-07-28 吴港空袭坐底（浅水），1946-1948 浮扬解体。
+# 与雾岛（1942-11-15 战没）截然不同——本舰活到了战争结束。
+# ============================================================================
+
+id: haruna
+name:
+  zh: 榛名
+  en: Haruna
+  ja: 榛名（はるな）
+class: kongo
+note: >-
+  金刚型三番舰。川崎造船所（神户）建造，1915-04-19 竣工。
+  四舰中第二次改装最早完成（1934-09-30），后部舰桥保持垂直。
+
+open_ended_note: |
+  本文件里 valid.to 留空的 fact 都是「无已知终止事件」的项：
+  该舰 1945-07-28 坐底后舰体仍存在至 1946-1948 年解体，
+  故部分参数的时间窗终点不是战没日而是解体完成。
+  具体的终止事件在各条 note 里注明。
+
+facts:
+  # ============================================================
+  # 身份
+  # ============================================================
+  - field: identity.name_original
+    value: 榛名（はるな）
+    src: [japanese-warship-haruna]
+    valid: { from: 1911-06-05 }
+    confidence: C
+
+  - field: identity.name_zh
+    value: 榛名号
+    src: [japanese-warship-haruna]
+    valid: { from: 1911-06-05 }
+    confidence: C
+
+  - field: identity.name_en
+    value: Haruna
+    src: [combinedfleet-haruna]
+    valid: { from: 1911-06-05 }
+    confidence: C
+
+  - field: identity.name_note
+    value: 以群马县榛名山（火山）命名。1911-06-05 由海军大臣斋藤实下令命名。
+    src: [combinedfleet-haruna]
+    valid: { from: 1911-06-05 }
+    confidence: C
+    note: >-
+      原文：「5 June 1911: Vice Admiral Saito Makoto (6), the current Navy Minister,
+      issues an order to name the third vessel of the KONGO class HARUNA after a
+      volcano in Gumma Prefecture.」
+
+  - field: identity.ship_type
+    value: battlecruiser
+    src: [combinedfleet-haruna, navypedia-kongo]
+    valid: { from: 1915-04-19, to: 1934-09-30 }
+    confidence: B
+    note: >-
+      竣工时分类为战列巡洋舰。原文：「Battlecruiser HARUNA is laid down on No. 4
+      slip at Kawasaki's shipyard.」
+
+  - field: identity.ship_type
+    value: battleship
+    src: [japanese-warship-haruna, combinedfleet-kirishima]
+    valid: { from: 1934-09-30 }
+    confidence: B
+    note: >-
+      第二次改装后转为高速战列舰。日文来源明写：「第一次改装後は25ノットだった
+      速度は、第二次改装によって30ノットを超え、【高速戦艦　榛名】が誕生しました。」
+      combinedfleet 对同级雾岛的同类改装用同一措辞：
+      「KIRISHIMA is reconstructed to transform her into a fast battleship.」
+      → 「高速戦艦」在本站枚举里对应 battleship（不是 battlecruiser），
+      转换节点取榛名第二次改装正式完成日 1934-09-30。
+
+  - field: identity.nation
+    value: japan
+    src: [combinedfleet-haruna]
+    valid: { from: 1915-04-19 }
+    confidence: B
+
+  - field: identity.operator
+    value: 大日本帝国海軍（Imperial Japanese Navy）
+    src: [combinedfleet-haruna]
+    valid: { from: 1915-04-19 }
+    confidence: B
+
+  - field: identity.era
+    value: ww2
+    src: [combinedfleet-haruna]
+    valid: { from: 1941-12-08 }
+    confidence: C
+
+  - field: identity.building_program
+    value: 1911 年度海军紧急扩张案，四艘高速装甲巡洋舰之第三艘
+    src: [combinedfleet-haruna]
+    valid: { from: 1910 }
+    confidence: C
+    note: 原文见 classes/kongo.yaml 同字段条。
+
+  # ============================================================
+  # 建造（逐舰）
+  # ============================================================
+  - field: construction.builder
+    value: 川崎造船所（Kawasaki Dockyard Co.）
+    src: [combinedfleet-haruna, navypedia-kongo, japanese-warship-haruna]
+    valid: { from: 1912-03-16 }
+    confidence: B
+    note: >-
+      navypedia「榛名 [Haruna] Kawasaki, Kobe」；日文来源「建 造 川崎造船所」；
+      combinedfleet「Kobe. Battlecruiser HARUNA is laid down on No. 4 slip at
+      Kawasaki's shipyard.」
+
+  - field: construction.builder_location
+    value: 兵庫県神戸（Kobe, Hyogo）
+    src: [combinedfleet-haruna]
+    valid: { from: 1912-03-16 }
+    confidence: B
+
+  - field: construction.building_slip
+    value: 川崎造船所 第 4 船台（No. 4 slip）
+    src: [combinedfleet-haruna]
+    valid: { from: 1912-03-16 }
+    confidence: C
+
+  - field: construction.laid_down
+    value: 1912-03-16
+    unit: date
+    src: [combinedfleet-haruna, navypedia-kongo, japanese-warship-haruna]
+    valid: { from: 1912-03-16 }
+    confidence: B
+    note: >-
+      navypedia「16.3.1912」；日文来源「明治45年/1912年3月16日」；
+      combinedfleet「16 March 1912」。三源一致。
+
+  - field: construction.launched
+    value: 1913-12-14
+    unit: date
+    src: [combinedfleet-haruna, navypedia-kongo, japanese-warship-haruna]
+    valid: { from: 1913-12-14 }
+    confidence: B
+    note: >-
+      navypedia「14.12.1913」；日文来源「大正2年/1913年12月14日」；
+      combinedfleet「14 December 1913: Kobe. Launched and named HARUNA. The ceremony
+      is attended by Prince Fushimi Sadanaru」。三源一致。
+
+  - field: construction.commissioned
+    value: 1915-04-19
+    unit: date
+    src: [combinedfleet-haruna, navypedia-kongo, japanese-warship-haruna]
+    valid: { from: 1915-04-19 }
+    confidence: B
+    note: >-
+      navypedia「19.4.1915」；日文来源「大正4年/1915年4月19日」；
+      combinedfleet「19 April 1915: Kobe. HARUNA is completed and commissioned in
+      the IJN. Attached to Sasebo Naval District. Captain Funakoshi Kajishiro is
+      the Commanding Officer.」三源一致。
+      与雾岛**同日竣工**（1915-04-19），这是两舰常被并称「双子」的原因：
+      日文来源「両者は竣工日を合わせ、ともに4月19日生まれとなったのです。」
+
+  - field: construction.fate_date
+    value: 1945-07-28
+    unit: date
+    src: [combinedfleet-haruna, navypedia-kongo]
+    valid: { from: 1945-07-28 }
+    confidence: B
+    note: >-
+      navypedia「sunk 28.7.1945」；combinedfleet「28 July 1945 … HARUNA takes on
+      tons of water and sinks in shallow water next to a pier at 34-15N, 132-29E.」
+      ——坐底而非沉入深海，故 fate_type 用 sunk_by_enemy 并在下条注明后续打捞。
+
+  - field: construction.fate_type
+    value: sunk_by_enemy
+    src: [combinedfleet-haruna]
+    valid: { from: 1945-07-28 }
+    confidence: B
+    note: >-
+      被美军舰载机炸沉（浅水坐底）。原文：「In the two days of attacks, HARUNA
+      receives 13 bomb hits and 10 near misses. 65 officers and men are lost.」
+      战后浮扬解体：「1946-1948: The wreck of HARUNA is raised and broken up.」
+      日文来源另给解体完成日「退役日（解体）昭和21年/1946年7月4日」——
+      与英方「1946-1948」两说不一致，本字段取沉没日，解体日期并列于 note，不裁决。
+
+  # ============================================================
+  # 排水量（逐舰终值）
+  # ============================================================
+  - field: displacement.standard
+    value: 32156
+    unit: t
+    src: [navypedia-kongo, japanese-warship-haruna]
+    valid: { from: 1934-09-30 }
+    confidence: B
+    note: >-
+      navypedia 1934-1940 列「Kongo: 31720 Hiei: 32350 Kirishima: 31980
+      Haruna: 32156」；日文来源「基準排水量 ③ 32,156t」。两源互证。
+      注意**四舰终值各不相同**，不可互推。
+
+  # ============================================================
+  # 动力（逐舰：锅炉座数与型号、涡轮厂牌是四舰分组的关键）
+  # ============================================================
+  - field: propulsion.boiler.count
+    value: 16
+    unit: count
+    src: [navypedia-kongo, combinedfleet-haruna, japanese-warship-haruna]
+    valid: { from: 1928-07-31, to: 1934-09-30 }
+    confidence: B
+    note: >-
+      第一次改装后 16 座。三源一致：
+      navypedia「Haruna: 4 Brown-Curtis steam turbines, 16 Kampon boilers」；
+      combinedfleet「all of HARUNA's 36 Yarrow boilers are replaced with 16 Kampon
+      RO-Go type boilers. The number of funnels is reduced from three to two,
+      deleting the fore funnel.」；
+      日文来源「ロ号艦本式ボイラー　混焼10基、重油専焼6基」（合计 16 座）。
+      **注意对比**：同一次改装里金刚/雾岛只有 10 座（见 ships/kirishima.yaml）。
+
+  - field: propulsion.boiler.type
+    value: ロ号艦本式（混烧 10 座＋重油专烧 6 座）
+    src: [japanese-warship-haruna]
+    valid: { from: 1928-07-31, to: 1934-09-30 }
+    confidence: C
+    note: >-
+      日文来源：「ロ号艦本式ボイラー　混焼10基、重油専焼6基[1-P88]」。
+      combinedfleet 只说「16 Kampon RO-Go type boilers」，未分混烧/专烧；
+      navypedia 只说「16 Kampon boilers」。故混烧与专烧的分配只有日文一家。
+
+  - field: propulsion.boiler.count
+    value: 11
+    unit: count
+    src: [navypedia-kongo, combinedfleet-haruna, japanese-warship-haruna]
+    valid: { from: 1934-09-30 }
+    confidence: B
+    note: >-
+      第二次改装后 11 座。navypedia「Haruna, Hiei: 4 sets Kampon geared steam
+      turbines, 11 Kampon boilers」；combinedfleet「All boilers are replaced with
+      11 oil-firing Kampon boilers」；日文来源「ロ号艦本式ボイラー（重油専焼）
+      11基」。三源一致。
+      **本级关键差异**：金刚/雾岛在同一次改装后是 8 座，只有榛名/比叡是 11 座。
+
+  - field: propulsion.boiler.type
+    value: ロ号艦本式（重油专烧）11 座
+    src: [japanese-warship-haruna, combinedfleet-haruna]
+    valid: { from: 1934-09-30 }
+    confidence: B
+    note: >-
+      日文来源「ロ号艦本式ボイラー（重油専焼）　11基」；
+      combinedfleet「11 oil-firing Kampon boilers」——两源都明写重油专烧。
+
+  - field: propulsion.turbine.count
+    value: 4
+    unit: count
+    src: [navypedia-kongo, japanese-warship-haruna]
+    valid: { from: 1934-09-30 }
+    confidence: B
+    note: >-
+      第二次改装后为 4 台齿轮传动涡轮（「4 sets Kampon geared steam turbines」/
+      日文「艦本式ギアード・タービン　4基4軸」）。改装前是 2 台直结涡轮
+      （日文「ブラウン・カーチス式タービン　2基4軸」），见下条。
+
+  - field: propulsion.turbine.count
+    value: 2
+    unit: count
+    src: [japanese-warship-haruna]
+    valid: { from: 1915-04-19, to: 1934-09-30 }
+    confidence: C
+    note: >-
+      日文来源竣工时栏「ブラウン・カーチス式タービン　2基4軸」。2 台涡轮带 4 轴。
+
+  - field: propulsion.turbine.type
+    value: Brown-Curtis 直结式蒸汽涡轮 2 台（4 轴）
+    src: [navypedia-kongo, japanese-warship-haruna]
+    valid: { from: 1915-04-19, to: 1934-09-30 }
+    confidence: B
+    note: >-
+      navypedia「Haruna: 4 Brown-Curtis steam turbines」——该栏写 4，
+      但同栏对金刚/雾岛写的是 Parsons，且日文来源明确「2基4軸」。
+      两说在「台数」上表述不同（navypedia 的 4 可能指 4 轴或 4 组），
+      **本文件按日文来源记 2 台/4 轴**，navypedia 的措辞保留于此不裁。
+      对比：金刚/雾岛/比叡是 Parsons（「Kongo, Hiei, Kirishima: 4 Parsons steam
+      turbines」），只有榛名是 Brown-Curtis——这是四舰动力系统的原始差异。
+
+  - field: propulsion.turbine.type
+    value: 艦本式齿轮传动涡轮 4 台（4 轴）
+    src: [navypedia-kongo, combinedfleet-haruna, japanese-warship-haruna]
+    valid: { from: 1934-09-30 }
+    confidence: B
+    note: >-
+      navypedia「4 sets Kampon geared steam turbines」；combinedfleet「she receives
+      new geared turbines」；日文来源「艦本式ギアード・タービン　4基4軸」。
+
+  # propulsion.power.trial（试航实测轴马力）：**未获取，故整条不写。**
+  # 日文来源榛名页马力栏只有「① 64,000馬力 / ③ 136,000馬力」两个设计值，
+  # 没有雾岛页那样的试航实测（「公試全力で29.80ノット・136,940軸馬力、
+  # 過荷全力で30.08ノット・144,500軸馬力」）。榛名的试航马力与试航航速
+  # 均不得以雾岛值代入。详见 RESEARCH-NOTES.md「卡住的地方」。
+
+  # ============================================================
+  # 航速（逐舰）
+  # ============================================================
+  - field: propulsion.speed.design
+    value: 30.5
+    unit: kn
+    src: [navypedia-kongo, japanese-warship-haruna]
+    valid: { from: 1934-09-30 }
+    confidence: B
+    note: >-
+      navypedia「Max speed, kts … 30.5」；日文来源「最大速度 ③ 30.5ノット」。
+      两源都是**最大速度**口径，不是试航实测。榛名的试航实测航速未获取
+      （对比：雾岛有 29.80 kn 公试全力 / 30.08 kn 过荷全力两个实测值）。
+
+  - field: propulsion.speed.design
+    value: 25.9
+    unit: kn
+    src: [navypedia-kongo, japanese-warship-haruna]
+    valid: { from: 1928-07-31, to: 1934-09-30 }
+    confidence: B
+    note: >-
+      navypedia 第一次改装后「25.9」；日文来源榛名页「最大速度 ② 25.9ノット」。
+      两源一致（对比：金刚 26.0、雾岛 26.3 —— 逐舰不同）。
+
+  - field: propulsion.speed.max
+    value: 26.5
+    unit: kn
+    src: [combinedfleet-haruna]
+    valid: { from: 1944-10-05, to: 1945-07-28 }
+    confidence: B
+    note: >-
+      战损后的实际航速上限，**不是设计值**。原文：「To minimize the vibration the
+      port outboard shaft is removed by the 101st Repair Facility. The maximum
+      speed (No. 5 battle speed) of HARUNA is thereby limited to 26.5 kts.」
+      直接原因链：1944-06-20 马里亚纳海战被 1 发 500 lb 炸弹击中舰尾 →
+      左外轴支架受损 → 1944-08 新加坡 Seletar 干船坞拆掉左外轴 → 限速 26.5 kn。
+
+  # ============================================================
+  # 续航（逐舰，与 navypedia 全级值冲突时并列）
+  # ============================================================
+  - field: propulsion.range.max
+    value: 9500
+    unit: nmi
+    src: [japanese-warship-haruna]
+    valid: { from: 1928-07-31, to: 1934-09-30 }
+    confidence: C
+    note: >-
+      日文来源「航続距離 ② 14ノット：9,500海里」。
+      **与 navypedia 冲突**：navypedia 第一次改装后给「10000(18)」——
+      数值不同（9,500 vs 10,000）且对应航速也不同（14 kn vs 18 kn）。
+      两说并列不裁决。
+
+  - field: propulsion.range.max
+    value: 10000
+    unit: nmi
+    src: [japanese-warship-haruna]
+    valid: { from: 1934-09-30 }
+    confidence: C
+    note: >-
+      日文来源「航続距離 ③ 18ノット：10,000海里」。与 navypedia 的 10,000(18)
+      在本状态上一致——这是四舰里唯一与 navypedia 全级值吻合的一艘
+      （雾岛 9,850、金刚 9,800）。
+
+  # ============================================================
+  # 编制（逐舰终值）
+  # ============================================================
+  - field: service.complement.standard
+    value: 1221
+    unit: persons
+    src: [navypedia-kongo]
+    valid: { from: 1915-04-19, to: 1928-07-31 }
+    confidence: C
+    note: >-
+      navypedia 编制栏第一列：「Kongo: 1201 / others: 1221」——金刚 1,201、
+      其余三舰 1,221，故榛名取 1,221。
+
+  - field: service.complement.standard
+    value: 1118
+    unit: persons
+    src: [navypedia-kongo]
+    valid: { from: 1928-07-31, to: 1934-09-30 }
+    confidence: C
+    note: >-
+      navypedia 编制栏第二列（1928-1931 modernization）「1118」。
+      **该值比改装前更低**，来源未解释原因（同期比叡正在撤除武装、
+      其余各舰编制口径可能随之调整），照抄不解释。
+
+  - field: service.complement.standard
+    value: 1437
+    unit: persons
+    src: [navypedia-kongo]
+    valid: { from: 1934-09-30 }
+    confidence: C
+    note: >-
+      navypedia 编制栏第三列（1934-1940 modernization）「1437」，全级同值。
+      战时编制（service.complement.wartime）未获取。
+
+  # ============================================================
+  # 航空（逐舰，弹射器与机型逐期变化）
+  # ============================================================
+  - field: aviation.aircraft.types
+    value: 一四式水上侦察机（E1Y3）1 机＋一五式水上侦察机（E2N1）1 机
+    src: [combinedfleet-haruna]
+    valid: { from: 1928-07-31, to: 1932-05-22 }
+    confidence: C
+    note: >-
+      第一次改装后配备。「A derrick boom is rigged to the superstructure starboard
+      aft for one Yokosho E1Y3 Type 14 and one Nakajima E2N1 Type 15 floatplane.
+      An aircraft handling deck is fitted between the aft turrets (Nos. 3 and 4).」
+      当时**无弹射器**，日文来源「水上機　3機（射出機なし）」。
+
+  - field: aviation.aircraft.types
+    value: 一四式（E1Y3）1 机＋一五式（E2N）2 机
+    src: [combinedfleet-haruna]
+    valid: { from: 1932-05-22, to: 1933-08-01 }
+    confidence: C
+    note: >-
+      「One E1Y3 and two Nakajima E2N Type 15 floatplanes are embarked.」
+      同日（1932-05-22）在 3 号炮塔后方左舷装吴式二号三型弹射器。
+
+  - field: aviation.catapult.type
+    value: 吴式二号三型（Kure Type No. 2 Model 3）
+    src: [combinedfleet-haruna]
+    valid: { from: 1932-05-22, to: 1933-08-01 }
+    confidence: C
+    note: >-
+      原文：「The aircraft handling deck is extended to accommodate a Kure Type
+      No. 2 Model 3 catapult installed on the port side aft of No. 3 turret.」
+      这是**本舰首次装弹射器**。
+
+  - field: aviation.catapult.type
+    value: 吴式二号三型一型（Kure Type No. 2 Model 3 Mk. 1），中线布置
+    src: [combinedfleet-haruna]
+    valid: { from: 1933-08-01, to: 1937-11 }
+    confidence: C
+    note: >-
+      第二次改装时改为中线弹射器：「A centerline Kure Type No. 2 Model 3 Mk. 1
+      catapult and a collapsibe derrick are installed.」
+
+  - field: aviation.catapult.type
+    value: 吴式二号五型（Kure Type No. 2 Mod. 5）
+    src: [combinedfleet-haruna]
+    valid: { from: 1937-11, to: 1945-07-28 }
+    confidence: C
+    note: >-
+      原文：「A new Kure Type No. 2 Mod. 5 catapult is installed for a Kawanishi
+      E7K1 Type 94 ("Alf") and two Nakajima E8N1 Type 95 ("Dave") floatplanes.」
+
+  - field: aviation.aircraft.types
+    value: 九〇式二号二型（E4N2）2 机＋九四式水上侦察机（E7K1）1 机
+    src: [combinedfleet-haruna]
+    valid: { from: 1933-08-01, to: 1937-11 }
+    confidence: C
+    note: >-
+      「Two Nakajima E4N2 Type 90 No. 2 Model 2 and one Kawanishi E7K1 Type 94
+      ("Alf") floatplanes are embarked.」
+
+  - field: aviation.aircraft.types
+    value: 九四式水上侦察机（E7K1）1 机＋九五式水上侦察机（E8N1）2 机
+    src: [combinedfleet-haruna]
+    valid: { from: 1937-11, to: 1942-07 }
+    confidence: C
+    note: 见上条弹射器换装原文。
+
+  - field: aviation.aircraft.types
+    value: 九五式水上侦察机（E8N2）3 机
+    src: [combinedfleet-haruna]
+    valid: { from: 1942-07-14, to: 1943-03 }
+    confidence: C
+    note: >-
+      原文：「Her floatplane complement is now three E8N2s.」（1942-07-14 编入
+      第二舰队第三战队同日）
+
+  - field: aviation.aircraft.types
+    value: 零式水上侦察机（E13A）1 机＋零式观测机（F1M）2 机
+    src: [combinedfleet-haruna]
+    valid: { from: 1943-03, to: 1944-08 }
+    confidence: C
+    note: >-
+      原文：「The aircraft complement is changed to one Aichi E13A Type 0 and two
+      Mitsubishi F1M Type 0s.」（1943-02-25～04-01 佐世保入坞期间）
+
+  - field: aviation.aircraft.types
+    value: 零式水上侦察机（E13A1）2 机
+    src: [combinedfleet-haruna]
+    valid: { from: 1944-08, to: 1945-07-28 }
+    confidence: C
+    note: >-
+      原文：「Two E13A1 floatplanes are embarked.」（1944-08-15 从佐世保出发时）
+
+  # ============================================================
+  # 雷达（逐舰，多型并存）
+  # ============================================================
+  - field: sensors.radar.installed
+    value: 二一号电探（Type 21）
+    src: [combinedfleet-haruna]
+    valid: { from: 1943-03 }
+    confidence: C
+    note: >-
+      原文：「25 February-1 April 1943: Dry-docked at Sasebo. A Type 21 radar and
+      Type 3 radar detectors are installed.」
+      **装设日期只能精确到这次入坞期（1943-02-25 至 1943-04-01）**，
+      本条 valid.from 取期中月份 1943-03，具体日未获取。
+
+  - field: sensors.radar.installed
+    value: 一三号电探（Type 13）
+    src: [combinedfleet-haruna]
+    valid: { from: 1944-08 }
+    confidence: C
+    note: >-
+      原文：「27 June-10 August 1944: Dry-docked in No. 4 drydock for battle damage
+      repairs and refit. Type 13 radar and additional 25-mm AA guns are installed.」
+      装设日只能确定在这次改装期内（1944-06-27 至 1944-08-10），
+      本条 valid.from 取完成月 1944-08，具体日未获取。
+
+  # 二二号电探（Type 22）：**装设时间未获取**，故不写 fact。
+  # combinedfleet 只在 1944-08 改装里提到「existing Type 22 radars are fitted with
+  # superheterodyne receivers」——即 1944-08 之前已装，但没给装设日期。
+  # 日文来源的 1944-10-05 兵装表记「22号対水上電探 2基」，这是**存在状态**，
+  # 不是装设日，不能拿来当 sensors.radar.installed 的 valid.from。
+  # 详见 RESEARCH-NOTES.md「卡住的地方」。
+
+  - field: sensors.radar.count
+    value: 5
+    unit: count
+    src: [japanese-warship-haruna]
+    valid: { from: 1944-10-05, to: 1945-07-28 }
+    confidence: C
+    note: >-
+      日文来源 1944-10-05 兵装表逐型给出：「21号対空電探 1基／22号対水上電探 2基／
+      13号対空電探 2基」，合计 5 基。这是**分型数量相加**后的总数，
+      各型数量原文俱在，故不是推算。
+
+  # ============================================================
+  # 武备（逐舰变化节点 —— 本级最需要逐舰记的一块）
+  # ============================================================
+  - field: armament.aa_25mm.count
+    value: 20
+    unit: count
+    src: [japanese-warship-haruna, combinedfleet-haruna]
+    valid: { from: 1937-11, to: 1943-04 }
+    confidence: B
+    note: >-
+      20 挺 ＝ 10 座双联。日文来源第二次改装栏「⇒のちいずれも撤去
+      25mm連装機銃 10基20挺」；combinedfleet「Twenty 25-mm Type 96 AA guns (10x2)
+      and four Type 95 HA directors are installed.」（1937-11～1938-11 佐世保改装，
+      同一次改装另撤 2 门最前部炮廓炮、改舰艏水线、换装吴式二号五型弹射器）
+      **装设年份三源不一致**：navypedia 记「1936, Haruna: - 4 x 2 - 13.2/76;
+      + 10 x 2 - 25/60 96-shiki」，即 1936 年即以 25 mm 换下 13.2 mm；
+      日文来源把它挂在「第二次改装（1934）」栏下但注「のち」（此后）；
+      combinedfleet 明确记在 1937-11 起的改装里。
+      本条取 combinedfleet 的 1937-11（有明确起止日），另两说并列不裁决。
+
+  - field: armament.aa_25mm.count
+    value: 26
+    unit: count
+    src: [combinedfleet-haruna]
+    valid: { from: 1943-04, to: 1944-02 }
+    confidence: C
+    note: >-
+      1943-03 改装加 2 座三联 = +6 挺，合计 26 挺。
+      原文：「Two 25-mm triple mounts are installed.」
+      与 navypedia「3/1943, Haruna: … + 2 x 2 - 127/40 89-shiki, 7 x 2 - 25/60
+      96-shiki」**冲突**：navypedia 记的是 +7 座双联（+14 挺），
+      combinedfleet 记 +2 座三联（+6 挺）。两说并列不裁决，详见 RESEARCH-NOTES。
+
+  - field: armament.aa_25mm.count
+    value: 38
+    unit: count
+    src: [combinedfleet-haruna]
+    valid: { from: 1944-02, to: 1944-08 }
+    confidence: C
+    note: >-
+      26（1938 年 10 座双联）＋12（1944-02 加 4 座三联）= 38 挺。
+      两笔都是原文明确给出的管数，加法不构成推算。
+      原文（1943-12-16 至 1944-02-26 佐世保改装）：「Four 12.7-cm AA guns (2x2)
+      and twelve 25-mm AA guns (4x3) are added.」
+
+  - field: armament.aa_25mm.count
+    value: 108
+    unit: count
+    src: [japanese-warship-haruna]
+    valid: { from: 1944-10-05, to: 1945-07-28 }
+    confidence: B
+    note: >-
+      日文来源 1944-10-05 兵装表逐型列出：
+      「25mm三連装機銃　28基84挺／25mm連装機銃　2基4挺／25mm単装機銃　20基20挺」，
+      合计 84+4+20 = 108 挺。
+      **这是本舰最终防空配置的权威逐型数据**，比 navypedia 的整批增减记账可靠
+      （navypedia 该段记「6/1944, Haruna: - 15 x 2 - 25/60; + 30 x 3 - 25/60 96-shiki,
+      6 x 1 - 25/60 96-shiki」「1/1945, Haruna: + 17 x 1」，
+      两源的记账方式不可直接相加对齐）。
+
+  - field: armament.aa_25mm.count
+    value: 124
+    unit: count
+    src: [navypedia-kongo]
+    valid: { from: 1945-01, to: 1945-07-28 }
+    confidence: C
+    note: >-
+      navypedia「1/1945, Haruna: + 17 x 1 - 25/60 96-shiki」——在 1944 年状态上
+      再加 17 挺单装。与日文来源 1944-10-05 的 108 挺**不是同一时点**，
+      两值不可混合相加；本条保留 navypedia 的独立记账，不与 108 合并。
+
+  - field: armament.mount.summary
+    value: >-
+      1944-10-05 状态：35.6 cm 连装 4 座 8 门／15.2 cm 单装 8 门／
+      12.7 cm 连装高角 6 座 12 门／25 mm 28 座三联（84）＋2 座双联（4）＋
+      20 座单装（20）＝108 挺／电探 21 号 1、22 号 2、13 号 2。
+    src: [japanese-warship-haruna]
+    valid: { from: 1944-10-05, to: 1945-07-28 }
+    confidence: B
+    note: >-
+      日文来源「TECHNICAL DATA / 05昭和19年/1944年10月5日時点の兵装」整栏。
+      15.2 cm 从 16 门减到 8 门的过程（1937-38 撤 2、1943 撤 2、1944 撤 4），
+      combinedfleet 与 navypedia 各自记账，两源的中间状态不一致，
+      故本条只记**已核实的终点状态**，中间过程见 RESEARCH-NOTES。
+
+  - field: armament.aa_20mm.count
+    value: 0
+    unit: count
+    src: [japanese-warship-haruna]
+    valid: { from: 1915-04-19, to: 1945-07-28 }
+    confidence: B
+    note: >-
+      **日本海军没有 20 mm 高炮**，本舰全生涯未装。此条记「0」是明确的
+      「装 0 门」而非「未获取」，依据是日文来源全篇兵装表只列 25 mm 与 13 mm，
+      从不出现 20 mm；navweaps 的 25 mm 页亦说明日军制式轻高炮为九六式 25 mm。
+
+  - field: armament.aa_40mm.count
+    value: 4
+    unit: count
+    src: [japanese-warship-haruna, combinedfleet-haruna]
+    valid: { from: 1932-05-22, to: 1934-09-30 }
+    confidence: C
+    note: >-
+      **维克斯 40 mm 机关炮**（不是博福斯），2 座双联 4 挺。
+      日文来源第二次改装栏「40mm連装機銃　2基4挺　⇒のちいずれも撤去」；
+      combinedfleet「four 40-mm Vickers AA guns (2x2) are installed」
+      （1932-05-22）→ 第二次改装时「The 40-mm Vickers AA guns are landed.」
+      注意：本字段在注册表里是「40 mm 高炮数」，注释写的是美军 Bofors；
+      榛名装的是英制维克斯，口径同为 40 mm，故记此并在 note 说明型号不同。
+
+  - field: armament.aa_40mm.count
+    value: 0
+    unit: count
+    src: [combinedfleet-haruna]
+    valid: { from: 1934-09-30 }
+    confidence: B
+    note: 第二次改装时撤除（「The 40-mm Vickers AA guns are landed.」），此后未再装。
+
+  # ============================================================
+  # 服役与编制（逐舰）
+  # ============================================================
+  - field: service.unit
+    value: 第三战队第二小队（BatDiv 3, Section 2）／第二舰队
+    src: [combinedfleet-haruna]
+    valid: { from: 1941-11-29, to: 1942-07-14 }
+    confidence: B
+    note: >-
+      原文：「29 November 1941: BatDiv 3's section 2, HARUNA and KONGO, is attached
+      to Vice Admiral Kondo Nobutake's Second Fleet, Southern (Malay) Force's Main
+      Body: BatDiv 3/2, CruDiv 4's ATAGO, TAKAO and MAYA and eight destroyers.」
+      **注意编成随时间变**：1941-11 时第二小队是榛名＋金刚；
+      到 1942-06 中途岛时，第三战队第二小队变成榛名＋**雾岛**（见下一条），
+      金刚、比叡不在该小队。1942-07-14 起又变回榛名＋金刚。
+      即「榛名与雾岛同队」只存在于中途岛这一次作战期间。
+
+  - field: service.unit
+    value: 第三战队第二小队（BatDiv 3, Section 2）／支援部队，随南云第一机动部队
+    src: [combinedfleet-haruna]
+    valid: { from: 1942-05-29, to: 1942-06-14 }
+    confidence: B
+    note: >-
+      中途岛时的确切编成。原文：「The Support Group's BatDiv 3, Section 2's HARUNA
+      and KIRISHIMA depart Hashirajima for Midway with Vice Admiral Nagumo's First
+      Mobile Force, Carrier Strike Force: CarDiv 1's AKAGI and KAGA, CarDiv 2's
+      HIRYU and SORYU, CruDiv 8's TONE and CHIKUMA, DesRon 10's light cruiser
+      NAGARA and 11 destroyers.」
+      → 两舰编在**阿部弘毅少将的支援部队**（Support Group），不是机动部队本队，
+      任务是护卫而非随航母同行。这一点任务书表述正确。
+
+  - field: service.unit
+    value: 第三战队（BatDiv 3）／第二舰队，旗舰金刚
+    src: [combinedfleet-haruna]
+    valid: { from: 1942-07-14, to: 1943-01-01 }
+    confidence: B
+    note: >-
+      原文：「14 July 1942: HARUNA is assigned to the Second Fleet. Vice Admiral
+      Kurita Takeo (former CO of KONGO) assumes command of the resized BatDiv 3's
+      KONGO (F) and HARUNA… HIEI and KIRISHIMA are reassigned to the new BatDiv 11.」
+      **这是两舰分道扬镳的节点**：1942-07-14 起榛名与金刚同队、雾岛与比叡同队。
+
+  - field: service.unit
+    value: 第一战队（BatDiv 1）／第二舰队
+    src: [combinedfleet-haruna]
+    valid: { from: 1945-01-01, to: 1945-02-10 }
+    confidence: B
+    note: >-
+      原文：「1 January 1945: At Kure. BatDiv 3 is deactivated. HARUNA is reassigned
+      to the reactivated BatDiv 1, Second Fleet.」
+
+  - field: service.unit
+    value: 吴镇守府（Kure Naval District）直属
+    src: [combinedfleet-haruna]
+    valid: { from: 1945-02-10, to: 1945-07-28 }
+    confidence: B
+    note: >-
+      原文：「10 February 1945: BatDiv 1 is deactivated once again. HARUNA is attached to Kure Naval District.」
+
+  - field: service.commander
+    value: 舟越楫四郎 大佐（Captain Funakoshi Kajishiro）
+    src: [combinedfleet-haruna]
+    valid: { from: 1915-04-19, to: 1916-12-01 }
+    confidence: C
+    note: >-
+      首任舰长。原文：「19 April 1915 … Captain Funakoshi Kajishiro is the
+      Commanding Officer.」他 1913-12-15 已任舾装员长（CEO）。
+
+  - field: service.commander
+    value: 高间完 大佐（Captain Takama Tamotsu）
+    src: [combinedfleet-haruna]
+    valid: { from: 1941-08-20, to: 1942-06-20 }
+    confidence: C
+    note: >-
+      中途岛海战时的舰长。原文：「20 August 1941: Captain (promoted Rear Admiral
+      1 May 1942; later Vice Admiral) Takama Tamotsu (41)(former CO of NACHI) is
+      appointed the CO.」
+
+  - field: service.commander
+    value: 石井敬之 大佐（Captain Ishii Keishi）
+    src: [combinedfleet-haruna]
+    valid: { from: 1942-06-20, to: 1944-01-25 }
+    confidence: C
+    note: >-
+      原文：「20 June 1942: Captain (promoted Rear Admiral 1 May 1943) Ishii Keishi
+      (43)(former CO of OBB target ship SETTSU) is appointed the CO.」
+      任内经历第三次所罗门海战、马里亚纳。
+
+  - field: service.commander
+    value: 重永主計 大佐（Captain Shigenaga Kazue）
+    src: [combinedfleet-haruna]
+    valid: { from: 1944-01-25, to: 1944-12-20 }
+    confidence: C
+    note: >-
+      原文：「25 January 1944: Captain (promoted Rear Admiral 15 October) Shigenaga Kazue (46)(former CO of CHIKUMA) is appointed the CO.」
+
+  - field: service.commander
+    value: 吉村真武 大佐（Captain Yoshimura Matake）
+    src: [combinedfleet-haruna]
+    valid: { from: 1944-12-20, to: 1945-07-28 }
+    confidence: C
+    note: >-
+      末任舰长。原文：「20 December 1944: At Kure. Captain Yoshimura Matake (45)
+      (former CO of CL YAHAGI) is appointed the CO.」
+
+  - field: service.casualties
+    value: 65
+    unit: persons
+    src: [combinedfleet-haruna]
+    valid: { from: 1945-07-28 }
+    confidence: B
+    note: >-
+      1945-07-24 与 07-28 两日空袭合计阵亡。原文：「In the two days of attacks,
+      HARUNA receives 13 bomb hits and 10 near misses. 65 officers and men are lost.」
+
+  - field: service.fate_category
+    value: 空袭坐底（浅水），战后浮扬解体
+    src: [combinedfleet-haruna, navypedia-kongo]
+    valid: { from: 1945-07-28 }
+    confidence: B
+    note: >-
+      navypedia：「24 and 28.7.1945 during American carrier aircraft raids of TF.38
+      to Kure she received 3 and 9 direct hits respectively and sunk on shallow
+      water. After war she was salvaged and scrapped.」
+      ——**命中数两源不同**：navypedia 记 3＋9＝12 发，combinedfleet 记两日合计
+      13 发命中＋10 发近失。两说并列不裁决，详见 RESEARCH-NOTES。

@@ -1,0 +1,332 @@
+# ============================================================================
+# 武器正文 —— 8 cm/40 三年式（三年式 40 口径 8cm 高角炮 / 3"/40 3rd Year Type）
+#
+# 这一篇最容易出的三个错，都写在这里：
+#  1) 「8 cm」是名义值。来源原句：日本称 8 cm，但这一系列所有炮的实弹径都是
+#     7.62 cm（3.0 英寸）。本站按实弹径记 76.2 mm，但条目名沿用日方称法。
+#  2) NavWeaps 这一页同时收了三型炮（三年式 / 十一年式 / 八八式），
+#     设计年与服务年各是三组数字（1914/1922/1928 与 1916/1926/1932），
+#     取任何一组都不说明是哪一型就是把三型混成一型。
+#  3) 同页的装舰表与同页的描述段不完全对得上：描述段说它是 1914 至 1925 年
+#     建成的多数战列舰与战列巡洋舰的高角炮，装舰表却只列了伊势（4）与长门（4）。
+#     两处并列照录，不裁决。
+# 另：凤翔装过这一型两门，但装舰表里没有凤翔 —— 这一点单独写。
+# ============================================================================
+weapon: 8cm-40-3ns
+updated: 2026-11-24
+
+intro:
+  lead:
+    zh: >-
+      8 cm/40 三年式是日本海军 1914 年设计、1916 年服役的一型高角炮，
+      名义口径 8 cm，实弹径 7.62 cm。它装在 1914 至 1925 年建成的多数战列舰与
+      战列巡洋舰上，也装在战前建造的轻巡与小型舰艇上，凤翔号航母也带过两门。
+      全部炮架都是简单的基座式，人工操作，仰角 −7 至 +75 度，回转 360 度，
+      射速 13 至 20 发/分。1930 年代主力舰改装时这批炮被整体撤下，
+      换成 12.7 cm/40 八九式与 25 mm 机炮。
+    en: >-
+      The 8 cm/40 3rd Year Type was an anti-aircraft gun designed in 1914 and in
+      service from 1916, with a nominal calibre of 8 cm and an actual bore of 7.62 cm.
+      It armed most battleships and battlecruisers completed between 1914 and 1925, and
+      also many smaller ships and cruisers built before the Second World War; the
+      carrier Hosho carried a pair as well. Every mounting was a simple pedestal type,
+      hand worked, with -7 to +75 degrees of elevation, 360 degrees of train and a rate
+      of fire of 13 to 20 rounds per minute. During the 1930s rebuilds of the capital
+      ships the guns were removed wholesale and replaced with 12.7 cm/40 Type 89 and
+      25 mm weapons.
+
+  paragraphs:
+    - heading: 「8 cm」是名义值，实弹径 7.62 cm
+      text:
+        zh: >-
+          来源把这一条写得很直：日本把口径称作 8 cm，但这批炮的实际弹径
+          都是 7.62 cm（3.0 英寸）。因此本站的条目名沿用日方称法（8 cm/40 三年式），
+          但口径字段记 76.2 mm 而不是 80 mm。
+          同页还有一句同性质的说明：1917 年 10 月 5 日，这批炮随度量衡改制改称厘米制。
+          构造上它与 8 cm/40 四一式相似，同为组合式炮管，
+          但用的是向右倾斜 45 度的滑动炮闩 —— 这一句是识别三型炮最直接的细节。
+          同页的十一年式与八八式则用整铸（monobloc）炮管配水平滑动炮闩。
+          身管型号之间还有一处差别在阴线上：I 型与 II 型为 16 条，
+          III、IV、VII 型为 24 条；IV 型的药室略长，所以膛线长度也略有不同
+          （2.623 m，其余为 2.608 m），药室容积三型相同，都是 2.1 dm³。
+        en: >-
+          The source states this plainly: although the Japanese designation was "8 cm,"
+          the actual bore diameter of all these weapons was 7.62 cm (3.0"). This entry
+          therefore keeps the Japanese name in its title but records the bore as 76.2 mm
+          rather than 80 mm. A statement of the same kind follows: all guns were
+          redesignated in centimetres on 5 October 1917. In construction it was similar
+          to the 8 cm/40 Type 41, a built-up gun, but used a sliding breech block angled
+          at 45 degrees to the right - the most direct identifying detail among the three
+          types on this page. The 11th Year Type and Type 88 used monobloc barrels with
+          horizontal sliding breech blocks. One further difference lies in the rifling:
+          barrel Model Types I and II had 16 grooves, Types III, IV and VII had 24. The
+          Model Type IV barrel had a slightly longer chamber, hence a slightly different
+          rifling length of 2.623 m against 2.608 m for the rest, while the chamber volume
+          of 2.1 dm3 was the same for all.
+      src: [navweaps-8cm-40-3ns]
+
+    - heading: 三型炮共用一页，三组年份不能混用
+      text:
+        zh: >-
+          NavWeaps 这一页收了三个型号：三年式（Model 1914）、十一年式（Model 1922）
+          与八八式（Model 1928）。设计年份栏因此写成「1914, 1922 and 1928」，
+          服役年份栏写成「1916, 1926 and 1932」—— 三组数字对应三个不同的炮，
+          不是同一个炮的三个日期。配对依据是各型括号里的型号年：
+          三年式 = Model 1914、十一年式 = Model 1922、八八式 = Model 1928，
+          与设计年份栏逐一对上；服役年份栏按同一顺序读即为 1916 / 1926 / 1932。
+          本条目只取三年式那一对：设计 1914、服役 1916。
+          三型的用途在来源里也是分开写的：三年式与十一年式用于许多战前建造的
+          小型舰艇与巡洋舰；八八式是「湿炮」（wet gun），用于 RO 33 与 RO 35 级潜艇。
+          数据栏给的是三型共用的数值（除注明外），所以引用时必须记住
+          ——炮身重 600 kg、全长 3.203 m、膛线长 3.048 m、药室 2.1 dm³、
+          膛压 2,250 kg/cm²、身管寿命 1,200 至 2,000 发，
+          这些是这一页的统一口径，不是三年式独有。
+        en: >-
+          NavWeaps collects three marks on one page: the 3rd Year Type (Model 1914), the
+          11th Year Type (Model 1922) and the Type 88 (Model 1928). The date-of-design
+          row therefore reads "1914, 1922 and 1928" and the date-in-service row
+          "1916, 1926 and 1932" - three sets of figures for three different guns, not
+          three dates for one. The pairing follows the model years in the designations -
+          3rd Year Type = Model 1914, 11th Year Type = Model 1922, Type 88 = Model 1928 -
+          matching the design row one for one, so the service row read in the same order
+          gives 1916, 1926 and 1932. This entry takes only the 3rd Year Type pair: design
+          1914, service 1916. The roles are separated in the source as well: the 3rd Year Type
+          and the 11th Year Type were used on many smaller ships and cruisers built
+          before the Second World War, while the Type 88 was a "wet gun" used on
+          submarines of the RO 33 and RO 35 classes. The data rows give figures shared by
+          all three marks unless noted, so on quotation one has to remember that the
+          600 kg gun weight, 3.203 m length overall, 3.048 m bore length, 2.1 dm3 chamber,
+          2,250 kg/cm2 working pressure and 1,200 to 2,000 round barrel life are the
+          page's common values, not the 3rd Year Type's alone.
+      src: [navweaps-8cm-40-3ns]
+
+    - heading: 弹药与弹道：定装弹、9.25 kg 一发
+      text:
+        zh: >-
+          这一型用定装弹（fixed），来源另给整发重量：Common Type 0 HE 整发 9.25 kg，
+          其中弹丸 5.99 kg、装药 0.48 kg、发射药 0.9 kg（20 C3）。
+          反潜弹弹丸 5.3 kg、装药 0.67 kg，平头。
+          初速：常规弹 680 至 685 mps，反潜弹 250 mps。
+          弹道：45 度时射程 10,800 m；75 度时对空射高 7,200 m；
+          反潜弹 40 度时 3,200 m，最小射程 700 m，低于此距离容易跳弹。
+          射速 13 至 20 发/分，来源未再分理论与实战两档 ——
+          这一型是人力装填的定装弹炮，射速区间本身就包含了操作差异。
+          弹药基数一栏为 N/A，即来源未给每门备弹量。
+          另一条值得单记的：Common Type 0 HE 配时间引信时可用于对空，
+          来源引 USNTMJ 的 O-19 报告说这种弹的有效杀伤半径 26 m，
+          但来源自己加了一句评价 —— 这个数字看起来偏乐观。
+          （这句话是来源对 USNTMJ 数据的保留，不是本站对它的判断。）
+        en: >-
+          The weapon fired fixed ammunition, and the source gives the complete round
+          weight: 9.25 kg for Common Type 0 HE, of which the projectile was 5.99 kg, the
+          bursting charge 0.48 kg and the propellant 0.9 kg of 20 C3. The ASW projectile
+          weighed 5.3 kg with a 0.67 kg bursting charge and a flat nose. Muzzle velocity
+          was 680 to 685 mps for Common and 250 mps for ASW. Ballistics: 10,800 m at
+          45 degrees, an AA ceiling of 7,200 m at 75 degrees, and 3,200 m at 40 degrees
+          for the ASW round, whose minimum range of 700 m is noted with the remark that
+          rounds below it tended to ricochet. Rate of fire 13 to 20 rounds per minute,
+          with no split into theoretical and effective figures - this was a hand-loaded
+          fixed-ammunition gun, and the band itself covers the variation in handling.
+          The stowage row is N/A, meaning the source gives no rounds-per-gun figure. One
+          further entry deserves its own line: Common Type 0 HE was supplied with time
+          fuzes for AA defence, and the source quotes USNTMJ report O-19 as giving an
+          effective radius of 26 m for the round, adding its own remark that this seems
+          optimistic. That reservation is the source's, not this site's.
+      src: [navweaps-8cm-40-3ns]
+
+    - heading: 炮架：全是简单基座式，全部人力
+      text:
+        zh: >-
+          来源对这一型的炮架只有一句总述：所有炮架都是简单的基座式（simple pedestal
+          types）。重量约 3.35 吨。仰角 −7 至 +75 度，俯仰与回转都是纯人力，
+          俯仰每秒 7 至 10 度、回转每秒 10 至 11 度；回转范围 360 度。
+          装舰表按类别列：战列舰为伊势 4 门、长门 4 门；
+          巡洋舰为天龙 1 门、球磨 2 门、长良 2 门、川内 2 门、夕张 1 门；
+          潜艇为 RO 33 与 RO 35 各 1 门。
+          这里有一处必须说清的内部不一致：同页的描述段写这一型
+          「是 1914 至 1925 年间建成的多数战列舰与战列巡洋舰的高角炮」，
+          但装舰表在战列舰一栏只列了伊势与长门两级。
+          两处并列照录，本站不替它补齐，也不据此推断榛名、雾岛等舰是否装过 41 年式
+          之外的这一型 —— 来源没有这样说。
+          另有一条装舰表里没有、但别处有记载的：凤翔号竣工时带两门 8 cm/40 三年式高角炮，
+          装在飞行甲板上、后升降机前方，炮架为可下沉式（disappearing mounts），
+          以便不挡甲板作业。这条出自该舰的行动记录，与装舰表并不冲突 ——
+          装舰表只是没有列航母这一类。
+        en: >-
+          On mountings the source says only that "Mountings were all simple pedestal
+          types," weighing about 3.35 tons, with -7/+75 degrees of elevation, elevation
+          and train both hand worked at 7 to 10 degrees per second in elevation and 10 to
+          11 in train, and 360 degrees of train. The ship table runs by category:
+          battleships Ise (4) and Nagato (4); cruisers Tenryu (1), Kuma (2), Nagara (2),
+          Sendai (2) and Yubari (1); submarines RO 33 (1) and RO 35 (1). One internal
+          inconsistency has to be stated: the description paragraph says the 3rd Year Type
+          "was used as an AA gun on most battleships and battlecruisers completed between
+          1914 and 1925," yet the ship table lists only the Ise and Nagato classes under
+          battleships. Both are reproduced here as they stand; this site neither completes
+          the list nor infers from it that ships such as Haruna or Kirishima carried this
+          weapon rather than the 41st Year Type - the source does not say so. There is one
+          ship the table omits but another record supplies: Hosho completed with a pair of
+          8 cm/40 3rd Year Type AA guns on disappearing mounts on the flight deck, just
+          forward of the rear elevator. That comes from the ship's own record of movement
+          and does not conflict with the table, which simply has no carrier category.
+      src: [navweaps-8cm-40-3ns, combinedfleet-hosho-trom, naval-encyclopedia-hosho]
+
+    - heading: 撤除：主力舰 1930 年代，凤翔两说
+      text:
+        zh: >-
+          主力舰这一侧没有分歧：来源脚注写得很清楚，这些炮在 1930 年代的改装中
+          全部从战列舰上撤除，由 12.7 cm/40 八九式与 25 mm 机炮接替。
+          八八式那一支的存续与潜艇有关，与本条目的三年式无关，不并入。
+          凤翔这一侧有两说，都要写：
+          combinedfleet 的行动记录把「舰上的高射炮、飞机吊车与上部航空燃油舱拆除」
+          记在 1936 年 3 月 31 日出坞的那一次改装里；
+          navypedia 与日文来源则把 8 cm 高角炮的撤除记在 1940 年 10 月，
+          同时换装九六式 25 mm 连装机炮。
+          两说相差四年多，本站并列，不裁决。
+          需要说明的是：这两说讲的都是凤翔这一艘舰的改装时点，
+          不涉及这一型炮本身的性能或产量。
+        en: >-
+          On the capital ships there is no disagreement: the source's footnote states
+          that all of these guns were removed from the battleships during their 1930s
+          rebuilds and replaced with 12.7 cm/40 Type 89 and 25 mm AA guns. The Type 88
+          branch belongs to submarines and is not merged in here. On Hosho there are two
+          accounts and both are written out: combinedfleet's record of movement places the
+          removal of "the ship's AA guns, aircraft crane and upper aviation fuel tanks" in
+          the refit that ended with undocking on 31 March 1936, while navypedia and the
+          Japanese source place the removal of the 8 cm AA guns in October 1940,
+          together with the fitting of Type 96 25 mm twin machine guns. More than four
+          years separate the two, and this site records both without adjudicating. Both
+          accounts concern the refit dates of one ship, not the weapon's performance or
+          production.
+      src: [navweaps-8cm-40-3ns, combinedfleet-hosho-trom, navypedia-hosho]
+
+history:
+  - id: design
+    title: { zh: 设计与采用, en: Design and adoption }
+    range: { from: 1914, to: 1917 }
+    lead:
+      zh: >-
+        设计 1914、服役 1916、改称厘米 1917 —— 三年式这个名号落在中间那一年之前。
+      en: >-
+        Designed 1914, in service 1916, redesignated in centimetres 1917: the "3rd Year
+        Type" name sits before the middle of those three dates.
+    events:
+      - date: 1914
+        text:
+          zh: >-
+            设计定案。来源的年份栏为三型并列「1914, 1922 and 1928」，
+            三年式取 1914（Model 1914）。
+          en: >-
+            Design fixed. The source's year row reads "1914, 1922 and 1928" for the three
+            marks; the 3rd Year Type takes 1914 (Model 1914).
+        src: [navweaps-8cm-40-3ns]
+      - date: 1916
+        text:
+          zh: >-
+            进入服役。同年份栏为「1916, 1926 and 1932」，三年式取 1916。
+          en: >-
+            Entered service. The parallel row reads "1916, 1926 and 1932", the 3rd Year
+            Type taking 1916.
+        src: [navweaps-8cm-40-3ns]
+      - date: 1917-10-05
+        text:
+          zh: >-
+            随度量衡改制改称厘米制。来源原句：All guns were redesignated in centimeters
+            on 5 October 1917。
+          en: >-
+            Redesignated under the metric system. The source's words: "All guns were
+            redesignated in centimeters on 5 October 1917."
+        src: [navweaps-8cm-40-3ns]
+
+  - id: service
+    title: { zh: 装舰与撤除, en: "Service afloat and removal" }
+    range: { from: 1922, to: 1943 }
+    lead:
+      zh: >-
+        这一型炮的装舰面横跨战列舰、轻巡、潜艇与航母四类，撤除时间也各不相同。
+      en: >-
+        This weapon's shipboard career spans battleships, light cruisers, submarines and
+        a carrier, and each gave it up on a different date.
+    events:
+      - date: 1922-12-27
+        text:
+          zh: >-
+            凤翔竣工，装两门 8 cm/40 三年式高角炮，炮架为可下沉式，
+            位置在飞行甲板上、后升降机前方 —— 这样不挡甲板作业。
+            来源另记该舰同时装四门 14 cm/50 三年式，两舷各两门用于对水面目标。
+          en: >-
+            Hosho completed with a pair of 8 cm/40 3rd Year Type AA guns on disappearing
+            mounts on the flight deck, just forward of the rear elevator, so as not to
+            obstruct deck operations. The same record notes four 14 cm/50 3rd Year Type
+            guns aboard, two on each side for surface action.
+        src: [combinedfleet-hosho-trom, naval-encyclopedia-hosho]
+      - date: 1924-08-20
+        text:
+          zh: >-
+            凤翔在横须贺改装完毕：舰岛、三脚桅与飞机吊车拆除，前部飞行甲板改为水平，
+            两门 8 cm 高角炮前移到原舰岛位置附近，避开着舰作业区。
+          en: >-
+            Hosho undocked at Yokosuka: the island, tripod mast and aircraft crane were
+            removed, the forward flight deck made horizontal, and both 8 cm AA guns moved
+            forward close to the position of the former island and out of the way of
+            landing operations.
+        src: [combinedfleet-hosho-trom]
+      - date: 1928
+        text:
+          zh: >-
+            八八式（Model 1928）设计定案，1932 年服役。它是这一型谱系里的
+            「湿炮」支系，用于 RO 33 与 RO 35 级潜艇，与三年式不是同一种炮。
+            列在此处只为说明同页三型的界限。
+          en: >-
+            The Type 88 (Model 1928) was designed, entering service in 1932. It is the
+            "wet gun" branch of the family, used on submarines of the RO 33 and RO 35
+            classes, and is not the same weapon as the 3rd Year Type. It is noted here only
+            to mark the boundary between the three marks sharing one page.
+        src: [navweaps-8cm-40-3ns]
+      - date: 1930
+        text:
+          zh: >-
+            1930 年代主力舰改装期间，这一型炮全部从战列舰上撤除，
+            由 12.7 cm/40 八九式与 25 mm 机炮接替。来源未给逐舰年份。
+          en: >-
+            During the 1930s rebuilds of the capital ships all of these guns were removed
+            and replaced with 12.7 cm/40 Type 89 and 25 mm AA guns. The source gives no
+            year by year dates.
+        src: [navweaps-8cm-40-3ns]
+      - date: 1936-03-31
+        text:
+          zh: >-
+            凤翔改装出坞。combinedfleet 的记录在此记「舰上的高射炮、飞机吊车
+            与上部航空燃油舱拆去」，同次改装另装六座九三式双联 13.2 mm 机炮。
+          en: >-
+            Hosho undocked from her refit. combinedfleet records at this point that "the
+            ship's AA guns, aircraft crane and upper aviation fuel tanks are removed," and
+            that six Type 93 twin 13.2 mm AA machine guns were fitted in the same work.
+        src: [combinedfleet-hosho-trom]
+      - date: 1940-10
+        text:
+          zh: >-
+            navypedia 与日文来源记的另一个时点：凤翔在 1940 年 10 月撤除 8 cm 高角炮，
+            换装九六式 25 mm 连装机炮。与上一条相差四年余，两说并列，不裁决。
+          en: >-
+            The other date, from navypedia and the Japanese source: Hosho's 8 cm AA guns
+            were removed in October 1940 and Type 96 25 mm twin machine guns fitted. More
+            than four years separate this from the entry above; both stand.
+        src: [navypedia-hosho, japanese-warship-hosho]
+      - date: 1943
+        text:
+          zh: >-
+            反潜弹配发。平头弹丸于 1943 年经长期试验后配发，
+            40 度时射程 3,200 m，最小射程 700 m，低于此距离容易跳弹。
+            来源引 USNTMJ O-19 说该弹在 8 米深度可穿透 11.5 cm Ducol 钢板，
+            但同时指出这份报告有多处单位换算错误，实际值更可能是 1.15 cm。
+            两种数字都保留，不裁决。
+          en: >-
+            The ASW projectile was issued. The flat-nosed round entered service in 1943
+            after extensive testing, with a range of 3,200 m at 40 degrees and a minimum
+            range of 700 m below which rounds tended to ricochet. The source quotes USNTMJ
+            report O-19 as crediting it with penetrating an 11.5 cm plate of Ducol steel
+            at a depth of 8 m, but notes that the report contains other metric-to-English
+            conversion errors and that the real figure is more likely 1.15 cm. Both numbers
+            are kept.
+        src: [navweaps-8cm-40-3ns]

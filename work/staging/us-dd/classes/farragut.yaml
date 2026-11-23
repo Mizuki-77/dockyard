@@ -1,0 +1,744 @@
+# ============================================================================
+# 舰级：Farragut class（法拉格特级驱逐舰，DD-348 – DD-355）
+# ----------------------------------------------------------------------------
+# 本级八舰：Farragut / Dewey / Hull / Macdonough / Worden / Dale / Monaghan / Aylwin
+# 本组只入库其中一艘：USS Monaghan (DD-354)。
+#
+# 【本级是美军第一代「条约型 1,500 吨驱逐舰」，也是第一级装上 5"/38 的军舰】
+#   destroyerhistory 原文：The original "goldplaters" were eight ships of the Farragut
+#   class, which surpassed the preceding flush deckers in speed, maneuverability,
+#   seaworthiness, range, armament and habitability.
+#   navweaps 的 5"/38 Mk 12 条目里 "First used on USS Farragut (DD-348)" ——
+#   这句话让本级成为整个 5"/38 炮族的起点，不是随便一级老驱逐舰。
+#
+# 【「四烟囱」这个说法在本组的来源里查不到】
+#   本组任务书说本级是「老式 4 烟囱驱逐舰」。可查到的来源只支持**两根烟囱**：
+#     - destroyerhistory：五门炮中的 No.3 炮位在 "abaft the second stack"（第二烟囱之后）
+#     - NavSource DD-348 图注：'the red Engineering Excellence "E" painted on her
+#       after smokestack'（她的后烟囱上）
+#   即本级有前、后两根烟囱。四烟囱是一战平甲板型（Wickes/Clemson）的特征，
+#   本级恰恰是取代它们的下一代。此事已写入 RESEARCH-NOTES 的「任务书更正」一节。
+#
+# 调研底稿：work/staging/us-dd/RESEARCH-NOTES.md
+# ============================================================================
+
+id: farragut
+name:
+  zh: 法拉格特级驱逐舰
+  en: Farragut class destroyer
+class_of: [monaghan]
+open_ended_note: |
+  本文件绝大多数 fact 的 valid.to 都留空，这是结构性的，不是漏填：
+  舰级设计参数的生效期从设计定案/服役起，到该级最后一艘损失或拆解为止，
+  期间不因改装而改变；实际战备状态随时间的变化写在 data/ships/<id>.yaml 的
+  状态切片里，由单舰 fact 覆盖。因此这里的 open 时间窗表示「无已知终止事件」。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: Farragut class
+    src: [navypedia-farragut, destroyerhistory-farragut]
+    valid: { from: 1934 }
+    confidence: C
+
+  - field: identity.name_zh
+    value: 法拉格特级
+    src: [navypedia-farragut]
+    valid: { from: 1934 }
+    confidence: C
+
+  - field: identity.name_en
+    value: Farragut class
+    src: [navypedia-farragut, destroyerhistory-farragut]
+    valid: { from: 1934 }
+    confidence: C
+
+  - field: identity.ship_type
+    value: destroyer
+    src: [navypedia-farragut]
+    valid: { from: 1934 }
+    confidence: A
+
+  - field: identity.nation
+    value: united_states
+    src: [navypedia-farragut]
+    valid: { from: 1934 }
+    confidence: A
+
+  - field: identity.operator
+    value: United States Navy
+    src: [navypedia-farragut]
+    valid: { from: 1934 }
+    confidence: A
+
+  - field: identity.era
+    value: interwar
+    src: [navypedia-farragut]
+    valid: { from: 1934-06, to: 1939-09-02 }
+    confidence: C
+    note: >
+      八舰全部在 1934-06 至 1935-06 之间服役，设计定案于 1931-03，
+      属于两次大战之间的条约型建造。本级在二战中的表现见各单舰文件。
+
+  - field: identity.building_program
+    value: 首批按 1930 年伦敦海军条约 1,500 长吨上限设计的美军驱逐舰（8 艘）
+    src: [destroyerhistory-farragut, navypedia-farragut]
+    valid: { from: 1931 }
+    confidence: C
+    note: >
+      destroyerhistory 原文："Authorized but not funded in 1918, the Farraguts were
+      designed in 1931 by Bethlehem Steel under the provisions of the London Naval
+      Treaty of 1930."
+      navypedia 补充了设计过程中主炮从 127/25 改为 127/38 的转折：
+      "Design works of new generation destroyer have begun in the first half of 1928
+      ... 127/25mm AA guns were used as main calibre, however soon have refused:
+      by this time the new DP 127/38mm guns were ready which so exceeded short-barrelled
+      127/25mm gun that has followed immediate deciding to rearm designed ships.
+      Simultaneously three triple TT have given way to two quadruple."
+      即设计中途从「3 座三联鱼雷管」改为「2 座四联」。
+
+  # ============================================================ 排水量
+  - field: displacement.standard
+    value: 1358
+    unit: t
+    src: [navypedia-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+    comparable: false
+    note: >
+      **三个口径并存，本条不参与高低比较。**
+      (a) navypedia "Displacement standard, t | 1358"
+      (b) navsource-monaghan "Displacement 1365 Tons"（未写是标准还是满载口径）
+      (c) destroyerhistory "Displacement: 1,500 long tons design; 1,758 long tons
+          to design waterline."（1,500 lt 是**条约设计上限**，不是实测标准排水量）
+      三者基准不同（实测标准 / 未标口径 / 设计上限），无法换算对齐，故标 comparable: false。
+
+  - field: displacement.full
+    value: 2064
+    unit: t
+    src: [navypedia-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: >
+      navypedia "Displacement full, t | 2064"。
+      destroyerhistory 只给到设计水线（1,758 lt = 1,786 t）与满载燃油（600.07 lt），
+      未给满载排水量总数，故不冲突。
+      **注意 navypedia 改装年表另有一句**："late 1942, all: ... Full displacement was
+      2307-2335t." —— 那是 1942 年加装 20 mm/40 mm 与深弹后的满载值，不是建成态。
+
+  # ============================================================ 主尺度
+  - field: dimensions.length.oa
+    value: 104.0
+    unit: m
+    src: [navypedia-farragut, destroyerhistory-farragut, navsource-monaghan]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: >
+      navypedia "Length, m | 101.8 wl 104.0 oa"；destroyerhistory
+      "Length: 341' 3" overall"（= 104.00 m）；navsource-monaghan "341' 3" (oa)"。
+
+  - field: dimensions.length.wl
+    value: 101.8
+    unit: m
+    src: [navypedia-farragut, destroyerhistory-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: >
+      navypedia "101.8 wl"；destroyerhistory "334' design waterline"（= 101.80 m）。
+
+  - field: dimensions.beam.wl
+    value: 10.4
+    unit: m
+    src: [navypedia-farragut, destroyerhistory-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: >
+      navypedia "Breadth, m | 10.4"。
+      destroyerhistory 给了三个值："Beam: 34' 2" molded maximum; 34' 2-7/8" outside of
+      plating at design waterline."（型宽 34'2" = 10.41 m；含板厚水线宽 34'2-7/8" = 10.43 m）。
+      navsource-monaghan 写 "34' 3""（= 10.44 m），是同一数值的取整。
+
+  - field: dimensions.draught.mean
+    value: 3.12
+    unit: m
+    src: [destroyerhistory-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: >
+      **装载状态已绑定：设计状态。** 原文 "Draft: 10' 2-13/16" design."（= 3.119 m），
+      脚注 3 指向 Friedman。
+      **第二个值并列，不裁决**：navypedia "Draught, m | 3.53"，未注明装载状态。
+      3.12 与 3.53 差 0.41 m，无法判定是否为同一状态，故只把有明确状态标注的 3.12
+      登记为 draught.mean。
+
+  - field: dimensions.draught.max
+    value: 4.98
+    unit: m
+    src: [destroyerhistory-farragut, navsource-monaghan]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: >
+      两源一致。destroyerhistory "16' 4" maximum"（= 4.978 m）；
+      navsource-monaghan 尺寸行 "341' 3" (oa) x 34' 3" x 16' 4" (Max)"。
+      另注 navypedia 的 3.53 既非设计吃水也非最大吃水，见上一条 note。
+
+  # ============================================================ 动力
+  - field: propulsion.plant_type
+    value: steam_turbine
+    src: [navypedia-farragut, destroyerhistory-farragut]
+    valid: { from: 1934-06 }
+    confidence: A
+    note: >
+      本级是美军第一批采用高压高温蒸汽动力装置的驱逐舰。
+      destroyerhistory 原文："A major improvement was the introduction of high-pressure
+      high-temperature steam propulsion machinery."
+
+  - field: propulsion.shafts
+    value: 2
+    unit: count
+    src: [navypedia-farragut, navsource-monaghan]
+    valid: { from: 1934-06 }
+    confidence: A
+
+  - field: propulsion.boiler.count
+    value: 4
+    unit: count
+    src: [navypedia-farragut, destroyerhistory-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: >
+      两源一致给 4。navypedia "4 Yarrow boilers"；destroyerhistory
+      "4 x Bethlehem Shipbuilding Corporation, Ltc. boilers"。
+      **锅炉厂牌两说并列，不裁决**（见下一条 boiler.type）：
+      Bethlehem 是设计方（本级由 Bethlehem Steel 设计），Yarrow 是锅炉型式名
+      （Yarrow 三鼓水管锅炉），两者可能都对但指的不是同一件事。
+
+  - field: propulsion.boiler.type
+    value: Yarrow 水管锅炉
+    src: [navypedia-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: >
+      与下一条并列，**两说并列，不裁决**。navypedia 原文 "4 Yarrow boilers"。
+
+  - field: propulsion.boiler.type
+    value: Bethlehem Shipbuilding Corporation 锅炉
+    src: [destroyerhistory-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: >
+      与上一条并列，**两说并列，不裁决**。destroyerhistory 原文
+      "4 x Bethlehem Shipbuilding Corporation, Ltc. boilers"。脚注 3 指向 Friedman。
+
+  - field: propulsion.boiler.pressure
+    value: 27.22
+    unit: atm
+    src: [destroyerhistory-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: >
+      原文 "400 psi, 645° F."。换算：400 psi ÷ 14.6959 = 27.22 atm。
+      这是本级被称为「高压高温」的量化依据（相比前代平甲板型的 265 psi 级）。
+
+  - field: propulsion.boiler.temperature
+    value: 340.6
+    unit: celsius
+    src: [destroyerhistory-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: 原文 "645° F."。换算：(645 − 32) × 5/9 = 340.6 °C。
+
+  - field: propulsion.turbine.count
+    value: 2
+    unit: count
+    src: [navypedia-farragut, navsource-monaghan]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: 双轴、每轴一套齿轮传动汽轮机。
+
+  - field: propulsion.turbine.type
+    value: Curtis 齿轮传动蒸汽轮机
+    src: [navypedia-farragut, navsource-monaghan]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: >
+      两源一致。navypedia "2 sets Curtis geared steam turbines"；
+      navsource-monaghan "Curtis Geared Turbines, 2 screws"。
+
+  - field: propulsion.power.design
+    value: 42800
+    unit: hp
+    src: [navypedia-farragut, destroyerhistory-farragut, navsource-monaghan]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: 三源一致：navypedia "Power, h. p. | 42800"；destroyerhistory "42,800 shp"；navsource "42,800 SHP"。
+
+  - field: propulsion.speed.design
+    value: 36.5
+    unit: kn
+    src: [navypedia-farragut, destroyerhistory-farragut, navsource-monaghan]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: 三源一致。
+
+  - field: propulsion.fuel.capacity
+    value: 600
+    unit: t
+    src: [navypedia-farragut, destroyerhistory-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: >
+      navypedia "Fuel, t | oil 600"；destroyerhistory "Fuel bunkerage: 600.07 tons
+      full load (95%)" —— 后者单位是长吨（600.07 lt = 609.7 t），标称值同为 600。
+      两源都只说「满载 / 满舱」，本条按 navypedia 的 600 登记，
+      **不强称是公吨实测值**。
+
+  - field: propulsion.range.max
+    value: 6500
+    unit: nmi
+    src: [navypedia-farragut, navsource-monaghan]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: >
+      navypedia "Endurance, nm(kts) | 6500 (12)"；navsource-monaghan "Range 6500 NM@ 12 Knots"。
+      **第三个值并列，不裁决**：destroyerhistory "Endurance: 5,980 nm at 12 knots."（脚注 3 = Friedman）。
+      6500 与 5980 差 520 nm。
+
+  - field: propulsion.range.at_speed
+    value: 12
+    unit: kn
+    src: [navypedia-farragut, navsource-monaghan]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: 上一条续航力对应的航速条件，两源均写作 @12 knots。
+
+  # ============================================================ 编制
+  - field: service.complement.standard
+    value: 160
+    unit: persons
+    src: [navypedia-farragut, navsource-monaghan, destroyerhistory-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: >
+      navypedia "Complement | 160"；navsource-monaghan "Crew 160"；
+      destroyerhistory 拆分给 "Designed complement: 10 officers; 150 enlisted."（10 + 150 = 160，自洽）。
+      **nhhc-danfs-monaghan 页首技术行写 "complement 100"，与三源全部冲突，不采用。**
+
+  - field: service.complement.officers
+    value: 10
+    unit: persons
+    src: [destroyerhistory-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: '原文 "Designed complement: 10 officers; 150 enlisted."（脚注 3 = Friedman）。'
+
+  # ============================================================ 武备概览
+  - field: armament.mount.summary
+    value: >-
+      建成态：5 × 5"/38（12.7 cm）Mk 12 单装，全部为 Mark 21 敞开式基座炮架
+      （前二、后二，No.3 在第二烟囱之后）
+      + 4 × 12.7 mm（0.5 in）机枪
+      + 2 座四联 21 in 鱼雷管（8 管，中线布置）
+    src: [navypedia-farragut, navweaps-5in38-mk12, destroyerhistory-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: >
+      **炮座型号有明确出处**：navweaps-5in38-mk12 的 Mount/Turret Data 表原文
+      "Single Open or Open-back Shield Pedestal Mounts — Farragut (5) and Mahan (5): Mark 21"。
+      即本级五座炮位全部是 Mark 21 基座式炮架，**没有一座是封闭式**——
+      这与后来的 Sims 级（3 座封闭 + 2 座敞开）和 Benham 级（2 座封闭 + 2 座敞开）不同，
+      是识别本级炮位外形的直接依据。
+
+      destroyerhistory 的措辞："Main gun battery: as built: 5 x 5-inch/38 caliber dual
+      purpose guns; as modified: 4 x 5-inch/38 caliber dual purpose guns: 2 forward in
+      shielded pedestal mounts; 2 aft in open pedestal mounts."
+      与 navweaps 一致：建成 5 门、改装后 4 门。
+
+      鱼雷：navypedia 原文 "2 x 4 - 533 TT"，destroyerhistory
+      "Torpedo battery: 8 x 21-inch torpedo tubes in two trainable quadruple centerline mounts."
+      两源一致，8 管，与设计中途放弃的「3 座三联」相对。
+
+  - field: armament.torpedo.tubes
+    value: 8
+    unit: count
+    src: [navypedia-farragut, destroyerhistory-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: 2 座四联，8 管。**全程未变**（与本级在 1942 年后被拆掉 No.3 炮、加装 20 mm 的改装不同，
+      鱼雷管数一直保留到战争结束）。
+
+  - field: armament.torpedo.diameter
+    value: 533
+    unit: mm
+    src: [navypedia-farragut, navweaps-us-torpedoes]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: >
+      21 in。本级发射 Mark 15 鱼雷，navweaps-us-torpedoes 原文
+      "21" (53.3 cm) Mark 15 ... The standard destroyer weapon of World War II."
+
+  - field: armament.depth_charge.count
+    value: 14
+    unit: count
+    src: [navypedia-farragut]
+    valid: { from: 1941-07 }
+    confidence: C
+    note: >
+      **本条不是建成态。** 建成态无深弹装备（destroyerhistory 原文：
+      "Depth charge tracks were not initially installed on the first two ships, but added
+      in 1936."，其余六舰未说明装于何时，故建成态深弹数记「未获取」）。
+      navypedia 改装年表 "mid-1941, all: + 2 DCR (14)" 是第一次有确切枚数记载的时点，
+      故 valid.from 取 1941-07。
+      1942 年 5-9 月改为 "4 DCT (48 DC at all)"，见单舰切片。
+
+  # ============================================================ 探测
+  - field: sensors.sonar.type
+    value: QCA
+    src: [navypedia-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: >
+      navypedia "Electronic equipment | QCA sonar"。
+      navypedia 另在项目史里写本级建成时反潜手段只有 "sonar and two DCRs
+      (in a wartime installation of additional DCT was planed, for what the deck had
+      necessary reinforcements)" —— 即战时加装深弹投射器的甲板加强在设计时就预留了。
+
+  # ============================================================ 炮位：5 × Mark 21
+  # 五座炮位同为 Mark 21 敞开式基座炮架。差别只在位置与是否带炮盾。
+  # navweaps 的重量表把 Mark 21 Mod 0（无盾 13,272 kg）与 Mod 1（半盾 14,297 kg）
+  # 分开列，但**未说明本级哪几座装的是哪一种**，故不按炮位分派 Mod 号。
+
+  - about: mount:farragut-5in-1
+    field: mount.label_name
+    value: "1"
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: 美舰按 1-5 编号炮位。
+
+  - about: mount:farragut-5in-1
+    field: mount.weapon
+    value: weapon:5in38-mk12
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-1
+    field: mount.turret_designation
+    value: Mark 21
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-1
+    field: mount.type
+    value: open_mount
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: >
+      对应 navweaps 归类 "Single Open or Open-back Shield Pedestal Mounts"。
+      注意这一类里既有全敞开（无盾）也有带后半敞开炮盾的两种，
+      本站 mount.type 枚举无更细切分，统一记 open_mount。
+
+  - about: mount:farragut-5in-1
+    field: mount.barrels
+    value: 1
+    unit: count
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-1
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-1
+    field: mount.position
+    value: fore
+    src: [destroyerhistory-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-1
+    field: mount.elevation.max
+    value: 85
+    unit: deg
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: >
+      navweaps 仰角表 "Single Mounts — All with the following exceptions -15 / +85 degrees"，
+      本级所用 Mark 21 不在例外之列（例外为 Mark 24 Mod 11、Mark 30 Mod 51、Mark 30 Mod 80）。
+      **最低仰角 −15°，本条只登记上限，不重复登记下限**。
+
+  - about: mount:farragut-5in-1
+    field: mount.weight
+    value: 13272
+    unit: kg
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: >
+      navweaps "Mark 21 Mod 0: 29,260 lbs. (13,272 kg) (no shield)"。
+      **警告：本级哪几座是无盾的 Mod 0、哪几座是半盾的 Mod 1 未获取**，
+      本条登记的 Mod 0 无盾值是本级最轻的一种装法，不代表全部五座。
+
+  - about: mount:farragut-5in-2
+    field: mount.label_name
+    value: "2"
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-2
+    field: mount.weapon
+    value: weapon:5in38-mk12
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-2
+    field: mount.turret_designation
+    value: Mark 21
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-2
+    field: mount.type
+    value: open_mount
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-2
+    field: mount.barrels
+    value: 1
+    unit: count
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-2
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-2
+    field: mount.position
+    value: superfiring_fore
+    src: [destroyerhistory-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: 前二座中较高的一座，可越过 1 号炮位向前射击。
+
+  - about: mount:farragut-5in-3
+    field: mount.label_name
+    value: "3"
+    src: [destroyerhistory-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: >
+      destroyerhistory 原文 "the No. 3 mount abaft the second stack" ——
+      3 号炮位在第二烟囱之后，这也是「本级有两根烟囱」的直接文字依据。
+      1942 年 5-9 月本级全部拆掉的就是这一座（navypedia
+      "5 - 9.1942, all: - 1 x 1 - 127/38 (No 3)"），炮数由 5 变 4。
+
+  - about: mount:farragut-5in-3
+    field: mount.weapon
+    value: weapon:5in38-mk12
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-3
+    field: mount.turret_designation
+    value: Mark 21
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-3
+    field: mount.type
+    value: open_mount
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-3
+    field: mount.barrels
+    value: 1
+    unit: count
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-3
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-3
+    field: mount.position
+    value: midships
+    src: [destroyerhistory-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-4
+    field: mount.label_name
+    value: "4"
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-4
+    field: mount.weapon
+    value: weapon:5in38-mk12
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-4
+    field: mount.turret_designation
+    value: Mark 21
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-4
+    field: mount.type
+    value: open_mount
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-4
+    field: mount.barrels
+    value: 1
+    unit: count
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-4
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-4
+    field: mount.position
+    value: aft
+    src: [destroyerhistory-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-5
+    field: mount.label_name
+    value: "5"
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-5
+    field: mount.weapon
+    value: weapon:5in38-mk12
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-5
+    field: mount.turret_designation
+    value: Mark 21
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-5
+    field: mount.type
+    value: open_mount
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-5
+    field: mount.barrels
+    value: 1
+    unit: count
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-5
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-5in-5
+    field: mount.position
+    value: aft
+    src: [destroyerhistory-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  # ============================================================ 炮位：鱼雷
+  - about: mount:farragut-torpedo-quad
+    field: mount.label_name
+    value: 四联装 21 in 鱼雷发射管
+    src: [navypedia-farragut, destroyerhistory-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: >
+      只登记装座，**不写 mount.weapon**：美制鱼雷实体（Mark 15）全站尚未建 id，
+      写 ref 会造成悬空链接。口径与管数分别记在
+      armament.torpedo.diameter / armament.torpedo.tubes。
+
+  - about: mount:farragut-torpedo-quad
+    field: mount.type
+    value: tube
+    src: [navypedia-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-torpedo-quad
+    field: mount.barrels
+    value: 4
+    unit: count
+    src: [navypedia-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-torpedo-quad
+    field: mount.count
+    value: 2
+    unit: count
+    src: [navypedia-farragut, destroyerhistory-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+
+  - about: mount:farragut-torpedo-quad
+    field: mount.position
+    value: midships
+    src: [destroyerhistory-farragut]
+    valid: { from: 1934-06 }
+    confidence: C
+    note: >
+      destroyerhistory 原文 "two trainable quadruple centerline mounts" ——
+      两座都在中线（本级不像 Benham 级那样用舷侧翼式布置）。

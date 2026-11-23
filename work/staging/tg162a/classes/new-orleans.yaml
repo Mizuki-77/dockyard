@@ -1,0 +1,1163 @@
+# ============================================================================
+# 舰级：New Orleans class（新奥尔良级重巡洋舰）
+# ----------------------------------------------------------------------------
+# 本文件覆盖全部 7 艘（CA-32/34/36/37/38/39/44），但本站入库的只有三艘：
+#   CA-32 New Orleans、CA-36 Minneapolis、CA-44 Vincennes（1942-06 同属 TG 16.2）
+# 另四艘（Astoria CA-34、Tuscaloosa CA-37、San Francisco CA-38、Quincy CA-39）
+# 只在本文件的「子级差异」中出现，不建单舰文件。
+#
+# 【本级为什么长成这样 —— 全级一句话】
+# 华盛顿条约把重巡锁在 10,000 t（10,160 mt）标准排水量 / 8 英寸主炮。
+# 美国前三级（Pensacola / Northampton / Portland）造下来普遍**欠重约 1,000 t**，
+# 这笔省下的余量被拿去做装甲 —— 于是本级成了美国第一条能挡 8 英寸弹的条约重巡。
+# 关键手法不是加厚舷侧，而是把动力舱从「交替布置」改成「纵列布置」，
+# 舰体因此缩短、装甲带跟着缩短、同样的重量就能摊到更厚的甲上。
+#
+# 【与北安普敦级的关键差别 = 弹药库装甲】
+# 北安普敦级：belt 95–76 / deck 51–25 / barbettes 38 / turrets 64–19 / CT 32 mm，
+#   弹药库只靠「免疫区对 152 mm 弹」撑着，对 8 英寸弹无免疫区（navypedia 原话
+#   「Under 203mm shells immune zone was absent」），设计时提议加强弹药库装甲
+#   最终只做到「splinterproof protection of ammunition elevators」。
+# 新奥尔良级：belt 127–76，**弹药库段另有一道窄装甲带 102 mm（下缘 76 mm）**，
+#   弹药库前后有 37 mm 舱壁，炮塔面板 203 mm、炮座 127 mm。
+#   代价是 CA-37/38 把装甲加过头、逼近吨位上限，于是 CA-39/44 又减回去
+#   （炮座 152→133 mm）——这条「加-减」的往复就是本级的子级差异主线。
+#
+# 【哪些东西没查到 —— 必须如实留着】
+#   垂线间长（pp）、型深、干舷、方形系数、水线面积、稳心高、
+#   水下防护纵深（本级无防雷突出部，也没有任何纵深数值）、
+#   蒸汽压力与温度、螺旋桨直径、舵数、发电机功率、
+#   造价（英文来源一致地不给）、装甲重量分配明细表。
+#   以上一律写「未获取」，不用姊妹舰或他级数值填充。
+# ============================================================================
+
+id: new-orleans
+name:
+  zh: 新奥尔良级重巡洋舰
+  en: New Orleans-class heavy cruiser
+class_of: [new-orleans, minneapolis, vincennes]
+open_ended_note: |
+  本文件绝大多数 fact 的 valid.to 都留空，这是结构性的，不是漏填：
+  舰级设计参数的生效期从设计定案/服役起，到该级最后一艘损失或拆解为止，
+  期间不因改装而改变；实际战备状态随时间的变化写在 data/ships/<id>.yaml 的
+  状态切片里，由单舰 fact 覆盖。因此这里的 open 时间窗表示「无已知终止事件」。
+  例外：本级的装甲、主炮与副炮**逐子级不同**（CA32/34/36 一批、CA37/38 一批、
+  CA39/44 一批），凡涉及子级差异的 fact 一律在 note 里写明「本值属哪一批」，
+  并尽量把适用批次写进 valid 或 note，不在单舰文件里重复整套值。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: New Orleans class
+    src: [navypedia-neworleans, historyofwar-neworleans-class]
+    valid: { from: 1929 }
+    confidence: C
+    note: >
+      美国海军官方分类是「heavy cruiser (CA)」，级别名随命名舰 New Orleans 而定。
+      historyofwar 原文另记一层：本级「was also sometimes known as the Astoria class,
+      as she was the first of the class to have been laid down. The New Orleans name
+      was officially adopted after the loss of the Astoria in 1942」——
+      即 1942 年阿斯托里亚号沉没之前，本级在部分资料里叫 Astoria 级。
+      本站统一用 New Orleans class，别名记在此处不另立级别。
+
+  - field: identity.name_zh
+    value: 新奥尔良级
+    src: [navypedia-neworleans]
+    valid: { from: 1929 }
+    confidence: C
+    note: 中文资料的通行译法。命名舰为 CA-32 新奥尔良号。
+
+  - field: identity.ship_type
+    value: heavy_cruiser
+    src: [navypedia-neworleans, danfs-ca36]
+    valid: { from: 1934-02-15 }
+    confidence: A
+    note: >
+      DANFS 每舰技术行标「CA」，正文称「heavy cruiser」。
+      注意 CA-32 原名 CL-32（DANFS 原文「The second New Orleans (CA-32),
+      formerly CL 32」），1931 年开工时是轻巡编号，1930 年伦敦条约签订后改归重巡。
+
+  - field: identity.nation
+    value: united_states
+    src: [navypedia-neworleans]
+    valid: { from: 1934-02-15 }
+    confidence: A
+
+  - field: identity.operator
+    value: United States Navy
+    src: [navypedia-neworleans]
+    valid: { from: 1934-02-15 }
+    confidence: A
+
+  - field: identity.era
+    value: ww2
+    src: [danfs-ca36, danfs-ca32]
+    valid: { from: 1939-09-01, to: 1945-09-02 }
+    confidence: A
+    note: >
+      按服役与作战期定位。本级设计于 1929–1931（interwar），但七艘的实战记录
+      全部落在二战期间；仅 CA-32 与 CA-36 活到战后（1959 年拆解）。
+
+  - field: identity.building_program
+    value: FY1929（CA-32/34/36）· FY1930（CA-37/38/39）· FY1931（CA-44）；华盛顿条约 10,000 t / 8 英寸上限下的条约型重巡
+    src: [navypedia-neworleans, historyofwar-neworleans-class]
+    valid: { from: 1929 }
+    confidence: C
+    note: >
+      navypedia 原文「First three cruisers of New Orleans class (CA32, 34 and 36)
+      were built under the FY1929 programme. They were followed by three ships of
+      the FY1930 programme (CA37-39) … Last ship of a class, CA44 was built under
+      the FY1931 programme and completely repeated design of CA39」。
+      注意 navsource 三舰页都写「Authorized 13 FEB 1929」——那是**授权日**，
+      与「哪一年计划」不是同一件事，两者不冲突。
+
+  # ============================================================ 排水量
+  - field: displacement.standard
+    value: 10136
+    unit: t
+    src: [navypedia-neworleans, historyofwar-neworleans-class]
+    valid: { from: 1934-02-15 }
+    confidence: C
+    note: >
+      navypedia 表头写「Displacement standard, t 10136」——来源自述是标准排水量，
+      故可直接作主值。historyofwar 给「Displacement (standard) 10,136t」，两源一致。
+      **另有三套不同口径的数字，不得混用**：
+        DANFS 每舰技术行「dp. 9,950」（未标口径；CA-44 更写 9,400）；
+        navsource 三舰页「Displacement 9,950 Tons」；
+        ibiblio 与 USS Vincennes Association「9375-9973 tons (normal)」。
+      9,950 短吨 = 10,110 mt，与 10,136 t 相差在四舍五入范围内，但仍属不同口径，
+      本站只把 10,136 t 当标准排水量（华盛顿口径）。
+
+  - field: displacement.full
+    value: 12463
+    unit: t
+    src: [navypedia-neworleans, historyofwar-neworleans-class]
+    valid: { from: 1934-02-15 }
+    confidence: C
+    note: >
+      navypedia「Displacement full, t 12463」；historyofwar「Displacement (loaded)
+      12,463t」；ibiblio 与 Vincennes Association 写「12,411 tons (full load)」。
+      1,2411 短吨 = 12,378 mt，与 12,463 t 差 85 t —— 两说并列，本条取 navypedia。
+      后期加装大量防空炮与雷达后满载明显增大（navypedia 记本级姊妹舰
+      Louisville/Augusta 改装后「full displacement was more than 14000t」，
+      那是北安普敦级，本级的战后满载值**未获取**）。
+
+  # ============================================================ 主尺度
+  - field: dimensions.length.oa
+    value: 179.2
+    unit: m
+    src: [navypedia-neworleans, danfs-ca36]
+    valid: { from: 1934-02-15 }
+    confidence: B
+    note: >
+      navypedia「Length, m 176.2 wl 179.2 oa」；DANFS 与 navsource 给英制
+      588'2"（= 179.27 m）与 588'0"（= 179.22 m）。三者换算后一致到 0.1 m。
+      取 179.2 m。
+
+  - field: dimensions.length.wl
+    value: 176.2
+    unit: m
+    src: [navypedia-neworleans, wdr-38]
+    valid: { from: 1934-02-15 }
+    confidence: A
+    note: >
+      两个独立来源在 0.01 m 内吻合：navypedia「176.2 wl」；
+      War Damage Report No.38 扉页给 CA-32 战前实测
+      「Length (W.L.) 578'-5/16"」= 176.19 m。
+
+  - field: dimensions.beam.wl
+    value: 18.8
+    unit: m
+    src: [navypedia-neworleans, danfs-ca36]
+    valid: { from: 1934-02-15 }
+    confidence: C
+    note: >
+      navypedia「Breadth, m 18.8」；DANFS/navsource 给 61'9"（= 18.82 m）。
+      **但 WDR-38 给 CA-32 战前实测水线宽「Beam (W.L.) 60'-1-3/8"」= 18.32 m** ——
+      说明 61'9" 是最大宽而非水线宽。本条按多数来源取 18.8，
+      CA-32 的实测水线宽另记在其单舰文件里，两说并列不裁。
+
+  - field: dimensions.beam.max
+    value: 18.82
+    unit: m
+    src: [danfs-ca36, navsource-ca36]
+    valid: { from: 1934-02-15 }
+    confidence: B
+    note: >
+      DANFS「b. 61'9"」= 18.82 m；navsource 三舰页同。CA-44 的 DANFS 行写
+      61'10"（18.85 m），属逐舰毫米级差异，不入库。
+
+  - field: dimensions.draught.mean
+    value: 6.93
+    unit: m
+    src: [navypedia-neworleans]
+    valid: { from: 1934-02-15 }
+    confidence: C
+    note: >
+      navypedia 原文「Draught, m 6.93 full」——**来源自述是满载状态**，
+      且未说明是平均吃水还是最大吃水，故此处按 mean 记并在此交代口径。
+      **四套数字互不相同，全部并列**：
+        navsource 三舰页「x 22'6" (Max)」= 6.86 m；
+        DANFS「dr. 19'5"」= 5.92 m（疑为设计/轻载）；
+        ibiblio 与 Vincennes Association「Draft: 24'4"」= 7.42 m；
+        WDR-38 给 CA-32 战前实测「Draft 23'-9"」= 7.24 m。
+      吃水必须与排水量状态绑定才可比（见字段注册表注释），
+      所以本条只当「满载约 6.9 m」用，不与其他舰的轻载值横比。
+
+  # ============================================================ 动力
+  - field: propulsion.plant_type
+    value: steam_turbine
+    src: [navypedia-neworleans, historyofwar-neworleans-class]
+    valid: { from: 1934-02-15 }
+    confidence: B
+
+  - field: propulsion.shafts
+    value: 4
+    unit: count
+    src: [navypedia-neworleans, navsource-ca36]
+    valid: { from: 1934-02-15 }
+    confidence: A
+    note: navypedia「No of shafts 4」；navsource「4 screws」。
+
+  - field: propulsion.boiler.count
+    value: 8
+    unit: count
+    src: [navypedia-neworleans, ibiblio-ships-ca]
+    valid: { from: 1934-02-15 }
+    confidence: A
+    note: navypedia「8 Babcock & Wilcox boilers」；ibiblio「8 boilers」。
+
+  - field: propulsion.boiler.type
+    value: Babcock & Wilcox（高压水管锅炉）
+    src: [navypedia-neworleans, historyofwar-neworleans-class]
+    valid: { from: 1934-02-15 }
+    confidence: B
+    note: >
+      navypedia「8 Babcock & Wilcox boilers」；historyofwar「eight Babcock and
+      Wilcox high-pressure steam boilers」。「high-pressure」是本级的设计要点之一，
+      但**具体压力与温度数值英文来源一律不给**（未获取），不要按他级推算。
+
+  - field: propulsion.turbine.count
+    value: 4
+    unit: count
+    src: [navypedia-neworleans, historyofwar-neworleans-class]
+    valid: { from: 1934-02-15 }
+    confidence: B
+    note: >
+      指 4 组（4 sets）齿轮传动汽轮机，每组带一级巡航级，各驱动一轴。
+      navypedia「4 sets Westinghouse geared steam turbines」；
+      historyofwar「107,000 horsepower to four Westinghouse geared steam turbines」。
+
+  - field: propulsion.turbine.type
+    value: Westinghouse 齿轮传动汽轮机（4 sets）
+    src: [navypedia-neworleans, pwencycl-neworleans]
+    valid: { from: 1934-02-15 }
+    confidence: C
+    note: >
+      navypedia 与 pwencycl 同记 Westinghouse。**但这是 class 级写法**：
+      navsource/pwencycl 只对 CA-32 与 CA-36 明写 Westinghouse，
+      CA-44 的轮机厂在已抓到的英文来源里**未获取**（DANFS 与 navsource 的
+      CA-44 页均未给轮机厂），故 CA-44 是否同为 Westinghouse 不作断言。
+
+  - field: propulsion.power.design
+    value: 107000
+    unit: hp
+    src: [navypedia-neworleans, navsource-ca36]
+    valid: { from: 1934-02-15 }
+    confidence: A
+    note: >
+      navypedia「Power, h. p. 107000」；navsource「107,000 SHP」；
+      ibiblio「107,000 hp」。三源一致。
+      **这是设计功率，不是试航实测值**——本级七艘逐舰的实测功率
+      在已抓到的英文来源里都没有（未获取）。
+
+  - field: propulsion.speed.design
+    value: 32.7
+    unit: kn
+    src: [navypedia-neworleans, danfs-ca36]
+    valid: { from: 1934-02-15 }
+    confidence: B
+    note: >
+      navypedia「Max speed, kts 32.7」；DANFS 三舰技术行均写「s. 32.7 k.」。
+      **navsource 三舰页写 32.0 Knots、ibiblio 与 Vincennes Association 写 32.5**——
+      两说并列。本条取 32.7（两源一致且更具体）。historyofwar 亦写 32.7kts。
+
+  - field: propulsion.fuel.capacity
+    value: 1861
+    unit: t
+    src: [pwencycl-neworleans]
+    valid: { from: 1934-02-15 }
+    confidence: C
+    note: >
+      pwencycl 原文「Bunkerage 1861 tons fuel oil」。
+      navypedia 给区间「Fuel, t oil 1241 - 1861」，未说明 1,241 t 是什么状态
+      （常规装载？）。本条取上限 1,861 t，下限 1,241 t 记在此处并列，
+      **不把区间中值当记载值**。
+
+  - field: propulsion.range.max
+    value: 10000
+    unit: nmi
+    src: [navypedia-neworleans, ibiblio-ships-ca]
+    valid: { from: 1934-02-15 }
+    confidence: C
+    note: >
+      navypedia「Endurance, nm(kts) 10000 (15)」；pwencycl「10,000 nautical miles
+      (19,000 km) at 15 knots」；historyofwar「10,000nm at 15kts」。
+      续航必须与航速成对解读，故另立一条 range.at_speed。
+
+  - field: propulsion.range.at_speed
+    value: 15
+    unit: kn
+    src: [navypedia-neworleans, pwencycl-neworleans]
+    valid: { from: 1934-02-15 }
+    confidence: C
+    note: 与上一条成对，来源原文均写「at 15 knots」。
+
+  # ============================================================ 防护
+  - field: protection.scheme
+    value: incremental
+    src: [navypedia-neworleans, pwencycl-neworleans]
+    valid: { from: 1934-02-15 }
+    confidence: C
+    note: >
+      **属归类判定，不是来源原话。** 本级不是 all-or-nothing：装甲带只覆盖动力舱段，
+      弹药库用独立的窄装甲带+前后 37 mm 舱壁围成盒子，舰体首尾无舷侧装甲，
+      主装甲甲板为单层 57 mm（弹药库段在 1 层平台、动力舱段在 2 层甲板，
+      不在同一水平面）。这正是「逐段防护」的定义特征。
+      pwencycl 给免疫区「12,000 to 24,000 yards against 8" gunfire」，
+      可佐证这套分段设计对 8 英寸弹成立；navypedia 则给
+      「immune zone under fire of 203mm guns at a relative 60° bearing laid in a
+      band between 60 and 120 cables」（= 12,000–24,000 码），两源吻合。
+
+  - field: protection.armor.thickness
+    value: 127
+    unit: mm
+    qual: { part: belt, region: main }
+    src: [navypedia-neworleans, historyofwar-neworleans-class]
+    valid: { from: 1934-02-15 }
+    confidence: B
+    note: >
+      navypedia「Main belt abreast machinery … was 127mm thick (76mm at lower edge)
+      on 19mm STS plating」。historyofwar「belt 5in to 3.25in over 0.75in STS」
+      （5 in = 127 mm，3.25 in = 82.6 mm，与 76 mm 属同义取整差）。
+      **这一条就是本级相对北安普敦级（同级部位 95 mm）的加强证据。**
+      装甲带范围：水线下 1.5 m 至水线上 2.86 m。
+
+  - field: protection.armor.thickness
+    value: 76
+    unit: mm
+    qual: { part: belt, region: lower }
+    src: [navypedia-neworleans]
+    valid: { from: 1934-02-15 }
+    confidence: B
+    note: >
+      navypedia「127mm thick (76mm at lower edge)」——主装带下缘削薄到 76 mm。
+      historyofwar 写 3.25 in（82.6 mm），与 76 mm 差 6.6 mm，两说并列不裁。
+
+  - field: protection.armor.thickness
+    value: 102
+    unit: mm
+    qual: { part: magazine, region: side }
+    src: [navypedia-neworleans]
+    valid: { from: 1934-02-15 }
+    confidence: B
+    note: >
+      **本级的定义性特征，必须单列。** navypedia 原文「There were narrow belts
+      abreast magazines. Thickness of these belts was 102mm decreasing to 76mm
+      at lower edge. Magazines were protected by 37mm bulkheads fore and aft」。
+      对照北安普敦级同部位无独立弹药库装甲带（navypedia 记其
+      「During designing it was offered to strengthen armour, ensuring protection
+      at least of magazines against 203mm shells, but works were limited only by
+      splinterproof protection of ammunition elevators」）。
+      另两源口径不同，并列：
+        pwencycl「4.7" (119mm) magazine sides tapering to 3" (76mm)」；
+        historyofwar「magazines 4in-3in side」（101.6–76.2 mm）。
+      102 / 119 / 101.6 三个值互不相同，本条取 navypedia 的 102，
+      三说并列，不裁决。
+
+  - field: protection.armor.thickness
+    value: 37
+    unit: mm
+    qual: { part: bulkhead, region: main }
+    src: [navypedia-neworleans]
+    valid: { from: 1934-02-15 }
+    confidence: B
+    note: >
+      navypedia「Magazines were protected by 37mm bulkheads fore and aft,
+      machinery and magazines were separated by 76-51mm bulkheads」。
+      本条记弹药库前后 37 mm 舱壁；动力舱与弹药库之间的 76–51 mm 分隔舱壁
+      属另一部位，未单列（避免同 part/region 出两条值）。
+
+  - field: protection.armor.thickness
+    value: 57
+    unit: mm
+    qual: { part: deck, region: main }
+    src: [navypedia-neworleans, pwencycl-neworleans]
+    valid: { from: 1934-02-15 }
+    confidence: B
+    note: >
+      navypedia「Armoured deck over main belt was 57mm over the machinery
+      (on 2nd deck level) and magazines (on 1st platform level).
+      Its thickness decreased to 32mm fwd from fore magazines」。
+      pwencycl「2.25" (57mm) armor deck」，historyofwar「2.25in」——三源一致。
+      **注意甲板不在同一层高**（动力舱段在第 2 层甲板、弹药库段在第 1 层平台），
+      这是这套分段防护的构造细节，写正文时要交代。
+
+  - field: protection.armor.thickness
+    value: 127
+    unit: mm
+    qual: { part: barbette, region: main }
+    src: [navypedia-neworleans, pwencycl-neworleans]
+    valid: { from: 1934-02-15 }
+    confidence: B
+    note: >
+      navypedia 按子级分列：CA32/34/36「barbettes: 127」；CA37/38「152」；
+      CA39/44「133」。**本条只对 CA-32/34/36 有效。**
+      CA-37/38 与 CA-39/44 的炮座值见本文件子级差异段。
+      historyofwar 给「barbettes 6in-5in」（152–127 mm），
+      与 navypedia 的三档值不矛盾（它把三批混写成一个区间）。
+
+  - field: protection.armor.thickness
+    value: 203
+    unit: mm
+    qual: { part: turret, region: face }
+    src: [navypedia-neworleans, historyofwar-neworleans-class]
+    valid: { from: 1934-02-15 }
+    confidence: B
+    note: >
+      navypedia「Turrets had 203mm faces, 95-38mm sides, 38mm rears and 70mm
+      crowns」（三批同值）。historyofwar「turrets 8in face」——三源一致。
+      **对照北安普敦级炮塔面板 64 mm**，本级是它的三倍多，
+      historyofwar 的评价是「The biggest improvement was on the turrets …
+      making them vulnerable to 6in and 8in shells at most ranges」
+      （指老舰），本级「had 8in armour on the turret face although the sides
+      and roof weren't improved by much」。
+
+  - field: protection.armor.thickness
+    value: 95
+    unit: mm
+    qual: { part: turret, region: side }
+    src: [navypedia-neworleans]
+    valid: { from: 1934-02-15 }
+    confidence: C
+    note: >
+      navypedia 原文是区间「95-38mm sides」——**侧板从上到下递减**，
+      本条取上缘 95 mm，下缘 38 mm 与后板同为 38 mm。
+      区间拆分记在此处，不另立一条同 part 的 fact。
+
+  - field: protection.armor.thickness
+    value: 70
+    unit: mm
+    qual: { part: turret, region: roof }
+    src: [navypedia-neworleans]
+    valid: { from: 1934-02-15 }
+    confidence: B
+    note: >
+      navypedia「70mm crowns」。historyofwar 与 pwencycl 都写 2.25 in（57 mm）——
+      与 70 mm 冲突，两说并列不裁（可能的成因：70 mm 含顶板下的支撑结构，
+      或来源把续航甲板厚度混入；英文来源未给解释，不作推断）。
+
+  - field: protection.armor.thickness
+    value: 127
+    unit: mm
+    qual: { part: conning_tower, region: main }
+    src: [navypedia-neworleans]
+    valid: { from: 1934-02-15 }
+    confidence: C
+    note: >
+      navypedia 三批均「CT: 127」。**pwencycl 写「2.5" (64mm) conning tower」**——
+      两说并列不裁。另有一层时间因素：navypedia 的 Modernizations 记
+      「late 1943, all survived … CT was removed」，即 1943 年底以后该舰桥
+      在存活舰上被拆除以省重量，此 fact 的有效期到那时为止。
+
+  - field: protection.armor.material
+    value: STS（Special Treatment Steel）
+    qual: { part: belt, region: main }
+    src: [navypedia-neworleans, historyofwar-neworleans-class]
+    valid: { from: 1934-02-15 }
+    confidence: B
+    note: >
+      navypedia「127mm thick … on 19mm STS plating」；historyofwar
+      「5in to 3.25in over 0.75in STS」——19 mm 背板材质为 STS。
+      炮塔面板的材质来源未明写；WDR-29 谈 Astoria 时称其为 Class "B" 装甲
+      （「Class "B" armor does not have the hard surface …」），
+      那是**弹着后的实效评价**，不直接等于设计材质牌号，故不据此填材质。
+
+  - field: protection.armor.weight
+    value: 1520
+    unit: t
+    src: [pwencycl-neworleans, navypedia-neworleans]
+    valid: { from: 1934-02-15 }
+    confidence: C
+    note: >
+      pwencycl 原文「Protection 1520 tons」。**与 navypedia 的间接值吻合**：
+      后者写「The protection weight made 15% of standard displacement」，
+      15% × 10,136 t = 1,520.4 t。两条独立路径得同一个数，故给 C 而非更低。
+      注意这是「防护重量」，是否等于纯装甲重量、含不含 STS 结构材，
+      两源都没界定——**口径未明**，只作参考值。
+
+  # ============================================================ 武备（装载层）
+  - field: armament.mount.summary
+    value: >-
+      建成时：3 座三联装 8"/55（前二后一，背负式）、8 座单装 5"/25 高平两用炮、
+      8 挺 12.7 mm（.50 cal）机枪、2 座弹射器、4 架水上飞机；无鱼雷发射管。
+    src: [navypedia-neworleans, historyofwar-neworleans-class, danfs-ca36]
+    valid: { from: 1934-02-15, to: 1941-12-07 }
+    confidence: A
+    note: >
+      navypedia「Armament CA32, 34, 36: 3 x 3 - 203/55 Mk 9.11.13/14,
+      8 x 1 - 127/25 Mk 10.11.13, 8 х 1 - 12.7/90, 2 catapults, 4 seaplanes」。
+      **无鱼雷发射管**这一点 historyofwar 明写：「They were built without torpedo
+      tubes」——对照北安普敦级有 2 座三联装 533 mm 鱼雷发射管
+      （navypedia 北安普敦页「2 х 3 - 533mm TTs」），这是本级的又一差别。
+      炮塔布置的文字依据是 historyofwar「nine 8in guns carried in three triple
+      turrets (two forward and one aft)」。
+      **本字段是人读概览，不是结构化数据源**；逐炮的型号与数量见下面的
+      weapon:/mount: 实体。
+
+  - field: armament.mount.summary
+    value: >-
+      1942 年中的标准状态：加装 4 座四联装 1.1"/75（28 mm）高炮，
+      撤除 8 挺 .50 机枪、改 6 门单装 20 mm，加装 SC 与 Mk 3 雷达；
+      5 英寸炮座加防破片围板。
+    src: [navypedia-neworleans, pwencycl-neworleans, historyofwar-ca36]
+    valid: { from: 1941-12, to: 1942-12 }
+    confidence: C
+    note: >
+      navypedia Modernizations 段原文：「Astoria, 6.1941; New Orleans,
+      Minneapolis, 11.1941; Tuscaloosa, San Francisco, Quincy, Vincennes
+      12.1941 - 4.1942: + 4 x 4 - 28/75 Mk 1」；「mid-1942, all: - 8 x 1 - 12.7/90;
+      + 6 x 1 - 20/70 Mk 4, SC, Mk 3 radars」。
+      pwencycl 同义：「0.50 machine guns replaced with 6x1 20mm Oerlikon AA guns.
+      Equipped with SC and Mark 3 radar」「1942-4: Splinter shields added to 5"
+      gun positions」。**这批改装的逐舰完成月份在三源间不完全一致**，
+      故本条窗口只给到年/半年粒度，逐舰精确日期见各舰文件（多数为未获取）。
+
+  - field: armament.torpedo.tubes
+    value: 0
+    unit: count
+    src: [historyofwar-neworleans-class, navypedia-northampton]
+    valid: { from: 1934-02-15 }
+    confidence: A
+    note: >
+      **明确记 0，不是「未获取」。** historyofwar 原文：「They were built without
+      torpedo tubes and with eight 5in guns as secondary armament.」
+      对照北安普敦级装 2 座三联装 533 mm 鱼雷发射管（navypedia 北安普敦页
+      「2 х 3 - 533mm TTs」）——这是本级与前一型的又一处固定差别。
+      本级七艘都没有鱼雷武器，故在舰级记一次，单舰不重复。
+
+  # ---------------------------------------------------------- 主炮 8"/55
+  #
+  # 【本级最容易被写错的一处】三批船的主炮**不是同一个 Mk**：
+  #   CA-32/34/36 —— 8"/55 Mk 9 族（Mk 9 原造；Mk 11 未建成；
+  #                  Mk 13 为局部镀铬内膛重镗；Mk 14 为全镀铬+小药室重镗）
+  #   CA-37/38（Tuscaloosa 子级）、CA-39/44 —— 8"/55 Mk 12（更轻的新炮+更紧凑炮塔）
+  # navweaps 原文：「Ship Class Used On: Lexington (CV-2), Pensacola (CA-24),
+  #   Northampton (CA-26), New Orleans (CA-32, 34 and 36 only) and Portland
+  #   (CA-33) classes」（Mk 9 页）；「Mark 12: Tuscaloosa (CA-37) sub-class」
+  #   并在脚注界定该子级含 Quincy (CA-39) 与 Vincennes (CA-44)（Mk 12 页）。
+  # 所以：明尼阿波利斯与新奥尔良是 Mk 9 族，**文森斯是 Mk 12**。
+  # 这一点必须进单舰文件，不能在舰级里糊成一个数。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.designation
+    value: 8"/55 (20.3 cm) Marks 9, 10, 11, 13 and 14
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: A
+    note: >
+      navweaps 标题原文。装舰的是 Mk 9（原造）及其重镗型 Mk 13 / Mk 14。
+      Mk 10 从未建造（「The Mark 10, which was never built, was a lighter gun
+      constructed of only three hoops」）；Mk 11 只有一圈套筒且自紧处理。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.nation
+    value: united_states
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: A
+
+  - about: weapon:8in-55-mk9
+    field: weapon.category
+    value: naval_gun
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: A
+
+  - about: weapon:8in-55-mk9
+    field: weapon.bore
+    value: 203
+    unit: mm
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: A
+
+  - about: weapon:8in-55-mk9
+    field: weapon.caliber_length
+    value: 55
+    unit: ratio
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: A
+    note: >
+      炮身全长 449.0 in（11.405 m）、膛线长 373.65 in（9.491 m）。
+      按美制算法（炮身全长/口径）为 56.2，标称 55 用的是膛长口径法，
+      故 caliber_method 记 usa_uk_method（见下一条）。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.caliber_method
+    value: usa_uk_method
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: B
+    note: >
+      注册表 caliber_method 的枚举只有 german_method / usa_uk_method / unknown，
+      本条属**按命名惯例归类**：美英以「膛线长/口径」计倍径（此为通行做法），
+      navweaps 本页未逐字声明用的是哪种算法，故不给 A。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.length.oa
+    value: 11.405
+    unit: m
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: A
+    note: navweaps「Gun Length 449.0 in (11.405 m)」。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.length.bore
+    value: 11.179
+    unit: m
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: A
+    note: navweaps「Bore Length 440.1 in (11.179 m)」。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.weight
+    value: 30480
+    unit: kg
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: A
+    note: >
+      navweaps「Gun Weight 30.0 tons (30.48 mt)」——即 30.48 公吨 = 30,480 kg。
+      **这是本级主炮与 Mk 12 的关键差别之一**：Mk 12 只有 17.38–17.45 mt，
+      轻了近 43%。navweaps 对 Mk 9 的评价是
+      「This series of 8" guns were very heavy when compared to most other
+      8" guns for reasons that are not readily apparent」。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.projectile_weight
+    value: 118
+    unit: kg
+    qual: { shell_type: apc }
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: A
+    note: >
+      navweaps「AP Mark 19 Mods 1 to 6: 260 lbs. (118 kg)」。
+      **弹种归类的判定**：AP Mark 19 是带被帽的穿甲弹，故 qual 用 apc。
+      另注意本级**不能**用「超重弹」：navweaps 开头明写
+      「None of these ships ever carried the "super-heavy" AP projectiles as
+      their ammunition hoists could not accommodate the longer, heavier round」
+      ——305 lb（152 kg）的 AP Mark 21 属巴尔的摩级，与本级无关。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.muzzle_velocity
+    value: 853
+    unit: mps
+    qual: { shell_type: apc }
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: A
+    note: >
+      navweaps「Muzzle Velocity / Marks 9, 10, 11 and 13 guns: 2,800 fps (853 mps)」。
+      脚注另记 Mk 9 最初设计初速是 3,000 fps（914 m/s），因炮管寿命只有约
+      500 发且精度差才降下来（「The Mark 9 originally had a muzzle velocity of
+      3,000 fps (914 mps), but barrel life was only about 500 rounds and
+      accuracy was poor」）。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.rate_of_fire
+    value: 3.5
+    unit: rpm
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: B
+    note: >
+      navweaps「Rate Of Fire 3 - 4 rounds per minute」。区间拆成单值属**本站取中**，
+      原文是 3–4 发/分，不作为精确值引用。脚注另给一例：
+      1942 年爪哇海战中 Houston (CA-30) 用「cue-balling」手法打到 5–6 发/分。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.elevation.min
+    value: -10
+    unit: deg
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1934-02-15 }
+    confidence: A
+    note: navweaps 炮座栏「Elevation -10 / +41 degrees」。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.elevation.max
+    value: 41
+    unit: deg
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1934-02-15 }
+    confidence: A
+    note: >
+      同上。**41° 是本级（New Orleans 级三联装炮塔）的值**，
+      navweaps 把它与双联/三联「mount」（Pensacola/Northampton 等）混在一栏，
+      但那几型同样标 -10/+41，故不构成冲突。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.barrel_life
+    value: 715
+    unit: count
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: A
+    note: navweaps「Approximate Barrel Life 715 rounds」。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.ammo_outfit
+    value: 150
+    unit: count
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1934-02-15 }
+    confidence: B
+    note: >
+      navweaps「Ammunition stowage per gun 150 rounds」——**每炮**，不是全舰。
+      另给战时实际基数：「Most of the 9-gun cruisers as commissioned had a
+      peace-time outfit of 100 - 125 rounds per gun with a wartime allowance of
+      1,400 rounds per ship」；**本级另有专门一条**：
+      「The New Orleans (CA-32) class was reduced during refits after August 1942
+      to 125 rounds per gun」——即 1942-08 以后每炮降到 125 发。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.range.max
+    value: 29563
+    unit: m
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1934-02-15 }
+    confidence: A
+    note: >
+      navweaps 射表：「45.00 degrees / 32,330 yards (29,563 m)」。
+      该表注明适用于装 Mk 9、Mk 11、Mk 13 炮的巡洋舰
+      （「This range table applies to those cruisers armed with Mark 9, Mark 11
+      and Mark 13 guns」），并注明数据出自 BuOrd OP 1188 第 29 页。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.range.max_elevation
+    value: 45
+    unit: deg
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1934-02-15 }
+    confidence: B
+    note: >
+      射表的最大射程对应 45°，**但炮塔机械上限是 41°**（见 elevation.max）——
+      即 45° 那一行是弹道表的外推值，实船打不到。这个矛盾必须在页面上写清，
+      否则读者会以为本炮能打 45°。取 45 仅因射表如此给。
+
+  # ---------------------------------------------------------- 主炮 8"/55 Mk 12（CA-39/44）
+  - about: weapon:8in-55-mk12
+    field: weapon.designation
+    value: 8"/55 (20.3 cm) Marks 12 and 15
+    src: [navweaps-8in-55-mk12]
+    valid: { from: 1939 }
+    confidence: A
+    note: >
+      装在本级 CA-39（Quincy）与 CA-44（Vincennes）上的是 Mk 12。
+      navweaps 脚注原文：「The Tuscaloosa sub-class consisted of Tuscaloosa
+      (CA-37), San Francisco (CA-38), Quincy (CA-39) and Vincennes (CA-44)」。
+
+  - about: weapon:8in-55-mk12
+    field: weapon.nation
+    value: united_states
+    src: [navweaps-8in-55-mk12]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:8in-55-mk12
+    field: weapon.category
+    value: naval_gun
+    src: [navweaps-8in-55-mk12]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:8in-55-mk12
+    field: weapon.bore
+    value: 203
+    unit: mm
+    src: [navweaps-8in-55-mk12]
+    valid: { from: 1939 }
+    confidence: A
+
+  - about: weapon:8in-55-mk12
+    field: weapon.caliber_length
+    value: 55
+    unit: ratio
+    src: [navweaps-8in-55-mk12]
+    valid: { from: 1939 }
+    confidence: A
+    note: 炮身全长 449.0 in（11.405 m）、膛线长 373.65 in（9.491 m），与 Mk 9 同长。
+
+  - about: weapon:8in-55-mk12
+    field: weapon.caliber_method
+    value: usa_uk_method
+    src: [navweaps-8in-55-mk12]
+    valid: { from: 1939 }
+    confidence: B
+    note: 同 Mk 9 条的归类说明。
+
+  - about: weapon:8in-55-mk12
+    field: weapon.weight
+    value: 17380
+    unit: kg
+    src: [navweaps-8in-55-mk12]
+    valid: { from: 1939 }
+    confidence: A
+    note: >
+      navweaps「Gun Weight 17.11 - 17.17 tons (17.38 - 17.45 mt)」——
+      取区间下沿 17.38 mt = 17,380 kg。区间上沿 17,450 kg 记此。
+      对照 Mk 9 的 30,480 kg，轻了约 13,100 kg/门。
+
+  - about: weapon:8in-55-mk12
+    field: weapon.projectile_weight
+    value: 118
+    unit: kg
+    qual: { shell_type: apc }
+    src: [navweaps-8in-55-mk12]
+    valid: { from: 1939 }
+    confidence: A
+    note: >
+      navweaps「AP Mark 19 Mods 1 to 6: 260 lbs. (118 kg)」。
+      **同一页还列了 335 lb（152 kg）的 AP Mark 21 超重弹，但脚注写明
+      「This range table applies only to the Baltimore and Oregon City classes.
+      Older cruisers were given the lighter AP Mark 19」——本级不装超重弹**，
+      这是极易抄错的一处。
+
+  - about: weapon:8in-55-mk12
+    field: weapon.muzzle_velocity
+    value: 823
+    unit: mps
+    qual: { shell_type: apc }
+    src: [navweaps-8in-55-mk12]
+    valid: { from: 1939 }
+    confidence: A
+    note: >-
+      navweaps「AP Mark 19: 2,700 fps (823 mps)」；HC 与 SP Common 同为 823 m/s。
+
+  - about: weapon:8in-55-mk12
+    field: weapon.rate_of_fire
+    value: 3.5
+    unit: rpm
+    src: [navweaps-8in-55-mk12]
+    valid: { from: 1939 }
+    confidence: B
+    note: navweaps「Rate Of Fire 3 - 4 rounds per minute」，区间取中。
+
+  - about: weapon:8in-55-mk12
+    field: weapon.barrel_life
+    value: 715
+    unit: count
+    src: [navweaps-8in-55-mk12]
+    valid: { from: 1939 }
+    confidence: A
+    note: navweaps「Approximate Barrel Life 715 rounds」——与 Mk 9 同值。
+
+  # ---------------------------------------------------------- 5"/25 副炮
+  - about: weapon:5in25-mk10
+    field: weapon.designation
+    value: 5"/25 (12.7 cm) Marks 10, 11, 13 and 17
+    src: [navweaps-5in25-mk10]
+    valid: { from: 1926 }
+    confidence: A
+    note: >
+      navweaps 本页标题。装舰火炮为 Mk 10；炮座另分 Mk 19 / Mk 23（见下）。
+
+  - about: weapon:5in25-mk10
+    field: weapon.nation
+    value: united_states
+    src: [navweaps-5in25-mk10]
+    valid: { from: 1926 }
+    confidence: A
+
+  - about: weapon:5in25-mk10
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-5in25-mk10]
+    valid: { from: 1926 }
+    confidence: A
+    note: >
+      navweaps 定性：「This was the first USN heavy AA gun designed for the
+      purpose」，故记 anti_aircraft_gun 而非 naval_gun。
+
+  - about: weapon:5in25-mk10
+    field: weapon.bore
+    value: 127
+    unit: mm
+    src: [navweaps-5in25-mk10]
+    valid: { from: 1926 }
+    confidence: A
+
+  - about: weapon:5in25-mk10
+    field: weapon.caliber_length
+    value: 25
+    unit: ratio
+    src: [navweaps-5in25-mk10]
+    valid: { from: 1926 }
+    confidence: A
+    note: 炮身全长 142.25 in（3.613 m），膛线长 98.1 in（2.492 m）。
+
+  - about: weapon:5in25-mk10
+    field: weapon.weight
+    value: 955
+    unit: kg
+    src: [navweaps-5in25-mk10]
+    valid: { from: 1926 }
+    confidence: A
+    note: >
+      navweaps「Barrel Weight (all except Mark 17): 2,105 lbs. (955 kg)」；
+      「Weight with housing: about 4,270 lbs. (1,937 kg)」。
+      本条记炮身，含炮架全重另见 note。
+
+  - about: weapon:5in25-mk10
+    field: weapon.projectile_weight
+    value: 24.49
+    unit: kg
+    qual: { shell_type: aa }
+    src: [navweaps-5in25-mk10]
+    valid: { from: 1926 }
+    confidence: A
+    note: >
+      navweaps「AA Common Mark 28 Mods 1 to 8: 54.0 lbs. (24.49 kg)」。
+      同页另列 HC Mark 36 53.85 lb、VT 型 51.7–54 lb。
+      这是**整装弹**（fixed），整弹重约 80 lb（36.3 kg）。
+
+  - about: weapon:5in25-mk10
+    field: weapon.muzzle_velocity
+    value: 657
+    unit: mps
+    qual: { shell_type: aa }
+    src: [navweaps-5in25-mk10]
+    valid: { from: 1926 }
+    confidence: A
+    note: >
+      navweaps「Muzzle Velocity 2,155 fps (657 mps)」。
+      低初速是设计取舍：本站引原文「As a result, these guns had about one-third
+      the moment of inertia for train … This in turn resulted in a relatively low
+      muzzle velocity, but this was considered to be acceptable for an AAA weapon」。
+
+  - about: weapon:5in25-mk10
+    field: weapon.rate_of_fire
+    value: 17.5
+    unit: rpm
+    src: [navweaps-5in25-mk10]
+    valid: { from: 1926 }
+    confidence: B
+    note: navweaps「Rate Of Fire 15 - 20 rounds per minute」，区间取中。
+
+  - about: weapon:5in25-mk10
+    field: weapon.elevation.max
+    value: 85
+    unit: deg
+    src: [navweaps-5in25-mk10]
+    valid: { from: 1926 }
+    confidence: A
+    note: >
+      navweaps「Elevation / Marks 17, 19, 23 and 27: -15 / +85 degrees」。
+      最低仰角 -15° 见下一条。
+
+  - about: weapon:5in25-mk10
+    field: weapon.elevation.min
+    value: -15
+    unit: deg
+    src: [navweaps-5in25-mk10]
+    valid: { from: 1926 }
+    confidence: A
+    note: 同上。
+
+  - about: weapon:5in25-mk10
+    field: weapon.barrel_life
+    value: 3000
+    unit: count
+    src: [navweaps-5in25-mk10]
+    valid: { from: 1926 }
+    confidence: A
+    note: navweaps「Approximate Barrel Life 3,000 rounds」。
+
+  - about: weapon:5in25-mk10
+    field: weapon.ammo_outfit
+    value: 200
+    unit: count
+    src: [navweaps-5in25-mk10]
+    valid: { from: 1926 }
+    confidence: B
+    note: navweaps「Ammunition stowage per gun about 200 rounds」——每炮。
+
+  # ---------------------------------------------------------- 炮座（本级三批不同）
+  - about: mount:neworleans-triple-turret
+    field: mount.weapon
+    value: weapon:8in-55-mk9
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1934-02-15 }
+    confidence: A
+    note: >
+      CA-32/34/36 的三联装炮座。navweaps 原文：
+      「Triple Turrets, New Orleans (CA-32, 34 and 36 only) (3)」，
+      并解释它与早期「mount」的机构差别：
+      「the later mountings used on New Orleans (CA-32), Astoria (CA-34) and
+      Minneapolis (CA-36) were classified as "triple turrets" as they did have
+      a rotating stalk」——即这三舰是**真炮塔**（有旋转中心柱），
+      而北安普敦级的「triple mount」没有。
+
+  - about: mount:neworleans-triple-turret
+    field: mount.type
+    value: triple_turret
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1934-02-15 }
+    confidence: A
+
+  - about: mount:neworleans-triple-turret
+    field: mount.barrels
+    value: 3
+    unit: count
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1934-02-15 }
+    confidence: A
+
+  - about: mount:neworleans-triple-turret
+    field: mount.count
+    value: 3
+    unit: count
+    src: [navweaps-8in-55-mk9, danfs-ca36]
+    valid: { from: 1934-02-15 }
+    confidence: A
+    note: 全舰 3 座（前二后一，背负式），共 9 门。
+
+  - about: mount:neworleans-triple-turret
+    field: mount.weight
+    value: 299000
+    unit: kg
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1934-02-15 }
+    confidence: A
+    note: >
+      navweaps「Triple Turrets: 294 tons (299 mt)」= 299,000 kg。
+      对照早期「Triple Mounts: 247 - 250 tons」。
+
+  - about: mount:neworleans-triple-turret
+    field: mount.elevation.max
+    value: 41
+    unit: deg
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1934-02-15 }
+    confidence: A
+    note: 仰角速率 8°/s，回旋约 ±150°、约 3.5°/s。
+
+  - about: mount:neworleans-triple-turret
+    field: mount.rangefinder_count
+    value: 1
+    unit: count
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1934-02-15 }
+    confidence: C
+    note: >
+      **依据是图像注记而非文字规格**：navweaps 图注对早期舰写
+      「Note that only the upper mounting has a rangefinder」——
+      指的是「上部炮座装测距仪」这一普遍做法，本级三联装炮塔的测距仪配置
+      文字来源未直接给数，故给 C 且在正文不强调。
+
+  # ============================================================ 航空
+  - field: aviation.catapult.count
+    value: 2
+    unit: count
+    src: [navypedia-neworleans, danfs-ca44]
+    valid: { from: 1934-02-15 }
+    confidence: A
+    note: >
+      navypedia「2 catapults」；DANFS CA-44 正文亦记弹射器（「battered against
+      the catapult silos」）。navsource 记 1945-03 CA-32「The port catapult has
+      been removed」——即末期减为 1 座，见单舰文件。
+
+  - field: aviation.aircraft.capacity
+    value: 4
+    unit: count
+    src: [navypedia-neworleans, danfs-ca44]
+    valid: { from: 1934-02-15 }
+    confidence: A
+    note: >
+      navypedia「4 seaplanes」；navsource「4 Aircraft」；
+      DANFS CA-44 技术行「ac. 4」。战役记述亦可佐证：DANFS CA-36 页记
+      「all 4 SOC seaplanes are on the catapults」（navsource 图注）。
+
+  - field: aviation.aircraft.types
+    value: OL / O2U / O3U / OJ（建成期）；后期换装 SOC Seagull
+    src: [navypedia-neworleans, danfs-ca44]
+    valid: { from: 1934-02-15 }
+    confidence: C
+    note: >
+      navypedia 按子级分列：「CA32, 34, 36: … 4 seaplanes (OL, O2U, O3U, OJ)」；
+      「CA37 - 39, 44: … 4 seaplanes (OL, O2U, O3U, OJ, SOC)」。
+      1942 年的实装是 SOC：DANFS CA-44 与 navsource 记
+      「a Curtiss SOC Seagull floatplane」/「VCS-7」/「VCS-6 SOC Seagull」。
+      **具体换装年份未获取**，故本条不给精确 valid.to。
+
+  # ============================================================ 建造
+  # 建造厂逐舰不同（本级七艘分属 4 个海军船厂与 2 个私营船厂：
+  # New York NYd / Puget Sound NYd / Philadelphia NYd / Mare Island NYd /
+  # New York SB Camden / Bethlehem Quincy），按 SCHEMA §5 的判据写在单舰文件里，
+  # 不在舰级重复。
+
+  # ============================================================ 服役（编制）
+  #
+  # 【编制是三套互不相同的数字，并列不裁】
+  #   708（DANFS 技术行）／868（navypedia）／1,042–1,121（ibiblio、Vincennes 协会）
+  # 差异的合理来源是年份与状态：708 更像建成初期的平时编制，
+  # 1,042–1,121 更像 1943 年以后加装大量防空炮、雷达与人员的战时编制。
+  # 但**三份来源都没有标明自己的口径与年份**，所以不能由本站替它们指定。
+  - field: service.complement.standard
+    value: 868
+    unit: persons
+    src: [navypedia-neworleans]
+    valid: { from: 1934-02-15 }
+    confidence: C
+    note: >
+      navypedia「Complement 868」。**与另两说并列，不裁决**：
+      DANFS 三舰技术行「cpl. 708」（CA-44 写 952）；
+      ibiblio 与 USS Vincennes Association「Complement: 1042-1121」。
+      三份来源均未给出口径与对应年份。
+
+  - field: service.complement.standard
+    value: 708
+    unit: persons
+    src: [danfs-ca36, danfs-ca32]
+    valid: { from: 1934-02-15 }
+    confidence: B
+    note: >
+      DANFS 技术行「cpl. 708」，CA-32 与 CA-36 同值；CA-44 行写 952。
+      **与 navypedia 的 868、ibiblio 的 1,042–1,121 并列，不裁决**——
+      三份官方/专题来源都没说清是平时编制还是战时编制、哪一年。
+
+  - field: service.flag
+    value: 见各舰文件（CA-32「November - Alpha - Bravo - Juliet」、CA-36「November - Alpha - Charlie - Foxtrot」）
+    src: [navsource-ca36, navsource-ca32]
+    valid: { from: 1934-02-15 }
+    confidence: C
+    note: >
+      navsource 各舰页首给出旗号/呼号，属单舰值；本条只作索引，
+      具体见 ships/*.yaml。
+
+  # ============================================================ 结局（逐舰）
+  - field: service.fate_category
+    value: 本级七艘中三艘（CA-34 / CA-39 / CA-44）于 1942-08-09 萨沃岛海战一夜沉没，四艘存活至战后拆解
+    src: [navypedia-neworleans, wdr-29]
+    valid: { from: 1942-08-09, to: 1961 }
+    confidence: A
+    note: >
+      navypedia「Vincennes, Quincy and Astoria were sunk by gunfire and torpedoes
+      of Japanese heavy cruisers 9.8.1942 in battle at Sawo Island (Guadalcanal)」。
+      WDR-29 原文「In a brief twenty-minute action we suffered the loss of three
+      heavy cruisers」。逐舰结局见各舰文件。

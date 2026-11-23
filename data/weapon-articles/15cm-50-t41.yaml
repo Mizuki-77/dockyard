@@ -1,0 +1,387 @@
+# ============================================================================
+# 武器正文 —— 15 cm/50 四十一式（50 口径四一式 15 cm 炮 / 6"/50 41st Year Type）
+#
+# 这一篇的三条主线：
+#  1) 它是英国设计、日本改型：金刚在英国的维克斯-阿姆斯特朗造，炮本身也是
+#     维克斯设计的，日本版由工程师秦千代吉设计、1912 年采用，
+#     英造称 Mark II、日产称 Mark III、短身管型称 Mark IV；
+#  2) 撤除台账两个来源打架：NavWeaps 说榛名 1943 年 3 月一次撤 6 门，
+#     combinedfleet 说 1943-03 撤 2 门、1944 年初再撤 4 门 —— 总数同为 6，
+#     节点不同。两边并列，不裁决；
+#  3) 撤下来的炮没有报废：一部分去武装商船巡洋舰，剩下的加上备件
+#     去武装阿贺野级轻巡的双联装。
+# ============================================================================
+weapon: 15cm-50-t41
+updated: 2026-11-24
+
+intro:
+  lead:
+    zh: >-
+      15 cm/50 四十一式是金刚级与扶桑级的副炮，也是金刚级最初开工时那批英造炮的
+      日本改型。设计出自维克斯，日本版由工程师秦千代吉设计、1912 年采用，1913 年服役。
+      英造炮称 Mark II，日本造称 Mark III，后来另有一种短身管型称 Mark IV。
+      它在这两级战列舰上一直装到 1930 年代改装，撤下来的炮没有被丢掉：
+      一部分在太平洋战争爆发前拿去武装商船巡洋舰，剩下的连同备件与战时续撤的炮
+      一起，去武装了阿贺野级轻巡的双联装炮座。
+    en: >-
+      The 15 cm/50 41st Year Type was the secondary battery of the Kongo and Fuso
+      classes, and the Japanese version of the British guns with which the Kongo was
+      first built. The design came from Vickers; the Japanese version was designed by
+      Engineer Hata Chiyokichi and adopted in 1912, entering service in 1913. British
+      guns were designated Mark II, Japanese-built guns Mark III, and a later
+      short-barrelled version Mark IV. The weapon stayed aboard those two battleship
+      classes until their 1930s modernisations, and the guns taken off were not
+      discarded: some went to arm merchant cruisers just before the Pacific War, and the
+      remainder, with spares and further guns removed during the war, armed the twin
+      mountings of the Agano class light cruisers.
+
+  paragraphs:
+    - heading: 英国设计的炮，日本改的型
+      text:
+        zh: >-
+          NavWeaps 把来源写在第一段：这批炮最初由维克斯设计，
+          作为金刚号的副炮 —— 而金刚号本身就是在英国巴罗的维克斯-阿姆斯特朗船厂建造的。
+          日本版由工程师秦千代吉设计，1912 年采用。
+          炮名的分档因此有两层：英造炮称 6"/50 (15.2 cm) Vickers Mark M 与 Mark II，
+          日本造称 Mark III，后来生产的短身管型称 Mark IV
+          （比早期各型短 10.5 cm）。制式名为 50 caliber 41st Year Type 15 cm Gun，
+          设计年份约 1910，服役 1913 年。
+          这里有一处来源自身的张力要照录：「41 年式」的型号年写作 Model 1908
+          （明治 41 年），而来源同时说日本版 1912 年才采用、1913 年服役 ——
+          型号年、采用年、服役年相差四至五年，来源未解释，本站按原样并列。
+          1917 年 10 月 5 日随度量衡改制改称厘米制。
+          构造上的分别：维克斯炮为线绕式，日本造炮为三层组合式；两者都用螺式炮闩。
+          实际口径三型一致，都是 15.24 cm（6.0 英寸）——
+          也就是说「15 cm」是名义值，不是实弹径。
+        en: >-
+          NavWeaps puts the origin in its first paragraph: the guns were originally
+          designed by Vickers as secondary weapons for the battlecruiser Kongo, which was
+          herself built in Britain by Vickers-Armstrong at Barrow. The Japanese version was
+          designed by Engineer Hata Chiyokichi and adopted in 1912. The nomenclature
+          therefore has two layers: British-built guns were the 6"/50 (15.2 cm) Vickers
+          Mark M and Mark II, Japanese-built guns the Mark III, and a later short-barrelled
+          version the Mark IV, 10.5 cm shorter than the earlier marks. The official
+          designation is 50 caliber 41st Year Type 15 cm Gun, with a date of design of
+          about 1910 and service entry in 1913. One tension inside the source has to be
+          carried as it stands: the "41st Year Type" model year is given as Model 1908
+          (Meiji 41), while the same source states that the Japanese version was adopted
+          in 1912 and entered service in 1913 - model year, adoption and service entry
+          four to five years apart, with no explanation offered, and set side by side here
+          unchanged. The guns were redesignated in centimetres on 5 October 1917. In construction the Vickers guns were wire-wound while the
+          Japanese ones were of three-layer built-up construction; all used screw
+          breech-blocks. The actual bore of all marks was 15.24 cm (6.0 in) - "15 cm" is a
+          nominal figure, not the bore.
+      src: [navweaps-15cm-50-t41]
+
+    - heading: 数字：8,360 kg 的炮身，理论与实战射速差一倍
+      text:
+        zh: >-
+          主要数据照录：炮身重 8,360 kg，全长 7.876 m，膛线长 6.584 m，阴线 42 条，
+          缠度 RH 1/30，药室 26.1 dm³。初速 850 至 855 mps，膛压 2,900 kg/cm²，
+          身管寿命 500 至 600 发。
+          射速这一项必须分两档读，来源自己就是这么写的：理论 10 发/分，
+          实战 5 至 6 发/分。两档差一倍，混用会把一门 1910 年代设计的舰炮
+          说成接近后来高角炮的水平。
+          弹药：Common Type 0 HE 与 Common Type 4 HE 同为 45.36 kg，
+          反潜弹 51.3 kg（1943 年配发，平头）。发射药为单药包 12.4 kg（37 DC），
+          带 60 g 黑药点火药。
+          射程按弹种分表：Common Type 4 在 2.7 度 5,000 m、8 度 10,000 m、
+          15 度 14,100 m、17.5 度 15,000 m、30 度 19,500 m、34 度 20,000 m、
+          45 度 21,000 m；Common Type 0 在 45 度同为 21,000 m。
+          另有两条容易漏的：Common Type 0 在 55 度时对空射高 8,000 m；
+          反潜弹 40 度时 4,200 m，最小射程 800 m，低于此距离容易跳弹。
+          弹药基数一项，来源只给了阿贺野级的 165 发/门，战列舰栏为 N/A。
+        en: >-
+          The principal figures, as given: gun weight 8,360 kg, length overall 7.876 m,
+          rifling length 6.584 m, 42 grooves, uniform right-hand twist of 1 in 30 and a
+          chamber volume of 26.1 dm3. Muzzle velocity 850 to 855 mps, working pressure
+          2,900 kg/cm2 and a barrel life of 500 to 600 rounds. The rate of fire has to be
+          read in two bands, and the source sets them out that way: theoretical 10 rounds
+          per minute, effective 5 to 6. Mixing the two would make a gun designed around
+          1910 look close to the performance of a later dual-purpose weapon. Ammunition:
+          Common Type 0 HE and Common Type 4 HE both 45.36 kg, and a 51.3 kg flat-nosed
+          ASW round issued in 1943. The propellant charge was a single bag of 12.4 kg
+          (37 DC) with a 60 gm black powder igniter. Range is tabulated by shell type:
+          Common Type 4 gives 5,000 m at 2.7 degrees, 10,000 m at 8, 14,100 m at 15,
+          15,000 m at 17.5, 19,500 m at 30, 20,000 m at 34 and 21,000 m at 45; Common Type 0
+          gives the same 21,000 m at 45 degrees. Two further entries are easily missed:
+          an AA ceiling of 8,000 m at 55 degrees with Common Type 0, and 4,200 m at 40
+          degrees for the ASW round, whose minimum range of 800 m is noted with the remark
+          that rounds below it tended to ricochet. On ammunition supply the source gives
+          only the Agano class figure of 165 rounds per gun, with the battleship entry
+          marked N/A.
+      src: [navweaps-15cm-50-t41]
+
+    - heading: 炮座：炮廓式单装，人力操作
+      text:
+        zh: >-
+          金刚级装的是 16 门单装炮廓炮，炮座型号栏给的是 Vickers P1；扶桑级的 16 门
+          同型，来源未给型号。仰角：金刚与扶桑竣工时 −5/+20 度，改装后升到 +30 度；
+          阿贺野级的双联装为 −5/+55 度。回转：单装约 ±70 度，双联装约 ±150 度。
+          速度这一栏是本型最要紧的差别：单装的俯仰与回转都是纯人力，来源写的是
+          Manual operation, only —— 没有给每秒度数；双联装为俯仰每秒 10 度、
+          回转每秒 6 度。装填角固定 +7 度。
+          双联装重 73 吨，单装重量来源未给。
+          另有一条外形细节：双联装的两炮轴线间距 155 cm；
+          阿贺野级双联装的防护为各面 1.9 cm 钢板。
+          阿贺野级那三座双联装，来源明确说不是真正的炮塔 ——
+          它们没有炮座筒（stalk），更像一个封闭炮房加一个不随动的下方操作室：
+          一号与三号炮座的中央枢轴通到中甲板，二号通到上甲板；
+          弹库在装甲甲板以下、药库在弹库之下；弹药在弹库与扬弹机之间全为人力搬运；
+          发射药包与弹丸共用同一部斗式扬弹机。
+          炮房平时由电动液压马达回转，紧急时两名炮手可用人力系统操作；两门炮各自独立衬套。
+        en: >-
+          The Kongo class carried sixteen single casemate guns, the mounting table naming
+          the Vickers P1; the Fuso class carried the same sixteen with no type given.
+          Elevation: -5/+20 degrees as built for Kongo and Fuso, raised to +30 as
+          modernised; -5/+55 for the Agano class twins. Train about +70/-70 degrees for a
+          single and about +150/-150 for a twin. The speed column holds this weapon's most
+          important difference: single mounts were hand worked for both elevation and
+          train, the source saying only "Manual operation, only" without a rate, while the
+          twins gave 10 degrees per second in elevation and 6 in train. Loading angle was a
+          fixed +7 degrees. A twin weighed 73 tons; the weight of a single is not given.
+          Two details of form belong here: twin gun axes were 155 cm apart, and the Agano
+          class mountings were protected by 1.9 cm of steel on all surfaces. Those three
+          Agano mountings, the source states plainly, were not true turrets as they lacked
+          a stalk - more an enclosed gun house with a non-rotating handling room below, a
+          central pivot running down to the middle deck for mounts 1 and 3 and to the upper
+          deck for mount 2. Shell rooms lay under the armoured deck with the powder
+          magazines beneath them; ammunition moved manually between magazines and hoists;
+          propellant bags and projectiles were carried by the same bucket hoist. The gun
+          house was normally trained by electro-hydraulic motors but could be worked by two
+          crewmen on a hand system in an emergency, and the guns were individually sleeved.
+      src: [navweaps-15cm-50-t41]
+
+    - heading: 榛名撤了几门、什么时候撤的：两说并列
+      text:
+        zh: >-
+          这是本型最实在的一处记载冲突，两边都要写。
+          NavWeaps 的脚注写：金刚在 1943 年初再撤 2 门、1944 年 1 月再撤 4 门；
+          榛名在 1943 年 3 月一次撤 6 门；撤下的炮由 12.7 cm/40 八九式与 25 mm 机炮替补。
+          combinedfleet 的榛名行动记录拆得更细，分三个节点：
+          1937 年 11 月至 1938 年 11 月的佐世保追加改装中撤掉最前两门炮廓炮；
+          1943 年 3 至 4 月撤 2 门；1943 年 12 月 16 日至 1944 年 2 月 26 日撤 4 门。
+          两条账的终点一致（16 − 2 − 2 − 4 = 8，与 NavWeaps 的 16 − 2 − 6 = 8 相同），
+          差别在 1943 年那一次到底撤了 2 门还是 6 门。
+          日文来源 japanese-warship 的 1944 年 10 月 5 日兵装表给出终点状态：
+          50 口径 15.2 cm 单装炮 8 基 8 门 —— 与两条账都吻合，
+          但它只能证明终点，不能判定中间节点。本站两个节点都记，不裁决。
+          金刚的账另有一条不同的记载：combinedfleet 记 1943 年 2 月 27 日至 3 月 13 日
+          在佐世保进坞时，以六门 6 英寸副炮（第 7、8 号）的代价换装两座三联 25 mm；
+          而 NavWeaps 记的是 1943 年初撤 2 门、1944 年 1 月再撤 4 门。
+          两说同样并列。
+        en: >-
+          This is the weapon's one substantive conflict of record, and both sides are
+          written out. NavWeaps' footnote states that Kongo had two more guns removed in
+          early 1943 and a further four in January 1944, that Haruna had six guns removed
+          in March 1943, and that removed guns were replaced with 12.7 cm/40 Type 89 and
+          25 mm AA guns. combinedfleet's record of Haruna's movements breaks the same
+          ledger into three points: two foremost casemate guns landed in the additional
+          refit at Sasebo between November 1937 and November 1938; two secondary guns
+          landed in March-April 1943; four secondary guns landed between 16 December 1943
+          and 26 February 1944. Both ledgers reach the same end point - sixteen minus two
+          minus two minus four is eight, as is sixteen minus two minus six - and differ
+          over whether six guns or two came off in 1943. The Japanese source
+          japanese-warship gives the end state as of 5 October 1944: eight single 15.2 cm
+          guns in eight mountings, which agrees with both ledgers but can only settle the
+          end point, not the intermediate dates. This site records both and adjudicates
+          neither. Kongo carries a separate divergence: combinedfleet records that at
+          Sasebo between 27 February and 13 March 1943 six 25 mm AA guns in two triple
+          mounts were fitted in place of six 6-inch secondary guns (Nos. 7 and 8), while
+          NavWeaps records two removed in early 1943 and four more in January 1944. Both
+          stand side by side here as well.
+      src: [navweaps-15cm-50-t41, combinedfleet-haruna, japanese-warship-haruna, combinedfleet-kongo]
+
+history:
+  - id: design
+    title: { zh: 设计与采用, en: Design and adoption }
+    range: { from: 1910, to: 1917 }
+    lead:
+      zh: >-
+        这门炮是随金刚号一起从英国来的，日本版晚了两年才定型。
+      en: >-
+        The gun came from Britain along with the Kongo herself; the Japanese version
+        followed two years later.
+    events:
+      - date: 1910
+        text:
+          zh: >-
+            维克斯完成设计，来源记作 about 1910。
+            同一时期维克斯向日本提交了 36 cm 主炮的设计（1910 年 11 月），
+            两级武备是同一批英国图纸的产物。
+          en: >-
+            Vickers completed the design, given as about 1910. In the same period Vickers
+            submitted the design of the 36 cm main gun to Japan, in November 1910: the two
+            batteries came out of the same batch of British drawings.
+        src: [navweaps-15cm-50-t41, navweaps-36cm-45-t41]
+      - date: 1912
+        text:
+          zh: >-
+            日本版由工程师秦千代吉设计完成并采用。
+          en: >-
+            The Japanese version was designed by Engineer Hata Chiyokichi and adopted.
+        src: [navweaps-15cm-50-t41]
+      - date: 1913
+        text:
+          zh: >-
+            进入服役。金刚号同年竣工，是四艘金刚级里唯一在英国建造、也是唯一
+            装英造 43 年式 36 cm 主炮的一艘；副炮即本型。
+          en: >-
+            Entered service. Kongo completed the same year, the only one of the four built
+            in Britain and the only one armed with the British-built 43rd Year Type 36 cm
+            main guns; this weapon was her secondary battery.
+        src: [navweaps-15cm-50-t41, navypedia-kongo]
+      - date: 1917-10-05
+        text:
+          zh: >-
+            随度量衡改制改称厘米制。来源原句：Guns were redesignated in centimeters
+            on 5 October 1917。
+          en: >-
+            Redesignated under the metric system. The source's words: "Guns were
+            redesignated in centimeters on 5 October 1917."
+        src: [navweaps-15cm-50-t41]
+
+  - id: rebuilds
+    title: { zh: 1930 年代改装与仰角提升, en: The 1930s rebuilds }
+    range: { from: 1933, to: 1938 }
+    lead:
+      zh: >-
+        两级战列舰的改装同时做了两件事：撤掉一部分 15 cm 炮，把留下的抬到 +30 度。
+      en: >-
+        The modernisations of both classes did two things at once: they took some of the
+        15 cm guns off, and raised the elevation of the rest to +30 degrees.
+    events:
+      - date: 1933-04
+        text:
+          zh: >-
+            榛名在吴工厂改装（1933 年 4 至 5 月），为第二次大改装打前站：
+            主炮仰角从 33 度提到 43 度，副炮仰角从 15 度提到 30 度。
+          en: >-
+            Haruna refitted at Kure in April-May 1933 ahead of the second reconstruction:
+            main battery elevation was increased from 33 to 43 degrees and secondary
+            elevation from 15 to 30 degrees.
+        src: [combinedfleet-haruna, navypedia-kongo]
+      - date: 1933
+        text:
+          zh: >-
+            navypedia 对全级的记法：第二次大改装中主炮仰角提到 43 度，
+            副炮从 15 度提到 30 度，同时撤掉两门副炮（金刚级与扶桑级各两门）。
+          en: >-
+            Navypedia's class-level record: in the second reconstruction the main guns
+            went to 43 degrees and the secondary guns from 15 to 30 degrees, while two
+            secondary guns were removed from the Kongo and Fuso classes.
+        src: [navypedia-kongo, navweaps-15cm-50-t41]
+      - date: 1934
+        text:
+          zh: >-
+            1930 年代改装期间，金刚级的 8 cm/40 高角炮全部撤除，
+            与撤下的部分 15 cm 炮一起由新的 12.7 cm/40 八九式两用炮接替。
+            来源未给这些撤除的确切日期，只记「during the 1930s」。
+          en: >-
+            During the 1930s modernisations all of the Kongo class 8 cm/40 AA guns were
+            removed and, together with some of the 15 cm guns taken off, replaced by the
+            new 12.7 cm/40 Type 89 dual-purpose gun. The source gives no exact dates for
+            these removals, only "during the 1930s".
+        src: [navweaps-15cm-50-t41]
+      - date: 1937-11
+        text:
+          zh: >-
+            榛名在佐世保追加改装（1937 年 11 月至 1938 年 11 月），
+            撤掉最前两门炮廓炮；同时装 10 座双联九六式 25 mm 机炮与四部九五式高射装置，
+            换装吴式二号五型弹射器。
+          en: >-
+            Haruna's additional refit at Sasebo, November 1937 to November 1938: the two
+            foremost casemate guns were landed, twenty 25 mm Type 96 AA guns in ten twin
+            mounts and four Type 95 HA directors were installed, and a new Kure Type No. 2
+            Mod. 5 catapult was fitted.
+        src: [combinedfleet-haruna]
+
+  - id: reuse
+    title: { zh: 撤下来的炮去哪了, en: Where the removed guns went }
+    range: { from: 1941, to: 1944 }
+    lead:
+      zh: >-
+        这批炮的下半生不在战列舰上：先去了商船巡洋舰，再去了轻巡，最后去了关岛的海岸炮台。
+      en: >-
+        The second half of this weapon's life was not aboard battleships: it went to
+        armed merchant cruisers, then to light cruisers, and finally to coast batteries.
+    events:
+      - date: 1941-12
+        text:
+          zh: >-
+            太平洋战争爆发前，一部分撤下的 15 cm 炮被用来武装商船巡洋舰。
+          en: >-
+            Just before the start of the Pacific War, some of the removed 15 cm guns were
+            used to arm merchant cruisers.
+        src: [navweaps-15cm-50-t41]
+      - date: 1942
+        text:
+          zh: >-
+            阿贺野级轻巡装三座双联装，来源说得很明确：
+            这些炮来自剩余库存、备件，以及战时从主力舰上续撤的炮。
+            双联装为 −5/+55 度，俯仰每秒 10 度、回转每秒 6 度，各面 1.9 cm 钢板防护，
+            每门备弹 165 发。
+          en: >-
+            The Agano class light cruisers carried three twin mountings, and the source is
+            explicit that these guns came from the remaining stock, from spares, and from
+            further guns removed from capital ships during the war. The twins gave
+            -5/+55 degrees, 10 degrees per second in elevation and 6 in train, 1.9 cm of
+            steel on all surfaces, and 165 rounds per gun.
+        src: [navweaps-15cm-50-t41]
+      - date: 1943-03
+        text:
+          zh: >-
+            榛名的副炮撤除：NavWeaps 记 1943 年 3 月一次撤 6 门；
+            combinedfleet 记 1943 年 3 至 4 月撤 2 门，1943 年 12 月至 1944 年 2 月再撤 4 门。
+            两说并列。
+          en: >-
+            Haruna's secondary battery came off: NavWeaps records six guns removed in
+            March 1943, while combinedfleet records two in March-April 1943 and four more
+            between December 1943 and February 1944. Both stand.
+        src: [navweaps-15cm-50-t41, combinedfleet-haruna]
+      - date: 1943-03-13
+        text:
+          zh: >-
+            金刚在佐世保进坞（1943 年 2 月 27 日起）完毕，以六门 6 英寸副炮（第 7、8 号）
+            与舰尾 4.5 m 测距仪的代价，换装六门 25 mm 机炮（两座三联装）。
+          en: >-
+            Kongo came out of dock at Sasebo, work having begun on 27 February: six 25 mm
+            AA guns in two triple mounts were fitted in place of six 6-inch secondary guns
+            (Nos. 7 and 8) and the aft 4.5 m rangefinders.
+        src: [combinedfleet-kongo]
+      - date: 1944-01
+        text:
+          zh: >-
+            NavWeaps 记金刚在 1944 年 1 月再撤 4 门 15 cm 炮。至此其副炮为 8 门，
+            与 combinedfleet 记录的 1944 年终状态「八门 6 英寸/50」一致。
+          en: >-
+            NavWeaps records a further four 15 cm guns removed from Kongo in January 1944,
+            leaving eight, which agrees with combinedfleet's final-state entry of "eight
+            6-inch/50".
+        src: [navweaps-15cm-50-t41, combinedfleet-kongo]
+      - date: 1944-10-05
+        text:
+          zh: >-
+            日文来源的兵装表在此日状态栏记：50 口径 15.2 cm 单装炮 8 基 8 门。
+            同表主炮仍为 45 口径 35.6 cm 连装炮 4 基 8 门。
+          en: >-
+            The Japanese source's armament table for this date lists eight single
+            15.2 cm/50 guns in eight mountings, with the main battery still four twin
+            35.6 cm/45 mountings for eight guns.
+        src: [japanese-warship-haruna]
+      - date: 1944
+        text:
+          zh: >-
+            这型炮在 1944 年的两处去向记在同一条里。
+            一处是阿贺野级的三座双联装（来源只给「Agano (3)」这一行，未逐舰点名） —— 来源另记该级
+            二号炮塔装有十四年式六米测距仪。
+            另一处是关岛的部分海岸炮台，来源把它与「商船巡洋舰」「阿贺野级」
+            并列写在同一段末尾，未给具体炮台数量与装设日期。
+          en: >-
+            Two destinations of this weapon in 1944 belong in one entry. The first is the
+            three twin mountings of the Agano class, the source giving only the row
+            "Agano (3)" without naming the ships, and adding that Turret II of the class
+            mounted a Type 14 six-metre rangefinder. The second is some coast defence batteries on Guam, which the
+            source places at the end of the same passage as the merchant cruisers and the
+            Agano class, giving neither the number of batteries nor a date of installation.
+        src: [navweaps-15cm-50-t41]

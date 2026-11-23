@@ -1,5 +1,5 @@
 version: 1
-updated: '2026-11-22'
+updated: '2026-11-24'
 note: '来源登记表 v0。任何 fact 的 src 必须指向本表里的 id，否则校验失败。 这里只登记"我实际用来支撑数据的来源"。搜索时扫过但没采用的不登记。 每条的 fetched 只在真抓到内容后才填日期；没抓到就写 status: blocked/not_fetched 并说明原因。
 
   '
@@ -2661,8 +2661,8 @@ sources:
   license: all_rights_reserved
   note: 升降机尺寸、拦阻索、射击指挥装置、格纳库尺寸的唯一结构化来源。但把赤城单列为「赤城型」，那是唯一舰自成一级的编目习惯，不代表有同级舰。
 - id: navweaps-20cm-3ns
-  title: Japanese 20 cm/50 (7.9") 3rd Year Type — NavWeaps
-  url: https://www.navweaps.com/Weapons/WNJAP_8-50_3ns.htm
+  title: Japanese 20 cm/50 (7.9") 3rd Year Type No. 1 — NavWeaps
+  url: https://www.navweaps.com/Weapons/WNJAP_79-50_3ns.htm
   type: website
   tier: C
   role:
@@ -2672,7 +2672,7 @@ sources:
   access: direct
   fetched: 2026-11-19
   license: all_rights_reserved
-  note: 注明 Model B 炮架用于 Akagi 与 Kaga。初速 840 mps，每门弹药架 120-126 发。
+  note: No.1（1 GÔ）炮。实弹径 20.0 cm、初速 870 mps，赤城与加贺的炮廓炮即此型，妙高级亦曾使用。2026-11-24 修正：本记录原 url 误指 No.2 页面（WNJAP_8-50_3ns.htm），标题却写 No.1 口径；两门炮是独立页面，已更正。No.2 另见 navweaps-20cm-3ns-no2。
 - id: navweaps-12cm-10ns
   title: Japanese 12 cm/45 (4.7") 10th Year Type — NavWeaps
   url: https://www.navweaps.com/Weapons/WNJAP_47-45_10ns.htm
@@ -5495,6 +5495,2238 @@ sources:
   fetched: 2026-11-23
   license: cc_by_sa
   note: 「第一个从医院学校到将官」与「下甲板出身 87 年来第一人」两句的出处。 其 DSO 的 Gazette 期号标作 1942-10-14，与 unithistories 的 1941-10-14 冲突，见 NOTES.md。
+- id: navweaps-20cm-3ns-no2
+  title: Japanese 20 cm/50 (8") 3rd Year Type No. 2 — NavWeaps
+  url: https://www.navweaps.com/Weapons/WNJAP_8-50_3ns.htm
+  type: website
+  tier: C
+  role:
+  - data
+  operator: navweaps.com
+  lang: en
+  access: direct
+  fetched: '2026-11-24'
+  license: all_rights_reserved
+  note: No.2（2 GÔ）炮。实弹径 20.32 cm、初速 840 mps，装备妙高/高雄/利根级重巡。1931-04-06 采用，No.1 的序号即因它而补。「三年式」指大正三年（1914），但本型设计在 1930-31 年。
+- id: combinedfleet-hosho-trom
+  title: IJN HOSHO — Tabular Record of Movement (combinedfleet.com)
+  url: https://www.combinedfleet.com/Hosho.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: combinedfleet.com（Anthony P. Tully / Gilbert Casse，2014 修订增强版）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 本舰主力来源。逐条年月日，覆盖 1920-12-16 起工至 1947-05-01 解体完毕全生涯。 「世界第一艘 purpose-built 航母」的原句在此（1922-12-27 条）。 注意地址大小写：/Hosho.htm 可通，/hosho.htm 与 /hosho_t.htm 均 404； 该链接由 combinedfleet 的 /cv.htm 航母索引页反查得到。 口径提示：文中
+    1922-01-10 写 "Completed"，但与同页 "Commissioning is delayed … March~December 1922" 及 1922-12-27 "Commissioned" 冲突，本轮不采用该完成日。
+- id: navypedia-hosho
+  title: HOSHO light aircraft carrier (1922) — Navypedia
+  url: http://www.navypedia.org/ships/japan/jap_cv_hosho.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: navypedia.org
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 主尺度/排水量/动力/燃料/续航/武备骨架，另含各期改装逐条与 1923-1942 逐年舰载机表。 口径提示一：起工记 16.12.1919、竣工记 16.12.1922，与 combinedfleet 的 1920/12-27 冲突，两说并存。 口径提示二：武备栏写「4 x 1 - 76/40」，但同页 Modernizations 又只写「- 2 x 1 - 76/40」，内部不自洽。
+    口径提示三：舰载机表把 1942-06 记为「8 B5N2」，与「凤翔无法运用 B5N」的记载矛盾，疑为笔误，不采纳但记录。
+- id: kasado-hosho
+  title: 鳳翔型航空母艦 Hosho class Aircraft Carrier — 日本海軍艦艇データ（kasado.net）
+  url: https://www.kasado.net/AircraftCarriers/Japan/Hosho_1922.html
+  type: website
+  tier: D
+  role:
+  - data
+  operator: kasado.net
+  lang: ja
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 竣工時 / 1945-08 两列对照表，是本轮唯一同时给出两个时期锅炉型式、飞行甲板、 升降机、拦阻装置与装甲分部位的来源。 口径提示：装甲栏用「N/A」与「-」两种符号——比较可知「-」表示「该处无此项」、 「N/A」表示「未查到」，但同一张表的雷达/声呐栏也全用「-」，故该栏不能当「无雷达」的证据。
+- id: naval-encyclopedia-hosho
+  title: Hōshō (1921) — naval encyclopedia
+  url: https://naval-encyclopedia.com/ww2/japan/hosho.php
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: naval-encyclopedia.com
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 设计沿革（最初按 Campania 式水上机母舰起案 → 改为 Furious 式）、武备布置与射界、 动力（4 座专烧 + 4 座混烧）、试航 26.66 kn、「no protection or armor」、 「no catapult」两句原文出自此页。引 Conway's 1906-1921 / 1922-1947 为据。
+- id: japanese-warship-hosho
+  title: 鳳翔【航空母艦】 Hosho — 大日本帝国軍 主要兵器（japanese-warship.com）
+  url: https://japanese-warship.com/carrier/hosho/
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: japanese-warship.com（旧「大日本帝国軍 主要兵器」）
+  lang: ja
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 日文技术细节 + 结构解说。1922 竣工時 / 1944 改造時两期要目对照。 引『艦船要目公表範囲』（海軍省）为一手依据。含纵索式制动装置与前后机库 「互不相通、高度也不同」的结构描述，以及 1944 甲板延长致复原性恶化的说明。
+- id: hazegray-ijn-carriers
+  title: World Aircraft Carriers List — Japanese Aircraft Carriers（hazegray.org，2006-10-27 存档快照）
+  url: https://web.archive.org/web/20061027174235/http://www.hazegray.org/navhist/carriers/ijn_cv.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: hazegray.org（Internet Archive 快照）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '各国航母一览表。凤翔条给「Armor: none」「Aircraft: 21」， 并留有一句自我保留的表述：「Often considered the first ship built from the keel up as a carrier, but was initially laid down as a tanker and redesigned during construction.」'
+- id: navweaps-14cm-50-3ns
+  title: Japan 14 cm/50 (5.5") 3rd Year Type — NavWeaps
+  url: https://www.navweaps.com/Weapons/WNJAP_55-50_3ns.php
+  type: website
+  tier: C
+  role:
+  - data
+  operator: navweaps.com
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 五十口径三年式 14cm 炮本体数据（炮身重 5,600-5,700 kg、初速 850-855 mps、 射速 6-10 发/分、弹重 38.0 kg）。 口径提示：本页 "Ship Class Used On" 只列主力舰与轻巡，**未提凤翔**， 故本页只用于 weapon.* 本体字段，不用来证明「凤翔装过这门炮」——那句由 combinedfleet TROM 与 naval-encyclopedia
+    支撑。
+- id: navweaps-8cm-40-3ns
+  title: Japan 8 cm/40 (3") 3rd Year Type, 11th Year Type and Type 88 — NavWeaps
+  url: https://www.navweaps.com/Weapons/WNJAP_3-40_3ns.php
+  type: website
+  tier: C
+  role:
+  - data
+  operator: navweaps.com
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 三年式 40 口径 8cm 高角炮本体数据。**关键一句：「Although the Japanese designation was "8 cm," the actual bore diameter of all these weapons was 7.62 cm (3.0")」**——名义 8cm、 实际 76.2 mm，录 bore 时必须按 76.2 记。 口径提示：本页 "Mount/Turret
+    Data" 只列战舰与轻巡的装舰（Ise、Nagato、Tenryu 等）， **未提凤翔**，故只用于 weapon.* 本体字段；「凤翔装过它」由 combinedfleet TROM 与 naval-encyclopedia 支撑。 注意 navweaps 的炮位编号 WNJAP_8-40_3ns.htm 已 404，可用地址是 .php 结尾这一条。
+- id: combinedfleet-b4y
+  title: Yokosuka B4Y（九六式艦上攻撃機）— combinedfleet.com IJNAF
+  url: http://www.combinedfleet.com/ijna/b4y.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: combinedfleet.com（数据取自 René J. Francillon, Japanese Aircraft of the Pacific War, Putnam 1979）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '九六式舰攻 B4Y1 尺寸/重量/性能/武装，含 "UNITS ALLOCATED — Aircraft carriers: Akagi, Hosho, Kaga, Ryujo and Soryu"。最大速度原值 150 kt。'
+- id: combinedfleet-a5m
+  title: Mitsubishi A5M（九六式艦上戦闘機）— combinedfleet.com IJNAF
+  url: http://www.combinedfleet.com/ijna/a5m.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: combinedfleet.com（数据取自 René J. Francillon, Japanese Aircraft of the Pacific War, Putnam 1979）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '九六式舰战 A5M4 尺寸/重量/性能分型表，含 "Carriers: Akagi, Hosho, Kaga, Ryujo and Zuiho"。 A5M4 最大速度原值 475 km/h at 3,000 m（原文即以公制给出）。'
+- id: navypedia-nagara
+  title: NAGARA light cruisers (1922 - 1925) — Navypedia
+  url: https://www.navypedia.org/ships/japan/jap_cr_nagara.htm
+  type: database
+  tier: D
+  role:
+  - data
+  operator: navypedia.org
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "长良级 6 艘的建造表 + 技术数据行 + 逐次改装清单（含月份）。本组主尺度、 排水量、动力、防护部位厚度的英文主力来源。 **口径提示**： ① 排水量只给「normal 5570 / full 7050」两个口径，**没有华盛顿条约的 standard 值**，\n   故 standard 的两条 fact 不出自本页；\n② 装甲数据行是单行压缩写法「belt: 63, shields:\
+    \ 20, deck: 29 (45 over magazines),\n   CT: 51 - 25」，**未指明 shields 的部位**；\n③ 速力写作 36 kts（设计），改装后正文说「maximal speed has decreased to 32kts」； ④ 续航「6000(15)」与日文来源的「5,000 nm @ 14 kn」冲突，两说并列。 ⑤ 该页把「鬼怒主机为\
+    \ Brown-Curtis」「阿武隈 1930 撞船后改 S 形舰首」等逐舰差异\n   写在级页里，引用时不可当成全级共性。"
+- id: navypedia-sendai
+  title: SENDAI light cruisers (1924 - 1925) — Navypedia
+  url: https://www.navypedia.org/ships/japan/jap_cr_sendai.htm
+  type: database
+  tier: D
+  role:
+  - data
+  operator: navypedia.org
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "川内级 3 艘 + 取消舰加古的建造表与技术数据。 **口径提示**： ① 唯一给出「standard 5195 t」的英文来源（日文来源只给基準/常備）； ② 长度写作「152.4 pp 158.5 wl 163.0 oa」，oa 163.0 与日文来源的 162.15 冲突； ③ 吃水 4.91 m，与日文/日文系的 4.80 m 冲突； ④ 明确记下本级与长良级的根本差别：「instead\
+    \ of two boilers with mixed firing\n   Sendai class cruisers had four boilers in No1 and No2 boiler rooms, that has\n   caused increase in number of funnels from three to four」——四烟囱的来源依据；\n⑤ 1941 年四连装鱼雷管换装只列\
+    \ Naka、Jintsu，**川内不在其内**； ⑥ 改建表「6/1943, Sendai」与 combinedfleet 的「5 May 1943」差一个月。"
+- id: combinedfleet-nagara-class
+  title: Nagara-class Light Cruiser — Nihon Kaigun (combinedfleet.com)
+  url: https://www.combinedfleet.com/nagara_c.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: combinedfleet.com
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "极简参数卡（竣工年份、排水量、尺寸、速力、武备、乘员）。 **口径提示**： ① 排水量只写「5,570 tons」，**未声明是 standard 还是 normal**，不可当标准排水量引用； ② 尺寸写英制「534'9\" x 48'5\" x 16'0\"」，换算后与日文来源的 162.15/14.17/4.80 一致； ③ 乘员写「438」，与 navypedia/kasado/japanese-warship\
+    \ 的 450 **冲突**，\n   两说并列；\n④ 武备栏是「up to 36 x 25mm AA」这类战时上限值，不是竣工值，引用时必须配时间窗。"
+- id: combinedfleet-sendai-class
+  title: Sendai-class Light Cruiser — Nihon Kaigun (combinedfleet.com)
+  url: https://www.combinedfleet.com/ships/sendai
+  type: website
+  tier: D
+  role:
+  - data
+  operator: combinedfleet.com
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "川内级参数卡。**口径提示**： ① 页内标题自相矛盾：主标题写「Sendai-class」，正文顶部又标「Naka class」，\n   且只给神通配图 —— 三级（Sendai/Naka）叫法在英文文献里通用，本站用川内型；\n② 排水量「7,100 tons」是 full load 口径（与 navypedia 7100 一致），\n   **不可当标准排水量**；\n③ 乘员\
+    \ 450，与 navypedia 一致，与 kasado 的 452 冲突。"
+- id: combinedfleet-nagara
+  title: IJN NAGARA — Tabular Record of Movement (combinedfleet.com)
+  url: http://www.combinedfleet.com/nagara_t.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: combinedfleet.com（Bob Hackett / Sander Kingsepp，Revision 16）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "长良逐日年表，本组战历与改装时间的英文主力来源。 **口径提示 / 抓取陷阱**： ① 该页是**唯一**逐条给出长良历次改装月份与内容的英文来源\n   （1942-04 舞鶴、1942-12/1943-01 舞鶴、1943-08 舞鶴、1944-01/04 舞鶴、1944-07 横須賀）；\n② 触雷一条正文写「Australian PBY Catalina」布设，同一页脚注 [2]\
+    \ 又写\n   「Some sources credit the mine as being laid 4 June 1943 by USS SILVERSIDES」——\n   **同一页内两说**，引用时必须一起引；\n③ 1943-12-05 夸贾林空袭只写「damaged slightly by near misses」，\n   但同页引用的 FRUMEL 截获电文写「2 men\
+    \ killed and ? injured」，\n   而日文来源记 48 死 112 伤 —— 三方冲突，见 RESEARCH-NOTES 分歧节；\n④ 沉没段给坐标「32-09N, 129-53E」与时刻 1222/1240。"
+- id: combinedfleet-sendai
+  title: IJN SENDAI — Tabular Record of Movement (combinedfleet.com)
+  url: http://www.combinedfleet.com/sendai_t.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: combinedfleet.com（Bob Hackett / Sander Kingsepp，Revision 8）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "川内逐日年表。**口径提示**： ① 中途岛段写得很清楚：随山本主力部队出击，「The Main Body remains 600 miles\n   behind ... First Carrier Striking Force and does not engage American forces.」\n   —— 这是任务书「川内属主力部队」的原话依据；\n② 1943-06-25「destroyer\
+    \ NIIZUKI becomes flagship of DesRon 3」——\n   川内自该日起不再是三水战旗舰，容易漏；\n③ 1943-05-05 佐世保改装装的是「Type 21 radar」，navypedia 记为「一号二型」且月份写 6 月； ④ 沉没段：0050 被四艘美军轻巡雷达射击命中并起火，0200 弃舰，0430 沉于\n   06-10S, 154-20E；阵亡「Captain\
+    \ Shoji and 184 crewmen」；救起「236 other crewmen」\n   由驱逐舰、脚注另记潜艇 RO-104 救起伊集院少将 + 75 人；\n⑤ 战沉时间与地点与 navypedia 一致，但 navypedia 另加「later she was torpedoed by\n   destroyers Charles Ausburn, Converse and\
+    \ Dyson」——combinedfleet 无此说。"
+- id: japanese-warship-nagara
+  title: 長良【長良型軽巡洋艦 一番艦】 — 大日本帝国軍 主要兵器
+  url: https://japanese-warship.com/light/nagara/
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: japanese-warship.com
+  lang: ja
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "按「竣工时 / 1934 / 1944-08」三个时点分列的装备表，是本组把武装做成时间窗的依据。 **口径提示**： ① 只给「常備排水量 5,570 t」，不给基準（standard）——标准的 5,170 只能出日文维基\n   （tier E，未采用）；\n② 1944-08 表明确写「25mm三連装機銃 2基6挺 / 連装 6基12挺 / 単装 14基14挺」\n   =\
+    \ 32 挺，与 combinedfleet 的「32 barrels (2x3, 6x2, 14x1)」完全吻合；\n③ 该站自称部分数据引自「一部資料」，对长良的鱼雷发射管换装写\n   「魚雷発射管の換装はなかったものの、改造で酸素魚雷が発射できるようになっていた\n   という説もあります」——**明确标为「说」，不是定论**；\n④ 速力给「計画36.0 / 1934年后 34.5」，后者与\
+    \ navypedia 的 32 节冲突。"
+- id: japanese-warship-sendai
+  title: 川内【川内型軽巡洋艦 一番艦】 — 大日本帝国軍 主要兵器
+  url: https://japanese-warship.com/light/sendai/
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: japanese-warship.com
+  lang: ja
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "川内的三时点装备表 + 战历叙述。 **口径提示**： ① **唯一给出川内公试实测值的来源**：「計画90,000馬力 / 公試97,657馬力」\n   「計画35.25ノット / 公試36.189ノット」；\n② 但该站把这组数标为引自「『唯一跑过36节的5500T轻巡——川内级轻巡洋舰设计史\n   （技术篇）』燃烧的岛群、鳳凰網」——**中文网络文章，不是一手档案**，\n\
+    \   本站按单源 C 级收录并在此标明层级偏低；\n③ 锅炉写「混焼4基、重油8基」，与 kasado 的「重油専焼12基」冲突（总数同为 12，\n   混合烧炉是否计入的编目差异）；\n④ 1943-05 佐世保改装段与 combinedfleet 同日同内容（撤 5 番炮、加 2 座三连装 25mm、\n   装 21 号电探），可用于互证；\n⑤ 战历叙述里明确写「川内型で唯一撃沈認定がされている戦果」=\
+    \ 埃达乌海战的 HMS Thanet。"
+- id: kasado-nagara
+  title: 長良型軽巡洋艦 Nagara class Light Cruiser — kasado.net
+  url: https://www.kasado.net/Cruisers/Japan/Nagara_1922.html
+  type: database
+  tier: D
+  role:
+  - data
+  operator: kasado.net
+  lang: ja
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "按部位逐行列出装甲（水線部舷側/上部舷側/前後主隔壁/水雷隔壁/最上甲板/上甲板/ 中甲板/下甲板/主砲楯/主砲塔バーベット/司令塔），是本组做 qual 化 armor fact 的主力来源。 **口径提示**： ① 舷側装甲写 38 mm（高張力鋼），navypedia 写 belt 63/64 —— **两说冲突**，\n   本站两条都写、不裁决；\n② 基准排水量 5,170\
+    \ t、常備 5,502 t，与日文维基的 5,170 / 5,502.81 一致； ③ 高角炮数写「三年式 40口径7.6cm単装高角砲:4基」，与 navypedia/日文维基的 2 门冲突； ④ 计划搭载机写「一〇年式艦上戦闘機:1機」，是计划值不是实载； ⑤ **该站只在其「五十鈴 1945年頃」栏里出现「次発装填装置付き」**\n   （「九二式 61.0cm四連装発射管 (次発装填装置付き):2基」），\n\
+    \   竣工时栏与长良 1944 栏都没有这个字样 —— 是「长良未装/未记载再装填装置」的\n   关键旁证，但它只是**没写**，不是明写「没有」。"
+- id: kasado-sendai
+  title: 川内型軽巡洋艦 Sendai class Light Cruiser — kasado.net
+  url: https://www.kasado.net/Cruisers/Japan/Sendai_1924.html
+  type: database
+  tier: D
+  role:
+  - data
+  operator: kasado.net
+  lang: ja
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 川内/那珂 与 神通 分两栏列数据（主机型号不同处即由此看出）。 **口径提示**： ① 全長 162.46 m，与 japanese-warship 的 162.15 / navypedia 的 163.0 三方并存； ② 吃水 4.80 m，navypedia 记 4.91 m； ③ 基准排水量栏写「N/A」，常備 5,595 t —— **本级的标准排水量本页未给**； ④ 定員
+    452 名，与 navypedia/combinedfleet 的 450 冲突； ⑤ 鱼雷栏「八年式 61.0cm連装魚雷発射管:4基 ↑八年式 61.0cm魚雷:16本」。
+- id: dougakan-cl4
+  title: 日本海軍史 軽巡洋艦４（軽巡の発射管と魚雷）— 図鑑置場
+  url: http://dougakan675.blog49.fc2.com/blog-entry-90.html
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: dougakan675.blog49.fc2.com
+  lang: ja
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "日文长篇技术随笔，逐条讲 5500 吨型轻巡的鱼雷发射管沿革。本组用它取证 「长良型/川内型各带多少条鱼雷、发射管怎么布置」。 **可用的关键原话**： ① 「八年式六一センチ魚雷搭載数は両舷各二斉射分の一六本であった」\n   —— 长良型带 16 条鱼雷 = 两舷各两个齐射份 = 8 门发射管各 1 条备份；\n② 「長良型の八年式連装水上発射管装備位置は…艦橋後部の船首楼甲板下の上甲板両舷に各一基、\n\
+    \   第3煙突後方の上甲板両舷に各一基の合計四基八門」—— 四基八门的具体位置；\n③ 「発射管は…楯を有さず、管体むき出しのままであったが、魚雷を装填すると\n   全備重量は一三トンを越えるものとなり、旋回は…五馬力の電動機による機力旋回であった。\n   三六〇度旋回時間は約一分」—— 单座全备 13 t 余、5 hp 电机驱动、360° 约 1 分钟；\n④ 川内型条目「魚雷発射管＝八年式六一センチ連装発射管四基\
+    \ / 魚雷＝八年式六一センチ魚雷一六本」。 **重要局限**：全文**没有出现「次発装填装置」这个词**。 它只说「16 条鱼雷」和「每舷两个齐射份」，即**推论上存在 8 条备份雷**， 但**没有任何一句说这些备份雷是靠机械再装填装置上膛的**。 本站因此不写「装几组再装填装置」，见 RESEARCH-NOTES 的「卡住的地方」。"
+- id: nsl-torpedoes-2
+  title: Imperial Japanese Navy Torpedoes, Part II — Naval Submarine League Archive
+  url: https://archive.navalsubleague.org/2002/imperial-japanese-navy-torpedoes-part-ii
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: Naval Submarine League（archive.navalsubleague.org）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "英文的日本鱼雷发展综述，用来做「本级为什么换 61 cm」的英文原句依据。 **可用原话**： ① 「These huge weapons were mounted on cruisers beginning with the Nagara class,\n   laid down in 1920-21, and on destroyers beginning with the Mutsuki\
+    \ class」\n   —— 长良级是日本巡洋舰用 61 cm 鱼雷的起点；\n② 「During WWII the torpedo armament was twelve or sixteen 24 inch tubes and usually\n   twenty-four Type 93 torpedoes including reloads.」—— 这句讲的是**重巡**（A 类），\n\
+    \   不是轻巡，引用时**必须限定范围，不可拿来套长良/川内**；\n③ 「Fifteen of the light cruisers that were commissioned in the Japanese Navy after\n   WWI were built with 24 inch tubes. ... All of these cruisers probably were\
+    \ capable\n   of firing Type 93 torpedoes, but some may not have been issued oxygen torpedoes\n   until some time after Pearl Harbor if at all.」\n   —— 注意原文用的是「probably」与「may not」，**是推测措辞，不可当定论引用**。"
+- id: naval-ency-nagara
+  title: Nagara class cruisers (1920) — naval encyclopedia
+  url: https://naval-encyclopedia.com/ww2/japan/nagara-class-cruisers.php
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: naval-encyclopedia.com
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "长良级的英文综述，**本组只用它做旁证与英文原句补充，不当主数据源**。 **口径提示（该页内部自相矛盾处）**： ① 排水量同段既写「5,570 long tons (5,659 t) normal (7,203 t deep load)」，\n   又写「range of 6,000 nmi at 14 knots」，后文又写「9,000 nautical miles at 10\
+    \ knots」\n   —— 同一页两个续航值；\n② 「armoured belt 60 mm ... armored deck 30 mm」与 navypedia 的 63/29、\n   kasado 的 38/29 三方并存；\n③ 鱼雷段称本级换装的是「Type 93 Long Lance」，但同句又说是「same number」\n   （4 座连装）—— **与「1944 年才换四连装」的其他来源时序矛盾**，\n\
+    \   本站不采用该页的换装时序。"
+- id: naval-ency-sendai
+  title: Sendai class Cruisers (1923) — naval encyclopedia
+  url: https://naval-encyclopedia.com/ww2/japan/sendai-class-cruisers.php
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: naval-encyclopedia.com
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 川内级的英文综述。**本组只用它做旁证**。 **关于鱼雷再装填的最重要一句（本组唯一的英文「reload」原话）**： 「Before the war in 1942 their torpedo tubes were augmented, at last on Naka and Jintsu which had their forward twin tubes banks eliminated
+    and the hull plated over for better seakeeping, but keeping their aft banks, now upgraded to quadruple ones for the same "long lance". Eight tubes, but the same number or reloads (so 16 torpedoes in
+    all).」 —— 这句说明那珂/神通换四连装后仍是 8 门 + 8 条备份 = 16 条， **但它说的是那珂与神通，不是川内**；且「reloads」在这里指备份鱼雷， **不等于「次発装填装置」这种机械装填装置**。引用时必须区分。 另：该页对长良级鱼雷段亦有「Twenty-four inch torpedoes」表述， 但未给长良级的 reload 数。
+- id: jawiki-nagara-class
+  title: 長良型軽巡洋艦 — 日本語版 Wikipedia
+  url: https://ja.wikipedia.org/wiki/%E9%95%B7%E8%89%AF%E5%9E%8B%E8%BB%BD%E5%B7%A1%E6%B4%8B%E8%89%A6
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  operator: Wikimedia Foundation
+  lang: ja
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: '**tier E，只作线索，不作任何 fact 的来源。** 用途：① 从这里找到日文一次文献的页码线索（「一般計画要領書(二等巡洋艦)」 「海軍造船技術概要(1987)」等）；② 交叉核对日文数值口径。 本组未引用其任何数值立 fact。 其「基準排水量 5,170 / 常備 5,502.81 / 公表 5,570 英トン」三口径并列的写法， 帮助本组判断 kasado 的 5,170
+    属「基準」而非「常備」。'
+- id: jawiki-sendai-class
+  title: 川内型軽巡洋艦 — 日本語版 Wikipedia
+  url: https://ja.wikipedia.org/wiki/%E5%B7%9D%E5%86%85%E5%9E%8B%E8%BB%BD%E5%B7%A1%E6%B4%8B%E8%89%A6
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  operator: Wikimedia Foundation
+  lang: ja
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: '**tier E，只作线索。** 其给出的「基準 5,195 / 常備 5,595 / 舷側 63.5mm (25.4+38.1mm HT鋼) / 甲板 28.6mm HT鋼」帮助本组理解 kasado 38 mm 与 navypedia 64 mm 的差额可能来自「两层合计 vs 单层」， 但该解释只见于 tier E，**本站未据此裁决**，两说并列。'
+- id: jawiki-nagara
+  title: 長良 (軽巡洋艦) — 日本語版 Wikipedia
+  url: https://ja.wikipedia.org/wiki/%E9%95%B7%E8%89%AF_(%E8%BB%BD%E5%B7%A1%E6%B4%8B%E8%89%A6)
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  operator: Wikimedia Foundation
+  lang: ja
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: '**tier E，只作线索，不作任何 fact 的来源。** 其对本组最有价值的一段是「田村俊夫 vs 定説」的鱼雷换装之争： 「一方、艦艇研究家の田村俊夫によれば上記の定説に対して、換装した根拠がない事や… 疑問を持ち、長良の兵装変遷を調査した」，并列三条反证 （1944-07-01『艦船要目概要一覧表』写「連装発射管四基、九三式魚雷」； あ号作戦後の現状調査表图仍是 well deck；Croaker
+    拍摄的沉没照片可见 well deck）。 **该争议指向的田村原文本组未取得**，故只并列观点、不裁决。 另：该页记长良沉没伤亡「中原艦長以下348名が戦死し、237名が救助された」， 与 combinedfleet 同数但口径不同（是否含舰长），正文来源用 combinedfleet。'
+- id: jawiki-sendai
+  title: 川内 (軽巡洋艦) — 日本語版 Wikipedia
+  url: https://ja.wikipedia.org/wiki/%E5%B7%9D%E5%86%85_(%E8%BB%BD%E5%B7%A1%E6%B4%8B%E8%89%A6)
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  operator: Wikimedia Foundation
+  lang: ja
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: '**tier E，只作线索，不作任何 fact 的来源。** 用途：核对川内中途岛的编成表述（「第三水雷戦隊（軽巡川内《旗艦》、第11駆逐隊… は連合艦隊司令長官山本五十六大将直率の主力部隊に所属した」）与 第二次瓜岛海战段（「第四戦隊、第三水雷戦隊、長良隊が発射した酸素魚雷は ほとんど自爆し」），与 combinedfleet 互证。 本组未用其任何数值立 fact。'
+- id: jamid-warships-index
+  title: 日本海軍の軽巡洋艦の一覧（kasado.net 站内索引，用作 URL 核对）
+  url: https://www.kasado.net/Cruisers/Japan/
+  type: website
+  tier: D
+  role:
+  - lead
+  operator: kasado.net
+  lang: ja
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 仅用于确认 kasado 站内长良级/川内级页面的正确路径（Nagara_1922.html / Sendai_1924.html）。未从本页取任何数值。
+- id: navypedia-kongo
+  title: KONGO battlecruisers (1913 - 1915) — Navypedia
+  url: https://www.navypedia.org/ships/japan/jap_bb_kongo.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: navypedia.org
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "金刚级主尺度/排水量/动力/装甲骨架，四舰合成一页、按三个状态列 （as completed / 1928-1931 modernization / 1934-1940 modernization）。 **口径提示（用前必读）**： ① 标准排水量栏在 as completed 列填「---」，只给「Displacement normal, t\n   27500」——normal\
+    \ 与条约 standard 不是同一口径，不可当标准排水量用；\n   本站的 26,330 t 取自日文来源的「基準排水量」。\n② 第二次改装后的标准排水量是**逐舰给**的（Kongo 31720 / Hiei 32350 /\n   Kirishima 31980 / Haruna 32156），而其上各项（全长、宽、吃水、马力、\n   燃油、续航）全级共用一个值——**不可把逐舰值当全级值，也不可反过来**。\n\
+    ③ 动力栏把四舰分两组：「Kongo, Kirishima: … 8 Kampon boilers /\n   Haruna, Hiei: … 11 Kampon boilers」——这是本级最重要的逐舰差异。\n④ 装甲栏是纵列字符串，多数项为区间（如 belt: 203 - 76），区间内部\n   如何分配到具体部位原文未写；同页文字段落与表格数字有若干处对不上\n   （deck 57\
+    \ 在文字叙述里无对应），引用时以逐条 note 为准。\n⑤ 燃油栏 as completed 记「coal 4200 + oil 1000」——含煤，本站\n   propulsion.fuel.capacity 只收油 1000 t，煤量仅在 note 保留。\n**抓取**：Python urllib 直连，1 次成功（HTTP 200，56,591 bytes）。"
+- id: combinedfleet-haruna
+  title: IJN Battleship HARUNA — Tabular Record of Movement (combinedfleet.com)
+  url: http://www.combinedfleet.com/haruna.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: combinedfleet.com (Bob Hackett / Sander Kingsepp / Lars Ahlberg)
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "榛名逐日年表，Revision 22，© 2000-2017。覆盖 1908（造舰缘起）至 1946-48 （残骸浮扬解体），是本轮榛名战历与改装节点的主要来源。 **口径提示**： ① **URL 注意**：`haruna_t.htm` 实测 404，正确路径是 `haruna.htm`\n   （雾岛则是首字母大写的 `Kirishima.htm`，小写 404）——同站大小写不统一，\n\
+    \   抓之前先试两种。\n② 编制数字来自 navypedia，本页不含编制表。 ③ 1943-03 的 25 mm 增装本页记「Two 25-mm triple mounts are installed」\n   （+2 座三联），navypedia 同一改装记「+ 7 x 2 - 25/60 96-shiki」\n   （+7 座双联）——**两源冲突，本站并列不裁决**。\n④ 1945-07\
+    \ 两日空袭的命中数记「13 bomb hits and 10 near misses」，\n   navypedia 记「3 and 9 direct hits」——两说并列不裁决。\n⑤ 注 [1] 主动质疑「榛名 1917 年触雷」这一流传说法：作者列出反证\n   （无照片、无修理记录，且日本海军史家中川努称其从未触雷）。\n   本站不采用「触雷」情节。\n⑥ 注 [2] 说明第一次改装起始日两本日文书的说法不同（石桥孝雄记\n\
+    \   1923-11-28，本页取 Gakken Pictorial Vol.65 的 1924-02-08）。\n**抓取**：Python urllib 直连，HTTP 200，78,280 bytes。"
+- id: combinedfleet-kirishima
+  title: IJN Battleship KIRISHIMA — Tabular Record of Movement (combinedfleet.com)
+  url: http://www.combinedfleet.com/Kirishima.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: combinedfleet.com (Bob Hackett / Sander Kingsepp / Lars Ahlberg)
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "雾岛逐日年表，Revision 19，© 2001-2016。覆盖 1912-03-17 开工至 1992-08 Ballard 发现残骸，第三次所罗门海战第二夜（1942-11-14/15）逐分钟记录尤详。 **口径提示**： ① **URL 注意**：本站路径大小写敏感，`kirishima.htm` 实测 404，\n   必须用 `Kirishima.htm`。\n② **本页有一条不可替代的否定性记载**（注\
+    \ [3]）：「Several sources suggest\n   that KIRISHIMA was fitted with a \"Type 21 Model 1\" radar in early August.\n   This is not correct: KIRISHIMA was scheduled to receive a Type 21 radar,\n   but departed\
+    \ without it.」——沉没时**无雷达**，本站据此驳回「1942-08\n   装二一号电探」的流行说法。\n③ 命中数存疑（注 [5]）：「USSBS postwar analysis … suggests that KIRISHIMA\n   received nine 16-inch shell hits and forty 5-inch shell hits. This is\n\
+    \   consistent with Admiral Lee's estimate of eight 16-inch shell hits…\n   However … Robert Lundgren has completed an analysis suggesting that the\n   real number might be some 20 major caliber hits\
+    \ and seventeen smaller\n   caliber hits.」→ 三说（USSBS 9+40 / Lee 8 / Lundgren 20+17）并存，\n   本站不采用任何单一数字作事实。\n④ 出发日与榛名页差两天：本页记 1942-05-27 出发，榛名页记 05-29。\n   并列不裁决。\n**抓取**：Python urllib 直连，HTTP 200，67,304\
+    \ bytes。"
+- id: combinedfleet-kongo
+  title: IJN Battleship KONGO — Tabular Record of Movement (combinedfleet.com)
+  url: http://www.combinedfleet.com/kongo.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: combinedfleet.com (Bob Hackett / Sander Kingsepp / Lars Ahlberg)
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 金刚逐日年表，Revision 22。**本轮只作旁证用**：① 建造段明确金刚是唯一 英国造（「Yard No. 414, a 32,200 ton battlecruiser … laid down at Vicker's shipyard」），用于反证「榛名/雾岛也是英国造」的说法；② 第一次改装段的 背景句「Unable to construct new battleships
+    under the terms of the Washington Treaty, Japan is forced to modernize her old battlecruisers」 解释了大改装的动因；③ 为 navypedia 的 as completed 满载 32,200 t 提供 独立互证。**榛名/雾岛的逐舰数据一律不引本页**。 **抓取**：Python urllib 直连，HTTP
+    200，84,006 bytes。
+- id: japanese-warship-haruna
+  title: 榛名【金剛型戦艦 三番艦】 — 大日本帝国軍 主要兵器
+  url: https://japanese-warship.com/battleship/haruna/
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: japanese-warship.com（大日本帝国軍 主要兵器）
+  lang: ja
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "日文舰艇资料页，公开 2018-01-27、更新 2024-07-11。**本轮不可替代的一部分** 是它按三个时点（1915 竣工 / 1928 一次改装后 / 1934 二次改装后） **逐型列兵装与锅炉**，且 1944-10-05 那一栏把 25 mm 按三联/双联/单装 **分型给管数**——这是全库唯一能直接读出「108 挺」的构成的地方。 **口径提示**： ① 锅炉逐舰差异记全：「一次改装：混焼10基、重油専焼6基\
+    \ → 二次改装：\n   重油専焼11基[1-P88]」，并与金刚/雾岛的 8 基明确区分。\n② 基准排水量 26,330 / 29,330 / 32,156 t 三个时点，与 navypedia 的\n   31,720（金刚）等逐舰值体系不同源，但 32,156 与 navypedia 的 Haruna\n   值一致，可互证。\n③ 「水線下幅」② 31.02 m / ③ 31.01\
+    \ m 与 navypedia 的 29.3 m 差 1.7 m\n   ——**两说并列不裁决**（日文用「水線下幅」、英文用 Breadth，可能不是\n   同一测量位置）。\n④ 引用的两本日文书：『船の科学』矢杉正一「舶用蒸気主機関の技術の変遷（7）」、\n   『経済学雑誌』坂上茂樹「艦本式ボイラについて（2/3）」。\n⑤ **本页马力栏只有设计值（64,000 / 136,000），没有试航实测**，\n\
+    \   故榛名的 propulsion.power.trial 与 speed.trial 为「未获取」。\n**抓取**：Python urllib 直连，HTTP 200，47,218 bytes。"
+- id: japanese-warship-kirishima
+  title: 霧島【金剛型戦艦 四番艦】 — 大日本帝国軍 主要兵器
+  url: https://japanese-warship.com/battleship/kirishima/
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: japanese-warship.com（大日本帝国軍 主要兵器）
+  lang: ja
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "日文舰艇资料页，公开 2018-01-27、更新 2024-07-11。 **本轮最有价值的一段是试航实测**：「第二次改装後の公試運転では、公試全力で 29.80ノット・136,940軸馬力、過荷全力で30.08ノット・144,500軸馬力を記録して います[3]」，出处 [3] 为『軍艦霧島第二回改装公試運転成績』（一手试航记录）。 这是四舰里**唯一**有试航实测马力/航速的一艘，故榛名页没有的数据\
+    \ 不得用本页值代入。 **口径提示**： ① 锅炉栏自己并列两说：「重油専焼10基[1-P88] or 重油専焼4基＋混焼6基[5]」\n   ——混烧/专烧构成未定，本站并列不裁决。\n② 速力栏把 ③ 标为「29.8ノット（公試全力）[3]」，与 navypedia 的\n   30.5 kn（最大速度）是不同口径，本站分列 speed.trial / speed.max。\n③ 第二次改装完成日记\
+    \ 1936（昭和 11），具体日 06-08 取自 combinedfleet。 ④ 炮塔侧面曲面的外形差异记于此：「【榛名】と【霧島】の類似点としては、\n   砲塔の側面に曲面があるところ。【金剛】と【比叡】は平面で構成されています。」\n**抓取**：Python urllib 直连，HTTP 200，47,000 bytes。"
+- id: japanese-warship-kongo
+  title: 金剛【金剛型戦艦 一番艦】 — 大日本帝国軍 主要兵器
+  url: https://japanese-warship.com/battleship/kongo/
+  type: website
+  tier: D
+  role:
+  - data
+  operator: japanese-warship.com（大日本帝国軍 主要兵器）
+  lang: ja
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "金刚日文页，公开 2017-12-22、更新 2024-07-20。**本轮只作旁证**： ① 建成时锅炉写「ヤーロー式ボイラー（混焼）36基」，而榛名/雾岛页同样位置\n   写「ロ号艦本式ボイラー（混焼）36基」——**同型舰建成时锅炉型号两说**，\n   本站并列不裁决（navypedia 对四舰一律写 Yarrow）；\n② 说明四舰动力厂牌差异的最小证据（金刚 Parsons\
+    \ / 榛名 Brown-Curtis）； ③ 1944-07-10 兵装表可作榛名 1944-10-05 表的对照，但**两舰数字不同，\n   不可互推**（金刚 25 mm 共 54+16+30=100 挺）。\n**抓取**：Python urllib 直连，HTTP 200，49,582 bytes。"
+- id: navweaps-36cm-45-t41
+  title: Japan 36 cm/45 (14") 41st Year Type — NavWeaps
+  url: https://www.navweaps.com/Weapons/WNJAP_14-45_t41.php
+  type: website
+  tier: C
+  role:
+  - data
+  operator: navweaps.com（Tony DiGiulian）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "金刚级主炮完整数据页。同页含三型：14\"/45 Vickers Mark \"A\"（英造）、 43rd Year Type、41st Year Type（日产）。 **口径提示**： ① **金刚装英造 43rd Year Type，榛名/雾岛装日产 41st Year Type**——\n   本页开头即写明这套命名沿革，是修正「四舰主炮同型」误解的直接依据。\n② 初速、药室、炮座重量等多项原文给区间（如\
+    \ APC 初速 770-775 mps、\n   炮管寿命 250-280 发），本站只收单值并在 note 保留区间，不取平均。\n③ 弹道染料（1941 起）：榛名 Black、雾岛 Blue、金刚 Red、比叡 None(White)\n   ——这是识别弹着的实用数据。\n④ 内页明确「Automatic air purging was added during refits in\
+    \ 1940-1941 on\n   at least the Kongô class.」\n⑤ 炮座重量「Kongô: About 654 tons (664 mt)」是**炮座**总重，不是炮身重。 **抓取**：Python urllib 直连，HTTP 200，41,436 bytes。"
+- id: navweaps-15cm-50-t41
+  title: Japan 15 cm/50 (6") 41st Year Type — NavWeaps
+  url: https://www.navweaps.com/Weapons/WNJAP_6-50_t41.php
+  type: website
+  tier: C
+  role:
+  - data
+  operator: navweaps.com（Tony DiGiulian）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "金刚级副炮（舷侧炮廓单装）数据页。含 Vickers Mark M/II/III/IV 与 四一式 15 cm 的对应关系。 **口径提示**： ① 页内脚注直接给出四舰副炮撤除台账：「Kongô had two more guns removed in\n   early 1943 and a further four removed in January 1944. Haruna\
+    \ had six\n   guns removed in March 1943.」——**与 combinedfleet 的榛名记载冲突**\n   （combinedfleet 记 1943-03 只撤 2 门、1944 年撤 4 门），并列不裁决。\n② 射速分理论 10 发/分与实战 5–6 发/分，初速给区间 850–855 mps，\n   本站均只收单值并在 note 保留区间。\n\
+    ③ 炮座栏「Kongô (16): Vickers P1」——16 为**炮位数**，不是炮管型号数。 **抓取**：Python urllib 直连，HTTP 200，28,349 bytes。"
+- id: navweaps-midway-oob
+  title: Orders of Battle — Battle of Midway and Aleutians, 3-7 June 1942 (NavWeaps)
+  url: https://www.navweaps.com/index_oob/OOB_WWII_Pacific/OOB_WWII_Midway.php
+  type: website
+  tier: C
+  role:
+  - data
+  operator: NavWeaps（contributed by Mark Horan, Richard Worth, David Williams, Richard Leonard）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 全站唯一**逐 Buntai（分队）列出日方航空队编制**的中途岛战斗序列，同时给出美方各中队 「编制数（operational 数）」双数。关键口径提示： （a）每个航空队单列一行「Unit commander … 1 x B5N2/D3A1」，该行与 Buntai 行是否重复计 未明说；按分队相加后与 combinedfleet TROM 一致，但属结构解读，不可写成来源断言。 （b）约克城
+    VS-5 19 / VB-3 18 与行动报告 18/18、出击 17 冲突，两说并列。 （c）VMSB-241 SB2U-3 标「21 (14 operational)，Only 12 crews」——飞机比机组多，是中途岛 岸基航空兵的真实窘境。 （d）本页同时收录阿留申作战，检索时必须分段（见 docs/51-midway-oob-verification.md）。
+- id: ussbs-ijo-1-amagi-kaga
+  title: USSBS Interrogation Nav No. 1 — Captain Amagai Takahisa, Air Officer of Kaga at Midway
+  url: https://www.ibiblio.org/hyperwar/AAF/USSBS/IJO/IJO-1.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: US Strategic Bombing Survey, 1945-10-06
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain_us_gov
+  note: '加贺飞行长一手证言。三处关键： （1）加贺航空队编制「21 fighters (0) Type: 27 VB (99 Type); 18 VT (97 Type); **same as all other carriers**」——与其他来源（18/18/27）不一致，属受访者记忆偏差，**不可作编制依据**， 只作旁证。 （2）加贺阵亡「About 800 lost. About
+    1000 saved.」；飞行员「About 40 pilots. About 50% pilots saved.」 （3）**雷达矛盾的关键来源**：先说「By radar. It was an experiment at MIDWAY」，又说「Did the Kaga have it? No, island too small」。两句都引，不裁决。 另有加贺被弹 4 发逐发部位、CAP 常态
+    28 机（每两舰 8/8/6/6）等。'
+- id: ussbs-ijo-2-kawaguchi-hiryu
+  title: USSBS Interrogation Nav No. 2 — Captain Kawaguchi Susumu, Air Officer of Hiryu at Midway
+  url: https://www.ibiblio.org/hyperwar/AAF/USSBS/IJO/IJO-2.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: US Strategic Bombing Survey, 1945-10-10
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain_us_gov
+  note: 飞龙航空参谋一手证言。**飞龙飞行员阵亡「About 60 pilots and a total of 500 men of crew of 1500」的唯一出处**。另有两句决定性的： （1）飞龙被弹「hit **six** times during the fourth attack」（与详报/ TROM 的 4 弹冲突，并列）。 （2）**日方雷达时间点**："No, not any.
+    As soon as we got back they put them on the carriers. **July 1942** both battleships and carriers received them." 注意：该页把山本座舰记作「Third Fleet / Third Task Force, commanded by Vice Admiral NAGUMO」， 部队番号有误（应为第一航空舰队），引用时不要照抄番号。
+- id: ussbs-ijo-13-watanabe
+  title: USSBS Interrogation Nav No. 13 — Captain Watanabe Yasuji, Gunnery Officer on Yamamoto's Staff
+  url: https://www.ibiblio.org/hyperwar/AAF/USSBS/IJO/IJO-13.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: US Strategic Bombing Survey, 1945-10-15
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain_us_gov
+  note: 山本幕僚视角。三处可用： （1）日方总损失估计「**The total lost was about 4,500**」（与 ONI 的 4,800 并列）。 （2）战后盘点「**Many planes and a number of pilots were lost in the action, which, weakened the Navy Air Force, requiring
+    training to replace them.**」 （3）雷达「No, about **August 1942** it was installed.」（与川口的「7 月」冲突，并列。） 该访谈把山本记作在 YAMATO 上指挥「entire operation」，且说「Admiral NAGANO commanded carrier forces」——后者有误（南云，非永野），引用时需剔除。
+- id: ussbs-ijo-31-katsumata-attrition
+  title: USSBS Interrogation Nav No. 31 — Rear Admiral Katsumata Seizo, Aircraft Ferrying and Pilot Attrition, JNAF
+  url: https://www.ibiblio.org/hyperwar/AAF/USSBS/IJO/IJO-31.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: US Strategic Bombing Survey, 1945-10-25
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain_us_gov
+  note: '**「中途岛不是飞行员损耗率修订主因」这条反证的原句出处**： "I believe the Battle of GUADALCANAL and the actions at RABAUL had more to do with the revision than the Battle of MIDWAY." 另给训练体系崩坏路径：损耗率假设 20-30% → 1943 上调 50%；
+    1943 年末因汽油短缺废弃中级训练阶段，"This increased operational losses."'
+- id: ussbs-ijo-39-ohara-soryu
+  title: USSBS Interrogation Nav No. 39 — Captain Ohara Hisashi, Executive Officer of Soryu at Midway
+  url: https://www.ibiblio.org/hyperwar/AAF/USSBS/IJO/IJO-39.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: US Strategic Bombing Survey
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain_us_gov
+  note: 苍龙副长一手证言。苍龙阵亡「About 700 were lost **including about 30 pilots**」；被弹 3 发逐发 部位；「About 250 planes were lost. Some were lost in the attack on the island, some at the American carriers, the remainder
+    were lost on the Japanese carriers.」——这是 44（空中）与 248 （编制）两个口径之间唯一讲清「损失去哪了」的一手说法。 另有「The planes were delayed while changing bombs to attack the carriers.」——换弹影响出击的 日方原始表述。
+- id: ussbs-ijo-50-aircraft-wastage
+  title: USSBS Interrogation Nav No. 50 — Commander Fukamizu, Aircraft Availability and Loss Reports
+  url: https://www.ibiblio.org/hyperwar/AAF/USSBS/IJO/IJO-50.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  operator: US Strategic Bombing Survey, 1945-10-31 / 11-01
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain_us_gov
+  note: '**Annex B 是唯一一份逐月「生产 / 损耗」双列的海军航空兵力表**，脚注 7 把 1942 年 6 月标注为 "Midway, Aleutians"。 ⚠️ 该页**没有给 `a/b` 的图例**，按表头 "Number of Planes Expended = Combat Losses/Operational Losses" 与列位推断为「生产/损耗」，**属推断，不是来源断言**。除非先核对原表图例，否则只引
+    「6 月标注为 Midway/Aleutians」这一事实，不引具体数字。'
+- id: ussbs-ijo-64-takata-planning
+  title: USSBS Interrogation Nav No. 64 — Rear Admiral Takata Toshitane, Japanese Naval Planning after Midway
+  url: https://www.ibiblio.org/hyperwar/AAF/USSBS/IJO/IJO-64.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: US Strategic Bombing Survey, 1945-11-01
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain_us_gov
+  note: 第三舰队参谋，负责中途岛后的航空队重建。三处关键： （1）飞行员「**30% of the pilots were killed and 40% were injured**」（唯一按比例给出的口径）。 （2）生还者去向：「30% came back to JAPAN to convalesce, 40% were shifted to the Third Fleet, at KYUSHU」，随后「forced
+    to send these pilots prematurely to RABAUL」，最终「most of them were killed in action at PORT MORESBY, BUNA and SANTA CRUZ」——**「长期损失」的真实路径**。 （3）「**I think failure of the MIDWAY Campaign was the beginning
+    of total failure.**」
+- id: ussbs-ijo-66-midway-solomons
+  title: USSBS Interrogation Nav No. 66 — Midway, Eastern Solomons, Philippines
+  url: https://www.ibiblio.org/hyperwar/AAF/USSBS/IJO/IJO-66.html
+  type: primary_archive
+  tier: A
+  role:
+  - narrative
+  operator: US Strategic Bombing Survey
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain_us_gov
+  note: 补强用的旁证访谈（中途岛→东所罗门→菲律宾一线的连续性）。本轮未逐句引用，登记备用。
+- id: nhhc-h006-1-battle-of-midway
+  title: 'NHHC H-gram 006-1: The Battle of Midway (S. J. Cox)'
+  url: https://www.history.navy.mil/about-us/leadership/director/directors-corner/h-grams/h-gram-006/h-006-1.html
+  type: official_publication
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: Naval History and Heritage Command
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain_us_gov
+  note: '**本轮最重要的一份**，因为它同时给出三组此前拿不到的数字： （1）**日方飞行员阵亡「only 36 were lost on the carriers and 74 in the air, mostly from Hiryu」** —— 这就是常被引用的 110。 （2）「All 248 carrier aircraft were lost」；「Over 3,000 Japanese
+    sailors were killed … including **over 700 aircraft technicians/maintainers**」。 （3）**决定性的反证句**："**It was not the loss of pilots at Midway** that crippled Japan''s ability to wage offensive naval operations,
+    but rather the loss of … **the irreplaceable aircraft carriers**." 另有美方空勤「Well over 150 U.S. aviators」；鱼雷机「Of the 99 men in the 42 torpedo planes that were lost, only three survived」。 该页直连 TLS 握手失败（history.navy.mil
+    全线），**本次经 Wayback 抓取**： http://web.archive.org/web/20251208122218id_/https://www.history.navy.mil/about-us/leadership/director/directors-corner/h-grams/h-gram-006/h-006-1.html'
+- id: nhhc-h006-4-flight-to-nowhere
+  title: 'NHHC H-gram 006-4: The Flight to Nowhere (S. J. Cox)'
+  url: https://www.history.navy.mil/about-us/leadership/director/directors-corner/h-grams/h-gram-006/h-006-4.html
+  type: official_publication
+  tier: A
+  role:
+  - narrative
+  operator: Naval History and Heritage Command
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain_us_gov
+  note: 大黄蜂航空团「flight to nowhere」（Ring 的 265° 航向）专题。含 2019 年作者自注：该说法 「differs from the traditional view [and Samuel Eliot Morison's] and provokes heated dissent」， 反证是大黄蜂两名战斗机飞行员称途中见到库雷环礁。**争议本身要写明**，不要单方面采用。
+    本轮仅登记，未作为正文主依据。 直连 TLS 失败，经 Wayback：20251208121820id_
+- id: ethw-radar-fighter-directors-midway
+  title: Midway — Chapter 7 of Radar and the Fighter Directors (Engineering and Technology History Wiki)
+  url: https://ethw.org/Midway_-_Chapter_7_of_Radar_and_the_Fighter_Directors
+  type: website
+  tier: C
+  role:
+  - data
+  - narrative
+  operator: ETHW / IEEE（章节作者引 [5][9][11][15][32][33] 页码）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '**美方 CXAM 四次接触的唯一逐次叙述来源**：0815 利根 4 号机（30 mi / 185°）、1159 飞龙第一波 （46 mi / 250°，ONI 同）、约 1430 飞龙第二波（45 mi）、1615 利根 3 号机。另有反事实判断 「If the Japanese carriers had radar equivalent to the American CXAM
+    they most likely would not have been surprised」——C 级作者判断，引用须标层级。 ⚠️ 该页称中途岛岸基雷达是「SCR-270, a close cousin of the CXAM」，与 ONI 只说「Midway radar」 不同，型号归属存疑，不要写成定论。'
+- id: hw-japanese-story-midway-nagumo
+  title: HyperWar — The Japanese Story of the Battle of Midway (ONI P32-1002 全文，含 7 张附表)
+  url: https://www.ibiblio.org/hyperwar/Japan/IJN/rep/Midway/Nagumo/
+  type: official_publication
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: ONI 译（南云一手战斗详报），HyperWar 转录
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain_us_gov
+  note: 与 `ng-nagumo-detailed-report` 同源同址——**两条 id 指向同一 URL 是重复，合并时请保留 `hw-japanese-story-midway-nagumo` 这一条，删除 `ng-nagumo-detailed-report`**。 保留理由：该 id 命名与既有 `oni-japanese-story-midway` 形成「NHHC 版 / HyperWar
+    版」对照， 便于区分「有表 / 无表」。
+- id: ss-introduction-shattered-sword
+  title: Shattered Sword — Introduction (free sample PDF, Potomac Books)
+  url: https://www.shatteredswordbook.com/ShatteredSwordIntroduction.pdf
+  type: document
+  tier: C
+  role:
+  - narrative
+  operator: Jonathan Parshall & Anthony Tully / Potomac Books
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 正式出版物的导言（非讲稿），比已登记的 `parshall-midway-brief`（2006 Historicon 讲义）更适合作 正文依据。**核心价值：把「精英飞行员全灭」明确列为谬见**： "• Japan's elite carrier aviators were all but wiped out during the battle. All of these are **fallacious**."
+    另有「after six months of war, Japan's naval aviation arm was already balanced on a knife's edge」等战略判断。 ⚠️ 仅导言 7 页，无页码级附录，引用时不得冒充全书数据。
+- id: usni-messaging-after-midway
+  title: Timeless Lessons From the Messaging After Midway (Naval History, June 2025)
+  url: https://www.usni.org/magazines/naval-history/2025/june/timeless-lessons-messaging-after-midway
+  type: paper
+  tier: C
+  role:
+  - narrative
+  operator: Lieutenant Jack Tribolet, USN / U.S. Naval Institute
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '**日方宣传口径分阶段释放的唯一成体系叙述**：6/11 Japan Times 头条「Navy Scores Another Epochal Victory」自称击沉 2 艘美航母、**同时承认损失 2 艘**；6/21 才承认另 2 艘「因不明损伤无法运作」。 另有对轴心盟友说谎→意大利在阿拉曼后公开归咎日本海军；以及「把生还者隔离一年以上，反而自损 经验」这条长期后果。 ⚠️
+    **该文自身有硬伤**：称美国头条「7 July 1942, hitting the stands three days after the battle」， 但中途岛是 6/4-7，距 7/7 已一个月。**「三天后」这句不可引用。** 直连 403，经 Wayback：20260604112236id_'
+- id: kyoto-shimbun-midway-daiseika
+  title: 【京都戦時新聞を読む】ミッドウェー海戦「大戦果」 嘘の「勝利」、どう伝えたのか（京都新聞）
+  url: https://www.kyoto-np.co.jp/articles/-/1734498
+  type: website
+  tier: C
+  role:
+  - narrative
+  operator: 京都新聞（引《京都戦時新聞》第 4 号，1942-06-11 掲載）
+  lang: ja
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '**大本営発表（1942-06-10 15:30）的日文原文转引**，是本轮唯一拿到日文原始措辞的来源： 「米航空母艦エンタープライズ型１隻とホーネット型１隻撃沈▽飛行機約１２０機撃墜」。 并附现代表述「大本営は虚構の戦果を発表し、京都新聞など全国の新聞は追従して「大戦果」と報道」。 ⚠️ 这是**报纸引大本営発表**，不是大本営发表原件；引用层级应写「转引自《京都戦時新聞》第 4
+    号」。'
+- id: nw-japanese-torpedoes-wwii
+  title: NavWeaps — Japanese Torpedoes of World War II
+  url: https://www.navweaps.com/Weapons/WTJAP_WWII.php
+  type: website
+  tier: C
+  role:
+  - data
+  operator: NavWeaps（Tony DiGiulian）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 九一式（Type 91）航空鱼雷各改型数据页。**中途岛可用的一条是图注**："Type 91 mod 2 Torpedoes on the carrier Akagi in November 1941"——1941-11 赤城带的是 Mod 2。 ⚠️ **该图为 1941 年 11 月（珍珠港前），不是 1942-06 中途岛当日**；中途岛当日具体改型未获取， 写作时不可断言是
+    Mod 2 还是 Mod 3。
+- id: nw-us-radar-wwii
+  title: NavWeaps — US Radar of World War II
+  url: https://www.navweaps.com/Weapons/WNUS_Radar_WWII.php
+  type: website
+  tier: C
+  role:
+  - data
+  operator: NavWeaps（Tony DiGiulian）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: CXAM 的型号学定位原句："The prefixes 'X' and 'CX' were reserved for the Navy (NRL) and commercially produced experimental or preproduction sets, eg **CXAM, the first US naval radar**." 本页**只有型号沿革与设备参数，没有中途岛战役数据**——战役接触记录须用
+    `ethw-radar-fighter-directors-midway` 与 `oni-midway-combat-narrative`。
+- id: danfs-ca36
+  title: Minneapolis II (CA-36) — Dictionary of American Naval Fighting Ships（HyperWar 转录）
+  url: http://www.ibiblio.org/hyperwar/USN/ships/danfs/CA/ca36.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: Naval History Division, Office of the Chief of Naval Operations（Patrick Clancey / HyperWar Foundation 转录）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: 'DANFS 词条，舰历叙述的骨架。**已知排印错误**：开工日写成 「laid down 27 June 1921」——1921 年本级尚未设计（本级首舰 1931 年才开工）， navypedia 与 navsource 均为 1931-06-27，故此处按 1931 采用， 并在 RESEARCH-NOTES 的「待核实/纠错」一节记明。技术行给 dp. 9,950 / l. 588''2"
+    / b. 61''9" / dr. 19''5" / s. 32.7 k. / cpl. 708。 **该行未标排水量口径**，不得直接当标准排水量引用。
+
+    '
+- id: danfs-ca32
+  title: New Orleans II (CA-32) — Dictionary of American Naval Fighting Ships（HyperWar 转录）
+  url: http://www.ibiblio.org/hyperwar/USN/ships/danfs/CA/ca32.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: Naval History Division, Office of the Chief of Naval Operations（HyperWar 转录）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '技术行与 CA-36 同（dp. 9,950 / 588''2" / 61''9" / 19''5" / 32.7 k. / cpl. 708）。 给「formerly CL 32」——建造时按轻巡编号 CL-32 起造、后改 CA-32。 服役日 1934-02-15，与 navsource 一致，与 navypedia 的 18.4.1934 冲突。
+
+    '
+- id: danfs-ca44
+  title: Vincennes II (CA-44) — Dictionary of American Naval Fighting Ships（HyperWar 转录）
+  url: http://www.ibiblio.org/hyperwar/USN/ships/danfs/CA/ca44.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: Naval History Division, Office of the Chief of Naval Operations（HyperWar 转录）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '技术行与另两舰**不同**：dp. 9,400 / l. 588''0" / b. 61''10" / dr. 18''8" / cpl. 952；武备多列「2 3 pdrs」与「ac. 4」。萨沃岛沉没过程是逐分钟叙述， 含 Riefkohl 的沉没时刻原话。
+
+    '
+- id: navypedia-neworleans
+  title: NEW ORLEANS heavy cruisers (1934 - 1937) — Navypedia
+  url: https://www.navypedia.org/ships/usa/us_cr_new_orleans.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: navypedia.org
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '**本组的主数据表**，也是唯一按子级（CA32/34/36、CA37/38、CA39/44） 分列装甲与主炮 Mk 号的一页——新奥尔良级三批的差别全靠这一页拆开。 局限：主尺度只给一个口径（179.2 oa / 176.2 wl），不逐舰； 轮机只给 class 级「Westinghouse」；服役日 CA32 记 18.4.1934、 CA36 记 20.6.1934，与 DANFS/navsource
+    均差一到两个月（见 RESEARCH-NOTES）。
+
+    '
+- id: navsource-ca36
+  title: Cruiser Photo Index CA-36 USS MINNEAPOLIS — NavSource Naval History
+  url: https://navsource.net/archives/04/036/04036.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - image
+  - narrative
+  operator: NavSource Naval History（Paul R. Yarnall / Tom Bateman / Michael Mohl）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '口径统一栏：Displacement 9,950 Tons / 588''0"(oa) × 61''9" × 22''6"(Max) / 107,000 SHP / 32.0 Knots / Crew 800 / Armor 5"-8"-2 1/4"-5"。 含逐任舰长表（含任期日）与 War Damage Report No.36 的图注， 是塔萨法隆加损伤细节的可用素材。
+
+    '
+- id: navsource-ca32
+  title: Cruiser Photo Index CL/CA-32 USS NEW ORLEANS — NavSource Naval History
+  url: https://navsource.net/archives/04/032/04032.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - image
+  - narrative
+  operator: NavSource Naval History
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '技术栏与 CA-36 同。含逐任舰长表；1945-03-08 马雷岛照片注明 「The port catapult has been removed」，可支撑「末期拆一座弹射器」。
+
+    '
+- id: navsource-ca44
+  title: Cruiser Photo Index CA-44 USS VINCENNES — NavSource Naval History
+  url: https://navsource.net/archives/04/044/04044.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - image
+  - narrative
+  operator: NavSource Naval History
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '技术栏直接把本级写成 9,950 t / 32.0 kn / 800 人（与 DANFS 的 9,400/952 冲突）。 含 Riefkohl 任期（04/23/1941 - 08/09/1942）与残骸照片说明 （RV Petrel，水深 3,000 英尺以上）。
+
+    '
+- id: navweaps-8in-55-mk9
+  title: USA 8"/55 (20.3 cm) Marks 9, 10, 11, 13 and 14 — NavWeaps
+  url: https://www.navweaps.com/Weapons/WNUS_8-55_mk9.php
+  type: website
+  tier: D
+  role:
+  - data
+  operator: Tony DiGiulian
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '**拆三舰主炮差别的关键页**。原文「Ship Class Used On: Lexington (CV-2), Pensacola (CA-24), Northampton (CA-26), New Orleans (CA-32, 34 and 36 only) and Portland (CA-33) classes」——即 CA-32/34/36 用 Mk 9 族， CA-37
+    以后的 Tuscaloosa 子级用另一页的 Mk 12。 另给：炮身 30.0 tons、膛线长 373.65 in、药室 5,300 in³、初速 2,800 fps、 炮管寿命 715 发、每炮 150 发；炮座为「triple turret」并注明 「the later mountings used on New Orleans (CA-32), Astoria (CA-34) and
+    Minneapolis (CA-36) were classified as "triple turrets" as they did have a rotating stalk」；「RPC was used in the New Orleans class as built」。
+
+    '
+- id: navweaps-8in-55-mk12
+  title: USA 8"/55 (20.3 cm) Marks 12 and 15 — NavWeaps
+  url: https://www.navweaps.com/Weapons/WNUS_8-55_mk12.php
+  type: website
+  tier: D
+  role:
+  - data
+  operator: Tony DiGiulian
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '原文「Mark 12: Tuscaloosa (CA-37) sub-class …」，脚注明确 「The Tuscaloosa sub-class consisted of Tuscaloosa (CA-37), San Francisco (CA-38), Quincy (CA-39) and Vincennes (CA-44)」——**文森斯属这一批， 主炮是 Mk 12，不是
+    Mk 9**。另给「Minneapolis (CA-36) was regunned with Mark 15 Mod 1 in 1945」。炮身 17.11–17.17 tons、药室 4,860 in³、 初速 2,700 fps。
+
+    '
+- id: historyofwar-neworleans-class
+  title: New Orleans Class Cruisers — History of War（J. Rickard）
+  url: https://www.historyofwar.org/articles/weapons_new_orleans_class_cruisers.html
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: John Rickard
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '同级设计沿革最清楚的一页：说明 1929 年计划、伦敦条约如何砍掉 CA-40/41、 为何 CA-32/34/36 是「第一批」（海军船厂建造、改动成本低）。 装甲给的是另一套口径：belt 5in 至 3.25in over 0.75in STS、 magazines 4in-3in side、barbettes 6in-5in、deck 2.25in。 与 navypedia
+    的 127/76、102、127、57 mm 数值可直接对照。
+
+    '
+- id: historyofwar-ca36
+  title: USS Minneapolis (CA-36) — History of War（J. Rickard）
+  url: https://www.historyofwar.org/articles/weapons_USS_Minneapolis_CA36.html
+  type: website
+  tier: D
+  role:
+  - narrative
+  - data
+  operator: John Rickard
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '战历叙述。改装段给逐次防空炮数：1942 年 12 门单装 20 mm、1943 年增至 24 门单装、1945-06 改为 9 座双联并加 1 座双联 40 mm。
+
+    '
+- id: historyofwar-ca32
+  title: USS New Orleans (CA-32) — History of War（J. Rickard）
+  url: https://www.historyofwar.org/articles/weapons_USS_New_Orleans_CA32.html
+  type: website
+  tier: D
+  role:
+  - narrative
+  - data
+  operator: John Rickard
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: 战历叙述，含塔萨法隆加断艏与椰木假艏的经过。
+- id: historyofwar-ca44
+  title: USS Vincennes (CA-44) — History of War（J. Rickard）
+  url: https://www.historyofwar.org/articles/weapons_USS_Vincennes_CA44.html
+  type: website
+  tier: D
+  role:
+  - narrative
+  - data
+  operator: John Rickard
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '技术栏对文森斯单列：turret face 6in（与同级 8in 不同）、 中部岛防空为「5in guns, single 20mm guns and quad mounted 1.1in」。 战历含「hit by at least 57 8in and 5in shells, losing 332 crewmen」。 **该页有两处日期明显笔误**（「shot down two
+    Japanese aircraft on 7 June」 应为 8 月 7 日；「On the afternoon of 8 June」应为 8 月 8 日）， 引用时按上下文改正并记入 RESEARCH-NOTES。
+
+    '
+- id: pwencycl-neworleans
+  title: New Orleans Class, U.S. Heavy Cruisers — The Pacific War Online Encyclopedia
+  url: http://pwencycl.kgbudge.com/N/e/New_Orleans_class.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: Kent G. Budge
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '按 ONI 222 识别手册口径给的规格表，是本组唯一给出**装甲总重**的来源 （「Protection 1520 tons」）与免疫区（12,000–24,000 码对 8 英寸弹）。 其 magazine 侧面 4.7in（119 mm）、conning tower 2.5in（64 mm） 与 navypedia 的 102 mm / 127 mm 冲突，按规矩并列不裁。
+
+    '
+- id: ibiblio-midway-oob
+  title: 'Battle of Midway: 4-7 June 1942 — Composition of U. S. Forces（HyperWar 转录）'
+  url: http://www.ibiblio.org/hyperwar/PTO/TideTurns/Midway/Midway-OOB.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  operator: HyperWar Foundation（转录美方官方战斗序列）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '原文「Task Group 16.2 (TG 16.2) / Cruiser Group / Rear Admiral Thomas C. Kinkaid, USN / Commander Cruiser Division 6 (Comcrudiv 6)」，下辖 New Orleans、Minneapolis、Vincennes、Northampton、Pensacola、Atlanta。
+    这一页确定「三舰同属 TG 16.2」与「Kinkaid 的编队司令身份」。
+
+    '
+- id: kinkaid-bio
+  title: Kinkaid of the Seventh Fleet — A Biography of Admiral Thomas C. Kinkaid, USN（HyperWar 全文 PDF）
+  url: https://www.ibiblio.org/hyperwar/NHC/NewPDFs/USN/USN,%20KINKAID%20OF%20THE%20SEVENTH%20FLEET%20(Bio).pdf
+  type: document
+  tier: C
+  role:
+  - data
+  - narrative
+  operator: Gerald E. Wheeler（Naval Historical Center / HyperWar 数字化）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '传记（538 页 PDF）。**中途岛编成表的原始出处**：第 208 页表把 TG 16.2 拆成 CTU 16.2.1（Chandler：Northampton/Pensacola/Atlanta）与 CTU 16.2.2（Kinkaid：Minneapolis/New Orleans/Vincennes）， 并标「CTG 16.2 Cruiser Group RADM Thomas
+    C. Kinkaid」——即 Kinkaid 本人坐镇明尼阿波利斯号指挥整个 TG 16.2。 同页注明资料来源为 Forrestel《Spruance》与两舰队的 Report of Action。 另记 1942-05-16 Kinkaid 巡洋舰部队并入 TF 16 后「Vincennes was added to Kinkaid''s charges, now TG 16.2.2」。
+
+    '
+- id: oni-combat-narrative-savo
+  title: The Battle of Savo Island, 9 August 1942 — ONI Combat Narrative（HyperWar 转录）
+  url: http://www.ibiblio.org/hyperwar/USN/USN-CN-Savo/index.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: Office of Naval Intelligence, Navy Department（HyperWar 转录）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '第 5 章「The Northern Group」是本组写文森斯沉没有关的唯一官方逐分钟叙述， 引 Riefkohl、Mullan、Adams、Craighill 等人的原始报告。 含「Vincennes replied with an 8-inch salvo, using a radar range of 8,250 yards」、命中计数表（Vincennes hit on bridge/hangar/Battle
+    II、 torpedo hits on port side）等。
+
+    '
+- id: oni-combat-narrative-tassafaronga
+  title: Battle of Tassafaronga, 30 November 1942 — ONI Combat Narrative（HyperWar 转录）
+  url: http://www.ibiblio.org/hyperwar/USN/USN-CN-Tassafaronga/index.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: Office of Naval Intelligence, Navy Department（HyperWar 转录）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '塔萨法隆加官方叙述。给编成（Minneapolis (FF) Capt. Charles K. Rosendahl / New Orleans Capt. Clifford H. Roper / Northampton / Pensacola / Honolulu / 4 DD，Rear Admiral Carleton H. Wright 接替 Kinkaid 指挥）、 逐分钟时刻（2327
+    Minneapolis 中雷、2328 New Orleans 中雷、2339 Pensacola、 2348 Northampton）与两舰断艏的细节。
+
+    '
+- id: oni-combat-narrative-midway
+  title: The Battle of Midway, 3-6 June 1942 — ONI Combat Narrative（HyperWar 转录）
+  url: http://www.ibiblio.org/hyperwar/USN/USN-CN-Midway/index.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: Office of Naval Intelligence, Navy Department（HyperWar 转录）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '第 8 章「The attack on the Yorktown」给文森斯在中途岛的实际位置： 「they were joined by the Vincennes」「the Vincennes, Pensacola, Balch, and Benham, which had been sent from Task Force SUGAR after the first attack
+    on the carrier」。即 6-04 下午文森斯已编入约克城的掩护圈。
+
+    '
+- id: wdr-29
+  title: 'War Damage Report No. 29: U.S.S. Quincy (CA-39), U.S.S. Astoria (CA-34) and U.S.S. Vincennes (CA-44), Gunfire and Torpedo Damage, Savo Island, 9 August 1942'
+  url: http://www.ibiblio.org/hyperwar/USN/rep/WDR/U.S.S.%20QUINCY%20(CA-39),%20U.S.S.%20ASTORIA%20(CA-34)%20and%20U.S.S.%20VINCENNES%20(CA-44),%20GUNFIRE%20AND%20TORPEDO%20D.pdf
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: Preliminary Design Branch, Bureau of Ships, Navy Department（HyperWar 数字化）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '一手战损报告（26 页，本地 work/staging/tg162a/_raw/wdr29-quincy-astoria-vincennes.pdf）。 **命中的权威计数**：「ASTORIA received at least 65 known hits. QUINCY received at least 36 known hits as well as two torpedo
+    hits … VINCENNES received 57 known hits as well as one torpedo hit (possibly two) on the port side in way of the forward magazine group」。 另有装甲实效评估：8 英寸 AP 对 Class "B" 炮塔面板的穿透表现、 火势致沉的因果分析。**注意**：本报告标题把
+    Quincy 误印成 CA-30， 正文与其余文件均为 CA-39。
+
+    '
+- id: wdr-36
+  title: 'War Damage Report No. 36: U.S.S. Chester (CA-27) Torpedo Damage 20 October 1942 & U.S.S. Minneapolis (CA-36) Torpedo Damage 30 November 1942'
+  url: http://www.ibiblio.org/hyperwar/USN/rep/WDR/U.S.S.%20CHESTER%20(CA-27),%20TORPEDO%20DAMAGE%20-Solomon%20Islands,%20October%2020,%201942%20U.S.S.%20MINNEAPOLIS%20(CA-.pdf
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: Preliminary Design Branch, Bureau of Ships, Navy Department（HyperWar 数字化）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '一手战损报告（18 页，本地 wdr36-chester-minneapolis.pdf）。 **扫描质量差、OCR 只出 8,647 字符**，正文段落基本读不出， 可用部分只有图注（「USS MINNEAPOLIS - View of damaged bow before it was cut away」「View of log breakwater」「View of temporary
+    bow」）与报告封面。 故本组对明尼阿波利斯的损伤细节改用 WDR-38（同批、同型、可读）与 ONI 叙述支撑，**不拿这份报告里读不出的数字充数**。
+
+    '
+- id: wdr-38
+  title: 'War Damage Report No. 38: U.S.S. New Orleans (CA-32) Torpedo Damage, Lunga Point, 30 November 1942'
+  url: http://www.ibiblio.org/hyperwar/USN/rep/WDR/U.S.S.%20NEW%20ORLEANS%20(CA-32),%20TORPEDO%20DAMAGE%20-Lunga%20Point,%20November%2030,%201942.pdf
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: Preliminary Design Branch, Bureau of Ships, Navy Department（HyperWar 数字化）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '一手战损报告（11 页，文本可读，本地 wdr38-neworleans.pdf / .txt）。 **本组最有价值的一份**：给出「ailure」因果链——鱼雷在航空炸弹库旁边爆炸， 引爆 160 lb 拆除装药与 49 枚 100 lb 炸弹，才是断艏的真正原因 （「this Bureau is of the opinion that the severe damage to NEW
+    ORLEANS was the result of the combined effects of the torpedo detonation and a mass detonation of aircraft bombs and demolition charge」）。 扉页给该舰战前尺度：Length (W.L.) 578''-5/16"、Beam (W.L.) 60''-1-3/8"、
+    Draft 23''-9" (Before Damage)。
+
+    '
+- id: nhc-photo-ca36
+  title: USS Minneapolis (CA-36), 1934-1959 — Naval Historical Center Online Library of Selected Images
+  url: https://www.ibiblio.org/hyperwar/OnlineLibrary/photos/sh-usn/usnsh-m/ca36.htm
+  type: archive
+  tier: B
+  role:
+  - narrative
+  - image
+  operator: Department of the Navy, Naval Historical Center（HyperWar 镜像）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '官方图像页附的舰史摘要。原文「On 30 November 1942, Minneapolis was flagship of a cruiser-destroyer force … in the ensuing Battle of Tassafaronga, she was one of four U.S. cruisers knocked out of action by enemy
+    torpedoes」。与 ONI 叙述一致，可作叙述来源。
+
+    '
+- id: ibiblio-ships-ca
+  title: Ships of the U.S. Navy, 1940-1945 — Cruisers (CA)（HyperWar）
+  url: http://www.ibiblio.org/hyperwar/USN/ships/ships-ca.html
+  type: website
+  tier: D
+  role:
+  - data
+  operator: HyperWar Foundation
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '本级在最概括一层给的组值：「Displacement: 9375-9973 tons (normal) / 12,411 tons (full load)」「Length: 588''2"」「Beam: 61''9"-61''10"」 「Draft: 24''4"」「Speed: 32.5 knots」「Complement: 1042-1121」 「Propulsion: Steam
+    turbines, 8 boilers, 4 shafts, 107,000 hp」。 **complement 1,042–1,121 与 DANFS 的 708 / navypedia 的 868 三方全不同**， 只能说明「编制随年份大幅变动」，不能取任一个当唯一值。
+
+    '
+- id: ibiblio-wdr-index
+  title: War Damage Reports — Index（HyperWar）
+  url: http://www.ibiblio.org/hyperwar/USN/rep/WDR/index.html
+  type: website
+  tier: D
+  role:
+  - lead
+  operator: HyperWar Foundation
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '仅用于定位 War Damage Report 的 PDF 真地址（文件名含空格与括号， 必须 [uri]::EscapeUriString 后再取，否则 404）。
+
+    '
+- id: navypedia-northampton
+  title: NORTHAMPTON heavy cruisers (1930) — Navypedia
+  url: https://www.navypedia.org/ships/usa/us_cr_northampton.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: navypedia.org
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '**本组只用于「与北安普敦级的对比」**，不用于本级任何参数。 关键原句：「Under 203mm shells immune zone was absent」「During designing it was offered to strengthen armour, ensuring protection at least of magazines against 203mm shells,
+    but works were limited only by splinterproof protection of ammunition elevators」（说明前一级的弹药库防护停在哪一步）； 「Armour, mm belt: 95 - 76, deck: 51 - 25, barbettes: 38, turrets: 64 - 19, CT: 32」 （前一级的装甲全套值，可直接与
+    navypedia-neworleans 的对应段对比）； 「2 х 3 - 533mm TTs」（前一级有鱼雷发射管，本级没有）。
+
+    '
+- id: navypedia-portland
+  title: PORTLAND heavy cruisers (1932) — Navypedia
+  url: https://www.navypedia.org/ships/usa/us_cr_portland.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - lead
+  operator: navypedia.org
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: 波特兰级（波特兰/印第安纳波利斯）逐舰技术数据与改装记录。2026-11-24 补：本级与 CA-34/36 组同属新奥尔良级谱系的对照参照，classes/portland.yaml 与 ships/portland.yaml 的多条主尺度、动力、武备 fact 直接引自本页，故 role 由 lead 补为 data。
+- id: ussvincennes-ca44-data
+  title: USS Vincennes CA-44 — Ship's Data（USS Vincennes Association）
+  url: http://www.ussvincennes.org/vincennes/ca-44/44_data.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: USS Vincennes Association
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  note: '舰友会抄录的规格页，与 ibiblio 的 CA 组值完全同源（9,375-9,973 normal / 12,411 full / 588''2" / 61''10" / 32.5 kn / 1,042-1,121 人 / 3 planes）。 **该页 Draft 栏写成「2 feet 4 inches」，明显是 22''4" 或类似值的错录**， 不作事实来源，仅作旁证。
+
+    '
+- id: navypedia-pensacola
+  title: PENSACOLA heavy cruisers (1929 - 1930) — Navypedia
+  url: http://www.navypedia.org/ships/usa/us_cr_pensacola.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: navypedia.org
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 主炮塔布置的解释（双联在首尾端、三联是背负）出自本页 Project history， 与 NavWeaps 炮架表（Pensacola 双联 2 座、三联 2 座）互相独立，两源一致。
+- id: navypedia-atlanta
+  title: ATLANTA AA cruisers (1941 - 1946) — Navypedia
+  url: http://www.navypedia.org/ships/usa/us_cr_atlanta.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: navypedia.org
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 本级建成态 8 座双联 5"/38 + 3 座四联 1.1"/75 + 2 座四联 21 in 鱼雷管； 1942 年初 Atlanta、Juneau 各加 1 座四联 1.1"/75。 **本页 CL51/52 的武备行没有 20 mm**，20 mm 只见于 NavSource，见 RESEARCH-NOTES 分歧表。
+- id: danfs-northampton
+  title: Northampton II (CL-26) — Dictionary of American Naval Fighting Ships / NHHC
+  url: https://www.history.navy.mil/research/histories/ship-histories/danfs/n/northampton-ii.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: Naval History and Heritage Command
+  lang: en
+  access: proxy
+  fetched: 2026-11-23
+  license: public_domain
+  note: 正文实由 web.archive.org 2021 快照逐字取得（原站 TLS 被重置）。 页内题头数据行（dp./l./b./dr./s./cpl./a.）与 ibiblio 的 HyperWar 转录一致， 可交叉验证转录无改动。战历与塔萨法隆加段是本舰叙事的主干。
+- id: danfs-pensacola
+  title: Pensacola III (CA-24) — Dictionary of American Naval Fighting Ships / NHHC
+  url: https://www.history.navy.mil/research/histories/ship-histories/danfs/p/pensacola-iii.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: Naval History and Heritage Command
+  lang: en
+  access: proxy
+  fetched: 2026-11-23
+  license: public_domain
+  note: 经 web.archive.org 2021 快照取得。**注意 URL 是 pensacola-iii 不是 pensacola-ii**： pensacola-ii 是那艘一次大战的运煤船（ScStr），抓错会拿到 1918-1925 的船史。 塔萨法隆加伤亡数（7 名军官 + 118 名士兵阵亡）与十字路口核试段出自本页。
+- id: danfs-atlanta
+  title: USS Atlanta (CL-51) — Dictionary of American Naval Fighting Ships（HyperWar 转录）
+  url: https://www.ibiblio.org/hyperwar/USN/ships/dafs/CL/cl51.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: Naval History and Heritage Command（Patrick Clancey 转录）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain
+  note: NHHC 的 atlanta-ii 页在 Wayback 上也取不到（404/429），改用 ibiblio 的 DANFS 转录。 正文与 DANFS 单行本一致，含 1942-11-13 夜战全过程与沉没坐标描述 （"sank three miles west of Lunga Point in 30 fathoms"，20:15）。
+- id: danfs-atlanta-brief
+  title: Brief History of USS Atlanta (CL-51) — DANFS 简史（HyperWar 转录）
+  url: https://www.ibiblio.org/hyperwar/USN/ships/dafs/CL/cl51-history.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: Naval History and Heritage Command（Patrick Clancey 转录）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain
+  note: 与 cl51.html 同源但内容不同的另一份 DANFS 短稿。两处独家信息：①中途岛期间「in the screen for Enterprise and Hornet, but these ships did not come under attack」；②伤亡 172 死 79 伤。长稿无伤亡数，故伤亡类 fact 只引本页，role 需含 data。
+- id: navweaps-us-torpedoes
+  title: World War II Torpedoes of the United States of America — NavWeaps
+  url: https://www.navweaps.com/Weapons/WTUS_WWII.php
+  type: website
+  tier: C
+  role:
+  - data
+  operator: NavWeaps（Tony DiGiulian）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '**本轮把亚特兰大级的鱼雷型号钉死的唯一来源。** Mark 15 条下的 "Ship Class Used On" 栏原文："Destroyers and Atlanta (CL-51) Class Cruisers"。 navypedia、DANFS、NavSource 三处都只写 "21" TT"，不给 Mark 号， 所以没有这一页就无法知道本级装的是哪一型鱼雷。 **注意与本站已有的
+    navweaps-torpedoes-wwii 不是同一页**： 那个 id 指向的是德国鱼雷页（WTGER_WWII.php）。'
+- id: oni-tassafaronga
+  title: The Battle of Tassafaronga — ONI Combat Narrative（HyperWar 转录）
+  url: https://www.ibiblio.org/hyperwar/USN/USN-CN-Tassafaronga/index.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: Office of Naval Intelligence, US Navy（HyperWar Foundation 转录）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain
+  note: '**本轮补到的最高价值来源。** ONI 官方战斗叙事（Combat Narrative 系列）， 带逐分钟时间线与逐舰战损。本轮靠它补到了四项别处没有的数据： ①北安普敦生还数「57 officers and 716 men」； ②北安普敦塔萨法隆加舰长 Capt. Willard A. Kitts, III（中途岛时是 Chandler，已换人）； ③彭萨科拉中雷时刻 2339
+    与 turret III 失效、两台陀螺震坏等故障清单； ④TF WILLIAM 四舰合计伤亡「19 officers and 398 enlisted men」。 **注意**：该文把参战编队称为 "Task Force WILLIAM"（按司令姓氏的 保密代号），全文**没有出现 "TF 67" 这个番号**。番号出自 DANFS 彭萨科拉页。'
+- id: oni-guadalcanal
+  title: The Battle of Guadalcanal, 12-15 November 1942 — ONI Combat Narrative（HyperWar 转录）
+  url: https://www.ibiblio.org/hyperwar/USN/USN-CN-Guadalcanal/USN-CN-Guadalcanal-1.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: Office of Naval Intelligence, US Navy（HyperWar Foundation 转录）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain
+  note: 亚特兰大号 1942-11-13 夜战的权威叙事。本轮靠它补到了四项： ①亚特兰大在挨旧金山号误击**之前**已被日舰击中「thirteen 5.5-inch hits and some 3-inch ... and twelve 5-inch from the destroyers」； ②中雷后「All power was lost, except the auxiliary Diesel,
+    and the rudder was jammed left」； ③旧金山号误击「19 hits ... with 8-inch armor-piercing ammunition ... The shells were loaded with green dye, the San Francisco's color」； ④10-30 那次对肖特兰角（Point Cruz）的炮击「Beginning
+    at 0030 on 30 October, the light cruiser Atlanta and four destroyers bombarded enemy positions back of Point Cruz for 8 hours」。 **该文把亚特兰大归为 CLAA**："CLAA 2 (Atlanta, Juneau)"——与本站按 light_cruiser 登记的口径不同，见
+    RESEARCH-NOTES §6.9。
+- id: navsource-northampton
+  title: Cruiser Photo Index CL/CA-26 USS NORTHAMPTON — NavSource
+  url: https://navsource.net/archives/04/026/04026.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - image
+  operator: NavSource Naval History
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 题头数据 + 照片说明。两处独有价值： ①速度写 32.7 kn、排水量写 9,300 t（与 navypedia/DANFS 都不同，见分歧表）； ②1930 年代初照片说明 "prior to the removal of her torpedo tubes" —— 这是鱼雷管被拆除而不是"本就没有"的直接旁证。
+- id: navsource-pensacola
+  title: Cruiser Photo Index CA-24 USS PENSACOLA — NavSource
+  url: https://navsource.net/archives/04/024/04024.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - image
+  operator: NavSource Naval History
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 十字路口核试与最终结局（"Survived atomic aerial burst on 1 JUL 1946 / Survived atomic subsurface burst on 25 JUL 1946 / Sunk as target on 10 NOV 1948 off the coast of Washington"）。DANFS 只给沉没日期，不给沉没海域。
+- id: navsource-atlanta
+  title: Cruiser Photo Index CL-51 USS ATLANTA — NavSource
+  url: https://navsource.net/archives/04/051/04051.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - image
+  operator: NavSource Naval History
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 题头武备行是**混编**的（"16 x 5"/38AA, 16 x 1.1", 16 x 40mm, 8 x 20mm"）， 其中 40 mm 与 CL-51 的实际战历不符（该舰 1942-11 即沉，本级 40 mm 是 1943 年后 CL95 起的改装），见分歧表。20 mm 8 门一说只有本页支持。
+- id: hyperwar-midway-oob
+  title: Battle of Midway 4-7 June 1942 — Composition of U.S. Forces（HyperWar 转录）
+  url: https://www.ibiblio.org/hyperwar/PTO/TideTurns/Midway/Midway-OOB.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  operator: HyperWar Foundation（转录自 NHHC 同名文件）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain
+  note: 与已有的 nhhc-midway-us-order-of-battle 同一份文件的另一载体，本轮用来核对 TG 16.2 名单与"巡洋舰侦察队 VCS-5 / VCS-6，20 架 SOC/SON"一条。
+- id: enterprise-war-diary-midway
+  title: U.S.S. Enterprise (CV6) War Diary, June 1942（midway1942.com 转录）
+  url: https://midway1942.com/docs/usn_doc_21.shtml
+  type: document
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: 转录站点 midway1942.com；原件为 USN 舰艇战报（1942-06）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain
+  note: 一手战报的转录本。**本轮最关键的一条证据在这里**： "Task Group 16.2, Rear Admiral T.O. Kinkaid in MINNEAPOLIS, NORTHAMPTON, PENSACOLA, ATLANTA, NEW ORLEANS, VINCENNES" —— 明确旗舰是明尼阿波利斯。 另 06-06 条目把 TF 16 分成 ENTERPRISE 组（含
+    NORTHAMPTON、PENSACOLA）与 HORNET 组（含 MINNEAPOLIS、NEW ORLEANS、ATLANTA），可交叉验证"谁护谁"。
+- id: navweaps-8in55-mk9
+  title: USA 8"/55 (20.3 cm) Marks 9, 10, 11, 13 and 14 — NavWeaps
+  url: https://www.navweaps.com/Weapons/WNUS_8-55_mk9.php
+  type: website
+  tier: C
+  role:
+  - data
+  operator: NavWeaps（Tony DiGiulian 编）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '单页覆盖 8"/55 的五个 Mark（9/10/11/13/14），是「Astoria 中途岛时装的是 Mk 9 不是 Mk 14」这条结论的唯一直接依据。关键原句： 「Mark 9 was the original design and was used on ships built in the 1920s」 「The Mark 14 was used for most regunnings
+    during World War II」。 炮座数据同页，且明分 twin mount / triple mount / triple turret 三档， 其中「Triple Turrets: New Orleans (CA-32, 34 and 36 only) (3)」正是本组 阿斯托里亚号那一档，与波特兰号的「Triple Mounts」在重量上差 45 吨。 **口径提示**：同页「Ship
+    Class Used On」一行写 「New Orleans (CA-32, 34 and 36 only)」，不要理解成整级 7 艘。
+
+    '
+- id: navweaps-oob-midway
+  title: Battle of Midway, 4-7 June 1942 — Orders of Battle（NavWeaps Order of Battle Archive）
+  url: https://www.navweaps.com/index_oob/OOB_WWII_Pacific/OOB_WWII_Midway.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: NavWeaps（Order of Battle 档案）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "**TG 17.2 编成的直接来源**，实测 178,648 bytes。原文块： 「Task Group 17.2 Cruiser Group / RA William Ward Smith /\n Position: ComCruTF-17 / Notes: USNA09 [95] /\n USS Astoria (CA-34) (flagship)\n Commanding officer:\
+    \ Capt. Francis Worth Scanland (Notes: USN09 [216].) /\n USS Portland (CA-33)\n Commanding officer: Capt. Laurance T. DuBose」。\n任务书里「RA William W. Smith / 阿斯托里亚为旗舰 / 两舰同属 17.2」 三点由此页全部坐实，**无需修正**。 口径提示：它只给编成与舰长姓名，**不给任何装备、雷达或排水量数据**；\
+    \ 舰长姓名后的「USN09 [216]」一类方括号是编者标注的毕业年级与档案号， 不是舰上职务。\n"
+- id: savo-nwc-3
+  title: 'The Battle of Savo Island, August 9th, 1942: Strategical and Tactical Analysis, Part I — Chapter 3（Allied Arrangements）
+
+    '
+  url: https://www.ibiblio.org/hyperwar/USN/rep/Savo/NWC/NWC-Savo-3.html
+  type: document
+  tier: C
+  role:
+  - data
+  - narrative
+  operator: Naval War College（Richard W. Bates, 1950），HyperWar 转录
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain_us_gov
+  note: "**它是本组唯一给出「1942-08 瓜岛登陆时波特兰号到底在哪一群」的来源。** 该页兵力编成表原文（节选）： 「(b) TG 61.2, Amphibious Force (TF 62 plus SW Pac TF 44)\n (1) TG 62.1, Transport Group XRAY ...\n (2) TG 62.2, Transport Group YOKE ...\n\
+    \ (3) TG 62.3 Fire Support Group LOVE\n Quincy, Vincennes, Astoria, Hull, Dewey, Ellet, Wilson 4 DD\n (4) TG S62.4 Fire Support Group MIKE\n San Juan 1 CL (AA) / Monssen, Buchanan 2 DD」\n而在它上面的另一段：\
+    \ 「(2) TG 61.1.2 (Pacific Fleet Task Force 16)\n Enterprise (38 VF, 36 VD, 10 VT) 1 CV\n North Carolina 1 BB / Portland 1 CA / Atlanta 1 CL (AA)\n Balch, Maury, Gwin, Benham, Grayson 5 DD」\n——**波特兰号在\
+    \ TG 61.1.2（企业号群），不在 TG 62.3，所以萨沃岛夜战里 没有她。** 这条推翻了「两舰中途岛同属 17.2，所以瓜岛也在一起」的想当然。 口径提示：该报告是战后（1950）海军战争学院的分析著作， 属权威二次文献记 C，不是一手战报；本章其余内容（航空搜索、日军编成） 与本组两舰无直接关系，未使用。\n"
+- id: danfs-astoria
+  title: Astoria II (CA-34) — Dictionary of American Naval Fighting Ships
+  url: https://www.ibiblio.org/hyperwar/USN/ships/danfs/CA/ca34.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: Naval History Division, Office of the Chief of Naval Operations （HyperWar 转录，Patrick Clancey 编）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain_us_gov
+  note: "**本文件的 URL 是 ibiblio 的转录版，不是 history.navy.mil 原站。** 原因：history.navy.mil 在本机 TLS 握手阶段即被断开（Python urllib 报 SSL UNEXPECTED_EOF，curl 报 schannel failed to receive handshake， Invoke-WebRequest 报「基础连接已经关闭」），三次尝试均不通，故改用\
+    \ HyperWar 的官方转录本。转录本页脚写明「Transcribed and formatted for HTML by Patrick Clancey」，内容与 NHHC 版一致。 价值：本舰全生涯叙事的最完整单一来源，含中途岛逐时刻、萨沃岛逐分钟、 舰长姓名、伤亡与弃舰过程。舰首数据行 「(CA-34: dp. 9.950; l. 588'0\"; b. 61'9\" (l.); dr.\
+    \ 19'5\" (mean);\n s. 32.7 k.; cpl. 899; a. 9 8\", 8 5\", 2 3-pdrs., 8 .50-cal. mg.;\n cl. New Orleans)」是骨架字段的主要来源。\n口径提示：DANFS 不给伤亡总数，也不给雷达型号——这两项要从别处找。\n"
+- id: danfs-portland
+  title: Portland I (CA-33) — Dictionary of American Naval Fighting Ships
+  url: https://www.ibiblio.org/hyperwar/USN/ships/danfs/CA/ca33.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: Naval History Division, Office of the Chief of Naval Operations （HyperWar 转录，Patrick Clancey 编）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain_us_gov
+  note: "同样是 HyperWar 转录本（理由见 danfs-astoria 条）。 价值：本舰全生涯最完整单一来源，从 1933 年阿克伦飞艇救援一直写到 1959 年拆解，含珊瑚海接收列克星敦号 722 名生还者、中途岛、瓜岛中雷后 「steam in circles to starboard」、苏里高海峡、冲绳、特鲁克受降。 舰首数据行「(CA-33: dp. 9,950; l. 610'3\"\
+    , b. 66'1\"; dr. 17'1\"; s. 32.7 k.; cpl. 848; a. 9 8\", 8 5\", 8 .50 cal.; cl. Indanapolis)」。 口径提示： ① 舰级栏写「cl. Indanapolis」是 DANFS 原文的拼写错误（应为\n   Indianapolis），不是另一个舰级；\n② 吃水 17'1\" 未标状态，与 navypedia\
+    \ 的满载 6.40 m 差 1.2 m，不可互换； ③ 全条不给伤亡数、不给雷达型号。\n"
+- id: navsource-astoria
+  title: Cruiser Photo Index CA-34 USS ASTORIA — NavSource Online
+  url: https://web.archive.org/web/20210120073955/https://www.navsource.org/archives/04/034/04034.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - image
+  operator: NavSource Naval History（Paul R. Yarnall / Tom Bateman 编）
+  lang: en
+  access: proxy
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "**必须记 Wayback 快照 URL，不能记原站 URL。** 原站 www.navsource.org 在本机返回 502（直连与 https 均不通）， 只能用 web.archive.org 的 2021-01-20 快照。 价值： ① 舰级数据行「CLASS - NEW ORLEANS / Displacement 9,950 Tons,\n   Dimensions,\
+    \ 588' 0\" (oa) x 61' 9\" x 22' 6\" (Max) / Armament 9 x\n   8\"/55, 8 x 5\"/25, 8 x 0.5\" 4 Aircraft / Armor, 5\" Belt, 8\" Turrets,\n   2 1/4\" Deck, 5\" Conning Tower / Machinery, 107,000 SHP;\n\
+    \   Geared Turbines, 4 screws / Speed, 32.0 Knots, Crew 800」；\n② 完整历任舰长表（含 Scanland 与 Greenman 的精确任期）； ③ 大量带日期与档案号的照片图注，是本组涂装（Measure 1）与\n   1941-07 改装（1.1 英寸炮）的旁证。\n口径提示：它是照片索引站，技术数据是二手汇总，不给来源； 凡与\
+    \ DANFS 冲突处（船速 32.0 vs 32.7、编制 800 vs 899）本文件并列不裁。\n"
+- id: navsource-portland
+  title: Cruiser Photo Index CA-33 USS PORTLAND — NavSource Online
+  url: https://web.archive.org/web/20210120073807/https://www.navsource.org/archives/04/033/04033.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - image
+  operator: NavSource Naval History（Paul R. Yarnall 编）
+  lang: en
+  access: proxy
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "同为 Wayback 快照（原站 502，见 navsource-astoria 条）。 价值： ① 舰级数据行「CLASS - PORTLAND / Displacement 9,950 Tons,\n   Dimensions, 610' 3\" (oa) x 66' 1\" x 24' (Max) / Armament 9 x\n   8\"/55, 8 x 5\"/25, 8\
+    \ x 0.5\" 4 Aircraft / Armor, 5\" Belt, 2 1/2 Turrets,\n   2 1/2\" Deck, 1 1/4 Conning Tower / Machinery, 107,000 SHP;\n   Geared Turbines, 4 screws / Speed, 32.7 Knots, Crew 621」；\n② **本舰最有价值的一批图注是关于\
+    \ 1942-11-13 鱼雷损伤的**，\n   但那些图注逐字引用 DANFS 同一段文字（「To quote DANFS - \"...\"」），\n   故不能当独立来源用；\n③ 1941-12 的 Life 杂志照片图注明确写出「SOC-1 Seagull of Cruiser\n   Scouting Squadron 4」，是中途岛时期机型的证据；\n④ 1944-07-30\
+    \ 图注给出涂装名「Measure 32, Design 7d」。 口径提示：船速 32.7 与 navypedia 的 32.5 冲突；编制 621 与 DANFS 848、navypedia 807 三个数并列，无一口径说明。\n"
+- id: nhhc-wdr29
+  title: 'USS Quincy (CA39), USS Astoria (CA34) & USS Vincennes (CA44) Loss In Action — Battle of Savo Island 9 August 1942 （Navy Department, Preliminary Design Branch, Bureau of Ships, War Damage Report
+    No. 29）
+
+    '
+  url: https://web.archive.org/web/2021id_/https://www.history.navy.mil/research/library/online-reading-room/title-list-alphabetically/w/war-damage-reports/uss-quincy-ca39-astoria-ca34-vincennes-ca44-war-damage-report-no29.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: Bureau of Ships（BuShips），Navy Department
+  lang: en
+  access: proxy
+  fetched: 2026-11-23
+  license: public_domain_us_gov
+  note: "**本组唯一 A 级来源，也是「阿斯托里亚怎么沉的」最硬的一手依据。** history.navy.mil 原站在本机 TLS 握手即断（见 danfs-astoria 条说明）， 只能用 web.archive.org 的 2021 快照；实测 183,753 bytes。 价值（逐条可引）： ① 三舰当晚编制与航态：「U.S.S. VINCENNES, U.S.S. QUINCY\
+    \ and\n   U.S.S. ASTORIA, plus two destroyers on the night of August 8-9, 1942\n   comprised Task Group 62.3」；\n② 阿斯托里亚中弹与失能的逐分钟过程（0155 开火、0200 副炮全失、\n   0202 航速降到 9 节、0215 全舰失电、1215 翻沉）；\n③ 逐条炮位失效清单（本文件\
+    \ armament.gun_failures 的来源）； ④ 舰载机实数：「The five airplanes on each ship except QUINCY had been\n   drained of all gasoline.」——**5 架，不是级表的 4 架**；\n⑤ 报告自身承认的局限：「there is a great deal of information which,\n\
+    \   naturally, is contradictory in many instances. The times and even the\n   sequence of events differ to such an extent in the various reports\n   that it has been impossible to construct an account\
+    \ in which all the\n   details agree」——引用时刻数据时必须带上这句。\n口径提示：全报告**不给伤亡总数**，只到「Personnel casualties were heavy」 这一层；也不给任何雷达型号。\n"
+- id: ussastoria-org
+  title: USS ASTORIA CA-34 — 舰史专题站（The Official Home of 'Nasty Asty'）
+  url: https://web.archive.org/web/20210120073955/http://ussastoria.org/The_Pineapple_Fleet.html
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: USS Astoria Reunion Association / Brent Jones（站主）
+  lang: en
+  access: proxy
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "**本组唯一给出阿斯托里亚号伤亡明细与 1942-06/07 改装细节的来源， 但它同时是最需要注意口径的一个。** 原站 ussastoria.org 现已跳到域名停放页（返回 114 bytes 的 「window.location.href=\"/lander\"」跳转），只能走 Wayback 快照。 本文件实际用到该站 6 个页面，全部经 2021-01-20 前后快照：\n\
+    \  · The_Pineapple_Fleet.html（1941-04/07 改装：1.1 英寸四联、桅顶截短、\n    雷达基座、Measure 1 涂装）\n  · Offensive_Preparations.html（1942-06-14 换舰长、Mk 3 火控雷达、\n    Measure 21 涂装、1942-07 炮术演习）\n  · Iron_Bottom_Sound.html（萨沃岛，**含\
+    \ CAPT Greenman 战报的转录**）\n  · Construction_Shakedown.html（建造：干船坞建造、捞瓶下水）\n  · Lines_of_Advance.html（珍珠港至中途岛）\n  · Home.php（站主页）\n关键原句（战报转录）： 「Out of a total of 83 officers, 990 enlisted men, and one\
+    \ civilian\n newspaper correspondent, Joe J. Custer, on board, incomplete information\n now at hand indicated 61 officers, the news correspondent and 629 men\n were rescued. ... 20 officers known dead,\
+    \ 2 unaccounted for.\n 138 enlisted men are known to be dead.」\n「ASTORIA FC [fire control] radar range gave 5640 yards.」 口径提示： ① 站主是老兵后人与研究者，非官方机构；战报是**转录**不是影像，\n   无法逐字核对原件，故凡出自此页的一手内容一律按 D 级站记 C\n\
+    \   （SCHEMA §2.1：「来源是 D 级主题站，confidence 填 C」）；\n② 该站照片图注里的日期与档案号（NARA 80-G-xxxxx、NH xxxxx）\n   可与 NHHC 藏品号交叉核对，这部分可信度高于其正文叙述。\n"
+- id: navalenc-portland
+  title: Portland class heavy cruisers (1931) — naval encyclopedia
+  url: https://naval-encyclopedia.com/ww2/us/portland-class-heavy-cruisers-1931.php
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: naval-encyclopedia.com
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "本组唯一**独立于 navypedia** 给出波特兰级雷达与防空改装序列的来源， 因此被用来交叉核对 navypedia 的改装表。关键原句： 「The Portland class started the war without radar. They were however\n fitted in early 1942 with an SC, Mk 3, and Mk 4 radars.\
+    \ By May 1943,\n they received SK radars in addition.」\n「starting in early 1942: Four quadruple 1.1in were fitted abreast the\n bridge and close to the 5in guns. Later, twelve 20mm guns were added\n\
+    \ instead of the twin 0.5 in cal HMGs.」\n「The AA saw four extra quadruple and four twin 40 mm Bofors, plus 12\n supplementary 20 mm Oerlikon guns.」\n口径提示： ① 该页「autumn 1944 ... both were installed Mk\
+    \ 3, Mk 4 radars and\n   Mk 8, Mk 18 radars」一句自身矛盾（同一句既说拆 Mk3/4 又说装\n   Mk3/4），按 navypedia 的「- Mk 3, Mk 4; + Mk 8, Mk 18」处理；\n② 该页把本级 40 mm 总数写成一串（四联 ×4 + 双联 ×4），\n   与 navypedia 只记「4 x 4」不一致，两说并列；\n\
+    ③ 该站是新近（2021 起）建立的大型专题站，但其正文不逐句标出处，\n   故与 navypedia 同级记 D，不作裁决依据。\n"
+- id: navweaps-8in55-mk12-15
+  title: USA 8"/55 (20.3 cm) Marks 12 and 15 — NavWeaps
+  url: https://www.navweaps.com/Weapons/WNUS_8-55_mk12-15.php
+  type: website
+  tier: C
+  role:
+  - data
+  operator: NavWeaps（Tony DiGiulian 编）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: "**用来证明「阿斯托里亚与波特兰的主炮从没装过 Mk 12/15」这一否定命题。** 关键原句（三句连读才能得出这个结论）： 「Mark 12: Tuscaloosa (CA-37) sub-class, Wichita (CA-45) and\n Baltimore (CA-68)」\n「Mark 15: All other Baltimore class and Oregon City\
+    \ (CA-122) class」 「Minneapolis (CA-36) was regunned with Mark 15 Mod 1 in 1945」 另注「The Tuscaloosa sub-class consisted of Tuscaloosa (CA-37), San Francisco (CA-38), Quincy (CA-39) and Vincennes (CA-44).」\
+    \ ——即 Mk 12/15 的装舰名单里，新奥尔良级只有 CA-37/38/39/44 这四艘， CA-32/34/36 一艘都不在其中；CA-36 明尼阿波利斯是 1945 年单独换装的， 而 CA-34 阿斯托里亚 1942-08 已沉没。 因此「中途岛时两舰主炮是 Mk 9 系列」有正面（navweaps-8in55-mk9）与 反面（本条）双重依据。 口径提示：本页只给炮本身（含药室\
+    \ 79.6 dm3、初速与 Mk 9 系列同表另列）， 炮座数据在 navweaps-8in55-mk9 那一页。\n"
+- id: navypedia-tone
+  title: Navypedia — TONE heavy cruisers (1938 - 1939)
+  url: https://www.navypedia.org/ships/japan/jap_cr_tone.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: navypedia.org
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '本级主尺度、动力、装甲按部位厚度、武备概览、编制、两舰建造日期与结局的主来源。 装甲段落写得比多数专题站细（按「机舱段 / 弹药库段」两段分别给上下缘厚度）， 但**未给材质**、也**未声明各厚度是设计值还是实测值**。 与本级另一来源 pwe-tone-class 在载油、续航、司令塔厚度、横向隔壁厚度四处不一致， 四处都按 SCHEMA §1.2 并列保留，不裁决。
+
+    '
+- id: combinedfleet-tone-trom
+  title: IJN TONE — Tabular Record of Movement（combinedfleet.com）
+  url: http://www.combinedfleet.com/tone_t.htm
+  type: website
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: combinedfleet.com（Bob Hackett & Sander Kingsepp，Rev. 22）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '利根逐日年表，逐次改装（雷达型号与加装月、25 mm 机铳分型明细）与结局链条 （07-24 中弹 / 07-29 坐沉 / 1947-04-07 起拆上层建筑 / 1948-05-04 浮起 / 1948-09-30 拆解完毕）的唯一逐条来源。tier 取 B 与本站已登记的 combinedfleet-mikuma（同为 Hackett & Kingsepp 的 TROM）保持一致。
+    **口径提示**：本站按「首次出现该装备的改装节点」取 valid.from； 区间原文（如 "26 June-8 July 1944"）取末日。
+
+    '
+- id: combinedfleet-chikuma-trom
+  title: IJN CHIKUMA — Tabular Record of Movement（combinedfleet.com）
+  url: http://www.combinedfleet.com/chikuma_t.htm
+  type: website
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: combinedfleet.com（Bob Hackett & Sander Kingsepp）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '筑摩逐日年表。萨马岛海战段落给到分钟级（08:53 中雷、09:07/09:20/09:30 三次报损、 11:05 再中两雷、14:15 后三雷、14:30 倾覆），是判定「击沉原因」的主要依据。 **口径提示**：该 TROM 的 1944-06/07 改装段只写 "26 June 1944: Arrives at Kure. Drydocked."，**没有像利根那样列出加装明细**——筑摩这一段的雷达/机铳构成
+    因此改用 navypedia 的月份区间，两舰记录粒度不同源，须在页面上说明。
+
+    '
+- id: combinedfleet-tone-class
+  title: Tone-class Heavy Cruiser（combinedfleet.com 舰级页）
+  url: http://www.combinedfleet.com/tone_c.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: combinedfleet.com
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '舰级速览页。**唯一用处**：为「四座主炮塔全部前置、舰尾无一门主炮」提供 独立于 navypedia 的第二条表述，原文 "Their main gun layout was sort of bizarre, with four dual turrets forward (some of which suffered from very poor firing arcs), and
+    none aft." 编制 850 亦与本页一致。其余数据（排水量、尺寸）为取整值，未采用。
+
+    '
+- id: pwe-tone-class
+  title: Tone Class, Japanese Heavy Cruisers（The Pacific War Online Encyclopedia）
+  url: http://pwencycl.kgbudge.com/T/o/Tone_class.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: Kent G. Budge
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '**本级唯一按部位逐条给装甲材质与厚度的来源**（NVNC / CNC 分写、司令塔分层、 舵机舱分层、烟道口 105 mm）。标准排水量 11,215、编制 850 与 navypedia 互证。 与本级 navypedia 的四处不一致见 navypedia-tone 的 note。 **口径提示**：pwe 的部分尺寸同时给英制与公制，两者换算不完全自洽 （661''1" =
+    201.50 m，但与 navypedia 的 201.6 m 差 0.1 m）， 本站两条并列，不取平均。
+
+    '
+- id: wiki-en-tone-class
+  title: Tone-class cruiser（English Wikipedia）
+  url: https://en.wikipedia.org/wiki/Tone-class_cruiser
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: '仅作线索。用于确认「本级原为最上型第 5、6 号舰」「No.1 前向、No.3/No.4 朝后、 No.2 背负」这类结构描述的存在，再去原始出处找依据。 **该页的装甲数字（belt 145 / 225 mm、deck 65-30 mm）与 navypedia、pwe 均不一致**， 尤其 225 mm 弹药库装带在任何非 E 级来源里都找不到，故未采用，见 NOTES 争议节。
+
+    '
+- id: wiki-ja-tone-class
+  title: 利根型重巡洋艦（日本語版ウィキペディア）
+  url: https://ja.wikipedia.org/wiki/利根型重巡洋艦
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  lang: ja
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: '仅作线索。公试排水量 13,320 t、公试速力 35.55 kn、乘员 869 名、申报排水量 8,636 t、 主炮塔布置（第 1・2 炮塔背负、第 3・4 炮塔在最上甲板层朝后）等 只在此处出现的数值，全部不进 fact。 该页自称其数值有防卫省防卫研究所档案编号（Ref.C05110625500 等）， 但档案正文本轮未抓取，故不能作为本站事实依据。
+
+    '
+- id: wiki-ja-tone-ship
+  title: 利根 (重巡洋艦)（日本語版ウィキペディア）
+  url: https://ja.wikipedia.org/wiki/利根_(重巡洋艦)
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  lang: ja
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa
+  note: '仅作线索。其「兵装変遷」一节对 25 mm 与电探的逐年推定，与 combinedfleet TROM 在月份上互有出入（如 21 号电探的撤除时间：本页 1945-02、TROM 1944-11-17）， 差异记进 NOTES 争议节，不据此改 fact。 该页另有搭载机编制的变化（1942-06-25 前 零式水偵 3 + 九五式水偵 2； 之后 零式水偵 5），属 tier E，未采用。
+
+    '
+- id: combinedfleet-tone
+  title: IJN TONE — Tabular Record of Movement (combinedfleet.com)
+  url: https://www.combinedfleet.com/tone_t.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: combinedfleet.com（Bob Hackett / Sander Kingsepp，Revision 22）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 利根号全生涯逐日年表（1934-12 起工 → 1948-09 拆解完）。本笔记 TROM 主表的主力来源。 口径提示：① 中途岛段用**中途岛当地时**（1942-06 当地为 UTC−12），与同站引用的 ONI 东京时相差 21 小时，换算规则见 RESEARCH-NOTES §0.2； ② 个别条目带 "Reportedly"（如 1943-10-31「离特鲁克时把全部水侦留下」），
+    转写正文时不可去掉该限定词； ③ 原页有多处排印错误（"28 June July 1942"、"pursuit of of Halsey's ships"）， 引用时按原文照抄，另在 note 里标注。 ④ 该页 1943-11-05 只写隼鹰被雷击后拖回吴，**未点名拖带者是利根**； 利根当时在本土近海，不在拉包尔——英文维基把「拉包尔受损」写在利根身上是错的。
+- id: combinedfleet-chikuma
+  title: IJN CHIKUMA — Tabular Record of Movement (combinedfleet.com)
+  url: https://www.combinedfleet.com/chikuma_t.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: combinedfleet.com（Bob Hackett / Sander Kingsepp，Revision 20）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 筑摩号全生涯逐日年表（1935-10 起工 → 1945-04-20 除籍）。**萨马岛沉没逐时链的一手转述**： 0853 被 Taffy 2 的 TBM 雷击失速 → 0907/0920/0930 三次报大和 → 1105 被 KITKUN BAY 机命中 2 雷 → 1415 被 OMMANEY BAY 机命中 3 雷 → 约 1430 向左翻覆、尾部下沉于 11-52N 126-36E，野分救起约
+    120 人。尾注记「唯一未被野分救起的 1 名幸存者 3 天后 被美舰捞起」。口径：与 navypedia「sunk by destroyer Nowaki」、日文维基「野分により 雷撃処分」冲突——本页写的是「翻覆沉没」，三说并列不裁决。
+- id: combinedfleet-nowaki
+  title: IJN NOWAKI — Tabular Record of Movement (combinedfleet.com)
+  url: https://www.combinedfleet.com/nowaki_t.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: combinedfleet.com
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 野分号（阳炎型驱逐舰）简表。**只用于 §7.1 争议**：该页写 "later removed survivors from CHIKUMA and scuttled with torpedoes"， 即主张野分以鱼雷处分了筑摩；与 combinedfleet-chikuma 的「翻覆沉没说」自相矛盾。 正文若取「处分说」，引此页；若取「沉没说」，引 combinedfleet-chikuma。
+- id: combinedfleet-atully08
+  title: Located & Surveyed Shipwrecks of the Japanese Navy (Anthony P. Tully, combinedfleet.com)
+  url: https://www.combinedfleet.com/atully08.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: combinedfleet.com（Anthony P. Tully；筑摩段落的图证分析由 Ed Low 作，2005-04）
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: IJN 沉舰调查合集。筑摩条目（Heavy Cruiser - CHIKUMA）是**目前可得的最细致损失分析**： 0853 鱼雷打掉舰尾、打坏舵、只剩内侧左螺旋桨（原地打转）；1105 被 VC-5 两雷打停、 左倾；1130 野分靠上左舷被 VC-76 拍到；1415 被 OMMANEY BAY 的 VC-75 三雷致向左翻覆 尾部下沉。**结论措辞最谨慎**："All the
+    evidence roughly agrees with NOWAKI commencing rescue operations about now."——即倾向「野分只救人」。同页亦记该舰残骸**至今未找到**。 ⚠ 同一作者更详的 TullyLeyte.pdf 是纯扫描图无文字层，未采用。
+- id: tone-class-design-ja
+  title: 利根型重巡洋艦 — ウィキペディア日本語版
+  url: https://ja.wikipedia.org/wiki/%E5%88%A9%E6%A0%B9%E5%9E%8B%E9%87%8D%E5%B7%A1%E6%B4%8B%E8%89%A6
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  operator: Wikipedia（日本語版）
+  lang: ja
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa_4
+  note: "**tier E，只能当线索，不能当 fact 或正文来源。** 本笔记只用它两条设计说明并已在 RESEARCH-NOTES 里标明 tier： ① 「後檣より後ろすべてが航空兵装」，主炮全前置使舰载机不致被主炮爆风损坏、\n   故可随时全主炮齐射（并举妙高、高雄被自家爆风毁机的例子）；\n② 无机库、露天系止、弹射甲板比系止甲板高一级、低处甲板易上浪维护性差，\n   故后来的大淀改设机库；并给\
+    \ `呉式2号射出機2基`（**此型号未得第二源，不可入 fact**）。\n另给逐期搭载定数表：计划 6 机 → 1942-06-25 前 零式 3 + 九五式 2 → 之后 零式 5。"
+- id: tone-ca-ja
+  title: 利根 (重巡洋艦) — ウィキペディア日本語版
+  url: https://ja.wikipedia.org/wiki/%E5%88%A9%E6%A0%B9_(%E9%87%8D%E5%B7%A1%E6%B4%8B%E8%89%A6)
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  operator: Wikipedia（日本語版）
+  lang: ja
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa_4
+  note: "**tier E，只能当线索。** 本笔记用它的三处： ① **利根 4 号机延误**：「利根のカタパルトが故障し…発進が30分遅れ…**とする文献がある**」\n   ——注意日文原文自己就把「30 分钟」标成「有文献如此说」；同段还给土井美二参谋\n   「4 号机罗盘失准才得以发现美舰队」的说法，以及近年研究「迟发反而发现、准时反而\n   错过」的反向结论。**三条都是线索，正文须另找\
+    \ C/D 级来源。**\n② **利根 1945 年结局**：3-19 吴空袭至近弹致 3 号炮塔不可用 → 移能美岛海岸伪装 →\n   7-24 左舷中部直击弹 → 7-28 左舷后部 2 直击（1000 磅、瞬发信管、未穿水平装甲）\n   + 6 近失、左倾 20 度以上 → 7-29 着底。\n③ 1943-11-05「利根は隼鷹を曳航、11月6日呉に到着」——**TROM 未点名拖带者，此处为单源。**"
+- id: chikuma-ca-ja
+  title: 筑摩 (重巡洋艦) — ウィキペディア日本語版
+  url: https://ja.wikipedia.org/wiki/%E7%AD%91%E6%91%A9_(%E9%87%8D%E5%B7%A1%E6%B4%8B%E8%89%A6)
+  type: encyclopedia
+  tier: E
+  role:
+  - lead
+  operator: Wikipedia（日本語版）
+  lang: ja
+  access: direct
+  fetched: 2026-11-23
+  license: cc_by_sa_4
+  note: "**tier E，只能当线索。** 本笔记用它的两处： ① 1944-10-25 经过的日方表述：8:53 前后被护卫航母 NATOMA BAY 起飞的 TBF 以 1 雷\n   命中舰尾起火 → 弹药耗尽后用演习弹應战 → 下午 4 时前后舰中部复数命中 → 左倾 →\n   发出总员退舰 → 「その後、駆逐艦野分により雷撃処分された」；\n② 幸存者：野分救起 120 余名，野分当晚被击沉；未被野分救起的\
+    \ 1 名短期现役士官\n   漂 3 天后被美舰救起、战后回国。「筑摩・野分の生存者は、筑摩航空機搭乗員を除けば\n   1名のみ」；「舞鶴鎮守府は、単艦で帰投した利根を見て筑摩の沈没を覚った」。\n⚠ 注意：① 的「雷撃処分」与 combinedfleet-chikuma 的「翻覆沉没」冲突，**两说并列**。"
+- id: imodeler-scout4
+  title: Scout 4 Is Late — 1/48 Battle of Midway Group Build, Aichi E13A "Jake" (iModeler)
+  url: https://imodeler.com/2017/06/scout-4-is-late/
+  type: website
+  tier: D
+  role:
+  - narrative
+  operator: iModeler（模型作者帖，2020-06-20）
+  lang: en
+  access: proxy
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '**本笔记关于「利根 4 号机延误原因众说纷纭」的唯一英文汇总来源**，是模型作者的考据帖 而非史学论文，故 tier D、role 只给 narrative，**不可作 fact 来源**。 它列举了四种说法：弹射器故障（most commonly reported）、发动机故障、 日方指挥文化轻慢侦察导致机组干等命令、以及（转述 Shattered Sword）机组为避开 Catalina
+    而自行缩短航程。并给出与 ONI 换算后完全吻合的四个报文时刻： 0728 / 0758 / 0809 / 0820（当地时）。 **access 记 proxy**：imodeler.com 直连 403，正文经 Wayback 存档读取 （http://web.archive.org/web/20260517143345/https://imodeler.com/2017/06/scout-4-is-late/）。'
+- id: nhhc-danfs-hammann
+  title: Hammann I (DD-412) — DANFS / NHHC
+  url: https://www.history.navy.mil/research/histories/ship-histories/danfs/h/hammann-i.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: Naval History and Heritage Command
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain_us_gov
+  note: '美海军官方舰史（DANFS）。**直连 TLS 失败**，经 Wayback 快照 20251209201923 取得。页首技术行原文是 "(DD-112; dp. 1620; l. 348'' 4" ; b. 36''1" ; dr. 11''5" ; a. 35 k.; cpl. 192; a. 4 5", 8 21" tt.; cl. Sims)" —— 舷号写成 DD-112
+    是 NHHC 页面自身的录入错误（正文与人名页均写 DD-412）；dp. 1620 与 "a. 4 5""（4 门 5 英寸）也和别处口径不同，**本条只取日期与人名，不取排水量与炮数**。
+
+    '
+- id: nhhc-danfs-monaghan
+  title: Monaghan II (DD-354) — DANFS / NHHC
+  url: https://www.history.navy.mil/research/histories/ship-histories/danfs/m/monaghan-ii.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: Naval History and Heritage Command
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain_us_gov
+  note: '**注意卷次**：DD-354 是 "Monaghan II"（Monaghan I 是 DD-32，一次大战 平甲板型）。经 Wayback 快照 20251208175037 取得。页内技术行原文 "(DD-354: displacement 1,726; length 341''3"; beam 34''3"; draft 8''10"; speed 36.5 knots; complement
+    100; armament 5 5-inch, 4 .30 caliber machine guns, 8 21-inch torpedo tubes; class Farragut)" —— complement 100 与该级通行的 160 差得离谱，**不采用**。
+
+    '
+- id: nhhc-danfs-benham
+  title: Benham II (DD-397) — DANFS / NHHC
+  url: https://www.history.navy.mil/research/histories/ship-histories/danfs/b/benham-ii.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: Naval History and Heritage Command
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain_us_gov
+  note: '**注意卷次**：DD-397 是 "Benham II"（Benham I 是 Destroyer No. 49）。 经 Wayback 快照 20251208220234 取得。技术行原文 "(DD-397: dp. 1,500; l. 341''3"; b. 34''8"; dr. 17''3"; s. 38.5 k.; cpl. 184; a. 4 5", 4 .50-cal.
+    mg., 16 21" tt., 2 dct.; class Benham)"。 作者署名 Timothy L. Francis，2006-02-08 定稿。
+
+    '
+- id: nhhc-danfs-vireo
+  title: Vireo I (AM-52 / AT-144) — DANFS / NHHC
+  url: https://www.history.navy.mil/research/histories/ship-histories/danfs/v/vireo-i.html
+  type: official_publication
+  tier: B
+  role:
+  - narrative
+  - data
+  operator: Naval History and Heritage Command
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain_us_gov
+  note: '1942-06-06 约克城号周围兵力核实的关键旁证。经 Wayback 快照 20251209200036 取得。原文给出 Vireo 受命拖带约克城号、 6 月 5 日 1308 带好拖缆、6 月 6 日与 Hammann 同在现场。
+
+    '
+- id: nhhc-hammann-action-report
+  title: USS Hammann (DD-412) Action Report, 4-6 June 1942
+  url: https://www.history.navy.mil/research/archives/digital-exhibits-highlights/action-reports/wwii-battle-of-midway/uss-hammann-action-report.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: C-in-C Pacific Fleet Serial 01849 of 28 June 1942
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain_us_gov
+  note: '**本组最重要的一份来源。** DD412/P6-1 Serial 2，1942-06-16 签发， 舰长（Commander）报告 + 副舰长（Acting Executive Officer， 署名 C. C. Hartigan, Jr., Lieut.(jg)）补充报告两份合成。 开篇自述 "In view of the fact that the Hammann was sunk
+    about 1600 on June 6, with total loss of all records, this report must be made entirely from memory." —— 时间与位置均系事后凭记忆，**坐标与时刻按约值处理**。 含 6 月 6 日约克城号周围完整兵力清单，是反驳「Hammann 是唯一在场驱逐舰」的直接证据。 经 Wayback 快照 20251208125454
+    取得。
+
+    '
+- id: nhhc-dessron6-action-report
+  title: Commander Destroyer Squadron Six Action Report, Battle of Midway, 4-7 June 1942
+  url: https://www.history.navy.mil/research/archives/digital-exhibits-highlights/action-reports/wwii-battle-of-midway/commander-destroyer-squadron-six-action-report.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: Commander Destroyer Squadron Six (Capt. E. P. Sauer), Serial 094 of 12 June 1942
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: public_domain_us_gov
+  note: '中途岛 TG 17.4（Balch / Benham / Morris / Anderson / Hammann / Hughes / Russell）的统一战报，含 6 月 4 日各舰救起幸存者人数表。 注意它只覆盖 6 月 4 日，**不覆盖 6 月 6 日 Hammann 沉没**。 经 Wayback 快照 20251208124920 取得。
+
+    '
+- id: navsource-hammann
+  title: USS HAMMANN (DD-412) — NavSource Destroyer Photo Index
+  url: https://www.navsource.org/archives/05/412.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: NavSource Naval History
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '技术行 + 图注。经 Wayback 快照 20241210025737 取得（直连 TLS 失败）。 图注里有高价值一手细节，例如 Hammann 幸存者由 Benham 送回珍珠港 （Photo 80-G-312064）、下水仪式由 Miss Lillian Hammann 主持。
+
+    '
+- id: navsource-monaghan
+  title: USS MONAGHAN (DD-354) — NavSource Destroyer Photo Index
+  url: https://www.navsource.org/archives/05/354.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: NavSource Naval History
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '技术行给出 "Displacement 1365 Tons"（口径与 navypedia 的 1358 t 不同）、 无线电呼号 NAJG。沉没日期写 December 17 1944，与 DANFS/navypedia 的 12-18 差一天。经 Wayback 快照 20250527011945 取得。
+
+    '
+- id: navsource-benham
+  title: USS BENHAM (DD-397) — NavSource Destroyer Photo Index
+  url: https://www.navsource.org/archives/05/397.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: NavSource Naval History
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: 'Fate 一栏写 "Sunk by Japanese Warships off Guadalcanal November 15 1942"， 与 DANFS 叙述（被日军鱼雷打断成两段后，两个浮体由 5 英寸炮火击沉） 措辞不同、日期也差一天。经 Wayback 快照 20250526222948 取得。
+
+    '
+- id: navypedia-sims
+  title: SIMS destroyers (1939) — Navypedia
+  url: http://www.navypedia.org/ships/usa/us_dd_sims.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: navypedia.org
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '本级逐舰建造表 + 主尺度骨架 + 改装年表。改装年表是本组 「Hammann 中途岛时到底几门炮、几管鱼雷、几枚深弹」的唯一 D 级以上来源。 注意其 "Armament" 一栏同时给 DD409-413（3 座四联）与 DD414-420（2 座四联）两种， 对 Hammann 应取前者再叠加 1940 年改装。
+
+    '
+- id: navypedia-farragut
+  title: FARRAGUT destroyers (1934-1935) — Navypedia
+  url: http://www.navypedia.org/ships/usa/us_dd_farragut.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: navypedia.org
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '8 舰建造表 + 主尺度 + 改装年表。技术行 "Machinery 2 sets Curtis geared steam turbines, 4 Yarrow boilers"，锅炉厂牌与 destroyerhistory 的 "4 x Bethlehem" 不同，两说并列不裁决。
+
+    '
+- id: navypedia-benham
+  title: BENHAM destroyers (1939) — Navypedia
+  url: http://www.navypedia.org/ships/usa/us_dd_benham.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: navypedia.org
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '10 舰建造表 + 主尺度 + 改装年表。锅炉数写 3，与 destroyerhistory 技术行写 4 冲突（后者同页正文又说 three boilers，属来源自相矛盾）。
+
+    '
+- id: destroyerhistory-sims
+  title: Sims-class destroyers in World War II — Destroyer History Foundation
+  url: https://destroyerhistory.org/goldplater/simsclass/
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: Destroyer History Foundation
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '引 Bureau of Construction and Repair 的 General Information book（脚注 1）、 Bauer and Roberts（脚注 2）、Friedman（脚注 3）。**本级主尺度的英制原值 只有这里给全**（348'' 1-3/4" oa、36'' 1-1/8" 宽等）。 注意它给 "1,570 long tons design"
+    与 navypedia 的 1764 t 不是同一口径。
+
+    '
+- id: destroyerhistory-farragut
+  title: Farragut-class destroyers in World War II — Destroyer History Foundation
+  url: https://destroyerhistory.org/goldplater/farragutclass/
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: Destroyer History Foundation
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '同上的脚注体系。本级 1931 年由 Bethlehem Steel 设计（在 1930 年伦敦条约框架下）， 建成 5 门 5"/38，No.3 炮位在第二烟囱之后 —— 这是判断该级有第二烟囱的直接依据。
+
+    '
+- id: destroyerhistory-benham
+  title: Benham-class destroyers in World War II — Destroyer History Foundation
+  url: https://destroyerhistory.org/goldplater/benhamclass/
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: Destroyer History Foundation
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '**来源自相矛盾，引用时必须逐条比对**：技术行写 "4 x Babcock & Wilcox boilers; 400 psi"，同页正文却写 "three boilers at 565 psi instead of the Bagley class'' four at 400 psi"。navypedia 独立给 3 锅炉，故采用 3。
+
+    '
+- id: destroyerhistory-hammann
+  title: USS Hammann (DD 412) — Destroyer History Foundation
+  url: https://destroyerhistory.org/goldplater/usshammann/
+  type: website
+  tier: D
+  role:
+  - narrative
+  operator: Destroyer History Foundation
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '正文即 DANFS 文本的转载（逐句对照与 nhhc-danfs-hammann 一致）， **只作 DANFS 的旁证，不当独立来源用**。
+
+    '
+- id: destroyerhistory-monaghan
+  title: USS Monaghan (DD 354) — Destroyer History Foundation
+  url: https://destroyerhistory.org/goldplater/ussmonaghan/
+  type: website
+  tier: D
+  role:
+  - narrative
+  operator: Destroyer History Foundation
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '同上，DANFS 转载版，且只到 1942 年初（页尾标 "(continued)" 但无续页）。 用于交叉核对珍珠港当日的行动顺序（0751 受命、0827 起航、撞沉微型潜艇）。
+
+    '
+- id: destroyerhistory-benham-ship
+  title: USS Benham (DD 397) — Destroyer History Foundation
+  url: https://destroyerhistory.org/goldplater/ussbenham/
+  type: website
+  tier: D
+  role:
+  - narrative
+  operator: Destroyer History Foundation
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '同上，DANFS 转载版。页首附 Halsey 1942-11 的嘉奖电全文。
+
+    '
+- id: navweaps-us-asw
+  title: ASW Weapons of the United States of America — NavWeaps
+  url: https://www.navweaps.com/Weapons/WAMUS_ASW.php
+  type: website
+  tier: C
+  role:
+  - data
+  operator: NavWeaps (Tony DiGiulian)
+  lang: en
+  access: direct
+  fetched: 2026-11-23
+  license: all_rights_reserved
+  note: '美制深水炸弹（Mark 6 等）、K 炮/Y 炮投射器、刺猬弹。用于核对 「DCT / DCR / DC 枚数」这些缩写在 navypedia 年表里的含义。
+
+    '
+- id: navypedia-takao
+  title: TAKAO heavy cruisers (1932) — Navypedia
+  url: https://www.navypedia.org/ships/japan/jap_cr_takao.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: navypedia.org
+  lang: en
+  access: direct
+  fetched: '2026-11-24'
+  license: all_rights_reserved
+  note: 高雄级重巡（高雄/爱宕/鸟海/摩耶）逐舰技术数据与结局。20 cm No.2 炮的主要装舰级。
+- id: navypedia-mogami
+  title: MOGAMI light / heavy cruisers (1935 - 1937) — Navypedia
+  url: https://www.navypedia.org/ships/japan/jap_cr_mogami.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: navypedia.org
+  lang: en
+  access: direct
+  fetched: '2026-11-24'
+  license: all_rights_reserved
+  note: 最上级（最上/三隈/铃谷/熊野）轻巡→重巡改装记录。15.5 cm 换 20 cm No.2 的关键案例。
 todo:
 - ~~抓 5 份一手档案 + 战争日志~~ **2026-11-17 已完成**：artillery-report / inclining-test / raeder-report / rodney-report / debriefing 全部抓到，另加 38cm 弹道表、flak-relocation、bs-ktb.zip（177 页 PDF 已转文本）
 - 重取 AWM / LAC / JACAR / Flickr Commons / 海自 五份条款（全部 blocked，目前对这几家的授权一无所知）

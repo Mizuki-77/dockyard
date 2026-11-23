@@ -1,0 +1,1425 @@
+# ============================================================================
+# 金刚型（金剛型戦艦 / Kongō class）—— 日本海军最后的英国血统战列巡洋舰
+#
+# 2026-11-23 建。本文件只放**四舰共享**的设计值；逐舰不同的
+# （排水量终值、锅炉数、涡轮型号、改装完成日、结局）写在 ships/haruna.yaml
+# 与 ships/kirishima.yaml。
+#
+# 三条必须写在文件头的事实，防止后来者搞混：
+#   1. **只有金刚是在英国造的**（Vickers, Barrow-in-Furness, Yard No.414）。
+#      比叡（横须贺）、榛名（川崎神户）、雾岛（三菱长崎）都是日本造。
+#      navypedia 原文把四舰列在同一页，但 Builder 栏逐舰不同：
+#        「金剛 [Kongo] 414 Vickers, Barrow, UK」「比叡 [Hiei] Yokosuka K K」
+#        「霧島 [Kirishima] 225 Mitsubishi, Nagasaki」「榛名 [Haruna] Kawasaki, Kobe」
+#      combinedfleet 的 TROM 亦逐舰写明：
+#        Haruna「Kobe. Battlecruiser HARUNA is laid down on No. 4 slip at Kawasaki's shipyard.」
+#        Kirishima「Nagasaki. A battlecruiser is laid down at Mitsubishi Zosen Kaisha's shipyard.」
+#      → 任务书「榛名与雾岛都是英国建造」的说法与两处来源直接冲突，本站按来源写。
+#   2. **四舰的锅炉数在 1930 年代大改装后分成两组**：金刚/雾岛 8 座、榛名/比叡 11 座。
+#      这是本级最容易被写成「同级同型」的一处差异，必须逐舰记。
+#   3. 本级最初分类是**战列巡洋舰**（巡洋戦艦），1930 年代改装后成为「高速戦艦」。
+#      navypedia 页标题即「KONGO battlecruisers (1913 - 1915)」；日文来源用
+#      「金剛型戦艦」并明确写改装后「高速戦艦」诞生。改级的具体日期未获取，
+#      故舰种只按「改装完成后」这个节点切换，见各单舰文件。
+# ============================================================================
+
+id: kongo
+name:
+  zh: 金刚型
+  en: Kongō class
+class_of:
+  - kongo
+  - hiei
+  - haruna
+  - kirishima
+
+date_convention_note: |
+  **本文件三段式时间窗用的是「该状态最早完成日」，即榛名的改装完成日**：
+    第一次改装段：1928-07-31（榛名，横须贺，1924-03-01 至 1928-07-31）
+    第二次改装段：1934-09-30（榛名，横须贺，1933-08-01 至 1934-09-30）
+  这是**刻意的简化**，不是史实错误，但必须知道它意味着什么：
+  雾岛的两次改装分别完成于 1930-04-16（吴）与 1936-06-08（佐世保），
+  比榛名晚 20 个月与 20 个月。所以在 1928-07-31～1930-04-16 与
+  1934-09-30～1936-06-08 这两段里，本文件按「已改装」给的宽、吃水、燃油、
+  续航、武备等值，对雾岛其实**尚未生效**。
+  逐舰真实节点以 ships/<id>.yaml 里的 fact 为准；主会话合并时若要做
+  逐舰时间轴，应以单舰文件的窗口覆盖本文件的窗口。
+  **未做逐条拆窗的原因**：拆开会把 51 处同名日期改成逐舰一对，属结构性重写，
+  本轮按主会话「立即收尾、不追求完整」的指令保留现状并在此明示。
+
+open_ended_note: |
+  本文件绝大多数 fact 的 valid.to 都留空，这是结构性的，不是漏填：
+  舰级设计参数的生效期从设计定案/该状态完成起，到该级最后一艘损失或拆解为止，
+  期间不因改装而改变（改装带来的变化另立一条 fact，用新的 valid.from）。
+  因此这里的 open 时间窗表示「无已知终止事件」。
+  四舰的结局不同（金刚 1944-11-21 被潜艇击沉、比叡 1942-11-13 自沉、
+  雾岛 1942-11-15 沉没、榛名 1945-07-28 空袭坐底后 1946-48 解体），
+  结局数据一律写单舰文件，本文件不写。
+
+facts:
+  # ============================================================
+  # 身份（舰级层）
+  # ============================================================
+  - field: identity.name_original
+    value: 金剛型戦艦（こんごうがたせんかん）
+    src: [japanese-warship-haruna, navypedia-kongo]
+    valid: { from: 1911 }
+    confidence: C
+    note: >-
+      日文来源全篇用「金剛型戦艦」；navypedia 英文页标题用
+      「KONGO battlecruisers (1913 - 1915)」，即建成时归类为战列巡洋舰。
+
+  - field: identity.name_zh
+    value: 金刚型
+    src: [japanese-warship-haruna]
+    valid: { from: 1911 }
+    confidence: C
+
+  - field: identity.name_en
+    value: Kongō class
+    src: [navypedia-kongo]
+    valid: { from: 1911 }
+    confidence: C
+
+  - field: identity.name_note
+    value: >-
+      四舰均以山名命名：金刚（金剛山，大阪/奈良境）、比叡（比叡山）、
+      榛名（榛名山，群马县）、雾岛（霧島山，鹿儿岛/宫崎境）。
+      命名依据原文（榛名）：「issues an order to name the third vessel of the
+      KONGO class HARUNA after a volcano in Gumma Prefecture.」
+    src: [combinedfleet-haruna]
+    valid: { from: 1911-06-05 }
+    confidence: C
+    note: >-
+      榛名、金刚、比叡的命名出处有原文；雾岛「以霧島山命名」这一句在本轮
+      抓到的来源里**没有直接原文**，属常识性说法，故本条只作译名说明，
+      不当史实字段用。
+
+  - field: identity.ship_type
+    value: battlecruiser
+    src: [navypedia-kongo, combinedfleet-kirishima]
+    valid: { from: 1913-08-16 }
+    confidence: B
+    note: >-
+      建成时分类为战列巡洋舰（巡洋戦艦）。navypedia 页标题「KONGO battlecruisers
+      (1913 - 1915)」；combinedfleet 逐舰写「A battlecruiser is laid down」。
+      1930 年代大改装后转为「高速戦艦」，切换日见各单舰文件
+      （榛名 1934-09-30、雾岛 1936-06-08，均为其第二次改装完成日）。
+
+  - field: identity.nation
+    value: japan
+    src: [navypedia-kongo]
+    valid: { from: 1913-08-16 }
+    confidence: B
+
+  - field: identity.operator
+    value: 大日本帝国海軍（Imperial Japanese Navy）
+    src: [navypedia-kongo]
+    valid: { from: 1913-08-16 }
+    confidence: B
+
+  - field: identity.era
+    value: ww2
+    src: [combinedfleet-haruna]
+    valid: { from: 1941-12-08 }
+    confidence: C
+    note: >-
+      按本站收录口径（二战资料站）归 ww2。本级实际横跨 ww1 与 interwar：
+      1915 年服役、1945 年全部损失或解体，舰龄 30 年以上。
+
+  - field: identity.building_program
+    value: 1911 年度海军紧急扩张案（Naval Emergency Expansion Bill）
+    src: [combinedfleet-haruna]
+    valid: { from: 1910 }
+    confidence: C
+    note: >-
+      原文：「The Diet passes and funds the 1911 Naval Emergency Expansion bill
+      received from the cabinet. The bill authorizes the design and construction
+      of a battleship and four armored cruisers. The battleship is FUSO.
+      HARUNA is the third of the four high-speed armored cruisers, after KONGO
+      and HIEI.」
+      即同案一舰战列舰（扶桑）+ 四艘「高速装甲巡洋舰」，后者即金刚型。
+      设计出自英国 Vickers 的 Sir George Thurston，以 Lion 级为起点改型：
+      「Japanese have preferred Vickers, with which in October, 1910 they have
+      signed the contract. As starting point at designing of Kongo Lion has
+      served design project」（navypedia）。
+
+  # ============================================================
+  # 主尺度与排水量（建成时 / 第一次改装后 / 第二次改装后 三段）
+  # 口径提示：navypedia 的 standard 栏在「as completed」一列填「---」，
+  # 只给 normal 27,500 t；standard 26,330 t 来自日文来源「基準排水量」。
+  # 两者定义不同（normal vs 基準），不是同一个数，故分列 standard / full。
+  # ============================================================
+  - field: displacement.standard
+    value: 26330
+    unit: t
+    src: [japanese-warship-haruna, japanese-warship-kirishima]
+    valid: { from: 1915-04-19, to: 1928-07-31 }
+    confidence: B
+    note: >-
+      日文来源「基準排水量 ① 26,330t」（榛名页与雾岛页同值）。
+      navypedia 的该列（as completed）标准排水量填「---」不给数，
+      只给「Displacement normal, t 27500」——normal 与 基準 不同口径，故不合并。
+
+  - field: displacement.standard
+    value: 29330
+    unit: t
+    src: [navypedia-kongo, japanese-warship-haruna, japanese-warship-kirishima]
+    valid: { from: 1928-07-31, to: 1934-09-30 }
+    confidence: B
+    note: >-
+      navypedia「Displacement standard, t … 29330」（1928-1931 modernization 列）；
+      日文来源「基準排水量 ② 29,330t」两处互证。
+
+  - field: displacement.full
+    value: 32200
+    unit: t
+    src: [navypedia-kongo, combinedfleet-kongo]
+    valid: { from: 1915-04-19, to: 1928-07-31 }
+    confidence: B
+    note: >-
+      navypedia「Displacement full, t 32200」（as completed 列）。
+      combinedfleet 对金刚的同一状态写「a 32,200 ton battlecruiser」，
+      与本值一致（该项是对金刚的描述，用于本级口径旁证）。
+
+  - field: displacement.full
+    value: 31785
+    unit: t
+    src: [navypedia-kongo]
+    valid: { from: 1928-07-31, to: 1934-09-30 }
+    confidence: C
+    note: navypedia「Displacement full, t … 31785」（第一次改装后列）。
+
+  - field: displacement.full
+    value: 36601
+    unit: t
+    src: [navypedia-kongo]
+    valid: { from: 1934-09-30 }
+    confidence: C
+    note: >-
+      navypedia「Displacement full, t … 36601」（1934-1940 modernization 列，
+      四舰共用一个值）。注意该列的标准排水量是**逐舰给**的
+      （Kongo 31720 / Hiei 32350 / Kirishima 31980 / Haruna 32156），
+      故标准排水量写单舰文件，本文件不重复。
+
+  - field: dimensions.length.oa
+    value: 214.5
+    unit: m
+    src: [navypedia-kongo]
+    valid: { from: 1915-04-19, to: 1928-07-31 }
+    confidence: C
+    note: navypedia「Length, m 212.1 wl 214.5 oa」（as completed）。
+
+  - field: dimensions.length.oa
+    value: 215.2
+    unit: m
+    src: [navypedia-kongo]
+    valid: { from: 1928-07-31, to: 1934-09-30 }
+    confidence: C
+    note: navypedia「212.1 wl 215.2 oa」（第一次改装后）。
+
+  - field: dimensions.length.oa
+    value: 222.1
+    unit: m
+    src: [navypedia-kongo]
+    valid: { from: 1934-09-30 }
+    confidence: C
+    note: >-
+      navypedia「219.6 wl 222.1 oa」（第二次改装后）。
+      舰尾延长幅度两处来源不同：combinedfleet 记榛名「stern is lengthened by
+      7.47 m (24.5 ft)」、雾岛「lengthened by 26-feet」（≈7.92 m），
+      两者差约 0.45 m，未裁决，详见 RESEARCH-NOTES 分歧节。
+
+  - field: dimensions.length.wl
+    value: 212.1
+    unit: m
+    src: [navypedia-kongo]
+    valid: { from: 1915-04-19, to: 1934-09-30 }
+    confidence: C
+    note: >-
+      navypedia「212.1 wl」（as completed 与第一次改装后两列同值）。
+      日文来源写 212.00 m（水線長），差 0.1 m 属四舍五入，未单列。
+
+  - field: dimensions.length.wl
+    value: 219.6
+    unit: m
+    src: [navypedia-kongo, japanese-warship-haruna, japanese-warship-kirishima]
+    valid: { from: 1934-09-30 }
+    confidence: B
+    note: navypedia「219.6 wl」；日文来源「水線長 ③ 219.61m」两页同值，互证。
+
+  - field: dimensions.beam.wl
+    value: 28.0
+    unit: m
+    src: [navypedia-kongo]
+    valid: { from: 1915-04-19, to: 1928-07-31 }
+    confidence: C
+    note: >-
+      navypedia「Breadth, m 28.0」（as completed）。
+      日文来源同状态写「水線下幅 ① 28.04m」，差 0.04 m 属取整。
+
+  - field: dimensions.beam.wl
+    value: 29.3
+    unit: m
+    src: [navypedia-kongo]
+    valid: { from: 1928-07-31 }
+    confidence: C
+    note: >-
+      navypedia「Breadth, m … 29.3」（第一次与第二次改装后同值）。
+      加装防雷突出部后的宽度，见 navypedia：「Bulges were fitted, breadth rose to 29.3m」。
+      **注意**：日文来源在同状态给出「水線下幅 ② 31.02m / ③ 31.01m」，
+      与 29.3 m 差 1.7 m，两说并列不裁决，详见 RESEARCH-NOTES 分歧节。
+
+  - field: dimensions.draught.mean
+    value: 8.40
+    unit: m
+    src: [navypedia-kongo]
+    valid: { from: 1915-04-19, to: 1928-07-31 }
+    confidence: C
+    note: navypedia「Draught, m 8.40」（as completed）。未标明对应的排水量状态，属来源缺口。
+
+  - field: dimensions.draught.mean
+    value: 8.65
+    unit: m
+    src: [navypedia-kongo]
+    valid: { from: 1928-07-31, to: 1934-09-30 }
+    confidence: C
+    note: navypedia「Draught, m … 8.65」（第一次改装后）。
+
+  - field: dimensions.draught.mean
+    value: 9.72
+    unit: m
+    src: [navypedia-kongo]
+    valid: { from: 1934-09-30 }
+    confidence: C
+    note: navypedia「Draught, m … 9.72」（第二次改装后全级同值）。
+
+  # ============================================================
+  # 动力（共用部分：轴数、主机型式分类、建成时主锅炉数、设计马力）
+  # 逐舰差异（锅炉座数与型号、涡轮厂牌、试航数据）写单舰文件。
+  # ============================================================
+  - field: propulsion.plant_type
+    value: steam_turbine
+    src: [navypedia-kongo]
+    valid: { from: 1915-04-19 }
+    confidence: B
+
+  - field: propulsion.shafts
+    value: 4
+    unit: count
+    src: [navypedia-kongo, japanese-warship-haruna]
+    valid: { from: 1915-04-19 }
+    confidence: B
+    note: >-
+      navypedia「No of shafts 4」（三段状态均 4）；日文来源「2基4軸」「4基4軸」，
+      均指四轴。
+
+  - field: propulsion.boiler.count
+    value: 36
+    unit: count
+    src: [navypedia-kongo, japanese-warship-haruna, japanese-warship-kirishima]
+    valid: { from: 1915-04-19, to: 1928-07-31 }
+    confidence: B
+    note: >-
+      建成时 36 座。日文来源「ロ号艦本式ボイラー（混焼） 36基」（榛名/雾岛两页）；
+      navypedia 同状态「36 Yarrow boilers」。**座数一致，型号说法冲突**，见下条。
+
+  - field: propulsion.boiler.type
+    value: Yarrow（ヤーロー式）水管锅炉 36 座，煤油混烧
+    src: [navypedia-kongo]
+    valid: { from: 1915-04-19, to: 1928-07-31 }
+    confidence: C
+    note: >-
+      navypedia：「Kongo, Hiei, Kirishima: 4 Parsons steam turbines, 36 Yarrow
+      boilers / Haruna: 4 Brown-Curtis steam turbines, 36 Yarrow boilers」。
+      **与日文来源冲突**：日文来源对榛名/雾岛建成时写「ロ号艦本式ボイラー（混焼）
+      36基」，只对金刚写「ヤーロー式ボイラー（混焼）36基」。
+      两说并列不裁决；逐舰取值见 ships/haruna.yaml、ships/kirishima.yaml。
+
+  - field: propulsion.power.design
+    value: 64000
+    unit: hp
+    src: [navypedia-kongo, japanese-warship-haruna, japanese-warship-kirishima]
+    valid: { from: 1915-04-19, to: 1934-09-30 }
+    confidence: B
+    note: >-
+      navypedia「Power, h. p. 64000」（as completed 与第一次改装后两列同值）；
+      日文来源「馬力 ① 64,000馬力」。第一次改装未换主机，故马力不变。
+
+  - field: propulsion.power.design
+    value: 136000
+    unit: hp
+    src: [navypedia-kongo, japanese-warship-haruna, japanese-warship-kirishima]
+    valid: { from: 1934-09-30 }
+    confidence: B
+    note: >-
+      navypedia「Power, h. p. … 136000」（第二次改装后，全级同值）；
+      日文来源「馬力 ③ 136,000馬力」。这是**设计值**；雾岛的试航实测另记
+      136,940 轴马力 / 29.80 kn，见 ships/kirishima.yaml。
+
+  - field: propulsion.speed.design
+    value: 27.5
+    unit: kn
+    src: [navypedia-kongo, japanese-warship-haruna, japanese-warship-kirishima]
+    valid: { from: 1915-04-19, to: 1928-07-31 }
+    confidence: B
+    note: navypedia「Max speed, kts 27.5」；日文来源「最大速度 ① 27.5ノット」互证。
+
+  - field: propulsion.speed.design
+    value: 25.9
+    unit: kn
+    src: [navypedia-kongo]
+    valid: { from: 1928-07-31, to: 1934-09-30 }
+    confidence: C
+    note: >-
+      navypedia「Max speed, kts … 25.9」（第一次改装后，加装突出部与装甲增重导致掉速）。
+      **与日文来源冲突**：日文来源雾岛页写 ② 26.3ノット、金刚页写 ② 26.0ノット。
+      两说并列，逐舰值见单舰文件。
+
+  - field: propulsion.speed.design
+    value: 30.5
+    unit: kn
+    src: [navypedia-kongo, japanese-warship-haruna]
+    valid: { from: 1934-09-30 }
+    confidence: B
+    note: >-
+      navypedia「Max speed, kts … 30.5」；日文来源榛名页 ③ 30.5ノット，互证。
+      另两舰日文来源给的是不同的量：金刚页 ③ 30.3ノット（最大速度）、
+      雾岛页 ③ 29.8ノット（公試全力）——后者是**试航实测**，不是设计值，
+      已分别记入各自单舰文件的 propulsion.speed.trial。
+
+  - field: propulsion.fuel.capacity
+    value: 1000
+    unit: t
+    src: [navypedia-kongo]
+    valid: { from: 1915-04-19, to: 1928-07-31 }
+    confidence: C
+    note: >-
+      navypedia「Fuel, t coal 4200 + oil 1000」（as completed）。
+      本字段口径是**燃油**，故取 oil 1000 t；石炭 4,200 t 不在本字段内
+      （注册表无载煤字段），一并注明于此。
+    # 载煤量无对应字段，仅在此 note 保留原文，避免丢信息。
+
+  - field: propulsion.fuel.capacity
+    value: 3292
+    unit: t
+    src: [navypedia-kongo]
+    valid: { from: 1928-07-31, to: 1934-09-30 }
+    confidence: C
+    note: navypedia「Fuel, t … coal 2661 + oil 3292」（第一次改装后）。
+
+  - field: propulsion.fuel.capacity
+    value: 6330
+    unit: t
+    src: [navypedia-kongo]
+    valid: { from: 1934-09-30 }
+    confidence: C
+    note: >-
+      navypedia「Fuel, t … oil 6330」（第二次改装后，改重油专烧，全级同值）。
+      该值是搭载量，不是续航试验实测耗油。
+
+  - field: propulsion.fuel.type
+    value: 石炭＋重油混烧（coal + oil）
+    src: [navypedia-kongo]
+    valid: { from: 1915-04-19, to: 1934-09-30 }
+    confidence: C
+    note: 原文「coal 4200 + oil 1000」（建成时）→「coal 2661 + oil 3292」（第一次改装后）。
+
+  - field: propulsion.fuel.type
+    value: 重油专烧（oil only）
+    src: [navypedia-kongo, japanese-warship-haruna]
+    valid: { from: 1934-09-30 }
+    confidence: B
+    note: >-
+      navypedia 第二次改装后燃油栏只剩「oil 6330」；日文来源榛名页
+      「ロ号艦本式ボイラー（重油専焼） 11基」，明写重油专烧。
+
+  - field: propulsion.range.max
+    value: 8000
+    unit: nmi
+    src: [navypedia-kongo, japanese-warship-haruna]
+    valid: { from: 1915-04-19, to: 1928-07-31 }
+    confidence: B
+    note: navypedia「Endurance, nm(kts) 8000(14)」；日文来源「14ノット：8,000海里」互证。
+
+  - field: propulsion.range.at_speed
+    value: 14
+    unit: kn
+    src: [navypedia-kongo, japanese-warship-haruna]
+    valid: { from: 1915-04-19, to: 1928-07-31 }
+    confidence: B
+    note: 与上一条成对解读：8,000 nmi @ 14 kn。
+
+  - field: propulsion.range.max
+    value: 10000
+    unit: nmi
+    src: [navypedia-kongo]
+    valid: { from: 1928-07-31 }
+    confidence: C
+    note: >-
+      navypedia「Endurance, nm(kts) … 10000(18)」（第一次与第二次改装后两列同值）。
+      **与日文来源冲突，且冲突的方式不只在数值上**：日文来源第一次改装后给的是
+      14 kn 下的里程（榛名 9,500 海里、雾岛 10,000 海里），第二次改装后才是
+      18 kn 下的（榛名 10,000、雾岛 9,850、金刚 9,800）。
+      即两源不但数值不同，连「对应航速」都不同。两说并列不裁决；
+      逐舰数值写各自单舰文件，本文件保留 navypedia 的 10,000 nmi @ 18 kn。
+
+  - field: propulsion.range.at_speed
+    value: 18
+    unit: kn
+    src: [navypedia-kongo]
+    valid: { from: 1928-07-31 }
+    confidence: C
+    note: 与上一条成对解读：10,000 nmi @ 18 kn。
+
+  # ============================================================
+  # 防护
+  # 口径提示：navypedia 的装甲栏是一个**纵列字符串**，多数项给的是区间
+  # （如 belt: 203 - 76）。本站逐部位拆条，区间内部的分配关系原文没写，
+  # 一律在 note 里保留原句，不自行把区间拆给具体部位。
+  # ============================================================
+  - field: protection.scheme
+    value: incremental
+    src: [navypedia-kongo]
+    valid: { from: 1915-04-19 }
+    confidence: C
+    note: >-
+      **这是分类判断，来源没有用过「incremental」这个词，故 confidence 记 C。**
+      判断依据是 navypedia 的装甲描述为一整套**分部位、分高度、不封闭成单盒**的
+      布置，而不是把所有防护集中成一条装甲堡：
+      「3.8m-high main belt extended from No1 to No4 barbettes and had 203mm
+      thickness between barbettes… Ship ends from end barbettes to ship ends were
+      protected by 76mm belt. Upper 152mm belt extended from main belt to upper
+      deck and from No1 to No4 barbette… Casemates had also 152mm armor. Main
+      19mm deck connected with lower edge of main belt by 19mm slopes. Forecastle
+      deck and upper deck aft from No3 barbette had 38mm protection.」
+      → 舷侧带 203 收薄到舰端 76、其上再接 152 上带、炮廓单独 152、
+      甲板分 19/38 两层并由 19 mm 斜板与主带下缘相接。这种「越靠两端越薄、
+      多层叠加」是 incremental 的特征；all_or_nothing 的核心恰恰是取消这种削薄、
+      只保一条完整装甲盒。**若日后主会话找到明写该舰防护体系的文献，应以文献为准。**
+
+  - field: protection.torpedo_bulge.type
+    value: 外置防雷突出部（第一次改装加装，宽度随之由 28.0 m 增至 29.3 m）
+    src: [navypedia-kongo, combinedfleet-haruna]
+    valid: { from: 1928-07-31 }
+    confidence: B
+    note: >-
+      navypedia：「Bulges were fitted, breadth rose to 29.3m. 4 TT were removed.」
+      combinedfleet 榛名 TROM 同一次改装：「Anti-torpedo bulges are added.
+      The torpedo nets and four torpedo tubes are removed.」
+
+  - field: protection.armor.thickness
+    value: 203
+    unit: mm
+    qual: { part: belt, region: main }
+    src: [navypedia-kongo]
+    valid: { from: 1915-04-19 }
+    confidence: C
+    note: >-
+      原文（三段状态同值）：「belt: 203 - 76」。203 为舷侧主装甲带（第 1 至第 4
+      炮座之间）；76 为舰端厚度，见 belt/fore 与 belt/aft 两条。
+      同页文字：「3.8m-high main belt extended from No1 to No4 barbettes and had
+      203mm thickness between barbettes.」
+
+  - field: protection.armor.thickness
+    value: 76
+    unit: mm
+    qual: { part: belt, region: fore }
+    src: [navypedia-kongo]
+    valid: { from: 1915-04-19 }
+    confidence: C
+    note: >-
+      原文：「Ship ends from end barbettes to ship ends were protected by 76mm belt.」
+      区间「203 - 76」中的 76 即舰端段。前后端同值，故 fore/aft 各一条。
+
+  - field: protection.armor.thickness
+    value: 76
+    unit: mm
+    qual: { part: belt, region: aft }
+    src: [navypedia-kongo]
+    valid: { from: 1915-04-19 }
+    confidence: C
+    note: 同上条，舰端 76 mm。
+
+  - field: protection.armor.thickness
+    value: 152
+    unit: mm
+    qual: { part: upper_belt, region: main }
+    src: [navypedia-kongo]
+    valid: { from: 1915-04-19 }
+    confidence: C
+    note: >-
+      原文：「Upper 152mm belt extended from main belt to upper deck and from No1 to
+      No4 barbette. It was closed by 152mm bulkheads.」
+
+  - field: protection.armor.thickness
+    value: 203
+    unit: mm
+    qual: { part: bulkhead, region: main }
+    src: [navypedia-kongo]
+    valid: { from: 1915-04-19 }
+    confidence: C
+    note: >-
+      原文：「bulkheads: 203 - 127」。区间两端分别对应第 1 号炮座侧
+      （152-127 mm）与第 4 号炮座侧（203-152 mm），原文写法为
+      「It closed by 152-127mm bulkhead abreast No1 barbette and 203-152mm
+      bulkhead abreast No4 barbette.」本站只记区间上限 203，不把 203 指给
+      某一端的具体部位，详见 RESEARCH-NOTES。
+
+  - field: protection.armor.thickness
+    value: 57
+    unit: mm
+    qual: { part: deck, region: main }
+    src: [navypedia-kongo]
+    valid: { from: 1915-04-19 }
+    confidence: C
+    note: >-
+      原文：「deck: 57 - 38」。**该行与同页文字不自洽**：文字另述
+      「Main 19mm deck connected with lower edge of main belt by 19mm slopes.
+      Forecastle deck and upper deck aft from No3 barbette had 38mm protection.」，
+      第二次改装后又写「Its thickness increased to 80mm over machinery and
+      152mm over magazines.」——57 这个数在文字叙述里找不到对应部位。
+      本站照抄表格值并标存疑，不自行解释；弹药库/机舱上方另见下两条。
+
+  - field: protection.armor.thickness
+    value: 19
+    unit: mm
+    qual: { part: slope, region: main }
+    src: [navypedia-kongo]
+    valid: { from: 1915-04-19 }
+    confidence: C
+    note: >-
+      原文：「Main 19mm deck connected with lower edge of main belt by 19mm slopes.」
+      （三段状态均为 19 mm，第二次改装未改此值。）
+
+  - field: protection.armor.thickness
+    value: 120
+    unit: mm
+    qual: { part: magazine, region: roof }
+    src: [navypedia-kongo]
+    valid: { from: 1928-07-31, to: 1934-09-30 }
+    confidence: C
+    note: >-
+      原文（第一次改装后）：「Its thickness increased to 80mm over machinery and
+      120mm over magazines.」水平装甲加强；80 mm 机舱上方无对应 qual 部位
+      （deck/region upper 会与 deck/main 57 冲突），故只记弹药库一条，
+      机舱上方的 80 mm 保留在本 note 内。
+
+  - field: protection.armor.thickness
+    value: 152
+    unit: mm
+    qual: { part: magazine, region: roof }
+    src: [navypedia-kongo]
+    valid: { from: 1934-09-30 }
+    confidence: C
+    note: >-
+      原文（第二次改装后）：「Its thickness increased to 80mm over machinery and
+      152mm over magazines.」另有「Horizontal protection of magazines increased
+      to 152mm」一句（同页 Modernizations 段），互相印证。
+
+  - field: protection.armor.thickness
+    value: 254
+    unit: mm
+    qual: { part: barbette, region: main }
+    src: [navypedia-kongo]
+    valid: { from: 1915-04-19, to: 1928-07-31 }
+    confidence: C
+    note: >-
+      navypedia「barbettes: 254」（as completed）。
+
+  - field: protection.armor.thickness
+    value: 305
+    unit: mm
+    qual: { part: barbette, region: main }
+    src: [navypedia-kongo]
+    valid: { from: 1928-07-31 }
+    confidence: C
+    note: >-
+      navypedia「barbettes: 305」（第一次与第二次改装后同值）；
+      同页文字另述「Barbettes under main deck were strengthened to 152-140 mm.」，
+      指主甲板以下段，与本条 305 不是同一段，未合并。
+
+  - field: protection.armor.thickness
+    value: 229
+    unit: mm
+    qual: { part: turret, region: main }
+    src: [navypedia-kongo]
+    valid: { from: 1915-04-19 }
+    confidence: C
+    note: >-
+      原文：「turrets: 229 - 76」（as completed）→「turrets: 229 - 152」
+      （第一次改装后，并注「Thickness of turrets crowns was increased to 152mm」，
+      即 152 为炮塔顶）。229 是区间上限，原文未指明是正面还是侧面，
+      故用 region: main 而不写 face。
+
+  - field: protection.armor.thickness
+    value: 254
+    unit: mm
+    qual: { part: conning_tower, region: main }
+    src: [navypedia-kongo]
+    valid: { from: 1915-04-19 }
+    confidence: C
+    note: >-
+      navypedia「CT: 254」（三段状态同值）。
+
+  - field: protection.armor.thickness
+    value: 51
+    unit: mm
+    qual: { part: bulkhead, region: torpedo }
+    src: [navypedia-kongo]
+    valid: { from: 1934-09-30 }
+    confidence: C
+    note: >-
+      原文（第二次改装后）：「There was 51-40mm anti-torpedo longitudinal bulkhead.」
+      本站记区间上限 51 mm；区间下限 40 mm 与此为同一道纵壁的不同段，
+      未再拆条。
+
+  # 装甲总重、水下防护纵深：本轮所有来源均无数据，不写 fact。
+  # （navypedia 只有一句「Underwater protection could resist exploding of 200kg TNT」，
+  #  这是抗爆当量，不是纵深米数，不能填 protection.underwater.depth。）
+
+  # ============================================================
+  # 武备（武器本体 + 全级共有的装载概览）
+  # 武器本体放舰级；炮位实例（mount:*）放单舰，因为装舰日期逐舰不同。
+  # ============================================================
+  - about: weapon:36cm-45-t41
+    field: weapon.designation
+    value: 45 口径四一式 36 cm 炮（36 cm/45 (14") 41st Year Type）
+    src: [navweaps-36cm-45-t41, navypedia-kongo]
+    valid: { from: 1913 }
+    confidence: B
+    note: >-
+      navweaps 官方名：「Official Designation: 45 caliber 41st Year Type 36 cm Gun」。
+      命名沿革（navweaps 原文）：「The original design was submitted by Vickers to
+      the Japanese in November 1910. In an effort to hide their true size, Vickers
+      designated these guns on their internal documents as the 12-in Vickers Mark
+      "J" and the Japanese documented them as the 12-in Meiji 43 Type… Later, the
+      guns built by Vickers were known as the 14-in Vickers Mark "A" and to the
+      Japanese as the 14-in 43rd Year Type (Model 1910). Guns manufactured in Japan
+      were known as 14-in 41st Year Type (Model 1908).」
+      → **金刚装的是英国造的 43rd Year Type（毘式），榛名/雾岛装的是日本造的
+      41st Year Type**。navypedia 装甲栏亦按此分：as completed 列写
+      「Kongo: 4 x 2 - 356/45 43-shiki … others: 4 x 2 - 356/45 41-shiki」。
+
+  - about: weapon:36cm-45-t41
+    field: weapon.nation
+    value: japan
+    src: [navweaps-36cm-45-t41]
+    valid: { from: 1913 }
+    confidence: A
+
+  - about: weapon:36cm-45-t41
+    field: weapon.category
+    value: naval_gun
+    src: [navweaps-36cm-45-t41]
+    valid: { from: 1913 }
+    confidence: A
+
+  - about: weapon:36cm-45-t41
+    field: weapon.bore
+    value: 356
+    unit: mm
+    src: [navweaps-36cm-45-t41]
+    valid: { from: 1913 }
+    confidence: A
+    note: >-
+      navweaps：「In 1917, when the Japanese converted to metric, all of these guns
+      were then designated as 36 cm (14.2 inches) but their bores remained unchanged
+      at 14.0 inches (35.6 cm).」——36 cm 只是改名，实际口径仍是 35.6 cm。
+
+  - about: weapon:36cm-45-t41
+    field: weapon.caliber_length
+    value: 45
+    unit: ratio
+    src: [navweaps-36cm-45-t41]
+    valid: { from: 1913 }
+    confidence: A
+    note: 炮身全长 16.469 m、膛线长 13.737 m，药室 294.9 dm³。
+
+  - about: weapon:36cm-45-t41
+    field: weapon.weight
+    value: 86000
+    unit: kg
+    src: [navweaps-36cm-45-t41]
+    valid: { from: 1913 }
+    confidence: A
+    note: 原文「Gun Weight 189,586 lbs. (86,000 kg)」。
+
+  - about: weapon:36cm-45-t41
+    field: weapon.projectile_weight
+    value: 673.5
+    unit: kg
+    qual: { shell_type: apc }
+    src: [navweaps-36cm-45-t41]
+    valid: { from: 1931 }
+    confidence: A
+    note: >-
+      APC Type 91「1,485 lbs. (673.5 kg)」，1931-04-06 采用。
+      战前的 APC No.6/Type 88 为「1,400 lbs. (635 kg)」。
+
+  - about: weapon:36cm-45-t41
+    field: weapon.projectile_weight
+    value: 625
+    unit: kg
+    qual: { shell_type: he }
+    src: [navweaps-36cm-45-t41]
+    valid: { from: 1931 }
+    confidence: A
+    note: Common Type 0 HE「1,378 lbs. (625 kg)」。
+
+  - about: weapon:36cm-45-t41
+    field: weapon.muzzle_velocity
+    value: 770
+    unit: mps
+    qual: { shell_type: apc }
+    src: [navweaps-36cm-45-t41]
+    valid: { from: 1931 }
+    confidence: A
+    note: >-
+      **原文给的是区间**：「APC Type 91: 2,526 - 2,543 fps (770 - 775 mps)」。
+      本字段只收单值，故记区间下限 770 mps，上限 775 mps 保留于此，
+      不取平均（平均值属推算）。
+
+  - about: weapon:36cm-45-t41
+    field: weapon.muzzle_velocity
+    value: 805
+    unit: mps
+    qual: { shell_type: he }
+    src: [navweaps-36cm-45-t41]
+    valid: { from: 1931 }
+    confidence: A
+    note: Common Type 0 HE「2,641 fps (805 mps)」，单值。
+
+  - about: weapon:36cm-45-t41
+    field: weapon.range.max
+    value: 35450
+    unit: m
+    src: [navweaps-36cm-45-t41]
+    valid: { from: 1933 }
+    confidence: A
+    note: >-
+      APC Type 91 在 43.0°（炮塔最大仰角）下「38,770 yards (35,450 m)」。
+      改装前 25° 仰角时的射程本页未给。
+
+  - about: weapon:36cm-45-t41
+    field: weapon.range.max_elevation
+    value: 43
+    unit: deg
+    src: [navweaps-36cm-45-t41]
+    valid: { from: 1933 }
+    confidence: A
+
+  - about: weapon:36cm-45-t41
+    field: weapon.elevation.min
+    value: -5
+    unit: deg
+    src: [navweaps-36cm-45-t41]
+    valid: { from: 1913 }
+    confidence: A
+    note: >-
+      「As commissioned: -5 / +25 degrees」。
+
+  - about: weapon:36cm-45-t41
+    field: weapon.elevation.max
+    value: 25
+    unit: deg
+    src: [navweaps-36cm-45-t41]
+    valid: { from: 1913, to: 1925 }
+    confidence: A
+    note: >-
+      原文：「As commissioned: -5 / +25 degrees; As modified in the 1920s: -5 / +33
+      degrees; As rebuilt in the 1930s: -5 / +43 degrees」。
+      抬升到 33° 的年份，navypedia 记为「1923 - 1925, all: maximal angle of main
+      gun elevation was increased from 25° to 33°」。
+
+  - about: weapon:36cm-45-t41
+    field: weapon.elevation.max
+    value: 33
+    unit: deg
+    src: [navweaps-36cm-45-t41, navypedia-kongo]
+    valid: { from: 1925, to: 1933 }
+    confidence: A
+    note: >-
+      同上；navypedia「1923 - 1925, all: … from 25° to 33°」。
+
+  - about: weapon:36cm-45-t41
+    field: weapon.elevation.max
+    value: 43
+    unit: deg
+    src: [navweaps-36cm-45-t41, navypedia-kongo]
+    valid: { from: 1933 }
+    confidence: A
+    note: >-
+      navypedia 逐舰记年份：榛名 1933-04/05 先改（「elevation of the main battery
+      guns is increased from 33 to 43 degrees」），其余在 1933-1936 年的大改装中完成。
+
+  - about: weapon:36cm-45-t41
+    field: weapon.rate_of_fire
+    value: 2
+    unit: rpm
+    src: [navweaps-36cm-45-t41]
+    valid: { from: 1913 }
+    confidence: A
+    note: 原文「Rate Of Fire 2 rounds per minute」。
+
+  - about: weapon:36cm-45-t41
+    field: weapon.barrel_life
+    value: 250
+    unit: count
+    src: [navweaps-36cm-45-t41]
+    valid: { from: 1913 }
+    confidence: A
+    note: 原文「Approximate Barrel Life 250 - 280 rounds」，本字段收单值，记区间下限。
+
+  - about: weapon:36cm-45-t41
+    field: weapon.ammo_outfit
+    value: 80
+    unit: count
+    src: [navweaps-36cm-45-t41]
+    valid: { from: 1913 }
+    confidence: A
+    note: >-
+      原文「Ammunition stowage per gun 80 rounds」，并注「Ammunition storage given
+      above is the design figure for peacetime. When the war started the outfit was
+      increased to about 110 rounds per gun…」——80 为平时设计值、每炮基数，
+      战时增至约 110 发/炮。
+
+  - about: weapon:36cm-45-t41
+    field: weapon.ammo_outfit
+    value: 110
+    unit: count
+    src: [navweaps-36cm-45-t41]
+    valid: { from: 1941-12 }
+    confidence: A
+    note: 同上，战时每炮约 110 发（原文「about 110 rounds per gun」）。
+
+  - about: weapon:36cm-45-t41
+    field: weapon.charge.weight
+    value: 142.3
+    unit: kg
+    qual: { charge_part: single, propellant: other }
+    src: [navweaps-36cm-45-t41]
+    valid: { from: 1931 }
+    confidence: A
+    note: >-
+      原文「Propellant Charge 313.8 lbs. (142.3 kg) 85 DC」，且「The propellant
+      charge was in four bags.」——四药包合计 142.3 kg；发射药牌号 85 DC 不在本站
+      枚举内（rp_c32/c38/c40），按 other 记。
+
+  - about: weapon:36cm-45-t41
+    field: weapon.charge.chamber_volume
+    value: 294.9
+    unit: dm3
+    src: [navweaps-36cm-45-t41]
+    valid: { from: 1913 }
+    confidence: A
+    note: 「Chamber Volume 17,996 in3 (294.9 dm3)」。
+
+  - about: weapon:36cm-45-t41
+    field: weapon.in_service_from
+    value: 1913
+    unit: date
+    src: [navweaps-36cm-45-t41]
+    valid: { from: 1913 }
+    confidence: A
+
+  - about: weapon:15cm-50-t41
+    field: weapon.designation
+    value: 50 口径四一式 15 cm 炮（15 cm/50 (6") 41st Year Type）
+    src: [navweaps-15cm-50-t41]
+    valid: { from: 1913 }
+    confidence: B
+    note: >-
+      navweaps 同时列出英国造与日本造的厂牌名：
+      「6"/50 (15.2 cm) Vickers Mark M (British built guns) / Mark II /
+      Mark III (Japanese built guns) / 15 cm/50 (6") 41st Year Type (Model 1908)」，
+      官方名「Official Designation: 50 caliber 41st Year Type 15 cm Gun」。
+
+  - about: weapon:15cm-50-t41
+    field: weapon.nation
+    value: japan
+    src: [navweaps-15cm-50-t41]
+    valid: { from: 1913 }
+    confidence: A
+
+  - about: weapon:15cm-50-t41
+    field: weapon.category
+    value: naval_gun
+    src: [navweaps-15cm-50-t41]
+    valid: { from: 1913 }
+    confidence: A
+
+  - about: weapon:15cm-50-t41
+    field: weapon.bore
+    value: 152
+    unit: mm
+    src: [navweaps-15cm-50-t41]
+    valid: { from: 1913 }
+    confidence: A
+
+  - about: weapon:15cm-50-t41
+    field: weapon.caliber_length
+    value: 50
+    unit: ratio
+    src: [navweaps-15cm-50-t41]
+    valid: { from: 1913 }
+    confidence: A
+    note: 炮身全长 7.876 m、膛线长 6.584 m。
+
+  - about: weapon:15cm-50-t41
+    field: weapon.weight
+    value: 8360
+    unit: kg
+    src: [navweaps-15cm-50-t41]
+    valid: { from: 1913 }
+    confidence: A
+    note: 「Gun Weight 18,430 lbs. (8,360 kg)」。
+
+  - about: weapon:15cm-50-t41
+    field: weapon.projectile_weight
+    value: 45.36
+    unit: kg
+    qual: { shell_type: he }
+    src: [navweaps-15cm-50-t41]
+    valid: { from: 1913 }
+    confidence: A
+    note: Common Type 0/Type 4 HE 均「100 lbs. (45.36 kg)」。
+
+  - about: weapon:15cm-50-t41
+    field: weapon.muzzle_velocity
+    value: 850
+    unit: mps
+    qual: { shell_type: he }
+    src: [navweaps-15cm-50-t41]
+    valid: { from: 1913 }
+    confidence: A
+    note: >-
+      原文为区间：「All except ASW: 2,790 - 2,805 fps (850 - 855 mps)」。
+      本字段只收单值，记下限 850，上限 855 留此，不取平均。
+
+  - about: weapon:15cm-50-t41
+    field: weapon.range.max
+    value: 21000
+    unit: m
+    src: [navweaps-15cm-50-t41]
+    valid: { from: 1933 }
+    confidence: A
+    note: >-
+      45° 时「22,970 yards (21,000 m)」（Common Type 4 与 Type 0 两表同值）。
+      改装前最大仰角 20° 时的射程本页未给。
+
+  - about: weapon:15cm-50-t41
+    field: weapon.range.max_elevation
+    value: 45
+    unit: deg
+    src: [navweaps-15cm-50-t41]
+    valid: { from: 1933 }
+    confidence: A
+
+  - about: weapon:15cm-50-t41
+    field: weapon.elevation.min
+    value: -5
+    unit: deg
+    src: [navweaps-15cm-50-t41]
+    valid: { from: 1913 }
+    confidence: A
+    note: >-
+      「Kongô and Fuso: -5 / +20 degrees as built, +30 degrees as modernized」。
+
+  - about: weapon:15cm-50-t41
+    field: weapon.elevation.max
+    value: 20
+    unit: deg
+    src: [navweaps-15cm-50-t41]
+    valid: { from: 1913, to: 1933 }
+    confidence: A
+
+  - about: weapon:15cm-50-t41
+    field: weapon.elevation.max
+    value: 30
+    unit: deg
+    src: [navweaps-15cm-50-t41, navypedia-kongo]
+    valid: { from: 1933 }
+    confidence: A
+    note: navypedia 同：「secondary guns from 15° to 30°」（1933 年 4-5 月榛名先行改）。
+
+  - about: weapon:15cm-50-t41
+    field: weapon.rate_of_fire
+    value: 10
+    unit: rpm
+    src: [navweaps-15cm-50-t41]
+    valid: { from: 1913 }
+    confidence: A
+    note: >-
+      原文分两档：「Theoretical: 10 rounds per minute / Effective: 5 - 6 rounds per
+      minute」。本字段收理论值 10；**实战射速 5–6 发/分**，不可当作同一指标引用。
+
+  - about: weapon:15cm-50-t41
+    field: weapon.barrel_life
+    value: 500
+    unit: count
+    src: [navweaps-15cm-50-t41]
+    valid: { from: 1913 }
+    confidence: A
+    note: 「500 - 600 Rounds」，本字段收区间下限。
+
+  - about: weapon:15cm-50-t41
+    field: weapon.in_service_from
+    value: 1913
+    unit: date
+    src: [navweaps-15cm-50-t41]
+    valid: { from: 1913 }
+    confidence: A
+
+  - about: weapon:127cm-89
+    field: weapon.designation
+    value: 40 口径八九式 12.7 cm 高角炮（12.7 cm/40 (5") Type 89）
+    src: [navweaps-127cm-89]
+    valid: { from: 1932 }
+    confidence: A
+    note: >-
+      navweaps 官方名：「Official Designation: 40 caliber Type 89 12.7 cm Gun」，
+      采用年 1929（「Date Of Design 1928 / 1929」，Type 88 与 Type 89 同页），
+      服役起始「Date In Service 1932」。
+
+  - about: weapon:127cm-89
+    field: weapon.nation
+    value: japan
+    src: [navweaps-127cm-89]
+    valid: { from: 1932 }
+    confidence: A
+
+  - about: weapon:127cm-89
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-127cm-89]
+    valid: { from: 1932 }
+    confidence: A
+
+  - about: weapon:127cm-89
+    field: weapon.bore
+    value: 127
+    unit: mm
+    src: [navweaps-127cm-89]
+    valid: { from: 1932 }
+    confidence: A
+
+  - about: weapon:127cm-89
+    field: weapon.caliber_length
+    value: 40
+    unit: ratio
+    src: [navweaps-127cm-89]
+    valid: { from: 1932 }
+    confidence: A
+    note: 炮身全长 5.284 m、膛线长 4.450 m，药室 9.0 dm³，炮身重 3.1 t。
+
+  - about: weapon:127cm-89
+    field: weapon.projectile_weight
+    value: 23.45
+    unit: kg
+    qual: { shell_type: he }
+    src: [navweaps-127cm-89]
+    valid: { from: 1932 }
+    confidence: A
+    note: Common Type 0 HE「51.7 lbs. (23.45 kg)」；另有三式烧霰弹 23.0 kg。
+
+  - about: weapon:127cm-89
+    field: weapon.muzzle_velocity
+    value: 700
+    unit: mps
+    qual: { shell_type: he }
+    src: [navweaps-127cm-89]
+    valid: { from: 1932 }
+    confidence: A
+    note: >-
+      原文为区间：「Common Type 0 HE: 2,360 - 2,379 fps (700 - 725 mps)」，
+      本字段只收单值，记下限 700，上限 725 留此，不取平均。
+
+  - about: weapon:127cm-89
+    field: weapon.rate_of_fire
+    value: 14
+    unit: rpm
+    src: [navweaps-127cm-89]
+    valid: { from: 1932 }
+    confidence: A
+    note: >-
+      原文「Type 89: 14 rounds per minute initially, 8 rounds per minute sustained」
+      ——14 为初期射速，持续射速只有 8 发/分，两者不可混用。
+
+  - about: weapon:127cm-89
+    field: weapon.range.aa_max
+    value: 9400
+    unit: m
+    src: [navweaps-127cm-89]
+    valid: { from: 1932 }
+    confidence: A
+    note: 原文「AA Ceiling @ 75 degrees / 30,840 feet (9,400 m)」——对空**升限**，非水平射程。
+
+  - about: weapon:127cm-89
+    field: weapon.range.max
+    value: 14800
+    unit: m
+    src: [navweaps-127cm-89]
+    valid: { from: 1932 }
+    confidence: A
+    note: 原文「Range of IS projectiles / 45 degrees / 16,185 yards (14,800 m)」——三式烧霰弹对水面射程。
+
+  - about: weapon:127cm-89
+    field: weapon.elevation.min
+    value: -7
+    unit: deg
+    src: [navweaps-127cm-89]
+    valid: { from: 1932 }
+    confidence: A
+    note: >-
+      原文「Type 89: -7 / +90 degrees (one source says -8 / +85 degrees)」——两说并存，本站取前者。
+
+  - about: weapon:127cm-89
+    field: weapon.elevation.max
+    value: 90
+    unit: deg
+    src: [navweaps-127cm-89]
+    valid: { from: 1932 }
+    confidence: A
+    note: 同上原句。另一说为 +85°，未单列。
+
+  - about: weapon:127cm-89
+    field: weapon.barrel_life
+    value: 800
+    unit: count
+    src: [navweaps-127cm-89]
+    valid: { from: 1932 }
+    confidence: A
+    note: 原文「Approximate Barrel Life 800 - 1500 rounds」，本字段收区间下限。
+
+  - about: weapon:127cm-89
+    field: weapon.in_service_from
+    value: 1932
+    unit: date
+    src: [navweaps-127cm-89]
+    valid: { from: 1932 }
+    confidence: A
+
+  # 12.7 cm 高角炮的**全级共有规律**（4 座起步、1944 年只有金刚/榛名加 2 座）
+  # 写在下面 armament.mount.summary 的 note 里，不另立一条 summary——
+  # 同一文件里两条 mount.summary 会让页面同时渲染两段「武备概览」。
+
+  - about: weapon:25mm-96
+    field: weapon.designation
+    value: 60 口径九六式 25 mm 机炮（25 mm/60 (1") Type 96）
+    src: [navweaps-25mm-96]
+    valid: { from: 1936 }
+    confidence: A
+    note: >-
+      「Official Designation: 96 Type 25 mm Machine Gun」；1935 年设计、1936 年服役。
+
+  - about: weapon:25mm-96
+    field: weapon.nation
+    value: japan
+    src: [navweaps-25mm-96]
+    valid: { from: 1936 }
+    confidence: A
+
+  - about: weapon:25mm-96
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-25mm-96]
+    valid: { from: 1936 }
+    confidence: A
+
+  - about: weapon:25mm-96
+    field: weapon.bore
+    value: 25
+    unit: mm
+    src: [navweaps-25mm-96]
+    valid: { from: 1936 }
+    confidence: A
+
+  - about: weapon:25mm-96
+    field: weapon.caliber_length
+    value: 60
+    unit: ratio
+    src: [navweaps-25mm-96]
+    valid: { from: 1936 }
+    confidence: A
+    note: 炮身全长 2.296 m、膛线长 1.350 m。
+
+  - about: weapon:25mm-96
+    field: weapon.projectile_weight
+    value: 0.24
+    unit: kg
+    qual: { shell_type: he }
+    src: [navweaps-25mm-96]
+    valid: { from: 1936 }
+    confidence: A
+    note: Common「0.55 lbs. (0.24 kg)」；AP 为 0.26 kg。
+
+  - about: weapon:25mm-96
+    field: weapon.muzzle_velocity
+    value: 900
+    unit: mps
+    qual: { shell_type: he }
+    src: [navweaps-25mm-96]
+    valid: { from: 1936 }
+    confidence: A
+    note: 原文「Muzzle Velocity 2,953 fps (900 mps)」，全弹种同值。
+
+  - about: weapon:25mm-96
+    field: weapon.rate_of_fire
+    value: 220
+    unit: rpm
+    src: [navweaps-25mm-96]
+    valid: { from: 1936 }
+    confidence: A
+    note: >-
+      原文「Cyclic: 200 - 260 rounds per minute, 220 standard / Effective: 110 - 120
+      rounds per minute」。本字段收标准循环射速 220；**实战有效射速仅 110–120 发/分**。
+
+  - about: weapon:25mm-96
+    field: weapon.elevation.min
+    value: -10
+    unit: deg
+    src: [navweaps-25mm-96]
+    valid: { from: 1936 }
+    confidence: A
+    note: 原文「Elevation -10 / +85 degrees」。
+
+  - about: weapon:25mm-96
+    field: weapon.elevation.max
+    value: 85
+    unit: deg
+    src: [navweaps-25mm-96]
+    valid: { from: 1936 }
+    confidence: A
+
+  - about: weapon:25mm-96
+    field: weapon.barrel_life
+    value: 12000
+    unit: count
+    src: [navweaps-25mm-96]
+    valid: { from: 1936 }
+    confidence: A
+    note: 「Approximate Barrel Life 12,000 rounds」。
+
+  - about: weapon:25mm-96
+    field: weapon.ammo_outfit
+    value: 2000
+    unit: count
+    src: [navweaps-25mm-96]
+    valid: { from: 1936 }
+    confidence: A
+    note: 「Ammunition stowage per gun 2,000 rounds」。
+
+  - about: weapon:25mm-96
+    field: weapon.in_service_from
+    value: 1936
+    unit: date
+    src: [navweaps-25mm-96]
+    valid: { from: 1936 }
+    confidence: A
+
+  - field: armament.mount.summary
+    value: >-
+      25 mm 九六式机炮：1930 年代大改装后 10 座双联（20 挺）。
+      战时逐次增装，四舰数量差别极大——雾岛沉没时仍为 20 挺（1942-11），
+      榛名 1944-10 已达 108 挺（28 座三联＋2 座双联＋20 座单装）。
+    src: [navweaps-25mm-96, navypedia-kongo, japanese-warship-haruna]
+    valid: { from: 1936 }
+    confidence: B
+    note: >-
+      navweaps 引 USNTMJ O-47(N)-2 的同级装机表：「Ise, Fuso and Kongô classes
+      20 triples / 6 twins / 30 singles」——**这是该报告统计的该级某艘（很可能是
+      1945 年状态的最重一舰）合计值，不能直接套到任一单舰**。
+      逐舰真实数字一律以各舰 TROM 与日文来源的兵装表为准，见 ships/*.yaml。
+
+  - field: armament.mount.summary
+    value: >-
+      建成时：35.6 cm 连装炮塔 4 座（8 门）＋15.2 cm 单装炮 16 门（舷侧炮廓）
+      ＋7.6 cm 单装炮 8 门＋53.3 cm 水下鱼雷发射管 8 具。
+      1930 年代大改装后：主炮 4 座 8 门不变；副炮减为 14 门；7.6 cm 炮撤除，
+      换 12.7 cm 八九式连装高射炮 4 座 8 门＋25 mm 九六式机炮 10 座 20 挺；
+      鱼雷发射管全撤。
+    src: [navypedia-kongo, japanese-warship-haruna, japanese-warship-kirishima]
+    valid: { from: 1915-04-19 }
+    confidence: C
+    note: >-
+      本节是**人读概览**，结构化数据一律在 mount:* 实体与 armament.aa_* 字段。
+      原文（navypedia, as completed）：「4 x 2 - 356/45 41-shiki, 16 x 1 -
+      152/50 41-shiki, 8 x 1 - 76/40 41-shiki, 8 - 533 TT (beam)」；
+      日文来源（榛名竣工时）：「45口径35.6cm連装砲 4基8門／50口径15.2cm単装砲
+      16基16門／40口径短7.6cm単装砲 4基4門／40口径8cm単装砲 8基8門／
+      53.3cm魚雷発射管 8門（水中）」——7.6 cm 一项两源分列方式不同
+      （navypedia 8 门 vs 日文 4+8=12 门），未裁决，详见 RESEARCH-NOTES。
+      12.7 cm 高角炮的全级规律（navweaps 原文）：「Older battleships of the
+      Kongô, Fuso, Ise and Nagato classes had their 8 cm (3") 41st Year Type and
+      3rd Year Type AA guns removed during their 1930s rebuilds and replaced with
+      the new 12.7 cm/40 (5") Type 89 in four twin mounts. Kongô and Haruna had
+      two additional twin mountings added in 1944.」
+      → ① 四舰都从 4 座起步（A1 型，navweaps：「The A1 mount was unshielded.」）；
+      ② 1944 年**只有金刚与榛名**各加 2 座（→ 6 座 12 门）；
+      雾岛/比叡 1942 年即战没，终生只有 4 座。这一条是两舰防空火力最易混的地方。
+
+  - field: armament.torpedo.tubes
+    value: 8
+    unit: count
+    src: [navypedia-kongo, japanese-warship-haruna, japanese-warship-kirishima]
+    valid: { from: 1915-04-19, to: 1928-07-31 }
+    confidence: B
+    note: >-
+      navypedia「8 - 533 TT (beam)」（as completed）；日文来源「53.3cm魚雷発射管
+      8門（水中）」。注意 navypedia 写 (beam)，日文写（水中）——**舷侧水下固定
+      发射管**，两说并不矛盾，但措辞不同。
+
+  - field: armament.torpedo.tubes
+    value: 4
+    unit: count
+    src: [navypedia-kongo, japanese-warship-haruna, japanese-warship-kirishima]
+    valid: { from: 1928-07-31, to: 1934-09-30 }
+    confidence: B
+    note: >-
+      第一次改装撤去 4 具。navypedia「4 TT were removed」；日文来源
+      「53.3cm魚雷発射管 4門（水中）」；combinedfleet 榛名「The torpedo nets and
+      four torpedo tubes are removed.」
+
+  - field: armament.torpedo.tubes
+    value: 0
+    unit: count
+    src: [navypedia-kongo, japanese-warship-haruna, japanese-warship-kirishima]
+    valid: { from: 1934-09-30 }
+    confidence: B
+    note: >-
+      第二次改装后全撤。日文来源鱼雷栏直接写「撤去」；navypedia 第二次改装后
+      装备栏已无 TT 项。**这是「0」而不是「未获取」**——来源明确表示拆除。
+
+  - field: armament.torpedo.diameter
+    value: 533
+    unit: mm
+    src: [navypedia-kongo, japanese-warship-haruna]
+    valid: { from: 1915-04-19, to: 1934-09-30 }
+    confidence: B
+    note: navypedia「533 TT」；日文来源「53.3cm魚雷発射管」。
+
+  # ============================================================
+  # 航空
+  # 弹射器与机型的逐舰/逐期差异写单舰文件，这里只放全级共有的机数上限。
+  # ============================================================
+  - field: aviation.aircraft.capacity
+    value: 3
+    unit: count
+    src: [navypedia-kongo, japanese-warship-haruna, japanese-warship-kirishima]
+    valid: { from: 1934-09-30 }
+    confidence: B
+    note: >-
+      navypedia「1 catapult, 3 seaplanes (E7K2)」（第二次改装后）；
+      日文来源「水上機 3機」（1928 年第一次改装后即已 3 机，但当时无弹射器：
+      「水上機 3機（射出機なし）」）。
+
+  - field: aviation.catapult.count
+    value: 1
+    unit: count
+    src: [navypedia-kongo]
+    valid: { from: 1933 }
+    confidence: C
+    note: navypedia「1 catapult」。首次装设时间逐舰不同，见单舰文件。
+
+  # 编制/结局/建造日期：逐舰不同，一律写单舰文件。

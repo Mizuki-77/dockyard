@@ -1,0 +1,375 @@
+# ============================================================================
+# 武器正文 —— 九六式舰上战斗机 A5M4（Mitsubishi A5M4 "Claude"）
+#
+# 这一篇的取舍：A5M 家族有 A5M1 / A5M2a / A5M2b / A5M3a / A5M4 / A5M4-K
+# 与陆用型 Ki-18 / Ki-33，而 combinedfleet 的尺寸性能表只并排列了五栏：
+# Ka-14 一号原型、A5M1、A5M4、Ki-18、Ki-33。
+# 因此凡引用数字必须点名是哪一栏，否则同一张表上的 235 节与 445 km/h
+# 会被读成同一架飞机的两个数据。
+#  1) A5M4 是三菱 A5M 家族里最后一型量产舰战，装中岛寿 41 型（起飞 710 hp）；
+#  2) 全族共造 1,094 架；其中明确标为 A5M4 的只有渡边 39 架与大村 161 架，
+#     另有三菱 782 架是 A5M1 至 A5M4 的合并数，来源没有再往下拆，本站也不拆；
+#  3) 中国战场的记录在 combinedfleet 的加贺行动年表里：1937 年 8 月 22 日
+#     加贺首次带上 A5M，9 月 4 日两架「Claude」宣称击落三架 Curtiss Hawk III；
+#     其中明确记到 A5M4 这一型的只有 1938 年 8 月 30 日广州那一次。
+# ============================================================================
+weapon: a5m4
+updated: 2026-11-24
+
+intro:
+  lead:
+    zh: >-
+      九六式舰上战斗机 A5M4 是三菱 A5M 家族最后一型量产的舰载战斗机，盟军代号 Claude。
+      它装中岛寿 41 型或 41 型改九缸气冷星型发动机，起飞功率 710 hp，
+      三叶螺旋桨；全金属结构、操纵面蒙布。
+      按 combinedfleet 的生产记录，A5M 全族共造 1,094 架，
+      其中三菱名古屋厂造 A5M1 至 A5M4 共 782 架（1936 至 1940 年），
+      渡边铁工所造 39 架 A5M4（1939 至 1942 年），
+      大村第二十一海军航空厂造 161 架 A5M4 与 103 架 A5M4-K 教练型（1939 至 1944 年）。
+      到太平洋战争爆发时它已被零战取代，但在 1941 年 9 月 28 日，
+      凤翔号的飞行队仍是 11 架 A5M4 加 8 架九六式舰攻 B4Y1。
+    en: >-
+      The A5M4 was the last production mark of Mitsubishi's A5M carrier fighter family,
+      known to the Allies as Claude. It was powered by a Nakajima Kotobuki 41 or 41 KAI
+      nine-cylinder air-cooled radial rated at 710 hp for take-off, driving a three-blade
+      propeller, and was of all-metal construction with fabric-covered control surfaces.
+      On combinedfleet's production record the A5M family totalled 1,094 aircraft: 782
+      A5M1 to A5M4 built by Mitsubishi at Nagoya between 1936 and 1940, 39 A5M4s by
+      Watanabe Tekkosho between 1939 and 1942, and 161 A5M4s plus 103 A5M4-K trainers by
+      the Twenty-First Naval Air Arsenal at Omura between 1939 and 1944. By the start of
+      the Pacific War it had been superseded by the Zero, but on 28 September 1941
+      Hosho's air group was still eleven A5M4s and eight Type 96 B4Y1 attack aircraft.
+
+  paragraphs:
+    - heading: 一张表五栏，引用前先认栏
+      text:
+        zh: >-
+          combinedfleet 的 A5M 页把 Ka-14 一号原型、A5M1、A5M4、Ki-18、Ki-33
+          五种并排列在一张尺寸与性能表上。
+          因此读这张表有一条必须遵守的规矩：每个数字都要说清是哪一栏。
+          以 A5M4 那一栏为准：翼展 11.00 m、机长 7.57 m、机高 3.27 m、翼面积 17.8 m²、
+          空重 1,216 kg、全重 1,671 kg、翼载 93.8 kg/m²、功载 2.4 kg/hp、
+          最大速度 235 节（3,000 m）、爬升到 3,000 m 用 3 分 35 秒、
+          实用升限 9,800 m、航程 648 海里。
+          最容易串列的是两处：表上「445 km/h at 3,050 m」属 Ki-18 栏、
+          「475 km/h at 3,000 m」属 Ki-33 栏，都不是 A5M4；
+          机高这一项 A5M1 也是 3.27 m、A5M2a 是 3.20 m，
+          所以「3.27 m」这个数单看不能定到 A5M4。
+          另一处跨栏的对照说明改型方向：A5M1 空重 1,075 kg、全重 1,500 kg、
+          最大速度 219 节（2,100 m）；A5M4 空重增到 1,216 kg、全重增到 1,671 kg，
+          最大速度反而升到 235 节，爬升到 3,000 m 只用 3 分 35 秒
+          （A5M1 爬 5,000 m 要 8 分 30 秒，两者目标高度不同，不能直接比时间）。
+        en: >-
+          combinedfleet's A5M page sets five aircraft side by side on one dimensions and
+          performance table: the first Ka-14 prototype, the A5M1, the A5M4, the Ki-18 and
+          the Ki-33. Reading it therefore carries one rule: every figure has to be
+          attributed to its column. For the A5M4 column: span 11.00 m, length 7.57 m,
+          height 3.27 m, wing area 17.8 m2, empty weight 1,216 kg, loaded weight 1,671 kg,
+          wing loading 93.8 kg/m2, power loading 2.4 kg/hp, maximum speed 235 knots at
+          3,000 m, climb to 3,000 m in 3 minutes 35 seconds, service ceiling 9,800 m and
+          range 648 nautical miles. Two figures are easiest to mis-take: the "445 km/h at
+          3,050 m" entry belongs to the Ki-18 column and "475 km/h at 3,000 m" to the
+          Ki-33, neither to the A5M4; and on height, the A5M1 is also 3.27 m while the
+          A5M2a is 3.20 m, so 3.27 m alone does not identify the A5M4. A cross-column
+          comparison shows the direction of development: the A5M1 has an empty weight of
+          1,075 kg and a loaded weight of 1,500 kg with a maximum speed of 219 knots at
+          2,100 m, whereas the A5M4 carries 1,216 kg empty and 1,671 kg loaded yet reaches
+          235 knots, climbing to 3,000 m in 3 minutes 35 seconds - the A5M1's 8 minutes
+          30 seconds is to 5,000 m, a different height, so the times are not comparable.
+      src: [combinedfleet-a5m]
+
+    - heading: 动力与武装：一型一种发动机，两挺 7.7 mm
+      text:
+        zh: >-
+          这一族换过五六种发动机，因此发动机一栏必须点名：
+          Ka-14 一号原型为寿 5（起飞 550 hp）、二号原型为寿 3（640 hp）、
+          三至五号原型为光 1（700 hp）；A5M1 为寿 2 改 1（580 hp）、
+          A5M2a 为寿 2 改 3A（610 hp）、A5M3a 为 Hispano-Suiza 12Xcrs
+          （液冷 V12，610 hp）、A5M2b 为寿 3（640 hp）；
+          A5M4 与 A5M4-K 为寿 41 或 41 改（起飞 710 hp、3,000 m 时 785 hp）。
+          武装：全型（除注明者外）为机头上部两挺 7.7 mm 八九式机枪；
+          A5M1a 为两门 20 mm 欧瑞康 FF 机炮；A5M3a 为发动机轴上一门 20 mm Hispano 炮。
+          外挂：A5M2b 与 A5M4 可挂两枚 30 kg 炸弹，A5M4 另可挂一具 160 升副油箱。
+          乘员：单座，敞开式座舱（A5M2b Model 22、Ki-33 与 A5M4-K 除外；
+          A5M4-K 为教员与学员前后两座敞开式座舱）。
+          结构：全金属，操纵面蒙布。
+        en: >-
+          The family changed engines five or six times, so the engine entry has to name
+          one: the Ka-14 first prototype used a Kotobuki 5 (550 hp for take-off), the
+          second a Kotobuki 3 (640 hp) and the third to fifth a Hikari 1 (700 hp); the
+          A5M1 a Kotobuki 2 KAI 1 (580 hp), the A5M2a a Kotobuki 2 KAI 3A (610 hp), the
+          A5M3a a Hispano-Suiza 12Xcrs liquid-cooled V12 (610 hp), and the A5M2b a
+          Kotobuki 3 (640 hp); the A5M4 and A5M4-K a Kotobuki 41 or 41 KAI, rated at
+          710 hp for take-off and 785 hp at 3,000 m. Armament: two 7.7 mm Type 89
+          machine-guns in the upper fuselage decking on all versions except as noted, the
+          A5M1a carrying two 20 mm Oerlikon FF cannon and the A5M3a one engine-mounted
+          20 mm Hispano. External stores: two 30 kg bombs on the A5M2b and A5M4, and a
+          160 litre drop tank on the A5M4. Crew: single-seat with an open cockpit, except
+          for the A5M2b Model 22, the Ki-33 and the A5M4-K, the last having student and
+          instructor in tandem open cockpits. Construction: all-metal with fabric-covered
+          control surfaces.
+      src: [combinedfleet-a5m]
+
+    - heading: 中国战场：1937 年 8 月第一次出动，9 月 4 日第一次战果
+      text:
+        zh: >-
+          这一型在开战前的实战记录，主要在加贺号的行动记录里。
+          1937 年 8 月 22 日，加贺的飞行队收到若干三菱 A5M 九六式舰战，
+          同日其中两架首次出动，未遇敌。
+          9 月 4 日，两架「Claude」宣称击落三架 Curtiss Hawk III。
+          9 月 7 日，三架 A5M 护航六架 D1A1，在太湖上空与三架 Hawk 交战半小时，
+          日方宣称击落五架中国飞机，但来源同时注明：那三架 Hawk 一架未失。
+          这一条要连着读 —— 宣称战果与对方实际损失是两件事，来源把两者都记了。
+          9 月 15 日，六架 A2N1、六架 A5M、18 架 D1A1 与刚到的 18 架 B4Y1
+          临时从加贺转场至公大机场支援陆上作战。
+          9 月 26 日加贺回佐世保补给，接收的补充机包括 32 架 B4Y1、16 架 D1A2
+          与 16 架 A5M。
+        en: >-
+          The type's pre-war combat record sits mainly in Kaga's record of movement. On
+          22 August 1937 Kaga's air group received some Mitsubishi A5M Type 96 fighters,
+          two of which made their first sortie the same day without meeting the enemy. On
+          4 September two Claudes claimed three Curtiss Hawk IIIs. On 7 September three
+          A5Ms escorted six D1A1s and fought three Hawks over Tai Hu for half an hour, the
+          Japanese claiming five Chinese aircraft destroyed - while the source notes in
+          the same passage that none of the Hawks was lost. The two statements have to be
+          read together: claims and actual losses are different things, and the source
+          records both. On 15 September six A2N1s, six A5Ms, eighteen D1A1s and eighteen
+          just-arrived B4Y1s were temporarily detached from Kaga to Kunda airfield to
+          support land operations. On 26 September Kaga reached Sasebo for reprovisioning
+          and received replacement aircraft including 32 B4Y1s, 16 D1A2s and 16 A5Ms.
+      src: [combinedfleet-kaga]
+
+    - heading: 战争爆发时它已经退到二线，但还没有退完
+      text:
+        zh: >-
+          1941 年的编成记录把这一型的处境写得很清楚。
+          1941 年 4 月末至 5 月，赤城在九州与冲绳之间训练时，
+          飞行队编成仍是 18 架 A5M（Claude）、27 架 B5N、18 架 D3A，各带 3 架备用 ——
+          也就是说开战前七个月，主力航母的制空队还是九六式。
+          同一年 11 月 22 日加贺抵达单冠湾时，编成已改为 18 架 A6M2、27 架九七式舰攻、
+          27 架九九式舰爆。
+          凤翔则是另一条线：1941 年 9 月 28 日的编成是 11 架 A5M4 与 8 架 B4Y1，
+          两型都是新机换装之后剩下的那一代。
+          中途岛时凤翔带的是 8 架 B4Y1（见 B4Y1 条目），A5M4 已不在其编成内；
+          同一场战役里还有一支装 A5M4 的单位 —— navweaps 的中途岛战斗序列记
+          瑞凤的舰战队为 12 架九六式舰战 A5M4。
+          战后这条线的终点是训练：1942 年 6 月 20 日凤翔的九六式机全部下舰，
+          该舰转为着舰练习舰。
+        en: >-
+          The 1941 establishment records state this type's position plainly. In late April
+          and May 1941, while Akagi trained between Kyushu and Okinawa, her air group was
+          still 18 A5M (Claude), 27 B5N and 18 D3A with three spares of each - seven months
+          before the war the fighter complement of a front-line carrier was still the
+          Type 96. By 22 November that year, when Kaga reached Hitokappu Bay, the
+          establishment had become 18 A6M2, 27 Type 97 attack aircraft and 27 Type 99 dive
+          bombers. Hosho followed a different line: her 28 September 1941 establishment was
+          eleven A5M4s and eight B4Y1s, both types belonging to the generation left behind
+          by the re-equipment. At Midway Hosho carried eight B4Y1s, dealt with in that
+          entry, and the A5M4 no longer appears in her establishment; another unit at the
+          same battle did carry it, navweaps' Midway order of battle listing Zuiho's
+          fighter unit as twelve Type 96 A5M4 carrier fighters. The end of that line was
+          training: on 20 June 1942 all of Hosho's Type 96 aircraft were disembarked and
+          the ship became a landing-practice carrier.
+      src: [combinedfleet-akagi, combinedfleet-kaga, combinedfleet-hosho-trom, navweaps-midway-oob]
+
+history:
+  - id: development
+    title: { zh: 从竞标到 A5M4, en: From the prototype competition to the A5M4 }
+    range: { from: 1935, to: 1940 }
+    lead:
+      zh: >-
+        这一族从 1935 年的六架原型机起步，到 1940 年三菱停产，五年里换了六种发动机。
+      en: >-
+        The family began with six prototypes in 1935 and ran to the end of Mitsubishi
+        production in 1940, changing engines six times in five years.
+    events:
+      - date: 1935
+        text:
+          zh: >-
+            三菱名古屋厂制造六架 Ka-14 原型机（1935 至 1936 年）。
+            一号原型为寿 5 发动机（起飞 550 hp）、二叶螺旋桨，空重栏来源未给、
+            全重 1,373 kg、最大速度 243 节（3,200 m）、爬升到 5,000 m 用 5 分 54 秒。
+            二号原型改用寿 3（640 hp）；三至五号原型改用光 1（700 hp）。
+            另有一架 Ka-14 原型试装三菱金星 A-8 或 A-9（720 hp，14 缸）。
+          en: >-
+            Mitsubishi at Nagoya built six Ka-14 prototypes in 1935-36. The first had a
+            Kotobuki 5 (550 hp for take-off) and a two-blade propeller, with no empty
+            weight given, a loaded weight of 1,373 kg, a maximum speed of 243 knots at
+            3,200 m and a climb to 5,000 m in 5 minutes 54 seconds. The second prototype
+            used a Kotobuki 3 (640 hp) and the third to fifth a Hikari 1 (700 hp). One
+            further Ka-14 prototype had an experimental installation of a 720 hp Mitsubishi
+            Kinsei A-8 or A-9 fourteen-cylinder radial.
+        src: [combinedfleet-a5m]
+      - date: 1936
+        text:
+          zh: >-
+            A5M1 投产，装寿 2 改 1（起飞 580 hp）配二叶螺旋桨。
+            三菱名古屋厂 A5M1 至 A5M4 的合计产量为 782 架，跨 1936 至 1940 年。
+          en: >-
+            A5M1 production began with a Kotobuki 2 KAI 1 of 580 hp for take-off driving
+            a two-blade propeller. Mitsubishi at Nagoya built 782 aircraft from A5M1 to
+            A5M4 between 1936 and 1940.
+        src: [combinedfleet-a5m]
+      - date: 1937-08-22
+        text:
+          zh: >-
+            加贺的飞行队收到若干三菱 A5M 九六式舰战，同日两架首次出动，未遇敌。
+          en: >-
+            Kaga's air group received some Mitsubishi A5M Type 96 fighters, two of which
+            made their first sortie that same day without encountering the enemy.
+        src: [combinedfleet-kaga]
+      - date: 1939
+        text:
+          zh: >-
+            渡边铁工所开始生产 A5M4（1939 至 1942 年共 39 架）；
+            大村第二十一海军航空厂开始生产 A5M4（1939 至 1941 年共 161 架）
+            与 A5M4-K 双座教练型（1942 至 1944 年共 103 架）。
+            全族合计 1,094 架（含 6 架 Ka-14 原型、1 架 Ki-18 原型、2 架 Ki-33 原型）。
+          en: >-
+            Watanabe Tekkosho began building the A5M4, 39 aircraft between 1939 and 1942,
+            and the Twenty-First Naval Air Arsenal at Omura began the A5M4, 161 aircraft
+            between 1939 and 1941, and the two-seat A5M4-K trainer, 103 aircraft between
+            1942 and 1944. The family total was 1,094 including six Ka-14 prototypes, one
+            Ki-18 prototype and two Ki-33 prototypes.
+        src: [combinedfleet-a5m]
+
+  - id: china
+    title: { zh: 中国战场的实战记录, en: Combat over China }
+    range: { from: 1937-08, to: 1938-08 }
+    lead:
+      zh: >-
+        这一型最早的实战全在中国，而记录里战果与对方实际损失常常并排出现。
+      en: >-
+        The type's earliest combat was all in China, and the record habitually sets
+        claims beside the other side's actual losses.
+    events:
+      - date: 1937-09-04
+        text:
+          zh: >-
+            两架「Claude」宣称击落三架 Curtiss Hawk III。
+          en: >-
+            Two Claudes claimed three Curtiss Hawk IIIs shot down.
+        src: [combinedfleet-kaga]
+      - date: 1937-09-07
+        text:
+          zh: >-
+            三架 A5M 护航六架 D1A1。07:50 在太湖上空，三架 Curtiss Hawk 拦截日方编队，
+            先宣称击落两架 B3Y1，随后与 A5M 交战半小时，日方宣称击落五架中国飞机。
+            来源注明：那三架 Hawk 一架未失。
+          en: >-
+            Three A5Ms escorted six D1A1s. At 0750 over Tai Hu three Curtiss Hawks
+            intercepted the Japanese formation, claiming two B3Y1s before being engaged by
+            the A5Ms for half an hour, in which the Japanese claimed five Chinese aircraft
+            shot down. The source notes that none of the Hawks was lost.
+        src: [combinedfleet-kaga]
+      - date: 1937-09-15
+        text:
+          zh: >-
+            六架 A2N1、六架 A5M、18 架 D1A1 与刚到的 18 架 B4Y1 临时从加贺转场至
+            公大机场，支援陆上作战。
+          en: >-
+            Six A2N1s, six A5Ms, eighteen D1A1s and eighteen just-landed B4Y1s were
+            temporarily detached from Kaga to Kunda airfield to support land operations.
+        src: [combinedfleet-kaga]
+      - date: 1937-09-19
+        text:
+          zh: >-
+            9 月 19 日与 20 日连续两天攻击南京，两天的记录结构相同：19 日三架 A5M
+            宣称击落两架中国飞机，午后 15 架 D1A1 与刚到的 D1A2、11 架 B4Y1
+            在 2 架 A5M 护航下飞往南京，宣称四个战果；
+            20 日六架加贺轰炸机由两架 A5M 护航，与九架 Hawk III 及两架 Boeing 281 交战，
+            日方宣称击落四架，而来源注明实际一架未失。
+          en: >-
+            Nanking was attacked on two consecutive days with the same shape of record.
+            On 19 September three A5Ms claimed two Chinese aircraft, and after midday
+            fifteen D1A1s with just-received D1A2s and eleven B4Y1s, escorted by two A5Ms,
+            headed for Nanking and claimed four victories. On 20 September six Kaga bombers
+            escorted by two A5Ms were engaged by nine Hawk IIIs and two Boeing 281s; the
+            Japanese claimed four shot down, and the source notes that none was actually
+            lost.
+        src: [combinedfleet-kaga]
+      - date: 1938-04-13
+        text:
+          zh: >-
+            08:30，18 架 D1A2 在 3 架 A4N1 与 3 架 A5M2 护航下起飞轰炸天河机场，
+            在目标上空遭中国第 28、29 队的 18 架 Gloster Gladiator 拦截。
+            约 40 分钟空战中，日方损失 1 架 A5M2、2 架 A4N1 与 2 架 D1A2，
+            击落 4 架 Gladiator。
+          en: >-
+            At 0830 eighteen D1A2s took off escorted by three A4N1s and three A5M2s to
+            bomb Tien He airbase, and were intercepted over the target by eighteen Gloster
+            Gladiators of the Chinese 28th and 29th PS. In the forty-minute fight the
+            Japanese lost one A5M2, two A4N1s and two D1A2s for four Gladiators shot down.
+        src: [combinedfleet-kaga]
+      - date: 1938-08-30
+        text:
+          zh: >-
+            五架轰炸机、四架 B4Y1 在六架 A5M4 护航下攻击广州附近机场，
+            遭中国第 32 队 Gladiator 拦截，40 分钟空战中日方损失 2 架战斗机、
+            击落 6 架 Gladiator。在已登记来源里这是第一次明确写作 A5M4 的出动记录 —— 此前各条记的是 A5M 或 A5M2，未标到这一型。
+          en: >-
+            Five bombers and four B4Y1s under escort of six A5M4s attacked an airfield near
+            Canton and were intercepted by Gladiators of the Chinese 32nd PS; in a
+            forty-minute battle two fighters were lost and six Gladiators shot down. In the
+            registered sources this is the first sortie explicitly recorded as A5M4; the
+            earlier entries name the A5M or the A5M2 and do not reach down to this mark.
+        src: [combinedfleet-kaga]
+
+  - id: eclipse
+    title: { zh: 被零战取代, en: Superseded by the Zero }
+    range: { from: 1941-04, to: 1942-06 }
+    lead:
+      zh: >-
+        换装发生在开战前七个月之内，两端都有原始编成记录。
+      en: >-
+        The changeover happened within the seven months before the war, and both ends of
+        it are original establishment records.
+    events:
+      - date: 1941-04
+        text:
+          zh: >-
+            赤城在九州与冲绳之间训练（1941 年 4 月末至 5 月），
+            飞行队编成为 18 架 A5M（Claude）、27 架 B5N（Kate）、18 架 D3A（Val），
+            三种各带 3 架备用。
+          en: >-
+            Akagi trained between Kyushu and Okinawa in late April and May 1941 with an air
+            group of 18 A5M (Claude), 27 B5N (Kate) and 18 D3A (Val), with three spares of
+            each.
+        src: [combinedfleet-akagi]
+      - date: 1941-09-28
+        text:
+          zh: >-
+            凤翔的飞行队编成：11 架三菱九六式 A5M4「Claude」与 8 架横须贺九六式
+            B4Y1「Jean」舰攻。
+          en: >-
+            Hosho's air group consisted of eleven Mitsubishi Type 96 A5M4 Claudes and eight
+            Yokosuka Type 96 B4Y1 Jeans.
+        src: [combinedfleet-hosho-trom]
+      - date: 1941-11-22
+        text:
+          zh: >-
+            加贺抵达单冠湾，飞行队编成已改为 18 架零战二一型、27 架九七式舰攻、
+            27 架九九式舰爆。赤城的记录同样把 11 月编成记为 18 架 A6M2。
+          en: >-
+            Kaga reached Hitokappu Bay with an air group of eighteen A6M2 fighters,
+            twenty-seven Type 97 attack aircraft and twenty-seven Type 99 dive bombers.
+            Akagi's record likewise revises her November establishment to 18 A6M2.
+        src: [combinedfleet-kaga, combinedfleet-akagi]
+      - date: 1942-06-05
+        text:
+          zh: >-
+            navweaps 的中途岛战斗序列记瑞凤的舰战队为 12 架九六式舰战 A5M4
+            （舰攻队为 12 架九七式 B5N1）。这是该战役中可查到的 A5M4 编制。
+          en: >-
+            navweaps' Midway order of battle lists Zuiho's fighter unit as twelve Type 96
+            A5M4 carrier fighters, with twelve Type 97 B5N1s as her attack unit. That is
+            the A5M4 establishment recorded for the battle.
+        src: [navweaps-midway-oob]
+      - date: 1942-06-20
+        text:
+          zh: >-
+            凤翔的九六式机全部下舰。该舰随后于 7 月 14 日转第三舰队附属，转为着舰练习舰。
+          en: >-
+            All of Hosho's Type 96 aircraft were disembarked. The ship was attached to the
+            Third Fleet on 14 July and used for landing practice thereafter.
+        src: [combinedfleet-hosho-trom]

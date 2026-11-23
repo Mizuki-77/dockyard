@@ -1,0 +1,539 @@
+# ============================================================================
+# 长良（ながら / Nagara）· 长良型 1 番舰
+#
+# 2026-11-23 入库。舰级共享设计值见 classes/nagara.yaml，本文件只写：
+#   ① 建造四日期；② 逐次改装（时间窗）；③ 本舰独有的值（覆盖舰级）；
+#   ④ 战历关键节点（叙事骨架在 articles/nagara.yaml）。
+#
+# 【任务书核对结果 —— 三处与主会话给的表述不符，以来源为准】
+#   ① 结局年份：任务书写「两舰结局都沉于 1943 年」。**长良是 1944-08-07 沉没**，
+#      不是 1943。见下方 construction.fate_date。1943 年她只是被机雷/近失弹
+#      反复损伤（1943-07-15 触雷、1943-12-05 夸贾林空袭）。
+#   ② 沉没地点：任务书写「在瑙鲁附近被潜艇击沉？」。**错两处**：
+#      (a) 地点不在瑙鲁，在**天草诸岛（熊本县）以西**、32-09N 129-53E；
+#      (b) 不是「在瑙鲁附近」，虽然 1943-06 她确实跑过瑙鲁运输。
+#      navypedia 也写「sunk in 35nm S off Nagasaki」，与 combinedfleet 的坐标一致。
+#   ③ 中途岛编队：任务书写「第 10 水雷战队旗舰（机动部队本队）」。**基本正确**，
+#      但需精确：她是 DesRon 10 旗舰，隶属**第一航空舰队（南云机动部队）的警戒队**，
+#      随一航战出击；6-04 赤城被击后南云把旗舰移到她身上。见 service.unit 各条。
+# ============================================================================
+
+id: nagara
+name:
+  zh: 长良
+  en: Nagara
+class: nagara
+
+note: >-
+  长良型命名舰。1920-09-09 佐世保海军工厂开工，1921-04-25 下水，1922-04-21 竣工。
+  全生涯多数时间担任水雷战队旗舰（第四急袭队→第十战队→第四水雷战队→第二水雷战队→
+  第十一水雷战队→第四舰队），是中太平洋—所罗门战役里出勤最频繁的日本轻巡之一。
+  1944-08-07 在天草诸岛以西被 USS Croaker (SS-246) 击沉。
+
+open_ended_note: >-
+  本文件 fact 的 valid 窗口按「该状态从何时起」记录；改装造成的中断由下一条 fact
+  接续（同一 field 多个时间窗），不合并、不覆盖。
+
+facts:
+  # ============================================================ 身份/命名
+  - field: identity.name_original
+    value: 長良（ながら）
+    src: [combinedfleet-nagara, japanese-warship-nagara]
+    valid: { from: 1921-04-25 }
+    confidence: C
+    note: "combinedfleet 原话「25 April 1921: Launched and named NAGARA.」"
+
+  - field: identity.name_zh
+    value: 长良
+    src: [combinedfleet-nagara]
+    valid: { from: 1921-04-25 }
+    confidence: C
+
+  - field: identity.name_en
+    value: Nagara
+    src: [combinedfleet-nagara]
+    valid: { from: 1921-04-25 }
+    confidence: C
+
+  # identity.namesake（命名来源）：本级属「川の名」体系，但本组未在英文来源取到
+  # 「長良川にちなむ」的原句（该句只见于日文维基，tier E 不作来源）→ **未获取**，
+  # 不写 fact；正文与 §RESEARCH-NOTES 用文字说明。
+
+  # ============================================================ 建造
+  - field: construction.builder
+    value: 佐世保海軍工廠（Sasebo Navy Yard）
+    src: [combinedfleet-nagara, navypedia-nagara]
+    valid: { from: 1920-09-09 }
+    confidence: C
+    note: >-
+      combinedfleet 原话「9 September 1920: Sasebo Navy Yard. Laid down.」；
+      navypedia 表格「Sasebo K K」。
+
+  - field: construction.builder_location
+    value: 佐世保（長崎県）
+    src: [combinedfleet-nagara]
+    valid: { from: 1920-09-09 }
+    confidence: C
+    note: 佐世保市属长崎县，为厂址常识性定位；combinedfleet 只写「Sasebo Navy Yard」。
+
+  - field: construction.laid_down
+    value: 1920-09-09
+    src: [combinedfleet-nagara, navypedia-nagara]
+    valid: { from: 1920-09-09 }
+    confidence: C
+    note: 两源一致（navypedia 表格「9.9.1920」）。
+
+  - field: construction.launched
+    value: 1921-04-25
+    src: [combinedfleet-nagara, navypedia-nagara]
+    valid: { from: 1921-04-25 }
+    confidence: C
+
+  - field: construction.commissioned
+    value: 1922-04-21
+    src: [combinedfleet-nagara, navypedia-nagara, japanese-warship-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      combinedfleet 原话「21 April 1922: Completed and registered in the IJN.
+      Captain Kuroda is the Commanding Officer.」
+      三源一致（navypedia「21.4.1922」、japanese-warship「大正11年/1922年4月21日」）。
+
+  - field: construction.building_time_days
+    value: 589
+    unit: count
+    src: [combinedfleet-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      派生值：1920-09-09 至 1922-04-21 共 589 天（本站按日期差算出）。
+      注册表注明此字段「派生字段，由日期算出，不手填」，故允许计算，非史料推断。
+
+  # construction.cost：查过 combinedfleet / navypedia / kasado / japanese-warship /
+  # naval-encyclopedia，均未给长良造价 → **未获取**，不写 fact（不填 0）。
+
+  # ============================================================ 竣工时独有值
+  # 与舰级文件重复的项一律不在此重写，只写本舰实测/本舰特有。
+  - field: propulsion.speed.design
+    value: 36.0
+    unit: kn
+    src: [japanese-warship-nagara]
+    valid: { from: 1922-04-21, to: 1934 }
+    confidence: C
+    note: >-
+      japanese-warship 原话「速力① 計画36.0ノット」。此条与舰级重复，
+      保留是为了与下一条（1934 年后的 34.5 kn）构成同 field 的两个时间窗。
+
+  - field: propulsion.speed.design
+    value: 34.5
+    unit: kn
+    src: [japanese-warship-nagara]
+    valid: { from: 1934 }
+    confidence: C
+    note: >-
+      japanese-warship 原话「② 34.5ノット」（1934 年改装完了后）。
+      **注意**：navypedia 对全级的表述是「maximal speed has decreased to 32kts」
+      （1934-1935 加装压载后降到 32 节）。两说并列（34.5 / 32），不裁决。
+
+  # ============================================================ 服役与编队
+  - field: service.unit
+    value: 第三艦隊 第十六戦隊（足柄・球磨・長良）
+    src: [combinedfleet-nagara]
+    valid: { from: 1941-09-10, to: 1941-11-26 }
+    confidence: C
+    note: >-
+      combinedfleet 原话「NAGARA is in Vice Admiral Takahashi Ibo's CruDiv 16 of
+      Ibo's Third Fleet with ASHIGARA (F), light cruisers KUMA and NATORI and DesRon 5.」
+
+  - field: service.unit
+    value: 第四急襲隊（第四急襲艦隊）旗艦 — 菲律宾南部攻略
+    src: [combinedfleet-nagara, japanese-warship-nagara]
+    valid: { from: 1941-11-26, to: 1942-03-10 }
+    confidence: C
+    note: >-
+      combinedfleet 原话「26 November 1941: NAGARA is flagship of Rear Admiral
+      (later Vice Admiral) Kubo Kyuji's (35) ... Fourth Surprise Attack Unit.
+      Departs the Terashima Strait, Japan.」
+      japanese-warship「第四急襲艦隊旗艦を務め」。
+
+  - field: service.unit
+    value: 第二南遣艦隊 第十六戦隊（鬼怒・名取・長良）
+    src: [combinedfleet-nagara]
+    valid: { from: 1942-03-10, to: 1942-04-10 }
+    confidence: C
+    note: >-
+      combinedfleet 原话「10 March 1942: The Third Fleet is disbanded and replaced by
+      the Second Southern Expeditionary Fleet ... NAGARA remains in ... CruDiv 16 with
+      light cruisers KINU and NATORI (F).」
+
+  - field: service.unit
+    value: 第一航空艦隊 第十水雷戦隊 旗艦（DesRon 10）
+    src: [combinedfleet-nagara, japanese-warship-nagara]
+    valid: { from: 1942-04-10, to: 1942-07-14 }
+    confidence: C
+    note: >-
+      **本条是任务书「中途岛时是第 10 水雷战队旗舰」的核心依据**。
+      combinedfleet 原话「10 April 1942: NAGARA is assigned as flagship of Rear Admiral
+      (later Vice Admiral) Kimura Susumu's (40)(former CO of HARUNA) new DesRon 10 with
+      DesDiv 7's NOWAKI, ARASHI, HAGIKAZE and MAIKAZE, DesDiv 10's MAKIGUMO, KAZAGUMO
+      and YUGUMO and DesDiv 17's URAKAZE, ISOKAZE, HAMAKAZE and TANIKAZE. DesRon 10 is
+      assigned to Vice Admiral ... Nagumo Chuichi's ... First Air Fleet.」
+
+  - field: service.unit
+    value: 第三艦隊 第十水雷戦隊 旗艦（DesRon 10）
+    src: [combinedfleet-nagara]
+    valid: { from: 1942-07-14, to: 1942-11-20 }
+    confidence: C
+    note: >-
+      combinedfleet 原话「14 July 1942: DesRon 10 and NAGARA are reassigned to the
+      Third (Carriers) Fleet.」
+      **midway 时的严格上级是「第一航空艦隊」，7-14 一航舰改称第三舰队**，两级编号不可混。
+
+  - field: service.unit
+    value: 第四水雷戦隊 旗艦（DesRon 4）
+    src: [combinedfleet-nagara]
+    valid: { from: 1942-11-20, to: 1943-07-20 }
+    confidence: C
+    note: >-
+      combinedfleet 原话「20 November 1942: Flagship of Rear Admiral (later Vice Admiral)
+      Takama Tamotsu's (41) DesRon 4, replacing YURA sunk on 25 October. The newly
+      commissioned AGANO replaces NAGARA as the flagship of DesRon 10.」
+
+  - field: service.unit
+    value: 第二水雷戦隊 旗艦（DesRon 2）
+    src: [combinedfleet-nagara]
+    valid: { from: 1943-07-20, to: 1943-08-20 }
+    confidence: C
+    note: >-
+      combinedfleet 原话「20 July 1943: DesRon 4 is deactivated. NAGARA becomes flagship
+      of Rear Admiral ... Isaki Shunji's ... DesRon 2, replacing JINTSU sunk on 12 July.」
+      与 japanese-warship「二水戦旗艦を務めました」一致。
+
+  - field: service.unit
+    value: 第八艦隊（外南洋部隊）
+    src: [combinedfleet-nagara]
+    valid: { from: 1943-08-20, to: 1943-11-01 }
+    confidence: C
+    note: >-
+      combinedfleet 原话「20 August 1943: NAGARA is relieved as flagship of DesRon 2 by
+      the newly commissioned NOSHIRO. NAGARA is attached to ... the Eighth Fleet.」
+
+  - field: service.unit
+    value: 第四艦隊 旗艦
+    src: [combinedfleet-nagara]
+    valid: { from: 1943-11-01, to: 1944-05-15 }
+    confidence: C
+    note: >-
+      combinedfleet 原话「1 November 1943: NAGARA is transferred from the Eighth Fleet to
+      ... the Fourth Fleet. She relieves KASHIMA as flagship of the Fourth Fleet.」
+
+  - field: service.unit
+    value: 第十一水雷戦隊 旗艦（DesRon 11）
+    src: [combinedfleet-nagara]
+    valid: { from: 1944-05-15, to: 1944-08-07 }
+    confidence: C
+    note: >-
+      combinedfleet 原话「15 May 1944: NAGARA becomes flagship of DesRon 11, Combined Fleet,
+      replacing TATSUTA, sunk on 14 March.」
+
+  # ============================================================ 舰长（有完整任期者，节选）
+  # 来源逐条给出姓名与任命日；本站只录 combinedfleet 明确写「is appointed the CO」者。
+  - field: service.commander
+    value: 直井俊夫 大佐（Naoi Toshio）
+    src: [combinedfleet-nagara]
+    valid: { from: 1941-09-10 }
+    confidence: C
+    note: >-
+      combinedfleet 原话「10 September 1941: Captain Naoi Toshio (47)(former instructor at
+      Naval Academy) is appointed the CO.」
+      任期终点来源未写；下一位是 1942-07-10 的俵義男（Tawara Yoshioki）。
+
+  - field: service.commander
+    value: 俵義男 大佐（Tawara Yoshioki）
+    src: [combinedfleet-nagara]
+    valid: { from: 1942-07-10, to: 1942-12-17 }
+    confidence: C
+    note: >-
+      combinedfleet 原话「10 July 1942: Captain (later Rear Admiral) Tawara Yoshioki (43)
+      (former CO of NAKA) is appointed the CO.」
+      中途岛（1942-06）时在任的是直井俊夫，俵为 7-10 接任。
+
+  - field: service.commander
+    value: 篠田勝清 大佐（Shinoda Katsukiyo）
+    src: [combinedfleet-nagara]
+    valid: { from: 1942-12-17, to: 1943-08-16 }
+    confidence: C
+    note: >-
+      combinedfleet 原话「17 December 1942: Captain (Vice Admiral, posthumously) Shinoda
+      Katsukiyo (44)(former CO of AKATSUKI) is appointed the CO.」
+
+  - field: service.commander
+    value: 北村正之 大佐（Kitamura Masayuki）
+    src: [combinedfleet-nagara]
+    valid: { from: 1943-08-16, to: 1944-04-07 }
+    confidence: C
+    note: >-
+      combinedfleet 原话「16 August 1943: ... Captain (Rear Admiral, posthumously)
+      Kitamura Masayuki (45)(former ComDesDiv 17) is appointed the CO.」
+
+  - field: service.commander
+    value: 近藤新一 大佐（Kondo Shinichi）
+    src: [combinedfleet-nagara]
+    valid: { from: 1944-04-07, to: 1944-05-08 }
+    confidence: C
+    note: >-
+      combinedfleet 原话「7 April 1944: Captain Kondo Shinichi (49)(former Naval Gunnery
+      School instructor) is appointed the CO.」
+
+  - field: service.commander
+    value: 中原義一郎 大佐（Nakahara Giichiro）
+    src: [combinedfleet-nagara]
+    valid: { from: 1944-05-08, to: 1944-08-07 }
+    confidence: C
+    note: >-
+      combinedfleet 原话「8 May 1944: Captain (Vice Admiral, posthumously) Nakahara
+      Giichiro (48)(former ComDesDiv 32) is appointed the CO.」
+      沉没时在任，随舰阵亡，追晋少将（原文「Captain Nakahara is promoted Vice Admiral,
+      posthumously」——原文写 Vice Admiral，本站照录，不作修正）。
+
+  # ============================================================ 改装（时间窗）
+  - field: sensors.radar.installed
+    value: 一号三型電探（Type 21 对空搜索雷达）
+    src: [navypedia-nagara, combinedfleet-nagara]
+    valid: { from: 1943-10 }
+    confidence: C
+    note: >-
+      **装设时间两说，不裁决**：
+      ① navypedia 改装表「5/1943, Abukuma; 10.1943, Nagara: + 1-shiki 2-go radar」
+         —— 把长良的「1-shiki 2-go」（一号二型）记在 1943-10；
+      ② combinedfleet「20 August 1943: ... Drydocked and refitted. A Type 21 air-search
+         radar set is fitted.」—— 记在 1943-08-20 的舞鹤改装。
+      两说型号表述不同（一号二型 / Type 21），月份差约两个月。本 fact 取 ② 的时间
+      与 ② 的型号名，并在正文并列 ①。
+
+  - field: sensors.radar.installed
+    value: 二号二型電探（Type 22 对水上搜索雷达）
+    src: [navypedia-nagara, japanese-warship-nagara]
+    valid: { from: 1944-06 }
+    confidence: C
+    note: >-
+      navypedia 改装表「6/1944, Nagara: ... + 2-shiki 2-go radar」；
+      japanese-warship 的 1944-08 时点表「22号対水上電探　2基」。
+      **两说数量不同**（+1 台 / 2 基），本字段是 multi 类型，只记型号；
+      数量差异写进下一条。
+
+  - field: sensors.radar.count
+    value: 2
+    unit: count
+    src: [japanese-warship-nagara]
+    valid: { from: 1944-06, to: 1944-08-07 }
+    confidence: C
+    note: >-
+      japanese-warship 1944-08 表「22号対水上電探　2基」。
+      navypedia 只写「+ 2-shiki 2-go radar」未给台数，故本条单源。
+
+  # ============================================================ 武备时间线（本舰特有）
+  - field: armament.aa_25mm.count
+    value: 4
+    unit: count
+    src: [navypedia-nagara, japanese-warship-nagara]
+    valid: { from: 1938, to: 1942-04 }
+    confidence: C
+    note: >-
+      navypedia 改装表「1938 - 1940, all: - 2 x 1 - 13.2/76; + 2 x 2 - 25/60 96-shiki」
+      —— 2 座连装 = 4 挺。japanese-warship 1934 年表亦记
+      「⇒のち25mm連装機銃　2基4挺」。按管数记。
+
+  - field: armament.aa_25mm.count
+    value: 12
+    unit: count
+    src: [navypedia-nagara, japanese-warship-nagara]
+    valid: { from: 1943-01, to: 1943-08 }
+    confidence: C
+    note: >-
+      navypedia「1/1943, Nagara: - 1 x 1 - 140/50 (No 5); + 4 x 2 - 25/60 96-shiki」
+      —— 原有 2 座连装（4 挺）+ 新增 4 座连装（8 挺）= 12 挺。
+      japanese-warship 1944-08 表按「25mm連装機銃 6基12挺」列出，与之吻合。
+
+  - field: armament.aa_25mm.count
+    value: 22
+    unit: count
+    src: [navypedia-nagara, combinedfleet-nagara]
+    valid: { from: 1944-01, to: 1944-06 }
+    confidence: C
+    note: >-
+      **两说并列，不裁决**：
+      ① combinedfleet「The catapult is removed and replaced by two triple-mount Type 96
+         25-mm AA gun mounts bringing NAGARA's total 25-mm AA suite to 22 barrels
+         (2x3, 6x2, 4x1).」—— 22 挺，明细 2×3 + 6×2 + 4×1；
+      ② navypedia「4/1944, Nagara: ... + 2 x 3 - 25/60 96-shiki, 4 x 1 - 25/60 96-shiki」
+         （在 12 挺基础上加 6 + 4 = 22，与 ① 数值一致）。
+      两源数值相同，仅明细排布记录方式不同，故不是数值分歧。
+
+  - field: armament.aa_25mm.count
+    value: 32
+    unit: count
+    src: [combinedfleet-nagara, japanese-warship-nagara]
+    valid: { from: 1944-07-02, to: 1944-08-07 }
+    confidence: C
+    note: >-
+      终末状态。combinedfleet 原话「Ten single mount Type 96 25-mm AA guns are installed,
+      bringing NAGARA's 25-mm suite to 32 barrels (2x3, 6x2, 14x1).」
+      japanese-warship 1944-08 表：三连装 2 基 6 挺 + 连装 6 基 12 挺 + 单装 14 基 14 挺 = 32 挺。
+
+  - field: armament.mount.summary
+    value: >-
+      1944-01/04 舞鹤改装后：主炮减至 5 门（撤 5 番、7 番），
+      7 番炮位改装 12.7 cm 连装高角炮 1 基，鱼雷发射管改为后部 4 连装 2 基，
+      弹射器撤除，25 mm 增至 22 挺。
+    src: [combinedfleet-nagara]
+    valid: { from: 1944-04-10, to: 1944-08-07 }
+    confidence: C
+    note: >-
+      combinedfleet 原话「26 January 1944: ... NAGARA's No. 7 140-mm gun mount is removed
+      and replaced by a 127-mm unshielded HA gun mount. The fore and aft twin torpedo
+      tubes are removed and replaced by two quadruple tube mounts aft. The catapult is
+      removed and replaced by two triple-mount Type 96 25-mm AA gun mounts ... DC rails
+      are installed in the stern and a Type 93 hydrophone set is fitted in the bow.」
+
+  - field: armament.torpedo.tubes
+    value: 8
+    unit: count
+    src: [combinedfleet-nagara]
+    valid: { from: 1944-04-10, to: 1944-08-07 }
+    confidence: C
+    note: >-
+      **总数仍是 8，但形态换了**：combinedfleet 原话「The fore and aft twin torpedo tubes
+      are removed and replaced by two quadruple tube mounts aft.」
+      即 2 基 × 4 门 = 8 门，前部发射管取消、全部集中在后部。
+      japanese-warship 1944-08 表据此写「61cm4連装魚雷発射管 2基8門」。
+      **这是「长良是否换装四连装」争议的核心**，详见 RESEARCH-NOTES 分歧节。
+
+  - field: aviation.catapult.count
+    value: 1
+    unit: count
+    src: [japanese-warship-nagara]
+    valid: { from: 1933, to: 1944-01 }
+    confidence: C
+    note: >-
+      japanese-warship 1934 年表「その他 水上機 1機」并记弹射器已装；
+      navypedia 改装表「1933, Nagara, Isuzu: ... + 1 catapult (between No 6 & 7 guns)」。
+      1944-01/04 改装时撤除（combinedfleet「The catapult is removed」），故 valid.to。
+
+  - field: aviation.aircraft.capacity
+    value: 1
+    unit: count
+    src: [japanese-warship-nagara]
+    valid: { from: 1933, to: 1944-01 }
+    confidence: C
+    note: combinedfleet 同条：「The catapult is removed ...」——机与弹射器同时撤除。
+
+  # ============================================================ 战历关键节点
+  - field: service.complement.standard
+    value: 450
+    unit: persons
+    src: [japanese-warship-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      japanese-warship 与 navypedia 均记 450（本体在舰级文件已写，此处重复）。
+      **midway 后运伤员的数字另见 service.casualties 相关记录**：
+      combinedfleet「14 June 1942: ... Transfers 338 men wounded at the Battle of Midway
+      to hospital ship TALASAGO MARU and 280 wounded men to hospital ship HIKAWA MARU.」
+      ——这是她载运的伤员数，不是本舰伤亡，故不写入 service.casualties。
+
+  - field: service.casualties
+    value: 6
+    unit: persons
+    src: [combinedfleet-nagara]
+    valid: { from: 1942-11-13, to: 1942-11-13 }
+    confidence: C
+    note: >-
+      第一次瓜岛海战（1942-11-12/13 夜）被圣弗朗西斯科号 5 英寸炮命中 1 发。
+      combinedfleet 原话「NAGARA is straddled by SAN FRANCISCO and hit by one 5-inch shell.
+      Six men are killed, but the ship sustains only minor hull damage.」
+
+  - field: service.casualties
+    value: 48
+    unit: persons
+    src: [japanese-warship-nagara]
+    valid: { from: 1943-12-05, to: 1943-12-05 }
+    confidence: C
+    note: >-
+      japanese-warship 原话「至近弾により搭載魚雷が誘爆、48名が死亡、艦長を含む112名が負傷した」
+      （1943-12-05 夸贾林空袭）。受伤 112 人见下条 note。
+      **英文来源未给此数**——combinedfleet 只记「NAGARA is damaged slightly by near misses」
+      与另处 FRUMEL 截获电文「2 men killed and ? injured」。
+      两说并列（48 / 2），不裁决，见 RESEARCH-NOTES 分歧节。
+
+  - field: service.casualties
+    value: 348
+    unit: persons
+    src: [combinedfleet-nagara, japanese-warship-nagara]
+    valid: { from: 1944-08-07, to: 1944-08-07 }
+    confidence: C
+    note: >-
+      combinedfleet 原话「Captain Nakahara and 348 crewmen are killed, but 237 other men
+      are rescued.」japanese-warship「中原艦長以下348名が戦死し、237名が救助された」。
+      两源一致。**348 是否含舰长**：combinedfleet 的写法是「舰长 + 348 名」，即
+      舰长不在 348 之内；japanese-warship 写「中原艦長以下348名」，即含舰长。
+      两说并列，本字段按 348 记，口径差异见 note。
+
+  - field: service.survivors
+    value: 237
+    unit: persons
+    src: [combinedfleet-nagara, japanese-warship-nagara]
+    valid: { from: 1944-08-07, to: 1944-08-07 }
+    confidence: C
+    note: 两源一致（combinedfleet「237 other men are rescued」）。
+
+  - field: service.fate_category
+    value: 被敌潜艇鱼雷击沉
+    src: [combinedfleet-nagara]
+    valid: { from: 1944-08-07 }
+    confidence: C
+    note: >-
+      combinedfleet 原话「7 August 1944: ... NAGARA is spotted by veteran submariner
+      LtCdr ... John E. Lee's ... new USS CROAKER (SS-246) on her first war patrol.
+      Lee lets NAGARA close to 1,300 yards and fires a salvo of four stern torpedoes.
+      At 1222, NAGARA is hit starboard aft by one of the torpedoes. At 1240, she sinks
+      by the stern off Amakusa Shoto at 32-09N, 129-53E.」
+
+  - field: construction.fate_date
+    value: 1944-08-07
+    src: [combinedfleet-nagara, navypedia-nagara]
+    valid: { from: 1944-08-07 }
+    confidence: C
+    note: >-
+      **任务书写「1943 年沉没」，此条即纠错依据**：
+      combinedfleet「7 August 1944 ... At 1240, she sinks」；
+      navypedia「Nagara ... 7.8.1944 she was sunk in 35nm S off Nagasaki by US
+      submarine Croaker」。两源一致为 1944 年。
+
+  - field: construction.fate_type
+    value: sunk_by_enemy
+    src: [combinedfleet-nagara, navypedia-nagara]
+    valid: { from: 1944-08-07 }
+    confidence: C
+
+  # ============================================================ 本舰独有：触雷
+  - field: construction.fate_type
+    value: sunk_cause_disputed
+    src: [combinedfleet-nagara, navypedia-nagara]
+    valid: { from: 1943-07-15, to: 1943-07-15 }
+    confidence: C
+    note: >-
+      **此条不是结局，是 1943-07-15 在卡维恩触雷的记录**——用一个已有的枚举表达
+      「当日损伤事件的归因有争议」，避免另造字段。
+      combinedfleet 原话「While mooring, NAGARA detonates a mine laid at night by
+      Australian PBY "Catalina" flying boats. The mine slightly damages her stern,
+      but she is able to operate.」
+      **布雷者两说并列，不裁决**：combinedfleet 正文写澳军 PBY，其脚注 [2] 另记
+      「Some sources credit the mine as being laid 4 June 1943 by USS SILVERSIDES (SS-236)」；
+      navypedia 写「Nagara 15.7.1943 was damaged by a mine (laid by US submarine Silversides)」。
+      （本字段枚举选 sunk_cause_disputed 只为承载「归因分歧」，**不是指该舰当日沉没**；
+      若主会话认为语义不合，请把本条改成正文叙述并删除。）
+
+  # protection.underwater.depth：本级无防雷突出部，查过的站点均未给出水下防护纵深数值
+  # → **未获取**，不写 fact（不填 0）。
+

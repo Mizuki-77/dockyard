@@ -1,0 +1,428 @@
+# 长良 正文
+# 2026-11-23 建。数据来源见 sources-fragment.yaml，逐条原句见 RESEARCH-NOTES.md。
+
+ship: nagara
+updated: 2026-11-23
+
+intro:
+  lead:
+    zh: >-
+      长良是 5500 吨型轻巡的第二组首舰，也是日本海军第一型装 61 cm 鱼雷的巡洋舰。
+      她在太平洋战争中的身份比她的火力更值得记：第四急袭队、第十水雷战队、
+      第四水雷战队、第二水雷战队、第十一水雷战队、第四舰队的旗舰都当过一轮，
+      中途岛当天赤城被击毁后，南云忠一的司令部一度就设在她身上。
+    en: >-
+      Nagara was the lead ship of the second group of Japan's 5,500-ton light cruisers
+      and the first Japanese cruiser class armed with 61 cm torpedoes. Her significance
+      in the Pacific War lies less in her guns than in her repeated role as a flotilla
+      flagship: she flew the flag of the Fourth Surprise Attack Unit, Destroyer Squadron 10,
+      DesRon 4, DesRon 2, DesRon 11 and the Fourth Fleet in turn, and on the afternoon of
+      4 June 1942 Admiral Nagumo Chuichi shifted his flag to her after Akagi was wrecked.
+
+  paragraphs:
+    - heading: 她真正的职务是旗舰，不是炮台
+      text:
+        zh: >-
+          5500 吨型轻巡的设计任务里，火炮和鱼雷是次要的，带队才是主要的。
+          长良的 7 门 14 cm 单装炮全在中心线上，炮座仰角只有 -7/+25 度，
+          弹重 38 kg，靠人力装填，射速 6 到 10 发/分，具体取决于弹药提升的距离——
+          传弹的人跑得远，射速就慢。这一点 NavWeaps 举了个例子：6 门炮的夕张
+          射速反而比 7 门炮的 5500 吨型快，因为她的炮座挨得更近。
+          真正让她有用的是那 8 门 61 cm 发射管和 16 条鱼雷。
+        en: >-
+          The design job of a 5,500-ton cruiser was to lead, not to shoot. Nagara's seven
+          14 cm single mounts were all on the centreline, elevated only -7/+25 degrees,
+          firing a 38 kg shell by hand at 6 to 10 rounds per minute depending on how far
+          the ammunition passers had to carry. NavWeaps makes the point with the 6-gun
+          Yubari, whose rate of fire was faster than the 7-gun 5,500-ton cruisers because
+          her mountings were spaced closer together. What made her useful was the eight
+          61 cm tubes and sixteen torpedoes.
+      src: [navweaps-14cm-50-3ns, dougakan-cl4]
+
+    - heading: 61 cm 是这一级的分水岭
+      text:
+        zh: >-
+          前一级的球磨型装的是 53 cm 六年式鱼雷，到长良型换成 61 cm 八年式。
+          换的理由很直接：主力舰的交战距离在拉长，53 cm 鱼雷的射程不够用了。
+          八年式连装发射管本身没有防盾，装一条鱼雷后整座全备重量超过 13 吨，
+          靠一台 5 马力电动机驱转，转一圈约 1 分钟。
+          四座发射管分两处：舰桥后方上甲板两舷各一基，第 3 烟囱后方上甲板两舷各一基。
+          长良型的短艇甲板向后延长，把后部两座发射管罩在下面，这是她与球磨型在外形上
+          最容易被忽略的一处差别。
+        en: >-
+          The preceding Kuma class carried 53 cm Sixth Year Type torpedoes; the Nagara
+          class moved to the 61 cm Eighth Year Type. The reason was range: the battle
+          range of capital ships was growing and 53 cm torpedoes could no longer reach.
+          The twin mount had no shield, weighed over 13 tons fully loaded with torpedo,
+          and was trained by a 5 hp electric motor at about one minute for a full circle.
+          The four mounts sat two per side abaft the bridge and two per side abaft the
+          third funnel; the Nagara class extended the boat deck aft so that the after
+          pair sat under cover.
+      src: [dougakan-cl4, nsl-torpedoes-2]
+
+    - heading: 防护薄到什么程度
+      text:
+        zh: >-
+          长良的装甲只保住机舱那一段。舷侧带高 7.32 m，但只覆盖机舱，
+          上部 73.2 m × 3.00 m 是 51 mm，下部 68.3 m × 4.32 m 是 63 mm；
+          29 mm 的平甲板连到舷侧带上缘，弹药库上方加厚到 45 mm；
+          司令塔侧 51 mm、顶 25 mm。船体前后各 2/3 完全没有装甲。
+          材质是高张力钢，不是渗碳装甲。
+          **同一部位的数值两份来源不一致**：Navypedia 记舷侧 63 mm，
+          kasado.net 记 38 mm。两边都保留在本站的 fact 里，不取平均、不裁决。
+        en: >-
+          Nagara's armour protected the machinery spaces and little else. The belt was
+          7.32 m high but covered only the machinery: the upper part (73.2 m by 3.00 m)
+          was 51 mm and the lower part (68.3 m by 4.32 m) 63 mm, with a 29 mm flat deck
+          joining the upper edge of the belt and 45 mm over the magazines. The conning
+          tower had 51 mm sides and a 25 mm roof. The forward and after thirds of the hull
+          were unarmoured. The material was high-tensile steel, not cemented armour.
+          The two sources disagree on the belt figure — Navypedia says 63 mm,
+          kasado.net says 38 mm — and both values are kept in this site's facts.
+      src: [navypedia-nagara, kasado-nagara]
+
+    - heading: 1944 年的那次改装改了什么
+      text:
+        zh: >-
+          1944 年 1 月到 4 月在舞鹤的改装是长良一生中最大的一次。
+          撤掉 7 番 140 mm 炮，原位换成一座无防盾的 12.7 cm 连装高角炮；
+          前后两组连装鱼雷发射管撤除，改为后部两座四连装（门数仍是 8）；
+          弹射器撤除，原位装 25 mm 三连装两座；舰尾加深弹投放轨，舰首装九三式水中听音机。
+          到 7 月在横须贺又补了 10 座 25 mm 单装，总数到 32 挺，同时装二号对水上电探。
+          这套配置她只用了不到一个月。
+        en: >-
+          The Maizuru refit of January to April 1944 was the largest of her career:
+          No. 7 14 cm gun replaced by an unshielded twin 12.7 cm HA mount, the fore and aft
+          twin torpedo tubes replaced by two quadruple mounts aft (still eight tubes),
+          the catapult removed and replaced by two triple 25 mm mounts, depth-charge rails
+          added aft and a Type 93 hydrophone fitted in the bow. In July at Yokosuka ten
+          more single 25 mm mounts brought the suite to 32 barrels and a Type 22 surface
+          search radar was fitted. She operated in that configuration for under a month.
+      src: [combinedfleet-nagara, japanese-warship-nagara]
+
+history:
+  - id: build
+    title: { zh: 建造与战前, en: Building and pre-war service }
+    range: { from: 1920, to: 1941 }
+    events:
+      - date: 1920-09-09
+        text:
+          zh: 在佐世保海军工厂开工。
+          en: Laid down at Sasebo Navy Yard.
+        src: [combinedfleet-nagara]
+
+      - date: 1921-04-25
+        text:
+          zh: 下水并命名长良。
+          en: Launched and named Nagara.
+        src: [combinedfleet-nagara]
+
+      - date: 1922-04-21
+        text:
+          zh: 竣工，登记入日本海军。首任舰长为黑田琢磨大佐。
+          en: Completed and registered in the IJN, with Captain Kuroda Takijiro as CO.
+        src: [combinedfleet-nagara]
+
+      - date: 1933
+        text:
+          zh: >-
+            装弹射器（位置在第 6、7 番炮之间），滑走台随之撤除，
+            空出的位置改装机枪座。同期加装一座 13 mm 四连装机枪。
+          en: >-
+            Fitted with a catapult between Nos. 6 and 7 guns; the flying-off platform was
+            removed and its space used for a machine-gun mounting.
+        src: [navypedia-nagara, japanese-warship-nagara]
+
+      - date: 1934
+        text:
+          zh: >-
+            友鹤事件后为改善复原性进行减重与加压载工事，满载排水量升至约 8,000 t，
+            最大速力降到 32 节。
+          en: >-
+            After the Tomozuru incident, weight reduction and ballast work brought full
+            load displacement to about 8,000 tons and maximum speed down to 32 knots.
+        src: [navypedia-nagara]
+
+      - date: 1936
+        text:
+          zh: 锅炉改为重油专烧，载油量增至 1,600 t。
+          en: Boilers converted to oil firing only, with fuel stowage raised to 1,600 tons.
+        src: [navypedia-nagara]
+
+      - date: 1937-08-14
+        text:
+          zh: >-
+            以第八战队（旗舰）身份与神通、川内一同在吴淞口外海面展开，
+            射击目标为浦东，炮弹越过英国单桅炮舰 FALMOUTH 的桅杆。
+          en: >-
+            With CruDiv 8 (flagship) and the cruisers Jintsu and Sendai, took position off
+            Woosung Flats and fired on Pootung over the masts of the British sloop Falmouth.
+        src: [combinedfleet-nagara]
+
+  - id: early-war
+    title: { zh: 开战与南方作战, en: Opening of the war and the southern operations }
+    range: { from: 1941, to: 1942 }
+    events:
+      - date: 1941-11-26
+        text:
+          zh: >-
+            作为久保九次少将的第四急袭队旗舰，率队从寺岛水道出发，12-01 抵帕劳。
+          en: >-
+            As flagship of Rear Admiral Kubo Kyuji's Fourth Surprise Attack Unit, departed
+            Terashima Strait and reached Palau on 1 December.
+        src: [combinedfleet-nagara]
+
+      - date: 1941-12-08
+        text:
+          zh: 率第四急袭队自帕劳出发，掩护菲律宾南部莱加斯皮登陆。
+          en: Sailed from Palau with the Fourth Surprise Attack Force to cover the Legaspi landings.
+        src: [combinedfleet-nagara]
+
+      - date: 1942-01-25
+        text:
+          zh: >-
+            在肯达里泊地，驱逐舰初春以 21 节撞上长良右舷中部，长良重伤 2 人。
+            久保少将转移到初霜，长良赴达沃由工作舰明石修理。
+          en: >-
+            At Kendari the destroyer Hatsuharu collided with Nagara's starboard midships at
+            21 knots, injuring two of her crew. Kubo shifted his flag to Hatsushimo and
+            Nagara went to Davao for repairs by the repair ship Akashi.
+        src: [combinedfleet-nagara]
+
+      - date: 1942-02-24
+        text:
+          zh: >-
+            巴厘岛以北遭英国潜艇 TRUANT 六雷齐射，两雷命中但均为哑弹，其余失的。
+          en: >-
+            North of Bali, HMS Truant fired six torpedoes at Nagara; two hit but were duds
+            and the rest missed.
+        src: [combinedfleet-nagara]
+
+      - date: 1942-03-31
+        text:
+          zh: 参加圣诞岛攻略，与那珂、名取同属第二南遣舰队第十六战队。
+          en: >-
+            Took part in the seizure of Christmas Island with Naka and Natori in CruDiv 16
+            of the Second Southern Expeditionary Fleet.
+        src: [combinedfleet-nagara]
+
+  - id: midway
+    title: { zh: 中途岛, en: Midway }
+    range: { from: 1942, to: 1942 }
+    events:
+      - date: 1942-04-10
+        text:
+          zh: >-
+            被任命为新编第十水雷战队（司令官木村进少将）旗舰，
+            下辖第 7、10、17 驱逐队，直属南云忠一的第一航空舰队。
+          en: >-
+            Appointed flagship of the newly formed DesRon 10 under Rear Admiral Kimura
+            Susumu, with DesDivs 7, 10 and 17, assigned to Nagumo's First Air Fleet.
+        src: [combinedfleet-nagara]
+
+      - date: 1942-05-27
+        text:
+          zh: >-
+            作为机动部队警戒队旗舰，随赤城、加贺、飞龙、苍龙及第 8 战队、第 3 战队
+            从柱岛出击，参加 MI 作战。
+          en: >-
+            As flagship of the Carrier Striking Force's screening force, sailed from
+            Hashirajima with Akagi, Kaga, Hiryu and Soryu, CruDiv 8 and BatDiv 3 for
+            Operation MI.
+        src: [combinedfleet-nagara]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            以深水炸弹攻击美军潜艇 NAUTILUS（未命中）。
+          en: Counter-attacked the US submarine Nautilus with depth charges, without result.
+        src: [combinedfleet-nagara]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            1047 赤城被企业号俯冲轰炸机击中起火后，南云先移到驱逐舰 NOWAKI，
+            1130 转移到长良，长良成为第一航空舰队临时旗舰。
+          en: >-
+            After Akagi was hit and set afire at 1047, Nagumo shifted first to the destroyer
+            Nowaki and at 1130 to Nagara, which became the temporary flagship of the
+            First Air Fleet.
+        src: [combinedfleet-nagara, japanese-warship-nagara]
+
+      - date: 1942-06-14
+        text:
+          zh: >-
+            在柱岛把中途岛负伤的 338 人移交给医院船 TALASAGO MARU、280 人移交给
+            HIKAWA MARU。这是她载运的伤员，不是本舰伤亡。
+          en: >-
+            At Hashirajima transferred 338 men wounded at Midway to the hospital ship
+            Talasago Maru and 280 to Hikawa Maru.
+        src: [combinedfleet-nagara]
+
+  - id: solomons
+    title: { zh: 所罗门战役, en: The Solomons campaign }
+    range: { from: 1942, to: 1943 }
+    events:
+      - date: 1942-07-14
+        text:
+          zh: 第十水雷战队随第一航空舰队改编为第三舰队。
+          en: DesRon 10 and Nagara were reassigned to the Third (Carriers) Fleet.
+        src: [combinedfleet-nagara]
+
+      - date: 1942-08-25
+        text:
+          zh: 参加第二次所罗门海战，随航母机动部队在瓜岛东北方向行动。
+          en: Took part in the Battle of the Eastern Solomons with the carrier force northeast of Guadalcanal.
+        src: [combinedfleet-nagara]
+
+      - date: 1942-11-13
+        text:
+          zh: >-
+            第一次瓜岛海战中被圣弗朗西斯科号跨射并命中一发 5 英寸炮弹，
+            阵亡 6 人，舰体仅轻伤。
+          en: >-
+            In the First Naval Battle of Guadalcanal she was straddled by San Francisco and
+            hit by one 5-inch shell; six men were killed and hull damage was minor.
+        src: [combinedfleet-nagara]
+
+      - date: 1942-11-15
+        text:
+          zh: >-
+            第二次瓜岛海战中率驱逐队以炮火与九三式鱼雷攻击美军第 64 特混舰队，
+            30 余条鱼雷射向南达科他号全部失的，但美军驱逐舰 PRESTON、WALKE 被击沉，
+            BENHAM 重伤后自沉。
+          en: >-
+            In the Second Naval Battle of Guadalcanal she led destroyers in a gun and
+            Type 93 torpedo attack on TF 64. More than thirty torpedoes were fired at
+            South Dakota and all missed, but the destroyers Preston and Walke were sunk
+            and Benham was so badly damaged that she was scuttled.
+        src: [combinedfleet-nagara]
+
+      - date: 1942-11-20
+        text:
+          zh: >-
+            改任高间完少将的第四水雷战队旗舰，接替 10-25 沉没的由良；
+            第十水雷战队旗舰由新造阿贺野接任。
+          en: >-
+            Became flagship of Rear Admiral Takama Tamotsu's DesRon 4, replacing Yura sunk
+            on 25 October; the newly commissioned Agano took over DesRon 10.
+        src: [combinedfleet-nagara]
+
+      - date: 1943-07-15
+        text:
+          zh: >-
+            在卡维恩系泊时触雷，舰尾轻损，5、6 番炮一度无法回旋，但仍可航行。
+            水雷的布设者两份来源不一致：combinedfleet 正文记澳军 PBY 卡特琳娜，
+            同页脚注与 Navypedia 则记美军潜艇 SILVERSIDES 于 6 月 4 日布设。
+          en: >-
+            While mooring at Kavieng she detonated a mine, slightly damaging her stern and
+            temporarily jamming Nos. 5 and 6 guns, but remained operational. The laying
+            unit is given differently: combinedfleet's text credits Australian PBY Catalinas,
+            while its own footnote and Navypedia credit the US submarine Silversides on
+            4 June.
+        src: [combinedfleet-nagara, navypedia-nagara]
+
+      - date: 1943-07-20
+        text:
+          zh: >-
+            第四水雷战队解散，长良转任第二水雷战队旗舰，接替 7-12 沉没的神通。
+          en: >-
+            DesRon 4 was deactivated and Nagara became flagship of DesRon 2, replacing
+            Jintsu sunk on 12 July.
+        src: [combinedfleet-nagara]
+
+      - date: 1943-08-20
+        text:
+          zh: >-
+            第二水雷战队旗舰由新造能代接任，长良转属第八舰队，在舞鹤入坞改装，
+            装一号对空电探与 25 mm 连装四座。
+          en: >-
+            Relieved as DesRon 2 flagship by the new Noshiro and attached to the Eighth
+            Fleet; drydocked and refitted at Maizuru with a Type 21 air-search radar and
+            four twin 25 mm mounts.
+        src: [combinedfleet-nagara]
+
+      - date: 1943-11-01
+        text:
+          zh: 转属第四舰队并任旗舰，接替鹿岛。
+          en: Transferred to the Fourth Fleet and relieved Kashima as its flagship.
+        src: [combinedfleet-nagara]
+
+      - date: 1943-11-14
+        text:
+          zh: 与驱逐舰浦风一同接替能代，拖曳被潜艇 SKATE 雷击的轻巡阿贺野，11-16 拖抵特鲁克。
+          en: >-
+            With the destroyer Urakaze, took over the tow of the torpedoed light cruiser
+            Agano from Noshiro and brought her into Truk on 16 November.
+        src: [combinedfleet-nagara]
+
+      - date: 1943-12-05
+        text:
+          zh: >-
+            在夸贾林环礁遭第 50.3 特混舰队舰载机攻击，近失弹造成损伤。
+            combinedfleet 记「轻微损伤」，同页引用的 FRUMEL 截获电文记「2 人死亡、若干人受伤」，
+            日文来源记 48 死 112 伤——三种口径并存，本站并列不裁决。
+          en: >-
+            Attacked by aircraft of TG 50.3 at Kwajalein and damaged by near misses.
+            combinedfleet records slight damage, a FRUMEL intercept quoted on the same page
+            records two killed and some injured, and a Japanese source records 48 killed and
+            112 wounded; all three are kept here without adjudication.
+        src: [combinedfleet-nagara, japanese-warship-nagara]
+
+  - id: loss
+    title: { zh: 沉没, en: Loss }
+    range: { from: 1944, to: 1944 }
+    events:
+      - date: 1944-01-26
+        text:
+          zh: >-
+            入舞鹤，至 4-10 出坞：撤 7 番炮换 12.7 cm 连装高角炮、鱼雷管改后部四连装两座、
+            撤弹射器、25 mm 增至 22 挺、舰尾加深弹轨、舰首装九三式水中听音机。
+          en: >-
+            Entered Maizuru and undocked on 10 April: No. 7 gun replaced by a twin 12.7 cm
+            HA mount, torpedo tubes replaced by two quadruple mounts aft, catapult removed,
+            25 mm suite raised to 22 barrels, depth-charge rails aft and a Type 93 hydrophone
+            in the bow.
+        src: [combinedfleet-nagara]
+
+      - date: 1944-05-15
+        text:
+          zh: 任第十一水雷战队旗舰，接替 3-14 沉没的龙田。
+          en: Became flagship of DesRon 11, replacing Tatsuta sunk on 14 March.
+        src: [combinedfleet-nagara]
+
+      - date: 1944-07-02
+        text:
+          zh: >-
+            在横须贺补装 10 座 25 mm 单装（总数 32 挺），并装二号对水上电探。
+          en: >-
+            At Yokosuka ten single 25 mm mounts brought the suite to 32 barrels and a
+            Type 22 surface-search radar was fitted.
+        src: [combinedfleet-nagara, japanese-warship-nagara]
+
+      - date: 1944-08-07
+        text:
+          zh: >-
+            自鹿儿岛赴佐世保途中，在天草诸岛以西被美军潜艇 CROAKER（SS-246）以艇尾
+            四雷齐射击中右舷后部一雷。1222 中雷，1240 舰尾下沉，位置 32-09N 129-53E。
+          en: >-
+            En route from Kagoshima to Sasebo, she was hit starboard aft by one of four
+            stern torpedoes from the US submarine Croaker (SS-246) at 1222 and sank by the
+            stern at 1240 off the Amakusa Islands, in 32-09N 129-53E.
+        src: [combinedfleet-nagara]
+
+      - date: 1944-08-07
+        text:
+          zh: >-
+            中原义一郎舰长与 348 名乘员阵亡，237 人获救。中原追晋少将
+            （combinedfleet 原文写 Vice Admiral，本站照录原文用词）。
+          en: >-
+            Captain Nakahara Giichiro and 348 crewmen were killed and 237 rescued.
+            Nakahara was promoted posthumously.
+        src: [combinedfleet-nagara, japanese-warship-nagara]
+
+      - date: 1944-10-10
+        text:
+          zh: 从海军舰艇名册除籍。
+          en: Removed from the Navy List.
+        src: [combinedfleet-nagara]

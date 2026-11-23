@@ -1,0 +1,260 @@
+ship: northampton
+updated: 2026-11-24
+
+intro:
+  lead:
+    zh: "北安普敦号（CA-26）在中途岛属 TG 16.2，但那支编队的旗舰不是它——金凯德少将的将旗在明尼阿波利斯号上，企业号 1942 年 6 月战报的原话是「Rear Admiral T.O. Kinkaid in MINNEAPOLIS, NORTHAMPTON, PENSACOLA, ATLANTA, NEW ORLEANS, VINCENNES」。它护的是企业号。五个月后的塔萨法隆加，两条鱼雷在左舷撕开一个大口，三小时后它被放弃，次日凌晨沉没。"
+    en: >-
+      Northampton (CA-26) was in TG 16.2 at Midway, but the group flagship was not
+      her: Kinkaid's flag was in Minneapolis, as Enterprise's June 1942 war diary
+      states - "Rear Admiral T.O. Kinkaid in MINNEAPOLIS, NORTHAMPTON, PENSACOLA,
+      ATLANTA, NEW ORLEANS, VINCENNES". She screened Enterprise. Five months later
+      at Tassafaronga two torpedoes tore a huge hole in her port side; she was
+      abandoned three hours later and sank before dawn.
+  paragraphs:
+    - heading: "那 6 根鱼雷管只带了 1 年多"
+      text:
+        zh: "北安普敦级建成时有 2 座三联 21 英寸鱼雷管，共 6 管，这是它与后来的新奥尔良级之间一处常被提到的差别。但「本级有鱼雷管」这句话必须带时间限定：navypedia 的改装表第一条就是「1931, all: - 2 x 3 - 533 TT」，即全级在 1931 年把鱼雷管全拆了。NavSource 一张 1930 年代初照片的图注是旁证——「prior to the removal of her torpedo tubes」。所以 1942 年的北安普敦号，鱼雷管为 0。"
+        en: >-
+          As built the Northampton class carried two triple 21-inch torpedo mounts, six
+          tubes, which is the usual difference cited against the later New Orleans
+          class. But "this class had torpedo tubes" needs a date: navypedia's first
+          modernisation entry reads "1931, all: - 2 x 3 - 533 TT", the whole class
+          losing them that year. A NavSource photo caption from the early 1930s is the
+          supporting note - "prior to the removal of her torpedo tubes". In 1942
+          Northampton had none.
+      src: [navypedia-northampton, navsource-northampton]
+    - heading: "设计时想加强的装甲，最后只做到弹药提升井"
+      text:
+        zh: "本级与彭萨科拉级同属美国第一代条约重巡，防护是逐段拼的：机舱段舷侧 76 mm、弹药库段 95 mm，装甲甲板弹药库上方 51 mm、机舱上方 25 mm，炮座环只有 38 mm，炮塔正面 64 mm，指挥塔 32 mm。navypedia 对设计过程的记载值得单列：设计时有人提议加强装甲，至少让弹药库能挡 203 mm 炮弹，但工作「只限于弹药提升井的防破片防护」；同一页的结论句是「在 203 mm 炮弹下，免疫区不存在」。1933 年的计算显示对 130 mm 炮弹在 40 缆以外、对 152 mm 炮弹在 50 至 105 缆之间存在免疫区，但那也只是弹药库段。"
+        en: >-
+          The class, like the Pensacolas, was among the first American treaty cruisers,
+          and its protection was pieced together: 76 mm belt abreast machinery and 95 mm
+          abreast magazines, 51 mm armour deck over the magazines and 25 mm over the
+          machinery, 38 mm barbettes, 64 mm turret faces, 32 mm conning tower.
+          Navypedia's design note is worth quoting: during design it was proposed to
+          strengthen the armour so that at least the magazines could resist 203 mm
+          shells, but the work was limited to splinter protection of the ammunition
+          elevators, and the same page concludes that "under 203mm shells immune zone
+          was absent". The 1933 calculations gave an immune zone against 130 mm beyond
+          40 cables and against 152 mm between 50 and 105 cables, magazines only.
+      src: [navypedia-northampton, navweaps-5in25-mk10]
+    - heading: "1942-06-04：护企业号，一弹未中"
+      text:
+        zh: "1942 年 5 月 28 日随 TF 16 出港，中途岛期间在企业号的屏卫圈里。6 月 4 日美方三艘航母的机群打掉日方四艘航母，日机的两次反击都落在独立行动的 TG 17 头上（约克城号那一群），TG 16 没有挨打。企业号战报 6 月 6 日条把 TF 16 分成两组，本舰与文森斯号、彭萨科拉号留在「ENTERPRISE group」，明尼阿波利斯号与新奥尔良号随「HORNET group」。6 月 13 日随舰返珍珠港，全舰无伤。"
+        en: >-
+          She sailed with TF 16 on 28 May 1942 and spent Midway in Enterprise's screen.
+          On 4 June the American carrier aircraft accounted for four Japanese carriers,
+          and both Japanese counter-strikes fell on TG 17, the Yorktown group, which was
+          operating independently; TG 16 was not attacked. The Enterprise war diary for
+          6 June splits TF 16 in two, leaving Northampton, Vincennes and Pensacola in
+          the "ENTERPRISE group" while Minneapolis and New Orleans went with the "HORNET
+          group". She returned to Pearl Harbor undamaged on 13 June.
+      src: [danfs-northampton, enterprise-war-diary-midway, navweaps-oob-midway]
+    - heading: "塔萨法隆加：两条鱼雷，三小时，773 人"
+      text:
+        zh: "1942 年 11 月 30 日深夜，编队在瓜岛北岸拦截日军驱逐舰输送队。接近战斗尾声时本舰被两条鱼雷命中：navypedia 与 NavSource 都指名是日本驱逐舰亲潮号（Oyashio）。ONI 战斗叙事给了逐帧的破口尺寸——一条打中第 108 号肋骨水线处，另一条打中第 98 号肋骨、水线下 10 英尺；左舷第 105 至 113 号肋骨之间被炸开，约 8 英尺外板翻卷在舷外。燃着的柴油泼满全舰。0240 横倾到 35 度时舰长 Kitts 与损管队弃舰，12 月 1 日凌晨 3 时过后它横过来、翻覆、尾部下坐沉没。弗莱彻号与戴顿号一小时内捞起 57 名军官与 716 名士兵，共 773 人。"
+        en: >-
+          Late on 30 November 1942 the force was intercepting a Japanese
+          destroyer-transport run off Guadalcanal. Near the end of the action
+          Northampton took two torpedoes - navypedia and NavSource both name the
+          Japanese destroyer Oyashio. ONI's narrative gives the damage frame by frame:
+          one hit at frame 108 at the waterline, the other at frame 98, ten feet below;
+          the port side was blown out between frames 105 and 113 with eight feet of
+          shell plating left protruding over the side. Flaming diesel sprayed over the
+          ship. At 0240, with the list at 35 degrees, Capt. Kitts and the salvage party
+          abandoned; just after 0300 on 1 December she turned on her beam ends, rolled
+          over and sank stern first. Fletcher and Drayton picked up all 57 officers and
+          716 men - 773 survivors - within the hour.
+      src: [oni-tassafaronga, danfs-northampton, navypedia-northampton]
+history:
+  - id: build
+    title: { zh: "建造与试航", en: "Building and shakedown" }
+    range: { from: 1928, to: 1932 }
+    events:
+      - date: 1928-04-12
+        text:
+          zh: "在麻萨诸塞州昆西的伯利恒钢铁公司开工。"
+          en: >-
+            Laid down by Bethlehem Steel Corp., Quincy, Massachusetts.
+        src: [danfs-northampton, navypedia-northampton]
+      - date: 1929-09-05
+        text:
+          zh: "下水，掷瓶人是前总统柯立芝夫人 Grace Coolidge。"
+          en: >-
+            Launched, sponsored by Mrs. Calvin Coolidge.
+        src: [danfs-northampton, navsource-northampton]
+      - date: 1930-05-17
+        text:
+          zh: "服役，首任舰长 Walter N. Vernou 上校。"
+          en: >-
+            Commissioned, Captain Walter N. Vernou in command.
+        src: [danfs-northampton, navsource-northampton]
+      - date: 1930
+        text:
+          zh: "加入大西洋舰队，试航巡航至地中海。"
+          en: >-
+            Joined the Atlantic Fleet and made a shakedown cruise to the Mediterranean.
+        src: [danfs-northampton]
+      - date: 1931-07-01
+        text:
+          zh: "由轻巡 CL-26 改类为重巡 CA-26。同一年全级拆除 2 座三联 21 英寸鱼雷管。"
+          en: >-
+            Reclassified from CL-26 to CA-26; in the same year the class lost its two
+            triple 21-inch torpedo mounts.
+        src: [navsource-northampton, navypedia-northampton]
+      - date: 1932
+        text:
+          zh: "主要活动海域转至太平洋，母港圣佩德罗，其后改珍珠港。"
+          en: >-
+            Shifted her main operating area to the Pacific, homeported at San Pedro and
+            later at Pearl Harbor.
+        src: [danfs-northampton]
+  - id: early-war
+    title: { zh: "1941-12 至 1942-05：威克岛、马库斯、东京", en: "December 1941 to May 1942" }
+    range: { from: 1941, to: 1942 }
+    events:
+      - date: 1941-12-07
+        text:
+          zh: "珍珠港遇袭时正随哈尔西中将与企业号在海上，次日返珍珠港。"
+          en: >-
+            Was at sea with Admiral William Halsey in Enterprise during the attack,
+            returning to Pearl Harbor the next day.
+        src: [danfs-northampton]
+      - date: 1942-02-01
+        text:
+          zh: "与盐湖城号脱离编队炮击沃杰环礁，炸毁建筑与油料库，并击沉两艘日方船只。"
+          en: >-
+            Detached with Salt Lake City to bombard Wotje, demolishing buildings and fuel
+            dumps and sinking two Japanese ships.
+        src: [danfs-northampton]
+      - date: 1942-02-24
+        text:
+          zh: "炮击威克岛。日方岸炮还击猛烈，本舰与僚舰仍在该岛引起大火并在潟湖内击沉一艘挖泥船；撤离时日方水上飞机、岸基飞机与巡逻艇来袭，全部被击落或击退。"
+          en: >-
+            Bombarded Wake: despite serious counterfire the force started large fires and
+            sank a dredge in the lagoon, and the retiring ships beat off attacks by
+            seaplanes, land-based aircraft and patrol craft.
+        src: [danfs-northampton]
+      - date: 1942-03-04
+        text:
+          zh: "编队放飞飞机空袭马库斯岛，随后东返珍珠港。"
+          en: >-
+            The force launched a strike on Marcus, then turned east for Pearl Harbor.
+        src: [danfs-northampton]
+      - date: 1942-04-18
+        text:
+          zh: "参加对东京的「香格里拉」空袭，属企业号编队，与大黄蜂号编队会合。"
+          en: >-
+            Took part in the "Shangri-La" raid on Tokyo with the Enterprise force, which
+            had joined the Hornet force.
+        src: [danfs-northampton]
+      - date: 1942-05
+        text:
+          zh: "珊瑚海海战结束后才抵达西南太平洋，随后返珍珠港准备中途岛。"
+          en: >-
+            Reached the Southwest Pacific just after the Coral Sea battle, then returned
+            to Pearl Harbor to prepare for Midway.
+        src: [danfs-northampton]
+  - id: midway
+    title: { zh: "中途岛：TG 16.2 里的一艘", en: "Midway, one ship in TG 16.2" }
+    range: { from: 1942-05, to: 1942-06 }
+    events:
+      - date: 1942-05-28
+        text:
+          zh: "随 TF 16 出港赴中途岛，舰长 William Dwight Chandler 上校。"
+          en: >-
+            Sailed with TF 16 for Midway, Capt. William Dwight Chandler in command.
+        src: [navweaps-oob-midway, enterprise-war-diary-midway]
+      - date: 1942-06-04
+        text:
+          zh: "中途岛海战。本舰属 TG 16.2，金凯德少将的将旗在明尼阿波利斯号上，本舰的任务是屏护企业号；日机两波反击都打在 TG 17 上，本舰当天未受伤。"
+          en: >-
+            At Midway she was one of TG 16.2, whose commander Rear Admiral Kinkaid flew
+            his flag in Minneapolis, and her task was to screen Enterprise; both Japanese
+            counter-strikes fell on TG 17 and she was undamaged that day.
+        src: [danfs-northampton, enterprise-war-diary-midway, navweaps-oob-midway]
+      - date: 1942-06-05
+        text:
+          zh: "6 月 4 日与 5 日，美方航母连续放飞机群，击沉或彻底瘫痪日方四艘航母；本舰全程在企业号身边，未受损伤。"
+          en: >-
+            On 4 and 5 June the American carriers launched their aircraft to sink or
+            completely disable four Japanese carriers; Northampton stayed with Enterprise
+            throughout and was undamaged.
+        src: [danfs-northampton]
+      - date: 1942-06-06
+        text:
+          zh: "企业号战报把 TF 16 分成两组：本舰与文森斯号、彭萨科拉号、菲尔普斯号、艾尔温号在「ENTERPRISE group」。"
+          en: >-
+            The Enterprise war diary splits TF 16: Northampton, Vincennes, Pensacola,
+            Phelps and Aylwin formed the "ENTERPRISE group".
+        src: [enterprise-war-diary-midway]
+      - date: 1942-06-13
+        text:
+          zh: "随企业号无伤返抵珍珠港。"
+          en: >-
+            Returned undamaged to Pearl Harbor with her carrier.
+        src: [danfs-northampton]
+  - id: solomons
+    title: { zh: "瓜岛战役与塔萨法隆加", en: "The Solomons campaign and Tassafaronga" }
+    range: { from: 1942, to: 1942 }
+    events:
+      - date: 1942-08
+        text:
+          zh: "驶往西南太平洋参加瓜岛作战，在圣克里斯托巴尔岛东南巡逻。"
+          en: >-
+            Sailed for the Southwest Pacific to join the Guadalcanal operation and
+            patrolled southeast of San Cristobal.
+        src: [danfs-northampton]
+      - date: 1942-09-15
+        text:
+          zh: "所在编队遭潜艇攻击：黄蜂号被击沉、北卡罗来纳号受伤、奥布莱恩号中雷——后者距本舰左舷只有 800 码。"
+          en: >-
+            Her force was attacked by submarines: Wasp was sunk, North Carolina damaged,
+            and O'Brien torpedoed only 800 yards off Northampton's port beam.
+        src: [danfs-northampton]
+      - date: 1942-10-26
+        text:
+          zh: "圣克鲁斯海战。大黄蜂号被日机重创，本舰靠上去试图拖带，同时以高炮为其提供掩护；该舰最终由驱逐舰以鱼雷与炮火处置。"
+          en: >-
+            At Santa Cruz she went to the aid of the mortally damaged Hornet, firing
+            antiaircraft cover while attempting to take the carrier in tow; Hornet was
+            finally disposed of by destroyer torpedoes and gunfire.
+        src: [danfs-northampton]
+      - date: 1942-11-30
+        text:
+          zh: "编队（ONI 文中称 Task Force WILLIAM，司令 Wright 少将）在瓜岛北岸拦截日军驱逐舰输送队。前四艘重巡相继中雷退出，本舰与火奴鲁鲁号及 6 艘驱逐舰继续作战并多次命中。"
+          en: >-
+            The force - "Task Force WILLIAM" in ONI's narrative, under Rear Admiral Wright
+            - intercepted a Japanese destroyer-transport run off Guadalcanal. Four heavy
+            cruisers were torpedoed out of the line in succession; Northampton, Honolulu
+            and six destroyers kept up the action and scored many hits.
+        src: [oni-tassafaronga, danfs-northampton]
+      - date: 1942-11-30
+        text:
+          zh: "接近战斗尾声时被两条鱼雷命中左舷（navypedia 与 NavSource 指名亲潮号）：一条打在第 108 号肋骨水线处，一条打在第 98 号肋骨水线下 10 英尺，第 105 至 113 号肋骨之间的舷侧被炸开，主甲板与第二甲板随之撕裂。燃着的柴油泼满全舰，进水迅速，开始倾斜。"
+          en: >-
+            Near the end of the action two torpedoes hit her port side (navypedia and
+            NavSource name Oyashio): one at frame 108 at the waterline, one at frame 98
+            ten feet below, blowing out the side between frames 105 and 113 and tearing
+            away the main and second decks. Flaming diesel sprayed over the ship; she took
+            water rapidly and began to list.
+        src: [oni-tassafaronga, navypedia-northampton, navsource-northampton]
+      - date: 1942-12-01
+        text:
+          zh: "0240 横倾达 35 度，舰长 Kitts 与损管队弃舰；凌晨 3 时过后舰体横过来、翻覆、尾部下坐沉没。弗莱彻号与戴顿号一小时内完成搜救，救起 57 名军官与 716 名士兵。"
+          en: >-
+            At 0240, with the list at 35 degrees, Capt. Kitts and the salvage party
+            abandoned ship; just after 0300 she turned on her beam ends, rolled over and
+            sank stern first. Fletcher and Drayton completed the search within the hour,
+            rescuing all 57 officers and 716 men.
+        src: [oni-tassafaronga, danfs-northampton]
+      - date: 1942-12-01
+        text:
+          zh: "DANFS 对伤亡只给定性描述：「弃舰过程如此有序，人员损失出乎意料地轻」，不给数字。ONI 的 19 名军官与 398 名士兵是当晚四艘被击中巡洋舰的合计，不能拆到本舰名下，故本舰阵亡数仍缺。"
+          en: >-
+            DANFS gives only a qualitative verdict - the abandonment was so orderly that
+            loss of life was surprisingly light - and no figure. The 19 officers and 398
+            men in ONI are the total for all four crippled cruisers that night and cannot
+            be assigned to this ship, so her death toll remains unestablished.
+        src: [danfs-northampton, oni-tassafaronga]

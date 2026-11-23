@@ -1,0 +1,468 @@
+# ============================================================================
+# 舰艇正文 —— 利根号（重巡洋舰）
+#
+# 这一条的重点不在「打了什么」，而在两件事上：
+#   1. 舰尾全部让给航空，主炮四座全在舰艏 —— 这是本级的设计立意；
+#   2. 它没有沉在莱特湾。沉在莱特湾的是筑摩。
+#
+# 中途岛 4 号机那一段按 NHHC 的口径写：延误是事实，原因不明，
+# 而且「延误导致败北」的流行叙事已被 NHHC 明确推翻（见 intro 第 3 段）。
+# ============================================================================
+ship: tone
+updated: 2026-11-24
+
+intro:
+  lead:
+    zh: >-
+      利根是利根级重巡洋舰的首舰，1938 年服役。它最出名的特征是主炮全在前部——
+      四座双联 20 cm 炮塔集中舰艏，舰尾一门主炮都没有，整段后甲板让给水上侦察机作业。
+      它是日本海军为航空机动部队专门造的两艘「侦察巡洋舰」之一，整场战争基本跟着航母走。
+      1944 年 10 月莱特湾之后它没有沉，一直撑到 1945 年 7 月在吴港被炸坐底，
+      1948 年拆解完毕。
+    en: >-
+      Tone was the lead ship of her class of heavy cruisers, completed in 1938. Her
+      defining feature was an all-forward main battery: four twin 20 cm turrets grouped
+      on the forecastle with none aft, the whole quarterdeck given over to floatplane
+      operations. She and her sister were built specifically as long-range scouts for
+      the Japanese carrier fleet and spent most of the war with it. She did not sink at
+      Leyte in October 1944; she survived to be bombed out at Kure in July 1945 and was
+      broken up in 1948.
+
+  paragraphs:
+    - heading: 舰尾为什么一门主炮都没有
+      text:
+        zh: >-
+          利根级的设计动因写在船体上：1930 年代初友鹤号水雷艇翻覆事件与台风中
+          大批新造舰受损，迫使日本海军重做巡洋舰设计——主炮塔由五座减到四座并
+          集中到舰艏，机械装置相对原型后移。这样装甲带可以缩短、上部重量可以降低、
+          舰艏舰艉可以变轻，耐波性随之改善；腾出来的舰尾足以容纳 6 架水上侦察机
+          的航空作业区。代价是四座炮塔里有几座射界很差。设计编制是 6 架水侦、
+          2 座弹射器；另一份专题资料写明「设计上可载 8 架，实战中从未超过 5 架，
+          战争后期降到 4 架」。
+        en: >-
+          The class's logic is written into the hull. The capsizing of the torpedo boat
+          Tomozuru and the typhoon damage to a large number of new ships in the early
+          1930s forced a redesign: the main battery was cut from five turrets to four and
+          grouped at the bow, with machinery shifted aft relative to the prototype. That
+          shortened the armoured belt, reduced topweight and made the ends lighter, which
+          improved seaworthiness; the freed quarterdeck was large enough for an air group
+          of six floatplanes. The price was that some of the four forward turrets had very
+          poor firing arcs. Design complement was six floatplanes and two catapults; a
+          second specialist source states that although the ships were designed to carry
+          eight, they never carried more than five, reduced to four later in the war.
+      src: [navypedia-tone, combinedfleet-tone-class, pwe-tone-class]
+
+    - heading: 主炮是三年式 No.2，不是 No.1
+      text:
+        zh: >-
+          四座双联炮塔装的是 20 cm/50 三年式 No.2：实弹径 20.32 cm、初速 840 m/s、
+          AP 弹重 125.85 kg、射速 3 至 4 发/分、炮座型号 E3、配 8 米基线测距仪，
+          最大仰角 45 度时射程 29,400 米。这一级在建造中就换过主炮：据 NavWeaps，
+          船体与炮座在装甲甲板以上已经完成之后，主炮才由三联装 15.5 cm 改成
+          双联装 20 cm。所以「利根级曾以轻巡身份服役」不成立，只有「曾以轻巡身份开工」
+          成立。值得注意的是型号：本站另有一条三年式 No.1 的条目（20.0 cm、
+          初速 870 m/s，赤城与加贺用），与 No.2 不是同一门炮——两者的区别正是
+          NavWeaps 特意说明过的。
+        en: >-
+          The four twin turrets mounted the 20 cm/50 3rd Year Type No. 2: actual bore
+          20.32 cm, muzzle velocity 840 m/s, APC projectile 125.85 kg, 3 to 4 rounds per
+          minute, Model E3 mountings with 8 m rangefinders, and a maximum range of
+          29,400 m at 45 degrees. The class changed main battery during construction:
+          according to NavWeaps, the hull and barbettes had already been completed above
+          the armoured deck when the armament went from triple 15.5 cm turrets to twin
+          20 cm turrets. So the class was laid down as light cruisers but never served as
+          such. The model number matters: this site also carries the 3rd Year Type No. 1
+          (20.0 cm, 870 m/s, used by Akagi and Kaga), which is a different gun.
+      src: [navweaps-20cm-3ns-no2, navypedia-tone]
+
+    - heading: 中途岛的 4 号机：延误是事实，原因不是
+      text:
+        zh: >-
+          1942 年 6 月 4 日的搜索里，利根 4 号机比同舰 3 号线晚起飞。延误这件事
+          有材料互证：日方战史《Midway Operations》写「利根、筑摩的出发都大幅延迟」，
+          ONI 译出的逐机时刻表给利根 3 号线 0142、4 号线 0200（东京时），相差 18 分钟，
+          另有文献作 30 分钟。原因是另一回事——NHHC 的原话是 launched late,
+          due to reasons that still remain unclear。流传最广的说法是弹射器故障，
+          没有一手材料支撑。同样重要的是 NHHC 的反证：4 号机若按时起飞并按
+          规定航线飞，反而会错过美航母；真正「该发现而没发现」的是准点起飞的
+          筑摩 1 号机，它按 NHHC 的推算本应在约 0615 看到第 17 特混舰队。
+        en: >-
+          In the search of 4 June 1942, Tone's No. 4 scout launched later than the same
+          ship's No. 3. The delay itself is well attested: Japanese Monograph No. 93
+          records that "the departure of the TONE, as well as the CHIKUMA was greatly
+          delayed," and the ONI translation of the Japanese report gives 0142 for the
+          No. 3 line and 0200 for the No. 4 line in Tokyo time, eighteen minutes apart;
+          some literature gives thirty minutes. The cause is a separate question: NHHC's
+          wording is that she "launched late, due to reasons that still remain unclear."
+          A failed catapult is the most commonly reported explanation and has no primary
+          support. Equally important is NHHC's counter-argument: had No. 4 launched on
+          time and flown the prescribed route, she would have missed the U.S. carriers,
+          and the scout that should have sighted TF-17 was Chikuma's No. 1, which was on
+          time and, by NHHC's reckoning, should have seen it at about 0615.
+      src: [nhhc-h006-2-isr-midway, oni-japanese-story-midway, jm93-midway-operations]
+
+    - heading: 只有一艘沉在莱特湾
+      text:
+        zh: >-
+          1944 年 10 月 25 日在萨马岛外海沉没的是筑摩，不是利根。利根当天在栗田部队
+          序列内，向约翰斯顿号与甘比尔湾号射击，全天打掉 408 发主炮弹；撤退途中
+          1249 被俯冲轰炸机命中右舷后部，舵机失灵，航速一度只能维持 15 节。
+          它活过了莱特湾：1944 年 11 月 17 日入舞鹤，21 号电探换成 22 号、25 mm 机铳
+          增至 62 门；1945 年 1 月 1 日改为练习舰；7 月 24 日被第 38 特混舰队舰载机
+          命中 3 发，7 月 28 日左舷再中 2 发（其中 1 发 1000 磅）、左倾 21 度，
+          7 月 29 日在浅水坐沉，11 月 20 日除籍；1947 年 4 月 7 日播磨造船开始拆除
+          上层建筑与炮塔，1948 年 5 月 4 日舰体浮起，9 月 30 日拆解完毕。
+        en: >-
+          The ship sunk off Samar on 25 October 1944 was Chikuma, not Tone. Tone was in
+          Kurita's force that day, firing at Johnston and at Gambier Bay and expending
+          408 main battery rounds in all; while retiring at 1249 she took one hit aft to
+          starboard from dive-bombers, which disabled her steering and limited her to
+          15 knots for a time. She survived Leyte: to Maizuru on 17 November 1944 for a
+          refit that replaced her Type 21 radar with a Type 22 and brought her 25 mm
+          battery to 62 barrels; reclassified as a training vessel on 1 January 1945;
+          hit three times by TF 38 aircraft on 24 July 1945 and twice more to port,
+          including one 1,000-lb bomb, on 28 July, developing a 21-degree list; she
+          settled on the bottom in shallow water on 29 July, was removed from the Navy
+          List on 20 November, had her superstructure and turrets cut down by Harima
+          Shipyard from 7 April 1947, was refloated on 4 May 1948 and was completely
+          scrapped by 30 September 1948.
+      src: [combinedfleet-tone-trom, navypedia-tone]
+
+history:
+  - id: build
+    title: { zh: 建造与开战, en: Construction and the opening of the war }
+    range: { from: 1934-12, to: 1941-12 }
+    lead:
+      zh: >-
+        本级只造两艘。利根比筑摩早五个月开工、早一年半服役，
+        战争打响时两舰同属第八战队，同在单冠湾的机动部队序列里。
+    events:
+      - date: 1934-12-01
+        text:
+          zh: >-
+            在三菱长崎造船所起工，船厂序列号 600。
+          en: >-
+            Laid down at Mitsubishi's Nagasaki shipyard, yard number 600.
+        src: [combinedfleet-tone-trom, navypedia-tone]
+
+      - date: 1937-11-21
+        text:
+          zh: >-
+            下水并命名「利根」，同日任命舣装员长。
+          en: >-
+            Launched and named Tone; a chief equipping officer was appointed the same day.
+        src: [combinedfleet-tone-trom]
+
+      - date: 1938-11-20
+        text:
+          zh: >-
+            竣工，编入横须贺镇守府籍。
+          en: >-
+            Completed and registered in the Imperial Japanese Navy, attached to Yokosuka
+            Naval District.
+        src: [combinedfleet-tone-trom, navypedia-tone]
+
+      - date: 1941-11-26
+        text:
+          zh: >-
+            作为第八战队一员，随南云忠一的机动部队自择捉岛单冠湾出击，
+            同行的还有第三战队第一小队的比叡与雾岛。
+          en: >-
+            Sortied from Hitokappu Bay in the Kuriles with Nagumo's carrier striking
+            force as part of CruDiv 8, accompanied by BatDiv 3's Hiei and Kirishima.
+        src: [combinedfleet-tone-trom]
+
+      - date: 1941-12-07
+        text:
+          zh: >-
+            0500 与筑摩各弹射 1 架零式水侦做攻击前侦察：利根机飞拉海纳锚地，
+            未发现美舰；筑摩机飞珍珠港本港。0630 两舰再各弹射 1 架九五式水侦，
+            担任机动部队以南的哨戒。约 0730，那架零式水侦在返航着水时因海况恶劣
+            翻覆损失。
+          en: >-
+            At 0500 Tone and Chikuma each catapulted one Type 0 floatplane for
+            pre-strike reconnaissance; Tone's aircraft reconnoitred Lahaina Roads and
+            found no American fleet units there, while Chikuma's went to Pearl Harbor
+            itself. At 0630 both ships launched a short-range Type 95 floatplane to
+            picket south of the striking force. At about 0730 Tone's Type 0 capsized and
+            was lost while attempting to land in heavy seas.
+        src: [combinedfleet-tone-trom]
+
+  - id: carrier-war
+    title: { zh: 机动部队的侦察舰, en: Scout for the carrier force }
+    range: { from: 1942-03, to: 1942-08 }
+    lead:
+      zh: >-
+        1942 年上半年它几乎每个月都在给航母当眼睛。这一年它最出名的一次出动
+        是中途岛，而那次出动的结论至今还在被重写。
+    events:
+      - date: 1942-03-01
+        text:
+          zh: >-
+            0700 与筑摩各弹射 1 架零式水侦搜索圣诞岛附近及以西海域。当日第八战队
+            参与追击美军驱逐舰埃兹尔号（EDSALL），1731 该舰尾部下沉于 13-45S、
+            106-47E；全战队共耗 844 发 8 英寸弹与 62 发 5 英寸弹，比叡与重巡在
+            1655 停火时未获一次直接命中。
+          en: >-
+            At 0700 Tone and Chikuma each launched one Type 0 floatplane to search the
+            waters around Christmas Island and to the west. That day CruDiv 8 took part
+            in running down the destroyer USS Edsall, which sank by the stern at
+            13-45S, 106-47E at 1731; the division expended 844 8-inch and 62 5-inch
+            rounds in all, Hiei and the cruisers having checked fire at 1655 without a
+            single direct hit.
+        src: [combinedfleet-tone-trom]
+
+      - date: 1942-04-05
+        text:
+          zh: >-
+            1 架九四式水侦（E7K）发现英军东方舰队的康沃尔号与多塞特郡号重巡洋舰——
+            两舰当时在没有空中掩护的状态下航行。当日这两艘舰被机动部队的舰载机击沉。
+          en: >-
+            A Type 94 (E7K) floatplane from Tone located the British Eastern Fleet's
+            cruisers Cornwall and Dorsetshire at sea, without air cover. Both were sunk
+            by the carrier force's aircraft that day.
+        src: [combinedfleet-tone-trom, combinedfleet-cornwall-dorsetshire]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            0435 至 0500 之间与筑摩各弹射 2 架零式水侦，自北北东到南做 300 海里
+            远程搜索——这是机动部队当天唯一的水侦搜索力量。
+          en: >-
+            Between 0435 and 0500 Tone and Chikuma each launched two Type 0 floatplanes
+            to search out 300 miles from north-northeast through south, the only
+            floatplane search the striking force flew that day.
+        src: [combinedfleet-tone-trom]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            0728（当地时间）4 号机发现约 10 艘敌舰，位置在中途岛方位 10 度、
+            距离 240 海里，航向 150 度、航速 20 节。首报没有认出其中的航母，
+            报文 0500（东京时）才到南云手上；「后面似乎跟着一艘航母」的补充报告
+            要到 0830（当地）才发出。日方战史与 ONI 译件对这套报文的措辞不同，
+            时刻链一致。
+          en: >-
+            At 0728 local time No. 4 reported roughly ten enemy ships on bearing 10
+            degrees, 240 miles from Midway, course 150, speed 20 knots. The first report
+            did not identify the carriers in the group and did not reach Nagumo until
+            0500 Tokyo time; the supplementary report that the enemy was accompanied by
+            what appeared to be a carrier followed only at about 0830 local. The Japanese
+            monograph and the ONI translation word these signals differently but agree
+            on the sequence of times.
+        src: [combinedfleet-tone-trom, oni-japanese-story-midway, jm93-midway-operations]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            当日遭美军舰载机攻击，未受损；损失 1 架九五式水侦及机组。
+          en: >-
+            Attacked by American carrier aircraft that day without damage; lost one
+            Type 95 floatplane with its crew.
+        src: [combinedfleet-tone-trom]
+
+      - date: 1942-08-24
+        text:
+          zh: >-
+            1100 第二次所罗门海战，本舰与筑摩合计放出 7 架水侦做临近中午的搜索；
+            1400 筑摩 2 号机发现美舰队，但被美军战斗机击落，报文没有送到攻击队
+            指挥官手上。
+          en: >-
+            At 1100 in the Battle of the Eastern Solomons, Tone and Chikuma together
+            launched seven floatplanes on a late-morning search; at 1400 Chikuma's No. 2
+            found the American task force but was shot down by fighters, and its report
+            never reached the leader of the Japanese striking group.
+        src: [combinedfleet-tone-trom]
+
+  - id: refits
+    title: { zh: 改装、运输与印度洋, en: Refits, transport runs and the Indian Ocean }
+    range: { from: 1943-02, to: 1944-07 }
+    lead:
+      zh: >-
+        1943 年起它从「航母的眼睛」变成了运输船与通商破坏舰。
+        这一段最该记住的不是战果，是 1944 年 3 月那批俘虏的下场。
+    events:
+      - date: 1943-02-21
+        text:
+          zh: >-
+            入舞鹤改装：加装 2 座双联 25 mm 机铳，装 21 号对空电探。
+            这是本舰第一次有雷达。
+          en: >-
+            Arrived at Maizuru for a refit: two additional 25 mm twin mounts were fitted
+            and a Type 21 air-search radar installed, the ship's first radar.
+        src: [combinedfleet-tone-trom]
+
+      - date: 1943-05-17
+        text:
+          zh: >-
+            与筑摩一起护送武藏号自特鲁克返回横须贺。武藏载着山本五十六的骨灰
+            回东京举行国葬。
+          en: >-
+            With Chikuma, escorted Musashi from Truk to Yokosuka; Musashi was carrying
+            Admiral Yamamoto's ashes to Tokyo for a state funeral.
+        src: [combinedfleet-tone-trom]
+
+      - date: 1943-07-19
+        text:
+          zh: >-
+            与筑摩、最上、水上机母舰日进及轻巡大淀、阿贺野一起自特鲁克出发，
+            执行往拉包尔的陆军运输任务，07-21 抵达并卸载。
+          en: >-
+            Departed Truk with Chikuma, Mogami, the seaplane tender Nisshin and the
+            light cruisers Oyodo and Agano on a troop transport run to Rabaul, arriving
+            and disembarking troops on 21 July.
+        src: [combinedfleet-tone-trom]
+
+      - date: 1943-11-06
+        text:
+          zh: >-
+            入吴海军工厂改装：前部 25 mm 双联座换成 4 座三联座，全舰 25 mm 机铳
+            达 20 门（4 座三联加 4 座双联）。
+          en: >-
+            Entered Kure Navy Yard for a refit: the forward 25 mm twin mounts were
+            replaced by four triple mounts, bringing the ship's 25 mm battery to 20
+            barrels in four triple and four twin mounts.
+        src: [combinedfleet-tone-trom]
+
+      - date: 1944-03-09
+        text:
+          zh: >-
+            在印度洋通商破坏作战中击沉英国货船贝哈尔号（BEHAR），收容 108 名俘虏，
+            其中 4 人死亡。03-18 自巴达维亚出港后，在青叶号舰上，第十六战队司令
+            左近允尚正少将下令将余下 72 名俘虏斩首。
+          en: >-
+            Sank the British freighter Behar during a commerce-raiding cruise in the
+            Indian Ocean and took 108 captives aboard, four of whom died. After
+            departing Batavia on 18 March, Rear Admiral Sakonjo Naomasa, commander of
+            CruDiv 16, ordered the remaining 72 captives beheaded aboard Aoba.
+        src: [combinedfleet-tone-trom]
+
+      - date: 1944-06-26
+        text:
+          zh: >-
+            至 07-08 在吴入坞：加 4 座三联 25 mm，全舰 25 mm 达 57 门
+            （8 座三联、4 座双联、25 座单装）；为两座 22 号对水电探换新天线，
+            并装 13 号对空电探。
+          en: >-
+            In drydock at Kure from 26 June to 8 July: four 25 mm triple mounts added,
+            bringing the battery to 57 barrels (8 triple, 4 twin, 25 single); new
+            antennas fitted for the two Type 22 surface-search radars and a Type 13
+            air-search radar installed.
+        src: [combinedfleet-tone-trom]
+
+  - id: leyte-and-end
+    title: { zh: 莱特湾与吴港的最后一年, en: Leyte Gulf and the last year at Kure }
+    range: { from: 1944-10, to: 1945-07 }
+    lead:
+      zh: >-
+        它参加了史上规模最大的一场海战，然后从这场海战里活了下来。
+        剩下九个月它停在吴湾，等美军舰载机一次次回来。
+    events:
+      - date: 1944-10-22
+        text:
+          zh: >-
+            随栗田健一的第一游击部队自文莱出击，参加「捷一号」作战；
+            利根编在 A 部队第二小队。
+          en: >-
+            Sortied from Brunei with Kurita's First Mobile Striking Force for Operation
+            Sho-1, Tone being assigned to Force "A"'s Second Section.
+        src: [combinedfleet-tone-trom]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            锡布延海。1024 之后与筑摩各放出最后 2 架水侦，飞往民都洛岛圣何塞。
+            1445 第四次空袭后，利根舰长主动联络铃木义尾少将，建议把全队集中到
+            重创的武藏号周围加强防空；1507 利根被派去掩护武藏。1517 遭俯冲轰炸机
+            近失 2 发，1518 被小口径炸弹命中引起小火。
+          en: >-
+            In the Sibuyan Sea. After 1024 Tone and Chikuma each launched their two
+            remaining floatplanes, bound for San Jose on Mindoro. After the fourth
+            attack, at 1445, Tone's commanding officer contacted Rear Admiral Suzuki
+            Yoshio suggesting the whole unit concentrate around the badly damaged
+            Musashi to thicken her anti-aircraft fire; at 1507 Suzuki detached Tone to
+            defend Musashi. At 1517 Tone took two near misses from dive-bombers and at
+            1518 a small-calibre bomb hit that started a minor fire.
+        src: [combinedfleet-tone-trom]
+
+      - date: 1944-10-25
+        text:
+          zh: >-
+            萨马岛海战。0713 之后向正在攻击的约翰斯顿号射击 18 发 8 英寸弹；
+            0818 至 0832 向一艘「突击者级」护航航母（实为甘比尔湾号）射击 90 发
+            主炮弹并观测到多次命中；全天共打出 408 发主炮弹。0853 舰桥目睹
+            筑摩被一条鱼雷打瘫。
+          en: >-
+            The battle off Samar. After 0713 Tone fired 18 8-inch rounds at the
+            attacking Johnston; between 0818 and 0832 she engaged a "Ranger-class"
+            escort carrier, actually Gambier Bay, with 90 main-calibre rounds and
+            observed several hits; she fired 408 main battery rounds in all that day.
+            At 0853 her lookouts watched a torpedo cripple Chikuma.
+        src: [combinedfleet-tone-trom]
+
+      - date: 1944-10-25
+        text:
+          zh: >-
+            1249 撤退途中遭 4 架俯冲轰炸机攻击，右舷后部被命中 1 发，舰体开了大洞、
+            舵机失灵，航速一度被限制在 15 节。1330 改用手动操舵后再度被攻击，
+            一枚「250 kg」炸弹哑弹命中；1341 恢复到 30 节。
+          en: >-
+            At 1249, while retiring, Tone was attacked by four dive-bombers and took one
+            hit aft to starboard that opened a large hole in the hull and disabled her
+            steering, temporarily limiting her to 15 knots. At 1330, now under manual
+            steering, she was attacked again and hit by a "250-kg" bomb that proved to be
+            a dud; by 1341 she could make 30 knots again.
+        src: [combinedfleet-tone-trom]
+
+      - date: 1944-11-17
+        text:
+          zh: >-
+            入舞鹤入坞：后部加 4 座三联 25 mm、撤掉 7 座单装，全舰 25 mm 达 62 门
+            （12 座三联、4 座双联、18 座单装）；21 号电探换成 22 号。
+            navypedia 把撤 21 号记在 1945 年 2 月，与 TROM 的 11 月 17 日差一个季度，
+            两说并列。
+          en: >-
+            Arrived at Maizuru and docked: four 25 mm triple mounts added aft, seven
+            single mounts removed, bringing the battery to 62 barrels (12 triple, 4 twin,
+            18 single); the Type 21 radar was replaced by a Type 22. Navypedia dates the
+            removal of the Type 21 to February 1945, a quarter apart from the TROM's
+            17 November; both are recorded here.
+        src: [combinedfleet-tone-trom, navypedia-tone]
+
+      - date: 1945-03-19
+        text:
+          zh: >-
+            米切尔中将的第 58 特混舰队空袭吴港。停在吴湾中央的利根被 1 发直击弹
+            命中，3 号炮塔转向卡死，另有若干近失弹。
+          en: >-
+            Vice Admiral Mitscher's Task Force 58 raided Kure. Tone, caught in the
+            middle of Kure Bay, took one direct hit that jammed her No. 3 turret in
+            train, plus several near misses.
+        src: [combinedfleet-tone-trom]
+
+      - date: 1945-07-24
+        text:
+          zh: >-
+            被麦凯恩中将第 38 特混舰队从香格里拉号、科彭斯号与蒙特雷号起飞的
+            舰载机攻击，命中 3 发直击弹，另有若干近失弹。
+          en: >-
+            Attacked by aircraft of Vice Admiral McCain's TF 38 from Shangri-La, Cowpens
+            and Monterey; Tone received three direct hits and several near misses.
+        src: [combinedfleet-tone-trom]
+
+      - date: 1945-07-28
+        text:
+          zh: >-
+            1000 之后遭巴丹号、提康德罗加号与蒙特雷号舰载机攻击。防空炮火在
+            第一批炸弹命中后迅速减弱；利根左舷被命中 2 发（其中 1 发 1000 磅落于
+            后部），另有 6 发近失。近失弹造成严重进水，左倾达 21 度；岸上损管队
+            赶到后用反向注水把倾斜压下去，但进水止不住。次日 07-29 在浅水坐沉。
+          en: >-
+            After 1000 Tone was attacked by aircraft from Bataan, Ticonderoga and
+            Monterey. Her flak, heavy at first, fell away quickly after the first bomb
+            hits; she took two direct hits to port, one of them a 1,000-lb bomb aft, and
+            six near misses. The near misses caused serious flooding and a 21-degree
+            list to port; damage control parties from ashore counter-flooded to reduce
+            the list, but the flooding could not be stopped. She settled on the bottom
+            in shallow water the next day, 29 July.
+        src: [combinedfleet-tone-trom, navypedia-tone]

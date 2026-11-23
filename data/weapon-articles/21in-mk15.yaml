@@ -1,0 +1,319 @@
+# ============================================================================
+# 武器正文 —— 21" (53.3 cm) Mark 15（美国）
+#
+# 本篇的关键不是鱼雷本身的参数，是「谁有鱼雷管、谁没有」这条分界线。
+# 中途岛编成的七艘重巡里：
+#   彭萨科拉级   建成 2 座三联 6 管 → navypedia「mid-1930s, both: - 2 x 3 - 533 TT」
+#   北安普敦级   建成 2 座三联 6 管 → navypedia「1931, all: - 2 x 3 - 533 TT」
+#   新奥尔良级   从未装（三份逐项枚举的武备清单都没有这一项）
+#   波特兰级     从未装，且有明文否定句「differed from predecessors by absence of TTs」
+# 也就是说到 1942 年 6 月，七艘重巡的鱼雷管数都是 0。
+# 真正在这一天带着 Mark 15 的是亚特兰大号（CL-51），2 座四联 8 管。
+#
+# 型号归属的唯一依据是 navweaps 鱼雷页 Mark 15 条下的
+#   "Ship Class Used On: Destroyers and Atlanta (CL-51) Class Cruisers"
+# navypedia、DANFS、NavSource 三处都只写「21" TT」，不给 Mark 号。
+#
+# 两处必须并列不裁决：
+#  ① 重量/长度/装药：Mod 0 与 Mod 3 差得很大（1,559 vs 1,742 kg；494 vs 801 lbs TNT），
+#     本站两个 Mod 都写，不取中间值。
+#  ② 射程表里 Mod 0 的 10,000 码档，navweaps 原文印的是「9.150 m」，
+#     与同栏其他换算不同（应作 9,150）。照录原句并在中文里注明这是原文排印。
+# ============================================================================
+weapon: 21in-mk15
+updated: 2026-11-24
+
+intro:
+  lead:
+    zh: >-
+      21 英寸（53.3 厘米）Mark 15 是美国海军二战期间标准的驱逐舰鱼雷，
+      1934 年设计、1935 年服役，取代更早的 Mark 11 与 Mark 12，
+      1940 到 1944 年间约生产 9,700 条。
+      它在巡洋舰上的唯一用户是亚特兰大级（CL-51）——
+      而这一条本身就是本站最需要写清的分界线：中途岛编成里的七艘重巡，
+      到 1942 年 6 月鱼雷管数全部是 0，两艘早期重巡的鱼雷管早在 1930 年代就拆掉了，
+      新奥尔良级与波特兰级则从来没有装过。
+    en: >-
+      The 21" (53.3 cm) Mark 15 was the standard US Navy destroyer torpedo of the Second
+      World War, designed in 1934 and in service from 1935, replacing the earlier Mark 11
+      and Mark 12, with about 9,700 produced between 1940 and 1944. Its only cruiser user
+      was the Atlanta class (CL-51) - and that fact is itself the dividing line this
+      article has to draw clearly: by June 1942 all seven heavy cruisers at Midway had
+      zero torpedo tubes. The two early classes had theirs removed in the 1930s; the
+      New Orleans and Portland classes never carried any.
+
+  paragraphs:
+    - heading: 一条标准型，却有两个差得很远的 Mod
+      text:
+        zh: >-
+          navweaps 把这一型的两个主要 Mod 分开列，两者的差别不是小数。
+          Mod 0：重 3,438 磅（1,559 公斤），全长 22 英尺 7 英寸（6.883 米），
+          装药 494 磅（224 公斤）TNT，三档射程/航速为
+          6,000 码／45 节、10,000 码／33.5 节、15,000 码／26.5 节。
+          Mod 3：重 3,841 磅（1,742 公斤），全长 24 英尺 0 英寸（7.315 米），
+          装药 801 磅（363 公斤）TNT 或 823 磅（373 公斤）HBX，
+          三档为 4,500 码／45 节、9,000 码／33.5 节、14,000 码／26.5 节。
+          也就是说 Mod 3 更重、更长、装药多了六成，但同一航速下的射程反而短了
+          1,000 到 1,500 码。这两个 Mod 是取舍的两端，本站两个都写，不取中间值、
+          也不把 Mod 3 的数当作「Mark 15 的性能」。
+          动力同为湿式加热蒸汽涡轮（Wet-Heater steam turbine），
+          陀螺仪同为 Mark 12 Mod 3。
+          一处排印要说明：navweaps 原表里 Mod 0 的 10,000 码档把公制写成
+          「9.150 m」，与同表其他换算的写法（千位用逗号）不一致；
+          本站照录原句，按 9,150 米理解，不另作改写。
+        en: >-
+          NavWeaps lists the two principal mods separately, and the gap between them is not
+          marginal. Mod 0: 3,438 lbs (1,559 kg), 22 ft 7 in (6.883 m) overall, 494 lbs
+          (224 kg) of TNT, with range/speed settings of 6,000 yards at 45 knots, 10,000 at
+          33.5 and 15,000 at 26.5. Mod 3: 3,841 lbs (1,742 kg), 24 ft 0 in (7.315 m),
+          801 lbs (363 kg) of TNT or 823 lbs (373 kg) of HBX, at 4,500 yards and 45 knots,
+          9,000 at 33.5 and 14,000 at 26.5. Mod 3 is therefore heavier, longer and carries
+          some sixty per cent more explosive, yet at the same speed settings its range is
+          1,000 to 1,500 yards shorter. The two mods are two ends of one trade; both are
+          recorded here, neither averaged, and Mod 3's figures are not treated as "the
+          Mark 15's performance". Both run on a wet-heater steam turbine and both use the
+          Mark 12 Mod 3 gyro. One typographical point: in the NavWeaps table the 10,000 yard
+          setting for Mod 0 gives the metric figure as "9.150 m", unlike the comma-thousands
+          form used elsewhere in the same table; it is quoted as printed and read as 9,150
+          metres, with no rewriting.
+      src: [navweaps-us-torpedoes]
+
+    - heading: 谁有鱼雷管：七艘重巡的四个答案
+      text:
+        zh: >-
+          中途岛那天的七艘重巡，按鱼雷管这件事要分成四组回答，
+          而四组的答案没有一组是「有」。
+          彭萨科拉级（CA-24、CA-25）：建成时 2 座三联 6 管，
+          navypedia 改装表写「mid-1930s, both: - 2 x 3 - 533 TT」，1930 年代中期全拆。
+          北安普敦级（CA-26）：建成时 2 座三联 6 管，
+          navypedia 改装表写「1931, all: - 2 x 3 - 533 TT」，1931 年全拆；
+          NavSource 一张 1930 年代初照片的图注写「prior to the removal of her
+          torpedo tubes」，是这条拆除的旁证。
+          新奥尔良级（CA-32/34/36）：从未装。依据是三条独立的逐项枚举式武备清单
+          都不含鱼雷管 —— navypedia 的 Armament 行、NavSource 的武备行、DANFS 的题头行。
+          波特兰级（CA-33）：从未装，且有明文否定句：
+          navypedia「Portland class differed from predecessors by absence of TTs」。
+          所以「美国重巡有鱼雷管」这句话，如果不带年份和舰级，就是错的。
+        en: >-
+          The seven heavy cruisers at Midway divide into four answers on torpedo tubes, and
+          none of the four is "yes". Pensacola class (CA-24, CA-28): two triple tubes for
+          six tubes as built, removed in the mid-1930s - navypedia's modernisation list
+          reads "mid-1930s, both: - 2 x 3 - 533 TT". Northampton class (CA-26): two triples
+          as built, "1931, all: - 2 x 3 - 533 TT", all removed in 1931, with a NavSource
+          caption on an early-1930s photograph reading "prior to the removal of her torpedo
+          tubes" as corroboration. New Orleans class (CA-32/34/36): never fitted, on the
+          evidence of three independent itemised armament lists - navypedia's Armament line,
+          NavSource's armament line and the DANFS data line - none of which contains torpedo
+          tubes. Portland class (CA-33): never fitted, with an explicit negative sentence:
+          "Portland class differed from predecessors by absence of TTs". So "US heavy
+          cruisers carried torpedo tubes" is wrong unless it carries a year and a class.
+      src: [navypedia-pensacola, navypedia-northampton, navypedia-neworleans, navypedia-portland, navsource-northampton]
+
+    - heading: 真正带着它的是亚特兰大号：2 座四联，8 管
+      text:
+        zh: >-
+          同一编成里的亚特兰大号（CL-51）是轻巡，反而是七艘重巡之外唯一带鱼雷管的
+          巡洋舰。座数与管数四源一致：navypedia「2 x 4 - 533 TT」、
+          DANFS 题头「8 21" tt.」、NavSource「8 x 21" tt.」，加上 navweaps 鱼雷页
+          把型号钉死为 Mark 15。8 是管数，2 是座数 —— 这两个数不能互换。
+          型号这一层只有 navweaps 给：Mark 15 条下的「Ship Class Used On」
+          一栏写「Destroyers and Atlanta (CL-51) Class Cruisers」。
+          navypedia、DANFS 与 NavSource 三处都只写「21" TT」，不给 Mark 号，
+          所以没有这一页就无法知道本级装的是哪一型鱼雷。
+          navypedia 另记本级最后三艘（CL-119–121）没有鱼雷管 ——
+          这说的是战后批次的改进型，与 1942 年的 CL-51 无关。
+        en: >-
+          Atlanta (CL-51) in the same screen was a light cruiser and yet the only cruiser
+          outside the seven heavy ones to carry torpedo tubes. The counts agree across four
+          sources: navypedia "2 x 4 - 533 TT", the DANFS data line "8 21" tt.", NavSource
+          "8 x 21" tt.", and the NavWeaps torpedo page fixing the mark as the Mark 15. The 8
+          is tubes, the 2 is mountings, and the two cannot be swapped. Only NavWeaps names
+          the mark, in the Mark 15 entry's "Ship Class Used On" line: "Destroyers and
+          Atlanta (CL-51) Class Cruisers". Navypedia, DANFS and NavSource all write only
+          "21" TT" without a mark, so without that page the class's torpedo cannot be
+          identified. Navypedia separately records that the last three ships (CL-119 to 121)
+          had no tubes - that is the post-war batch, not CL-51 in 1942.
+      src: [navweaps-us-torpedoes, navypedia-atlanta, danfs-atlanta, navsource-atlanta]
+
+    - heading: 一条被留作拆船的鱼雷，与 1942 年 11 月 13 日的那一夜
+      text:
+        zh: >-
+          亚特兰大号在 1942 年 11 月 13 日的夜战里，鱼雷管是真实用上了的。
+          ONI 的战斗叙事记：当第一发炮弹命中、「Capt. S. P. Jenkins of the Atlanta
+          rushed to the port side to get off torpedoes」（舰长冲向左侧去发射鱼雷）。
+          同一份叙事把当夜的命中账分得很清：日舰轻巡的 5.5 英寸 13 发、
+          若干 3 英寸，日舰驱逐舰的 5 英寸 12 发，随后是旧金山号的
+          「19 hits ... with 8-inch armor-piercing ammunition」。
+          这三个数字的统计范围不同，不能相加。
+          本舰最终由本舰人员爆破处置：一名爆破组由 Jenkins 舰长带领，
+          在柴油机舱设了炸药；舰员由图拉吉的 Higgins 艇接下，
+          此后一直留有巡逻艇在旁，直到她于当日 20:15 沉没。
+          ONI 另把本舰列为 CLAA（防空巡洋舰），而它的舷号 CL-51 从未改过 ——
+          前者是职能分类，后者是舷号序列，两者不矛盾。
+        en: >-
+          Atlanta's torpedo tubes were actually used in the night action of 13 November
+          1942. The ONI combat narrative records that as the first shell struck, "Capt.
+          S. P. Jenkins of the Atlanta rushed to the port side to get off torpedoes". The
+          same narrative separates the night's hit accounting carefully: thirteen 5.5-inch
+          and some 3-inch from the Japanese light cruiser, twelve 5-inch from the Japanese
+          destroyers, then San Francisco's "19 hits ... with 8-inch armor-piercing
+          ammunition". The three figures cover different things and cannot be added. The
+          ship was finally disposed of by her own crew: a demolition party headed by Capt.
+          Jenkins set a charge in the Diesel engine room, the crew was taken off by Higgins
+          boats from Tulagi, and a patrol was maintained around her until she sank at 2015.
+          ONI also classifies her as a CLAA (anti-aircraft cruiser) although her hull number
+          CL-51 never changed; the former is a functional classification and the latter a
+          hull series, and they do not conflict.
+      src: [oni-guadalcanal, navypedia-atlanta, danfs-atlanta]
+
+history:
+  - id: design
+    title: { zh: 取代 Mark 11 与 Mark 12 的 1934 年型, en: The 1934 design that replaced Marks 11 and 12 }
+    range: { from: 1934, to: 1940 }
+    lead:
+      zh: >-
+        这一型是作为 Mark 11 与 Mark 12 的替代品设计的，1934 年定型、1935 年服役，
+        此后一直是美军 21 英寸鱼雷管的标准弹。
+      en: >-
+        The Mark 15 was developed as a replacement for the Mark 10's successors, the
+        Mark 11 and Mark 12, designed in 1934 and in service from 1935, and it remained the
+        standard round for US 21-inch torpedo tubes thereafter.
+    events:
+      - date: 1934
+        text:
+          zh: >-
+            navweaps 记的设计年份为 1934。同页对这一型的定位是：
+            「二战期间标准的驱逐舰武器，取代了更早的 Mark 11 与 Mark 12」。
+            这两型在本站没有单独条目，故只按 navweaps 的这句记载引用，不补充其参数。
+          en: >-
+            NavWeaps dates the design to 1934. Its positioning on the same page is: the
+            standard destroyer weapon of World War II, replacing the earlier Mark 11 and
+            Mark 12. Neither of those two has its own entry on this site, so only this one
+            sentence from NavWeaps is cited, without adding their particulars.
+        src: [navweaps-us-torpedoes]
+
+      - date: 1935
+        text:
+          zh: >-
+            进入服役。陀螺仪为 Mark 12 Mod 3，动力为湿式加热蒸汽涡轮。
+            navweaps 明确说这一型在美军驱逐舰带 21 英寸鱼雷管的整个时期一直在役；
+            1940 到 1944 年间约生产 9,700 条。
+          en: >-
+            Entered service. The gyro was the Mark 12 Mod 3 and the powerplant a wet-heater
+            steam turbine. NavWeaps states that it remained in service as long as US
+            destroyers carried 21" torpedo tubes, and that about 9,700 were produced between
+            1940 and 1944.
+        src: [navweaps-us-torpedoes]
+
+      - date: 1940
+        text:
+          zh: >-
+            量产期的起点。同页另记这一型的一个固有特征：它是蒸汽鱼雷，
+            所以航迹可见 —— 这一点 navweaps 在本页上只对电动鱼雷
+            （如 Mark 18「trackless」）作了对照说明，没有对 Mark 15 单列评价。
+            本站不据此给 Mark 15 加任何「隐蔽性差」的判断。
+          en: >-
+            The start of the production run. The same page records one inherent trait: this
+            is a steam torpedo, so its wake is visible - though NavWeaps makes that contrast
+            only in describing electric torpedoes such as the "trackless" Mark 18, and
+            offers no separate verdict on the Mark 15. This article draws no "poor
+            concealment" conclusion about the Mark 15 from it.
+        src: [navweaps-us-torpedoes]
+
+  - id: cruisers
+    title: { zh: 巡洋舰上的鱼雷管：装、拆、从未装, en: "Torpedo tubes in cruisers - fitted, removed, never fitted" }
+    range: { from: 1930, to: 1942-11 }
+    lead:
+      zh: >-
+        这一节记的是「有」与「没有」两件事，而后者比前者更需要证据。
+        三条拆除记录、两条从未装的记录，合起来才是 1942 年 6 月的实际情况。
+      en: >-
+        This section records both presence and absence, and the absence needs the stronger
+        evidence. Three removal records and two never-fitted records together describe the
+        actual state in June 1942.
+    events:
+      - date: 1930-02-06
+        text:
+          zh: >-
+            彭萨科拉号（CA-24）服役，建成武备含 2 座三联 533 毫米鱼雷管（6 管）。
+            navypedia 的 Armament 行原文为「2 x 3 - 533 TT」。
+            本级两艘同型，故这是舰级配置而非单舰特例。
+          en: >-
+            Pensacola (CA-24) commissioned with two triple 533 mm torpedo tubes, six tubes,
+            in her as-built armament; navypedia's Armament line reads "2 x 3 - 533 TT". Both
+            ships of the class were so fitted, so this is a class configuration rather than a
+            single-ship exception.
+        src: [navypedia-pensacola]
+
+      - date: 1931
+        text:
+          zh: >-
+            北安普敦级全部拆除鱼雷管。navypedia 改装表原文
+            「1931, all: - 2 x 3 - 533 TT」。
+            这意味着北安普敦号（CA-26）在 1942 年 6 月的中途岛与 1942 年 11 月的
+            塔萨法隆加两次战斗中都没有鱼雷管 —— 后一次它被亲潮号的两条鱼雷击中沉没，
+            而它自己一发鱼雷也没有。
+          en: >-
+            The Northampton class had its torpedo tubes removed, all ships: navypedia's
+            modernisation list reads "1931, all: - 2 x 3 - 533 TT". Northampton (CA-26)
+            therefore had no tubes at either Midway in June 1942 or Tassafaronga in November
+            1942 - at the latter she was hit by two torpedoes from the Japanese destroyer
+            Oyashio and sank, without having fired one herself.
+        src: [navypedia-northampton, navsource-northampton]
+
+      - date: 1933-02-23
+        text:
+          zh: >-
+            波特兰级建成即无鱼雷管。navypedia 的否定句是：
+            「Portland class differed from predecessors by absence of TTs and doubled
+            number of 127mm AA guns」。本级两艘（CA-33、CA-35）
+            从一开始就没有装过，不存在「拆除」这个动作。
+          en: >-
+            The Portland class was built without torpedo tubes, and navypedia states it
+            negatively: the class differed from its predecessors by absence of TTs and a
+            doubled number of 127 mm AA guns. Both ships (CA-33 and CA-35) never had them,
+            so there is no removal to date.
+        src: [navypedia-portland, danfs-portland]
+
+      - date: 1934-02-15
+        text:
+          zh: >-
+            新奥尔良级建成，武备清单里没有鱼雷管。三条独立的逐项枚举式清单互证：
+            navypedia 的「Armament CA32, 34, 36: 3 x 3 - 203/55 …, 8 x 1 - 127/25 …,
+            8 х 1 - 12.7/90, 2 catapults, 4 seaplanes」；
+            NavSource 的「Armament 9 x 8"/55, 8 x 5"/25, 8 x 0.5" 4 Aircraft」；
+            DANFS 的「a. 9 8", 8 5", 2 3-pdrs., 8 .50-cal. mg.」。
+            三份都逐项列到底而不含鱼雷管，与「三家都漏记同一项」相比，
+            「本来就没有」是更合理的读法。本站在此把这条当作否定证据使用。
+          en: >-
+            The New Orleans class was completed without torpedo tubes. Three independent
+            itemised lists agree: navypedia's "Armament CA32, 34, 36: 3 x 3 - 203/55 ...,
+            8 x 1 - 127/25 ..., 8 x 1 - 12.7/90, 2 catapults, 4 seaplanes"; NavSource's
+            "Armament 9 x 8"/55, 8 x 5"/25, 8 x 0.5" 4 Aircraft"; and DANFS'
+            "a. 9 8", 8 5", 2 3-pdrs., 8 .50-cal. mg.". All three enumerate to the end
+            without listing torpedo tubes, and "there were none" is the more reasonable
+            reading than "three sources all forgot the same item". It is used here as
+            negative evidence.
+        src: [navypedia-neworleans, navsource-astoria, danfs-astoria, danfs-ca32]
+
+      - date: 1942-11-13
+        text:
+          zh: >-
+            亚特兰大号（CL-51）在瓜岛夜战中被命中。ONI 的叙事记舰长
+            「rushed to the port side to get off torpedoes」，即在这一刻鱼雷管仍在舰上、
+            且被当作可用武器。本舰与同级的朱诺号（CL-52）都在这一夜的战斗中损失，
+            而同批另两艘 —— 圣迭戈号（CL-53）与圣胡安号（CL-54）——
+            此后仍带着 2 座四联 533 毫米鱼雷管服役；
+            navypedia 对这两艘的武备行原文仍写「2 x 4 - 533 TT」。
+            所以「本级带鱼雷管」这句话对 1942 年 11 月之后的该级仍然成立，
+            只是要写明是哪两艘。
+          en: >-
+            Atlanta (CL-51) was hit in the Guadalcanal night action. The ONI narrative
+            records her captain rushing to the port side to get off torpedoes, i.e. the tubes
+            were still aboard and still counted as a usable weapon at that moment. She and
+            her sister Juneau (CL-52) were both lost in that night's fighting, while the
+            other two of the batch - San Diego (CL-53) and San Juan (CL-54) - went on
+            carrying two quadruple 533 mm torpedo tubes, and navypedia's armament line for
+            those two still reads "2 x 4 - 533 TT". So "the class carried torpedo tubes"
+            remains true of this class after November 1942, provided the two ships are named.
+        src: [oni-guadalcanal, navweaps-us-torpedoes, navypedia-atlanta]

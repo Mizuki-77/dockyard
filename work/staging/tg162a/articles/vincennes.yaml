@@ -1,0 +1,228 @@
+ship: vincennes
+updated: 2026-11-23
+
+intro:
+  lead:
+    zh: >-
+      文森斯号（CA-44）是新奥尔良级七艘里唯一装备 8"/55 Mk 12 轻量主炮的一批
+      （与昆西号同批）中的一员。它参加过杜立特空袭与中途岛，
+      1942 年 8 月 9 日在萨沃岛海战中被击沉，全舰生涯只有五年半。
+    en: >-
+      USS Vincennes (CA-44) belonged to the batch of New Orleans-class cruisers
+      armed with the lighter 8"/55 Mark 12 gun. She took part in the Doolittle
+      raid and Midway, and was sunk at the Battle of Savo Island on 9 August
+      1942, her whole career lasting five and a half years.
+
+  paragraphs:
+    - heading: 同级里的「第三批」：更轻的炮、更薄的炮座
+      text:
+        zh: >-
+          本级七艘分三批，装甲与主炮逐批不同，而文森斯是第三批的最后一艘。
+          第一批（CA-32/34/36）炮塔面板 203 mm、炮座 127 mm；第二批
+          （CA-37/38）换了更轻的 8 英寸炮与更紧凑的炮塔，省下约 40 吨，
+          全拿去加厚炮座到 152 mm；但这一加反而逼近吨位上限，
+          于是第三批（CA-39/44）只好把炮座减回 133 mm。
+          本舰与昆西号还完全重复了第二批的设计。
+          另有两处容易被抹平的差别：本舰的主炮是 8"/55 Mk 12（炮身 17.4 吨），
+          不是另两艘的 Mk 9（炮身 30.5 吨）；副炮座是 5"/25 Mark 23
+          （动力驱动，配 Mk 33 指挥仪），不是它们的手动 Mark 19。
+        en: >-
+          The seven ships of the class came in three batches with different
+          armour and guns, and Vincennes was the last of the third. The first
+          batch (CA-32/34/36) had 203 mm turret faces and 127 mm barbettes; the
+          second (CA-37/38) took a lighter 8-inch gun and a smaller turret,
+          saving some forty tons, all of which went into barbette armour raised
+          to 152 mm - which pushed them close to the treaty limit, so the third
+          batch (CA-39/44) had to cut the barbettes back to 133 mm. Vincennes and
+          Quincy repeated the second batch's design outright. Two further
+          differences are easily flattened: her main guns were 8"/55 Mark 12
+          (17.4-ton barrels), not the Mark 9 of the other two (30.5 tons), and
+          her secondary mountings were 5"/25 Mark 23 - power-driven and used with
+          the Mark 33 director - not their manual Mark 19s.
+      src: [navypedia-neworleans, navweaps-8in-55-mk12, navweaps-5in25-mk10, historyofwar-ca44]
+
+    - heading: 从大西洋到太平洋：运金、护航、杜立特
+      text:
+        zh: >-
+          本舰 1937 年服役后先在大西洋。1940 年 6 月它到法属摩洛哥装运一批黄金回美国；
+          1941 年 3 月又到开普敦把英国支付军购的黄金运回。1941 年 11 月它随 WS-12
+          护航队把英军运往开普敦——美国当时还没参战。珍珠港事件当天它在海上，
+          风暴把一艘救生艇打成碎片，并把一架 SOC 水上飞机从井甲板扯下来撞进弹射器。
+          1942 年 4 月它随第 18 特混舰队护送大黄蜂号，参加了 4 月 18 日的杜立特空袭。
+        en: >-
+          Commissioned in 1937, she began in the Atlantic. In June 1940 she
+          carried a shipment of gold from French Morocco to the United States,
+          and in March 1941 brought British gold home from Cape Town to pay for
+          armaments. In November 1941 she escorted Convoy WS-12 carrying British
+          troops to Cape Town while America was still neutral. On the day of
+          Pearl Harbor she was at sea, where heavy seas smashed a motor whaleboat
+          to matchwood and tore a Curtiss SOC floatplane loose to batter the
+          catapult silos. In April 1942 she screened Hornet in Task Force 18 for
+          the Doolittle raid of 18 April.
+      src: [danfs-ca44]
+
+    - heading: 中途岛：掩护企业号，然后被派去救约克城
+      text:
+        zh: >-
+          1942 年 6 月 4 日，本舰属 TG 16.2 的 CTU 16.2.2（金凯德少将直辖），
+          但实际任务与另两艘同级舰不同——它掩护的是企业号，不是大黄蜂号。
+          当天下午日军「飞龙」号的「凯特」机来袭时，本舰 16:44 以 5 英寸、
+          20 mm 与 1.1 英寸炮对从左舷接近的机群开火，加速到 25 节、
+          缓慢右转保持左舷火力，一边规避鱼雷航迹一边击落一架，
+          该机在距左舷首 150 码处落海。
+          它随后跟着阿斯托里亚号绕着受创的约克城转，为其遮挡后续空袭。
+          6 月 6 日日军潜艇 I-168 穿过六艘驱逐舰的警戒幕，
+          雷击约克城号与哈曼号，本舰无力阻止。
+        en: >-
+          On 4 June 1942 Vincennes was in CTU 16.2.2 under Rear Admiral Kinkaid,
+          but her assignment differed from the other two: she screened Enterprise,
+          not Hornet. When Hiryu's torpedo aircraft came in that afternoon she
+          opened fire at 1644 with her 5-inch, 20 mm and 1.1-inch batteries on the
+          group approaching from port, worked up to 25 knots and turned slowly to
+          starboard to keep her port guns bearing, combed torpedo tracks and
+          splashed one "Kate" 150 yards off her port bow. She then followed
+          Astoria around the stricken Yorktown to shield her from further air
+          attack. On 6 June the Japanese submarine I-168 slipped through a screen
+          of six destroyers and torpedoed Yorktown and Hammann, and there was
+          nothing Vincennes could do about it.
+      src: [navweaps-midway-oob, danfs-ca44, oni-combat-narrative-midway]
+
+    - heading: 萨沃岛：二十分钟，三艘重巡
+      text:
+        zh: >-
+          1942 年 8 月 7 日瓜岛登陆时，本舰是 TG 62.3 的旗舰。
+          8 月 8 日正午前 27 架「贝蒂」低空雷击，本舰以全炮开火，
+          协助击落至少七架，规避了一条从舰艉下方穿过的鱼雷。
+          当夜它与昆西号、阿斯托里亚号编为北区掩护队，在萨沃岛外巡逻。
+          8 月 9 日凌晨 0155，日军探照灯照中本舰，它以 8,250 码的雷达距离
+          还击一个齐射；一分钟后就被跨射，舰桥、木工房、Battle II 与
+          无线电天线筒先后命中，机库里的飞机起火且无法扑灭。
+          0200 右转规避时被一到两条「长矛」鱼雷击中 1 号锅炉舱，
+          五分钟后失去舵机，再过几分钟完全停车。全舰至少中弹 57 发。
+          0210 日舰停火撤离，0230 舰长 Riefkohl 下令弃舰，约 0250 翻转沉没。
+          海军船舶局的战损报告对这条舰的结论很直接：
+          「昆西号与文森斯号的损伤严重到沉没不可避免。任何轻防护的舰艇
+          都无法承受这样的打击而幸存。」
+        en: >-
+          Vincennes was flagship of TG 62.3 during the Guadalcanal landings on
+          7 August 1942. Shortly before noon on 8 August, twenty-seven "Betty"
+          bombers came in on a low-level torpedo attack; she opened with every
+          gun that would bear, helped bring down at least seven, and dodged a
+          torpedo that passed under her stern. That night she formed the northern
+          escort with Quincy and Astoria off Savo Island. At 0155 on 9 August
+          Japanese searchlights picked her out and she replied with an 8-inch
+          salvo at a radar range of 8,250 yards; a minute later she was
+          bracketed, and the bridge, carpenter shop, Battle II and radio antenna
+          trunks were all hit while aircraft in the hangar caught fire and could
+          not be put out. Turning to starboard at 0200 she took one or two "Long
+          Lance" torpedoes in No. 1 fireroom, lost steering five minutes later
+          and was dead in the water soon after, having taken at least 57 hits.
+          The Japanese ceased fire and retired at 0210; Captain Riefkohl ordered
+          abandon ship at 0230 and she capsized and sank at about 0250. The
+          Bureau of Ships' verdict was blunt: damage to Quincy and Vincennes was
+          so extensive that loss was inevitable, and "it is not possible for any
+          lightly protected vessel to absorb such punishment and survive."
+      src: [danfs-ca44, wdr-29, oni-combat-narrative-savo]
+
+history:
+  - id: build
+    title: { zh: 建造与战前, en: Building and pre-war service }
+    range: { from: 1934, to: 1941 }
+    events:
+      - date: 1934-01-02
+        text:
+          zh: 在伯利恒造船公司 Fore River 厂（马萨诸塞州昆西）开工。
+          en: Laid down at the Bethlehem Shipbuilding Company's Fore River plant, Quincy, Mass.
+        src: [danfs-ca44, navypedia-neworleans]
+      - date: 1936-05-21
+        text:
+          zh: 下水，掷瓶人为文森斯市市长之女 Harriet Virginia Kimmell。
+          en: Launched, sponsored by Miss Harriet Virginia Kimmell.
+        src: [danfs-ca44]
+      - date: 1937-02-24
+        text:
+          zh: 服役，首任舰长 Burton H. Green 上校。
+          en: Commissioned, Captain Burton H. Green in command.
+        src: [danfs-ca44, navsource-ca44]
+      - date: 1937-04-19
+        text:
+          zh: 离波士顿试航，访问斯德哥尔摩、赫尔辛基、勒阿弗尔与朴茨茅斯。
+          en: Departed Boston on shakedown, visiting Stockholm, Helsinki, Le Havre and Portsmouth.
+        src: [danfs-ca44]
+      - date: 1940-06-04
+        text:
+          zh: 访问亚速尔群岛蓬塔德尔加达，随后赴法属摩洛哥装运黄金回国。
+          en: Visited Ponta Delgada in the Azores, then loaded a shipment of gold at French Morocco.
+        src: [danfs-ca44]
+      - date: 1941-03-29
+        text:
+          zh: 抵开普敦，装运英国支付军购的黄金后返美。
+          en: Arrived Cape Town to load British gold bullion paying for arms purchased in the United States.
+        src: [danfs-ca44]
+
+  - id: pacific
+    title: { zh: 太平洋：杜立特与中途岛, en: The Pacific - Doolittle and Midway }
+    range: { from: 1941, to: 1942 }
+    events:
+      - date: 1941-12-07
+        text:
+          zh: 随 WS-12 护航队在海上遇风暴，救生艇被打碎，一架 SOC 水上飞机被扯下井甲板；当日得知珍珠港遇袭。
+          en: >-
+            Was at sea with Convoy WS-12 when heavy seas smashed a whaleboat and
+            tore a SOC floatplane from the well deck; that evening learned of the
+            attack on Pearl Harbor.
+        src: [danfs-ca44]
+      - date: 1942-01
+        text:
+          zh: 在纽约改装后加入大黄蜂号，担任其试航护航。
+          en: After outfitting at New York, joined Hornet for the carrier's shakedown.
+        src: [danfs-ca44]
+      - date: 1942-04-18
+        text:
+          zh: 随第 18 特混舰队参加杜立特空袭，16 架 B-25 自大黄蜂号起飞。
+          en: Took part in the Doolittle raid with TF 18 as sixteen B-25s left Hornet's deck.
+        src: [danfs-ca44]
+      - date: 1942-06-04
+        text:
+          zh: 参加中途岛海战，掩护企业号；下午调去支援约克城号，击落一架「凯特」。
+          en: >-
+            Fought at Midway screening Enterprise; sent to aid Yorktown in the
+            afternoon, where she splashed a "Kate".
+        src: [navweaps-midway-oob, danfs-ca44]
+      - date: 1942-07-26
+        text:
+          zh: 与圣胡安号、昆西号一同加入第 62 特混舰队，任 TG 62.3 旗舰。
+          en: Joined TF 62 with San Juan and Quincy, as flagship of TG 62.3.
+        src: [danfs-ca44]
+
+  - id: savo
+    title: { zh: 瓜岛登陆与萨沃岛, en: Guadalcanal and Savo Island }
+    range: { from: 1942, to: 1942 }
+    events:
+      - date: 1942-08-07
+        text:
+          zh: 抵瓜岛外海，拂晓弹射校射机后以主副炮对岸轰击；下午击落日机两架。
+          en: >-
+            Arrived off Guadalcanal, catapulted spotting planes and bombarded the
+            shore; that afternoon she splashed two Japanese aircraft.
+        src: [danfs-ca44]
+      - date: 1942-08-08
+        text:
+          zh: 正午前 27 架「贝蒂」低空雷击，本舰以全炮开火协助击落至少七架，规避一条从舰艉下方通过的鱼雷。
+          en: >-
+            Helped break up a 27-bomber torpedo attack just before noon, claiming
+            a share of at least seven, and dodged a torpedo under her stern.
+        src: [danfs-ca44, oni-combat-narrative-savo]
+      - date: 1942-08-09
+        text:
+          zh: 0155 被探照灯照中，以 8,250 码雷达距离还击；随后中弹至少 57 发与一到两条鱼雷，0230 弃舰，约 0250 沉没。
+          en: >-
+            Lit by searchlight at 0155 and replied at a radar range of 8,250
+            yards; took at least 57 hits and one or two torpedoes, abandoned at
+            0230 and sank at about 0250.
+        src: [oni-combat-narrative-savo, wdr-29, danfs-ca44]
+      - date: 1942-11-02
+        text:
+          zh: 自海军舰艇名册除名。
+          en: Struck from the Navy List.
+        src: [danfs-ca44]

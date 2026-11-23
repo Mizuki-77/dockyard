@@ -51,7 +51,7 @@ belligerents:
     ships:
       - name: 赤城
         ship_id: akagi
-        role: { zh: 第一航空战队旗舰, en: Flagship, Carrier Division 1 }
+        role: { zh: 第一航空战队旗舰, en: 'Flagship, Carrier Division 1' }
       - name: 加贺
         ship_id: kaga
         role: { zh: 第一航空战队, en: Carrier Division 1 }
@@ -69,10 +69,10 @@ belligerents:
     ships:
       - name: 企业号
         ship_id: enterprise
-        role: { zh: 第 16 特混舰队旗舰, en: Flagship, Task Force 16 }
+        role: { zh: 第 16 特混舰队旗舰, en: 'Flagship, Task Force 16' }
       - name: 约克城号
         ship_id: yorktown
-        role: { zh: 第 17 特混舰队旗舰, en: Flagship, Task Force 17 }
+        role: { zh: 第 17 特混舰队旗舰, en: 'Flagship, Task Force 17' }
       - name: 大黄蜂号
         ship_id: hornet
         role: { zh: 第 16 特混舰队, en: Task Force 16 }
@@ -568,13 +568,21 @@ losses:
       zh: 航空母舰 4 艘（赤城、加贺、苍龙、飞龙）+ 重巡 1 艘（三隈）
     killed: 3057
     note:
-      zh: 飞机损失约 248 架；舰载机飞行员阵亡约 110 名——这批熟练飞行员比航母更难补充。各来源对总数的口径有差异。
+      zh: >-
+        飞机损失约 248 架。飞行员阵亡数各来源口径有差异：美国海军历史与遗产司令部（NHHC）
+        给出 36 名在舰上阵亡、74 名在空中阵亡，共 110 名，并指出多数飞行员被救起。
+        关于长期影响，NHHC 明确认为决定性损失是四艘航母本身与约 700 名航空机务人员，
+        而非飞行员——「it was not the loss of pilots at Midway that crippled Japan's ability
+        to wage offensive naval operations」。传统的「熟练飞行员全灭」说法与之并列，本站不裁决。
   - side: allies
     ships_lost:
       zh: 航空母舰 1 艘（约克城）+ 驱逐舰 1 艘（哈曼）
     killed: 362
     note:
-      zh: 飞机损失约 150 架。岸基航空兵的损失占相当比例，其中 TBD 鱼雷机三队几乎全灭（41 架出击、35 架被击落）。
+      zh: >-
+        飞机损失约 150 架。岸基航空兵的损失占相当比例。鱼雷机三队损失极重但并非全灭：
+        出击 41 架、被击落 35 架，有 6 架返回航母，其中 3 架仍可用。
+        真正的损失在人员——42 架鱼雷机上的 99 名空勤仅有 3 人幸存。
 
 outcome:
   zh: >-

@@ -1,0 +1,278 @@
+ship: new-orleans
+updated: 2026-11-24
+
+intro:
+  lead:
+    zh: "新奥尔良号（CA-32）是这一级的命名舰，但这个名字是 1942 年阿斯托里亚号沉没之后才正式落到本级头上的。它自己在 1942 年 11 月 30 日夜里被一条鱼雷切掉了整个舰艏，海军船舶局的战损报告却给出了与通说不同的因果：致命的是鱼雷引爆了旁边的航空炸弹库。它靠自身动力驶进图拉吉，用椰木接了个艏，打完了剩下的战争。"
+    en: >-
+      New Orleans (CA-32) was the name ship of her class, though the name was
+      formally applied only after Astoria was lost in 1942. On the night of 30
+      November 1942 a torpedo took off her entire bow, and the Bureau of Ships'
+      damage report gives a different causal chain from the usual one: what wrecked
+      her was the torpedo detonating the aviation bomb magazine beside it. She
+      reached Tulagi under her own power, was given a coconut-log bow, and finished
+      the war.
+  paragraphs:
+    - heading: "同一级，两种主炮"
+      text:
+        zh: "新奥尔良级七艘不是一批造完的，主炮也不止一种。NavWeaps 的 8\"/55 页面把装舰对象分成两页：Mk 9 族（Mk 9/10/11/13/14）对应「New Orleans (CA-32, 34 and 36 only) and Portland (CA-33) classes」，而 Mk 12/15 那一页写明「Mark 12: Tuscaloosa (CA-37) sub-class, Wichita (CA-45) and Baltimore (CA-68)」，并注明 Tuscaloosa 子级是 CA-37/38/39/44。也就是说本舰与阿斯托里亚号、明尼阿波利斯号是 Mk 9 族，文森斯号那一批是 Mk 12。差别不是名义上的：Mk 9 炮身 30.48 吨，Mk 12 是 17 吨级，每门轻约 13 吨。明尼阿波利斯号 1945 年单独换过 Mk 15 Mod 1 炮身，本舰没有换装记录。"
+        en: >-
+          The seven ships of the class were not one batch and did not all carry the same
+          gun. NavWeaps splits the 8"/55 into two pages: the Mark 9 family for "New
+          Orleans (CA-32, 34 and 36 only) and Portland (CA-33) classes", and the Mark
+          12/15 page which reads "Mark 12: Tuscaloosa (CA-37) sub-class, Wichita (CA-45)
+          and Baltimore (CA-68)", with the Tuscaloosa sub-class being CA-37/38/39/44.
+          This ship, Astoria and Minneapolis therefore carried the Mark 9 family while
+          Vincennes and her sisters carried the Mark 12. The difference is real: the
+          Mark 9 weighs 30.48 tonnes against roughly 17 for the Mark 12, about 13 tonnes
+          per gun. Minneapolis alone was regunned with the Mark 15 Mod 1 in 1945; there
+          is no such record for New Orleans.
+      src: [navweaps-8in55-mk9, navweaps-8in55-mk12-15, navypedia-neworleans]
+    - heading: "珍珠港那一夜：断电、手电、手摇炮"
+      text:
+        zh: "1941 年 12 月 7 日，本舰靠泊珍珠港，靠码头供电、主机在修。空袭一开始码头电源就断了，工程师在黑暗里打着手电升汽，甲板上的人用步枪和手枪对空射击。炮座全部只能手摇操作，但十分钟内全舰高炮都已开火。一枚破片弹在舷侧附近爆炸，伤了数名舰员。次月它返旧金山修轮机，顺带装上新的搜索雷达与 20 mm 炮。"
+        en: >-
+          On 7 December 1941 she was moored at Pearl Harbor, taking power and light from
+          the dock with her engines under repair. When yard power failed her engineers
+          raised steam by flashlight while men on deck fired at the attackers with
+          rifles and pistols. Every mount had to be worked by hand, yet all her AA
+          batteries were in action within ten minutes, and a fragmentation bomb bursting
+          close aboard injured several of the crew. The next month she returned to San
+          Francisco for engineering repairs and received a new search radar and 20 mm
+          guns.
+      src: [danfs-ca32]
+    - heading: "中途岛：护的是哪艘航母，两源说法不同"
+      text:
+        zh: "1942 年 6 月 4 日，本舰属金凯德少将的 TG 16.2，在编成表里归 CTU 16.2.2 （与明尼阿波利斯号、文森斯号同一战术单元），而旗舰是明尼阿波利斯号。至于它当天护的是谁，两个来源不一致：NavWeaps 的战斗序列给本舰的注是「Escorting Hornet」，DANFS 则写「sailed 28 May screening Enterprise」。两说并列，本页不裁。同一天还有一处可核的调动：1430 彭萨科拉号与文森斯号被派去支援正遭攻击的第 17 特混舰队。"
+        en: >-
+          On 4 June 1942 she was in Kinkaid's TG 16.2, in the order of battle assigned
+          to CTU 16.2.2 with Minneapolis and Vincennes, with the group flag in
+          Minneapolis. Which carrier she screened that day is disputed: NavWeaps
+          annotates her "Escorting Hornet", while DANFS says she "sailed 28 May
+          screening Enterprise". Both are recorded here. One move that day is
+          documented: at 1430 Pensacola and Vincennes were sent to assist the
+          hard-pressed TF 17.
+      src: [ibiblio-midway-oob, navweaps-oob-midway, danfs-ca32, enterprise-war-diary-midway]
+    - heading: "塔萨法隆加：鱼雷不是致命的，炸弹库才是"
+      text:
+        zh: "1942 年 11 月 30 日夜，本舰在旗舰明尼阿波利斯号之后一千码跟进，航速 20 节，主炮已开始射击。旗舰中雷起火后本舰右满舵避让，转到右约 10 度时被一条深水鱼雷命中左舷首部第 36 号肋骨以前。鱼雷爆炸之后几秒钟又发生一次更重的爆炸，舰艏在两座前炮塔之间几乎被完全切断；断艏漂到左舷后方，在第 53、130、136 号肋骨撞出破口，打坏了左内侧螺旋桨。战损报告把这一串事件的因果写清楚了：鱼雷是在航空炸弹库（A-502-1/8-M，内有 160 磅拆除装药与 49 枚 100 磅炸弹；小型武器弹药库内另有 5 枚 325 磅深水炸弹）旁边爆炸的，而这些弹药库「一直延伸到外板，没有装甲也没有液体防护」。报告的结论是：「新奥尔良号的严重损伤，是鱼雷爆炸与航空炸弹、拆除装药大规模殉爆共同作用的结果」，军械局同意这一判断。"
+        en: >-
+          On the night of 30 November 1942 she followed the flagship Minneapolis at a
+          thousand yards, making 20 knots with her main battery already firing. When
+          Minneapolis was torpedoed and caught fire, New Orleans put her helm hard right
+          to pass her; with the rudder 15 degrees over and the ship about 10 degrees off
+          course, a deep-running torpedo hit her port bow forward of frame 36. A few
+          seconds after the detonation came a second, much heavier one, and the bow was
+          severed almost completely between the two forward turrets. It tore loose,
+          floated aft along the port side, punched holes at frames 53, 130 and 136 and
+          wrecked the port inboard propeller. The damage report sets out the chain: the
+          torpedo detonated alongside the bomb and mine magazine A-502-1/8-M, which held
+          the 160-pound demolition charge and forty-nine 100-pound bombs, with five
+          325-pound depth bombs in the small arms magazine, and those magazines
+          "extended to the shell with no armor or liquid protection". Its conclusion is
+          that "the severe damage to NEW ORLEANS was the result of the combined effects
+          of the torpedo detonation and a mass detonation of aircraft bombs and
+          demolition charge", and the Bureau of Ordnance concurred.
+      src: [wdr-38, oni-combat-narrative-tassafaronga]
+history:
+  - id: build
+    title: { zh: "建造与战前", en: "Building and the pre-war years" }
+    range: { from: 1931, to: 1941 }
+    events:
+      - date: 1931-03-14
+        text:
+          zh: "在纽约海军船厂（布鲁克林）开工，此时编号为轻巡 CL-32。"
+          en: >-
+            Laid down at the New York Navy Yard, Brooklyn, then numbered CL-32.
+        src: [danfs-ca32]
+      - date: 1933-04-12
+        text:
+          zh: "下水，掷瓶人是助理海军部长之女 Cora S. Jahncke。"
+          en: >-
+            Launched, sponsored by Miss Cora S. Jahncke, daughter of the Assistant
+            Secretary of the Navy.
+        src: [danfs-ca32]
+      - date: 1934-02-15
+        text:
+          zh: "服役，首任舰长 Allen B. Reed 上校。"
+          en: >-
+            Commissioned, Captain Allen B. Reed in command.
+        src: [danfs-ca32, navsource-ca32]
+      - date: 1934-07-05
+        text:
+          zh: "出航与休斯敦号会合，罗斯福总统登舰，经巴拿马运河航行，并在加州外海与飞艇 Macon 及其机群合练；8 月 2 日在俄勒冈州阿斯托里亚结束。"
+          en: >-
+            Sailed to rendezvous with Houston with President Roosevelt embarked, cruised
+            through the Panama Canal and exercised with the airship Macon off California,
+            ending the cruise at Astoria, Oregon, on 2 August.
+        src: [danfs-ca32]
+      - date: 1939-10-12
+        text:
+          zh: "加入夏威夷分遣队，此后参加演习与训练，并随局势紧张转为警戒巡逻。"
+          en: >-
+            Joined the Hawaiian Detachment for exercises and training and, as war drew
+            close, for vigilant patrol.
+        src: [danfs-ca32]
+  - id: early-war
+    title: { zh: "珍珠港到中途岛", en: "Pearl Harbor to Midway" }
+    range: { from: 1941, to: 1942 }
+    events:
+      - date: 1941-12-07
+        text:
+          zh: "珍珠港遇袭。码头断电后打手电升汽，炮座全靠手摇，十分钟内全高炮开火；一枚破片弹在舷侧爆炸，数名舰员受伤。"
+          en: >-
+            Attacked at Pearl Harbor: with yard power gone her engineers raised steam by
+            flashlight, every mount was worked by hand, and all AA batteries were in
+            action within ten minutes; a fragmentation bomb bursting close aboard injured
+            several of the crew.
+        src: [danfs-ca32]
+      - date: 1942-01-13
+        text:
+          zh: "返旧金山修轮机，并加装新搜索雷达与 20 mm 炮。"
+          en: >-
+            Returned to San Francisco for engineering repairs and installation of new
+            search radar and 20 mm guns.
+        src: [danfs-ca32]
+      - date: 1942-05-07
+        text:
+          zh: "珊瑚海海战。列克星敦号沉没时本舰靠上去救援，舰员跳水捞人、艇员靠帮救人，共救起该舰 580 名舰员。"
+          en: >-
+            At the Coral Sea, when Lexington was lost her men dived overboard and her boat
+            crews closed the burning carrier to rescue 580 of the crew.
+        src: [danfs-ca32]
+      - date: 1942-06-04
+        text:
+          zh: "中途岛海战。属 TG 16.2 的 CTU 16.2.2，编队司令金凯德少将的旗舰是明尼阿波利斯号。"
+          en: >-
+            Fought at Midway in CTU 16.2.2 of TG 16.2, whose commander Rear Admiral
+            Kinkaid flew his flag in Minneapolis.
+        src: [ibiblio-midway-oob, navweaps-oob-midway]
+      - date: 1942-08-24
+        text:
+          zh: "东所罗门海战，屏护萨拉托加号，击退日机攻击。"
+          en: >-
+            Screened Saratoga and helped fight off Japanese air attacks at the Eastern
+            Solomons.
+        src: [danfs-ca32]
+      - date: 1942-08-31
+        text:
+          zh: "萨拉托加号被日本潜艇击中，本舰护送其返珍珠港，9 月 21 日抵达。"
+          en: >-
+            When Saratoga was torpedoed, New Orleans guarded her passage to Pearl Harbor,
+            arriving 21 September.
+        src: [danfs-ca32]
+  - id: tassafaronga
+    title: { zh: "塔萨法隆加与断艏生还", en: "Tassafaronga and the severed bow" }
+    range: { from: 1942, to: 1943 }
+    events:
+      - date: 1942-11-27
+        text:
+          zh: "抵圣埃斯皮里图，加入第 67 特混舰队（巡洋舰-驱逐舰编队），11 月 29 日出港拦截日军驱逐舰输送队。"
+          en: >-
+            Arrived at Espiritu Santo and joined the cruiser-destroyer TF 67, which sailed
+            on 29 November to intercept a Japanese destroyer-transport force.
+        src: [danfs-ca32, oni-combat-narrative-tassafaronga]
+      - date: 1942-11-30
+        text:
+          zh: "2321 主炮开火，目标方位约 280 度相对、距离约 8,700 码；三分钟多之后（中雷时刻由本舰记为开火后 3 分 20 秒）左舷首部第 36 号肋骨以前被深水鱼雷命中。"
+          en: >-
+            Opened fire at 2321 at a target bearing about 280 degrees relative and 8,700
+            yards distant; three minutes and twenty seconds later a deep-running torpedo
+            hit her port bow forward of frame 36.
+        src: [wdr-38]
+      - date: 1942-11-30
+        text:
+          zh: "鱼雷爆炸后几秒又发生一次更重的爆炸，舰艏在两座前炮塔之间几乎完全切断；断艏漂向左舷后方，在第 53、130、136 号肋骨撞出破口、打坏左内侧螺旋桨。2 号炮塔连同弹药库与提升室的人员全部阵亡。"
+          en: >-
+            A second, heavier detonation followed within seconds and severed the bow
+            almost completely between the two forward turrets; the severed bow floated aft
+            along the port side, holing the shell at frames 53, 130 and 136 and wrecking
+            the port inboard propeller. All personnel of turret II, including the
+            magazines and handling rooms, were killed.
+        src: [wdr-38]
+      - date: 1942-12-01
+        text:
+          zh: "靠自身动力在拂晓前后驶入图拉吉港，航速曾降到 2 节；此后留在图拉吉至 12 月 12 日，舰员清理残骸、支撑舱壁、作临时修理。"
+          en: >-
+            Entered Tulagi Harbor under her own power near daybreak, having slowed to two
+            knots, and stayed there until 12 December while the crew cleared wreckage,
+            shored bulkheads and made temporary repairs.
+        src: [danfs-ca32, wdr-38]
+      - date: 1942-12-24
+        text:
+          zh: "离图拉吉后抵悉尼，在干船坞里装了一个临时短艏；损坏的左内侧螺旋桨也在这里处理。"
+          en: >-
+            Reached Sydney, where a temporary stub bow was fitted in dry dock and the
+            damaged port inboard propeller dealt with.
+        src: [wdr-38, danfs-ca32]
+      - date: 1943-04-03
+        text:
+          zh: "经帕果帕果与珍珠港抵普吉特湾海军船厂，换装预制新艏并完成全部修复与改装，约 1943 年 8 月 1 日完工归队。"
+          en: >-
+            Reached Puget Sound Navy Yard after stops at Pago Pago and Pearl Harbor, where
+            a prefabricated bow was fitted and all repairs and alterations completed, the
+            ship being back in service about 1 August 1943.
+        src: [wdr-38]
+      - date: 1943-04
+        text:
+          zh: "这级舰的弹药基数在 1942 年 8 月之后的改装中被下调：每门炮从 150 发减到 125 发，腾出的重量给新增的防空武器。"
+          en: >-
+            In the refits after August 1942 the class's ammunition allowance was cut from
+            150 rounds per gun to 125 to free weight for added AA weapons.
+        src: [navweaps-8in55-mk9]
+  - id: late-war
+    title: { zh: "重返前线与结局", en: "Return to the line and the end" }
+    range: { from: 1943, to: 1959 }
+    events:
+      - date: 1943-10-05
+        text:
+          zh: "炮击威克岛，为重返前线后的第一次作战，并击退日军鱼雷机攻击。"
+          en: >-
+            Bombarded Wake on returning to the line and repulsed a Japanese torpedo-plane
+            attack.
+        src: [danfs-ca32]
+      - date: 1944-04-22
+        text:
+          zh: "一架失控的约克城号舰载机撞上本舰主桅，坠落时打坏炮座，在水面爆炸后把汽油喷了全舰；一人阵亡、一人重伤，本舰继续作战。"
+          en: >-
+            A disabled Yorktown aircraft flew into her mainmast, hitting gun mounts as it
+            fell and spraying the ship with gasoline when it exploded on the water; one
+            crewman was lost and another badly injured, and she stayed in action.
+        src: [danfs-ca32]
+      - date: 1944-06-19
+        text:
+          zh: "菲律宾海海战。突入到美方航母附近的少数日机由本舰与其他护航舰击落；此役美方飞行员与潜艇兵击沉日方三艘航母、击落约 395 架飞机。"
+          en: >-
+            At the Philippine Sea the few Japanese aircraft that broke through were shot
+            down by New Orleans and the other escorts; the action cost Japan three
+            carriers and some 395 aircraft.
+        src: [danfs-ca32]
+      - date: 1944-10-24
+        text:
+          zh: "莱特湾：先随航母攻击日军南路部队，再袭击锡布延海的中路部队，随后在恩加尼奥角外参与击溃北路诱饵航母；之后南下支援萨马岛外的护航航母。"
+          en: >-
+            At Leyte Gulf her carriers first attacked the Japanese Southern Force, then
+            the Centre Force in the Sibuyan Sea, then destroyed the Northern decoy
+            carriers off Cape Engano, before racing south to aid the escort carriers off
+            Samar.
+        src: [danfs-ca32]
+      - date: 1945-04-23
+        text:
+          zh: "抵冲绳，与岸炮对射并直接压制日军阵地近两个月，随后赴菲律宾补给修整。"
+          en: >-
+            Arrived Okinawa for nearly two months of counter-battery fire and direct
+            support of the troops ashore, then sailed to the Philippines to replenish and
+            repair.
+        src: [danfs-ca32]
+      - date: 1947-02-10
+        text:
+          zh: "在费城海军船厂退役，转入预备役。"
+          en: >-
+            Decommissioned at the Philadelphia Naval Shipyard and laid up in reserve.
+        src: [danfs-ca32, navsource-ca32]
+      - date: 1959-09-22
+        text:
+          zh: "售予巴尔的摩 Boston Metals 公司拆解。"
+          en: >-
+            Sold for scrapping to Boston Metals Co., Baltimore, Maryland.
+        src: [danfs-ca32]

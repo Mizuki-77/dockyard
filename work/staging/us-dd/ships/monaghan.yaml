@@ -1,0 +1,427 @@
+# ============================================================================
+# 单舰：USS Monaghan（莫纳汉号，DD-354，法拉格特级）
+# ----------------------------------------------------------------------------
+# 本级第 7 舰。本舰有三件必须分清、极容易被混为一谈的事：
+#
+# 一、**珍珠港当日撞沉过一艘日本微型潜艇。** 这不是战功叙述，是一手行为记录：
+#    DANFS："Monaghan cast off her mooring pendants at 0827 and began passing the north
+#    end of Ford Island through the midst of the attack"；destroyerhistory：
+#    "Monaghan headed for the trespasser, rammed it glancingly, then sank it with two
+#    depth charges."
+#
+# 二、**1942-06-06 她就在约克城号现场，属于屏护圈里的五艘驱逐舰之一。**
+#    这与本组另一艘 Hammann 的关系直接相关：Hammann 一手战报写
+#    "About 0400, sighted Yorktown, screened by Hughes, Gwin and Monaghan"，
+#    约克城号行动报告写 "The other five destroyers, Balch, Benham, Gwin, Anderson,
+#    and Monaghan ... formed anti-submarine and anti-aircraft screen around Yorktown"。
+#
+# 三、**本舰不是战沉。** 1944-12-18 在菲律宾以东台风中倾覆沉没，
+#    性质是「恶劣天气海事损失（foundered）」，不是被敌火击沉。
+#    这一点必须写清，因为本站 fate_type 枚举里 sunk_by_enemy 与 wrecked 是两回事。
+#
+# 调研底稿：work/staging/us-dd/RESEARCH-NOTES.md
+# ============================================================================
+
+id: monaghan
+name:
+  zh: 莫纳汉号
+  en: USS Monaghan
+class: farragut
+
+open_ended_note: |
+  本文件绝大多数 fact 的 valid.to 都是 1944-12-18（本舰沉没日）或更早的改装节点，
+  已逐条写明。舰级设计参数不在此重复，见 data/classes/farragut.yaml。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: USS Monaghan
+    src: [nhhc-danfs-monaghan, navsource-monaghan]
+    valid: { from: 1935-04-19, to: 1944-12-18 }
+    confidence: B
+
+  - field: identity.name_zh
+    value: 莫纳汉号
+    src: [nhhc-danfs-monaghan]
+    valid: { from: 1935-04-19, to: 1944-12-18 }
+    confidence: C
+
+  - field: identity.name_en
+    value: USS Monaghan
+    src: [nhhc-danfs-monaghan, navsource-monaghan]
+    valid: { from: 1935-04-19, to: 1944-12-18 }
+    confidence: B
+
+  - field: identity.pennant_number
+    value: DD-354
+    src: [nhhc-danfs-monaghan, navsource-monaghan]
+    valid: { from: 1933-11-21, to: 1944-12-18 }
+    confidence: B
+
+  - field: identity.name_note
+    value: >
+      本舰是第二艘 Monaghan；第一艘是 DD-32（一次大战平甲板型），
+      故 DANFS 页面标题作 "Monaghan II"，URL 也是 monaghan-ii。
+    src: [nhhc-danfs-monaghan]
+    valid: { from: 1935-04-19, to: 1944-12-18 }
+    confidence: B
+    note: >
+      这条是给合并者看的防错提示：抓错卷次会把 DD-32 的数据串到本舰上。
+      DANFS 原文标题 "Monaghan II (DD-354)"，正文起句 "The second Monaghan (DD-354)
+      was laid down on 21 November 1933 by the Boston Navy Yard, Mass."
+
+  - field: identity.namesake
+    value: 约翰·罗伯特·莫纳汉少尉（John Robert Monaghan，1873-03-26 生于华盛顿州 Chewelah，1899-04-01 阵亡于萨摩亚）
+    src: [nhhc-danfs-monaghan, navsource-monaghan]
+    valid: { from: 1935-04-19, to: 1944-12-18 }
+    confidence: B
+    note: >
+      NavSource 原文："During a combined American and British reconnaissance near Apia,
+      Samoa, on 1 April 1899, the American detachment, from Philadelphia, under the command
+      of Lt. Philip V. Lansdale, came under fire from hostile Samoans ... In the ensuing
+      retreat, Lansdale fell, wounded ... Monaghan seized a rifle 'from a disabled man
+      [to make] a brave defense.'"
+      DANFS 另给出纪念像铭文原文："During the retreat of the allied forces from the deadly
+      fire and overwhelming number of the savage foe, he alone stood the fearful onslaught
+      and sacrificed his life defending a wounded comrade Lieutenant Philip V. Lansdale
+      United States Navy."
+
+  - field: identity.ship_type
+    value: destroyer
+    src: [nhhc-danfs-monaghan]
+    valid: { from: 1935-04-19, to: 1944-12-18 }
+    confidence: A
+
+  - field: identity.nation
+    value: united_states
+    src: [nhhc-danfs-monaghan]
+    valid: { from: 1935-04-19, to: 1944-12-18 }
+    confidence: A
+
+  - field: identity.operator
+    value: United States Navy
+    src: [nhhc-danfs-monaghan]
+    valid: { from: 1935-04-19, to: 1944-12-18 }
+    confidence: A
+
+  - field: identity.era
+    value: interwar
+    src: [nhhc-danfs-monaghan]
+    valid: { from: 1935-04-19, to: 1939-09-02 }
+    confidence: A
+    note: >
+      本舰 1935-04 服役，其设计生涯处于两次大战之间。
+      **二战期间的作战部分由 service.unit 与切片表达，不在此重复设一个 ww2 时代值**
+      （identity.era 是单值枚举，同一舰不能同时在两个时代；本站按服役起始定位）。
+
+  # ============================================================ 建造
+  - field: construction.builder
+    value: Boston Navy Yard（波士顿海军船厂）
+    src: [nhhc-danfs-monaghan, navsource-monaghan, navypedia-farragut]
+    valid: { from: 1933-11-21 }
+    confidence: B
+    note: >
+      三源一致。DANFS "laid down on 21 November 1933 by the Boston Navy Yard, Mass."；
+      navypedia "Boston N Yd, Charlestown"。
+
+  - field: construction.builder_location
+    value: Charlestown, Massachusetts（波士顿海军船厂）
+    src: [navypedia-farragut]
+    valid: { from: 1933-11-21 }
+    confidence: C
+    note: navypedia 写明 "Boston N Yd, Charlestown"；DANFS 只写 "Boston Navy Yard, Mass."。
+
+  - field: construction.laid_down
+    value: 1933-11-21
+    unit: date
+    src: [nhhc-danfs-monaghan, navsource-monaghan, navypedia-farragut]
+    valid: { from: 1933-11-21 }
+    confidence: B
+    note: 三源一致。DANFS 原文 "laid down on 21 November 1933"。
+
+  - field: construction.launched
+    value: 1935-01-09
+    unit: date
+    src: [nhhc-danfs-monaghan, navsource-monaghan, navypedia-farragut]
+    valid: { from: 1935-01-09 }
+    confidence: B
+    note: >
+      三源一致。DANFS 原文 "launched on 9 January 1935; sponsored by Miss Mary F. Monaghan,
+      niece of the late Ens. Monaghan"。
+
+  - field: construction.commissioned
+    value: 1935-04-19
+    unit: date
+    src: [nhhc-danfs-monaghan, navsource-monaghan, navypedia-farragut]
+    valid: { from: 1935-04-19 }
+    confidence: B
+    note: >
+      三源一致。DANFS 原文 "commissioned on 19 April 1935, Cmdr. Robert R. Thompson in command."
+      DANFS 另给出试航结束进入现役的时点："Monaghan completed her sea trials and entered
+      operational service on 30 August 1935." —— 与服役日不同，两个日期并存不矛盾。
+
+  # ============================================================ 结局
+  - field: construction.fate_date
+    value: 1944-12-18
+    unit: date
+    src: [nhhc-danfs-monaghan, navypedia-farragut]
+    valid: { from: 1944-12-18 }
+    confidence: B
+    note: >
+      **两个日期并列，不裁决。** DANFS 与 navypedia 均为 1944-12-18；
+      navsource-monaghan 写 "Fate Foundered in typhoon off Luzon December 17 1944." 差一天。
+      DANFS 给出的时刻细节支持 12-18："The typhoon reached its full fury between 1100 and
+      1400 on 18 December 1944" 与 "Monaghan rolled to starboard at least six times and on
+      her final roll continued and capsized."
+      （navsource 的 12-17 可能取自舰队日志的前一日，本站不作裁断。）
+
+  - field: construction.fate_type
+    value: wrecked
+    src: [nhhc-danfs-monaghan, navsource-monaghan]
+    valid: { from: 1944-12-18 }
+    confidence: B
+    note: >
+      **本舰不是战沉，这一点必须写清。**
+      DANFS 原文："Monaghan rolled to starboard at least six times and on her final roll
+      continued and capsized. The typhoon violently ripped off most of the ship's bridge."
+      NavSource 用词是 "Foundered in typhoon"（台风中沉没）。
+      本站 fate_type 枚举无 foundered 一项，最贴近的是 wrecked
+      （恶劣天气/海损导致的损失），**不填 sunk_by_enemy**。
+
+  - field: service.fate_category
+    value: 海损沉没（1944-12 台风，非战沉、非自沉、非被敌击沉）
+    src: [nhhc-danfs-monaghan, navsource-monaghan, navypedia-farragut]
+    valid: { from: 1944-12-18 }
+    confidence: B
+    note: >
+      三源一致。navypedia 原文 "Hull and Monaghan 18.12.1944 were lost during a typhoon
+      off Luzon."；DANFS 把这次台风的总损失一并给出："The fueling day was the first of the
+      typhoon that claimed the lives of 790 men, sank Hull, Monaghan, and Spence (DD-512),
+      and seriously damaged 21 ships"。
+      —— 即本舰是同一次海难中被刮沉的三艘驱逐舰之一，另两艘是 Hull 与 Spence。
+
+  - field: service.casualties
+    value: 244
+    unit: persons
+    src: [navsource-monaghan]
+    valid: { from: 1944-12-18 }
+    confidence: C
+    note: >
+      NavSource 原文 "244 of her crew were lost and remain on duty; there were only six
+      survivors."
+      **第二个数字并列，不裁决**：DANFS 原文给出的是军官与士兵分解
+      "as well as all 17 of officers and 227 enlisted men"（17 + 227 = 244），
+      与 NavSource 的 244 吻合。**但 DANFS 同段又说她的舰长 "Lt. Cmdr. Floyd B. Garrett, Jr.,
+      ... her commanding officer for only 19 days ... perished"**，
+      若舰长已计入这 244 人，则 244 是包含舰长的总数。
+      本站按两源一致的 244 登记。
+
+  - field: service.survivors
+    value: 6
+    unit: persons
+    src: [nhhc-danfs-monaghan, navsource-monaghan]
+    valid: { from: 1944-12-18 }
+    confidence: B
+    note: >
+      两源一致。DANFS 原文 "Brown ... rescued S1 Doil T. Carpenter, MM2 Robert J. Darden,
+      Fenn, F1 William F. Kramer, McCrane, and Story."（六人具名）；
+      NavSource "there were only six survivors"。
+      DANFS 还给出了获救时间与递送地点："Brown delivered the six battered sailors,
+      wearing borrowed clothing, to Ulithi on Christmas Eve."
+
+  - field: service.complement.wartime
+    value: 250
+    unit: persons
+    src: [nhhc-danfs-monaghan]
+    valid: { from: 1944-12-18 }
+    confidence: C
+    note: >
+      **这是本站由 DANFS 的分解人数相加得到的派生值，不是来源直接给出的总数。**
+      推算过程：17 名军官 + 227 名士兵 = 244（全部随舰损失），
+      加上 6 名生还者 = 250 人。
+      引用时必须说明是推算。若主会话认为不宜入库，可直接删除本条。
+
+  # ============================================================ 服役编成
+  - field: service.complement.standard
+    value: 160
+    unit: persons
+    src: [navypedia-farragut, navsource-monaghan]
+    valid: { from: 1935-04-19 }
+    confidence: C
+    note: >
+      与舰级一致。**nhhc-danfs-monaghan 页首技术行写 "complement 100"，与两源及该级通行
+      值冲突，不采用。**
+
+  - field: service.commander
+    value: Cmdr. Robert R. Thompson
+    src: [nhhc-danfs-monaghan]
+    valid: { from: 1935-04-19 }
+    confidence: B
+    note: >
+      首任舰长。DANFS 原文 "commissioned on 19 April 1935, Cmdr. Robert R. Thompson in command."
+      **末任舰长另有一条**（见下）—— 两者不是冲突，是任期不同。
+
+  - field: service.commander
+    value: Cmdr. William P. Burford
+    src: [nhhc-danfs-monaghan]
+    valid: { from: 1941-12-07, to: 1941-12-07 }
+    confidence: B
+    note: >
+      珍珠港当日舰长。**来源只证明他在 1941-12-07 当天在任，任期起止均未获取**，
+      故 valid 两端都取该日。DANFS 原文 "Cmdr. William P. Burford, Monaghan's commanding
+      officer, ordered the ship to ring up flank speed and to ram the submarine."
+      他因当日指挥获海军十字勋章（见 RESEARCH-NOTES）。
+
+  - field: service.commander
+    value: Lt. Cmdr. Floyd B. Garrett, Jr.
+    src: [nhhc-danfs-monaghan]
+    valid: { from: 1944-11-29, to: 1944-12-18 }
+    confidence: C
+    note: >
+      末任舰长，随舰阵亡。DANFS 原文 "Lt. Cmdr. Floyd B. Garrett, Jr., (USNA 1938) her
+      commanding officer for only 19 days, remembered by USNA classmates as 'small in size,
+      but full of fight and determination,' as well as all 17 of officers and 227 enlisted
+      men ... perished."
+      **上任日期的性质必须说清：valid.from 的 1944-11-29 是本站按「在任仅 19 天」
+      与沉没日 1944-12-18 反推的，不是来源直接给出的日期，故 confidence 降为 C。**
+      若主会话不接受推算值，请把 valid 改回只写 { to: 1944-12-18 }。
+      DANFS 页面末尾有完整的历任舰长表，本组未逐行抄录。
+
+  - field: service.unit
+    value: DesRon 20，DesDiv 61（北大西洋）
+    src: [nhhc-danfs-monaghan]
+    valid: { from: 1935-08-30, to: 1941-12-07 }
+    confidence: B
+    note: >
+      DANFS 原文："The ship served initially with Destroyer Division (DesDiv) 61 alongside
+      Aylwin (DD-355), Dale (DD-353 -- the division flagship), and Mahan (DD-364) as part of
+      Destroyer Squadron (DesRon) 20 in the North Atlantic."
+      destroyerhistory-farragut 亦写本级整体编成："As Destroyer Squadon 1 with flagship Phelps,
+      the eight Farraguts were present on 7 December 1941 at Pearl Harbor" ——
+      **两源对 1941-12 时的番号写法不同（DesRon 20 vs DesRon 1）**，
+      这与 DANFS 的 "DesRon 20 (later DesRon 1)" 改写说法一致（美海军 1941 年改编过驱逐舰番号）。
+      本条按 DANFS 的服役初期番号登记。
+
+  - field: service.unit
+    value: TG 16.4 屏护（DesRon 1，中途岛）
+    src: [nhhc-midway-us-order-of-battle, nhhc-danfs-monaghan]
+    valid: { from: 1942-05-26, to: 1942-06-13 }
+    confidence: B
+    note: >
+      **本组任务书说本舰「属 DesRon 1，中途岛护卫企业号」，此说成立，且有两份来源。**
+      nhhc-midway-us-order-of-battle 原文（TG 16.4 Destroyer Screen 之下）：
+      "Capt. Alexander R. Early, USN / Commander Destroyer Squadron 1 (ComDesRon 1) /
+      USS Phelps (DD-360) / USS Worden (DD-352) / USS Monaghan (DD-354) / USS Aylwin (DD-355)"。
+      DANFS 佐证："Through the first two days of the Battle of Midway on 3 and 4 June 1942,
+      Monaghan screened Enterprise, faithfully keeping station on the carrier"。
+
+  - field: service.unit
+    value: TF 38 补给群（第三次舰队，菲律宾以东）
+    src: [nhhc-danfs-monaghan]
+    valid: { from: 1944-11-30, to: 1944-12-18 }
+    confidence: B
+    note: >
+      沉没时的编成。DANFS 原文 "on the last day of the month joined escort ships Crowley (DE-303)
+      and Weaver (DE-741) and they shepherded three oilers bound for Philippine waters to
+      rendezvous on 17 December with the Third Fleet, Adm. William F. Halsey Jr., in command."
+
+  # ============================================================ 武备：1942-06 实况
+  - field: armament.mount.summary
+    value: >-
+      1942-06 中途岛时：4 × 5"/38 单装（1942 年 5-9 月拆除 No.3 炮位）+ 8 × 20 mm 厄利孔单装
+      + 2 座四联 21 in 鱼雷管（8 管）+ 4 座深弹投射器 + 2 座滑轨（共 48 枚）
+    src: [navypedia-farragut]
+    valid: { from: 1942-06, to: 1942-09 }
+    confidence: C
+    note: >
+      **本条完全是 navypedia 改装年表的迭代结果，未与第二来源交叉验证。**
+      逐条原文：
+      (1) "mid-1941, all: + 2 DCR (14)"（加 2 座深弹滑轨，14 枚）
+      (2) "5 - 9.1942, all: - 1 x 1 - 127/38 (No 3), 4 x 1 - 12.7/90; + 8 x 1 - 20/70 Mk 4,
+          4 DCT (48 DC at all)"（拆 No.3 炮与全部 12.7 mm 机枪，加 8 门 20 mm 与 4 座投射器）
+      (3) "late 1942, all: - 3 x 1 - 20/70; + 2 x 2 - 40/56 Mk 1.2. Full displacement was
+          2307-2335t."（1942 年末减 3 门 20 mm，加 2 座双联 40 mm）
+
+      **时间窗的边界需要说明**：第 (2) 条记的是「1942 年 5-9 月」这一段，
+      中途岛（6 月 4-6 日）落在这个窗口内部，**但来源没有给出本舰具体哪一天完成改装**。
+      因此「中途岛当天已经是 4 门 5 英寸」这个结论**无法从 navypedia 确证**，
+      只能说「1942 年 5-9 月之间某一时点」。
+      一手战报里也没有本舰的炮数记载（本组未获取 Monaghan 的中途岛行动报告全本）。
+      **这是本文件最弱的一条，请主会话按需降级或删除。**
+
+  - field: armament.aa_20mm.count
+    value: 8
+    unit: count
+    src: [navypedia-farragut]
+    valid: { from: 1942-09, to: 1942-12 }
+    confidence: C
+    note: >
+      navypedia "5 - 9.1942, all: ... + 8 x 1 - 20/70 Mk 4"。
+      建成态为 0（本级建成时只有 4 挺 12.7 mm 机枪）。
+      1942 年末减为 5 门（"late 1942, all: - 3 x 1 - 20/70"）。
+
+  - field: armament.torpedo.tubes
+    value: 8
+    unit: count
+    src: [navypedia-farragut, destroyerhistory-farragut]
+    valid: { from: 1935-04-19, to: 1944-12-18 }
+    confidence: C
+    note: >
+      全过程未变。navypedia "2 x 4 - 533 TT"；destroyerhistory "8 x 21-inch torpedo tubes
+      in two trainable quadruple centerline mounts."
+      本级改装年表从未出现减少鱼雷管的条目，这一点与 Sims/Benham 级不同。
+
+  - field: armament.depth_charge.count
+    value: 48
+    unit: count
+    src: [navypedia-farragut]
+    valid: { from: 1942-09, to: 1944-12-18 }
+    confidence: C
+    note: >
+      navypedia "5 - 9.1942, all: ... 4 DCT (48 DC at all)"。
+      建成态未装深弹滑轨（destroyerhistory："Depth charge tracks were not initially
+      installed on the first two ships, but added in 1936."），
+      1941 年中为 14 枚，1942 年 5-9 月为 48 枚。
+
+  # ============================================================ 珍珠港事件
+  - field: service.fate_authority
+    value: >
+      1941-12-07 珍珠港：本舰在港内以冲撞与深水炸弹击沉日本微型潜艇 I-22tou；
+      舰长 Cmdr. William P. Burford 因此获海军十字勋章。
+      本条目记录的是「本舰当日的行为与认定机构」，不是结局判定。
+    src: [nhhc-danfs-monaghan]
+    valid: { from: 1941-12-07, to: 1941-12-07 }
+    confidence: B
+    note: >
+      DANFS 原文（完整过程）："In the midst of this bedlam Cmdr. William P. Burford,
+      Monaghan's commanding officer, ordered the ship to ring up flank speed and to ram the
+      submarine. ... Monaghan fired a 5-inch round that passed over the submarine and
+      ricocheted off a derrick moored off Beckoning Point, and the enemy fired a second
+      torpedo at the oncoming ship but it missed and detonated against the shore.
+      Monaghan's bow glanced off the submarine at 0843, but the destroyer dropped two depth
+      charges that detonated in the shallow harbor and sank the enemy boat, northwest of
+      Ford Island."
+      战果确认旁的证据："The Americans subsequently raised I-22tou, examined the boat, and
+      then buried her as landfill while expanding the Submarine Base at Pearl Harbor."
+      **注意与 destroyerhistory 的措辞差别**：后者写 "rammed it glancingly, then sank it
+      with two depth charges"（擦碰后以两枚深弹击沉），DANFS 更精确地写 bow glanced off
+      at 0843。两者不矛盾，DANFS 更细。
+      Burford 的勋章评语原文："presence of mind, and devotion to duty and disregard for his
+      personal safety"。
+      **本条借用了 service.fate_authority 字段，属权宜之计**——该字段原设计用于记录结局判定机构，
+      而本条记录的是战功认定。若主会话认为不宜占用该字段，请整条删除，内容已在
+      RESEARCH-NOTES 的战历一节里。
+
+  - field: appearance.scheme
+    value: Measure 31, Design 7d
+    src: [nhhc-danfs-monaghan]
+    valid: { from: 1944-09-26, to: 1944-12-18 }
+    confidence: C
+    note: >
+      DANFS 图注原文："Monaghan lies-to off Puget Sound Navy Yard, Bremerton, Wash.,
+      26 September 1944. The ship wears Measure 31, Design 7d camouflage."
+      **该图注只证明 1944-09-26 时的涂装**；1941-12 珍珠港时期与 1942-06 中途岛时期的
+      涂装方案**未获取**。
+
+  # ============================================================ 武器实体引用
+  # weapon:5in38-mk12 与 weapon:20mm-oerlikon 已在既有文件中登记，此处不重复。

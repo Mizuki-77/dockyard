@@ -1,0 +1,269 @@
+ship: pensacola
+updated: 2026-11-24
+
+intro:
+  lead:
+    zh: "彭萨科拉号（CA-24）是美国第一艘按华盛顿条约造的重巡，也是唯一一级把双联与三联混装在首尾的美国重巡：2 座三联在上、2 座双联在下，共 10 门 8 英寸。中途岛时它属 TG 16.2、护企业号；11 月 30 日塔萨法隆加被一条鱼雷命中而活了下来，同一条战列线上相邻的北安普敦号中了两条，沉了。"
+    en: >-
+      Pensacola (CA-24) was the first American heavy cruiser built to the Washington
+      Treaty, and her class was the only one to mix twin and triple turrets fore and
+      aft - two triple superfiring over two twin, ten 8-inch guns in all. At Midway
+      she was in TG 16.2 screening Enterprise; at Tassafaronga on 30 November one
+      torpedo hit her and she survived, while Northampton, next in the same line,
+      took two and sank.
+  paragraphs:
+    - heading: "为什么炮塔是「下双上三」"
+      text:
+        zh: "彭萨科拉级的舰体是为速度削瘦过的：平甲板、明显舷弧、两端收得很窄。navypedia 把代价写得很直白——三联装炮座的座圈太宽，塞不进艏艉的细瘦线型，于是出现了一种美国重巡里独一份的布置：「end twin turrets and superfiring triple ones」，双联在两端低位、三联背负在它们上面。NavWeaps 的炮座表独立印证这一点：双联「Pensacola (2)」、三联「Pensacola (2)」，两处口径不同但结果一致。"
+        en: >-
+          The Pensacola hull was fined down for speed - flush deck, marked sheer,
+          sharply narrowed ends. Navypedia states the price plainly: the barbettes of
+          the triple mounts were too wide to fit into those fine lines, so the class
+          ended up with an arrangement unique among American heavy cruisers - "end twin
+          turrets and superfiring triple ones". NavWeaps' mounting table corroborates
+          independently: twins "Pensacola (2)", triples "Pensacola (2)".
+      src: [navypedia-pensacola, navweaps-8in55-mk9]
+    - heading: "她挨的每一样东西都挡不住 8 英寸弹"
+      text:
+        zh: "本级防护的分配与后一级相反：机舱段舷侧 64 mm、弹药库段 102 mm，装甲甲板弹药库上方 45 mm、机舱上方 25 mm，炮座环只有 19 mm，炮塔正面 64 mm，指挥塔 32 mm。navypedia 对这级的设计意图有一句判断：它的防护能挡 130 mm 炮，配上集中火控可以在远距离与装 152 mm 炮的轻巡对射，但「在任何距离上，在 203 mm 炮弹下都是脆弱的」。本级两艘建成后横摇严重，后来靠加大舭龙骨解决。"
+        en: >-
+          The class split its protection the opposite way from its successor: 64 mm belt
+          abreast machinery and 102 mm abreast magazines, 45 mm armour deck over the
+          magazines and 25 mm over the machinery, 19 mm barbettes, 64 mm turret faces,
+          32 mm conning tower. Navypedia's judgement on the design intent is that the
+          protection kept out 130 mm fire and, with central fire control, allowed
+          long-range engagement of 152 mm light cruisers - but that the ships "were
+          vulnerable on any distances under fire of 203mm guns". Both ships rolled
+          heavily on completion and had their bilge keels enlarged to fix it.
+      src: [navypedia-pensacola]
+    - heading: "中途岛：先护企业号，下午被调去救约克城"
+      text:
+        zh: "1942 年 6 月 4 日，本舰属金凯德少将的 TG 16.2，NavWeaps 给的注是「Escorting Enterprise; joined TF-17」。企业号战报把这次调动写成了时刻：1430「PENSACOLA, VINCENNES, BALCH and BENHAM left formation to assist Task Force 17」。ONI 的中途岛叙述也是同一件事——下午日机攻击约克城号时，该舰的掩护圈里多了从 TF 16 调来的文森斯号、彭萨科拉号与两艘驱逐舰。6 月 6 日战报里它又回到「ENTERPRISE group」。"
+        en: >-
+          On 4 June 1942 she was in Kinkaid's TG 16.2; NavWeaps annotates her "Escorting
+          Enterprise; joined TF-17". The Enterprise war diary times the move: at 1430
+          "PENSACOLA, VINCENNES, BALCH and BENHAM left formation to assist Task Force
+          17". ONI's Midway narrative records the same thing - when the Japanese
+          attacked Yorktown that afternoon her screen had been reinforced by Vincennes,
+          Pensacola and two destroyers from TF 16. By the 6 June entry she is back in
+          the "ENTERPRISE group".
+      src: [navweaps-oob-midway, enterprise-war-diary-midway, oni-combat-narrative-midway]
+    - heading: "塔萨法隆加：一条鱼雷，125 人"
+      text:
+        zh: "1942 年 11 月 30 日 2339，一条鱼雷在左舷主桅下方命中。日方驱逐舰当晚一共射出 18 条鱼雷，这是其中一条。DANFS 与 ONI 对损伤的记法不同：ONI 明确点名 3 号炮塔（turret III）失效、全部转向控制丢失、两台陀螺罗经都被震坏；DANFS 写「三座炮塔失效」。两说并列，本页不裁。火从后甲板烧起来，8 英寸炮弹在 3 号炮塔里接连爆炸，它带着火驶向图拉吉，靠岸后又烧了十二小时才扑灭。伤亡有明确数字：7 名军官、118 名士兵阵亡，1 名军官、67 名士兵受伤。"
+        en: >-
+          At 2339 on 30 November 1942 a torpedo hit below the mainmast on the port side
+          - one of eighteen the Japanese destroyers fired that night. DANFS and ONI
+          describe the damage differently: ONI names turret III as useless, all steering
+          control lost and both gyros knocked out, while DANFS says three turrets went
+          out of commission. Both are recorded here. Fire swept the after deck and
+          8-inch projectiles exploded in No. 3 turret; she reached Tulagi still burning
+          and it took twelve hours to put the last fire out. The casualties are
+          explicit: 7 officers and 118 men dead, one officer and 67 men injured.
+      src: [danfs-pensacola, oni-tassafaronga]
+history:
+  - id: build
+    title: { zh: "建造与战前", en: "Building and the pre-war years" }
+    range: { from: 1926, to: 1939 }
+    events:
+      - date: 1926-10-27
+        text:
+          zh: "在纽约海军船厂（布鲁克林）开工。"
+          en: >-
+            Laid down by the New York Navy Yard.
+        src: [danfs-pensacola, navsource-pensacola]
+      - date: 1929-04-25
+        text:
+          zh: "下水。掷瓶人姓名两处写法不同：DANFS 写「Mrs. Joseph L. Seligman」，NavSource 的报纸剪报图注一处写 Josephine L.、一处写 Josephine K.，此处并列不裁。"
+          en: >-
+            Launched. The sponsor's name is given as "Mrs. Joseph L. Seligman" by DANFS
+            while the NavSource newspaper captions read both Josephine L. and Josephine
+            K.; both forms are recorded.
+        src: [danfs-pensacola, navsource-pensacola]
+      - date: 1930-02-06
+        text:
+          zh: "服役，首任舰长 Alfred G. Howe 上校。"
+          en: >-
+            Commissioned, Capt. Alfred G. Howe in command.
+        src: [danfs-pensacola, navsource-pensacola, navypedia-pensacola]
+      - date: 1930-03-24
+        text:
+          zh: "离纽约，经巴拿马运河访问秘鲁卡亚俄与智利瓦尔帕莱索，6 月 5 日返纽约。"
+          en: >-
+            Departed New York, transited the Panama Canal to Callao and Valparaiso, and
+            returned on 5 June.
+        src: [danfs-pensacola]
+      - date: 1931-07-01
+        text:
+          zh: "由轻巡 CL-24 改类为重巡 CA-24。"
+          en: >-
+            Reclassified from CL-24 to CA-24.
+        src: [navsource-pensacola, navypedia-pensacola]
+  - id: early-war
+    title: { zh: "1941-11 至 1942-06：护航与中途岛", en: "November 1941 to Midway" }
+    range: { from: 1941, to: 1942 }
+    events:
+      - date: 1941-11-29
+        text:
+          zh: "率一支开往马尼拉的运输船队离珍珠港；珍珠港遇袭后船队改道澳大利亚，1942 年 1 月 7 日进布里斯班。"
+          en: >-
+            Departed Pearl Harbor with a convoy bound for Manila; after the attack the
+            convoy was diverted to Australia, entering Brisbane on 7 January 1942.
+        src: [danfs-pensacola]
+      - date: 1942-02-20
+        text:
+          zh: "布干维尔近海，本舰炮手协助击退两波日机，编队无一舰受损；高炮与列克星敦号战斗空中巡逻合计击落来袭 18 架中的 17 架，其中 O'Hare 上尉一人击落 5 架。"
+          en: >-
+            Off Bougainville her gunners helped repel two waves of Japanese bombers
+            without damage to the force; AA fire and Lexington's CAP downed 17 of 18
+            attackers, Lt. Edward H. O'Hare accounting for five.
+        src: [danfs-pensacola]
+      - date: 1942-03-10
+        text:
+          zh: "列克星敦号放飞飞机越过欧文斯坦利山脉空袭萨拉莫阿与莱城，本舰当时在掩护列克星敦号。"
+          en: >-
+            While Lexington launched her aircraft over the Owen Stanley mountains against
+            Salamaua and Lae, Pensacola was helping to guard her.
+        src: [danfs-pensacola]
+      - date: 1942-05-28
+        text:
+          zh: "随企业号编队离珍珠港，6 月 2 日在中途岛东北与第 17 特混舰队会合。"
+          en: >-
+            Sailed with the Enterprise task force on 28 May, rendezvousing northeast of
+            Midway with TF 17 on 2 June.
+        src: [danfs-pensacola]
+      - date: 1942-06-04
+        text:
+          zh: "中途岛海战。属金凯德少将 TG 16.2，任务为屏护企业号；舰长 Frank L. Lowe 上校。当天 40 mm Bofors 为 0，防空是 1.1\"/75 加 20 mm；本级的 40 mm 换装记在 1942 年底。"
+          en: >-
+            Fought at Midway in Rear Admiral Kinkaid's TG 16.2 screening Enterprise, Capt.
+            Frank L. Lowe in command. She carried no 40 mm Bofors that day, her AA battery
+            being 1.1-inch and 20 mm; the class's 40 mm refit is recorded in late 1942.
+        src: [danfs-pensacola, navweaps-oob-midway]
+      - date: 1942-06-04
+        text:
+          zh: "1430 与企业号编队脱离，同文森斯号、巴尔奇号、本汉姆号一起去支援正遭攻击的第 17 特混舰队；赶到时约克城号已停车，本舰在日机第二波攻击中协助击落 4 架九七舰攻。"
+          en: >-
+            At 1430 she left formation with Vincennes, Balch and Benham to assist TF 17;
+            arriving to find Yorktown dead in the water, she helped shoot down four
+            torpedo bombers in the second attack.
+        src: [enterprise-war-diary-midway, danfs-pensacola]
+      - date: 1942-06-13
+        text:
+          zh: "返珍珠港；6 月 22 日又与企业号出港，把海军陆战队第 22 航空大队的 1,157 名陆战队员运往中途岛。"
+          en: >-
+            Returned to Pearl Harbor, then sailed again with Enterprise on 22 June
+            carrying 1,157 Marines of Marine Aircraft Group 22 to Midway.
+        src: [danfs-pensacola]
+  - id: solomons
+    title: { zh: "瓜岛战役与塔萨法隆加", en: "The Solomons campaign and Tassafaronga" }
+    range: { from: 1942, to: 1942 }
+    events:
+      - date: 1942-08-07
+        text:
+          zh: "陆战队登陆瓜岛当天，本舰在萨拉托加号、大黄蜂号、黄蜂号三艘航母的屏卫圈内驶向所罗门。"
+          en: >-
+            As the Marines landed on Guadalcanal she sailed for the Solomons in the screen
+            of Saratoga, Hornet and Wasp.
+        src: [danfs-pensacola]
+      - date: 1942-10-26
+        text:
+          zh: "圣克鲁斯海战。大黄蜂号被重创后放弃，本舰接下该舰 55 名军官与 133 名士兵的生还者，10 月 30 日在努美阿卸下。"
+          en: >-
+            At Santa Cruz she received 55 officers and 133 men, survivors of the abandoned
+            Hornet, and landed them at Noumea on 30 October.
+        src: [danfs-pensacola]
+      - date: 1942-11-12
+        text:
+          zh: "11 月 12 至 13 日瓜岛海战期间为企业号提供掩护；企业号的飞机参与击沉战列舰比叡，并协助击沉一艘巡洋舰、三艘驱逐舰与十一艘辅助船。"
+          en: >-
+            Helped guard Enterprise during the Naval Battle of Guadalcanal, 12-13
+            November; her aircraft took part in sinking the battleship Hiei, a cruiser,
+            three destroyers and eleven auxiliaries.
+        src: [danfs-pensacola]
+      - date: 1942-11-29
+        text:
+          zh: "在圣埃斯皮里图加入 Wright 少将的第 67 特混舰队（巡洋舰-驱逐舰编队），当日出港拦截预计次夜出现在瓜岛外海的日军驱逐舰输送队。"
+          en: >-
+            Joined Rear Admiral Carleton H. Wright's cruiser-destroyer TF 67 at Espiritu
+            Santo and sailed on 29 November to intercept a Japanese destroyer-transport
+            force expected off Guadalcanal the next night.
+        src: [danfs-pensacola]
+      - date: 1942-11-30
+        text:
+          zh: "2339 在左舷主桅下方被一条鱼雷命中。此前本舰向左转向以避开前方两艘受伤的美舰，被燃烧的美舰照亮，正好进入日方射界；日方驱逐舰当晚共射出 18 条鱼雷。"
+          en: >-
+            At 2339 a torpedo hit below the mainmast on the port side. She had turned left
+            to avoid two damaged American ships ahead, was silhouetted by their fires, and
+            so came into the Japanese line of fire; the Japanese destroyers fired eighteen
+            torpedoes that night.
+        src: [danfs-pensacola, oni-tassafaronga]
+      - date: 1942-11-30
+        text:
+          zh: "损伤：前机舱进水、左轴断，后锅炉舱水位上升，弹药库进水与火灾使 3 号炮塔失效；转向控制全部丢失，两台陀螺罗经被震坏；后部火控在向第二个雷达目标开火时被首轮齐射震毁。DANFS 另记「三座炮塔失效」，与 ONI 只点名 3 号炮塔的说法并列。"
+          en: >-
+            Damage: the forward engine room flooded and the port shaft broke, the water
+            level rose in the after fireroom, and flooded magazines and fires made turret
+            III useless; all steering control was lost and both gyros were knocked out;
+            the after fire control was disabled by the first salvo at the second radar
+            target. DANFS separately says three turrets went out of commission, alongside
+            ONI's single turret III.
+        src: [oni-tassafaronga, danfs-pensacola]
+      - date: 1942-12-01
+        text:
+          zh: "带火驶入图拉吉，靠岸后又烧了十二小时才扑灭；伤亡 7 名军官、118 名士兵阵亡，1 名军官、67 名士兵受伤。舰体伪装成岛上的一部分，在图拉吉抢修后自行驶往圣埃斯皮里图，12 月 6 日抵港，由供应舰维修舰 Vestal 号应急修理。"
+          en: >-
+            Reached Tulagi still burning; the last fire was out twelve hours later.
+            Casualties were 7 officers and 118 men dead, one officer and 67 men injured.
+            Camouflaged as part of the island, she repaired at Tulagi and steamed to
+            Espiritu Santo, arriving 6 December for emergency work by the tender Vestal.
+        src: [danfs-pensacola]
+  - id: late-war
+    title: { zh: "1943-1948：塔拉瓦到十字路口核试", en: "Tarawa to Okinawa, and Crossroads" }
+    range: { from: 1943, to: 1948 }
+    events:
+      - date: 1943-11-19
+        text:
+          zh: "炮击塔拉瓦的贝蒂奥岛，发射 600 发炮弹压制岸防炮、摧毁滩头工事与建筑。"
+          en: >-
+            Bombarded Betio, Tarawa, firing 600 projectiles to put coast defence guns out
+            of action and destroy beach defences and buildings.
+        src: [danfs-pensacola]
+      - date: 1944-10-25
+        text:
+          zh: "参加莱特湾：先随快速航母袭击吕宋，25 日北上去恩加尼奥角参与击溃日军诱饵航母群，随后南下支援萨马岛外的护航航母。"
+          en: >-
+            In the Leyte Gulf battle she screened fast carriers striking Luzon, raced
+            north on 25 October for the destruction of the Japanese decoy carrier force
+            off Cape Engano, then turned south to aid the escort carriers off Samar.
+        src: [danfs-pensacola]
+      - date: 1945-02-17
+        text:
+          zh: "硫磺岛：在掩护扫雷舰近岸作业时被岸炮命中 6 发，3 名军官与 14 名士兵阵亡，5 名军官与 114 名士兵受伤；本舰边还击边退出作临时修理，随后返回炮位。"
+          en: >-
+            Off Iwo Jima, covering minesweepers close inshore, she took six hits from
+            shore batteries: three officers and 14 men killed, five officers and 114 men
+            injured. She fired back while retiring for temporary repairs, then returned to
+            her bombardment station.
+        src: [danfs-pensacola]
+      - date: 1945-04-01
+        text:
+          zh: "为冲绳初次登陆提供直接炮火支援，持续到 4 月 15 日，随后经关岛与珍珠港返国。"
+          en: >-
+            Gave direct bombardment support to the initial Okinawa landings until 15
+            April, then sailed for home via Guam and Pearl Harbor.
+        src: [danfs-pensacola]
+      - date: 1946-07-01
+        text:
+          zh: "在 7 月 1 日的空爆试验中存活。"
+          en: >-
+            Survived the aerial burst test of 1 July 1946.
+        src: [danfs-pensacola, navsource-pensacola]
+      - date: 1948-11-10
+        text:
+          zh: "研究结束后作为靶舰沉没。NavSource 记「在华盛顿州外海作为靶舰击沉」，navypedia 记「scuttled」（ 自沉）——两说并列，本页不裁。"
+          en: >-
+            Sunk after the studies were complete. NavSource records "sunk as target off
+            the coast of Washington" while navypedia says "scuttled"; both are recorded
+            here.
+        src: [danfs-pensacola, navsource-pensacola, navypedia-pensacola]

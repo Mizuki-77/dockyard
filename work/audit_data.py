@@ -151,14 +151,38 @@ for p in glob.glob('data/slices/*.yaml'):
         orphans.append(f'slices/{os.path.basename(p)}: ship={sid} 不存在')
 
 imgs = load('data/images.yaml').get('images') or []
+
+# 2026-11-24 加：识别 PRELOAD 预存素材。
+#
+# 为什么：data/images.yaml 里有几条图指向尚未入库的舰（大和/衣阿华/密苏里），
+# 每条上方都写了 `# PRELOAD:` 注释，交接报告 §7.4 明确说这是刻意预留、不是脏数据。
+# 但本脚本原来不认这个标记，每跑一次就报三条孤儿 —— 误报比不报更危险，
+# 会训练人忽略警告（交接报告 §9.3 第 4 条）。
+#
+# 现在：带 PRELOAD 注释的条目视为预存，不算孤儿。
+# 注意 PRELOAD 是 YAML 注释，safe_load 后拿不到，必须扫原文：
+#   注释在前，subject 在后面几行，所以「见到 # PRELOAD 就记下随后第一个 subject」。
+preload_subjects = set()
+_pending = False
+for _line in open('data/images.yaml', encoding='utf-8'):
+    if '# PRELOAD' in _line or 'PRELOAD' in _line and _line.strip().startswith('#'):
+        _pending = True
+        continue
+    if _pending and _line.strip().startswith('subject:'):
+        preload_subjects.add(_line.split(':', 1)[1].strip())
+        _pending = False
+
 subjects = defaultdict(int)
 for im in imgs:
     s = str(im.get('subject') or '')
     subjects[s] += 1
+
 for s in subjects:
     if s.startswith('ship:'):
         sid = s[5:]
         if sid not in ships:
+            if s in preload_subjects:
+                continue  # 已声明的预存素材，不是孤儿
             orphans.append(f'images.yaml: subject={s} 但该舰不存在')
     elif s.startswith('weapon:'):
         pass  # 稍后单独查

@@ -1,0 +1,902 @@
+# ============================================================================
+# 北安普敦级重巡洋舰（Northampton class heavy cruiser）
+#
+# 2026-11-23 tg162b 建。本级共 6 艘（CL/CA-26 Northampton、27 Chester、28 Louisville、
+# 29 Chicago、30 Houston、31 Augusta），本轮只入库首舰北安普敦。
+# 同级另 5 艘的 dates 与战历**不进本文件**，将来入库时各写自己的单舰文件。
+#
+# 三件必须记住的事：
+#   1. **建成时有 2 座三联 21 in 鱼雷管，1931 年全部拆除。**
+#      所以 1942 年中途岛时本舰没有鱼雷管。navypedia 改装表原句
+#      "1931, all: - 2 x 3 - 533 TT"；NavSource 1930 年代照片说明
+#      "prior to the removal of her torpedo tubes" 是旁证。
+#      「本级有鱼雷管」这句话只对 1931 年以前成立。
+#   2. 主炮是三座三联 8"/55 Mk 9（**Mk 9 不是英国郡级的 Mk VIII**，
+#      两者的 NavWeaps 页面不同，本站已有 navweaps-8in-50-mk8 是英国炮）。
+#   3. 装甲数字来自 navypedia 的「belt: 95 - 76」这种双值写法，
+#      本文件按 navypedia 自己的正文拆开登记（机舱段 76 / 弹药库段 95），
+#      没有自行取平均或取上限。
+# ============================================================================
+
+id: northampton
+name:
+  zh: 北安普敦级
+  en: Northampton class
+class_of:
+  - northampton
+note: >-
+  北安普敦级重巡洋舰。本级为 1929 财年计划（navypedia 原句 "All 6 ships were built
+  under FY1929 program"）。设计上是彭萨科拉级的改进型：把彭萨科拉级那个
+  「首尾双联、背负三联」的怪异主炮布置改成统一的三座三联，
+  换来更宽裕的舰容与更好的适航性。
+
+open_ended_note: |
+  本文件绝大多数 fact 的 valid.to 都留空，这是结构性的，不是漏填：
+  舰级设计参数的生效期从首舰服役（1930-05-17）起到该级最后一艘损失或拆解为止，
+  期间不因改装而改变；实际战备状态随时间的变化写在 data/ships/<id>.yaml 的
+  状态切片里，由单舰 fact 覆盖。因此这里的 open 时间窗表示「无已知终止事件」。
+  valid.from 取首舰北安普敦的服役日 1930-05-17，不是设计定案日
+  （navypedia 未给设计定案日）。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: Northampton class
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+
+  - field: identity.name_zh
+    value: 北安普敦级
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+
+  - field: identity.name_en
+    value: Northampton class
+    src: [navypedia-northampton, danfs-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: B
+    note: DANFS 题头数据行末写 "cl. Northampton"，是官方口径的级名。
+
+  - field: identity.ship_type
+    value: heavy_cruiser
+    src: [navypedia-northampton, danfs-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: B
+    note: >-
+      建成时分类为轻巡（CL），1931-07-01 改重巡（CA）。NavSource 原句
+      "Reclassified CA 26 01 JUL 1931"；navypedia 舰名栏写 "CL26, 7.1931- CA26"。
+      本字段取重巡，时间窗从 1930-05-17 起是本文件的口径简化，
+      详见单舰文件的 identity.ship_type（那里按 1931-07-01 分段）。
+
+  - field: identity.nation
+    value: united_states
+    src: [navypedia-northampton, danfs-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: B
+
+  - field: identity.operator
+    value: United States Navy
+    src: [danfs-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: B
+
+  - field: identity.era
+    value: ww2
+    src: [danfs-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: B
+    note: >-
+      按服役期定位（1930-1942），整段都在 ww2 窗口内。设计的摸索期在
+      interwar，但 identity.era 的注册表定义是「按服役期定位，不是按设计年份」。
+
+  - field: identity.building_program
+    value: FY1929 造舰计划
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    note: >-
+      navypedia 原句："All 6 ships were built under FY1929 program."
+      同页另有一句关于本级设计的缘起，一并留档：
+      "At discussion on the General Board (February, 1926) about specification of
+      cruisers planed to build it was offered to redesign the project of Pensacola
+      class, improving protection at the expense of machinery re-arrangement in
+      larger number of compartments, and raising seaworthiness using a forecastle."
+
+  # ============================================================ 主尺度与排水
+  - field: displacement.standard
+    value: 9006
+    unit: t
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    note: >-
+      navypedia 原句 "Displacement standard, t 9006"。
+      **两处异说并列，不裁决**：DANFS 题头写 "dp. 9 050"（即 9,050，
+      但 DANFS 的这个 dp. 未说明是标准还是正常排水量）；NavSource 写
+      "Displacement 9,300 Tons"。三个数分别 9006 / 9050 / 9300，
+      口径均未自述，故只登记 navypedia 自述为 standard 的那一个。
+
+  - field: displacement.full
+    value: 11420
+    unit: t
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    note: navypedia 原句 "Displacement full, t 11420"。
+
+  - field: dimensions.length.oa
+    value: 183.0
+    unit: m
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    note: >-
+      navypedia 原句 "Length, m 177.4 wl 183.0 oa"。DANFS 原句 "l. 600'3""
+      （600.25 ft = 182.96 m），与 183.0 m 互相印证。
+
+  - field: dimensions.length.wl
+    value: 177.4
+    unit: m
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    note: navypedia 同句 "177.4 wl"。
+
+  - field: dimensions.beam.wl
+    value: 20.1
+    unit: m
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    note: >-
+      navypedia 原句 "Breadth, m 20.1"。DANFS 原句 "b. 66'1""（66.083 ft = 20.14 m），
+      两者一致。navypedia 未标明该宽度是水线宽还是最大宽，
+      归档为 beam.wl 是按船体主尺度惯例，属口径推定。
+
+  - field: dimensions.draught.mean
+    value: 5.92
+    unit: m
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    note: >-
+      navypedia 原句 "Draught, m 5.92 full load"，即这是**满载吃水**。
+      **三处异说并列，不裁决**：DANFS 题头 "dr. 16'4""（4.98 m，未说明状态）；
+      NavSource "23' (Max)"（7.01 m，自述为最大）。
+      三个数分别是 5.92（满载）/ 4.98（DANFS 未述）/ 7.01（最大），
+      口径不同，不能相减或平均。
+
+  # ============================================================ 动力
+  - field: propulsion.plant_type
+    value: steam_turbine
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    note: navypedia 原句 "Machinery 4 sets Parsons geared steam turbines, 8 White-Forster boilers"。
+
+  - field: propulsion.shafts
+    value: 4
+    unit: count
+    src: [navypedia-northampton, danfs-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    note: >-
+      navypedia 原句 "No of shafts 4"；ibiblio 的 HyperWar 转录亦写
+      "Steam tubine enginess, 8 boilers, 4 shafts, 107,000 hp"。
+
+  - field: propulsion.boiler.count
+    value: 8
+    unit: count
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    note: navypedia 原句 "8 White-Forster boilers"。
+
+  - field: propulsion.boiler.type
+    value: White-Forster
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+
+  - field: propulsion.turbine.count
+    value: 4
+    unit: count
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    note: >-
+      navypedia 原句 "4 sets Parsons geared steam turbines"。
+      注意这是「4 套」，不是 4 台；一套指一组减速齿轮带动的机组。
+      本字段按「主机数量」记为 4，与 sets 对齐。
+
+  - field: propulsion.turbine.type
+    value: Parsons geared steam turbine
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+
+  - field: propulsion.power.design
+    value: 107000
+    unit: hp
+    src: [navypedia-northampton, danfs-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    note: >-
+      navypedia 原句 "Power, h. p. 107000"；HyperWar 转录同。
+      **这是设计功率，不是试航实测**——两个来源都没有试航实测功率，
+      故不写 propulsion.power.trial。
+
+  - field: propulsion.speed.design
+    value: 32.5
+    unit: kn
+    src: [navypedia-northampton, danfs-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    note: >-
+      navypedia 原句 "Max speed, kts 32.5"；DANFS 题头 "s. 32.5 k."。
+      **异说并列，不裁决**：NavSource 写 "Speed, 32.7 Knots"。
+      无试航实测航速来源，故不写 propulsion.speed.trial。
+
+  - field: propulsion.range.max
+    value: 10000
+    unit: nmi
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    note: >-
+      navypedia 原句 "Endurance, nm(kts) 10000 (15)"，即 15 节下 10,000 nm。
+      **必须与下一条 propulsion.range.at_speed 成对读。**
+
+  - field: propulsion.range.at_speed
+    value: 15
+    unit: kn
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    note: 上一条续航力对应的航速。
+
+  # 燃油装载量：navypedia 只给区间，不取单值，故不写 propulsion.fuel.capacity。
+  # 原句 "Fuel, toil 1417 - 2108"。两个数分别对应什么状态（正常/满载）
+  # 来源未说明，取任一都是推断。见 RESEARCH-NOTES.md §3。
+
+  # ============================================================ 防护
+  - field: protection.scheme
+    value: incremental
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    note: >-
+      **属归类判定，不是来源原话。** navypedia 没有用 all-or-nothing 或
+      incremental 这两个词。判定依据是本页的两句自述：
+      "At the designing an immune zone was not defined, however the calculations
+      conducted in 1933 have shown, that protection against 130mm shells on a
+      distance from more than 40 cables was provided, the immune zone against
+      152mm shells laid in a 50-105 cables interval, but only for magazines"
+      以及 "Under 203mm shells immune zone was absent."
+      即：要害局部加厚（弹药库段 95 mm）、机舱段减薄（76 mm）、
+      水平防护按部位分 51 / 25 mm，**对 8 英寸弹完全没有免疫区**——
+      「要害局部加厚 + 其余薄板」的叠加式防护，归 incremental。
+
+  - field: protection.armor.thickness
+    value: 76
+    unit: mm
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    qual: { part: belt, region: main }
+    note: >-
+      机舱段主装甲带。navypedia 装甲行原句 "belt: 95 - 76"，
+      正文把两个数拆开："Main belt extended to 1.5m below and 3m over waterline.
+      Middle part of the belt abreast machinery was 76mm thick and end parts
+      abreast magazines were 95mm."
+      本条是「舯部机舱段 76 mm」，95 mm 记在下面 fore / aft 两条。
+
+  - field: protection.armor.thickness
+    value: 95
+    unit: mm
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    qual: { part: belt, region: fore }
+    note: >-
+      前部弹药库段装甲带。navypedia 正文 "end parts abreast magazines were 95mm"。
+      来源没有把「前部」与「后部」分列两个数，两段同为 95 mm，
+      故 fore / aft 各记一条，不是两段数值不同。
+
+  - field: protection.armor.thickness
+    value: 95
+    unit: mm
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    qual: { part: belt, region: aft }
+    note: 后部弹药库段装甲带，同上句。与 fore 条同值。
+
+  - field: protection.armor.thickness
+    value: 25
+    unit: mm
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    qual: { part: deck, region: main }
+    note: >-
+      机舱段上方装甲甲板。navypedia 正文
+      "Armoured deck over main belt was 51mm thick over magazines and 25mm over
+      machinery."；装甲行 "deck: 51 - 25"。
+      弹药库段的 51 mm 记在下一条（part: magazine, region: roof）。
+
+  - field: protection.armor.thickness
+    value: 51
+    unit: mm
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    qual: { part: magazine, region: roof }
+    note: 弹药库上方装甲甲板，navypedia 同句 "51mm thick over magazines"。
+
+  - field: protection.armor.thickness
+    value: 38
+    unit: mm
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    qual: { part: barbette, region: main }
+    note: >-
+      navypedia 装甲行 "barbettes: 38"，正文 "Barbettes were 38mm thick."
+
+  - field: protection.armor.thickness
+    value: 64
+    unit: mm
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    qual: { part: turret, region: face }
+    note: >-
+      navypedia 正文 "Turrets had 64mm faces, 25mm sides, 19mm rears and 51mm
+      crowns."，装甲行 "turrets: 64 - 19"。
+
+  - field: protection.armor.thickness
+    value: 25
+    unit: mm
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    qual: { part: turret, region: side }
+    note: 同上句 "25mm sides"。
+
+  - field: protection.armor.thickness
+    value: 19
+    unit: mm
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    qual: { part: turret, region: rear }
+    note: 同上句 "19mm rears"。
+
+  - field: protection.armor.thickness
+    value: 51
+    unit: mm
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    qual: { part: turret, region: roof }
+    note: 同上句 "51mm crowns"。
+
+  - field: protection.armor.thickness
+    value: 32
+    unit: mm
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    qual: { part: conning_tower, region: side }
+    note: >-
+      navypedia 装甲行 "CT: 32"，正文 "There was a CT with 32mm sides."
+
+  # ============================================================ 武备概览
+  - field: armament.mount.summary
+    value: >-
+      建成时：3 × 三联 8 in/55 Mk 9（203 mm）主炮 + 4 × 单装 5 in/25 高平两用炮
+      + 2 × 三联 21 in 鱼雷管 + 2 具弹射器、4 架水上飞机。
+      1931 年拆除全部鱼雷管；1938-39 年副炮由 4 门增至 8 门；
+      1941 年末以 4 座四联 1.1 in/75 取代 3 in 高炮；
+      1942 年拆除 8 挺 0.5 in 机枪、加装 14 门 20 mm 厄利孔。
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17, to: 1942-12-01 }
+    confidence: C
+    note: >-
+      概览条，逐项依据在下面各 mount 实体与单舰文件的武备 fact 里。
+      navypedia 原句（建成态）：
+      "Armament 3 x 3 - 203/55 Mk 9.10.11/13/14, 4 x 1 - 127/25 Mk 10.11.13,
+      2 x 3 - 533 TT, 2 catapults, 4 seaplanes (OL, O2U, O3U)"。
+      改装链原句：1931 "all: - 2 x 3 - 533 TT"；1933 "+ 8 x 1 - 12.7/90"；
+      1938-39 "+ 4 x 1 - 127/25 Mk 10.11.13"；mid-1941 "+ 4 x 1 - 76/50 Mk 20"；
+      late-1941 "- 4 x 1 - 76/50; + 4 x 4 - 28/75 Mk 1"；
+      1942 "- 8 x 1 - 12.7/90; + 14 x 1 - 20/70 Mk 4, Mk 3, Mk 4 radars"。
+
+  - field: armament.torpedo.tubes
+    value: 6
+    unit: count
+    src: [navypedia-northampton, danfs-northampton]
+    valid: { from: 1930-05-17, to: 1931-12-31 }
+    confidence: C
+    note: >-
+      **建成态：2 座三联，6 管。1931 年全部拆除，此后再无鱼雷管。**
+      navypedia 原句 "2 x 3 - 533 TT" 与改装表 "1931, all: - 2 x 3 - 533 TT"；
+      DANFS 题头 "6 21" tt."（题头数据行记的是**建成状态**，不是 1942 年状态）。
+      NavSource 一张 1930 年代初照片的说明写 "underway during the early 1930s,
+      prior to the removal of her torpedo tubes"，可见拆除确有其事。
+      **1942 年中途岛时本舰鱼雷管数为 0**，见单舰文件同名 fact。
+
+  - field: armament.torpedo.diameter
+    value: 533
+    unit: mm
+    src: [navypedia-northampton, danfs-northampton]
+    valid: { from: 1930-05-17, to: 1931-12-31 }
+    confidence: C
+    note: >-
+      21 英寸。navypedia 「533 TT」；DANFS 「6 21" tt.」。
+      时间窗同上条，只覆盖有鱼雷管的那一年多。
+
+  # ============================================================ 航空
+  - field: aviation.aircraft.types
+    value: OL、O2U、O3U 三型水上侦察机（建成时）
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    note: >-
+      navypedia 原句 "2 catapults, 4 seaplanes (OL, O2U, O3U)"。
+      **中途岛时期（1942-06）本舰载机型号未获取**——navypedia 的机型清单
+      是建成态，不能直接套到 1942 年；DANFS 与 NavSource 都没有给中途岛时的机型。
+      这一点在单舰文件里如实标为未获取。
+
+  - field: aviation.catapult.count
+    value: 2
+    unit: count
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: C
+    note: navypedia 原句 "2 catapults"。
+
+  # ============================================================ 武器实体
+  # 本文件只新建一件武器实体：8 in/55 Mk 9。
+  # 5 in/25 Mk 10、1.1 in/75 Mk 1、20 mm 厄利孔三件**全站已有实体**，
+  # 分别复用 weapon:5in25-mk10（本轮新建于 pensacola.yaml）、
+  # weapon:11in75-mk1、weapon:20mm-oerlikon。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.designation
+    value: 8"/55 (20.3 cm) Mark 9
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: C
+    note: >-
+      NavWeaps 页面题名是「Marks 9, 10, 11, 13 and 14」，五种 Mark 共用一页。
+      本实体对应 Mark 9 —— 原句 "Mark 9 was the original design and was used on
+      ships built in the 1920s."。Mark 10 从未制造（"The Mark 10, which was never
+      built, was a lighter gun constructed of only three hoops."），
+      Mark 11/13/14 是后来的重 lining 版本。
+      **不要把本实体与本站已有的 weapon:8in-50-mk8 混淆**：
+      那是英国 8"/50 (20.3 cm) Mark VIII（郡级），倍径 50、弹重 256 lb；
+      这是美国 8"/55，倍径 55、弹重 260 lb，两门炮无任何通用件。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.nation
+    value: united_states
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: C
+
+  - about: weapon:8in-55-mk9
+    field: weapon.category
+    value: naval_gun
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: C
+
+  - about: weapon:8in-55-mk9
+    field: weapon.bore
+    value: 203
+    unit: mm
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: C
+    note: NavWeaps 题名 "8"/55 (20.3 cm)"。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.caliber_length
+    value: 55
+    unit: ratio
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: C
+    note: >-
+      倍径 55。NavWeaps 原文没有直接写 "L/55" 这个记号，
+      但题名 "8"/55" 与 "Gun Length 449.0 in (11.405 m)" / "Bore Length 440.1 in
+      (11.179 m)" 的比值（449.0/8 = 56.1，440.1/8 = 55.0）表明 55 是膛线长度口径法。
+      按 usa_uk_method 记。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.caliber_method
+    value: usa_uk_method
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: C
+    note: >-
+      判定依据是上一条 note 里的除法（Bore Length ÷ 口径 = 55.0）。
+      属本站在来源数据上做的算术，不是来源自述，故置信度取 C。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.weight
+    value: 30480
+    unit: kg
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: C
+    note: >-
+      NavWeaps 原句 "Gun Weight 30.0 tons (30.48 mt)"。
+      来源自己给了公吨换算值 30.48 mt，本条直接取 30,480 kg，未另行换算。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.length.oa
+    value: 11.405
+    unit: m
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: C
+    note: NavWeaps 原句 "Gun Length 449.0 in (11.405 m)"，取来源给的公制值。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.length.bore
+    value: 11.179
+    unit: m
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: C
+    note: NavWeaps 原句 "Bore Length 440.1 in (11.179 m)"。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.projectile_weight
+    value: 118
+    unit: kg
+    qual: { shell_type: ap }
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: C
+    note: >-
+      NavWeaps 原句 "AP Mark 19 Mods 1 to 6: 260 lbs. (118 kg)"。
+      来源明写这是 AP（穿甲）弹；同页另列 SP Common / Common / HC 各型，
+      弹重多为 260 lbs（118 kg），HC 亦是。
+      **注意**：本炮从未使用过「超重弹」（super-heavy），
+      原句 "None of these ships ever carried the "super-heavy" AP projectiles
+      as their ammunition hoists could not accommodate the longer, heavier round."
+
+  - about: weapon:8in-55-mk9
+    field: weapon.muzzle_velocity
+    value: 853
+    unit: mps
+    qual: { shell_type: ap }
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: C
+    note: >-
+      NavWeaps 原句 "Marks 9, 10, 11 and 13 guns: 2,800 fps (853 mps)"
+      （Mark 14 是 823 mps，本条不含）。
+      同页另注原 Mark 9 初速原为 3,000 fps，因炮管寿命仅约 500 发且精度差而降低：
+      "The Mark 9 originally had a muzzle velocity of 3,000 fps (914 mps),
+      but barrel life was only about 500 rounds and accuracy was poor."
+
+  - about: weapon:8in-55-mk9
+    field: weapon.charge.weight
+    value: 40.4
+    unit: kg
+    qual: { charge_part: single, propellant: other }
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: C
+    note: >-
+      NavWeaps 原句 "Marks 9, 10, 11 and 13 guns / Full Charge: 89 lbs. (40.4 kg) SPD"。
+      propellant 一栏的枚举里没有 SPD（美国无烟药）这个值，取 other，
+      化学名 SPD 写在 weapon 页的正文里。charge_part 取 single 是因为
+      来源注 "The propellant charges were in halves."——**这其实与 single 冲突**，
+      本条按「整装药总重」登记，分装两半的事实记在本 note 里，不另立字段。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.charge.chamber_volume
+    value: 86.8
+    unit: dm3
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: C
+    note: >-
+      NavWeaps 原句 "Marks 9, 10, 11 and 13: 5,300 in3 (86.8 dm3)"
+      （Mark 14 是 4,860 in3 / 79.6 dm3，本条不含）。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.rate_of_fire
+    value: 3.5
+    unit: rpm
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: C
+    note: >-
+      NavWeaps 原句 "Rate Of Fire 3 - 4 rounds per minute"，取区间中值 3.5。
+      **中值是本站计算，不是来源原话**，故置信度 C。
+      同页另记休斯敦号在爪哇海曾打出 5-6 发/分（可能用 "cue-balling" 手法）。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.range.max
+    value: 29563
+    unit: m
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: C
+    note: >-
+      NavWeaps 射表末行：仰角 45.00°，射程 32,330 yards (29,563 m)，
+      弹种为 AP Mark 19 / SP Common Mark 17 / Common Mark 15，初速 853 mps。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.range.max_elevation
+    value: 45
+    unit: deg
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: C
+    note: 上一条对应的仰角。NavWeaps 射表 "45.00 degrees"。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.barrel_life
+    value: 715
+    unit: count
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: C
+    note: NavWeaps 原句 "Approximate Barrel Life 715 rounds"（Mk 9 降初速后的值）。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.elevation.min
+    value: -10
+    unit: deg
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: C
+    note: >-
+      NavWeaps 炮座段 "Elevation -10 / +41 degrees"。这是**炮座**（mount）的限制，
+      不是炮身；但塔身与炮身的仰角在本炮上相同，故同时登记在 weapon 与 mount 两处。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.elevation.max
+    value: 41
+    unit: deg
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: C
+    note: 同上句 "+41"。
+
+  - about: weapon:8in-55-mk9
+    field: weapon.in_service_from
+    value: 1927
+    unit: date
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1927 }
+    confidence: C
+    note: NavWeaps 原句 "Date In Service 1927"（设计 1922）。
+
+  # ---- 炮位：三座三联 ----
+  - about: mount:northampton-triple-8in
+    field: mount.weapon
+    value: weapon:8in-55-mk9
+    src: [navweaps-8in-55-mk9, navypedia-northampton]
+    valid: { from: 1930-05-17, to: 1942-12-01 }
+    confidence: C
+    note: >-
+      NavWeaps 炮座段原句 "Triple Mounts Pensacola (2), Northampton (3) and
+      Indianapolis (3)"——括注即座数。
+      **注意来源用的是 mount 不是 turret**：同页脚注 1g 解释
+      "The earliest ones were officially classified as "twin mounts" and
+      "triple mounts" rather than "turrets," as they had handling rooms directly
+      below the gunhouse and did not have a rotating stalk."
+      即本级的三联装没有旋转炮座筒，官方分类是 mount。
+
+  - about: mount:northampton-triple-8in
+    field: mount.type
+    value: triple_turret
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1930-05-17, to: 1942-12-01 }
+    confidence: C
+    note: >-
+      注册表 mount.type 的枚举里没有 "triple_mount"，最接近的是 triple_turret。
+      按枚举取值，但**来源明确说它不是 turret**（见上一条 note），
+      这个字段与来源的术语冲突，特此注明。
+
+  - about: mount:northampton-triple-8in
+    field: mount.barrels
+    value: 3
+    unit: count
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17, to: 1942-12-01 }
+    confidence: C
+    note: 三联装，每座 3 管。
+
+  - about: mount:northampton-triple-8in
+    field: mount.count
+    value: 3
+    unit: count
+    src: [navweaps-8in-55-mk9, navypedia-northampton]
+    valid: { from: 1930-05-17, to: 1942-12-01 }
+    confidence: C
+    note: NavWeaps "Northampton (3)"；navypedia "3 x 3 - 203/55"。
+
+  - about: mount:northampton-triple-8in
+    field: mount.position
+    value: superfiring_fore
+    src: [navypedia-northampton]
+    valid: { from: 1930-05-17, to: 1942-12-01 }
+    confidence: C
+    note: >-
+      **本条只是概略位置，来源没有逐座给方位。**
+      三座三联按本级惯例是前二（背负）后一，但 navypedia 与 NavWeaps
+      都没有逐座列出 1/2/3 号炮位的方位。按「前二后一」写会变成推断，
+      故只登记一个 superfiring_fore 表示「含背负前置炮位」，
+      逐座方位标为未获取。详见 RESEARCH-NOTES.md §5。
+
+  - about: mount:northampton-triple-8in
+    field: mount.weight
+    value: 251000
+    unit: kg
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1930-05-17, to: 1942-12-01 }
+    confidence: C
+    note: >-
+      NavWeaps 原句 "Triple Mounts: 247 - 250 tons (251 - 254 mt)"。
+      区间下限 251 mt = 251,000 kg，本条取**下限**并在 note 里标明区间。
+      取中值或上限同样是推断，故取来源写在前面的那个数。
+
+  - about: mount:northampton-triple-8in
+    field: mount.elevation.max
+    value: 41
+    unit: deg
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1930-05-17, to: 1942-12-01 }
+    confidence: C
+    note: NavWeaps 炮座段 "Elevation -10 / +41 degrees"。
+
+  - about: mount:northampton-triple-8in
+    field: mount.traverse
+    value: 约 ±150°
+    src: [navweaps-8in-55-mk9]
+    valid: { from: 1930-05-17, to: 1942-12-01 }
+    confidence: C
+    note: NavWeaps 原句 "Train about +150 / -150 degrees"。
+
+  # ---- 炮位：单装 5 in/25（8 门，1942 年状态）----
+  - about: mount:northampton-5in25-single
+    field: mount.weapon
+    value: weapon:5in25-mk10
+    src: [navweaps-5in25-mk10, navypedia-northampton]
+    valid: { from: 1938, to: 1942-12-01 }
+    confidence: C
+    note: >-
+      NavWeaps 炮座段原句 "Cruisers / Pensacola (4), Northampton (8), Portland (8)
+      and New Orleans (except Quincy and Vincennes) (8): Mark 19"。
+      即本级用 Mark 19 单装炮座，8 座。
+      navypedia 的累加链：建成 4 座，1938-39 "+ 4 x 1 - 127/25 Mk 10.11.13" → 8 座。
+      两源独立，结果一致。
+
+  - about: mount:northampton-5in25-single
+    field: mount.type
+    value: open_mount
+    src: [navweaps-5in25-mk10]
+    valid: { from: 1938, to: 1942-12-01 }
+    confidence: C
+    note: >-
+      NavWeaps 的分类名是 "Pedestal Single Mounting"，即基座式单装、敞开式。
+      同页另注 Mark 19 的仰角与旋回均为**手动**：
+      "Elevation Rate Mark 19: Manual operation, only" /
+      "Train Rate Mark 19: Manual operation, only"。
+
+  - about: mount:northampton-5in25-single
+    field: mount.barrels
+    value: 1
+    unit: count
+    src: [navweaps-5in25-mk10]
+    valid: { from: 1938, to: 1942-12-01 }
+    confidence: C
+
+  - about: mount:northampton-5in25-single
+    field: mount.count
+    value: 8
+    unit: count
+    src: [navweaps-5in25-mk10, navypedia-northampton]
+    valid: { from: 1938, to: 1942-12-01 }
+    confidence: C
+    note: >-
+      **建成时是 4 座**（DANFS 题头 "4 5"" 亦为建成态）。
+      本条的 8 座时间窗从 1938 年加装后起算，具体月份来源未给，故取年份粒度。
+
+  - about: mount:northampton-5in25-single
+    field: mount.elevation.max
+    value: 85
+    unit: deg
+    src: [navweaps-5in25-mk10]
+    valid: { from: 1938, to: 1942-12-01 }
+    confidence: C
+    note: >-
+      NavWeaps 原句 "Elevation / Marks 17, 19, 23 and 27: -15 / +85 degrees"。
+
+  # ---- 炮位：四联 1.1 in/75（4 座，1941 年末起）----
+  - about: mount:northampton-11in75-quad
+    field: mount.weapon
+    value: weapon:11in75-mk1
+    src: [navypedia-northampton, navweaps-11in75-mk1]
+    valid: { from: 1941-10, to: 1942-12-01 }
+    confidence: C
+    note: >-
+      navypedia 改装表 "late 1941, Northampton: - 4 x 1 - 76/50; + 4 x 4 - 28/75 Mk 1"。
+      即 1941 年末以 4 座四联 1.1 in 换掉 4 门 3 in/50。
+      时间窗取 1941-10（"late 1941" 只能落到季度粒度，取季初是本站口径，非来源原话）。
+
+  - about: mount:northampton-11in75-quad
+    field: mount.type
+    value: quad_turret
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1941-10, to: 1942-12-01 }
+    confidence: C
+    note: >-
+      注册表枚举无 quad_mount，取 quad_turret。
+      NavWeaps 的分类名是 "Quadruple Mounts"，同样不是 turret。
+
+  - about: mount:northampton-11in75-quad
+    field: mount.barrels
+    value: 4
+    unit: count
+    src: [navweaps-11in75-mk1]
+    valid: { from: 1941-10, to: 1942-12-01 }
+    confidence: C
+
+  - about: mount:northampton-11in75-quad
+    field: mount.count
+    value: 4
+    unit: count
+    src: [navypedia-northampton]
+    valid: { from: 1941-10, to: 1942-12-01 }
+    confidence: C
+    note: navypedia "4 x 4 - 28/75 Mk 1"，即 4 座四联 = 16 管。
+
+  # ---- 炮位：单装 20 mm 厄利孔（14 门，1942 年）----
+  - about: mount:northampton-20mm-single
+    field: mount.weapon
+    value: weapon:20mm-oerlikon
+    src: [navypedia-northampton]
+    valid: { from: 1942, to: 1942-12-01 }
+    confidence: C
+    note: >-
+      navypedia 改装表 "1942, Northampton, Louisville, Chicago, Augusta:
+      - 8 x 1 - 12.7/90; + 14 x 1 - 20/70 Mk 4, Mk 3, Mk 4 radars"。
+      时间窗只能给到年份粒度，**无法判断这 14 门是否在 1942-06 中途岛之前装好**，
+      这一点在单舰文件里如实标注。
+
+  - about: mount:northampton-20mm-single
+    field: mount.type
+    value: open_mount
+    src: [navypedia-northampton]
+    valid: { from: 1942, to: 1942-12-01 }
+    confidence: C
+    note: navypedia 写 "20/70 Mk 4, Mk 3, Mk 4"（Mark 数指炮座型号），单装敞开式。
+
+  - about: mount:northampton-20mm-single
+    field: mount.barrels
+    value: 1
+    unit: count
+    src: [navypedia-northampton]
+    valid: { from: 1942, to: 1942-12-01 }
+    confidence: C
+
+  - about: mount:northampton-20mm-single
+    field: mount.count
+    value: 14
+    unit: count
+    src: [navypedia-northampton]
+    valid: { from: 1942, to: 1942-12-01 }
+    confidence: C

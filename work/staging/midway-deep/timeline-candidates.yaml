@@ -1,0 +1,242 @@
+# ============================================================================
+# 中途岛 · timeline 候选（只列候选，未改动 data/battles/midway.yaml）
+#
+# 2026-11-23 · 采集员 midway-deep
+#
+# 说明：
+#   1. 格式照抄 data/battles/midway.yaml 的 timeline 条目（time / major / text.zh / src）。
+#   2. **time 一律用中途岛当地时间（Zone +12）**，与 existing 文件一致。
+#      凡来源本身用别的基准，条目里用 note 写明原记基准与换算。
+#   3. src 用 data/sources.yaml 现有 id，或本组 sources-fragment.yaml 新登记的 id。
+#   4. 已存在于 midway.yaml 的事件**不重复列**，只列缺口。
+#   5. 有争议的时刻，条目里并列，不裁决。
+#
+# 时间基准速查（引用前务必核）：
+#   Zone +12 = 中途岛当地  ← 本文件与 midway.yaml 使用的基准
+#   Zone +10 = 企业号 / 大黄蜂号行动报告  → 换算 +2h
+#   JST +9，5 日制 = 南云战斗详报 / JM-93 → 换算：+3h，日期 −1d
+# ============================================================================
+
+timeline_candidates:
+
+  # ---------------------------------------------------------------- 6 月 4 日 · 雷达与侦察
+  - time: '06-04 05:50'
+    confidence: B
+    text:
+      zh: >-
+        中途岛岸基雷达首次捕捉来袭机群（93 英里、约 10,000 英尺）。
+        注意：ONI 记「0545 报告后五分钟」，NHHC 记 0553，两说并列。
+      en: >-
+        Midway radar first picked up the incoming strike at 93 miles, altitude about 10,000 feet.
+    src: [oni-midway-combat-narrative, nhhc-h006-2-isr-midway]
+    note: >-
+      ONI ch5 原句：「Five minutes later the Midway radar picked up the planes at a distance of 93
+      miles, altitude about 10,000 feet.」（时标在 0545 条目之后）
+      NHHC 原句：「Midway radar detected the incoming strike at 0553.」
+      **两说并列**。更关键的是顺序：NHHC 的链条是「PBY 目视 0545 → PBY 目视航母 0552 →
+      岸基雷达 0553」，即雷达比目视晚 8 分钟——与「雷达先发现」的通行印象相反。
+
+  - time: '06-04 06:29'
+    text:
+      zh: >-
+        中途岛雷达连续报读：8 英里 330° 与 29 英里 265° 各一批不明机（香农中校战斗日志逐条记录）。
+    src: [oni-midway-combat-narrative]
+    note: >-
+      原句（引 Lt. Col. Harold D. Shannon 战斗日志）：「0629 Radar to Bn: "Many unidentified planes
+      8 miles, 330° and 29 miles, 265°".」同一日志 0637、0653 另有两次类似报读，可合成一条长事件。
+
+  - time: '06-04 08:15'
+    major: true
+    text:
+      zh: >-
+        企业号 CXAM 在 30 英里、方位 185° 发现日方侦察机（利根 4 号机）；战斗机因低云未能拦截，
+        该机随后发出「编队中确有航母」的报告。
+    src: [ethw-radar-fighter-directors-midway]
+    note: >-
+      原句：「At 0815 Enterprise CXAM operators found a contact at thirty miles on bearing 185
+      degrees. It was Tone's Number 4 float plane still looking for the task force.」
+      「Because of low altitude cloud cover, Red 17 did not spot the float plane, and Tone No. 4 was
+      able to get off another report saying the formation did indeed include one carrier.」
+      **这是全战役「雷达发现了但没拦住」的典型，也是日方确认美军航母在场的时刻。**
+
+  - time: '06-04 08:15'
+    text:
+      zh: >-
+        （与上条同刻）ONI 亦记此接触：企业号雷达发现南面 36 英里的日军双浮筒水上侦察机。
+    src: [oni-midway-combat-narrative]
+    note: >-
+      ONI ch8 原句：「At 0815 that morning … the radar of Task Force SUGAR detected a Japanese
+      twin-float seaplane 36 miles to the south.」距离 36 英里 vs ETHW 的 30 英里，并列。
+
+  # ---------------------------------------------------------------- 6 月 4 日 · 鱼雷机三队（补已有时刻之外的节点）
+  - time: '06-04 09:40'
+    text:
+      zh: >-
+        日方瞭望发现自东南低空进入的 14 架鱼雷机（企业号 VT-6，Lindsey）。
+        日方由此判定「至少有两艘美军航母」，且此时约 30 架零战已全部被吸引到 30 英里外。
+    src: [nhhc-h006-3-victory-barely]
+    note: >-
+      原句：「Shortly after the Zeroes finished off Torpedo EIGHT, the Japanese sighted 14 low-flying
+      aircraft coming in from the southeast around 0940. What this meant to the Japanese was that
+      another torpedo attack was coming in, that they were up against at least two U.S. carriers,
+      and that their swarm of Zeroes were almost 30 miles out of position.」
+      existing 文件 09:38 条已记加贺瞭望发现 VT-6，本条补的是「日方由此判定至少两艘航母」这层。
+
+  - time: '06-04 10:10'
+    text:
+      zh: >-
+        日方发现第三波 12 架低空来袭机（约克城 VT-3，Massey），航向指向北面的飞龙、苍龙。
+    src: [nhhc-h006-3-victory-barely, combinedfleet-soryu]
+    note: >-
+      原句：「At around 1010, the Japanese sighted yet another wave of 12 low-flying aircraft
+      approaching from the east, heading for the northern group, Hiryu and Soryu.」
+      existing 文件 10:06 条记赤城「方位 48°、距离 45,000 米」发现 VT-3，本条是日方编队层面的
+      第二次确认，两时刻相差 4 分钟，**并列不裁决**。
+
+  # ---------------------------------------------------------------- 6 月 4 日 · 日方四舰沉没时刻（existing 完全缺失）
+  - time: '06-04 19:12'
+    major: true
+    text:
+      zh: >-
+        苍龙沉没（当地 19:12）。日方战斗详报原记 JST 1620，换算为当地 1920，两说相差 8 分钟。
+        方位 30-42.5N, 178-37.5W（详报）。
+    src: [combinedfleet-soryu, hw-japanese-story-midway-nagumo]
+    note: >-
+      **existing midway.yaml 的 timeline 没有苍龙沉没这一条**，是明确缺口。
+      TROM 原句：「Sunk: 1912 (1612 JST)」（见 work/raw/midway-battle.md §5 争议 7）。
+      详报 Table 3 原句：「SORYU … 5 JUNE 1620 / 30-42.5N / 178-37.5W」（JST）。
+      JST 1620 → +3h = 1920 → 日期 −1d = 6/4 1920。**19:12 vs 19:20 并列**。
+
+  - time: '06-04 19:25'
+    major: true
+    text:
+      zh: >-
+        加贺沉没（当地 19:25 / JST 16:25）。萩风发射两条鱼雷，加贺以舰尾下沉，
+        沉没位置 30-23.3N, 179-17.2W，阵亡 814 人。
+    src: [combinedfleet-kaga, hw-japanese-story-midway-nagumo]
+    note: >-
+      **existing timeline 同样缺加贺沉没**。
+      TROM 原句：「Sunk: 1925 (1625 JST) destroyer HAGIKAZE fires two torpedoes into her starboard
+      side amidships aft … in approximate position 30-23.3'N, 179-17.2' W. She suffers a loss of 814
+      officers, petty officers, and men.」
+      详报 Table 3 原句：「KAGA … 5 JUNE 1625 SUNK / 30-23.3N / 179-17.2W」（JST）。
+      两源一致，可作高置信条目。
+
+  # ---------------------------------------------------------------- 6 月 4 日 · 潜艇（existing 缺）
+  - time: '06-04 13:59'
+    text:
+      zh: >-
+        USS Nautilus (SS-168) 对已中弹停车的苍龙发射 3 条鱼雷（ONI 记 1359）。
+        日方记载该次攻击的 1 条鱼雷命中右舷后部但未爆炸（加贺方向另有一次同类记录）。
+    src: [oni-midway-combat-narrative, combinedfleet-kaga]
+    note: >-
+      ONI ch7 原句：「at 1359 fired three torpedoes into her. The cruisers at once made a heavy
+      depth-charge attack. When this passed the Nautilus rose to periscope depth and found the
+      carrier completely aflame and abandoned. She sank at 1840.」
+      **ONI 说苍龙 1840 沉没**，与 TROM 1912、详报 1920 三方冲突——这一条本身就是争议证据。
+      加贺 TROM 另有：「1410 (1110 JST) KAGA is attacked by … USS NAUTILUS. One torpedo hits the
+      starboard quarter, but fails to explode.」
+
+  # ---------------------------------------------------------------- 6 月 4 日 · 雷达接触（第二波，与 existing 的彭萨科拉条并列）
+  - time: '06-04 14:30'
+    text:
+      zh: >-
+        （与 existing 14:27 彭萨科拉条并列的另一种记载）约克城号 CXAM 在 45 英里处发现飞龙第二波。
+        ETHW 记 1430/45 英里，ONI 记 1427/33 英里（彭萨科拉号接替雷达警戒后）。
+    src: [ethw-radar-fighter-directors-midway, oni-midway-combat-narrative]
+    note: >-
+      ETHW 原句：「Again they found Yorktown, whose CXAM radar at about 1430 detected them at
+      forty-five miles range.」
+      ONI ch8 原句：「at 1427 the Pensacola, which had assumed radar guard after the Yorktown was
+      damaged, picked up enemy planes bearing 340°, distance 33 miles.」
+      **两说差异有两层**：一是舰（约克城 vs 彭萨科拉），二是距离（45 vs 33 英里）。
+      不裁决；但从作战逻辑看，约克城此时已失去电力（见同日 14:45 条），**彭萨科拉的说法更合物理**，
+      但这是推断，不写入正文，仅作注释。
+
+  # ---------------------------------------------------------------- 6 月 5 日 · 追击与侦察
+  - time: '06-05 06:30'
+    text:
+      zh: >-
+        凤翔号一架飞机发现并拍摄仍漂浮的飞龙，甲板上仍可见幸存者。
+    src: [combinedfleet-hiryu]
+    note: >-
+      **existing timeline 已有此条**（06-05 06:30），本处重复列出仅作核对——合并时请删除本条。
+
+  # ---------------------------------------------------------------- 战后 · 官方口径（timeline 或 consequences 均可）
+  - time: '06-10 15:30'
+    major: true
+    section: consequences
+    text:
+      zh: >-
+        大本营发表（1942-06-10 15:30）：宣称击沉美航母「企业型 1 艘、大黄蜂型 1 艘」、击落飞机约 120 架、
+        爆碎重要军事设施；对己方损失只字未提。
+    src: [kyoto-shimbun-midway-daiseika]
+    note: >-
+      日文原句（转引自《京都戦時新聞》第 4 号，1942-06-11 掲載）：
+      「主な戦果（１）ミッドウェー方面　米航空母艦エンタープライズ型１隻とホーネット型１隻撃沈▽
+      飛行機約１２０機撃墜▽重要軍事施設爆砕」
+      同报道现代表述：「大本営は虚構の戦果を発表し、京都新聞など全国の新聞は追従して「大戦果」と
+      報道しました」。
+      **实际**：美方损失航母 1 艘（约克城）+ 驱逐舰 1 艘，飞机约 150 架；日方损失航母 4 艘 + 重巡 1 艘。
+
+  - time: '06-11'
+    section: consequences
+    text:
+      zh: >-
+        日本《Japan Times and Advertiser》刊出「Navy Scores Another Epochal Victory」，
+        自称击沉 2 艘美航母，同时首次承认己方损失 2 艘航母。
+    src: [usni-messaging-after-midway]
+    note: >-
+      原句：「On 11 June, the Japan Times and Advertiser lied to the Japanese public by publishing
+      "Navy Scores Another Epochal Victory," claiming to have sunk two U.S. carriers. In this initial
+      article, the Japanese admitted to losing two carriers.」
+      **注意这是英字报（对在日外国人/对外宣传），与大本营日文发表是两条线。**
+
+  - time: '06-21'
+    section: consequences
+    text:
+      zh: >-
+        日方承认另 2 艘航母「因不明损伤无法运作」，至此 4 艘航母的损失才以模糊措辞公开完毕（距战斗 17 天）。
+    src: [usni-messaging-after-midway]
+    note: >-
+      原句：「Then, on 21 June, the state revealed that the other two carriers could no longer
+      operate due to vaguely defined damage.」
+      **叙事价值**：不是一次性撒谎，而是分两次、隔 10 天、逐级加码地摊开。
+
+  - time: '07-11'
+    section: consequences
+    text:
+      zh: >-
+        大本营第 18 号令所定的中途岛攻略任务正式取消（作战目标放弃的官方时点）。
+    src: [jm93-midway-operations]
+    note: >-
+      原句：「On 11 Jul 42, the mission of the Commander-in-Chief of the Combined Fleet to capture
+      MIDWAY, which had been based on Imperial General Headquarters Order No 18, was canceled.」
+      **midway.yaml 的 consequences 里没有这一条**，而它是「战役结束」的制度性节点，建议补入。
+
+# ============================================================================
+# 附：existing 文件中发现的口径问题（不改 data/，只报告）
+#
+# 1. `losses.note`（日方）写「飞机损失约 248 架」。核实：248 是**编制总数**（NHHC 原句
+#    "All 248 carrier aircraft were lost"），而南云战斗详报的**空中战损只有 44 架**。
+#    两个词必须分开，否则读者会以为来源打架。建议改成：
+#    「舰载机编制 248 架全损（多数随舰沉没）；其中空中战损 44 架（南云战斗详报 Table 8）」。
+#
+# 2. `losses.note`（日方）写「舰载机飞行员阵亡约 110 名」。110 有硬出处（NHHC H-006-1：
+#    36 舰上 + 74 空中），**可以保留并升级为 A 级**；但同文紧接着说
+#    「It was not the loss of pilots at Midway that crippled Japan's ability to wage offensive
+#    naval operations」——**建议把「这批熟练飞行员比航母更难补充」这句改成
+#    「NHHC 认为决定性损失是航母本身与约 700 名航空机务人员，而非飞行员」**，
+#    否则与最新官方史学口径相反。
+#
+# 3. `losses.note`（美方）写「TBD 三队几乎全灭（41 架出击、35 架被击落）」。
+#    「35 架被击落」宜改为「35 架损失、6 架返回航母（其中仅 3 架仍可用）」——
+#    NHHC 原句是 "only six of the TBDs made it back to the carriers; only three of the aircraft
+#    were flyable"，没有说全部 35 架都「被击落」。
+#
+# 4. `timeline` 缺 6/4 苍龙、加贺两舰沉没条目（已在上方补候选项）。
+#
+# 5. `hits_received` 里赤城被弹时刻 06-04 10:26 与加贺 10:22 均已有；但
+#    **飞龙被弹另有「6 弹」说**（USSBS IJO-2 川口进："The Hiryu was hit six times during the
+#    fourth attack"），与现有 4 弹记录冲突，建议在 hits_received 的 note 里并列。
+# ============================================================================

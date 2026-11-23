@@ -1,0 +1,392 @@
+# ============================================================================
+# 武器正文 —— 8"/55 (20.3 cm) Marks 9, 10, 11, 13 and 14（美国）
+#
+# 先把最容易撞车的一件事钉死：本篇与站内已有的 8in-50-mk8 不是同一个东西。
+#   8in-50-mk8 = 英国 8"/50 (20.3 cm) Mk VIII（郡级重巡）
+#                膛长 400.0 in / 炮身 38,528 lbs (17,476 kg) / 仰角上限 +70 度
+#   本篇       = 美国 8"/55 (20.3 cm) Mk 9 族（条约重巡与列克星敦级）
+#                膛长 440.1 in / 炮身 30.0 tons (30,480 kg) / 仰角上限 +41 度
+# 口径同为 8 英寸，但倍径差 5、炮身差近 13 吨（美国这根更重）、炮座仰角差 29 度。
+# 弹道、炮座、装舰对象全不同，绝不合并。
+#
+# 第二条主线：Mk 9 / Mk 13 / Mk 14 / Mk 15 是一条谱系，不是四个并列型号。
+#   Mk 9   1920 年代的原始设计 —— 中途岛时六艘重巡用的就是它
+#   Mk 10  从未制造（更轻，只有三个箍）
+#   Mk 11  只有一个箍，自紧工艺
+#   Mk 13  Mk 9 重新镗线 + 局部镀铬
+#   Mk 14  Mk 9 重新镗线 + 全膛镀铬 + 缩小药室（为的是能打 Mk 12/15 的发射药）
+#   Mk 15  新造炮身，带适配套筒，可直接顶替老炮（另立一篇：8in-55-mk15）
+# 「中途岛时是 Mk 9」这条，正面依据是 navweaps「Mark 9 was the original design
+# and was used on ships built in the 1920s」，反面依据是 Mk 12/15 的装舰名单里
+# 没有 CA-32/34/36。两条都写在这一篇里。
+#
+# 中途岛编成的七艘重巡里，六艘装 Mk 9 族，只有文森斯号（CA-44）是 Mk 12 ——
+# 这一条来自两页 navweaps 的装舰名单交叉，写在中途岛那一节。
+# ============================================================================
+weapon: 8in-55-mk9
+updated: 2026-11-24
+
+intro:
+  lead:
+    zh: >-
+      8"/55 (20.3 cm) Marks 9, 10, 11, 13 and 14 是美国 1920 年代条约型重巡的主炮，
+      1922 年设计、1927 年服役，装在彭萨科拉、北安普敦、新奥尔良（仅 CA-32/34/36）
+      与波特兰四级重巡上，另有列克星敦级两艘航母。中途岛编成里的七艘重巡，
+      六艘用的是它，只有文森斯号（CA-44）是 Mk 12。
+      它最容易被写错的两处：一是与英国的 8"/50 Mk VIII 混成同一门炮，
+      二是把「8 英寸/55 倍径」当成一个型号 —— 这其实是一族五个 Mark，
+      而 1942 年 6 月那六艘舰装的是最老的 Mk 9。
+    en: >-
+      The 8"/55 (20.3 cm) Marks 9, 10, 11, 13 and 14 was the main battery of the
+      United States' 1920s treaty cruisers, designed in 1922 and in service from 1927,
+      fitted to the Pensacola, Northampton, New Orleans (CA-32, 34 and 36 only) and
+      Portland classes and to the two Lexington class carriers. Six of the seven heavy
+      cruisers at Midway carried it; only Vincennes (CA-44) had the Mark 12. Two things
+      are habitually got wrong about it: conflating it with the British 8"/50 Mark VIII,
+      and treating "8 inch / 55 calibre" as a single model - it is a family of five
+      marks, and the six ships present in June 1942 had the oldest of them, the Mark 9.
+
+  paragraphs:
+    - heading: 与英国 8"/50 只共用一个口径，其余全不同
+      text:
+        zh: >-
+          两门炮的题名只差一个数字，但那一个数字就是倍径，而倍径带着整条链子。
+          美国 8"/55 的膛长 440.1 英寸（11.179 米）、炮身 30.0 吨（30,480 公斤）；
+          英国 8"/50 Mk VIII 的膛长 400.0 英寸（10.160 米）、炮身 38,528 磅（17,476 公斤）。
+          口径一样，美国这根炮管比英国那根长 40 英寸，还重了将近 13 吨 ——
+          navweaps 对这一族的原话正是「相对于同时代大多数 8 英寸炮非常重」。
+          方向不能写反：重的是美国这根。
+          炮座那边差得更远：美国这一族的仰角上限是 +41 度，下限 −10 度；
+          英国 Mk I／I*／II 是 −3 到 +70 度。+41 与 +70 之间差的不是数字，
+          是这两种重巡对「高射角」这件事的态度。
+          还有一个不能混的实测差别：英国那门炮的初速 2,805 fps（855 米/秒），
+          美国 Mk 9 族是 2,800 fps（853 米/秒）—— 两个数字几乎相同，
+          但弹重、药室、膛线缠度都不同，把初速相近读成弹道相近是错的。
+          本节两组数字分别出自两页 navweaps，本站并列，不做换算。
+        en: >-
+          The two designations differ by one digit, and that digit is the calibre
+          length, which drags the whole chain behind it. The US 8"/55 has a bore of
+          440.1 in (11.179 m) and a gun weight of 30.0 tons (30,480 kg); the British
+          8"/50 Mark VIII has a bore of 400.0 in (10.160 m) and a gun weight of
+          38,528 lbs (17,476 kg). Same bore, a barrel forty inches longer and nearly
+          thirteen tons heavier - NavWeaps' own words for this family are that these
+          8-inch guns were very heavy compared with most other 8-inch guns, so the
+          direction must not be reversed: it is the US barrel that is heavy. The
+          mountings diverge further: this US family runs from -10 to +41 degrees, while
+          the British Marks I, I* and II run from -3 to +70. The gap between +41 and +70
+          is not a number but a difference in what the two navies wanted a heavy
+          cruiser's high-angle fire to be. One measured point that must not be merged:
+          the British gun's muzzle velocity is 2,805 fps (855 mps) and the US Mark 9
+          family's is 2,800 fps (853 mps). The figures are nearly identical, but
+          projectile weight, chamber and rifling twist are not, so reading similar
+          muzzle velocity as similar ballistics is wrong. The two sets of figures come
+          from two NavWeaps pages and stand side by side here without conversion.
+      src: [navweaps-8in-55-mk9, navweaps-8in-50-mk8]
+
+    - heading: 射表打到 45 度，炮座只到 41 度；超重弹则根本装不进
+      text:
+        zh: >-
+          这一族有两条约束不在炮身上，在炮座与扬弹机里。
+          第一条：射表列到 45.00 度、32,330 码（29,563 米），
+          而同一页的炮座表写仰角 −10/+41 度。45 度那一行超出了舰上炮座能抬到的角度。
+          navweaps 给射表的脚注只说「本表适用于装 Mk 9、Mk 11 与 Mk 13 的巡洋舰」，
+          没有解释 41 度上限的炮座怎么用 45 度那一行；本站两处并列，不替它圆。
+          第二条更要紧：这一族所有舰「从未携带过超重弹（super-heavy AP）」，
+          navweaps 给的理由是扬弹机装不下更长更重的弹。
+          对照另一页就清楚了：Mk 12/15 那一代的巴尔的摩级与俄勒冈城级
+          用的是 335 磅（152 公斤）的 AP Mark 21 超重弹，
+          而这一族的弹重一直被锁在 260 磅（118 公斤）。
+          一门炮的口径相同、初速相近，穿甲能力却被弹药这条链子卡住 ——
+          这个差别不在炮上，在弹药库到炮尾之间。
+        en: >-
+          Two of this family's constraints sit not in the gun but in the mounting and
+          the hoists. First: the range table runs to 45.00 degrees and 32,330 yards
+          (29,563 m), while the mounting table on the same page gives elevation as
+          -10/+41 degrees. The 45-degree row lies beyond what a shipboard mounting can
+          elevate to. NavWeaps' footnote to the table says only that it applies to those
+          cruisers armed with Mark 9, Mark 11 and Mark 13 guns, and does not explain how
+          a mounting capped at 41 degrees uses a 45-degree row; both statements stand
+          here without being reconciled. Second, and more important: none of these ships
+          ever carried the super-heavy AP projectiles, the reason given being that their
+          ammunition hoists could not accommodate the longer, heavier round. The contrast
+          is on the next page: the Mark 12/15 generation in Baltimore and Oregon City
+          used the 335 lbs (152 kg) AP Mark 21, while this family stayed locked to a
+          260 lbs (118 kg) projectile. Same bore, similar muzzle velocity, and armour
+          penetration capped by a link in the chain that is not the gun at all - the one
+          between magazine and breech.
+      src: [navweaps-8in-55-mk9, navweaps-8in-55-mk12]
+
+    - heading: 3,000 fps 打到 500 发，2,800 fps 才打得住
+      text:
+        zh: >-
+          这一族有一个被写在脚注里、却比正文更重要的数字：Mk 9 最初的初速是
+          3,000 fps（914 米/秒），但炮管寿命只有约 500 发，而且精度很差。
+          服役时给出的 2,800 fps 是降下来的结果，换来的是 715 发的炮管寿命。
+          精度问题在文献里是分开写的另一条：建成初期的巡洋舰齐射散布很差，
+          全齐射有时达 2,000 码（1,830 米）；navweaps 把成因归到
+          「初速过高」与「弹丸入膛定位不良（poor shot seating）」两处。
+          1933 年在马尼拉湾做了大规模试验，海岸炮兵部队参与，结果送交军械局；
+          采取的措施是降低初速与重新镗线。
+          两条记载（脚注的 3,000→2,800，正文的散布与 1933 年试验）在同一页上
+          是分开的两段，navweaps 没有把前者写成后者的措施之一；
+          本站也不合并，只把两段并排给出。
+        en: >-
+          One figure sits in a footnote and matters more than the body text: the Mark 9
+          originally had a muzzle velocity of 3,000 fps (914 mps), but barrel life was
+          only about 500 rounds and accuracy was poor. The 2,800 fps given in service is
+          the derated result, and what it bought was a barrel life of 715 rounds. The
+          accuracy problem is recorded separately: as commissioned the early cruisers had
+          poor dispersion patterns, sometimes as large as 2,000 yards (1,830 m) for a
+          full salvo, which NavWeaps attributes to the guns having a very high muzzle
+          velocity and poor shot seating. Extensive testing to establish the cause was
+          carried out in 1933 at Manila Bay with the assistance of the Coast Artillery,
+          and the results went to BuOrd; the corrections included reducing the muzzle
+          velocity and relining the barrels. The footnote's 3,000-to-2,800 derating and
+          the body text's dispersion and 1933 trials are two separate passages on the same
+          page, and NavWeaps does not present the first as one of the second's remedies.
+          Neither does this article: the two are given side by side.
+      src: [navweaps-8in-55-mk9]
+
+    - heading: 「炮座」是三档，不是一档：187 / 247–250 / 294 吨
+      text:
+        zh: >-
+          navweaps 在这一族上分了三种炮座，差别不是管数，是有没有旋转 stalk。
+          最早的一批官方分类叫 twin mounts 与 triple mounts 而不是 turrets，
+          因为它们的操作室就在炮房正下方，没有旋转 stalk；
+          而新奥尔良级 CA-32/34/36 用的那一批被分类为 triple turrets，因为它有 stalk。
+          重量对得上这条线：双联 187 吨（190 公吨）、三联 mount 247–250 吨
+          （251–254 公吨）、三联 turret 294 吨（299 公吨）。
+          三联 turret 比三联 mount 重约 45 吨，多出来的那 45 吨买的是 stalk ——
+          弹丸提升机因此能从弹库直通炮尾，而不必经过固定的下层结构。
+          装填角也随之一分为二：mounts 是 +5 度，turrets 是 +9 度。
+          俯仰速率 8 度/秒、旋回约 3.5 度/秒，俯仰与旋回都是电驱动经液压机构。
+          另有一处必须按型分开写：遥控（RPC）在新奥尔良级上是建成即有的，
+          战争期间装到了存活下来的各舰上，唯独盐湖城号（CA-25）没有。
+        en: >-
+          NavWeaps splits this family's mountings into three kinds, and the difference is
+          not the number of barrels but whether there is a rotating stalk. The earliest
+          were officially classified as twin mounts and triple mounts rather than turrets,
+          because they had handling rooms directly below the gunhouse and no rotating
+          stalk; the later mountings used on New Orleans (CA-32), Astoria (CA-34) and
+          Minneapolis (CA-36) were classified as triple turrets because they did have
+          one. The weights follow that line: twin mounts 187 tons (190 mt), triple mounts
+          247 to 250 tons (251 to 254 mt), triple turrets 294 tons (299 mt). A triple
+          turret is about 45 tons heavier than a triple mount, and what those 45 tons buy
+          is the stalk - so each gun's shell hoist can run straight from the shell room
+          to the breech instead of through fixed structure. Loading angle splits the same
+          way: +5 degrees for mounts, +9 for turrets. Elevation ran at 8 degrees per
+          second and train at about 3.5, all electrically powered through hydraulic gear.
+          One point has to be stated per class: RPC was used in the New Orleans class as
+          built, and was fitted to surviving ships during the war, except for Salt Lake
+          City (CA-25).
+      src: [navweaps-8in-55-mk9]
+
+    - heading: 中途岛那天：七艘重巡，六艘是 Mk 9 族
+      text:
+        zh: >-
+          中途岛的巡洋舰编成可以按 navweaps 的战斗序列逐条对到炮型上。
+          TG 16.2 是明尼阿波利斯（CA-36）、新奥尔良（CA-32）、文森斯（CA-44）、
+          北安普敦（CA-26）、彭萨科拉（CA-24）、亚特兰大（CL-51）；
+          TG 17.2 是阿斯托里亚（CA-34）与波特兰（CA-33）。
+          七艘重巡里，Mk 9 的装舰名单覆盖彭萨科拉级、北安普敦级、
+          新奥尔良级的 CA-32/34/36、以及波特兰级；文森斯号（CA-44）
+          属 Tuscaloosa 子级，主炮是 Mk 12。所以那天的比例是六比一，
+          不是「七艘都用同一种炮」，也不是「有的用 Mk 14」——
+          Mk 14 是战时大规模换装用的重新镗线版，与 1942 年 6 月无关。
+          亚特兰大号那一栏要单独说清：它是轻巡，主炮是 5"/38，不在这七艘之内；
+          本站把七艘重巡与它分开记，避免在「重巡主炮」这一栏里混进另一型炮。
+        en: >-
+          The Midway cruiser order of battle can be matched to gun marks entry by entry.
+          TG 16.2 was Minneapolis (CA-36), New Orleans (CA-32), Vincennes (CA-44),
+          Northampton (CA-26), Pensacola (CA-24) and Atlanta (CL-51); TG 17.2 was
+          Astoria (CA-34) and Portland (CA-33). Of the seven heavy cruisers, the Mark 9
+          fitting list covers the Pensacola class, the Northampton class, New Orleans
+          CA-32/34/36 and the Portland class; Vincennes (CA-44) belongs to the Tuscaloosa
+          sub-class and her main battery was the Mark 12. The ratio that day was therefore
+          six to one - not "seven ships with the same gun", and certainly not "some with
+          the Mark 14", which was the relined version used for wartime regunning on a
+          large scale and has nothing to do with June 1942. Atlanta needs a separate
+          line: she was a light cruiser with 5"/38 main guns and is not one of the seven;
+          this article keeps her apart so that a different weapon does not slip into the
+          heavy cruiser column.
+      src: [navweaps-midway-oob, navweaps-8in-55-mk9, navweaps-8in-55-mk12]
+
+history:
+  - id: design
+    title: { zh: 设计、降速与定型, en: "Design, derating and acceptance" }
+    range: { from: 1922, to: 1933 }
+    lead:
+      zh: >-
+        这一族从设计到把精度问题处理完，用了十一年；中间那一步不是改炮，
+        是把初速降下来。
+      en: >-
+        From design to a settled accuracy fix took eleven years, and the decisive step
+        was not a redesign of the gun but a reduction in muzzle velocity.
+    events:
+      - date: 1922
+        text:
+          zh: >-
+            navweaps 记的设计年份为 1922。同一族在这一页上列了五个 Mark：
+            9、10、11、13、14，其中 Mark 10 从未制造。
+            这一族的共同点是「相对于同时代其他 8 英寸炮非常重」，
+            navweaps 给的理由是「并不显而易见」。
+          en: >-
+            NavWeaps dates the design to 1922. The family is listed on that page as five
+            marks - 9, 10, 11, 13 and 14 - of which the Mark 10 was never built. The
+            common trait is that these 8-inch guns were very heavy compared with most
+            other 8-inch guns, for reasons NavWeaps describes as not readily apparent.
+        src: [navweaps-8in-55-mk9]
+
+      - date: 1927
+        text:
+          zh: >-
+            进入服役。9 炮巡洋舰建成时的平时备弹是每门 100–125 发，
+            战时定额为每舰 1,400 发；单炮备弹表另记 150 发/门。
+            炮身由衬管、A 管、套筒、五个箍、三个锁环与一个螺旋炮尾衬套组成，
+            药室 5,300 立方英寸（86.8 立方分米）。
+          en: >-
+            Entered service. Most of the nine-gun cruisers as commissioned had a
+            peacetime outfit of 100 to 125 rounds per gun with a wartime allowance of
+            1,400 rounds per ship; the stowage table separately gives 150 rounds per gun.
+            The gun consisted of liner, A tube, jacket, five hoops, three locking rings
+            and a screw box liner, with a chamber of 5,300 cubic inches (86.8 dm3).
+        src: [navweaps-8in-55-mk9]
+
+      - date: 1933
+        text:
+          zh: >-
+            在马尼拉湾做了大规模试验，海岸炮兵部队协助，结果送交军械局。
+            要解决的问题是齐射散布过大（全齐射有时达 2,000 码），
+            navweaps 归因于初速过高与弹丸入膛定位不良。
+            采取的措施是降低初速并重新镗线；初速由最初的 3,000 fps 降到服役值
+            2,800 fps（853 米/秒），炮管寿命随之由约 500 发提到 715 发。
+          en: >-
+            Extensive testing was carried out at Manila Bay with the assistance of the
+            Coast Artillery, and the results were sent to BuOrd. The problem was excessive
+            salvo dispersion, sometimes 2,000 yards for a full salvo, which NavWeaps
+            attributes to very high muzzle velocity and poor shot seating. The corrections
+            were to reduce the muzzle velocity and reline the barrels; velocity came down
+            from the original 3,000 fps to 2,800 fps (853 mps) in service, and barrel life
+            rose from about 500 rounds to 715.
+        src: [navweaps-8in-55-mk9]
+
+  - id: midway
+    title: { zh: 1942：中途岛与两艘航母的炮, en: "1942 - Midway and the carrier guns" }
+    range: { from: 1942-02, to: 1942-06 }
+    lead:
+      zh: >-
+        这一年这一族炮出现在两个位置上：六艘重巡的主炮，以及从两艘航母上拆下来
+        运去瓦胡岛当岸炮的那批炮管。
+      en: >-
+        In this year the family appears in two places: as the main battery of six heavy
+        cruisers, and as the barrels taken off two carriers and sent to Oahu as coast
+        artillery.
+    events:
+      - date: 1942-02
+        text:
+          zh: >-
+            爪哇海海战中，休斯敦号（CA-30）在战斗前段维持了 5–6 发/分的射速。
+            navweaps 的标准射速栏是 3–4 发/分，并把这个更高的数字写在脚注里，
+            附带一句「可能使用了 cue-balling 手法」。两条并列：表中值 3–4，
+            战例值 5–6，脚注没有说明后者是否可重复。
+          en: >-
+            At the Battle of the Java Sea, Houston (CA-30) was able to maintain a rate of
+            fire of 5 to 6 rounds per minute during the early part of the battle. The
+            standard figure in the rate-of-fire line is 3 to 4 rounds per minute, and
+            NavWeaps puts the higher number in a footnote, adding that it was possibly
+            through the use of cue-balling techniques. Both stand: 3 to 4 in the table,
+            5 to 6 in the action, with the footnote not saying whether the latter was
+            repeatable.
+        src: [navweaps-8in-55-mk9]
+
+      - date: 1942-06
+        text:
+          zh: >-
+            中途岛。七艘重巡里六艘的主炮是 Mk 9 族（彭萨科拉、北安普敦、
+            新奥尔良 CA-32、明尼阿波利斯 CA-36、阿斯托里亚 CA-34、波特兰 CA-33），
+            文森斯号（CA-44）是 Mk 12。亚特兰大号（CL-51）虽在同一编成里，
+            主炮是 5"/38，不计入这一族。
+          en: >-
+            Midway. Six of the seven heavy cruisers mounted the Mark 9 family - Pensacola,
+            Northampton, New Orleans (CA-32), Minneapolis (CA-36), Astoria (CA-34) and
+            Portland (CA-33) - while Vincennes (CA-44) had the Mark 12. Atlanta (CL-51),
+            though in the same screen, carried 5"/38 main guns and is not counted in this
+            family.
+        src: [navweaps-midway-oob, navweaps-8in-55-mk9, navweaps-8in-55-mk12]
+
+      - date: 1942
+        text:
+          zh: >-
+            列克星敦号（CV-2）与萨拉托加号（CV-3）上的这一族炮与炮座被拆除，
+            改作夏威夷瓦胡岛的岸炮。原计划给这两艘航母换装 5"/38，
+            但只有萨拉托加号实际换到，列克星敦号在换装完成前已沉没。
+          en: >-
+            These guns and mountings were removed from Lexington (CV-2) and Saratoga
+            (CV-3) and reused as coastal artillery on the island of Oahu, Hawaii. It had
+            been planned to rearm both carriers with 5"/38 guns, but only Saratoga actually
+            received hers, Lexington having been sunk before the work could be carried out.
+        src: [navweaps-8in-55-mk9]
+
+  - id: reline
+    title: { zh: 重新镗线与换炮身：1946 年 1 月的清单, en: "Relining and regunning - the January 1946 return" }
+    range: { from: 1942-08, to: 1946-01 }
+    lead:
+      zh: >-
+        这一族的后半段是「原来的炮管慢慢都不在原位上了」。
+        Mk 13 与 Mk 14 都是把 Mk 9 重新镗线的产物，Mk 15 则是带适配套筒的新炮身；
+        1946 年 1 月各舰的炮型清单里，原始 Mk 9 已经很少见。
+      en: >-
+        The second half of this family's story is that the original barrels gradually
+        stopped being where they started. Both the Mark 13 and the Mark 14 are relined
+        Mark 9s, and the Mark 15 is a new barrel with adapter sleeves; by the January
+        1946 outfit lists, original Mark 9s were becoming rare.
+    events:
+      - date: 1942-08
+        text:
+          zh: >-
+            新奥尔良级（CA-32）在 1942 年 8 月之后的改装中，把备弹降到每门 125 发；
+            北安普敦级与波特兰级在 1942 年 7 月之后的改装中由每舰 1,500 发降到
+            略多于 1,300 发，腾出的重量给新增的防空武器。
+            navweaps 对彭萨科拉级没有给数字，只写「料想有类似的变化」——
+            这一句是来源自己的推测，本站不据此填彭萨科拉级的数。
+          en: >-
+            The New Orleans (CA-32) class was reduced during refits after August 1942 to
+            125 rounds per gun; the Northampton (CA-26) and Portland (CA-33) classes had
+            carried 1,500 rounds per ship and were cut during refits after July 1942 to
+            just over 1,300, to allow for added AA weapons. NavWeaps gives no figure for
+            the Pensacola (CA-24) class and writes only that it would assume similar
+            changes - that sentence is the source's own assumption, and this article does
+            not fill the Pensacola figure from it.
+        src: [navweaps-8in-55-mk9]
+
+      - date: 1944
+        text:
+          zh: >-
+            navypedia 的改装表把明尼阿波利斯号（CA-36）的换炮记在 1944 年：
+            「Minneapolis, 1944: - 3 x 3 - 203/55; + 3 x 3 - 203/55 Mk 12.15」。
+            这一条与 navweaps 的「1945 年换 Mk 15 Mod 1」在年份与型号上都不一致，
+            两说并列，不裁决（详见 8in-55-mk15 一篇）。
+          en: >-
+            Navypedia's modernisation list puts Minneapolis (CA-36)'s regunning in 1944:
+            "Minneapolis, 1944: - 3 x 3 - 203/55; + 3 x 3 - 203/55 Mk 12.15". That entry
+            disagrees with NavWeaps' "regunned with Mark 15 Mod 1 in 1945" in both year
+            and mark. The two stand side by side and are not settled here; the detail is
+            in the 8in-55-mk15 article.
+        src: [navypedia-neworleans, navweaps-8in-55-mk12]
+
+      - date: 1946-01
+        text:
+          zh: >-
+            navypedia 记下各舰 1946 年 1 月的炮型：彭萨科拉号、波特兰号与新奥尔良号
+            均为 203/55 Mk 14，明尼阿波利斯号为 Mk 15，Tuscaloosa 与旧金山为 Mk 12。
+            也就是说战争结束时，这一族原始 Mk 9 的炮管基本已被 Mk 13/14 的重新镗线件
+            或 Mk 15 的新炮身替下 —— 谱系的后三个 Mark 是前几个的替代品，
+            而不是三件平行产品。
+          en: >-
+            Navypedia records the January 1946 gun outfits: Pensacola, Portland and New
+            Orleans all at 203/55 Mark 14, Minneapolis at Mark 15, Tuscaloosa and San
+            Francisco at Mark 12. By the end of the war, then, the original Mark 9
+            barrels of this family had largely been replaced either by relined Mark 13/14
+            guns or by new Mark 15 barrels - the later marks of the family are
+            replacements for the earlier ones, not three parallel products.
+        src: [navypedia-neworleans, navypedia-pensacola, navypedia-portland]

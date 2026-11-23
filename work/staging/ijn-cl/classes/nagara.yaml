@@ -1,0 +1,701 @@
+# ============================================================================
+# 长良型轻巡洋舰（Nagara class）· 5500 吨型第 2 组
+#
+# 2026-11-23 建级。本文件只放「6 艘共享的设计值」；
+# 长良本舰的建造日期、改装台账、战历、结局写在 ships/nagara.yaml。
+#
+# 采集纪律（本组任务书硬规矩）：
+#   ① 每条数值必须能指回来源原句（见 RESEARCH-NOTES.md 逐条对照表）；
+#   ② 查不到的字段整条不写，不按姊妹舰类推、不跨来源拼合；
+#   ③ 两源打架的，两边各写一条 fact 并注明「两说并列，不裁决」；
+#   ④ 日文维基（tier E）只用于找线索，不作任何 fact 的来源。
+#
+# 单位换算提示：来源多用英制/日制原话。本站存储层为公制，
+#   换算处一律在 note 里给出原话数值，便于复核。
+#   1 英尺 = 0.3048 m；1 英寸 = 25.4 mm。
+# ============================================================================
+
+id: nagara
+name:
+  zh: 长良型
+  en: Nagara class
+class_of:
+  - nagara
+  - isuzu
+  - natori
+  - yura
+  - kinu
+  - abukuma
+
+open_ended_note: |
+  本文件绝大多数 fact 的 valid.to 都留空，这是结构性的，不是漏填：
+  舰级设计参数的生效期从设计定案/服役起，到该级最后一艘损失或拆解为止，
+  期间不因改装而改变；实际战备状态随时间的变化写在 data/ships/<id>.yaml 的
+  状态切片里，由单舰 fact 覆盖。因此这里的 open 时间窗表示「无已知终止事件」。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: 長良型軽巡洋艦
+    src: [navypedia-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      navypedia 页面标题原话「NAGARA light cruisers (1922 - 1925)」。
+      日文资料另称「二等巡洋艦（軽巡洋艦）」，本字段只记级名。
+
+  - field: identity.name_zh
+    value: 长良型
+    src: [navypedia-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+
+  - field: identity.name_en
+    value: Nagara class
+    src: [navypedia-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+
+  - field: identity.ship_type
+    value: light_cruiser
+    src: [navypedia-nagara, combinedfleet-nagara-class]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      combinedfleet 页标题原话「Nagara-class Light Cruiser」；
+      navypedia 归入 CRUISERS → light cruiser 一组。
+
+  - field: identity.nation
+    value: japan
+    src: [navypedia-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+
+  - field: identity.operator
+    value: 大日本帝国海軍（Imperial Japanese Navy）
+    src: [combinedfleet-nagara-class]
+    valid: { from: 1922-04-21 }
+    confidence: C
+
+  - field: identity.era
+    value: ww2
+    src: [combinedfleet-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      按服役期定位：1922 竣工、1944 末舰损失，横跨两次大战之间与二战。
+      本站按参与二战作战归 ww2（6 艘全部在 1942-1944 年间执行战时任务）。
+
+  - field: identity.building_program
+    value: >-
+      大正 6 年（1917）度計画「八四艦隊案」起工 3 艘（长良・名取・五十鈴），
+      大正 7 年（1918）度「八六艦隊案」追加 3 艘（由良・鬼怒・阿武隈）。
+    src: [navypedia-nagara]
+    valid: { from: 1917 }
+    confidence: C
+    note: >-
+      navypedia 原话「They were built under FY1917 (Nagara, Natori and Isuzu)
+      and FY1918 (Kinu, Yura and Abukuma) Programmes」。
+      日文资料的年度表述（大正 6 年/大正 7 年）与此一致，但本站不据日文维基立 fact。
+
+  # ============================================================ 排水量
+  - field: displacement.standard
+    value: 5170
+    unit: t
+    src: [kasado-nagara, japanese-warship-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      kasado 原话「基準排水量 5,170t」。japanese-warship 未单列基准值。
+      **注意**：navypedia 不给 standard，只给「Displacement normal, t 5570」，
+      而日文资料的「常備排水量」= 5,502 t（kasado）/ 5,570 t（japanese-warship）。
+      本站没有注册「常備排水量」字段，该值无处安放，故只在 note 里留档，不写 fact。
+
+  - field: displacement.full
+    value: 7050
+    unit: t
+    src: [navypedia-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      navypedia 原话「Displacement full, t 7050」。
+      naval-encyclopedia 另记「5,570 long tons (5,659 t) normal (7,203 t deep load)」，
+      那是 normal/deep load 口径，不是 full，量级相近但口径不同，两条并列不合并。
+
+  # ============================================================ 尺度
+  - field: dimensions.length.oa
+    value: 162.15
+    unit: m
+    src: [kasado-nagara, japanese-warship-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+
+  - field: dimensions.length.wl
+    value: 158.53
+    unit: m
+    src: [kasado-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      navypedia 记「158.5 wl」，naval-encyclopedia 记「158.6 m at the waterline」，
+      与 kasado 的 158.53 差 0.07 m 以内，属四舍五入口径，不列为分歧。
+
+  - field: dimensions.length.pp
+    value: 152.40
+    unit: m
+    src: [kasado-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+
+  - field: dimensions.beam.wl
+    value: 14.17
+    unit: m
+    src: [kasado-nagara, japanese-warship-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: navypedia 记 14.2 m，四舍五入。
+
+  - field: dimensions.draught.mean
+    value: 4.80
+    unit: m
+    src: [kasado-nagara, japanese-warship-nagara, navypedia-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      三源一致：kasado「吃水 常備時:4.80m」、navypedia「Draught, m 4.80」、
+      naval-encyclopedia「4.8 m」。口径为常備（normal）排水量状态下的平均吃水。
+
+  # dimensions.depth.molded（型深）：navypedia / kasado / japanese-warship / naval-encyclopedia
+  # 均未给出本级型深；唯一给出「29 ft 0 in」的是日文维基（tier E，不作来源）
+  # → **未获取**，不写 fact。
+
+  # ============================================================ 动力
+  - field: propulsion.plant_type
+    value: steam_turbine
+    src: [navypedia-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+
+  - field: propulsion.shafts
+    value: 4
+    unit: count
+    src: [navypedia-nagara, kasado-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+
+  - field: propulsion.boiler.count
+    value: 12
+    unit: count
+    src: [navypedia-nagara, kasado-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      navypedia 原话「12 Kampon boilers」；kasado 原话「ロ号艦本式重油専焼水管罐:12基」。
+
+  - field: propulsion.boiler.type
+    value: ロ号艦本式水管缶（Kampon 号舰本式）
+    src: [navypedia-nagara, japanese-warship-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      **混烧比例两说并列，不裁决**：
+      ① japanese-warship「缶・主機 ロ号艦本式ボイラー　混焼2基、重油10基」（2 混烧 + 10 重油）；
+      ② kasado「ロ号艦本式重油専焼水管罐:12基」（12 基全部重油专烧）。
+      两说总数都是 12 基。1935-1936 年间的改装把混烧炉改为重油专烧一事，
+      见 ships/nagara.yaml 的改装记录。
+
+  - field: propulsion.turbine.count
+    value: 4
+    unit: count
+    src: [navypedia-nagara, japanese-warship-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+
+  - field: propulsion.turbine.type
+    value: 三菱-Parsons-Gihon 式全齿轮减速汽轮机（4 基 4 轴）
+    src: [navypedia-nagara, japanese-warship-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      navypedia 原话「4 sets Mitsubishi-Parsons-Gihon geared steam turbines」。
+      同页另注「Kinu: 4 sets Brown-Curtis geared steam turbines」——
+      **鬼怒一舰主机型号不同**，逐舰差异写在 ships 层，不写在本级文件里。
+
+  - field: propulsion.power.design
+    value: 90000
+    unit: hp
+    src: [navypedia-nagara, kasado-nagara, japanese-warship-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: 三源一致。kasado 记「90,000shp」，japanese-warship 记「計画馬力 90,000馬力」。
+
+  - field: propulsion.speed.design
+    value: 36.0
+    unit: kn
+    src: [navypedia-nagara, kasado-nagara, japanese-warship-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      navypedia「Max speed, kts 36」；kasado「速力 36.0kt」；
+      japanese-warship「速力 計画36.0ノット」。设计值，非实测。
+
+  - field: propulsion.range.max
+    value: 5000
+    unit: nmi
+    src: [kasado-nagara, japanese-warship-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      **三说并列，不裁决**：
+      ① kasado 与 japanese-warship「14.0kt / 5,000nm」（14 节 5,000 海里）；
+      ② navypedia「Endurance, nm(kts) 6000(15)」（15 节 6,000 海里）；
+      ③ naval-encyclopedia「6,000 nmi at 14 knots」正文，同页另一处又写
+         「9,000 nautical miles at 10 knots cruising speed」。
+      口径与实际载油状态强相关，本站不换算、不取平均。
+
+  - field: propulsion.range.at_speed
+    value: 14
+    unit: kn
+    src: [kasado-nagara, japanese-warship-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: 与上条 range.max 的 ① 说配套。②③ 两说的对应航速分别为 15 kn 与 10 kn，见上条。
+
+  - field: propulsion.fuel.capacity
+    value: 1260
+    unit: t
+    src: [navypedia-nagara, kasado-nagara, japanese-warship-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      本字段只装**重油**：三源一致给出重油 1,260 t（navypedia「coal 350 + oil 1260」、
+      kasado「重油:1,260t 石炭:350t」）。煤炭 350 t 无对应注册字段，留在本 note 里。
+      1935-1936 年锅炉改重油专烧后载油量变为 1,600 t —— 那是逐舰时间窗的事，
+      不写进本级设计值。
+
+  - field: propulsion.fuel.type
+    value: 重油 + 石炭（混烧）
+    src: [navypedia-nagara, kasado-nagara]
+    valid: { from: 1922-04-21, to: 1936 }
+    confidence: C
+    note: >-
+      navypedia 原话「Fuel, t coal 350 + oil 1260」。各舰在 1935-1936 年间
+      改为重油专烧、载油 1,600 t（navypedia「1935 - 1936, all: boilers were
+      converted to oil only, fuel stowage was 1600t of oil」），故本 fact 的
+      valid.to 定为 1936（改装年份，月不详）。
+
+  - field: propulsion.propeller.count
+    value: 4
+    unit: count
+    src: [kasado-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      kasado 原话「軸数 4軸」。螺旋桨直径 11 ft 0 in（3.35 m）的记载出自
+      日文资料，英文导航站未见，本字段不写直径。
+
+  # ============================================================ 防护
+  - field: protection.scheme
+    value: other
+    src: [navypedia-nagara, kasado-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      **不用 all_or_nothing、也不用 incremental 的理由**：两份来源都只给
+      「哪些部位多少毫米」，没有使用条约时代的装甲体系术语。
+      navypedia 原话「Main belt (7.32m high) protected only machinery」，
+      即只在机舱段设舷侧带 + 平甲板，前后 2/3 船体无防护。
+      把它写成 incremental 属本站推断，故取 other 并在正文说明布置方式。
+
+  - field: protection.armor.thickness
+    value: 63
+    unit: mm
+    qual: { part: belt, region: main }
+    src: [navypedia-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      navypedia 原话「belt: 63, shields: 20, deck: 29 (45 over magazines), CT: 51 - 25」。
+      **与 kasado 的 38 mm 是两说，见下条，不裁决。**
+
+  - field: protection.armor.thickness
+    value: 38
+    unit: mm
+    qual: { part: belt, region: main }
+    src: [kasado-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      kasado 原话「水線部舷側装甲 38mm 装甲材質:高張力鋼」。
+      两说并列（63 navypedia / 38 kasado）。差额的可能解释是「25.4 + 38.1 两层合计
+      63.5 mm」与「只计承力的一层 38.1 mm」两种记法，但该解释只见于日文维基
+      （tier E，仅作线索），本站**不据此裁决**，两条都留。
+
+  - field: protection.armor.material
+    value: 高張力鋼（HT 钢）
+    qual: { part: belt, region: main }
+    src: [kasado-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: kasado 原话「装甲材質:高張力鋼」。即非渗碳装甲，属结构用高强度钢。
+
+  - field: protection.armor.thickness
+    value: 29
+    unit: mm
+    qual: { part: deck, region: upper }
+    src: [navypedia-nagara, kasado-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      navypedia「deck: 29」与 kasado「上甲板装甲 29mm」一致；
+      naval-encyclopedia 记「armoured deck 30 mm」，四舍五入差 1 mm，不列分歧。
+
+  - field: protection.armor.thickness
+    value: 45
+    unit: mm
+    qual: { part: magazine, region: main }
+    src: [navypedia-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: "navypedia 原话「deck: 29 (45 over magazines)」，即弹药库上方加厚到 45 mm。"
+
+  - field: protection.armor.thickness
+    value: 51
+    unit: mm
+    qual: { part: conning_tower, region: side }
+    src: [navypedia-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      navypedia 原话「CT: 51 - 25」，即司令塔侧 51 mm、顶 25 mm。
+      naval-encyclopedia 亦记「2-inches of armour (51 mm ...), with a 25 mm thick roof」。
+      注意日文资料另有「司令塔は廃止」之说（轻巡为设格纳库取消了司令塔），
+      与该防护数值并存，本站在正文层面说明，不在 fact 层裁。
+
+  - field: protection.armor.thickness
+    value: 25
+    unit: mm
+    qual: { part: conning_tower, region: roof }
+    src: [navypedia-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+
+  - field: protection.armor.thickness
+    value: 25
+    unit: mm
+    qual: { part: turret, region: face }
+    src: [kasado-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      kasado 原话「主砲楯 前面:25mm 側面:25mm 天蓋:N/A」。
+      **navypedia 记「shields: 20」，且未指明部位**——两说并列（25 kasado / 20 navypedia），
+      不裁决；navypedia 那条因缺部位信息，本站未把它写成带 qual 的 fact。
+
+  - field: protection.armor.thickness
+    value: 25
+    unit: mm
+    qual: { part: turret, region: side }
+    src: [kasado-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+
+  # ============================================================ 武备（装载层）
+  - field: armament.mount.summary
+    value: >-
+      竣工时：14 cm/50 三年式单装炮 7 门、8 cm/40 三年式单装高角炮 2 门、
+      6.5 mm 三年式机炮 2 挺、61 cm 八年式连装鱼雷发射管 4 基 8 门（鱼雷 16 本）、
+      机雷 48 个、滑走台 1 基。
+    src: [navypedia-nagara, kasado-nagara, japanese-warship-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      navypedia 原话「7 x 1 - 140/50 3-shiki, 2 x 1 - 76/40 3-shiki, 2 x 1 - 6.5/115,
+      4 x 2 - 610 TT, 48 mines, 1 seaplane」。
+      **高角炮门数两说**：navypedia 与 naval-encyclopedia 记 2 门，
+      kasado 记「三年式 40口径7.6cm単装高角砲:4基」。并列不裁，本字段暂按 2 门写。
+      主炮炮座形态见 weapon:14cm-50-3ns 的 mount 数据（单装、开放炮座）。
+
+  - field: armament.torpedo.tubes
+    value: 8
+    unit: count
+    src: [navypedia-nagara, kasado-nagara, dougakan-cl4]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      4 基连装 × 2 门 = 8 门。dougakan 原话「八年式六一センチ連装発射管装備位置は…
+      合計四基八門」。1933 年以前为八年式（空气）鱼雷，1944 年长良改装后的
+      发射管形态有争议，见 ships/nagara.yaml。
+
+  - field: armament.torpedo.diameter
+    value: 610
+    unit: mm
+    src: [navypedia-nagara, dougakan-cl4, nsl-torpedoes-2]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      navypedia「4 x 2 - 610 TT」写成 610 mm（24 in）。
+      NSL 文章原话「These huge weapons were mounted on cruisers beginning with the
+      Nagara class, laid down in 1920-21」——即本级是日本海军第一型装 61 cm
+      鱼雷的巡洋舰（此前 5500 吨型用 53 cm）。
+
+  - field: armament.mine.capacity
+    value: 48
+    unit: count
+    src: [navypedia-nagara, naval-ency-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      navypedia「48 mines」；naval-encyclopedia「rails to carry and drop 48 naval mines」。
+      **与日文资料 56 个冲突，见 RESEARCH-NOTES.md 分歧节**（日文维基作 九三式機雷56個，
+      但它是 tier E，不作 fact 来源，故此处只写 48）。
+
+  # armament.total_weight：查过 navypedia / kasado / japanese-warship / naval-encyclopedia
+  # 四站，均未给出本级武备总重 → **未获取**，不写 fact（不填 0，0 会被读成「重量为零」）。
+
+  # ============================================================ 航空
+  - field: aviation.aircraft.capacity
+    value: 1
+    unit: count
+    src: [navypedia-nagara, kasado-nagara, japanese-warship-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      navypedia「1 seaplane」；japanese-warship「その他 艦上偵察機 1機（滑走台）」。
+      竣工时为滑走台起飞、无弹射器；1930 年代改装为弹射器，见单舰文件。
+
+  - field: aviation.aircraft.types
+    value: 水上侦察机 1 机（竣工时由滑走台起飞）
+    src: [japanese-warship-nagara, kasado-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      kasado 记计划搭载「一〇年式艦上戦闘機:1機」（计划值，非实载）；
+      japanese-warship 记「艦上偵察機 1機（滑走台）」。两处机型名不同，
+      本字段按后者写「水上侦察机」，机型名不入 fact。
+
+  - field: aviation.catapult.count
+    value: 0
+    unit: count
+    src: [japanese-warship-nagara, kasado-nagara]
+    valid: { from: 1922-04-21, to: 1932 }
+    confidence: C
+    note: >-
+      **0 是「确实没有」不是「未获取」**：kasado 的竣工时栏「カタパルト -」；
+      japanese-warship 写「滑走台」。弹射器是 1929-1934 年间逐舰加装的，
+      逐舰月份见各舰文件（由良 1929、鬼怒 1931、名取 1932、长良/五十鈴 1933、阿武隈 1934）。
+
+  # ============================================================ 编制
+  - field: service.complement.standard
+    value: 450
+    unit: persons
+    src: [navypedia-nagara, kasado-nagara, japanese-warship-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      三源一致 450。但 combinedfleet 的级页写「Crew 438」——
+      两说并列（450 navypedia/kasado/japanese-warship；438 combinedfleet），不裁决。
+      战时编制无来源给出，未获取。
+
+  # ============================================================ 武器本体
+  # 本章的 about: weapon:14cm-50-3ns 是**全局武器实体**，只在长良级文件里建档一次。
+  # 川内级共用同一型号主炮，请在合并时复用本 id，不要另建。
+  - about: weapon:14cm-50-3ns
+    field: weapon.designation
+    value: 14 cm/50 (5.5") 3rd Year Type（五十口径三年式十四糎砲）
+    src: [navweaps-14cm-50-3ns]
+    valid: { from: 1914 }
+    confidence: C
+    note: >-
+      navweaps 原话「Official Designation: 50 caliber 3rd Year Type 14 cm Gun」，
+      同一页面标题行写「Japan 14 cm/50 (5.5") 3rd Year Type」。
+
+  - about: weapon:14cm-50-3ns
+    field: weapon.nation
+    value: japan
+    src: [navweaps-14cm-50-3ns]
+    valid: { from: 1914 }
+    confidence: C
+
+  - about: weapon:14cm-50-3ns
+    field: weapon.category
+    value: naval_gun
+    src: [navweaps-14cm-50-3ns]
+    valid: { from: 1914 }
+    confidence: C
+    note: >-
+      navweaps 原话「This weapon was the standard secondary gun for most of Japan's
+      capital ships ... and was the primary gun on light cruisers built prior to 1930.
+
+  - about: weapon:14cm-50-3ns
+    field: weapon.bore
+    value: 140
+    unit: mm
+    src: [navweaps-14cm-50-3ns]
+    valid: { from: 1914 }
+    confidence: C
+
+  - about: weapon:14cm-50-3ns
+    field: weapon.caliber_length
+    value: 50
+    unit: ratio
+    src: [navweaps-14cm-50-3ns]
+    valid: { from: 1914 }
+    confidence: C
+    note: >-
+      按 navweaps 的日本口径记法（50 caliber）。navweaps 同时给出
+      「Gun Length oa 284.8 in (7.235 m)」「Bore Length 275.6 in (7.000 m)」，
+      可复核 50 倍口径按膛线长/炮全长计算：7.000 / 0.140 = 50。
+
+  - about: weapon:14cm-50-3ns
+    field: weapon.caliber_method
+    value: unknown
+    src: [navweaps-14cm-50-3ns]
+    valid: { from: 1914 }
+    confidence: C
+    note: 来源未声明用的是德式还是英美式倍径法，故记 unknown，不推断。
+
+  - about: weapon:14cm-50-3ns
+    field: weapon.weight
+    value: 5600
+    unit: kg
+    src: [navweaps-14cm-50-3ns]
+    valid: { from: 1914 }
+    confidence: C
+    note: >-
+      navweaps 原话「Gun Weight 5.5 - 5.6 tons (5,600 - 5,700 kg)」。
+      来源给的是区间，本字段取区间下限 5,600 kg，不取中值（中值属本站折算）。
+
+  - about: weapon:14cm-50-3ns
+    field: weapon.projectile_weight
+    value: 38.0
+    unit: kg
+    qual: { shell_type: he }
+    src: [navweaps-14cm-50-3ns]
+    valid: { from: 1914 }
+    confidence: C
+    note: >-
+      navweaps 原话「Common Type 0 HE: 83.8 lbs. (38.0 kg)」。
+      同表另有 Capped Common 38.0 kg、Common Type 2 HE 38.0 kg、ASW 42.0 kg。
+
+  - about: weapon:14cm-50-3ns
+    field: weapon.muzzle_velocity
+    value: 850
+    unit: mps
+    qual: { shell_type: he }
+    src: [navweaps-14cm-50-3ns]
+    valid: { from: 1914 }
+    confidence: C
+    note: >-
+      navweaps 原话「All except ASW: 2,789 to 2,805 fps (850 to 855 mps)」。
+      区间下限，不取中值（中值属本站折算）。
+
+  - about: weapon:14cm-50-3ns
+    field: weapon.barrel_life
+    value: 500
+    unit: count
+    src: [navweaps-14cm-50-3ns]
+    valid: { from: 1914 }
+    confidence: C
+    note: >-
+      navweaps 原话「Approximate Barrel Life 500 - 600 Rounds」。
+      区间下限，不取中值。
+
+  - about: weapon:14cm-50-3ns
+    field: weapon.rate_of_fire
+    value: 6
+    unit: rpm
+    src: [navweaps-14cm-50-3ns]
+    valid: { from: 1914 }
+    confidence: C
+    note: >-
+      navweaps 原话「Rate Of Fire 6 to 10 rounds per minute, depending upon the rate
+      of supply」。本字段填区间下限，因为来源另注 5,500 吨型巡洋舰的弹药提升全靠人力、
+      射速受传弹距离限制（「the 6-gun, 3,500 ton Yubari had a faster ROF than did
+      the 7-gun, 5,500 ton cruisers」）。上限 10 发/分见 note。
+
+  # weapon.range.max / weapon.range.max_elevation：navweaps 只给分仰角射程表
+  # 「20 deg 15,800 m / 25 deg 17,500 m / 30 deg 19,100 m / 35 deg 20,574 m」，
+  # 没有单一「最大射程 + 对应仰角」值。取任何单一数都是本站插值 → **未获取**，不写 fact。
+  # 需要展示时请在正文里直接列这张表。
+
+  # ---------------------------------------------------------------- 炮座形态（用 mount 实体记，不占 armament 字段）
+  # 主炮为单装开放炮座（无炮塔），一个「炮位实例」代表 7 座同型炮位之一。
+  # navweaps 原话：
+  #   「Single Pedestal Mounts: Nagara (7), Naka (7) and Yubari (2)」
+  #   「Weight: Single Mounts: About 20 tons (21 mt)」
+  #   「Elevation: Kuma and Nagara: -7 / +25 degrees ; Sendai and Yubari: -7 / +30 degrees」
+  #   「Train: Light Cruisers: +150 / -150 degrees」
+  #   「Elevation Rate / Train Rate: Single Mounts: 8 degrees per second - Manual operation, only」
+  #   「Single mountings on cruisers had bucket chain hoists ... Single mounts were entirely hand worked.」
+  - about: mount:nagara-14cm-single
+    field: mount.weapon
+    value: weapon:14cm-50-3ns
+    src: [navweaps-14cm-50-3ns]
+    valid: { from: 1922-04-21 }
+    confidence: C
+
+  - about: mount:nagara-14cm-single
+    field: mount.type
+    value: single_turret
+    src: [navweaps-14cm-50-3ns]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      **装载型式按本站枚举取 single_turret，但来源原话是「Single Pedestal Mounts」
+      （单装基座炮架）而非真正意义上的炮塔**。navweaps 另处直接称其防护为
+      「shields」（防盾）。若主会话认为单装基座应归 open_mount / shielded_mount，
+      请改本条——这一点属枚举映射，不是史实分歧。
+
+  - about: mount:nagara-14cm-single
+    field: mount.barrels
+    value: 1
+    unit: count
+    src: [navweaps-14cm-50-3ns]
+    valid: { from: 1922-04-21 }
+    confidence: C
+
+  - about: mount:nagara-14cm-single
+    field: mount.count
+    value: 7
+    unit: count
+    src: [navweaps-14cm-50-3ns]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: 竣工时 7 座。战时逐舰递减，见各舰文件。
+
+  - about: mount:nagara-14cm-single
+    field: mount.weight
+    value: 20000
+    unit: kg
+    src: [navweaps-14cm-50-3ns]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: "navweaps 原话「Single Mounts: About 20 tons (21 mt)」，20 吨 = 20,000 kg。"
+
+  - about: mount:nagara-14cm-single
+    field: mount.elevation.max
+    value: 25
+    unit: deg
+    src: [navweaps-14cm-50-3ns]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: >-
+      navweaps 原话「Kuma and Nagara: -7 / +25 degrees」。**本级 -7/+25，川内级 -7/+30**——
+      这是两级的火炮安装差异，逐级记录。
+
+  - about: mount:nagara-14cm-single
+    field: mount.traverse
+    value: +150 / -150 度
+    src: [navweaps-14cm-50-3ns]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: "navweaps 原话「Train: Light Cruisers: +150 / -150 degrees」。"
+
+  - about: mount:nagara-14cm-single
+    field: mount.installed
+    value: 1922-04-21
+    src: [navypedia-nagara]
+    valid: { from: 1922-04-21 }
+    confidence: C
+    note: 长良本舰竣工日；本级各舰装舰日期各自不同，本条代表本级炮位的起始日期。

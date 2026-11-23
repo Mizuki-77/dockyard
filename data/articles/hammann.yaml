@@ -1,0 +1,309 @@
+# ============================================================================
+# 舰艇正文 —— 哈曼号（USS Hammann, DD-412）
+#
+# 抓手：一艘在四天里救了两次人、第三次出海就没回来的驱逐舰。
+#
+# 【本舰最容易被写错的一条，必须守住】
+#   1942-06-06 她不是「唯一在场的驱逐舰」。她是唯一贴靠（moored alongside）
+#   约克城号舷侧、向这艘死船输送消防水与电力的舰；屏护圈上另有五艘驱逐舰
+#   （Balch / Benham / Gwin / Anderson / Monaghan），约克城号本身由拖船
+#   Vireo（AT-144，原 AM-52）拖带。四份独立来源一致：本舰自己的行动报告、
+#   约克城号行动报告、Vireo 的 DANFS、I-168 战历。
+#
+# 【分歧怎么处理（一律并列，不裁决）】
+#   阵亡数：80（DANFS / NavSource）与 81（一手战报的分解数字；日方记录同数）
+#     并列；若把在 Benham 上伤重不治的 26 人计入，则为 107，口径差别写明。
+#   沉没时刻：美方 1536（Zone plus ten）与日方 1331（JST）并列。
+#   6 月 4 日救起人数：87（本舰战报）与 85（DesRon 6 战报表）并列。
+# ============================================================================
+ship: hammann
+updated: 2026-11-24
+
+intro:
+  lead:
+    zh: >-
+      哈曼号是西姆斯级的第四艘。1942 年 6 月 6 日下午，她正贴靠
+      约克城号舷侧、向这艘失去动力的航母输送消防水与电力，
+      日本潜艇 I-168 发射的鱼雷在 1536 击中她的 2 号锅炉舱，
+      龙骨断裂，四分钟后沉没。次日清晨约克城号也翻了。
+    en: >-
+      Hammann was the fourth ship of the Sims class. On the afternoon of
+      6 June 1942 she was moored alongside the crippled carrier Yorktown,
+      supplying firefighting water and electric power, when a torpedo from the
+      Japanese submarine I-168 hit her No. 2 fireroom at 1536, broke her back,
+      and sank her in four minutes. Yorktown capsized the following morning.
+
+  paragraphs:
+    - heading: 一级过渡舰
+      text:
+        zh: >-
+          西姆斯级是 1937 财年计划下的十二艘驱逐舰。这一级原本打算在本汉级
+          基础上略作改动，设计从 1936 年春开始；长期争论之后，主张强炮的一方
+          争回了第五门 127 毫米炮，代价是四联鱼雷发射管减到三座、十二管，
+          比本汉级少一座。五个炮位全部装在环形炮座上，其中 1、2、5 号
+          为全封闭式，3、4 号为敞开式；全级沿用单烟囱。本舰 1939 年 8 月
+          11 日服役，第一任舰长是 A. E. True 中校。
+
+          建成时的十二管鱼雷却在服役第一年就被削减了。试航暴露建造超重
+          约 120 吨、稳性很差，北大西洋的服役经验又显示舷侧鱼雷发射管
+          极易锈蚀、并容易被浪打坏。1939 年 9 月 25 日海军部长批准拆掉
+          舷侧发射管、把其中一座移到中线，另加压载 60 吨。已完工的舰在
+          1940 年夏完成改装，本舰是其中之一，鱼雷管因此变为两座四联、
+          八管。被拆下的发射管后来装到了亚特兰大级巡洋舰上。
+        en: >-
+          The Sims class were twelve destroyers of the FY1937 programme. The
+          design began in the spring of 1936 as a slightly altered Benham;
+          after long argument the supporters of heavy gunpower got the fifth
+          127 mm gun back at the cost of one quadruple torpedo mount, leaving
+          three — twelve tubes — against the Benham's four. All five guns sat
+          on base-ring mounts, Nos. 1, 2 and 5 fully enclosed and Nos. 3 and 4
+          open, and the class kept a single stack. Hammann was commissioned on
+          11 August 1939 under Commander A. E. True.
+
+          The twelve tubes did not last the first year of service. Trials
+          showed a building overload of about 120 tons and very poor stability,
+          and North Atlantic service revealed that side-mounted banks corroded
+          badly and were easily damaged by heavy seas. On 25 September 1939 the
+          Secretary of the Navy approved removing the side banks and moving one
+          to the centreline, with 60 tons of ballast added. Completed ships were
+          rearranged in the summer of 1940 — Hammann among them — to two
+          quadruple mounts, eight tubes. The tubes taken out went to the
+          Atlanta-class cruisers.
+      src: [navypedia-sims, destroyerhistory-sims, nhhc-danfs-hammann]
+
+    - heading: 珊瑚海的两天
+      text:
+        zh: >-
+          1942 年 5 月 4 日，第 17 特混舰队空袭图拉吉，本舰在屏护航母时
+          奉命去瓜达尔卡纳尔岛接两名被击落的战斗机飞行员——落点在北面
+          约四十海里。她全速赶到时已近黄昏，只找到一具降落伞。摩托艇放下去
+          却被涌浪挡住上不了岸，最后是用绳索把人拉上来的。
+
+          四天后的 5 月 8 日，珊瑚海海战主战当天，她在约克城号与列克星敦号
+          之间屏护，用 20 毫米炮打日本雷机。列克星敦号中了两条鱼雷后
+          内部爆炸，弃舰命令下达时本舰与 Morris、Anderson 一起靠上去收人，
+          从水里救起近五百名舰员。当晚由菲尔普斯号用鱼雷处分了这艘航母。
+        en: >-
+          On 4 May 1942, while screening the carriers during the raids on
+          Tulagi, Hammann was sent to Guadalcanal to recover two fighter pilots
+          downed about forty miles to the north. She reached the area at dusk at
+          full speed and found only a parachute; the motor whaleboat was put
+          over but dangerous surf kept it off the beach, and the men were
+          finally taken off with lines from the boat.
+
+          Four days later, on 8 May, the main day of the Coral Sea battle, she
+          screened between Yorktown and Lexington and fired her 20 mm guns at
+          the Japanese torpedo planes. Lexington, hit by two torpedoes, blew up
+          internally; when the order to abandon ship came, Hammann with Morris
+          and Anderson stood by to take survivors and picked up nearly five
+          hundred men from the water. Phelps torpedoed the carrier that night.
+      src: [nhhc-danfs-hammann]
+
+    - heading: 六月六日：她是唯一贴靠的那一艘，不是唯一在场的那一艘
+      text:
+        zh: >-
+          1942 年 6 月 6 日上午八时许，第 17.5 特混小队命本舰靠近约克城号
+          右舷，向这艘失去动力、还在着火的航母供水。她试过在旁侧保持位置，
+          但靠不上去就供不上水，于是索性贴靠（moored alongside）到
+          约克城号前部舷侧，用碰垫和破片席隔开，接了两条泡沫管、一条上
+          飞行甲板的水龙带、一条接到后部泵入海水用于压载纠倾的软管，
+          另有一条抽油管，把约克城号左舷油舱的燃油抽走以纠正倾斜。
+
+          关于这一天最常见的写法是「哈曼号是唯一在场的驱逐舰」，这句话
+          不成立。约克城号的行动报告写得很清楚：另五艘驱逐舰 Balch、Benham、
+          Gwin、Anderson、Monaghan 在约 2,000 码距离、14 节速度上构成
+          反潜与防空屏护圈；加上本舰共六艘，与日方 I-168 战历所记
+          「六艘驱逐舰在一英里外盘旋」正好对上。约克城号本身则由拖船
+          Vireo 拖着走。本舰的特殊之处在于她是唯一贴着舷侧、把消防水、
+          电力和排水泵直接接到航母上的那艘。
+        en: >-
+          Soon after 0800 on 6 June 1942 Task Group 17.5 ordered Hammann to
+          close Yorktown's starboard side and supply water to the burning,
+          powerless carrier. She tried lying off, but could not hold position
+          accurately enough to be of use, so she came in and moored alongside
+          forward, separated from the carrier by fenders and splinter mats, and
+          ran two foam hoses, a water hose up to the flight deck, a hose aft to
+          pump in salt water for counter-flooding, and an oil suction hose to
+          draw fuel out of Yorktown's port tanks and correct her list.
+
+          The usual way of putting this day is that Hammann was the only
+          destroyer present. That is not correct. Yorktown's action report is
+          explicit: the other five destroyers, Balch, Benham, Gwin, Anderson
+          and Monaghan, formed the anti-submarine and anti-aircraft screen at
+          about 2,000 yards at 14 knots. Six destroyers in all, which matches
+          the Japanese account in I-168's record of movement — six destroyers
+          circling a mile away. Yorktown herself was in tow by the tug Vireo.
+          What was unique about Hammann was that she was the one ship actually
+          alongside, feeding firefighting water, power and pumps directly into
+          the carrier.
+      src: [nhhc-hammann-action-report, nhhc-yorktown-midway-report, nhhc-danfs-vireo, combinedfleet-i168]
+
+history:
+  - id: build
+    title: { zh: 建造与战前服役, en: Building and pre-war service }
+    range: { from: 1938, to: 1942-02 }
+    events:
+      - date: 1938-01-17
+        text:
+          zh: >-
+            在 Kearny 的 Federal Shipbuilding 船厂开工，船台号 148。
+            navypedia 的建造表只记到月（1938 年 1 月）。
+          en: >-
+            Laid down at the Federal Shipbuilding yard, Kearny, New Jersey,
+            yard number 148; navypedia's table records only the month.
+        src: [navsource-hammann, navypedia-sims]
+      - date: 1939-02-04
+        text:
+          zh: 下水，由舰名者的侄女 Lillian Hammann 主持命名仪式。
+          en: >-
+            Launched, sponsored by Miss Lillian Hammann, niece of the ship's
+            namesake.
+        src: [nhhc-danfs-hammann, navsource-hammann]
+      - date: 1939-08-11
+        text:
+          zh: 服役，A. E. True 中校任舰长。
+          en: Commissioned under Commander A. E. True.
+        src: [nhhc-danfs-hammann, navsource-hammann, navypedia-sims]
+      - date: 1941-12-07
+        text:
+          zh: >-
+            战争爆发当天本舰在冰岛。她随即返诺福克加油补给，
+            1942 年 1 月 6 日启程赴太平洋。
+          en: >-
+            She was at Iceland when war began, returned to Norfolk for fuel and
+            supplies, and sailed for the Pacific on 6 January 1942.
+        src: [nhhc-danfs-hammann]
+      - date: 1942-02-25
+        text:
+          zh: >-
+            经巴拿马运河于 1 月 22 日抵旧金山，2 月 25 日随弗莱彻中将的
+            第 17 特混舰队出航南太平洋。
+          en: >-
+            Reached San Francisco on 22 January via the Panama Canal, and sailed
+            on 25 February with Vice Admiral Fletcher's Task Force 17 for the
+            South Pacific.
+        src: [nhhc-danfs-hammann]
+
+  - id: coral-sea
+    title: { zh: 珊瑚海（1942 年 5 月）, en: The Coral Sea, May 1942 }
+    range: { from: 1942-05, to: 1942-05 }
+    events:
+      - date: 1942-05-04
+        text:
+          zh: >-
+            在图拉吉空袭的屏护位置上，奉命北驶约四十海里营救两名被击落的
+            战斗机飞行员。日暮抵达，只找到降落伞；摩托艇因涌浪无法登岸，
+            最终以绳索将人救起。
+          en: >-
+            During the Tulagi raids she was sent some forty miles north to
+            rescue two downed fighter pilots. Arriving at dusk she found only a
+            parachute; the whaleboat could not land in the surf, and the men
+            were recovered with lines from the boat.
+        src: [nhhc-danfs-hammann]
+      - date: 1942-05-08
+        text:
+          zh: >-
+            珊瑚海海战主战日。她在约克城号与列克星敦号之间屏护，向日本雷机
+            射击。列克星敦号中雷后内部爆炸，弃舰时本舰与 Morris、Anderson
+            一起收容落水者，救起近五百人；当晚该航母由菲尔普斯号以鱼雷处分。
+          en: >-
+            The main day of the Coral Sea battle. Screening between Yorktown and
+            Lexington, she fired at the Japanese torpedo planes. After Lexington
+            was torpedoed and blew up internally, Hammann with Morris and
+            Anderson stood by the abandoning crew and picked up nearly five
+            hundred men; the carrier was torpedoed by Phelps that night.
+        src: [nhhc-danfs-hammann]
+      - date: 1942-05-27
+        text:
+          zh: >-
+            随特混舰队高速返珍珠港，当日抵达；5 月 30 日再次出海，
+            赴中途岛。
+          en: >-
+            Returned to Pearl Harbor at high speed with the task force on 27
+            May, and sailed again on 30 May for Midway.
+        src: [nhhc-danfs-hammann]
+
+  - id: midway
+    title: { zh: 中途岛与沉没（1942 年 6 月）, en: Midway and loss, June 1942 }
+    range: { from: 1942-06-04, to: 1942-06-06 }
+    events:
+      - date: 1942-06-04
+        text:
+          zh: >-
+            全天屏护约克城号。日机两次攻击中本舰以 5 英寸与 20 毫米炮射击，
+            20 毫米炮组当场击落一架俯冲轰炸机。约 1700 航母弃舰，本舰靠近
+            捞起舰长 Buckmaster 上校在内的最后一批人。本舰战报记救起 87 人，
+            DesRon 6 的战报表记 85 人，两说并列。
+          en: >-
+            Screened Yorktown all day, firing 5-inch and 20 mm at both Japanese
+            attacks; her 20 mm crews definitely shot down one dive bomber. When
+            the carrier was abandoned about 1700 she closed and took the last
+            survivors, including Captain Buckmaster. Her own report gives 87
+            rescued, the DesRon 6 report table gives 85.
+        src: [nhhc-hammann-action-report, nhhc-dessron6-action-report]
+      - date: 1942-06-05
+        text:
+          zh: >-
+            随 Anderson 靠波特兰号，转交约克城号幸存者并把燃油加至九成；
+            随后与 Balch、Benham 编为第 17.5 特混小队，以 16 节航速、
+            航向 285° 返回约克城号。
+          en: >-
+            Went alongside Portland after Anderson, transferred the Yorktown
+            survivors and fuelled to 90 per cent; then with Balch and Benham,
+            as Task Group 17.5, shaped course 285 at 16 knots to return to
+            Yorktown.
+        src: [nhhc-hammann-action-report]
+      - date: 1942-06-06
+        text:
+          zh: >-
+            0400 望见约克城号，由 Hughes、Gwin、Monaghan 屏护。0615 送救险队
+            上舰（Buckmaster 上校、29 名军官、130 名士兵）。0800 受命靠近供水，
+            因无法在旁侧保持位置，改为贴靠约克城号前部舷侧，接通泡沫管、
+            水龙带、灌水管与抽油管；至中午火势已被控制，倾斜纠正了两三度。
+          en: >-
+            Sighted Yorktown at 0400, screened by Hughes, Gwin and Monaghan.
+            At 0615 she put the salvage party aboard: Captain Buckmaster, 29
+            officers and 130 men. At 0800 she was told to close and supply
+            water; unable to hold station while lying off, she moored alongside
+            forward and connected foam, water, flooding and oil lines. By noon
+            the fire was reported under control and two or three degrees of
+            list had been taken off.
+        src: [nhhc-hammann-action-report]
+      - date: 1942-06-06
+        text:
+          zh: >-
+            1536（Zone plus ten），屏护圈上的驱逐舰发出警报，右舷约 600 码
+            出现四条鱼雷航迹。第一枚从本舰 2 号炮下方穿过，击中约克城号；
+            第二枚命中本舰 2 号锅炉舱，龙骨断裂，前后系缆与软管全部崩断，
+            舰体被推离航母。日方记录 I-168 于 1331（日本标准时）自 1,900 码
+            发射四条鱼雷，第一枚命中本舰——两方时刻并列，不裁断。
+          en: >-
+            At 1536 (Zone plus ten) the screening destroyers sounded the alarm
+            and four torpedo tracks appeared about 600 yards on the starboard
+            beam. The first passed under Hammann near No. 2 gun and hit
+            Yorktown; the second struck her No. 2 fireroom, broke her back and
+            parted every mooring line and hose. The Japanese record has I-168
+            firing four torpedoes from 1,900 yards at 1331 JST, the first
+            hitting Hammann; the two times are given side by side and not
+            adjudicated.
+        src: [nhhc-hammann-action-report, nhhc-danfs-hammann, combinedfleet-i168]
+      - date: 1942-06-06
+        text:
+          zh: >-
+            四分钟内沉没，随即发生剧烈的水下爆炸，水中人员大量死亡。
+            阵亡数两说并列：DANFS 与 NavSource 记 80 人，本舰战报按
+            「已知死亡 + 失踪」分解计为 81 人（2+7 名军官、25+47 名士兵），
+            日方记录亦记 81 人；若把在 Benham 上伤重不治的 26 人计入，
+            则为 107 人。幸存者由 Benham 与 Balch 救起，Balch 捞起舰长与
+            另一人后转至 Gwin。本舰在二战中获两枚战星。
+          en: >-
+            She sank in four minutes; a violent underwater explosion followed,
+            killing many of the men in the water. The death toll is given two
+            ways: DANFS and NavSource record 80, while her own report's
+            breakdown of known dead and missing gives 81 (2+7 officers,
+            25+47 men), the same figure as the Japanese record; counting the 26
+            who died of wounds aboard Benham would make 107. Survivors were
+            taken on board Benham and Balch, the latter picking up the
+            commanding officer and one man and transferring them to Gwin.
+            Hammann received two battle stars.
+        src: [nhhc-danfs-hammann, navsource-hammann, nhhc-hammann-action-report, combinedfleet-i168]

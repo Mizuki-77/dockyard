@@ -1,0 +1,523 @@
+# ============================================================================
+# 舰艇正文 —— 榛名号（战列巡洋舰 → 高速战列舰）
+#
+# 这一条要纠正的最常见错误是「金刚级都是英国造」。只有金刚是英国造；
+# 榛名在川崎神户、雾岛在三菱长崎，两舰是日本第一批由民间船厂建造的战列舰。
+#
+# 另一处要写清的是它和雾岛的关系：两舰同日竣工（1915-04-19）、
+# 只在 1942 年中途岛那一次作战里同队，1942-07-14 之后就分开了。
+# ============================================================================
+ship: haruna
+updated: 2026-11-24
+
+intro:
+  lead:
+    zh: >-
+      榛名是金刚型战列巡洋舰的三号舰，1915 年 4 月 19 日竣工，与四号舰雾岛同一天。
+      它在川崎造船所神户船厂建造——金刚级四艘里只有金刚是英国造，另三艘都是日本造，
+      榛名与雾岛还是日本第一批由民间船厂建造的战列舰。它经历了 1920 年代与
+      1930 年代两次大改装，从 26 节级的战列巡洋舰变成 30 节的「高速战列舰」，
+      1942 年 10 月 13 日一夜向亨德森机场打出 483 发 14 英寸弹。
+      它活到了战争结束：1945 年 7 月 28 日在吴港码头边坐底，1946 至 1948 年浮扬解体。
+    en: >-
+      Haruna was the third Kongo-class battlecruiser, completed on 19 April 1915, the
+      same day as her sister Kirishima. She was built at Kawasaki's yard in Kobe: of the
+      four ships of the class only Kongo was British-built, and Haruna and Kirishima were
+      the first battleships Japan had built in private yards. Two major reconstructions
+      turned her from a 26-knot battlecruiser into a 30-knot "fast battleship", and on
+      the night of 13 October 1942 she fired 483 14-inch shells at Henderson Field. She
+      survived the war, settling on the bottom beside a pier at Kure on 28 July 1945 and
+      being raised and broken up between 1946 and 1948.
+
+  paragraphs:
+    - heading: 它不是英国造的
+      text:
+        zh: >-
+          金刚级四舰的建造地经常被一句「维克斯造」带过，这是错的。金刚确实在
+          英国 Barrow 的维克斯船厂建造（船台号 414）；比叡在横须贺海军工厂；
+          榛名在川崎造船所神户船厂第 4 船台；雾岛在三菱合资会社长崎造船所
+          （船台号 225）。英国只提供了设计——四舰都基于维克斯-阿姆斯特朗的
+          乔治·瑟斯顿爵士为金刚所作的设计。日文资料把榛名与雾岛的这一层意义
+          说得更清楚：它们是日本第一批由民间船厂建造的战列舰，而承建这两艘的
+          川崎与三菱长崎也因此展开了激烈的竞争。雾岛的建造还用了一条更进一步的
+          记载：其建造所用部件大部分是日本制造的。
+        en: >-
+          The class's building yards are often waved away as "Vickers", which is wrong.
+          Kongo was built at Vickers in Barrow (yard number 414); Hiei at Yokosuka Navy
+          Yard; Haruna on No. 4 slip at Kawasaki's Kobe yard; Kirishima at Mitsubishi
+          Zosen Kaisha in Nagasaki (yard number 225). Britain supplied only the design, by
+          Sir George Thurston of Vickers-Armstrong. Japanese sources make the point
+          explicitly: Haruna and Kirishima were the first battleships built in Japanese
+          private yards, and the two yards competed hard over them. For Kirishima there is
+          the further record that most of the parts used in her construction were
+          manufactured in Japan.
+      src: [navypedia-kongo, combinedfleet-haruna, combinedfleet-kirishima, japanese-warship-haruna]
+
+    - heading: 两次改装：从 26 节到 30 节，锅炉从 36 座到 11 座
+      text:
+        zh: >-
+          第一次改装在横须贺，1924 年 3 月 1 日开工、1928 年 7 月 31 日完成：
+          弹药库与机舱上方的水平装甲加厚、加防雷鼓包、拆鱼雷网与 4 具鱼雷发射管、
+          重建前桅与后部指挥塔。动力上把 36 座锅炉全部换成 16 座舰本式ロ号锅炉，
+          烟囱由三根减到两根并拆掉前烟囱；因为炉舱布局变了，剩下两根烟囱的间距
+          比同级其他舰更宽。第二次改装 1933 年 8 月 1 日在横须贺开始，
+          1934 年 9 月 30 日正式完成：舰尾延长 7.47 米、前舰桥改成塔式、
+          锅炉换成 11 座重油专烧舰本式、换新齿轮传动涡轮、航速提到 30 节、
+          撤掉 40 mm 维克斯炮。11 座这个数字是四舰里的分组依据——金刚与雾岛
+          在同一次改装后是 8 座，只有榛名与比叡是 11 座。
+        en: >-
+          The first reconstruction ran at Yokosuka from 1 March 1924 to 31 July 1928:
+          horizontal armour over the magazines and machinery was thickened, anti-torpedo
+          bulges added, torpedo nets and four torpedo tubes removed, the foremast and aft
+          control tower rebuilt. All 36 boilers were replaced by 16 Kampon RO-Go boilers
+          and the funnels cut from three to two by deleting the fore funnel; because the
+          boiler-room layout changed, the two remaining funnels ended up more widely
+          spaced than in the other ships of the class. The second reconstruction began at
+          Yokosuka on 1 August 1933 and was officially complete on 30 September 1934: the
+          stern was lengthened by 7.47 m, the forebridge rebuilt in pagoda style, all
+          boilers replaced with 11 oil-firing Kampon boilers, new geared turbines fitted,
+          speed raised to 30 knots and the 40 mm Vickers guns landed. The boiler count is
+          the class's chief internal difference: Kongo and Kirishima came out of the same
+          rebuild with eight.
+      src: [combinedfleet-haruna, navypedia-kongo, japanese-warship-haruna]
+
+    - heading: 1942 年 10 月 13 日：一夜 918 发
+      text:
+        zh: >-
+          这是金刚级最著名的一次火力投射。当天 0133 起，第三战队炮击瓜岛的
+          亨德森机场，榛名与金刚合计打出 918 发 14 英寸弹（分别 483 发与 435 发），
+          其中包括原本设计用来打飞机的三式烧霰弹；高爆弹打光之后，
+          第三战队改用它自己也知道效果较差的穿甲弹继续射击。
+          栗田的这两艘战列舰在地面上毁掉了 40 多架美军飞机。炮击结束后
+          0230 第三战队以 29 节经「槽海」北撤。这一夜的代价在两个月后才显现：
+          美军航空兵力被压制的时间足够日军完成一次增援。
+        en: >-
+          This was the class's most celebrated shoot. Beginning at 0133 BatDiv 3
+          bombarded Henderson Field on Guadalcanal, Haruna and Kongo firing 918 14-inch
+          shells between them (483 and 435 respectively), including Type 3 incendiary
+          shells originally designed as anti-aircraft rounds; once the HE shells were
+          gone the division kept firing with less effective AP. Kurita's two battleships
+          destroyed more than 40 American aircraft on the ground. The bombardment ended
+          with BatDiv 3 retiring up the Slot at 29 knots at 0230.
+      src: [combinedfleet-haruna]
+
+    - heading: 战后的最后一年与坐底
+      text:
+        zh: >-
+          1944 年 6 月 20 日马里亚纳海战中，一发 500 磅炸弹从水面弹起后穿透
+          右舷舰尾、在下甲板爆炸，手动操舵室随即进水，左外轴支架受损——
+          这一击把它从 30 节打到 26 节，此后一直没有真正修好。
+          1944 年 11 月 22 日在林加锚地外触礁，右舷中部一百多米长的船壳被压弯、
+          开了一道 30 米长的裂口、进水约 1,400 吨。1945 年它在吴港当浮炮台用：
+          3 月 19 日、6 月 22 日、7 月 24 日各挨了少量命中，7 月 28 日
+          0800 至 1700 连续遭第 38 特混舰队空袭，1615 最后一次重击在左舷开口，
+          进水使 7 月 24 日那道裂口没入水下，随即在码头边浅水坐底。
+          两日合计命中 13 发炸弹、近失 10 发，阵亡 65 人。它没有沉入深海——
+          舰体大部分露出水面，1946 至 1948 年被浮扬解体。
+        en: >-
+          On 20 June 1944 at the Battle of the Philippine Sea a 500-lb bomb skipped off
+          the water, penetrated the starboard side of the stern and exploded on the lower
+          deck; the manual steering compartment flooded and the port outboard shaft
+          bracket was damaged, taking her from 30 knots down to 26 and never properly
+          repaired. On 22 November 1944 she ran aground on Admiral Bank outside Lingga
+          Roads, buckling her hull over a hundred-metre stretch and opening a 30-metre
+          gash that let in some 1,400 tons of water. In 1945 she served at Kure as a
+          floating battery, taking minor hits on 19 March, 22 June and 24 July; on
+          28 July, attacked from 0800 to 1700 by TF 38 aircraft, she was holed to port in
+          a final heavy attack at 1615, and the flooding put the 24 July gash under water
+          and she settled on the bottom in shallow water beside a pier. Over the two days
+          she took 13 bomb hits and 10 near misses and lost 65 officers and men. She did
+          not sink in deep water: most of the hull stayed above the surface, and the wreck
+          was raised and broken up between 1946 and 1948.
+      src: [combinedfleet-haruna, navypedia-kongo]
+
+history:
+  - id: build
+    title: { zh: 建造与两次大改装, en: Construction and the two reconstructions }
+    range: { from: 1912-03, to: 1934-09 }
+    lead:
+      zh: >-
+        它是四舰里第二次改装最早完成的一艘，也因此成为「高速战列舰」这个
+        概念在金刚级上的第一个实例。
+    events:
+      - date: 1912-03-16
+        text:
+          zh: >-
+            在神户川崎造船所第 4 船台起工，基于维克斯-阿姆斯特朗的乔治·瑟斯顿爵士
+            为金刚所作的设计建造。日文资料记：榛名与雾岛是日本第一批由民间船厂
+            建造的战列舰。
+          en: >-
+            Laid down on No. 4 slip at Kawasaki's shipyard in Kobe to the Kongo design
+            prepared by Sir George Thurston of Vickers-Armstrong. Japanese sources record
+            that Haruna and Kirishima were the first battleships built in Japanese private
+            yards.
+        src: [combinedfleet-haruna, japanese-warship-haruna, navypedia-kongo]
+
+      - date: 1913-12-14
+        text:
+          zh: >-
+            下水并命名「榛名」，典礼由伏见宫贞爱亲王出席。舰名取自群马县的
+            榛名山（火山），1911 年 6 月 5 日由当时的海军大臣斋藤实下令命名。
+          en: >-
+            Launched and named Haruna; the ceremony was attended by Prince Fushimi
+            Sadanaru. The name came from the volcano Mount Haruna in Gumma Prefecture,
+            ordered by Navy Minister Saito Makoto on 5 June 1911.
+        src: [combinedfleet-haruna]
+
+      - date: 1915-04-19
+        text:
+          zh: >-
+            竣工服役，编入佐世保镇守府籍，首任舰长舟越楫四郎大佐。
+            竣工日与四号舰雾岛是同一天。日文资料给的理由是：按计划本应雾岛先竣工，
+            但榛名在完成前发现缺陷、工期延后 6 天，川崎造船所造机工作部长篠田恒太郎
+            为此自刃；结果两舰把竣工日凑成了同一天。
+          en: >-
+            Completed and commissioned, attached to Sasebo Naval District, with Captain
+            Funakoshi Kajishiro as her first commanding officer. She commissioned the same
+            day as Kirishima. The Japanese account explains the coincidence: Kirishima was
+            due to finish first, but a defect found just before completion delayed Haruna
+            by six days, and the head of Kawasaki's engine works, Shinoda Tsunetaro, took
+            his own life over it; the two ships were then brought to a common date.
+        src: [combinedfleet-haruna, japanese-warship-haruna]
+
+      - date: 1928-07-31
+        text:
+          zh: >-
+            第一次改装在横须贺完成（1924-03-01 开工）：弹药库与机舱上方水平装甲加厚、
+            加防雷鼓包、拆鱼雷网与 4 具鱼雷发射管、重建前桅与后部指挥塔、
+            舰尾炮塔之间加设航空作业甲板。36 座锅炉全部换成 16 座舰本式ロ号锅炉
+            （混烧 10 座、重油专烧 6 座），烟囱由三根减到两根，剩下两根的间距
+            比同级其他舰更宽。
+          en: >-
+            The first reconstruction was completed at Yokosuka (begun 1 March 1924):
+            horizontal armour over magazines and machinery thickened, anti-torpedo bulges
+            added, torpedo nets and four torpedo tubes removed, foremast and aft control
+            tower rebuilt, and an aircraft handling deck fitted between the aft turrets.
+            All 36 boilers were replaced by 16 Kampon RO-Go boilers (ten mixed-firing, six
+            oil-only) and the funnels cut from three to two, the two survivors being more
+            widely spaced than in the other ships of the class.
+        src: [combinedfleet-haruna, japanese-warship-haruna]
+
+      - date: 1932-05-22
+        text:
+          zh: >-
+            在横须贺做防空与航空改装：8 门 8 cm/40 三年式高炮与 7.7 mm 九二式
+            机枪换成 8 门 12.7 cm/40 八九式（4 座双联）与 4 门 40 mm 维克斯
+            （2 座双联）；航空作业甲板延长，装吴式二号三型弹射器于 3 号炮塔
+            后方左舷——这是本舰第一次有弹射器。
+          en: >-
+            Anti-aircraft and aviation upgrade at Yokosuka: the 8 cm/40 3rd Year Type
+            guns and 7.7 mm Type 92 machine guns were replaced by eight 12.7 cm/40 Type
+            89 guns in four twin mounts and four 40 mm Vickers guns in two twin mounts;
+            the aircraft handling deck was extended to take a Kure Type No. 2 Model 3
+            catapult on the port side aft of No. 3 turret, the ship's first catapult.
+        src: [combinedfleet-haruna]
+
+      - date: 1933-08-01
+        text:
+          zh: >-
+            第二次改装在横须贺开始：舰尾延长 7.47 米、前舰桥改成塔式、
+            锅炉换成 11 座重油专烧舰本式、换新齿轮传动涡轮、航速提到 30 节、
+            撤掉 40 mm 维克斯炮、改装中线吴式二号三型一型弹射器。
+            1934 年 9 月 30 日正式完成，是四舰里最早的一艘。
+          en: >-
+            The second reconstruction began at Yokosuka: stern lengthened by 7.47 m, the
+            forebridge rebuilt in pagoda style, all boilers replaced with 11 oil-firing
+            Kampon boilers, new geared turbines, speed raised to 30 knots, the 40 mm
+            Vickers guns landed, and a centreline Kure Type No. 2 Model 3 Mk. 1 catapult
+            fitted. It was officially completed on 30 September 1934, the earliest of the
+            four ships.
+        src: [combinedfleet-haruna, japanese-warship-haruna]
+
+  - id: carrier-war
+    title: { zh: 开战、中途岛与瓜岛, en: The opening of the war, Midway and Guadalcanal }
+    range: { from: 1941-11, to: 1943-02 }
+    lead:
+      zh: >-
+        开战时它跟着南云走，中途岛时它和雾岛同队，瓜岛时它在一旁看。
+        真正属于它自己的一夜是 1942 年 10 月 13 日。
+    events:
+      - date: 1941-11-29
+        text:
+          zh: >-
+            第三战队第二小队（榛名与金刚）配属近藤信竹的第二舰队，编入南方部队
+            主队，自柱岛出发前往澎湖马公。注意编成会变：中途岛时第二小队
+            变成榛名加雾岛，1942-07-14 之后又变回榛名加金刚。
+          en: >-
+            BatDiv 3's section 2 — Haruna and Kongo — was attached to Kondo Nobutake's
+            Second Fleet in the Southern Force main body and departed Hashirajima for
+            Makung in the Pescadores. The pairing changed over time: at Midway section 2
+            was Haruna and Kirishima, and from 14 July 1942 it was Haruna and Kongo again.
+        src: [combinedfleet-haruna]
+
+      - date: 1941-12-09
+        text:
+          zh: >-
+            主队在南印支近海。1415 潜艇伊 65 报告发现一支以 14 节北北西航行的
+            英军部队——这是菲利普斯中将自新加坡出击的 Z 舰队。主队南下准备夜战，
+            未获接触；次日下午收到两艘英国主力舰在关丹外海被击沉的消息后
+            离开搜索区。
+          en: >-
+            The main body was at sea south of Indochina. At 1415 the submarine I-65
+            reported a British force steering north-northwest at 14 knots — Admiral
+            Phillips's Force Z, out from Singapore. The main body turned south for a night
+            attack but made no contact, and left the search area the following afternoon
+            after reports that both British capital ships had been sunk off Kuantan.
+        src: [combinedfleet-haruna]
+
+      - date: 1942-03-07
+        text:
+          zh: >-
+            第三战队第二小队与第 17 驱逐队的浦风、滨风、矶风、谷风一起炮击
+            圣诞岛。榛名打出 3 发 14 英寸弹与 14 发 6 英寸弹。
+          en: >-
+            BatDiv 3's section 2, with DesDiv 17's Urakaze, Hamakaze, Isokaze and
+            Tanikaze, bombarded Christmas Island. Haruna fired three 14-inch and fourteen
+            6-inch shells.
+        src: [combinedfleet-haruna]
+
+      - date: 1942-05-29
+        text:
+          zh: >-
+            与雾岛一起自柱岛出发参加「MI」作战（中途岛），编在阿部弘毅少将的
+            支援部队第三战队第二小队，随南云的第一机动部队行动。
+            雾岛页把同一件事记作 05-27，同站两页差两天，两说并列。
+          en: >-
+            With Kirishima, departed Hashirajima for Operation MI, assigned to Rear
+            Admiral Abe Hiroaki's Support Group, BatDiv 3 Section 2, operating with
+            Nagumo's First Mobile Force. Kirishima's TROM on the same site dates the same
+            departure to 27 May; both dates are recorded here.
+        src: [combinedfleet-haruna, combinedfleet-kirishima]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            0430 弹射 1 架九五式水侦，搜索机动部队东北方向的美军航母。
+            0817 与雾岛遭中途岛起飞的 11 架 SB2U-3 攻击，只有近失弹。
+            1020 从约克城号起飞的 2 架 SBD 从右舷正横方向接近，投下两发极近的
+            近失弹；水柱遮住舰体，附近军舰的瞭望哨一度报告它已被击沉。
+            加贺号起火时，榛名短暂靠近准备救助。全天未受损。
+          en: >-
+            At 0430 she catapulted a Type 95 floatplane to search northeast of the
+            striking force for American carriers. At 0817 Haruna and Kirishima were
+            attacked by 11 SB2U-3 dive-bombers from Midway and took only near misses. At
+            1020 two SBDs from Yorktown approached from her starboard beam and planted two
+            very near misses; the battleship disappeared behind the waterspouts and
+            lookouts on nearby ships reported her lost. When Kaga was set afire Haruna
+            briefly closed to assist. She was not damaged that day.
+        src: [combinedfleet-haruna]
+
+      - date: 1942-10-13
+        text:
+          zh: >-
+            0133 起第三战队炮击亨德森机场，榛名与金刚合计打出 918 发 14 英寸弹
+            （483 发与 435 发），内含三式烧霰弹；高爆弹打光后改用穿甲弹继续。
+            地面上 40 多架美军飞机被毁。0230 以 29 节经「槽海」北撤。
+          en: >-
+            From 0133 BatDiv 3 bombarded Henderson Field, Haruna and Kongo firing 918
+            14-inch shells between them (483 and 435), including Type 3 incendiary
+            rounds; after the HE shells were expended the ships continued with AP. More
+            than 40 American aircraft were destroyed on the ground. At 0230 the division
+            retired up the Slot at 29 knots.
+        src: [combinedfleet-haruna]
+
+      - date: 1942-11-15
+        text:
+          zh: >-
+            第三次所罗门海战第二夜，第三战队在翁通爪哇环礁附近。第十一战队的
+            雾岛在萨沃岛外海战没后，第三战队离开该海域前往特鲁克。
+            两舰自此再未同队。
+          en: >-
+            On the second night of the Third Battle of the Solomons, BatDiv 3 was near
+            Ontong Java Atoll. After BatDiv 11's Kirishima was lost off Savo Island,
+            BatDiv 3 left the area for Truk. The two ships never served in the same
+            division again.
+        src: [combinedfleet-haruna, combinedfleet-kirishima]
+
+  - id: leyte
+    title: { zh: 1944：马里亚纳受创、莱特湾与搁浅, en: 1944 — damage in the Philippine Sea, Leyte Gulf, grounding }
+    range: { from: 1944-06, to: 1944-12 }
+    lead:
+      zh: >-
+        这一年它挨了一发炸弹、参加了史上最大的一场海战、然后在回家的路上触了礁。
+        三件事里对它伤害最大的是第一件。
+    events:
+      - date: 1944-06-20
+        text:
+          zh: >-
+            马里亚纳海战。约 1833 第三战队正在为千代田号提供防空掩护，遭
+            卡伯特号（CVL-28）的 TBF-1C 鱼雷机攻击；1837 一发 500 磅通用炸弹
+            从水面弹起、穿透右舷舰尾、在下甲板爆炸。手动操舵室随即进水，
+            左外轴支架受损、涡轮被迫停转，航速降到 26 节。舰上 15 人阵亡、19 人受伤，
+            舰艏外板被近失弹压皱。榛名的炮手声称击落 2 架。
+          en: >-
+            The Battle of the Philippine Sea. At about 1833, while BatDiv 3 was providing
+            anti-aircraft cover for the carrier Chiyoda, TBF-1C torpedo-bombers from Cabot
+            (CVL-28) attacked; at 1837 a 500-lb general-purpose bomb skipped off the
+            water, penetrated the starboard side of the stern and exploded on the lower
+            deck. The manual steering compartment flooded, the port outboard shaft bracket
+            was damaged and its turbine had to be shut down, reducing speed to 26 knots.
+            Fifteen sailors were killed and nineteen wounded, and the near misses buckled
+            hull plating forward. Haruna's gunners claimed two aircraft.
+        src: [combinedfleet-haruna]
+
+      - date: 1944-08-21
+        text:
+          zh: >-
+            至 10 月 5 日在新加坡 Seletar 的英王乔治六世干船坞做进一步修理。
+            为压制振动，第 101 修理部把左外轴整根拆除，最大航速（第 5 战速）
+            因此被限制在 26.5 节。
+          en: >-
+            Further repairs in the King George VI graving dock at Seletar, Singapore,
+            until 5 October. To suppress vibration the 101st Repair Facility removed the
+            port outboard shaft entirely, which limited her maximum speed — fifth battle
+            speed — to 26.5 knots.
+        src: [combinedfleet-haruna]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            锡布延海。1521 遭三架从舰尾方向、三架从右舷前方同时进入的俯冲轰炸机
+            攻击，吃 5 发近失弹（2 发在舰艏、3 发在左舷后方），损伤轻微。
+          en: >-
+            The Sibuyan Sea. At 1521 she was attacked by three dive-bombers from astern
+            and three from off the starboard bow simultaneously and took five near misses
+            (two off the bow, three off the port quarter); the damage was negligible.
+        src: [combinedfleet-haruna]
+
+      - date: 1944-10-25
+        text:
+          zh: >-
+            萨马岛海战。第三战队受命向东堵截，榛名以三轴跑 26 节，很快落在后面。
+            0748 向一艘驱逐舰开火；0808 向一艘被识别为巡洋舰、后改判为护航航母的
+            目标射击，很可能命中甘比尔湾号。0912 遭三架鱼雷机从舰艏方向攻击，
+            以左转规避两条鱼雷、第三条几乎擦过舰体；0928 又以右转规避一条。
+            1040 接令去拦截一艘报告的「巴尔的摩级重巡洋舰」，瞭望哨很快认出
+            那是已经重创的铃谷号。1705 再次遭攻击，3 发近失弹的破片打坏
+            右舷中部 5 号锅炉舱通风机的油管，烟囱冒出一股黑烟。
+          en: >-
+            The battle off Samar. Ordered east to head off the enemy, Haruna made 26 knots
+            on three shafts and soon lagged behind. At 0748 she opened fire on a
+            destroyer; at 0808 she engaged a target identified as a cruiser and later
+            reclassified as an escort carrier, in all likelihood hitting Gambier Bay. At
+            0912 three torpedo-bombers attacked from ahead; she evaded two torpedoes by
+            turning to port while a third almost grazed the hull, and at 0928 evaded
+            another by turning to starboard. At 1040 she was ordered to intercept a
+            reported "Baltimore-class heavy cruiser", which her lookouts quickly
+            identified as the crippled Suzuya. At 1705, attacked again, three near misses
+            sent splinters into the oil line of No. 5 boiler room's starboard ventilator,
+            which seized and threw a burst of black smoke from the fore funnel.
+        src: [combinedfleet-haruna]
+
+      - date: 1944-11-22
+        text:
+          zh: >-
+            在林加锚地外触礁（Admiral Bank）。右舷中部一百多米长的船壳被压弯、
+            开出一道 30 米长的裂口，进水约 1,400 吨。11 月 26 日在新加坡由
+            第 101 修理部检查后报告：仍可跑 18 节，但更高航速有安全风险，
+            最短修理期估计 15 天。
+          en: >-
+            Ran aground on Admiral Bank off Lingga Roads. Her hull was buckled over a
+            stretch of more than a hundred metres to starboard amidships, a 30-metre gash
+            opened and she shipped some 1,400 tons of water. Inspected at Seletar on
+            26 November, the 101st Repair Facility reported that she could still make
+            18 knots but that higher speeds were dangerous, and estimated a minimum of
+            fifteen days' repair.
+        src: [combinedfleet-haruna]
+
+      - date: 1944-12-10
+        text:
+          zh: >-
+            经马公返回佐世保。12 月 8 日至 9 日夜间，美军潜艇海魔鬼号（SS-400）、
+            鲽鱼号（SS-390）与红鱼号（SS-395）连续攻击这支编队，
+            隼鹰号被 1 至 2 条鱼雷命中、右舷前后进水、右主机舱淹没，
+            以左机 12 节脱离；榛名在整个过程中未受损。
+          en: >-
+            Returned to Sasebo via Makung. During the night of 8-9 December the
+            submarines Sea Devil (SS-400), Plaice (SS-390) and Redfish (SS-395) attacked
+            the group in succession; Junyo was hit by one or two torpedoes, flooded
+            forward and aft to starboard with her starboard engine room drowned, and got
+            away on her port engine at 12 knots. Haruna was undamaged throughout.
+        src: [combinedfleet-haruna]
+
+  - id: end
+    title: { zh: 吴港的最后一年与解体, en: The last year at Kure and the breakers }
+    range: { from: 1945-01, to: 1948 }
+    lead:
+      zh: >-
+        这一年它一次也没有出海作战。它是被飞机一趟一趟炸死在码头边的。
+    events:
+      - date: 1945-01-01
+        text:
+          zh: >-
+            第三战队解队，榛名转隶重新编成的第一战队（第二舰队）。
+            1945 年内它的战伤大部分修复，涂装改为灰色、炮塔上加很浅的灰色条纹。
+          en: >-
+            BatDiv 3 was deactivated and Haruna was reassigned to the reactivated BatDiv 1
+            of the Second Fleet. During 1945 most of her battle damage was repaired and
+            she was camouflaged grey with very pale grey stripes on her turrets.
+        src: [combinedfleet-haruna]
+
+      - date: 1945-03-19
+        text:
+          zh: >-
+            米切尔的第 58 特混舰队首次空袭吴海军工厂，240 多架飞机攻击吴港内的
+            榛名、大和、伊势、日向与航母龙凤、海鹰、天城、葛城等舰。
+            停在江田岛湾的榛名遭 15 架飞机攻击，只在舰桥右后方被命中 1 发，损伤轻微。
+          en: >-
+            Mitscher's Task Force 58 made the first carrier attack on Kure Naval Arsenal,
+            more than 240 aircraft striking Haruna, Yamato, Ise and Hyuga and the carriers
+            Ryuho, Kaiyo, Amagi and Katsuragi among others. Haruna, at anchor in Etajima
+            Bight, was attacked by 15 aircraft and hit only once, to starboard abaft the
+            bridge, for light damage.
+        src: [combinedfleet-haruna]
+
+      - date: 1945-07-24
+        text:
+          zh: >-
+            麦凯恩的第 38 特混舰队空袭吴港。榛名在左舷后方被命中 1 发炸弹，
+            损伤轻微。这一击留下的裂口在四天后决定了它的结局。
+          en: >-
+            McCain's Task Force 38 attacked Kure. Haruna was hit by one bomb to port aft,
+            causing light damage. The gash it opened decided her fate four days later.
+        src: [combinedfleet-haruna]
+
+      - date: 1945-07-28
+        text:
+          zh: >-
+            0800 至 1700 连续遭黄蜂号（CV-18）第 86 航空队、香格里拉号（CV-38）
+            及第 38 特混舰队其他飞机攻击，中多发起近失弹。1615 最后一次重击
+            在左舷开口，进水造成的横倾使 7 月 24 日那道裂口没入水下，
+            舰体大量进水，在码头边浅水坐底，位置 34-15N、132-29E。
+            两日合计命中 13 发炸弹、近失 10 发，阵亡 65 人。
+            navypedia 记这两日为 3 发与 9 发直击弹，与 13 发合计不同，两说并列。
+          en: >-
+            From 0800 to 1700 she was attacked by Air Group 86 from Wasp (CV-18),
+            aircraft from Shangri-La (CV-38) and others of TF 38, taking many hits and
+            near misses. At 1615 a final heavy attack holed her to port; the resulting
+            list put the 24 July gash under water, she took on tons of water and settled
+            on the bottom in shallow water beside a pier at 34-15N, 132-29E. Over the two
+            days she took 13 bomb hits and 10 near misses and lost 65 officers and men.
+            Navypedia gives 3 and 9 direct hits for the two days, which differs from the
+            combined figure of 13; both are recorded here.
+        src: [combinedfleet-haruna, navypedia-kongo]
+
+      - date: 1945-11-20
+        text:
+          zh: >-
+            从海军籍除籍。
+          en: >-
+            Removed from the Navy List.
+        src: [combinedfleet-haruna]
+
+      - date: 1948
+        text:
+          zh: >-
+            残骸于 1946 至 1948 年浮扬解体。日文资料另给一个具体日期
+            「退役日（解体）昭和 21 年（1946 年）7 月 4 日」，与英方的两年区间
+            不是同一口径，两说并列不裁决。
+          en: >-
+            The wreck was raised and broken up between 1946 and 1948. A Japanese source
+            gives a specific date, 4 July 1946, for the disposal, which is a different
+            measure from the British two-year span; both are recorded here.
+        src: [combinedfleet-haruna, japanese-warship-haruna]

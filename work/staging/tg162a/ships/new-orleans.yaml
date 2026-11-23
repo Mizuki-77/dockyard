@@ -1,0 +1,433 @@
+# ============================================================================
+# 单舰：USS New Orleans（CA-32，新奥尔良号重巡洋舰）
+# ----------------------------------------------------------------------------
+# 只写本舰与舰级（new-orleans）不同的值与本舰特有的事实。
+# 本舰是**本级命名舰**，但按 historyofwar 的记载，级别名是 1942 年阿斯托里亚号
+# 沉没之后才正式定在它头上的（此前部分资料称 Astoria 级）。
+#
+# 【本舰最该说清的三件事】
+#   1) 1942-06 中途岛：与明尼阿波利斯号同属 TG 16.2 的 CTU 16.2.2，
+#      编队内担任 Hornet（大黄蜂号）的掩护（navweaps 战斗序列页原文
+#      「USS New Orleans (CA-32) … Escorting Hornet」）。
+#   2) 1942-11-30 塔萨法隆加：紧随旗舰明尼阿波利斯号之后 1,000 码，
+#      旗舰中雷后右满舵规避，正好撞进另一条鱼雷的航迹——**舰艏在 2 号炮塔
+#      炮座处整段被切掉**。WDR-38 的结论是：真正致命的是鱼雷引爆了旁边的
+#      航空炸弹库（160 lb 拆除装药 + 49 枚 100 lb 炸弹），不是鱼雷本身。
+#   3) 生还方式与明尼阿波利斯不同：本舰艏部整段漂到港侧，把舷侧撞出几个洞
+#      （frames 53 / 130 / 136），航速掉到 2 节，但**靠自身动力**驶入 Tulagi；
+#      用椰木临时接了个艏，1943-03 到 Puget Sound 换真艏。
+#
+# 【与姊妹舰的硬差别】
+#   · 主炮：CA-32/34/36 一批，8"/55 Mk 9 族（与明尼阿波利斯同，与文森斯不同）。
+#   · 副炮炮座：本舰是 5"/25 **Mark 19**（手动），而 Quincy 与 Vincennes 是
+#     Mark 23（动力驱动）——navweaps 原文「New Orleans (except Quincy and
+#     Vincennes) (8): Mark 19」「Quincy (8), Vincennes (8) and Brooklyn (8):
+#     Mark 23」。这三艘同级舰的副炮座不是一回事。
+#   · 舰长：中途岛当天是谁，两源打架（见 service.commander 条）。
+#
+# 【未获取】
+#   试航实测功率/航速、1942 年以前的雷达型号与装舰日期、各次战斗弹药消耗、
+#   塔萨法隆加阵亡人数、造价、水线宽实测（WDR-38 给了一个 60'-1-3/8"，
+#   与 DANFS 的 61'9" 不同，已并列）。
+# ============================================================================
+
+id: new-orleans
+name:
+  zh: 新奥尔良号
+  en: USS New Orleans
+class: new-orleans
+
+open_ended_note: >
+  CA-32，本级命名舰。1931-03-14 开工（原名 CL-32）、1933-04-12 下水、
+  1934-02-15 服役。1942-06 中途岛属 TG 16.2 掩护大黄蜂号；
+  1942-11-30 塔萨法隆加被鱼雷切断舰艏仍生还，1943-08 重返前线；
+  1947-02-10 退役，1959-09-22 售拆。17 枚战斗之星（navsource 作战勋表栏）。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: USS New Orleans
+    src: [danfs-ca32, navypedia-neworleans]
+    valid: { from: 1931-03-14 }
+    confidence: A
+
+  - field: identity.name_zh
+    value: 新奥尔良号
+    src: [danfs-ca32]
+    valid: { from: 1931-03-14 }
+    confidence: C
+    note: >
+      DANFS 命名来源原文：「Largest city of Louisiana, New Orleans was the scene
+      of Andrew Jackson's great victory at the close of … the War of 1812 …
+      and of a key naval action in the Civil War, in which Admiral David Farragut
+      opened the southern Mississippi to Union forces」——路易斯安那州最大城市。
+      中文通行译法即「新奥尔良号」。
+
+  - field: identity.name_en
+    value: USS New Orleans
+    src: [danfs-ca32]
+    valid: { from: 1931-03-14 }
+    confidence: A
+
+  - field: identity.namesake
+    value: 路易斯安那州新奥尔良市
+    src: [danfs-ca32]
+    valid: { from: 1931-03-14 }
+    confidence: A
+    note: 本舰是美国海军第二艘取此名的军舰（DANFS 标题「New Orleans II (CA-32)」）。
+
+  - field: identity.pennant_number
+    value: CA-32（原名 CL-32）
+    src: [danfs-ca32, navsource-ca32]
+    valid: { from: 1931-03-14 }
+    confidence: A
+    note: >
+      DANFS 原文「The second New Orleans (CA-32), formerly CL 32」；
+      navsource 页头亦作「USS NEW ORLEANS (CL/CA 32)」。
+      1930 年伦敦条约把重巡定义为 8 英寸炮舰后，本舰由轻巡编号改为重巡编号；
+      **改动日期未获取**。
+
+  - field: identity.ship_type
+    value: heavy_cruiser
+    src: [navypedia-neworleans]
+    valid: { from: 1934-02-15 }
+    confidence: A
+
+  - field: identity.nation
+    value: united_states
+    src: [navypedia-neworleans]
+    valid: { from: 1934-02-15 }
+    confidence: A
+
+  - field: identity.operator
+    value: United States Navy
+    src: [navypedia-neworleans]
+    valid: { from: 1934-02-15 }
+    confidence: A
+
+  - field: identity.era
+    value: ww2
+    src: [danfs-ca32]
+    valid: { from: 1939-09-01, to: 1945-09-02 }
+    confidence: A
+
+  - field: identity.building_program
+    value: FY1929 计划（CA-32/34/36 三艘海军船厂建造的第一批）
+    src: [navypedia-neworleans, navsource-ca32]
+    valid: { from: 1929-02-13 }
+    confidence: B
+    note: navsource「Authorized 13 FEB 1929」；navypedia 同明第一批属 FY1929。
+
+  # ============================================================ 建造
+  - field: construction.builder
+    value: New York Navy Yard
+    src: [danfs-ca32, navypedia-neworleans]
+    valid: { from: 1931-03-14 }
+    confidence: A
+
+  - field: construction.builder_location
+    value: Brooklyn, New York
+    src: [navypedia-neworleans, navsource-ca32]
+    valid: { from: 1931-03-14 }
+    confidence: A
+    note: >
+      navypedia「New York N Yd, Brooklyn」；navsource 图注记开工仪式在
+      「Brooklyn navy yard」举行（「Rear Adm. Louis R. DeSteiguer … by riveting
+      the first spike of the keel laying ceremony at Brooklyn navy yard」）。
+
+  - field: construction.laid_down
+    value: 1931-03-14
+    unit: date
+    src: [danfs-ca32, navypedia-neworleans]
+    valid: { from: 1931-03-14 }
+    confidence: A
+
+  - field: construction.launched
+    value: 1933-04-12
+    unit: date
+    src: [danfs-ca32, navypedia-neworleans]
+    valid: { from: 1933-04-12 }
+    confidence: A
+    note: >
+      DANFS「launched 12 April 1933; sponsored by Miss Cora S. Jahncke, daughter
+      of the Assistant Secretary of the Navy」；navsource 图注亦记掷瓶人为
+      Jahncke 之女（其父 Ernest Lee Jahncke 时任助理海军部长）。
+
+  - field: construction.commissioned
+    value: 1934-02-15
+    unit: date
+    src: [danfs-ca32, navsource-ca32]
+    valid: { from: 1934-02-15 }
+    confidence: A
+    note: >
+      DANFS「commissioned 15 February 1934, Captain Allen B. Reed in command」；
+      navsource「Commissioned 15 FEB 1934」。
+      **navypedia 写「18.4.1934」，与两源差两个月**——两说并列，
+      取 DANFS/navsource（官方出版物 + 舰长任期表起点 02/15/1934 自洽）。
+
+  - field: construction.fate_date
+    value: 1959-09-22
+    unit: date
+    src: [danfs-ca32, navsource-ca32]
+    valid: { from: 1959-09-22 }
+    confidence: A
+    note: >
+      DANFS「struck from the Navy List 1 March 1959 and sold for scrapping
+      22 September 1959 to Boston Metals Co., Baltimore, Md.」；
+      navsource「Stricken 01 MAR 1959 / Sold for scrap 22 SEP 1959」。
+      退役日 1947-02-10（DANFS「decommissioned 10 February 1947」）同样真，
+      但按注册表只记结局（售拆）日，退役日写在这里。
+
+  - field: construction.fate_type
+    value: scrapped
+    src: [danfs-ca32]
+    valid: { from: 1959-09-22 }
+    confidence: A
+
+  # ============================================================ 服役
+  - field: service.commander
+    value: Captain Howard Harrison Good
+    src: [navsource-ca32, navweaps-midway-oob]
+    valid: { from: 1941-08-22, to: 1942-06-18 }
+    confidence: A
+    note: >
+      navsource 舰长表「Good, Howard Harrison, CAPT … 08/22/1941 - 06/18/1942」；
+      navweaps 中途岛战斗序列「USS New Orleans (CA-32) Commanding officer:
+      Capt. Howard H. Good」。**但 Kinkaid 传记第 208 页的中途岛编成表把本舰
+      舰长写作「CAPT Walter S. DeLany」**——两说并列，不裁决。
+      时间线支持 Good：中途岛是 1942-06-04，DeLany 的任期从 06-18 才开始。
+
+  - field: service.commander
+    value: Captain Clifford Harris Roper
+    src: [oni-combat-narrative-tassafaronga, navsource-ca32]
+    valid: { from: 1942-11-02, to: 1943-04-14 }
+    confidence: A
+    note: >
+      ONI 塔萨法隆加叙述编成表「New Orleans, Capt. Clifford H. Roper」；
+      navsource 舰长表「Roper, Clifford Harris, CAPT … 11/02/1942 - 04/14/1943」。
+      两源在塔萨法隆加当夜（1942-11-30）完全吻合。
+
+  - field: service.unit
+    value: 第 6 巡洋舰分队（CruDiv 6）· TG 16.2 巡洋舰群 · 太平洋舰队
+    src: [ibiblio-midway-oob, kinkaid-bio, navweaps-midway-oob]
+    valid: { from: 1942-05-16, to: 1942-06-30 }
+    confidence: A
+    note: >
+      ibiblio 官方战斗序列把本舰列在 TG 16.2（Kinkaid，Comcrudiv 6）之下；
+      navweaps 序列页给分派「USS New Orleans (CA-32) … Notes: Escorting Hornet」；
+      Kinkaid 传记第 208 页把本舰列入 Kinkaid 直辖的 CTU 16.2.2。
+      **DANFS 自己的说法略有不同**：记 1942-05-28「sailed … screening Enterprise」
+      （「New Orleans sailed 28 May screening Enterprise, to surprise the Japanese
+      in the Battle of Midway」），与 navweaps 的「Escorting Hornet」冲突——
+      两说并列。可能的解释是编队内位置随航渡调整过，但**来源未给解释，不作推断**。
+
+  - field: service.unit
+    value: TF 67（ONI 代字 Task Force WILLIAM）· 南太平洋部队
+    src: [oni-combat-narrative-tassafaronga, navsource-ca32, danfs-ca32]
+    valid: { from: 1942-11-27, to: 1942-11-30 }
+    confidence: A
+    note: >
+      ONI 原文编成「New Orleans, Capt. Clifford H. Roper」，队列位置
+      「Steaming 1,000 yards astern of the flagship was the New Orleans」；
+      WDR-38 亦记「The cruisers were in column, spaced 1000 yards, with
+      MINNEAPOLIS in the lead followed by NEW ORLEANS」。
+
+  # 【未获取，故整条不写】
+  #   service.casualties —— WDR-38 只说前炮塔全灭（「All personnel in both
+  #     forward turrets lost their lives」，ONI 转述），未给全舰阵亡总数；
+  #     navsource 与 DANFS 也都没给。按 SCHEMA §1 不写 fact。
+
+  # ============================================================ 主尺度（实测）
+  - field: dimensions.length.wl
+    value: 176.19
+    unit: m
+    src: [wdr-38]
+    valid: { from: 1942-11-30, to: 1943-04-03 }
+    confidence: A
+    note: >
+      War Damage Report No.38 扉页的实测值：「Length (W.L.) 578'-5/16"」= 176.19 m。
+      与 navypedia 的 class 值 176.2 m 在 0.01 m 内吻合，两源独立互证。
+
+  - field: dimensions.beam.wl
+    value: 18.32
+    unit: m
+    src: [wdr-38]
+    valid: { from: 1942-11-30, to: 1943-04-03 }
+    confidence: A
+    note: >
+      **这里与舰级值冲突，两说并列。** WDR-38 扉页实测
+      「Beam (W.L.) 60'-1-3/8"」= 18.32 m；而 DANFS / navsource 给 61'9"
+      （18.82 m），navypedia 给 18.8 m。差的 0.5 m 落在「水线宽」与
+      「最大宽」两个口径之间——前者是水线处的实测，后者是含舷弧的最大宽。
+      本舰这条取 WDR-38 的实测水线宽（一手档案），舰级那条取 18.8（多源）。
+      哪一个是水线处实测、哪一个是含舷弧最大宽，来源均未明说，故不合并。
+
+  - field: dimensions.draught.mean
+    value: 7.24
+    unit: m
+    src: [wdr-38]
+    valid: { from: 1942-11-30, to: 1942-11-30 }
+    confidence: A
+    note: >
+      WDR-38 扉页「Draft … 23'-9" (Before Damage)」= 7.24 m。
+      **注意两点**：① 这个「Draft」未说明是平均还是最大；② 它注明了
+      「Before Damage」，即**战损前**的状态。战损后同一页另记
+      「Draft forward about 27'-9"」（照片说明），那是断艏后的艏吃水，
+      两个数不能混。与舰级的 6.93 m（navypedia，满载）口径不同，不构成冲突。
+
+  # ============================================================ 本舰特异：武备
+  - field: armament.mount.summary
+    value: >-
+      1942-06 中途岛：3 座三联装 8"/55 Mk 9（前二后一）、8 座单装 5"/25
+      （Mark 19 手动炮座）、4 座四联装 1.1"/75、单装 20 mm；无鱼雷发射管。
+    src: [navypedia-neworleans, navweaps-5in25-mk10, pwencycl-neworleans]
+    valid: { from: 1942-06-03, to: 1942-06-07 }
+    confidence: B
+    note: >
+      主炮 Mk 号：navypedia 逐子级清单「CA32, 34, 36: 3 x 3 - 203/55
+      Mk 9.11.13/14」。副炮座型号：navweaps 原文
+      「Pensacola (4), Northampton (8), Portland (8) and New Orleans
+      (except Quincy and Vincennes) (8): Mark 19」——**本级中只有 Quincy 与
+      Vincennes 用 Mark 23（动力驱动），本舰是手动的 Mark 19**，这是三舰之间
+      很容易被抹平的差别。1.1 in 四联装：navypedia Modernizations
+      「New Orleans, Minneapolis, 11.1941: + 4 x 4 - 28/75 Mk 1」。
+      20 mm：DANFS 记 1942-01 在旧金山「installation of new search radar and
+      20mm guns」——这是本舰装 20 mm 的最早记录。
+
+  - field: armament.mount.summary
+    value: >-
+      1942-11 塔萨法隆加：3 座三联装 8"/55、8 座单装 5"/25（Mark 19）、
+      4 座四联装 1.1"/75、6 门单装 20 mm、SC 与 SG 雷达。
+    src: [oni-combat-narrative-tassafaronga, navypedia-neworleans]
+    valid: { from: 1942-11-30, to: 1942-11-30 }
+    confidence: B
+    note: >
+      ONI 原文记本舰有 SG（「Steaming 1,000 yards astern of the flagship was the
+      New Orleans. Her SG also failed to discover the Japanese ships for several
+      minutes after their appearance on the Minneapolis' screen at 2306」），
+      也有 SC（编队要求「one ship with CXAM or SC-1 radar」）。
+      **当夜本舰的实际弹药消耗未获取。**
+
+  - field: armament.mount.summary
+    value: >-
+      1944–1945：3 座三联装 8"/55、8 座单装 5"/25、6 座四联装 40 mm、
+      14 座双联 20 mm、仅 1 座弹射器（左舷那座 1945-03 前已拆除）。
+    src: [navypedia-neworleans, navsource-ca32]
+    valid: { from: 1944, to: 1945-09 }
+    confidence: C
+    note: >
+      navypedia 记 1944–45 年本舰「- (12 - 16) x 1 - 20/70; + 14 x 2 - 20/70 Mk 4」，
+      1946-01 状态「3 x 3 - 203/55 Mk 14, 8 x 1 - 127/25 Mk 19, 6 x 4 - 40/60 Mk 2,
+      14 x 2 - 20/70 Mk 24, 1 catapult, 4 seaplanes」。
+      弹射器减为 1 座的图像证据：navsource 1945-03-08 马雷岛照片说明
+      「The port catapult has been removed」。主炮 Mk 14 是重镗型
+      （navweaps「The Mark 14 was used for most regunnings during World War II」）。
+
+  - field: armament.aa_40mm.count
+    value: 24
+    unit: count
+    src: [navypedia-neworleans, pwencycl-neworleans]
+    valid: { from: 1943-09, to: 1945-09 }
+    confidence: C
+    note: >
+      navypedia「late 1943, all survived: … + 6 x 4 - 40/56 Mk 1.2」= 24 管；
+      pwencycl「Late 1943: 1.1" guns replaced with 6x4 40mm Bofors AA guns」。
+      按管数记。完成月份未获取。
+
+  - field: armament.aa_20mm.count
+    value: 6
+    unit: count
+    src: [navypedia-neworleans]
+    valid: { from: 1942-06, to: 1942-10 }
+    confidence: C
+    note: >
+      navypedia「mid-1942, all: - 8 x 1 - 12.7/90; + 6 x 1 - 20/70 Mk 4」。
+      与 historyofwar 对明尼阿波利斯的 12 门不同——**同级舰的 20 mm 数量
+      是逐舰不同的，不能互推**，这也是本条只引 navypedia 并给 C 的原因。
+
+  - field: armament.aa_20mm.count
+    value: 28
+    unit: count
+    src: [navypedia-neworleans]
+    valid: { from: 1944, to: 1945-09 }
+    confidence: C
+    note: >
+      navypedia「1944 - 1945, New Orleans: - (12 - 16) x 1 - 20/70;
+      + 14 x 2 - 20/70 Mk 4」——14 座双联 = 28 管。**这是算术换算，
+      且同时撤掉 12–16 门单装**；原文的区间说明它没有精确的换装完成日。
+
+  # ============================================================ 本舰特异：探测与损伤
+  - field: sensors.radar.installed
+    value: SG 水面搜索雷达
+    src: [oni-combat-narrative-tassafaronga]
+    valid: { from: 1942-11-30 }
+    confidence: A
+    note: >
+      ONI 原文「Her SG also failed to discover the Japanese ships for several
+      minutes after their appearance on the Minneapolis' screen at 2306.
+      Eight minutes later, however, what appeared on the SG screen to be a reef
+      close to Guadalcanal was identified as a column of ships」。
+      装舰起始日未获取，valid.from 取已确证的使用日。
+
+  - field: sensors.radar.installed
+    value: SC 对空/搜索雷达
+    src: [navypedia-neworleans, danfs-ca32]
+    valid: { from: 1942-01 }
+    confidence: B
+    note: >
+      DANFS 记 1942-01 在旧金山「returned … for engineering repairs and
+      installation of new search radar and 20mm guns」；navypedia 记
+      「mid-1942, all: … + SC, Mk 3 radars」。两条在时间上可接续，
+      但 DANFS 未点名雷达型号，故本条以 navypedia 定型号、DANFS 定时间，给 B。
+
+  - field: protection.armor.thickness
+    value: 57
+    unit: mm
+    qual: { part: deck, region: main }
+    src: [navypedia-neworleans, wdr-38]
+    valid: { from: 1942-11-30, to: 1942-11-30 }
+    confidence: C
+    note: >
+      **本条的作用是给断艏事故留一个对照点。** navypedia 记弹药库段的
+      主装甲甲板在「1st platform level」、厚 57 mm；WDR-38 记断艏后
+      「The second deck was missing forward of frame 31 … The explosion had torn
+      out everything below the second deck forward of frame 31」，
+      并在照片说明里提到「Armored bulkhead 53 apparently prevented further
+      damage」（frame 53 处的装甲舱壁挡住了破口继续扩大）——
+      这是**装甲舱壁确实起了作用**的一手证据，与「装甲无效」的笼统说法相反。
+
+  - field: service.fate_category
+    value: 1942-11-30 塔萨法隆加被一条鱼雷切断舰艏（2 号炮塔炮座处），靠自航驶入 Tulagi 并以椰木假艏返修，1943-08 重返前线，战后拆解
+    src: [oni-combat-narrative-tassafaronga, wdr-38, danfs-ca32]
+    valid: { from: 1942-11-30, to: 1959-09-22 }
+    confidence: A
+    note: >
+      ONI 原文：「When the Minneapolis was torpedoed, the New Orleans had to come
+      hard right to avoid ramming her … Rarely a minute passed before the New
+      Orleans herself received a torpedo hit on her port bow. The gasoline stowage
+      and magazine groups 1 and 3 exploded, and the entire bow as far aft at the
+      barbette of turret II was blown away. All personnel in both forward turrets
+      lost their lives. The bow floated aft along the port side, tearing gaping
+      holes at frames 130 and 136 just above the waterline」。
+      WDR-38 的官方因果结论：「this Bureau is of the opinion that the severe
+      damage to NEW ORLEANS was the result of the combined effects of the torpedo
+      detonation and a mass detonation of aircraft bombs and demolition charge
+      caused by fragments produced by the torpedo. The Bureau of Ordnance concurs
+      with this opinion」——即**炸弹库殉爆放大了损伤**，鱼雷本身不足以断艏。
+      DANFS 的对照叙述：「a torpedo which ripped off her bow. Bumping down the
+      ship's port side, the severed bow punched several holes in New Orleans'
+      hull. A fifth of her length gone, slowed to 2 knots」。
+      两处对「断到哪里」一致（2 号炮塔炮座），对「是否靠自航进港」也一致
+      （DANFS「under her own power she entered Tulagi Harbor near daybreak
+      1 December」）。
+
+  - field: service.complement.standard
+    value: 1121
+    unit: persons
+    src: [ibiblio-ships-ca]
+    valid: { from: 1943, to: 1945-09 }
+    confidence: C
+    note: >
+      ibiblio 与 USS Vincennes Association 给本级「Complement: 1042-1121」。
+      本条取上限并限定在 1943 年以后——**这是按年份推断的限定，不是来源明说**，
+      故给 C。对照 DANFS 的 708 与 navypedia 的 868，三者口径全不同。

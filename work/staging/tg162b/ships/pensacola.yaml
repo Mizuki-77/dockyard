@@ -1,0 +1,414 @@
+# ============================================================================
+# 彭萨科拉号（USS Pensacola, CL/CA-24）—— 彭萨科拉级首舰
+#
+# 2026-11-23 tg162b 入库。舰级共用参数见 classes/pensacola.yaml。
+#
+# 四件必须记住的事：
+#   1. **主炮 10 门 = 2 座三联 + 2 座双联，共 4 座炮座。**
+#      这个布置在美国条约重巡里是独一份：双联在首尾两端（低位），
+#      三联背负在它们上面。navypedia 原句
+#      "end twin turrets and superfiring triple ones"。
+#      NavWeaps 炮座表把它拆成两行：双联 "Pensacola (2)"、三联 "Pensacola (2)"，
+#      两源独立、结果一致。
+#   2. **1942-06 中途岛时本舰属 TG 16.2，护卫企业号。**
+#      NavWeaps 原句 "USS Pensacola (CA-24) ... Notes: Escorting Enterprise;
+#      joined TF-17."；企业号战报 06-06 条把本舰列在 ENTERPRISE 组内。
+#   3. **1942-11-30 塔萨法隆加被一条鱼雷命中，重伤但存活。**
+#      伤亡 7 名军官 + 118 名士兵阵亡，1 名军官 + 67 名士兵受伤（DANFS 原文）。
+#      注意与北安普敦号的区别：彭萨科拉中雷 1 条且活下来，北安普敦中 2 条而沉没。
+#   4. **战后参加十字路口核试，两次爆炸都存活，1948-11-10 作为靶舰沉没。**
+#      DANFS 只给沉没日期，NavSource 给了"华盛顿州外海"这个地点。
+# ============================================================================
+
+id: pensacola
+name:
+  zh: 彭萨科拉号
+  en: USS Pensacola
+class: pensacola
+note: >-
+  彭萨科拉级首舰，舷号 CL-24（1931-07-01 改 CA-24）。
+  以佛罗里达州埃斯坎比亚县的彭萨科拉湾与彭萨科拉市命名。DANFS 原句：
+  "A bay and city in Escambia County, Fla."
+  二战获 13 颗战斗之星（本舰为 13 颗，是美军巡洋舰中较多的一艘）。
+
+open_ended_note: >-
+  本舰活到战后（1946-08-26 退役、1948-11-10 作为靶舰沉没），
+  故多数 fact 的 valid.to 取 1948-11-10（最终沉没）或 1946-08-26（退役），
+  视字段性质而定，每条 note 里说明取哪个及原因。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: Pensacola
+    src: [danfs-pensacola]
+    valid: { from: 1930-02-06, to: 1948-11-10 }
+    confidence: B
+
+  - field: identity.name_zh
+    value: 彭萨科拉号
+    src: [danfs-pensacola]
+    valid: { from: 1930-02-06, to: 1948-11-10 }
+    confidence: B
+
+  - field: identity.name_en
+    value: USS Pensacola
+    src: [danfs-pensacola]
+    valid: { from: 1930-02-06, to: 1948-11-10 }
+    confidence: B
+
+  - field: identity.name_note
+    value: 以佛罗里达州埃斯坎比亚县的彭萨科拉湾与彭萨科拉市命名。
+    src: [danfs-pensacola]
+    valid: { from: 1930-02-06, to: 1948-11-10 }
+    confidence: B
+    note: >-
+      DANFS 原句 "A bay and city in Escambia County, Fla."
+      本舰是 DANFS 的第三艘 Pensacola（题头 "Pensacola III"），
+      前两艘分别是 1858 年的蒸汽单桅帆船与 1917 年的运煤船。
+      **抓取时要小心**：pensacola-ii 那个 URL 是运煤船，
+      重巡是 pensacola-iii。
+
+  - field: identity.pennant_number
+    value: CL-24（1931-07-01 改 CA-24）
+    src: [navsource-pensacola]
+    valid: { from: 1930-02-06, to: 1948-11-10 }
+    confidence: C
+    note: >-
+      NavSource 原句 "Reclassified CA 24 01 JUL 1931"；
+      navypedia 舰名栏 "CL24, 7.1931- CA24"。
+      NavSource 的多张 1929 年照片图注仍写 "Pensacola (CL 24)"，
+      即下水时用的还是 CL 舷号。
+
+  - field: identity.ship_type
+    value: heavy_cruiser
+    src: [navypedia-pensacola, danfs-pensacola]
+    valid: { from: 1931-07-01, to: 1948-11-10 }
+    confidence: B
+    note: >-
+      时间窗从 1931-07-01 起，因为在此之前分类是轻巡（CL）。
+      与北安普敦号同一个制度问题：装 8 in 炮的舰在 1931 年之前也叫 CL。
+
+  - field: identity.nation
+    value: united_states
+    src: [danfs-pensacola]
+    valid: { from: 1930-02-06, to: 1948-11-10 }
+    confidence: B
+
+  - field: identity.operator
+    value: United States Navy
+    src: [danfs-pensacola]
+    valid: { from: 1930-02-06, to: 1948-11-10 }
+    confidence: B
+
+  - field: identity.era
+    value: ww2
+    src: [danfs-pensacola]
+    valid: { from: 1930-02-06, to: 1948-11-10 }
+    confidence: B
+    note: >-
+      按服役期定位：1930-1946，主体在 ww2。战后参加十字路口核试
+      （1946-07）时已过二战结束，但整段仍属 ww2 期，不改标 cold_war。
+
+  # ============================================================ 建造
+  - field: construction.builder
+    value: New York Navy Yard
+    src: [danfs-pensacola, navypedia-pensacola]
+    valid: { from: 1926-10-27 }
+    confidence: B
+    note: >-
+      DANFS 原句 "laid down by the New York Navy Yard 27 October 1926"；
+      navypedia 建造厂栏 "New York N Yd, Brooklyn"；
+      NavSource "Keel laid on 27 OCT 1926 by the New York Navy Yard"。
+
+  - field: construction.builder_location
+    value: Brooklyn, New York
+    src: [navypedia-pensacola, navsource-pensacola]
+    valid: { from: 1926-10-27 }
+    confidence: C
+    note: >-
+      navypedia "Brooklyn"；NavSource 一张 1929 年照片图注写
+      "at the New York Navy Yard"，另一张写 "the Brooklyn Navy Yard in New York"。
+      两者是同一处设施的两种叫法（纽约海军船厂位于布鲁克林）。
+
+  - field: construction.laid_down
+    value: 1926-10-27
+    unit: date
+    src: [danfs-pensacola, navypedia-pensacola, navsource-pensacola]
+    valid: { from: 1926-10-27 }
+    confidence: B
+    note: >-
+      DANFS "laid down by the New York Navy Yard 27 October 1926"；
+      navypedia "10.1926"（只到月）；NavSource "Keel laid on 27 OCT 1926"。
+      DANFS 与 NavSource 逐日一致，navypedia 粒度较粗。
+
+  - field: construction.launched
+    value: 1929-04-25
+    unit: date
+    src: [danfs-pensacola, navypedia-pensacola, navsource-pensacola]
+    valid: { from: 1929-04-25 }
+    confidence: B
+    note: >-
+      三源一致：DANFS "launched 25 April 1929"；navypedia "25.4.1929"；
+      NavSource "Launched 25 APR 1929"。
+      命名掷瓶人：DANFS "sponsored by Mrs. Joseph L. Seligman"；
+      NavSource 的报纸剪报图注写 "Mrs. Josephine L. Seligman, daughter of
+      Mr. and Mrs. William H. Knowles, of Pensacola, Fla." 与
+      "Mrs. Josephine K. Seligman"（中间名首字母两处不一致，Seligman 姓一致）。
+      **两处拼写冲突并列，不裁决**：Josephine L. / Josephine K.。
+
+  - field: construction.commissioned
+    value: 1930-02-06
+    unit: date
+    src: [danfs-pensacola, navypedia-pensacola, navsource-pensacola]
+    valid: { from: 1930-02-06 }
+    confidence: B
+    note: >-
+      三源一致：DANFS "commissioned 6 February 1930, Capt. Alfred G. Howe in command"；
+      navypedia "6.2.1930"；NavSource "Commissioned 06 FEB 1930"；
+      HyperWar 舰级页 "commissioned 6 Feb 1930"。
+
+  - field: construction.fate_date
+    value: 1948-11-10
+    unit: date
+    src: [danfs-pensacola, navsource-pensacola]
+    valid: { from: 1948-11-10 }
+    confidence: B
+    note: >-
+      **这里有两个日期，取的是最终沉没日。**
+      DANFS 原句："On 24 August 1946 she was taken in tow for Kwajalein where she
+      decommissioned 26 August 1946. Her hulk was turned over to the custody of
+      Joint Task Force One for radiological and structural studies. On completion
+      of these studies, her hulk was sunk 10 November 1948."
+      NavSource 原句："Decommissioned 26 AUG 1946 / Fate: Sunk as target on
+      10 NOV 1948 off the coast of Washington."
+      即：1946-08-26 退役 → 1948-11-10 作为靶舰沉没。
+      fate_date 取后者（舰体终结），与本站 enterprise 的「拆解完成」口径一致。
+      navypedia 结局栏写 "target 7.1946"，那是「被选为靶舰」的时间，
+      不是沉没时间，两者不矛盾。
+
+  - field: construction.fate_type
+    value: expended_as_target
+    src: [danfs-pensacola, navsource-pensacola, navypedia-pensacola]
+    valid: { from: 1948-11-10 }
+    confidence: B
+    note: >-
+      **登记为「作为靶舰消耗」，不是 sunk_by_enemy。**
+      NavSource 原句 "Fate: Sunk as target on 10 NOV 1948 off the coast of
+      Washington."；DANFS "her hulk was sunk 10 November 1948"（未说是作为靶舰，
+      但前句已说明它被交给 JTF-1 做放射与结构研究）；
+      navypedia "Both ships were used as targets in nuclear tests in 1946,
+      Pensacola was finally scuttled 10.11.1948"。
+      **两处措辞冲突，并列不裁决**：navypedia 说 "scuttled"（自沉），
+      NavSource 说 "sunk as target"（作靶击沉）。
+      注册表枚举里 expended_as_target 与 scuttled 是两个不同值。
+      本条取 expended_as_target，因为 NavSource 的 "as target" 是更具体的描述，
+      且 navypedia 同句自己先说 "used as targets"。
+      **这个选择写出来是为了让主会话能复核，不是裁决。**
+
+  # ============================================================ 编制
+  - field: service.complement.standard
+    value: 653
+    unit: persons
+    src: [danfs-pensacola]
+    valid: { from: 1930-02-06, to: 1948-11-10 }
+    confidence: B
+    note: >-
+      DANFS 题头 "cpl. 653"。
+      **四源四值，全部并列不裁决**：
+      DANFS 653 / navypedia 631 / NavSource "Crew 635" / HyperWar 舰级页
+      "Complement: 1113-1135"。
+      前三个在 631-653 区间内（差 22 人），第四个 1113-1135 高出近一倍，
+      疑为战时加强编制或误植，本轮无法核实，不下结论。
+      本条取 DANFS 的 653（官方出版物口径）。
+
+  # ============================================================ 服役与编制
+  - field: service.commander
+    value: Alfred G. Howe（首任，1930-02-06 起）
+    src: [danfs-pensacola]
+    valid: { from: 1930-02-06 }
+    confidence: B
+    note: DANFS 原句 "commissioned 6 February 1930, Capt. Alfred G. Howe in command."。
+
+  - field: service.commander
+    value: Frank L. Lowe（1942-06 中途岛时，至 1942-11-30 塔萨法隆加仍在此职）
+    src: [navweaps-midway-oob, oni-tassafaronga]
+    valid: { from: 1942-06, to: 1942-12-01 }
+    confidence: B
+    note: >-
+      NavWeaps 中途岛战斗序列原句："USS Pensacola (CA-24) / Commanding officer:
+      Capt. Frank L. Lowe"。microworks 的序列同。
+      **塔萨法隆加时仍是同一人，本轮补到一手印证**——ONI《The Battle of
+      Tassafaronga》战斗序列原句："Pensacola, Capt. Frank L. Lowe"，
+      同文另有 "Capt. Lowe confirmed Comdr. Keeler's decision to make for Tulagi,
+      where the burning cruiser anchored at 0344."
+      即从 1942-06 到 1942-11-30 本舰舰长未换人（北安普敦号则换了，见该舰文件）。
+
+  - field: service.unit
+    value: 第 16 特混舰队第 16.2 特混大队（TG 16.2），护卫企业号（CV-6）
+    src: [navweaps-midway-oob, enterprise-war-diary-midway]
+    valid: { from: 1942-05-28, to: 1942-06-13 }
+    confidence: B
+    note: >-
+      NavWeaps 原句："USS Pensacola (CA-24) ... Notes: Escorting Enterprise;
+      joined TF-17."
+      **注意后半句 "joined TF-17"**：本舰中途岛期间一度转属第 17 特混舰队。
+      企业号战报 06-04 条印证了这次转属：
+      "0030 1430 PENSACOLA, VINCENNES, BALCH and BENHAM left formation to assist
+      Task Force 17."
+      06-06 条又记本舰在企业号组内：
+      "The ENTERPRISE group consists of ENTERPRISE, NORTHAMPTON, VINCENNES,
+      PENSACOLA, PHELPS and AYLWIN"。
+      即：06-04 临时去支援 TF 17，06-06 已回到企业号编队内。
+      本条的编队归属因此只写「TG 16.2 / 护卫企业号」，
+      「转属 TF 17」这件事写在本 note 里，不另立 fact
+      （因为它是一天内的一次临时调动，用 valid 窗口表达会产生误导）。
+
+  - field: service.unit
+    value: 第 67 特混舰队（TF 67），RA Carleton H. Wright 指挥（塔萨法隆加）
+    src: [danfs-pensacola]
+    valid: { from: 1942-11-29, to: 1942-12-01 }
+    confidence: B
+    note: >-
+      DANFS 原句："Pensacola returned to Espiritu Santo to join cruiser-destroyer
+      Task Force 67 under Rear Admiral Carleton H. Wright. On 29 November, the
+      task force sailed to intercept a Japanese destroyer-transport force expected
+      off Guadalcanal the next night."
+      这是本轮**唯一**直接给出 TF 67 番号与司令的来源。
+
+  # ============================================================ 伤亡（本舰特有，且有明确数字）
+  - field: service.casualties
+    value: 125
+    unit: persons
+    src: [danfs-pensacola]
+    valid: { from: 1942-12-01 }
+    confidence: B
+    note: >-
+      DANFS 原句："Her dead numbered 7 officers and 118 men.
+      One officer and 67 men were injured."
+      7 + 118 = 125，是本站的加法；来源是把两个数分开写的。
+      **注意这是塔萨法隆加这一场战斗的伤亡，不是全战历累计。**
+      1945 年硫磺岛岸炮命中另有三名军官、十四名士兵阵亡，
+      另一次伤亡不计入本 fact（见下面第 1945 条 note）。
+
+  # service.survivors 本条不写。
+  # DANFS 给了伤亡数（7 名军官 + 118 名士兵阵亡，1 名军官 + 67 名士兵受伤），
+  # 但没有给全舰编制数或生还数，无法由「编制 − 伤亡」倒推（那是推算）。
+  # 按红线整条留空。
+
+  - field: armament.gun_failures
+    value: >-
+      塔萨法隆加（1942-11-30 2339 中雷后）：3 号主炮塔（turret III）因弹药库
+      进水与火灾而失效；全部转向控制丢失，两台陀螺罗经均被震坏；
+      后部火控（after FC）在向第二个雷达目标开火时被首轮齐射震毁。
+    src: [oni-tassafaronga]
+    valid: { from: 1942-11-30, to: 1942-12-01 }
+    confidence: A
+    note: >-
+      **这是一手战斗叙事里的故障清单，不是事后归纳。**
+      原文四句：
+      ①"Water flooded the engine room and the port shaft from the forward engine
+      broke. The water level rose in the after fireroom, while flooded magazines
+      and fires rendered **turret III useless**."
+      ②"Pensacola ... had lost all steering control when the torpedo struck.
+      Central Control attempted unsuccessfully to take over. **Both gyros were
+      knocked out.**"
+      ③"the first salvo **disabled the after FC**"（对第二个目标时）。
+      ④"DANFS"另记主桅中弹起火："a soaked torch of her mast"，
+      与之呼应的是 ONI 的 "transforming the mainmast into a blazing torch and
+      roasting all the personnel in Control Aft to death."
+      **DANFS 的说法是「三座炮塔失效」**：
+      "Her engine room flooded, **three gun turrets went out of commission**,
+      and her oil tanks ruptured"——ONI 只点名 turret III 一座。
+      **两说并列不裁决**：DANFS 3 座 vs ONI 明确 1 座（III）。
+      DANFS 的 "three" 可能包含动力/通信中断导致的间接失效，ONI 记的是直接损毁。
+
+  # ============================================================ 1942 年状态的武备差异
+  - field: armament.torpedo.tubes
+    value: 0
+    unit: count
+    src: [navypedia-pensacola]
+    valid: { from: 1936, to: 1948-11-10 }
+    confidence: C
+    note: >-
+      **本条记的是 0。** navypedia 改装表
+      "mid-1930s, both: - 2 x 3 - 533 TT"——本级两艘都在 1930 年代中期
+      拆除了全部 2 座三联鱼雷管。
+      故 1942 年中途岛与 11 月塔萨法隆加时本舰鱼雷管为 0。
+      valid.from 取 1936 是「mid-1930s」的粒度落点，**不是来源原话**。
+      舰级文件的同名字段记建成态 6 管，两者互补。
+
+  - field: armament.aa_40mm.count
+    value: 16
+    unit: count
+    src: [navypedia-pensacola]
+    valid: { from: 1942-12, to: 1944-12 }
+    confidence: C
+    note: >-
+      **按管数记的 16 管，不是 4 座。** 注册表对本字段的定义是
+      "美军 40 mm Bofors（多为四联）。按管数记，不按座数。"
+      navypedia 原句 "late 1942, both: - 4 x 4 - 28/75; + 4 x 4 - 40/56 Mk 1.2"
+      = 4 座 × 4 管 = 16 管。
+      1944 年后加至 6 座 24 管，见下一条。
+      时间窗从 1942-12 起是「late 1942」的粒度落点，非来源原话。
+
+  - field: armament.aa_40mm.count
+    value: 24
+    unit: count
+    src: [navypedia-pensacola]
+    valid: { from: 1944-01, to: 1945-12 }
+    confidence: C
+    note: >-
+      1944 年再加 2 座四联 → 6 座 = **24 管**。
+      navypedia "1944, both: - 1 catapult; + 2 x 4 - 40/56 Mk 1.2,
+      (8 - 9) x 1 - 20/70 Mk 4"。
+      1946-01 的最终配置另有记录："6 x 4 - 40/60 Mk 2"，6 座 24 管，与 24 吻合。
+
+  - field: armament.aa_20mm.count
+    value: 8
+    unit: count
+    src: [navypedia-pensacola]
+    valid: { from: 1942-01, to: 1942-12 }
+    confidence: C
+    note: >-
+      navypedia 改装表 "1942, both: + 2 x 4 - 28/75 Mk 1, 8 x 1 - 20/70 Mk 4"
+      → 8 门单装 20 mm。
+      **必须标注：来源只给到「1942 年」这个粒度，无法确认在 1942-06 中途岛之前
+      是否已装好**，因此本条不能用来回答「中途岛时本舰有几门 20 mm」。
+
+  - field: armament.mount.summary
+    value: >-
+      1942 年（中途岛时期）：2 × 三联 + 2 × 双联 8 in/55 Mk 9（共 10 门）
+      + 8 × 单装 5 in/25 + 4 × 四联 1.1 in/75 + 8 × 单装 20 mm（装舰月份不明）。
+      无鱼雷管。
+    src: [navypedia-pensacola, navweaps-8in-55-mk9]
+    valid: { from: 1942-01, to: 1942-12 }
+    confidence: C
+    note: >-
+      累加依据：主炮 4 座（NavWeaps 与 navypedia 一致）；
+      副炮 1938-39 → 8 门（navypedia "early 1941, both: - 8 x 1 - 12.7/90;
+      + 4 x 1 - 127/25 Mk 10.11.13"，叠加建成时的 4 门）；
+      1.1 in：1941-11 加 2 座、1942 年再加 2 座 = 4 座；
+      20 mm：1942 年 8 门。
+      **累加过程是本站执行**，来源只给相对增减，故置信度 C。
+
+  # ============================================================ 战历节点
+  - field: service.fate_category
+    value: 十字路口核试靶舰，试验后留存，1948 年作为靶舰击沉
+    src: [danfs-pensacola, navsource-pensacola]
+    valid: { from: 1948-11-10 }
+    confidence: B
+    note: >-
+      **这是任务书里点名要核实的「十字路口核试？」——结论：是，且两次都存活。**
+      DANFS 原句："Pensacola departed San Pedro 29 April to stage with units of
+      Joint Task Force One at Pearl Harbor in preparation for operation
+      "Crossroads," the atomic bomb experiments at Bikini Atoll. She stood out of
+      Pearl Harbor 20 May and reached Bikini the 29th to serve as a target ship.
+      She survived the tests of 1 July and 25 July 1946."
+      NavSource 逐条列了两次爆炸："Survived atomic aerial burst on 1 JUL 1946 /
+      Survived atomic subsurface burst on 25 JUL 1946"。
+      即：1946-07-01 空爆与 1946-07-25 水下爆都存活。
+
+  # service.fate_authority 本条不写。
+  # 「结局判定机构」本轮未在任何来源中找到记载。DANFS 只写
+  # "her hulk was sunk 10 November 1948"，不提判定机构。
+  # 按红线不推测，整条留空。

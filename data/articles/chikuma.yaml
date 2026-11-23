@@ -1,0 +1,421 @@
+# ============================================================================
+# 舰艇正文 —— 筑摩号（重巡洋舰）
+#
+# 与利根共用一份舰级设计，但这一条的重心完全不同：
+#  1. 它是本级唯一在莱特湾沉没的那一艘，且沉没经过是逐分钟的；
+#  2. 它的「击沉原因」至今有两说（空袭中自行倾覆 / 被野分雷击处分），
+#     页面里两条并列，不裁决；
+#  3. 中途岛真正「该发现而没发现」美航母的是它的 1 号机，不是利根的 4 号机。
+# ============================================================================
+ship: chikuma
+updated: 2026-11-24
+
+intro:
+  lead:
+    zh: >-
+      筑摩是利根级重巡洋舰的二号舰，1939 年 5 月服役，比姊妹舰利根晚半年。
+      它和利根共用同一套「主炮全前置、舰尾全给水上机」的设计，整场战争的大部分
+      时间也在给航母当侦察舰。1944 年 10 月 25 日萨马岛海战中，它在三个小时里
+      被三批舰载机的鱼雷逐次打瘫，约 14:30 向左翻覆、尾部下沉于
+      11-52N、126-36E。它是这一级里唯一沉在莱特湾的那一艘。
+    en: >-
+      Chikuma was the second of the Tone class, completed in May 1939, half a year
+      after her sister. She shared the class's all-forward main battery and
+      quarterdeck devoted to floatplanes, and likewise spent most of the war scouting
+      for the carrier fleet. In the battle off Samar on 25 October 1944 she was
+      crippled in three successive torpedo attacks over three hours and capsized to
+      port at about 1430, sinking by the stern at 11-52N, 126-36E. She was the only
+      ship of her class lost at Leyte.
+
+  paragraphs:
+    - heading: 与利根同型，但工艺不一样
+      text:
+        zh: >-
+          两舰共用同一套设计：四座双联 20 cm 三年式 No.2 炮塔全部前置、舰尾无主炮，
+          后甲板给 6 架水上侦察机与 2 座弹射器使用，标准排水量 11,215 吨、
+          全长 201.6 米、4 轴、8 座锅炉、设计 152,000 马力、35 节、编制 850 人。
+          有一处工艺差别值得单独记：本来计划部分采用焊接，但因为对舰体强度的顾虑，
+          筑摩几乎全部改成铆接。这一点在模型与结构讨论里常被忽略。
+        en: >-
+          The two ships shared one design: four twin 20 cm 3rd Year Type No. 2 turrets
+          all forward with none aft, the quarterdeck given to six floatplanes and two
+          catapults, 11,215 tons standard, 201.6 m overall, four shafts, eight boilers,
+          152,000 shp design, 35 knots, complement 850. One construction detail
+          deserves separate mention: the ships were originally to be partially welded,
+          but concerns about hull strength led to Chikuma being almost entirely riveted.
+      src: [navypedia-tone, pwe-tone-class, navweaps-20cm-3ns-no2]
+
+    - heading: 中途岛：该发现航母而没发现的是它
+      text:
+        zh: >-
+          1942 年 6 月 4 日的搜索里，两舰各出 2 架零式水侦飞 3、4、5、6 号搜索线。
+          筑摩 1 号机走 5 号线，准点起飞。NHHC 的判断是：它本应在约 0615 看到
+          第 17 特混舰队，但因云层或其他至今不明的原因没有看到；而且即便它在 0615
+          就报告，南云要动用 107 架待命攻击机也已经来不及。同一天真正先看到美舰的
+          是利根的 4 号机（0728，当地时），而利根 4 号机是延误起飞的。
+          1045 筑摩 5 号机（原久志三等兵曹驾驶）发现约克城号，此后跟踪约三小时
+          并引导攻击；1409 该机被 VF-6 的沃登中尉与霍伊尔少尉击落。
+        en: >-
+          In the search of 4 June 1942 each ship flew two Type 0 floatplanes over lines
+          3, 4, 5 and 6. Chikuma's No. 1 flew line 5 and launched on time. NHHC's
+          judgement is that she should have seen Task Force 17 at about 0615 but did
+          not, due to clouds or other factors that remain unclear, and that even had she
+          reported at 0615 it was already too late for Nagumo to launch the 107 aircraft
+          of his reserve strike. The ship that did sight the Americans first that day was
+          Tone's No. 4, at 0728 local, and Tone's No. 4 had launched late. At 1045
+          Chikuma's No. 5, flown by PO3c Hara Hisashi, found Yorktown, shadowed her for
+          about three hours and guided the attacking dive-bombers; the aircraft was shot
+          down at 1409, evidently by Lt(jg) Warden and Lt(jg) Hoyle of VF-6.
+      src: [nhhc-h006-2-isr-midway, combinedfleet-chikuma-trom]
+
+    - heading: 圣克鲁斯：一次单场 344 人的伤亡
+      text:
+        zh: >-
+          1942 年 10 月 26 日南太平洋海战，筑摩在投弃鱼雷之后被大黄蜂号一架
+          SBD-3 投下的 500 磅炸弹命中右舷前部鱼雷室，另中 2 弹，弹射器上 1 架
+          零式水侦损毁。全舰阵亡 190 人、伤 154 人，舰长古村启藏亦在伤员之列；
+          随后以 23 节的最高可用航速在浦风、谷风护航下撤往特鲁克。
+          这是本级单场伤亡最重的一次。
+        en: >-
+          In the Battle of the Santa Cruz Islands on 26 October 1942, Chikuma jettisoned
+          her torpedoes before a 500-lb bomb from a Hornet SBD-3 hit her starboard
+          forward torpedo room; two more bombs followed and one Type 0 floatplane was
+          destroyed on the catapult. Her crew suffered 190 killed and 154 wounded,
+          Captain Komura among the wounded, and she retired to Truk at her maximum
+          available speed of 23 knots under Urakaze and Tanikaze.
+      src: [combinedfleet-chikuma-trom, navypedia-tone]
+
+    - heading: 沉没经过为什么写成两种
+      text:
+        zh: >-
+          08:53 被 Taffy 2 的 4 架 TBM 攻击，1 条 Mk.13 鱼雷打坏左螺旋桨与舵，
+          两分钟后失去航行能力；09:07、09:20、09:30 连续三次向大和报损。
+          11:05 被基特昆湾号 VC-5 的 5 架 TBM 在左舷中部命中 2 雷，机舱进水、
+          失电、停船、左倾——当时防空弹药已近耗尽，上一次攻击中甚至有炮手用了
+          演习弹。1110 野分号被派来救助。1415 之后又被奥马尼湾号 3 架 TBM
+          在左舷中部命中 3 雷，约 1430 向左翻覆、尾部下沉。
+          野分救起约 120 名幸存者，但野分当夜 0054 至 0149 被美军水面舰艇击沉，
+          这批人随之全灭；另有一名未被野分救起的军官三天后被美舰捞起。
+          关于「野分是否对筑摩执行了雷击处分」，长期流传的说法是执行了，
+          近年研究认为她在空袭中已经倾覆、野分赶到时只来得及救人。两说并列。
+        en: >-
+          At 0853 four TBM torpedo-bombers of Taffy 2 attacked; one Mk.13 torpedo
+          disabled her port screw and rudder and two minutes later she was dead in the
+          water. She reported to Yamato at 0907, 0920 and 0930. At 1105 five VC-5
+          TBM-1Cs from Kitkun Bay hit her port side amidships with two torpedoes; her
+          engine rooms flooded, power was lost, she came to a stop and listed to port —
+          her anti-aircraft ammunition was by then mostly gone, and in the previous
+          attack some gunners had resorted to exercise rounds. Nowaki was sent to assist
+          at 1110. After 1415 three TBM-1Cs from Ommaney Bay hit her port side amidships
+          with three torpedoes, and at about 1430 she capsized to port and sank by the
+          stern. Nowaki rescued some 120 survivors, but was herself sunk by American
+          surface ships between 0054 and 0149 that night, taking them with her; a single
+          officer not picked up by Nowaki was recovered by an American warship three days
+          later. Whether Nowaki finished Chikuma with torpedoes is disputed: the
+          long-standing account says she did, while more recent study holds that Chikuma
+          had already capsized from the air attack and Nowaki arrived only in time to
+          pick up survivors. Both are recorded here.
+      src: [combinedfleet-chikuma-trom, combinedfleet-atully08, navypedia-tone]
+
+history:
+  - id: build
+    title: { zh: 建造与开战, en: Construction and the opening of the war }
+    range: { from: 1935-10, to: 1941-12 }
+    lead:
+      zh: >-
+        它比利根晚十个月开工、晚一年半服役，赶上的是同一场战争的开幕。
+    events:
+      - date: 1935-10-01
+        text:
+          zh: >-
+            在三菱长崎造船所起工，船厂序列号 670。
+          en: >-
+            Laid down at Mitsubishi's Nagasaki shipyard, yard number 670.
+        src: [combinedfleet-chikuma-trom, navypedia-tone]
+
+      - date: 1938-03-19
+        text:
+          zh: >-
+            下水并命名「筑摩」。
+          en: >-
+            Launched and named Chikuma.
+        src: [combinedfleet-chikuma-trom]
+
+      - date: 1939-05-20
+        text:
+          zh: >-
+            竣工，编入横须贺镇守府籍。同日两舰编成第六战队，1939-11-15 改称第八战队。
+          en: >-
+            Completed and registered in the Imperial Japanese Navy, attached to Yokosuka
+            Naval District. The two ships formed CruDiv 6 the same day, redesignated
+            CruDiv 8 on 15 November 1939.
+        src: [combinedfleet-chikuma-trom]
+
+      - date: 1941-11-26
+        text:
+          zh: >-
+            随第八战队自择捉岛单冠湾出击，编入南云机动部队序列。
+          en: >-
+            Sortied from Hitokappu Bay in the Kuriles with CruDiv 8 as part of Nagumo's
+            carrier striking force.
+        src: [combinedfleet-chikuma-trom]
+
+      - date: 1941-12-07
+        text:
+          zh: >-
+            0500 与利根各弹射 1 架零式水侦做攻击前侦察，筑摩机飞珍珠港本港。
+          en: >-
+            At 0500 Chikuma and Tone each catapulted one Type 0 floatplane for pre-strike
+            reconnaissance; Chikuma's aircraft reconnoitred Pearl Harbor itself.
+        src: [combinedfleet-chikuma-trom]
+
+      - date: 1941-12-23
+        text:
+          zh: >-
+            威克岛攻略中，筑摩的水侦被高射炮击伤后迫降，机组获救；同日利根的水侦
+            最先报告岛上战斗已经结束。
+          en: >-
+            During the Wake operation Chikuma's floatplane was damaged by anti-aircraft
+            fire and ditched, its crew being rescued; the same day Tone's floatplane was
+            the first to report that fighting on the island had ceased.
+        src: [combinedfleet-chikuma-trom]
+
+  - id: carrier-war
+    title: { zh: 从印度洋到所罗门, en: From the Indian Ocean to the Solomons }
+    range: { from: 1942-01, to: 1942-10 }
+    lead:
+      zh: >-
+        这一年它打了三场不同的仗：追歼一艘老驱逐舰、跟着航母横扫印度洋、
+        然后在圣克鲁斯挨了三发炸弹。
+    events:
+      - date: 1942-03-01
+        text:
+          zh: >-
+            0700 与利根各弹射 1 架零式水侦搜索圣诞岛附近及以西。筑摩机发现
+            正从芝拉扎逃往澳大利亚的荷兰武装商船莫佐克托号（MODJOKERTO）并报出
+            其位置——但据第一水雷战队的战时日志，该船实际是由矶风等驱逐舰拦截击沉的，
+            不是筑摩的战果。1603 筑摩以 8 英寸炮在极远距离开火射击美军驱逐舰埃兹尔号，
+            1731 该舰尾部下沉于 13-45S、106-47E，筑摩救起 7 至 8 名幸存者。
+          en: >-
+            At 0700 Chikuma and Tone each launched one Type 0 floatplane to search around
+            Christmas Island and to the west. Chikuma's aircraft located the Dutch armed
+            merchant Modjokerto attempting to escape from Tjilatjap to Australia and
+            reported its position, though DesRon 1's war diary confirms that the ship was
+            intercepted and sunk by Isokaze and other destroyers, not by Chikuma. At 1603
+            Chikuma opened fire with her 8-inch guns at extremely long range at the
+            destroyer Edsall, which sank by the stern at 13-45S, 106-47E at 1731;
+            Chikuma picked up seven or eight survivors.
+        src: [combinedfleet-chikuma-trom]
+
+      - date: 1942-05-27
+        text:
+          zh: >-
+            自柱岛出击参加「MI」作战（中途岛）。同日出发的记录与榛名页的 05-29
+            相差两天，两页同站而日期不同，两说并列。
+          en: >-
+            Departed Hashirajima for Operation MI, the Midway operation. The sister
+            battleship Haruna's TROM on the same site gives 29 May for the same
+            departure; both dates are recorded here.
+        src: [combinedfleet-chikuma-trom]
+
+      - date: 1942-06-06
+        text:
+          zh: >-
+            0652 筑摩 2 号机发现重创的约克城号并报出位置，潜艇伊 168 据此找到并
+            击沉了这艘航母。
+          en: >-
+            At 0652 Chikuma's No. 2 floatplane found the damaged Yorktown and signalled
+            her position; on that information the submarine I-168 was able to find and
+            sink the carrier.
+        src: [combinedfleet-chikuma-trom]
+
+      - date: 1942-10-26
+        text:
+          zh: >-
+            南太平洋海战受重创（详见简介第三段），以 23 节撤往特鲁克。
+          en: >-
+            Heavily damaged at Santa Cruz (see the third introductory paragraph), she
+            retired to Truk at 23 knots.
+        src: [combinedfleet-chikuma-trom]
+
+  - id: refits
+    title: { zh: 修理、改装与运输, en: Repairs, refits and transport duty }
+    range: { from: 1942-11, to: 1944-07 }
+    lead:
+      zh: >-
+        1943 年它在本土与特鲁克之间来回，一边改装一边给陆军运兵。
+        这一段它挨的最近的一发炸弹来自萨拉托加号。
+    events:
+      - date: 1942-11-10
+        text:
+          zh: >-
+            在吴修理并改装：加装 2 座双联 25 mm 机铳，装 21 号对空电探。
+            这次改装 1943-02-27 完成，随后在内海训练。
+          en: >-
+            Repaired and refitted at Kure: two additional 25 mm twin mounts and a
+            Type 21 air-search radar. The refit was completed on 27 February 1943,
+            followed by training in the Inland Sea.
+        src: [combinedfleet-chikuma-trom]
+
+      - date: 1943-05-17
+        text:
+          zh: >-
+            与利根一起护送武藏号自特鲁克返回横须贺，武藏载山本五十六骨灰回东京
+            举行国葬。
+          en: >-
+            With Tone, escorted Musashi from Truk to Yokosuka; Musashi was carrying
+            Admiral Yamamoto's ashes to Tokyo for a state funeral.
+        src: [combinedfleet-chikuma-trom]
+
+      - date: 1943-07-21
+        text:
+          zh: >-
+            与利根、最上一起执行往拉包尔的陆军运输任务，当日抵达并卸载。
+          en: >-
+            With Tone and Mogami, ran troops to Rabaul, arriving and disembarking that
+            day.
+        src: [combinedfleet-chikuma-trom]
+
+      - date: 1943-11-05
+        text:
+          zh: >-
+            拉包尔空袭。约 0931 被萨拉托加号一架 SBD 俯冲轰炸机攻击，右舷弹射器
+            附近落下一发近失弹，3 号鱼雷发射管失灵、轻微进水，3 人受伤。
+            注意：同一天利根不在拉包尔，它在本土近海。
+          en: >-
+            The Rabaul air raid. At about 0931 an SBD from Saratoga attacked; a near
+            miss off the starboard catapult disabled No. 3 torpedo mount and caused
+            slight flooding, wounding three crewmen. Tone was not at Rabaul that day;
+            she was in home waters.
+        src: [combinedfleet-chikuma-trom]
+
+      - date: 1943-12-12
+        text:
+          zh: >-
+            入吴改装：前部 25 mm 双联座换成 4 座三联座，全舰 25 mm 达 20 门
+            （4 座三联加 4 座双联），与利根同期改装的结果相同。
+          en: >-
+            Arrived at Kure for a refit: the forward 25 mm twin mounts were replaced by
+            four triple mounts, bringing the battery to 20 barrels in four triple and
+            four twin mounts, the same result as Tone's concurrent refit.
+        src: [combinedfleet-chikuma-trom]
+
+      - date: 1944-03-01
+        text:
+          zh: >-
+            参加「SA 一号」作战，抵达邦加后出发往印度洋做通商破坏；
+            03-24 至 04-07 任第七战队旗舰。
+          en: >-
+            Took part in Operation SA No. 1, arriving at Bangka and departing for
+            commerce raiding in the Indian Ocean; she flew the flag of CruDiv 7 from
+            24 March to 7 April.
+        src: [combinedfleet-chikuma-trom]
+
+  - id: leyte
+    title: { zh: 莱特湾——萨马岛外海的三个小时, en: Leyte Gulf — three hours off Samar }
+    range: { from: 1944-10, to: 1944-10 }
+    lead:
+      zh: >-
+        从 08:53 到 14:30，它被三批不同的舰载机打了三次。
+        整个过程日方时刻记录到分钟，这也是本站能把沉没经过写清楚的原因。
+    events:
+      - date: 1944-10-22
+        text:
+          zh: >-
+            0820 随第七战队的熊野、铃谷、利根一起自文莱出击，编入栗田的第一游击部队。
+          en: >-
+            At 0820 Chikuma sortied from Brunei with Kumano, Suzuya and Tone as part of
+            Kurita's First Mobile Striking Force.
+        src: [combinedfleet-chikuma-trom]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            锡布延海、塔布拉斯海峡。1024 之后与利根各放出最后 2 架水侦，
+            飞往民都洛岛圣何塞——此后本舰再没有可用的舰载水侦。
+          en: >-
+            In the Sibuyan Sea and Tablas Strait. After 1024 Chikuma and Tone each
+            launched their two remaining floatplanes for San Jose on Mindoro; the ship
+            had no serviceable floatplanes afterwards.
+        src: [combinedfleet-chikuma-trom]
+
+      - date: 1944-10-25
+        text:
+          zh: >-
+            0724 熊野被鱼雷击中受损后，筑摩临时代理第七战队旗舰。
+          en: >-
+            After 0724, when Kumano was damaged by a torpedo, Chikuma was designated the
+            ad hoc flagship of CruDiv 7.
+        src: [combinedfleet-chikuma-trom]
+
+      - date: 1944-10-25
+        text:
+          zh: >-
+            0853 被 Taffy 2 的 4 架 TBM 攻击，1 条 Mk.13 鱼雷命中，左螺旋桨与舵
+            失效，两分钟后失去航行能力。
+          en: >-
+            At 0853 four TBM torpedo-bombers of Taffy 2 attacked; one Mk.13 torpedo hit
+            disabled her port screw and rudder, and two minutes later she was dead in
+            the water.
+        src: [combinedfleet-chikuma-trom, combinedfleet-atully08]
+
+      - date: 1944-10-25
+        text:
+          zh: >-
+            0907 向大和报告已被雷击、失去航行能力；0920 报告失去一根主轴、
+            可维持 18 节但无法操舵；0930 报位 11-25N、126-48E，航速 9 节。
+          en: >-
+            At 0907 she reported to Yamato that she had been torpedoed and was
+            unnavigable; at 0920 that she had lost a shaft, could make 18 knots but was
+            unsteerable; at 0930 that she was at 11-25N, 126-48E making nine knots.
+        src: [combinedfleet-chikuma-trom]
+
+      - date: 1944-10-25
+        text:
+          zh: >-
+            1105 被基特昆湾号 VC-5 的 5 架 TBM-1C 攻击，左舷中部命中 2 雷，
+            机舱进水、失电、停船、左倾。1110 野分号被派来救助。
+          en: >-
+            At 1105 five VC-5 TBM-1Cs from Kitkun Bay attacked; two torpedoes hit her
+            port side amidships, her engine rooms flooded, power was lost, she came to a
+            stop and took on a list to port. At 1110 the destroyer Nowaki was dispatched
+            to assist.
+        src: [combinedfleet-chikuma-trom]
+
+      - date: 1944-10-25
+        text:
+          zh: >-
+            1415 之后被奥马尼湾号（CVE-79）VC-75 中队长艾伦·史密斯上尉率领的
+            3 架 TBM-1C 攻击，左舷中部命中 3 雷；约 1430 向左翻覆、尾部下沉于
+            11-52N、126-36E，野分救起约 120 名幸存者。
+          en: >-
+            After 1415 three TBM-1Cs from Ommaney Bay (CVE-79), led by VC-75's
+            commanding officer Lt Allen W. Smith Jr, attacked; three torpedoes hit her
+            port side amidships. At about 1430 she capsized to port and sank by the
+            stern at 11-52N, 126-36E, Nowaki rescuing some 120 survivors.
+        src: [combinedfleet-chikuma-trom, combinedfleet-atully08]
+
+      - date: 1944-10-26
+        text:
+          zh: >-
+            0054 至 0149 野分号被第 34.5 特混大队的文森斯号、比洛克西号、迈阿密号
+            以炮火打瘫，随后被驱逐舰以炮火与鱼雷击沉于 13N、124-54E，全舰战没，
+            包括它救起的筑摩幸存者。三天后另有一名未被野分救起的筑摩军官被美舰捞起。
+          en: >-
+            Between 0054 and 0149 Nowaki was crippled and set afire by gunfire from
+            TG 34.5's Vincennes, Biloxi and Miami, then sunk by gunfire and torpedoes
+            from the destroyers at 13N, 124-54E, going down with all hands including
+            Chikuma's survivors. A single Chikuma officer not picked up by Nowaki was
+            recovered by an American warship three days later.
+        src: [combinedfleet-chikuma-trom]
+
+      - date: 1945-04-20
+        text:
+          zh: >-
+            从海军籍除籍。筑摩是利根级唯一沉在莱特湾的一艘；
+            同一天在同一片海域，利根挨了一发炸弹、舵机失灵，然后活了下来。
+          en: >-
+            Removed from the Navy List. Chikuma was the only ship of her class lost at
+            Leyte; in the same waters that day her sister Tone took one bomb hit, lost
+            her steering, and survived.
+        src: [combinedfleet-chikuma-trom, combinedfleet-tone-trom]

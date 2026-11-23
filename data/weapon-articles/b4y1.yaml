@@ -1,0 +1,395 @@
+# ============================================================================
+# 武器正文 —— 九六式舰上攻击机 B4Y1（Yokosuka B4Y1 "Jean"）
+#
+# 这一篇的三条骨架：
+#  1) naval-encyclopedia 称它是「日本海军最后一型双翼轰炸机」；
+#     产地分散：5 架原型在横须贺、37 架在中岛、135 架在三菱、28 架在广厂，
+#     合计 205 架 —— 这个产量本身就是它在 1937 至 1938 年两年里当主力的证据。
+#  2) 它有可查的战果与可查的误击：1937 年 12 月 12 日，加贺的 3 架 B4Y1
+#     在长江上炸沉美国炮舰 Panay（18 枚 60 kg 炸弹中 2 发命中）。
+#     这一条写进正文时不能只写「击沉」，因为外交后果比战术结果重得多。
+#  3) 到 1942 年 6 月它已经退到二线，但仍在凤翔上飞完了中途岛：
+#     6 月 3 日搜索失踪的川内与矶波，6 月 5 日 0420 发现漂流中的飞龙并拍照。
+# 航程两说并列：来源只给 850 海里，未注明载荷条件，本站不补。
+# ============================================================================
+weapon: b4y1
+updated: 2026-11-24
+
+intro:
+  lead:
+    zh: >-
+      九六式舰上攻击机 B4Y1 是日本海军最后一型双翼舰攻，盟军代号 Jean。
+      五架原型由横须贺的第一海军航空技术厂制造，全金属结构、轻合金与蒙布混用蒙皮，
+      装中岛光 2 型九缸气冷星型发动机，起飞功率 840 hp，二叶螺旋桨。
+      乘员三人：飞行员在敞开式座舱，领航员与报务员兼射手在后部封闭座舱。
+      按 combinedfleet 的生产记录，全型共造 205 架：原型 5 架（1935 至 1936 年，横须贺）、
+      中岛 37 架（1937 至 1938 年）、三菱名古屋 135 架（1937 至 1938 年）、
+      广厂 28 架（1938 年）。到太平洋战争爆发它已被九七式舰攻取代，
+      但 1942 年 6 月的凤翔号上仍是它。
+    en: >-
+      The B4Y1 was the last biplane carrier attack aircraft of the Imperial Japanese
+      Navy, known to the Allies as Jean. Its five prototypes were built by the First
+      Naval Air Technical Arsenal at Yokosuka; the airframe was of all-metal structure
+      with light alloy and fabric covering, powered by a Nakajima Hikari 2 nine-cylinder
+      air-cooled radial rated at 840 hp for take-off driving a two-blade propeller. Its crew of three sat with the pilot in an open
+      cockpit and the navigator and radio operator/gunner in an enclosed rear cockpit.
+      On combinedfleet's production record 205 were built in all: five prototypes in
+      1935-36 at Yokosuka, 37 by Nakajima in 1937-38, 135 by Mitsubishi at Nagoya in
+      1937-38 and 28 by the Hiro arsenal in 1938. By the start of the Pacific War it had
+      been superseded by the Type 97, but in June 1942 it was still what Hosho flew.
+
+  paragraphs:
+    - heading: 参数与产地：一型双翼机，四个厂一起造
+      text:
+        zh: >-
+          数据栏：翼展 15.00 m、机长 10.15 m、机高 4.36 m、翼面积 50.0 m²、
+          空重 2,000 kg、全重 3,600 kg、翼载 72.0 kg/m²、功载 4.3 kg/hp、
+          最大速度 150 节、爬升到 3,000 m 用 14 分、实用升限 6,000 m、航程 850 海里。
+          武装：后部一挺可转动的 7.7 mm 九二式机枪；外挂为一枚 800 kg 鱼雷
+          或 500 kg 炸弹。
+          需要点明的是航程这一项：来源只给 850 海里一个数，没有注明是带鱼雷、
+          带炸弹还是侦察构型。所以本站不在正文里替它加上「带弹航程」或「侦察航程」
+          的限定 —— 那是来源没写的东西。
+          产地值得单独看：1942 年之前的日本舰攻产量能达到 205 架，
+          靠的是四家分摊 —— 原型在横须贺，量产分散到中岛、三菱与广厂。
+          三菱一家就出了 135 架，占全产量的三分之二。
+          另有一条与年份有关的记录要分清：naval-encyclopedia 记它
+          「1935 年首飞、1936 至 1939 年生产」，combinedfleet 的生产表则为
+          1935 至 1938 年（原型 1935-36、量产 1937-38、广厂 1938）。
+          两者对首架量产机的年份口径不同（1936 与 1937），两说并列，不裁决。
+        en: >-
+          The data: span 15.00 m, length 10.15 m, height 4.36 m, wing area 50.0 m2,
+          empty weight 2,000 kg, loaded weight 3,600 kg, wing loading 72.0 kg/m2, power
+          loading 4.3 kg/hp, maximum speed 150 knots, climb to 3,000 m in 14 minutes,
+          service ceiling 6,000 m and range 850 nautical miles. Armament: one flexible
+          rear-firing 7.7 mm Type 92 machine-gun, with external stores of either one
+          800 kg torpedo or 500 kg of bombs. The range figure needs saying out loud: the
+          source gives a single number, 850 nautical miles, without stating whether it is
+          the torpedo, bomb or reconnaissance configuration. This site therefore does not
+          add a "with torpedo" or "scouting" qualifier in the text; the source does not
+          supply one. The production base is worth isolating: 205 aircraft of a single
+          carrier attack type before 1942 was achieved by spreading the work across four
+          establishments - prototypes at Yokosuka, production at Nakajima, Mitsubishi and
+          Hiro. Mitsubishi alone built 135, two thirds of the total. One record about
+          dates has to be separated out: naval-encyclopedia gives "first flew in 1935 and
+          was produced from 1936 to 1939," while combinedfleet's production table covers
+          1935-36 for prototypes, 1937-38 for production aircraft and 1938 for the Hiro
+          batch. The two differ on the year of the first production aircraft, 1936 against
+          1937, and both stand.
+      src: [combinedfleet-b4y, naval-encyclopedia-hosho]
+
+    - heading: 1937 年 12 月 12 日：长江上的 Panay
+      text:
+        zh: >-
+          这是这一型最重的一条战史记录，也是它最容易被只写一半的一条。
+          加贺的行动记录写：1937 年 12 月 12 日约 13:27，在南京上游的长江上，
+          美军长江炮舰 Panay（PR-5）在护航三艘美孚石油公司驳船时遭日机攻击。
+          Panay 被加贺的 3 架 B4Y1「Jean」投下的 18 枚 60 kg（132 磅）炸弹中的两发命中，
+          另遭中岛 A4N 九五式战斗机扫射。攻击持续到 15:54，Panay 沉没。
+          三人死亡，43 名水兵与 5 名乘客受伤。
+          后果写在记录的后半：美国大使 Grew 立即提出正式抗议；日本政府承担责任，
+          但声明攻击并非故意。来源另记一条：美方破译的日本海军电文显示，
+          对 Panay 及长江上其他中立船只的攻击是由加贺的一名飞行军官
+          事先知情并刻意计划的。1938 年 4 月日方赔付 220 万美元后，事件正式了结。
+          这条记录的结构值得注意：战术层面的两发命中，与战略层面的外交危机，
+          在来源里是同一段的两半，中间没有转折词。
+        en: >-
+          This is the type's heaviest single entry in the record, and the one most easily
+          written only half way. Kaga's record states that at about 1327 on 12 December
+          1937, on the Yangtze above Nanking, the US river gunboat Panay (PR-5) was
+          attacked by Japanese aircraft while escorting three Socony Vacuum Oil Company
+          barges. Panay was hit by two of the eighteen 60 kg (132 lb) bombs dropped by
+          three B4Y1s from Kaga and strafed by Nakajima A4N Type 95 fighters; the attack
+          continued until 1554, when she sank. Three men were killed and 43 sailors and
+          five passengers wounded. The consequences fill the second half of the same
+          entry: the American ambassador, Joseph C. Grew, immediately lodged a formal
+          protest, and the Japanese government accepted responsibility while claiming the
+          attack was unintentional. The source adds that the US Navy decrypted an IJN
+          message indicating the attack on Panay and other neutral ships on the Yangtze had
+          been knowingly and deliberately planned by an air officer on Kaga. After an
+          indemnity of $2.2 million was paid in April 1938 the incident was officially
+          closed. The structure of the entry is worth noticing: two bomb hits at the
+          tactical level and a diplomatic crisis at the strategic level are two halves of
+          the same paragraph, with no connective in between.
+      src: [combinedfleet-kaga]
+
+    - heading: 中途岛：它飞的是搜索，不是攻击
+      text:
+        zh: >-
+          1942 年 6 月，这一型在凤翔号上飞完了它最后一次作战出动，任务全部是搜索。
+          6 月 3 日晨，因夜间浓雾与能见度差，轻巡川内与驱逐舰矶波失踪，
+          凤翔派出 B4Y 搜索；数小时无结果，13:15 搜索机在主力前方 43 海里找到两舰，
+          它们转向，三小时后归队。
+          6 月 5 日拂晓（约 02:00）联合舰队仍未等到南云的消息，
+          山本下令凤翔从她仅有的八架九六式 B4Y 中派出数架搜索南云。
+          04:20，其中一架发现漂流且已弃舰的航母飞龙，位置代号 FU RO RI 43；
+          飞行员报告舰上还有人，并拍了照。一小时后驱逐舰谷风奉命前往搜索，
+          未找到，并在当日下午险遭轰炸。
+          同一时期凤翔的编成，navweaps 的中途岛战斗序列写作
+          「8 x Type 96 B4Y1 carrier attack planes」，舰攻队指挥官为 Irikiin Yoshiaki 大尉；
+          6 月 20 日，凤翔的九六式机全部下舰。
+          也就是说这一型在太平洋战争里的最后一次实战，是找到并拍下自己一方
+          已经沉没的航母。
+        en: >-
+          In June 1942 the type flew its last operational sorties from Hosho, and every
+          one of them was a search mission. On the morning of 3 June, light cruiser Sendai
+          and destroyer Isonami having gone missing after a night of fog and poor
+          visibility, Hosho launched B4Ys to look for them; the search found nothing for
+          hours, until at 1315 the aircraft located the two ships forty-three miles ahead
+          of the Main Body, which turned and rejoined three hours later. At dawn on 5 June,
+          around 0200, with still no word of Nagumo, Yamamoto ordered Hosho to launch a few
+          of her meagre complement of eight Type 96 B4Ys to search for him. At 0420 one of
+          them located the smouldering and abandoned wreck of the carrier Hiryu in position
+          FU RO RI 43; the pilot reported survivors aboard and took photographs. An hour
+          later the destroyer Tanikaze was ordered to search for the wreck, found nothing,
+          and narrowly escaped destruction by bombing that afternoon. Hosho's establishment
+          at the time is given in navweaps' Midway order of battle as "8 x Type 96 B4Y1
+          carrier attack planes" under Lieutenant Irikiin Yoshiaki, and on 20 June all of
+          the ship's Type 96 aircraft were disembarked. The type's last combat in the
+          Pacific War, then, was finding and photographing its own navy's sunken carrier.
+      src: [combinedfleet-hosho-trom, navweaps-midway-oob]
+
+    - heading: 它在哪些舰上，以及为什么会退得这么快
+      text:
+        zh: >-
+          combinedfleet 的编成栏列的是：加贺、凤翔、赤城、龙骧、苍龙五艘航母，
+          以及第十三、第十五航空队。
+          naval-encyclopedia 另把「云鹰」也列进去，并给了一句定位：
+          它是日本海军最后一型双翼轰炸机，1935 年首飞，逐步转往二线战场
+          （如中国的偏远基地），直到 1943 年才退役。
+          退得快的原因不需要推断，编成记录本身就是证据：
+          1937 年 9 月加贺一次就接收 32 架 B4Y1 补充机，同批还有 16 架 D1A2 与 16 架 A5M；
+          1938 年 8 月 30 日广州作战时，它已经要和 A5M4 一起出击；
+          到 1939 年 1 月 30 日赤城赴华南时，编成是 12 架 A5M2、18 架 D1A2 与 36 架 B4Y1，
+          舰攻仍是 B4Y1；而 1940 年 3 月 26 日赤城再到华中时，
+          舰攻已换成 27 架九七式 B5N。
+          也就是说赤城这一艘舰上，舰攻从 B4Y1 换成 B5N 发生在 1939 年 1 月
+          至 1940 年 3 月之间。凤翔因为不能运用新机，把 B4Y1 一直留到了 1942 年 6 月。
+        en: >-
+          combinedfleet's allocation list names the carriers Kaga, Hosho, Akagi, Ryujo and
+          Soryu, plus the 13th and 15th Kokutais. naval-encyclopedia adds Unyo and gives a
+          characterisation: the last IJN bomber biplane, first flown in 1935, posted
+          gradually to secondary theatres such as distant Chinese outposts and retired only
+          in 1943. Why it went out of service so quickly needs no inference, because the
+          establishment records are themselves the evidence: on 26 September 1937 Kaga
+          alone received 32 B4Y1s among her replacement aircraft, with 16 D1A2s and 16 A5Ms;
+          by 30 August 1938, over Canton, the type was already operating alongside A5M4s;
+          on 30 January 1939, when Akagi sailed for southern China, her group was 12 A5M2s,
+          18 D1A2s and 36 B4Y1s, the attack aircraft still the B4Y1; and by 26 March 1940,
+          when Akagi returned to Central China waters, the attack aircraft had become 27
+          Type 97 B5Ns. Aboard that one ship, then, the change from B4Y1 to B5N falls
+          between January 1939 and March 1940. Hosho, unable to operate the newer types,
+          kept the B4Y1 until June 1942.
+      src: [combinedfleet-b4y, naval-encyclopedia-hosho, combinedfleet-kaga, combinedfleet-akagi]
+
+history:
+  - id: development
+    title: { zh: 设计与生产, en: Design and production }
+    range: { from: 1935, to: 1939 }
+    lead:
+      zh: >-
+        205 架，四个厂，两年量产期 —— 这组数字说明它在 1937 至 1938 年是主力，不是过渡品。
+      en: >-
+        Two hundred and five aircraft, four establishments and a two-year production run:
+        these figures say it was the mainstay of 1937-38, not an interim type.
+    events:
+      - date: 1935
+        text:
+          zh: >-
+            首飞。naval-encyclopedia 记「first flew in 1935」；
+            combinedfleet 记横须贺造 5 架原型（1935 至 1936 年）。
+            早期原型换过两种发动机：一号原型用 600 hp 的广厂九一式十二缸液冷
+            （起飞 750 hp），二、三号原型用中岛寿 3（起飞 640 hp）。
+          en: >-
+            First flight. naval-encyclopedia records that it "first flew in 1935" and
+            combinedfleet that Yokosuka built five prototypes in 1935-36. The early
+            prototypes used two different engines: a 600 hp Hiro Type 91 twelve-cylinder
+            liquid-cooled unit rated at 750 hp for take-off in the first, and a Nakajima
+            Kotobuki 3 rated at 640 hp in the second and third.
+        src: [combinedfleet-b4y, naval-encyclopedia-hosho]
+      - date: 1936
+        text:
+          zh: >-
+            生产型定案：四、五号原型与量产机改用中岛光 2 型（起飞 840 hp、
+            1,200 m 时 700 hp），二叶螺旋桨。
+            naval-encyclopedia 记生产期为 1936 至 1939 年；combinedfleet 记量产机
+            为 1937 至 1938 年（中岛 37 架、三菱 135 架）与 1938 年（广厂 28 架）。
+            首架量产机的年份两说不同，并列。
+          en: >-
+            The production configuration: the fourth and fifth prototypes and the
+            production aircraft used a Nakajima Hikari 2 rated at 840 hp for take-off and
+            700 hp at 1,200 m, driving a two-blade propeller. naval-encyclopedia gives the
+            production period as 1936 to 1939, while combinedfleet gives 1937-38 for the
+            production aircraft (37 by Nakajima, 135 by Mitsubishi) and 1938 for the 28
+            built at Hiro. The two differ on the year of the first production aircraft,
+            and both stand.
+        src: [combinedfleet-b4y, naval-encyclopedia-hosho]
+      - date: 1938
+        text:
+          zh: >-
+            广厂（第十一海军航空厂）生产 28 架，为四个产地中的最后一批。
+            至此全型 205 架生产完毕。
+          en: >-
+            The Hiro arsenal, the Eleventh Naval Air Arsenal, built 28 aircraft, the last
+            of the four batches, completing the type's 205.
+        src: [combinedfleet-b4y]
+
+  - id: china
+    title: { zh: 中国战场与 Panay 事件, en: China and the Panay incident }
+    range: { from: 1937-09, to: 1938-08 }
+    lead:
+      zh: >-
+        这一型的战史记录集中在中国，其中最重的一条不是战果，是一起外交事件。
+      en: >-
+        The type's combat record is concentrated in China, and its heaviest entry there
+        is not a success but a diplomatic incident.
+    events:
+      - date: 1937-09-15
+        text:
+          zh: >-
+            六架 A2N1、六架 A5M、18 架 D1A1 与刚到的 18 架 B4Y1 临时从加贺转场至
+            公大机场，支援陆上作战。
+          en: >-
+            Six A2N1s, six A5Ms, eighteen D1A1s and eighteen just-landed B4Y1s were
+            temporarily detached from Kaga to Kunda airfield to support land operations.
+        src: [combinedfleet-kaga]
+      - date: 1937-09-19
+        text:
+          zh: >-
+            15 架 D1A1 与刚到的 D1A2、11 架 B4Y1 在 2 架 A5M 护航下飞往南京，
+            遭中国战斗机拦截，宣称四个战果。
+          en: >-
+            Fifteen D1A1s with just-received D1A2s and eleven B4Y1s, escorted by two
+            A5Ms, headed for Nanking; intercepted by Chinese fighters, they claimed four
+            victories.
+        src: [combinedfleet-kaga]
+      - date: 1937-09-26
+        text:
+          zh: >-
+            加贺回佐世保补给，接收补充机 32 架 B4Y1、16 架 D1A2 与 16 架 A5M。
+            一次补充 32 架同型机，可作它当时仍是主力舰攻的一个旁证 ——
+            补充数量来自消耗，而不是编制。
+          en: >-
+            Kaga reached Sasebo for reprovisioning and received replacement aircraft
+            including 32 B4Y1s, 16 D1A2s and 16 A5Ms. A single delivery of 32 of one type
+            is indirect evidence that it was still the principal attack aircraft: the
+            number was driven by wastage, not by establishment.
+        src: [combinedfleet-kaga]
+      - date: 1937-12-12
+        text:
+          zh: >-
+            约 13:27，长江南京上游。加贺的 3 架 B4Y1 投下 18 枚 60 kg 炸弹，
+            其中两发命中美国长江炮舰 Panay（PR-5）；该舰另遭 A4N 九五式战斗机扫射。
+            15:54 沉没，三人死亡、43 名水兵与 5 名乘客受伤。
+          en: >-
+            At about 1327 on the Yangtze above Nanking, three B4Y1s from Kaga dropped
+            eighteen 60 kg bombs, two of which hit the US river gunboat Panay (PR-5); the
+            ship was also strafed by A4N Type 95 fighters. She sank at 1554, three men
+            being killed and 43 sailors and five passengers wounded.
+        src: [combinedfleet-kaga]
+      - date: 1938-04
+        text:
+          zh: >-
+            日方赔付 220 万美元后，Panay 事件正式了结。美国政府在军事上尚未准备，
+            接受了日方的「误击」解释。
+          en: >-
+            After an indemnity of $2.2 million was paid the Panay incident was officially
+            closed; the United States government, militarily unprepared, accepted the
+            Japanese explanation of a mistake.
+        src: [combinedfleet-kaga]
+      - date: 1938-08-30
+        text:
+          zh: >-
+            五架轰炸机与四架 B4Y1 在六架 A5M4 护航下攻击广州附近机场，
+            遭中国第 32 队 Gladiator 拦截；40 分钟空战中日方损失 2 架战斗机、
+            击落 6 架 Gladiator。
+          en: >-
+            Five bombers and four B4Y1s under escort of six A5M4s attacked an airfield near
+            Canton and were intercepted by Gladiators of the Chinese 32nd PS; in a
+            forty-minute battle two fighters were lost and six Gladiators shot down.
+        src: [combinedfleet-kaga]
+
+  - id: eclipse
+    title: { zh: 退为二线与中途岛, en: "Second line and Midway" }
+    range: { from: 1939-01, to: 1942-06 }
+    lead:
+      zh: >-
+        它的退场分两步：主力航母在 1939 至 1940 年间换掉它，凤翔一直留到 1942 年 6 月。
+      en: >-
+        It went out in two stages: the front-line carriers replaced it in 1939-40, while
+        Hosho kept it until June 1942.
+    events:
+      - date: 1939-01-30
+        text:
+          zh: >-
+            赤城赴华南，飞行队编成为 12 架（另 4 架备用）A5M2「Claude」、
+            18 架（另 5 架备用）D1A2「Susie」与 36 架（另 16 架备用）B4Y1「Jean」。
+            舰攻仍是它，且数量是三型里最多的。
+          en: >-
+            Akagi sailed for southern China with an air group of 12 (+4 spares) A5M2
+            Claudes, 18 (+5 spares) D1A2 Susies and 36 (+16 spares) B4Y1 Jeans. The attack
+            aircraft was still this type, and the largest single block in the group.
+        src: [combinedfleet-akagi]
+      - date: 1940-03-26
+        text:
+          zh: >-
+            赤城抵华中，飞行队编成改为 18 架 A5M「Claude」（另 6 架备用）、
+            27 架 B5N「Kate」（另 9 架备用）与 18 架 D1A2「Susie」（另 6 架备用）。
+            舰攻已换成九七式 —— 在赤城这一艘舰上，换装发生在前一条与本条之间。
+          en: >-
+            Akagi arrived in Central China waters with an air group of 18 A5M Claudes
+            (+6 spares), 27 B5N Kates (+9 spares) and 18 D1A2 Susies (+6 spares). The
+            attack aircraft had become the Type 97: aboard that one ship the changeover
+            falls between this entry and the one before it.
+        src: [combinedfleet-akagi]
+      - date: 1941-09-28
+        text:
+          zh: >-
+            凤翔的飞行队编成：11 架三菱九六式 A5M4「Claude」与 8 架横须贺九六式
+            B4Y1「Jean」舰攻。此时主力航母早已不用这一型。
+          en: >-
+            Hosho's air group consisted of eleven Mitsubishi Type 96 A5M4 Claudes and
+            eight Yokosuka Type 96 B4Y1 Jeans. By then the front-line carriers had long
+            since given the type up.
+        src: [combinedfleet-hosho-trom]
+      - date: 1942-05-29
+        text:
+          zh: >-
+            中途岛作战。navweaps 的战斗序列把凤翔编在山本主力部队的航空母舰队内，
+            舰攻队 8 架九六式 B4Y1，指挥官Irikiin Yoshiaki 大尉；该序列在凤翔名下另只列
+            一艘驱逐舰（夕风）。
+          en: >-
+            The Midway operation. navweaps' order of battle places Hosho in the carrier
+            group of Yamamoto's Main Body with eight Type 96 B4Y1 attack aircraft under
+            Lieutenant Irikiin Yoshiaki, listing only one destroyer, Yukaze, beneath her.
+        src: [navweaps-midway-oob]
+      - date: 1942-06-03
+        text:
+          zh: >-
+            这一型在凤翔上的最后两次出动都是搜索，日期是 6 月 3 日与 5 日。
+            3 日晨，轻巡川内与驱逐舰矶波在夜间浓雾后失踪，凤翔派 B4Y 搜索；
+            数小时无结果，13:15 搜索机在主力前方 43 海里找到两舰，三小时后归队。
+            5 日 04:20，一架 B4Y 发现漂流且已弃舰的航母飞龙，位置 FU RO RI 43；
+            飞行员报告舰上有人并拍照。一小时后驱逐舰谷风奉命前往，未找到，
+            当日下午险遭轰炸。
+          en: >-
+            The type's last two sorties from Hosho were both searches, on 3 and 5 June. On
+            the morning of the 3rd, light cruiser Sendai and destroyer Isonami having gone
+            missing after a night of fog, Hosho launched B4Ys; the search found nothing for
+            hours until 1315, when the aircraft located the two ships forty-three miles
+            ahead of the Main Body, which rejoined three hours later. At 0420 on the 5th,
+            one of the B4Ys located the smouldering and abandoned wreck of the carrier
+            Hiryu at position FU RO RI 43; the pilot reported survivors aboard and took
+            photographs. An hour later the destroyer Tanikaze was ordered to search for the
+            wreck, found nothing and narrowly escaped bombing that afternoon.
+        src: [combinedfleet-hosho-trom]
+      - date: 1942-06-20
+        text:
+          zh: >-
+            凤翔的九六式机全部下舰。该舰于 7 月 14 日转第三舰队附属，转为着舰练习舰。
+            这一型的作战生涯在此结束。
+          en: >-
+            All of Hosho's Type 96 aircraft were disembarked. The ship was attached to the
+            Third Fleet on 14 July and used for landing practice thereafter, ending the
+            type's operational career.
+        src: [combinedfleet-hosho-trom]

@@ -1,0 +1,358 @@
+# ============================================================================
+# 武器正文 —— 14 cm/50 三年式（五十口径三年式十四糎砲 / 5.5"/50 3rd Year Type）
+#
+# 这一篇的主线是「一门装得最杂的炮」：
+#  1) 它不是某一类舰的专用炮，而是 1915-1922 年造或计划的主力舰副炮、
+#     1930 年前轻巡的主炮、以及二战中数量最多的海岸炮，三种身份同一门炮；
+#  2) 射速不是一个固定的数：来源写明弹药从扬弹机到炮位全为人力搬运，
+#     所以射速取决于弹药手的搬运距离 —— 3,500 吨的夕张反而比 5,500 吨的巡洋舰快；
+#  3) 射程只有分仰角表（20/25/30/35 度），没有「最大射程 + 对应仰角」的单一值，
+#     本站不插值，只把表照录。
+# 装舰面太大，装舰表按来源原样引用，不合并成一句概括。
+# ============================================================================
+weapon: 14cm-50-3ns
+updated: 2026-11-24
+
+intro:
+  lead:
+    zh: >-
+      14 cm/50 三年式是日本海军 1914 年采用、约 1916 年服役的一门中等口径舰炮，
+      名义口径 14 cm。它一门炮担了三种差得很远的角色：1915 至 1922 年建成或计划中的
+      主力舰的副炮、1930 年以前建造的轻巡的主炮、以及二战期间日本数量最多的一种海岸炮。
+      它取代上一代 15.2 cm 炮的理由写在来源里：较轻的弹丸更适合日本水兵的人力搬运。
+      这门炮的射速从来不是一个固定值 —— NavWeaps 明写弹药从扬弹机到炮位全靠人力搬运，
+      射速因此取决于弹药手要走多远。
+    en: >-
+      The 14 cm/50 3rd Year Type was a medium-calibre naval gun adopted by the Imperial
+      Japanese Navy in 1914 and in service from about 1916, with a nominal calibre of
+      14 cm. One weapon filled three very different roles: secondary armament for capital
+      ships built or planned between 1915 and 1922, main armament for light cruisers built
+      before 1930, and the most numerous coastal defence gun Japan used in the Second World
+      War. The reason for its adoption, in the source's own words, was that its lighter
+      shells were better suited for manual handling by the average Japanese crewman, the
+      gun replacing the earlier 6" (15.2 cm) weapons. Its rate of fire was never a fixed
+      figure: NavWeaps states that all ammunition transfers from the hoists to the guns
+      were manual, so the rate depended on how far the ammunition passers had to travel.
+
+  paragraphs:
+    - heading: 名字里的「三年」是 1914，服役在两年之后
+      text:
+        zh: >-
+          NavWeaps 的三行表头把这门炮的身份写全了：14 cm/50 (5.5") 3rd Year Type
+          (Model 1914)，官方制式名 50 caliber 3rd Year Type 14 cm Gun。
+          设计年份栏是 1914，服役年份栏是 about 1916 —— 采用与服役之间隔了约两年。
+          1917 年 10 月 5 日，这批炮随日本的度量衡改制改用厘米称法，
+          这一条在来源里是单独一句：Redesignated in centimeters on 5 October 1917。
+          身管构造分前后两批：早期为四层加线绕（Model No. II），后期改为无线绕的
+          组合式构造（Model No. IV），炮闩一律是 Welin 螺式配三动作开闭机构。
+          尺寸与药室一并记在这里：炮身全长 7.235 m、膛线长 7.000 m、阴线 42 条、
+          药室 23 dm³、炮身重 5.5 至 5.6 吨。
+        en: >-
+          NavWeaps' three-line heading carries the whole identity of the weapon: 14 cm/50
+          (5.5") 3rd Year Type (Model 1914), with the official designation given as
+          50 caliber 3rd Year Type 14 cm Gun. The date of design is 1914 and the date in
+          service is about 1916, roughly two years apart. On 5 October 1917 the guns were
+          redesignated in centimetres as part of the Japanese conversion to the metric
+          system, a point the source states in a line of its own: "Redesignated in
+          centimeters on 5 October 1917." Construction changed partway through production:
+          earlier guns were built with four layers and wire-winding (Model No. II), while
+          later guns were of built-up construction without the wire (Model No. IV), all
+          using Welin screw breech blocks with a three-motion breech mechanism. The
+          dimensions belong here too: gun length overall 7.235 m, bore length 7.000 m,
+          42 grooves, chamber volume 23 dm3 and a gun weight of 5.5 to 5.6 tons.
+      src: [navweaps-14cm-50-3ns]
+
+    - heading: 装舰面：从主力舰副炮到中国巡洋舰
+      text:
+        zh: >-
+          来源对这一型的定位写得很干脆：它是 1915 至 1922 年间建成或计划中的
+          多数日本主力舰的标准副炮，也是 1930 年以前建造的轻巡的主炮。
+          装舰表按类别逐条列出，本站照录不合并：主力舰为伊势、长门、天城、加贺、纪伊
+          与「13」级；航母为凤翔；轻巡为天龙、球磨、长良、川内、夕张与香取级；
+          水上机母舰为日进；布雷舰为冲岛；潜艇母舰为迅鲸级。
+          表里另有一栏不是日本的：中国海军宁海级 —— 宁海在日本建造、
+          平海在中国借助日本技术建造，两舰各装六门三年式 14 cm 炮。
+          1937 年两舰被击沉并俘获，1943 年改为海防舰（Ioshima / Yososhima）时
+          这批炮被拆掉，换成两门更轻的 12 cm/45 十年式。
+        en: >-
+          The source is blunt about the weapon's place: it "was the standard secondary gun
+          for most of Japan's capital ships built or planned between 1915 and 1922 and was
+          the primary gun on light cruisers built prior to 1930." The ship-class table is
+          reproduced here as listed rather than compressed into a summary: capital ships
+          Ise, Nagato, Amagi, Kaga, Kii and the "13" classes; the carrier Hosho; light
+          cruisers Tenryu, Kuma, Nagara, Sendai, Yubari and the Katori class; the seaplane
+          carrier Nisshin; the minelayer Okinoshima; the submarine tenders of the Jingei
+          class. One line in that table is not Japanese: the Chinese Ning Hai class. Ning
+          Hai was built in Japan and her near sister Ping Hai in China with Japanese
+          assistance, and both carried six 14 cm/50 Type 3 guns. Sunk and captured in 1937,
+          they were converted into kaibokans in 1943, when the 14 cm guns were removed and
+          replaced with two lighter 12 cm/45 10th Year Type guns.
+      src: [navweaps-14cm-50-3ns]
+
+    - heading: 射速由弹药手走多远决定，夕张比 5,500 吨巡洋舰更快
+      text:
+        zh: >-
+          射速栏写的是 6 至 10 发/分，后面跟一句限定：取决于供弹速度。
+          脚注把这个限定拆开了：所有从扬弹机到炮位的弹药转运都是人力，
+          所以单门炮的射速受弹药手搬运距离的影响。
+          该注引《Japanese Cruisers of the Pacific War》给出一个具体对照 ——
+          六门炮、3,500 吨的夕张，射速反而比七门炮、5,500 吨的巡洋舰快，
+          原因是她的炮座排得更密，弹药手要走的路更短。
+          同页另注：巡洋舰上的单装炮用斗式链式扬弹机把弹丸与发射药送上露天甲板，
+          弹库、扬弹机与炮位之间的所有转运同样全靠人力；单装炮架全部为手动操作。
+          弹药本身：Capped Common、Common Type 0 HE、Common Type 2 HE 与
+          Common Type 3 IS 四种弹丸同为 38.0 kg，另有 1943 年起配发的平头反潜弹 42.0 kg。
+          初速 850 至 855 mps，膛压 2,900 至 2,910 kg/cm²，身管寿命 500 至 600 发；
+          发射药为单药包，10.33 kg（40C 或 50C）或 10.97 kg（37DC），
+          带 60 g 黑药点火药。
+        en: >-
+          The rate-of-fire entry reads 6 to 10 rounds per minute, qualified in the same
+          cell: "depending upon the rate of supply." A footnote unpacks the qualification:
+          "All ammunition transfers from the hoists to the guns were manual, so the ROF of
+          the individual guns was affected by how far the ammunition passers had to travel."
+          The same note draws a concrete comparison from Japanese Cruisers of the Pacific
+          War - the six-gun, 3,500-ton Yubari had a faster rate of fire than the seven-gun,
+          5,500-ton cruisers because her mountings were spaced closer together and her
+          ammunition passers had a shorter distance to cover. A further note records that
+          single mountings on cruisers used bucket chain hoists to bring projectiles and
+          propellant up to the weather deck, that all transfers between magazines, hoists
+          and guns were performed manually, and that single mounts were entirely hand
+          worked. The ammunition: Capped Common, Common Type 0 HE, Common Type 2 HE and
+          Common Type 3 IS all weighed 38.0 kg, with a flat-nosed 42.0 kg ASW round issued
+          from 1943. Muzzle velocity 850 to 855 mps, working pressure 2,900 to 2,910
+          kg/cm2 and a barrel life of 500 to 600 rounds. The propellant charge was a single
+          bag of 10.33 kg (40C or 50C) or 10.97 kg (37DC) with a 60 gm black powder igniter.
+      src: [navweaps-14cm-50-3ns]
+
+    - heading: 射程只有分仰角表，没有单一的最大射程值
+      text:
+        zh: >-
+          来源给的是一张分仰角的射程表，不是「最大射程 + 对应仰角」的一对数：
+          20 度 15,800 m、25 度 17,500 m、30 度 19,100 m、35 度 20,574 m，
+          四行都是高爆弹的数据，表到 35 度为止。
+          因此本站不填「最大射程」这个单一值 —— 在 30 度与 35 度之间插一个中点，
+          或者把 35 度的 20,574 m 直接当最大射程，都是在替来源做它没做的换算。
+          反潜弹另有一张表：40 度 4,200 m，并注明最小射程 800 m，
+          低于此距离容易跳弹。另据该页脚注，反潜弹于 1943 年经长期试验后配发，
+          穿甲性能来源未给。
+        en: >-
+          What the source provides is a range table by elevation, not a single
+          maximum-range figure with its angle: 20 degrees 15,800 m, 25 degrees 17,500 m,
+          30 degrees 19,100 m, 35 degrees 20,574 m, all four rows for HE projectiles, the
+          table ending at 35 degrees. This site therefore does not record a single
+          maximum-range value: interpolating a midpoint between 30 and 35 degrees, or
+          taking the 35-degree figure of 20,574 m as the maximum, would be doing a
+          conversion the source did not do. The ASW shell has a table of its own: 4,200 m
+          at 40 degrees, with a minimum range of 800 m noted and the remark that ranges
+          below that tended to ricochet. A footnote records that the ASW round was issued
+          in 1943 following extensive testing, and that penetration performance is not
+          available.
+      src: [navweaps-14cm-50-3ns]
+
+    - heading: 两种炮架，两种驱动，以及它们在 1930 年代之后的去处
+      text:
+        zh: >-
+          炮架分单装与双联两大类。单装又分炮廓式与基座式两种：
+          伊势 20 门、长门 20 门、加贺 20 门、纪伊 16 至 20 门、天城 16 门为炮廓式；
+          凤翔 4 门、天龙 4 门、球磨 7 门、长良 7 门、中 7 门、夕张 2 门为基座式。
+          双联装为夕张 2 基、冲岛 2 基、迅鲸 2 基（A 型）、香取 2 基与日进 3 基（A2 型）、
+          宁海 3 基（A 型）。重量：单装约 20 吨，双联 49 吨。
+          仰角按舰级分档：伊势 −7/+20、长门 −7/+25、天龙 −7/+20、
+          球磨与长良 −7/+25、川内与夕张 −7/+30；双联装为 −5/+30 或 −5/+35。
+          驱动方式是最实质的差别：单装为纯人力，俯仰与回转都是每秒 8 度；
+          双联装带电动液压机构，回转每秒 4 度、俯仰每秒 6 度，必要时也可人力操作。
+          回转范围按舰种分：主力舰约 ±70 度，轻巡 ±150 度。
+          装填角为 +20 度以内任意角度（人力推弹）。
+          撤除与转用的账，来源逐条记着：1934 年长门级撤 2 门（长门 1944 年 6 月再撤 2 门）；
+          1935 年伊势级撤 4 门；1943 年伊势、日向改航空战列舰时全部撤除；
+          5,500 吨级巡洋舰在 1942 至 1943 年多半撤掉舰尾两门，用来换一座 12.7 cm 双联高角炮
+          与若干 25 mm 机炮；五十铃 1944 年改防空巡洋舰时 14 cm 炮全撤；
+          北上与大井 1941 年撤掉舰尾三门，原位换十座 61 cm 四联装鱼雷发射管；
+          夕张在 1943 至 1944 年的改装中两门单装全撤，舰艏换 12 cm/45 十年式、
+          舰尾换三联 25 mm。另有一条影响后来型号的记录：
+          三年式 14 cm 的 A 型双联炮架，是吹雪级特型驱逐舰所用
+          12.7 cm/50 A 型双联炮架的样板。
+        en: >-
+          The mountings divide into singles and twins, and the singles into casemate and
+          pedestal types: casemate for Ise (20), Nagato (20), Kaga (20), Kii (16 to 20) and
+          Amagi (16); pedestal for Hosho (4), Tenryu (4), Kuma (7), Nagara (7), Naka (7) and
+          Yubari (2). Twins: Yubari, Okinoshima and Jingei two each (Type A), the Katori
+          class two and Nisshin three (A2), Ning Hai three (A). Weight: about 20 tons for a
+          single and 49 tons for a twin. Elevation is banded by class - Ise -7/+20, Nagato
+          -7/+25, Tenryu -7/+20, Kuma and Nagara -7/+25, Sendai and Yubari -7/+30; twins
+          -5/+30 or -5/+35. The drive is the substantive difference: singles were entirely
+          hand worked at 8 degrees per second in both elevation and train, while twins had
+          electro-hydraulic gear giving 4 degrees per second in train and 6 in elevation,
+          with hand operation possible if necessary. Training arcs run to about +70/-70
+          degrees in capital ships and +150/-150 in light cruisers, and the loading angle
+          was any angle up to +20 degrees by hand ramming. The ledger of removals is
+          recorded item by item: two guns from the Nagato class in 1934 (Nagato losing two
+          more in June 1944), four from the Ise class in 1935, all of them when Ise and
+          Hyuga became hybrid carriers in 1943; most of the 5,500-ton cruisers lost two
+          stern guns in 1942-43 to make room for a twin 12.7 cm/40 Type 89 mounting and
+          more 25 mm guns; Isuzu lost the lot in her 1944 conversion to an anti-aircraft
+          cruiser; Kitakami and Ooi had their three aft guns removed in 1941 for ten
+          quadruple 61 cm torpedo tube mounts; and Yubari lost both singles in a 1943-44
+          refit, the bow gun replaced by a 12 cm/45 Type 10 and the after gun by a triple
+          25 mm mounting. One further record bears on later designs: the 14 cm/50 Type "A"
+          twin mounting served as the model for the 12.7 cm/50 Type "A" twins used on the
+          Fubuki class "Special" destroyers.
+      src: [navweaps-14cm-50-3ns]
+
+history:
+  - id: design
+    title: { zh: 采用与改名, en: Adoption and redesignation }
+    range: { from: 1914, to: 1917 }
+    lead:
+      zh: >-
+        三年式这个名号记的是采用的年份，不是服役的年份，也不是改称厘米的年份。
+      en: >-
+        The "3rd Year Type" name records the year of adoption, not the year the gun
+        entered service, and not the year it was redesignated in centimetres.
+    events:
+      - date: 1914
+        text:
+          zh: >-
+            采用。NavWeaps 记的理由是取代更早的 15.2 cm 炮，
+            因为较轻的弹丸更适合日本水兵的人力搬运。
+          en: >-
+            Adopted. NavWeaps gives the reason as replacement of the earlier 15.2 cm guns,
+            since the lighter shells were considered better suited for manual handling by
+            the average Japanese crewman.
+        src: [navweaps-14cm-50-3ns]
+      - date: 1916
+        text:
+          zh: >-
+            服役。来源记的是「about 1916」，未给具体月日。
+          en: >-
+            Entered service. The source gives the date as "about 1916" without a month or
+            day.
+        src: [navweaps-14cm-50-3ns]
+      - date: 1917-10-05
+        text:
+          zh: >-
+            随度量衡改制改称厘米制。来源原句：Redesignated in centimeters on 5 October 1917。
+          en: >-
+            Redesignated under the metric system. The source's words: "Redesignated in
+            centimeters on 5 October 1917."
+        src: [navweaps-14cm-50-3ns]
+
+  - id: service
+    title: { zh: 装舰与逐批撤除, en: "Service, removal and reuse" }
+    range: { from: 1922, to: 1944 }
+    lead:
+      zh: >-
+        这门炮的服役史不是一条线，是几十条并行的线 —— 每一级舰撤它的时间都不一样。
+      en: >-
+        The service history of this gun is not one line but dozens running in parallel:
+        every class gave it up on a different date.
+    events:
+      - date: 1922-12-27
+        text:
+          zh: >-
+            凤翔竣工时装 4 门，两舷各两门用于对水面目标；
+            来源同时记该舰另有 8 cm/40 三年式高角炮一对，装在飞行甲板上。
+          en: >-
+            Hosho completed with four of these guns, two on each side for surface action;
+            the same record notes a pair of 8 cm/40 3rd Year Type AA guns on the flight
+            deck.
+        src: [combinedfleet-hosho-trom, navweaps-14cm-50-3ns]
+      - date: 1934
+        text:
+          zh: >-
+            长门级改装中撤除 2 门 14 cm 炮；长门 1944 年 6 月又撤 2 门，
+            以便加装更多九六式 25 mm 机炮。
+          en: >-
+            Two 14 cm guns were removed from the Nagato class during modernisation;
+            Nagato lost a further two in June 1944 in order to allow more 25 mm Type 96
+            AA guns to be fitted.
+        src: [navweaps-14cm-50-3ns]
+      - date: 1935
+        text:
+          zh: >-
+            伊势级改装中撤除 4 门 14 cm 炮。
+          en: >-
+            Four 14 cm guns were removed from the Ise class during modernisation.
+        src: [navweaps-14cm-50-3ns]
+      - date: 1941
+        text:
+          zh: >-
+            球磨级北上与大井撤掉舰尾三门 14 cm 炮，原位装十座 61 cm 四联装鱼雷发射管。
+            来源另记：曾计划把这两舰的 14 cm 炮全部撤掉、换成两座 12.7 cm 双联高角炮，
+            因该炮座短缺而作罢，两舰保留了舰艏四门。
+          en: >-
+            Kitakami and Ooi of the Kuma class had their three aft 14 cm guns removed and
+            replaced by ten quadruple 61 cm torpedo tube mounts. The source adds that it
+            had been planned to remove all the 14 cm guns from both ships and fit two twin
+            12.7 cm/40 Type 89 mountings, but a shortage of those mounts left the ships
+            with their four bow guns.
+        src: [navweaps-14cm-50-3ns]
+      - date: 1942
+        text:
+          zh: >-
+            来源记 1942 至 1943 年间，多数残存的 5,500 吨级巡洋舰撤掉舰尾两门 14 cm 炮，
+            以便装一座 12.7 cm/40 八九式双联炮座与若干九六式 25 mm 机炮。
+          en: >-
+            The source records that most surviving 5,500-ton cruisers lost two of their
+            stern guns in 1942-43 in order to fit a twin 12.7 cm/40 Type 89 mounting and
+            additional 25 mm Type 96 AA guns.
+        src: [navweaps-14cm-50-3ns]
+      - date: 1943
+        text:
+          zh: >-
+            反潜弹配发。平头弹丸于 1943 年经长期试验后配发，
+            40 度时射程 4,200 m，最小射程 800 m，低于此距离容易跳弹；穿甲性能来源未给。
+          en: >-
+            The ASW projectile was issued. The flat-nosed round entered service in 1943
+            after extensive testing, with a range of 4,200 m at 40 degrees and a minimum
+            range of 800 m below which rounds tended to ricochet; penetration performance
+            is not available.
+        src: [navweaps-14cm-50-3ns]
+      - date: 1943-05-05
+        text:
+          zh: >-
+            川内在佐世保修理改装：装 21 号电探，撤掉第五号 5.5 英寸炮座，
+            加装两座三联 25 mm 机炮座。这是本型炮在川内级上可查到确切日期的一次撤除。
+          en: >-
+            Sendai refitted at Sasebo: a Type 21 radar was installed, the No. five
+            5.5-inch gun mount was removed, and two triple 25 mm AA gun mounts were added.
+            This is the one removal of the weapon aboard a Sendai-class ship with an exact
+            date.
+        src: [combinedfleet-sendai, navweaps-14cm-50-3ns]
+      - date: 1943
+        text:
+          zh: >-
+            伊势与日向改装为航空战列舰，两舰剩余的 14 cm 炮全部撤除。
+          en: >-
+            Ise and Hyuga were converted into hybrid battleship-carriers, and all their
+            remaining 14 cm guns were removed.
+        src: [navweaps-14cm-50-3ns]
+      - date: 1943
+        text:
+          zh: >-
+            前一年被击沉并俘获的中国巡洋舰宁海、平海改为海防舰（Ioshima / Yososhima），
+            舰上的三年式 14 cm 炮被拆掉，换成两门 12 cm/45 十年式。
+          en: >-
+            The captured Chinese cruisers Ning Hai and Ping Hai, sunk and taken in 1937,
+            were converted into kaibokans as Ioshima and Yososhima; their 14 cm/50 Type 3
+            guns were removed and replaced with two lighter 12 cm/45 10th Year Type guns.
+        src: [navweaps-14cm-50-3ns]
+      - date: 1944
+        text:
+          zh: >-
+            1943 至 1944 年的三次撤除记在这一条里。
+            五十铃改装为防空巡洋舰：14 cm 炮全撤，换成三座 12.7 cm/40 八九式双联炮座，
+            另加 11 座三联与 17 座单装九六式 25 mm 机炮。
+            夕张两门单装全撤：舰艏那门换 12 cm/45 十年式，舰尾那门换一座三联 25 mm 机炮座。
+            北上进一步改为回天（人操鱼雷）搭载舰：剩余四门 14 cm 炮与全部鱼雷发射管一并撤除，
+            原位换两座 12.7 cm/40 八九式双联炮座，并加装搭载八具回天的设备。
+          en: >-
+            Three removals of 1943-44 belong here. Isuzu was converted into an
+            anti-aircraft cruiser by removing all her 14 cm/50 guns and replacing them
+            with three twin 12.7 cm/40 Type 89 mountings along with 11 triple and 17 single
+            25 mm Type 96 AA guns. Yubari had both single guns removed, the bow gun
+            replaced by a 12 cm/45 Type 10 gun and the after gun by a triple 25 mm
+            mounting. Kitakami was further modified into a Kaiten carrier: her remaining
+            four 14 cm/50 guns and all torpedo tubes were removed and replaced with two
+            twin 12.7 cm/40 Type 89 mountings and fittings to carry eight Kaitens.
+        src: [navweaps-14cm-50-3ns]

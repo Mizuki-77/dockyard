@@ -1,0 +1,350 @@
+# ============================================================================
+# 来源分片：us-dd 组（美国海军三艘驱逐舰：Hammann / Monaghan / Benham）
+# ----------------------------------------------------------------------------
+# 只登记本组新用的来源。已存在且被复用的（不在此重复登记）：
+#   navweaps-5in38-mk12          5"/38 Mk 12 炮本体
+#   navweaps-20mm-oerlikon       20 mm 厄利孔
+#   navweaps-40mm-bofors         40 mm 博福斯
+#   nhhc-yorktown-midway-report  约克城号中途岛行动报告（tier A）
+#   nhhc-midway-us-order-of-battle 中途岛美军编成（tier B）
+#   combinedfleet-i168           I-168 战历（tier B）
+#
+# 抓取方式说明：history.navy.mil 与 navsource.org 在本机 TLS 握手失败
+# （SSL: UNEXPECTED_EOF_WHILE_READING），改用 web.archive.org 的快照镜像抓取。
+# url 一律登记原始地址，note 里给出实际取用的快照时间戳。
+# ============================================================================
+
+sources:
+  # ---------------------------------------------------------------- 官方舰史
+  - id: nhhc-danfs-hammann
+    title: Hammann I (DD-412) — DANFS / NHHC
+    url: https://www.history.navy.mil/research/histories/ship-histories/danfs/h/hammann-i.html
+    type: official_publication
+    tier: B
+    role: [data, narrative]
+    operator: Naval History and Heritage Command
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: public_domain_us_gov
+    note: >
+      美海军官方舰史（DANFS）。**直连 TLS 失败**，经 Wayback 快照
+      20251209201923 取得。页首技术行原文是
+      "(DD-112; dp. 1620; l. 348' 4" ; b. 36'1" ; dr. 11'5" ; a. 35 k.;
+      cpl. 192; a. 4 5", 8 21" tt.; cl. Sims)" —— 舷号写成 DD-112 是 NHHC
+      页面自身的录入错误（正文与人名页均写 DD-412）；dp. 1620 与
+      "a. 4 5""（4 门 5 英寸）也和别处口径不同，**本条只取日期与人名，不取排水量与炮数**。
+
+  - id: nhhc-danfs-monaghan
+    title: Monaghan II (DD-354) — DANFS / NHHC
+    url: https://www.history.navy.mil/research/histories/ship-histories/danfs/m/monaghan-ii.html
+    type: official_publication
+    tier: B
+    role: [data, narrative]
+    operator: Naval History and Heritage Command
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: public_domain_us_gov
+    note: >
+      **注意卷次**：DD-354 是 "Monaghan II"（Monaghan I 是 DD-32，一次大战
+      平甲板型）。经 Wayback 快照 20251208175037 取得。页内技术行原文
+      "(DD-354: displacement 1,726; length 341'3"; beam 34'3"; draft 8'10";
+      speed 36.5 knots; complement 100; armament 5 5-inch, 4 .30 caliber
+      machine guns, 8 21-inch torpedo tubes; class Farragut)" ——
+      complement 100 与该级通行的 160 差得离谱，**不采用**。
+
+  - id: nhhc-danfs-benham
+    title: Benham II (DD-397) — DANFS / NHHC
+    url: https://www.history.navy.mil/research/histories/ship-histories/danfs/b/benham-ii.html
+    type: official_publication
+    tier: B
+    role: [data, narrative]
+    operator: Naval History and Heritage Command
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: public_domain_us_gov
+    note: >
+      **注意卷次**：DD-397 是 "Benham II"（Benham I 是 Destroyer No. 49）。
+      经 Wayback 快照 20251208220234 取得。技术行原文
+      "(DD-397: dp. 1,500; l. 341'3"; b. 34'8"; dr. 17'3"; s. 38.5 k.;
+      cpl. 184; a. 4 5", 4 .50-cal. mg., 16 21" tt., 2 dct.; class Benham)"。
+      作者署名 Timothy L. Francis，2006-02-08 定稿。
+
+  - id: nhhc-danfs-vireo
+    title: Vireo I (AM-52 / AT-144) — DANFS / NHHC
+    url: https://www.history.navy.mil/research/histories/ship-histories/danfs/v/vireo-i.html
+    type: official_publication
+    tier: B
+    role: [narrative, data]
+    operator: Naval History and Heritage Command
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: public_domain_us_gov
+    note: >
+      1942-06-06 约克城号周围兵力核实的关键旁证。经 Wayback 快照
+      20251209200036 取得。原文给出 Vireo 受命拖带约克城号、
+      6 月 5 日 1308 带好拖缆、6 月 6 日与 Hammann 同在现场。
+
+  # ---------------------------------------------------------------- 一手战报
+  - id: nhhc-hammann-action-report
+    title: USS Hammann (DD-412) Action Report, 4-6 June 1942
+    url: https://www.history.navy.mil/research/archives/digital-exhibits-highlights/action-reports/wwii-battle-of-midway/uss-hammann-action-report.html
+    type: primary_archive
+    tier: A
+    role: [data, narrative]
+    operator: C-in-C Pacific Fleet Serial 01849 of 28 June 1942
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: public_domain_us_gov
+    note: >
+      **本组最重要的一份来源。** DD412/P6-1 Serial 2，1942-06-16 签发，
+      舰长（Commander）报告 + 副舰长（Acting Executive Officer，
+      署名 C. C. Hartigan, Jr., Lieut.(jg)）补充报告两份合成。
+      开篇自述 "In view of the fact that the Hammann was sunk about 1600
+      on June 6, with total loss of all records, this report must be made
+      entirely from memory." —— 时间与位置均系事后凭记忆，**坐标与时刻按约值处理**。
+      含 6 月 6 日约克城号周围完整兵力清单，是反驳「Hammann 是唯一在场驱逐舰」的直接证据。
+      经 Wayback 快照 20251208125454 取得。
+
+  - id: nhhc-dessron6-action-report
+    title: Commander Destroyer Squadron Six Action Report, Battle of Midway, 4-7 June 1942
+    url: https://www.history.navy.mil/research/archives/digital-exhibits-highlights/action-reports/wwii-battle-of-midway/commander-destroyer-squadron-six-action-report.html
+    type: primary_archive
+    tier: A
+    role: [data, narrative]
+    operator: Commander Destroyer Squadron Six (Capt. E. P. Sauer), Serial 094 of 12 June 1942
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: public_domain_us_gov
+    note: >
+      中途岛 TG 17.4（Balch / Benham / Morris / Anderson / Hammann /
+      Hughes / Russell）的统一战报，含 6 月 4 日各舰救起幸存者人数表。
+      注意它只覆盖 6 月 4 日，**不覆盖 6 月 6 日 Hammann 沉没**。
+      经 Wayback 快照 20251208124920 取得。
+
+  # ---------------------------------------------------------------- 专题站
+  - id: navsource-hammann
+    title: USS HAMMANN (DD-412) — NavSource Destroyer Photo Index
+    url: https://www.navsource.org/archives/05/412.htm
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: NavSource Naval History
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >
+      技术行 + 图注。经 Wayback 快照 20241210025737 取得（直连 TLS 失败）。
+      图注里有高价值一手细节，例如 Hammann 幸存者由 Benham 送回珍珠港
+      （Photo 80-G-312064）、下水仪式由 Miss Lillian Hammann 主持。
+
+  - id: navsource-monaghan
+    title: USS MONAGHAN (DD-354) — NavSource Destroyer Photo Index
+    url: https://www.navsource.org/archives/05/354.htm
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: NavSource Naval History
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >
+      技术行给出 "Displacement 1365 Tons"（口径与 navypedia 的 1358 t 不同）、
+      无线电呼号 NAJG。沉没日期写 December 17 1944，与 DANFS/navypedia 的
+      12-18 差一天。经 Wayback 快照 20250527011945 取得。
+
+  - id: navsource-benham
+    title: USS BENHAM (DD-397) — NavSource Destroyer Photo Index
+    url: https://www.navsource.org/archives/05/397.htm
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: NavSource Naval History
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >
+      Fate 一栏写 "Sunk by Japanese Warships off Guadalcanal November 15 1942"，
+      与 DANFS 叙述（被日军鱼雷打断成两段后，两个浮体由 5 英寸炮火击沉）
+      措辞不同、日期也差一天。经 Wayback 快照 20250526222948 取得。
+
+  - id: navypedia-sims
+    title: SIMS destroyers (1939) — Navypedia
+    url: http://www.navypedia.org/ships/usa/us_dd_sims.htm
+    type: website
+    tier: D
+    role: [data]
+    operator: navypedia.org
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >
+      本级逐舰建造表 + 主尺度骨架 + 改装年表。改装年表是本组
+      「Hammann 中途岛时到底几门炮、几管鱼雷、几枚深弹」的唯一 D 级以上来源。
+      注意其 "Armament" 一栏同时给 DD409-413（3 座四联）与 DD414-420（2 座四联）两种，
+      对 Hammann 应取前者再叠加 1940 年改装。
+
+  - id: navypedia-farragut
+    title: FARRAGUT destroyers (1934-1935) — Navypedia
+    url: http://www.navypedia.org/ships/usa/us_dd_farragut.htm
+    type: website
+    tier: D
+    role: [data]
+    operator: navypedia.org
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >
+      8 舰建造表 + 主尺度 + 改装年表。技术行 "Machinery 2 sets Curtis geared
+      steam turbines, 4 Yarrow boilers"，锅炉厂牌与 destroyerhistory 的
+      "4 x Bethlehem" 不同，两说并列不裁决。
+
+  - id: navypedia-benham
+    title: BENHAM destroyers (1939) — Navypedia
+    url: http://www.navypedia.org/ships/usa/us_dd_benham.htm
+    type: website
+    tier: D
+    role: [data]
+    operator: navypedia.org
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >
+      10 舰建造表 + 主尺度 + 改装年表。锅炉数写 3，与 destroyerhistory
+      技术行写 4 冲突（后者同页正文又说 three boilers，属来源自相矛盾）。
+
+  - id: destroyerhistory-sims
+    title: Sims-class destroyers in World War II — Destroyer History Foundation
+    url: https://destroyerhistory.org/goldplater/simsclass/
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: Destroyer History Foundation
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >
+      引 Bureau of Construction and Repair 的 General Information book（脚注 1）、
+      Bauer and Roberts（脚注 2）、Friedman（脚注 3）。**本级主尺度的英制原值
+      只有这里给全**（348' 1-3/4" oa、36' 1-1/8" 宽等）。
+      注意它给 "1,570 long tons design" 与 navypedia 的 1764 t 不是同一口径。
+
+  - id: destroyerhistory-farragut
+    title: Farragut-class destroyers in World War II — Destroyer History Foundation
+    url: https://destroyerhistory.org/goldplater/farragutclass/
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: Destroyer History Foundation
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >
+      同上的脚注体系。本级 1931 年由 Bethlehem Steel 设计（在 1930 年伦敦条约框架下），
+      建成 5 门 5"/38，No.3 炮位在第二烟囱之后 —— 这是判断该级有第二烟囱的直接依据。
+
+  - id: destroyerhistory-benham
+    title: Benham-class destroyers in World War II — Destroyer History Foundation
+    url: https://destroyerhistory.org/goldplater/benhamclass/
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: Destroyer History Foundation
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >
+      **来源自相矛盾，引用时必须逐条比对**：技术行写 "4 x Babcock & Wilcox
+      boilers; 400 psi"，同页正文却写 "three boilers at 565 psi instead of
+      the Bagley class' four at 400 psi"。navypedia 独立给 3 锅炉，故采用 3。
+
+  - id: destroyerhistory-hammann
+    title: USS Hammann (DD 412) — Destroyer History Foundation
+    url: https://destroyerhistory.org/goldplater/usshammann/
+    type: website
+    tier: D
+    role: [narrative]
+    operator: Destroyer History Foundation
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >
+      正文即 DANFS 文本的转载（逐句对照与 nhhc-danfs-hammann 一致），
+      **只作 DANFS 的旁证，不当独立来源用**。
+
+  - id: destroyerhistory-monaghan
+    title: USS Monaghan (DD 354) — Destroyer History Foundation
+    url: https://destroyerhistory.org/goldplater/ussmonaghan/
+    type: website
+    tier: D
+    role: [narrative]
+    operator: Destroyer History Foundation
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >
+      同上，DANFS 转载版，且只到 1942 年初（页尾标 "(continued)" 但无续页）。
+      用于交叉核对珍珠港当日的行动顺序（0751 受命、0827 起航、撞沉微型潜艇）。
+
+  - id: destroyerhistory-benham-ship
+    title: USS Benham (DD 397) — Destroyer History Foundation
+    url: https://destroyerhistory.org/goldplater/ussbenham/
+    type: website
+    tier: D
+    role: [narrative]
+    operator: Destroyer History Foundation
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >
+      同上，DANFS 转载版。页首附 Halsey 1942-11 的嘉奖电全文。
+
+  # ---------------------------------------------------------------- 武器
+  - id: navweaps-us-torpedoes
+    title: World War II Torpedoes of the United States of America — NavWeaps
+    url: https://www.navweaps.com/Weapons/WTUS_WWII.php
+    type: website
+    tier: C
+    role: [data]
+    operator: NavWeaps (Tony DiGiulian)
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >
+      **不要与已登记的 navweaps-torpedoes-wwii 混淆**：那一条是德国鱼雷
+      （WTGER_WWII.php）。本条是美制 21 in 鱼雷，含 Mark 15（驱逐舰标准雷）。
+      原文 "The standard destroyer weapon of World War II. Replaced the earlier
+      Mark 11 and Mark 12."
+
+  - id: navweaps-us-asw
+    title: ASW Weapons of the United States of America — NavWeaps
+    url: https://www.navweaps.com/Weapons/WAMUS_ASW.php
+    type: website
+    tier: C
+    role: [data]
+    operator: NavWeaps (Tony DiGiulian)
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >
+      美制深水炸弹（Mark 6 等）、K 炮/Y 炮投射器、刺猬弹。用于核对
+      「DCT / DCR / DC 枚数」这些缩写在 navypedia 年表里的含义。

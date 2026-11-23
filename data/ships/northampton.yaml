@@ -1,0 +1,380 @@
+# ============================================================================
+# 北安普敦号（USS Northampton, CL/CA-26）—— 北安普敦级首舰
+#
+# 2026-11-23 tg162b 入库。舰级共用参数见 classes/northampton.yaml，
+# 本文件只写**本舰特有的**：建造日期、编制、战历节点、结局。
+#
+# 三件必须记住的事：
+#   1. **1942-06 中途岛时，本舰不是 TG 16.2 旗舰。**
+#      TG 16.2 司令金凯德少将（RA Thomas C. Kinkaid）的坐舰是明尼阿波利斯号（CA-36）。
+#      依据是一手战报：企业号 1942 年 6 月战报原文
+#      "Task Group 16.2, Rear Admiral T.O. Kinkaid in MINNEAPOLIS,
+#      NORTHAMPTON, PENSACOLA, ATLANTA, NEW ORLEANS, VINCENNES"。
+#      Kinkaid 的职务是 ComCruDiv 6（第 6 巡洋舰分队司令），
+#      不是「第 6 巡洋舰队旗舰」这种说法。
+#   2. **1942 年本舰没有鱼雷管**（1931 年已拆）。「北安普敦级有鱼雷管」
+#      只对建成后的头一年多成立，见舰级文件的同名字段。
+#   3. 沉没有两个日期写法：战斗始于 1942-11-30 深夜（2300 前 40 分钟），
+#      舰在次日（12-01）沉没。DANFS 与本文件取 1942-12-01 为 fate_date。
+# ============================================================================
+
+id: northampton
+name:
+  zh: 北安普敦号
+  en: USS Northampton
+class: northampton
+note: >-
+  北安普敦级首舰，舷号 CL-26（1931-07-01 改 CA-26）。
+  以马萨诸塞州北安普敦市命名。DANFS 原句：
+  "A city in Massachusetts; the first vessel of this name retained its former name."
+  二战获 6 颗战斗之星。
+
+open_ended_note: >-
+  本舰多数 fact 的 valid.to 取 1942-12-01（沉没日），因为舰在此时终结。
+  武备与雷达的逐期状态另用不同时间窗区分；来源只能给到年份粒度的，
+  在 note 里明确标出「无法闭合到月」的地方。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: Northampton
+    src: [danfs-northampton]
+    valid: { from: 1930-05-17, to: 1942-12-01 }
+    confidence: B
+
+  - field: identity.name_zh
+    value: 北安普敦号
+    src: [danfs-northampton]
+    valid: { from: 1930-05-17, to: 1942-12-01 }
+    confidence: B
+
+  - field: identity.name_en
+    value: USS Northampton
+    src: [danfs-northampton]
+    valid: { from: 1930-05-17, to: 1942-12-01 }
+    confidence: B
+
+  - field: identity.name_note
+    value: >-
+      以马萨诸塞州北安普敦市命名。DANFS 另注「第一艘同名舰沿用了原名」。
+    src: [danfs-northampton]
+    valid: { from: 1930-05-17, to: 1942-12-01 }
+    confidence: B
+    note: >-
+      DANFS 原句："A city in Massachusetts; the first vessel of this name retained
+      its former name."
+      本舰是 DANFS 的第二艘 Northampton（题头写 "Northampton II"），
+      因第一艘是 1917 年征用的商船、保留了原名，故序列上算一艘但不改名。
+
+  - field: identity.pennant_number
+    value: CL-26（1931-07-01 改 CA-26）
+    src: [navsource-northampton]
+    valid: { from: 1930-05-17, to: 1942-12-01 }
+    confidence: C
+    note: >-
+      NavSource 原句 "Reclassified CA 26 01 JUL 1931"；
+      navypedia 舰名栏 "CL26, 7.1931- CA26"。
+      DANFS 换了一种说法："Redesignated CA-26 in 1931"（只到年份）。
+
+  - field: identity.ship_type
+    value: heavy_cruiser
+    src: [navypedia-northampton, danfs-northampton]
+    valid: { from: 1931-07-01, to: 1942-12-01 }
+    confidence: B
+    note: >-
+      **本字段的时间窗从 1931-07-01 起**，因为在此之前本舰的分类是轻巡（CL）。
+      「轻巡/重巡」在华盛顿条约体系下是**按主炮口径**分的，不是按排水量，
+      所以一艘装 8 in 炮的舰在 1931 年之前也叫 CL——这是分类制度的时间差，
+      不是来源错误。舰级文件里同一字段的时间窗从 1930 起，
+      那里是口径简化，以本文件为准。
+
+  - field: identity.nation
+    value: united_states
+    src: [danfs-northampton]
+    valid: { from: 1930-05-17, to: 1942-12-01 }
+    confidence: B
+
+  - field: identity.operator
+    value: United States Navy
+    src: [danfs-northampton]
+    valid: { from: 1930-05-17, to: 1942-12-01 }
+    confidence: B
+
+  - field: identity.era
+    value: ww2
+    src: [danfs-northampton]
+    valid: { from: 1930-05-17, to: 1942-12-01 }
+    confidence: B
+
+  # ============================================================ 建造
+  - field: construction.builder
+    value: Bethlehem Steel Corp.
+    src: [danfs-northampton, navypedia-northampton]
+    valid: { from: 1928-04-12 }
+    confidence: B
+    note: >-
+      DANFS 原句 "laid down 12 April 1928 by Bethlehem Steel Corp., Quincy, Mass."；
+      navypedia 建造厂栏 "Bethlehem, Quincy"。
+
+  - field: construction.builder_location
+    value: Quincy, Massachusetts
+    src: [danfs-northampton]
+    valid: { from: 1928-04-12 }
+    confidence: B
+
+  - field: construction.laid_down
+    value: 1928-04-12
+    unit: date
+    src: [danfs-northampton, navypedia-northampton, navsource-northampton]
+    valid: { from: 1928-04-12 }
+    confidence: B
+    note: >-
+      三源一致：DANFS "laid down 12 April 1928"；navypedia "12.4.1928"；
+      NavSource "Laid down 12 APR 1928"。
+
+  - field: construction.launched
+    value: 1929-09-05
+    unit: date
+    src: [danfs-northampton, navypedia-northampton, navsource-northampton]
+    valid: { from: 1929-09-05 }
+    confidence: B
+    note: >-
+      三源一致：DANFS "launched 5 September 1929"；navypedia "5.9.1929"；
+      NavSource "Launched 05 SEP 1929"。
+      命名掷瓶人是前总统柯立芝夫人：DANFS "sponsored by Mrs. Calvin Coolidge"；
+      NavSource 一张 1929 年 9 月 7 日《华盛顿时报》剪报的图注写
+      "MRS. CALVIN COOLIDGE, sponsor of the new cruiser Northampton (CL 26),
+      points down the ways of the docks at Quincy, Mass."
+
+  - field: construction.commissioned
+    value: 1930-05-17
+    unit: date
+    src: [danfs-northampton, navypedia-northampton, navsource-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: B
+    note: >-
+      三源一致：DANFS "commissioned 17 May 1930, Captain Walter N. Vernou in command"；
+      navypedia "5.1930"（只到月）；NavSource "Commissioned 17 MAY 1930"。
+      首任舰长 Walter N. Vernou 见 service.commander。
+
+  - field: construction.fate_date
+    value: 1942-12-01
+    unit: date
+    src: [navsource-northampton, navypedia-northampton, danfs-northampton]
+    valid: { from: 1942-12-01 }
+    confidence: B
+    note: >-
+      NavSource 原句 "Sunk by two torpedoes from the Japanese destroyer Oyashio
+      during the Battle of Tassafaronga off Guadalcanal on 01 DEC 1942."；
+      navypedia 结局栏 "sunk 1.12.1942"。
+      **DANFS 是把沉没写成过程的**："The Battle of Tassafaronga began 40 minutes
+      before midnight, 30 November ... Three hours later, as she began to sink
+      stern first, she had to be abandoned."
+      即战斗在 11-30 深夜打响，弃舰与沉没在次日凌晨，故 fate_date 取 12-01。
+      HyperWar 舰级页另有更宽的措辞："struck by two 24-inch torpedoes ... on
+      30 Nov 42 ... and sank the following day."（战斗日 11-30 / 沉没日 12-01）
+      与本条一致。
+
+  - field: construction.fate_type
+    value: sunk_by_enemy
+    src: [navsource-northampton, navypedia-northampton]
+    valid: { from: 1942-12-01 }
+    confidence: B
+    note: >-
+      NavSource 原句 "Sunk by two torpedoes from the Japanese destroyer Oyashio"；
+      navypedia "Northampton in battle at Tassafaronga 30.11.1942 shortly before
+      midnight received 2 torpedo hits from Japanese destroyer Oyashio. In 3 hours
+      she was abandoned by a crew and sunk."
+      即被日军驱逐舰亲潮号（Oyashio）的鱼雷击沉，非自沉、非事故。
+
+  # ============================================================ 编制
+  - field: service.complement.standard
+    value: 621
+    unit: persons
+    src: [danfs-northampton, navsource-northampton]
+    valid: { from: 1930-05-17, to: 1942-12-01 }
+    confidence: B
+    note: >-
+      两源一致：DANFS 题头 "cpl. 621"；NavSource "Crew 621"。
+      **异说并列，不裁决**：navypedia 给 "Complement CA26 - 28: 617
+      CA29 - 31: 734 - 748, inc flag"，即本级前两艘（含本舰）617 人、
+      后三艘（旗舰型）734-748 人（含旗舰人员）。
+      621 与 617 差 4 人，可能是建成时与后来的差异，来源都没说口径。
+      HyperWar 舰级页另写 "Complement: 1,155"，这个数与其他三源差得太多
+      （近两倍），疑为把战时加强编制或同名后续舰的数据混入，不采用、不并列
+      ——但记录在此，供主会话核对。详见 RESEARCH-NOTES.md §9。
+
+  # ============================================================ 服役与编制
+  - field: service.commander
+    value: Walter N. Vernou（首任，1930-05-17 起）
+    src: [danfs-northampton]
+    valid: { from: 1930-05-17 }
+    confidence: B
+    note: >-
+      DANFS 原句 "commissioned 17 May 1930, Captain Walter N. Vernou in command."
+      卸任日期未获取，故 valid.to 留空。
+      **中途岛时的舰长是另一人**，见下一条。
+
+  - field: service.commander
+    value: William Dwight Chandler（1942-06 中途岛时）
+    src: [navweaps-midway-oob]
+    valid: { from: 1942-06, to: 1942-11-29 }
+    confidence: C
+    note: >-
+      NavWeaps 中途岛战斗序列原句："USS Northampton (CA-26) / Commanding officer:
+      Capt. William Dwight Chandler"。
+      同一条目在 microworks 的美军序列里一致（Capt. William W. Chandler）。
+      **卸任时点未获取**，valid.to 取 1942-11-29 只表示「本轮能证实的最后时点之前」——
+      塔萨法隆加时的舰长已换人，见下一条。
+
+  - field: service.commander
+    value: Willard A. Kitts, III（1942-11-30 塔萨法隆加时）
+    src: [oni-tassafaronga]
+    valid: { from: 1942-11-30, to: 1942-12-01 }
+    confidence: B
+    note: >-
+      **这是本轮从一手战斗叙事里补到的一处更正。**
+      ONI《The Battle of Tassafaronga》战斗序列原句：
+      "Northampton, Capt. Willard A. Kitts, 111"（原文如此，"111" 是 "III" 的
+      转录错误）。同文另有 "Capt. Kitts barely had time to order hard left rudder
+      before the torpedoes struck" 与 "At 0240, when the list reached 35°,
+      Capt. Kitts and the salvage party abandoned ship."
+      即塔萨法隆加时的舰长是 Kitts，**不是中途岛时的 Chandler**。
+      我在写单舰文件时曾标注「塔萨法隆加时是否仍为 Chandler，来源未给」——
+      现在有了答案：不是，已换人。**任务书没有提到这一点，属本轮自行核实。**
+
+  - field: service.unit
+    value: 第 16 特混舰队第 16.2 特混大队（TG 16.2），护卫企业号（CV-6）
+    src: [navweaps-midway-oob, enterprise-war-diary-midway]
+    valid: { from: 1942-05-28, to: 1942-06-13 }
+    confidence: B
+    note: >-
+      **这是本任务书要核实的第一件事，结论：成立。**
+      NavWeaps 中途岛序列原句（TG 16.2 条下）：
+      "USS Northampton (CA-26) ... Notes: Escorting Enterprise."
+      HyperWar 的美军序列只列舰名，不带"护卫谁"的注。
+      **一手战报的印证更硬**：企业号 1942 年 6 月战报原文
+      "Task Group 16.2, Rear Admiral T.O. Kinkaid in MINNEAPOLIS,
+      NORTHAMPTON, PENSACOLA, ATLANTA, NEW ORLEANS, VINCENNES"；
+      同战报 06-06 条又把 TF 16 分成两组：
+      "The ENTERPRISE group consists of ENTERPRISE, NORTHAMPTON, VINCENNES,
+      PENSACOLA, PHELPS and AYLWIN"——本舰在企业号组内，与 NavWeaps 的
+      "Escorting Enterprise." 互为印证。
+      时间窗取 1942-05-28（随 TF 16 出港）到 1942-06-13（返珍珠港）。
+
+  - field: service.unit
+    value: 第 67 特混舰队（TF 67）巡洋舰-驱逐舰编队（塔萨法隆加）
+    src: [danfs-northampton, danfs-pensacola]
+    valid: { from: 1942-11-29, to: 1942-12-01 }
+    confidence: B
+    note: >-
+      DANFS 本舰条目没有给这支编队的番号，只写
+      "Northampton next operated with a cruiser-destroyer force"。
+      番号出自姊妹文档（彭萨科拉号 DANFS）：
+      "Pensacola returned to Espiritu Santo to join cruiser-destroyer Task Force 67
+      under Rear Admiral Carleton H. Wright. On 29 November, the task force sailed
+      to intercept a Japanese destroyer-transport force..."
+      两舰同属这支编队（同一场战斗、同一司令），故引用彭萨科拉条目的番号。
+      **这是一条跨文档推断：战斗序列上两舰确实同队，但北安普敦号自己的
+      DANFS 条目里没有"TF 67"这四个字符。** 置信度因此给 B 而非 A。
+
+  # ============================================================ 1942 年状态的武备差异
+  - field: armament.torpedo.tubes
+    value: 0
+    unit: count
+    src: [navypedia-northampton, navsource-northampton]
+    valid: { from: 1931-12-31, to: 1942-12-01 }
+    confidence: C
+    note: >-
+      **本条记的是 0，不是未获取。** 1931 年本级全部拆除鱼雷管：
+      navypedia 改装表 "1931, all: - 2 x 3 - 533 TT"。
+      NavSource 一张 1930 年代初照片的图注提供了旁证：
+      "USS Northampton (CA 26) underway during the early 1930s,
+      prior to the removal of her torpedo tubes."
+      故 1942 年中途岛时本舰鱼雷管为 0。
+      舰级文件里的同名字段记建成态 6 管、时间窗到 1931 年末，两者互补不矛盾。
+
+  # armament.aa_40mm.count 本条**不写 fact，也不写 0**。
+  # navypedia 的逐舰改装表里 Northampton 一行没有任何 40 mm 条目
+  # （同级 Chester / Louisville / Augusta 都有 "early 1943: + 4 x 4 - 40/56 Mk 1.2"），
+  # 但这只是「表中没有」——把表里没有当成「装 0 门」是推断，
+  # 违反红线「不许推算」。故此处留空，在 RESEARCH-NOTES.md §4 记为「未获取」。
+
+  - field: armament.aa_20mm.count
+    value: 14
+    unit: count
+    src: [navypedia-northampton]
+    valid: { from: 1942-01, to: 1942-12-01 }
+    confidence: C
+    note: >-
+      navypedia 改装表 "1942, Northampton, Louisville, Chicago, Augusta:
+      - 8 x 1 - 12.7/90; + 14 x 1 - 20/70 Mk 4, Mk 3, Mk 4 radars"。
+      **必须标注的不确定性**：来源只给到「1942 年」这个粒度，
+      **无法确认这 14 门 20 mm 是否在 1942-06 中途岛之前装好**。
+      因此本条不能用来回答「中途岛时本舰有几门 20 mm」。
+      本站在这里选择登记「1942 年内达到 14 门」，并把不确定性写进 note，
+      而不是猜一个中途岛当时的数字。
+
+  - field: armament.mount.summary
+    value: >-
+      1942 年（中途岛时期）：3 × 三联 8 in/55 Mk 9 主炮 + 8 × 单装 5 in/25
+      + 4 × 四联 1.1 in/75 + 14 × 单装 20 mm（装舰月份不明）+ CXAM 雷达。
+      无鱼雷管。
+    src: [navypedia-northampton]
+    valid: { from: 1942-01, to: 1942-12-01 }
+    confidence: C
+    note: >-
+      依据是 navypedia 改装表的累加：1938-39 副炮到 8 门；
+      "late 1941, Northampton: - 4 x 1 - 76/50; + 4 x 4 - 28/75 Mk 1"（换 1.1 in）；
+      "1942 ... + 14 x 1 - 20/70"。
+      雷达：navypedia "1940, Northampton, Chester, Chicago: + CXAM radar"。
+      **累加过程是本站执行，来源只给相对增减**，故置信度 C。
+
+  # ============================================================ 战历节点（只写与舰级文件无关的本舰事件）
+  - field: service.survivors
+    value: 773
+    unit: persons
+    src: [oni-tassafaronga]
+    valid: { from: 1942-12-01 }
+    confidence: A
+    note: >-
+      **本条是补到的硬数据，来自一手战斗叙事（ONI Combat Narrative）。**
+      原句："An hour later, the Fletcher and Drayton had completed their search for
+      survivors, rescuing all **57 officers and 716 men**."
+      57 + 716 = **773**（加法是本站做的，来源把两个数分开写）。
+      同文的分舰明细可交叉核对："the Fletcher picked up 42 officers and over 600
+      men from the Northampton ... the Drayton, who took aboard 15 officers and
+      113 men"——42+15 = 57 名军官，600+113 = 713 至 716 名士兵，与合计数吻合。
+      **这一条推翻了 RESEARCH-NOTES 早期版本里「生还数未获取」的标注。**
+
+  - field: service.fate_category
+    value: 战斗中雷沉没
+    src: [danfs-northampton, navsource-northampton]
+    valid: { from: 1942-12-01 }
+    confidence: B
+    note: >-
+      DANFS 原句："Close to the end of the engagement, Northampton was struck by
+      two torpedoes, which tore a huge hole in her port side, ripping away decks
+      and bulkheads. Flaming diesel oil sprayed over the ship, she took on water
+      rapidly and began to list. Three hours later, as she began to sink stern
+      first, she had to be abandoned. So orderly and controlled was the process
+      that loss of life was surprisingly light, and the survivors were all picked
+      up within an hour by destroyers."
+      **DANFS 只给定性描述，不给数字**；生还数（773）由 ONI 战斗叙事补到，
+      见上一条。**阵亡数仍然缺**，原因见 RESEARCH-NOTES §11.1。
+      ONI 的作战细节（可作叙事素材）：
+      "One torpedo hit frame 108 at the waterline, the other struck frame 98,
+      10 feet below. ... The explosion blew out the ship's port side between
+      frames 105 and 113, leaving eight feet of skin plate protruding over the
+      side. The main and second decks were torn away from frame 105 to frame 107,
+      then aft to frame 112, and outboard along frame 117."
+      以及倾覆过程："At first the Northampton listed to port 10°, then ...
+      the angle increased to 20° ... At 0240, when the list reached 35°, Capt.
+      Kitts and the salvage party abandoned ship. On the morning of 1 December,
+      just after 0300, the Northampton turned on her beam ends, then rolled over
+      and sank stern first."
+
+  # service.fate_authority 本条不写。
+  # 「结局判定机构」（如海军损失委员会）本轮未在任何来源中找到记载。
+  # DANFS、navypedia、NavSource、ONI 战斗叙事四处都只叙述沉没过程，不提判定机构。
+  # 按红线不推测，整条留空。

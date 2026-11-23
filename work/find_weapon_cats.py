@@ -1,83 +1,68 @@
-# 查 10 型新武器的 Commons 分类。
-#
-# 武器图的分类规律与舰不同：多数是「型号名」或「口径 + 型号」。
-# 先批量试点，能拿到就抓，拿不到就记「无图」——
-# 用户本轮说了「尽力而为，不强求多图」，武器图尤其如此。
+# 用 Commons 搜索找到正确的分类名（上一次是猜的，多数不存在）
 import json
-import time
+import ssl
 import urllib.parse
 import urllib.request
 
-UA = 'DockyardArchive/1.0 (historical research; github.com/Mizuki-77/dockyard)'
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+HDR = {'User-Agent': 'DockyardArchive/1.0 (research)'}
 API = 'https://commons.wikimedia.org/w/api.php'
 
-CANDIDATES = {
-    '8in-50-mk8': ['BL 8 inch Mk VIII naval gun', '8 inch 50 calibre Mk VIII',
-                   'BL 8-inch naval gun'],
-    '6in-50-mk23': ['BL 6 inch Mk XXIII naval gun', 'QF 6 inch Mk XXIII',
-                    'BL 6-inch gun Mk XXIII'],
-    '45in-45-mk1': ['QF 4.5 inch Mk I naval gun', 'QF 4.5-inch Mk I',
-                    '4.5 inch naval gun'],
-    '47in-45-mk12': ['QF 4.7 inch Mk XII', 'QF 4.7-inch gun',
-                     '4.7 inch QF Mark XII'],
-    '4in-45-mk16': ['QF 4 inch Mk XVI naval gun', 'QF 4-inch Mk XVI',
-                    '4 inch 45 calibre gun'],
-    'vickers-50': ['Vickers .50 machine gun', 'Vickers 0.5 inch',
-                   'Vickers .50 calibre'],
-    '3pdr-hotchkiss': ['QF 3 pounder Hotchkiss', '3 pounder Hotchkiss',
-                       'Hotchkiss 3-pdr'],
-    'skua': ['Blackburn Skua', 'Blackburn B-24 Skua'],
-    'roc': ['Blackburn Roc', 'Blackburn B-25 Roc'],
-    'albacore': ['Fairey Albacore', 'Fairey TBR Albacore'],
+QUERIES = {
+    '15cm-50-t41': '15.5 cm gun Japanese',
+    '8cm-40-3ns': '8 cm 40 Type 3 gun Japanese',
+    '5in25-mk10': '5 inch 25 caliber gun',
+    '8in-55-mk9': '8 inch 55 caliber gun',
+    '8in-55-mk15': '8 inch 55 Mark 15',
+    '21in-mk15': 'Mark 15 torpedo US Navy',
+    'a5m4': 'A5M Claude fighter',
+    'b4y1': 'B4Y Jean',
+    '20cm-3ns-no2': '20 cm 50 Japanese gun',
+    '45in-45-mk1': '4.5 inch naval gun',
+    '47in-45-mk12': '4.7 inch Mark XII',
 }
 
 
-def api(params, retries=5):
-    params = dict(params)
-    params['format'] = 'json'
-    url = API + '?' + urllib.parse.urlencode(params)
-    for a in range(retries):
+def search_categories(term, limit=6):
+    """在分类命名空间（14）里搜"""
+    q = urllib.parse.urlencode({
+        'action': 'query', 'list': 'search', 'srsearch': term,
+        'srnamespace': '14', 'srlimit': str(limit), 'format': 'json',
+    })
+    req = urllib.request.Request(API + '?' + q, headers=HDR)
+    with urllib.request.urlopen(req, timeout=30, context=ctx) as f:
+        j = json.load(f)
+    return [x['title'] for x in (j.get('query', {}).get('search') or [])]
+
+
+def cat_count(cat):
+    q = urllib.parse.urlencode({
+        'action': 'query', 'list': 'categorymembers', 'cmtitle': cat,
+        'cmtype': 'file', 'cmlimit': '1', 'format': 'json',
+    })
+    req = urllib.request.Request(API + '?' + q, headers=HDR)
+    with urllib.request.urlopen(req, timeout=30, context=ctx) as f:
+        j = json.load(f)
+    members = j.get('query', {}).get('categorymembers') or []
+    return len(members) > 0
+
+
+for wid, term in QUERIES.items():
+    print(f'\n=== {wid}  (搜: {term})')
+    try:
+        cats = search_categories(term)
+    except Exception as e:
+        print('   搜索失败:', type(e).__name__, str(e)[:60])
+        continue
+    if not cats:
+        print('   无分类命中')
+        continue
+    for c in cats:
         try:
-            req = urllib.request.Request(url, headers={'User-Agent': UA})
-            with urllib.request.urlopen(req, timeout=40) as r:
-                return json.loads(r.read().decode('utf-8'))
-        except urllib.error.HTTPError as e:
-            if e.code == 429:
-                time.sleep(20 + a * 15)
-                continue
-            return {'_err': str(e)}
+            has = cat_count(c)
         except Exception:
-            if a == retries - 1:
-                return {}
-            time.sleep(8)
-    return {}
-
-
-def count(cat):
-    d = api({'action': 'query', 'list': 'categorymembers',
-             'cmtitle': 'Category:' + cat, 'cmtype': 'file', 'cmlimit': '500'})
-    if '_err' in d:
-        return None
-    return len(d.get('query', {}).get('categorymembers', []))
-
-
-out = {}
-for wid, cands in CANDIDATES.items():
-    print(f'=== {wid} ===')
-    best = None
-    for c in cands:
-        n = count(c)
-        print(f'   {n if n is not None else "?":>4}  {c}')
-        if n and (best is None or n > best[1]):
-            best = (c, n)
-        time.sleep(1.2)
-    out[wid] = best[0] if best else None
-    print()
-
-print('=== 结论 ===')
-for wid, cat in out.items():
-    print(f'  {wid:<16} {cat or "（无可用分类）"}')
-
-json.dump(out, open('work/weapcat_results.json', 'w', encoding='utf-8'),
-          ensure_ascii=False, indent=2)
-print('\n已写 work/weapcat_results.json')
+            has = False
+        mark = '有图' if has else ' 空 '
+        print(f'   [{mark}] {c}')

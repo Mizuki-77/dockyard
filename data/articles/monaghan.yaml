@@ -1,0 +1,325 @@
+# ============================================================================
+# 舰艇正文 —— 莫纳汉号（USS Monaghan, DD-354）
+#
+# 抓手：一艘从第一分钟打到最后一分钟的船 —— 但结局不是战沉。
+#
+# 【三条必须守住的东西】
+#   1) 她属于法拉格特级。这一级是美军第一代条约型 1,500 吨驱逐舰，
+#      双烟囱、高艏楼船型，正是用来取代四烟囱平甲板的 Wickes/Clemson 的。
+#      把四烟囱安在她头上，是把前一代的外形错移到下一代。
+#   2) 1944-12-18 沉没于台风，是海损，不是战沉。fate_type 记 wrecked。
+#   3) 珍珠港当天她真的撞沉了一艘日本微型潜艇，有两发深弹与一张
+#      Navy Cross 支撑。
+#
+# 【分歧怎么处理】
+#   沉没日期：DANFS / navypedia 记 12-18，NavSource 记 12-17，并列。
+# ============================================================================
+ship: monaghan
+updated: 2026-11-24
+
+intro:
+  lead:
+    zh: >-
+      莫纳汉号是法拉格特级的第七艘（DD-354，八舰中的倒数第二艘）。
+      1941 年 12 月 7 日上午，她以珍珠港
+      值班驱逐舰的身份强行出港，用舰艏撞、又补了两发深弹，把一艘已经
+      突入港内的日本微型潜艇按在水底。此后三年她打遍珊瑚海、中途岛、
+      科曼多尔群岛与马里亚纳，1944 年 12 月 18 日在菲律宾以东的台风里倾覆，
+      全舰 250 人中只有 6 人生还。她是被那场台风刮沉的三艘驱逐舰之一。
+    en: >-
+      Monaghan was the seventh of the eight Farragut-class ships (DD-354).
+      On the morning of
+      7 December 1941, as Pearl Harbor's ready-duty destroyer, she forced her
+      way out of the harbour, rammed a Japanese midget submarine that had
+      already broken in, and finished it with two depth charges. Over the next
+      three years she fought at the Coral Sea, Midway, the Komandorski Islands
+      and the Marianas, and on 18 December 1944 she capsized in a typhoon east
+      of the Philippines, with only six of her 250 men surviving. She was one of
+      three destroyers lost to that storm.
+
+  paragraphs:
+    - heading: 一代新船，两根烟囱
+      text:
+        zh: >-
+          法拉格特级是美军在两次大战之间造的第一批新驱逐舰。此前十几年，
+          轻兵力一直靠一战剩余的平甲板型撑着；到 1930 年前后，那些
+          Wickes 与 Clemson 已经过时。新舰 1931 年由 Bethlehem Steel
+          在 1930 年伦敦条约框架下完成设计，前后讨论了从 1,350 吨到
+          1,850 吨的一批方案，主炮一度打算用 127 毫米/25 倍径高炮，
+          等 127 毫米/38 倍径两用炮成熟后立即改回。
+
+          这一级在船型上是对平甲板型的正面否定：放弃通长甲板，
+          改用带艏楼的传统船型；全部武备移回中线；为了省吨位采用了
+          纵骨架式并大量使用焊接。外形上的直接结果是两根烟囱——
+          不是四根。建成武备为五门 127 毫米/38 倍径（前二、后二，
+          3 号炮位在第二烟囱之后）、四挺 12.7 毫米机枪、两座四联
+          533 毫米鱼雷发射管，编制 160 人。
+        en: >-
+          The Farragut class were the first new American destroyers built
+          between the wars. For more than a decade the light forces had rested
+          on the wartime flush-deckers, and by about 1930 the Wickes and
+          Clemson ships were obsolete. The new design was completed in 1931 by
+          Bethlehem Steel under the 1930 London Naval Treaty, after a series of
+          studies ranging from 1,350 to 1,850 tons standard; the main battery
+          was at one point to have been the 127 mm/25 calibre anti-aircraft gun,
+          and was changed back as soon as the 127 mm/38 calibre dual-purpose
+          gun was ready.
+
+          In hull form the class was a direct rejection of the flush-deckers: a
+          traditional forecastle instead of a continuous deck, all armament
+          returned to the centreline, longitudinal framing and heavy use of
+          welding to save weight. The visible consequence was two funnels, not
+          four. As completed the ships carried five 127 mm/38 calibre guns (two
+          forward, two aft, No. 3 abaft the second stack), four 12.7 mm machine
+          guns and two quadruple 533 mm torpedo mounts, with a complement of
+          160.
+      src: [destroyerhistory-farragut, navypedia-farragut, nhhc-danfs-monaghan]
+
+    - heading: 珍珠港的那个上午
+      text:
+        zh: >-
+          1941 年 12 月 7 日，本舰是珍珠港的值班驱逐舰，与同级的 Aylwin、
+          Dale、Farragut 并排系在福特岛以北的东湾。0751 她接到命令去支援
+          刚刚发现并击沉一艘微型潜艇的沃德号；0827 她解缆，从攻击进行中的
+          港内缓慢穿行。
+
+          0835，柯蒂斯号水上飞机供应舰升起了「发现敌潜艇」的信号旗；
+          两分钟后本舰的信号兵在右舷舰艏约 1,200 码处看见了潜望镜和
+          指挥塔。舰长 Burford 中校下令全速撞击。此后几分钟里，
+          这艘 1,300 多吨的驱逐舰向那艘不到 50 吨的潜艇压过去；舰艏只是
+          擦过，随即投下两发深弹，在浅水里炸开，把潜艇按在福特岛西北
+          水底。随后本舰余速未消，撞上一条起火的吊杆驳船，一分钟内扑灭
+          火焰脱身。Burford 因此获海军十字勋章。
+        en: >-
+          On 7 December 1941 Monaghan was Pearl Harbor's ready-duty destroyer,
+          berthed in a nest with her sisters Aylwin, Dale and Farragut in East
+          Loch north of Ford Island. At 0751 she was ordered to join Ward, which
+          had just sighted and sunk a midget submarine; at 0827 she cast off and
+          threaded her way through the harbour in the middle of the attack.
+
+          At 0835 Curtiss hoisted the flag hoist warning of an enemy submarine.
+          Monaghan's signalmen two minutes later spotted a periscope and conning
+          tower about 1,200 yards off the starboard bow. Her commanding officer,
+          Commander William P. Burford, ordered flank speed and a ramming. Over
+          the next few minutes the 1,300-ton destroyer bore down on a submarine
+          of under 50 tons; her bow only glanced off, so she dropped two depth
+          charges, which detonated in the shallow water and put the boat on the
+          bottom north-west of Ford Island. Still carrying way, she then struck
+          a burning derrick barge, put the fire out within a minute and got
+          clear. Burford received the Navy Cross for the action.
+      src: [nhhc-danfs-monaghan, destroyerhistory-monaghan]
+
+    - heading: 最后一夜：不是被击沉的
+      text:
+        zh: >-
+          1944 年 12 月 18 日，第 38 特混舰队在菲律宾以东加油，台风正面
+          压上来。中午前后风力最大，华盛顿号记录到气压低至 29.30 英寸、
+          阵风 93 节。本舰在巨浪里向 starboard（右舷）连续横倾至少六次，
+          最后一次没有回来，直接翻了过去；台风把舰桥大部撕掉。舰长
+          Garrett 少校接掌这艘船才 19 天。
+
+          她不是被敌人打沉的。同一天同一片海面上，Hull 与 Spence 也沉了，
+          三舰合计与舰队其他损失使这场台风夺去 790 人的性命。本舰
+          17 名军官与 227 名士兵随舰死亡，6 人被 Brown 号救起。1945 年
+          1 月 10 日她从海军舰艇名册上除名；2 月 20 日，随舰失踪者的
+          身份由「失踪」改为「阵亡」。
+        en: >-
+          On 18 December 1944 the Third Fleet was fuelling east of the
+          Philippines when a typhoon came straight through. The wind peaked
+          around midday; Washington logged a low of 29.30 inches and gusts to
+          93 knots. Monaghan rolled to starboard at least six times in the
+          mountainous seas; on the final roll she kept going and capsized, the
+          storm tearing most of her bridge away. Lieutenant Commander Floyd B.
+          Garrett had commanded her for only 19 days.
+
+          She was not sunk by the enemy. Hull and Spence went down in the same
+          water on the same day, and the typhoon cost the fleet 790 lives.
+          Monaghan lost 17 officers and 227 enlisted men with the ship; six men
+          were rescued by Brown. She was stricken from the Navy Register on
+          10 January 1945, and on 20 February 1945 the status of those lost with
+          her was changed from missing to dead.
+      src: [nhhc-danfs-monaghan, navypedia-farragut]
+
+history:
+  - id: build
+    title: { zh: 建造与战前服役, en: Building and pre-war service }
+    range: { from: 1933, to: 1941 }
+    events:
+      - date: 1933-11-21
+        text:
+          zh: 在波士顿海军船厂开工。
+          en: Laid down at the Boston Navy Yard.
+        src: [nhhc-danfs-monaghan, navypedia-farragut]
+      - date: 1935-01-09
+        text:
+          zh: 下水，由舰名者的侄女 Mary F. Monaghan 主持命名仪式。
+          en: >-
+            Launched, sponsored by Miss Mary F. Monaghan, niece of the ship's
+            namesake.
+        src: [nhhc-danfs-monaghan]
+      - date: 1935-04-19
+        text:
+          zh: >-
+            服役，Robert R. Thompson 中校任舰长；8 月 30 日完成试航
+            转入现役，编入北大西洋的第 20 驱逐舰中队第 61 分队。
+          en: >-
+            Commissioned under Commander Robert R. Thompson; completed trials
+            and entered operational service on 30 August, joining Destroyer
+            Division 61 of Destroyer Squadron 20 in the North Atlantic.
+        src: [nhhc-danfs-monaghan]
+
+  - id: war
+    title: { zh: 从珍珠港到阿留申（1941-1943）, en: From Pearl Harbor to the Aleutians, 1941-43 }
+    range: { from: 1941-12-07, to: 1943-08 }
+    events:
+      - date: 1941-12-07
+        text:
+          zh: >-
+            以值班驱逐舰身份参战：0751 受命支援沃德号，0827 解缆出港，
+            0837 在右舷舰艏约 1,200 码处发现日本微型潜艇，全速撞击，
+            舰艏擦过后再投两发深弹将其炸沉于福特岛西北浅水；随后撞上
+            一条起火驳船，一分钟内灭火脱身。舰长 Burford 获海军十字勋章。
+          en: >-
+            Fought as the ready-duty destroyer: ordered to join Ward at 0751,
+            cast off at 0827, and at 0837 sighted a Japanese midget submarine
+            about 1,200 yards off the starboard bow. She rammed at flank speed, glanced off, and sank the boat with two depth charges
+            in the shallow water north-west of Ford Island, then struck a
+            burning barge and put the fire out within a minute. Commander
+            Burford received the Navy Cross.
+        src: [nhhc-danfs-monaghan, destroyerhistory-monaghan]
+      - date: 1942-05-08
+        text:
+          zh: >-
+            珊瑚海海战当天，受命离开编队去拍发重要电报，以保持主力的
+            无线电静默；随后奉命搜寻被击沉的 Sims 号与被重创的 Neosho 号
+            的幸存者，因最后位置报错，未找到任何人。
+          en: >-
+            On the day of the Coral Sea action she was ordered away from the
+            formation to transmit important messages so that the main body could
+            keep radio silence; she was then sent to search for survivors of
+            Sims and the damaged Neosho, but their final positions had been
+            reported in error and she found none.
+        src: [nhhc-danfs-monaghan]
+      - date: 1942-06-05
+        text:
+          zh: >-
+            6 月 3 日与 4 日屏护企业号。5 日上午受命去搜救被击落的
+            PBY 机组，未能找到救生筏（该筏次日由另一架 PBY 救起）；
+            当日 1830 抵达约克城号舷侧，加入抢救与屏护。
+          en: >-
+            Screened Enterprise on 3 and 4 June. On the morning of the 5th she
+            was sent to look for the crew of a shot-down PBY and failed to find
+            the raft, whose survivors were picked up by another Catalina the
+            next day; at 1830 she reached Yorktown's side and joined the salvage
+            and screen.
+        src: [nhhc-danfs-monaghan]
+      - date: 1942-06-06
+        text:
+          zh: >-
+            日本潜艇 I-168 突入屏护圈，击中约克城号与哈曼号。本舰舰上
+            人员看见了鱼雷航迹。随后本舰与 Gwin、Hughes 一起追击 I-168
+            一个多小时，被其摆脱；2045 了望在水平线上发现该艇，烟大但仍
+            在高速航行，Hughes 与本舰追上去，该艇下潜后失去声呐接触。
+            约克城号又浮了 16 小时，7 日清晨翻沉。
+          en: >-
+            The Japanese submarine I-168 penetrated the screen and hit Yorktown
+            and Hammann; men on board Monaghan saw the torpedo wakes. Monaghan,
+            Gwin and Hughes hunted I-168 for more than an hour before losing
+            her; at 2045 lookouts sighted the boat on the horizon, smoking
+            heavily but making speed, and though Hughes and Monaghan gave chase
+            she dived and sonar contact was lost. Yorktown stayed afloat another
+            16 hours and capsized at dawn on the 7th.
+        src: [nhhc-danfs-monaghan, combinedfleet-i168]
+      - date: 1943-03-27
+        text:
+          zh: >-
+            科曼多尔群岛海战。本舰在 McMorris 少将的编队里为盐湖城号
+            重巡提供屏护与烟幕；鱼雷攻击阶段随 Bailey、Coghlan 前出，
+            日方巡洋舰的齐射在三舰周围「泼得满是水柱」，本舰因处在最远、
+            部分被烟遮住而未受损。全天发射 235 发 5 英寸炮弹
+            （201 发榴弹、2 发染色弹、32 发高射炮弹）与 48 发 40 毫米弹。
+          en: >-
+            The Battle of the Komandorski Islands. Monaghan screened and made
+            smoke for the heavy cruiser Salt Lake City in Rear Admiral
+            McMorris's force; in the torpedo phase she went forward with Bailey
+            and Coghlan, and the Japanese cruisers' salvos left the three
+            destroyers "smothered with splashes". Monaghan, furthest out and
+            partly hidden by smoke, escaped damage, and fired 235 5-inch rounds
+            (201 common, 2 dye-loaded, 32 anti-aircraft) and 48 rounds of 40 mm.
+        src: [nhhc-danfs-monaghan]
+      - date: 1943-06-22
+        text:
+          zh: >-
+            6 月 20 日与 22 日两次在基斯卡岛外以 SG 雷达发现日本潜艇 I-7，
+            先后自 2,000 码与更近距离以雷达指挥射击。第一次交火中两发
+            5 英寸炮弹打穿指挥塔，I-7 于当日 19:45 在 Bukhti Point 搁浅；
+            22 日凌晨再次交火，该艇于 03:10 在 Twin Rocks 触礁，约 12 英里
+            外、基斯卡岛南南西方向迅速沉没。日方共 87 人死亡，43 人被
+            己方驳船救走。
+          en: >-
+            On 20 and 22 June she twice detected the Japanese submarine I-7 off
+            Kiska with SG radar and opened radar-directed fire, first from 2,000
+            yards. In the first exchange two 5-inch shells tore into the
+            submarine's conning tower and I-7 ran aground at Bukhti Point at
+            about 1945. In the second, early on the 22nd, the boat struck the
+            rocks at Twin Rocks at 0310 and foundered quickly about 12 miles
+            south-south-west of Kiska. The Japanese lost 87 dead; 43 survivors
+            were taken off by their own barges.
+        src: [nhhc-danfs-monaghan]
+
+  - id: typhoon
+    title: { zh: 一九四四年十二月：台风, en: December 1944 — the typhoon }
+    range: { from: 1944-12-17, to: 1945-02 }
+    events:
+      - date: 1944-12-17
+        text:
+          zh: >-
+            随第 38 特混舰队的加油群行动。当日海况迅速恶化，本舰在涌浪中
+            剧烈横摇，许多舰员无法站稳，夜间左舷两条救生筏被浪打走。
+          en: >-
+            Operating with the Third Fleet's fueling group. The sea worsened
+            rapidly that day; the ship rolled heavily, many men could not stay
+            on their feet, and during the night two life rafts were torn
+            off the port side.
+        src: [nhhc-danfs-monaghan]
+      - date: 1944-12-18
+        text:
+          zh: >-
+            台风在 1100 至 1400 之间达到最强。本舰向右舷连续横倾至少六次，
+            最后一次继续倾覆；台风把舰桥大部撕掉。舰员多从后部跳海或被浪
+            卷出。舰长 Garrett 少校与全舰 17 名军官、227 名士兵死亡 ——
+            共 244 人。DANFS 与 navypedia 记沉没日为 12 月 18 日，
+            NavSource 记 12 月 17 日，并列。
+          en: >-
+            The typhoon reached full fury between 1100 and 1400. Monaghan
+            rolled to starboard at least six times and on the final roll
+            capsized, the storm tearing most of the bridge away; most of the
+            crew jumped or were washed overboard from aft. Lieutenant Commander
+            Garrett and 17 officers and 227 enlisted men died — 244 in all.
+            DANFS and navypedia give 18 December as the date of loss, NavSource
+            gives 17 December.
+        src: [nhhc-danfs-monaghan, navypedia-farragut, navsource-monaghan]
+      - date: 1944-12-21
+        text:
+          zh: >-
+            一架搜索机发现了漂浮的救生筏并投下淡水标记，Brown 号随后救起
+            6 人：Carpenter、Darden、Fenn、Kramer、McCrane、Story，
+            圣诞前夜送抵乌利西。同一天 Brown 号还从另一条筏上救起
+            Hull 号的 13 人。
+          en: >-
+            A search plane spotted the raft and dropped water markers, and
+            Brown rescued six men — Carpenter, Darden, Fenn, Kramer, McCrane
+            and Story — delivering them to Ulithi on Christmas Eve. The same
+            day Brown took 13 of Hull's crew from another raft.
+        src: [nhhc-danfs-monaghan]
+      - date: 1945-01-10
+        text:
+          zh: >-
+            从海军舰艇名册除名，同日公布损失。1945 年 2 月 20 日，
+            随舰失踪者的身份由「失踪」改为「阵亡」。本舰在二战中获
+            12 枚战星。
+          en: >-
+            Stricken from the Navy Register and her loss announced the same
+            day; on 20 February 1945 the status of those lost with her was
+            changed from missing to dead. Monaghan received 12 battle stars.
+        src: [nhhc-danfs-monaghan]

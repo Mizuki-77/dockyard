@@ -1,0 +1,475 @@
+# ============================================================================
+# 来源分片 —— ijn-cl 组（旧日本海军轻巡：长良 / 川内）
+# ----------------------------------------------------------------------------
+# 只登记本组新采的来源。**已存在的直接复用，不重复登记**：
+#   navweaps-25mm-96      data/sources.yaml:2689（九六式 25 mm 本体）
+#   combinedfleet-kaigun  data/sources.yaml:602 （日本海军总索引）
+#   combinedfleet-guns    data/sources.yaml:566 （日方火炮索引）
+#
+# 【抓取方式说明】
+#   按任务书要求**未使用 web_fetch / research**（本机 SSRF 拦截）。
+#   全部用 Python urllib + 自定义 User-Agent 直连抓取，
+#   原始 HTML/PDF 与提取文本存 work/staging/ijn-cl/_raw/。
+#   实测可达：combinedfleet.com / navypedia.org / navweaps.com /
+#             kasado.net / japanese-warship.com / naval-encyclopedia.com /
+#             dougakan675.blog49.fc2.com / ja.wikipedia.org
+#   实测不可达（记录在案，未重试）：
+#     legacy.maritime.org（ONI 222-J 识别手册，403）
+#     hnsa.org 的 oni222j.pdf（404）
+#     fischer-tropsch.org 的 USNTMJ O-01-3 PDF 可下载但其正文是扫描图，
+#       无文本层（20 页提取 411 字符）→ 不可用作原句来源
+# ============================================================================
+
+sources:
+  # ---------------------------------------------------------------- 主尺度与设计（英）
+  - id: navypedia-nagara
+    title: NAGARA light cruisers (1922 - 1925) — Navypedia
+    url: https://www.navypedia.org/ships/japan/jap_cr_nagara.htm
+    type: database
+    tier: D
+    role: [data]
+    operator: navypedia.org
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      长良级 6 艘的建造表 + 技术数据行 + 逐次改装清单（含月份）。本组主尺度、
+      排水量、动力、防护部位厚度的英文主力来源。
+      **口径提示**：
+      ① 排水量只给「normal 5570 / full 7050」两个口径，**没有华盛顿条约的 standard 值**，
+         故 standard 的两条 fact 不出自本页；
+      ② 装甲数据行是单行压缩写法「belt: 63, shields: 20, deck: 29 (45 over magazines),
+         CT: 51 - 25」，**未指明 shields 的部位**；
+      ③ 速力写作 36 kts（设计），改装后正文说「maximal speed has decreased to 32kts」；
+      ④ 续航「6000(15)」与日文来源的「5,000 nm @ 14 kn」冲突，两说并列。
+      ⑤ 该页把「鬼怒主机为 Brown-Curtis」「阿武隈 1930 撞船后改 S 形舰首」等逐舰差异
+         写在级页里，引用时不可当成全级共性。
+
+  - id: navypedia-sendai
+    title: SENDAI light cruisers (1924 - 1925) — Navypedia
+    url: https://www.navypedia.org/ships/japan/jap_cr_sendai.htm
+    type: database
+    tier: D
+    role: [data]
+    operator: navypedia.org
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      川内级 3 艘 + 取消舰加古的建造表与技术数据。
+      **口径提示**：
+      ① 唯一给出「standard 5195 t」的英文来源（日文来源只给基準/常備）；
+      ② 长度写作「152.4 pp 158.5 wl 163.0 oa」，oa 163.0 与日文来源的 162.15 冲突；
+      ③ 吃水 4.91 m，与日文/日文系的 4.80 m 冲突；
+      ④ 明确记下本级与长良级的根本差别：「instead of two boilers with mixed firing
+         Sendai class cruisers had four boilers in No1 and No2 boiler rooms, that has
+         caused increase in number of funnels from three to four」——四烟囱的来源依据；
+      ⑤ 1941 年四连装鱼雷管换装只列 Naka、Jintsu，**川内不在其内**；
+      ⑥ 改建表「6/1943, Sendai」与 combinedfleet 的「5 May 1943」差一个月。
+
+  - id: combinedfleet-nagara-class
+    title: Nagara-class Light Cruiser — Nihon Kaigun (combinedfleet.com)
+    url: https://www.combinedfleet.com/nagara_c.htm
+    type: website
+    tier: D
+    role: [data]
+    operator: combinedfleet.com
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      极简参数卡（竣工年份、排水量、尺寸、速力、武备、乘员）。
+      **口径提示**：
+      ① 排水量只写「5,570 tons」，**未声明是 standard 还是 normal**，不可当标准排水量引用；
+      ② 尺寸写英制「534'9" x 48'5" x 16'0"」，换算后与日文来源的 162.15/14.17/4.80 一致；
+      ③ 乘员写「438」，与 navypedia/kasado/japanese-warship 的 450 **冲突**，
+         两说并列；
+      ④ 武备栏是「up to 36 x 25mm AA」这类战时上限值，不是竣工值，引用时必须配时间窗。
+
+  - id: combinedfleet-sendai-class
+    title: Sendai-class Light Cruiser — Nihon Kaigun (combinedfleet.com)
+    url: https://www.combinedfleet.com/ships/sendai
+    type: website
+    tier: D
+    role: [data]
+    operator: combinedfleet.com
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      川内级参数卡。**口径提示**：
+      ① 页内标题自相矛盾：主标题写「Sendai-class」，正文顶部又标「Naka class」，
+         且只给神通配图 —— 三级（Sendai/Naka）叫法在英文文献里通用，本站用川内型；
+      ② 排水量「7,100 tons」是 full load 口径（与 navypedia 7100 一致），
+         **不可当标准排水量**；
+      ③ 乘员 450，与 navypedia 一致，与 kasado 的 452 冲突。
+
+  # ---------------------------------------------------------------- 战历 TROM（英）
+  - id: combinedfleet-nagara
+    title: IJN NAGARA — Tabular Record of Movement (combinedfleet.com)
+    url: http://www.combinedfleet.com/nagara_t.htm
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: combinedfleet.com（Bob Hackett / Sander Kingsepp，Revision 16）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      长良逐日年表，本组战历与改装时间的英文主力来源。
+      **口径提示 / 抓取陷阱**：
+      ① 该页是**唯一**逐条给出长良历次改装月份与内容的英文来源
+         （1942-04 舞鶴、1942-12/1943-01 舞鶴、1943-08 舞鶴、1944-01/04 舞鶴、1944-07 横須賀）；
+      ② 触雷一条正文写「Australian PBY Catalina」布设，同一页脚注 [2] 又写
+         「Some sources credit the mine as being laid 4 June 1943 by USS SILVERSIDES」——
+         **同一页内两说**，引用时必须一起引；
+      ③ 1943-12-05 夸贾林空袭只写「damaged slightly by near misses」，
+         但同页引用的 FRUMEL 截获电文写「2 men killed and ? injured」，
+         而日文来源记 48 死 112 伤 —— 三方冲突，见 RESEARCH-NOTES 分歧节；
+      ④ 沉没段给坐标「32-09N, 129-53E」与时刻 1222/1240。
+
+  - id: combinedfleet-sendai
+    title: IJN SENDAI — Tabular Record of Movement (combinedfleet.com)
+    url: http://www.combinedfleet.com/sendai_t.htm
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: combinedfleet.com（Bob Hackett / Sander Kingsepp，Revision 8）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      川内逐日年表。**口径提示**：
+      ① 中途岛段写得很清楚：随山本主力部队出击，「The Main Body remains 600 miles
+         behind ... First Carrier Striking Force and does not engage American forces.」
+         —— 这是任务书「川内属主力部队」的原话依据；
+      ② 1943-06-25「destroyer NIIZUKI becomes flagship of DesRon 3」——
+         川内自该日起不再是三水战旗舰，容易漏；
+      ③ 1943-05-05 佐世保改装装的是「Type 21 radar」，navypedia 记为「一号二型」且月份写 6 月；
+      ④ 沉没段：0050 被四艘美军轻巡雷达射击命中并起火，0200 弃舰，0430 沉于
+         06-10S, 154-20E；阵亡「Captain Shoji and 184 crewmen」；救起「236 other crewmen」
+         由驱逐舰、脚注另记潜艇 RO-104 救起伊集院少将 + 75 人；
+      ⑤ 战沉时间与地点与 navypedia 一致，但 navypedia 另加「later she was torpedoed by
+         destroyers Charles Ausburn, Converse and Dyson」——combinedfleet 无此说。
+
+  # ---------------------------------------------------------------- 日文技术资料（方案与数值）
+  - id: japanese-warship-nagara
+    title: 長良【長良型軽巡洋艦 一番艦】 — 大日本帝国軍 主要兵器
+    url: https://japanese-warship.com/light/nagara/
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: japanese-warship.com
+    lang: ja
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      按「竣工时 / 1934 / 1944-08」三个时点分列的装备表，是本组把武装做成时间窗的依据。
+      **口径提示**：
+      ① 只给「常備排水量 5,570 t」，不给基準（standard）——标准的 5,170 只能出日文维基
+         （tier E，未采用）；
+      ② 1944-08 表明确写「25mm三連装機銃 2基6挺 / 連装 6基12挺 / 単装 14基14挺」
+         = 32 挺，与 combinedfleet 的「32 barrels (2x3, 6x2, 14x1)」完全吻合；
+      ③ 该站自称部分数据引自「一部資料」，对长良的鱼雷发射管换装写
+         「魚雷発射管の換装はなかったものの、改造で酸素魚雷が発射できるようになっていた
+         という説もあります」——**明确标为「说」，不是定论**；
+      ④ 速力给「計画36.0 / 1934年后 34.5」，后者与 navypedia 的 32 节冲突。
+
+  - id: japanese-warship-sendai
+    title: 川内【川内型軽巡洋艦 一番艦】 — 大日本帝国軍 主要兵器
+    url: https://japanese-warship.com/light/sendai/
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: japanese-warship.com
+    lang: ja
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      川内的三时点装备表 + 战历叙述。
+      **口径提示**：
+      ① **唯一给出川内公试实测值的来源**：「計画90,000馬力 / 公試97,657馬力」
+         「計画35.25ノット / 公試36.189ノット」；
+      ② 但该站把这组数标为引自「『唯一跑过36节的5500T轻巡——川内级轻巡洋舰设计史
+         （技术篇）』燃烧的岛群、鳳凰網」——**中文网络文章，不是一手档案**，
+         本站按单源 C 级收录并在此标明层级偏低；
+      ③ 锅炉写「混焼4基、重油8基」，与 kasado 的「重油専焼12基」冲突（总数同为 12，
+         混合烧炉是否计入的编目差异）；
+      ④ 1943-05 佐世保改装段与 combinedfleet 同日同内容（撤 5 番炮、加 2 座三连装 25mm、
+         装 21 号电探），可用于互证；
+      ⑤ 战历叙述里明确写「川内型で唯一撃沈認定がされている戦果」= 埃达乌海战的 HMS Thanet。
+
+  - id: kasado-nagara
+    title: 長良型軽巡洋艦 Nagara class Light Cruiser — kasado.net
+    url: https://www.kasado.net/Cruisers/Japan/Nagara_1922.html
+    type: database
+    tier: D
+    role: [data]
+    operator: kasado.net
+    lang: ja
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      按部位逐行列出装甲（水線部舷側/上部舷側/前後主隔壁/水雷隔壁/最上甲板/上甲板/
+      中甲板/下甲板/主砲楯/主砲塔バーベット/司令塔），是本组做 qual 化 armor fact 的主力来源。
+      **口径提示**：
+      ① 舷側装甲写 38 mm（高張力鋼），navypedia 写 belt 63/64 —— **两说冲突**，
+         本站两条都写、不裁决；
+      ② 基准排水量 5,170 t、常備 5,502 t，与日文维基的 5,170 / 5,502.81 一致；
+      ③ 高角炮数写「三年式 40口径7.6cm単装高角砲:4基」，与 navypedia/日文维基的 2 门冲突；
+      ④ 计划搭载机写「一〇年式艦上戦闘機:1機」，是计划值不是实载；
+      ⑤ **该站只在其「五十鈴 1945年頃」栏里出现「次発装填装置付き」**
+         （「九二式 61.0cm四連装発射管 (次発装填装置付き):2基」），
+         竣工时栏与长良 1944 栏都没有这个字样 —— 是「长良未装/未记载再装填装置」的
+         关键旁证，但它只是**没写**，不是明写「没有」。
+
+  - id: kasado-sendai
+    title: 川内型軽巡洋艦 Sendai class Light Cruiser — kasado.net
+    url: https://www.kasado.net/Cruisers/Japan/Sendai_1924.html
+    type: database
+    tier: D
+    role: [data]
+    operator: kasado.net
+    lang: ja
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      川内/那珂 与 神通 分两栏列数据（主机型号不同处即由此看出）。
+      **口径提示**：
+      ① 全長 162.46 m，与 japanese-warship 的 162.15 / navypedia 的 163.0 三方并存；
+      ② 吃水 4.80 m，navypedia 记 4.91 m；
+      ③ 基准排水量栏写「N/A」，常備 5,595 t —— **本级的标准排水量本页未给**；
+      ④ 定員 452 名，与 navypedia/combinedfleet 的 450 冲突；
+      ⑤ 鱼雷栏「八年式 61.0cm連装魚雷発射管:4基 ↑八年式 61.0cm魚雷:16本」。
+
+  # ---------------------------------------------------------------- 武器
+  - id: navweaps-14cm-50-3ns
+    title: Japan 14 cm/50 (5.5") 3rd Year Type — NavWeaps
+    url: https://www.navweaps.com/Weapons/WNJAP_55-50_3ns.php
+    type: website
+    tier: C
+    role: [data]
+    operator: navweaps.com
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      长良级／川内级主炮的本体数据页（tier C：NavWeaps 自述其数据源为 Campbell
+      「Naval Weapons of World War Two」、Lacroix & Wells「Japanese Cruisers of the
+      Pacific War」与 USNTMJ O-19/O-47(N1)/O-54(N) 报告）。
+      **对本组最关键的两行**：
+      ① 「Single Pedestal Mounts: ... Nagara (7), Naka (7) ...」
+         —— 明确长良与中（川内级同型布置）各 7 座**单装基座炮架**；
+      ② 「Elevation: ... Kuma and Nagara: -7 / +25 degrees ; Sendai and Yubari:
+         -7 / +30 degrees」—— **两级的炮座仰角上限不同**，这是本组把 mount 分开建的原因。
+      其余可用原话：炮重 5.5–5.6 t、炮全长 7.235 m、膛线长 7.000 m、药室 23 dm³、
+      射速 6–10 发/分、弹重 38.0 kg、初速 850–855 mps、身管寿命 500–600 发、
+      单装炮座约 20 t、旋回 ±150°、俯仰/旋回均 8°/s 人力。
+      **本页不给**单一「最大射程 @ 仰角」值，只给分仰角射程表 —— 故本组未写 weapon.range.max。
+
+  # ---------------------------------------------------------------- 鱼雷（再装填装置的取证）
+  - id: dougakan-cl4
+    title: 日本海軍史 軽巡洋艦４（軽巡の発射管と魚雷）— 図鑑置場
+    url: http://dougakan675.blog49.fc2.com/blog-entry-90.html
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: dougakan675.blog49.fc2.com
+    lang: ja
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      日文长篇技术随笔，逐条讲 5500 吨型轻巡的鱼雷发射管沿革。本组用它取证
+      「长良型/川内型各带多少条鱼雷、发射管怎么布置」。
+      **可用的关键原话**：
+      ① 「八年式六一センチ魚雷搭載数は両舷各二斉射分の一六本であった」
+         —— 长良型带 16 条鱼雷 = 两舷各两个齐射份 = 8 门发射管各 1 条备份；
+      ② 「長良型の八年式連装水上発射管装備位置は…艦橋後部の船首楼甲板下の上甲板両舷に各一基、
+         第3煙突後方の上甲板両舷に各一基の合計四基八門」—— 四基八门的具体位置；
+      ③ 「発射管は…楯を有さず、管体むき出しのままであったが、魚雷を装填すると
+         全備重量は一三トンを越えるものとなり、旋回は…五馬力の電動機による機力旋回であった。
+         三六〇度旋回時間は約一分」—— 单座全备 13 t 余、5 hp 电机驱动、360° 约 1 分钟；
+      ④ 川内型条目「魚雷発射管＝八年式六一センチ連装発射管四基 / 魚雷＝八年式六一センチ魚雷一六本」。
+      **重要局限**：全文**没有出现「次発装填装置」这个词**。
+      它只说「16 条鱼雷」和「每舷两个齐射份」，即**推论上存在 8 条备份雷**，
+      但**没有任何一句说这些备份雷是靠机械再装填装置上膛的**。
+      本站因此不写「装几组再装填装置」，见 RESEARCH-NOTES 的「卡住的地方」。
+
+  - id: nsl-torpedoes-2
+    title: Imperial Japanese Navy Torpedoes, Part II — Naval Submarine League Archive
+    url: https://archive.navalsubleague.org/2002/imperial-japanese-navy-torpedoes-part-ii
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: Naval Submarine League（archive.navalsubleague.org）
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      英文的日本鱼雷发展综述，用来做「本级为什么换 61 cm」的英文原句依据。
+      **可用原话**：
+      ① 「These huge weapons were mounted on cruisers beginning with the Nagara class,
+         laid down in 1920-21, and on destroyers beginning with the Mutsuki class」
+         —— 长良级是日本巡洋舰用 61 cm 鱼雷的起点；
+      ② 「During WWII the torpedo armament was twelve or sixteen 24 inch tubes and usually
+         twenty-four Type 93 torpedoes including reloads.」—— 这句讲的是**重巡**（A 类），
+         不是轻巡，引用时**必须限定范围，不可拿来套长良/川内**；
+      ③ 「Fifteen of the light cruisers that were commissioned in the Japanese Navy after
+         WWI were built with 24 inch tubes. ... All of these cruisers probably were capable
+         of firing Type 93 torpedoes, but some may not have been issued oxygen torpedoes
+         until some time after Pearl Harbor if at all.」
+         —— 注意原文用的是「probably」与「may not」，**是推测措辞，不可当定论引用**。
+
+  # ---------------------------------------------------------------- 反证/线索（未作 fact 来源）
+  - id: naval-ency-nagara
+    title: Nagara class cruisers (1920) — naval encyclopedia
+    url: https://naval-encyclopedia.com/ww2/japan/nagara-class-cruisers.php
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: naval-encyclopedia.com
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      长良级的英文综述，**本组只用它做旁证与英文原句补充，不当主数据源**。
+      **口径提示（该页内部自相矛盾处）**：
+      ① 排水量同段既写「5,570 long tons (5,659 t) normal (7,203 t deep load)」，
+         又写「range of 6,000 nmi at 14 knots」，后文又写「9,000 nautical miles at 10 knots」
+         —— 同一页两个续航值；
+      ② 「armoured belt 60 mm ... armored deck 30 mm」与 navypedia 的 63/29、
+         kasado 的 38/29 三方并存；
+      ③ 鱼雷段称本级换装的是「Type 93 Long Lance」，但同句又说是「same number」
+         （4 座连装）—— **与「1944 年才换四连装」的其他来源时序矛盾**，
+         本站不采用该页的换装时序。
+
+  - id: naval-ency-sendai
+    title: Sendai class Cruisers (1923) — naval encyclopedia
+    url: https://naval-encyclopedia.com/ww2/japan/sendai-class-cruisers.php
+    type: website
+    tier: D
+    role: [data, narrative]
+    operator: naval-encyclopedia.com
+    lang: en
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      川内级的英文综述。**本组只用它做旁证**。
+      **关于鱼雷再装填的最重要一句（本组唯一的英文「reload」原话）**：
+      「Before the war in 1942 their torpedo tubes were augmented, at last on Naka and
+      Jintsu which had their forward twin tubes banks eliminated and the hull plated over
+      for better seakeeping, but keeping their aft banks, now upgraded to quadruple ones
+      for the same "long lance". Eight tubes, but the same number or reloads
+      (so 16 torpedoes in all).」
+      —— 这句说明那珂/神通换四连装后仍是 8 门 + 8 条备份 = 16 条，
+      **但它说的是那珂与神通，不是川内**；且「reloads」在这里指备份鱼雷，
+      **不等于「次発装填装置」这种机械装填装置**。引用时必须区分。
+      另：该页对长良级鱼雷段亦有「Twenty-four inch torpedoes」表述，
+      但未给长良级的 reload 数。
+
+  - id: jawiki-nagara-class
+    title: 長良型軽巡洋艦 — 日本語版 Wikipedia
+    url: https://ja.wikipedia.org/wiki/%E9%95%B7%E8%89%AF%E5%9E%8B%E8%BB%BD%E5%B7%A1%E6%B4%8B%E8%89%A6
+    type: encyclopedia
+    tier: E
+    role: [lead]
+    operator: Wikimedia Foundation
+    lang: ja
+    access: direct
+    fetched: 2026-11-23
+    license: cc_by_sa
+    note: >-
+      **tier E，只作线索，不作任何 fact 的来源。**
+      用途：① 从这里找到日文一次文献的页码线索（「一般計画要領書(二等巡洋艦)」
+      「海軍造船技術概要(1987)」等）；② 交叉核对日文数值口径。
+      本组未引用其任何数值立 fact。
+      其「基準排水量 5,170 / 常備 5,502.81 / 公表 5,570 英トン」三口径并列的写法，
+      帮助本组判断 kasado 的 5,170 属「基準」而非「常備」。
+
+  - id: jawiki-sendai-class
+    title: 川内型軽巡洋艦 — 日本語版 Wikipedia
+    url: https://ja.wikipedia.org/wiki/%E5%B7%9D%E5%86%85%E5%9E%8B%E8%BB%BD%E5%B7%A1%E6%B4%8B%E8%89%A6
+    type: encyclopedia
+    tier: E
+    role: [lead]
+    operator: Wikimedia Foundation
+    lang: ja
+    access: direct
+    fetched: 2026-11-23
+    license: cc_by_sa
+    note: >-
+      **tier E，只作线索。** 其给出的「基準 5,195 / 常備 5,595 / 舷側 63.5mm
+      (25.4+38.1mm HT鋼) / 甲板 28.6mm HT鋼」帮助本组理解 kasado 38 mm 与
+      navypedia 64 mm 的差额可能来自「两层合计 vs 单层」，
+      但该解释只见于 tier E，**本站未据此裁决**，两说并列。
+
+  - id: jawiki-nagara
+    title: 長良 (軽巡洋艦) — 日本語版 Wikipedia
+    url: https://ja.wikipedia.org/wiki/%E9%95%B7%E8%89%AF_(%E8%BB%BD%E5%B7%A1%E6%B4%8B%E8%89%A6)
+    type: encyclopedia
+    tier: E
+    role: [lead]
+    operator: Wikimedia Foundation
+    lang: ja
+    access: direct
+    fetched: 2026-11-23
+    license: cc_by_sa
+    note: >-
+      **tier E，只作线索，不作任何 fact 的来源。**
+      其对本组最有价值的一段是「田村俊夫 vs 定説」的鱼雷换装之争：
+      「一方、艦艇研究家の田村俊夫によれば上記の定説に対して、換装した根拠がない事や…
+      疑問を持ち、長良の兵装変遷を調査した」，并列三条反证
+      （1944-07-01『艦船要目概要一覧表』写「連装発射管四基、九三式魚雷」；
+      あ号作戦後の現状調査表图仍是 well deck；Croaker 拍摄的沉没照片可见 well deck）。
+      **该争议指向的田村原文本组未取得**，故只并列观点、不裁决。
+      另：该页记长良沉没伤亡「中原艦長以下348名が戦死し、237名が救助された」，
+      与 combinedfleet 同数但口径不同（是否含舰长），正文来源用 combinedfleet。
+
+  - id: jawiki-sendai
+    title: 川内 (軽巡洋艦) — 日本語版 Wikipedia
+    url: https://ja.wikipedia.org/wiki/%E5%B7%9D%E5%86%85_(%E8%BB%BD%E5%B7%A1%E6%B4%8B%E8%89%A6)
+    type: encyclopedia
+    tier: E
+    role: [lead]
+    operator: Wikimedia Foundation
+    lang: ja
+    access: direct
+    fetched: 2026-11-23
+    license: cc_by_sa
+    note: >-
+      **tier E，只作线索，不作任何 fact 的来源。**
+      用途：核对川内中途岛的编成表述（「第三水雷戦隊（軽巡川内《旗艦》、第11駆逐隊…
+      は連合艦隊司令長官山本五十六大将直率の主力部隊に所属した」）与
+      第二次瓜岛海战段（「第四戦隊、第三水雷戦隊、長良隊が発射した酸素魚雷は
+      ほとんど自爆し」），与 combinedfleet 互证。
+      本组未用其任何数值立 fact。
+
+  - id: jamid-warships-index
+    title: 日本海軍の軽巡洋艦の一覧（kasado.net 站内索引，用作 URL 核对）
+    url: https://www.kasado.net/Cruisers/Japan/
+    type: website
+    tier: D
+    role: [lead]
+    operator: kasado.net
+    lang: ja
+    access: direct
+    fetched: 2026-11-23
+    license: all_rights_reserved
+    note: >-
+      仅用于确认 kasado 站内长良级/川内级页面的正确路径（Nagara_1922.html /
+      Sendai_1924.html）。未从本页取任何数值。

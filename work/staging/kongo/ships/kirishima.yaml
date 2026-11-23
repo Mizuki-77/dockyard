@@ -1,0 +1,631 @@
+# ============================================================================
+# 雾岛（きりしま / Kirishima）—— 金刚型四番舰，三菱长崎建造
+#
+# 2026-11-23 建。舰级共用数据见 classes/kongo.yaml。
+#
+# **本舰三个必须记住的识别点：**
+#   1. **三菱长崎造船所建造**（navypedia：「霧島 [Kirishima] 225 Mitsubishi,
+#      Nagasaki」），不是英国造。与榛名同为日本民间船厂建造的首批战列舰。
+#      但机器与材料国产化程度比榛名高：combinedfleet「Most of the parts used in
+#      her construction are manufactured in Japan.」
+#   2. 第二次改装完成 **1936-06-08**（比榛名晚约 20 个月），之后锅炉为 **8 座**
+#      （榛名/比叡为 11 座），涡轮为艦本式齿轮传动 4 台。
+#      且**有试航实测数据**：公试全力 29.80 kn / 136,940 轴马力，
+#      过荷全力 30.08 kn / 144,500 轴马力 —— 这是四舰里唯一有实测值的一艘。
+#   3. 与金刚同为**炮塔侧板平面**，榛名/雾岛炮塔侧面是**曲面**
+#      （「【榛名】と【霧島】の類似点としては、砲塔の側面に曲面があるところ。」）。
+#      → 这与任务书给的「榛名与雾岛都…」无关，但反过来是区分四舰的外形依据。
+#
+# 结局：1942-11-15 第三次所罗门海战（瓜岛第二次夜战）被 USS Washington 击沉，
+# 是太平洋战争中**第一场战列舰对战列舰交战**的战败方，也是日本海军唯一
+# 与敌战列舰正面交火的主力舰。212 人阵亡，1,098 人生还。
+# ============================================================================
+
+id: kirishima
+name:
+  zh: 雾岛
+  en: Kirishima
+  ja: 霧島（きりしま）
+class: kongo
+note: >-
+  金刚型四番舰。三菱长崎造船所建造，1915-04-19 竣工（与榛名同日）。
+  1942-11-15 在萨沃岛西北被 USS Washington 击沉。
+
+open_ended_note: |
+  本舰 1942-11-15 沉没，故所有 valid.to 为空且无终止事件的 fact，
+  其实际终点都是 1942-11-15；个别参数（如 1942-07 换装的机型）
+  终点更早，已在各条 note 内注明。
+  1942-12-20 从海军籍除籍（「KIRISHIMA is removed from the Navy List.」）。
+
+facts:
+  # ============================================================
+  # 身份
+  # ============================================================
+  - field: identity.name_original
+    value: 霧島（きりしま）
+    src: [japanese-warship-kirishima]
+    valid: { from: 1913-12-01 }
+    confidence: C
+
+  - field: identity.name_zh
+    value: 雾岛号
+    src: [japanese-warship-kirishima]
+    valid: { from: 1913-12-01 }
+    confidence: C
+
+  - field: identity.name_en
+    value: Kirishima
+    src: [combinedfleet-kirishima]
+    valid: { from: 1913-12-01 }
+    confidence: C
+
+  - field: identity.name_note
+    value: 以下水时命名（1913-12-01）。命名来源为霧島山。
+    src: [combinedfleet-kirishima]
+    valid: { from: 1913-12-01 }
+    confidence: C
+    note: >-
+      原文只给下水命名事实：「1 December 1913: Launched and named KIRISHIMA」。
+      「以霧島山（鹿儿岛/宫崎境火山）命名」这一句**在本轮抓到的来源里没有原文**，
+      按金刚型统一的山名命名规则可推知，但属推断，故只放在本条说明里、
+      不作为独立 fact 的 value 单独成条。
+
+  - field: identity.ship_type
+    value: battlecruiser
+    src: [combinedfleet-kirishima, navypedia-kongo]
+    valid: { from: 1915-04-19, to: 1936-06-08 }
+    confidence: B
+    note: 原文：「Nagasaki. A battlecruiser is laid down at Mitsubishi Zosen Kaisha's shipyard.」
+
+  - field: identity.ship_type
+    value: battleship
+    src: [combinedfleet-kirishima]
+    valid: { from: 1936-06-08 }
+    confidence: B
+    note: >-
+      原文（第二次改装开工）：「Sasebo. KIRISHIMA is reconstructed to transform her
+      into a fast battleship.」→ 改装完成日 1936-06-08 起为战列舰。
+
+  - field: identity.nation
+    value: japan
+    src: [combinedfleet-kirishima]
+    valid: { from: 1915-04-19 }
+    confidence: B
+
+  - field: identity.operator
+    value: 大日本帝国海軍（Imperial Japanese Navy）
+    src: [combinedfleet-kirishima]
+    valid: { from: 1915-04-19 }
+    confidence: B
+
+  - field: identity.era
+    value: ww2
+    src: [combinedfleet-kirishima]
+    valid: { from: 1941-12-08, to: 1942-11-15 }
+    confidence: C
+
+  - field: identity.building_program
+    value: 1911 年度海军紧急扩张案，四艘高速装甲巡洋舰之第四艘
+    src: [combinedfleet-haruna]
+    valid: { from: 1910 }
+    confidence: C
+    note: 见 classes/kongo.yaml 同字段条的原文。
+
+  # ============================================================
+  # 建造（逐舰）
+  # ============================================================
+  - field: construction.builder
+    value: 三菱合资会社长崎造船所（Mitsubishi Zosen Kaisha, Nagasaki）
+    src: [combinedfleet-kirishima, navypedia-kongo, japanese-warship-kirishima]
+    valid: { from: 1912-03-17 }
+    confidence: B
+    note: >-
+      navypedia「霧島 [Kirishima] 225 Mitsubishi, Nagasaki」（225 为船台号）；
+      日文来源「建 造 三菱長崎造船所」；
+      combinedfleet「Nagasaki. A battlecruiser is laid down at Mitsubishi Zosen
+      Kaisha's shipyard.」三源一致。
+
+  - field: construction.builder_location
+    value: 長崎県長崎（Nagasaki）
+    src: [combinedfleet-kirishima]
+    valid: { from: 1912-03-17 }
+    confidence: B
+
+  - field: construction.yard_number
+    value: '225'
+    src: [navypedia-kongo]
+    valid: { from: 1912-03-17 }
+    confidence: C
+    note: navypedia 表「No」列写 225。金刚同列写 414（Barrow 的船台号）。
+
+  - field: construction.laid_down
+    value: 1912-03-17
+    unit: date
+    src: [combinedfleet-kirishima, navypedia-kongo, japanese-warship-kirishima]
+    valid: { from: 1912-03-17 }
+    confidence: B
+    note: navypedia「17.3.1912」；日文「明治45年/1912年3月17日」；combinedfleet「17 March 1912」。三源一致。
+
+  - field: construction.launched
+    value: 1913-12-01
+    unit: date
+    src: [combinedfleet-kirishima, navypedia-kongo, japanese-warship-kirishima]
+    valid: { from: 1913-12-01 }
+    confidence: B
+    note: >-
+      navypedia「1.12.1913」；日文「大正2年/1913年12月1日」；
+      combinedfleet「1 December 1913: Launched and named KIRISHIMA」。三源一致。
+      比榛名（12-14）早 13 天下水。
+
+  - field: construction.commissioned
+    value: 1915-04-19
+    unit: date
+    src: [combinedfleet-kirishima, navypedia-kongo, japanese-warship-kirishima]
+    valid: { from: 1915-04-19 }
+    confidence: B
+    note: >-
+      三源一致（navypedia「19.4.1915」／日文「大正4年/1915年4月19日」／
+      combinedfleet「19 April 1915: Completed and commissioned in the IJN.»）。
+      **与榛名同日竣工**。日文来源解释了这个巧合的来由：榛名竣工前发现缺陷、
+      工期延后 6 天（川崎造机工作部长篠田恒太郎因此自刃），
+      结果两舰凑成了同一天「生まれ」：
+      「予定通りならば【霧島】が先に竣工することになるのですが両者は竣工日を合わせ、
+      ともに4月19日生まれとなったのです。」
+
+  - field: construction.fate_date
+    value: 1942-11-15
+    unit: date
+    src: [combinedfleet-kirishima, navypedia-kongo, japanese-warship-kirishima]
+    valid: { from: 1942-11-15 }
+    confidence: B
+    note: >-
+      navypedia「sunk 15.11.1942」；日文「昭和17年/1942年11月15日（第三次ソロモン海戦）」；
+      combinedfleet「0325: KIRISHIMA suddenly rolls over and capsizes to port 7.5
+      miles NW of Savo Island at 09-05S, 159-42E.」三源一致。
+
+  - field: construction.fate_type
+    value: sunk_by_enemy
+    src: [combinedfleet-kirishima]
+    valid: { from: 1942-11-15 }
+    confidence: B
+    note: >-
+      被 USS Washington (BB-56) 的 16 英寸主炮击沉。原文：「Undetected, WASHINGTON
+      approaches to within 5,800 yards and opens fire at KIRISHIMA around 0000.
+      First straddled, KIRISHIMA attempts to return fire, but her forward turrets
+      are quickly disabled…」
+      **不写 sunk_by_scuttling**：日方未自沉，是在丧失操舵后自行翻覆。
+
+  # ============================================================
+  # 排水量（逐舰终值）
+  # ============================================================
+  - field: displacement.standard
+    value: 31980
+    unit: t
+    src: [navypedia-kongo, japanese-warship-kirishima]
+    valid: { from: 1936-06-08 }
+    confidence: B
+    note: >-
+      navypedia 1934-1940 列「Kirishima: 31980」；日文来源「基準排水量 ③ 31,980t」。
+      两源互证。**与榛名 32,156 t 不同**——四舰终值各不相同，不得互推。
+
+  # ============================================================
+  # 动力（逐舰：8 座锅炉是本舰与榛名的关键差异之一）
+  # ============================================================
+  - field: propulsion.boiler.count
+    value: 10
+    unit: count
+    src: [navypedia-kongo, combinedfleet-kirishima, japanese-warship-kirishima]
+    valid: { from: 1930-04-16, to: 1936-06-08 }
+    confidence: B
+    note: >-
+      第一次改装后 10 座。三源一致：
+      navypedia「Kongo, Kirishima: 4 Parsons steam turbines, 10 Kampon boilers」；
+      combinedfleet「All of her 36 Yarrow boilers are removed and replaced with 10
+      newer type boilers.」；
+      日文来源给两个说法：「重油専焼10基[1-P88] or 重油専焼4基＋混焼6基[5]」——
+      座数 10 一致，但混烧/专烧构成两说并存，见下条。
+
+  - field: propulsion.boiler.type
+    value: 重油专烧 10 座（另一说：重油专烧 4 座＋混烧 6 座）
+    src: [japanese-warship-kirishima]
+    valid: { from: 1930-04-16, to: 1936-06-08 }
+    confidence: C
+    note: >-
+      **日文来源自己并列两种说法**：「ロ号艦本式ボイラー　重油専焼10基[1-P88]
+      or 重油専焼4基＋混焼6基[5]」，脚注分别是两本不同的书。
+      combinedfleet / navypedia 只说「10 Kampon boilers」，不分混烧专烧。
+      两说并列不裁决——这是本舰混烧→专烧过渡期唯一有分歧的一项。
+      对比榛名同状态：日文来源给「混焼10基、重油専焼6基」（16 座），无分歧。
+
+  - field: propulsion.boiler.count
+    value: 8
+    unit: count
+    src: [navypedia-kongo, combinedfleet-kirishima, japanese-warship-kirishima]
+    valid: { from: 1936-06-08 }
+    confidence: B
+    note: >-
+      第二次改装后 8 座。三源一致：
+      navypedia「Kongo, Kirishima: 4 sets Kampon geared steam turbines, 8 Kampon
+      boilers」；combinedfleet「All boilers are removed and replaced with 8 Kampon
+      boilers」；日文来源「ロ号艦本式ボイラー　8基」。
+      **本级关键差异**：榛名/比叡是 11 座，金刚/雾岛是 8 座。
+
+  - field: propulsion.boiler.type
+    value: ロ号艦本式（重油专烧）8 座
+    src: [navypedia-kongo, combinedfleet-kirishima]
+    valid: { from: 1936-06-08 }
+    confidence: B
+    note: >-
+      combinedfleet 只说「8 Kampon boilers」，未明写专烧；
+      navypedia 第二次改装后燃油栏只剩「oil 6330」可旁证全舰无煤。
+      日文来源该行只写「ロ号艦本式ボイラー　8基」，未标专烧。
+      → 「重油专烧」由燃油栏（无煤）推得，非原文直述，confidence 记 B 而非 A。
+
+  - field: propulsion.turbine.count
+    value: 2
+    unit: count
+    src: [japanese-warship-kirishima]
+    valid: { from: 1915-04-19, to: 1936-06-08 }
+    confidence: C
+    note: 日文来源「パーソンス式タービン　2基4軸」（2 台涡轮带 4 轴）。
+
+  - field: propulsion.turbine.type
+    value: Parsons 直结式蒸汽涡轮 2 台（4 轴）
+    src: [navypedia-kongo, japanese-warship-kirishima]
+    valid: { from: 1915-04-19, to: 1936-06-08 }
+    confidence: B
+    note: >-
+      navypedia「Kongo, Hiei, Kirishima: 4 Parsons steam turbines」；
+      日文来源「パーソンス式タービン　2基4軸」。
+      厂牌一致；台数表述不同（navypedia 写 4，日文写 2 台/4 轴），
+      本文件按日文记 2 台，措辞分歧保留于此不裁。
+      对比：榛名是 Brown-Curtis，另三舰是 Parsons。
+
+  - field: propulsion.turbine.type
+    value: 艦本式齿轮传动涡轮 4 台（4 轴）
+    src: [navypedia-kongo, combinedfleet-kirishima, japanese-warship-kirishima]
+    valid: { from: 1936-06-08 }
+    confidence: B
+    note: >-
+      navypedia「4 sets Kampon geared steam turbines」；combinedfleet「she receives
+      new geared turbines」；日文来源「艦本式ギアード・タービン　4基4軸」。
+
+  - field: propulsion.power.trial
+    value: 136940
+    unit: hp
+    src: [japanese-warship-kirishima]
+    valid: { from: 1936-06-08 }
+    confidence: B
+    note: >-
+      **四舰中唯一有试航实测马力的一艘。** 日文来源：「第二次改装後の公試運転では、
+      公試全力で29.80ノット・136,940軸馬力、過荷全力で30.08ノット・144,500軸馬力を
+      記録しています[3]。上記の136,000馬力[1-P88]は、これらの公試実測値とは
+      区別して記載しています。」
+      出处 [3] ＝『軍艦霧島第二回改装公試運転成績』（一手试航记录）。
+      本条记**公试全力**值 136,940 轴马力 @ 29.80 kn；
+      同一场试航的**过荷全力**工况为 144,500 轴马力 @ 30.08 kn，
+      是同一台机器在两种工况下的读数，**不是两个来源打架**，
+      故不另立一条 fact（另立会让校验器判成同源自相矛盾）。
+
+  # ============================================================
+  # 航速（逐舰，且本舰有试航实测）
+  # ============================================================
+  - field: propulsion.speed.trial
+    value: 29.8
+    unit: kn
+    src: [japanese-warship-kirishima]
+    valid: { from: 1936-06-08 }
+    confidence: B
+    note: >-
+      公试全力实测：29.80 kn @ 136,940 轴马力。
+      日文来源在「速力」栏把 ③ 直接标成「29.8ノット（公試全力）[3]」，
+      与 navypedia 的 30.5 kn（最大速度）**不是同一口径**，故分列两个字段。
+
+  - field: propulsion.speed.max
+    value: 30.08
+    unit: kn
+    src: [japanese-warship-kirishima]
+    valid: { from: 1936-06-08 }
+    confidence: B
+    note: >-
+      过荷全力实测 30.08 kn @ 144,500 轴马力。
+      与 navypedia 的 30.5 kn 差 0.42 kn：navypedia 记的是**全级统一的最大速度**，
+      日文来源记的是**本舰实测**。两说并列不裁决。
+
+  - field: propulsion.speed.max
+    value: 30.5
+    unit: kn
+    src: [navypedia-kongo]
+    valid: { from: 1936-06-08 }
+    confidence: C
+    note: >-
+      navypedia 第二次改装后全级同值「Max speed, kts 30.5」。
+      与日文来源的本舰实测 30.08 kn（过荷）／29.80 kn（公试）并列，不裁决。
+
+  - field: propulsion.speed.design
+    value: 26.3
+    unit: kn
+    src: [japanese-warship-kirishima]
+    valid: { from: 1930-04-16, to: 1936-06-08 }
+    confidence: C
+    note: >-
+      日文来源「速力 ② 26.3ノット[5]」。**与 navypedia 的 25.9 冲突**（差 0.4 kn），
+      且 navypedia 是全级统一值。两说并列不裁决。
+
+  # ============================================================
+  # 续航（逐舰，与 navypedia 全级值冲突）
+  # ============================================================
+  - field: propulsion.range.max
+    value: 10000
+    unit: nmi
+    src: [japanese-warship-kirishima]
+    valid: { from: 1930-04-16, to: 1936-06-08 }
+    confidence: C
+    note: >-
+      日文来源「航続距離 ② 14ノット：10,000海里」。
+      navypedia 同状态给「10000(18)」——里程相同但对应航速不同（14 vs 18 kn）。
+      两说并列不裁决。
+
+  - field: propulsion.range.max
+    value: 9850
+    unit: nmi
+    src: [japanese-warship-kirishima]
+    valid: { from: 1936-06-08 }
+    confidence: C
+    note: >-
+      日文来源「航続距離 ③ 18ノット：9,850海里」。
+      **与 navypedia 的 10,000 nmi 冲突**（差 150 nmi）。
+      同状态四舰日文值：榛名 10,000、雾岛 9,850、金刚 9,800，
+      而 navypedia 一律 10,000。两说并列不裁决。
+
+  # ============================================================
+  # 编制（逐舰）
+  # ============================================================
+  - field: service.complement.standard
+    value: 1221
+    unit: persons
+    src: [navypedia-kongo]
+    valid: { from: 1915-04-19, to: 1930-04-16 }
+    confidence: C
+    note: >-
+      navypedia「Kongo: 1201 / others: 1221」，雾岛属 others，取 1,221。
+
+  - field: service.complement.standard
+    value: 1118
+    unit: persons
+    src: [navypedia-kongo]
+    valid: { from: 1930-04-16, to: 1936-06-08 }
+    confidence: C
+    note: navypedia 第二列（1928-1931 modernization）「1118」，全级同值。
+
+  - field: service.complement.standard
+    value: 1437
+    unit: persons
+    src: [navypedia-kongo]
+    valid: { from: 1936-06-08, to: 1942-11-15 }
+    confidence: C
+    note: navypedia 第三列「1437」，全级同值。战时编制未获取。
+
+  # ============================================================
+  # 航空（逐舰）
+  # ============================================================
+  - field: aviation.aircraft.types
+    value: 九〇式二号二型（E4N2）水上侦察机 2–3 机
+    src: [combinedfleet-kirishima]
+    valid: { from: 1933, to: 1936-06-08 }
+    confidence: C
+    note: >-
+      原文：「Late 1933: Aircraft handling deck is extended to accommodate a
+      catapult. Two to three Nakajima E4N2 Type 90-2-2 floatplanes are embarked.」
+      **原文给的是「2 至 3 机」区间**，本字段只收单值，故此处记区间不入
+      aviation.aircraft.capacity；capacity 另条记 3（见下条注明口径）。
+
+  - field: aviation.aircraft.capacity
+    value: 3
+    unit: count
+    src: [navypedia-kongo]
+    valid: { from: 1936-06-08, to: 1942-11-15 }
+    confidence: C
+    note: navypedia 第二次改装后「1 catapult, 3 seaplanes (E7K2)」。
+
+  - field: aviation.catapult.type
+    value: 弹射器 1 座（型号未获取）
+    src: [combinedfleet-kirishima]
+    valid: { from: 1933, to: 1942-11-15 }
+    confidence: C
+    note: >-
+      combinedfleet 只写「Aircraft handling deck is extended to accommodate a
+      catapult」，**没给型号**；1939-11-15 的改装里又写「A new catapult is fitted
+      (probably earlier)」——作者自己标注不确定。故型号记「未获取」。
+      navypedia 只记「1 catapult」，同样无型号。**不使用姊妹舰的型号代入。**
+
+  - field: aviation.aircraft.types
+    value: 九五式水上侦察机（E8N1）2 机＋九四式水上侦察机（E7K1）1 机
+    src: [combinedfleet-kirishima]
+    valid: { from: 1936-06-08, to: 1942-07-14 }
+    confidence: C
+    note: >-
+      原文（第二次改装）：「She is reequipped with two Nakajima E8N1 Type 95 Dave
+      and one Kawanishi E7K1 Type 94 Alf floatplanes.」
+
+  - field: aviation.aircraft.types
+    value: 零式水上侦察机（E13A1）1 机＋零式观测机（F1M2）2 机
+    src: [combinedfleet-kirishima]
+    valid: { from: 1942-07-14, to: 1942-11-15 }
+    confidence: C
+    note: >-
+      原文：「14 July 1942: KIRISHIMA and HIEI (F) are reassigned… KIRISHIMA and
+      HIEI's aircraft complement is upgraded: they receive one Aichi E13A1 "Jake"
+      reconnaissance floatplane and two Mitsubishi Type F1M2 "Pete" floatplanes,
+      tail codes CIII-x (in red).」
+      ——**尾码 CIII-x（红色）**，这是模型与涂装的关键依据。
+
+  # ============================================================
+  # 雷达（逐舰）—— 本舰的雷达问题是一个明确的分歧点
+  # ============================================================
+  - field: sensors.radar.installed
+    value: 未获取（沉没时无雷达）
+    src: [combinedfleet-kirishima]
+    valid: { from: 1941-12-08, to: 1942-11-15 }
+    confidence: B
+    note: >-
+      **这是本舰最重要的一条「否定性」记载，combinedfleet 专门立注驳斥流行说法：**
+      「[3] Several sources suggest that KIRISHIMA was fitted with a "Type 21
+      Model 1" radar in early August. This is not correct: KIRISHIMA was scheduled
+      to receive a Type 21 radar, but departed without it.」
+      → 即：计划装二一号电探，但因故**未装即出航**，沉没时无雷达。
+      本条 value 写「未获取（沉没时无雷达）」是刻意的：既记录「没有雷达」，
+      也记录「本站未能取得其雷达装设记录（因为根本没有）」。
+      同时**驳回**「1942-08 初装二一号电探」这一流行说法。
+
+  # ============================================================
+  # 武备（逐舰变化节点）
+  # ============================================================
+  - field: armament.aa_25mm.count
+    value: 20
+    unit: count
+    src: [japanese-warship-kirishima, navypedia-kongo]
+    valid: { from: 1936-06-08, to: 1942-11-15 }
+    confidence: B
+    note: >-
+      第二次改装后 10 座双联 = 20 挺。日文来源「25mm連装機銃　10基20挺」；
+      navypedia「Kirishima, Hiei: … 10 x 2 - 25/60 96-shiki」。
+      **注意本舰 1942-11 沉没前没有大幅增装 25 mm 的记录**——
+      combinedfleet 只在 1942-05-11 记了一次位置调整：
+      「25-mm AA guns Nos. 7 and 8 are relocated from the upper deck to the vicinity
+      of the forward funnel to provide better arcs of fire.」（No.7/8 移位置，
+      不是加装）。即**沉没时仍是 20 挺**，与榛名 1945 年的 108 挺天差地别。
+
+  - field: armament.aa_20mm.count
+    value: 0
+    unit: count
+    src: [japanese-warship-kirishima]
+    valid: { from: 1915-04-19, to: 1942-11-15 }
+    confidence: B
+    note: >-
+      **日本海军没有 20 mm 高炮**。日文来源全篇兵装表只列 25 mm（与 13 mm），
+      无 20 mm。本条记「0」＝明确未装，不是未获取。
+
+  - field: armament.aa_40mm.count
+    value: 4
+    unit: count
+    src: [combinedfleet-kirishima, navypedia-kongo]
+    valid: { from: 1933, to: 1936-06-08 }
+    confidence: C
+    note: >-
+      **维克斯 40 mm**（非博福斯），2 座双联 4 挺。
+      combinedfleet：「November 1932 to spring 1933: During an AA upgrade at Sasebo
+      3-in guns are replaced by four twin 5-inch and four 40 mm Vickers guns.」
+      navypedia 第二次改装前列：「Haruna, Kirishima: … 4 x 2 - 13.2/76…
+      （第一次改装列另有 7 x 1 - 76/40 3-shiki）」
+      ——**navypedia 的第一次改装列给的是 13.2 mm 而非 40 mm，与 combinedfleet 冲突**，
+      两说并列不裁决，详见 RESEARCH-NOTES。
+
+  - field: armament.aa_40mm.count
+    value: 0
+    unit: count
+    src: [navypedia-kongo]
+    valid: { from: 1936-06-08, to: 1942-11-15 }
+    confidence: C
+    note: >-
+      navypedia 第二次改装后装备栏「Kirishima, Hiei: 4 x 2 - 356/45 41-shiki,
+      14 x 1 - 152/50 41-shiki, 4 x 2 - 127/40 89-shiki, 10 x 2 - 25/60 96-shiki」
+      ——已无 40 mm 项。与榛名同一次改装撤除 40 mm 维克斯炮的记载互通。
+
+  - field: armament.mount.summary
+    value: >-
+      沉没时（1942-11-15）：35.6 cm 连装 4 座 8 门／15.2 cm 单装炮／
+      12.7 cm 八九式连装高角 4 座 8 门／25 mm 九六式连装 10 座 20 挺／无鱼雷发射管／
+      无雷达。
+    src: [japanese-warship-kirishima, combinedfleet-kirishima, navypedia-kongo]
+    valid: { from: 1936-06-08, to: 1942-11-15 }
+    confidence: B
+    note: >-
+      **本舰的 12.7 cm 高角炮只有 4 座（8 门）**，与榛名 1944 年的 6 座不同——
+      因为榛名在 1943-03 与 1944-02 各加了 2 座，而雾岛 1942-11 就已战没，
+      从未获得这两次增装。这是两舰防空火力最容易混淆的一处。
+      combinedfleet 未直接给 12.7 cm 座数；本条依据 navypedia 的
+      「Kirishima, Hiei: … 4 x 2 - 127/40 89-shiki」与日文来源
+      「40口径12.7cm連装高角砲　4基8門」（第二次改装栏）。
+
+  - field: armament.torpedo.tubes
+    value: 0
+    unit: count
+    src: [navypedia-kongo, japanese-warship-kirishima]
+    valid: { from: 1936-06-08, to: 1942-11-15 }
+    confidence: B
+    note: 日文来源第二次改装栏鱼雷栏「撤去」；navypedia 第二次改装后无 TT 项。
+
+  # ============================================================
+  # 服役与编制（逐舰）
+  # ============================================================
+  - field: service.unit
+    value: 第三战队第二小队（BatDiv 3, Section 2）／支援部队，随南云第一机动部队
+    src: [combinedfleet-kirishima]
+    valid: { from: 1942-05-27, to: 1942-06-14 }
+    confidence: B
+    note: >-
+      中途岛时的确切编成。原文：「27 May 1942: Rear Admiral Abe Hiroaki's (former
+      CO of FUSO) Support Group, BatDiv 3, Section 2's KIRISHIMA and HARUNA depart
+      Hashirajima with Vice Admiral Nagumo's First Mobile Force, Carrier Strike
+      Force: CarDiv 1's AKAGI and KAGA, CarDiv 2's HIRYU and SORYU, CruDiv 8's
+      CHIKUMA and TONE, DesRon 10's light cruiser NAGARA and 11 destroyers.」
+      **两份 TROM 的出发日记不同**：榛名页记 05-29 出发、雾岛页记 05-27 出发。
+      两说并列不裁决，详见 RESEARCH-NOTES。
+
+  - field: service.unit
+    value: 第十一战队（BatDiv 11）／第三舰队
+    src: [combinedfleet-kirishima]
+    valid: { from: 1942-07-14, to: 1942-11-15 }
+    confidence: B
+    note: >-
+      原文：「14 July 1942: KIRISHIMA and HIEI (F) are reassigned from the First
+      Fleet to Vice Admiral Nagumo's Third Fleet in Rear Admiral Abe Hiroaki's
+      new BatDiv 11.」
+      ——**这是与榛名分道扬镳的节点**：此后雾岛与比叡同队（第十一战队），
+      榛名与金刚同队（第三战队）。瓜岛两次夜战，雾岛都在阿部弘毅麾下。
+
+  - field: service.commander
+    value: 岩渊三次 大佐（Captain Iwabuchi Sanji）
+    src: [combinedfleet-kirishima]
+    valid: { from: 1942-04-20, to: 1942-11-22 }
+    confidence: C
+    note: >-
+      沉没时的舰长。原文：「20 April 1942: Early naval aviator Captain (Vice
+      Admiral, posthumously) Iwabuchi Sanji (43)(former CO of KASHII) is appointed
+      CO.」沉没后「22 November 1942: Captain Iwabuchi is formally relieved of
+      command.」
+      注：此人是后来马尼拉 Intramuros 守备队司令、1945-02 战死的同一人
+      （combinedfleet 注 [6]）。
+
+  - field: service.casualties
+    value: 212
+    unit: persons
+    src: [combinedfleet-kirishima]
+    valid: { from: 1942-11-15 }
+    confidence: B
+    note: >-
+      原文：「0325: KIRISHIMA suddenly rolls over and capsizes to port … A total of 212 crewmen are lost.」
+
+  - field: service.survivors
+    value: 1098
+    unit: persons
+    src: [combinedfleet-kirishima]
+    valid: { from: 1942-11-15 }
+    confidence: B
+    note: >-
+      原文：「ASAGUMO, TERUZUKI and SAMIDARE rescue Captain Iwabuchi, his Executive
+      Officer Cdr (Rear Admiral, posthumously) Ono Koro … and 1,098 survivors.」
+      阵亡 212 + 生还 1,098 = 1,310，与编制 1,437 不符（差额 127）——
+      差额可能是当日不在舰人员，来源未解释，不推算。
+
+  - field: service.fate_category
+    value: 战没（战列舰对战列舰交战中沉没），1942-12-20 除籍
+    src: [combinedfleet-kirishima]
+    valid: { from: 1942-11-15 }
+    confidence: B
+    note: >-
+      原文：「20 December 1942: BatDiv 11 is deactivated and KIRISHIMA is removed
+      from the Navy List.」
+      另：残骸 1992-08 由 Robert D. Ballard 在 4,000 英尺深处发现，倒扣、舰艏炸断
+      （「resting upside down with its bow blown off」）。
