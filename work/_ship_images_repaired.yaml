@@ -1,0 +1,273 @@
+ships:
+  new-orleans:
+  - fn: new-orleans-01-USS-Hornet-CV-8-USS-New-Orleans-CA-32-USS-At.jpg
+    idx: 1
+    commons_title: File:-USS Hornet (CV-8), USS New Orleans (CA-32), USS Atlanta (CL-51) and USS Phelps (DD-360) at sea on 6 June 1942 (80-G-7750).jpg
+    license_raw: Public domain
+    descr: The U.S. Navy aircraft carrier USS Hornet (CV-8), the light anti-aircraft cruiser USS Atlanta (CL-51), left, and the heavy cruiser USS New Orleans (CA-32), center, and the destroyer USS Phelps
+      (DD-360), right, following the Battle of Midway on 6 June 1942. The photo was taken as Atlanta came up to offer assistance to the Phelps (DD-360) which had broken down temporarily because of fuel
+      shortage.
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:-USS_Hornet_(CV-8),_USS_New_Orleans_(CA-32),_USS_Atlanta_(CL-51)_and_USS_Phelps_(DD-360)_at_sea_on_6_June_1942_(80-G-7750).jpg
+    width: 2774
+    height: 2073
+  - fn: new-orleans-02-Camouflaged-bridge-of-USS-New-Orleans-CA-32-.jpg
+    idx: 2
+    commons_title: File:Camouflaged bridge of USS New Orleans (CA-32) at Tulagi, in December 1942 (74250510).jpg
+    license_raw: Public domain
+    descr: The U.S. Navy heavy cruiser USS New Orleans (CA-32) camouflaged at Tulagi, in December 1942. Everything ahead of turret No. 2 is missing after being hit by a single torpedo during the Battle
+      of Tassafaronga on 30 November 1942 which exploded her forward magazines.
+    author: U.S. Marine Corps photo 127-GR-89-52200-A
+    source_url: https://commons.wikimedia.org/wiki/File:Camouflaged_bridge_of_USS_New_Orleans_(CA-32)_at_Tulagi,_in_December_1942_(74250510).jpg
+    width: 5881
+    height: 4564
+  - fn: new-orleans-03-Damaged-bow-of-USS-New-Orleans-CA-32-circa-i.jpg
+    idx: 3
+    commons_title: File:Damaged bow of USS New Orleans (CA-32), circa in December 1942, following the Battle of Tassafaronga.jpg
+    license_raw: Public domain
+    descr: Damage to the U.S. Navy heavy cruiser USS New Orleans (CA-32) with everything ahead of turret No.2 missing after being hit by a single torpedo which exploded her forward magazines. Photographed
+      after the Battle of Tassafaronga which occurred on 30 November 1942.
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Damaged_bow_of_USS_New_Orleans_(CA-32),_circa_in_December_1942,_following_the_Battle_of_Tassafaronga.jpg
+    width: 322
+    height: 348
+  - fn: new-orleans-04-Damaged-USS-New-Orleans-CA-32-reaching-Tulag.jpg
+    idx: 4
+    commons_title: File:Damaged USS New Orleans (CA-32) reaching Tulagi on 1 December 1942.jpg
+    license_raw: Public domain
+    descr: The damaged U.S. Navy heavy cruiser USS New Orleans (CA-32) entering Tulagi harbour about eight hours after the Battle of Tassafaronga, 1 December 1942. Everything ahead of turret No. 2 is missing
+      after being hit by a single torpedo which exploded her forward magazines.
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Damaged_USS_New_Orleans_(CA-32)_reaching_Tulagi_on_1_December_1942.jpg
+    width: 1200
+    height: 968
+  - fn: new-orleans-05-False-bow-being-fitted-to-USS-New-Orleans.jpg
+    idx: 5
+    commons_title: File:False bow being fitted to USS New Orleans.jpg
+    license_raw: Public domain
+    descr: Cockatoo Island Docyard, Sydney, NSW. 1943-02. Starboard side view of the prefabricated false bow ready for final positioning before being welded to the heavy cruiser USS New Orleans (CA-32),
+      under repair in the Sutherland Dock after losing 150 feet of her bow from torpedeo damage at the Battle of Tassafaronga.
+    author: Australian armed forces
+    source_url: https://commons.wikimedia.org/wiki/File:False_bow_being_fitted_to_USS_New_Orleans.jpg
+    width: 442
+    height: 345
+  - fn: new-orleans-06-New-Orleans-CA-32-Passengers-December-1944-D.jpg
+    idx: 6
+    commons_title: File:New Orleans (CA-32) - Passengers, December 1944 - DPLA - f7351d74e0d9d08fd385fa0884d80c02.jpg
+    license_raw: Public domain
+    descr: These records include detailed muster rolls listing all personnel assigned to ships based at Pearl Harbor, 1939-47, as well as reports of changes for sailors transferred to other ships or locations,
+      and those missing or dead.
+    author: Department of Defense. Department of the Navy. Bureau of Naval Personnel. 9/18/1947-1982
+    source_url: https://commons.wikimedia.org/wiki/File:New_Orleans_(CA-32)_-_Passengers,_December_1944_-_DPLA_-_f7351d74e0d9d08fd385fa0884d80c02.jpg
+    width: 2460
+    height: 3819
+  - fn: new-orleans-07-New-Orleans-CA-32-Report-of-Changes-July-BLA.jpg
+    idx: 7
+    commons_title: File:New Orleans (CA-32) - Report of Changes, July (BLANK) - DPLA - 035f8484b4bc4a555a224cfbcd9f8f0c.jpg
+    license_raw: Public domain
+    descr: These records include detailed muster rolls listing all personnel assigned to ships based at Pearl Harbor, 1939-47, as well as reports of changes for sailors transferred to other ships or locations,
+      and those missing or dead.
+    author: Department of Defense. Department of the Navy. Bureau of Naval Personnel. 9/18/1947-1982
+    source_url: https://commons.wikimedia.org/wiki/File:New_Orleans_(CA-32)_-_Report_of_Changes,_July_(BLANK)_-_DPLA_-_035f8484b4bc4a555a224cfbcd9f8f0c.jpg
+    width: 2408
+    height: 3820
+  - fn: new-orleans-08-Retired-US-cruisers-at-Philadelphia-Navy-Yar.jpg
+    idx: 8
+    commons_title: File:Retired US cruisers at Philadelphia Navy Yard 1947.jpg
+    license_raw: Public domain
+    descr: 'Decommissioned U.S. Navy cruisers in the Reserve Basin of the Philadelphia Naval Shipyard, Pennsylvania (USA), in 1947. In the foreground are three Brooklyn-class light cruisers. The four surviving
+      New Orleans-class heavy cruisers are visible in the center background, with Northampton-class heavy cruisers tied up to the right.
+
+
+      The first ship on the left is USS Honolulu (CL-48), the outboard ship in the left group is USS St. Louis (CL-49). The ships in background include (in no order)(center) : USS San Francisco (CA-38),
+      USS Tuscaloosa (CA-37), USS Minneapolis (CA-36), USS New Orleans (CA-32), and (right side) USS Augusta  (CA-31), USS Louisville (CA-28), and USS Portland (CA-33).'
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Retired_US_cruisers_at_Philadelphia_Navy_Yard_1947.jpg
+    width: 5717
+    height: 4278
+  - fn: new-orleans-09-Ships-in-drydock-at-Mare-Island-Naval-Shipya.jpg
+    idx: 9
+    commons_title: File:Ships in drydock at Mare Island Naval Shipyard c1944.jpg
+    license_raw: Public domain
+    descr: View of the U.S. Navy Mare Island Naval Shipyard, California (USA) during the Second World War. The distilling ship USS Abatan (AW-4) is in dry dock No. 3, the heavy cruiser USS New Orleans (CA-32)
+      (only her funnels are visible) in dry dock No. 2 to right of Abatan. Floating drydock ARD-32 is on the quay wall with USS Cod (SS-224) docked inside.
+    author: 'Mare Island Naval Shipyard photo # 610-45.'
+    source_url: https://commons.wikimedia.org/wiki/File:Ships_in_drydock_at_Mare_Island_Naval_Shipyard_c1944.jpg
+    width: 4330
+    height: 3208
+  - fn: new-orleans-10-Survivors-on-PT-boat-after-Tassafaronga.jpg
+    idx: 10
+    commons_title: File:Survivors on PT boat after Tassafaronga.jpg
+    license_raw: Public domain
+    descr: The U.S. Navy heavy cruiser USS New Orleans (CA-32) seen after the Battle of Tassafaronga near Tulagi on 1 December 1942. The PT boat in the foreground is carrying survivors from the USS Northampton
+      (CA-26).
+    author: USN
+    source_url: https://commons.wikimedia.org/wiki/File:Survivors_on_PT_boat_after_Tassafaronga.jpg
+    width: 414
+    height: 246
+  - fn: new-orleans-11-Temporary-bow-fitted-to-USS-New-Orleans.jpg
+    idx: 11
+    commons_title: File:Temporary bow fitted to USS New Orleans.jpg
+    license_raw: Public domain
+    descr: Cockatoo Island Dockyard, Sydney, NSW. 1943-03. Starboard side view of the heavy cruiser USS New Orleans (CA-32), fitted with a temporary bow to enable her return to the United States to repair
+      damage sustained from torpedo damage at the Battle of Tassafaronga. The eight inch guns have been removed from No. 2 turret.
+    author: Australian armed forces
+    source_url: https://commons.wikimedia.org/wiki/File:Temporary_bow_fitted_to_USS_New_Orleans.jpg
+    width: 510
+    height: 383
+  - fn: new-orleans-12-Titan-lifting-temporary-bow-to-be-welded-to-.jpg
+    idx: 12
+    commons_title: File:Titan lifting temporary bow to be welded to USS New Orleans.jpg
+    license_raw: Public domain
+    descr: Cockatoo Island Dockyard, Sydney, NSW. 1943-02. A prefabricated false bow being lifted by the crane Titan for the heavy cruiser USS New Orleans (CA-32), under repair in Sutherland Dock after
+      losing 150 feet of her bow from torpedo damage at the Battle of Tassafaronga.
+    author: (Naval Historical Collection)
+    source_url: https://commons.wikimedia.org/wiki/File:Titan_lifting_temporary_bow_to_be_welded_to_USS_New_Orleans.jpg
+    width: 269
+    height: 360
+  nagara:
+  - fn: nagara-01-Croiseur-l-ger-japonais-de-la-classe-Nagara-btv1.jpg
+    idx: 1
+  - fn: nagara-02-Nagara.jpg
+    idx: 2
+  - fn: nagara-03-Nagara-Sinking.jpg
+    idx: 3
+  - fn: nagara-04-Sentai-4-1935.jpg
+    idx: 4
+  - fn: nagara-05-Asheville-Nagara.jpg
+    idx: 5
+  - fn: nagara-07-Nagara-class-cruiser-drawing.jpg
+    idx: 7
+  - fn: nagara-08-Asheville-Nagara.jpg
+    idx: 8
+    commons_title: File:Asheville-Nagara.jpg
+    license_raw: Public domain
+    descr: The American gunboat USS Asheville anchored off Shanghai. The Japanese light cruiser Nagara is docked behind her, colorized
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:Asheville-Nagara.jpg
+    width: 736
+    height: 476
+  - fn: nagara-09-Croiseur-l-ger-japonais-de-la-classe-Nagara-.jpg
+    idx: 9
+    commons_title: File:Croiseur (léger) japonais de la classe Nagara - btv1b530824037.jpg
+    license_raw: Public domain
+    descr: 'Sujet : Croiseurs -- Japon
+
+      Référence bibliographique : Rol, 75390
+
+      Appartient à l’ensemble documentaire : Pho20Rol
+
+      Image de presse
+
+      Couverture : .. mai 1922
+
+
+      Langue : français'
+    author: Agence Rol. Agence photographique (commanditaire)
+    source_url: https://commons.wikimedia.org/wiki/File:Croiseur_(léger)_japonais_de_la_classe_Nagara_-_btv1b530824037.jpg
+    width: 8460
+    height: 6147
+  - fn: nagara-10-Nagara.jpg
+    idx: 10
+    commons_title: File:Nagara.jpg
+    license_raw: Public domain
+    descr: De lichte Japanse kruiser Nagara in Sasebo, Japan in de lente van 1932
+    author: Patton Wayne (2005) Japanese light Cruisers of World War II in action Original uploader was Renegade at nl.wikipedia
+    source_url: https://commons.wikimedia.org/wiki/File:Nagara.jpg
+    width: 518
+    height: 182
+  - fn: nagara-11-Nagara-Sinking.jpg
+    idx: 11
+    commons_title: File:Nagara Sinking.jpg
+    license_raw: Public domain
+    descr: Periscope photo to prove the sinking of the Nagara
+    author: Taken by the Captain J.E. Lee from the periscope.
+    source_url: https://commons.wikimedia.org/wiki/File:Nagara_Sinking.jpg
+    width: 608
+    height: 476
+  - fn: nagara-12-Sentai-4-1935.jpg
+    idx: 12
+    commons_title: File:Sentai 4 1935.jpg
+    license_raw: Public domain
+    descr: Sentai 4 (Chokai, Maya, Atago, Takao) off Shinagawa in october 1935. In the distance-Sentai 6 (Aoba, Kinugasa, Furutaka) and Sentai 8 (Nagara, Isuzu, Natori).
+    author: Japanese Imperial Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Sentai_4_1935.jpg
+    width: 2100
+    height: 903
+  - fn: nagara-13-Nagara-class-cruiser-drawing.jpg
+    idx: 13
+    commons_title: File:Nagara class cruiser drawing.jpg
+    license_raw: Public domain
+    descr: Drawing of the Nagara class cruiser
+    author: US Department of the Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Nagara_class_cruiser_drawing.jpg
+    width: 1030
+    height: 340
+  monaghan:
+  - fn: monaghan-02-Monaghan-DD-354-Passengers-June-1942-DPLA-49a256.jpg
+    idx: 2
+  - fn: monaghan-03-Ditched-VT-3-TBD-during-Battle-of-Midway-1942.jpg
+    idx: 3
+  - fn: monaghan-03-TBD-sinking-astern-of-USS-Enterprise-CV-6-in-May.jpg
+    idx: 3
+  - fn: monaghan-05-Japanese-midget-submarine-h54302.jpg
+    idx: 5
+  - fn: monaghan-05-USSMonaghanDD354.jpg
+    idx: 5
+  - fn: monaghan-06-Ditched-VT-3-TBD-during-Battle-of-Midway-194.jpg
+    idx: 6
+    commons_title: File:Ditched VT-3 TBD during Battle of Midway 1942.jpg
+    license_raw: Public domain
+    descr: The U.S. Navy Douglas TBD-1 Devastator (BuNo 0303, "T-3") from Torpedo Squadron VT-3 sinking after a water landing alongside the destroyer USS Monaghan (DD-354), ca. at 1305 hrs on 4 June 1942
+      during the Battle of Midway. Pilot Machinist Harry Lee Corl and his gunner Lloyd Fred Childers, ARM3c, were launched from the aircraft carrier USS Yorktown (CV-5) and had attacked the Japanese carrier
+      Hiryu. "T-3" was heavily damaged by fighters and Corl had to jettison his torpedo but managed to reach Task Force 16. Only two of 12 VT-3 planes were not shot down, but the other two had to ditch.
+      Corl himself was lost during the Battle of Eastern Solomons on 24 August 1942.
+    author: Lt. JG H.H. Kait, USN (aboard USS Monaghan)
+    source_url: https://commons.wikimedia.org/wiki/File:Ditched_VT-3_TBD_during_Battle_of_Midway_1942.jpg
+    width: 665
+    height: 550
+  - fn: monaghan-07-Japanese-midget-submarine-h54302.jpg
+    idx: 7
+    commons_title: File:Japanese midget submarine h54302.jpg
+    license_raw: Public domain
+    descr: 'A Japanese midget submarine after having been raised by the U.S. Navy at the Pearl Harbor Navy Yard in December 1941. This submarine had been sunk by USS Monaghan (DD-354) in Pearl Harbor during
+      the 7 December 1941 Japanese attack and was subsequently recovered and buried in a landfill. The submarine''s hull shows the effects of depth charges and ramming. A hole visible in the after part
+      of the conning tower may be from a 5" shell.
+
+      The upper background had been overpainted for censorship purposes.'
+    author: USN
+    source_url: https://commons.wikimedia.org/wiki/File:Japanese_midget_submarine_h54302.jpg
+    width: 740
+    height: 596
+  - fn: monaghan-08-Monaghan-DD-354-Passengers-June-1942-DPLA-49.jpg
+    idx: 8
+    commons_title: File:Monaghan (DD-354) - Passengers, June 1942 - DPLA - 49a25616d58632b0fca92abcd0308308.jpg
+    license_raw: Public domain
+    descr: These records include detailed muster rolls listing all personnel assigned to ships based at Pearl Harbor, 1939-47, as well as reports of changes for sailors transferred to other ships or locations,
+      and those missing or dead.
+    author: Department of Defense. Department of the Navy. Bureau of Naval Personnel. 9/18/1947-1982
+    source_url: https://commons.wikimedia.org/wiki/File:Monaghan_(DD-354)_-_Passengers,_June_1942_-_DPLA_-_49a25616d58632b0fca92abcd0308308.jpg
+    width: 3288
+    height: 5064
+  - fn: monaghan-09-TBD-sinking-astern-of-USS-Enterprise-CV-6-in.jpg
+    idx: 9
+    commons_title: File:TBD sinking astern of USS Enterprise (CV-6) in May 1942.jpg
+    license_raw: Public domain
+    descr: U.S. Navy Lieutenant Commander Eugene E. Lindsey's Douglas TBD-1 Devastator (BuNo 0370) sinking astern of the aircraft carrier USS Enterprise (CV-6) after a deck landing accident on 28 May 1942.
+      The plane guard destroyer, USS Monaghan (DD-354) is in the left background. Enterprise was then en route to the Midway area. LCdr. Lindsey, Commanding Officer of Torpedo Squadron 6 (VT-6), was flying
+      out with the rest of the air group to join the ship when the crash took place. He, and the other members of the plane's crew, were rescued by Monaghan.Although injured in this accident, Lindsey led
+      the attack of VT-6 on the Japanese carriers off Midway. He died in action 4 June 1942 with his rear-seat gunner C.T. Grant, ACRM, when their Devastator was shot down by Japanese A6M2 Zero fighters,
+      while attacking the Japanese aircraft carrier Kaga. VT-6 lost 10 out of 14 planes. Lindsey was posthumously awarded the Navy Cross.
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:TBD_sinking_astern_of_USS_Enterprise_(CV-6)_in_May_1942.jpg
+    width: 5607
+    height: 4204
+  - fn: monaghan-10-USSMonaghanDD354.jpg
+    idx: 10
+    commons_title: File:USSMonaghanDD354.jpg
+    license_raw: Public domain
+    descr: USS Monaghan (DD-354).
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:USSMonaghanDD354.jpg
+    width: 900
+    height: 736

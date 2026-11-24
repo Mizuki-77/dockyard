@@ -1,72 +1,63 @@
-# 用 Commons 的 prefixsearch 找舰船分类正名（比全文搜精准）。
-import json
+# 用搜索确定 18 艘新舰的真实 Commons 分类名与图片数
+# 上一轮我猜的下水年全错（利根 1938 而非 1937），所以必须搜而不是猜
 import time
-import urllib.parse
-import urllib.request
 
-UA = 'DockyardArchive/1.0 (historical research; github.com/Mizuki-77/dockyard)'
-API = 'https://commons.wikimedia.org/w/api.php'
+from commons_client import cat_files, search_cats
 
-# 每舰给几个前缀猜测
-GUESS = {
-    'enterprise': ['Enterprise (CV-6)', 'USS Enterprise (CV-6)', 'Enterprise (ship, 1938)'],
-    'hiryu': ['Hiryū', 'Hiryū (ship, 1939)', 'Hiryu'],
-    'hood': ['Hood (ship, 1918)', 'HMS Hood', 'Hood (battlecruiser)'],
-    'hornet': ['Hornet (CV-8)', 'USS Hornet (CV-8)', 'Hornet (ship, 1940)'],
-    'illustrious': ['Illustrious (87)', 'Illustrious (ship, 1939)', 'HMS Illustrious'],
-    'king-george-v': ['King George V (41)', 'King George V (ship, 1939)', 'HMS King George V'],
-    'prince-of-wales': ['Prince of Wales (53)', 'Prince of Wales (ship, 1939)', 'HMS Prince of Wales'],
-    'rodney': ['Rodney (29)', 'Rodney (ship, 1925)', 'HMS Rodney'],
-    'soryu': ['Sōryū', 'Sōryū (ship, 1937)', 'Soryu'],
-    'tirpitz': ['Tirpitz', 'Tirpitz (ship, 1939)', 'Tirpitz (battleship)'],
-    'yorktown': ['Yorktown (CV-5)', 'USS Yorktown (CV-5)', 'Yorktown (ship, 1936)'],
+# 舰 id → 搜索词
+QUERIES = {
+    'tone': 'Tone class cruiser Japanese',
+    'chikuma': 'Chikuma cruiser Japanese',
+    'haruna': 'Haruna battleship Japanese',
+    'kirishima': 'Kirishima battleship Japanese',
+    'hosho': 'Hosho aircraft carrier Japanese',
+    'nagara': 'Nagara class cruiser',
+    'sendai': 'Sendai class cruiser',
+    'astoria': 'USS Astoria CA-34',
+    'portland': 'USS Portland CA-33',
+    'minneapolis': 'USS Minneapolis CA-36',
+    'new-orleans': 'USS New Orleans CA-32',
+    'vincennes': 'USS Vincennes CA-44',
+    'northampton': 'USS Northampton CA-26',
+    'pensacola': 'USS Pensacola CA-24',
+    'atlanta': 'USS Atlanta CL-51',
+    'hammann': 'USS Hammann DD-412',
+    'monaghan': 'USS Monaghan DD-354',
+    'benham': 'USS Benham DD-397',
 }
 
-
-def api(params):
-    params = dict(params)
-    params['format'] = 'json'
-    url = API + '?' + urllib.parse.urlencode(params)
-    req = urllib.request.Request(url, headers={'User-Agent': UA})
-    for attempt in range(3):
-        try:
-            with urllib.request.urlopen(req, timeout=30) as r:
-                return json.loads(r.read().decode('utf-8'))
-        except urllib.error.HTTPError as e:
-            if e.code == 429:
-                time.sleep(15)
-                continue
-            raise
-        except Exception:
-            if attempt == 2:
-                return {}
-            time.sleep(3)
-    return {}
-
-
-def count(cat):
-    d = api({'action': 'query', 'list': 'categorymembers', 'cmtitle': 'Category:' + cat,
-             'cmtype': 'file', 'cmlimit': '500'})
-    return len(d.get('query', {}).get('categorymembers', []))
-
-
-for sid, guesses in GUESS.items():
-    print(f'=== {sid} ===')
+results = {}
+for sid, term in QUERIES.items():
+    print(f'\n=== {sid}  (搜: {term})')
+    try:
+        cats = search_cats(term, limit=8)
+    except Exception as e:
+        print('   搜索失败', type(e).__name__)
+        continue
+    time.sleep(2)
     best = None
-    for g in guesses:
-        n = count(g)
-        if n:
-            print(f'  {g:<40} {n} 文件  ✓')
-            if not best or n > best[1]:
-                best = (g, n)
-        else:
-            print(f'  {g:<40} 0')
+    for c in cats:
+        if not c.startswith('Category:'):
+            continue
+        name = c[9:]
+        # 排除明显的非本舰分类（舰级页、同名旧舰）
+        try:
+            files = cat_files(name, limit=500)
+        except Exception:
+            files = []
         time.sleep(1.5)
-    if not best:
-        # prefixsearch
-        d = api({'action': 'query', 'list': 'allpages', 'apnamespace': '14',
-                 'apprefix': guesses[0].split('(')[0].strip(), 'aplimit': '10'})
-        print('  prefixsearch:')
-        for p in d.get('query', {}).get('allpages', []):
-            print(f'    {p["title"]}')
-    print()
+        imgs = [f for f in files if not f.lower().endswith(('.ogv', '.webm', '.ogg'))]
+        tag = '' if imgs else ' 空'
+        print(f'     {len(imgs):>4} 张  {name}{tag}')
+        if imgs and (best is None or len(imgs) > best[1]):
+            best = (name, len(imgs))
+    if best:
+        results[sid] = best
+        print(f'   → 选 {best[0]}（{best[1]} 张）')
+
+print('\n\n===== 汇总 =====')
+tot = 0
+for sid, (cat, n) in results.items():
+    print(f'  {sid:14} {cat:34} {n:>4}')
+    tot += n
+print(f'  合计素材 {tot} 张，18 舰 × 10-15 张 = 180-270 张目标')

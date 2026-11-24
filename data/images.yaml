@@ -9835,3 +9835,2959 @@ images:
     height: 720
     primary: true
     note: '这是技术图纸，不是照片。可清楚看到炮座与装填机构的结构，对模型制作者比照片更有用。'
+
+  # ===== 2026-11-25 新增：中途岛扩编 18 艘舰的配图 =====
+  # 全部 A 档（PD/CC0）。按 Commons Category 浏览抓取。
+  # 每舰第一张 primary。已剔除舰队合影、友舰视角、同级的其他舰。
+
+  - id: tone-01
+    file: /img/ships/tone-01-Aerial-view-of-Japanese-cruiser-Tone-during-.jpg
+    subject: ship:tone
+    title:
+      zh: 利根号（第 1 张）
+      en: 'Aerial view of Japanese cruiser Tone during the Battle of the Eastern Solomons, 24 August '
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Aerial_view_of_Japanese_cruiser_Tone_during_the_Battle_of_the_Eastern_Solomons,_24_August_1942_(80-G-88024).jpg
+    width: 1860
+    height: 1376
+    primary: true
+    note: 'Battle of the Eastern Solomons, 24 August 1942: The Japanese heavy cruiser Tone photographed from a USAAF Boeing B-17 Flying Fortress bomber, during high-level bombing attacks on the immobile carrier
+      Ryujo on 24 August 1942. Ryujo is out of this view, some distance to the right.'
+
+  - id: tone-02
+    file: /img/ships/tone-02-FgO33CGXwAA6E00.jpg
+    subject: ship:tone
+    title:
+      zh: 利根号（第 2 张）
+      en: FgO33CGXwAA6E00.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:FgO33CGXwAA6E00.jpg
+    width: 1582
+    height: 1034
+    note: The Japanese heavy cruiser Tone sinking to carrier-based air attacks near the end of WW2, colorized
+
+  - id: tone-03
+    file: /img/ships/tone-03-G4wzOMM.jpg
+    subject: ship:tone
+    title:
+      zh: 利根号（第 3 张）
+      en: G4wzOMM.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:G4wzOMM.jpg
+    width: 2630
+    height: 1759
+    note: A shot taken from the heavy cruiser Kako during an Imperial Japanese Navy fleet review; the heavy cruiser Furutaka is behind her. Anchored in the first row (closest to farthest) lies the heavy cruisers
+      Kumano, Suzuya, Mogami, Tone, and Chikuma, then the destroyers Kagero, Oshio, Asashio, and Arashio
+
+  - id: tone-04
+    file: /img/ships/tone-04-GF8iu4Va4AAHaAF.jpg
+    subject: ship:tone
+    title:
+      zh: 利根号（第 4 张）
+      en: GF8iu4Va4AAHaAF.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:GF8iu4Va4AAHaAF.jpg
+    width: 1658
+    height: 2048
+    note: The Japanese aircraft carrier Zuikaku after assisting in the evacuation of Guadalcanal. The heavy cruiser Tone (left) and light cruiser Agano (right) are anchored behind her.
+
+  - id: tone-05
+    file: /img/ships/tone-05-Japanese-cruiser-Tone-taking-over-fuel-from-.jpg
+    subject: ship:tone
+    title:
+      zh: 利根号（第 5 张）
+      en: Japanese cruiser Tone taking-over fuel from an oiler in 1944.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: 日本海軍Imperial Japanese Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Japanese_cruiser_Tone_taking-over_fuel_from_an_oiler_in_1944.jpg
+    width: 4096
+    height: 3054
+    note: HIJMS Tone and Aux. oiler Kokuyō Maru at Philippine Sea.
+
+  - id: tone-06
+    file: /img/ships/tone-06-Japanese-cruiser-Tone.jpg
+    subject: ship:tone
+    title:
+      zh: 利根号（第 6 张）
+      en: Japanese cruiser Tone.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:Japanese_cruiser_Tone.jpg
+    width: 500
+    height: 153
+
+  - id: tone-07
+    file: /img/ships/tone-07-The-wreck-of-Tone-in-Kure-2.jpg
+    subject: ship:tone
+    title:
+      zh: 利根号（第 7 张）
+      en: The wreck of Tone in Kure (2).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown Japanese Navy photographer
+    source_url: https://commons.wikimedia.org/wiki/File:The_wreck_of_Tone_in_Kure_(2).jpg
+    width: 2560
+    height: 1682
+    note: Wreckage of the Imperial Japanese Navy heavy cruiser Tone. She was sunk by US Navy aircraft in July 1945 off Etajima, Kure.
+
+  - id: tone-08
+    file: /img/ships/tone-08-The-wreck-of-Tone-in-Kure-3.jpg
+    subject: ship:tone
+    title:
+      zh: 利根号（第 8 张）
+      en: The wreck of Tone in Kure (3).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown Japanese Navy photographer
+    source_url: https://commons.wikimedia.org/wiki/File:The_wreck_of_Tone_in_Kure_(3).jpg
+    width: 2560
+    height: 1675
+    note: Wreckage of the Imperial Japanese Navy heavy cruiser Tone. She was sunk by US Navy aircraft in July 1945 off Etajima, Kure.
+
+  - id: tone-09
+    file: /img/ships/tone-09-The-wreck-of-Tone-in-Kure-4.jpg
+    subject: ship:tone
+    title:
+      zh: 利根号（第 9 张）
+      en: The wreck of Tone in Kure (4).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown Japanese Navy photographer
+    source_url: https://commons.wikimedia.org/wiki/File:The_wreck_of_Tone_in_Kure_(4).jpg
+    width: 1481
+    height: 849
+    note: Wreckage of the Imperial Japanese Navy heavy cruiser Tone. She was sunk by US Navy aircraft in July 1945 off Etajima, Kure.
+
+  - id: tone-10
+    file: /img/ships/tone-10-The-wreck-of-Tone-in-Kure-5.jpg
+    subject: ship:tone
+    title:
+      zh: 利根号（第 10 张）
+      en: The wreck of Tone in Kure (5).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown Japanese Navy photographer
+    source_url: https://commons.wikimedia.org/wiki/File:The_wreck_of_Tone_in_Kure_(5).jpg
+    width: 1618
+    height: 1215
+    note: Wreckage of the Imperial Japanese Navy heavy cruiser Tone. She was sunk by US Navy aircraft in July 1945 off Etajima, Kure.
+
+  - id: tone-11
+    file: /img/ships/tone-11-Tone-1942-cropped.jpg
+    subject: ship:tone
+    title:
+      zh: 利根号（第 11 张）
+      en: Tone 1942 (cropped).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Japanese Imperial Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Tone_1942_(cropped).jpg
+    width: 2560
+    height: 697
+    note: Japanese heavy cruiser Tone anchored in Hashirajima shortly before the battle of Midway, taken from the battleship Hiei. A destroyer is seen behind Tone to the right. This is a cropped and edited
+      version of the image.
+
+  - id: chikuma-01
+    file: /img/ships/chikuma-01-1b5X1hO.jpg
+    subject: ship:chikuma
+    title:
+      zh: 筑摩号（第 1 张）
+      en: 1b5X1hO.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:1b5X1hO.jpg
+    width: 2757
+    height: 865
+    primary: true
+    note: A view of an Imperial Japanese Navy fleet review. The destroyer Yudachi is seen to the left, and the bow of the destroyer Harusame is poking out from behind her. To the right in the distance (R
+      to L), the heavy cruisers Chikuma, Tone, Mogami, Suzuya, and Kumano are seen.
+
+  - id: chikuma-02
+    file: /img/ships/chikuma-02-Chikuma-1941.jpg
+    subject: ship:chikuma
+    title:
+      zh: 筑摩号（第 2 张）
+      en: Chikuma 1941.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Japanese Imperial Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Chikuma_1941.jpg
+    width: 1500
+    height: 481
+    note: Japanese heavy cruiser Chikuma in Sukumo bay in june 1941.
+
+  - id: chikuma-03
+    file: /img/ships/chikuma-03-ChikumaLeyte.jpg
+    subject: ship:chikuma
+    title:
+      zh: 筑摩号（第 3 张）
+      en: ChikumaLeyte.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: USN (photographed from a U.S. Navy aircraft)
+    source_url: https://commons.wikimedia.org/wiki/File:ChikumaLeyte.jpg
+    width: 740
+    height: 600
+    note: The Japanese cruiser Chikuma under aerial attack during Battle off Samar on 25 October 1944. The ship's stern has been severely damaged by a torpedo hit, but the ship's outboard propellers are still
+      keeping her somewhat moving.
+
+  - id: chikuma-04
+    file: /img/ships/chikuma-04-DSObqT2UEAA-4Qf.jpg
+    subject: ship:chikuma
+    title:
+      zh: 筑摩号（第 4 张）
+      en: DSObqT2UEAA 4Qf.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:DSObqT2UEAA_4Qf.jpg
+    width: 2048
+    height: 1288
+    note: A view from the heavy cruiser Atago, showing the heavy cruisers Maya and Chikuma refueling from the oiler Nihon Maru
+
+  - id: chikuma-05
+    file: /img/ships/chikuma-05-GmJJJLRbcAIbvEJ.jpg
+    subject: ship:chikuma
+    title:
+      zh: 筑摩号（第 5 张）
+      en: GmJJJLRbcAIbvEJ.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:GmJJJLRbcAIbvEJ.jpg
+    width: 2048
+    height: 897
+    note: The Japanese fleet anchored off Eniwetok Atoll. The heavy cruiser Haguro is closest to the camera, and behind her the heavy cruiser Chikuma, the aircraft carrier Zuikaku, and the heavy cruiser Tone
+      (R to L) are seen anchored
+
+  - id: chikuma-06
+    file: /img/ships/chikuma-06-GmW3z4QbcAA1a-K.jpg
+    subject: ship:chikuma
+    title:
+      zh: 筑摩号（第 6 张）
+      en: GmW3z4QbcAA1a-K.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:GmW3z4QbcAA1a-K.jpg
+    width: 2048
+    height: 1396
+    note: The launching of the Japanese heavy cruiser Chikuma
+
+  - id: chikuma-07
+    file: /img/ships/chikuma-07-GWm-Yw6boAAKeen.jpg
+    subject: ship:chikuma
+    title:
+      zh: 筑摩号（第 7 张）
+      en: GWm Yw6boAAKeen.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:GWm_Yw6boAAKeen.jpg
+    width: 2048
+    height: 1204
+    note: A view taken from the Japanese heavy cruiser Chikuma, showing her sistership Tone on training duty
+
+  - id: chikuma-08
+    file: /img/ships/chikuma-08-HBz0PX5aMAAeB8o.jpg
+    subject: ship:chikuma
+    title:
+      zh: 筑摩号（第 8 张）
+      en: HBz0PX5aMAAeB8o.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:HBz0PX5aMAAeB8o.jpg
+    width: 2048
+    height: 1224
+    note: Admiral Nagumo's carrier fleet moored in Staring Bay, including the heavy cruiser Chikuma, the aircraft carriers Soryu and Hiryu, and the heavy cruiser Takao (L to R)
+
+  - id: chikuma-09
+    file: /img/ships/chikuma-09-Japanese-cruiser-Chikuma-under-air-attack-du.jpg
+    subject: ship:chikuma
+    title:
+      zh: 筑摩号（第 9 张）
+      en: 'Japanese cruiser Chikuma under air attack during the Battle of the Santa Cruz Islands, 26 '
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Photographed from a USS Enterprise (CV-6) plane.
+    source_url: https://commons.wikimedia.org/wiki/File:Japanese_cruiser_Chikuma_under_air_attack_during_the_Battle_of_the_Santa_Cruz_Islands,_26_October_1942_(80-G-30614).jpg
+    width: 5684
+    height: 4258
+    note: The Japanese heavy cruiser Chikuma under air attack during the Battle of the Santa Cruz Islands, 26 October 1942. Note the smoke coming from her bridge area, which had been hit by a bomb, and what
+      appears to be a recognition marking painted atop her number two eight-inch gun turret. The ship's catap
+
+  - id: chikuma-10
+    file: /img/ships/chikuma-10-Japanese-cruiser-Chikuma-under-air-attack-du.jpg
+    subject: ship:chikuma
+    title:
+      zh: 筑摩号（第 10 张）
+      en: 'Japanese cruiser Chikuma under air attack during the Battle of the Santa Cruz Islands, 26 '
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Photographed from a USS Enterprise (CV-6) plane.
+    source_url: https://commons.wikimedia.org/wiki/File:Japanese_cruiser_Chikuma_under_air_attack_during_the_Battle_of_the_Santa_Cruz_Islands,_26_October_1942_(NH_82404).jpg
+    width: 3768
+    height: 2821
+    note: The Japanese heavy cruiser Chikuma under air attack during the Battle of the Santa Cruz Islands, 26 October 1942. Note the smoke coming from her bridge area, which had been hit by a bomb, and what
+      appears to be a recognition marking painted atop her number two eight-inch gun turret. The ship's catap
+
+  - id: chikuma-11
+    file: /img/ships/chikuma-11-Japanese-heavy-cruiser-Chikuma.jpg
+    subject: ship:chikuma
+    title:
+      zh: 筑摩号（第 11 张）
+      en: Japanese heavy cruiser Chikuma.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:Japanese_heavy_cruiser_Chikuma.jpg
+    width: 750
+    height: 604
+
+  - id: haruna-01
+    file: /img/ships/haruna-01-Battleships-Haruna-and-Yamashiro.jpg
+    subject: ship:haruna
+    title:
+      zh: 榛名号（第 1 张）
+      en: Battleships Haruna and Yamashiro.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:Battleships_Haruna_and_Yamashiro.jpg
+    width: 2048
+    height: 922
+    primary: true
+    note: Japanese battleships Haruna (front) and Yamashiro
+
+  - id: haruna-02
+    file: /img/ships/haruna-02-Fxj5goFaYAAD7Vo.jpg
+    subject: ship:haruna
+    title:
+      zh: 榛名号（第 2 张）
+      en: Fxj5goFaYAAD7Vo.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:Fxj5goFaYAAD7Vo.jpg
+    width: 1200
+    height: 899
+    note: A view of Admiral Nagumo's task force shortly before the Indian Ocean raid, taken from the aircraft carrier Zuikaku. The view shows (from closest to farthest) the Japanese battleships Kongo, Haruna,
+      Kirishima, and Hiei, and the aircraft carriers Hiryu, Soryu, and Akagi.
+
+  - id: haruna-03
+    file: /img/ships/haruna-03-Haruna-14-inch-gun-installation-1914.jpg
+    subject: ship:haruna
+    title:
+      zh: 榛名号（第 3 张）
+      en: Haruna 14 inch gun installation 1914.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Shizuo Fukui
+    source_url: https://commons.wikimedia.org/wiki/File:Haruna_14_inch_gun_installation_1914.jpg
+    width: 554
+    height: 360
+    note: 14 inch gun being installed (in the turret at left) on Japanese battlecruiser Haruna at the Kawasaki company at Kobe, Japan
+
+  - id: haruna-04
+    file: /img/ships/haruna-04-Haruna-1928.jpg
+    subject: ship:haruna
+    title:
+      zh: 榛名号（第 4 张）
+      en: Haruna 1928.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Shizuo Fukui
+    source_url: https://commons.wikimedia.org/wiki/File:Haruna_1928.jpg
+    width: 2984
+    height: 2050
+    note: Imperial Japanese Navy battleship Haruna undergoes trials after reconfiguration from a battlecruiser to a battleship.
+
+  - id: haruna-05
+    file: /img/ships/haruna-05-Haruna-1934-cropped.jpg
+    subject: ship:haruna
+    title:
+      zh: 榛名号（第 5 张）
+      en: Haruna 1934 (cropped).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Kure Naval Arsenal Shipbuilding unit
+    source_url: https://commons.wikimedia.org/wiki/File:Haruna_1934_(cropped).jpg
+    width: 2800
+    height: 1300
+    note: Imperial Japanese Navy battleship Haruna undergoes trials after her second reconstruction.
+
+  - id: haruna-06
+    file: /img/ships/haruna-06-Haruna-1934.jpg
+    subject: ship:haruna
+    title:
+      zh: 榛名号（第 6 张）
+      en: Haruna 1934.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Kure Naval Arsenal Shipbuilding unit
+    source_url: https://commons.wikimedia.org/wiki/File:Haruna_1934.jpg
+    width: 2976
+    height: 2012
+    note: Imperial Japanese Navy battleship Haruna undergoes trials after her second reconstruction.
+
+  - id: haruna-07
+    file: /img/ships/haruna-07-Haruna-1935.jpg
+    subject: ship:haruna
+    title:
+      zh: 榛名号（第 7 张）
+      en: Haruna 1935.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Shizuo Fukui
+    source_url: https://commons.wikimedia.org/wiki/File:Haruna_1935.jpg
+    width: 3026
+    height: 2058
+    note: Imperial Japanese Navy battleship Haruna off Yokosuka, Japan in 1935.
+
+  - id: haruna-08
+    file: /img/ships/haruna-08-Haruna-and-Yamashiro.jpg
+    subject: ship:haruna
+    title:
+      zh: 榛名号（第 8 张）
+      en: Haruna and Yamashiro.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:Haruna_and_Yamashiro.jpg
+    width: 3773
+    height: 2708
+    note: Haruna (Japanese Battleship, 1915), at right, and Yamashiro (Japanese Battleship, 1917), at left. Photographed circa the later 1930s. Donation of Kazutoshi Hando, 1970. U.S. Naval History and Heritage
+      Command Photograph.
+
+  - id: haruna-09
+    file: /img/ships/haruna-09-Haruna-at-Kobe-1915.jpg
+    subject: ship:haruna
+    title:
+      zh: 榛名号（第 9 张）
+      en: Haruna at Kobe 1915.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Shizuo Fukui
+    source_url: https://commons.wikimedia.org/wiki/File:Haruna_at_Kobe_1915.jpg
+    width: 2408
+    height: 2051
+    note: Imperial Japanese Navy battlecruiser Haruna at Kobe, Japan one week after commissioning.
+
+  - id: haruna-10
+    file: /img/ships/haruna-10-Haruna-at-Yokosuka-1916.jpg
+    subject: ship:haruna
+    title:
+      zh: 榛名号（第 10 张）
+      en: Haruna at Yokosuka 1916.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Shizuo Fukui
+    source_url: https://commons.wikimedia.org/wiki/File:Haruna_at_Yokosuka_1916.jpg
+    width: 3032
+    height: 2040
+    note: Imperial Japanese Navy battlecruiser Haruna at Yokosuka, Japan.
+
+  - id: haruna-11
+    file: /img/ships/haruna-11-Haruna-in-1913-1-cropped.jpg
+    subject: ship:haruna
+    title:
+      zh: 榛名号（第 11 张）
+      en: Haruna in 1913(1) (cropped).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: 歴史写真会
+    source_url: https://commons.wikimedia.org/wiki/File:Haruna_in_1913(1)_(cropped).jpg
+    width: 2365
+    height: 1758
+    note: 1913年（大正2年）12月14日、戦艦榛名進水式
+
+  - id: haruna-12
+    file: /img/ships/haruna-12-Haruna-in-1913-1.jpg
+    subject: ship:haruna
+    title:
+      zh: 榛名号（第 12 张）
+      en: Haruna in 1913(1).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: 歴史写真会
+    source_url: https://commons.wikimedia.org/wiki/File:Haruna_in_1913(1).jpg
+    width: 2365
+    height: 1943
+    note: 1913年（大正2年）12月14日、戦艦榛名進水式
+
+  - id: kirishima-01
+    file: /img/ships/kirishima-01-G5uBddXbsAAgxOk.jpg
+    subject: ship:kirishima
+    title:
+      zh: 雾岛号（第 1 张）
+      en: G5uBddXbsAAgxOk.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:G5uBddXbsAAgxOk.jpg
+    width: 1639
+    height: 721
+    primary: true
+    note: Japanese battleship Kirishima
+
+  - id: kirishima-02
+    file: /img/ships/kirishima-02-GF-in-Indian-Ocean-1942.jpg
+    subject: ship:kirishima
+    title:
+      zh: 雾岛号（第 2 张）
+      en: GF in Indian Ocean, 1942.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:GF_in_Indian_Ocean,_1942.jpg
+    width: 1687
+    height: 1117
+    note: 'The Japanese strike force advancing to the Indian Ocean. Ships shown from left to right are: Akagi, Sōryū, Hiryū, Hiei, Kirishima, Haruna, and Kongō. Taken from Zuikaku, 30 March 1942.'
+
+  - id: kirishima-03
+    file: /img/ships/kirishima-03-GG0lIlWbkAAaKGF.jpg
+    subject: ship:kirishima
+    title:
+      zh: 雾岛号（第 3 张）
+      en: GG0lIlWbkAAaKGF.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:GG0lIlWbkAAaKGF.jpg
+    width: 2048
+    height: 1224
+    note: A photo taken from the stern of the Japanese heavy cruiser Atago while entering Staring Bay for operations off Java. The battleships Hiei, Kirishima, Haruna, and Kongo (closest to farthest) are
+      following her into port.
+
+  - id: kirishima-04
+    file: /img/ships/kirishima-04-Gm7ZUN-bYAE4m2s-1.jpg
+    subject: ship:kirishima
+    title:
+      zh: 雾岛号（第 4 张）
+      en: Gm7ZUN bYAE4m2s (1).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:Gm7ZUN_bYAE4m2s_(1).jpg
+    width: 2048
+    height: 868
+    note: Japanese battleships Kongo (right) and Kirishima (left) anchored off Qingdao, photographed from a British warship
+
+  - id: kirishima-05
+    file: /img/ships/kirishima-05-Japanese-battleship-Kirishima.jpg
+    subject: ship:kirishima
+    title:
+      zh: 雾岛号（第 5 张）
+      en: Japanese battleship Kirishima.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: United States Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Japanese_battleship_Kirishima.jpg
+    width: 888
+    height: 232
+    note: 'Japanese Battleship Kirishima Kirishima (Japanese Battleship, 1915-1942) Off Amoy, China, on 21 October 1938. Photographed from USS Pillsbury (DD-227). Note: Crew on deck; Flared funnel tops; Kawanishi
+      E17K and Nakajima E8N floatplanes on the aircraft deck. Official U.S. Navy Photograph, from the co'
+
+  - id: kirishima-06
+    file: /img/ships/kirishima-06-Kirishima-and-Akagi-at-Sukumo-Bay-1939.jpg
+    subject: ship:kirishima
+    title:
+      zh: 雾岛号（第 6 张）
+      en: Kirishima and Akagi at Sukumo Bay 1939.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Shizuo Fukui
+    source_url: https://commons.wikimedia.org/wiki/File:Kirishima_and_Akagi_at_Sukumo_Bay_1939.jpg
+    width: 3114
+    height: 2057
+    note: Imperial Japanese Navy battleship Kirishima (foreground) and aircraft carrier Akagi (background) near Sukumo Bay, Japan.
+
+  - id: kirishima-07
+    file: /img/ships/kirishima-07-Kirishima-Beppu-1932.jpg
+    subject: ship:kirishima
+    title:
+      zh: 雾岛号（第 7 张）
+      en: Kirishima Beppu 1932.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Shizuo Fukui
+    source_url: https://commons.wikimedia.org/wiki/File:Kirishima_Beppu_1932.jpg
+    width: 3208
+    height: 1349
+    note: Imperial Japanese Navy battleship Kirishima near Beppu, Kyushu, Japan in mid-October 1932.
+
+  - id: kirishima-08
+    file: /img/ships/kirishima-08-Kirishima-Kaga-and-Hiei-at-Hitokappu.jpg
+    subject: ship:kirishima
+    title:
+      zh: 雾岛号（第 8 张）
+      en: Kirishima Kaga and Hiei at Hitokappu.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Imperial Japanese Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Kirishima_Kaga_and_Hiei_at_Hitokappu.jpg
+    width: 2235
+    height: 1323
+    note: Imperial Japanese Navy battleship Kirishima (left), aircraft carrier Kaga (center right), and battleship Hiei (right background) at Hitokappu Bay, Etorofu Island, Kuriles three days before departing
+      for the attack on Pearl Harbor.
+
+  - id: kirishima-09
+    file: /img/ships/kirishima-09-Kirishima-Kure-1940.jpg
+    subject: ship:kirishima
+    title:
+      zh: 雾岛号（第 9 张）
+      en: Kirishima Kure 1940.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Shizuo Fukui
+    source_url: https://commons.wikimedia.org/wiki/File:Kirishima_Kure_1940.jpg
+    width: 3044
+    height: 1922
+    note: Imperial Japanese Navy battleship Kirishima at Kure, Japan
+
+  - id: kirishima-10
+    file: /img/ships/kirishima-10-Kirishima-Launch.jpg
+    subject: ship:kirishima
+    title:
+      zh: 雾岛号（第 10 张）
+      en: Kirishima Launch.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Shizuo Fukui
+    source_url: https://commons.wikimedia.org/wiki/File:Kirishima_Launch.jpg
+    width: 3116
+    height: 2040
+    note: Imperial Japanese Navy battlecruiser Kirishima is launched from the Mitsubishi shipyard's Ichi-pan-dai construction slip at Nagasaki, Japan on December 1, 1913.
+
+  - id: kirishima-11
+    file: /img/ships/kirishima-11-Kirishima-maintenance-Sasebo-1921.jpg
+    subject: ship:kirishima
+    title:
+      zh: 雾岛号（第 11 张）
+      en: Kirishima maintenance Sasebo 1921.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Shizuo Fukui
+    source_url: https://commons.wikimedia.org/wiki/File:Kirishima_maintenance_Sasebo_1921.jpg
+    width: 2779
+    height: 2064
+    note: Imperial Japanese Navy battlecruiser Kirishima undergoes maintenance and training at Sasebo, Kyushu, Japan.
+
+  - id: kirishima-12
+    file: /img/ships/kirishima-12-Kirishima-Sasebo-1915.jpg
+    subject: ship:kirishima
+    title:
+      zh: 雾岛号（第 12 张）
+      en: Kirishima Sasebo 1915.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Sasebo Naval Arsenal
+    source_url: https://commons.wikimedia.org/wiki/File:Kirishima_Sasebo_1915.jpg
+    width: 3104
+    height: 1887
+    note: Imperial Japanese Navy battlecruiser Kirishima at Sasebo, Japan.
+
+  - id: kirishima-13
+    file: /img/ships/kirishima-13-Kirishima-Tsukumowan-1937.jpg
+    subject: ship:kirishima
+    title:
+      zh: 雾岛号（第 13 张）
+      en: Kirishima Tsukumowan 1937.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Shizuo Fukui
+    source_url: https://commons.wikimedia.org/wiki/File:Kirishima_Tsukumowan_1937.jpg
+    width: 3041
+    height: 1955
+    note: Imperial Japanese Navy battleship Kirishima at Tsukumowan, Japan.
+
+  - id: kirishima-14
+    file: /img/ships/kirishima-14-KondoKirishimaNov14.jpg
+    subject: ship:kirishima
+    title:
+      zh: 雾岛号（第 14 张）
+      en: KondoKirishimaNov14.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:KondoKirishimaNov14.jpg
+    width: 1417
+    height: 944
+    note: Imperial Japanese Navy warships under Vice Admiral Nobutake Kondo head for Guadalcanal to bombard Henderson Field on November 14, 1942. Photographed from heavy cruiser Atago. Battlecruiser Kirishima
+      (background) is preceded in formation by heavy cruiser Takao (center). Kirishima was sunk in battle b
+
+  - id: hosho-01
+    file: /img/ships/hosho-01-80-G-351903-Hosho.jpg
+    subject: ship:hosho
+    title:
+      zh: 凤翔号（第 1 张）
+      en: 80-G-351903 Hosho.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Presumed offical US Navy photographer
+    source_url: https://commons.wikimedia.org/wiki/File:80-G-351903_Hosho.jpg
+    width: 6190
+    height: 4820
+    primary: true
+    note: 'Title: Hosho Description: (Japanese Aircraft Carrier, 1922-1947) View on the ship''s forecastle, 13 October 1945. Hosho was then at Kure, Japan, undergoing conversion to a repatriation transport.
+      Note her overhanging flight deck and anchor handling machinery. Official U.S. Navy Photograph, now in the'
+
+  - id: hosho-02
+    file: /img/ships/hosho-02-80-G-351904-Hosho.jpg
+    subject: ship:hosho
+    title:
+      zh: 凤翔号（第 2 张）
+      en: 80-G-351904 Hosho.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Presumed offical US Navy photographer
+    source_url: https://commons.wikimedia.org/wiki/File:80-G-351904_Hosho.jpg
+    width: 6156
+    height: 4870
+    note: 'Title: Hosho Description: (Japanese Aircraft Carrier, 1922-1947) Off Kure, Japan, 13 October 1945. She was then undergoing conversion to a repatriation transport. Official U.S. Navy Photograph,
+      now in the collections of the National Archives. Catalog #: 80-G-351904'
+
+  - id: hosho-03
+    file: /img/ships/hosho-03-80-G-351905-Hosho.jpg
+    subject: ship:hosho
+    title:
+      zh: 凤翔号（第 3 张）
+      en: 80-G-351905 Hosho.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Presumed offical US Navy photographer
+    source_url: https://commons.wikimedia.org/wiki/File:80-G-351905_Hosho.jpg
+    width: 6094
+    height: 4824
+    note: 'Title: Hosho Description: (Japanese Aircraft Carrier, 1922-1947) Interior of the ship''s hangar, 13 October 1945, showing temporary deck built to provide extra berthing space. Hosho was then at
+      Kure, Japan, undergoing conversion to a repatriation transport. Official U.S. Navy Photograph, now in the c'
+
+  - id: hosho-04
+    file: /img/ships/hosho-04-Hosho-1945-flight-deck.jpg
+    subject: ship:hosho
+    title:
+      zh: 凤翔号（第 4 张）
+      en: Hosho 1945 flight deck.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Not stated
+    source_url: https://commons.wikimedia.org/wiki/File:Hosho_1945_flight_deck.jpg
+    width: 1283
+    height: 498
+    note: Imperial Japanese Navy aircraft carrier Hōshō in October 1945 after Japan's surrender. The image shows the ship's extended and widened flight deck.
+
+  - id: hosho-05
+    file: /img/ships/hosho-05-Hosho-and-Kaga.jpg
+    subject: ship:hosho
+    title:
+      zh: 凤翔号（第 5 张）
+      en: Hosho and Kaga.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Not stated
+    source_url: https://commons.wikimedia.org/wiki/File:Hosho_and_Kaga.jpg
+    width: 1619
+    height: 868
+    note: Imperial Japanese Navy aircraft carriers Hōshō (foreground) and Kaga (background) at an unknown location during the China Incident in 1937.
+
+  - id: hosho-06
+    file: /img/ships/hosho-06-Hosho-first-landing-1MF3.jpg
+    subject: ship:hosho
+    title:
+      zh: 凤翔号（第 6 张）
+      en: Hosho first landing - 1MF3.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Imperial Japanese Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Hosho_first_landing_-_1MF3.jpg
+    width: 600
+    height: 409
+    note: The first landing on the japanese aircraft carrier Hosho.
+
+  - id: hosho-07
+    file: /img/ships/hosho-07-Hosho-forecastle.jpg
+    subject: ship:hosho
+    title:
+      zh: 凤翔号（第 7 张）
+      en: Hosho forecastle.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: US Government
+    source_url: https://commons.wikimedia.org/wiki/File:Hosho_forecastle.jpg
+    width: 5744
+    height: 4556
+    note: A view of the underside of the flightdeck of the Imperial Japanese Navy aircraft carrier Hōshō, looking from the forecastle forward. Kure, Japan.
+
+  - id: hosho-08
+    file: /img/ships/hosho-08-Hosho-Kure-1945.jpg
+    subject: ship:hosho
+    title:
+      zh: 凤翔号（第 8 张）
+      en: Hosho Kure 1945.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: United States Government
+    source_url: https://commons.wikimedia.org/wiki/File:Hosho_Kure_1945.jpg
+    width: 3127
+    height: 2058
+    note: Imperial Japanese Navy aircraft carrier Hōshō at Kure, Japan in 1945 after the end of World War II.
+
+  - id: hosho-09
+    file: /img/ships/hosho-09-Hosho-Shanghai.jpg
+    subject: ship:hosho
+    title:
+      zh: 凤翔号（第 9 张）
+      en: Hosho Shanghai.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Not stated
+    source_url: https://commons.wikimedia.org/wiki/File:Hosho_Shanghai.jpg
+    width: 2142
+    height: 923
+    note: An unidentified aircraft lands on the Imperial Japanese Navy aircraft carrier Hōshō at an unidentified location sometime around the Shanghai Incident.
+
+  - id: hosho-10
+    file: /img/ships/hosho-10-Hosho-Tateyama.jpg
+    subject: ship:hosho
+    title:
+      zh: 凤翔号（第 10 张）
+      en: Hosho Tateyama.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Imperial Japanese Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Hosho_Tateyama.jpg
+    width: 3131
+    height: 2070
+    note: Imperial Japanese Navy aircraft carrier Hōshō undergoes full power trials in Tateyama Bay, Japan.
+
+  - id: hosho-11
+    file: /img/ships/hosho-11-Hosho-Yokosuka.jpg
+    subject: ship:hosho
+    title:
+      zh: 凤翔号（第 11 张）
+      en: Hosho Yokosuka.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Imperial Japanese Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Hosho_Yokosuka.jpg
+    width: 2898
+    height: 1841
+    note: Imperial Japanese Navy aircraft carrier Hōshō outside Yokosuka. On deck is a Mitsubishi 1MF Type 10 fighter aircraft undergoing landing trials.
+
+  - id: hosho-12
+    file: /img/ships/hosho-12-ImageJapanese-aircraft-carrier-H-sh-1922.jpg
+    subject: ship:hosho
+    title:
+      zh: 凤翔号（第 12 张）
+      en: ImageJapanese aircraft carrier Hōshō1922.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: 不明。
+    source_url: https://commons.wikimedia.org/wiki/File:ImageJapanese_aircraft_carrier_Hōshō1922.jpg
+    width: 3528
+    height: 2355
+    note: 鳳翔 日本海軍の航空母艦 千葉県館山沖標柱間にて速力公試験中の写真。Imperial Japanese Navy aircraft carrier Hōshō undergoes initial trials off Tateyama, Japan.
+
+  - id: hosho-13
+    file: /img/ships/hosho-13-Japanese-aircraft-carrier-Hosho-1922.jpg
+    subject: ship:hosho
+    title:
+      zh: 凤翔号（第 13 张）
+      en: Japanese aircraft carrier Hosho 1922.JPG
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: 'Japanese_aircraft_carrier_Hōshō1922a.jpg: 不明 derivative work: 0607crp (talk)'
+    source_url: https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Hosho_1922.JPG
+    width: 2765
+    height: 1659
+    note: 鳳翔 日本海軍航空母艦 千葉県館山沖標柱間にて全力公試中の写真。 Imperial Japanese Navy's aircraft carrier, Hosho on its trial run at full power near Tateyama, Japan
+
+  - id: hosho-14
+    file: /img/ships/hosho-14-Japanese-aircraft-carrier-Hosho-cropped.jpg
+    subject: ship:hosho
+    title:
+      zh: 凤翔号（第 14 张）
+      en: Japanese aircraft carrier Hosho cropped.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: 'Japanese_aircraft_carrier_Hosho.jpg: User:Editor at Large derivative work: 0607crp (talk)'
+    source_url: https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Hosho_cropped.jpg
+    width: 4308
+    height: 2575
+    note: 'Japanese aircraft carrier Hosho off Kure, Japan, 13 October 1945. Hosho was then undergoing conversion to a repatriation transport. Official U.S. Navy Photograph, now in the collections of the
+      National Archives. Removed caption read: Photo # 80-G-351904 Japanese aircraft carrier Hosho off Kure, Japa'
+
+  - id: hosho-15
+    file: /img/ships/hosho-15-Japanese-aircraft-carrier-Hosho-diagrams-193.jpg
+    subject: ship:hosho
+    title:
+      zh: 凤翔号（第 15 张）
+      en: Japanese aircraft carrier Hosho, diagrams, 1939 (26367545424).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: National Museum of the U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Japanese_aircraft_carrier_Hosho,_diagrams,_1939_(26367545424).jpg
+    width: 3134
+    height: 1512
+    note: 'Lot-2406-6: Japanese aircraft carrier Hosho, diagrams, 1939. Halftone copy from the files of the Department of Naval Intelligence, June 1943. Courtesy of the Library of Congress. (2016/05/12).'
+
+  - id: nagara-01
+    file: /img/ships/nagara-01-Croiseur-l-ger-japonais-de-la-classe-Nagara-.jpg
+    subject: ship:nagara
+    title:
+      zh: 长良号（第 1 张）
+      en: Croiseur (léger) japonais de la classe Nagara - btv1b530824037.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Agence Rol. Agence photographique (commanditaire)
+    source_url: https://commons.wikimedia.org/wiki/File:Croiseur_(léger)_japonais_de_la_classe_Nagara_-_btv1b530824037.jpg
+    width: 8460
+    height: 6147
+    primary: true
+    note: 'Sujet : Croiseurs -- Japon Référence bibliographique : Rol, 75390 Appartient à l’ensemble documentaire : Pho20Rol Image de presse Couverture : .. mai 1922 Langue : français'
+
+  - id: nagara-02
+    file: /img/ships/nagara-02-Nagara.jpg
+    subject: ship:nagara
+    title:
+      zh: 长良号（第 2 张）
+      en: Nagara.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Patton Wayne (2005) Japanese light Cruisers of World War II in action Original uploader was Renegade
+    source_url: https://commons.wikimedia.org/wiki/File:Nagara.jpg
+    width: 518
+    height: 182
+    note: De lichte Japanse kruiser Nagara in Sasebo, Japan in de lente van 1932
+
+  - id: nagara-03
+    file: /img/ships/nagara-03-Nagara-Sinking.jpg
+    subject: ship:nagara
+    title:
+      zh: 长良号（第 3 张）
+      en: Nagara Sinking.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Taken by the Captain J.E. Lee from the periscope.
+    source_url: https://commons.wikimedia.org/wiki/File:Nagara_Sinking.jpg
+    width: 608
+    height: 476
+    note: Periscope photo to prove the sinking of the Nagara
+
+  - id: nagara-04
+    file: /img/ships/nagara-04-Sentai-4-1935.jpg
+    subject: ship:nagara
+    title:
+      zh: 长良号（第 4 张）
+      en: Sentai 4 1935.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Japanese Imperial Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Sentai_4_1935.jpg
+    width: 2100
+    height: 903
+    note: Sentai 4 (Chokai, Maya, Atago, Takao) off Shinagawa in october 1935. In the distance-Sentai 6 (Aoba, Kinugasa, Furutaka) and Sentai 8 (Nagara, Isuzu, Natori).
+
+  - id: sendai-01
+    file: /img/ships/sendai-01-G9lzVTIakAAsAsv.jpg
+    subject: ship:sendai
+    title:
+      zh: 川内号（第 1 张）
+      en: G9lzVTIakAAsAsv.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:G9lzVTIakAAsAsv.jpg
+    width: 2048
+    height: 1649
+    primary: true
+    note: A Japanese destroyer flotilla anchored in Ariake Bay. From closest to farthest, the Hatsuharu, Wakaba, Yamakaze, Suzukaze, Kawakaze, Umikaze, Yudachi, and Murasame are seen. The light cruiser Sendai
+      is also seen in the distance.
+
+  - id: sendai-02
+    file: /img/ships/sendai-02-Lot-2406-42-26906325781.jpg
+    subject: ship:sendai
+    title:
+      zh: 川内号（第 2 张）
+      en: Lot-2406-42 (26906325781).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: National Museum of the U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Lot-2406-42_(26906325781).jpg
+    width: 3043
+    height: 1348
+    note: 'Lot-2406-42: Japanese cruiser of the Sendai class, undated. Lead ship Sendai was sunk at the Battle of Empress Augusta Bay, November 2-3, 1943. Halftone copy from the files of the Department of
+      Naval Intelligence, June 1943. Courtesy of the Library of Congress. (2016/05/12).'
+
+  - id: sendai-03
+    file: /img/ships/sendai-03-Lot-2406-64-26953875196.jpg
+    subject: ship:sendai
+    title:
+      zh: 川内号（第 3 张）
+      en: Lot-2406-64 (26953875196).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: National Museum of the U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Lot-2406-64_(26953875196).jpg
+    width: 3467
+    height: 1944
+    note: 'Lot-2406-64: Japanese Sendai class cruiser, starboard view, 1937. Halftone copy from the files of the Department of Naval Intelligence, June 1943. Courtesy of the Library of Congress. (2016/05/12).'
+
+  - id: sendai-04
+    file: /img/ships/sendai-04-Lot-2406-66-26892828162.jpg
+    subject: ship:sendai
+    title:
+      zh: 川内号（第 4 张）
+      en: Lot-2406-66 (26892828162).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: National Museum of the U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Lot-2406-66_(26892828162).jpg
+    width: 3059
+    height: 2156
+    note: 'Lot-2406-66: Japanese Sendai class cruiser, starboard view, 1937. Halftone copy from the files of the Department of Naval Intelligence, June 1943. Courtesy of the Library of Congress. (2016/05/12).'
+
+  - id: sendai-05
+    file: /img/ships/sendai-05-Sendai-1.jpg
+    subject: ship:sendai
+    title:
+      zh: 川内号（第 5 张）
+      en: Sendai-1.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:Sendai-1.jpg
+    width: 494
+    height: 254
+
+  - id: sendai-06
+    file: /img/ships/sendai-06-Sendai-19390226-1.jpg
+    subject: ship:sendai
+    title:
+      zh: 川内号（第 6 张）
+      en: Sendai-19390226-1.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:Sendai-19390226-1.jpg
+    width: 6289
+    height: 4131
+    note: The Japanese destroyer Sendai anchored during a fleet reivew; the destroyer Hatsuharu is behind her
+
+  - id: astoria-01
+    file: /img/ships/astoria-01-Damaged-USS-Yorktown-CV-5-and-Astoria-CA-34-.jpg
+    subject: ship:astoria
+    title:
+      zh: 阿斯托里亚号（第 1 张）
+      en: Damaged USS Yorktown (CV-5) and Astoria (CA-34) at Midway 1942.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Photographer 2rd Class William G. Roy, USN; post-work Cobatfor
+    source_url: https://commons.wikimedia.org/wiki/File:Damaged_USS_Yorktown_(CV-5)_and_Astoria_(CA-34)_at_Midway_1942.jpg
+    width: 1413
+    height: 763
+    primary: true
+    note: Scene on board the U.S. Navy aircraft carrier USS Yorktown (CV-5) during the Battle of Midway, shortly after she was hit by three Japanese bombs on 4 June 1942. Dense smoke is from fires in her
+      uptakes, caused by a bomb that punctured them and knocked out her boilers. A man with hammer at right is p
+
+  - id: astoria-02
+    file: /img/ships/astoria-02-Douglas-SBD-3-Dauntless-of-VB-3-ditching-nea.jpg
+    subject: ship:astoria
+    title:
+      zh: 阿斯托里亚号（第 2 张）
+      en: Douglas SBD-3 Dauntless of VB-3 ditching near USS Astoria (CA-34) during the Battle of Mid
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:Douglas_SBD-3_Dauntless_of_VB-3_ditching_near_USS_Astoria_(CA-34)_during_the_Battle_of_Midway,_4_June_1942_(80-G-32307).jpg
+    width: 2154
+    height: 1685
+    note: U.S. Navy LCdr Maxwell F. Leslie, commanding officer of Bombing Squadron 3 (VB-3), ditches his Douglas SBD-3 Dauntless next to the heavy cruiser USS Astoria (CA-34) after successfully attacking
+      the Japanese carrier Soryu during the Battle of Midway, 13:48 hrs, 4 June 1942. Leslie and his wingman Lt(
+
+  - id: astoria-03
+    file: /img/ships/astoria-03-SBD-ditiching-near-USS-Astoria-CA-34-at-Midw.jpg
+    subject: ship:astoria
+    title:
+      zh: 阿斯托里亚号（第 3 张）
+      en: SBD ditiching near USS Astoria (CA-34) at Midway 1942.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:SBD_ditiching_near_USS_Astoria_(CA-34)_at_Midway_1942.jpg
+    width: 4893
+    height: 3668
+    note: 'Battle of Midway, 4 June 1942: While U.S. Navy Lieutenant (Junior Grade) Fisler circles the scene in his Consolidated PBY-5 Catalina, LCdr. Max Leslie prepares to ditch his Douglas SBD-3 Dauntless
+      dive bomber from Bombing Squadron 3 (VB-3) near the heavy cruiser USS Astoria (CA-34) between 1342 and '
+
+  - id: astoria-04
+    file: /img/ships/astoria-04-SBD-from-VB-3-ditches-near-USS-Astoria-CV-34.jpg
+    subject: ship:astoria
+    title:
+      zh: 阿斯托里亚号（第 4 张）
+      en: SBD from VB-3 ditches near USS Astoria (CV-34) at Midway 1942.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: USN
+    source_url: https://commons.wikimedia.org/wiki/File:SBD_from_VB-3_ditches_near_USS_Astoria_(CV-34)_at_Midway_1942.jpg
+    width: 5591
+    height: 4194
+    note: A U.S. Navy Douglas SBD-3 Dauntless scout bomber from Bombing Squadron VB-3, probably flown by Lieutenant (Junior Grade) Paul A. Holmberg, ditches near USS Astoria (CA-34) at about 1342 hrs on 4
+      June 1942. This was one of two VB-3 planes that ditched near Astoria after they were unable to land on th
+
+  - id: astoria-05
+    file: /img/ships/astoria-05-USS-Astoria-CA-34-19-N-25346-cropped.jpg
+    subject: ship:astoria
+    title:
+      zh: 阿斯托里亚号（第 5 张）
+      en: USS Astoria (CA-34) - 19-N-25346 (cropped).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Astoria_(CA-34)_-_19-N-25346_(cropped).jpg
+    width: 4499
+    height: 2300
+    note: Off the Mare Island Navy Yard, California, 11 July 1941. Photograph from the Bureau of Ships Collection in the U.S. National Archives.
+
+  - id: astoria-06
+    file: /img/ships/astoria-06-USS-Astoria-CA-34-19-N-25346.jpg
+    subject: ship:astoria
+    title:
+      zh: 阿斯托里亚号（第 6 张）
+      en: USS Astoria (CA-34) - 19-N-25346.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Astoria_(CA-34)_-_19-N-25346.jpg
+    width: 5668
+    height: 4540
+    note: Off the Mare Island Navy Yard, California, 11 July 1941. Photograph from the Bureau of Ships Collection in the U.S. National Archives.
+
+  - id: astoria-07
+    file: /img/ships/astoria-07-USS-Astoria-CA-34-and-USS-Minneapolis-CA-36-.jpg
+    subject: ship:astoria
+    title:
+      zh: 阿斯托里亚号（第 7 张）
+      en: USS Astoria (CA-34) and USS Minneapolis (CA-36) moored in Pearl Harbor, Hawaii, in late Ju
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Astoria_(CA-34)_and_USS_Minneapolis_(CA-36)_moored_in_Pearl_Harbor,_Hawaii,_in_late_June_1942_(80-G-K-452).jpg
+    width: 5613
+    height: 3315
+    note: The U.S. Navy heavy cruisers USS Astoria (CA-34) and USS Minneapolis (CA-36) (left) moored near Aiea Landing, Pearl Harbor, Hawaii, in late June 1942.
+
+  - id: astoria-08
+    file: /img/ships/astoria-08-USS-Astoria-CA-34-battle-damage-chart-2-9-Au.jpg
+    subject: ship:astoria
+    title:
+      zh: 阿斯托里亚号（第 8 张）
+      en: USS Astoria (CA-34) battle damage chart (2) 9 August 1942.JPG
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy Bureau of Ships
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Astoria_(CA-34)_battle_damage_chart_(2)_9_August_1942.JPG
+    width: 6431
+    height: 3658
+    note: Chart showing the battle damage of the U.S. Navy heavy cruiser USS Astoria (CA-34) received during the Battle of Savo Island, between circa 0150 and 0210 hrs on 9 August 1942. Astoria received at
+      least 65 shell hits and sank at 1216 hrs, with a loss of 219 crewmembers.
+
+  - id: astoria-09
+    file: /img/ships/astoria-09-USS-Astoria-CA-34-battle-damage-chart-9-Augu.jpg
+    subject: ship:astoria
+    title:
+      zh: 阿斯托里亚号（第 9 张）
+      en: USS Astoria (CA-34) battle damage chart 9 August 1942.JPG
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy Bureau of Ships
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Astoria_(CA-34)_battle_damage_chart_9_August_1942.JPG
+    width: 11884
+    height: 3658
+    note: Chart showing the battle damage of the U.S. Navy heavy cruiser USS Astoria (CA-34) received during the Battle of Savo Island, between circa 0150 and 0210 hrs on 9 August 1942. Astoria received at
+      least 65 shell hits and sank at 1216 hrs, with a loss of 219 crewmembers.
+
+  - id: astoria-10
+    file: /img/ships/astoria-10-USS-Astoria-CA-34-off-Mare-Island-in-July-19.jpg
+    subject: ship:astoria
+    title:
+      zh: 阿斯托里亚号（第 10 张）
+      en: USS Astoria (CA-34) off Mare Island in July 1941.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: USN
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Astoria_(CA-34)_off_Mare_Island_in_July_1941.jpg
+    width: 5209
+    height: 3883
+    note: The U.S. Navy heavy cruiser USS Astoria (CA-34) off the Mare Island Navy Yard, California (USA), on 11 July 1941.
+
+  - id: astoria-11
+    file: /img/ships/astoria-11-USS-Astoria-CA-34-operating-in-Hawaiian-wate.jpg
+    subject: ship:astoria
+    title:
+      zh: 阿斯托里亚号（第 11 张）
+      en: USS Astoria (CA-34) operating in Hawaiian waters on 8 July 1942 (NH 97682).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Astoria_(CA-34)_operating_in_Hawaiian_waters_on_8_July_1942_(NH_97682).jpg
+    width: 5698
+    height: 4231
+    note: 'The U.S. Navy heavy cruiser USS Astoria (CA-34) operating in Hawaiian waters during battle practice, 8 July 1942. She appears to be recovering floatplanes from off her starboard side. Note the
+      booms rigged below the forward superstructure to tow aircraft recovery mats, and the starboard crane swung '
+
+  - id: astoria-12
+    file: /img/ships/astoria-12-USS-Astoria-CA-34-underway-in-August-1942.jpg
+    subject: ship:astoria
+    title:
+      zh: 阿斯托里亚号（第 12 张）
+      en: USS Astoria (CA-34) underway in August 1942.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Astoria_(CA-34)_underway_in_August_1942.jpg
+    width: 3797
+    height: 2850
+    note: The U.S. Navy heavy cruiser USS Astoria (CA-34) joins Task Force 16 as it approaches Tulagi, about 6 August 1942.
+
+  - id: astoria-13
+    file: /img/ships/astoria-13-USS-ASTORIA-in-Farm-Cove-Sydney-August-1934.jpg
+    subject: ship:astoria
+    title:
+      zh: 阿斯托里亚号（第 13 张）
+      en: USS ASTORIA in Farm Cove, Sydney, August 1934.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Australian National Maritime Museum
+    source_url: https://commons.wikimedia.org/wiki/File:USS_ASTORIA_in_Farm_Cove,_Sydney,_August_1934.jpg
+    width: 2001
+    height: 1501
+    note: USS ASTORIA, a New Orleans class heavy cruiser, in Sydney Harbour. ASTORIA visited Sydney in August 1934 during its shakedown cruise of the Pacific after its commissioning.
+
+  - id: astoria-14
+    file: /img/ships/astoria-14-USS-Lexington-CV-2-and-Saratoga-CV-3-at-the-.jpg
+    subject: ship:astoria
+    title:
+      zh: 阿斯托里亚号（第 14 张）
+      en: USS Lexington (CV-2) and Saratoga (CV-3) at the Puget Sound Navy Yard in June 1932.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Army Air Corps (photographed from a USAAC plane)
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Lexington_(CV-2)_and_Saratoga_(CV-3)_at_the_Puget_Sound_Navy_Yard_in_June_1932.jpg
+    width: 5333
+    height: 3689
+    note: 'The U.S. Navy Puget Sound Naval Shipyard, Bremerton, Washington (USA) on 8 June 1932: the aircraft carriers USS Lexington (CV-2) and Saratoga (CV-3) at the yard. Also present is an old collier
+      at left. The heavy cruiser USS Astoria (CA-34) is under construction in drydock, upper right.'
+
+  - id: portland-01
+    file: /img/ships/portland-01-80-G-322499-30329156391.jpg
+    subject: ship:portland
+    title:
+      zh: 波特兰号（第 1 张）
+      en: 80-G-322499 (30329156391).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: National Museum of the U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:80-G-322499_(30329156391).jpg
+    width: 2455
+    height: 1960
+    primary: true
+    note: '80-G-322499: USS Portland (CA 33), Vice Admiral Jesse B. Oldendorf presenting the Navy Cross to Captain Thomas G.W. Settle, USN onboard the cruiser. Photograph received December 29, 1944. Official
+      U.S. Navy Photograph, now in the collections of the National Archives. (2016/10/18).'
+
+  - id: portland-02
+    file: /img/ships/portland-02-80-G-433301-Laurance-T-DuBose-cropped.jpg
+    subject: ship:portland
+    title:
+      zh: 波特兰号（第 2 张）
+      en: 80-G-433301 Laurance T. DuBose (cropped).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:80-G-433301_Laurance_T._DuBose_(cropped).jpg
+    width: 4558
+    height: 5756
+    note: Laurance Toombs DuBose (May 21, 1893 - July 11, 1967) was a highly decorated officer in the United States Navy with the rank of four-star Admiral. A veteran of several conflicts, including both
+      World Wars, he distinguished himself several times as Commanding officer of heavy cruiser USS Portland and
+
+  - id: portland-03
+    file: /img/ships/portland-03-80-G-433301-Laurance-T-DuBose.jpg
+    subject: ship:portland
+    title:
+      zh: 波特兰号（第 3 张）
+      en: 80-G-433301 Laurance T. DuBose.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:80-G-433301_Laurance_T._DuBose.jpg
+    width: 5030
+    height: 6392
+    note: Laurance Toombs DuBose (May 21, 1893 - July 11, 1967) was a highly decorated officer in the United States Navy with the rank of four-star Admiral. A veteran of several conflicts, including both
+      World Wars, he distinguished himself several times as Commanding officer of heavy cruiser USS Portland and
+
+  - id: portland-04
+    file: /img/ships/portland-04-Cannon-and-the-USS-Portland-mast-memorial-ab.jpg
+    subject: ship:portland
+    title:
+      zh: 波特兰号（第 4 张）
+      en: Cannon and the USS Portland mast memorial above Casco Bay in Fort Allen Park, Eastern Prom
+    license: pd
+    license_tier: A
+    license_raw: CC0
+    author: Z3lvs
+    source_url: https://commons.wikimedia.org/wiki/File:Cannon_and_the_USS_Portland_mast_memorial_above_Casco_Bay_in_Fort_Allen_Park,_Eastern_Promenade,_Portland,_Maine.jpg
+    width: 3983
+    height: 2972
+    note: Cannon and the USS Portland mast memorial above Casco Bay in Fort Allen Park, Eastern Promenade, Portland, Maine. The memorial incorporates the foremast of the heavy cruiser USS Portland (CA-33);
+      a 19th-century cannon stands in the foreground.
+
+  - id: portland-05
+    file: /img/ships/portland-05-Cruiser-Portland-CA-33-off-Mare-Island.jpg
+    subject: ship:portland
+    title:
+      zh: 波特兰号（第 5 张）
+      en: Cruiser Portland (CA-33) off Mare Island.png
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Cruiser_Portland_(CA-33)_off_Mare_Island.png
+    width: 5631
+    height: 3260
+    note: USS Portland (CA-33) off the Mare Island Navy Yard, California (USA), 30 July 1944. (colorized)
+
+  - id: portland-06
+    file: /img/ships/portland-06-USS-Portland-CA-33-in-a-drydock-at-the-Cocka.jpg
+    subject: ship:portland
+    title:
+      zh: 波特兰号（第 6 张）
+      en: 'USS Portland (CA-33) in a drydock at the Cockatoo Island Dockyard, circa in late 1942 (NH '
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Portland_(CA-33)_in_a_drydock_at_the_Cockatoo_Island_Dockyard,_circa_in_late_1942_(NH_81992).jpg
+    width: 4598
+    height: 5606
+    note: 'The U.S. Navy heavy cruiser USS Portland (CA-33) in a drydock at the Cockatoo Island Dockyard, Sydney, New South Wales, Australia, circa in late December 1942, while under repair for torpedo damage
+      received in the Naval Battle of Guadalcanal on 13 November 1942. She arrived at Sydney on 30 November '
+
+  - id: portland-07
+    file: /img/ships/portland-07-Portland-heavy-CA33-Aerial-starboard-how-und.jpg
+    subject: ship:portland
+    title:
+      zh: 波特兰号（第 7 张）
+      en: Portland (heavy CA33). Aerial, starboard how, underway, 05-31-1934 - NARA - 520826.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author or not provided
+    source_url: https://commons.wikimedia.org/wiki/File:Portland_(heavy_CA33)._Aerial,_starboard_how,_underway,_05-31-1934_-_NARA_-_520826.jpg
+    width: 3000
+    height: 2353
+
+  - id: portland-08
+    file: /img/ships/portland-08-Task-Force-16-maneuvering-under-attack-durin.jpg
+    subject: ship:portland
+    title:
+      zh: 波特兰号（第 8 张）
+      en: Task Force 16 maneuvering under attack during the Battle of the Santa Cruz Islands on 26 O
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy, photographed from plane of USS Hornet (CV-8).
+    source_url: https://commons.wikimedia.org/wiki/File:Task_Force_16_maneuvering_under_attack_during_the_Battle_of_the_Santa_Cruz_Islands_on_26_October_1942_(80-G-304523).jpg
+    width: 5634
+    height: 4170
+    note: The U.S. Navy Task Force 16 maneuvering under Japanese air attack during the Battle of the Santa Cruz Islands on 26 October 1942. The aircraft carrier USS Enterprise (CV-6) is obscured by moke in
+      the center of the photograph, just above the heavy cruiser USS Portland (CA-33). The battleship USS Sout
+
+  - id: portland-09
+    file: /img/ships/portland-09-Task-Force-16-maneuvering-under-attack-durin.jpg
+    subject: ship:portland
+    title:
+      zh: 波特兰号（第 9 张）
+      en: Task Force 16 maneuvering under attack during the Battle of the Santa Cruz Islands on 26 O
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy, photographed from plane of USS Hornet (CV-8).
+    source_url: https://commons.wikimedia.org/wiki/File:Task_Force_16_maneuvering_under_attack_during_the_Battle_of_the_Santa_Cruz_Islands_on_26_October_1942_(80-G-304525).jpg
+    width: 5660
+    height: 4223
+    note: The U.S. Navy Task Force 16 maneuvering under Japanese air attack during the Battle of the Santa Cruz Islands on 26 October 1942. The large ships are (l-r):the heavy cruiser USS Portland (CA-33),
+      the aircraft carrier USS Enterprise (CV-6) and the battleship USS South Dakota (BB-57).
+
+  - id: portland-10
+    file: /img/ships/portland-10-Task-Force-16-maneuvering-under-attack-durin.jpg
+    subject: ship:portland
+    title:
+      zh: 波特兰号（第 10 张）
+      en: Task Force 16 maneuvering under attack during the Battle of the Santa Cruz Islands on 26 O
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy, photographed from plane of USS Hornet (CV-8).
+    source_url: https://commons.wikimedia.org/wiki/File:Task_Force_16_maneuvering_under_attack_during_the_Battle_of_the_Santa_Cruz_Islands_on_26_October_1942_(80-G-304526).jpg
+    width: 4411
+    height: 3311
+    note: The U.S. Navy Task Force 16 maneuvering under Japanese air attack during the Battle of the Santa Cruz Islands on 26 October 1942. The large ships are (l-r):the heavy cruiser USS Portland (CA-33),
+      the aircraft carrier USS Enterprise (CV-6) and the battleship USS South Dakota (BB-57).
+
+  - id: portland-11
+    file: /img/ships/portland-11-US-Navy-warships-entering-Lingayen-Gulf-in-J.jpg
+    subject: ship:portland
+    title:
+      zh: 波特兰号（第 11 张）
+      en: US Navy warships entering Lingayen Gulf in January 1945.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: 'U.S. Navy; Post-work: Cobatfor (Pennsylvania´s radar antennas added that had been removed by the war'
+    source_url: https://commons.wikimedia.org/wiki/File:US_Navy_warships_entering_Lingayen_Gulf_in_January_1945.jpg
+    width: 5658
+    height: 4244
+    note: The U.S. Navy battleship USS Pennsylvania (BB-38) leading USS Colorado (BB-45) and the cruisers USS Louisville (CA-28), USS Portland (CA-33), and USS Columbia (CL-56) into Lingayen Gulf, Philippines,
+      in January 1945.
+
+  - id: portland-12
+    file: /img/ships/portland-12-US-warships-entering-Lingayen-Gulf-1945.jpg
+    subject: ship:portland
+    title:
+      zh: 波特兰号（第 12 张）
+      en: US warships entering Lingayen Gulf 1945.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: 'U.S. Navy photo 80-G-59525; Post-work: Cobatfor (Pennsylvania´s radar antennas added that had been r'
+    source_url: https://commons.wikimedia.org/wiki/File:US_warships_entering_Lingayen_Gulf_1945.jpg
+    width: 1384
+    height: 969
+    note: The U.S. Navy battleship USS Pennsylvania (BB-38) leading USS Colorado (BB-45) and the cruisers USS Louisville (CA-28), USS Portland (CA-33), and USS Columbia (CL-56) into Lingayen Gulf, Philippines,
+      in January 1945.
+
+  - id: portland-13
+    file: /img/ships/portland-13-USS-Benham-DD-397-transfers-wounded-to-USS-P.jpg
+    subject: ship:portland
+    title:
+      zh: 波特兰号（第 13 张）
+      en: USS Benham (DD-397) transfers wounded to USS Portland (CA-33) on 4 June 1942 (80-G-32381).
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Benham_(DD-397)_transfers_wounded_to_USS_Portland_(CA-33)_on_4_June_1942_(80-G-32381).jpg
+    width: 2864
+    height: 2312
+    note: 'Battle of Midway, 4 June 1942: A wounded crew member from the U.S. Navy aircraft carrier USS Yorktown (CV-5) is being high-lined transferred from the destroyer USS Benham (DD-397) to the heavy
+      cruiser USS Portland (CA-33). A report of unidentified aircraft caused Benham to break away before transfer'
+
+  - id: minneapolis-01
+    file: /img/ships/minneapolis-01-80-G-55260-17105938897.jpg
+    subject: ship:minneapolis
+    title:
+      zh: 明尼阿波利斯号（第 1 张）
+      en: 80-G-55260 (17105938897).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: National Museum of the U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:80-G-55260_(17105938897).jpg
+    width: 2432
+    height: 2916
+    primary: true
+    note: '80-G-55260: Gunner’s Mate Third Class J. MacMillan dressed in full Floss dress onboard USS Minneapolis (CA 36) during a raid on Wake Island, October 5, 1943. He is shown putting on the goggles.
+      Photographed by CPU-7. (4/28/2015).'
+
+  - id: minneapolis-02
+    file: /img/ships/minneapolis-02-80-G-55261-16693111543.jpg
+    subject: ship:minneapolis
+    title:
+      zh: 明尼阿波利斯号（第 2 张）
+      en: 80-G-55261 (16693111543).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: National Museum of the U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:80-G-55261_(16693111543).jpg
+    width: 2404
+    height: 2952
+    note: '80-G-55261: Gunner’s Mate Third Class J. MacMillan dressed in full Floss dress onboard USS Minneapolis (CA 36) during a raid on Wake Island, October 5, 1943. He is shown putting on the nose mask.
+      Photographed by CPU-7. (4/28/2015).'
+
+  - id: minneapolis-03
+    file: /img/ships/minneapolis-03-80-G-55262-17312929951.jpg
+    subject: ship:minneapolis
+    title:
+      zh: 明尼阿波利斯号（第 3 张）
+      en: 80-G-55262 (17312929951).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: National Museum of the U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:80-G-55262_(17312929951).jpg
+    width: 2416
+    height: 2964
+    note: '80-G-55262: Gunner’s Mate Third Class J. MacMillan dressed in full Floss dress onboard USS Minneapolis (CA 36) during a raid on Wake Island, October 5, 1943. He is shown putting on the nose mask.
+      Photographed by CPU-7. (4/28/2015).'
+
+  - id: minneapolis-04
+    file: /img/ships/minneapolis-04-80-G-55263-17127155349.jpg
+    subject: ship:minneapolis
+    title:
+      zh: 明尼阿波利斯号（第 4 张）
+      en: 80-G-55263 (17127155349).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: National Museum of the U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:80-G-55263_(17127155349).jpg
+    width: 2368
+    height: 2948
+    note: '80-G-55263: Gunner’s Mate Third Class J. MacMillan dressed in full Floss dress onboard USS Minneapolis (CA 36) during a raid on Wake Island, October 5, 1943. He is shown putting on the helmet (protection
+      against shrapnel). Photographed by CPU-7. (4/28/2015).'
+
+  - id: minneapolis-05
+    file: /img/ships/minneapolis-05-80-G-55264-17287422976.jpg
+    subject: ship:minneapolis
+    title:
+      zh: 明尼阿波利斯号（第 5 张）
+      en: 80-G-55264 (17287422976).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: National Museum of the U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:80-G-55264_(17287422976).jpg
+    width: 2936
+    height: 2368
+    note: '80-G-55264: Gunner’s Mate Third Class J. MacMillan dressed in full Floss dress onboard USS Minneapolis (CA 36) during a raid on Wake Island, October 5, 1943. Photographed by CPU-7. (4/28/2015).'
+
+  - id: minneapolis-06
+    file: /img/ships/minneapolis-06-80-G-55265-17125597358.jpg
+    subject: ship:minneapolis
+    title:
+      zh: 明尼阿波利斯号（第 6 张）
+      en: 80-G-55265 (17125597358).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: National Museum of the U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:80-G-55265_(17125597358).jpg
+    width: 2320
+    height: 2948
+    note: '80-G-55265: Gunner’s Mate Third Class J. MacMillan dressed in full Floss dress onboard USS Minneapolis (CA 36) during a raid on Wake Island, October 5, 1943. He is shown putting on the Kapok Life
+      Jacket. Photographed by CPU-7. (4/28/2015).'
+
+  - id: minneapolis-07
+    file: /img/ships/minneapolis-07-80-G-55266-17311544912.jpg
+    subject: ship:minneapolis
+    title:
+      zh: 明尼阿波利斯号（第 7 张）
+      en: 80-G-55266 (17311544912).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: National Museum of the U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:80-G-55266_(17311544912).jpg
+    width: 2332
+    height: 2908
+    note: '80-G-55266: Gunner’s Mate Third Class J. MacMillan dressed in full Floss dress onboard USS Minneapolis (CA 36) during a raid on Wake Island, October 5, 1943. He is shown putting on the Gas Mask.
+      Photographed by CPU-7. (4/28/2015).'
+
+  - id: minneapolis-08
+    file: /img/ships/minneapolis-08-80-G-55267-17125600908.jpg
+    subject: ship:minneapolis
+    title:
+      zh: 明尼阿波利斯号（第 8 张）
+      en: 80-G-55267 (17125600908).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: National Museum of the U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:80-G-55267_(17125600908).jpg
+    width: 2944
+    height: 2316
+    note: '80-G-55267: Gunner’s Mate Third Class J. MacMillan dressed in full Floss dress onboard USS Minneapolis (CA 36) during a raid on Wake Island, October 5, 1943. He is shown during the raid on Wake
+      Island, October 5, 1943. Photographed by CPU-7. (4/28/2015).'
+
+  - id: minneapolis-09
+    file: /img/ships/minneapolis-09-80-G-55268-16693121413.jpg
+    subject: ship:minneapolis
+    title:
+      zh: 明尼阿波利斯号（第 9 张）
+      en: 80-G-55268 (16693121413).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: National Museum of the U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:80-G-55268_(16693121413).jpg
+    width: 2312
+    height: 2932
+    note: '80-G-55268: Gunner’s Mate Third Class J. MacMillan dressed in full Floss dress onboard USS Minneapolis (CA 36) during a raid on Wake Island, October 5, 1943. He is shown during the raid on Wake
+      Island, October 5, 1943. Photographed by CPU-7. (4/28/2015).'
+
+  - id: minneapolis-10
+    file: /img/ships/minneapolis-10-80-G-55269-17313383105.jpg
+    subject: ship:minneapolis
+    title:
+      zh: 明尼阿波利斯号（第 10 张）
+      en: 80-G-55269 (17313383105).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: National Museum of the U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:80-G-55269_(17313383105).jpg
+    width: 2288
+    height: 2928
+    note: '80-G-55269: A Gunner’s Mate is dressed as he should not be. Inadequate protection exposes him to the danger of flash burns. Photographed by CPU-7 on board USS Minneapolis (CA 36) during a raid
+      on Wake Island, October 5, 1943. (4/28/2015).'
+
+  - id: minneapolis-11
+    file: /img/ships/minneapolis-11-80-G-55270-17287432816.jpg
+    subject: ship:minneapolis
+    title:
+      zh: 明尼阿波利斯号（第 11 张）
+      en: 80-G-55270 (17287432816).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: National Museum of the U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:80-G-55270_(17287432816).jpg
+    width: 2892
+    height: 2312
+    note: '80-G-55270: A Gunner’s Mate is dressed as he should not be. Inadequate protection exposes him to the danger of flash burns. Photographed by CPU-7 on board USS Minneapolis (CA 36) during a raid
+      on Wake Island, October 5, 1943. (4/28/2015).'
+
+  - id: minneapolis-12
+    file: /img/ships/minneapolis-12-80-G-55271-17312943051.jpg
+    subject: ship:minneapolis
+    title:
+      zh: 明尼阿波利斯号（第 12 张）
+      en: 80-G-55271 (17312943051).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: National Museum of the U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:80-G-55271_(17312943051).jpg
+    width: 2308
+    height: 2844
+    note: '80-G-55271: Crew members of USS Minneapolis (CA 36) at posts during an attack on Wake Island, October 5, 1943. Boatswain’s Mate R. Gonzales at the watch blowing General Quarters (GQ). Photographed
+      by CPU-7. (4/28/2015).'
+
+  - id: minneapolis-13
+    file: /img/ships/minneapolis-13-Bombardment-of-Anguar.jpg
+    subject: ship:minneapolis
+    title:
+      zh: 明尼阿波利斯号（第 13 张）
+      en: Bombardment of Anguar.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: USN
+    source_url: https://commons.wikimedia.org/wiki/File:Bombardment_of_Anguar.jpg
+    width: 744
+    height: 514
+    note: 'Bombardment of Anguar. Three U.S. Navy ships of Task Group 32.12 are visible (l-r): the battleship USS Tennessee (BB-43), wearing camouflage Measure 32 Design 1D; LST-689; and the heavy cruiser
+      USS Minneapolis (CA-36), which wore a unique camouflage that should give her the shilouette of a destroyer'
+
+  - id: minneapolis-14
+    file: /img/ships/minneapolis-14-Damaged-USS-Minneapolis-CA-36-at-Tulagi-on-1.jpg
+    subject: ship:minneapolis
+    title:
+      zh: 明尼阿波利斯号（第 14 张）
+      en: Damaged USS Minneapolis (CA-36) at Tulagi on 1 December 1942, after the Battle of Tassafar
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:Damaged_USS_Minneapolis_(CA-36)_at_Tulagi_on_1_December_1942,_after_the_Battle_of_Tassafaronga_(80-G-211215).jpg
+    width: 5687
+    height: 4580
+    note: The U.S. Navy heavy cruiser USS Minneapolis (CA-36) at Tulagi with torpedo damage received in the Battle of Tassafaronga, the night before. The photograph was taken on 1 December 1942, as work began
+      to cut away the wreckage of her bow.
+
+  - id: new-orleans-01
+    file: /img/ships/new-orleans-01-USS-Hornet-CV-8-USS-New-Orleans-CA-32-USS-At.jpg
+    subject: ship:new-orleans
+    title:
+      zh: 新奥尔良号（第 1 张）
+      en: -USS Hornet (CV-8), USS New Orleans (CA-32), USS Atlanta (CL-51) and USS Phelps (DD-360) a
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:-USS_Hornet_(CV-8),_USS_New_Orleans_(CA-32),_USS_Atlanta_(CL-51)_and_USS_Phelps_(DD-360)_at_sea_on_6_June_1942_(80-G-7750).jpg
+    width: 2774
+    height: 2073
+    primary: true
+    note: The U.S. Navy aircraft carrier USS Hornet (CV-8), the light anti-aircraft cruiser USS Atlanta (CL-51), left, and the heavy cruiser USS New Orleans (CA-32), center, and the destroyer USS Phelps (DD-360),
+      right, following the Battle of Midway on 6 June 1942. The photo was taken as Atlanta came up to o
+
+  - id: new-orleans-02
+    file: /img/ships/new-orleans-02-Camouflaged-bridge-of-USS-New-Orleans-CA-32-.jpg
+    subject: ship:new-orleans
+    title:
+      zh: 新奥尔良号（第 2 张）
+      en: Camouflaged bridge of USS New Orleans (CA-32) at Tulagi, in December 1942 (74250510).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Marine Corps photo 127-GR-89-52200-A
+    source_url: https://commons.wikimedia.org/wiki/File:Camouflaged_bridge_of_USS_New_Orleans_(CA-32)_at_Tulagi,_in_December_1942_(74250510).jpg
+    width: 5881
+    height: 4564
+    note: The U.S. Navy heavy cruiser USS New Orleans (CA-32) camouflaged at Tulagi, in December 1942. Everything ahead of turret No. 2 is missing after being hit by a single torpedo during the Battle of
+      Tassafaronga on 30 November 1942 which exploded her forward magazines.
+
+  - id: new-orleans-03
+    file: /img/ships/new-orleans-03-Damaged-bow-of-USS-New-Orleans-CA-32-circa-i.jpg
+    subject: ship:new-orleans
+    title:
+      zh: 新奥尔良号（第 3 张）
+      en: Damaged bow of USS New Orleans (CA-32), circa in December 1942, following the Battle of Ta
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Damaged_bow_of_USS_New_Orleans_(CA-32),_circa_in_December_1942,_following_the_Battle_of_Tassafaronga.jpg
+    width: 322
+    height: 348
+    note: Damage to the U.S. Navy heavy cruiser USS New Orleans (CA-32) with everything ahead of turret No.2 missing after being hit by a single torpedo which exploded her forward magazines. Photographed
+      after the Battle of Tassafaronga which occurred on 30 November 1942.
+
+  - id: new-orleans-04
+    file: /img/ships/new-orleans-04-Damaged-USS-New-Orleans-CA-32-reaching-Tulag.jpg
+    subject: ship:new-orleans
+    title:
+      zh: 新奥尔良号（第 4 张）
+      en: Damaged USS New Orleans (CA-32) reaching Tulagi on 1 December 1942.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Damaged_USS_New_Orleans_(CA-32)_reaching_Tulagi_on_1_December_1942.jpg
+    width: 1200
+    height: 968
+    note: The damaged U.S. Navy heavy cruiser USS New Orleans (CA-32) entering Tulagi harbour about eight hours after the Battle of Tassafaronga, 1 December 1942. Everything ahead of turret No. 2 is missing
+      after being hit by a single torpedo which exploded her forward magazines.
+
+  - id: new-orleans-05
+    file: /img/ships/new-orleans-05-New-Orleans-CA-32-Passengers-December-1944-D.jpg
+    subject: ship:new-orleans
+    title:
+      zh: 新奥尔良号（第 5 张）
+      en: New Orleans (CA-32) - Passengers, December 1944 - DPLA - f7351d74e0d9d08fd385fa0884d80c02.
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Department of Defense. Department of the Navy. Bureau of Naval Personnel. 9/18/1947-1982
+    source_url: https://commons.wikimedia.org/wiki/File:New_Orleans_(CA-32)_-_Passengers,_December_1944_-_DPLA_-_f7351d74e0d9d08fd385fa0884d80c02.jpg
+    width: 2460
+    height: 3819
+    note: These records include detailed muster rolls listing all personnel assigned to ships based at Pearl Harbor, 1939-47, as well as reports of changes for sailors transferred to other ships or locations,
+      and those missing or dead.
+
+  - id: new-orleans-06
+    file: /img/ships/new-orleans-06-New-Orleans-CA-32-Report-of-Changes-July-BLA.jpg
+    subject: ship:new-orleans
+    title:
+      zh: 新奥尔良号（第 6 张）
+      en: New Orleans (CA-32) - Report of Changes, July (BLANK) - DPLA - 035f8484b4bc4a555a224cfbcd9
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Department of Defense. Department of the Navy. Bureau of Naval Personnel. 9/18/1947-1982
+    source_url: https://commons.wikimedia.org/wiki/File:New_Orleans_(CA-32)_-_Report_of_Changes,_July_(BLANK)_-_DPLA_-_035f8484b4bc4a555a224cfbcd9f8f0c.jpg
+    width: 2408
+    height: 3820
+    note: These records include detailed muster rolls listing all personnel assigned to ships based at Pearl Harbor, 1939-47, as well as reports of changes for sailors transferred to other ships or locations,
+      and those missing or dead.
+
+  - id: new-orleans-07
+    file: /img/ships/new-orleans-07-Retired-US-cruisers-at-Philadelphia-Navy-Yar.jpg
+    subject: ship:new-orleans
+    title:
+      zh: 新奥尔良号（第 7 张）
+      en: Retired US cruisers at Philadelphia Navy Yard 1947.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Retired_US_cruisers_at_Philadelphia_Navy_Yard_1947.jpg
+    width: 5717
+    height: 4278
+    note: Decommissioned U.S. Navy cruisers in the Reserve Basin of the Philadelphia Naval Shipyard, Pennsylvania (USA), in 1947. In the foreground are three Brooklyn-class light cruisers. The four surviving
+      New Orleans-class heavy cruisers are visible in the center background, with Northampton-class heavy cr
+
+  - id: new-orleans-08
+    file: /img/ships/new-orleans-08-Ships-in-drydock-at-Mare-Island-Naval-Shipya.jpg
+    subject: ship:new-orleans
+    title:
+      zh: 新奥尔良号（第 8 张）
+      en: Ships in drydock at Mare Island Naval Shipyard c1944.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: 'Mare Island Naval Shipyard photo # 610-45.'
+    source_url: https://commons.wikimedia.org/wiki/File:Ships_in_drydock_at_Mare_Island_Naval_Shipyard_c1944.jpg
+    width: 4330
+    height: 3208
+    note: View of the U.S. Navy Mare Island Naval Shipyard, California (USA) during the Second World War. The distilling ship USS Abatan (AW-4) is in dry dock No. 3, the heavy cruiser USS New Orleans (CA-32)
+      (only her funnels are visible) in dry dock No. 2 to right of Abatan. Floating drydock ARD-32 is on the
+
+  - id: new-orleans-09
+    file: /img/ships/new-orleans-09-USS-Hornet-CV-8-USS-New-Orleans-CA-32-and-US.jpg
+    subject: ship:new-orleans
+    title:
+      zh: 新奥尔良号（第 9 张）
+      en: USS Hornet (CV-8), USS New Orleans (CA-32) and USS Atlanta (CL-51) at sea on 6 June 1942 (
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy photograph
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Hornet_(CV-8),_USS_New_Orleans_(CA-32)_and_USS_Atlanta_(CL-51)_at_sea_on_6_June_1942_(80-G-88908).jpg
+    width: 2533
+    height: 1885
+    note: The U.S. Navy aircraft carrier USS Hornet (CV-8), the light anti-aircraft cruiser USS Atlanta (CL-51), and the heavy cruiser USS New Orleans (CA-32), right, following the Battle of Midway on 6 June
+      1942. The photo was taken as Atlanta came up to offer assistance to the destroyer USS Phelps (DD-360),
+
+  - id: new-orleans-10
+    file: /img/ships/new-orleans-10-USS-New-Orleans-CA-32-off-the-Mare-Island-Na.jpg
+    subject: ship:new-orleans
+    title:
+      zh: 新奥尔良号（第 10 张）
+      en: USS New Orleans (CA-32) off the Mare Island Naval Shipyard, California (USA), on 8 March 1
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:USS_New_Orleans_(CA-32)_off_the_Mare_Island_Naval_Shipyard,_California_(USA),_on_8_March_1945_(19-N-80227).jpg
+    width: 5580
+    height: 4176
+    note: The U.S. Navy heavy cruiser USS New Orleans (CA-32) off the Mare Island Naval Shipyard, California (USA), on 8 March 1945, following her last wartime overhaul. The port catapult has been removed.
+
+  - id: new-orleans-11
+    file: /img/ships/new-orleans-11-USS-New-Orleans-CA-32-underway-during-exerci.jpg
+    subject: ship:new-orleans
+    title:
+      zh: 新奥尔良号（第 11 张）
+      en: USS New Orleans (CA-32) underway during exercises off Hawaii on 8 July 1942 (80-G-10115).j
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:USS_New_Orleans_(CA-32)_underway_during_exercises_off_Hawaii_on_8_July_1942_(80-G-10115).jpg
+    width: 5381
+    height: 4038
+    note: The U.S. Navy heavy cruiser USS New Orleans (CA-32) underway during exercises off Hawaii, 8 July 1942.
+
+  - id: new-orleans-12
+    file: /img/ships/new-orleans-12-USS-New-Orleans-CA-32-underway-in-Puget-Soun.jpg
+    subject: ship:new-orleans
+    title:
+      zh: 新奥尔良号（第 12 张）
+      en: USS New Orleans (CA-32) underway in Puget Sound on 30 July 1943 (NH 94847) (cropped).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:USS_New_Orleans_(CA-32)_underway_in_Puget_Sound_on_30_July_1943_(NH_94847)_(cropped).jpg
+    width: 5630
+    height: 3280
+    note: The U.S. Navy heavy cruiser USS New Orleans (CA-32) steams through a tight turn in Elliot Bay, Washington (USA), on 30 July 1943, following battle damage repairs and overhaul at the Puget Sound
+      Naval Shipyard.
+
+  - id: new-orleans-13
+    file: /img/ships/new-orleans-13-USS-New-Orleans-CA-32-underway-in-Puget-Soun.jpg
+    subject: ship:new-orleans
+    title:
+      zh: 新奥尔良号（第 13 张）
+      en: USS New Orleans (CA-32) underway in Puget Sound on 30 July 1943 (NH 94847).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:USS_New_Orleans_(CA-32)_underway_in_Puget_Sound_on_30_July_1943_(NH_94847).jpg
+    width: 5757
+    height: 4336
+    note: The U.S. Navy heavy cruiser USS New Orleans (CA-32) steams through a tight turn in Elliot Bay, Washington (USA), on 30 July 1943, following battle damage repairs and overhaul at the Puget Sound
+      Naval Shipyard.
+
+  - id: vincennes-01
+    file: /img/ships/vincennes-01-USS-Vincennes-CA-44-19-N-17183.jpg
+    subject: ship:vincennes
+    title:
+      zh: 文森斯号（第 1 张）
+      en: USS Vincennes (CA-44) - 19-N-17183.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Vincennes_(CA-44)_-_19-N-17183.jpg
+    width: 5633
+    height: 4501
+    primary: true
+    note: Making 10.74 knots during trials off Rockland, Maine, 12 January 1937. Photographed while the ship was running south, at 12:58 PM. Photograph from the Bureau of Ships Collection in the U.S. National
+      Archives.
+
+  - id: vincennes-02
+    file: /img/ships/vincennes-02-USS-Vincennes-CA-44-at-Pearl-Harbor-May-1942.jpg
+    subject: ship:vincennes
+    title:
+      zh: 文森斯号（第 2 张）
+      en: USS Vincennes (CA-44) at Pearl Harbor May 1942.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: USN
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Vincennes_(CA-44)_at_Pearl_Harbor_May_1942.jpg
+    width: 2826
+    height: 2114
+    note: The U.S. Navy heavy cruiser USS Vincennes (CA-44) at Pearl Harbor, circa 26-28 May 1942, prior to departing to take part in the Battle of Midway. A Curtiss SOC Seagull floatplane is in the left
+      foreground.
+
+  - id: vincennes-03
+    file: /img/ships/vincennes-03-USS-Vincennes-CA-44-battle-damage-chart-9-Au.jpg
+    subject: ship:vincennes
+    title:
+      zh: 文森斯号（第 3 张）
+      en: USS Vincennes (CA-44) battle damage chart 9 August 1942.JPG
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy Bureau of Ships
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Vincennes_(CA-44)_battle_damage_chart_9_August_1942.JPG
+    width: 12192
+    height: 3655
+    note: Chart showing the battle damage of the U.S. Navy heavy cruiser USS Vincennes (CA-44) received during the Battle of Savo Island, between circa 0150 and 0210 hrs on 9 August 1942. Vincennes sank at
+      0250 hrs with a loss of 332 crewmembers.
+
+  - id: vincennes-04
+    file: /img/ships/vincennes-04-USS-Vincennes-CA-44-during-sea-trials-1937.jpg
+    subject: ship:vincennes
+    title:
+      zh: 文森斯号（第 4 张）
+      en: USS Vincennes (CA-44) during sea trials, 1937.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Naval History & Heritage Command
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Vincennes_(CA-44)_during_sea_trials,_1937.jpg
+    width: 5360
+    height: 2806
+    note: 'USS Vincennes on her trials, off Rockland, Maine, on 13 January 1937. Photographed while making 30.15 knots on a Northward run, at 10: 55 A.M.'
+
+  - id: vincennes-05
+    file: /img/ships/vincennes-05-USS-Vincennes-CA-44-in-Panama-Canal-1938.jpg
+    subject: ship:vincennes
+    title:
+      zh: 文森斯号（第 5 张）
+      en: USS Vincennes (CA-44) in Panama Canal 1938.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Vincennes_(CA-44)_in_Panama_Canal_1938.jpg
+    width: 982
+    height: 768
+    note: The U.S. Navy heavy cruiser USS Vincennes (CA-44) passing through the Panama Canal on 6 January 1938, while en route to join the U.S. Pacific Fleet. Note the crewmen on her deck, watching the airplane
+      from which the photograph was taken.
+
+  - id: vincennes-06
+    file: /img/ships/vincennes-06-USS-Vincennes-CA-44-off-Hawaii-July-1942.jpg
+    subject: ship:vincennes
+    title:
+      zh: 文森斯号（第 6 张）
+      en: USS Vincennes (CA-44) off Hawaii July 1942.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Vincennes_(CA-44)_off_Hawaii_July_1942.jpg
+    width: 4230
+    height: 5664
+    note: The U.S. Navy heavy cruiser USS Vincennes (CA-44) underway during tactical exercises in Hawaiian waters, 8 July 1942.
+
+  - id: northampton-01
+    file: /img/ships/northampton-01-127-mm-guns-aboard-USS-Northampton-CA-26-fir.jpg
+    subject: ship:northampton
+    title:
+      zh: 北安普敦号（第 1 张）
+      en: 127 mm guns aboard USS Northampton (CA-26) firing on Wotje on 1 February 1942.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:127_mm_guns_aboard_USS_Northampton_(CA-26)_firing_on_Wotje_on_1_February_1942.jpg
+    width: 5179
+    height: 3830
+    primary: true
+    note: View of the port side 127 mm/25 caliber guns aboard the U.S. Navy heavy cruiser USS Northampton (CA-26) in action against the Japanese base on Wotje Atoll, Marshall Islands, early on 1 February
+      1942. USS Salt Lake City (CA-25) is visible in the background.
+
+  - id: northampton-02
+    file: /img/ships/northampton-02-Damaged-USS-Hornet-CV-8-surrounded-by-cruise.jpg
+    subject: ship:northampton
+    title:
+      zh: 北安普敦号（第 2 张）
+      en: Damaged USS Hornet (CV-8) surrounded by cruisers during Battle of the Santa Cruz Islands 1
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Damaged_USS_Hornet_(CV-8)_surrounded_by_cruisers_during_Battle_of_the_Santa_Cruz_Islands_1942.jpg
+    width: 5200
+    height: 3847
+    note: The U.S. Navy aircraft carrier USS Hornet (CV-8) dead in the water as the heavy cruiser USS Northampton (CA-26) attempts to take her in tow during the Battle of the Santa Cruz Islands on 26 October
+      1942. The cruisers USS Pensacola (CA-24), USS San Diego (CL-53), and USS Juneau (CL-52) maneuver aroun
+
+  - id: northampton-03
+    file: /img/ships/northampton-03-Northampton-heavy-CA26-Aerial-starboard-beam.jpg
+    subject: ship:northampton
+    title:
+      zh: 北安普敦号（第 3 张）
+      en: Northampton (heavy CA26). Aerial, starboard beam, underway, 08-23-1935 - NARA - 520786.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author or not provided
+    source_url: https://commons.wikimedia.org/wiki/File:Northampton_(heavy_CA26)._Aerial,_starboard_beam,_underway,_08-23-1935_-_NARA_-_520786.jpg
+    width: 2945
+    height: 2240
+
+  - id: northampton-04
+    file: /img/ships/northampton-04-PT-109.jpg
+    subject: ship:northampton
+    title:
+      zh: 北安普敦号（第 4 张）
+      en: PT-109.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:PT-109.jpg
+    width: 1500
+    height: 856
+    note: The American torpedo boat PT-109 entering Tulagi carrying 94 survivors from the sunken heavy cruiser USS Northampton (CA-26) The previous night, during the battle of Tassafaronga, Northampton was
+      hit by two torpedoes from the Japanese destroyers Kagerō and Makinami which sank her over 2 hours and 16
+
+  - id: northampton-05
+    file: /img/ships/northampton-05-US-Task-Force-17-underway-during-the-Battle-.jpg
+    subject: ship:northampton
+    title:
+      zh: 北安普敦号（第 5 张）
+      en: US Task Force 17 underway during the Battle of the Santa Cruz Islands 1942.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:US_Task_Force_17_underway_during_the_Battle_of_the_Santa_Cruz_Islands_1942.jpg
+    width: 5671
+    height: 4171
+    note: The U.S. Navy Task Force 17 maneuvering to avoid a Japanese air attack, early in the Battle of the Santa Cruz Islands, 26 October 1942. The aircraft carrier USS Hornet (CV-8) is in left center,
+      the heavy cruiser USS Northampton (CA-26) is in the in center.
+
+  - id: northampton-06
+    file: /img/ships/northampton-06-USS-Northampton-CA-26-1930.jpg
+    subject: ship:northampton
+    title:
+      zh: 北安普敦号（第 6 张）
+      en: USS Northampton (CA-26) 1930.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy (Wooden framed story board with folding doors for the heavy cruiser USS Northhampton (CA-2
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Northampton_(CA-26)_1930.jpg
+    width: 1451
+    height: 949
+    note: The U.S. Navy heavy cruiser USS Northampton (CA-26) 1930, probably during builder's trials.
+
+  - id: northampton-07
+    file: /img/ships/northampton-07-USS-Northampton-CA-26-1941.jpg
+    subject: ship:northampton
+    title:
+      zh: 北安普敦号（第 7 张）
+      en: USS Northampton (CA-26) 1941.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Northampton_(CA-26)_1941.jpg
+    width: 2102
+    height: 1369
+    note: The U.S. Navy heavy cruiser USS Northampton (CA-26) in 1941. Note that her forward funnel has already been heightened but no camouflage has been applied, yet.
+
+  - id: northampton-08
+    file: /img/ships/northampton-08-USS-Northampton-CA-26-at-Brisbane-on-5-Augus.jpg
+    subject: ship:northampton
+    title:
+      zh: 北安普敦号（第 8 张）
+      en: USS Northampton (CA-26) at Brisbane on 5 August 1941 (NH 94596).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Northampton_(CA-26)_at_Brisbane_on_5_August_1941_(NH_94596).jpg
+    width: 5812
+    height: 4364
+    note: The U.S. heavy cruiser USS Northampton (CA-26) at Brisbane, Australia, on 5 August 1941. Note her false bow wave Camouflage Measure 5 on Camouflage Measure 1. She carries one of the early CXAM radars
+      on her mainmast.
+
+  - id: northampton-09
+    file: /img/ships/northampton-09-USS-Northampton-CA-26-attempting-to-tow-USS-.jpg
+    subject: ship:northampton
+    title:
+      zh: 北安普敦号（第 9 张）
+      en: USS Northampton (CA-26) attempting to tow USS Hornet (CV-8) on 26 October 1942 (80-G-33897
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Northampton_(CA-26)_attempting_to_tow_USS_Hornet_(CV-8)_on_26_October_1942_(80-G-33897).jpg
+    width: 4318
+    height: 3239
+    note: The U.S. heavy cruiser USS Northampton (CA-26) attempting to tow the aircraft carrier USS Hornet (CV-8) after the latter had been damaged by Japanese air attacks on 26 October 1942 during the Battle
+      of the Santa Cruz Islands.
+
+  - id: northampton-10
+    file: /img/ships/northampton-10-USS-Northampton-CA-26-entering-Pearl-Harbor-.jpg
+    subject: ship:northampton
+    title:
+      zh: 北安普敦号（第 10 张）
+      en: USS Northampton (CA-26) entering Pearl Harbor 8 Dec 1941.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: USN
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Northampton_(CA-26)_entering_Pearl_Harbor_8_Dec_1941.jpg
+    width: 5568
+    height: 4311
+    note: The U.S. Navy heavy cruiser USS Northampton (CA-26) steams into Pearl Harbor on the morning of 8 December 1941, the day after the Japanese air attack. Photographed from Ford Island, looking toward
+      the Navy Yard, with the dredging pipe in the foreground. Northampton was at sea with Vice Admiral Halse
+
+  - id: northampton-11
+    file: /img/ships/northampton-11-USS-Northampton-CA-26-entering-Pearl-Harbor-.jpg
+    subject: ship:northampton
+    title:
+      zh: 北安普敦号（第 11 张）
+      en: USS Northampton (CA-26) entering Pearl Harbor on 8 December 1941.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Northampton_(CA-26)_entering_Pearl_Harbor_on_8_December_1941.jpg
+    width: 4308
+    height: 3223
+    note: The U.S. Navy heavy cruiser USS Northampton (CA-26) entering Pearl Harbor, Hawaii, on the morning of 8 December 1941, the day after the Japanese raid. Note her crew standing by her lifelines. The
+      ship is in Measure 1 camouflage, with a Measure 5 false bow wave. In the background, beyond Northamptons
+
+  - id: northampton-12
+    file: /img/ships/northampton-12-USS-Northampton-CA-26-firing-on-Wotje-on-1-F.jpg
+    subject: ship:northampton
+    title:
+      zh: 北安普敦号（第 12 张）
+      en: USS Northampton (CA-26) firing on Wotje on 1 February 1942.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Northampton_(CA-26)_firing_on_Wotje_on_1_February_1942.jpg
+    width: 5048
+    height: 3736
+    note: The U.S. Navy heavy cruiser USS Northampton (CA-26) firing against the Japanese base on Wotje Atoll, Marshall Islands, early on 1 February 1942.
+
+  - id: northampton-13
+    file: /img/ships/northampton-13-USS-Northampton-CA-26-prepares-to-tow-USS-Ho.jpg
+    subject: ship:northampton
+    title:
+      zh: 北安普敦号（第 13 张）
+      en: USS Northampton (CA-26) prepares to tow USS Hornet (CV-8) during the Battle of the Santa C
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Northampton_(CA-26)_prepares_to_tow_USS_Hornet_(CV-8)_during_the_Battle_of_the_Santa_Cruz_Islands_on_26_October_1942_(80-G-304517).jpg
+    width: 4715
+    height: 3531
+    note: The U.S. heavy cruiser USS Northampton (CA-26) maneuvers to try to take the crippled aircraft carrier USS Hornet (CV-8) under tow during the Battle of the Santa Cruz Islands on 26 October 1942.
+      A destroyer is standing by.
+
+  - id: pensacola-01
+    file: /img/ships/pensacola-01-80-G-307160-29508720945.jpg
+    subject: ship:pensacola
+    title:
+      zh: 彭萨科拉号（第 1 张）
+      en: 80-G-307160 (29508720945).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: National Museum of the U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:80-G-307160_(29508720945).jpg
+    width: 1508
+    height: 1068
+    primary: true
+    note: '80-G-307160: Battle for Iwo Jima, February-March 1945. Battle damage to USS Pensacola (CA 24) caused by Japanese shore batteries on Iwo Jima. Pensacola took six hits from enemy shore batteries
+      as her guns covered operations of the minesweepers close inshore. On 17 February, three of her officers and'
+
+  - id: pensacola-02
+    file: /img/ships/pensacola-02-80-G-307163-29508720445.jpg
+    subject: ship:pensacola
+    title:
+      zh: 彭萨科拉号（第 2 张）
+      en: 80-G-307163 (29508720445).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: National Museum of the U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:80-G-307163_(29508720445).jpg
+    width: 1528
+    height: 984
+    note: '80-G-307163: Battle for Iwo Jima, February-March 1945. Battle damage to USS Pensacola (CA 24) caused by Japanese shore batteries on Iwo Jima. Pensacola took six hits from enemy shore batteries
+      as her guns covered operations of the minesweepers close inshore. On 17 February, three of her officers and'
+
+  - id: pensacola-03
+    file: /img/ships/pensacola-03-80-G-307166-28886492933.jpg
+    subject: ship:pensacola
+    title:
+      zh: 彭萨科拉号（第 3 张）
+      en: 80-G-307166 (28886492933).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: National Museum of the U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:80-G-307166_(28886492933).jpg
+    width: 1539
+    height: 1048
+    note: '80-G-307166: Battle for Iwo Jima, February-March 1945. Battle damage to USS Pensacola (CA 24) caused by Japanese shore batteries on Iwo Jima. Pensacola took six hits from enemy shore batteries
+      as her guns covered operations of the minesweepers close inshore. On 17 February, three of her officers and'
+
+  - id: pensacola-04
+    file: /img/ships/pensacola-04-80-G-307167-28886492573.jpg
+    subject: ship:pensacola
+    title:
+      zh: 彭萨科拉号（第 4 张）
+      en: 80-G-307167 (28886492573).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: National Museum of the U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:80-G-307167_(28886492573).jpg
+    width: 1464
+    height: 1020
+    note: '80-G-30767: Battle for Iwo Jima, February-March 1945. Battle damage to USS Pensacola (CA 24) caused by Japanese shore batteries on Iwo Jima. Pensacola took six hits from enemy shore batteries as
+      her guns covered operations of the minesweepers close inshore. On 17 February, three of her officers and '
+
+  - id: pensacola-05
+    file: /img/ships/pensacola-05-Aerial-view-of-the-Crossroads-Baker-atomic-t.jpg
+    subject: ship:pensacola
+    title:
+      zh: 彭萨科拉号（第 5 张）
+      en: Aerial view of the Crossroads Baker atomic test, less than one second after the detonation
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_Crossroads_Baker_atomic_test,_less_than_one_second_after_the_detonation,_on_25_July_1946_(NH_96250).jpg
+    width: 1729
+    height: 1298
+    note: 'Aerial view from a U.S. Navy Martin PBM Mariner (callsign "U") of the Crossroads Baker atomic test, less than one second after the detonation. Identifiable ships are (l-r): USS Pensacola (CA-24),
+      USS Saratoga (CV-3), USS Pennsylvania (BB-38), the former Japanese battleship Nagato, USS New York (BB-3'
+
+  - id: pensacola-06
+    file: /img/ships/pensacola-06-Launch-of-USS-Pensacola-CA-24-at-Brooklyn-Na.jpg
+    subject: ship:pensacola
+    title:
+      zh: 彭萨科拉号（第 6 张）
+      en: Launch of USS Pensacola (CA-24) at Brooklyn Navy Yard 1929.jpeg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Launch_of_USS_Pensacola_(CA-24)_at_Brooklyn_Navy_Yard_1929.jpeg
+    width: 2079
+    height: 1667
+    note: The U.S. Navy heavy cruiser USS Pensacola (CA-24) slides down the ways during her launching at the Brooklyn Navy Yard, New York (USA), on 25 April 1929.
+
+  - id: pensacola-07
+    file: /img/ships/pensacola-07-Pensacola-CA-24-Louis-Claes.jpg
+    subject: ship:pensacola
+    title:
+      zh: 彭萨科拉号（第 7 张）
+      en: Pensacola CA-24 Louis Claes.jpg
+    license: pd
+    license_tier: A
+    license_raw: CC0
+    author: Louis Claes
+    source_url: https://commons.wikimedia.org/wiki/File:Pensacola_CA-24_Louis_Claes.jpg
+    width: 5399
+    height: 2943
+    note: The cruiser USS Pensacola (CA-24), probably in the Scheldt
+
+  - id: pensacola-08
+    file: /img/ships/pensacola-08-Pensacola-Kruiser-asset-ExErUPQUfXZCJNzJfwyH.jpg
+    subject: ship:pensacola
+    title:
+      zh: 彭萨科拉号（第 8 张）
+      en: Pensacola Kruiser, asset ExErUPQUfXZCJNzJfwyH9TN3.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Claes, Louis (fotograaf)
+    source_url: https://commons.wikimedia.org/wiki/File:Pensacola_Kruiser,_asset_ExErUPQUfXZCJNzJfwyH9TN3.jpg
+    width: 5892
+    height: 3494
+    note: 'Title: Pensacola KruiserCreator: Claes, Louis (fotograaf)Format original: breedte 18 cm (geheel)lengte 13 cm (geheel)Type: https://www.wikidata.org/wiki/Special:EntityData/Q85621807.rdfCategory:
+      uit de museumcollecties van MASLanguage: Dutch'
+
+  - id: pensacola-09
+    file: /img/ships/pensacola-09-Pensacola-Kruiser-asset-u1i5fQFLCIe9TkLtTcJM.jpg
+    subject: ship:pensacola
+    title:
+      zh: 彭萨科拉号（第 9 张）
+      en: Pensacola Kruiser, asset u1i5fQFLCIe9TkLtTcJMZfrR.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Claes, Louis (fotograaf)
+    source_url: https://commons.wikimedia.org/wiki/File:Pensacola_Kruiser,_asset_u1i5fQFLCIe9TkLtTcJMZfrR.jpg
+    width: 5892
+    height: 3806
+    note: 'Title: Pensacola KruiserCreator: Claes, Louis (fotograaf)Format original: breedte 18 cm (geheel)lengte 13 cm (geheel)Type: https://www.wikidata.org/wiki/Special:EntityData/Q85621807.rdfCategory:
+      uit de museumcollecties van MASLanguage: Dutch'
+
+  - id: pensacola-10
+    file: /img/ships/pensacola-10-Pensacola-Kruiser-asset-zF8SvdD6jnVTSGlIY2Fo.jpg
+    subject: ship:pensacola
+    title:
+      zh: 彭萨科拉号（第 10 张）
+      en: Pensacola Kruiser, asset zF8SvdD6jnVTSGlIY2FoSnA6.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Claes, Louis (fotograaf)
+    source_url: https://commons.wikimedia.org/wiki/File:Pensacola_Kruiser,_asset_zF8SvdD6jnVTSGlIY2FoSnA6.jpg
+    width: 5989
+    height: 3537
+    note: 'Title: Pensacola KruiserCreator: Claes, Louis (fotograaf)Format original: breedte 18 cm (geheel)lengte 13 cm (geheel)Type: https://www.wikidata.org/wiki/Special:EntityData/Q85621807.rdfCategory:
+      uit de museumcollecties van MASLanguage: Dutch'
+
+  - id: pensacola-11
+    file: /img/ships/pensacola-11-USS-Adams-DM-27-off-Mare-Island-in-June-1945.jpg
+    subject: ship:pensacola
+    title:
+      zh: 彭萨科拉号（第 11 张）
+      en: USS Adams (DM-27) off Mare Island in June 1945.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: USN
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Adams_(DM-27)_off_Mare_Island_in_June_1945.jpg
+    width: 5670
+    height: 3494
+    note: The U.S. Navy destroyer minelayer USS Adams (DM-27) off Mare Island, California (USA), on 28 June 1945. The heavy cruiser USS Pensacola (CA-24) is visible in the right background.
+
+  - id: pensacola-12
+    file: /img/ships/pensacola-12-USS-Pensacola-CA-24-alongside-of-USS-Vestal-.jpg
+    subject: ship:pensacola
+    title:
+      zh: 彭萨科拉号（第 12 张）
+      en: 'USS Pensacola (CA-24) alongside of USS Vestal (AR-4) after the Battle of Tassafaronga, 17 '
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Pensacola_(CA-24)_alongside_of_USS_Vestal_(AR-4)_after_the_Battle_of_Tassafaronga,_17_December_1942_(80-G-33862).jpg
+    width: 5698
+    height: 4218
+    note: 'The U.S. Navy heavy cruiser USS Pensacola (CA-24) alongside the repair ship USS Vestal (AR-4), undergoing repair of torpedo damage received during the Battle of Tassafaronga, off Guadalcanal on
+      30 November 1942. Note the hole in her side below the mainmast, and the extensive fire damage in the area '
+
+  - id: pensacola-13
+    file: /img/ships/pensacola-13-USS-Pensacola-CA-24-at-anchor-in-September-1.jpg
+    subject: ship:pensacola
+    title:
+      zh: 彭萨科拉号（第 13 张）
+      en: USS Pensacola (CA-24) at anchor in September 1942.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Pensacola_(CA-24)_at_anchor_in_September_1942.jpg
+    width: 5253
+    height: 3912
+    note: The U.S. Navy heavy cruiser USS Pensacola (CA-24) at anchor in Nouméa, New Caledonia, on 28 September 1942. A fleet oiler is visible in the left distance. Pensacola arrived at Nouméa on 26 September,
+      and departed with the aircraft carrier USS Hornet (CV-8) on 2 October.
+
+  - id: pensacola-14
+    file: /img/ships/pensacola-14-USS-Pensacola-CA-24-at-Midway-in-late-June-1.jpg
+    subject: ship:pensacola
+    title:
+      zh: 彭萨科拉号（第 14 张）
+      en: USS Pensacola (CA-24) at Midway in late June 1942.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Pensacola_(CA-24)_at_Midway_in_late_June_1942.jpg
+    width: 5706
+    height: 4594
+    note: The U.S. Navy heavy cruiser USS Pensacola (CA-24) bringing in U.S. Marine Corps reinfocements to Midway on 24 June 1942. USS Ballard (AVD-10) is visible in the background. In the foreground is the
+      tail of Ensign Bert Ernest's Grumman TBF-1 Avenger (BuNo 00380).
+
+  - id: atlanta-01
+    file: /img/ships/atlanta-01-USS-Hornet-CV-8-USS-New-Orleans-CA-32-USS-At.jpg
+    subject: ship:atlanta
+    title:
+      zh: 亚特兰大号（第 1 张）
+      en: -USS Hornet (CV-8), USS New Orleans (CA-32), USS Atlanta (CL-51) and USS Phelps (DD-360) a
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:-USS_Hornet_(CV-8),_USS_New_Orleans_(CA-32),_USS_Atlanta_(CL-51)_and_USS_Phelps_(DD-360)_at_sea_on_6_June_1942_(80-G-7750).jpg
+    width: 2774
+    height: 2073
+    primary: true
+    note: The U.S. Navy aircraft carrier USS Hornet (CV-8), the light anti-aircraft cruiser USS Atlanta (CL-51), left, and the heavy cruiser USS New Orleans (CA-32), center, and the destroyer USS Phelps (DD-360),
+      right, following the Battle of Midway on 6 June 1942. The photo was taken as Atlanta came up to o
+
+  - id: atlanta-02
+    file: /img/ships/atlanta-02-Margaret-Mitchell-1941-on-USS-Atlanta-CL-51.jpg
+    subject: ship:atlanta
+    title:
+      zh: 亚特兰大号（第 2 张）
+      en: Margaret Mitchell 1941 on USS Atlanta (CL-51).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Department of the Navy--Naval Historical Center
+    source_url: https://commons.wikimedia.org/wiki/File:Margaret_Mitchell_1941_on_USS_Atlanta_(CL-51).jpg
+    width: 740
+    height: 584
+    note: 'Photo #: NH 57451 USS Atlanta (CL-51) Scene on the ship''s fantail, during her commissioning ceremonies at the New York Navy Yard, Brooklyn, N.Y., 24 December 1941. Standing in the foreground are
+      (left to right): Captain Samuel P. Jenkins, Commanding Officer; Rear Admiral Adolphus Andrews; Margaret M'
+
+  - id: atlanta-03
+    file: /img/ships/atlanta-03-USS-Atlanta-CL-51-19-N-27282.jpg
+    subject: ship:atlanta
+    title:
+      zh: 亚特兰大号（第 3 张）
+      en: USS Atlanta (CL-51) - 19-N-27282.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Atlanta_(CL-51)_-_19-N-27282.jpg
+    width: 5738
+    height: 4110
+    note: Is christened by author Margaret Mitchell (Mrs. John R. Marsh), during launching ceremonies at the Federal Shipbuilding and Drydock Company shipyard, Kearny, New Jersey, 6 September 1941. Photograph
+      from the Bureau of Ships Collection in the U.S. National Archives.
+
+  - id: atlanta-04
+    file: /img/ships/atlanta-04-USS-Atlanta-CL-51-19-N-27284.jpg
+    subject: ship:atlanta
+    title:
+      zh: 亚特兰大号（第 4 张）
+      en: USS Atlanta (CL-51) - 19-N-27284.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Atlanta_(CL-51)_-_19-N-27284.jpg
+    width: 4539
+    height: 5764
+    note: Slides down the building ways, during launching ceremonies at the Federal Shipbuilding and Drydock Company shipyard, Kearny, New Jersey, 6 September 1941. Photograph from the Bureau of Ships Collection
+      in the U.S. National Archives.
+
+  - id: atlanta-05
+    file: /img/ships/atlanta-05-USS-Atlanta-CL-51-at-Pearl-Harbor-in-May-194.jpg
+    subject: ship:atlanta
+    title:
+      zh: 亚特兰大号（第 5 张）
+      en: USS Atlanta (CL-51) at Pearl Harbor in May 1942.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Atlanta_(CL-51)_at_Pearl_Harbor_in_May_1942.jpg
+    width: 5557
+    height: 4156
+    note: The U.S. Navy light cruiser USS Atlanta (CL-51) at Pearl Harbor, Hawaii, in May 1942.
+
+  - id: atlanta-06
+    file: /img/ships/atlanta-06-USS-Atlanta-CL-51-steaming-at-high-speed-cir.jpg
+    subject: ship:atlanta
+    title:
+      zh: 亚特兰大号（第 6 张）
+      en: USS Atlanta (CL-51) steaming at high speed, circa in November 1941 (NH 57455).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Atlanta_(CL-51)_steaming_at_high_speed,_circa_in_November_1941_(NH_57455).jpg
+    width: 5173
+    height: 3858
+    note: The U.S. Navy light cruiser USS Atlanta (CL-51) steaming at high speed, probably during her trials, circa in November 1941.
+
+  - id: atlanta-07
+    file: /img/ships/atlanta-07-USS-Atlanta-CL-51-underway-at-sea-on-16-Octo.jpg
+    subject: ship:atlanta
+    title:
+      zh: 亚特兰大号（第 7 张）
+      en: USS Atlanta (CL-51) underway at sea on 16 October 1942 (NH 97807).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Atlanta_(CL-51)_underway_at_sea_on_16_October_1942_(NH_97807).jpg
+    width: 5671
+    height: 4482
+    note: The U.S. Navy light cruiser USS Atlanta (CL-51) comes alongside the heavy cruiser USS San Francisco (CA-38) to refuel, 16 October 1942.
+
+  - id: atlanta-08
+    file: /img/ships/atlanta-08-USS-Atlanta-CL-51-underway-in-November-1941.jpg
+    subject: ship:atlanta
+    title:
+      zh: 亚特兰大号（第 8 张）
+      en: USS Atlanta (CL-51) underway in November 1941.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown authorUnknown author
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Atlanta_(CL-51)_underway_in_November_1941.jpg
+    width: 5706
+    height: 3414
+    note: The U.S. Navy light cruiser USS Atlanta (CL-51) running trials off Rockland, Maine (USA), on 26 November 1941.
+
+  - id: atlanta-09
+    file: /img/ships/atlanta-09-USS-Hornet-CV-8-and-USS-Atlanta-CL-51-at-sea.jpg
+    subject: ship:atlanta
+    title:
+      zh: 亚特兰大号（第 9 张）
+      en: USS Hornet (CV-8) and USS Atlanta (CL-51) at sea on 6 June 1942 (80-G-88908).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Hornet_(CV-8)_and_USS_Atlanta_(CL-51)_at_sea_on_6_June_1942_(80-G-88908).jpg
+    width: 1874
+    height: 1395
+    note: The U.S. Navy aircraft carrier USS Hornet (CV-8) and the light anti-aircraft cruiser USS Atlanta (CL-51) following the Battle of Midway on 6 June 1942. The photo was taken as Atlanta came up to
+      offer assistance to the destroyer USS Phelps (DD-360), which had broken down temporarily because of fuel s
+
+  - id: atlanta-10
+    file: /img/ships/atlanta-10-USS-Hornet-CV-8-USS-New-Orleans-CA-32-and-US.jpg
+    subject: ship:atlanta
+    title:
+      zh: 亚特兰大号（第 10 张）
+      en: USS Hornet (CV-8), USS New Orleans (CA-32) and USS Atlanta (CL-51) at sea on 6 June 1942 (
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy photograph
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Hornet_(CV-8),_USS_New_Orleans_(CA-32)_and_USS_Atlanta_(CL-51)_at_sea_on_6_June_1942_(80-G-88908).jpg
+    width: 2533
+    height: 1885
+    note: The U.S. Navy aircraft carrier USS Hornet (CV-8), the light anti-aircraft cruiser USS Atlanta (CL-51), and the heavy cruiser USS New Orleans (CA-32), right, following the Battle of Midway on 6 June
+      1942. The photo was taken as Atlanta came up to offer assistance to the destroyer USS Phelps (DD-360),
+
+  - id: atlanta-11
+    file: /img/ships/atlanta-11-USS-Phelps-DD-360-and-USS-Atlanta-CL-51-duri.jpg
+    subject: ship:atlanta
+    title:
+      zh: 亚特兰大号（第 11 张）
+      en: USS Phelps (DD-360) and USS Atlanta (CL-51) during the Battle of Midway, 6 May 1942 (80-G-
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Phelps_(DD-360)_and_USS_Atlanta_(CL-51)_during_the_Battle_of_Midway,_6_May_1942_(80-G-7751).jpg
+    width: 2654
+    height: 1984
+    note: The U.S. Navy destroyer USS Phelps (DD-360) during the third day of the Battle of Midway, on 6 June 1942. Phelps lost suction because fuel oil was running low and caused a huge cloud of smoke to
+      ascend skyward. The light cruiser USS Atlanta (CL-51), left, approached and offered its assistance but th
+
+  - id: atlanta-12
+    file: /img/ships/atlanta-12-USS-Saratoga-CV-3-with-Atlanta-CL-51-off-Gua.jpg
+    subject: ship:atlanta
+    title:
+      zh: 亚特兰大号（第 12 张）
+      en: USS Saratoga (CV-3) with Atlanta (CL-51) off Guadalcanal Aug 1942.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: USN (Photographed from USS Enterprise (CV-6)
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Saratoga_(CV-3)_with_Atlanta_(CL-51)_off_Guadalcanal_Aug_1942.jpg
+    width: 5685
+    height: 4208
+    note: Landing operations continue on the U.S. Navy aircraft carrier USS Saratoga (CV-3), at left, in the late afternoon of 21 August 1942, while ships of the task force which escorted troops into the
+      Solomons patrol off Guadalcanal. This was three days before the Battle of the Eastern Solomons. USS Atlant
+
+  - id: hammann-01
+    file: /img/ships/hammann-01-Survivors-of-USS-Hammann-DD-412-are-brought-.jpg
+    subject: ship:hammann
+    title:
+      zh: 哈曼号（第 1 张）
+      en: Survivors of USS Hammann (DD-412) are brought ashore at Pearl Harbor from USS Benham (DD-3
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:Survivors_of_USS_Hammann_(DD-412)_are_brought_ashore_at_Pearl_Harbor_from_USS_Benham_(DD-397),_9_June_1942_(80-G-312064).jpg
+    width: 5622
+    height: 3922
+    primary: true
+    note: 'Battle of Midway, June 1942: Survivors of the U.S. Navy destroyer USS Hammann (DD-412) are brought ashore at Pearl Harbor from USS Benham (DD-397) on 9 June 1942, three days after their ship was
+      sunk. Note the U.S. Navy ambulance in left foreground, many onlookers, the depth charge racks on Benham''s'
+
+  - id: hammann-02
+    file: /img/ships/hammann-02-USS-Hammann-alongside-USS-Yorktown-both-torp.jpg
+    subject: ship:hammann
+    title:
+      zh: 哈曼号（第 2 张）
+      en: USS Hammann alongside USS Yorktown-both torpedoed.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Hammann_alongside_USS_Yorktown-both_torpedoed.jpg
+    width: 740
+    height: 509
+
+  - id: hammann-03
+    file: /img/ships/hammann-03-USS-Hammann-DD-412-sunk-depth-charges-explod.jpg
+    subject: ship:hammann
+    title:
+      zh: 哈曼号（第 3 张）
+      en: USS Hammann DD-412 sunk-depth charges exploding near Yorktown.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: USN
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Hammann_DD-412_sunk-depth_charges_exploding_near_Yorktown.jpg
+    width: 5554
+    height: 4281
+    note: Diorama by Norman Bel Geddes, depicting the explosion of depth charges from USS Hammann (DD-412) as she sank alongside USS Yorktown (CV-5) during the afternoon of 6 June 1942. Both ships were torpedoed
+      by Japanese submarine I-168 while Hammann was assisting with the salvage of Yorktown. USS Vireo (A
+
+  - id: monaghan-01
+    file: /img/ships/monaghan-01-Monaghan-DD-354-Passengers-June-1942-DPLA-49.jpg
+    subject: ship:monaghan
+    title:
+      zh: 莫纳汉号（第 1 张）
+      en: Monaghan (DD-354) - Passengers, June 1942 - DPLA - 49a25616d58632b0fca92abcd0308308.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Department of Defense. Department of the Navy. Bureau of Naval Personnel. 9/18/1947-1982
+    source_url: https://commons.wikimedia.org/wiki/File:Monaghan_(DD-354)_-_Passengers,_June_1942_-_DPLA_-_49a25616d58632b0fca92abcd0308308.jpg
+    width: 3288
+    height: 5064
+    primary: true
+    note: These records include detailed muster rolls listing all personnel assigned to ships based at Pearl Harbor, 1939-47, as well as reports of changes for sailors transferred to other ships or locations,
+      and those missing or dead.
+
+  - id: monaghan-02
+    file: /img/ships/monaghan-02-TBD-sinking-astern-of-USS-Enterprise-CV-6-in.jpg
+    subject: ship:monaghan
+    title:
+      zh: 莫纳汉号（第 2 张）
+      en: TBD sinking astern of USS Enterprise (CV-6) in May 1942.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:TBD_sinking_astern_of_USS_Enterprise_(CV-6)_in_May_1942.jpg
+    width: 5607
+    height: 4204
+    note: 'U.S. Navy Lieutenant Commander Eugene E. Lindsey''s Douglas TBD-1 Devastator (BuNo 0370) sinking astern of the aircraft carrier USS Enterprise (CV-6) after a deck landing accident on 28 May 1942.
+      The plane guard destroyer, USS Monaghan (DD-354) is in the left background. Enterprise was then en route '
+
+  - id: monaghan-03
+    file: /img/ships/monaghan-03-USSMonaghanDD354.jpg
+    subject: ship:monaghan
+    title:
+      zh: 莫纳汉号（第 3 张）
+      en: USSMonaghanDD354.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:USSMonaghanDD354.jpg
+    width: 900
+    height: 736
+    note: USS Monaghan (DD-354).
+
+  - id: benham-01
+    file: /img/ships/benham-01-Survivors-of-USS-Hammann-DD-412-are-brought-.jpg
+    subject: ship:benham
+    title:
+      zh: 本汉号（第 1 张）
+      en: Survivors of USS Hammann (DD-412) are brought ashore at Pearl Harbor from USS Benham (DD-3
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:Survivors_of_USS_Hammann_(DD-412)_are_brought_ashore_at_Pearl_Harbor_from_USS_Benham_(DD-397),_9_June_1942_(80-G-312064).jpg
+    width: 5622
+    height: 3922
+    primary: true
+    note: 'Battle of Midway, June 1942: Survivors of the U.S. Navy destroyer USS Hammann (DD-412) are brought ashore at Pearl Harbor from USS Benham (DD-397) on 9 June 1942, three days after their ship was
+      sunk. Note the U.S. Navy ambulance in left foreground, many onlookers, the depth charge racks on Benham''s'
+
+  - id: benham-02
+    file: /img/ships/benham-02-USS-Benham-DD-397-anchored-off-New-York-City.jpg
+    subject: ship:benham
+    title:
+      zh: 本汉号（第 2 张）
+      en: USS Benham (DD-397) anchored off New York City (USA), in 1939 (NH 81173) (cropped).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Benham_(DD-397)_anchored_off_New_York_City_(USA),_in_1939_(NH_81173)_(cropped).jpg
+    width: 5610
+    height: 2500
+    note: The U.S. Navy destroyer USS Benham (DD-397) anchored off New York City (USA), during a naval review in 1939.
+
+  - id: benham-03
+    file: /img/ships/benham-03-USS-Benham-DD-397-anchored-off-New-York-City.jpg
+    subject: ship:benham
+    title:
+      zh: 本汉号（第 3 张）
+      en: USS Benham (DD-397) anchored off New York City (USA), in 1939 (NH 81173).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Benham_(DD-397)_anchored_off_New_York_City_(USA),_in_1939_(NH_81173).jpg
+    width: 5611
+    height: 3248
+    note: The U.S. Navy destroyer USS Benham (DD-397) anchored off New York City (USA), during a naval review in 1939.
+
+  - id: benham-04
+    file: /img/ships/benham-04-USS-Benham-DD-397-crewmembers-at-Espiritu-Sa.jpg
+    subject: ship:benham
+    title:
+      zh: 本汉号（第 4 张）
+      en: USS Benham (DD-397) crewmembers at Espiritu Santo, New Hebrides, in November 1942 (NH 1068
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Benham_(DD-397)_crewmembers_at_Espiritu_Santo,_New_Hebrides,_in_November_1942_(NH_106830).jpg
+    width: 5900
+    height: 4639
+    note: Crewmembers of the U.S. Navy destroyer USS Benham (DD-397) at Espiritu Santo, New Hebrides, shortly after she was lost on 15 November 1942.
+
+  - id: benham-05
+    file: /img/ships/benham-05-USS-Benham-DD-397-off-Kearny-New-Jersey-USA-.jpg
+    subject: ship:benham
+    title:
+      zh: 本汉号（第 5 张）
+      en: USS Benham (DD-397) off Kearny, New Jersey (USA), on 4 January 1939 (NH 97822).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Benham_(DD-397)_off_Kearny,_New_Jersey_(USA),_on_4_January_1939_(NH_97822).jpg
+    width: 5735
+    height: 3773
+    note: The U.S. Navy destroyer USS Benham (DD-397) off Kearny, New Jersey (USA), on 4 January 1939.
+
+  - id: benham-06
+    file: /img/ships/benham-06-USS-Benham-DD-397-off-the-Mare-Island-Naval-.jpg
+    subject: ship:benham
+    title:
+      zh: 本汉号（第 6 张）
+      en: 'USS Benham (DD-397) off the Mare Island Naval Shipyard, California (USA), 6 February 1942 '
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Benham_(DD-397)_off_the_Mare_Island_Naval_Shipyard,_California_(USA),_6_February_1942_(NH_90936).jpg
+    width: 5684
+    height: 4168
+    note: The U.S. Navy destroyer USS Benham (DD-397) off the Mare Island Naval Shipyard, California (USA), 6 February 1942. Note that she appears to be painted in Camouflage Measure 12.
+
+  - id: benham-07
+    file: /img/ships/benham-07-USS-Benham-DD-397-on-4-June-1942-with-surviv.jpg
+    subject: ship:benham
+    title:
+      zh: 本汉号（第 7 张）
+      en: USS Benham (DD-397) on 4 June 1942, with survivors of USS Yorktown (CV-5) on board (80-G-3
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Benham_(DD-397)_on_4_June_1942,_with_survivors_of_USS_Yorktown_(CV-5)_on_board_(80-G-32390).jpg
+    width: 4388
+    height: 4478
+    note: 'Battle of Midway, 4 June 1942: The U.S. Navy destroyer USS Benham (DD-397), with 720 survivors of the aircraft carrier USS Yorktown (CV-5) on board, closes the heavy cruiser USS Portland (CA-33)
+      at about 1900 hrs. A report of unidentified aircraft caused Benham to break away before transferring any '
+
+  - id: benham-08
+    file: /img/ships/benham-08-USS-Benham-DD-397-transfers-wounded-to-USS-P.jpg
+    subject: ship:benham
+    title:
+      zh: 本汉号（第 8 张）
+      en: USS Benham (DD-397) transfers wounded to USS Portland (CA-33) on 4 June 1942 (80-G-32381).
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Benham_(DD-397)_transfers_wounded_to_USS_Portland_(CA-33)_on_4_June_1942_(80-G-32381).jpg
+    width: 2864
+    height: 2312
+    note: 'Battle of Midway, 4 June 1942: A wounded crew member from the U.S. Navy aircraft carrier USS Yorktown (CV-5) is being high-lined transferred from the destroyer USS Benham (DD-397) to the heavy
+      cruiser USS Portland (CA-33). A report of unidentified aircraft caused Benham to break away before transfer'
+
+  - id: benham-09
+    file: /img/ships/benham-09-USS-Yorktown-CV-5-being-abandonded-4-June-19.jpg
+    subject: ship:benham
+    title:
+      zh: 本汉号（第 9 张）
+      en: USS Yorktown (CV-5) being abandonded, 4 June 1942.jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: USN
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Yorktown_(CV-5)_being_abandonded,_4_June_1942.jpg
+    width: 5591
+    height: 4125
+    note: 'The U.S. Navy aircraft carrier USS Yorktown (CV-5) being abandoned by her crew after she was hit by two Japanese Type 91 aerial torpedoes, 4 June 1942. The following destroyers are standing by
+      (l-r): USS Benham (DD-397), USS Russell (DD-414), USS Balch (DD-363) and USS Anderson (DD-411).'
+
+  - id: benham-10
+    file: /img/ships/benham-10-USS-Yorktown-CV-5-survivors-aboard-USS-Benha.jpg
+    subject: ship:benham
+    title:
+      zh: 本汉号（第 10 张）
+      en: USS Yorktown (CV-5) survivors aboard USS Benham (DD-397) on 4 June 1942 (80-G-32379).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Yorktown_(CV-5)_survivors_aboard_USS_Benham_(DD-397)_on_4_June_1942_(80-G-32379).jpg
+    width: 2328
+    height: 2252
+    note: 'Battle of Midway, 4 June 1942: The U.S. Navy destroyer USS Benham (DD-397), with 720 survivors of the aircraft carrier USS Yorktown (CV-5) on board, closes the heavy cruiser USS Portland (CA-33)
+      at about 1900 hrs. A report of unidentified aircraft caused Benham to break away before transferring any '
+
+  - id: benham-11
+    file: /img/ships/benham-11-USS-Yorktown-CV-5-survivors-aboard-USS-Benha.jpg
+    subject: ship:benham
+    title:
+      zh: 本汉号（第 11 张）
+      en: USS Yorktown (CV-5) survivors aboard USS Benham (DD-397), 4 June 1942 (80-G-32378).jpg
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: ''
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Yorktown_(CV-5)_survivors_aboard_USS_Benham_(DD-397),_4_June_1942_(80-G-32378).jpg
+    width: 2312
+    height: 2268
+    note: 'Battle of Midway, 4 June 1942: The U.S. Navy destroyer USS Benham (DD-397), with 720 survivors of the aircraft carrier USS Yorktown (CV-5) on board, closes the heavy cruiser USS Portland (CA-33)
+      at about 1900 hrs. A report of unidentified aircraft caused Benham to break away before transferring any '
