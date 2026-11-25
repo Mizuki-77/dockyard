@@ -332,10 +332,10 @@ sources:
   fetched: 2026-11-17
   license: all_rights_reserved
   note: '**本次把时间轴升级到 A 档的关键来源**。原文现藏 Bundesarchiv/Militärarchiv Freiburg RM 92/5100、 英国国家档案馆 Kew、美国 NARA College Park（缩微胶卷 T1022 roll 2791，items PG 47896 / PG 47897）。 重要限制：1941-05-27 沉没前那段（PDF 第 114–179
-    页）是 Seekriegsleitung 于 1941-07 **重建**的， 因为 Bismarck 的实际日志随舰沉没——这一段虽是官方文件，但不是当场记录，引用时须注明。 本地文本：work/raw/ktb/bs-ktb.txt（390,913 字符）。
+    页）是 Seekriegsleitung 于 1941-07 **重建**的， 因为 Bismarck 的实际日志随舰沉没——这一段虽是官方文件，但不是当场记录，引用时须注明。 本地文本：docs/reference/bs-ktb.txt（390,913 字符）。
 
     '
-  local_copy: work/raw/ktb/bs-ktb.txt
+  local_copy: docs/reference/bs-ktb.txt
 - id: kbismarck-artillery-report
   title: AVKS-700 Artillery Testing Report
   url: https://www.kbismarck.com/artillery-testing-report.html

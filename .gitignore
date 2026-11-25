@@ -1,8 +1,8 @@
-# Dockyard · 版本控制范围
-# 原则：入库的是「重建站点所必需的内容」与「可读的调研报告」；
+# ── Dockyard 版本控制范围 ─────────────────────────────────────────────
+# 原则：入库的是「重建站点所必需的内容」与「可读的调研文档」；
 #       抓下来的原始 HTML/PDF/截图是原料，留在磁盘上，但不进 git。
 
-# ── 依赖与构建产物 ──────────────────────────────
+# ── 依赖与构建产物 ───────────────────────────────────────────────────
 node_modules/
 dist/
 .astro/
@@ -10,50 +10,22 @@ dist/
 __pycache__/
 *.pyc
 
-# ── 本地临时 ────────────────────────────────────
+# ── 本地临时 ─────────────────────────────────────────────────────────
 _tmp/
 
-# ── 备份文件（交接报告 §9.1 第 8 条，确认无用后可删）──
+# ── 备份文件 ─────────────────────────────────────────────────────────
+# 覆盖 *.bak / *.bak2 / *.bak3 / *.bak-2026-11-19 / *.bak2-2026-11-21 等形态。
 *.bak
 *.bak*
-# 上面一条覆盖了 *.bak2 / *.bak3 / *.bak-2026-11-19 以及
-# *.bak2-2026-11-21 这种「bakN-日期」形式 —— 之前写成 *.bak-* 时
-# bak2-2026-11-21 漏网，会被误提交。
 
-# ── work/ 只有这几类入库 ────────────────────────
-#   根目录的 *.py（可复用脚本）与 *.md（工作报告）
-#   raw/ 下的 *.md（调研报告，带英文原句与来源 URL）
-#   raw/ktb/bs-ktb.txt（sources.yaml 的 local_copy 指向它）
-work/shots/
-work/_tmp/
-work/_src/
-work/ijn-weapons/
-work/*.txt
-work/*.log
-work/_[!_]*.json
-work/imgfrag/**/*.jpg
-work/imgfrag/**/*.jpeg
-work/imgfrag/**/*.png
-work/imgfrag/**/*.json
-work/imgfrag/**/*.txt
-work/navweaps/*.php
-work/navweaps/*.txt
-work/raw/**/*.pdf
-work/raw/**/*.html
-work/raw/**/*.htm
-work/raw/**/*.zip
-work/raw/**/*.bin
-work/raw/**/*.txt
+# ── 调研车间 ─────────────────────────────────────────────────────────
+# work/ 是一次性的抓取脚本、中间产物和 staging 分片，属于加工过程而不是
+# 项目本体。2026-11-25 起整体移出版本控制，本地照常保留、照常能用。
+# 需要随库长期留存的原始材料，请移到 docs/reference/ 下再入库。
+/work/
 
-# 唯一例外：sources.yaml 引用的德国海军战争日志原文
-!work/raw/ktb/bs-ktb.txt
-
-# ── 分片协作的原始抓取（2026-11-22 十舰入库那一轮起）────────
-# 派 subagent 时它们会把抓到的页面存 _raw/（或 _src/），
-# 这些和 work/raw/ 里的一样是原料，不进 git。
-# 保留的是同目录下的 *.yaml（分片本体）与 *.md（RESEARCH-NOTES.md，带英文原句）。
-work/staging/**/_raw/**
-work/staging/**/_src/**
-# 2026-11-23 加：指挥官分片用的另一套 staging 目录，规则同上。
-work/staging_cmdr/**/_raw/**
-work/staging_cmdr/**/_src/**
+# ── 编辑器 / 系统 ────────────────────────────────────────────────────
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
