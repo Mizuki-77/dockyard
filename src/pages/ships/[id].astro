@@ -1,9 +1,18 @@
 ---
 // ============================================================================
-// 单舰档案页。章节顺序按用户的意见定：
-//   总图 → 简介 → 武器配置 → 历史 → 状态时间轴 → 详细参数 → 争议
-// 时间轴放在「详细参数」之前，因为它是参数的另一种读法（按时间读），
-// 而不是参数表的一部分。
+// 单舰档案页。章节顺序按用户的意见定（2026-11-25 调整）：
+//   总图 → 简介 → 状态时间轴 → 详细参数 → 武器配置 → 历史 → 争议 → 图片
+//
+// 为什么时间轴上提到简介之后：
+//   时间轴是这艘舰最核心的交互（拖动横条看不同时刻的状态），
+//   放在页面靠前的位置，读者一进来就能玩到它，而不是滚到很下面才发现。
+// 为什么详细参数紧跟时间轴：
+//   两者是同一批数据的两种读法——时间轴按时刻读，参数表按字段读。
+//   分开放会让读者来回滚。
+// 武器配置与历史往后放：
+//   这两块是深内容，读到这里的人已经决定要认真看了。
+// 图片在最后：页首已有总图，其余照片属于「看完正文还想多看的」，
+// 所以页首与时间轴区各留一句「更多图片在末尾」的提示。
 // ============================================================================
 import Base from '../../layouts/Base.astro';
 import SideNav from '../../components/SideNav.astro';
@@ -127,11 +136,12 @@ const bareCommanders = getRawCommanderFacts()
 
 const navItems = [
   { href: '#intro', label: '简介' },
-  ...(entities.weapons.length > 0 ? [{ href: '#armament', label: '武器配置' }] : []),
-  ...(article?.history?.length ? [{ href: '#history', label: '历史' }] : []),
   { href: '#timeline', label: '状态时间轴' },
   { href: '#specs', label: '详细参数' },
+  ...(entities.weapons.length > 0 ? [{ href: '#armament', label: '武器配置' }] : []),
+  ...(article?.history?.length ? [{ href: '#history', label: '历史' }] : []),
   ...(narratives.length > 0 ? [{ href: '#disputes', label: '争议' }] : []),
+  ...(gallery.length > 0 ? [{ href: '#gallery', label: '图片' }] : []),
 ];
 
 /** 来源 id 渲染成带层级角标的小标签，指向原始页面。 */
@@ -161,7 +171,7 @@ const nation = primaryValue(view.id, 'identity.nation');
     kicker={view.className?.en ?? 'Ship'}
     title={view.name.zh}
     items={navItems}
-    note="本页按「总图 → 简介 → 武器配置 → 历史 → 详细参数」排列，最后是还没定论的问题。"
+    note="本页按「总图 → 简介 → 状态时间轴 → 详细参数 → 武器配置 → 历史」排列，图片集中在最末。"
   />
 
   <nav class="crumbs">
@@ -223,6 +233,11 @@ const nation = primaryValue(view.id, 'identity.nation');
           图片来源按授权分三档：A 档可归档，B 档外链并署名，C 档不使用。
         </span>
       )}
+      {gallery.length > 0 && (
+        <span class="shiphero__more">
+          <a href="#gallery">共 {gallery.length + (hero ? 1 : 0)} 张照片，更多图片在页面末尾 ↓</a>
+        </span>
+      )}
     </figcaption>
   </figure>
 
@@ -280,217 +295,6 @@ const nation = primaryValue(view.id, 'identity.nation');
     )
   }
 
-  <!-- ============================ 武器配置 ============================ -->
-  {
-    entities.weapons.length > 0 && (
-      <section class="section" id="armament">
-        <div class="section__head">
-          <h2 class="section__title">武器配置</h2>
-          <span class="section__en">Armament</span>
-          <span class="section__aside">{entities.weapons.length} 种</span>
-        </div>
-        <p class="section__sub">
-          按武器型号分组，每组下面是这型炮在舰上的具体炮位。
-          参数里凡是能随时间变化的（比如炮塔测距仪），都标了生效区间。
-        </p>
-
-        <div class="stack">
-          {entities.weapons.map((w) => (
-            <div class="weapon">
-              <div class="weapon__head">
-                <h3 class="weapon__title">
-                  <WeaponLink id={w.id} label={w.label} />
-                </h3>
-                <span class="tag tag--ghost">{w.facts.length} 条参数</span>
-                <a class="weapon__more" href={`/weapons/${w.id}/`}>
-                  武器详情
-                  <span aria-hidden="true">→</span>
-                </a>
-              </div>
-              <div class="weapon__body">
-                <div class="weapon__facts">
-                  {mergeFactRows(w.facts).map((r) => {
-                    const def = getField(r.field);
-                    if (!def) return null;
-                    return (
-                      <div class="datarow datarow--tight">
-                        <div class="datarow__k datarow__k--wrap">{def.label.zh}</div>
-                        <div
-                          class:list={[
-                            'datarow__v',
-                            { 'datarow__v--long': r.text.length > 42 },
-                          ]}
-                        >
-                          {r.pairs.length > 0 ? (
-                            <span class="pairlist">
-                              {r.pairs.map((p) => (
-                                <span class="pair">
-                                  <span class="pair__q">{p.q}</span>
-                                  <span class="pair__t">{p.t}</span>
-                                </span>
-                              ))}
-                            </span>
-                          ) : (
-                            r.text
-                          )}
-                          {r.disputed && <span class="tag tag--warn tiny">存在争议</span>}
-                        </div>
-                        <div class="datarow__meta">
-                          {r.conf && <span class={`conf conf--${r.conf}`}>{r.conf}</span>}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-                {w.mounts.length > 0 && (
-                  <div class="mountbox">
-                    <div class="mountbox__title">炮位</div>
-                    {w.mounts.map((m) => (
-                      <a class="mountbox__row" href={`/weapons/${w.id}/#mounts`}>
-                        <span class="mountbox__name">{m.label}</span>
-                        <span class="mountbox__n">{m.facts.length} 条</span>
-                        <span class="mountbox__arrow" aria-hidden="true">→</span>
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-    )
-  }
-
-  <!-- ============================== 历史 ============================== -->
-  {
-    article?.history && article.history.length > 0 && (
-      <section class="section" id="history">
-        <div class="section__head">
-          <h2 class="section__title">历史</h2>
-          <span class="section__en">History</span>
-          <span class="section__aside">
-            {article.history.reduce((n, s) => n + (s.events?.length ?? 0), 0)} 条事件
-          </span>
-        </div>
-
-        <div class="hist">
-          {article.history.map((sec) => (
-            <div class="hist__sec">
-              <div class="hist__head">
-                <h3 class="hist__title">{sec.title.zh}</h3>
-                {sec.range && (
-                  <span class="hist__range mono">
-                    {displayDate(sec.range.from)}
-                    {sec.range.to ? ` — ${displayDate(sec.range.to)}` : ' 起'}
-                  </span>
-                )}
-              </div>
-              {sec.lead && <p class="hist__lead">{sec.lead.zh}</p>}
-              <div class="hist__events">
-                {(sec.events ?? []).map((ev) => (
-                  <div class="hist__ev">
-                    <div class="hist__date mono">{displayDate(ev.date)}</div>
-                    <div class="hist__text">
-                      {ev.text.zh}
-                      {ev.src && ev.src.length > 0 && (
-                        <div class="srcline srcline--inline">
-                          {ev.src.map((sid) => {
-                            const s = srcLink(sid);
-                            return (
-                              <a
-                                class="srcchip srcchip--sm"
-                                href={s.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                title={s.title}
-                              >
-                                <span class={`conf conf--${s.tier}`}>{s.tier}</span>
-                                {s.id}
-                              </a>
-                            );
-                          })}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {battles.length > 0 && (
-          <div class="btllist">
-            <div class="btllist__title">相关战役</div>
-            {battles.map((b) => (
-              <a class="btlrow" href={`/battles/${b.id}`}>
-                <span class="btlrow__date mono">{b.date.from}</span>
-                <span class="btlrow__body">
-                  <span class="btlrow__name">{b.name.zh}</span>
-                  <span class="btlrow__en">{b.name.en}</span>
-                </span>
-                <span class="btlrow__n">{b.timeline.length} 个事件</span>
-                <span class="btlrow__arrow" aria-hidden="true">→</span>
-              </a>
-            ))}
-          </div>
-        )}
-
-        <!-- 历任指挥官（2026-11-23 新增，与 /commanders 双向跳转）
-             数据来源两处：
-               ① 有完整档案的（13 人）→ 可点进人物页
-               ② 只有 name+军衔+任期 的（其余）→ 只列一行，不链接
-             都来自 data/ships 里既有的 service.commander fact，
-             加上 data/commanders/*.yaml 的 relations 反查。 -->
-        {(shipCommanders.length > 0 || bareCommanders.length > 0) && (
-          <div class="cmdrbox">
-            <div class="btllist__title">
-              历任指挥官
-              <span class="cmdrbox__n">
-                {shipCommanders.length + bareCommanders.length} 条任期记录
-              </span>
-            </div>
-
-            {shipCommanders.map(({ commander, tenure }) => (
-              <a class="cdrow" href={`/commanders/${commander.id}`}>
-                <span class="cdrow__date mono">
-                  {tenure.from || '—'} → {tenure.to || '—'}
-                </span>
-                <span class="cdrow__body">
-                  <span class="cdrow__name">{commander.name.zh}</span>
-                  <span class="cdrow__rank">{commander.rank_at_post ?? commander.rank_final}</span>
-                </span>
-                <span class="cdrow__role">{tenure.role}</span>
-                <span class="cdrow__arrow" aria-hidden="true">→</span>
-              </a>
-            ))}
-
-            {bareCommanders.map((b) => (
-              <div class="cdrow cdrow--bare">
-                <span class="cdrow__date mono">
-                  {b.from || '—'} → {b.to || '—'}
-                </span>
-                <span class="cdrow__body">
-                  <span class="cdrow__name">{b.parsed.name}</span>
-                  <span class="cdrow__rank">{b.parsed.rank}</span>
-                </span>
-                <span class="cdrow__role cdrow__role--mute">无传记资料</span>
-                <span class="cdrow__arrow cdrow__arrow--none" aria-hidden="true">·</span>
-              </div>
-            ))}
-
-            <p class="cmdrbox__note">
-              标「无传记资料」的是只有姓名与任期的记录 ——
-              本站查不到这些人的生平，所以不为他们建人物页。
-              给一个只有名字的人编简历会毁掉整站的可追溯性。
-            </p>
-          </div>
-        )}
-      </section>
-    )
-  }
-
   <!-- ============================ 状态时间轴 ============================ -->
   <section class="section" id="timeline">
     <div class="section__head">
@@ -501,6 +305,12 @@ const nation = primaryValue(view.id, 'identity.nation');
     <p class="section__sub">
       同一艘舰在不同日期的参数并不同。拖动横条，下面只显示该时刻成立的取值。
       没显示出来不代表是 0，而是「未记载」。
+      {gallery.length > 0 && (
+        <>
+          {' '}
+          <a class="sub-anchor" href="#gallery">该舰的 {gallery.length + (hero ? 1 : 0)} 张照片在页面末尾 →</a>
+        </>
+      )}
     </p>
 
     <div class="timeline" id="tl">
@@ -821,6 +631,226 @@ const nation = primaryValue(view.id, 'identity.nation');
     }
   </section>
 
+  <!-- ============================ 武器配置 ============================ -->
+  {
+    entities.weapons.length > 0 && (
+      <section class="section" id="armament">
+        <div class="section__head">
+          <h2 class="section__title">武器配置</h2>
+          <span class="section__en">Armament</span>
+          <span class="section__aside">{entities.weapons.length} 种</span>
+        </div>
+        <p class="section__sub">
+          按武器型号分组，每组下面是这型炮在舰上的具体炮位。
+          参数里凡是能随时间变化的（比如炮塔测距仪），都标了生效区间。
+        </p>
+
+        <div class="stack">
+          {entities.weapons.map((w) => (
+            <div class="weapon">
+              <div class="weapon__head">
+                <h3 class="weapon__title">
+                  <WeaponLink id={w.id} label={w.label} />
+                </h3>
+                <span class="tag tag--ghost">{w.facts.length} 条参数</span>
+                <a class="weapon__more" href={`/weapons/${w.id}/`}>
+                  武器详情
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+              <div class="weapon__body">
+                <div class="weapon__facts">
+                  {mergeFactRows(w.facts).map((r) => {
+                    const def = getField(r.field);
+                    if (!def) return null;
+                    // 四列网格里，长值必须横跨整行，否则被挤成窄条读不下去。
+                    // 判据用合并后的实际显示文本长度（含限定词），不是单个 fact 的值。
+                    const isLong = r.text.length > 42 || r.pairs.length > 0;
+                    return (
+                      <div
+                        class:list={[
+                          'datarow',
+                          'datarow--tight',
+                          { 'weapon__row--wide': isLong },
+                        ]}
+                      >
+                        <div class="datarow__k datarow__k--wrap">{def.label.zh}</div>
+                        <div
+                          class:list={[
+                            'datarow__v',
+                            { 'datarow__v--long': r.text.length > 42 },
+                          ]}
+                        >
+                          {r.pairs.length > 0 ? (
+                            <span class="pairlist">
+                              {r.pairs.map((p) => (
+                                <span class="pair">
+                                  <span class="pair__q">{p.q}</span>
+                                  <span class="pair__t">{p.t}</span>
+                                </span>
+                              ))}
+                            </span>
+                          ) : (
+                            r.text
+                          )}
+                          {r.disputed && <span class="tag tag--warn tiny">存在争议</span>}
+                        </div>
+                        <div class="datarow__meta">
+                          {r.conf && <span class={`conf conf--${r.conf}`}>{r.conf}</span>}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+                {w.mounts.length > 0 && (
+                  <div class="mountbox">
+                    <div class="mountbox__title">炮位</div>
+                    {w.mounts.map((m) => (
+                      <a class="mountbox__row" href={`/weapons/${w.id}/#mounts`}>
+                        <span class="mountbox__name">{m.label}</span>
+                        <span class="mountbox__n">{m.facts.length} 条</span>
+                        <span class="mountbox__arrow" aria-hidden="true">→</span>
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <!-- ============================== 历史 ============================== -->
+  {
+    article?.history && article.history.length > 0 && (
+      <section class="section" id="history">
+        <div class="section__head">
+          <h2 class="section__title">历史</h2>
+          <span class="section__en">History</span>
+          <span class="section__aside">
+            {article.history.reduce((n, s) => n + (s.events?.length ?? 0), 0)} 条事件
+          </span>
+        </div>
+
+        <div class="hist">
+          {article.history.map((sec) => (
+            <div class="hist__sec">
+              <div class="hist__head">
+                <h3 class="hist__title">{sec.title.zh}</h3>
+                {sec.range && (
+                  <span class="hist__range mono">
+                    {displayDate(sec.range.from)}
+                    {sec.range.to ? ` — ${displayDate(sec.range.to)}` : ' 起'}
+                  </span>
+                )}
+              </div>
+              {sec.lead && <p class="hist__lead">{sec.lead.zh}</p>}
+              <div class="hist__events">
+                {(sec.events ?? []).map((ev) => (
+                  <div class="hist__ev">
+                    <div class="hist__date mono">{displayDate(ev.date)}</div>
+                    <div class="hist__text">
+                      {ev.text.zh}
+                      {ev.src && ev.src.length > 0 && (
+                        <div class="srcline srcline--inline">
+                          {ev.src.map((sid) => {
+                            const s = srcLink(sid);
+                            return (
+                              <a
+                                class="srcchip srcchip--sm"
+                                href={s.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title={s.title}
+                              >
+                                <span class={`conf conf--${s.tier}`}>{s.tier}</span>
+                                {s.id}
+                              </a>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {battles.length > 0 && (
+          <div class="btllist">
+            <div class="btllist__title">相关战役</div>
+            {battles.map((b) => (
+              <a class="btlrow" href={`/battles/${b.id}`}>
+                <span class="btlrow__date mono">{b.date.from}</span>
+                <span class="btlrow__body">
+                  <span class="btlrow__name">{b.name.zh}</span>
+                  <span class="btlrow__en">{b.name.en}</span>
+                </span>
+                <span class="btlrow__n">{b.timeline.length} 个事件</span>
+                <span class="btlrow__arrow" aria-hidden="true">→</span>
+              </a>
+            ))}
+          </div>
+        )}
+
+        <!-- 历任指挥官（2026-11-23 新增，与 /commanders 双向跳转）
+             数据来源两处：
+               ① 有完整档案的（13 人）→ 可点进人物页
+               ② 只有 name+军衔+任期 的（其余）→ 只列一行，不链接
+             都来自 data/ships 里既有的 service.commander fact，
+             加上 data/commanders/*.yaml 的 relations 反查。 -->
+        {(shipCommanders.length > 0 || bareCommanders.length > 0) && (
+          <div class="cmdrbox">
+            <div class="btllist__title">
+              历任指挥官
+              <span class="cmdrbox__n">
+                {shipCommanders.length + bareCommanders.length} 条任期记录
+              </span>
+            </div>
+
+            {shipCommanders.map(({ commander, tenure }) => (
+              <a class="cdrow" href={`/commanders/${commander.id}`}>
+                <span class="cdrow__date mono">
+                  {tenure.from || '—'} → {tenure.to || '—'}
+                </span>
+                <span class="cdrow__body">
+                  <span class="cdrow__name">{commander.name.zh}</span>
+                  <span class="cdrow__rank">{commander.rank_at_post ?? commander.rank_final}</span>
+                </span>
+                <span class="cdrow__role">{tenure.role}</span>
+                <span class="cdrow__arrow" aria-hidden="true">→</span>
+              </a>
+            ))}
+
+            {bareCommanders.map((b) => (
+              <div class="cdrow cdrow--bare">
+                <span class="cdrow__date mono">
+                  {b.from || '—'} → {b.to || '—'}
+                </span>
+                <span class="cdrow__body">
+                  <span class="cdrow__name">{b.parsed.name}</span>
+                  <span class="cdrow__rank">{b.parsed.rank}</span>
+                </span>
+                <span class="cdrow__role cdrow__role--mute">无传记资料</span>
+                <span class="cdrow__arrow cdrow__arrow--none" aria-hidden="true">·</span>
+              </div>
+            ))}
+
+            <p class="cmdrbox__note">
+              标「无传记资料」的是只有姓名与任期的记录 ——
+              本站查不到这些人的生平，所以不为他们建人物页。
+              给一个只有名字的人编简历会毁掉整站的可追溯性。
+            </p>
+          </div>
+        )}
+      </section>
+    )
+  }
+
   <!-- ============================== 争议 ============================== -->
   {
     narratives.length > 0 && (
@@ -964,6 +994,21 @@ const nation = primaryValue(view.id, 'identity.nation');
   .shiphero__credit a {
     color: var(--blue-700);
   }
+  /* 「更多图片在末尾」—— 页首给一个锚点提示，读者不用滚到底才发现有图集 */
+  .shiphero__more {
+    display: block;
+    margin-top: 5px;
+  }
+  .shiphero__more a {
+    font-size: 11px;
+    color: var(--blue-700);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--blue-200);
+  }
+  .shiphero__more a:hover {
+    color: var(--navy-800);
+    border-bottom-color: var(--navy-800);
+  }
 
   .pagehead--tight {
     margin-bottom: 26px;
@@ -1084,9 +1129,55 @@ const nation = primaryValue(view.id, 'identity.nation');
   .weapon__facts {
     padding: 6px 15px 12px;
     min-width: 0;
+    /* 2026-11-25 用户要求「武器配置列表紧凑一些」：参数行改成四列网格。
+       原来一行一条（字段/值/置信度），一门炮十几个字段占满一屏。
+       四列后短字段并排，一屏能看完大半门炮的参数。
+       ⚠ 长值（型号全名、带括注的口径说明）横跨整行，否则会被挤成窄条读不下去。 */
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0 18px;
+    align-items: start;
   }
-  .datarow--tight {
-    padding: 7px 0;
+  .weapon__facts > .datarow--tight {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding: 6px 0;
+    border-bottom: 1px dashed var(--line);
+    min-width: 0;
+    position: relative;
+  }
+  .weapon__facts > .datarow--tight .datarow__k {
+    font-size: 11px;
+    color: var(--ink-400);
+  }
+  .weapon__facts > .datarow--tight .datarow__v {
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+  .weapon__facts > .datarow--tight .datarow__meta {
+    position: absolute;
+    top: 6px;
+    right: 0;
+  }
+  /* 长值横跨整行（:has 在目标浏览器都支持；不支持时退化成正常四列，不会坏） */
+  .weapon__facts > .datarow--tight.weapon__row--wide {
+    grid-column: 1 / -1;
+  }
+  @media (max-width: 1100px) {
+    .weapon__facts {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 900px) {
+    .weapon__facts {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 640px) {
+    .weapon__facts {
+      grid-template-columns: minmax(0, 1fr);
+    }
   }
   .mountbox {
     border-left: 1px solid var(--line-soft);
@@ -1181,6 +1272,26 @@ const nation = primaryValue(view.id, 'identity.nation');
   }
   .hist__events {
     position: relative;
+    /* 2026-11-25：历史左侧的点用一条竖线连起来，让它明显是一条时间线。
+       线画在 .hist__events 上（不是每个点自己画），这样事件之间自然连续，
+       最后一条事件之后不会多出一截尾巴。 */
+    padding-left: 0;
+  }
+  /* 竖线：落在日期列左侧 2px 处，从第一个点到最后一个点。
+     用 ::before 画在容器上，避免逐条计算 */
+  .hist__events::before {
+    content: '';
+    position: absolute;
+    left: 1.5px;
+    top: 12px;
+    bottom: 12px;
+    width: 1px;
+    background: linear-gradient(
+      to bottom,
+      var(--blue-200) 0%,
+      var(--blue-200) 92%,
+      transparent 100%
+    );
   }
   .hist__ev {
     display: grid;
@@ -1188,6 +1299,7 @@ const nation = primaryValue(view.id, 'identity.nation');
     gap: 14px;
     padding: 9px 0 9px 0;
     border-top: 1px dashed var(--line-soft);
+    position: relative;
   }
   .hist__ev:first-child {
     border-top: 0;
@@ -1200,6 +1312,7 @@ const nation = primaryValue(view.id, 'identity.nation');
     position: relative;
     padding-top: 2px;
   }
+  /* 圆点：坐在竖线上，加一圈纸色描边把它从线上「抠」出来 */
   .hist__date::before {
     content: '';
     position: absolute;
@@ -1209,6 +1322,8 @@ const nation = primaryValue(view.id, 'identity.nation');
     height: 5px;
     border-radius: 50%;
     background: var(--blue-400);
+    box-shadow: 0 0 0 3px var(--paper, #fff);
+    z-index: 1;
   }
   .hist__text {
     font-size: 13.5px;

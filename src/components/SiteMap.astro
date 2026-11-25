@@ -72,6 +72,43 @@ for (const nat of extra) {
 
 const totalShips = entries.length;
 
+// ---------------------------------------------------------------- 重要舰船
+//
+// 2026-11-25 用户要求：首页左侧只放「重要的舰船」快速跳转，并**指明**是重要舰船。
+//
+// 为什么不再按国家铺全部 47 艘：
+//   47 艘铺成 4 组要占满整栏还放不下，左侧栏的优势「常驻可见」被稀释成
+//   一张长列表。读者在首页要的是「从哪儿开始看」，不是「站里全都有谁」——
+//   全部清单在 /ships 页有完整的层级树，这里不重复。
+//
+// 选哪些、凭什么：不引入新的数据字段（那要动 47 个 yaml），
+// 用三条客观判据叠加，写死在代码里并标注理由：
+//   ① 战役页直接点开的旗舰/主角舰（俾斯麦、赤城、大和、企业号…）
+//   ② 本站最早收录、正文最完整的一批（俾斯麦级、光辉级、约克城级）
+//   ③ 海军史上公认的「那一艘」（大和、俾斯麦、胡德）
+// 顺序按历史时间排，不按字母序——读者脑子里是「1941 年那艘」而不是「B 开头那艘」。
+const FEATURED = [
+  { id: 'hood', reason: '英国战巡的终点，1941-05-24 三分钟沉没' },
+  { id: 'bismarck', reason: '本站最早收录的舰，正文 41 条事件' },
+  { id: 'prince-of-wales', reason: '与胡德同战，后随威尔士亲王号战沉远东' },
+  { id: 'akagi', reason: '中途岛机动部队旗舰，左舷舰岛' },
+  { id: 'enterprise', reason: '美军战历最长的航母，几乎打满全场' },
+  { id: 'yorktown', reason: '珊瑚海重创后 72 小时抢修赶赴中途岛' },
+  { id: 'tirpitz', reason: '「孤独的北方女王」，存在即牵制' },
+  { id: 'yamato', reason: '史上最大战列舰，46 cm 主炮' },
+  { id: 'musashi', reason: '大和型二号舰，锡布延海沉没' },
+  { id: 'victorious', reason: '光辉级，本站配图最多的一艘' },
+];
+
+// 只保留真实存在于数据里的（防止手写清单与 data 脱节）
+const shipById = new Map(entries.map((e) => [e.id, e]));
+const featured = FEATURED.map((f) => {
+  const s = shipById.get(f.id);
+  return s ? { ...s, reason: f.reason } : null;
+}).filter((x): x is ShipEntry & { reason: string } => x !== null);
+
+const missingFeatured = FEATURED.filter((f) => !shipById.has(f.id)).map((f) => f.id);
+
 // ---------------------------------------------------------------- 战役与行动
 interface BattleEntry {
   id: string;
@@ -153,36 +190,40 @@ function isActive(href: string): boolean {
   </button>
 
   <div class="sitemap__body" id="sitemap-body">
-    <!-- ============================================ ① 舰艇清单 -->
+    <!-- ============================================ ① 重要舰船 -->
     <section class="sitemap__sec">
       <div class="sitemap__sechead">
-        <span class="sitemap__sectitle">舰艇</span>
-        <span class="sitemap__count">{totalShips}</span>
+        <span class="sitemap__sectitle">重要舰船</span>
+        <span class="sitemap__count">{featured.length}</span>
       </div>
+      <p class="sitemap__lead">
+        挑着放的十艘，不是全集——全部 {totalShips} 艘在
+        <a href="/ships">战舰信息</a> 的完整索引里。按历史时间排。
+      </p>
 
-      {
-        byNation.map((g) => (
-          <div class="smgroup">
-            <div class="smgroup__head">
-              <span class="smgroup__nation">{g.label}</span>
-              <span class="smgroup__n">{g.ships.length}</span>
-            </div>
-            <ul class="smgroup__list">
-              {g.ships.map((s) => (
-                <li>
-                  <a
-                    class="smlink"
-                    href={`/ships/${s.id}`}
-                    aria-current={isActive(`/ships/${s.id}`) ? 'page' : undefined}
-                  >
-                    {s.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))
-      }
+      <ul class="smlist">
+        {featured.map((s) => (
+          <li>
+            <a
+              class="smlink smlink--feat"
+              href={`/ships/${s.id}`}
+              aria-current={isActive(`/ships/${s.id}`) ? 'page' : undefined}
+            >
+              <span class="smlink__name">{s.name}</span>
+              <span class="smlink__why">{s.reason}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      {missingFeatured.length > 0 && (
+        <p class="sitemap__warn">
+          ⚠ 清单里有 {missingFeatured.length} 个 id 在数据里不存在：
+          {missingFeatured.join('、')}
+        </p>
+      )}
+
+      <a class="sitemap__all" href="/ships">全部 {totalShips} 艘 →</a>
     </section>
 
     <!-- ============================================ ② 战役与行动 -->
@@ -449,6 +490,76 @@ function isActive(href: string): boolean {
     background: var(--blue-50);
     color: var(--blue-700);
     outline: none;
+  }
+
+  /* ------------------------------------------------ 重要舰船（2026-11-25） */
+  .sitemap__lead {
+    margin: 0 0 8px;
+    font-size: 10.5px;
+    line-height: 1.6;
+    color: var(--ink-400);
+  }
+  .sitemap__lead a {
+    color: var(--blue-700);
+  }
+  .smlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .smlist > li + li {
+    margin-top: 1px;
+  }
+  /* 重要舰船每条两个信息：舰名 + 一句「为什么它重要」。
+     比光列名字多占一行，但读者第一次进站就能知道这艘舰是什么。 */
+  .smlink--feat {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 5px 8px;
+    border-radius: 4px;
+    width: 100%;
+  }
+  .smlink__name {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--ink-800);
+    line-height: 1.5;
+  }
+  .smlink:hover .smlink__name,
+  .smlink:focus-visible .smlink__name {
+    color: var(--blue-700);
+  }
+  .smlink__why {
+    font-size: 10.5px;
+    line-height: 1.5;
+    color: var(--ink-400);
+  }
+  .sitemap__all {
+    display: block;
+    margin-top: 10px;
+    padding: 6px 8px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    text-align: center;
+    font-size: 11.5px;
+    color: var(--ink-500);
+    text-decoration: none;
+    transition: all 0.14s ease;
+  }
+  .sitemap__all:hover {
+    border-color: var(--blue-300);
+    background: var(--blue-50);
+    color: var(--blue-700);
+  }
+  .sitemap__warn {
+    margin: 8px 0 0;
+    padding: 6px 8px;
+    font-size: 10.5px;
+    line-height: 1.5;
+    color: #8a3a1a;
+    background: #fff4ee;
+    border-radius: 4px;
   }
   .smlink[aria-current='page'] {
     background: var(--blue-50);

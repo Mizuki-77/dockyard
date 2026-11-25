@@ -60,7 +60,8 @@ const nationsTotal = new Set(tree.flatMap((r) => r.nations.map((n) => n.key))).s
     title="武器与装备"
     branches={branches}
     currentHref={Astro.url.pathname}
-    note="分类（主炮 / 副炮 / 防空炮 …）是本站为了检索做的归并，不是史料字段；国别来自每型武器的制造国记录。"
+    defaultOpen={false}
+    note="分类（主炮 / 副炮 / 防空炮 …）是本站为了检索做的归并，不是史料字段；国别来自每型武器的制造国记录。左侧默认折叠，点类别展开。"
   />
 
   <div class="pagehead">

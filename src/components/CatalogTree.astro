@@ -21,6 +21,12 @@ export interface TreeLeaf {
   count?: number;
   hint?: string;
   meta?: string;
+  /**
+   * 可选：点击时要交给客户端的标识。
+   * 对比器左侧索引用它把「点树上的舰」映射到「勾选上方那艘舰」，
+   * 而不是跳去 /ships/<id> 把正在对比的组合丢掉。
+   */
+  dataShip?: string;
 }
 
 /** 中间层：branch 内部的第二级分组（武器树用国别，海战树不用）。 */
@@ -53,9 +59,21 @@ interface Props {
   note?: string;
   /** 树底部的一条额外链接（如「全部 / 按年份」） */
   footLink?: { href: string; label: string };
+  /**
+   * 首层分支是否默认展开。
+   *   true  = 列表页（树就是内容，全展开）
+   *   false = 默认全折叠，只露类名（2026-11-25 用户要求「武器与装备左侧列表默认折叠」）
+   *
+   * 无论哪种，含当前页的那一支**始终展开** —— 否则从详情页进来
+   * 会看不到自己在树里的位置，那比折叠更糟。
+   */
+  defaultOpen?: boolean;
 }
 
-const { kicker, title, branches, currentHref, note, footLink } = Astro.props;
+const {
+  kicker, title, branches, currentHref, note, footLink,
+  defaultOpen = true,
+} = Astro.props;
 
 /** 某分支下的全部叶子，两层三层都能取到。 */
 function leavesOf(b: TreeBranch): TreeLeaf[] {
@@ -66,21 +84,25 @@ function leavesOf(b: TreeBranch): TreeLeaf[] {
 const total = branches.reduce((n, b) => n + leavesOf(b).length, 0);
 
 // 折叠策略：
-//   列表页（当前页不是任何一片叶子）→ 全部展开。这时树本身就是内容，
-//   收起去只剩几个类名，读者点进来看到一片空。
-//   详情页 → 只展开当前项所在的那一支（有子组的话，再展开到那一组）。
-//   当前 href 不在任何一支里（比如路径写错）时退回全展开，
-//   否则整棵树会全部收起，看起来像坏了。
+//   当前 href 不在任何一支里（比如路径写错）→ 按 defaultOpen 来，
+//     不要因为「没找到」就把所有分支强行展开（那是上一版的行为，会让折叠失效）。
+//   含当前项的支 → 一定展开。
+//   其余支 → 看 defaultOpen。
 const anyCurrent = branches.some((b) => leavesOf(b).some((l) => l.href === currentHref));
 
 function branchOpen(b: TreeBranch): boolean {
-  if (!anyCurrent) return true;
-  return leavesOf(b).some((l) => l.href === currentHref);
+  // 含当前项的那一支永远展开——否则从详情页进来找不到自己在哪
+  if (leavesOf(b).some((l) => l.href === currentHref)) return true;
+  // 当前页不在任何一支里（列表页）：听 defaultOpen
+  if (!anyCurrent) return defaultOpen;
+  // 详情页的其他支：收起
+  return false;
 }
 
 function groupOpen(g: TreeGroup): boolean {
-  if (!anyCurrent) return true;
-  return g.leaves.some((l) => l.href === currentHref);
+  if (g.leaves.some((l) => l.href === currentHref)) return true;
+  if (!anyCurrent) return defaultOpen;
+  return false;
 }
 ---
 
@@ -126,6 +148,7 @@ function groupOpen(g: TreeGroup): boolean {
                           href={l.href}
                           aria-current={l.href === currentHref ? 'page' : undefined}
                           title={l.meta || undefined}
+                          data-ship={l.dataShip}
                         >
                           <span class="ctree__llabel">{l.label}</span>
                           {l.meta && <span class="ctree__lmeta">{l.meta}</span>}
@@ -144,6 +167,7 @@ function groupOpen(g: TreeGroup): boolean {
                       href={l.href}
                       aria-current={l.href === currentHref ? 'page' : undefined}
                       title={l.meta || undefined}
+                      data-ship={l.dataShip}
                     >
                       <span class="ctree__llabel">{l.label}</span>
                       {l.meta && <span class="ctree__lmeta">{l.meta}</span>}

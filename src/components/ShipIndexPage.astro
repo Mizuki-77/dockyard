@@ -52,7 +52,12 @@ const heads = `收录 ${ships.length} 艘 · ${classes.length} 个舰级。`;
   <div id="preview-root">
     {
       ships.map((s) => (
-        <div class="previewslot" data-ship={s.id} hidden={s.id !== first}>
+        <div
+          class="previewslot"
+          data-ship={s.id}
+          data-name={`${s.name.zh} ${s.name.en ?? ''} ${s.id} ${s.class ?? ''}`.toLowerCase()}
+          hidden={s.id !== first}
+        >
           <ShipPreview shipId={s.id} />
         </div>
       ))
@@ -110,6 +115,44 @@ const heads = `收录 ${ships.length} 艘 · ${classes.length} 个舰级。`;
 
       const initial = new URLSearchParams(location.search).get('ship');
       if (initial) show(initial);
+
+      // ------------------------------------------------------------------
+      // 搜索联动（2026-11-25 修）
+      //
+      // 原来的 bug：从顶栏搜「大和」，URL 变成 /ships?q=大和，
+      // 左侧树由 ShipTree 那段脚本筛成了只剩大和，
+      // 但右侧预览仍停在服务端渲染的默认第一艘 —— 字母序的 akagi（赤城）。
+      // 用户看到的是「搜大和跳出赤城」。
+      //
+      // 现在：监听搜索词，命中唯一一艘就直接把它显示到右侧；
+      // 命中多艘时留在原处不动（此时让用户在左侧树里自己选）。
+      // 搜索框在 TopNav 里，不在本组件 DOM 内，所以按 .navsearch 全局找。
+      const qInput = document.querySelector<HTMLInputElement>('.navsearch input[name="q"]');
+
+      function pickByQuery(q: string) {
+        const needle = q.trim().toLowerCase();
+        if (!needle) return;
+        const hits = slots.filter((el) =>
+          (el.dataset.name ?? '').includes(needle),
+        );
+        if (hits.length === 1) {
+          show(hits[0].dataset.ship ?? '');
+          const url = new URL(location.href);
+          url.searchParams.set('ship', hits[0].dataset.ship ?? '');
+          history.replaceState(null, '', url);
+        }
+      }
+
+      if (qInput) {
+        // 首次进入（?q= 已在地址栏）
+        const q0 = new URLSearchParams(location.search).get('q') ?? '';
+        if (q0) {
+          qInput.value = q0;
+          pickByQuery(q0);
+        }
+        // 边打字边联动：只在命中唯一一艘时切，避免把读者正在看的舰换掉
+        qInput.addEventListener('input', () => pickByQuery(qInput.value));
+      }
     }
   </script>
 </Base>

@@ -13,7 +13,8 @@
 //   所以每舰各一条滑块，另给一个「同步到同一时刻」开关。
 // ============================================================================
 import Base from '../layouts/Base.astro';
-import { buildCompareIndex } from '../lib/data';
+import CatalogTree from '../components/CatalogTree.astro';
+import { buildCompareIndex, getClasses, enumLabel } from '../lib/data';
 import { REPO_URL, ISSUE_TEMPLATE } from '../lib/site';
 
 const idx = buildCompareIndex();
@@ -34,9 +35,107 @@ const payload = {
   issueTemplate: ISSUE_TEMPLATE,
   pageUrl: `${siteUrl}${Astro.url.pathname}`,
 };
+
+// ------------------------------------------------------------------ 左侧索引
+//
+// 2026-11-25 用户要求：对比器也要有左侧分类索引，跟战舰信息一样。
+//
+// 「一样」指的是同样的层级路径：国家 → 舰种 → 舰级 → 单舰。
+// 但不能照搬 /ships 的树组件（ShipIndex）——那套会让链接跳去 /ships/<id>，
+// 把当前正在对比的组合丢掉。这里的叶子链接写成 `?add=<id>`，
+// 由页面脚本拦下来改成「勾选这一艘」，不整页跳转。
+//
+// 只用 compare index 里真有的舰（能拖动滑块的），避免点进去发现没数据。
+const cmpShips = idx.ships;
+const classesAll = getClasses();
+
+const NATION_ORDER = ['united_kingdom', 'germany', 'japan', 'united_states'];
+const TYPE_ORDER = [
+  'battleship', 'battlecruiser', 'aircraft_carrier', 'heavy_cruiser',
+  'light_cruiser', 'destroyer',
+];
+
+/** 舰 id → 它所属的舰级 id */
+const classOfShip = new Map<string, string>();
+for (const c of classesAll) {
+  for (const sid of c.class_of ?? []) classOfShip.set(sid, c.id);
+}
+const classById = new Map(classesAll.map((c) => [c.id, c]));
+
+// 现算国家/舰种（compare index 只带 classId，没有 nation/type）
+const shipMeta = cmpShips.map((s) => {
+  const cid = s.classId ?? classOfShip.get(s.id) ?? '';
+  const cls = cid ? classById.get(cid) : undefined;
+  const cf = (cls?.facts ?? []).find((f) => f.field === 'identity.nation');
+  const tf = (cls?.facts ?? []).find((f) => f.field === 'identity.ship_type');
+  return {
+    id: s.id,
+    name: s.name.zh,
+    en: s.name.en ?? '',
+    classId: cid,
+    className: cls?.name.zh ?? s.className?.zh ?? '未分级',
+    nation: typeof cf?.value === 'string' ? cf.value : 'other',
+    type: typeof tf?.value === 'string' ? tf.value : 'other',
+  };
+});
+
+const nations = [
+  ...NATION_ORDER,
+  ...new Set(shipMeta.map((m) => m.nation).filter((n) => !NATION_ORDER.includes(n))),
+];
+
+const cmpBranches = nations
+  .map((nat) => {
+    const inNat = shipMeta.filter((m) => m.nation === nat);
+    if (inNat.length === 0) return null;
+    const types = [
+      ...TYPE_ORDER,
+      ...new Set(inNat.map((m) => m.type).filter((t) => !TYPE_ORDER.includes(t))),
+    ];
+    const groups = types
+      .map((t) => {
+        const inType = inNat.filter((m) => m.type === t);
+        if (inType.length === 0) return null;
+        // 第三层是舰级，叶子是单舰：这里只有两级子结构，
+        // CatalogTree 支持 group → leaves，所以把「舰种」当 group，
+        // 叶子标签写成「舰级 · 舰名」以保留舰级信息。
+        return {
+          key: t,
+          label: enumLabel(t, 'zh') || t,
+          en: enumLabel(t, 'en') || t,
+          count: inType.length,
+          leaves: inType
+            .slice()
+            .sort((a, b) => a.className.localeCompare(b.className) || a.name.localeCompare(b.name))
+            .map((m) => ({
+              label: m.className === '未分级' ? m.name : `${m.className} · ${m.name}`,
+              href: `?add=${m.id}`,
+              dataShip: m.id,
+              meta: '',
+            })),
+        };
+      })
+      .filter((g): g is NonNullable<typeof g> => g !== null);
+    return {
+      key: nat,
+      label: enumLabel(nat, 'zh') || nat,
+      en: enumLabel(nat, 'en') || nat,
+      count: inNat.length,
+      groups,
+    };
+  })
+  .filter((b): b is NonNullable<typeof b> => b !== null);
 ---
 
-<Base title="对比器" variant="full">
+<Base title="对比器" variant="tree">
+  <CatalogTree
+    slot="sidenav"
+    kicker="Compare"
+    title="对比器索引"
+    branches={cmpBranches}
+    defaultOpen={false}
+    note="点这里的舰名会把它勾到上方对比里，不会离开本页。只列有对比数据的舰。"
+  />
   <div class="cmp">
     <header class="cmp__head">
       <div class="cmp__titles">
@@ -591,6 +690,52 @@ const payload = {
       });
     }
 
+    // ------------------------------------------------ 左侧索引联动（2026-11-25）
+    //
+    // 左侧树里的叶子 href 写成 `?add=<id>`，这里拦下点击，
+    // 把它当成「勾选这一艘」处理，而不是整页跳走。
+    //
+    // 规则与上方复选框一致：最多两艘。已经选了两艘时，
+    // 把新点的那艘换进去、顶掉较早勾的那艘。
+    const treeLinks = document.querySelectorAll<HTMLAnchorElement>('.ctree__leaf[data-ship]');
+    treeLinks.forEach((a) => {
+      const id = a.dataset.ship ?? '';
+      if (!id) return;
+      if (!SHIPS.has(id)) {
+        // 数据里没有的舰（理论上不该出现），去掉链接避免死路
+        a.removeAttribute('href');
+        return;
+      }
+      // 已经选中时给个视觉标记
+      if (selected.includes(id)) a.classList.add('ctree__leaf--on');
+
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (selected.includes(id)) {
+          // 再点一次 = 取消这艘（但至少留一艘，不留空表）
+          if (selected.length <= 1) return;
+          selected = selected.filter((x) => x !== id);
+        } else if (selected.length < 2) {
+          selected = [...selected, id];
+        } else {
+          selected = [selected[1], id];
+        }
+        applySelection();
+        // 用新选中项重建时刻表（新加进来的舰还没初始化 T）
+        for (const sid of selected) {
+          if (!T.has(sid)) {
+            const s = SHIPS.get(sid);
+            T.set(sid, s ? num(s.span.from) + (num(s.span.to) - num(s.span.from)) * 0.5 : 0);
+          }
+        }
+        render();
+        // 同步左侧高亮
+        treeLinks.forEach((x) => {
+          x.classList.toggle('ctree__leaf--on', selected.includes(x.dataset.ship ?? ''));
+        });
+      });
+    });
+
     // ---------------------------------------------------------------- 工具
     const syncBtn = document.getElementById('cmp-sync');
     syncBtn.addEventListener('click', () => {
@@ -626,6 +771,29 @@ const payload = {
       selected = [qa, qb];
       applySelection();
       render();
+    }
+
+    // 左侧索引带来的 ?add=<id>：加进选择并同步高亮
+    const addId = qs.get('add');
+    if (addId && SHIPS.has(addId)) {
+      if (!selected.includes(addId)) {
+        selected = selected.length < 2 ? [...selected, addId] : [selected[1], addId];
+      }
+      for (const sid of selected) {
+        if (!T.has(sid)) {
+          const s = SHIPS.get(sid);
+          T.set(sid, s ? num(s.span.from) + (num(s.span.to) - num(s.span.from)) * 0.5 : 0);
+        }
+      }
+      applySelection();
+      render();
+      treeLinks.forEach((x) => {
+        x.classList.toggle('ctree__leaf--on', selected.includes(x.dataset.ship ?? ''));
+      });
+      // 清掉 URL 上的 add，避免刷新时重复叠加
+      const u = new URL(location.href);
+      u.searchParams.delete('add');
+      history.replaceState(null, '', u);
     }
   </script>
 </Base>
