@@ -65,7 +65,9 @@ def git(git_exe: str, *args: str) -> str:
         [git_exe, "-C", str(REPO), *args],
         capture_output=True, text=True, encoding="utf-8", errors="replace",
     )
-    return r.stdout.strip()
+    # 只清尾部换行，不能用 strip()：`git status --short` 的首行以空格开头
+    # （" M file"），strip 掉之后按 line[3:] 取路径会吃掉文件名第一个字符。
+    return r.stdout.rstrip()
 
 
 def check_worktree(git_exe: str) -> list[str]:
@@ -76,16 +78,29 @@ def check_worktree(git_exe: str) -> list[str]:
 
 
 def check_unpushed(git_exe: str, repo_slug: str) -> tuple[str, str]:
-    """返回 (本地 sha, 远端 sha)。任何一边取不到就给空串。"""
+    """返回 (本地 sha, 远端 sha)。任何一边取不到就给空串。
+
+    远端 sha 优先用 `git ls-remote` —— 直接问 git 服务器，不写本地 .git，
+    只读权限下也能跑。GitHub 的 REST API 有 CDN 缓存，刚 push 完立刻查
+    会拿到旧 sha，造成「明明推了却报未推送」的误报（2026-11-25 实测）。
+    API 只作为 ls-remote 失败时的兜底。
+    """
     local = git(git_exe, "rev-parse", "HEAD")
     remote = ""
-    try:
-        url = f"https://api.github.com/repos/{repo_slug}/commits/main"
-        req = urllib.request.Request(url, headers={"User-Agent": "dockyard-patrol"})
-        with urllib.request.urlopen(req, timeout=20) as resp:
-            remote = json.load(resp).get("sha", "")
-    except Exception:
-        remote = ""
+    out = git(git_exe, "ls-remote", "origin", "refs/heads/main")
+    if out:
+        remote = out.split()[0].strip()
+    if not remote:
+        try:
+            url = f"https://api.github.com/repos/{repo_slug}/commits/main"
+            req = urllib.request.Request(
+                url,
+                headers={"User-Agent": "dockyard-patrol", "Cache-Control": "no-cache"},
+            )
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                remote = json.load(resp).get("sha", "")
+        except Exception:
+            remote = ""
     return local, remote
 
 
