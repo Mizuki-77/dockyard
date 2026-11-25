@@ -1,0 +1,459 @@
+# ============================================================================
+# 武器正文 —— 46 cm/45 九四式（46 cm/45 Type 94）
+#
+# 这一篇的主线不是「世界最大」这句结论，是三条互相咬住的记录：
+#  1) 「40 cm」是官方文书上的名字，不是笔误。navweaps 把「Official Designation」
+#     与「Actual Size」并排放在页面最上方，这个排列本身就是证据；
+#  2) 「口径最大」与「威力最大」不是同一句话，两个来源说的是两件事，
+#     navweaps 的「最强大」还自带「远距离与 16"/50 Mk 7 相当」的限定；
+#  3) 唯一一次对舰射击的成果，navweaps 写 "possibly"，combinedfleet TROM 记
+#     观测机确认命中并记该舰沉没。两说并列，不裁决。
+# 任务书里「炮塔 1,510 吨/座」一说在来源中查不到，见 §history/manufacture 说明。
+# ============================================================================
+weapon: 46cm-45-t94
+updated: 2026-11-25
+
+intro:
+  lead:
+    zh: >-
+      46 cm/45 九四式是大和级战列舰的主炮，也是迄今装上军舰的口径最大的舰炮。
+      日本官方文书从头到尾把它写作「40 cm/45 九四式」，这个假口径是整型武器保密工作
+      的一部分，直到战争结束才对外公开。全期一共造了 27 门，
+      其中 18 门随大和与武藏沉入海底。
+    en: >-
+      The 46 cm/45 Type 94 was the main battery of the Yamato class and the largest
+      calibre naval gun ever mounted afloat. Japanese official documents called it the
+      "40 cm/45 Type 94" from first to last - a false calibre that was part of a secrecy
+      programme and was not made public until after the war. Twenty-seven guns were built
+      in all, and eighteen of them went to the bottom with Yamato and Musashi.
+
+  paragraphs:
+    - heading: 官方名称与实际口径差 6 厘米
+      text:
+        zh: >-
+          navweaps 把两行并排放在页面最上方：「Official Designation: 45 caliber Type 94
+          40 cm Gun / Actual Size 46 cm (18.1")」。同页的说明句是整件事的注脚：
+          「These guns were officially designated by the Japanese as 40 cm/45 Type 94
+          (15.7 inch) in an effort to hide their actual size, which was a closely-guarded
+          secret until after the end of World War II.」也就是说「九四式四〇糎」这个写法
+          不是笔误，是设计出来的名字。navweaps 的命名栏另写 "Model 1934"，
+          与「九四」这个编号指向同一年（按神武纪元 2594 年换算，这一步是换算、
+          不是来源原句）；但同页的设计年份栏填的是 1939，两者相差五年，
+          来源未解释这个落差。
+        en: >-
+          NavWeaps puts two lines side by side at the head of the page: "Official
+          Designation: 45 caliber Type 94 40 cm Gun / Actual Size 46 cm (18.1")". The
+          explanatory sentence is the key to the whole thing: "These guns were officially
+          designated by the Japanese as 40 cm/45 Type 94 (15.7 inch) in an effort to hide
+          their actual size, which was a closely-guarded secret until after the end of
+          World War II." The "40 cm" is not a typographical slip; it was a name built on
+          purpose. The designation line also reads "Model 1934", which points at the same
+          year as the Type 94 number; the same page, however, gives the date of design as
+          1939. The source does not explain the five-year gap.
+      src: [navweaps-46cm-45-t94]
+
+    - heading: 「最大」的两个含义要分开
+      text:
+        zh: >-
+          两种「最大」在这门炮上不是同一句话，两个来源说的也是两件事。
+          combinedfleet 说的是口径：「The largest naval rifles ever mounted afloat, these
+          guns were installed aboard the superbattleships Yamato and Musashi.」
+          navweaps 说的是威力，而且自己加了限定：「The 46 cm/45 (18.1") cannons used on
+          the Yamato class were the most powerful guns ever installed on a battleship.
+          While closely matched by the USA 16"/50 Mark 7 at long ranges, in a close-range
+          engagement the penetration power of this weapon was unsurpassed.」
+          即远距离上与美军 16 英寸/50 倍径 Mk 7 相当，近距离的穿甲力无出其右。
+          本站按两个来源各自的措辞分别写，不把「口径最大」与「威力最大」合成一句。
+        en: >-
+          Two different superlatives are involved here and two sources make two different
+          claims. CombinedFleet speaks of calibre: "The largest naval rifles ever mounted
+          afloat, these guns were installed aboard the superbattleships Yamato and
+          Musashi." NavWeaps speaks of power, with a qualification built in: "The 46 cm/45
+          (18.1") cannons used on the Yamato class were the most powerful guns ever
+          installed on a battleship. While closely matched by the USA 16"/50 Mark 7 at
+          long ranges, in a close-range engagement the penetration power of this weapon
+          was unsurpassed." That is: matched by the American 16-inch/50 Mark 7 at long
+          range, unsurpassed in penetration at close range. This site keeps the two claims
+          in the words of the two sources rather than merging them.
+      src: [combinedfleet-46cm, navweaps-46cm-45-t94]
+
+    - heading: 一门只能整根换掉的炮
+      text:
+        zh: >-
+          炮身重 164,654 kg（含炮闩），全长 21.130 m，膛长 20.700 m，膛线长 20.480 m，
+          72 条阴线，药室 680 dm³，发射药 360 kg 的 110 DC1、分装六包，
+          工作压力 3,000–3,200 kg/cm²。构造按 navweaps 的描述是层层套合：
+          内 A 管（1A）用三次液压涨开就位，就位之后才拉膛线；外面缩上 3A 管、
+          线绕一层、全长再缩两层管，炮尾再加两段式被筒，各管的定位肩部装
+          Belleville 弹簧垫圈。炮闩是日版的 Asbury 式配 Welin 闩体。
+          这种结构的代价写在同一页：要恢复膛线只能把内 A 管整个镗掉，
+          「This was so expensive a process that it was considered to be more practical to
+          simply replace a worn out gun with a new one」—— 而战争中两舰都没有换过炮。
+          身管寿命原句是 "about 150 - 250 rounds"，每门弹药基数 100 发，
+          每座炮塔随炮携带 300 发（回转结构上两个扬弹室共 180 发，弹库另 120 发）。
+        en: >-
+          The gun weighed 164,654 kg with the breech, was 21.130 m long overall with a
+          20.700 m bore and 20.480 m of rifling, had 72 grooves, a chamber of 680 dm3 and
+          a 360 kg charge of 110 DC1 in six bags, with a working pressure of 3,000 to
+          3,200 kg/cm2. NavWeaps describes the construction as a stack of shrunk layers:
+          the inner A tube (1A) was radially expanded into place in three separate
+          hydraulic operations and rifled only after it was in place; the 3A tube was
+          shrunk on over part of the length, the assembly wire-wound, two more tubes shrunk
+          on over the whole length, and a two-part jacket added at the breech, with
+          Belleville spring washers at the tube locating shoulders. The breech was a
+          Japanese version of the Asbury type with a Welin block. The cost of that
+          construction is stated on the same page: the gun could only be relined by boring
+          out the inner A tube entirely, which "was so expensive a process that it was
+          considered to be more practical to simply replace a worn out gun with a new
+          one" - and neither battleship was regunned during the war. Barrel life is given
+          as "about 150 - 250 rounds", stowage as 100 rounds per gun, with 300 rounds to a
+          mounting (180 in two handling rooms on the rotating structure, 120 in the shell
+          rooms).
+      src: [navweaps-46cm-45-t94]
+
+    - heading: 四种弹，两个初速
+      text:
+        zh: >-
+          九一式彻甲弹 1,458.3 kg、一型彻甲弹 1,460 kg、零式通常弾 1,360 kg、
+          三式通常弾 1,360 kg。初速按弹种分两档：两种彻甲弹都是 780 mps，
+          两种通常弾都是 805 mps。九一式与一型之间 1.7 kg 的差不是两说 ——
+          navweaps 说明这是两个弹种：一型更长（81 in 对 76.9 in）、风帽锥角更尖
+          （21° 对 23.5°）、新增染污弹袋，因而略重；「The modified type superseded the
+          original in 1941, so these battleships may never have carried any but the newer
+          shell.」染污色按舰区分，用于辨认己方齐射落点：大和黄、武藏绿。
+          九一式弹底装 TNA 起爆药 23.9 kg，同页注明日方 TNA 对冲击敏感，
+          弹腔里填了约三分之一到二分之一的缓冲衬套，代价是弹壁更薄 ——
+          战后达尔格伦的试验显示大落角命中会使弹体碎裂而不穿透。
+        en: >-
+          APC Type 91 at 1,458.3 kg, APC Type 1 at 1,460 kg, Common Type 0 HE at 1,360
+          kg and Common Type 3 at 1,360 kg. Muzzle velocity splits by projectile type:
+          780 mps for both APC rounds, 805 mps for both Common rounds. The 1.7 kg
+          difference between the Type 91 and the Type 1 is not a disagreement between two
+          accounts - NavWeaps describes them as two different projectiles: the Type 1 was
+          longer (81 in against 76.9 in), its windscreen cone sharper (21 degrees against
+          23.5), and it introduced a dye bag, which made it slightly heavier. "The
+          modified type superseded the original in 1941, so these battleships may never
+          have carried any but the newer shell." Dye colours were issued by ship for
+          spotting purposes: Yamato yellow, Musashi green. The Type 91's bursting charge
+          was 23.9 kg of TNA; the same page notes that Japanese TNA was sensitive to shock,
+          so a third to a half of the cavity was filled with a shock-absorbing liner,
+          which meant a thinner shell wall - post-war USN tests at Dahlgren showed that
+          hits at high obliquity would break the projectile up without penetrating.
+      src: [navweaps-46cm-45-t94]
+
+    - heading: 三式弹：一场给飞行员看的焰火
+      text:
+        zh: >-
+          三式通常弾（sankaidan）内装 900 根烧夷管。定时引信通常设在出膛后约
+          1,000 m 处起爆，弹体由起爆药炸开以增加钢片数量，烧夷管在半秒后点燃，
+          以 3,000 ℃ 燃烧五秒，火焰长约 5 m，向来袭方向张开约 20 度的锥角。
+          设计意图是在来袭机群必经的空域打出一片弹幕。
+          navweaps 对实战效果的评价是转述美方飞行员的：「these shells were considered by
+          US Navy pilots to be more of a visual spectacular than an effective AA weapon.」
+          同页另记 1944 年时三式弹可能占到全弹药的 40%。
+          这型弹在大和与武藏身上都留下了记录：1944-10-24 锡布延海与大和 1944-10-25
+          萨马岛外海，两舰的主炮都打过三式弹，具体见年表。
+        en: >-
+          The Type 3 Common (sankaidan) carried 900 incendiary-filled tubes. A time fuze
+          was normally set for about 1,000 m after leaving the muzzle; the shell body was
+          burst by a charge to increase the quantity of steel splinters, the incendiary
+          tubes ignited about half a second later and burned for five seconds at 3,000
+          degrees C, producing a flame roughly 5 m long, expelled in a 20 degree cone
+          towards the oncoming aircraft. The intention was to put up a barrage pattern the
+          attacking aircraft would have to fly through. NavWeaps' verdict, reporting US
+          Navy pilots, is that "these shells were considered by US Navy pilots to be more
+          of a visual spectacular than an effective AA weapon". The same page notes that
+          Type 3 may have made up as much as 40 per cent of the outfit by 1944. Both ships
+          left records of using it: Yamato at the Sibuyan Sea on 24 October 1944 and off
+          Samar on 25 October 1944, as set out in the timeline below.
+      src: [navweaps-46cm-45-t94]
+
+    - heading: 炮塔：2,774 吨，两个仰角档
+      text:
+        zh: >-
+          一座三联装炮塔全重 "2,730.2 tons (2,774 mt)"；同一页转引 USNTMJ O-45(N)
+          给出的回转部分重量是 "2,510 metric tons [2,470 tons]" —— 全重与回转重量是
+          两个口径，不是两说。俯仰 -5 / +45 度；炮架有一个可切换的滑动十字头，
+          切换后仰角范围变成 +3 / +41 度，好处是不必为装填插锁定销，
+          操作手只要把控制柄保持在「下压」位，等指示器显示装填完成即可。
+          俯仰速度 8 °/s，回转 2 °/s，装填角 +3 度，炮轴间距 350 cm，后座行程 1.43 m。
+          射速 1.5–2 发/分：装填角 +3 度时循环约 30 秒，但对应的射程不超过 6,000 m；
+          要把仰角抬到 41 度，循环要多约 11 秒，所以多数交战距离上的合理值是 35 秒。
+          炮塔回转部由两套独立的回转传动（一次只用一套）驱动，各配一台 500 hp
+          立式斜盘马达带直齿小齿轮。座圈直径这一项，来源未给，**未获取**。
+        en: >-
+          One triple turret weighed "2,730.2 tons (2,774 mt)"; the same page quotes
+          USNTMJ report O-45(N) giving the total revolving weight of one turret as "2,510
+          metric tons [2,470 tons]" - total weight and revolving weight are two measures,
+          not two accounts. Elevation was -5 / +45 degrees, and the mounting had a unique
+          sliding cross-head for the elevating cylinder anchor point which could be set to
+          give either -5 to +45 degrees or +3 to +41 degrees; the advantage of the latter
+          was that no locking pins had to be inserted to hold the guns at the loading
+          angle - the operator simply kept the controls at the "depress" position until an
+          indicator showed loading was complete. Elevation rate 8 degrees per second,
+          train rate 2 degrees per second, loading angle +3 degrees, gun axes 350 cm
+          apart, recoil 1.43 m. Rate of fire 1.5 to 2 rounds per minute: a firing cycle of
+          about 30 seconds could be achieved at the loading angle, but that equated to a
+          range of no more than 6,000 m, and the extra elevation and depression time to
+          reach 41 degrees added about 11 seconds, so 35 seconds was reasonable at most
+          battle ranges. The turrets had two independent sets of training gear, only one
+          in use at a time, each driven by a 500 hp vertical swashplate motor through
+          straight-toothed pinions. The diameter of the barbette ring is not given by the
+          sources and is recorded here as not obtained.
+      src: [navweaps-46cm-45-t94]
+
+    - heading: 8 度还是 10 度：来源自己裁了
+      text:
+        zh: >-
+          俯仰速度这一项有分歧，而 navweaps 自己写下了裁决过程：正文取 8 °/s，
+          脚注写「"Anatomy of the Ship: The Battleship Yamato" states in the text that the
+          elevation rate was 10 degrees per second. However, Japanese sources agree with
+          the 8 degree figure」，并说明该书本身大量引用 USNTMJ O-45(N) 的射速循环表，
+          而那张表用的就是 8 度。散布另有两说：navweaps 正文记最大射程处 400–500 m，
+          同页转引的 USNTMJ O-45(N) 原句是「Spreads of salvos were reasonably small,
+          (about 500 to 600 yards at maximum range)」。中心炮延迟同理：多数文献写
+          0.080 秒，较新的研究写 0.300 秒，后者对应外炮与中心炮落点相隔约 230 m。
+          三处都并列，本站不裁。
+        en: >-
+          The elevation rate is disputed, and NavWeaps records its own reasoning: the main
+          text gives 8 degrees per second, and the footnote reads "'Anatomy of the Ship:
+          The Battleship Yamato' states in the text that the elevation rate was 10 degrees
+          per second. However, Japanese sources agree with the 8 degree figure", adding
+          that the book itself makes extensive use of USNTMJ report O-45(N)'s firing cycle
+          table, which uses 8 degrees. Dispersion has two figures: the main text records
+          400 to 500 m at maximum range, while the USNTMJ O-45(N) passage quoted on the
+          same page reads "Spreads of salvos were reasonably small, (about 500 to 600
+          yards at maximum range)". The centre-gun delay is the same story: most
+          references state 0.080 second, more recent works state 0.300 second, the latter
+          corresponding to about 230 m of separation between the outer shells and the
+          centre shell. All three are set side by side; this site does not adjudicate.
+      src: [navweaps-46cm-45-t94]
+
+    - heading: 唯一一次对舰射击，与那个 "possibly"
+      text:
+        zh: >-
+          萨马岛外海是这门炮唯一一次对敌舰开火。navweaps 的措辞留了余地：
+          「Yamato is known to have fired at enemy ships on only one occasion. This was at
+          the Battle off Samar in October 1944 against the U.S. Taffy 1 and Taffy 3 escort
+          carrier groups, with rounds possibly hitting USS Gambier Bay (CVE-73).」
+          combinedfleet 的 TROM 写得更实：0558 两座前炮塔在 20 英里距离开火，
+          六门前主炮里起初只有两门装的是彻甲弹、其余装的是三式弹；
+          舰载 F1M2 观测机回报第一齐射命中、目标开始冒烟，随后对同一目标打了三个
+          六门齐射才转移目标；而当日汇总句直接写「Force A sinks GAMBIER BAY」。
+          一处用 "possibly"，一处记观测机确认命中并记该舰当日沉没 —— 两说并列。
+          武藏是另一件事：navweaps 记她唯一一次开火是 1944 年 10 月锡布延海用三式弹
+          对空，且「One of these reportedly exploded in the barrel, disabling the gun.」
+          这一条只在 navweaps 上，combinedfleet 的武藏 TROM 里没有对应记录，
+          引用时按 navweaps 的记述标注，不并入战历。
+        en: >-
+          Samar is the only occasion on which these guns fired at enemy ships. NavWeaps
+          hedges: "Yamato is known to have fired at enemy ships on only one occasion. This
+          was at the Battle off Samar in October 1944 against the U.S. Taffy 1 and Taffy 3
+          escort carrier groups, with rounds possibly hitting USS Gambier Bay (CVE-73)."
+          CombinedFleet's TROM is more definite: at 0558 both of Yamato's forward turrets
+          opened fire at a range of 20 miles, and of her six forward rifles only two were
+          initially loaded with AP shells, the remainder with Type 3s; the ship's F1M2
+          spotter plane confirmed that the first salvo was a hit and the carrier started to
+          smoke, three six-gun salvos were fired on the same target before the fire was
+          shifted, and the day's summary entry reads "Force A sinks GAMBIER BAY". One
+          account says "possibly", the other records a confirmed hit by the spotting
+          aircraft and the ship's loss that day; both stand. Musashi is a separate matter:
+          NavWeaps records that she fired her guns in anger only once, using "sankaidan"
+          incendiary shrapnel anti-aircraft shells in the Sibuyan Sea in October 1944, and
+          that "One of these reportedly exploded in the barrel, disabling the gun." That
+          appears only on NavWeaps and has no counterpart in CombinedFleet's Musashi TROM,
+          so it is cited as NavWeaps' account and not merged into the ship's service
+          record.
+      src: [navweaps-46cm-45-t94, combinedfleet-yamato-trom]
+
+history:
+  - id: design
+    title: { zh: 设计与试制, en: Design and proving }
+    range: { from: 1934, to: 1941 }
+    lead:
+      zh: >-
+        九四式这个编号指向 1934 年，设计年份栏却写 1939；中间隔着一场
+        50 倍径与 45 倍径的选择，以及一门在龟ケ首试验场上打响的首炮。
+      en: >-
+        The Type 94 number points at 1934 while the date of design reads 1939, with a
+        choice between 50 and 45 calibres, and a first gun proved at Kamegakubi, in
+        between.
+    events:
+      - date: 1934
+        text:
+          zh: >-
+            设计讨论中认真考虑过 50 倍径方案：同弹同装药下初速高 40 mps、
+            最大射程远 2,600 m、到 20,000 m 的飞行时间短 1.9 秒。
+            最终判断增重换不来相应的威力，定为 45 倍径。
+          en: >-
+            During design discussions the option of 50 calibre guns was seriously
+            considered: they would have given a muzzle velocity 40 mps higher, a maximum
+            range 2,600 m greater with the same projectile and propellant loading, and a
+            time of flight to 20,000 m 1.9 seconds shorter. It was decided that the extra
+            weight was not offset by the greater power, and the 45 calibre gun was kept.
+        src: [navweaps-46cm-45-t94]
+      - date: 1937-03
+        text:
+          zh: >-
+            福田启二设计组完成最终设计：满载排水量 69,988 t，
+            三座三联装共九门 460 mm/45 炮，「Each turret will weigh more than a destroyer.」
+          en: >-
+            Constructor Rear Admiral Fukuda Keijii's design team completed the final
+            design: 69,988 tons full load, nine 460-mm/45 rifles in three triple turrets,
+            each turret weighing more than a destroyer.
+        src: [combinedfleet-yamato-trom]
+      - date: 1938-03
+        text:
+          zh: >-
+            首门炮完成，在龟ケ首试验场试射。
+          en: >-
+            The first gun was completed and tested at the Kamegakubi proving grounds.
+        src: [navweaps-46cm-45-t94]
+      - date: 1939
+        text:
+          zh: >-
+            navweaps 的设计年份栏记为 1939。
+          en: >-
+            NavWeaps gives the date of design as 1939.
+        src: [navweaps-46cm-45-t94]
+      - date: 1941
+        text:
+          zh: >-
+            进入服役。龟ケ首试验场实测炮口前 15 m 处爆风压力 7.0 kg/cm²，
+            是长门级 41 cm 炮的两倍。
+          en: >-
+            The gun entered service. Blast pressure measured at Kamegakubi was 7.0 kg/cm2
+            at a point 15 m in front of the muzzle, twice as high as that of the 41 cm guns
+            of the Nagato class.
+        src: [navweaps-46cm-45-t94]
+
+  - id: manufacture
+    title: { zh: 造炮、运炮与战后下落, en: Production, transport and post-war fate }
+    range: { from: 1938, to: 1950 }
+    lead:
+      zh: >-
+        全期 27 门。这个数字的另一半是运输问题：炮身与炮塔重到没有现成船只可运，
+        于是专门造了一艘只干这件事的船。
+      en: >-
+        Twenty-seven guns in all. The other half of that number is a transport problem:
+        the guns and turrets were too heavy for any existing ship, so one was built for
+        the job alone.
+    events:
+      - date: 1940
+        text:
+          zh: >-
+            为运送炮身与炮塔专门建造给兵舰樫野。日文来源的原句是
+            『既存艦の改装をするにもあまりに手間がかかりすぎるので、結局砲身、砲塔を
+            運ぶため「だけ」の船として、1年かけて【給兵艦　樫野】が建造されることに
+            なりました』。同页另记：此前给油舰知床曾运送长门级的 41 cm 炮，
+            但 46 cm 炮的规模完全不同，既有舰改装也来不及。
+          en: >-
+            The special ammunition ship Kashino was built specifically to carry the guns
+            and turrets; the Japanese account states that a ship was built over a year for
+            the sole purpose of transporting barrels and turrets. The oiler Shiretoko had
+            previously carried 41 cm guns for the Nagato class, but the 46 cm weapon was on
+            an entirely different scale.
+        src: [japanese-warship-yamato-building]
+      - date: 1941-10-06
+        text:
+          zh: >-
+            樫野从吴港运来第一批 46 cm 炮与一座炮塔，抵达长崎。
+          en: >-
+            Kashino arrived from Kure carrying the first batch of 46-cm guns and one
+            turret.
+        src: [combinedfleet-musashi-trom]
+      - date: 1944-10
+        text:
+          zh: >-
+            18 门炮随大和与武藏损失。
+          en: >-
+            Eighteen of the guns were lost with Yamato and Musashi.
+        src: [navweaps-46cm-45-t94]
+      - date: 1945-11
+        text:
+          zh: >-
+            龟ケ首的两门试验炮按美军解除武装命令拆毁。
+          en: >-
+            The two test guns at Kamegakubi were demolished in accordance with the general
+            disarmament orders of the U.S. Army.
+        src: [navweaps-46cm-45-t94]
+      - date: 1946-06
+        text:
+          zh: >-
+            23 号与 27 号炮于 6 月 6 日与 7 日运抵弗吉尼亚州达尔格伦试验场；
+            余下五门在龟ケ首以北海湾沙滩上以不同完工状态被发现后就地炸毁。
+            信浓预定使用的两座未完工炮座也被缴获，随后销毁。
+          en: >-
+            Guns No. 23 and No. 27 arrived at Dahlgren Proving Grounds in Virginia on 6 and
+            7 June; of the seven incomplete guns found on the beach north of Kamegakubi,
+            five were destroyed. Two partially completed turntables intended for Shinano
+            were also captured and later destroyed.
+        src: [navweaps-46cm-45-t94]
+      - date: 1948-05-07
+        text:
+          zh: >-
+            配套的两座炮架运抵达尔格伦。炮与炮架在 1950 年代的某个时候被切割回炉。
+          en: >-
+            Two slides for these guns were delivered to Dahlgren. The guns and slides were
+            later cut up for scrap sometime during the 1950s.
+        src: [navweaps-46cm-45-t94]
+
+  - id: service
+    title: { zh: 服役与唯一一次对舰射击, en: Service and the single surface action }
+    range: { from: 1941, to: 1945 }
+    lead:
+      zh: >-
+        两舰的主炮一共对敌舰开火过一次。其余时间里，它们打的是飞机、或者什么都没打。
+      en: >-
+        Between them the two ships' main batteries fired at enemy ships once. The rest of
+        the time they fired at aircraft, or at nothing.
+    events:
+      - date: 1941-12-07
+        text:
+          zh: >-
+            大和在周防滩进行炮术试验，一次全齐射在 32,500 m 距离发射。
+          en: >-
+            Yamato conducted gunnery tests in the Suo Sea; one full salvo was fired at a
+            distance of 32,500 m.
+        src: [combinedfleet-yamato-trom]
+      - date: 1942-03-30
+        text:
+          zh: >-
+            山本五十六在场观摩 23 英里距离的炮术试验，判定为失败；
+            舰长与炮术长因主测距仪操作手误读水平装定而受斥。
+          en: >-
+            Admiral Yamamoto observed further armament trials at a range of 23 miles; they
+            were judged a failure, and both the captain and his gunnery officer were
+            upbraided because the men manning the main rangefinder misread the horizontal
+            settings.
+        src: [combinedfleet-yamato-trom]
+      - date: 1944-10-24
+        text:
+          zh: >-
+            锡布延海，大和以主炮发射三式弹对空。
+          en: >-
+            In the Sibuyan Sea Yamato opened fire on enemy aircraft using her main guns and
+            Type 3 "sanshikidan" rounds.
+        src: [combinedfleet-yamato-trom]
+      - date: 1944-10-25
+        text:
+          zh: >-
+            萨马岛外海 0558，两座前炮塔在 20 英里距离对护航航母群开火；
+            navweaps 记弹着「possibly」命中冈比亚湾号（CVE-73），
+            combinedfleet 记观测机确认第一齐射命中。
+          en: >-
+            Off Samar at 0558 both forward turrets opened fire on the escort carrier group
+            at a range of 20 miles; NavWeaps records rounds "possibly" hitting Gambier Bay
+            (CVE-73), while CombinedFleet records the spotter aircraft confirming the first
+            salvo as a hit.
+        src: [navweaps-46cm-45-t94, combinedfleet-yamato-trom]
+      - date: 1945-04-07
+        text:
+          zh: >-
+            大和一号弹药库爆炸，舰沉于 30-22 N、128-04 E。
+            至此 27 门炮中的 18 门随两舰沉没，日本海军再没有可用的 46 cm 舰炮。
+          en: >-
+            Yamato's No. 1 magazine exploded and she sank at 30-22 N, 128-04 E. Eighteen of
+            the twenty-seven guns had now gone down with the two ships, and the Japanese
+            navy had no 46 cm naval guns left in service.
+        src: [navweaps-46cm-45-t94, combinedfleet-yamato-trom]

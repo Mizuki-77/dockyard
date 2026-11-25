@@ -1,0 +1,810 @@
+# ============================================================================
+# 金刚（こんごう / Kongō）—— 金刚型一番舰，英国维克斯建造
+#
+# 2026-11-25 建（kongo-ships 组）。舰级共用数据见 classes/kongo.yaml，
+# 本文件只写与舰级不同的、本舰特有的、以及随时间变化的部分。
+#
+# **本舰五个必须记住的识别点：**
+#   1. **唯一在英国建造的一艘**：Vickers, Barrow-in-Furness, Yard No. 414。
+#      原文：「Yard No. 414, a 32,200 ton battlecruiser designed by Sir George
+#      Thurston of Vickers-Armstrong, is laid down at Vicker's shipyard for the IJN.」
+#   2. **主炮是英造 43 年式（毘式），不是日产 41 年式**——四舰里只有金刚如此。
+#      navypedia 逐舰列装：「Kongo: 4 x 2 - 356/45 **43-shiki** … others: 41-shiki」；
+#      navweaps 命名沿革亦分「Vickers built guns → 43rd Year Type /
+#      Guns manufactured in Japan → 41st Year Type」。**型号不可互换。**
+#   3. 第二次改装后**锅炉 8 座**（与雾岛同组），涡轮换艦本式齿轮传动 4 台。
+#      第一次改装后是 **10 座**（混烧 6＋重油专烧 4）——注意榛名同阶段是 16 座。
+#   4. 1942-08-01 在吴工厂装**二一号电探**，是四舰里**最早**有雷达记录的一艘
+#      （早于榛名的 1943-03）。1944-06-30 再加二二号与一三号。
+#   5. **太平洋战争中唯一被潜艇击沉的日本战列舰**，也是史上最后一艘被潜艇
+#      击沉的战列舰（combinedfleet 原文）。但「太平洋战争中唯一被潜艇击沉的
+#      **战列舰**」这个更强的说法要限定战区才成立——见 RESEARCH-NOTES §8。
+#
+# 结局：1944-11-21 台湾海峡被 USS SEALION II (SS-315) 雷击，0301 中雷三发
+# （日方记命中 2 发），0524 弹药库爆炸，0530 沉没于 26-09N, 121-23E。
+# 约 1,200 人阵亡（日方记 1,300），驱逐舰浜风/矶风救起 237 人。
+# ============================================================================
+
+id: kongo
+name:
+  zh: 金刚
+  en: Kongo
+  ja: 金剛（こんごう）
+class: kongo
+note: >-
+  金刚型一番舰。英国维克斯（Barrow-in-Furness，船台 414）建造，1913-08-16 竣工，
+  是日本海军第一艘超弩级巡洋战列舰。1944-11-21 在台湾海峡被 USS SEALION II 击沉。
+
+open_ended_note: |
+  本文件里 valid.to 留空的 fact 都是「无已知终止事件」的项：
+  该舰 1944-11-21 沉没后舰体仍在海底，1945-01-20 除籍。
+  故所有 open 时间窗的实际终点都是 1944-11-21；个别参数（如 1944-08 的 25 mm
+  增装）终点更早，已在各条 note 内注明。
+
+facts:
+  # ============================================================
+  # 身份
+  # ============================================================
+  - field: identity.name_original
+    value: 金剛（こんごう）
+    src: [japanese-warship-kongo]
+    valid: { from: 1913-08-16 }
+    confidence: C
+
+  - field: identity.name_zh
+    value: 金刚号
+    src: [japanese-warship-kongo]
+    valid: { from: 1913-08-16 }
+    confidence: C
+
+  - field: identity.name_en
+    value: Kongo
+    src: [combinedfleet-kongo]
+    valid: { from: 1912-05-18 }
+    confidence: C
+
+  - field: identity.name_note
+    value: 1912-05-18 下水同日命名（「Launched and named KONGO」）。
+    src: [combinedfleet-kongo]
+    valid: { from: 1912-05-18 }
+    confidence: C
+    note: >-
+      原文：「18 May 1912: Launched and named KONGO」。
+      「以金剛山（大阪/奈良境）命名」这一句在本轮抓到的四个来源里**都没有原文**，
+      舰级文件已按同名规则写过，本文件不重复、也不单立 namesake 字段。
+
+  - field: identity.ship_type
+    value: battlecruiser
+    src: [combinedfleet-kongo, navypedia-kongo]
+    valid: { from: 1913-08-16, to: 1931-06-01 }
+    confidence: B
+    note: >-
+      竣工时分类巡洋战列舰。原文：「16 August 1913: Completed and registered
+      (commissioned) in the IJN.」；navypedia 页标题「KONGO battlecruisers
+      (1913 - 1915)」。
+
+  - field: identity.ship_type
+    value: battleship
+    src: [combinedfleet-kongo]
+    valid: { from: 1931-06-01 }
+    confidence: B
+    note: >-
+      原文：「31 March 1931: Yokosuka. KONGO's first reconstruction is completed
+      although works are still carried out after 31 March. **She is re-rated a
+      battleship.**」
+      **改级日取 1931-06-01**：日文来源记「1931年（昭和6年）6月1日付けで戦艦に
+      艦種変更」，与 combinedfleet「first reconstruction 完成即改级」不冲突
+      （工程 03-31 完工、编制 06-01 改级）。两说在日期上差两个月，本条取编制日，
+      工程日保留于此不裁。
+
+  - field: identity.nation
+    value: japan
+    src: [combinedfleet-kongo]
+    valid: { from: 1913-08-16 }
+    confidence: B
+
+  - field: identity.operator
+    value: 大日本帝国海軍（Imperial Japanese Navy）
+    src: [combinedfleet-kongo]
+    valid: { from: 1913-08-16 }
+    confidence: B
+
+  - field: identity.era
+    value: ww2
+    src: [combinedfleet-kongo]
+    valid: { from: 1941-12-08, to: 1944-11-21 }
+    confidence: C
+
+  - field: identity.building_program
+    value: 1911 年度海军紧急扩张案，四艘高速装甲巡洋舰之第一艘
+    src: [combinedfleet-kongo]
+    valid: { from: 1910 }
+    confidence: C
+    note: >-
+      原文：「The Japanese Diet passes and funds the 1911 Naval Emergency Expansion
+      bill received from the cabinet that authorizes the design and construction of
+      a battleship and four armored cruisers. The battleship is FUSO and **KONGO is
+      the first of the four armored cruisers**.」
+
+  # ============================================================
+  # 建造（逐舰）
+  # ============================================================
+  - field: construction.builder
+    value: 维克斯公司（Vickers, Barrow-in-Furness）
+    src: [combinedfleet-kongo, navypedia-kongo, japanese-warship-kongo]
+    valid: { from: 1911-01-17 }
+    confidence: B
+    note: >-
+      navypedia Ships 表「金剛 [Kongo] | 414 | **Vickers, Barrow, UK**」；
+      combinedfleet「laid down at Vicker's shipyard」；
+      日文来源建造栏「英　ヴィッカース社」。三源一致。
+
+  - field: construction.builder_location
+    value: 英国 巴罗因弗内斯（Barrow-in-Furness, Cumbria, England）
+    src: [combinedfleet-kongo]
+    valid: { from: 1911-01-17 }
+    confidence: B
+    note: 原文：「Barrow-in-Furness, Cumbria, England.」
+
+  - field: construction.yard_number
+    value: '414'
+    src: [navypedia-kongo, combinedfleet-kongo]
+    valid: { from: 1911-01-17 }
+    confidence: C
+    note: >-
+      navypedia「No」列 414；combinedfleet「Yard No. 414, a 32,200 ton
+      battlecruiser」。四舰中只有金刚与雾岛在 navypedia 该列给了船台号。
+
+  - field: construction.laid_down
+    value: 1911-01-17
+    unit: date
+    src: [combinedfleet-kongo, navypedia-kongo, japanese-warship-kongo]
+    valid: { from: 1911-01-17 }
+    confidence: B
+    note: >-
+      navypedia「17.1.1911」；combinedfleet「17 January 1911」；
+      日文来源「明治44年/1911年1月17日」。三源一致。
+
+  - field: construction.launched
+    value: 1912-05-18
+    unit: date
+    src: [combinedfleet-kongo, navypedia-kongo, japanese-warship-kongo]
+    valid: { from: 1912-05-18 }
+    confidence: B
+    note: >-
+      navypedia「18.5.1912」；combinedfleet「18 May 1912: Launched and named KONGO」；
+      日文来源「明治45年/1912年5月18日」。三源一致。
+
+  - field: construction.commissioned
+    value: 1913-08-16
+    unit: date
+    src: [combinedfleet-kongo, navypedia-kongo, japanese-warship-kongo]
+    valid: { from: 1913-08-16 }
+    confidence: B
+    note: >-
+      navypedia「16.8.1913」；combinedfleet「16 August 1913: Completed and registered
+      (commissioned) in the IJN. Captain Nakano is the Commanding Officer.」；
+      日文来源「大正2年/1913年8月16日」。三源一致。
+      **比另三舰（1914-08-04 / 1915-04-19）都早**，晚于开工 2 年 7 个月。
+
+  - field: construction.fate_date
+    value: 1944-11-21
+    unit: date
+    src: [combinedfleet-kongo, navypedia-kongo, japanese-warship-kongo]
+    valid: { from: 1944-11-21 }
+    confidence: B
+    note: >-
+      navypedia「sunk 21.11.1944」；日文来源「昭和19年/1944年11月21日（台湾海峡）」；
+      combinedfleet「0524, an explosion … At 0524 … KONGO sinks at 26-09 N, 121-23 E,
+      60 miles N of Keelung, Formosa in 348 feet of water.」三源一致。
+
+  - field: construction.fate_type
+    value: sunk_by_enemy
+    src: [combinedfleet-kongo, navypedia-kongo]
+    valid: { from: 1944-11-21 }
+    confidence: B
+    note: >-
+      被潜艇击沉。navypedia：「Kongo 21.11.1944 en route to Japan was torpedoed in N
+      part of Formosa strait by American submarine Sealion (under different versions,
+      has got from one to three torpedoes). In two hours she has blown up and sunk.」
+      **命中数两说不一**：combinedfleet 记「At 0301, SEALION sees three hits on the
+      KONGO. YAMATO's crew reports seeing two hits」，日文来源记「魚雷6本中2本が
+      金剛左舷に命中」，日方战报记「六・八罐室浸水、十六節、傾斜十四度」。
+      三说（3 / 2 / 2）并列不裁决。
+
+  # ============================================================
+  # 排水量（逐舰终值）
+  # ============================================================
+  - field: displacement.standard
+    value: 31720
+    unit: t
+    src: [navypedia-kongo, japanese-warship-kongo]
+    valid: { from: 1937-01-08 }
+    confidence: B
+    note: >-
+      navypedia 1934-1940 列逐舰给值「Kongo: 31720」；日文来源「基準排水量
+      ③ 31,720t」。两源互证。**四舰终值各不相同**（金刚 31,720 / 比叡 32,350 /
+      雾岛 31,980 / 榛名 32,156），不可互推。
+
+  # 公试（trial）排水量：日文维基给「竣工时 27,580t／最终 36,314t」，
+  # 但 ja.wikipedia 为 tier E，按 SCHEMA §2.1 不能作 fact 来源，故不写。
+  # 见 RESEARCH-NOTES §7.1。
+
+  # ============================================================
+  # 动力（逐舰：锅炉座数与涡轮厂牌是本级分组的关键）
+  # ============================================================
+  - field: propulsion.boiler.count
+    value: 36
+    unit: count
+    src: [navypedia-kongo, combinedfleet-kongo, japanese-warship-kongo]
+    valid: { from: 1913-08-16, to: 1931-03-31 }
+    confidence: B
+    note: >-
+      建成时 36 座。navypedia「Kongo, Hiei, Kirishima: 4 Parsons steam turbines,
+      36 Yarrow boilers」；combinedfleet「All of her 36 Yarrow boilers are removed
+      and replaced with 10 newer type boilers.」；
+      日文来源「ヤーロー式ボイラー（混焼）　36基[2-P88][3-P30]」。
+      **注意**：日文来源对榛名/雾岛同位置写「ロ号艦本式ボイラー（混焼）36基」，
+      只有金刚写ヤーロー式——建成时锅炉型号两说并存，见下条。
+
+  - field: propulsion.boiler.type
+    value: ヤーロー式（Yarrow）混烧水管锅炉 36 座
+    src: [japanese-warship-kongo, navypedia-kongo]
+    valid: { from: 1913-08-16, to: 1931-03-31 }
+    confidence: C
+    note: >-
+      日文来源金刚页明写「ヤーロー式ボイラー（混焼）36基」（与榛名/雾岛页的
+      「ロ号艦本式」不同）；navypedia 对四舰一律写 Yarrow。
+      两说在榛名/雾岛页成立，在金刚页**两源一致**，故本舰此条 confidence 记 C
+      是因为日文来源与 navypedia 措辞体系不同，不是数值分歧。
+      combinedfleet 亦写「36 Yarrow boilers」。
+
+  - field: propulsion.boiler.count
+    value: 10
+    unit: count
+    src: [navypedia-kongo, combinedfleet-kongo, japanese-warship-kongo]
+    valid: { from: 1931-03-31, to: 1937-01-08 }
+    confidence: B
+    note: >-
+      第一次改装后 10 座。三源一致：navypedia「Kongo, Kirishima: … 10 Kampon
+      boilers」；combinedfleet「replaced with 10 newer type boilers」；
+      日文来源「ロ号艦本式ボイラー　混焼6基、重油4基」（合计 10）。
+      **同级对照**：榛名同阶段 16 座、比叡（练习舰期）11 座。
+
+  - field: propulsion.boiler.type
+    value: ロ号艦本式 混烧 6 座＋重油专烧 4 座
+    src: [japanese-warship-kongo]
+    valid: { from: 1931-03-31, to: 1937-01-08 }
+    confidence: C
+    note: >-
+      日文来源「ロ号艦本式ボイラー　混焼6基、重油4基」。
+      navypedia 与 combinedfleet 都只说「10 Kampon boilers」不分混烧/专烧，
+      故混烧与专烧的分配只有日文一家。
+
+  - field: propulsion.boiler.count
+    value: 8
+    unit: count
+    src: [navypedia-kongo, combinedfleet-kongo, japanese-warship-kongo]
+    valid: { from: 1937-01-08 }
+    confidence: B
+    note: >-
+      第二次改装后 8 座。三源一致：navypedia「Kongo, Kirishima: 4 sets Kampon geared
+      steam turbines, 8 Kampon boilers」；combinedfleet「All boilers are are removed
+      and replaced with eight oil-fired Kampon boilers」；
+      日文来源「ロ号艦本式ボイラー　8基[2-P88]」。
+      **本级关键差异：金刚/雾岛 8 座，榛名 11 座。**
+
+  - field: propulsion.boiler.type
+    value: ロ号艦本式（重油专烧）8 座
+    src: [combinedfleet-kongo, navypedia-kongo]
+    valid: { from: 1937-01-08 }
+    confidence: B
+    note: >-
+      combinedfleet「eight **oil-fired** Kampon boilers」明写重油专烧；
+      navypedia 第二次改装后燃油栏只剩「oil 6330」可旁证全舰无煤。
+      日文来源该行只写「ロ号艦本式ボイラー　8基」，未标专烧。
+
+  - field: propulsion.turbine.count
+    value: 2
+    unit: count
+    src: [japanese-warship-kongo]
+    valid: { from: 1913-08-16, to: 1937-01-08 }
+    confidence: C
+    note: >-
+      日文来源竣工时栏「パーソンス式タービン　2基4軸」（2 台涡轮带 4 轴）。
+      同页 1931 年栏仍为「2基4軸」——第一次改装未换主机。
+
+  - field: propulsion.turbine.type
+    value: Parsons 直结式蒸汽涡轮 2 台（4 轴）
+    src: [navypedia-kongo, japanese-warship-kongo]
+    valid: { from: 1913-08-16, to: 1937-01-08 }
+    confidence: B
+    note: >-
+      navypedia「Kongo, Hiei, Kirishima: 4 Parsons steam turbines」；
+      日文来源「パーソンス式タービン　2基4軸」。
+      厂牌一致；**台数表述不同**（navypedia 写 4，日文写 2 台/4 轴），
+      本文件按日文记 2 台，navypedia 措辞保留于此不裁（榛名/雾岛文件同此处理）。
+      **对比**：榛名是 Brown-Curtis，另三舰 Parsons。
+
+  - field: propulsion.turbine.count
+    value: 4
+    unit: count
+    src: [navypedia-kongo, japanese-warship-kongo]
+    valid: { from: 1937-01-08 }
+    confidence: B
+    note: >-
+      第二次改装后 4 台齿轮传动。navypedia「4 sets Kampon geared steam turbines」；
+      日文来源「艦本式ギアード・タービン　4基4軸」。
+      combinedfleet 只写「she receives new Parsons geared turbines」——**厂牌与
+      另两源冲突**：combinedfleet 说新型仍是 Parsons，navypedia 与日文来源都说是
+      艦本式（Kampon）。两说并列不裁决。
+
+  - field: propulsion.turbine.type
+    value: 艦本式齿轮传动涡轮 4 台（4 轴）
+    src: [navypedia-kongo, japanese-warship-kongo]
+    valid: { from: 1937-01-08 }
+    confidence: B
+    note: >-
+      见上条：combinedfleet 的「new Parsons geared turbines」与本源措辞冲突，
+      并列不裁决。
+
+  - field: propulsion.power.design
+    value: 136000
+    unit: hp
+    src: [navypedia-kongo, japanese-warship-kongo]
+    valid: { from: 1937-01-08 }
+    confidence: B
+    note: >-
+      navypedia「Power, h. p. … 136000」；日文来源「馬力 ③ 136,000馬力」。
+      这是设计值；本舰**试航实测另有数据但未取得合规来源**，见 RESEARCH-NOTES §7.1。
+
+  # propulsion.power.trial / speed.trial：**未获取（合规来源）**，故不写 fact。
+  # 日文维基「公試成績」栏给出竣工验收 27,580t/78,275shp/27.54kt（1913-05-08
+  # 克莱德湾）与二次改装后 30.27kt（1936-11-14），但 ja.wikipedia 属 tier E，
+  # 不能作 fact 来源；其脚注指向一手档案「試験(2)」（海軍省-公文備考-T3-17-1656），
+  # 该档案本轮未取到。**不得据维基数字填 fact，也不得用雾岛的实测值代入。**
+
+  # ============================================================
+  # 航速（逐舰）
+  # ============================================================
+  - field: propulsion.speed.design
+    value: 26.0
+    unit: kn
+    src: [japanese-warship-kongo]
+    valid: { from: 1931-03-31, to: 1937-01-08 }
+    confidence: C
+    note: >-
+      日文来源「最大速度 ② 26.0ノット」。**与 navypedia 全级值 25.9 冲突**（差 0.1 kn），
+      且同级另两舰也各不相同（榛名 25.9、雾岛 26.3）——说明 navypedia 的 25.9
+      只是抄了其中一艘。两说并列不裁决。
+
+  - field: propulsion.speed.design
+    value: 30.3
+    unit: kn
+    src: [japanese-warship-kongo]
+    valid: { from: 1937-01-08 }
+    confidence: C
+    note: >-
+      日文来源「最大速度 ③ 30.3ノット」。**与 navypedia 全级值 30.5 冲突**（差 0.2 kn）。
+      两说并列不裁决；navypedia 的 30.5 已写在舰级文件。
+
+  # ============================================================
+  # 续航（逐舰，与 navypedia 全级值冲突）
+  # ============================================================
+  - field: propulsion.range.max
+    value: 10000
+    unit: nmi
+    src: [japanese-warship-kongo]
+    valid: { from: 1931-03-31, to: 1937-01-08 }
+    confidence: C
+    note: >-
+      日文来源「航続距離 ② 14ノット：10,000海里」。
+      navypedia 同状态给「10000(18)」——里程相同但**对应航速不同**（14 vs 18 kn）。
+      两说并列不裁决：数值可互证，口径不可混用。
+
+  - field: propulsion.range.max
+    value: 9800
+    unit: nmi
+    src: [japanese-warship-kongo]
+    valid: { from: 1937-01-08 }
+    confidence: C
+    note: >-
+      日文来源「航続距離 ③ 18ノット：9,800海里」。
+      **与 navypedia 全级值 10,000 nmi 冲突**（差 200 nmi）。
+      同级日文值：榛名 10,000、雾岛 9,850、金刚 9,800 —— 四舰各不相同，
+      而 navypedia 一律 10,000。两说并列不裁决。
+
+  # ============================================================
+  # 编制（逐舰）
+  # ============================================================
+  - field: service.complement.standard
+    value: 1201
+    unit: persons
+    src: [navypedia-kongo, japanese-warship-kongo]
+    valid: { from: 1913-08-16, to: 1931-03-31 }
+    confidence: C
+    note: >-
+      navypedia 编制栏第一列「Kongo: 1201 / others: 1221」——**金刚是唯一 1,201 的一艘**，
+      另三舰 1,221；日文来源「乗員 1,201名」互证。这是本级唯一一份逐舰编制差异。
+
+  - field: service.complement.standard
+    value: 1437
+    unit: persons
+    src: [navypedia-kongo]
+    valid: { from: 1937-01-08, to: 1944-11-21 }
+    confidence: C
+    note: >-
+      navypedia 第三列（1934-1940 modernization）「1437」，全级同值。
+      按 1,437 编制、1,200 阵亡记，沈没时约 237 人生还，与驱逐舰救起数吻合，
+      但来源未直接给战时定员，故不用差额倒推战时编制。
+      战时编制（service.complement.wartime）**未获取**。
+
+  # ============================================================
+  # 航空（逐舰，弹射器型号本舰**有**原文）
+  # ============================================================
+  - field: aviation.catapult.type
+    value: 吴式二号三型（Kure Type No. 2 Model 3），装于 3 号炮塔后方左舷
+    src: [combinedfleet-kongo]
+    valid: { from: 1932-05-02, to: 1937-01-08 }
+    confidence: C
+    note: >-
+      原文：「2 May 1932: Eight 12.7cm/40 Type 89 (4x2) and four 40mm Vickers AA
+      guns (2x2) are installed. **A Kure Type No. 2 Model 3 catapult is added to
+      the port side aft of No. 3 main gun turret.**」随后「26 January 1933:
+      Catapult is tested.」
+      **这是本舰优于雾岛的一处**：雾岛的弹射器型号两源都没给（记「未获取」），
+      金刚这一型有明确原文。但**不得反推雾岛/比叡同型**。
+
+  - field: aviation.aircraft.types
+    value: 九〇式二号二型（E4N2）等 3 机（具体型号未获取）
+    src: [combinedfleet-kongo]
+    valid: { from: 1932-05-02, to: 1937-01-08 }
+    confidence: C
+    note: >-
+      原文只给机数不给型号：「1 catapult, 3 seaplanes (E2N1)」（navypedia，
+      1932-1933 改装栏）——**该栏给的型号是 E2N1（一五式）**。
+      combinedfleet 金刚页 1932-1937 段未逐型列机型，故本条 value 只写「3 机」，
+      型号按 navypedia 的 E2N1 保留在 note 内，不写成确定值。
+
+  - field: aviation.aircraft.types
+    value: 九五式水上侦察机（E8N1 "Dave"）＋九四式水上侦察机（E7K1 "Alf"），3 机
+    src: [combinedfleet-kongo]
+    valid: { from: 1937-01-08, to: 1942-07-18 }
+    confidence: C
+    note: >-
+      原文（第二次改装）：「A catapult and rails for three floatplanes are installed
+      aft and to port of her No. 3 turret. The aircraft she now carries are Nakajima
+      E8N1 Type 95 ("Dave") and Kawanishi E7K1 Type 94 ("Alf") floatplanes.」
+
+  - field: aviation.aircraft.types
+    value: 零式水上侦察机（E13A）1 机＋零式观测机（F1M）2 机
+    src: [combinedfleet-kongo]
+    valid: { from: 1942-07-18, to: 1944-06-30 }
+    confidence: C
+    note: >-
+      原文：「18 July 1942: KONGO departs Yokosuka. Her floatplane complement is now
+      one Aichi E13A Type 0 and two Mitsubishi F1M Type 0, **tail codes CI-x
+      (in yellow)**.」——尾码 CI-x 黄色，是模型涂装的关键依据，
+      **与雾岛/比叡的 CIII-x / CIV-x 红色不同**。
+
+  - field: aviation.aircraft.types
+    value: 零式观测机（F1M2 "Pete"）2 机
+    src: [combinedfleet-kongo]
+    valid: { from: 1944-06-30, to: 1944-11-21 }
+    confidence: C
+    note: >-
+      原文：「30 June 1944: … She embarks two Mitsubishi F1M2 "Pete" floatplanes.」
+      即沈没前**只带 2 架水上观测机，不再带三座水侦**。
+
+  # ============================================================
+  # 雷达（逐舰 —— 本舰是四舰里最早有雷达记录的一艘）
+  # ============================================================
+  - field: sensors.radar.installed
+    value: 二一号电探（Type 21 对空/对水面）
+    src: [combinedfleet-kongo, navypedia-kongo]
+    valid: { from: 1942-08-01 }
+    confidence: B
+    note: >-
+      **四舰里最早**。combinedfleet：「1 August 1942: KONGO is transferred to Kure.
+      Overhaul and refit. **A Type 21 air and surface detection radar set is installed
+      on the foretop rangefinder.**」；navypedia 逐舰台账「8/1942, Kongo: + 21-go
+      radar」——两源互证，且 navypedia 的逐舰雷达台账**只给金刚与榛名**，
+      比叡、雾岛无条目。
+      → 与榛名（1943-03）相比早约 7 个月。
+
+  - field: sensors.radar.installed
+    value: 二二号电探（Type 22 对水面/射击指挥）＋一三号电探（Type 13 对空）
+    src: [combinedfleet-kongo, navypedia-kongo]
+    valid: { from: 1944-06-30 }
+    confidence: B
+    note: >-
+      combinedfleet：「30 June 1944: Kure Naval Yard. **A Type 22 surface
+      search/gunnery control radar set and Type 13 radars are fitted on the bridge
+      and the mainmast respectively.**」；navypedia「7/1944, Kongo: … 2-shiki 2-go,
+      3-shiki 1-go radars」——型号代号互证（二号二型＝Type 22 改、三号一型＝Type 13 改）。
+
+  - field: sensors.radar.count
+    value: 4
+    unit: count
+    src: [japanese-warship-kongo]
+    valid: { from: 1944-07-10, to: 1944-11-21 }
+    confidence: C
+    note: >-
+      日文来源 1944-07-10 兵装表逐型给出：「21号対空電探 1基／22号対水上電探 2基／
+      13号対空電探 1基」，合计 1+2+1 = 4 基。这是**分型数量相加**，各型数字原文俱在，
+      不构成推算。**与榛名 1944-10-05 的 5 基（21 号 1／22 号 2／13 号 2）不同**——
+      金刚的一三号只有 1 基。
+
+  # ============================================================
+  # 武备（逐舰变化节点）
+  # ============================================================
+  - field: armament.aa_25mm.count
+    value: 20
+    unit: count
+    src: [japanese-warship-kongo, combinedfleet-kongo, navypedia-kongo]
+    valid: { from: 1937-01-08, to: 1943-03-13 }
+    confidence: B
+    note: >-
+      20 挺 ＝ 10 座双联。三源一致：日文来源 1937 年栏「25mm連装機銃 10基20挺」；
+      combinedfleet 第二次改装段「40-mm MGs removed and **ten twin 25-mm MGs
+      installed**」；navypedia 1934-1940 栏「Kongo: … 10 x 2 - 25/60 96-shiki」。
+
+  - field: armament.aa_25mm.count
+    value: 26
+    unit: count
+    src: [combinedfleet-kongo, navypedia-kongo]
+    valid: { from: 1943-03-13, to: 1944-02-14 }
+    confidence: C
+    note: >-
+      20 ＋ 6 = 26 挺。**两源记账一致**（本级少见的无分歧项）：
+      combinedfleet「27 February - 13 March 1943: … **Six 25-mm AA guns (two triple
+      mounts)** are fitted in place of six 6-in. guns secondary guns (Nos. 7 and 8)」；
+      navypedia「3/1943, Kongo: … + 2 x 3 - 25/60 96-shiki」。
+
+  - field: armament.aa_25mm.count
+    value: 34
+    unit: count
+    src: [combinedfleet-kongo, navypedia-kongo]
+    valid: { from: 1944-02-14, to: 1944-07 }
+    confidence: C
+    note: >-
+      26 − 4 ＋ 12 = 34 挺。两源一致：combinedfleet「30 January 1944: Sasebo.
+      Drydocked. Four 152mm guns (Nos. 1, 2, 11, 12) and their directors and
+      **two 25mm twin mounts are removed**. Four 127-mm. AA guns (two twin mounts)
+      and **twelve 25mm (four triple mounts) are installed** in their place.
+      14 February 1944: Undocked.」；navypedia「2/1944, Kongo: - 4 x 1 - 152/50,
+      2 x 2 - 25/60; + 2 x 2 - 127/40 89-shiki, 4 x 3 - 25/60 96-shiki」。
+
+  - field: armament.aa_25mm.count
+    value: 100
+    unit: count
+    src: [japanese-warship-kongo, combinedfleet-kongo]
+    valid: { from: 1944-07-10, to: 1944-08-23 }
+    confidence: B
+    note: >-
+      日文来源 1944-07-10 兵装表逐型列出：「25mm三連装機銃 18基54挺／
+      25mm連装機銃 8基16挺／25mm単装機銃 30基30挺」，合计 54+16+30 = **100 挺**。
+      combinedfleet 同日段亦写「KONGO's secondary and AA armament are eight
+      6-inch/50, six dual 5-inch/40 and **one hundred 25-mm AA**」，与 100 吻合。
+      **但 combinedfleet 同段的增装记账与之不闭合**：「Seventy-six 25mm AA guns
+      (twelve triple and forty single mounts) are installed」——34＋76＝110≠100。
+      本条取**逐型相加的 100**（有分型原文），combinedfleet 的 +76 记账并列于此不裁。
+
+  - field: armament.aa_25mm.count
+    value: 118
+    unit: count
+    src: [combinedfleet-kongo]
+    valid: { from: 1944-08-23, to: 1944-11-21 }
+    confidence: C
+    note: >-
+      原文：「23 August 1944: KONGO departs Lingga for Seletar, Naval Base, Singapore
+      where electrical work is accomplished. **Eighteen more 25 mm. AA are probably
+      also added at this time** to bring their final total to 118.」
+      ——**原文自己标了 "probably"**，故 confidence 记 C，且必须在页面上标为存疑。
+      这是本舰最终的 25 mm 总数，比榛名 1945 年的 124 挺略少。
+
+  - field: armament.aa_40mm.count
+    value: 4
+    unit: count
+    src: [combinedfleet-kongo, navypedia-kongo]
+    valid: { from: 1932-05-02, to: 1937-01-08 }
+    confidence: C
+    note: >-
+      **维克斯 40 mm 机关炮**（不是博福斯），2 座双联 4 挺。
+      combinedfleet：「2 May 1932: Eight 12.7cm/40 Type 89 (4x2) and **four 40mm
+      Vickers AA guns (2x2)** are installed.」；navypedia 1932-1933 段
+      「+ 4 x 1 - 40/62 "HI" 91-shiki」——**两源型号名不同**（维克斯 vs 九一式
+      "HI"），座数也不同（2 座双联 4 挺 vs 4 座单装 4 挺），并列不裁决。
+      口径同为 40 mm，故记入本字段并在 note 说明型号之争。
+
+  - field: armament.aa_40mm.count
+    value: 0
+    unit: count
+    src: [combinedfleet-kongo]
+    valid: { from: 1937-01-08 }
+    confidence: B
+    note: >-
+      第二次改装撤除。原文：「40-mm MGs removed and ten twin 25-mm MGs installed.」
+      **这是「0」不是「未获取」**——来源明确表示撤除，此后本舰再未装 40 mm。
+
+  - field: armament.aa_20mm.count
+    value: 0
+    unit: count
+    src: [japanese-warship-kongo]
+    valid: { from: 1913-08-16, to: 1944-11-21 }
+    confidence: B
+    note: >-
+      **日本海军没有 20 mm 高炮**，本舰全生涯未装。此条记「0」是明确的「装 0 门」
+      而非「未获取」：日文来源全篇兵装表只列 25 mm（与 13 mm），从不出现 20 mm；
+      navweaps 的 25 mm 页亦说明日军制式轻高炮为九六式 25 mm。
+
+  - field: armament.mount.summary
+    value: >-
+      沈没前（1944-07-10 状态）：35.6 cm 连装 4 座 8 门（**英造 43 年式/毘式**）／
+      15.2 cm 单装 8 门／12.7 cm 连装高角 6 座 12 门／25 mm 18 座三联（54）＋
+      8 座双联（16）＋30 座单装（30）＝100 挺／电探 21 号 1、22 号 2、13 号 1／
+      鱼雷发射管全撤。
+    src: [japanese-warship-kongo, combinedfleet-kongo, navypedia-kongo,
+          navweaps-36cm-45-t41]
+    valid: { from: 1944-07-10, to: 1944-11-21 }
+    confidence: B
+    note: >-
+      **本条含两件事，都不可省**：
+      （一）**主炮型号是本舰最独特的一点**：35.6 cm 连装 4 座 8 门装的是
+      **英造 43 年式（毘式 / 14-in Vickers Mark "A"）**，另三舰装的是
+      日产 41 年式（四一式，Model 1908）。**两者型号不可互换。**
+      原文（navypedia as completed 装备栏，逐舰分列）：「**Kongo**: 4 x 2 -
+      356/45 **43-shiki**, 16 x 1 - 152/50 41-shiki, 16 x 1 - 76/40 41-shiki,
+      8 - 533 TT (beam) / **others**: 4 x 2 - 356/45 **41-shiki**, …」
+      ——该分法在三个状态栏全部保留（第一次、第二次改装后仍写 Kongo 43-shiki）。
+      原文（navweaps 命名沿革）：「Later, the guns built by **Vickers** were known
+      as the 14-in Vickers Mark "A" and to the Japanese as the 14-in **43rd Year
+      Type (Model 1910)**. Guns **manufactured in Japan** were known as 14-in
+      **41st Year Type (Model 1908)**.」
+      **一个必须提防的陷阱**：日文来源四页都把主炮写成「45口径**毘式**35.6cm
+      連装砲」（毘式＝Vickers 式），比叡/榛名/雾岛页也这么写——**日文这一层
+      不能用来区分四舰**，区分只能靠 navypedia 的 43-shiki/41-shiki 与 navweaps
+      的命名沿革。
+      又（navweaps）：「In addition to those guns on Kongô, Vickers supplied a
+      number of complete guns and individual forgings to the Japanese for a few
+      years, but most guns were built by Kure Arsenal and by Japan Steel Works,
+      LTD (Muroran Plant).」→ 金刚这一批是维克斯原厂造，后续备件与另三舰的炮
+      由吴工厂/日本制钢所造。「性能相近但不等于同型」——navweaps 说的
+      「they and the Vickers guns had similar performance and can be considered
+      together」是**弹道数据层面可合并考虑**，型号名与备件互换性不因此成立。
+      （二）**1944-07-10 的完整兵装状态**（日文来源「TECHNICAL DATA / 05
+      昭和19年/1944年7月10日時点の兵装」整栏）。
+      **与榛名 1944-10-05 表逐项不同**：榛名 25 mm 为 28 座三联＋2 座双联＋
+      20 座单装＝108 挺、15.2 cm 为 8 门（同）、12.7 cm 为 6 座（同）、
+      电探 21 号 1／22 号 2／13 号 **2**（金刚 1）。四舰不可互推。
+
+  - field: armament.torpedo.tubes
+    value: 8
+    unit: count
+    src: [navypedia-kongo, japanese-warship-kongo]
+    valid: { from: 1913-08-16, to: 1931-03-31 }
+    confidence: B
+    note: navypedia「8 - 533 TT (beam)」；日文来源「53.3cm魚雷発射管　8門（水中）」。
+
+  - field: armament.torpedo.tubes
+    value: 0
+    unit: count
+    src: [combinedfleet-kongo, japanese-warship-kongo]
+    valid: { from: 1937-01-08 }
+    confidence: B
+    note: >-
+      第二次改装全撤。combinedfleet「Torpedo tubes removed.」；
+      日文来源 1937 年栏鱼雷「撤　去」。
+      **注意第一次改装后是 4 具**（navypedia「4 TT were removed」／日文「4門（水中）」），
+      该中间状态已写在舰级文件，本文件不重复。
+      本条记「0」是明确拆除，不是未获取。
+
+  # ============================================================
+  # 服役与编制（逐舰）
+  # ============================================================
+  - field: service.unit
+    value: 第三战队第二小队（BatDiv 3, Section 2）／第二舰队，马来部队本队
+    src: [combinedfleet-kongo]
+    valid: { from: 1941-11-29, to: 1942-07-14 }
+    confidence: B
+    note: >-
+      原文：「29 November 1941: BatDiv 3's section 2, **KONGO and HARUNA**, is
+      attached to Vice Admiral Kondo Nobutake's Second Fleet, Southern (Malay)
+      Force's Main Body: BatDiv 3/2, CruDiv 4's ATAGO, TAKAO, MAYA and eight
+      destroyers.」→ 开战时第二小队是金刚＋榛名（不是雾岛）。
+
+  - field: service.unit
+    value: 第三战队（BatDiv 3）旗舰／第二舰队
+    src: [combinedfleet-kongo]
+    valid: { from: 1942-07-14, to: 1944-11-21 }
+    confidence: B
+    note: >-
+      原文：「14 July 1942: Reassigned in Vice Admiral Kondo's Second Fleet.
+      **KONGO becomes flagship of the resized BatDiv 3's KONGO and HARUNA.**
+      Vice Admiral Kurita assumes command of the division. … HIEI and KIRISHIMA are
+      reassigned to the new BatDiv 11.」
+      此后直到沈没，金刚与榛名同队（比叡/雾岛在第十一战队）。
+
+  - field: service.unit
+    value: 第一游击部队（栗田）第一部队第二小队旗舰／莱特湾海战
+    src: [combinedfleet-kongo]
+    valid: { from: 1944-10-22, to: 1944-10-28 }
+    confidence: B
+    note: >-
+      原文：「22 October 1944: Operation "SHO-I-GO"(Victory) - The Battle of Leyte
+      Gulf: KONGO sorties from Brunei as the flagship of the Second Section of
+      Force A of Vice Admiral Kurita's First Striking Force: (Center Force)…」
+
+  - field: service.commander
+    value: 中野直枝 大佐（Captain Nakano Naoe）
+    src: [combinedfleet-kongo]
+    valid: { from: 1913-08-16, to: 1913-12-01 }
+    confidence: C
+    note: >-
+      首任舰长（此前自 1912-12-01 任舾装员/Equipping Officer）。原文：
+      「1 December 1912: Captain (later Vice Admiral) Nakano Naoe (former CO of AC
+      YAKUMO) is appointed **Equipping Officer**.」→「16 August 1913: Completed and
+      registered (commissioned) in the IJN. **Captain Nakano is the Commanding
+      Officer.**」
+
+  - field: service.commander
+    value: 小柳富次 大佐（Captain Koyanagi Tomiji）
+    src: [combinedfleet-kongo]
+    valid: { from: 1941-08-15, to: 1942-12-16 }
+    confidence: C
+    note: >-
+      原文：「15 August 1941: Captain (later Vice Admiral) Koyanagi Tomiji (former CO
+      of CA ATAGO) assumes command.」任内经历开战、印度洋、中途岛、瓜岛炮击；
+      「1 November 1942: Captain Koyanagi is promoted to Rear Admiral.」
+
+  - field: service.commander
+    value: 岛崎利雄 大佐（Captain Shimazaki Toshio，后追晋少将）
+    src: [combinedfleet-kongo]
+    valid: { from: 1943-07-17, to: 1944-11-21 }
+    confidence: C
+    note: >-
+      末任舰长，随舰阵亡。原文：「17 July 1943: Captain (later Rear Admiral)
+      Shimazaki Toshio (former CO of CL SENDAI) assumes command of KONGO.」；
+      沈没段：「About 1,200 crewmen are lost including BatDiv 3's Vice Admiral
+      Suzuki and **KONGO's skipper Rear Admiral Shimazaki**.」
+
+  - field: service.casualties
+    value: 1200
+    unit: persons
+    src: [combinedfleet-kongo]
+    valid: { from: 1944-11-21 }
+    confidence: B
+    note: >-
+      原文：「**About 1,200 crewmen are lost** including BatDiv 3's Vice Admiral
+      Suzuki and KONGO's skipper Rear Admiral Shimazaki.」
+      **两说不一**：日文来源记「1,300名もの人員が犠牲となりました」、
+      日文维基记「島崎利雄艦長、第三戦隊司令官 鈴木義尾 少将以下1,300名」。
+      1,200 与 1,300 并列不裁决；combinedfleet 用的是 About 的约数。
+
+  - field: service.survivors
+    value: 237
+    unit: persons
+    src: [combinedfleet-kongo]
+    valid: { from: 1944-11-21 }
+    confidence: B
+    note: >-
+      原文：「Destroyers HAMAKAZE and ISOKAZE, fighting high seas, **rescue 237
+      survivors** and return to Kure. The Emperor's portrait is not recovered.」
+      日文维基给出同一总数并附逐舰分列：「磯風、浜風は準士官以上13名、下士官兵
+      224名、計237名を救助（浜風：准士官以上7名、下士官兵139名。磯風：准士官以上
+      副長以下6名、下士官兵85名）」——总数互证。
+
+  - field: service.fate_category
+    value: 被潜艇雷击沉没（台湾海峡），1945-01-20 除籍
+    src: [combinedfleet-kongo, japanese-warship-kongo]
+    valid: { from: 1944-11-21 }
+    confidence: B
+    note: >-
+      原文：「KONGO sinks at 26-09 N, 121-23 E, 60 miles N of Keelung, Formosa in
+      348 feet of water.」除籍：「20 January 1945: Removed from the Navy List.」
+      日文来源退役日栏「昭和19年/1944年11月21日（台湾海峡）」。
+      **combinedfleet 的两句定性**：「KONGO is the **only IJN battleship sunk by a
+      submarine during the war** and **the last battleship ever sunk by a
+      submarine**.」——前一句可无条件采用；后一句是「史上最后一艘」，
+      截至本轮无相反记载，但属综合判断，引用时应保留原文措辞。
+      见 RESEARCH-NOTES §8 关于「太平洋战争中唯一」这一更强说法的限定。

@@ -1,0 +1,816 @@
+# ============================================================================
+# 比叡（ひえい / Hiei）—— 金刚型二番舰，横须贺海军工厂建造
+#
+# 2026-11-25 建（kongo-ships 组）。舰级共用数据见 classes/kongo.yaml，
+# 本文件只写与舰级不同的、本舰特有的、以及随时间变化的部分。
+#
+# **本舰六个必须记住的识别点（前三个是四舰里独一无二的）：**
+#   1. **日本第一艘国产超弩级战列舰**（横须贺海军工厂，1914-08-04 竣工）。
+#      但材料大半仍从维克斯订购——日文来源自己说「実は材料の大半はヴィッカース社に
+#      注文しており、純国産、とは言いづらい建造過程です」；combinedfleet 亦记
+#      「Most of the parts used in her construction are imported from England.」
+#   2. **唯一被降格为「練習戦艦」的一艘**（1929-1932 撤武装、拆 4 号炮塔、
+#      拆舷侧装甲、锅炉 36→11 座、速力掉到 18 kn）。这段历史四舰里只有比叡有，
+#      也是她 1940 年「一次性做完别人两次改装」的原因。
+#   3. **唯一塔型舰桥的一艘**（另三舰是檣楼型）——日文来源：「他の『金剛型』の
+#      艦橋は檣楼型ですが、【比叡】のみ塔型となっている」，且是**大和型舰桥的
+#      试验原型**（combinedfleet：「She receives a new bridge structure that is a
+#      prototype for the YAMATO-class then under design.」）→ 模型识别第一特征。
+#   4. **锅炉 8 座**（1940 年大改装后）——但这与舰级文件冲突，必须知道：
+#      combinedfleet 明写「She receives **eight** new oil-fired Kampon boilers」，
+#      日文来源亦写「ロ号艦本式ボイラー　8基」，而 navypedia 的 1934-1940 栏把
+#      「Haruna, **Hiei**: … 11 Kampon boilers」并写。**两说并列，本站不裁决**，
+#      但**认定比叡属「8 座」组**（两源记 8、一源记 11，理由见 RESEARCH-NOTES §2.1）。
+#      另注：11 座是她**練習戦艦时期**的锅炉数（36−25＝11，两源互证）——
+#      两个 11 数字巧合相同、时点与含义完全不同，这是本舰最易被误读的一处。
+#   5. 1940-01-31 大改装完成。副炮 14 门、12.7 cm 连装高角 **4 座 8 门**、
+#      25 mm 连装 10 座 20 挺、13 mm 四连装 2 座 8 挺。**全生涯未再增装 25 mm**。
+#   6. **雷达：未获取。** combinedfleet / navypedia 的逐舰雷达台账里都没有比叡
+#      任何一条装设记录（navypedia 只给金刚与榛名），故不写"有"也不写"无"。
+#
+# 结局：1942-11-13 第三次所罗门海战（第一次夜战）被美巡洋舰炮火打坏舵机，
+# 白天空袭中再被命中，当日 1530 阿部弘毅下令弃舰、西田正雄舰长开金斯顿阀自沉，
+# 1900-0100 间沉于萨沃岛附近（09-04S, 159-45E）。阵亡 188、伤 151。
+# **她是日本海军在太平洋战争中第一艘沉没的战列舰**（早于雾岛两天）。
+# ============================================================================
+
+id: hiei
+name:
+  zh: 比叡
+  en: Hiei
+  ja: 比叡（ひえい）
+class: kongo
+note: >-
+  金刚型二番舰。横须贺海军工厂建造，1914-08-04 竣工，是日本第一艘国产超弩级战列舰。
+  1929-1932 降格为練習戦艦，1940-01-31 大改装完成复归高速战列舰。
+  1942-11-13 在瓜岛第一次夜战受重创后自沉。
+
+open_ended_note: |
+  本舰 1942-11-13 沉没，故所有 valid.to 为空且无终止事件的 fact，
+  其实际终点都是 1942-11-13（部分记录记 11-14，因沉没发生在 13 日 1900 至
+  14 日 0100 之间，见 construction.fate_date 的 note）。
+  1942-12-20 从海军籍除籍（「BatDiv 11 is deactivated and HIEI is removed from
+  the Navy List.」）。
+
+facts:
+  # ============================================================
+  # 身份
+  # ============================================================
+  - field: identity.name_original
+    value: 比叡（ひえい）
+    src: [japanese-warship-hiei]
+    valid: { from: 1911-11-04 }
+    confidence: C
+
+  - field: identity.name_zh
+    value: 比叡号
+    src: [japanese-warship-hiei]
+    valid: { from: 1911-11-04 }
+    confidence: C
+
+  - field: identity.name_en
+    value: Hiei
+    src: [combinedfleet-hiei]
+    valid: { from: 1912-11-21 }
+    confidence: C
+
+  - field: identity.name_note
+    value: >-
+      1912-11-21 下水（「21 November 1912: Yokosuka. HIEI is launched.」）。
+    src: [combinedfleet-hiei]
+    valid: { from: 1912-11-21 }
+    confidence: C
+    note: >-
+      原文只给下水事实，未写「以比叡山（京都/滋贺境）命名」。
+      同页另记开工时的假称：「『仮称卯号装甲巡洋艦』という名称で【比叡】の建造は
+      スタート。書類上で【比叡】が巡洋戦艦となったのは進水後のことです。」
+      （日文来源）——即先以「卯号装甲巡洋舰」名义开工，下水后才在文书上定为巡洋战舰。
+      命名来源（比叡山）本轮**无原文**，故不立 namesake 字段。
+
+  - field: identity.ship_type
+    value: battlecruiser
+    src: [combinedfleet-hiei, navypedia-kongo]
+    valid: { from: 1914-08-04, to: 1933-01-01 }
+    confidence: B
+    note: >-
+      原文：「4 November 1911: Yokosuka Navy Yard. **Battlecruiser HIEI** is laid
+      down.」navypedia 页标题「KONGO battlecruisers (1913 - 1915)」。
+      日文来源补充：「書類上で【比叡】が巡洋戦艦となったのは進水後のことです。」
+
+  - field: identity.ship_type
+    value: other
+    src: [japanese-warship-hiei, combinedfleet-hiei]
+    valid: { from: 1933-01-01, to: 1940-01-31 }
+    confidence: B
+    note: >-
+      **練習戦艦（训练战列舰）**。枚举里没有 training_ship，按 other 记，
+      实际含义见本 note。
+      日文来源：「昭和8年/1933年1月1日、【比叡】は正式に練習戦艦となりました。」
+      combinedfleet：「15 October 1929: First Reconstruction: Kure Navy Yard.
+      HIEI is **demilitarized and converted to a training ship** to avoid having to
+      be scrapped under the limitations imposed by the Washington Naval Treaty.」
+      → 工程 1929-10-15 起、1932-12-31 完工，正式分类变更 1933-01-01。
+      本条取**正式分类日**；工程期间（1929-10-15～1932-12-31）仍列巡洋战舰。
+
+  - field: identity.ship_type
+    value: battleship
+    src: [combinedfleet-hiei, japanese-warship-hiei]
+    valid: { from: 1940-01-31 }
+    confidence: B
+    note: >-
+      **两说冲突，并列不裁决**：
+      A（combinedfleet）：「31 January 1940: Kure. HIEI's second reconstruction is
+      completed. **She is re-rated a battleship.**」
+      B（日文来源）：「しかし【比叡】の分類は練習戦艦から改められることはなく、
+      【比叡】は**書類上では戦艦に戻ることはなかった**。」
+      → 即「实际当高速战列舰用」无争议，但「编制上是否改回战舰」两源相反。
+      本条按 A 记 battleship（工程完成后实际运用如此），B 的相反说法保留于此。
+
+  - field: identity.nation
+    value: japan
+    src: [combinedfleet-hiei]
+    valid: { from: 1914-08-04 }
+    confidence: B
+
+  - field: identity.operator
+    value: 大日本帝国海軍（Imperial Japanese Navy）
+    src: [combinedfleet-hiei]
+    valid: { from: 1914-08-04 }
+    confidence: B
+
+  - field: identity.era
+    value: ww2
+    src: [combinedfleet-hiei]
+    valid: { from: 1941-12-08, to: 1942-11-13 }
+    confidence: C
+
+  - field: identity.building_program
+    value: 1911 年度海军紧急扩张案，四艘高速装甲巡洋舰之第二艘
+    src: [combinedfleet-hiei]
+    valid: { from: 1910 }
+    confidence: C
+    note: >-
+      原文：「The battleship is FUSO and **HIEI is the second of the four armored
+      cruisers, after KONGO**.」
+
+  # ============================================================
+  # 建造（逐舰）
+  # ============================================================
+  - field: construction.builder
+    value: 横须贺海军工厂（Yokosuka Navy Yard）
+    src: [combinedfleet-hiei, navypedia-kongo, japanese-warship-hiei]
+    valid: { from: 1911-11-04 }
+    confidence: B
+    note: >-
+      navypedia Ships 表「比叡 [Hiei] | **Yokosuka K K**」（该列无船台号）；
+      combinedfleet「Yokosuka Navy Yard. Battlecruiser HIEI is laid down.」；
+      日文来源建造栏「横須賀海軍工廠」。三源一致。
+      **这是四舰里唯一由海军工厂（而非民间船厂或英国船厂）建造的一艘。**
+
+  - field: construction.builder_location
+    value: 神奈川県横須賀（Yokosuka, Kanagawa）
+    src: [combinedfleet-hiei]
+    valid: { from: 1911-11-04 }
+    confidence: B
+
+  - field: construction.laid_down
+    value: 1911-11-04
+    unit: date
+    src: [combinedfleet-hiei, navypedia-kongo, japanese-warship-hiei]
+    valid: { from: 1911-11-04 }
+    confidence: B
+    note: >-
+      navypedia「4.11.1911」；combinedfleet「4 November 1911」；
+      日文来源「明治44年/1911年11月4日」。三源一致。
+      **比金刚晚 9 个月 18 天开工**（金刚 1911-01-17）。
+
+  - field: construction.launched
+    value: 1912-11-21
+    unit: date
+    src: [combinedfleet-hiei, navypedia-kongo, japanese-warship-hiei]
+    valid: { from: 1912-11-21 }
+    confidence: B
+    note: >-
+      navypedia「21.11.1912」；combinedfleet「21 November 1912」；
+      日文来源「大正元年/1912年11月21日」。三源一致。
+
+  - field: construction.commissioned
+    value: 1914-08-04
+    unit: date
+    src: [combinedfleet-hiei, navypedia-kongo, japanese-warship-hiei]
+    valid: { from: 1914-08-04 }
+    confidence: B
+    note: >-
+      navypedia「4.8.1914」；combinedfleet「4 August 1914: Sasebo. HIEI is
+      commissioned and attached to Sasebo Naval District. Captain Takagi is her
+      first Commanding Officer.」；日文来源「大正3年/1914年8月4日」。三源一致。
+      **竣工地点记在佐世保（Sasebo）而非横须贺**，即建成后即赴佐世保入籍，
+      但建造厂仍是横须贺——两者不矛盾。
+
+  - field: construction.fate_date
+    value: 1942-11-13
+    unit: date
+    src: [combinedfleet-hiei, navypedia-kongo, japanese-warship-hiei]
+    valid: { from: 1942-11-13 }
+    confidence: B
+    note: >-
+      navypedia「sunk 13.11.1942」；日文来源退役日栏「昭和17年/1942年11月13日
+      （第三次ソロモン海戦）」；combinedfleet「1900-0100: HIEI sinks by the stern
+      some 4.5 miles from Savo Island at about 09-04S, 159-45E.」
+      **为何也有记 11-14 的**：沉没发生在 13 日 1900 至 14 日 0100 之间，
+      combinedfleet 把该条写在 13 日项下、结尾写「1900-0100」。
+      同日 14 日另有条目（阿部被解职），易被误读为沉没日。
+      本条取日方与 navypedia 一致的 **11-13**。
+
+  - field: construction.fate_type
+    value: sunk_by_own_forces
+    src: [combinedfleet-hiei, japanese-warship-hiei]
+    valid: { from: 1942-11-13 }
+    confidence: B
+    note: >-
+      由本舰乘员**打开金斯顿阀自沉**（不是被敌方直接击沉入水）。
+      combinedfleet：「Captain Nishida reluctantly orders HIEI **scuttled**.
+      The Emperor's portrait is removed. … 1838: Admiral Yamamoto orders Abe not to
+      scuttle HIEI, but the message is received too late.」
+      日文来源：「【比叡】はキングストン弁が開かれ、もう後戻りはできませんでした。」
+      **注意两处不同记载，并列不裁决**：
+      ① navypedia 记「lost speed and **sunk by escort**」（被护航舰处置），
+         与「自开阀门」不是同一表述；
+      ② Tully 的专题文（combinedfleet atully03）讨论「自沉是否多余」，
+         结论倾向「即使不自沉也会沉没」，并指出山本的电令到达太晚。
+      → 直接致沉动作是自沉，但**战伤（炮火＋空袭）是根本原因**，两者不可割裂。
+
+  # ============================================================
+  # 排水量与主尺度（逐舰：練習戦艦期的 19,500 t 是四舰独有）
+  # ============================================================
+  - field: displacement.standard
+    value: 19500
+    unit: t
+    src: [navypedia-kongo, japanese-warship-hiei]
+    valid: { from: 1933-01-01, to: 1940-01-31 }
+    confidence: B
+    note: >-
+      **練習戦艦期的排水量，四舰中只有比叡有这一段。**
+      navypedia：「(10/1929 - 12.1932, Kure K K), Hiei: … Standard displacement was
+      **19500t with 6.3m draught.**」；日文来源「基準排水量 ② 19,500t」。
+      两源互证。
+
+  - field: displacement.standard
+    value: 32350
+    unit: t
+    src: [navypedia-kongo, japanese-warship-hiei]
+    valid: { from: 1940-01-31 }
+    confidence: B
+    note: >-
+      navypedia 1934-1940 列逐舰给值「Hiei: 32350」；日文来源「基準排水量
+      ③ 32,350t[6]」。两源互证。
+      **四舰终值各不相同**（金刚 31,720 / 比叡 32,350 / 雾岛 31,980 / 榛名 32,156），
+      **比叡是四舰里最大的**，不可互推。
+
+  - field: dimensions.length.oa
+    value: 214.58
+    unit: m
+    src: [japanese-warship-hiei]
+    valid: { from: 1914-08-04, to: 1940-01-31 }
+    confidence: C
+    note: >-
+      日文来源「長さ ① 全長214.58m[7][6]」。**与 navypedia 全级值 214.5 m 差 0.08 m**，
+      属逐舰实测值 vs 全级取整值，两说并列（差 0.08 m 在误差级，但口径不同，
+      不合并）。比叡另有水線長数据见下条。
+
+  - field: dimensions.length.wl
+    value: 211.80
+    unit: m
+    src: [japanese-warship-hiei]
+    valid: { from: 1933-01-01, to: 1940-01-31 }
+    confidence: C
+    note: >-
+      日文来源「長さ ② 水線長211.80m」（練習戦艦期）。
+      navypedia 全级水线长 212.1 m——**差 0.3 m**，两说并列不裁决。
+      另：練習戦艦期全長日文来源未给（只给水线长），故本文件不写该期的 length.oa。
+
+  - field: dimensions.length.oa
+    value: 222.05
+    unit: m
+    src: [japanese-warship-hiei]
+    valid: { from: 1940-01-31 }
+    confidence: C
+    note: >-
+      日文来源「長さ ③ 全長222.05m」。navypedia 全级值 222.1 m（第二次改装后），
+      差 0.05 m，属取整，两说并列。
+      **舰尾延长量**：combinedfleet「Her stern is lengthened by **26-feet**」
+      （≈7.92 m）；日文维基（仅线索，E 级不采）记 7.6 m。两说差约 0.3 m，不裁决。
+
+  - field: dimensions.beam.wl
+    value: 31.97
+    unit: m
+    src: [japanese-warship-hiei]
+    valid: { from: 1940-01-31 }
+    confidence: C
+    note: >-
+      日文来源「艦幅 ③ 水線下幅31.97m」。**与 navypedia 全级值 29.3 m 差 2.67 m**，
+      与榛名（31.01）/雾岛（31.01）/金刚（31.04）的日文值也各差约 0.95 m。
+      日文用「水線下幅」、英文用 Breadth，两源都没给测量定义，
+      两说并列不裁决（舰级文件已按 navypedia 29.3 记）。
+
+  - field: dimensions.beam.wl
+    value: 28.04
+    unit: m
+    src: [japanese-warship-hiei]
+    valid: { from: 1914-08-04, to: 1940-01-31 }
+    confidence: C
+    note: >-
+      日文来源「艦幅 ① 最大幅28.04m／② 全幅28.04m」——**練習戦艦期仍是 28.04 m**，
+      即加装防雷突出部的第一次改装比叡没有做（她是撤装甲减重 19,500 t），
+      故宽度未增。这是四舰里唯一宽度不涨的一艘。
+
+  - field: dimensions.draught.mean
+    value: 6.3
+    unit: m
+    src: [navypedia-kongo]
+    valid: { from: 1933-01-01, to: 1940-01-31 }
+    confidence: C
+    note: >-
+      navypedia：「Standard displacement was 19500t with **6.3m draught**.」
+      ——该值是**与 19,500 t 标准排水量绑定**给出的，比全级 8.40/8.65/9.72 m
+      小得多，是練習戦艦期减重的直接结果。日文来源给 6.32 m（仅线索，不并入）。
+
+  # ============================================================
+  # 动力（逐舰 —— 本舰锅炉座数分两段，与榛名不同组）
+  # ============================================================
+  - field: propulsion.boiler.count
+    value: 11
+    unit: count
+    src: [navypedia-kongo, japanese-warship-hiei]
+    valid: { from: 1933-01-01, to: 1940-01-31 }
+    confidence: B
+    note: >-
+      **練習戦艦期 11 座**（36 座中拆掉 25 座）。两源互证：
+      navypedia：「(10/1929 - 12.1932, Kure K K), Hiei: … **25 boilers were
+      removed** (13800hp, 18kts)」→ 36−25 = 11；
+      日文来源：「ロ号艦本式ボイラー　**混焼6基、重油5基** [2-P88]」→ 6+5 = 11。
+      **这里正是最容易被误读的一处**：navypedia 的 1934-1940 栏把「Haruna, Hiei:
+      11 Kampon boilers」并写，容易被当成二次改装后的值；但比叡的 11 座属于
+      **練習戦艦期**，1940 年大改装后是 8 座（见下条）。榛名的 11 座才是
+      二次改装后的 11 座。两者数字巧合相同、**时点与含义完全不同**。
+
+  - field: propulsion.boiler.type
+    value: ロ号艦本式 混烧 6 座＋重油专烧 5 座
+    src: [japanese-warship-hiei]
+    valid: { from: 1933-01-01, to: 1940-01-31 }
+    confidence: C
+    note: >-
+      日文来源「ロ号艦本式ボイラー　混焼6基、重油5基[2-P88]」。
+      navypedia 只说「25 boilers were removed」不分混烧/专烧，故此分配只有日文一家。
+      **与金刚同阶段对比**：金刚 10 座＝混烧 6＋专烧 4；比叡 11 座＝混烧 6＋专烧 5。
+
+  - field: propulsion.boiler.count
+    value: 8
+    unit: count
+    src: [combinedfleet-hiei, japanese-warship-hiei]
+    valid: { from: 1940-01-31 }
+    confidence: B
+    note: >-
+      **1940 年大改装后 8 座**（不是 11 座）。
+      combinedfleet：「1 April 1937: Second Reconstruction: Kure. … **She receives
+      eight new oil-fired Kampon boilers** and new geared turbines. Her speed is
+      increased to 30 knots.」
+      日文来源：「缶・主機　ロ号艦本式ボイラー　**8基** [2-P88]／
+      艦本式ギアード・タービン　4基4軸」。
+      **与 navypedia 冲突**：navypedia 1934-1940 栏写「Haruna, **Hiei**:
+      … 11 Kampon boilers」。两源对一源（combinedfleet＋日文来源都说 8），
+      但按「有分歧不裁决」的规矩，两说并列记入，不擅自替 navypedia 改数。
+      → 结论：**比叡属「8 座」组（与金刚/雾岛同），不属「11 座」组**。
+
+  - field: propulsion.boiler.type
+    value: ロ号艦本式（重油专烧）8 座
+    src: [combinedfleet-hiei, japanese-warship-hiei]
+    valid: { from: 1940-01-31 }
+    confidence: B
+    note: >-
+      combinedfleet 明写「**eight new oil-fired** Kampon boilers」；
+      日文来源只写「ロ号艦本式ボイラー　8基」，未标专烧。
+
+  - field: propulsion.turbine.count
+    value: 2
+    unit: count
+    src: [japanese-warship-hiei]
+    valid: { from: 1914-08-04, to: 1940-01-31 }
+    confidence: C
+    note: >-
+      日文来源竣工时栏「パーソンス式タービン　2基4軸」；1932 年（練習戦艦）栏
+      仍为「パーソンス式タービン　2基4軸」——降格时**未换主机**（只拆锅炉）。
+
+  - field: propulsion.turbine.type
+    value: Parsons 直结式蒸汽涡轮 2 台（4 轴）
+    src: [navypedia-kongo, japanese-warship-hiei]
+    valid: { from: 1914-08-04, to: 1940-01-31 }
+    confidence: B
+    note: >-
+      navypedia「Kongo, **Hiei**, Kirishima: 4 Parsons steam turbines」；
+      日文来源「パーソンス式タービン　2基4軸」。
+      **厂牌一致无分歧**（对比：榛名是 Brown-Curtis）；台数表述不同
+      （navypedia 写 4，日文写 2 台/4 轴），本文件按日文记 2 台，措辞并列不裁。
+
+  - field: propulsion.turbine.count
+    value: 4
+    unit: count
+    src: [navypedia-kongo, japanese-warship-hiei]
+    valid: { from: 1940-01-31 }
+    confidence: B
+    note: navypedia「4 sets Kampon geared steam turbines」；日文来源「4基4軸」。
+
+  - field: propulsion.turbine.type
+    value: 艦本式齿轮传动涡轮 4 台（4 轴）
+    src: [navypedia-kongo, combinedfleet-hiei, japanese-warship-hiei]
+    valid: { from: 1940-01-31 }
+    confidence: B
+    note: >-
+      navypedia「4 sets Kampon geared steam turbines」；combinedfleet「new geared
+      turbines」（未写厂牌）；日文来源「艦本式ギアード・タービン　4基4軸」。
+      三源不冲突（combinedfleet 只是没写厂牌）。
+
+  - field: propulsion.power.design
+    value: 16000
+    unit: hp
+    src: [navypedia-kongo, japanese-warship-hiei]
+    valid: { from: 1933-01-01, to: 1940-01-31 }
+    confidence: B
+    note: >-
+      練習戦艦期 16,000 hp。navypedia「25 boilers were removed (**13800hp**,
+      18kts)」——减去 13,800 hp，64,000−13,800 = 50,200，与 16,000 不符；
+      日文来源直接给「馬力 ② 16,000馬力」。
+      → **两源在降格后马力上冲突**（navypedia 的 13,800 是"减去的量"还是"剩余量"
+      未明说），本条取日文来源的 16,000，navypedia 的 13,800 并列不裁。
+
+  - field: propulsion.power.design
+    value: 136000
+    unit: hp
+    src: [navypedia-kongo, japanese-warship-hiei]
+    valid: { from: 1940-01-31 }
+    confidence: B
+    note: navypedia「Power, h. p. … 136000」；日文来源「馬力 ③ 136,000馬力[2-P88]」。
+
+  # propulsion.power.trial / speed.trial：**未获取（合规来源）**，不写 fact。
+  # 日文维基「公試成績」栏给 1914-04-26 馆山冲 27,390t/76,127shp/27.724kt、
+  # 1939-12 宿毛湾 36,332t/137,970shp/29.9kt，但 ja.wikipedia 属 tier E，
+  # 不能作 fact 来源；其脚注指向一手档案「試験(2)」，本轮未取到。
+  # **不得据维基数字填 fact，也不得用雾岛的实测值代入。**
+
+  # ============================================================
+  # 航速与续航（逐舰：練習戦艦期的 18 kn 是四舰独有）
+  # ============================================================
+  - field: propulsion.speed.design
+    value: 18.0
+    unit: kn
+    src: [navypedia-kongo, japanese-warship-hiei]
+    valid: { from: 1933-01-01, to: 1940-01-31 }
+    confidence: B
+    note: >-
+      練習戦艦期 18.0 kn。日文来源「最大速度 ② 18.0ノット」；navypedia 同段
+      「(13800hp, **18kts**)」互证。
+      日文来源并给了一句评价：「排水量は19,500tまで減り、さらに『金剛型』最大の
+      特徴だった速度は18ノットとかつての武勲艦【三笠】並になってしまいます。」
+
+  - field: propulsion.speed.design
+    value: 29.7
+    unit: kn
+    src: [japanese-warship-hiei]
+    valid: { from: 1940-01-31 }
+    confidence: C
+    note: >-
+      日文来源「最大速度 ③ 29.7ノット」。**与 navypedia 全级值 30.5 冲突**（差 0.8 kn）。
+      combinedfleet 只写「Her speed is increased to 30 knots」（约数）。
+      两说并列不裁决；navypedia 的 30.5 已写在舰级文件。
+
+  - field: propulsion.range.max
+    value: 10000
+    unit: nmi
+    src: [japanese-warship-hiei]
+    valid: { from: 1933-01-01, to: 1940-01-31 }
+    confidence: C
+    note: >-
+      日文来源「航続距離 ② **16ノット**：10,000海里」。
+      **注意对应航速是 16 kn，不是另两舰的 14 kn**——同阶段的航速基准逐舰不同，
+      数值不可直接横比。navypedia 同段给「10000(18)」（18 kn），
+      三说（16 kn / 18 kn / 数值 10,000）在对应航速上分歧，并列不裁决。
+
+  - field: propulsion.range.max
+    value: 9800
+    unit: nmi
+    src: [japanese-warship-hiei]
+    valid: { from: 1940-01-31 }
+    confidence: C
+    note: >-
+      日文来源「航続距離 ③ 18ノット：9,800海里」。
+      **与 navypedia 全级值 10,000 nmi 冲突**（差 200 nmi）。
+      **与金刚同为 9,800**，雾岛 9,850、榛名 10,000。
+
+  # ============================================================
+  # 编制（逐舰）
+  # ============================================================
+  - field: service.complement.standard
+    value: 1221
+    unit: persons
+    src: [navypedia-kongo]
+    valid: { from: 1914-08-04, to: 1929-10-15 }
+    confidence: C
+    note: >-
+      navypedia 编制栏第一列「Kongo: 1201 / **others: 1221**」——比叡属 others，
+      取 1,221。日文来源亦记「乗員 1,221名」（其表列于 2 次改装后栏，与
+      navypedia 的分列方式不同，故只作旁证）。
+
+  - field: service.complement.standard
+    value: 1437
+    unit: persons
+    src: [navypedia-kongo]
+    valid: { from: 1940-01-31, to: 1942-11-13 }
+    confidence: C
+    note: >-
+      navypedia 第三列（1934-1940 modernization）「1437」，全级同值。
+      比叡的第二次改装 1940-01-31 完成，落在该列覆盖期内，故取此值。
+      練習戦艦期的编制**未获取**（19,500 t 的减重舰不可能沿用 1,221，
+      但来源未给数，不推算）。战时编制（service.complement.wartime）**未获取**。
+
+  # ============================================================
+  # 航空（逐舰：練習戦艦期曾把航空设备全撤，后又装回）
+  # ============================================================
+  - field: aviation.catapult.count
+    value: 0
+    unit: count
+    src: [combinedfleet-hiei]
+    valid: { from: 1927-10, to: 1937-04-01 }
+    confidence: C
+    note: >-
+      **本舰此期有水上机设备但无弹射器**。原文（1927 年 10-11 月佐世保改装）：
+      「The equipment to accommodate **two E1Y Type 14 floatplanes** is fitted,
+      but **no catapult**. Possibly during that time anti-torpedo net booms are
+      landed.」
+      随后降格时「All aircraft equipment is landed.」（1929-10-15）
+      → 即 1929-1932 全期无航空设备，本条时间窗覆盖整个 1927-1937 段，
+      中间状态见 aviation.aircraft.types 各条。
+
+  - field: aviation.aircraft.types
+    value: 一四式水上侦察机（E1Y）2 机（无弹射器）
+    src: [combinedfleet-hiei]
+    valid: { from: 1927-10, to: 1929-10-15 }
+    confidence: C
+    note: 见上条原文。此后 1929-10-15 降格时「All aircraft equipment is landed.」
+
+  - field: aviation.aircraft.types
+    value: 九五式水上侦察机（E8N1 "Dave"）＋九四式水上侦察机（E7K1 "Alf"），3 机
+    src: [combinedfleet-hiei]
+    valid: { from: 1937-04-01, to: 1942-07-14 }
+    confidence: C
+    note: >-
+      原文（第二次改装）：「**A catapult and rails for three** Nakajima E8N1 Type 95
+      Dave and Kawanishi E7K1 Type 94 Alf floatplanes are installed **aft of her
+      No. 3 turret**.」
+      → 注意与金刚/榛名不同：比叡的弹射器装在 **3 号炮塔后方（中线）**，
+      金刚 1932 年那台装在「3 号炮塔后方**左舷**」；榛名二次改装时改中线。
+      **弹射器型号未获取**（combinedfleet 只说 "a catapult"，navypedia 只说
+      "1 catapult"）——不得以金刚的吴式二号三型代入。
+
+  - field: aviation.aircraft.types
+    value: 零式水上侦察机（E13A1 "Jake"）1 机＋零式观测机（F1M2 "Pete"）2 机
+    src: [combinedfleet-hiei]
+    valid: { from: 1942-07-14, to: 1942-11-13 }
+    confidence: C
+    note: >-
+      原文：「14 July 1942: HIEI (F) and KIRISHIMA are reassigned … HIEI and
+      KIRISHIMA's aircraft complement is upgraded: they receive **one Aichi E13A1
+      "Jake" reconnaissance floatplane and two Mitsubishi Type F1M2 "Pete"
+      floatplanes, tail codes CIV-x (in red)**.」
+      ——**尾码 CIV-x 红色**（雾岛 CIII-x 红、金刚 CI-x 黄、榛名无此记录），
+      这是模型涂装的关键依据。
+      另 1942-09-23：「Two floatplanes are landed, one Jake and one Pete.」
+      → 此后实载减为 1 机（Jake 与 Pete 各减 1），但来源未再给新编制，不另立条。
+
+  # ============================================================
+  # 雷达（逐舰）—— 本舰的答案只能是「未获取」
+  # ============================================================
+  - field: sensors.radar.installed
+    value: 未获取
+    src: [combinedfleet-hiei, navypedia-kongo]
+    valid: { from: 1941-12-08, to: 1942-11-13 }
+    confidence: C
+    note: >-
+      **不写"有"，也不写"无"——本轮两个主源都没有比叡的雷达装设记录。**
+      ① combinedfleet 比叡 TROM 全篇（1911-1942）**没有任何 radar/電探 条目**，
+         1942 年的改装只记「11 July 1942: Arrives at Yokosuka. HIEI is refit and
+         drydocked. She remains at Yokosuka for a month.」——未提雷达；
+      ② navypedia 的逐舰雷达台账**只给两艘**：「8/1942, Kongo: + 21-go radar」
+         「3/1943, Haruna: … 1-shiki 2-go radar」「6/1944, Haruna: … 3-shiki 1-go
+         radar」「7/1944, Kongo: … radars」——**比叡、雾岛均无条目**。
+      → 反向证据（"没有"）不足以支撑一条否定的 fact，因为
+      ① 台账只记"改装时加装"，不记"从未装"；
+      ② 比叡 1942-11-13 即战没，若未装则时间窗极短、更易漏记。
+      故按硬规矩记「未获取」，**不以雾岛"沉没时无雷达"的结论代入**。
+      另：某现代聚合站（worldwar1-2.com）称「In 1942, Hiei received a Type 21
+      air-search radar」，但该页无引注、无档案出处，且与上述两源台账相反，
+      **本站不采用**，见 RESEARCH-NOTES §8。
+
+  # ============================================================
+  # 武备（逐舰 —— 練習戦艦期的武装削减是四舰独有）
+  # ============================================================
+  - field: armament.mount.summary
+    value: >-
+      沈没时（1942-11-13）：35.6 cm 连装 4 座 8 门（**日产 41 年式/毘式**）／
+      15.2 cm 单装 14 门／12.7 cm 八九式连装高角 **4 座 8 门**／
+      25 mm 九六式连装 10 座 20 挺／13 mm 四连装 2 座 8 挺／鱼雷发射管全撤／
+      雷达未获取。
+    src: [japanese-warship-hiei, navypedia-kongo, combinedfleet-hiei,
+          navweaps-36cm-45-t41]
+    valid: { from: 1940-01-31, to: 1942-11-13 }
+    confidence: B
+    note: >-
+      **本条含三件事，都不可省**：
+      （一）**主炮型号与金刚不同**：35.6 cm 连装 4 座 8 门装的是
+      **日产 41 年式（四一式，Model 1908）**，金刚装的是英造 43 年式（毘式）。
+      **两者型号不可互换。**
+      原文（navypedia as completed 装备栏）：「Kongo: 4 x 2 - 356/45 **43-shiki** …
+      **others: 4 x 2 - 356/45 41-shiki**」——比叡属 others，即 41 年式；
+      该分法在三个状态栏全部保留。
+      原文（navweaps 命名沿革）：「Later, the guns built by **Vickers** were known
+      as the 14-in Vickers Mark "A" and to the Japanese as the 14-in **43rd Year
+      Type (Model 1910)**. Guns **manufactured in Japan** were known as 14-in
+      **41st Year Type (Model 1908)**.」
+      **一个必须提防的陷阱**：日文来源四页都把主炮写成「45口径**毘式**35.6cm
+      連装砲」（毘式＝Vickers 式），比叡页也这么写——**日文这一层不能用来区分
+      四舰**，区分只能靠 navypedia 的 43-shiki/41-shiki 与 navweaps 的沿革。
+      比叡的炮为国产（吴工厂/日本制钢所），番号仍沿用「毘式」是型式名。
+      （二）**1940 年大改装后的完整兵装状态**（日文来源 1940 年栏整栏）：
+      「主砲 45口径毘式35.6cm連装砲 4基8門／副砲・備砲 50口径15.2cm単装砲
+      14基14門、40口径12.7cm連装砲 4基8門／機銃 25mm連装機銃 10基20挺、
+      13mm四連装機銃 2基8挺」。
+      **12.7 cm 只有 4 座**——这是本舰与金刚/榛名最易混的一处：
+      金刚与榛名在 1944 年各加 2 座（→6 座 12 门），
+      而比叡 1942-11 就战没了，从未获得这两次增装。
+      **25 mm 20 挺全生涯未增装**（combinedfleet 比叡 TROM 从 1940-01-31 到
+      1942-11-13 没有任何 25 mm 增装记载）。
+      （三）**练习战舰期（1933-01-01～1940-01-31）的兵装状态，四舰独有**：
+      35.6 cm 连装 **3 座 6 门**（4 号炮塔已拆，原址加 500 t 压载）／
+      15.2 cm 单装 16 门／8 cm 单装高角 4 门／25 mm 连装 10 座 20 挺＋
+      13 mm 四连装 1 座 4 挺／鱼雷发射管全撤（比另三舰早）／舷侧装甲拆除／
+      速力 18 kn、标准排水量 19,500 t（6.3 m 吃水）。
+      该段三源各记一部分，且**有两处直接冲突**：
+      ① **4 号炮塔**：navypedia「- 1 x 2 - 356/45 (No4)」；日文来源「主砲
+         45口径毘式35.6cm連装砲　**3基6門**」；combinedfleet「Her aft 14-inch
+         turret … removed」。三源一致（3 座 6 门）。
+      ② **15.2 cm 副炮**：combinedfleet 记「**all of** her 6-inch guns are
+         removed」；日文来源 1932 年栏仍写「50口径15.2cm単装砲　**16門**」；
+         navypedia 装备栏亦仍列「16 x 1 - 152/50」。
+         → **两说相反，并列不裁决**。
+      ③ **13 mm**：日文来源 1932 年栏「13mm四連装機銃　1基4挺」，
+         1940 年栏变「2基8挺」；本站无 13 mm 字段，只在此保留原文。
+
+  - field: armament.torpedo.tubes
+    value: 8
+    unit: count
+    src: [navypedia-kongo, japanese-warship-hiei]
+    valid: { from: 1914-08-04, to: 1929-10-15 }
+    confidence: B
+    note: navypedia「8 - 533 TT (beam)」；日文来源「53.3cm魚雷発射管　8門（水中）」。
+
+  - field: armament.torpedo.tubes
+    value: 0
+    unit: count
+    src: [japanese-warship-hiei, combinedfleet-hiei]
+    valid: { from: 1933-01-01 }
+    confidence: B
+    note: >-
+      **比叡是全级最早撤除鱼雷发射管的一艘**（降格时就全撤，1932 年完成），
+      比另三舰（1934-1937 年间）早。
+      日文来源 1932 年栏鱼雷「撤　去」；combinedfleet 降格段
+      「Her aft 14-inch turret and **all torpedo tubes** are removed.」
+      → 记「0」是明确拆除，不是未获取。
+
+  # ============================================================
+  # 防护（逐舰：降格期拆舷侧装甲，四舰独有）
+  # ============================================================
+  - field: protection.armor.thickness
+    value: 0
+    unit: mm
+    qual: { part: belt, region: main }
+    src: [combinedfleet-hiei, navypedia-kongo]
+    valid: { from: 1933-01-01, to: 1940-01-31 }
+    confidence: C
+    note: >-
+      **練習戦艦期主装甲带被拆除（记 0 是"已拆除"，不是"未获取"）。**
+      combinedfleet：「Her **armor belt** and all of the her 6-inch guns are
+      removed.」（1929-10-15 降格工程）
+      navypedia：「(10/1929 - 12.1932, Kure K K), Hiei: **Main and upper belts were
+      removed**, 25 boilers were removed …」
+      两源一致。
+      **但"1940 年是否装回"没有可用的合规来源**：
+      日文来源 1940 年段未提舷侧装甲；combinedfleet 1940 年段只提水平装甲加强
+      与防雷突出部；只有 ja.wikipedia（E 级，不能作 fact 来源）写
+      「第4砲塔、舷側装甲の復活」。故本条只记拆除、**不记恢复**，
+      恢复的日期与厚度记「未获取」，见 RESEARCH-NOTES §7.2。
+
+  # ============================================================
+  # 服役与编制（逐舰）
+  # ============================================================
+  - field: service.unit
+    value: 第三战队第一小队（BatDiv 3, Section 1）／第一舰队
+    src: [combinedfleet-hiei]
+    valid: { from: 1941-09-10, to: 1941-11-26 }
+    confidence: B
+    note: >-
+      原文：「HIEI is assigned to Vice Admiral Takasu Shiro's First Fleet … in Vice
+      Admiral Mikawa Gunichi's BatDiv 3 with HARUNA, KONGO and KIRISHIMA.」
+      随后 1941-11-26：「BatDiv 3, Section 1: **HIEI and KIRISHIMA** departs the
+      Kuriles with Vice Admiral Mikawa's Support Force…」
+
+  - field: service.unit
+    value: 第三战队第一小队（BatDiv 3, Section 1）／南云机动部队支援部队
+    src: [combinedfleet-hiei]
+    valid: { from: 1941-11-26, to: 1942-07-14 }
+    confidence: B
+    note: >-
+      珍珠湾至中途岛期间的编成。原文：「The Support Force consists of Vice Admiral
+      Mikawa Gunichi's (38) **BatDiv 3/1's HIEI and KIRISHIMA**…」
+      中途岛时：「27 May 1942: Departs Hashirajima in Vice Admiral Kondo's Main
+      Body: **Bat Div 3/1's KONGO and HIEI**…」——即中途岛是金刚＋比叡，
+      与榛名＋雾岛那一对**正好对调**（两页 TROM 一致）。
+
+  - field: service.unit
+    value: 第十一战队（BatDiv 11）旗舰／第三舰队
+    src: [combinedfleet-hiei]
+    valid: { from: 1942-07-14, to: 1942-11-13 }
+    confidence: B
+    note: >-
+      原文：「14 July 1942: **HIEI (F) and KIRISHIMA** are reassigned from the First
+      Fleet to Vice Admiral Nagumo's Third Fleet in Rear Admiral Abe Hiroaki's new
+      **BatDiv 11**.」
+      → **这是与金刚/榛名分道扬镳的节点**：此后比叡（旗舰）与雾岛同队，
+      金刚与榛名同队。瓜岛两次夜战比叡都在阿部麾下。
+
+  - field: service.commander
+    value: 高木七太郎 大佐（Captain Takagi Shichitaro）
+    src: [combinedfleet-hiei]
+    valid: { from: 1914-08-04, to: 1915-12-13 }
+    confidence: C
+    note: >-
+      首任舰长（此前 1913-09-20 任舾装长）。原文：「20 Sept 1913: Captain (later
+      Rear Admiral) Takagi Shichitaro (former CO of NISSHIN) is posted as HIEI's
+      Chief Equipping Officer.」→「4 August 1914: … Captain Takagi is her first
+      Commanding Officer.」
+
+  - field: service.commander
+    value: 西田正雄 大佐（Captain Nishida Masao）
+    src: [combinedfleet-hiei]
+    valid: { from: 1941-09-10, to: 1942-11-13 }
+    confidence: C
+    note: >-
+      末任舰长。原文：「10 September 1941: Captain Nishida Masao (former CO of CA
+      TONE) is appointed CO.」
+      沈没时：「1530: … Vice Admiral Abe orders Captain Nishida to Abandon Ship.
+      Captain Nishida reluctantly orders HIEI scuttled.」
+      战后：「Captain Nishida is placed on the Reserve List.」日文来源补充他被左迁
+      且山本五十六曾为其抗辩：「この処分には山本五十六連合艦隊司令長官も激怒し、
+      猛反対をしましたが処分は覆ることなく、西田艦長は二度と船に乗ることは
+      ありませんでした。」
+
+  - field: service.casualties
+    value: 188
+    unit: persons
+    src: [combinedfleet-hiei]
+    valid: { from: 1942-11-13 }
+    confidence: B
+    note: >-
+      原文两处一致：「188 crewmen are lost and **151 wounded**」／
+      「HIEI sinks by the stern … 188 crewmen are lost.」
+      Tully 专题文亦记「the HIEI had gone with 188 of her company」。
+
+  - field: service.fate_category
+    value: 战伤后由本舰乘员自沉（瓜岛第一次夜战），1942-12-20 除籍
+    src: [combinedfleet-hiei]
+    valid: { from: 1942-11-13 }
+    confidence: B
+    note: >-
+      战伤构成：夜战中「thirty 8-inch shell hits from SAN FRANCISCO and PORTLAND」
+      ＋「many 5-inch shells from STERETT」＋舵机被毁；白天空袭「70 American
+      sorties」，被 500 lb、1,000 lb 炸弹与多条鱼雷命中。
+      沉没：「1900-0100: HIEI sinks by the stern some 4.5 miles from Savo Island at
+      about 09-04S, 159-45E.」
+      除籍：「20 December 1942: … BatDiv 11 is deactivated and HIEI is removed from
+      the Navy List.」
+      两处**定性并存，不裁决**：
+      ① combinedfleet 与日文来源：自沉（开金斯顿阀）；
+      ② Tully 专题文（combinedfleet atully03）：倾向「自沉是多余的，
+         即使不自沉也会沉没」，并指出山本「不要处分」的电令到得太晚。
+      ③ navypedia：「lost speed and **sunk by escort**」——第三种说法。
+
+  - field: service.fate_authority
+    value: 日本海军第一艘在太平洋战争中沉没的战列舰（早于雾岛两天）
+    src: [combinedfleet-atully03, japanese-warship-hiei]
+    valid: { from: 1942-11-13 }
+    confidence: B
+    note: >-
+      Tully 专题文原文：「She was **the first Japanese battleship lost in World War
+      II** and **the first sunk by the U.S. Navy since 1898**.」
+      日文来源：「【比叡】は、帝国海軍所属艦艇で、**太平洋戦争で初めて沈んだ
+      戦艦**です。」
+      两源互证。**与雾岛（1942-11-15 被 USS Washington 击沉）是同一场战役的
+      前后两夜**：11-13 第一次夜战（比叡沉）、11-14/15 第二次夜战（雾岛沉）。

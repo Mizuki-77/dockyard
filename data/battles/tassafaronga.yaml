@@ -1,0 +1,317 @@
+# ============================================================================
+# 塔萨法隆加海战（Battle of Tassafaronga）· 1942-11-30 夜
+#
+# 时间基准：
+#   本场用 **美方时刻**。ONI 的《The Battle of Tassafaronga》正文**没有声明时区**，
+#   但同一系列 ONI 战斗叙述《The Battle of Guadalcanal》Part I 的脚注写明
+#   「All times in Part I are Zone minus 11.」，Part II 写「Zone minus 12」，
+#   两者本身就不统一——所以本文件**只声明「美方叙述时刻」，不声明具体 zone 编号**，
+#   避免把「−11」这个数字嫁接到没有声明它的那份文件上。
+#
+#   日方一侧引 IJO-60（田中第二水雷战队参谋部）与 TROM 的记载，都注明是日方口径，
+#   不做换算。USSBS 的 IJO 卷在个别条目上直接写「TOKYO time」，这一份没有。
+#
+# 跨午夜：开战 2320，北安普敦号次日 0300 后沉没，所以 time 全用 'MM-DD HH:MM'。
+# ============================================================================
+
+id: tassafaronga
+name:
+  zh: 塔萨法隆加海战
+  en: Battle of Tassafaronga
+
+date:
+  from: 1942-11-30
+  to: 1942-12-01
+theater: pacific
+period:
+  zh: 1942-11-30 23:20 接敌至 1942-12-01 03:00 后北安普敦号沉没。全部为美方叙述时刻（ONI 未声明 zone）
+  en: 2320 on 30 November to after 0300 on 1 December 1942, US narrative times
+
+location:
+  zh: 瓜达尔卡纳尔岛西北岸塔萨法隆加角外海，萨沃岛与埃斯佩兰斯角之间
+  en: Off Tassafaronga Point, northwest coast of Guadalcanal, between Savo Island and Cape Esperance
+coordinates: 交战海域约 09°12′S 159°45′E（各来源不给统一单点，本站不填精确坐标）
+
+scale:
+  zh: 美军重巡 4 艘 + 轻巡 1 艘 + 驱逐舰 6 艘；日军驱逐舰 8 艘（含旗舰长波）
+  en: US 4 heavy cruisers, 1 light cruiser, 6 destroyers; IJN 8 destroyers
+
+summary:
+  zh: >-
+    1942 年 11 月 30 日深夜，赖特少将率第 67 特混舰队（ONI 代号「WILLIAM」）在塔萨法隆加角外海
+    截击田中的「东京快车」补给编队。美方先以雷达取得先手、击中并击沉高波，
+    但日方在撤退前一瞬间齐射 20 余条九三式鱼雷，四分钟内连中三艘重巡、
+    又在 20 分钟后命中北安普敦号。美军一沉三重创，日方仅损失一艘驱逐舰。
+  en: >-
+    Late on 30 November 1942 Wright's Task Force WILLIAM intercepted Tanaka's destroyer
+    supply run off Tassafaronga. US radar and gunfire sank Takanami, but a single
+    Japanese torpedo counter-salvo crippled three heavy cruisers within four minutes
+    and sank Northampton twenty minutes later.
+
+belligerents:
+  - side: axis
+    label:
+      zh: 大日本帝国海军第二水雷战队
+      en: Imperial Japanese Navy, Destroyer Squadron 2
+    ships:
+      - name: 长波
+        role: { zh: 驱逐舰 · 第二水雷战队旗舰（田中赖三少将座舰）, en: Destroyer · flagship of DesRon 2 }
+        note: 本站尚未收录该舰单页
+      - name: 高波
+        role: { zh: 驱逐舰 · 第 13 驱逐队 · 此役唯一开炮者，被集火击沉, en: Destroyer · DesDiv 13; the only Japanese ship to open fire, sunk }
+        note: 本站尚未收录该舰单页
+      - name: 巻波
+        role: { zh: 驱逐舰 · 第 13 驱逐队, en: Destroyer · DesDiv 13 }
+        note: 本站尚未收录该舰单页
+      - name: 亲潮
+        role: { zh: 驱逐舰 · 第 15 驱逐队, en: Destroyer · DesDiv 15 }
+        note: 本站尚未收录该舰单页
+      - name: 黑潮
+        role: { zh: 驱逐舰 · 第 15 驱逐队, en: Destroyer · DesDiv 15 }
+        note: 本站尚未收录该舰单页
+      - name: 阳炎
+        role: { zh: 驱逐舰 · 第 15 驱逐队, en: Destroyer · DesDiv 15 }
+        note: 本站尚未收录该舰单页
+      - name: 川风
+        role: { zh: 驱逐舰 · 第 24 驱逐队, en: Destroyer · DesDiv 24 }
+        note: 本站尚未收录该舰单页
+      - name: 凉风
+        role: { zh: 驱逐舰 · 第 24 驱逐队, en: Destroyer · DesDiv 24 }
+        note: 本站尚未收录该舰单页
+
+  - side: allies
+    label:
+      zh: 美国海军第 67 特混舰队（ONI 代号 Task Force WILLIAM）
+      en: US Navy Task Force 67 (codenamed Task Force WILLIAM in ONI narratives)
+    ships:
+      - name: 明尼阿波利斯号
+        ship_id: minneapolis
+        role: { zh: 重巡 · 特混舰队旗舰（赖特少将）, en: Heavy cruiser · task force flagship }
+      - name: 新奥尔良号
+        ship_id: new-orleans
+        role: { zh: 重巡 · 纵队第二艘, en: Heavy cruiser · second in column }
+      - name: 彭萨科拉号
+        ship_id: pensacola
+        role: { zh: 重巡 · 纵队第三艘, en: Heavy cruiser · third in column }
+      - name: 北安普敦号
+        ship_id: northampton
+        role: { zh: 重巡 · 纵队末艘 · 唯一沉没, en: Heavy cruiser · last in column; the only ship lost }
+      - name: 檀香山号
+        role: { zh: 轻巡 · 纵队第四艘（唯一以之字形规避者）, en: Light cruiser · fourth in column }
+        note: 本站尚未收录该舰单页
+      - name: 弗莱彻号
+        role: { zh: 驱逐舰 · 前卫（第 1 艘）, en: Destroyer · van, leading }
+        note: 本站尚未收录该舰单页
+      - name: 珀金斯号
+        role: { zh: 驱逐舰 · 前卫, en: Destroyer · van }
+        note: 本站尚未收录该舰单页
+      - name: 莫里号
+        role: { zh: 驱逐舰 · 前卫（无 SG 雷达，全程未获接触）, en: Destroyer · van, no SG radar }
+        note: 本站尚未收录该舰单页
+      - name: 德雷顿号
+        role: { zh: 驱逐舰 · 前卫, en: Destroyer · van }
+        note: 本站尚未收录该舰单页
+      - name: 兰姆森号
+        role: { zh: 驱逐舰 · 临时加入，列于巡洋舰纵列之后, en: Destroyer · attached at short notice, stationed astern of the cruisers }
+        note: 本站尚未收录该舰单页
+      - name: 拉德纳号
+        role: { zh: 驱逐舰 · 临时加入，列于巡洋舰纵列之后, en: Destroyer · attached at short notice, stationed astern of the cruisers }
+        note: 本站尚未收录该舰单页
+
+timeline:
+  - time: '11-30 19:40'
+    text:
+      zh: 赖特少将奉命率部尽速出航，前往瓜岛西北岸塔萨法隆加角外海截击日军。零时（midnight）定为出航时刻。
+    src: [oni-combat-narrative-tassafaronga]
+  - time: '11-30 22:23'
+    text:
+      zh: 巡洋舰纵队与驱逐舰同时转向 320°T；约 15 分钟后全队成 140° 方位线，航向 280°T。
+    src: [oni-combat-narrative-tassafaronga]
+  - time: '11-30 22:25'
+    text:
+      zh: 第 67 特混舰队以 20 节驶出伦戈水道。
+    src: [oni-combat-narrative-tassafaronga]
+  - time: '11-30 23:06'
+    text:
+      zh: >-
+        明尼阿波利斯号 SG 雷达在埃斯佩兰斯角方向首次发现目标（「a small wart on Cape Esperance」），
+        方位 284°T、距离 26,000 码；至 2315 屏幕上已清晰可见 7 艘，航向东南、航速 15 节。
+    src: [oni-combat-narrative-tassafaronga]
+  - time: '11-30 23:16'
+    text:
+      zh: >-
+        弗莱彻号在 243°T、7,000 码上请求发射鱼雷，赖特确认距离后批准。
+        彭萨科拉号与新奥尔良号无 SG 雷达，此时仍未发现目标。
+    src: [oni-combat-narrative-tassafaronga]
+  - time: '11-30 23:20'
+    major: true
+    text:
+      zh: >-
+        前卫驱逐舰发起鱼雷攻击：弗莱彻号分两半齐射共 10 条（日方队列中心方位 267°T、距离 7,300 码，
+        即鱼雷航程 9,600 码）、珀金斯号 8 条、德雷顿号仅 2 条（目标速度始终解算为 0）、
+        莫里号无接触未发射。
+    src: [oni-combat-narrative-tassafaronga]
+  - time: '11-30 23:20'
+    text:
+      zh: >-
+        日方记载：刚减速准备卸载补给时，「saw two torpedoes pass ahead of us」，
+        随即提速至 24 节并全队同时转向，三个驱逐队各自成纵队撤离。
+        （日方口径，未换算。）
+    src: [ussbs-ijo-60]
+  - time: '11-30 23:21'
+    text:
+      zh: >-
+        明尼阿波利斯号开火，其余各舰相继找到目标。旗舰以四次齐射打爆一艘运输船（「violently
+        disintegrated」）；新奥尔良号以全雷达射击在 8,700 码上打爆一艘驱逐舰。
+    src: [oni-combat-narrative-tassafaronga]
+  - time: '11-30 23:25'
+    text:
+      zh: 前卫驱逐舰转向西北，绕萨沃岛撤离；此后未再参加战斗。
+    src: [oni-combat-narrative-tassafaronga]
+  - time: '11-30 23:27'
+    major: true
+    text:
+      zh: >-
+        明尼阿波利斯号被两条鱼雷命中：一发在 I 号炮塔前方、航空汽油舱附近，另一发几乎同时击中二号锅炉舱。
+        舰艏在 frame 22 处整段撕裂下垂；一号至三号锅炉舱进水，舱内人员溺毙或窒息。
+    src: [oni-combat-narrative-tassafaronga]
+  - time: '11-30 23:28'
+    major: true
+    text:
+      zh: >-
+        新奥尔良号为避开明尼阿波利斯号而右满舵，随即左舷舰艏被一条深水鱼雷命中。
+        鱼雷爆炸后「within a few seconds」又发生一次更重的爆炸，舰艏在 I、II 号炮塔之间几乎完全切断，
+        前两座炮塔人员全部阵亡。
+    src: [oni-combat-narrative-tassafaronga, wdr-38]
+  - time: '11-30 23:39'
+    major: true
+    text:
+      zh: >-
+        彭萨科拉号在 III 号炮塔前方燃油舱外侧的左舷后部被一条鱼雷命中，燃油瞬间起火，
+        火柱高过桅顶，把主桅变成一支火炬，Aft Control 内人员全部烧死。
+    src: [oni-combat-narrative-tassafaronga]
+  - time: '11-30 23:48'
+    major: true
+    text:
+      zh: >-
+        北安普敦号左舷舰艏方向发现两条鱼雷贴近水面平行来袭（来自约 270°T），
+        舰长 Kitts 上校刚来得及下令左满舵即被命中。一发命中 frame 108 水线、一发命中 frame 98 水下 10 英尺。
+    src: [oni-combat-narrative-tassafaronga]
+  - time: '12-01 01:30'
+    text:
+      zh: 北安普敦号除损管队外全员奉命离舰。
+    src: [oni-combat-narrative-tassafaronga]
+  - time: '12-01 02:40'
+    text:
+      zh: 北安普敦号左倾达 35°，Kitts 上校与损管队弃舰。
+    src: [oni-combat-narrative-tassafaronga]
+  - time: '12-01 03:00'
+    major: true
+    text:
+      zh: >-
+        北安普敦号横倾至舰体侧卧，随后翻转、舰尾先沉。弗莱彻号与德雷顿号在约一小时后完成搜救，
+        共救起全部 57 名军官与 716 名士兵。
+    src: [oni-combat-narrative-tassafaronga]
+
+hits_received:
+  - time: '11-30 23:27'
+    text:
+      zh: >-
+        明尼阿波利斯号：一发命中 I 号炮塔前方航空汽油舱附近，一发命中二号锅炉舱，两爆几乎同时，
+        许多人只感到一次爆炸。舰艏 frame 22 处整段撕裂下垂，水线漫至 I 号炮座。
+    src: [oni-combat-narrative-tassafaronga]
+  - time: '11-30 23:28'
+    text:
+      zh: >-
+        新奥尔良号：左舷舰艏 frame 36 前方被一条深水鱼雷命中，随后发生第二次更重的爆炸，
+        舰艏在 I、II 号炮塔之间被切断。断艏漂浮到左舷后方，在 frame 53（装甲带以下）、
+        frame 130 与 136（水线以上）撞出破口，并打坏左内侧螺旋桨。
+    src: [wdr-38]
+    note: >-
+      舰艏为何被整段切断，两说并列：
+      （一）战损报告 No.38 的官方结论是「鱼雷爆炸 + 被鱼雷破片引爆的航空炸弹与爆破药 mass detonation」
+      的合成效果——该报告查明 A-502-1/8-M 炸弹与水雷库内有 160 磅爆破药与 49 枚 100 磅炸弹，
+      A-502-M 轻武器库内有 5 枚 325 磅深弹，而这些弹药库「extended to the shell with no armor or
+      liquid protection」，鱼雷正好在其附近爆炸；
+      （二）ONI 战斗叙述的表述是鱼雷直接命中后「the gasoline stowage and magazine groups 1 and 3
+      exploded, and the entire bow … was blown away」，把爆炸归给汽油舱与弹药库被直接卷入。
+      两说并列，不裁决。
+  - time: '11-30 23:39'
+    text:
+      zh: >-
+        彭萨科拉号：左舷后部 III 号炮塔前方燃油舱外侧被一条鱼雷命中。全舰失去操舵，
+        两台陀螺仪震坏，机舱与前部主机左轴进水，后锅炉舱水位上升，弹药库进水与火势使 III 号炮塔失效。
+    src: [oni-combat-narrative-tassafaronga]
+  - time: '11-30 23:48'
+    text:
+      zh: >-
+        北安普敦号：两条鱼雷命中左舷，一发在 frame 108 水线、一发在 frame 98 水下 10 英尺。
+        燃油与柴油起火并喷洒到主桅与艇甲板，引爆 5 英寸待发弹，左舷 frame 105–113 之间舰壳被炸开、
+        八英尺外板外翻。
+    src: [oni-combat-narrative-tassafaronga]
+  - text:
+      zh: >-
+        日方：高波号是唯一开炮的日舰（约 70 发），因此被美舰集火击沉，全役唯一沉没的日舰。
+        长波号后烟囱被两发破片弹命中，是日方唯一的其他损伤。
+    src: [ussbs-ijo-60]
+  - text:
+      zh: >-
+        美方无一舰被日方炮弹命中——ONI 原文：「not a single enemy shell struck any of our ships」。
+        全部损失都来自鱼雷。
+    src: [oni-combat-narrative-tassafaronga]
+
+consequences:
+  - time: '11-30 23:33'
+    text:
+      zh: >-
+        明尼阿波利斯号失去全部炮塔动力后，赖特少将下令檀香山号的 Tisdale 少将接替指挥特混舰队。
+    src: [oni-combat-narrative-tassafaronga]
+  - time: '12-01 02:00'
+    text:
+      zh: >-
+        明尼阿波利斯号确认只能维持 3 至 3.5 节且能顶住继续进水后，舰长 Rosendahl 决定驶向 18 英里外的图拉吉港，
+        后由图戈 Bobolink 与数艘 PT 艇接应入港，靠上萨萨皮滩、以椰树与树桩系缆并加以伪装。
+    src: [oni-combat-narrative-tassafaronga]
+  - time: '12-01 03:44'
+    text:
+      zh: 彭萨科拉号以一号轴 8 节驶入图拉吉下锚，火势许久才被控制。
+    src: [oni-combat-narrative-tassafaronga]
+  - text:
+      zh: >-
+        新奥尔良号以 5 节驶向图拉吉；舰长 Roper 担心前横舱壁被水压压塌曾试图倒车入港未果，
+        最终靠上莫里号系泊。
+    src: [oni-combat-narrative-tassafaronga]
+
+losses:
+  - side: allies
+    ships_lost:
+      zh: 重巡 1 艘（北安普敦）+ 重巡 3 艘重创（明尼阿波利斯、新奥尔良、彭萨科拉）
+      en: One heavy cruiser sunk (Northampton); three heavily damaged (Minneapolis, New Orleans, Pensacola)
+    killed: 417
+    note:
+      zh: >-
+        417 人 = ONI 原文「19 officers and 398 enlisted men」。这是**整个第 67 特混舰队**的合计，
+        不是北安普敦号一舰之数，不能拆到单舰名下。
+        北安普敦号生还 57 名军官 + 716 名士兵（ONI 原文），但该舰编制数无来源，故阵亡数不可倒推。
+    src: [oni-combat-narrative-tassafaronga]
+  - side: axis
+    ships_lost:
+      zh: 驱逐舰 1 艘（高波）
+      en: One destroyer (Takanami)
+    note:
+      zh: >-
+        ONI 原叙述按当时情报称击沉高波及另外三艘驱逐舰；同一报告的脚注 26 更正则说
+        「In the light of subsequent information, it seems certain that two enemy destroyers were sunk」。
+        日方 IJO-60 的当事人陈述是「The Takanami (DD) was the only one sunk」。
+        三说并列，不裁决。
+    src: [oni-combat-narrative-tassafaronga, ussbs-ijo-60]
+
+outcome:
+  zh: >-
+    日军战术胜利：以一艘驱逐舰的代价使美军一沉三重创，补给登陆虽被推迟（改在 12 月 3、7、10 日分批完成），
+    但美方水面编队此后数周无力再拦截。美军唯一的战果是击沉高波。
+  en: >-
+    A Japanese tactical victory: one destroyer lost in exchange for one US heavy cruiser
+    sunk and three crippled, though the supply drop itself was postponed.
+
+narrative_refs: []

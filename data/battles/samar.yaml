@@ -1,0 +1,399 @@
+# ============================================================================
+# 萨马岛海战（Battle off Samar）· 1944-10-25
+#
+# 时间基准 —— 本场是三条里时间最乱的一场，务必分清：
+#
+#   1) 美方一手汇编《Battle Experience: Battle for Leyte Gulf》开篇即声明：
+#      「All times indicated are zone minus nine.」
+#      其正文里还出现「0724I/25」这种写法，I = Item（爱称），即 Zone −9。
+#      **本文件 timeline 的美方时刻全部用 Zone −9。**
+#
+#   2) 日方 TROM（combinedfleet）**不声明时区基准**。而且同一站内部就不一致：
+#      战列舰三条（YAMATO / KONGO / HARUNA）记「0544 发现、0558 开火」，
+#      重巡两条（TONE / CHIKUMA）记「0644 发现、0658 开火」——**整整差一小时**。
+#      美方的 0646/0653/0658 与**重巡那两条**吻合。本站两说并列，不裁决谁对。
+#      凡引 TROM 时刻，text 里注明出处与「未声明基准」。
+#
+#   3) USSBS 对日方人员的审讯（IJO-35、IJO-41）里，被问者自己用「0640 TOKYO time」
+#      这种说法，说明日方人员在受审时混用东京时间与当地时间。本文件引用时照录原话。
+# ============================================================================
+
+id: samar
+name:
+  zh: 萨马岛海战
+  en: Battle off Samar
+
+date:
+  from: 1944-10-25
+  to: 1944-10-25
+theater: pacific
+period:
+  zh: 1944-10-25 上午，自 06:46 接触至 09:24 日方巡洋舰停止射击，约 2.5 小时；下午为追击与空袭。美方时刻为 Zone −9
+  en: Morning of 25 October 1944, 0646 to 0924, about two and a half hours; afternoon pursuit and air attacks. US times Zone −9.
+
+location:
+  zh: 菲律宾萨马岛以东海域，圣贝纳迪诺海峡以东
+  en: Off the east coast of Samar Island, Philippines, east of San Bernardino Strait
+coordinates: 交战海域约 11°30′N 126°30′E（各来源位置点不统一，本站不填精确单点）
+
+scale:
+  zh: >-
+    日军栗田第一游击部队主力（战列舰 4、重巡 6、轻巡 2、驱逐舰约 11）；
+    美军第 77.4.3 特混群（护航航母 6、驱逐舰 3、护航驱逐舰 4），另有 77.4.1 / 77.4.2 的舰载机参战
+  en: >-
+    Kurita's Centre Force (4 battleships, 6 heavy cruisers, 2 light cruisers, about 11 destroyers)
+    against TU 77.4.3 (6 escort carriers, 3 destroyers, 4 destroyer escorts), plus aircraft from TU 77.4.1 and 77.4.2
+
+summary:
+  zh: >-
+    1944 年 10 月 25 日晨，栗田健男的第一游击部队穿过圣贝纳迪诺海峡后，在萨马岛以东撞上
+    斯普拉格少将的第 77.4.3 特混群——六艘护航航母与七艘护航舰艇。日方误将护航航母认作舰队航母，
+    美军则以烟幕、鱼雷冲击与舰载机反击拖延了两个半小时。日方击沉一艘护航航母与三艘护航舰艇，
+    却在 09:24 突然停止射击、掉头北撤，把几乎到手的战果与莱特湾入口一并放弃。
+  en: >-
+    On the morning of 25 October 1944 Kurita's Centre Force came through San Bernardino Strait
+    and ran into Rear Admiral Clifton Sprague's TU 77.4.3 — six escort carriers and seven escorts.
+    The Japanese mistook the CVEs for fleet carriers; the Americans held them off for two and a
+    half hours with smoke, torpedo charges and aircraft, and at 0924 the Japanese abruptly broke
+    off and turned north.
+
+belligerents:
+  - side: axis
+    label:
+      zh: 大日本帝国海军第一游击部队（中心部队）
+      en: Imperial Japanese Navy, First Diversion Attack Force (Centre Force)
+    ships:
+      - name: 大和
+        role: { zh: 战列舰 · 第一战队（栗田健男中将座舰，10-23 由爱宕转移而来）, en: Battleship · BatDiv 1, fleet flagship }
+        note: 本站本轮尚未收录该舰单页
+      - name: 长门
+        role: { zh: 战列舰 · 第一战队, en: Battleship · BatDiv 1 }
+        note: 本站尚未收录该舰单页
+      - name: 金刚
+        role: { zh: 战列舰 · 第三战队, en: Battleship · BatDiv 3 }
+        note: 本站尚未收录该舰单页
+      - name: 榛名
+        ship_id: haruna
+        role: { zh: 战列舰 · 第三战队（螺旋桨在菲律宾海海战后未修复，只能跑 26 节，很快掉队）, en: Battleship · BatDiv 3; still limited to 26 knots after Philippine Sea damage }
+      - name: 鸟海
+        role: { zh: 重巡 · 第四战队 · 当日上午重伤后被己方处分, en: Heavy cruiser · CruDiv 4; crippled and scuttled }
+        note: 本站尚未收录该舰单页
+      - name: 羽黑
+        role: { zh: 重巡 · 第五战队, en: Heavy cruiser · CruDiv 5 }
+        note: 本站尚未收录该舰单页
+      - name: 利根
+        ship_id: tone
+        role: { zh: 重巡 · 第七战队 · 全战耗主炮 408 发, en: Heavy cruiser · CruDiv 7; fired 408 main battery rounds }
+      - name: 筑摩
+        ship_id: chikuma
+        role: { zh: 重巡 · 第七战队 · 熊野受伤后代理战队旗舰 · 当日下午翻覆沉没, en: Heavy cruiser · CruDiv 7; ad hoc flagship after Kumano was hit; capsized that afternoon }
+      - name: 熊野
+        role: { zh: 重巡 · 第七战队 · 07:24 被约翰斯顿号鱼雷炸掉舰艏, en: Heavy cruiser · CruDiv 7; bow blown off by a torpedo from USS Johnston at 0724 }
+        note: 本站尚未收录该舰单页
+      - name: 铃谷
+        role: { zh: 重巡 · 第七战队 · 当日上午重伤后被己方处分, en: Heavy cruiser · CruDiv 7; crippled and scuttled }
+        note: 本站尚未收录该舰单页
+      - name: 能代
+        role: { zh: 轻巡 · 第二水雷战队旗舰, en: Light cruiser · flagship, DesRon 2 }
+        note: 本站尚未收录该舰单页
+      - name: 矢矧
+        role: { zh: 轻巡 · 第十水雷战队旗舰, en: Light cruiser · flagship, DesRon 10 }
+        note: 本站尚未收录该舰单页
+
+  - side: allies
+    label:
+      zh: 美国海军第七舰队第 77.4.3 特混群（「塔菲三号」）
+      en: US Navy Task Unit 77.4.3 ("Taffy 3"), Seventh Fleet
+    ships:
+      - name: 方肖湾号
+        role: { zh: 护航航母 · 第 77.4.31 特混大队旗舰（斯普拉格少将）, en: Escort carrier · flagship, TU 77.4.31 }
+        note: 本站尚未收录该舰单页
+      - name: 圣洛号
+        role: { zh: 护航航母 · 10:50 被特攻机撞中后爆炸沉没, en: Escort carrier · sunk after a kamikaze hit at about 1050 }
+        note: 本站尚未收录该舰单页
+      - name: 白平原号
+        role: { zh: 护航航母, en: Escort carrier }
+        note: 本站尚未收录该舰单页
+      - name: 加里宁湾号
+        role: { zh: 护航航母, en: Escort carrier }
+        note: 本站尚未收录该舰单页
+      - name: 基特昆湾号
+        role: { zh: 护航航母, en: Escort carrier }
+        note: 本站尚未收录该舰单页
+      - name: 甘比尔湾号
+        role: { zh: 护航航母 · 约 09:00 被日方巡洋舰近距炮火击沉, en: Escort carrier · sunk about 0900 by close-range cruiser fire }
+        note: 本站尚未收录该舰单页
+      - name: 霍尔号
+        role: { zh: 驱逐舰 · 07:30 前后发起鱼雷冲击，被击沉, en: Destroyer · torpedo charge; sunk }
+        note: 本站尚未收录该舰单页
+      - name: 约翰斯顿号
+        role: { zh: 驱逐舰 · 07:24 以鱼雷炸掉熊野号舰艏，被击沉, en: Destroyer · torpedoed Kumano's bow at 0724; sunk }
+        note: 本站尚未收录该舰单页
+      - name: 希尔曼号
+        role: { zh: 驱逐舰 · 三艘驱逐舰中唯一幸存, en: Destroyer · the only one of the three destroyers to survive }
+        note: 本站尚未收录该舰单页
+      - name: 塞缪尔·B·罗伯茨号
+        role: { zh: 护航驱逐舰 · 被击沉, en: Destroyer escort · sunk }
+        note: 本站尚未收录该舰单页
+      - name: 丹尼斯号
+        role: { zh: 护航驱逐舰 · 09:02 报告水线下被命中、主炮失效, en: Destroyer escort · reported hit below the waterline at 0902 }
+        note: 本站尚未收录该舰单页
+      - name: 雷蒙德号
+        role: { zh: 护航驱逐舰, en: Destroyer escort }
+        note: 本站尚未收录该舰单页
+      - name: 约翰·C·巴特勒号
+        role: { zh: 护航驱逐舰, en: Destroyer escort }
+        note: 本站尚未收录该舰单页
+
+timeline:
+  - time: '06:31'
+    text:
+      zh: >-
+        第 77.4.3 特混群的反潜巡逻机报告：在其西北约 15 英里处发现大批日军战列舰、巡洋舰与驱逐舰，航向正南。
+        （美方汇编，Zone −9）
+    src: [leyte-battle-experience]
+  - time: '06:46'
+    text:
+      zh: 第 77.4.3 特混群首次迹象：方位 300°、约 15 英里处出现自动武器对空射击。
+    src: [leyte-battle-experience]
+  - time: '06:53'
+    text:
+      zh: >-
+        目视发现一支大舰队，方位 298°、约 17 英里；当时判断为战列舰 4、重巡与轻巡 8、驱逐舰至少 8 艘。
+        「No report of radar contact was made prior to the visual sighting.」
+    src: [leyte-battle-experience]
+  - time: '06:55'
+    text:
+      zh: 下令各航母放出全部可用飞机，特混群转向东迎风起飞。
+    src: [leyte-battle-experience]
+  - time: '07:01'
+    text:
+      zh: 下令警戒舰在航母后方施放烟幕。
+    src: [leyte-battle-experience]
+  - time: '07:05'
+    text:
+      zh: 第 77.4.3 特混群广播接触报告并请求支援。
+    src: [leyte-battle-experience]
+  - time: '07:24'
+    major: true
+    text:
+      zh: >-
+        第 77.4 特混舰队（旗舰）收到 77.4.3 报告：正被 4 艘战列舰、8 艘重巡与众多驱逐舰在约 30,000 码上炮击。
+        「This was the first indication that the enemy's Central Force had succeeded in passing through
+        SAN BERNARDINO Straits.」
+    src: [leyte-battle-experience]
+  - time: '07:24'
+    text:
+      zh: >-
+        日方 TROM：熊野被约翰斯顿号的鱼雷命中，Mk.15 鱼雷把熊野的舰艏撕掉一段；
+        熊野以 15 节向圣贝纳迪诺海峡撤退，第七战队旗舰暂由筑摩代理。
+        （TROM 未声明基准；同一站的战列舰 TROM 把同类事件记在约一小时前，见文件头说明。）
+    src: [combinedfleet-chikuma-trom, combinedfleet-kumano-trom]
+  - time: '07:30'
+    major: true
+    text:
+      zh: >-
+        霍尔号、约翰斯顿号与罗伯茨号转向，对日方战列舰发起昼间半齐射鱼雷攻击（距离 10,000 码以内），
+        随后转向、在约 7,000 码上以另半个齐射攻击重巡。三舰最终全部沉没。
+    src: [leyte-battle-experience]
+  - time: '07:40'
+    text:
+      zh: 日方重巡已进至 24,000 码，警戒舰指挥官奉命发起鱼雷攻击。
+    src: [leyte-battle-experience]
+  - time: '07:54'
+    text:
+      zh: 警戒舰报告有鱼雷从右后方逼近航母。
+    src: [leyte-battle-experience]
+  - time: '07:56'
+    text:
+      zh: >-
+        南方 20 英里外的三艘弗莱彻级驱逐舰被发现；以探照灯告知其正遭水面攻击后，
+        这三舰先向东驶向敌阵，随后转向南消失，「They did not enter the affray」。
+    src: [leyte-battle-experience]
+  - time: '08:20'
+    text:
+      zh: 甘比尔湾号报告受重创、只能以单机航行；在持续炮火下不断落后，最终消失在烟幕中。
+    src: [leyte-battle-experience]
+  - time: '08:26'
+    text:
+      zh: 两艘护航驱逐舰奉命自右向左横越，在编队左前方施放烟幕。
+    src: [leyte-battle-experience]
+  - time: '09:00'
+    text:
+      zh: >-
+        甘比尔湾号沉没。生还者最初报告称是被六艘重巡在最后进至 2,000 码的距离上以多枚 8 英寸弹击沉。
+    src: [leyte-battle-experience]
+  - time: '09:02'
+    text:
+      zh: 丹尼斯号报告水线下被命中、主炮全部失效。
+    src: [leyte-battle-experience]
+  - time: '09:24'
+    major: true
+    text:
+      zh: >-
+        日方巡洋舰在进至仅 10,500 码时停止射击，成纵队向左反航、向东北撤退。
+        第 77.4.3 特混群随即减速至 15 节。
+    src: [leyte-battle-experience]
+  - time: '10:20'
+    text:
+      zh: 日方 TROM：栗田下令再次转向南，重向莱特湾前进。
+    src: [combinedfleet-chikuma-trom]
+  - time: '10:50'
+    text:
+      zh: >-
+        基特昆湾号被一架「托尼」（日军战斗机）自杀式撞穿左舷前部天桥，受轻伤与小规模汽油火；
+        约五分钟后圣洛号被一架被高炮击中起火的俯冲轰炸机掠过甲板后坠入左舷海中，
+        随后发生一连串极猛烈的爆炸并燃起大火，最终弃舰。
+    src: [leyte-battle-experience]
+  - time: '11:05'
+    text:
+      zh: >-
+        日方 TROM：筑摩被基特昆湾号 VC-5 的 5 架 TBM-1C 攻击，左舷舯部中两条鱼雷、机舱进水、失电停船、左倾。
+        此时其防空弹药已大部耗尽，前一次攻击中「some gunners had resorted to using exercise rounds」。
+        1110 野分号奉命前往救助。
+    src: [combinedfleet-chikuma-trom]
+  - time: '12:49'
+    text:
+      zh: >-
+        日方 TROM：撤退中的栗田部队遭舰载机攻击。利根被四架俯冲轰炸机攻击，右舷后部被命中一发，
+        舰体破口很大、舵机失灵，航速暂时被限制在 15 节；1330 又以手动操舵遭攻击，被一枚「250 kg」炸弹
+        （未爆）命中；1341 已能重新跑到 30 节。利根全战耗主炮 408 发。
+    src: [combinedfleet-tone-trom]
+  - time: '12:55'
+    major: true
+    text:
+      zh: >-
+        日方部队转向、以 105 度航向、15–20 节向圣贝纳迪诺海峡撤退，留下数艘受创舰只。
+        「At 1255I/25 the enemy force turned away and commenced retirement towards SAN BERNARDINO Strait」。
+    src: [leyte-battle-experience]
+  - time: '14:15'
+    text:
+      zh: >-
+        日方 TROM：筑摩遭奥马尼湾号（USS OMMANEY BAY, CVE-79）VC-75 的三架 TBM-1C 攻击，
+        左舷舯部中三条鱼雷；约 14:30 向左翻覆、舰尾下沉于 11-52N 126-36E。野分号救起约 120 人。
+    src: [combinedfleet-chikuma-trom]
+  - time: '21:00'
+    text:
+      zh: 日方 TROM：第一游击部队残余经圣贝纳迪诺海峡西撤。
+    src: [combinedfleet-haruna]
+
+hits_received:
+  - time: '07:24'
+    text:
+      zh: 熊野（日方）：约翰斯顿号一条 Mk.15 鱼雷炸掉一段舰艏，以 15 节撤退。
+    src: [combinedfleet-kumano-trom]
+  - time: '08:53'
+    text:
+      zh: >-
+        筑摩（日方）：被「塔菲二号」的四架 TBM 复仇者攻击，一条 Mk.13 鱼雷使其左螺旋桨与舵失效，
+        两分钟后完全停车。利根号舰桥人员目睹了这次命中。
+    src: [combinedfleet-chikuma-trom, combinedfleet-tone-trom]
+  - time: '11:05'
+    text:
+      zh: 筑摩（日方）：左舷舯部再中两条鱼雷，机舱进水、失电停船、左倾。
+    src: [combinedfleet-chikuma-trom]
+  - time: '14:15'
+    text:
+      zh: 筑摩（日方）：左舷舯部再中三条鱼雷，约 1430 向左翻覆、舰尾下沉。
+    src: [combinedfleet-chikuma-trom]
+  - time: '12:49'
+    text:
+      zh: 利根（日方）：右舷后部被一发炸弹命中，舰体大破口、舵机失灵、航速暂限 15 节。
+    src: [combinedfleet-tone-trom]
+  - time: '12:28'
+    text:
+      zh: >-
+        金刚（日方）：被约 20 架 SB2C 俯冲轰炸机攻击，五次近失。右舷舯部一发近失使防雷凸舱与侧板凹陷，
+        海水污染受损油舱燃油；舰尾另一发近失使右舷两桨桨叶轻微弯曲。12 人阵亡、36 人负伤。
+    src: [combinedfleet-kongo]
+  - time: '08:29'
+    text:
+      zh: >-
+        利根（日方）：遭数架 F4F 野猫反复扫射，1 名下士阵亡，舰长黛治夫上校与数名水兵负伤。
+    src: [combinedfleet-tone-trom]
+  - text:
+      zh: >-
+        日方对自身损失的评估（栗田的参谋长 Koyanagi 少将）：鸟海「became unnavigable by bombing and
+        she sank」，铃谷同样失航后被处分，筑摩「was sunk but I do not know how」，并称
+        「I think there was no great damage by gunfire, evidently not many gunfire hits, very few if any」。
+        大和仅受近失，无炮击命中。
+    src: [ussbs-ijo-35]
+  - text:
+      zh: >-
+        美方：第 77.4.3 特混群「No vessel of this Task Unit escaped undamaged」。
+        日方炮弹多为染色弹（红、蓝染料）用于修正落点。
+    src: [leyte-battle-experience]
+
+consequences:
+  - time: '07:24'
+    text:
+      zh: >-
+        第七舰队直到此刻才知道日方中心部队已穿过圣贝纳迪诺海峡：
+        「Up to this time … it was assumed that THIRD Fleet forces were guarding the SAN BERNARDINO
+        Straits」，且此前询问第三舰队的电报「Reply was not received until after the enemy surface
+        forces were attacking our Northern CVE Group」。
+    src: [leyte-battle-experience]
+  - time: '07:30'
+    text:
+      zh: >-
+        鱼雷冲击与持续的舰载机攻击使日方「momentarily turned away and several of his ships were seen
+        to be hit and in trouble」；美方评价这是「one of the most gallant and heroic acts of the war」。
+    src: [leyte-battle-experience]
+  - time: '09:24'
+    text:
+      zh: >-
+        第 77.4.2 特混群判断：其 08:55 起的两波攻击取得「two torpedo hits on a heavy cruiser (Tone Class)
+        and one torpedo hit on a battleship (Kongo)」，并认为「The effect of the attacks caused the enemy
+        to circle immediately and discontinue gunfire on this Task Unit」。
+        同一份报告同时承认 77.4.3 认为日方是「for no apparent reason」转向。
+    src: [leyte-battle-experience]
+  - text:
+      zh: >-
+        栗田撤退的原因（参谋长 Koyanagi 在审讯中列举）：一、第二游击部队报告西村部队几乎全灭；
+        二、两部原本约定协同，本队已大幅延误、合击无望；三、截获美方电话通话得知航母正在请求增援、
+        增援需两小时；四、截获命令舰载机转往莱特岸基机场，判断美方航母与岸基飞机将合流；
+        五、推测美方另一支特混舰队可能自北方南下；六、继续在莱特湾作战将耗更多燃油，且周边无油船。
+        他并明确「No orders from TOYODA, it was orders of Admiral KURITA」，
+        且参谋部「Almost unanimous - yes, the decision was unanimous」。
+    src: [ussbs-ijo-35]
+  - text:
+      zh: >-
+        同一份审讯里另一处自述与此并列：被问到为何在约 0930 中止攻击时，回答是
+        「We lost sight of your force. We could not close the range your speed was so high,
+        so we gave up the chase」，并估计美方航速约 30 节、长门只能跑 24 节、燃油紧张。
+        这与上面六条理由并不冲突，但侧重不同，两处并列。
+    src: [ussbs-ijo-35]
+
+losses:
+  - side: allies
+    ships_lost:
+      zh: >-
+        护航航母 2 艘（甘比尔湾、圣洛）+ 驱逐舰 2 艘（霍尔、约翰斯顿）+ 护航驱逐舰 1 艘（塞缪尔·B·罗伯茨）
+      en: >-
+        Two escort carriers (Gambier Bay, St. Lo), two destroyers (Hoel, Johnston),
+        one destroyer escort (Samuel B. Roberts)
+    note:
+      zh: >-
+        第 77.4.3 特混群自述「lost two of its six CVEs and three of its seven screening vessels」，
+        与上列相符。人员伤亡数：美方这一份汇编未给合计，本站不填。
+    src: [leyte-battle-experience]
+  - side: axis
+    ships_lost:
+      zh: >-
+        重巡 3 艘（鸟海、筑摩、铃谷）。熊野舰艏被炸掉、利根舵机失灵，均重伤撤出
+      en: Three heavy cruisers (Chokai, Chikuma, Suzuya); Kumano and Tone badly damaged
+    note:
+      zh: >-
+        鸟海与铃谷是「失航后被己方处分」，筑摩是空袭中翻覆沉没——三种结局不同，不能并成一句。
+        人员损失数：日方来源未给本役合计，本站不填。
+    src: [ussbs-ijo-35, combinedfleet-chikuma-trom]
+
+outcome:
+  zh: >-
+    日军战术上占尽优势却主动放弃：击沉美方一艘护航航母与三艘护航舰艇，自身损失三艘重巡，
+    但在即将突入莱特湾时掉头北撤，登陆场因此未受攻击。美方的抵抗被双方都记为一次成功的拖延。
+  en: >-
+    A Japanese tactical advantage thrown away: one US escort carrier and three escorts sunk for
+    three Japanese heavy cruisers, and the way into Leyte Gulf abandoned at the decisive moment.
+
+narrative_refs: []

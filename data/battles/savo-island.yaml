@@ -1,0 +1,396 @@
+# ============================================================================
+# 萨沃岛海战（Battle of Savo Island）· 1942-08-09
+#
+# 时间基准（本文件最重要的一条约定）：
+#   timeline 全部用 **美方 Zone −11**（= UTC+11）。依据是 ONI《The Battle of
+#   Savo Island》的脚注 3：「Times in this Narrative are Zone minus 11.」
+#   Bates 主编的海军战争学院分析同样声明：「ALL TIMES IN THIS ANALYSIS, EXCEPT
+#   DISPATCH TIMES ARE ZONE TIME (- 11); DISPATCH TIMES ARE GREENWICH CIVIL
+#   TIME.」
+#
+#   **例外**：日方 TROM（combinedfleet）的条目**不声明时区基准**。
+#   凡引日方 TROM 的时刻，text 里都注明，并且**不做换算**。
+#
+# 为什么 time 一律写成 'MM-DD HH:MM'：这场仗从 8 日 23:45 的预警链一直写到
+# 9 日 12:15 的阿斯托里亚号沉没，跨了午夜。只写 HH:MM 会把 23:45 排到 01:00 之后。
+# date.from 仍取 8 月 9 日（战役日），与 midway.yaml「date 06-04、时间轴从 06-03 起」
+# 的既有做法一致。
+# ============================================================================
+
+id: savo-island
+name:
+  zh: 萨沃岛海战
+  en: Battle of Savo Island
+
+date:
+  from: 1942-08-09
+  to: 1942-08-09
+theater: pacific
+period:
+  zh: 1942-08-09 凌晨，自 01:43 接敌至 02:15 日方停火，约 30 分钟。全部时刻为美方 Zone −11
+  en: Early hours of 9 August 1942, 0143 to 0215, about 30 minutes. All times Zone −11.
+
+location:
+  zh: 所罗门群岛瓜达尔卡纳尔岛与佛罗里达岛之间、萨沃岛以南与以北的水域（后称「铁底湾」）
+  en: The waters between Guadalcanal and Florida Island, north and south of Savo Island
+coordinates: 交战海域约 09°S 160°E（各来源不给统一单点，本站不填精确坐标）
+
+scale:
+  zh: >-
+    日军重巡 5 艘 + 轻巡 2 艘 + 驱逐舰 1 艘；盟军**在场**重巡 5 艘（美 4：文森斯、阿斯托里亚、
+    昆西、芝加哥；澳 1：堪培拉）+ 轻巡 2 艘 + 驱逐舰 8 艘。另有澳舰澳大利亚号（重巡、南群旗舰）
+    因载克拉奇利赴会而不在场，未计入此数
+  en: >-
+    IJN 5 heavy cruisers, 2 light cruisers, 1 destroyer; Allied 5 heavy cruisers present
+    (4 US, 1 RAN) plus 2 light cruisers and 8 destroyers. HMAS Australia, the Southern Group
+    flagship, was absent carrying Crutchley to a conference and is not counted.
+
+summary:
+  zh: >-
+    1942 年 8 月 9 日凌晨，三川军一率第八舰队穿过「槽海」夜袭瓜岛登陆场外的盟军警戒线。
+    日军在约半小时内以鱼雷与探照灯支援的炮火打瘫南、北两个巡洋舰群，美澳方四艘重巡
+    非沉即废，日军几乎无损。这是美军在太平洋战争中单场损失最重的海战之一，
+    也直接导致运输船团提前撤离、陆战队补给不足。
+  en: >-
+    In the early hours of 9 August 1942 Mikawa Gunichi's Eighth Fleet ran down the
+    "Slot" and fell on the Allied screening force off Guadalcanal. In about half an
+    hour four Allied heavy cruisers were sunk or wrecked at almost no cost to the
+    Japanese, and the transports withdrew with much of the supplies still aboard.
+
+belligerents:
+  - side: axis
+    label:
+      zh: 大日本帝国海军第八舰队
+      en: Imperial Japanese Navy, Eighth Fleet
+    ships:
+      - name: 鸟海
+        role: { zh: 重巡 · 第八舰队旗舰（三川军一座舰）, en: Heavy cruiser · flagship of Eighth Fleet }
+        note: 本站尚未收录该舰单页
+      - name: 青叶
+        role: { zh: 重巡 · 第六战队, en: Heavy cruiser · CruDiv 6 }
+        note: 本站尚未收录该舰单页
+      - name: 古鹰
+        role: { zh: 重巡 · 第六战队, en: Heavy cruiser · CruDiv 6 }
+        note: 本站尚未收录该舰单页
+      - name: 衣笠
+        role: { zh: 重巡 · 第六战队, en: Heavy cruiser · CruDiv 6 }
+        note: 本站尚未收录该舰单页
+      - name: 加古
+        role: { zh: 重巡 · 第六战队（翌日返航途中被美潜艇 S-44 击沉，不属本战）, en: Heavy cruiser · CruDiv 6; sunk by USS S-44 the next day, not in this action }
+        note: 本站尚未收录该舰单页
+      - name: 天龙
+        role: { zh: 轻巡 · 第十八战队, en: Light cruiser · CruDiv 18 }
+        note: 本站尚未收录该舰单页
+      - name: 夕张
+        role: { zh: 轻巡 · 第十八战队, en: Light cruiser · CruDiv 18 }
+        note: 本站尚未收录该舰单页。注：USSBS 对松山政光的审讯（IJO-61）把第十八战队记作「天龙、龙田」，但日方各舰 TROM 与本役兵力表均作「天龙、夕张」；两说并列，见 RESEARCH-NOTES
+      - name: 夕凪
+        role: { zh: 驱逐舰, en: Destroyer }
+        note: 本站尚未收录该舰单页
+
+  - side: allies
+    label:
+      zh: 盟军第 62 特混舰队警戒群（美、澳）
+      en: Allied screening force, TF 62 (US and RAN)
+    ships:
+      - name: 文森斯号
+        ship_id: vincennes
+        role: { zh: 重巡 · 北群旗舰（第 62.3 特混群）, en: Heavy cruiser · flagship, Northern Group (TG 62.3) }
+      - name: 阿斯托里亚号
+        ship_id: astoria
+        role: { zh: 重巡 · 北群, en: Heavy cruiser · Northern Group }
+      - name: 昆西号
+        role: { zh: 重巡 · 北群, en: Heavy cruiser · Northern Group }
+        note: 本站尚未收录该舰单页
+      - name: 芝加哥号
+        role: { zh: 重巡 · 南群（澳大利亚号离队后由 Bode 上校指挥）, en: Heavy cruiser · Southern Group, under Capt. Bode after Australia detached }
+        note: 本站尚未收录该舰单页
+      - name: 澳大利亚号
+        role: { zh: 澳皇家海军重巡 · 南群旗舰（交战时不在场：载克拉奇利赴麦克考利号开会）, en: HMAS Australia · Southern Group flagship; absent at the action, carrying Crutchley to McCawley for a conference }
+        note: 本站尚未收录该舰单页
+      - name: 堪培拉号
+        role: { zh: 澳皇家海军重巡 · 南群, en: HMAS Canberra · Southern Group }
+        note: 本站尚未收录该舰单页
+      - name: 帕特森号
+        role: { zh: 驱逐舰 · 最先发现日舰并广播警报, en: Destroyer · first to sight the enemy and broadcast the warning }
+        note: 本站尚未收录该舰单页
+      - name: 巴格利号
+        role: { zh: 驱逐舰 · 南群, en: Destroyer · Southern Group }
+        note: 本站尚未收录该舰单页
+      - name: 拉尔夫·塔尔博特号
+        role: { zh: 驱逐舰 · 萨沃岛以北雷达哨, en: Destroyer · radar picket north of Savo }
+        note: 本站尚未收录该舰单页
+      - name: 布鲁号
+        role: { zh: 驱逐舰 · 萨沃岛以西雷达哨, en: Destroyer · radar picket west of Savo }
+        note: 本站尚未收录该舰单页
+      - name: 赫尔姆号
+        role: { zh: 驱逐舰 · 北群护卫, en: Destroyer · Northern Group screen }
+        note: 本站尚未收录该舰单页
+      - name: 威尔逊号
+        role: { zh: 驱逐舰 · 北群护卫, en: Destroyer · Northern Group screen }
+        note: 本站尚未收录该舰单页
+
+timeline:
+  - time: '08-08 23:45'
+    text:
+      zh: >-
+        萨沃岛以北的拉尔夫·塔尔博特号发现一架不明「巡洋舰型」飞机低飞过岛，立即在 TBO 与 TBS
+        上重复播发「Warning, warning, plane over Savo headed east」，持续数分钟。
+        任务部队司令与第四驱逐舰战队司令均未应答其呼号。
+    src: [oni-combat-narrative-savo]
+  - time: '08-09 01:00'
+    text:
+      zh: >-
+        此后一个半小时内飞机多次过顶：昆西号约 0100 听到飞机自右舷向前飞过，阿斯托里亚号
+        天空管制也报告头顶有飞机，堪培拉号听到发动机声。这些接触报到了舰桥，
+        但未见转给火控站，也没有再向其他舰广播。
+    src: [oni-combat-narrative-savo]
+  - time: '08-09 01:20'
+    text:
+      zh: 北群（文森斯、昆西、阿斯托里亚）转入航向 315°。
+    src: [oni-combat-narrative-savo]
+  - time: '08-09 01:38'
+    text:
+      zh: >-
+        日方 TROM：鸟海在约 5,000 码距离上发射一批九三式「长矛」鱼雷。
+        （日方 TROM 未声明时区基准，此处照录其记载时刻，未作换算。）
+    src: [combinedfleet-kinugasa-trom]
+  - time: '08-09 01:43'
+    major: true
+    text:
+      zh: >-
+        帕特森号值更人员在正前方约 5,000 码发现一舰，日舰航向东南、紧贴萨沃岛。
+        该舰以闪光灯通报堪培拉号与芝加哥号，并以 TBS 广播「Warning, warning,
+        strange ships entering harbor」。
+    src: [oni-combat-narrative-savo]
+    note: >-
+      开战时刻各舰记载不一致，ONI 原报告自注：帕特森号记 0146、巴格利号记 0144、
+      堪培拉号记 0143、芝加哥号记「0145 见堪培拉号右转」。本文件取 0143，并列于此。
+  - time: '08-09 01:44'
+    text:
+      zh: >-
+        日方一侧（Quantock 的战争学院研究）：三川于 0133 下达「All Ships Attack」，
+        0136 改令「Independent Firing」，南群随即遭鱼雷攻击。
+    src: [savo-quantock]
+    note: >-
+      本条与 ONI 的接敌时刻（0143）相差数分钟，两说并列，本文件不裁决。
+  - time: '08-09 01:45'
+    text:
+      zh: >-
+        瓜达尔卡纳尔岛北岸、运输船团东南上空投下多枚照明弹，成一线排列、间距约一英里，
+        把运输船照得一清二楚。同一时刻南群巡洋舰位于萨沃岛以南约 4 英里、航向 310°。
+    src: [oni-combat-narrative-savo]
+  - time: '08-09 01:47'
+    text:
+      zh: >-
+        芝加哥号记录：0142 见橙色闪光；0143 见第一枚飞机照明弹（相对方位 160–170°）；
+        0145 堪培拉号右转；0146 见数个黑影与鱼雷航迹；0147 本舰被一条鱼雷命中舰艏。
+    src: [oni-combat-narrative-savo]
+  - time: '08-09 01:50'
+    text:
+      zh: >-
+        拉尔夫·塔尔博特号在 TBS 上听到帕特森号舰长 Walker 中校的声音：
+        「Warning, warning, 3 enemy ships inside Savo Island」。
+    src: [oni-combat-narrative-savo]
+  - time: '08-09 01:55'
+    major: true
+    text:
+      zh: >-
+        敌方探照灯照亮北群各舰。阿斯托里亚号炮术长 Truesdell 少校未待舰桥批准即自行下令开火，
+        距离 5,500 码、相对方位 240°。舰长 Greenman 上校起初误判为「在打自己的船」而下令停火，
+        确认目标是日舰后再次下令开火，并说「Whether our ships or not we will have to stop them」。
+    src: [oni-combat-narrative-savo]
+  - time: '08-09 01:56'
+    text:
+      zh: >-
+        美方战损报告 No.29：阿斯托里亚号于 0155 被探照灯照亮、随即开火；
+        约 0156 日方第四次齐射落在舰艏附近，一发 8 英寸弹穿入油漆间引燃小火。
+    src: [nhhc-wdr29]
+  - time: '08-09 01:56'
+    text:
+      zh: >-
+        日方 TROM：衣笠号一号机舱被帕特森号一发 5 英寸弹命中，
+        随后左舷操舵装置又被文森斯号一发炮弹击中。
+        （日方 TROM 未声明基准，照录，未换算。）
+    src: [combinedfleet-kinugasa-trom]
+  - time: '08-09 02:00'
+    major: true
+    text:
+      zh: >-
+        文森斯号开始右转；转向过程中左舷舯部（医务室下方、四号锅炉舱附近）被两到三条鱼雷命中。
+        主炮动力一度中断，改用柴油辅机为 I、III 号炮塔供电，II 号炮塔改手摇。
+    src: [oni-combat-narrative-savo]
+  - time: '08-09 02:00'
+    text:
+      zh: >-
+        昆西号也在同一时段被鱼雷命中（约在三、四号锅炉舱之间）。
+        其主炮与 5 英寸炮在此前已因直接命中与火势全部失效。
+    src: [oni-combat-narrative-savo]
+  - time: '08-09 02:05'
+    text:
+      zh: 文森斯号舰桥失去操舵控制，转由舰尾操舵；不久舰尾也失去控制，与机舱通信中断。
+    src: [oni-combat-narrative-savo]
+  - time: '08-09 02:10'
+    text:
+      zh: >-
+        文森斯号已停车、左倾；约 0210 被两艘驱逐舰的探照灯自相对方位 120° 照亮。
+        舰长 Riefkohl 曾下令升起并照亮巨幅国旗，但「were illuminated only by enemy searchlights」。
+    src: [oni-combat-narrative-savo]
+  - time: '08-09 02:15'
+    major: true
+    text:
+      zh: 日方停止射击。阿斯托里亚号此时已失去动力与操舵，文森斯号、昆西号均已瘫痪。
+    src: [oni-combat-narrative-savo, nhhc-wdr29]
+  - time: '08-09 02:20'
+    major: true
+    text:
+      zh: >-
+        日方 TROM：三川下令撤退，TROM 记「Mikawa is unaware that Admiral Fletcher has withdrawn
+        his carriers」，其顾虑是天亮后遭空袭。（日方 TROM 未声明基准，照录。）
+    src: [combinedfleet-kinugasa-trom]
+  - time: '08-09 02:30'
+    text:
+      zh: 文森斯号舰长下令弃舰，十分钟后离舰。
+    src: [oni-combat-narrative-savo]
+  - time: '08-09 02:35'
+    text:
+      zh: 昆西号向左倾覆，舰艏没入水中、舰尾翘起后沉没。
+    src: [oni-combat-narrative-savo]
+  - time: '08-09 02:50'
+    text:
+      zh: >-
+        文森斯号向左翻覆下沉。舰长 Riefkohl 原话：「rolled over and then sank at about 0250,
+        9 August 1942, about 2 1/2 miles east of Savo Island」。
+    src: [danfs-ca44, oni-combat-narrative-savo]
+  - time: '08-09 03:20'
+    text:
+      zh: >-
+        拉尔夫·塔尔博特号先被一艘「友舰」驱逐舰误击，随后又与一艘被判断为利根型的日巡洋舰交火，
+        一发炮弹命中其鱼雷发射管，阵亡 2 人。
+    src: [oni-combat-narrative-savo, danfs-ralphtalbot]
+  - time: '08-09 08:00'
+    text:
+      zh: >-
+        堪培拉号由埃尔利特号以一条鱼雷处分，向右翻覆、舰艏下沉没。
+        此前塞尔弗里奇号已向其发射 263 发 5 英寸弹与 4 条鱼雷，仅 1 条爆炸。
+    src: [oni-combat-narrative-savo]
+  - time: '08-09 12:15'
+    major: true
+    text:
+      zh: >-
+        阿斯托里亚号向左翻覆，舰尾先沉、约 1215 完全消失。此前一度组织约 325 人的抢救队回舰，
+        因火势复发、左倾增至 15° 而放弃。
+    src: [oni-combat-narrative-savo, nhhc-wdr29]
+
+# 命中记录：本场盟军几乎没能有效还手，所以这里既记「我方挨的」也记「日方挨的」。
+hits_received:
+  - time: '08-09 01:56'
+    text:
+      zh: >-
+        阿斯托里亚号：日方第四次齐射一发 8 英寸弹穿入油漆间引火；下一轮齐射命中舯部，
+        引燃艇甲板小艇与机库内三架飞机，并使 8 号炮位待发弹起火、二号锅炉舱的三号鼓风机失效。
+    src: [nhhc-wdr29]
+  - time: '08-09 01:56'
+    text:
+      zh: 阿斯托里亚号：日方第六次齐射命中 I 号炮塔面板与炮座，炮塔及炮座内人员全部阵亡。
+    src: [nhhc-wdr29]
+  - time: '08-09 02:00'
+    text:
+      zh: 阿斯托里亚号：一发 8 英寸弹射入一号锅炉舱，舱内人员全部阵亡。
+    src: [nhhc-wdr29]
+  - time: '08-09 02:06'
+    text:
+      zh: 阿斯托里亚号：二号指挥仪被命中失效；frame 103 以前的消防总管全部破裂，无水灭火。
+    src: [nhhc-wdr29]
+  - time: '08-09 02:00'
+    text:
+      zh: >-
+        文森斯号：I 号炮塔炮座右舷被命中，炮塔转向卡死；II 号炮塔顶被一弹命中，
+        另一发 8 英寸弹穿透 II 号炮塔面板并引燃外露发射药（发射药燃烧而未爆炸）。
+    src: [oni-combat-narrative-savo]
+  - time: '08-09 02:00'
+    text:
+      zh: 文森斯号：全舰「known hits」57 发，另有左舷前弹药库部位一至两条鱼雷命中。
+    src: [nhhc-wdr29]
+  - text:
+      zh: >-
+        阿斯托里亚号中弹数两说：DANFS 作「at least 65 hits」；战损报告 No.29 作
+        「ASTORIA sustained an unknown number of hits from 8", 5", and 20mm projectiles of which
+        about 63 were reported in references (a) and (b)」。两说并列，不裁决。
+    src: [danfs-astoria, nhhc-wdr29]
+  - time: '08-09 01:56'
+    text:
+      zh: >-
+        衣笠号（日方）：一号机舱被帕特森号一发 5 英寸弹命中，左舷操舵装置被文森斯号一发炮弹击中。
+    src: [combinedfleet-kinugasa-trom]
+  - time: '08-09 02:15'
+    text:
+      zh: >-
+        鸟海号（日方）：被昆西号与阿斯托里亚号命中数发，I 号炮塔失效、34 名舰员阵亡；
+        返拉包尔后由第八潜艇基地队抢修至 8 月 17 日，I 号炮塔仅右炮可用。
+    src: [combinedfleet-chokai-trom]
+  - text:
+      zh: >-
+        青叶号（日方）：全战被命中一发。另青叶、加古两舰的水侦及机组在此役中损失。
+    src: [combinedfleet-aoba-trom]
+
+consequences:
+  - time: '08-09 02:20'
+    text:
+      zh: >-
+        三川放弃第二次攻击。日方自述的原因是担心天亮后遭航母空袭、编队已被打散需约三小时收拢、
+        且鱼雷已用尽。运输船团因此未被攻击。
+    src: [combinedfleet-kinugasa-trom, savo-quantock]
+  - time: '08-09 03:30'
+    text:
+      zh: >-
+        航母编队直到 0330 才收到南太平洋战区批准其撤离的回复——已在战斗结束一个多小时之后，
+        而且「our carriers withdrew without having received any real information of what had taken place」。
+    src: [oni-combat-narrative-savo]
+  - time: '08-09 07:00'
+    text:
+      zh: >-
+        运输船团原定 0630 撤离，因转移与救治伤员、塔南博戈岛未完全攻占而推迟至 0700，
+        卸载继续；1120 才接令收艇准备离区。结果「our ships departed without having unloaded
+        all supplies」，贝特尔吉斯号自估尚有 50% 货物在船。
+    src: [oni-combat-narrative-savo]
+  - text:
+      zh: >-
+        战术后果：盟军北群三艘重巡全失、南群一沉一伤，日军无舰损失。
+        登陆场在其后数周内缺乏水面掩护。
+    src: [oni-combat-narrative-savo, savo-quantock]
+
+losses:
+  - side: allies
+    ships_lost:
+      zh: >-
+        重巡 4 艘：文森斯、昆西、阿斯托里亚（美）、堪培拉（澳）；
+        另芝加哥号重创（舰艏水下部分基本被炸掉）
+      en: >-
+        Four heavy cruisers lost (Vincennes, Quincy, Astoria, HMAS Canberra);
+        Chicago severely damaged
+    killed: 1023
+    note:
+      zh: >-
+        1,023 人阵亡、700 余人受伤是 Quantock 引用的合计值（含澳方）。逐舰数字各来源不一：
+        阿斯托里亚号当时报告为「20 名军官确定阵亡、2 名失踪、138 名士兵确定阵亡」，
+        原文自注「incomplete information now at hand」；文森斯号的 332 人只见于
+        historyofwar 单一来源。逐舰最终核定表未获取。
+    src: [savo-quantock, danfs-astoria]
+  - side: axis
+    killed: 34
+    note:
+      zh: >-
+        鸟海号 34 人阵亡（I 号炮塔被击毁）；衣笠号、青叶号仅轻伤。无舰艇损失。
+        另有青叶、加古两舰的水侦及机组损失。
+    src: [combinedfleet-chokai-trom, combinedfleet-aoba-trom]
+
+outcome:
+  zh: >-
+    日军战术完胜：以轻微损伤换取盟军四艘重巡，并把登陆船团赶出锚地。
+    战略上未能扩大战果——三川未攻击运输船，美军登陆场得以保留。
+  en: >-
+    A decisive Japanese tactical victory at negligible cost; strategically incomplete
+    because the transports were left untouched.
+
+narrative_refs: []

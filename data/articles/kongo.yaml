@@ -1,0 +1,601 @@
+# ============================================================================
+# 舰艇正文 —— 金刚号（战列巡洋舰 → 高速战列舰）
+#
+# 这一条要纠正的三处：
+#   1. 它不是「四舰都英国造」里的一个普通成员——它是四舰里**唯一**英国造的，
+#      维克斯公司巴罗因弗内斯船厂，船台号 414。另三舰全在日本。
+#   2. 它的主炮是**英造 43 年式**，与另三舰的日产 41 年式**型号不可互换**。
+#      这是金刚最独特、也最容易被「同级同型」埋掉的一点。
+#   3. 它是**唯一被潜艇击沉的日本战列舰**——但「二战中唯一被潜艇击沉的战列舰」
+#      这个更强的说法不成立，别写。
+# ============================================================================
+ship: kongo
+updated: 2026-11-25
+
+intro:
+  lead:
+    zh: >-
+      金刚是金刚型战列巡洋舰的一号舰，1913 年 8 月 16 日竣工。它是本级唯一在
+      英国建造的一艘——维克斯公司巴罗因弗内斯船厂，船台号 414；也是四舰里
+      唯一装英造 43 年式 35.6 cm 主炮的一艘，另三舰装的是日产 41 年式，
+      两种型号不可互换。1944 年 11 月 21 日凌晨，它在台湾海峡被美国潜艇
+      海狮二号（SS-315）击沉，是日本海军在战争中被潜艇击沉的唯一一艘战列舰。
+    en: >-
+      Kongo was the first Kongo-class battlecruiser, completed on 16 August 1913.
+      She was the only ship of the class built in Britain — at Vickers' Barrow-in-
+      Furness yard, No. 414 — and the only one armed with the British-built 43rd
+      Year Type 14-inch gun, the other three carrying the Japanese-built 41st Year
+      Type; the two models are not interchangeable. In the early hours of
+      21 November 1944 she was torpedoed in the Formosa Strait by the submarine
+      Sealion II (SS-315), the only IJN battleship sunk by a submarine in the war.
+
+  paragraphs:
+    - heading: 四舰里唯一在英国建造的一艘
+      text:
+        zh: >-
+          金刚级四舰的建造地经常被一句「维克斯造」带过，这是错的。只有金刚
+          在英国建造：维克斯公司巴罗因弗内斯船厂，船台号 414，1911 年 1 月 17 日
+          开工，合同于 1910 年 10 月与维克斯签订。另三舰全在日本：比叡在
+          横须贺海军工厂，榛名在川崎造船所神户船厂第 4 船台，雾岛在三菱合资会社
+          长崎造船所（船台号 225）。四舰共用的是设计——维克斯-阿姆斯特朗的
+          乔治·瑟斯顿爵士为金刚所作的那一份，日方技术部门在其基础上做过大幅
+          修改。navypedia 另记一条区分：比叡开工时约 30% 的材料与设备向国外
+          订购，后两艘（榛名、雾岛）则只用国产材料。
+        en: >-
+          The class's building yards are often waved away as "Vickers", which is
+          wrong. Only Kongo was British-built: at Vickers in Barrow-in-Furness, yard
+          number 414, laid down on 17 January 1911 under a contract signed with
+          Vickers in October 1910. The other three were all Japanese: Hiei at
+          Yokosuka Navy Yard, Haruna on No. 4 slip at Kawasaki's Kobe yard, Kirishima
+          at Mitsubishi Zosen Kaisha in Nagasaki (yard number 225). What the four
+          shared was the design — Sir George Thurston's work at Vickers-Armstrong for
+          Kongo, extensively reworked by the Japanese naval technical department.
+          Navypedia adds a further distinction: about 30 per cent of the materials
+          and equipment for Hiei were ordered abroad, while the last two ships used
+          domestic materials only.
+      src: [navypedia-kongo, combinedfleet-kongo, japanese-warship-kongo]
+
+    - heading: 主炮是英造 43 年式，与另三舰不可互换
+      text:
+        zh: >-
+          这是金刚最独特的一点，也是最容易被「同级同型」四个字埋掉的一点。
+          navypedia 的装备栏逐舰分列：金刚是 4 座双联 35.6 cm/45 的 43 年式，
+          其余各舰是 41 年式；这一分法在三个状态栏（竣工、第一次改装后、
+          第二次改装后）全部保留。navweaps 的命名沿革把这条分法说清了：
+          维克斯造的炮在日方文献里记作「四三年式（1910 年型）」，
+          日本本土制造的记作「四一年式（1908 年型）」。两者射表性能相近，
+          navweaps 说「可以合并考虑」——但那是弹道数据层面，型号与备件互换性
+          不因此成立。同页另记：金刚这一批是维克斯原厂造；此后维克斯还向日本
+          供应过若干整炮与锻件，但大部分炮由吴工厂与日本制钢所室兰厂制造，
+          各种来源合计约 100 门。一个必须提防的陷阱：日文来源四舰页面都把主炮
+          写作「45口径毘式 35.6 cm 连装炮」（毘式＝Vickers 式），这一层根本
+          不能用来区分四舰，区分只能靠 navypedia 的 43/41 年式与 navweaps 的沿革。
+        en: >-
+          This is Kongo's most distinctive feature and the one most easily buried
+          under "same class, same ship". Navypedia lists the armament ship by ship:
+          Kongo has four twin 35.6 cm/45 of the 43rd Year Type, the others the 41st
+          Year Type, and the split is preserved across all three data columns — as
+          completed, after the first reconstruction, after the second. Navweaps sets
+          out the naming history: guns built by Vickers were known to the Japanese as
+          the 43rd Year Type (Model 1910), guns manufactured in Japan as the 41st Year
+          Type (Model 1908). The two had similar performance and "can be considered
+          together" — but that is a ballistics statement; it does not make the models
+          or their spares interchangeable. The same page records that Kongo's batch was
+          Vickers-built, that Vickers later supplied some complete guns and forgings,
+          but that most guns came from Kure Arsenal and Japan Steel Works' Muroran
+          plant, about 100 in all from all sources. One trap worth stating: all four
+          Japanese-language pages write the main battery as the "45-calibre Vickers
+          type 35.6 cm twin gun", so that layer cannot distinguish the four ships at
+          all; only navypedia's 43/41 split and the navweaps history can.
+      src: [navypedia-kongo, navweaps-36cm-45-t41, japanese-warship-kongo]
+
+    - heading: 锅炉 36 → 10 → 8，四舰里最早装上雷达
+      text:
+        zh: >-
+          两次大改装把它从 26 节级的战列巡洋舰变成 30 节的「高速战列舰」。
+          第一次 1928 年 12 月 1 日在横须贺开始、1931 年 3 月 31 日完成
+          （工程实际延续到 9 月），同日改级为战舰；36 座 Yarrow 锅炉换成
+          10 座舰本式（混烧 6 座、重油专烧 4 座），拆掉 4 具鱼雷发射管。
+          第二次 1935 年 6 月 1 日开始、1937 年 1 月 8 日完成：锅炉换成 8 座
+          重油专烧舰本式，舰尾延长，主炮仰角由 33 度提到 43 度、副炮由 15 度
+          提到 30 度，撤掉 40 mm 维克斯炮改 10 座双联 25 mm，鱼雷发射管全撤。
+          锅炉座数是四舰的分组依据：金刚与雾岛 8 座，榛名 11 座。它也是四舰里
+          最早有雷达记录的一艘——1942 年 8 月 1 日在吴装二一号电探于前桅顶部
+          测距仪上，比榛名的 1943 年 3 月早约 7 个月。
+        en: >-
+          Two reconstructions turned her from a 26-knot battlecruiser into a 30-knot
+          fast battleship. The first began at Yokosuka on 1 December 1928 and was
+          completed on 31 March 1931 (work continued to September), when she was
+          re-rated a battleship; all 36 Yarrow boilers were replaced by 10 Kampon
+          boilers (six mixed-firing, four oil-only) and four torpedo tubes were
+          removed. The second ran from 1 June 1935 to 8 January 1937: eight oil-fired
+          Kampon boilers, the stern lengthened, main gun elevation raised from 33 to 43
+          degrees and secondary from 15 to 30, the 40 mm Vickers guns landed for ten
+          twin 25 mm mounts, and all torpedo tubes removed. The boiler count is the
+          class's dividing line: Kongo and Kirishima came out with eight, Haruna with
+          eleven. She was also the first of the four with a radar record — a Type 21
+          set mounted on the foretop rangefinder at Kure on 1 August 1942, some seven
+          months before Haruna received hers in March 1943.
+      src: [combinedfleet-kongo, navypedia-kongo, japanese-warship-kongo]
+
+    - heading: 1944 年 11 月 21 日：唯一被潜艇击沉的日本战列舰
+      text:
+        zh: >-
+          1944 年 11 月 21 日凌晨，它随第二舰队从文莱经台湾海峡返吴。
+          0020 海狮二号（USS Sealion II, SS-315）在 44,000 码上雷达接触；
+          0256 在 3,000 码上射出六条艇首鱼雷；0301 艇上看到三发命中，
+          大和号舰员看到两发与他舰的水柱。0307 六号与八号锅炉舱进水，
+          一度还能跑 16 节，左倾增大到 15 度。0524 一次爆炸（很可能是弹药库）
+          照亮夜空，随后沉于 26-09N、121-23E，基隆以北 60 海里、水深 348 英尺。
+          约 1,200 人阵亡，含第三战队司令铃木义尾少将与舰长岛崎利雄少将；
+          驱逐舰浜风、矶风顶着大浪救起 237 人。日文来源记命中 2 条、阵亡 1,300 人，
+          与美方记载并列不裁决。combinedfleet 的定性是「日本海军在战争中被潜艇
+          击沉的唯一一艘战列舰」，以及「史上最后一艘被潜艇击沉的战列舰」。
+          前一句可无条件采用；「二战中唯一被潜艇击沉的战列舰」这个更强的说法
+          不成立——皇家橡树号（1939 年 10 月，斯卡帕湾）与巴勒姆号（1941 年 11 月，
+          地中海）都在它之前。金刚是这三艘里唯一的日本舰、唯一的太平洋战区案例、
+          也是最后一艘。
+        en: >-
+          In the early hours of 21 November 1944 she was homeward bound from Brunei
+          through the Formosa Strait with the Second Fleet. At 0020 Sealion II (SS-315)
+          made radar contact at 44,000 yards; at 0256 she fired six bow tubes at 3,000
+          yards; at 0301 the submarine saw three hits while Yamato's crew reported two
+          plus waterspouts. By 0307 boiler rooms 6 and 8 had flooded, she could still
+          make 16 knots, and her list to port grew to 15 degrees. At 0524 an explosion,
+          probably a magazine, lit the sky, and she sank at 26-09N, 121-23E, 60 miles
+          north of Keelung in 348 feet of water. About 1,200 men were lost including
+          BatDiv 3's Vice Admiral Suzuki and her skipper Rear Admiral Shimazaki;
+          Hamakaze and Isokaze fought heavy seas to rescue 237. Japanese sources give
+          two torpedo hits and 1,300 dead, recorded here alongside the American figures
+          without a ruling. Combinedfleet calls her "the only IJN battleship sunk by a
+          submarine during the war" and "the last battleship ever sunk by a submarine".
+          The first can be adopted without qualification; the stronger claim "the only
+          battleship sunk by a submarine in World War II" does not hold — Royal Oak
+          (October 1939, Scapa Flow) and Barham (November 1941, Mediterranean) came
+          first. Kongo is the only Japanese ship of the three, the only Pacific case,
+          and the last.
+      src: [combinedfleet-kongo, navypedia-kongo, japanese-warship-kongo]
+
+history:
+  - id: build
+    title: { zh: 建造与两次大改装, en: Construction and the two reconstructions }
+    range: { from: 1911-01, to: 1937-01 }
+    lead:
+      zh: >-
+        它是四舰里最早开工、最早竣工的一艘——因为它在英国造。两次改装则
+        落在中间：比榛名晚，比雾岛早。
+    events:
+      - date: 1911-01-17
+        text:
+          zh: >-
+            在维克斯公司巴罗因弗内斯船厂开工，船台号 414。舰型为 32,200 吨级
+            战列巡洋舰，设计出自维克斯-阿姆斯特朗的乔治·瑟斯顿爵士。它是
+            1911 年度海军紧急扩张案批准的四艘「装甲巡洋舰」中的第一艘，
+            同案批准的战列舰是扶桑。
+          en: >-
+            Laid down at Vickers' Barrow-in-Furness yard, No. 414, a 32,200-ton
+            battlecruiser designed by Sir George Thurston of Vickers-Armstrong. She
+            was the first of the four "armoured cruisers" funded under the 1911 Naval
+            Emergency Expansion bill, whose battleship was Fuso.
+        src: [combinedfleet-kongo, navypedia-kongo]
+
+      - date: 1912-05-18
+        text:
+          zh: >-
+            下水并命名「金刚」。
+          en: >-
+            Launched and named Kongo.
+        src: [combinedfleet-kongo, navypedia-kongo]
+
+      - date: 1913-08-16
+        text:
+          zh: >-
+            竣工服役。首任舰长中野直枝大佐（1912 年 12 月 1 日起任舾装员）。
+            它是金刚级四舰里最早竣工的一艘：比叡早 11 个半月，比榛名与雾岛
+            早 1 年 8 个月。
+          en: >-
+            Completed and commissioned, with Captain Nakano Naoe — her equipping
+            officer since 1 December 1912 — as first commanding officer. She was the
+            first of the class to finish: eleven and a half months before Hiei and
+            twenty months before Haruna and Kirishima.
+        src: [combinedfleet-kongo, navypedia-kongo, japanese-warship-kongo]
+
+      - date: 1914-08-24
+        text:
+          zh: >-
+            编入第一舰队第三战队。一战期间它随第一舰队行动：8 月 26 日自横须贺
+            出发前往中途岛方向，试图截击德国轻巡洋舰纽伦堡号，未获接触。
+            日文来源对这一段有一句点明：日本虽然参战，实际并未执行作战任务。
+          en: >-
+            Attached to BatDiv 3 of the First Fleet. She served with the First Fleet
+            through the first months of the war, departing Yokosuka on 26 August to
+            intercept the German light cruiser Nurnberg near Midway without making
+            contact. The Japanese source is explicit that although Japan was at war,
+            no actual operation was carried out.
+        src: [combinedfleet-kongo, japanese-warship-kongo]
+
+      - date: 1928-12-01
+        text:
+          zh: >-
+            在横须贺开始第一次大改装（工期记为 1928-12-01 至 1931-09-15，
+            但 1931 年 3 月 31 日之后仍有工程继续）。背景是华盛顿条约限制下
+            日本无法新建主力舰，只能改造旧舰。改装内容：机舱与弹药库上方水平
+            装甲加厚，炮塔顶盖加厚至 152 mm，炮座下方加强至 152-140 mm，
+            加装防雷突出部使舰宽增至 29.3 m，拆掉 4 具鱼雷发射管，锅炉全部换新。
+          en: >-
+            The first reconstruction began at Yokosuka (recorded as 1 December 1928
+            to 15 September 1931, with work still running after 31 March 1931). The
+            driver was the Washington Treaty: unable to build new capital ships,
+            Japan modernised her old battlecruisers. Horizontal armour over machinery
+            and magazines was thickened, turret crowns increased to 152 mm, barbettes
+            below the main deck strengthened to 152-140 mm, anti-torpedo bulges fitted
+            (breadth rising to 29.3 m), four torpedo tubes removed and all boilers
+            replaced.
+        src: [combinedfleet-kongo, navypedia-kongo]
+
+      - date: 1931-03-31
+        text:
+          zh: >-
+            第一次改装完成，同日改级为战舰。日文来源把编制上的舰种变更记在
+            1931 年 6 月 1 日——工程完工日与编制改级日相差两个月，两说并列。
+            锅炉由 36 座 Yarrow 换成 10 座舰本式（混烧 6 座、重油专烧 4 座），
+            涡轮未换，仍为 Parsons 2 台 4 轴。
+          en: >-
+            The first reconstruction was completed and she was re-rated a battleship.
+            The Japanese source dates the formal reclassification to 1 June 1931, two
+            months after the engineering completion; both dates are recorded. All 36
+            Yarrow boilers were replaced by ten Kampon boilers (six mixed-firing, four
+            oil-only); the turbines were not changed and remained two Parsons sets on
+            four shafts.
+        src: [combinedfleet-kongo, japanese-warship-kongo, navypedia-kongo]
+
+      - date: 1932-05-02
+        text:
+          zh: >-
+            防空与航空改装：装 8 门 12.7 cm/40 八九式（4 座双联）与 4 门 40 mm
+            维克斯炮（2 座双联），并在 3 号主炮塔后方左舷加装一座吴式二号三型
+            弹射器——这是本舰第一台弹射器，1933 年 1 月 26 日试射。
+            navypedia 对同一时点记的是 4 座单装 40 mm 九一式「HI」炮与 8 挺
+            13.2 mm 机枪，型号与座数两说并列不裁决。
+          en: >-
+            Anti-aircraft and aviation upgrade: eight 12.7 cm/40 Type 89 guns in four
+            twin mounts and four 40 mm Vickers guns in two twin mounts, plus a Kure
+            Type No. 2 Model 3 catapult on the port side aft of No. 3 turret — her
+            first catapult, tested on 26 January 1933. Navypedia records four single
+            40 mm Type 91 "HI" guns and eight 13.2 mm machine guns at the same point;
+            the models and mount counts differ, and both are recorded.
+        src: [combinedfleet-kongo, navypedia-kongo]
+
+      - date: 1937-01-08
+        text:
+          zh: >-
+            第二次大改装在横须贺完成（1935 年 6 月 1 日开始）。此时日本已退出
+            军缩条约体系，改装目标明确写为「把它改造成能伴随舰队航母的高速战列舰」。
+            锅炉全部换成 8 座重油专烧舰本式；
+            涡轮换新，navypedia 与日文来源记作艦本式齿轮传动 4 台 4 轴，
+            combinedfleet 记作「new Parsons geared turbines」——厂牌两说并列不裁决。
+            舰尾延长（combinedfleet 记 25 英尺），塔式舰桥重建，主炮仰角提到
+            43 度、副炮提到 30 度，4 座双联 25 mm 取代 40 mm 维克斯炮，
+            鱼雷发射管全撤，3 号炮塔后方设 3 架九五式/九四式水侦的轨道。
+          en: >-
+            The second reconstruction was completed at Yokosuka. All boilers were
+            replaced by eight oil-fired Kampon units; the turbines were renewed,
+            recorded by navypedia and the Japanese source as four Kampon geared sets on
+            four shafts, and by combinedfleet as "new Parsons geared turbines" — the
+            make is recorded both ways without a ruling. The stern was lengthened
+            (25 feet per combinedfleet), the bridge rebuilt in pagoda style, main gun
+            elevation raised to 43 degrees and secondary to 30, four twin 25 mm mounts
+            replaced the 40 mm Vickers guns, all torpedo tubes were removed, and rails
+            for three Type 95/Type 94 floatplanes were fitted aft of No. 3 turret.
+        src: [combinedfleet-kongo, navypedia-kongo, japanese-warship-kongo]
+
+  - id: opening
+    title: { zh: 开战、南印支与印度洋, en: The opening of the war and the Indian Ocean }
+    range: { from: 1941-11, to: 1942-06 }
+    lead:
+      zh: >-
+        开战后的头半年它一直给航母当护卫。真正的对手一次也没碰上——
+        唯一接近的一次是威尔士亲王号，那一天它在几百海里之外。
+    events:
+      - date: 1941-11-29
+        text:
+          zh: >-
+            第三战队第二小队（金刚与榛名）配属近藤信竹的第二舰队，编入南方
+            部队（马来）主队，自佐伯出发前往澎湖马公。同队的是第四战队的
+            爱宕、高雄、摩耶与 8 艘驱逐舰。注意编成会变：中途岛时第二小队
+            变成金刚加比叡，1942 年 7 月 14 日之后又变回金刚加榛名。
+          en: >-
+            BatDiv 3's section 2 — Kongo and Haruna — was attached to Kondo
+            Nobutake's Second Fleet in the Southern (Malay) Force main body and
+            sailed from Saeki for Makung in the Pescadores, with CruDiv 4's Atago,
+            Takao and Maya and eight destroyers. The pairing changed over time: at
+            Midway section 2 was Kongo and Hiei, and from 14 July 1942 it was Kongo
+            and Haruna again.
+        src: [combinedfleet-kongo]
+
+      - date: 1941-12-09
+        text:
+          zh: >-
+            主队在 Poulo Condore 岛东南。1415 潜艇伊 65 报告发现一支以 14 节
+            北北西航行的英军部队——这是菲利普斯中将自新加坡出击的 Z 舰队。
+            主队南下准备夜战，未获接触；次日下午收到两艘英国主力舰在关丹外海
+            被击沉的消息后离开搜索区。日本海军由此避开了它在这场战争里
+            唯一可能遇上的同代战列舰对手。
+          en: >-
+            The main body was southeast of Poulo Condore Island. At 1415 the
+            submarine I-65 reported a British force steering north-northwest at
+            14 knots — Admiral Phillips's Force Z, out from Singapore. The main body
+            turned south for a night action but made no contact, and left the search
+            area the following afternoon after reports that both British capital ships
+            had been sunk off Kuantan. Japan had thus avoided the only contemporary
+            battleship opponent she might have met in the war.
+        src: [combinedfleet-kongo]
+
+      - date: 1942-03-07
+        text:
+          zh: >-
+            第三战队第二小队与第 17 驱逐队的浦风、滨风、矶风、谷风一起炮击
+            圣诞岛（爪哇以南 190 海里）。
+          en: >-
+            BatDiv 3's section 2, with DesDiv 17's Urakaze, Hamakaze, Isokaze and
+            Tanikaze, bombarded Christmas Island, 190 miles south of Java.
+        src: [combinedfleet-kongo]
+
+      - date: 1942-04-09
+        text:
+          zh: >-
+            印度洋作战。当日机动部队空袭亭可马里，英国皇家空军第 11 中队
+            9 架布伦海姆轰炸机攻击金刚，未命中，自身损失 4 架（另 1 架返航途中
+            被飞龙的零战击落）。同日榛名的一架九五式水侦在亭可马里以南 65 海里
+            发现竞技神号，0843 至 0853 之间 85 架九九式舰爆将其击沉。
+          en: >-
+            The Indian Ocean raid. While the mobile force struck Trincomalee, nine
+            Bristol Blenheims of RAF No. 11 Squadron attacked Kongo, scored no hits
+            and lost four of their number, with a fifth shot down on the way home by
+            Zekes from Hiryu. That day an E8N floatplane from Haruna spotted Hermes
+            65 miles south of the base and between 0843 and 0853 eighty-five D3A1
+            dive-bombers sank her.
+        src: [combinedfleet-kongo]
+
+      - date: 1942-05-27
+        text:
+          zh: >-
+            第三战队第一小队（金刚与比叡）随第二舰队主力自柱岛出发参加
+            「MI」作战（中途岛）。6 月 4 日上午，美军潜艇六线鱼号（SS-211）
+            在 0842 发现两艘战列舰的塔式桅楼，很可能是比叡与金刚，
+            但日军飞机迫使它下潜，失去目标。本舰当日未受损。
+          en: >-
+            BatDiv 3's section 1 — Kongo and Hiei — left Hashirajima with the Second
+            Fleet main body for Operation MI. On the morning of 4 June the submarine
+            Gudgeon (SS-211) sighted the pagoda masts of two battleships, most probably
+            Hiei and Kongo, at 0842 but was forced down by Japanese aircraft and lost
+            them. Kongo was not damaged that day.
+        src: [combinedfleet-kongo]
+
+  - id: solomon
+    title: { zh: 所罗门：雷达与 1942 年 10 月 13 日那一夜, en: The Solomons — radar and the night of 13 October 1942 }
+    range: { from: 1942-08, to: 1943-03 }
+    lead:
+      zh: >-
+        它在这一年里得到了四舰中最强的雷达配置，也打出了金刚级最著名的一次
+        火力投射。比叡与雾岛沉没的那两夜，它在翁通爪哇环礁以北。
+    events:
+      - date: 1942-08-01
+        text:
+          zh: >-
+            转入吴工厂大修，在前桅顶部测距仪上装二一号电探（对空/对水面）。
+            这是四舰里第一份雷达记录，比榛名的 1943 年 3 月早约 7 个月。
+            navypedia 的逐舰雷达台账在「8/1942, Kongo: + 21-go radar」一条上
+            与之互证。
+          en: >-
+            Transferred to Kure for overhaul, where a Type 21 air and surface search
+            radar was mounted on the foretop rangefinder. This is the first radar
+            record of the four ships, some seven months before Haruna's in March 1943.
+            Navypedia's ship-by-ship radar ledger corroborates it with "8/1942,
+            Kongo: + 21-go radar".
+        src: [combinedfleet-kongo, navypedia-kongo]
+
+      - date: 1942-10-13
+        text:
+          zh: >-
+            0137 起栗田的第三战队炮击亨德森机场，金刚先开火、榛名随后。
+            两舰沿 Lunga Point 向东行驶、主炮向右舷射击，随后 180 度转向
+            用左舷再打一遍。金刚打出 435 发 14 英寸弹（104 发三式烧霰弹、
+            331 发一式穿甲弹）与 27 发 6 英寸弹；榛名打出 433 发 14 英寸弹
+            与 21 发 6 英寸弹。三式烧霰弹是本舰首次在实战中使用——出发前
+            只有金刚领到，因为存量不够两舰分。地面 40 多架美军飞机被毁。
+            0230 第三战队以 29 节经「槽海」北撤。
+          en: >-
+            From 0137 Kurita's BatDiv 3 bombarded Henderson Field, Kongo opening
+            fire and Haruna following. The two ran east past Lunga Point firing to
+            starboard, then turned 180 degrees and came back firing to port. Kongo
+            fired 435 14-inch shells (104 Type 3 incendiary, 331 Type 1 AP) and
+            twenty-seven 6-inch; Haruna fired 433 14-inch and twenty-one 6-inch. It
+            was Kongo's first action with the Type 3 incendiary round, which only she
+            had received before departure because there were not enough for both
+            ships. More than 40 American aircraft were destroyed on the ground. At
+            0230 the division retired up the Slot at 29 knots.
+        src: [combinedfleet-kongo]
+
+      - date: 1942-10-26
+        text:
+          zh: >-
+            南太平洋海战。企业号（CV-6）4 架 TBF 鱼雷机攻击金刚，未造成损伤。
+            当日美军俯冲轰炸机重创筑摩号，另有一发 550 磅炸弹命中南达科他号。
+          en: >-
+            The Battle of Santa Cruz. Four TBF torpedo-bombers from Enterprise (CV-6)
+            attacked Kongo without result. That day American dive-bombers badly
+            damaged Chikuma and a 550-lb bomb hit South Dakota.
+        src: [combinedfleet-kongo]
+
+      - date: 1942-11-15
+        text:
+          zh: >-
+            第三次所罗门海战第二夜。第三战队在翁通爪哇环礁附近为近藤的急迫
+            炮击部队提供远距支援；第十一战队的雾岛在萨沃岛外海战没后，
+            第三战队离开该海域前往特鲁克。比叡已于两日前沉没。
+            金刚级四舰在这场战役里两天内失去两艘。
+          en: >-
+            The second night of the Third Battle of the Solomons. BatDiv 3 cruised
+            near Ontong Java Atoll providing distant cover for Kondo's emergency
+            bombardment force; after BatDiv 11's Kirishima was lost off Savo Island,
+            the division left the area for Truk. Hiei had gone down two days earlier.
+            The class lost two ships in two days in this one battle.
+        src: [combinedfleet-kongo]
+
+      - date: 1943-02-27
+        text:
+          zh: >-
+            至 3 月 13 日在佐世保入坞。比叡与雾岛相继沉没后，操舵机舱两侧与
+            顶部加敷混凝土防护；机舱通风改善，加设水密舱壁与柴油应急燃油泵。
+            拆掉 7、8 号 6 英寸副炮与后部 4.5 m 测距仪，原位装 2 座三联 25 mm
+            （6 挺），25 mm 总数由 20 挺增至 26 挺。副炮拆掉的门数两说不一：
+            combinedfleet 记「six 6-in. guns」，navypedia 记 2 门，并列于此不裁决。
+          en: >-
+            Dry-docked at Sasebo until 13 March. After the loss of both Hiei and
+            Kirishima, concrete protection was added to the sides and roofs of the
+            steering gear compartments, ventilation of the machinery spaces improved,
+            and new watertight bulkheads and diesel emergency fuel pumps fitted. Six
+            6-inch guns (Nos. 7 and 8) and the aft 4.5 m rangefinders were landed for
+            two triple 25 mm mounts, taking the 25 mm total from twenty to twenty-six.
+        src: [combinedfleet-kongo, navypedia-kongo]
+
+  - id: leyte-end
+    title: { zh: 1944：莱特湾与台湾海峡, en: 1944 — Leyte Gulf and the Formosa Strait }
+    range: { from: 1944-01, to: 1945-01 }
+    lead:
+      zh: >-
+        这一年它打了生涯中最后一场炮战，也是战果最实的一场：护航航母甘比尔湾、
+        驱逐舰霍尔与塞缪尔·B·罗伯茨都在它的炮口下。六周后，一条潜艇结束了它。
+    events:
+      - date: 1944-01-30
+        text:
+          zh: >-
+            佐世保入坞，至 2 月 14 日出坞。拆掉 1、2、11、12 号 152 mm 副炮
+            及其指挥装置与 2 座双联 25 mm，原位装 4 门 127 mm 高炮（2 座双联）
+            与 12 挺 25 mm（4 座三联）。25 mm 由 26 挺增至 34 挺，
+            12.7 cm 高炮由 4 座增至 6 座 12 门——后一项只有金刚与榛名做了，
+            比叡与雾岛在 1942 年就已战没。
+          en: >-
+            Dry-docked at Sasebo from 30 January to 14 February. Four 152 mm guns
+            (Nos. 1, 2, 11 and 12) with their directors and two twin 25 mm mounts were
+            landed for four 127 mm AA guns in two twin mounts and twelve 25 mm in four
+            triple mounts. The 25 mm battery went from twenty-six to thirty-four
+            barrels and the 12.7 cm battery from four mounts to six, twelve guns — an
+            increase only Kongo and Haruna received, Hiei and Kirishima having been
+            lost in 1942.
+        src: [combinedfleet-kongo, navypedia-kongo]
+
+      - date: 1944-06-20
+        text:
+          zh: >-
+            马里亚纳海战。1830 前后第三战队与千代田号遭邦克山号（CVL-17）、
+            蒙特雷号（CVL-26）、卡伯特号（CVL-28）的 SB2C 与 TBM 攻击；
+            卡伯特号 VT-31 的飞机命中榛名，金刚未受损。当日翔鹤号与大风号
+            分别被棘鳍号、青花鱼号潜艇击沉。
+          en: >-
+            The Battle of the Philippine Sea. At about 1830 BatDiv 3 and the carrier
+            Chiyoda were attacked by SB2C and TBM aircraft from Bunker Hill (CVL-17),
+            Monterey (CVL-26) and Cabot (CVL-28); Cabot's VT-31 hit Haruna and Kongo
+            was undamaged. That day Shokaku and Taiho were sunk by the submarines
+            Cavalla and Albacore.
+        src: [combinedfleet-kongo]
+
+      - date: 1944-06-30
+        text:
+          zh: >-
+            在吴海军工厂改装：舰桥装二二号对水面/射击指挥电探，主桅装一三号
+            对空电探。按日文来源 7 月 10 日兵装表逐型相加，25 mm 为 18 座三联
+            （54 挺）＋8 座双联（16 挺）＋30 座单装（30 挺）＝100 挺；
+            combinedfleet 同段另记「新装 76 挺（12 座三联、40 座单装）」
+            与之不闭合（34＋76＝110），本条取逐型相加的 100，两说并列不裁决。
+            同日搭载 2 架零式观测机（F1M2）。
+          en: >-
+            Refitted at Kure Naval Yard: a Type 22 surface search and gunnery control
+            radar on the bridge and a Type 13 air search set on the mainmast. Adding
+            the types in the Japanese 10 July armament table gives 18 triple (54) plus
+            8 twin (16) plus 30 single (30) = 100 barrels; combinedfleet's entry for
+            the same refit says 76 guns (twelve triple, forty single) were installed,
+            which does not close (34 + 76 = 110). This entry takes the 100 built up
+            from the type breakdown and records both. Two F1M2 floatplanes were
+            embarked the same day.
+        src: [combinedfleet-kongo, japanese-warship-kongo, navypedia-kongo]
+
+      - date: 1944-08-23
+        text:
+          zh: >-
+            自林加出发前往新加坡 Seletar 做电气工程，期间可能再加 18 挺 25 mm，
+            使总数达到 118 挺。原文自己写的是「Eighteen more 25 mm. AA are
+            probably also added」——「probably」是来源自带的，故这一条按存疑记录。
+          en: >-
+            Departed Lingga for Seletar naval base in Singapore for electrical work,
+            where eighteen more 25 mm AA were "probably also added" to bring the final
+            total to 118. The qualifier is the source's own, so this entry is marked
+            as uncertain.
+        src: [combinedfleet-kongo]
+
+      - date: 1944-10-25
+        text:
+          zh: >-
+            萨马岛海战。0600 在 15 英里距离上以主炮开火；0622 遭 F4F 扫射，
+            主炮测距仪失效；0625 霍尔号（DD-533）在 14,000 码向其开火并射出
+            5 条鱼雷，金刚急转向左规避，全部落空；因炮塔测距仪位置过低、
+            远距射击不利，改以副炮应战。0655 发现甘比尔湾号（CVE-73）并取得
+            多发命中。0800 前后主测距仪恢复，转向已被巡洋舰打成重伤的
+            塞缪尔·B·罗伯茨号（DE-413），0912 将其击沉。1228 至 1248 遭
+            第 38.1 特混舰队约 20 架 SB2C 攻击，5 发近失：右舷中部一发压凹
+            防雷突出部与外板、海水污染燃油舱，舰尾一发使右舷两个螺旋桨叶片
+            轻微变形，12 人阵亡、36 人受伤。全日消耗 14 英寸弹 310 发
+            （99 发三式、211 发一式）、6 英寸弹 347 发。
+          en: >-
+            The battle off Samar. At 0600 she opened fire with her main battery at
+            15 miles; at 0622 strafing Wildcats disabled her main rangefinder; at 0625
+            Hoel (DD-533) engaged her at 14,000 yards and fired five torpedoes, all of
+            which missed as Kongo turned hard to port; with her turret rangefinders
+            mounted too low for long-range fire she switched to her secondary battery.
+            At 0655 she sighted Gambier Bay (CVE-73) and scored numerous hits. Around
+            0800 the main rangefinder was working again and she took the
+            cruiser-crippled Samuel B. Roberts (DE-413) under fire, sinking her at
+            0912. Between 1228 and 1248 about twenty SB2C dive-bombers of TF 38.1
+            attacked, planting five near misses: one to starboard amidships dented the
+            torpedo bulge and side plating and contaminated fuel tanks with seawater,
+            one at the stern slightly bent both starboard propeller blades, and twelve
+            men were killed and thirty-six wounded. She expended 310 14-inch rounds
+            (99 Type 3, 211 Type 1) and 347 6-inch that day.
+        src: [combinedfleet-kongo]
+
+      - date: 1944-11-21
+        text:
+          zh: >-
+            台湾海峡。0020 海狮二号（SS-315）在 44,000 码雷达接触；0256 在
+            3,000 码射出六条艇首鱼雷；0301 艇上看到三发命中，大和号舰员看到
+            两发。0307 六号与八号锅炉舱进水，仍可跑 16 节，左倾渐增至 15 度。
+            0450 编队分裂，金刚与浜风、矶风落在后面减速至 11 节；0520 停车；
+            0524 一次爆炸（很可能是弹药库）照亮夜空，雷达上大型回波消失。
+            沉没位置 26-09N、121-23E，基隆以北 60 海里、水深 348 英尺。
+            约 1,200 人阵亡，含第三战队司令铃木义尾少将与舰长岛崎利雄少将；
+            浜风、矶风救起 237 人，天皇御真影未寻回。日文来源记命中 2 条、
+            倾斜 18 度、阵亡 1,300 人，与美方记载并列不裁决。
+          en: >-
+            The Formosa Strait. At 0020 Sealion II (SS-315) made radar contact at
+            44,000 yards; at 0256 she fired six bow tubes at 3,000 yards; at 0301 she
+            saw three hits while Yamato's crew reported two. By 0307 boiler rooms 6
+            and 8 had flooded, she could still make 16 knots, and the list to port grew
+            to 15 degrees. At 0450 the formation split and Kongo, with Hamakaze and
+            Isokaze, dropped astern and slowed to 11 knots; at 0520 she stopped; at
+            0524 an explosion, probably a magazine, lit the sky and the large radar pip
+            vanished. She sank at 26-09N, 121-23E, 60 miles north of Keelung in 348
+            feet of water. About 1,200 men were lost including BatDiv 3's Vice Admiral
+            Suzuki and her skipper Rear Admiral Shimazaki; Hamakaze and Isokaze rescued
+            237 and the Emperor's portrait was never recovered. The Japanese source
+            gives two torpedo hits, an 18-degree list and 1,300 dead, recorded here
+            alongside the American figures without a ruling.
+        src: [combinedfleet-kongo, navypedia-kongo, japanese-warship-kongo]
+
+      - date: 1945-01-20
+        text:
+          zh: >-
+            从海军籍除籍。
+          en: >-
+            Removed from the Navy List.
+        src: [combinedfleet-kongo]

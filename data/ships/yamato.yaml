@@ -1,0 +1,505 @@
+# ============================================================================
+# 大和（Yamato）单舰数据
+# ----------------------------------------------------------------------------
+# 只写与舰级文件不同的、本舰特有的项：
+#   1) 建造日期、船厂、编制、战历、结局
+#   2) 本舰实测值（试航排水量/出力/航速、编制）
+#   3) 状态随时间变化（雷达加装、防空强化、装甲局部增厚）
+# 解析顺序：单舰 fact -> 舰级 fact -> 未记载。
+# ============================================================================
+
+id: yamato
+name:
+  zh: 大和
+  en: Yamato
+class: yamato
+
+open_ended_note: |
+  本文件中 valid.to 留空的 fact 表示「至本舰沉没为止持续有效」，
+  不是漏填。本舰 1945-04-07 沉没，故未写 to 的时间窗终点即该日。
+
+facts:
+  # ---------------------------------------------------------------- 身份
+  - field: identity.name_original
+    value: 大和
+    src: [kasado-yamato, combinedfleet-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >
+      建造期代称「第一号艦」（Battleship No. 1）。TROM 原文
+      "Battleship No. 1 is completed and registered in the Kure Naval District as YAMATO."
+
+  - field: identity.name_zh
+    value: 大和
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - field: identity.name_en
+    value: Yamato
+    src: [combinedfleet-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - field: identity.ship_type
+    value: battleship
+    src: [combinedfleet-yamato, kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - field: identity.nation
+    value: japan
+    src: [combinedfleet-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - field: identity.operator
+    value: 大日本帝国海軍
+    src: [combinedfleet-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - field: identity.era
+    value: ww2
+    src: [combinedfleet-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - field: identity.namesake
+    value: 大和国（今奈良县）
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: 旧国名。来源只给舰名，命名依据为日本海军战列舰命名惯例的归纳。
+
+  - field: identity.pennant_number
+    value: 无（日本海军战列舰不设舷号）
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      来源均未给旗号/舷号。本条记录「本舰无舷号」这一事实，
+      而非「查不到舷号」。日本海军以舰名识别，无舷号制度。
+
+  # ---------------------------------------------------------------- 建造
+  - field: construction.builder
+    value: 呉海軍工廠（Kure Naval Arsenal）
+    src: [kasado-yamato, navypedia-yamato, japanese-warship-yamato]
+    valid: { from: 1937-11-04 }
+    confidence: B
+    note: >-
+      navypedia 记 "Kure K K"；japanese-warship「建 造 呉海軍工廠」。
+
+  - field: construction.builder_location
+    value: 広島県呉市
+    src: [navypedia-yamato]
+    valid: { from: 1937-11-04 }
+    confidence: C
+    note: >-
+      navypedia 只写 "Kure K K"（吴海军工厂），所在地为常识补充，confidence C。
+
+  - field: construction.laid_down
+    value: 1937-11-04
+    unit: date
+    src: [kasado-yamato, navypedia-yamato, combinedfleet-yamato]
+    valid: { from: 1937-11-04 }
+    confidence: B
+    note: >
+      navypedia "4.11.1937"；kasado「起工:1937年11月4日」；
+      TROM "4 November 1937: Kure Naval Arsenal. The keel of Battleship No. 1 is laid down."
+
+  - field: construction.launched
+    value: 1940-08-08
+    unit: date
+    src: [kasado-yamato, navypedia-yamato, combinedfleet-yamato]
+    valid: { from: 1940-08-08 }
+    confidence: B
+    note: >-
+      三源一致。TROM "8 August 1940: Launched."
+
+  - field: construction.commissioned
+    value: 1941-12-16
+    unit: date
+    src: [kasado-yamato, navypedia-yamato, combinedfleet-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >
+      TROM "16 December 1941: Battleship No. 1 is completed and registered in the
+      Kure Naval District as YAMATO." 注意 navweaps 的图片说明里有一处写
+      "completed December 1941"（对），但另有一处展览铭牌写 "The 68,000 ton Yamato …
+      was completed December 1941"，两处一致。
+
+  - field: construction.fate_date
+    value: 1945-04-07
+    unit: date
+    src: [combinedfleet-yamato, kasado-yamato]
+    valid: { from: 1945-04-07 }
+    confidence: B
+    note: kasado「戦没:1945年4月7日 (航空攻撃)」；TROM 逐时记录至 1423 弹药库爆炸。
+
+  - field: construction.fate_type
+    value: sunk_by_enemy
+    src: [combinedfleet-yamato]
+    valid: { from: 1945-04-07 }
+    confidence: B
+    note: >
+      天一号作战中在坊ノ岬沖被 TF 58 舰载机击沉。TROM "1423: YAMATO's No. 1 magazine
+      explodes … She slips under followed by an underwater explosion.
+      YAMATO sinks at 30-22 N, 128-04 E."
+
+  - field: construction.order_date
+    value: 1937
+    unit: date
+    src: [navypedia-yamato]
+    valid: { from: 1937 }
+    confidence: C
+    note: >
+      navypedia "First two ships were ordered in 1937 within the limits of
+      3rd Supplementary Programme"。只给年份，无具体日。
+
+  - field: construction.building_slip
+    value: 呉海軍工廠 第4ドック（建造船渠）
+    src: [japanese-warship-yamato-building, combinedfleet-yamato]
+    valid: { from: 1937-11-04 }
+    confidence: C
+    note: >
+      建造时在船渠内进行，进水方式为「ドック内に海水を入れて浮揚する方式」
+      （japanese-warship-building 原文：「【武蔵】と比較して【大和】はドック内に海水を入れて
+      浮揚する方式ですからこちらの方が楽です」）。TROM 1944-01-16 条另记
+      "YAMATO is docked in No. 4 drydock"。船渠编号取自 1944 年的记录，
+      1937-1940 建造时是否同为第 4 号渠，来源未明写，故 confidence C。
+
+  # ---------------------------------------------------------------- 本舰实测
+  - field: displacement.trial
+    value: 69100
+    unit: t
+    src: [japanese-warship-yamato]
+    valid: { from: 1941-10-30 }
+    confidence: C
+    note: >
+      japanese-warship「公試排水量69,100t」。与舰级文件并列的 68,010 t（kasado）
+      构成两说，不裁决。本舰 1941-10-22～30 在宿毛湾公试。
+
+  - field: propulsion.power.trial
+    value: 153000
+    unit: hp
+    src: [japanese-warship-yamato-building]
+    valid: { from: 1941-10-30 }
+    confidence: C
+    note: >
+      **未获取到本舰实测出力的直接记载。** 本条数值 153,000 shp 出自日文报道类
+      记述（「出力15万3千馬力の重油専焼タービンで4軸のプロペラを回す」），
+      该段同时给出蒸汽参数 25 kgf/cm²、325 ℃。因来源层级偏低且与设计值 150,000 shp
+      关系不明，confidence 记 C，未在正文中当作实测值使用。
+
+  - field: propulsion.speed.trial
+    value: 27.46
+    unit: kn
+    src: [yamato-museum-data, kasado-yamato]
+    valid: { from: 1941-10-30 }
+    confidence: B
+    note: >
+      博物馆与 kasado 均记 27.46 节。注意 kasado 把 27.46 同时用于
+      「大和型竣工時／大和 1944-10／大和 最終時／武蔵 最終時」四列，
+      即该站把它当级的设计值而非单舰实测值；而武藏的实测是 28.05 节（见 musashi.yaml）。
+      故本值对本舰而言是「公试速力」口径。
+
+  - field: service.complement.standard
+    value: 2500
+    unit: persons
+    src: [yamato-museum-data, navypedia-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: 竣工时编制。博物馆「乗組員 竣工時 2,500人」。
+
+  - field: service.complement.wartime
+    value: 3332
+    unit: persons
+    src: [yamato-museum-data, combinedfleet-yamato]
+    valid: { from: 1945-04-07 }
+    confidence: B
+    note: >
+      最终时编制。博物馆「乗組員 最終時 3,332人」；TROM "3,055 of 3,332 crewmen are lost"。
+
+  - field: service.casualties
+    value: 3055
+    unit: persons
+    src: [combinedfleet-yamato]
+    valid: { from: 1945-04-07 }
+    confidence: B
+    note: >
+      TROM 原文："Vice Admiral Ito and YAMATO's skipper Captain Aruga and 3,055 of
+      3,332 crewmen are lost."
+
+  - field: service.survivors
+    value: 276
+    unit: persons
+    src: [combinedfleet-yamato]
+    valid: { from: 1945-04-07 }
+    confidence: B
+    note: >
+      TROM 原文："276 men are rescued including Rear Admiral Morishita Nobuei,
+      Chief of Staff, Second Fleet (and former YAMATO skipper)."
+
+  - field: service.fate_category
+    value: 航空攻撃により沈没（天一号作战）
+    src: [combinedfleet-yamato, kasado-yamato]
+    valid: { from: 1945-04-07 }
+    confidence: B
+
+  # ---------------------------------------------------------------- 服役与编成
+  - field: service.unit
+    value: 連合艦隊 第一戦隊（BatDiv 1）
+    src: [combinedfleet-yamato]
+    valid: { from: 1941-12-16, to: 1942-07-14 }
+    confidence: B
+    note: >
+      TROM "YAMATO is assigned to the Combined Fleet's BatDiv 1 with NAGATO and MUTSU
+      at Hashirajima."；1942-07-14 长门、陆奥转第二战队，大和留第一战队。
+
+  - field: service.unit
+    value: 連合艦隊 旗艦（Combined Fleet flagship）
+    src: [combinedfleet-yamato]
+    valid: { from: 1942-02-12, to: 1943-02-11 }
+    confidence: B
+    note: >
+      TROM 1942-02-12："The flag of the Combined Fleet's Commander-in-Chief Admiral
+      Yamamoto Isoroku … is transferred from battleship NAGATO to YAMATO."
+      1943-02-11 旗舰转武藏。
+
+  - field: service.unit
+    value: 第二艦隊 第一戦隊
+    src: [combinedfleet-yamato]
+    valid: { from: 1944-02-25 }
+    confidence: B
+    note: >
+      TROM 1944-02-25："BatDiv 1's YAMATO and MUSASHI are reassigned from the
+      First Fleet to the Second Fleet."
+
+  - field: service.unit
+    value: 第二艦隊 旗艦
+    src: [combinedfleet-yamato]
+    valid: { from: 1944-11-15 }
+    confidence: B
+    note: >-
+      TROM 1944-11-15："BatDiv 1 is disbanded. YAMATO is assigned as the flagship of the Second Fleet."
+
+  - field: service.unit
+    value: 第一航空戦隊（CarDiv 1）
+    src: [combinedfleet-yamato]
+    valid: { from: 1945-02-10 }
+    confidence: B
+    note: >
+      TROM 1945-02-10："BatDiv 1, Second Fleet is deactivated for the last time.
+      YAMATO is reassigned to CarDiv 1."（此时航母部队已无航母，属名义编成）
+
+  - field: service.commander
+    value: 高柳儀八 大佐（Takayanagi Gihachi）
+    src: [combinedfleet-yamato]
+    valid: { from: 1941-11-01, to: 1942-12-17 }
+    confidence: B
+    note: >
+      TROM 1941-11-01 任「Chief Equipping Officer」，1941-12-16 竣工时即为舰长；
+      1942-05-01 晋升少将。1942-12-17 由松田千秋接任。
+
+  - field: service.commander
+    value: 松田千秋 大佐（Matsuda Chiaki）
+    src: [combinedfleet-yamato]
+    valid: { from: 1942-12-17, to: 1943-09-07 }
+    confidence: B
+    note: >-
+      TROM "17 December 1942: Captain (later Rear Admiral) Matsuda Chiaki … assumes command"；1943-05-01 晋升少将。
+
+  - field: service.commander
+    value: 小野寺治 大佐（Ono Takeji）
+    src: [combinedfleet-yamato]
+    valid: { from: 1943-09-07, to: 1944-01-25 }
+    confidence: C
+    note: >
+      TROM 原文 "7 September 1943: Captain (later Rear Admiral) Ono Takeji (former CO of
+      SUZUYA) assumes command from from Rear Admiral Matsuda"。**注意**：TROM 只给
+      姓「Ono」，汉字「小野寺」为本组补写，来源未给汉字，故 confidence C。
+
+  - field: service.commander
+    value: 森下信衛 大佐（Morishita Nobuei）
+    src: [combinedfleet-yamato]
+    valid: { from: 1944-01-25, to: 1944-11-25 }
+    confidence: B
+    note: >-
+      TROM "25 January 1944: Captain Morishita Nobuei (former CO of HARUNA) assumes command from Rear Admiral Ono."；1944-10-15 晋升少将。
+
+  - field: service.commander
+    value: 有賀幸作 大佐（Aruga Kosaku）
+    src: [combinedfleet-yamato]
+    valid: { from: 1944-11-25, to: 1945-04-07 }
+    confidence: B
+    note: >
+      TROM "25 November 1944: … Captain Aruga Kosaku (former CO of CHOKAI) assumes command
+      from Rear Admiral Morishita." 1945-04-07 随舰阵亡，追晋中将（"a rare double promotion
+      posthumously to Vice Admiral on the request of Admiral Toyoda"——原文写 Vice Admiral，
+      中文通常记中将，此处照原文记「追晋」不写具体阶级）。
+
+  # ---------------------------------------------------------------- 改装与状态变化
+  # 来源：combinedfleet TROM 的逐次改装条 + navypedia 的 Modernizations 表。
+  # 两源在月份上有一处冲突（1944-02 vs 1944-03），并列不裁决。
+
+  - field: sensors.radar.installed
+    value: 二一号電探（Type 21 Mod 3，対空・対水上捜索）
+    src: [combinedfleet-yamato, japanese-warship-yamato]
+    valid: { from: 1943-07-12 }
+    confidence: B
+    note: >
+      TROM 1943-07-12："Kure. Drydocked. A Type 21, Mod 3, air and surface search radar
+      is installed. Twelve new (4x3) 25-mm AA guns are fitted on the weather deck."
+      位置为前桅楼测距仪臂（同型武藏 1942-09-03 条写 "installed to the foretop rangefinder arms"）。
+
+  - field: sensors.radar.installed
+    value: 二二号電探（Type 22 Mod 4，対水上捜索・射撃管制）
+    src: [combinedfleet-yamato, japanese-warship-yamato]
+    valid: { from: 1944-02-25 }
+    confidence: B
+    note: >
+      TROM 1944-02-25："Type 13 air search and Type 22, Mod 4, surface search/gunnery
+      control radars are installed and the main mast is altered."
+
+  - field: sensors.radar.installed
+    value: 一三号電探（Type 13，対空捜索）
+    src: [combinedfleet-yamato, japanese-warship-yamato]
+    valid: { from: 1944-02-25 }
+    confidence: B
+    note: >-
+      同上条。TROM 1945-04-07 记 "YAMATO's Type 13 air search radar operator reports contact … at his set's maximum range of 63 miles"，可证其探测距离。
+
+  - field: sensors.radar.installed
+    value: E27 雷达告警接收机（仿德国 FuMB 1 Metox R.600）
+    src: [combinedfleet-yamato]
+    valid: { from: 1944-02-25 }
+    confidence: C
+    note: >
+      TROM 1944-02-25 前后："About this time, YAMATO is also fitted with multiple E27
+      radar detectors copied from the German FuMB 1 Metox R.600." 原文用 "About this time"，
+      日期不精确。
+
+  - field: armament.aa_25mm.count
+    value: 36
+    unit: count
+    src: [combinedfleet-yamato]
+    valid: { from: 1943-07-12, to: 1944-02-24 }
+    confidence: B
+    note: >
+      TROM 1943-07-12："Twelve new (4x3) 25-mm AA guns are fitted on the weather deck.
+      YAMATO's total 25-mm. AA suite is now 36 guns."（24 + 12 = 36）
+
+  - field: armament.aa_25mm.count
+    value: 98
+    unit: count
+    src: [navypedia-yamato]
+    valid: { from: 1944-03 }
+    confidence: C
+    note: >
+      navypedia 1944-03 大和改装条："+ 6 x 2 - 127/40 89-go, 24 x 3 - 25/60 96-shiki,
+      26 x 1 - 25/60 96-shiki"。此为该次改装**新增**的 25 mm 门数（24×3+26×1=98），
+      不是总数。本条只记来源原话给的新增数，不做加总。
+
+  - field: armament.aa_25mm.count
+    value: 152
+    unit: count
+    src: [combinedfleet-yamato]
+    valid: { from: 1944-11-25 }
+    confidence: B
+    note: >
+      最终时总数。TROM 1944-11-25："Twenty-four older 25-mm AA single mounts are removed.
+      Twenty-seven 25-mm AA guns (9 triple mounts) are fitted in their place. YAMATO's final
+      AA complement is 152 25-mm AA guns (50 triple mounts, 2 single mounts)."
+      kasado「最終時 25mm三連装機銃 52基156挺 + 25mm単装機銃 6基6挺」= 162 门，与 152 冲突，
+      **两说并列不裁决**（本条取 TROM 的 152）。
+
+  - field: armament.aa_25mm.count
+    value: 162
+    unit: count
+    src: [kasado-yamato, japanese-warship-yamato]
+    valid: { from: 1944-11-25 }
+    confidence: C
+    note: >
+      另一说。kasado「25mm三連装機銃 52基156挺 + 25mm単装機銃 6基6挺」= 162；
+      japanese-warship 最终时同记「25mm三連装機銃 52基156挺、25mm単装機銃 6基6挺」。
+      与 TROM 的 152（50 三联 + 2 单装）**并列，不裁决**。
+
+  - field: armament.mount.summary
+    value: >
+      1944-02-25 改装：撤去两座舷侧 15.5 cm 三联装炮塔，改装六座 12.7 cm 双联高角炮
+      ＋ 8 座三联与 26 座单装 25 mm；新装 13 号电探与 22 号电探改四，主桅改造
+    src: [combinedfleet-yamato]
+    valid: { from: 1944-02-25 }
+    confidence: B
+    note: >
+      TROM 原文："Two beam triple 6.1 inch (155-mm.) turrets are removed and replaced by six
+      (3x2) 5-inch (127-mm.) HA AA mounts. Twenty-four (8x3) and 26 single 25mm. AA mounts
+      are added. Shelters are also added on the upper deck for the increased AA crews."
+
+  - field: armament.mount.summary
+    value: >
+      1944-07-02～08 改装：增装十五门（五座三联）25 mm，木甲板（檜甲板）整块更换
+    src: [combinedfleet-yamato]
+    valid: { from: 1944-07-08 }
+    confidence: B
+    note: >
+      TROM "2-8 July 1944: Kure. Fifteen new (five triple-mount) 25mm. AA guns are installed
+      on YAMATO and the entire hinoki deck is also replaced."
+
+  - field: protection.armor.thickness
+    value: 103
+    unit: mm
+    qual: { part: barbette, region: side }
+    src: [navypedia-yamato, combinedfleet-yamato]
+    valid: { from: 1943-07 }
+    confidence: C
+    note: >
+      **仅本舰的局部增厚。** navypedia 1943-07 大和改装条："thickness of beam 155mm
+      barbettes was increased to 103mm"；TROM 同条："Her 155-mm. wing mount guns are
+      provided with coaming armor and their barbettes with 28-mm of additional armor."
+      28 + 75 = 103，两源可互证。
+
+  - field: protection.armor.thickness
+    value: 28
+    unit: mm
+    qual: { part: barbette, region: side }
+    src: [combinedfleet-yamato]
+    valid: { from: 1943-07-12 }
+    confidence: C
+    note: >-
+      增厚量（not 总厚）。TROM "their barbettes with 28-mm of additional armor"。
+
+  - field: appearance.scheme
+    value: 甲板涂黑（圣贝纳迪诺海峡夜战突破用迷彩）
+    src: [combinedfleet-yamato]
+    valid: { from: 1944-10-18, to: 1945-04-07 }
+    confidence: B
+    note: >
+      TROM 1944-10-18："Black deck camouflage, intended for the night breakthrough in the
+      San Bernardino Strait, is hastily applied to both YAMATO and MUSASHI.
+      The main component is soot from YAMATO's stack."
+
+  # ---------------------------------------------------------------- 战历关键节点
+  - field: service.fate_authority
+    value: 連合艦隊（天一号作战命令）
+    src: [combinedfleet-yamato]
+    valid: { from: 1945-04-05 }
+    confidence: B
+    note: >
+      TROM 1945-04-05 1359："A detailed order is received: "The Surface Special Attack Unit
+      is ordered to proceed via Bungo Suido Channel … Your mission is to attack the enemy fleet
+      and supply train and destroy them. Y-day is April 8th.""
+
+  - field: armament.gun_failures
+    value: >
+      1944-06-19 马里亚纳海战时，大和以主炮三式弹对**友军**机群开火（误认）；
+      1944-10-25 萨马岛海战中，六门前部主炮仅两门装九一式彻甲弹，其余装三式弹
+    src: [combinedfleet-yamato]
+    valid: { from: 1944-06-19 }
+    confidence: B
+    note: >
+      ① TROM 1944-06-19："YAMATO's main guns, loaded with "Sanshiki-dan" shells, are fired
+      in anger for the first time - but at friendly forces! Four Mitsubishi Zeke fighters are
+      damaged."；② TROM 1944-10-25 0558："Of her six forward rifles only two are initially
+      loaded with AP shells, the remainder with Type 3s."

@@ -1,0 +1,499 @@
+# ============================================================================
+# 武藏（Musashi）单舰数据
+# ----------------------------------------------------------------------------
+# 只写与舰级文件不同的、本舰特有的项：
+#   1) 建造日期、船厂、建造代号、保密措施
+#   2) 本舰实测值（公试 28.05 节 / 70,358 t / 167,310 shp、编制、伤亡）
+#   3) 状态随时间变化（1942-07 首次防空强化、1942-09 二一号电探、1944-04 大改装）
+#   4) 结局（1944-10-24 锡布延海）
+# 解析顺序：单舰 fact -> 舰级 fact -> 未记载。
+# ============================================================================
+
+id: musashi
+name:
+  zh: 武藏
+  en: Musashi
+class: yamato
+
+open_ended_note: |
+  本文件中 valid.to 留空的 fact 表示「至本舰战沉为止持续有效」，
+  不是漏填。本舰 1944-10-24 沉没，故未写 to 的时间窗终点即该日。
+
+facts:
+  # ---------------------------------------------------------------- 身份
+  - field: identity.name_original
+    value: 武蔵
+    src: [kasado-yamato, combinedfleet-musashi]
+    valid: { from: 1940-11-01 }
+    confidence: B
+    note: >
+      建造期代称「第二号艦」「Warship No. 2」，船体番号 800。
+      TROM 1940-11-01："「Warship No. 2」 is named MUSASHI.
+      For security reasons the former designation is used in most official documents
+      until the commissioning of the ship."
+
+  - field: identity.name_zh
+    value: 武藏
+    src: [kasado-yamato]
+    valid: { from: 1940-11-01 }
+    confidence: B
+
+  - field: identity.name_en
+    value: Musashi
+    src: [combinedfleet-musashi]
+    valid: { from: 1940-11-01 }
+    confidence: B
+
+  - field: identity.ship_type
+    value: battleship
+    src: [combinedfleet-musashi, kasado-yamato]
+    valid: { from: 1942-08-05 }
+    confidence: B
+
+  - field: identity.nation
+    value: japan
+    src: [combinedfleet-musashi]
+    valid: { from: 1942-08-05 }
+    confidence: B
+
+  - field: identity.operator
+    value: 大日本帝国海軍
+    src: [combinedfleet-musashi]
+    valid: { from: 1942-08-05 }
+    confidence: B
+
+  - field: identity.era
+    value: ww2
+    src: [combinedfleet-musashi]
+    valid: { from: 1942-08-05 }
+    confidence: B
+
+  - field: identity.namesake
+    value: 武蔵国（今东京都、埼玉县一带）
+    src: [kasado-yamato]
+    valid: { from: 1940-11-01 }
+    confidence: C
+    note: 旧国名。来源只给舰名，命名依据为日本海军战列舰命名惯例的归纳。
+
+  - field: identity.pennant_number
+    value: 无（日本海军战列舰不设舷号）
+    src: [kasado-yamato]
+    valid: { from: 1942-08-05 }
+    confidence: C
+    note: 同大和，来源均未给舷号，日本海军不设此制度。
+
+  # ---------------------------------------------------------------- 建造
+  - field: construction.builder
+    value: 三菱重工業 長崎造船所（Mitsubishi, Nagasaki）
+    src: [navypedia-yamato, kasado-yamato, combinedfleet-musashi]
+    valid: { from: 1938-03-29 }
+    confidence: B
+    note: >-
+      navypedia「Mitsubishi, Nagasaki」；TROM "in Mitsubishi's Nagasaki Yard"。
+
+  - field: construction.builder_location
+    value: 長崎県長崎市
+    src: [combinedfleet-musashi]
+    valid: { from: 1938-03-29 }
+    confidence: C
+    note: >-
+      TROM "Nagasaki. At 0955 … is laid down in Mitsubishi's Nagasaki Yard."
+
+  - field: construction.yard_number
+    value: >-
+      "800"
+    src: [combinedfleet-musashi, navypedia-yamato]
+    valid: { from: 1938-03-29 }
+    confidence: B
+    note: >
+      TROM "with the hull No. 800, provisionally designated "Warship No. 2""；
+      navypedia 的 Yard No 栏亦为「800」。
+
+  - field: construction.building_slip
+    value: 三菱長崎造船所 第2船台（slipway No. 2）
+    src: [combinedfleet-musashi]
+    valid: { from: 1938-03-29 }
+    confidence: B
+    note: >
+      TROM "The first section of the keel structure placed on the slipway No. 2 that day
+      is 71 feet (21.6 m) long."
+
+  - field: construction.laid_down
+    value: 1938-03-29
+    unit: date
+    src: [kasado-yamato, navypedia-yamato, combinedfleet-musashi]
+    valid: { from: 1938-03-29 }
+    confidence: B
+    note: >
+      navypedia "29.3.1938"；kasado「起工:1938年3月29日」；
+      TROM "29 March 1938: Nagasaki. At 0955 … is laid down".
+
+  - field: construction.launched
+    value: 1940-11-01
+    unit: date
+    src: [kasado-yamato, navypedia-yamato, combinedfleet-musashi]
+    valid: { from: 1940-11-01 }
+    confidence: B
+    note: >
+      TROM "1 November 1940: Nagasaki. At 0855, a secret launching ceremony is held at
+      Mitsubishi's shipyard led by Minister of the Navy, Admiral Oikawa Koshiro"。
+
+  - field: construction.commissioned
+    value: 1942-08-05
+    unit: date
+    src: [kasado-yamato, navypedia-yamato, combinedfleet-musashi]
+    valid: { from: 1942-08-05 }
+    confidence: B
+    note: >
+      TROM "5 August 1942: Completed and attached to Yokosuka Naval District.
+      The commissioning ceremony is held at 0900."
+
+  - field: construction.fate_date
+    value: 1944-10-24
+    unit: date
+    src: [combinedfleet-musashi, kasado-yamato]
+    valid: { from: 1944-10-24 }
+    confidence: B
+    note: >
+      kasado「戦没:1944年10月24日 (航空攻撃)」；TROM 记 1936 倾覆沉没
+      （当地时，见 note 于 construction.fate_type 条）。
+
+  - field: construction.fate_type
+    value: sunk_by_enemy
+    src: [combinedfleet-musashi]
+    valid: { from: 1944-10-24 }
+    confidence: B
+    note: >
+      TROM "At 1936, MUSASHI capsizes to port and sinks by the bow in 4,430 feet of water
+      at 13-07N, 122-32E (as per her DAR; DesDiv 17 DAR lists that location as
+      12-50N, 122-35E and KIYOSHIMO's log as 12-48N, 122-41.5E)."
+
+  - field: construction.order_date
+    value: 1937
+    unit: date
+    src: [navypedia-yamato]
+    valid: { from: 1937 }
+    confidence: C
+    note: >
+      navypedia "First two ships were ordered in 1937 within the limits of
+      3rd Supplementary Programme"。只给年份，无具体日。
+
+  # ---------------------------------------------------------------- 建造期间的保密措施（武藏独有的细节）
+  - field: identity.name_note
+    value: >
+      建造期间以「第二号艦／Warship No. 2」代称；下水时以客货船春日丸并靠遮挡舰影；
+      船台外挂棕榈纤维帷幕；动用 1,800 名警察、宪兵与水兵警戒
+    src: [combinedfleet-musashi]
+    valid: { from: 1938-03-29, to: 1942-08-05 }
+    confidence: B
+    note: >
+      TROM 1938-03-29："In an attempt to hide the slipway from the foreign ships visiting
+      Nagasaki a large curtain made of palm fiber rope is draped from the gantry crane over it.
+      Prior to the start of construction the Sasebo Naval District authorities had purchased a
+      total of 400 metric tons of wajuro palm fiber, causing a temporary shortage of that
+      material in the Kyushu fishing industry."
+      TROM 1940-11-01："As soon as MUSASHI is in the water, the new passenger-cargo liner
+      KASUGA MARU (future escort carrier TAIYO) is towed alongside the battleship to block her
+      silhouette from any foreign eyes. A combined force of 1,800 policemen, IJA Military Police
+      (Kempeitai) and sailors of the Sasebo Sailor Corps patrols near the shipyard to ensure
+      maximum secrecy during the launch."
+
+  - field: identity.name_note
+    value: >
+      主炮装船时以帆布遮盖；46 cm 炮与炮塔由给兵舰樫野自吴运送，
+      1941-10-06 起运，至 1941-12-08 全部主炮安装完毕
+    src: [combinedfleet-musashi]
+    valid: { from: 1941-10-06, to: 1941-12-08 }
+    confidence: B
+    note: >
+      TROM 1941-10-06："Nagasaki. IJN special ammunition ship KASHINO arrives from Kure,
+      carrying the first batch of 46-cm guns and one turret. Once aboard, the turret and gun
+      are covered with canvas to maintain secrecy. By 8 December, all main guns are installed
+      to the respective turrets."
+
+  # ---------------------------------------------------------------- 本舰实测
+  - field: displacement.trial
+    value: 70358
+    unit: t
+    src: [combinedfleet-musashi]
+    valid: { from: 1942-06-22 }
+    confidence: B
+    note: >
+      **本舰独有的实测记录。** TROM 1942-06-22："On 22 June, MUSASHI achieves 28.05 kts in
+      overload condition at 70,358 tons displacement (167,310 shp)."
+      这是「overload condition」（过载状态）的排水量，不能当公试排水量标准值引用。
+
+  - field: propulsion.power.trial
+    value: 167310
+    unit: hp
+    src: [combinedfleet-musashi]
+    valid: { from: 1942-06-22 }
+    confidence: B
+    note: >
+      TROM 同条："(167,310 shp)"。比设计值 150,000 shp 高出 11.5%，
+      是在过载状态下测得的，故不能代表设计余量。
+
+  - field: propulsion.speed.trial
+    value: 28.05
+    unit: kn
+    src: [combinedfleet-musashi]
+    valid: { from: 1942-06-22 }
+    confidence: B
+    note: >
+      TROM "MUSASHI achieves 28.05 kts in overload condition"。**注意**：这与舰级文件里
+      通用的 27.46 节不是一个数——27.46 是设计/大和公试口径，28.05 是武藏过载公试实测。
+      两值并存，不裁决。
+
+  - field: service.complement.wartime
+    value: 2399
+    unit: persons
+    src: [combinedfleet-musashi]
+    valid: { from: 1944-10-22 }
+    confidence: B
+    note: >
+      TROM 1944-10-22："At the time of departure a total of 2,417 people are embarked on
+      MUSASHI including her 2,399-strong crew (112 officers, 2,279 men and 8 Navy-hired
+      civilians), six judicial service officers attached to Combined Fleet HQ, one Second Fleet
+      liaison officer, two First Mobile Fleet liaison officers and nine sailors from NAGATO."
+      船体编制 2,399 人，加乘舰人员共 2,417 人。
+
+  - field: service.casualties
+    value: 1023
+    unit: persons
+    src: [combinedfleet-musashi]
+    valid: { from: 1944-10-24 }
+    confidence: B
+    note: >
+      TROM "but 1,023 of her 2,399-man crew are lost including her skipper, Rear Admiral
+      Inoguchi". 另有 117 名麻耶号生还者同在此役损失（不并入本数）。
+
+  - field: service.survivors
+    value: 1423
+    unit: persons
+    src: [combinedfleet-musashi]
+    valid: { from: 1944-10-24 }
+    confidence: B
+    note: >
+      TROM "Destroyers KIYOSHIMO and HAMAKAZE rescue 1,423 survivors including MUSASHI's
+      XO, Captain Kato"。同页引 1944-10-25 美军破译电文按舰分列：
+      "Hamakaze: Executive officer and 800 men (of which 30 were officers).
+      Isokaze: 30 officers and 410 men."
+
+  - field: service.fate_category
+    value: 航空攻撃により沈没（锡布延海海战）
+    src: [combinedfleet-musashi, navypedia-yamato]
+    valid: { from: 1944-10-24 }
+    confidence: B
+
+  # ---------------------------------------------------------------- 服役与编成
+  - field: service.unit
+    value: 連合艦隊 第一戦隊（BatDiv 1）
+    src: [combinedfleet-musashi]
+    valid: { from: 1942-08-05 }
+    confidence: B
+    note: >
+      TROM "Assigned to the Combined Fleet's BatDiv 1 with YAMATO, NAGATO and MUTSU."
+
+  - field: service.unit
+    value: 連合艦隊 旗艦（Combined Fleet flagship）
+    src: [combinedfleet-musashi]
+    valid: { from: 1943-02-11, to: 1944-05 }
+    confidence: B
+    note: >
+      TROM 1943-02-11："Truk. Relieves her sister-ship, YAMATO, as flagship of Admiral
+      Yamamoto Isoroku's Combined Fleet." 1944-03-31 古贺峰一乘机失事身亡后，
+      旗舰职能随联合舰队司令部转移，本条的 to 取 1944-05（来源未给确切终止日，
+      属区间判定的保守取值，见 RESEARCH-NOTES）。
+
+  - field: service.unit
+    value: 第二艦隊 第一戦隊
+    src: [combinedfleet-musashi]
+    valid: { from: 1944-02-25 }
+    confidence: C
+    note: >
+      TROM 在**大和**页 1944-02-25 条写 "BatDiv 1's YAMATO and MUSASHI are reassigned from
+      the First Fleet to the Second Fleet"；武藏页未重述，本条据姊妹舰页的同一条记录转引。
+
+  - field: service.commander
+    value: 有馬馨 大佐（Arima Kaoru）
+    src: [combinedfleet-musashi]
+    valid: { from: 1941-09-15, to: 1943-06-09 }
+    confidence: B
+    note: >
+      TROM 1941-09-15 任 "Chief Equipping Officer"，1942-08-05 竣工时即为舰长；
+      1942-11-01 晋升少将。1943-06-09 由古村啓蔵接任。
+
+  - field: service.commander
+    value: 古村啓蔵 大佐（Komura Keizo）
+    src: [combinedfleet-musashi]
+    valid: { from: 1943-06-09, to: 1944-08-12 }
+    confidence: B
+    note: >-
+      TROM "9 June 1943: Captain (promoted Rear Admiral 1 November) Komura Keizo (45)(former CO of FUSO) is appointed the CO."
+
+  - field: service.commander
+    value: 猪口敏平 大佐（Inoguchi Toshihira）
+    src: [combinedfleet-musashi]
+    valid: { from: 1944-08-12, to: 1944-10-24 }
+    confidence: B
+    note: >
+      TROM "12 August 1944: Captain (promoted Rear Admiral 15 October; Vice Admiral,
+      posthumously) Inoguchi Toshihira (46)(former CO of TAKAO) is appointed the CO."
+      注 [6] 特别指出通行记述常把姓名错写成 "Iguchi Toshihira" 或 "Inoguchi Toshihei"，
+      1937 年海军名簿第 73 页作 Inoguchi Toshihira。
+
+  # ---------------------------------------------------------------- 改装与状态变化
+  - field: armament.aa_25mm.count
+    value: 36
+    unit: count
+    src: [combinedfleet-musashi]
+    valid: { from: 1942-07-27, to: 1944-04-09 }
+    confidence: B
+    note: >
+      TROM 1942-07-27～1942-07-23 首次防空强化条："Twelve unshielded 25-mm AA guns (4x3)
+      are added … MUSASHI's initial AA suite is twelve 127-mm guns (6x2), thirty-six 25-mm guns
+      (12x3) and four 13.2-mm machine guns (2x2)."
+
+  - field: armament.aa_25mm.count
+    value: 115
+    unit: count
+    src: [combinedfleet-musashi]
+    valid: { from: 1944-04-27, to: 1944-10-24 }
+    confidence: B
+    note: >
+      TROM 1944-04-10/27 改装条："MUSASHI's resulting AA suite is one hundred and fifteen
+      25-mm AA guns (30x3, 25x1)."
+
+  - field: sensors.radar.installed
+    value: 二一号電探（Type 21 Mod 3，対空捜索）
+    src: [combinedfleet-musashi]
+    valid: { from: 1942-09-03 }
+    confidence: B
+    note: >
+      TROM 1942-09-03："Departs Hashirajima for Kure for the final fitting-out.
+      After the arrival a modified Type 21 Mod. 3 air-search radar is installed to the
+      foretop rangefinder arms." **注意**：武藏装二一号比大和早约 10 个月
+      （大和为 1943-07-12），这是两舰最容易搞混的一点。
+
+  - field: sensors.radar.installed
+    value: 二二号電探（Type 22，対水上捜索）× 2
+    src: [combinedfleet-musashi]
+    valid: { from: 1944-04-27 }
+    confidence: B
+    note: >
+      TROM 1944-04 改装条："Two Type 22 surface-search and two Type 13 air-search radars
+      are installed."
+
+  - field: sensors.radar.installed
+    value: 一三号電探（Type 13，対空捜索）× 2
+    src: [combinedfleet-musashi]
+    valid: { from: 1944-04-27 }
+    confidence: B
+    note: 同上条。
+
+  - field: sensors.radar.installed
+    value: 二二号電探改四（Type 22 Mod 4，限定的射击管制能力）
+    src: [combinedfleet-musashi]
+    valid: { from: 1944-07-02 }
+    confidence: B
+    note: >
+      TROM 1944-07-02："Type 22 surface-search radars are replaced by Type 22 Mod. 4 with a
+      limited fire-control capability."
+
+  - field: armament.mount.summary
+    value: >
+      1942-07 首次防空强化：增设 4 座三联 25 mm（12 门），装于 15.5 cm 舷侧炮塔前后
+      的天甲板上，每舷两座
+    src: [combinedfleet-musashi]
+    valid: { from: 1942-07-27 }
+    confidence: B
+    note: >
+      TROM 原文："Twelve unshielded 25-mm AA guns (4x3) are added to the weather deck forward
+      and aft of the 15.5-cm wing turrets, two mounts on each side."
+
+  - field: armament.mount.summary
+    value: >
+      1944-04-10～27 大改装：撤去舷侧 15.5 cm 三联装炮塔二号、三号（每舷一座），
+      改装三联 25 mm 无防盾座；增装 16 座三联与 25 座单装 25 mm；
+      撤去 150 cm 探照灯 7、8 号及其实射击指挥装置；增设第 6、第 7 防空炮术分队
+    src: [combinedfleet-musashi]
+    valid: { from: 1944-04-27 }
+    confidence: B
+    note: >
+      TROM 原文："The 15.5-cm wing turrets Nos. 2 and 3 are replaced by three triple 25-mm
+      unshielded AA mounts on each side. Sixteen 25-mm triple mounts and 25 single mounts are
+      added, increasing the number of their directors to fourteen. Two 150-cm searchlights
+      (Nos. 7 and 8) and their directors are removed to make room for new 25-mm mounts and
+      their directors. The searchlights are later reinstalled for use by Sasebo's AA batteries.
+      … As a result of increased AA suite, the crew of MUSASHI is increased by two AA gunner
+      divisions Nos. 6 (forward batteries) and 7 (stern area batteries)."
+
+  - field: armament.aa_25mm.count
+    value: 130
+    unit: count
+    src: [combinedfleet-musashi]
+    valid: { from: 1944-07-02, to: 1944-10-24 }
+    confidence: B
+    note: >
+      TROM 1944-07-02："Five additional 25-mm triple AA mounts are installed for a total of
+      one hundred and thirty guns (35x3, 25x1)."
+      与上一条 1944-04 的 115 门不冲突：这是同一序列的下一次增装。
+
+  - field: protection.armor.thickness
+    value: 28
+    unit: mm
+    qual: { part: barbette, region: side }
+    src: [combinedfleet-musashi]
+    valid: { from: 1942-06-09 }
+    confidence: B
+    note: >
+      **比大和早约一年。** TROM 1942-05-26～06-09："Dry-docked in Kure No. 4 drydock.
+      The 28-mm coaming armor for the two superfiring secondary battery turrets (Nos. 1 and 4)
+      is fitted." 大和同项改装为 1943-07-12。
+
+  - field: appearance.scheme
+    value: 甲板部分涂黑 ＋ 舰体与炮塔侧面涂暗灰色（1944-10 文莱）
+    src: [combinedfleet-musashi]
+    valid: { from: 1944-10-18 }
+    confidence: B
+    note: >
+      TROM 1944-10-18："Black deck camouflage intended for the night breakthrough in the
+      San Bernardino Strait is hastily applied to both MUSASHI and YAMATO.
+      In case of MUSASHI only a part of the upper deck is painted over."
+      TROM 1944-10-20："Rear Admiral Inoguchi orders to apply a gray camouflage with a dark
+      tint to hull and turret sides. The work continues until the next day."
+
+  # ---------------------------------------------------------------- 战历关键节点
+  - field: armament.gun_failures
+    value: >
+      1944-10-24 锡布延海海战中，一号主炮塔中弹后跳飞（1000 磅炸弹 bounced off）；
+      同日炮击记录：一次齐射九发三式弹（460 mm）、十七发零式通常弹（155 mm）、
+      二百一十七发三式弹（127 mm）
+    src: [combinedfleet-musashi]
+    valid: { from: 1944-10-24 }
+    confidence: B
+    note: >
+      TROM 1029："One 1000-lb bomb hits turret No. 1 and bounces off, exploding in the …"；
+      TROM 同日："She fires nine 460-mm Type 3 shells, seventeen 155-mm Type 0, two hundred
+      and seventeen 127-mm Type 3 and an unknown number of 25-mm rounds."
+
+  - field: service.fate_authority
+    value: 第一遊撃部隊（栗田健男中将）→ 第二艦隊
+    src: [combinedfleet-musashi]
+    valid: { from: 1944-10-22 }
+    confidence: B
+    note: >
+      TROM 1944-10-22："At 0800 sorties from Brunei towards the Philippines with Vice Admiral
+      Kurita Takeo's First Mobile Striking Force, Center Force: BatDiv 1's YAMATO, MUSASHI,
+      NAGATO, CruDivs 4, 5, DesRon 2."
+
+  - field: service.flag
+    value: 联合舰队旗舰旗（1943-02-11 至 1944-03-31 期间）
+    src: [combinedfleet-musashi]
+    valid: { from: 1943-02-11, to: 1944-03-31 }
+    confidence: B
+    note: >
+      TROM 1943-02-11 接替大和为联合舰队旗舰；1944-03-31 古贺峰一乘机失事身亡
+      （TROM：「Admiral Koga departs Palau by a Kawanishi Type 2 H8K2 "Emily" flying-boat …
+      Both planes are lost in a typhoon off Cebu」），此后联合舰队司令部南撤，
+      旗舰职能的实际归属来源未再明写，故时间窗止于此日。

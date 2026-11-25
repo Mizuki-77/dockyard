@@ -1,0 +1,641 @@
+# ============================================================================
+# 舰艇正文 —— 比叡号（战列巡洋舰 → 练习战舰 → 高速战列舰）
+#
+# 这一条要纠正或写清的五处：
+#   1. 它是横须贺海军工厂建造，是日本第一艘国产超弩级战列舰——但材料大半
+#      仍自维克斯订购，不是纯国货。金刚级四舰里只有金刚在英国造。
+#   2. 它是四舰里唯一被降格为「練習戦艦」的一艘（1929-1932 拆武装，
+#      1933-01-01 正式定级），因此 1940 年那次大改装把别人两次改装并成了一次。
+#   3. **锅炉的 11 座属于練習戦艦期（1933-1940），改装后是 8 座。**别写反。
+#      10 座是金刚第一次改装后的数，与本舰无关。
+#   4. 它是四舰里唯一塔型舰桥的一艘（另三舰檣楼型），且是大和型舰桥的试验原型。
+#   5. 1942-11-13 受重创后自沉，是日本海军在太平洋战争中第一艘沉没的战列舰。
+#      雷达状态只能写「未获取」——雾岛那条「沉没时无雷达」是有专门否定记载的，
+#      比叡没有，两条不能互相套用。
+# ============================================================================
+ship: hiei
+updated: 2026-11-25
+
+intro:
+  lead:
+    zh: >-
+      比叡是金刚型战列巡洋舰的二号舰，1914 年 8 月 4 日竣工，在横须贺海军工厂
+      建造——日本第一艘国产超弩级战列舰，但材料大半仍从维克斯订购。
+      它是金刚级里唯一被降格为「練習戦艦」的一艘（1933 至 1940 年），
+      也因此把别人分两次做完的改装并成 1940 年 1 月 31 日的一次，
+      舰桥是四舰里唯一的塔型，也是大和型舰桥的试验原型。
+      1942 年 11 月 13 日，它在瓜岛第一次夜战中被美巡洋舰炮火打坏舵机，
+      次日在持续空袭后自沉，是日本海军在太平洋战争中第一艘沉没的战列舰。
+    en: >-
+      Hiei was the second Kongo-class battlecruiser, completed on 4 August 1914 at
+      Yokosuka Navy Yard — Japan's first domestically built super-dreadnought,
+      though most of her materials were still ordered from Vickers. She was the only
+      ship of the class demoted to training ship (1933 to 1940), and for that reason
+      the reconstruction that others did in two stages was compressed into one
+      completed on 31 January 1940; her bridge was the only tower-type in the class
+      and served as a prototype for the Yamato class. On 13 November 1942, her
+      steering wrecked by cruiser fire in the first night action off Guadalcanal, she
+      was scuttled the next day after sustained air attack — the first Japanese
+      battleship lost in the Pacific War.
+
+  paragraphs:
+    - heading: 横须贺造，日本第一艘国产超弩级——但材料大半是进口的
+      text:
+        zh: >-
+          金刚级四舰的建造地必须分开记：金刚在维克斯（巴罗因弗内斯，船台号
+          414）、比叡在横须贺海军工厂、榛名在川崎造船所神户船厂第 4 船台、
+          雾岛在三菱合资会社长崎造船所（船台号 225）。比叡是四舰里唯一由海军
+          工厂建造的一艘，也是日本第一艘国产超弩级战列舰。但这个「国产」有一个
+          必须同时写出的限定：combinedfleet 记「其建造所用部件大部分自英国
+          进口」；日文来源说得更直白——「実は材料の大半はヴィッカース社に注文
+          しており、純国産、とは言い難い建造過程です」。navypedia 给的比例是
+          约 30% 的材料与设备向国外订购，后两艘（榛名、雾岛）才只用国产材料。
+          它开工时还有一个细节：以「仮称卯号装甲巡洋艦」的名义动工，
+          文书上定为巡洋战舰是在下水之后。
+        en: >-
+          The four building yards must be kept apart: Kongo at Vickers in Barrow
+          (yard number 414), Hiei at Yokosuka Navy Yard, Haruna on No. 4 slip at
+          Kawasaki in Kobe, Kirishima at Mitsubishi Zosen Kaisha in Nagasaki (yard
+          number 225). Hiei was the only one built in a navy yard and the first
+          super-dreadnought built in Japan. That "domestic" label comes with a
+          qualification that has to be stated alongside it: combinedfleet records that
+          most of the parts used in her construction were imported from England, and
+          the Japanese source is blunter — most of the materials were in fact ordered
+          from Vickers, so the process is hard to call purely domestic. Navypedia puts
+          the figure at about 30 per cent of materials and equipment ordered abroad,
+          with the last two ships using domestic materials only. She was also laid
+          down under the provisional name "No. 4 Armoured Cruiser" and only classified
+          as a battlecruiser on paper after launching.
+      src: [navypedia-kongo, combinedfleet-hiei, japanese-warship-hiei]
+
+    - heading: 唯一被降格为练习战舰的一艘，与 11 座锅炉的由来
+      text:
+        zh: >-
+          这是四舰里只有比叡有的一段历史，也是读她所有参数时最容易出错的地方。
+          1929 年 10 月 15 日，为规避华盛顿条约下必须报废的命运，她在吴海军工厂
+          被解除武装、改为练习舰：拆掉舰尾 14 英寸炮塔与全部鱼雷发射管、
+          拆除舷侧装甲带与全部 6 英寸炮、36 座锅炉中拆掉 25 座、航速下调、
+          航空设备全部撤除、烟囱由三根减为两根。拆下的装备全部编号保存。
+          量化结果是 19,500 吨、18 节、16,000 马力，主炮剩 3 座 6 门；
+          4 号炮塔拆除后为配平在炮塔原位加了 500 吨压载。**11 座锅炉就是这一期
+          的数字**（36 减 25），不是改装后的。1932 年 12 月 31 日工程完成，
+          1933 年 1 月 1 日正式定级为練習戦艦。
+        en: >-
+          This is the stretch of her career no sister shares, and the point at which
+          her figures are easiest to misread. On 15 October 1929, to avoid having to be
+          scrapped under the Washington Treaty, she was demilitarised and converted to
+          a training ship at Kure: the aft 14-inch turret and all torpedo tubes
+          removed, the armour belt and all 6-inch guns removed, twenty-five of her
+          thirty-six boilers removed, speed reduced, all aircraft equipment landed and
+          the funnels cut from three to two. The removed equipment and armament was
+          preserved and stored. The quantified result was 19,500 tons, 18 knots and
+          16,000 horsepower, with three twin 14-inch turrets left; 500 tons of ballast
+          went into the empty No. 4 turret position to keep her in trim. The eleven
+          boilers belong to this period — thirty-six minus twenty-five — and not to her
+          later reconstruction. The work was completed on 31 December 1932 and she was
+          formally classified a training ship on 1 January 1933.
+      src: [combinedfleet-hiei, navypedia-kongo, japanese-warship-hiei]
+
+    - heading: 1940 年：把别人两次改装并成一次，塔型舰桥与 8 座锅炉
+      text:
+        zh: >-
+          1937 年 4 月 1 日在吴开始的大改装，1940 年 1 月 31 日完成——比榛名的
+          1934 年 9 月 30 日晚 5 年 4 个月。日文来源点明了这一次的性质：
+          「他の金剛型戦艦が一次、二次と2回で行われた改装を一度に行った形」。
+          内容含：恢复 4 号炮塔与舷侧装甲、加强水平装甲、主炮盾增至 250 mm
+          顶盖 150 mm、主炮仰角提到 43 度、副炮仰角提到 30 度、副炮减为 14 门、
+          锅炉换成 8 座重油专烧舰本式、主机换艦本式涡轮 136,000 马力、
+          舰尾延长使航速达 29.7 节、加装防雷突出部。**锅炉是 8 座，不是 11 座。**
+          navypedia 的 1934-1940 栏把「Haruna, Hiei: … 11 Kampon boilers」并写，
+          与 combinedfleet 与日文来源的 8 座冲突，本条按两源对一源取 8，
+          navypedia 的原话保留并列，不裁决。舰桥是另一处独有：另三舰是檣楼型,
+          只有比叡是塔型，combinedfleet 记它是「当时正在设计的大和型舰桥的原型」；
+          日文来源并记其射撃塔把测距仪与测的所一体设在舰桥顶部。
+        en: >-
+          The reconstruction begun at Kure on 1 April 1937 was completed on
+          31 January 1940, five years and four months after Haruna's on
+          30 September 1934. The Japanese source names what it was: the work the other
+          Kongo-class ships did in two stages, carried out in one. It restored No. 4
+          turret and the belt armour, thickened horizontal armour, took the main gun
+          shields to 250 mm and crowns to 150 mm, raised main gun elevation to 43
+          degrees and secondary to 30, cut the secondary battery to fourteen guns,
+          replaced all boilers with eight oil-fired Kampon units, fitted new Kampon
+          turbines of 136,000 horsepower, lengthened the stern for 29.7 knots and added
+          torpedo bulges. The boiler count is eight, not eleven: navypedia's 1934-1940
+          column groups "Haruna, Hiei: ... 11 Kampon boilers", which conflicts with the
+          eight given by combinedfleet and the Japanese source; this entry takes eight
+          on the two-against-one weight and records navypedia's wording alongside
+          without a ruling. The bridge is the other unique feature: the other three
+          were pagoda masts, Hiei alone was tower-type, recorded by combinedfleet as a
+          prototype for the Yamato class then under design, with the Japanese source
+          adding that her fire-control tower integrated rangefinders and director on
+          top of the bridge.
+      src: [combinedfleet-hiei, navypedia-kongo, japanese-warship-hiei]
+
+    - heading: 1942 年 11 月 13 日：被打坏舵机，然后在空袭里等了一整天
+      text:
+        zh: >-
+          那一夜的账要按顺序记。0150 比叡与晓号打开探照灯照亮亚特兰大号，
+          混战开始；0154 它在约 2,500 码上向旧金山号开火，主副炮把对方上层建筑
+          打烂，卡拉汉少将阵亡——但只来得及打出两轮齐射，就被 2 发 8 英寸弹命中
+          （最可能来自旧金山号），一发是哑弹，另一发从右舷舰尾穿入舰体，
+          进水使操舵装置失效。全战它共吃 30 发 8 英寸弹（旧金山号与波特兰号），
+          另被斯特雷特号等多艘驱逐舰的 5 英寸弹命中，主副炮火控全毁、
+          上层建筑起火。阿部弘毅令雾岛脱离北上，0200 放弃炮击任务退出。
+          天亮后它成了靶子：当日承受美军 70 架次空袭，1110 被 14 架 B-17
+          投下的 56 发 500 磅弹中的 1 发命中，1130 中 2 条鱼雷，1400 再中 2 条
+          并因规避动作丢失应急舵，向右倾斜、舰尾下沉，1435 再中 2 条
+          （右舷中部与舰尾，后者使舵机舱进水）。
+          1530 阿部下令弃舰，西田正雄舰长下令打开金斯顿阀自沉，天皇御真影移走；
+          1838 山本五十六电令「不得处置比叡」，电到得太晚。1900 至次日 0100
+          之间，它在萨沃岛约 4.5 海里处舰尾下沉。阵亡 188 人、伤 151 人。
+        en: >-
+          The account of that night has to be kept in order. At 0150 Hiei and Akatsuki
+          switched on searchlights to illuminate Atlanta and the melee began; at 0154
+          Hiei opened fire on San Francisco at about 2,500 yards, her main and
+          secondary batteries shattering the American's superstructure and killing
+          Rear Admiral Callaghan — but she got off only two salvos before two 8-inch
+          shells hit her, most probably from San Francisco. One was a dud; the other
+          penetrated her hull on the starboard quarter and the flooding disabled her
+          steering gear. Over the action she took thirty 8-inch hits from San
+          Francisco and Portland plus many 5-inch from Sterett and other destroyers,
+          her main and secondary fire control knocked out and her superstructure set
+          afire. Abe ordered Kirishima to detach northward and at 0200 abandoned the
+          bombardment. Daylight made her a target: she suffered seventy American
+          sorties that day, was hit at 1110 by one of fifty-six 500-lb bombs from
+          fourteen B-17s, took two torpedoes at 1130, two more at 1400 (losing her
+          emergency rudder in the evasive turn, listing to starboard and down by the
+          stern) and two more at 1435 (starboard amidships and the stern, the latter
+          flooding her steering gear). At 1530 Abe ordered abandon ship and Captain
+          Nishida ordered her scuttled, the Emperor's portrait removed; at 1838
+          Yamamoto signalled that she was not to be scuttled, but the message arrived
+          too late. Between 1900 and 0100 she sank by the stern some 4.5 miles from
+          Savo Island. 188 men were killed and 151 wounded.
+      src: [combinedfleet-hiei, combinedfleet-atully03, japanese-warship-hiei]
+
+history:
+  - id: build
+    title: { zh: 建造、一战与练习战舰时代, en: Construction, the Great War and the training-ship years }
+    range: { from: 1911-11, to: 1935-03 }
+    lead:
+      zh: >-
+        它是四舰里第二艘开工、第二艘竣工的。但真正把它与三个姊妹分开的，
+        是 1929 年那一次降格——四舰里只有它走过这一段。
+    events:
+      - date: 1911-11-04
+        text:
+          zh: >-
+            在横须贺海军工厂开工。以「仮称卯号装甲巡洋艦」的名义动工，
+            基于维克斯-阿姆斯特朗的乔治·瑟斯顿爵士为金刚所作的设计建造；
+            其建造所用部件大部分自英国进口。它是 1911 年度海军紧急扩张案
+            批准的四艘「装甲巡洋舰」中的第二艘，第一艘是金刚。
+          en: >-
+            Laid down at Yokosuka Navy Yard under the provisional name "No. 4
+            Armoured Cruiser", to the Kongo design prepared by Sir George Thurston of
+            Vickers-Armstrong; most of the parts used in her construction were
+            imported from England. She was the second of the four "armoured cruisers"
+            funded under the 1911 Naval Emergency Expansion bill, after Kongo.
+        src: [combinedfleet-hiei, navypedia-kongo, japanese-warship-hiei]
+
+      - date: 1912-11-21
+        text:
+          zh: >-
+            下水。日文来源记：文书上定为巡洋战舰是在下水之后的事。
+          en: >-
+            Launched. The Japanese source notes that she became a battlecruiser on
+            paper only after launching.
+        src: [combinedfleet-hiei, navypedia-kongo, japanese-warship-hiei]
+
+      - date: 1914-08-04
+        text:
+          zh: >-
+            竣工服役，入佐世保镇守府籍，首任舰长高木七太郎大佐。
+            navypedia 与日文来源均记竣工日为 1914 年 8 月 4 日。
+            它是金刚级四舰里第二艘竣工的，比金刚晚 11 个半月；
+            日文来源对工期有一句评价：舰体比以往战列舰大五成，
+            而与英国本土的工期差距并不大。
+          en: >-
+            Completed and commissioned, attached to Sasebo Naval District, with
+            Captain Takagi Shichitaro as her first commanding officer. Navypedia and
+            the Japanese source both give 4 August 1914. She was the second of the
+            class to finish, eleven and a half months after Kongo; the Japanese source
+            notes that although the hull was half again the size of earlier
+            battleships, the building time differed little from a British yard's.
+        src: [combinedfleet-hiei, navypedia-kongo, japanese-warship-hiei]
+
+      - date: 1923-12-01
+        text:
+          zh: >-
+            在吴入厂改装：主炮仰角由 20 度提到 33 度，前桅重建。
+            navypedia 把同一次仰角提升记在全级范围、时间写作 1923 至 1925 年
+            （由 25 度提到 33 度）——起点角度与年代两说并列不裁决。
+          en: >-
+            Refitted at Kure: main gun elevation raised from 20 to 33 degrees and the
+            foremast rebuilt. Navypedia records the same elevation increase class-wide
+            for 1923-1925 and gives the starting angle as 25 degrees; the starting
+            figure and the date are recorded both ways without a ruling.
+        src: [combinedfleet-hiei, navypedia-kongo]
+
+      - date: 1929-10-15
+        text:
+          zh: >-
+            在吴海军工厂解除武装、改为练习舰，以规避华盛顿条约下必须报废的
+            命运：拆舰尾 14 英寸炮塔与全部鱼雷发射管、拆舷侧装甲带与全部
+            6 英寸炮、36 座锅炉中拆 25 座、降速、撤全部航空设备、
+            烟囱由三根减为两根，拆下的装备全部编号保存。
+          en: >-
+            Demilitarised and converted to a training ship at Kure to avoid having to
+            be scrapped under the Washington Naval Treaty: the aft 14-inch turret and
+            all torpedo tubes removed, the armour belt and all 6-inch guns removed,
+            twenty-five of her thirty-six boilers removed, speed reduced, all aircraft
+            equipment landed and the funnels cut from three to two, with the removed
+            equipment and armament preserved and stored.
+        src: [combinedfleet-hiei, navypedia-kongo]
+
+      - date: 1932-12-31
+        text:
+          zh: >-
+            降格工程完成。结果：标准排水量 19,500 吨、吃水 6.3 米、18 节、
+            16,000 马力，主炮剩 3 座 6 门（4 号炮塔原位加 500 吨压载配平），
+            鱼雷发射管全撤，锅炉 11 座（混烧 6＋重油专烧 5）。
+            注意这 11 座是練習戦艦期的数字，1940 年大改装后是 8 座。
+          en: >-
+            The conversion was completed: standard displacement 19,500 tons,
+            draught 6.3 m, 18 knots and 16,000 horsepower, with three twin 14-inch
+            turrets left (500 tons of ballast in the empty No. 4 position), all
+            torpedo tubes gone and eleven boilers (six mixed-firing, five oil-only).
+            Those eleven belong to the training-ship years; after the 1940
+            reconstruction she had eight.
+        src: [navypedia-kongo, japanese-warship-hiei, combinedfleet-hiei]
+
+      - date: 1933-01-01
+        text:
+          zh: >-
+            正式定级为練習戦艦。同日前后她在横须贺被改造为御召舰：
+            1933 年 5 月 31 日开工、7 月 20 日完工，设展望台与御座所、
+            扶手以白绢包裹。此后她承担观舰式与皇室航行的任务，
+            1935 年 11 月 6 日被指定供奉天皇的鹿儿岛、宫崎行幸。
+          en: >-
+            Formally classified a training ship. Around the same time she was fitted
+            out at Yokosuka as an imperial service ship, work running from 31 May to
+            20 July 1933, with an observation platform and imperial seat installed and
+            the handrails wrapped in white silk. She thereafter served the fleet
+            reviews and imperial passages, being assigned to the Emperor for his
+            Kagoshima and Miyazaki tour on 6 November 1935.
+        src: [japanese-warship-hiei, combinedfleet-hiei]
+
+      - date: 1935-03-31
+        text:
+          zh: >-
+            主炮弹药库工程与 4 号炮塔位的复原完成（1934 年 1 月 26 日在横须贺
+            开工）。至此她的练习战舰形态定型：三座主炮塔、无舷侧装甲带、
+            无鱼雷、两根烟囱、18 节、标准排水量 19,500 吨。
+          en: >-
+            Work on the main battery shell rooms and the restoration of the No. 4
+            turret position was completed (begun at Yokosuka on 26 January 1934). Her
+            training-ship configuration was now fixed: three main turrets, no belt
+            armour, no torpedoes, two funnels, 18 knots, standard displacement
+            19,500 tons.
+        src: [combinedfleet-hiei, japanese-warship-hiei]
+
+  - id: rebuild
+    title: { zh: 1940 年大改装与复归战列舰, en: The 1940 reconstruction and return to the battle line }
+    range: { from: 1937-04, to: 1940-10 }
+    lead:
+      zh: >-
+        这一次改装决定了她的外形——塔型舰桥、8 座锅炉、14 门副炮、
+        4 座 12.7 cm 高炮、20 挺 25 mm。后两项此后终生未变。
+    events:
+      - date: 1937-04-01
+        text:
+          zh: >-
+            在吴开始大改装。此时日本已不受华盛顿与伦敦条约约束，海军决定把
+            比叡重新武装、改造为高速战列舰。日文来源点明这一次的性质：
+            其他金刚型分两次做的改装，她一次做完。
+          en: >-
+            The great reconstruction began at Kure. With Japan no longer bound by the
+            Washington and London treaties, the navy decided to remilitarise Hiei and
+            turn her into a fast battleship. The Japanese source names what this was:
+            the work the other Kongo-class ships did in two stages, done here in one.
+        src: [combinedfleet-hiei, japanese-warship-hiei]
+
+      - date: 1940-01-31
+        text:
+          zh: >-
+            大改装在吴完成，同日改级为战舰（日文来源另有相反记载：编制上
+            从未改回战舰，两说并列不裁决）。结果：主炮仍为日产 41 年式
+            35.6 cm 连装 4 座 8 门（与金刚的英造 43 年式型号不可互换）、
+            锅炉 8 座重油专烧舰本式、
+            艦本式齿轮传动涡轮 4 台 4 轴、136,000 马力、29.7 节、标准排水量
+            32,350 吨（四舰里最大）；主炮仰角 43 度、副炮减为 14 门仰角 30 度、
+            12.7 cm 八九式连装高炮 4 座 8 门、25 mm 连装 10 座 20 挺、
+            13 mm 四连装 2 座 8 挺；舰桥为塔型，是大和型舰桥的试验原型。
+            **12.7 cm 终生只有 4 座、25 mm 终生只有 20 挺**——金刚与榛名在
+            1943、1944 年各加 2 座高炮，比叡 1942 年 11 月即战没，从未获得。
+            雷达状态记「未获取」：combinedfleet 与 navypedia 的逐舰台账里都没有
+            比叡任何一条装设记录，既不能写「有」，也不能套用雾岛那条有专门否定
+            记载的「无」。
+          en: >-
+            The reconstruction was completed at Kure and she was re-rated a
+            battleship, though the Japanese source records the opposite — that her
+            classification never reverted and she remained a training ship on paper;
+            both are recorded without a ruling. The result: the main battery remained
+            the Japanese-built 41st Year Type 35.6 cm in four twin turrets, which is
+            not interchangeable with Kongo's British-built 43rd Year Type; eight
+            oil-fired Kampon boilers, four Kampon geared turbines on four shafts,
+            136,000 horsepower,
+            29.7 knots and a standard displacement of 32,350 tons, the largest of the
+            four; main gun elevation 43 degrees, the secondary battery cut to fourteen
+            guns at 30 degrees, four twin 12.7 cm Type 89 AA mounts (eight guns), ten
+            twin 25 mm mounts (twenty barrels) and two quadruple 13 mm mounts (eight
+            barrels); the bridge was tower-type, a prototype for the Yamato class. Her
+            12.7 cm battery stayed at four mounts and her 25 mm at twenty barrels for
+            her whole career — Kongo and Haruna each gained two more heavy AA mounts in
+            1943 and 1944, but Hiei was gone by November 1942 and never received them.
+            Her radar state is recorded as not obtained: neither combinedfleet nor
+            navypedia's ship-by-ship ledger has any fitting record for her, so it can
+            be written neither as "had" nor borrowed from Kirishima's documented
+            negative.
+        src: [combinedfleet-hiei, navypedia-kongo, japanese-warship-hiei]
+
+      - date: 1940-10-11
+        text:
+          zh: >-
+            横滨。作为御召舰参加帝国观舰式：98 艘军舰在东京湾展开，
+            山本五十六随昭和天皇登舰检阅，527 架飞机从头上飞过。
+            combinedfleet 记当日比叡离浮标时鸣 21 响礼炮，
+            由高雄、加古、古鹰三巡洋舰护航。
+          en: >-
+            Yokohama. She served as the imperial ship at the Imperial Naval Review:
+            ninety-eight warships were spread across Tokyo Bay, Yamamoto Isoroku
+            accompanying Emperor Hirohito aboard her for the review while 527 aircraft
+            flew overhead. Combinedfleet records that she left her buoy to a
+            twenty-one-gun salute, escorted by the cruisers Takao, Kako and Furutaka.
+        src: [combinedfleet-hiei]
+
+  - id: war
+    title: { zh: 开战到印度洋, en: From Pearl Harbor to the Indian Ocean }
+    range: { from: 1941-11, to: 1942-07 }
+    lead:
+      zh: >-
+        开战后的头半年它跟着航母走。唯一真正开火的一次对手是一艘驱逐舰，
+        而那一仗让它成了太平洋战争中第一艘击沉敌舰的日本战列舰。
+    events:
+      - date: 1941-11-26
+        text:
+          zh: >-
+            第三战队第一小队（比叡与雾岛）随三川军一的支援部队自择捉岛单冠湾
+            出击，编入南云的第一航空舰队。比叡担任机动部队的通信中枢，
+            为防止误发信号，其无线电发射设备被拆除；两舰位于「机动部队」
+            后方，以 13 节向东航行。
+          en: >-
+            BatDiv 3's section 1 — Hiei and Kirishima — sortied from Hitokappu Bay in
+            the Kuriles with Mikawa Gunichi's Support Force, accompanying Nagumo's
+            First Air Fleet. Hiei served as the force's communications centre, and to
+            prevent accidental transmissions her radio transmitting equipment was
+            dismantled; the two battleships took position to the rear of the carrier
+            force and steamed east at 13 knots.
+        src: [combinedfleet-hiei]
+
+      - date: 1941-12-07
+        text:
+          zh: >-
+            0630 第三战队第一小队弹射九五式（E8N）水侦，担任机动部队以南的
+            哨戒。攻击珍珠港期间本舰未直接参战。12 月 23 日随主力返回柱岛。
+          en: >-
+            At 0630 BatDiv 3's section 1 launched Type 95 (E8N) floatplanes to picket
+            south of the striking force. She took no direct part in the Pearl Harbor
+            attack, returning to Hashirajima with the main force on 23 December.
+        src: [combinedfleet-hiei]
+
+      - date: 1942-01-17
+        text:
+          zh: >-
+            随机动部队自特鲁克出击参加「R」作战（拉包尔与卡维恩攻略），
+            为航母的空袭提供掩护并对登陆部队做远程支援；01-27 返回特鲁克。
+          en: >-
+            Sortied from Truk with the carrier force for Operation R, the invasions of
+            Rabaul and Kavieng, covering the carriers' air attacks and providing
+            distant support to the landings; returned to Truk on 27 January.
+        src: [combinedfleet-hiei]
+
+      - date: 1942-03-01
+        text:
+          zh: >-
+            1550 机动部队在 14-25S、106-50E 以 16 节航行时，赤城号一架战斗
+            巡逻机发现一艘「马布尔黑德级轻巡洋舰」——实为美军驱逐舰埃兹尔号。
+            1552 南云令第三战队第二小队与第八战队追击，三川自比叡指挥。
+            1616 比叡在 27,900 码上以主炮开火，跨射未命中；1720 在 19,400 码上
+            以主副炮再打，1730 停火。全战比叡打出 210 发 14 英寸弹与 70 发
+            6 英寸弹（雾岛为 87 发与 62 发）。1731 埃兹尔号舰尾下沉。
+            日文来源记：这是太平洋战争中日本战列舰首次击沉敌舰，
+            而最后了结它的是 15.2 cm 副炮而非主炮。
+          en: >-
+            At 1550, with the mobile force steaming at 16 knots in 14-25S, 106-50E, a
+            combat air patrol from Akagi sighted a "Marblehead-class light cruiser" —
+            actually the destroyer Edsall. At 1552 Nagumo ordered BatDiv 3's section 2
+            and CruDiv 8 to chase her, Mikawa directing from Hiei. At 1616 Hiei opened
+            fire with her forward 14-inch guns at 27,900 yards, straddling without
+            hitting; at 1720 she engaged again with main and secondary at 19,400 yards
+            and checked fire at 1730. In all Hiei fired 210 14-inch and 70 6-inch
+            shells (Kirishima 87 and 62). At 1731 Edsall sank by the stern. The
+            Japanese source records that this was the first sinking of an enemy
+            warship by a Japanese battleship in the Pacific War, and that the coup de
+            grace came from the 15.2 cm secondary battery rather than the main guns.
+        src: [combinedfleet-hiei, japanese-warship-hiei]
+
+      - date: 1942-04-09
+        text:
+          zh: >-
+            印度洋作战。当日机动部队空袭亭可马里，随后击沉竞技神号；
+            英国皇家空军第 11 中队 9 架布伦海姆攻击的是金刚，未命中。
+            本舰当日在编队内但未成为攻击目标。
+          en: >-
+            The Indian Ocean raid. The mobile force struck Trincomalee and then sank
+            Hermes; the nine Blenheims of RAF No. 11 Squadron attacked Kongo and scored
+            no hits. Hiei was in company but was not the target that day.
+        src: [combinedfleet-hiei, combinedfleet-kongo]
+
+      - date: 1942-05-27
+        text:
+          zh: >-
+            第三战队第一小队（金刚与比叡）随近藤的第二舰队主力自柱岛出发参加
+            「MI」作战（中途岛）。6 月 4 日美军潜艇六线鱼号（SS-211）在 0842
+            发现两艘战列舰的塔式桅楼、很可能是比叡与金刚，被日军飞机逼下潜后
+            失去目标。本舰当日未受损。
+          en: >-
+            BatDiv 3's section 1 — Kongo and Hiei — left Hashirajima with Kondo's
+            Second Fleet main body for Operation MI. On 4 June the submarine Gudgeon
+            (SS-211) sighted the pagoda masts of two battleships, most probably Hiei and
+            Kongo, at 0842 and lost them after being forced down by aircraft. Hiei was
+            not damaged that day.
+        src: [combinedfleet-hiei, combinedfleet-kongo]
+
+      - date: 1942-07-14
+        text:
+          zh: >-
+            比叡（旗舰）与雾岛自第一舰队转隶南云忠一的第三舰队，编成阿部弘毅的
+            新第十一战队；同日金刚与榛名编入第三战队。这是四舰分成两对的节点：
+            此后比叡与雾岛同队，直到双双沉没。同日舰载机改为 1 架零式水侦
+            （E13A1）与 2 架零式观测机（F1M2），尾码 CIV-x（红色）。
+          en: >-
+            Hiei (flagship) and Kirishima were reassigned from the First Fleet to
+            Nagumo's Third Fleet in Rear Admiral Abe Hiroaki's new BatDiv 11, while
+            Kongo and Haruna formed BatDiv 3. This is the point at which the class
+            split into two pairs, Hiei and Kirishima staying together until both were
+            lost. The same day their air group changed to one E13A1 reconnaissance
+            floatplane and two F1M2 observation floatplanes, tail codes CIV-x in red.
+        src: [combinedfleet-hiei, combinedfleet-kongo]
+
+  - id: solomon-end
+    title: { zh: 所罗门与 1942 年 11 月 13 日, en: The Solomons and 13 November 1942 }
+    range: { from: 1942-08, to: 1942-12 }
+    lead:
+      zh: >-
+        它没有死在炮战里。它死在炮战之后那一整天的空袭里，
+        最后由自己的舰员打开金斯顿阀。
+    events:
+      - date: 1942-08-24
+        text:
+          zh: >-
+            东所罗门海战。第十一战队与第一航空战队的翔鹤、瑞鹤及龙骧在东
+            所罗门群岛东北行动；龙骧被萨拉托加号（CV-3）的飞机击沉，
+            翔鹤、瑞鹤的空袭命中企业号 3 发炸弹但未将其击沉。
+          en: >-
+            The Battle of the Eastern Solomons. BatDiv 11 operated northeast of the
+            Solomons with CarDiv 1's Shokaku and Zuikaku and the light carrier Ryujo;
+            Ryujo was sunk by aircraft from Saratoga (CV-3), while the carriers' strike
+            hit Enterprise with three bombs without sinking her.
+        src: [combinedfleet-hiei]
+
+      - date: 1942-10-26
+        text:
+          zh: >-
+            南太平洋海战。前卫部队遭企业号与大黄蜂号的俯冲轰炸机与鱼雷机
+            攻击，3 架 SBD 攻击雾岛未造成损伤，而筑摩号被若干发 1,000 磅炸弹
+            命中。日方航空兵重创大黄蜂号。
+          en: >-
+            The Battle of Santa Cruz. The vanguard force was attacked by dive-bombers
+            and torpedo planes from Enterprise and Hornet; three SBDs attacked
+            Kirishima without doing damage while several 1,000-lb bombs hit Chikuma.
+            Japanese aircraft mortally damaged Hornet.
+        src: [combinedfleet-hiei]
+
+      - date: 1942-11-10
+        text:
+          zh: >-
+            0530 第十一战队与第 27 驱逐队不知火、白露、夕暮自布干维尔岛肖特兰
+            锚地出发，执行近藤计划中的瓜岛增援：把陆军第 38 师团与第 8 特别
+            陆战队的 14,500 人、重装备与补给送上岛，登陆前须再炮击亨德森机场。
+            运送由田中赖三的第 2 水雷战队 12 艘驱逐舰护航 11 艘高速运输船。
+          en: >-
+            At 0530 BatDiv 11, with DesDiv 27's Shigure, Shiratsuyu and Yugure, left
+            the Shortland anchorage off Bougainville to carry out Kondo's planned
+            reinforcement of Guadalcanal: 14,500 men of the Army's 38th Division and
+            the 8th Special Naval Landing Force with heavy equipment and supplies, the
+            landing to be preceded by another bombardment of Henderson Field. Tanaka
+            Raizo's DesRon 2 destroyers would escort eleven fast transports.
+        src: [combinedfleet-hiei]
+
+      - date: 1942-11-12
+        text:
+          zh: >-
+            1530 阿部与第 4 水雷战队的朝云、春雨、村雨、五月雨、夕立会合，
+            令驱逐舰组成密集的双半环反潜阵，长良随第十一战队在其后成纵队，
+            以 18 节沿「槽海」南下。比叡弹射 1 架零式观测机，其报告 Lunga Point
+            外有十余艘敌舰；随后暴雨数小时，该机无法返舰，转降布干维尔。
+          en: >-
+            At 1530 Abe rendezvoused with DesRon 4's Asagumo, Harusame, Murasame,
+            Samidare and Yudachi, ordering the destroyers into a tight double half-ring
+            as an anti-submarine measure, with Nagara following BatDiv 11 in column as
+            the force headed south down the Slot at 18 knots. Hiei catapulted an F1M2,
+            which reported more than a dozen enemy ships off Lunga Point; a rainstorm
+            then lasted several hours and the floatplane, unable to return, landed at
+            Bougainville.
+        src: [combinedfleet-hiei]
+
+      - date: 1942-11-13
+        text:
+          zh: >-
+            瓜岛第一次夜战。0150 比叡与晓号打开探照灯照亮亚特兰大号，混战开始；
+            0154 在约 2,500 码上向旧金山号开火，主副炮打烂其上层建筑，
+            卡拉汉少将与舰长杨氏阵亡，但只打出两轮齐射即被 2 发 8 英寸弹命中
+            （最可能来自旧金山号），一发哑弹、一发自右舷舰尾穿入，
+            进水使操舵装置失效。全战共吃 30 发 8 英寸弹（旧金山号与波特兰号）
+            及多艘驱逐舰的 5 英寸弹，主副炮火控全毁、上层建筑起火。
+            阿部令雾岛脱离北上，0200 放弃炮击任务退出战斗。
+          en: >-
+            The first night off Guadalcanal. At 0150 Hiei and Akatsuki switched on
+            searchlights to illuminate Atlanta and the melee began; at 0154 she opened
+            fire on San Francisco at about 2,500 yards, her main and secondary
+            batteries shattering the American's superstructure and killing Rear
+            Admiral Callaghan and Captain Young, but she got off only two salvos
+            before two 8-inch shells hit her, most probably from San Francisco — one a
+            dud, the other penetrating her starboard quarter and disabling her steering
+            by flooding. Over the action she took thirty 8-inch hits from San Francisco
+            and Portland plus 5-inch fire from several destroyers, her fire control
+            knocked out and her superstructure afire. Abe ordered Kirishima to detach
+            northward and at 0200 abandoned the bombardment.
+        src: [combinedfleet-hiei, japanese-warship-hiei]
+
+      - date: 1942-11-13
+        text:
+          zh: >-
+            天亮后的空袭与自沉。当日承受美军 70 架次：0615 六架陆战队 SBD 攻击、
+            0715 四架 TBF，未中；1110 被 14 架 B-17 所投 56 发 500 磅弹中的
+            1 发命中；1130 中 2 条鱼雷（舰中部与左舷舰艏）；1400 再中 2 条
+            （右舷舰尾与右舷中部），规避动作中丢失应急舵，向右倾斜、舰尾下沉；
+            1435 又中 2 条（右舷中部与舰尾，后者使舵机舱进水）。
+            舵机失效后它只能以交替转动螺旋桨勉强维持航向，四座锅炉中有三座
+            先后失效。1530 阿部下令弃舰，西田正雄舰长下令打开金斯顿阀自沉，
+            天皇御真影移走，幸存者由第 27 驱逐队时雨、白露、夕暮与第 61 驱逐队
+            照月救起。1838 山本五十六电令「不得处置比叡」，电到得太晚。
+            1900 至次日 0100 之间，它在萨沃岛约 4.5 海里处、约 09-04S、159-45E
+            舰尾下沉。阵亡 188 人、伤 151 人。
+            死因三说并存不裁决：combinedfleet 与日文来源记自沉（开金斯顿阀）；
+            navypedia 记「lost speed and sunk by escort」；Tully 的专题文倾向
+            「自沉是多余的，即使不自沉也会沉没」，并指出山本的电令到得太晚。
+            无论取哪一说，战伤（炮火＋空袭）都是根本原因。
+          en: >-
+            The air attacks after daylight, and the scuttling. She suffered seventy
+            American sorties that day: six Marine SBDs at 0615 and four TBFs at 0715
+            without hits; at 1110 one of fifty-six 500-lb bombs from fourteen B-17s;
+            two torpedoes at 1130 (amidships and on the port bow); two more at 1400
+            (starboard aft and starboard amidships), losing her emergency rudder in the
+            evasive turn, listing to starboard and down by the stern; and two more at
+            1435 (starboard amidships and the stern, the latter flooding her steering
+            gear). With steering gone she could only hold a rough heading by
+            alternating her screws, and three of her four boiler rooms were eventually
+            lost. At 1530 Abe ordered abandon ship and Captain Nishida ordered her
+            scuttled, the Emperor's portrait was removed, and the survivors were taken
+            off by DesDiv 27's Shigure, Shiratsuyu and Yugure and DesDiv 61's Teruzuki.
+            At 1838 Yamamoto signalled that she was not to be scuttled, but the message
+            arrived too late. Between 1900 and 0100 she sank by the stern some 4.5
+            miles from Savo Island at about 09-04S, 159-45E. 188 men were killed and
+            151 wounded. Three accounts of the cause stand side by side without a
+            ruling: combinedfleet and the Japanese source record a scuttling by opening
+            the Kingston valves; navypedia says she "lost speed and sunk by escort";
+            Tully's analysis argues the scuttling was redundant and that she would have
+            sunk anyway, noting that Yamamoto's countermand arrived too late. On any of
+            the three the battle damage — gunfire and air attack — was the underlying
+            cause.
+        src: [combinedfleet-hiei, navypedia-kongo, combinedfleet-atully03, japanese-warship-hiei]
+
+      - date: 1942-12-20
+        text:
+          zh: >-
+            第十一战队解队，比叡从海军籍除籍。阿部弘毅被解除指挥、
+            西田正雄被转入预备役。Tully 的专题文给它的定性是：
+            「她是第二次世界大战中第一艘战沉的日本战列舰，
+            也是 1898 年以来第一艘被美国海军击沉的（日本）战列舰」；
+            日文来源同给定性——帝国海军所属舰艇中，太平洋战争里第一艘沉没的
+            战列舰。两天后，同队的雾岛在同一场战役的第二夜被华盛顿号击沉。
+          en: >-
+            BatDiv 11 was deactivated and Hiei was removed from the Navy List. Abe was
+            relieved of command and Nishida placed on the Reserve List. Tully's analysis
+            states that she was the first Japanese battleship lost in World War II and
+            the first sunk by the U.S. Navy since 1898; the Japanese source gives the
+            same verdict, that she was the first warship of the Imperial Navy to be
+            lost in the Pacific War. Two days later her division mate Kirishima was
+            sunk by Washington on the second night of the same battle.
+        src: [combinedfleet-hiei, combinedfleet-atully03, japanese-warship-hiei]

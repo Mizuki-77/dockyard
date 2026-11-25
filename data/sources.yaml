@@ -1,5 +1,5 @@
 version: 1
-updated: '2026-11-24'
+updated: '2026-11-25'
 note: '来源登记表 v0。任何 fact 的 src 必须指向本表里的 id，否则校验失败。 这里只登记"我实际用来支撑数据的来源"。搜索时扫过但没采用的不登记。 每条的 fetched 只在真抓到内容后才填日期；没抓到就写 status: blocked/not_fetched 并说明原因。
 
   '
@@ -7727,6 +7727,798 @@ sources:
   fetched: '2026-11-24'
   license: all_rights_reserved
   note: 最上级（最上/三隈/铃谷/熊野）轻巡→重巡改装记录。15.5 cm 换 20 cm No.2 的关键案例。
+- id: savo-quantock
+  title: Disaster at Savo Island, 1942 (Lt. Col. David E. Quantock, USA, U.S. Army War College, 2002)
+  url: https://www.ibiblio.org/hyperwar/USN/rep/Savo/Quantock/index.html
+  type: paper
+  tier: C
+  role:
+  - narrative
+  - data
+  operator: U.S. Army War College（HyperWar 转录）
+  lang: en
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: 战争学院研究论文（Strategy Research Project），42 页，2002-04-09。 本组用它取两样东西：①日方一侧的战列/时序叙述（如「0133 All Ships Attack / 0136 Independent Firing」）；②盟军伤亡合计「1,023 sailors killed and over 700 wounded」。**它的时刻序列与 ONI
+    逐舰叙述相差数分钟**，凡引用处都并列了 ONI 的时间。 这是二次文献，不是档案；文中大量引用但未逐条给出档案编号。 原始页面 87941 字节，存 _raw/quantock.html、_raw/quantock.txt。
+- id: combinedfleet-chokai-trom
+  title: IJN CHOKAI — Tabular Record of Movement (combinedfleet.com)
+  url: https://www.combinedfleet.com/chokai_t.htm
+  type: database
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: Bob Hackett & Sander Kingsepp（combinedfleet.com）
+  lang: en
+  access: direct
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: 逐日战历。萨沃岛条给的是「At 2312, CHOKAI, KAKO and FURUTAKA each launch a floatplane … They soon report three cruisers south of Savo」，与本组引用的 0138 鱼雷时刻分属两处 （鸟海条写 0138 发鱼雷，衣笠条写 2312 弹射水侦）。**该 TROM 不声明时区基准**，
+    引用时已注明。 另给出鸟海战损与修理：「CHOKAI takes several hits from QUINCY and ASTORIA that knock out her No. 1 turret and kill 34 crewmen」。 原始页面存 _raw/cf-chokai.html、_raw/cf-chokai.txt。
+- id: combinedfleet-kinugasa-trom
+  title: IJN KINUGASA — Tabular Record of Movement (combinedfleet.com)
+  url: https://www.combinedfleet.com/kinugasa_t.htm
+  type: database
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: Bob Hackett & Sander Kingsepp（combinedfleet.com）
+  lang: en
+  access: direct
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: 萨沃岛条目给出日方一侧最完整的一段： 「At about 2300, CHOKAI, FURUTAKA and KAKO all launch their spotter float planes. At 0138, CHOKAI launches a salvo of Type 93 "Long Lance" torpedoes at the Allied force from only
+    5,000 yards.」 「On the Japanese side, at 0156, KINUGASA is hit in her No. 1 engine room by a 5-inch shell from PATTERSON and later her port steering gear is hit by a shell from VINCENNES. CHOKAI is hit
+    three times and AOBA once.」 「At 0220, Mikawa orders a retirement.」 **不声明时区基准**；与美方 Zone −11 的对照关系未经来源证实，本组不换算。 原始页面存 _raw/cf-kinugasa.html、_raw/cf-kinugasa.txt。
+- id: combinedfleet-aoba-trom
+  title: IJN AOBA — Tabular Record of Movement (combinedfleet.com)
+  url: https://www.combinedfleet.com/aoba_t.htm
+  type: database
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: Bob Hackett & Sander Kingsepp（combinedfleet.com）
+  lang: en
+  access: direct
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: 「On the Japanese side, AOBA is hit once, KINUGASA twice and CHOKAI is hit three times. AOBA and KAKO's floatplanes and crews are also lost.」 同一页 8 月 8 日条给出战前侦察：青叶水侦报回「one battleship, one auxiliary
+    carrier, four cruisers, seven destroyers and 15 transports」。 **不声明时区基准。** 原始页面存 _raw/cf-aoba.html、_raw/cf-aoba.txt。
+- id: danfs-ralphtalbot
+  title: Ralph Talbot (DD-390) — Dictionary of American Naval Fighting Ships（HyperWar 转录）
+  url: https://www.ibiblio.org/hyperwar/USN/ships/danfs/DD/dd390.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: Naval History Division / HyperWar Foundation
+  lang: en
+  access: direct
+  fetched: 2026-11-25
+  license: public_domain
+  note: 用于萨沃岛一役中拉尔夫·塔尔博特号被友舰误击、随后又与日巡洋舰交火的情节。 原文：「Half an hour later Ralph Talbot was shelled by a friendly destroyer, the error was quickly rectified, but within minutes an enemy cruiser appeared off her
+    port quarter.」 **该条目不给伤亡数字。** 原始页面存 _raw/danfs-ralphtalbot.html、_raw/danfs-ralphtalbot.txt。
+- id: ussbs-ijo-60
+  title: 'USSBS Interrogation Nav. No. 60 (USSBS No. 252) — Capt. TOYAMA Yasumi, IJN, Chief of Staff DesRon 2: Transports at Midway / Eastern Solomons / Battle of Tassafaronga'
+  url: https://www.ibiblio.org/hyperwar/AAF/USSBS/IJO/IJO-60.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: United States Strategic Bombing Survey, Naval Analysis Division（HyperWar 转录）
+  lang: en
+  access: direct
+  fetched: 2026-11-25
+  license: public_domain
+  note: 日方当事人的战后审讯记录（东京，1945-11-01）。塔萨法隆加段是本组唯一的日方一手口述： 「We had left BUIN on the night of the 29th … We were intending to land supplies and a few troops at TASSAFARONGA.」 「Just after we had slowed down
+    and just before we turned, we saw two torpedoes pass ahead of us. You also opened fire at the same time.」 「The Takanami fired about seventy rounds and was the only ship to open up. Because it opened
+    fire, it was concentrated upon by the American ships and sunk. It was the only ship sunk during the action.」 「The Naganami received two shrapnel hits in the after stack.」 「No radar of any sort. Visual
+    fire control only.」 **口径提示**：这是口述回忆，不是战斗详报；且被问者说错了一处舰名（把「巻波」写作 「Makanami」）。本组只把它当作日方视角，不当作权威数据。 原始页面存 _raw/ijo-60.html、_raw/ijo-60.txt。
+- id: leyte-battle-experience
+  title: 'Battle Experience: Battle for Leyte Gulf (COMINCH, 1944-45; HyperWar 转录, 含 TF 77 与 TU 77.4.3 战斗报告节录)'
+  url: https://www.ibiblio.org/hyperwar/USN/rep/Leyte/BatExp/Leyte-BE-78.1.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: Commander in Chief, U.S. Fleet（HyperWar 转录）
+  lang: en
+  access: direct
+  fetched: 2026-11-25
+  license: public_domain
+  note: '**本组写萨马岛时间轴的主来源**，因为它是唯一在开篇明确声明时区的一份： 「All times indicated are zone minus nine.」 正文内另有「0646」「0653」「0724I/25」这种写法（I = Item = Zone −9），可互证。 含 CTF 77 的综述、CTU 77.4.3（Taffy 3）的战斗报告、CTU 77.4.2 的战斗报告，
+    以及 77.4.2 对「击伤利根型重巡与金刚级战列舰」的战果评估。 **口径提示**：这是汇编，不同分队的报告对同一事件给的时间略有出入（如 0644/0646/0653）， 本组在 timeline 里逐条标了它出自哪一段。 原始页面存 _raw/leyte-be-78-1.html、_raw/leyte-be-78-1.txt。'
+- id: ussbs-ijo-35
+  title: 'USSBS Interrogation Nav. No. 35 (USSBS No. 149) — Rear Admiral KOYANAGI Tomiji, IJN, Chief of Staff, Second Fleet: Battle off Samar, 25 October 1944'
+  url: https://www.ibiblio.org/hyperwar/AAF/USSBS/IJO/IJO-35.html
+  type: primary_archive
+  tier: A
+  role:
+  - narrative
+  - data
+  operator: United States Strategic Bombing Survey, Naval Analysis Division（HyperWar 转录）
+  lang: en
+  access: direct
+  fetched: 2026-11-25
+  license: public_domain
+  note: '**栗田为何撤退的六条理由，本组用的是这一份**（不是事后回忆录，是 1945-10-24 的当场审讯）： 「One reason was that the Second Division Attack Force reported the almost complete destruction of Admiral NISHIMURA''s force … The second reason
+    … The third reason, we intercepted a telephone message … The fourth reason … The fifth reason … The sixth reason, if we continued the battle here at LEYTE it would consume more fuel.」 并明确「No orders
+    from TOYODA, it was orders of Admiral KURITA」、参谋部「Almost unanimous」。 同一份里另有一段与六条并列的说法：「We lost sight of your force. We could not close the range your speed was so high, so we gave up the chase」——两处侧重不同，本组并列未裁。
+    **口径提示**：被问者自称用「0640 TOKYO time」，说明审讯中东京时间与当地时间混用。 原始页面存 _raw/ijo-35.html、_raw/ijo-35.txt。'
+- id: combinedfleet-kumano-trom
+  title: IJN KUMANO — Tabular Record of Movement (combinedfleet.com)
+  url: https://www.combinedfleet.com/kumano_t.htm
+  type: database
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: Bob Hackett & Sander Kingsepp（combinedfleet.com）
+  lang: en
+  access: direct
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: 萨马岛条：「At 0724, when attacking TG 77.4.3's "Jeep" carriers, KUMANO is hit by a torpedo from destroyer USS JOHNSTON (DD-557). The Mk.15 tears a section of KUMANO's bow off.」 **不声明时区基准**；同一站的战列舰 TROM
+    把「发现/开火」记在 0544/0558、 重巡两条记在 0644/0658，站内本身差一小时（见 battles/samar.yaml 文件头）。 原始页面存 _raw/cf-kumano.html、_raw/cf-kumano.txt。
+- id: combinedfleet-hiei
+  title: IJN Battleship HIEI — Tabular Record of Movement (combinedfleet.com)
+  url: https://www.combinedfleet.com/hiei2.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: combinedfleet.com (Bob Hackett / Sander Kingsepp / Lars Ahlberg)
+  lang: en
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: "比叡逐日年表，**Revision 18**，© 2000-2016。覆盖 1910（造舰缘起）至 1942-12-20（除籍），1942-11-13 的第一次瓜岛夜战逐分钟记录尤详。 **URL 陷阱（留给后来者）**：本站比叡有**两个页面**—— `hiei.htm` 是 2000 年 Bob Hackett 的**旧版短页**（25,982 bytes， 从 1940-10\
+    \ 帝国观舰式起，早期建造段缺失）； `hiei2.htm` 是**现行完整版**（65,548 bytes，Revision 18，从 1910 年起）。 本文件引用的建造段、1929-1932 降格段、1937-1940 二次改装段**只在 hiei2.htm 里**， 引用时必须用 hiei2.htm。两页 1942 年的战历内容基本一致。 **口径提示**： ① **锅炉座数与 navypedia\
+    \ 冲突**：本页 1937-04-01 二次改装段写\n   「She receives **eight** new oil-fired Kampon boilers」，\n   navypedia 1934-1940 栏却把「Haruna, **Hiei**: … 11 Kampon boilers」并写。\n   本站两说并列不裁决，但**认定比叡属 8 座组**（本页＋日文来源二对一），\n\
+    \   详见 RESEARCH-NOTES §2.1。\n② **15.2 cm 副炮在降格期是否全撤，与本页自身另有冲突**：本页 1929-10-15 写\n   「all of the her 6-inch guns are removed」，而日文来源 1932 年栏仍列\n   「16門」——两说并列。\n③ **舰种编制冲突**：本页 1940-01-31 写「She is re-rated\
+    \ a battleship」，\n   日文来源写「書類上では戦艦に戻ることはなかった」——两说相反，并列。\n④ 本页全篇**没有比叡的雷达装设记录**（1911-1942 无任何 radar 条目），\n   这是本站把比叡 `sensors.radar.installed` 记为「未获取」的主要依据之一。\n⑤ 沉没时刻写「1900-0100」，横跨 13/14 两日——这是「比叡沉没日有\
+    \ 11-13\n   与 11-14 两说」的来源。\n**抓取**：urllib + 代理，HTTP 200，65,548 bytes。"
+- id: combinedfleet-atully03
+  title: 'Death of Battleship HIEI: Sunk by Gunfire or Air Attack? (Anthony P. Tully, combinedfleet.com)'
+  url: https://www.combinedfleet.com/atully03.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: combinedfleet.com（Anthony P. Tully）
+  lang: en
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: "专题分析文（\"Mysteries of the Imperial Japanese Navy\" 系列），不是年表。 **本文件只用它三处**： ① 明确的两句定性：「She was **the first Japanese battleship lost in World\n   War II** and **the first sunk by the U.S. Navy since\
+    \ 1898**.」\n② 「自沉是否多余」的讨论——作者倾向「自沉是多余的，即使不自沉也会沉没」，\n   并指出山本「不要处分」的电令到得太晚；这是与 combinedfleet TROM\n   单纯记「scuttled」不同的**第二层判断**，本站两条并列。\n③ 损伤归因：日方记录显示「the battleship WAS NOT a 'total loss' or even\n\
+    \   mortally wounded by the night action」，最终沉没是**炮火与空袭共同**\n   迫使日方自行处置——故本站不把死因单归于任一方。\n**口径提示**：该文对「沉没位置」提出存疑（Ballard 未找到比叡残骸， 找到的倒扣金刚型舰体「was in truth, never definitively identified」）， 与 TROM 给的 09-04S,\
+    \ 159-45E 不冲突但性质不同，引用坐标时应注明是日方记录值。 **抓取**：urllib + 代理，HTTP 200，30,449 bytes。"
+- id: japanese-warship-hiei
+  title: 比叡【金剛型戦艦 二番艦】 — 大日本帝国軍 主要兵器
+  url: https://japanese-warship.com/battleship/hiei/
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: japanese-warship.com（大日本帝国軍 主要兵器）
+  lang: ja
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: "日文舰艇资料页，公開 2018-01-27、更新 2024-07-11。 **本轮不可替代的一部分**是它按**三个比叡专属时点**列表： ① 1914 竣工 / ② 1932 練習戦艦改装后 / ③ 1940 大改装后 ——与另三舰（竣工 / 一次改装 / 二次改装）的时点划分**完全不同**， 因为比叡把别人两次改装并为一次做。 **口径提示**： ① **锅炉**：② 栏「ロ号艦本式ボイラー　混焼6基、重油5基」（11\
+    \ 座）、\n   ③ 栏「ロ号艦本式ボイラー　8基」——即**降格期 11 座、大改装后 8 座**。\n   这是纠正「比叡 11 座」误读的直接依据（11 座属于練習戦艦期）。\n② **速力**：② 18.0 ノット、③ 29.7 ノット；**航続距離** ② 是\n   「**16ノット**：10,000海里」（另两舰同阶段是 14 kn，基准不同）。\n③ **兵装**：② 栏主炮写「3基6門」（4\
+    \ 号炮塔已拆），副炮仍写「16門」\n   （与 combinedfleet「all 6-inch guns removed」冲突，并列）；\n   ③ 栏「40口径12.7cm連装砲 4基8門」「25mm連装機銃 10基20挺」\n   「13mm四連装機銃 2基8挺」——**12.7 cm 只有 4 座**，全生涯未增装。\n④ **舰种**：「【比叡】の分類は練習戦艦から改められることはなく、\n\
+    \   書類上では戦艦に戻ることはなかった」——与 combinedfleet「re-rated a\n   battleship」相反，两说并列。\n⑤ **建造材料**：「実は材料の大半はヴィッカース社に注文しており、\n   純国産、とは言い難い建造過程です。」——与「日本第一艘国产超弩级战列舰」\n   的通行说法并不矛盾，但是重要限定。\n⑥ **舰桥**：「他の『金剛型』の艦橋は檣楼型ですが、【比叡】のみ塔型と\n\
+    \   なっている他、各種補機類も、三隻とは違う最新のものが採用されています。」\n   ——模型识别第一依据。\n⑦ 本页**无编制数、无雷达条目**；马力栏只有设计值（64,000 / 16,000 /\n   136,000），**无试航实测**。\n**抓取**：urllib + 代理，HTTP 200，67,084 bytes。"
+- id: combinedfleet-yamato-class
+  title: Yamato-class Battleship — Nihon Kaigun (combinedfleet.com)
+  url: https://www.combinedfleet.com/yamato.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: combinedfleet.com
+  lang: en
+  access: direct
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: '舰级速览参数卡（Year Completed / Displacement / Dimensions / Speed / Armament / Armor / Crew）。**唯一用处**：为「满载 71,659 tons」「27 knots」 「Armor 16.1" belt …」这些取整值提供一条独立于 navypedia 的表述。 数据明显取整（尺寸写作 862''10" x
+    121''1" x 32''11"），不作为精确值来源。 抓取：Python urllib 直连，HTTP 200，7,044 bytes。
+
+    '
+- id: combinedfleet-musashi
+  title: IJN Battleship MUSASHI — Tabular Record of Movement (combinedfleet.com)
+  url: https://www.combinedfleet.com/musashi.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: combinedfleet.com（Bob Hackett / Sander Kingsepp，Rev. 21）
+  lang: en
+  access: direct
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: "武藏逐日年表，覆盖 1937-03（设计定案）至 1945（除籍）。本舰战历与改装节点的 英文主力来源。**口径提示**： ① 1942-06-22 公试记录「28.05 kts in overload condition at 70,358 tons\n   displacement (167,310 shp)」——这是**武藏自己的实测值**，与大和的 27.46 节不是一回事；\n\
+    ② 1944-04-10/27 改装段给出拆除舷侧 15.5 cm 炮塔 + 增装 25 mm 的完整明细\n   （\"one hundred and fifteen 25-mm AA guns (30x3, 25x1)\"），与大和 1944-02 的改装不同；\n③ 沉没段给两个坐标（本舰 DAR 13-07N 122-32E；DesDiv 17 DAR 12-50N 122-35E；\n\
+    \   KIYOSHIMO 日志 12-48N 122-41.5E），三说并列；\n④ 阵亡/生还写「1,023 of her 2,399-man crew are lost」「rescue 1,423 survivors」。 抓取：Python urllib 直连，HTTP 200，65,652 bytes。\n"
+- id: navypedia-yamato
+  title: YAMATO battleships (1941 - 1942) — Navypedia
+  url: http://www.navypedia.org/ships/japan/jap_bb_yamato.htm
+  type: database
+  tier: D
+  role:
+  - data
+  operator: navypedia.org
+  lang: en
+  access: direct
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: "主尺度/排水量/动力/燃料/续航/装甲逐部位厚度/武备骨架/编制，以及逐次改装表 （1942-11 至 1944-11）。**本轮最重要的单一骨架来源**。口径提示： ① 标准排水量记 63,200 t，与大和ミュージアム的 65,000 t 冲突，两说并列不裁决； ② 装甲段落按「机舱段／弹药库段」两段分别给上下缘厚度（270→75 / 200→75），\n   这一点比 pwe\
+    \ 的单值表更细；\n③ **未给装甲材质**，VH/MNC/CNC 只出现在 pwe； ④ 改装表把大和的 1944-03 改装记为「- 2 x 3 - 155/60 (beam); + 6 x 2 - 127/40 …\n   24 x 3 - 25/60, 26 x 1 - 25/60」，与 combinedfleet TROM 的 1944-02-25 差一个月，\n   并列不裁决；\n\
+    ⑤ 武藏沉没损失记「10-12 torpedo and 17 227-454kg bomb hits」，与本舰 TROM 的\n   「19 torpedo and 17 bomb hits」冲突，并列不裁决。\n抓取：Python urllib 直连，HTTP 200，32,333 bytes。\n"
+- id: navweaps-46cm-45-t94
+  title: Japan 40 cm/45 (15.7") Type 94 — NavWeaps
+  url: https://www.navweaps.com/Weapons/WNJAP_18-45_t94.php
+  type: website
+  tier: C
+  role:
+  - data
+  operator: navweaps.com（Tony DiGiulian）
+  lang: en
+  access: direct
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: "46 cm/45 九四式炮本体与三联装炮塔的完整数据：炮身重、全长/膛线长、药室容积、 逐弹种弹重与初速、装药、射速、仰角、射程表（含 48° 最大射程 42,110 m）、 穿深表、炮塔重（2,774 mt）、炮塔装甲（引 Skulski：面 650 / 侧 250 / 后 190 / 顶 270 mm）。 **口径提示**： ① 页面标题写「40 cm/45」是日方伪装口径，正文\
+    \ \"Actual Size 46 cm (18.1\")\"； ② APC 九一 1,458.3 kg 与 APC 一型 1,460 kg 是两个弹种，不是同一弹的两说； ③ 炮塔重给两个口径：全重 \"2,730.2 tons (2,774 mt)\"、回转部分\n   \"2,510 metric tons [2,470 tons]\"（引自 USNTMJ O-45(N)）；\n④ 炮管寿命原文是区间\
+    \ \"about 150 - 250 rounds\"。 抓取：Python urllib 直连，HTTP 200，63,595 bytes。\n"
+- id: navweaps-155cm-60-3ns
+  title: Japan 15.5 cm/60 (6.1") 3rd Year Type — NavWeaps
+  url: https://www.navweaps.com/Weapons/WNJAP_61-60_3ns.php
+  type: website
+  tier: C
+  role:
+  - data
+  operator: navweaps.com（Tony DiGiulian）
+  lang: en
+  access: direct
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: "60 口径三年式 15.5 cm 炮本体 + 三联装炮塔。本页对大和型的关键性有两处： ① 明写炮塔型号区分——\"Yamato (4): \"Yamato Model\"\" 与巡洋舰的 \"Mogami Model\"，\n   且 \"The Yamato and Ôyodo classes reused the mountings removed from the Mogami\
+    \ class\"；\n② 明写改装——\"Yamato and Musashi had their two amidships mounts removed in 1944.\n   Yamato had these replaced with twelve additional 12.7 cm/40 (5\") AA guns.\"\n**口径提示**：AP Type 91 严格说不是 APC（无被帽），同页自己说明；\
+    \ 炮塔重 \"Battleships: About 190 tons (194 mt)\" 不含测距仪。 抓取：Python urllib 直连，HTTP 200，38,551 bytes。\n"
+- id: navweaps-13mm-76-t93
+  title: Japan 13 mm/76 (0.52") Type 93 — NavWeaps
+  url: https://www.navweaps.com/Weapons/WNJAP_13mm-76_mg.php
+  type: website
+  tier: C
+  role:
+  - data
+  operator: navweaps.com（Tony DiGiulian）
+  lang: en
+  access: direct
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: '13.2 mm 九三式机炮本体与单/双/四联装座。大和型竣工时装 2 座双联（kasado）。 注意 navweaps 的 URL 是 `WNJAP_13mm-76_mg.php`，`WNJAP_13-76_93.php` 等写法均 404。 抓取：Python urllib 直连，HTTP 200，18,795 bytes。
+
+    '
+- id: yamato-museum-data
+  title: 数字で見る戦艦「大和」 — 呉市海事歴史科学館（大和ミュージアム）
+  url: https://yamato-museum.com/yamato-data/
+  type: website
+  tier: B
+  role:
+  - data
+  operator: 呉市海事歴史科学館（大和ミュージアム）
+  lang: ja
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: '博物馆官方数据页，逐项给：全長 263 m、最大幅 38.9 m、基準排水量 65,000 t、 主砲 45口径46センチ3連装3基9門、主砲射程 42 km、主砲砲身重量 165.76 t、 砲弾重量 1.46 t、砲弾長さ 1.95 m、最大速力 27.46ノット、プロペラ直径 5 m、 乗組員 竣工時 2,500人 / 最終時 3,332人。 **这是本站唯一能给出「螺旋桨直径
+    5 m」与「砲身重量 165.76 t」的来源**， 且是 tier B（官方机构出版物口径），比英文专题站高一档。 注意：data/sources.yaml 里已有的 `yamato-museum` 条目 role 只有 rights（图片授权用）， 与本条不同，故另立 id。 抓取：本机代理 http://127.0.0.1:12450，HTTP 200，77,272 bytes。
+
+    '
+- id: japanese-warship-yamato
+  title: 大和【大和型戦艦 一番艦】 — 大日本帝国軍 主要兵器
+  url: https://japanese-warship.com/battleship/yamato/
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: japanese-warship.com
+  lang: ja
+  access: direct
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: '日文舰艇志。给三套装备表：竣工时（1941-12）、1944-07-14、最终时， 逐项列主炮/副炮/高角炮/机铳/电探的座数与门数，是本组「武备随时间变化」 最细的日文来源。数据出处脚注指向大和ミュージアム（[2][4]）与 USNI 的 "Design and Construction of the Yamato and Musashi"（[3][5]）。 **口径提示**：公試排水量记
+    69,100 t（与 kasado 的 68,010 t 冲突）； 基準排水量 65,000 t 与博物馆一致。 抓取：Python urllib 直连，HTTP 200，53,220 bytes。
+
+    '
+- id: japanese-warship-yamato-building
+  title: 【大和】建造の一部始終 The whole process of building Yamato — 大日本帝国軍 主要兵器
+  url: https://japanese-warship.com/battleship/building-yamato/
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: japanese-warship.com
+  lang: ja
+  access: direct
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: '**建造期间保密措施的核心来源**（任务书点名的「大和独有题材」）： ① 对外伪报「42,000t、40cm砲9門、25ノット」；乘员亦不知主炮真实口径； ② 图纸定为最高机密的「軍機」级，且刻意不出大图，须拼合小图才能看全貌； ③ 船坞上方先挂棕榈席、后加三角屋顶遮断山上视线； ④ 军港附近民居窗加木框、巴士与铁路封窗、农家须随身携带证明； ⑤ 建造相关者全员身辺調査 + 宣誓书。
+    另给工程表（计划 vs 实际）：主砲積み込み原定 1941-05 下旬～10 下旬， 实际提前到 1941-03 下旬～05 下旬；引渡原定 1942-06-15，实际 1941-12-16； 船殻工数由计划 1,474,000 降到 999,000。 引用出处：御田重宝《戦艦「大和」の建造》（講談社文庫）、牧野茂《艦船ノート》。 抓取：Python urllib 直连，HTTP 200，68,094
+    bytes。
+
+    '
+- id: pwe-yamato-class
+  title: Yamato Class, Japanese Battleships — The Pacific War Online Encyclopedia
+  url: http://pwencycl.kgbudge.com/Y/a/Yamato_class.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: Kent G. Budge
+  lang: en
+  access: direct
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: '**本组唯一逐行给出装甲材质（VH / MNC / CNC / Ducol）的来源**， 且给出完整的「层-材质-厚度」对应表，含烟路 140 mm、舵机舱 350 mm、 弹药库下 80 mm platform 等其它来源没有的项。 另给：发电机总容量 4,800 kW、1,147 个水密隔舱、18 节时推进效率 58.7%、 主装甲带仅占水线长 53.3%、回转时倾斜 9°（26
+    节、舵角 35°）。 **口径提示**： ① 标准排水量记 62,315 t（四说中的一说）； ② 横向隔壁记 340 mm VH、倾角 20°，与 navypedia 的 300/270-300 mm、25° 冲突； ③ 副炮塔材质记 "1" (25mm) CNC"，与 kasado/naweaps 的 50 mm 冲突； ④ 编制记 2,500。 抓取：Python urllib 直连，HTTP
+    200，25,246 bytes。
+
+    '
+- id: kasado-yamato
+  title: 大和型戦艦 Yamato class Battleship — 日本海軍艦艇データ（kasado.net）
+  url: https://www.kasado.net/Battleships/Japan/Yamato_1941.html
+  type: database
+  tier: D
+  role:
+  - data
+  operator: kasado.net
+  lang: ja
+  access: direct
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: "全站最细的分列对比表：把「大和型竣工時 / 大和 1944-10 / 大和 最終時 / 武蔵 最終時 / 一一〇号艦型 / 七九七号艦型」六列并排， 涵盖寸法・排水量、機関関係、装甲防御、搭載火器、測距儀/レーダー、航空艤装、乗員定数。 **本组「逐部位逐甲板厚度」与「逐期武备数量」的主骨架**。 口径提示： ① 基準排水量 63,980 t、公試 68,010 t，与博物馆的 65,000\
+    \ t / 69,100 t 冲突，并列不裁决； ② 大和最終時 満載写 72,809 t，与 navypedia 的 72,810 t 差 1 t（换算取整）； ③ 装甲表把「下部舷側装甲」按弹药库段/机舱段分列上下缘，是本组唯一这样做的日文源； ④ 大和 1944-10 的 25 mm 记「三連装 50 基 + 単装 2 基」，最终时记\n   「三連装 52 基 156 挺 + 単装 6\
+    \ 基 6 挺」，两组数与 combinedfleet 的 152 门不完全一致，\n   并列不裁决。\n抓取：Python urllib 直连，HTTP 200，39,739 bytes。\n"
+- id: combinedfleet-yamato-trom
+  title: IJN Battleship YAMATO — Tabular Record of Movement (Revision 18)
+  url: https://www.combinedfleet.com/yamato.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: combinedfleet.com（Bob Hackett / Sander Kingsepp）
+  lang: en
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: 大和逐日年表，覆盖 1937-03 设计定案至 1985 沉舰发现、2009 打捞计划。 口径提示：（1）**无脚注**，属 D 级二次编纂，凡数字建议与 IJO（A/B 级）并列。 （2）正文从不给「最终命中总数」，只在 1333 时段给「已中 4 雷」的阶段性数字。 （3）1943-04-18 无「大和在特鲁克」的独立条目，只能由 1942-08-28 进驻与 1943-05-08
+    离港之间的驻泊区间推断——正文须标注为推断。 （4）对瓜岛期间「为何不用大和」只列「被提出的几种理由」，且自陈未给来源。
+- id: combinedfleet-musashi-trom
+  title: IJN Battleship MUSASHI — Tabular Record of Movement (Revision 21)
+  url: https://www.combinedfleet.com/musashi.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: combinedfleet.com（Bob Hackett / Sander Kingsepp）
+  lang: en
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: 武藏逐日年表，1944-10-24 六次攻击的逐时序列是本轮最细的一份材料。 口径提示：（1）**页内自相矛盾**：正文记「19 雷（左 10 右 9）、17 弹、20 次近失」， 脚注 [9] 引武藏 DAR 却记「11 雷（含 2 哑弹）、10 弹、6 次近失」。正文必须两说并列。 （2）沉没坐标页内即列三个：本舰 DAR 13-07N/122-32E、水雷战队 17 驱 DAR
+    12-50N/122-35E、洁白号日志 12-48N/122-41.5E。 （3）脚注 [3] 给出 ONI 1944-02 照片判读结论「≥60,000 t、18 英寸炮」， 是「美军何时知道大和级」的关键原句。 （4）脚注 [1] 修正绳幕材料为中国扇叶棕（Trachycarpus fortunei）， 与 USNI 1953 的「sisal」冲突。 （5）脚注 [7][8] 主动驳正两处通说（首波近失造成的艏倾、三式弹使用时机）。
+- id: combinedfleet-bb-index
+  title: Japanese Battleships Operational Histories（SENKAN! 索引页）
+  url: https://www.combinedfleet.com/bb.htm
+  type: website
+  tier: D
+  role:
+  - lead
+  operator: combinedfleet.com（Bob Hackett / Sander Kingsepp / Lars Ahlberg）
+  lang: en
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: 仅用于确认 TROM 的正确 URL（Yamato → /yamato.htm，Musashi → /musashi.htm），不作数据来源。
+- id: combinedfleet-radar-japan
+  title: Japanese Radar Equipment in WWII — Nihon Kaigun
+  url: https://www.combinedfleet.com/radar.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: combinedfleet.com
+  lang: en
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: 'Type 21 / 22 / 13 的纸面参数来源。用法提示：（1）**页内自相矛盾**—— Type 21 标「Became Operational: August 1943」，正文却写「first fitted to BB Ise in April 1942」，引用须注明。（2）本页写「Type 22 fitted to ... Yamato and Musashi in October
+    1943」，与大和 TROM 的 1944-02-25 冲突， 与武藏 TROM 的 1943-11-28 雷达射击试验部分吻合。三处并列，不裁决。'
+- id: ussbs-ijo-32-miyamoto-yamato
+  title: USSBS Interrogation Nav No. 32 — Commander Miyamoto T., Staff Officer of Second Fleet, "The Attack on the Yamato Group, 7 April 1945"
+  url: https://www.ibiblio.org/hyperwar/AAF/USSBS/IJO/IJO-32.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: US Strategic Bombing Survey, 1945-10-25（审讯人 Capt. T. J. Hedding, USN）
+  lang: en
+  access: proxy
+  fetched: 2026-11-25
+  license: public_domain_us_gov
+  note: '**天一号作战唯一的日方参谋级一手证言**（本人就在大和舰上，任第二舰队防空炮术参谋）。 三处关键：（1）攻击波次「between 1200 and 1430 when she sank, four or five attacks by forty or fifty planes each」——与 TROM 的六波及 NHHC 的 390 机总数均不同。 （2）命中分布「by the
+    end of the fourth attack ... the original three bombs; and on the port side 6 to 8 torpedoes, and on the starboard side 2 to 3 torpedoes」。 （3）沉没时刻只说「sometime between 1400 and 1430」，不给分钟。 另有一条重要的技术性自白：「Q.
+    What were the size of the YAMATO''S main battery? A. I was not informed. It was a terrific secret.」——连参谋都不知道 46 cm。'
+- id: ussbs-ijo-9-kurita-leyte
+  title: USSBS Interrogation Nav No. 9 — Vice Admiral Kurita Takeo, Battle of the Philippine Sea / Battle for Leyte Gulf
+  url: https://www.ibiblio.org/hyperwar/AAF/USSBS/IJO/IJO-9.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: US Strategic Bombing Survey, 1945-10-16/17
+  lang: en
+  access: proxy
+  fetched: 2026-11-25
+  license: public_domain_us_gov
+  note: 栗田本人。本轮用途：（1）**旗舰转移的评语**——「The shift to the YAMATO improved the command possible because she was designed as a flagship and communications were therefore better and the AA defense was also better.」这是「大和作为旗舰
+    与别舰不同」最硬的一手依据。（2）武藏命中数「18 torpedoes, 40 bombs」。 （3）武藏沉没时刻「About 8 o'clock she sank」——与武藏 DAR 的 1936 冲突。 （4）大和当日「four bombs and quite a few near misses ... not so great as to interfere with fighting
+    or navigation」。
+- id: ussbs-ijo-35-koyanagi-samar
+  title: USSBS Interrogation Nav No. 35 — Rear Admiral Koyanagi Tomiji, Chief of Staff Second Fleet, Battle off Samar
+  url: https://www.ibiblio.org/hyperwar/AAF/USSBS/IJO/IJO-35.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: US Strategic Bombing Survey, 1945-10-24
+  lang: en
+  access: proxy
+  fetched: 2026-11-25
+  license: public_domain_us_gov
+  note: 小柳富次（第二舰队参谋长）。两处关键：（1）**雷达的负面自评**——「I think there was no special array for radar fire control because the radar fire control was yet not well developed; there was no particular confidence in it.」
+    （2）武藏「18 torpedoes, 40 bombs」与「About 8 o'clock she sank」。 （3）防空增备「about 120 machine-guns on each battleship on an average」。
+- id: ussbs-ijo-41-otani-samar
+  title: USSBS Interrogation Nav No. 41 — Commander Otani Tonosuke, Operations Officer Second Fleet, Battle off Samar
+  url: https://www.ibiblio.org/hyperwar/AAF/USSBS/IJO/IJO-41.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: US Strategic Bombing Survey, 1945-10-26
+  lang: en
+  access: proxy
+  fetched: 2026-11-25
+  license: public_domain_us_gov
+  note: 大谷第二舰队作战参谋。两处关键：（1）**参谋部曾预先在大和上做旗舰准备**—— 「It had been my opinion that flagships should be battleships; so we had made some preparation on Yamato beforehand.」（2）大和当日损伤「two bomb hits and two near
+    misses. The two near misses made a big hole in the bow」，与栗田的 「four bombs」冲突，三说（2/3/4 弹）并列。武藏「18 torpedo hits which exploded and three which did not, and 40 dive bombs」，且自陈「I did not see, but that is
+    according to reports」。
+- id: nhhc-h044-3-ten-ichi-go
+  title: 'NHHC H-Gram 044-3: "Operation Heaven Number One" (Ten-ichi-go) — the Death of Yamato, 7 April 1945'
+  url: https://www.history.navy.mil/about-us/leadership/director/directors-corner/h-grams/h-gram-044/h-044-3.html
+  type: official_publication
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: Naval History and Heritage Command（Samuel J. Cox, Director NHHC, 2020-04）
+  lang: en
+  access: proxy
+  fetched: 2026-11-25
+  license: public_domain_us_gov
+  note: '**天一号作战英文叙事最完整的一篇，且带美方档案视角。** 直连 TLS 失败， 本次经 Wayback 快照 20251208122213 抓取（archive 页面已剥壳）。 本轮采用的关键原句：（1）决策契机「The emperor''s question clinched it.」 （2）舰长会议「provoked the closest thing to a mutiny
+    in the Japanese navy」。 （3）作战目标「beach themselves and continue firing as long as they had ammunition」。（4）燃料「they actually received as much fuel as was available to give」。（5）倾覆 1430 + 主炮弹药库爆炸。（6）阵亡 3,055/3,332、生还
+    276， 并引 Morison「23 officers and 246 enlisted」。（7）「390 U.S. carrier aircraft」， 同时指出汉考克 53 机晚发未参战、首波实为 227 机——**与 TROM 的 280 编制数不冲突， 是两个口径**。（8）U.S. losses「10 aircraft and 12 pilots and aircrewmen」。 注意：文中把舰长写作「Rear
+    Admiral Ariga」（有贺），与日方「Aruga 有賀幸作」同人异拼。'
+- id: nhhc-ussbs46-japanese-naval-shipbuilding
+  title: Japanese Naval Shipbuilding — "Know Your Enemy!" CinCPac-CinCPOA Bulletin 142-45 (4 June 1945)
+  url: https://www.history.navy.mil/research/library/online-reading-room/title-list-alphabetically/j/japanese-naval-shipbuilding.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  operator: CinCPac-CinCPOA / NHHC 数字图书馆
+  lang: en
+  access: proxy
+  fetched: 2026-11-25
+  license: public_domain_us_gov
+  note: 1945-06-04 的 wartime 情报通报（**不是**战后 USSBS 报告，登记时勿混）。 本轮只用一条关键原句：「No battleships were announced as building during this period. The Yamato had previously been announced on 25 July, 1940. The date
+    of Musashi's announcement is not known.」——**说明日方 1940-07-25 曾就「大和」 发过造舰公告（TATSU 体系），只是未公开舰种性能**。这条对「完全保密」的通说 是一处必要限定。经 Wayback 快照 20251208171346 抓取。
+- id: usni-proceedings-1953-yamato-design
+  title: Design and Construction of the Yamato and Musashi — USNI Proceedings, Oct 1953, Vol. 79/10/608
+  url: https://www.usni.org/magazines/proceedings/1953/october/design-and-construction-yamato-and-musashi
+  type: paper
+  tier: C
+  role:
+  - data
+  - narrative
+  operator: U.S. Naval Institute（作者：Capt. Kitaro Matsumoto, Cdr. Masataka Chichaya，均为旧日本海军）
+  lang: en
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: '**设计者本人写的建造史，本轮保密题材与舰体数据的英文主源。** usni.org 直连 403， 经 Wayback 快照 20250915054945 抓取。可用点：（1）设计沿革——1934-10 起案、 23 份图纸、50 个船模、最终案 1937-03。（2）尺度：垂线间 244.0 m、全长 263.0 m、 最大宽 38.9 m、满载吃水 10.86 m、公试 69,100
+    t / 满载 72,809 t、续航 7,200 nmi @16 kn。 （3）保密工程：吴的船坞加深约 1 m、龙门吊提到 100 t、**船坞末端约四分之一加盖屋顶** 「to prevent its being seen from a prominent hill nearby」；长崎船台加 **sisal 绳幕** 「2,710 kilometers / 408 tons」。（4）武藏下水：「all
+    the entrances ... were closed without notice and communications to the outside were severed ... a heavy guard was maintained」。（5）空调与居住性：「the first Japanese warship to be equipped with an air conditioning
+    system ... the most comfortable ship in the Japanese Navy」。 （6）武藏损伤与沉没原因的分析（数据与 TROM 不同，见 RESEARCH-NOTES §4.2/§7.11）。 **口径警告**：文中「the Musashi ... had been hit by a total of seven bombs, nine torpedoes
+    ... by 1253 hours」是**截至 1253 的累计**，不是全天总数，勿当总数引用。'
+- id: usni-naval-history-2007-ikeda-final-sortie
+  title: The Imperial Navy's Final Sortie — Naval History Magazine, Oct 2007, Vol. 21/5
+  url: https://www.usni.org/magazines/naval-history-magazine/2007/october/imperial-navys-final-sortie
+  type: paper
+  tier: C
+  role:
+  - narrative
+  operator: U.S. Naval Institute（作者：Takekuni Ikeda 池田武邦，矢矧号幸存军官）
+  lang: en
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: '**矢矧号前目标指示官的第一人称回忆 + 2006 年慰灵航海纪实。** usni.org 直连 403， 经 Wayback 快照 20251209070857 抓取。可用点：（1）燃料：「even though the Japanese Naval General Staff had instructed the fuel facility to supply oil for only
+    one way, each ship was filled to capacity. The Yahagi carried 1,250 tons of fuel.」 （2）逐时：1600/6 日出击、0200-0345 通过大隅海峡、0630 零战 9 机到着、0657 朝霜掉队、 1016 发现 PBM、1220 发现来袭机群 40,000 码、1234 大和开火、1241 提速 28 kn、
+    1330 矢矧舰尾中弹、1405 矢矧沉、**1423 大和沉**。（3）战殁表：大和 2,740 死 / 117 伤。 （4）战后：「Rear Admiral Nobue Morishita ... argued that any assault operation requires thorough preparation ...」；二水战详报「naval operations must
+    be cautiously and calculatingly executed」。（5）个人评价：「the operation was a worthy end for the great Yamato」——**这是日本国内正面评价的代表性一手文本**， 与「无谋」批判并列，不可只取一边。'
+- id: hatoh-yamato-060
+  title: 波頭 060 Ⅲ部 建造 34「港側目隠し次々と」— 戦艦大和取材記
+  url: https://hatoh-yamato.jp/archives-060/
+  type: website
+  tier: C
+  role:
+  - narrative
+  operator: 渡辺圭司（元新聞記者，长期采访大和建造亲历者）
+  lang: ja
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: 吴市目隐工程的实地采访 + 地方志引文。可用原句：1936 年船坞加盖大屋顶且两侧垂网； 1937 年吴线铁道临港侧筑高墙；学校与民家被封堵临港窗、新筑一律不设港侧窗； 吴市宫原 7 丁目仍有「港側目隠しの家」遗构。**这是「下水前就已全城保密」的最具体材料。**
+- id: hatoh-yamato-061
+  title: 波頭 061 Ⅲ部 建造 35「大屋根」— 戦艦大和取材記
+  url: https://hatoh-yamato.jp/archives-061/
+  type: website
+  tier: C
+  role:
+  - narrative
+  operator: 渡辺圭司
+  lang: ja
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: '**本轮保密题材最重要的一页**，因为它直接引用牧野茂等《海軍造船技術概要》上巻 83 页， 给出设计方自述的保密理由与措施（「船渠の四周には目隠しの塀を設け、附近の山上より 視認されぬよう、網等を垂らしたが、なお不十分であったので、船渠渠頭付近、艦の長さの 約四分の一の部分に上屋を設けた」）。屋顶硬数字：长 101.8 m、斜边 35.1 m、自身高 15 m、 面积约 7,000
+    m²、坞底到屋脊 49.5 m、坞宽 63.5 m；1936 年建成，覆盖大和全长近一半。 该页同时说明 1993 年船坞被填埋、屋顶拆除。'
+- id: hatoh-yamato-062
+  title: 波頭 062 Ⅲ部 建造 36「高塀」— 戦艦大和取材記
+  url: https://hatoh-yamato.jp/archives-062/
+  type: website
+  tier: C
+  role:
+  - narrative
+  operator: 渡辺圭司
+  lang: ja
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: '**宪兵与防谍的一手材料所在页。** 引《大呉市民史昭和編(中巻)》1937 年条： 2 月起海军测量新宫隧道至港町小学间 855 m 高墙；4 月起张挂；6 月乘客因照り返し 在车内「蒸しぶろ」而投诉。另有：「列車から軍港を見ないようにと移動憲兵が乗り込み、 山ではカメラを持ったり、絵を描いたりすることが禁じられた」；1937 年 11 月成立 职业别防谍团（花園防団约 640 人、桜防諜団约
+    300 人）。**任务书要的「宪兵戒备」 在此有落地证据。**'
+- id: hatoh-yamato-066
+  title: 波頭 066 Ⅲ部 建造 40「闇夜に提灯」— 戦艦大和取材記
+  url: https://hatoh-yamato.jp/archives-066/
+  type: website
+  tier: C
+  role:
+  - narrative
+  operator: 渡辺圭司
+  lang: ja
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: 1936 年海军内部谷恵吉郎造兵大佐提议开发雷达被以「闇夜に提灯である」驳回的经过 （转引水交会机关纸《水交》1983 年 8 月号「電波兵器不振に対する反省」）。 **可用于「雷达落后不是技术不能，而是判断失误」这一层解释**，与 IJO-35 的 「no particular confidence in it」形成互补。
+- id: trafficnews-2020-yamato-launch
+  title: 隠せ隠せ！ 史上最大の戦艦「大和」 80年前の進水式も極秘 徹底的な隠蔽工作のワケ（乗りものニュース）
+  url: https://trafficnews.jp/post/98971
+  type: website
+  tier: D
+  role:
+  - narrative
+  operator: 乗りものニュース（柘植優介，2020-08-07）
+  lang: ja
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: '**「大和下水时不举行常规仪式」最直接的可引日文来源。** 关键原句：进水式由皇族 久邇宮朝融王代临，但「見物人などはおらず」、仅有工厂关系者约 1,000 人； 「軍楽隊の演奏などなく、万歳も拍手も起きなかった」。第 2 页给出工程保密细节： 船坞加盖大屋顶 + 棕榈叶筵、临港民家禁开窗、道路筑墙、铁道加铁皮围墙、 列车临港侧车窗全闭、作业者逐一检查、参观须海军大臣许可证。 **口径**：该文属大众媒体，D
+    级；但所引事实与 hatoh（C）与 USNI 1953（C）三方吻合， 可作 narrative 来源，不宜单独支撑 fact。'
+- id: gendai-2019-shimizu-yamato
+  title: 「戦艦大和」特攻を「思い付きの作戦」と痛烈批判した副砲長の無念（神立尚紀／現代ビジネス）
+  url: https://gendai.media/articles/-/63947
+  type: website
+  tier: C
+  role:
+  - narrative
+  operator: 講談社 現代ビジネス（神立尚紀，2019-04-07）
+  lang: ja
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: '**本轮日方一手回忆中最重的一篇**：大和副炮长清水芳人（1912-2008）的长篇访谈， 且明确交代「軍艦大和戦闘詳報」现藏防卫省、由清水本人执笔（因副长能村次郎负伤）。 可用点：（1）详报里的自我批判原句「「思ヒ付キ」作戦ハ精鋭部隊（艦船）ヲモミスミス 徒死セシメルニ過ギズ」——**这是「无谋」评价最硬的一手文本**。 （2）燃料：「出撃時の燃料搭載量は、満載の約3分の2にあたる4000トン」，
+    并明确反驳「片道燃料」说。（3）沉没时刻「午後2時23分」与自述被吸入海中的过程。 （4）战果「撃墜3機、撃破20機」。（5）各舰战殁数（矢矧 446、冬月 12、凉月 57、 磯風 20、濱風 100、雪風 3、朝霜 336、霞 17，合计 991；与大和合计 3,731）。 （6）对吉田満《戦艦大和ノ最期》中「用日本刀砍求生者手腕」一段，本文明确指出 系虚构且作者后来承认——**引用该书时必须带这条提醒**。'
+- id: sankei-2024-yamato-hotel
+  title: 皮肉と羨望から「ホテル」と呼ばれた戦艦「大和」　冷房やアイス販売も…沈没から79年（産経ニュース）
+  url: https://www.sankei.com/article/20240406-QGCOHNWAWRP6LPIAJPNCUSLP2A/
+  type: website
+  tier: D
+  role:
+  - narrative
+  operator: 産経新聞（小川恵理子，2024-04-06）
+  lang: ja
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: '**仅取到标题与导语，正文为付费墙，未获取。** 标题本身可用：「皮肉と羨望から 「ホテル」と呼ばれた」——说明「大和ホテル」这个外号同时含讽刺与羡慕两面。 **不建议以本文支撑任何 fact。**'
+- id: bunshun-2014-ichinose-yamato-myth
+  title: 戦艦大和 戦後作られた最強神話（一ノ瀬俊也／文藝春秋 2014年9月号）
+  url: https://bunshun.jp/bungeishunju/articles/h4755
+  type: paper
+  tier: C
+  role:
+  - narrative
+  operator: 文藝春秋（一ノ瀬俊也，埼玉大学教授）
+  lang: ja
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: '**付费墙，仅得首节，完整论证未读。** 首节已足支撑一个关键论点：大和的神话化是 **战后**建构的，战时国民多数根本不知道这艘舰。原文：「戦時中、戦艦大和の存在は 極秘であったから、国民の大部分は大和について知ることはなかった」「大和は当初、 けっして現在のような賛美の対象ではなかった」。另转引 1956 年《海と空》 「日本戦艦号」的严厉批评（「如何に造船技術は我が国の最高水準を本艦によつて
+    誇示した処で…」）。**注意：这是「战后神话化」论，与「战时神话破灭」不是同一命题。**'
+- id: jstage-2025-kikuzawa-yamato-tokko
+  title: 戦艦大和の沖縄特攻という悲劇の合理性 ― 無駄死という不合理とその回避 ―（菊澤研宗）
+  url: https://www.jstage.jst.go.jp/article/jmp/21/2/21_2/_html/-char/ja
+  type: paper
+  tier: C
+  role:
+  - narrative
+  operator: 経営哲学 21巻2号（2025-03-31），pp.2-9，DOI 10.50874/jmp.21.2_2（城西大学 菊澤研宗）
+  lang: ja
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: '**天一号决策链最清晰的一份日文材料，且是学术论文（非大众媒体）。** 关键原句： （1）神重徳发起：「連合艦隊首席参謀であった神重徳大佐が「水上特攻」の必要性を 主張し始めた」，并给出其主张「成算があるかないかより、どうやって花道を飾るか」。 （2）批准链：丰田副武承认 → 军令部作战课长富冈定俊反对 → 军令部次长小泽治三郎 了解 → 军令部总长及川古志郎承认。（3）草鹿龙之介的说服词「一億玉砕の魁に
+    なってもらいたい」与伊藤的回答「それならば何をかいわんや。よく了解した」。 （4）「われわれは死に場所を与えられたのだ」。 （5）对山本七平「空气论」的反驳：主张该决定有其「合理性」（交易成本论）。 **这是「日本国内评价」一节的核心学术来源，必须与池田（USNI 2007）的正面评价并列。**'
+- id: gendai-2017-kikuzawa-yamato-sontaku
+  title: 戦艦大和「特攻」の大失敗にみる、「忖度」の本質（菊澤研宗／現代ビジネス）
+  url: https://gendai.media/articles/-/52589
+  type: website
+  tier: D
+  role:
+  - narrative
+  operator: 講談社 現代ビジネス（2017-08-15）
+  lang: ja
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: jstage 论文的大众版，专攻「责任归属」这一层。关键原句：（1）决策链复述 （神重徳主张 → 丰田承认 → 小泽了解 → 及川黙認）。（2）把责任摊到组织： 「大和特攻を反対し続けることは、海軍の軍人にとって非合理的だったのである」； 理由包括怕被骂「卑怯者」、说服天皇的交易成本、怕陆军讥讽水上部队无能、 怕战后被美军当战利品展示。（3）对「空气论」的方法论批评：「空気論は無責任論へ
+    と行きつく」。**用作「战后争议」的第二种立场，与山本七平并列。**
+- id: wartimechapters-yamato
+  title: Wartime Chapters — Yamato 1941–45（12 章专题，含逐条来源说明）
+  url: https://wartimechapters.com/yamato/fuel-for-the-voyage/
+  type: website
+  tier: C
+  role:
+  - narrative
+  - data
+  operator: Julian Mullins（个人史学项目，2026 年版，逐章附来源与「Checked/Limits」注记）
+  lang: en
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: '**本轮最有价值的方法论型来源**：每章末尾列出所用档案（含 USNTMJ、USSBS、 各舰 action report、潜艇 patrol report）并逐条写「引用段落／核对状态／局限」， 是本轮唯一明确讨论「证据能证明什么、不能证明什么」的英文材料。 本轮采用其以下几个结论（均为转引，非直引原件）： （1）燃料：明确反对「只够单程」与「精确替代值」两种写法（《Fuel for
+    the Voyage》）。 （2）武藏命中：转引 USNTMJ「10 确定雷（左右各 5）+ 16 弹」（《Sibuyan Sea》）。 （3）沉没时刻：大和战闘详报 1423，USNTMJ 约 1420（《The Wreck》）。 （4）残骸：2016 年吴市调查，深约 350 m，范围 450×400 m（《The Wreck》）。 **重要**：该站 12 章 URL 各自独立，本条目只登记其中一章的
+    URL； 其余章节（sibuyan-sea / off-samar / the-last-sortie / orders-for-okinawa / under-carrier-attack / the-men-and-the-record / the-wreck / flagship-at-a-distance / waiting-in-reserve / why-build-yamato）同属一个专题，引用时请在
+    note 里写明章名。'
+- id: navweaps-46cm-t94
+  title: Japan 40 cm/45 (15.7") Type 94 — NavWeaps（实为 46 cm/45）
+  url: https://www.navweaps.com/Weapons/WNJAP_18-45_t94.php
+  type: website
+  tier: C
+  role:
+  - data
+  operator: navweaps.com（Tony DiGiulian）
+  lang: en
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: '**与既有 combinedfleet-46cm 是两个不同站点，不可互相替代。** 本页共 27 门炮的 生产/去向、Kamegakubi 试射的爆风数据（15 m 处 7.0 kg/cm²）、以及两舰火炮使用的 辨识染色（大和黄、武藏绿）都在这页。本轮只取三处： （1）「These guns were officially designated by the Japanese as
+    40 cm/45 Type 94 (15.7 inch) in an effort to hide their actual size, which was a closely-guarded secret until after the end of World War II.」——**「40 cm」是官方伪装名称， 本条可用于解释为何档案里到处是「40 cm」**。 （2）「Yamato
+    is known to have fired at enemy ships on only one occasion. This was at the Battle off Samar in October 1944 ... with rounds possibly hitting USS Gambier Bay (CVE-73).」——注意是 "possibly"。 （3）「Musashi
+    is known to have fired her guns in anger only once when she used "sankaidan" (incendiary shrapnel) anti-aircraft shells during the Battle of the Sibuyan Sea in October 1944. One of these reportedly
+    exploded in the barrel, disabling the gun.」——**「武藏主炮唯一一次实战是对空射击三式弹」这个说法出自本页， 与武藏 TROM 的「主炮在第二次攻击即对空开火」吻合，但与「主炮弹膛炸膛」一节 在 TROM 里没有对应记录，引用须标注为 navweaps 的记述。**'
+- id: usntmj-o-45-18in-mounts
+  title: US Naval Technical Mission to Japan, Report O-45(N) — Japanese 18-Inch Gun Mounts
+  url: https://www.fischer-tropsch.org/primary_documents/gvt_reports/USNAVY/USNTMJ%20Reports/USNTMJ-200F-0384-0445%20Report%20O-45%20N.pdf
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  operator: US Naval Technical Mission to Japan（1945-46）
+  lang: en
+  access: proxy
+  license: public_domain_us_gov
+  status: not_fetched
+  note: '**PDF 已下载（7.7 MB / 62 页）至 work/staging/yamato-history/_raw/USNTMJ-O-45.pdf， 但为纯扫描件、无文本层（62 页仅抽出 1,045 字符），本机无 OCR，未取得可引原句。** 本轮凡涉及「武藏命中数」的 USNTMJ 数字，均转引 wartimechapters 的引述， 未直引本报告。**主会话若需一手数字，须先
+    OCR 或另换源。**'
+- id: usntmj-s-01-3-yamato-class
+  title: US Naval Technical Mission to Japan, Report S-01-3 — Yamato-class Battleship（船体与防护）
+  url: https://www.fischer-tropsch.org/primary_documents/gvt_reports/USNAVY/USNTMJ%20Reports/USNTMJ-200G-0085-0145%20Report%20S-01-3.pdf
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  operator: US Naval Technical Mission to Japan
+  lang: en
+  access: proxy
+  license: public_domain_us_gov
+  status: not_fetched
+  note: '**PDF 已下载（5.9 MB / 61 页），同为无文本层扫描件（抽出 1,028 字符），未取得原句。** 该报告是「1943-12-25 Skate 雷伤」「大和/武藏沉没原因」「6 日加至 90% 燃料」等 说法的原始出处，本轮全部只能经 wartimechapters 转引。**同上，需 OCR 才能直引。**'
+- id: ussbs-monograph-jm-84-leyte
+  title: USSBS Japanese Monograph No. 84 — Philippines Area Naval Operations, Part II (October–December 1944)
+  url: https://www.ibiblio.org/hyperwar/Japan/Monos/pdfs/JM-84/JM-84.pdf
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  operator: USSBS / 原日本海军（HyperWar Foundation 镜像）
+  lang: en
+  access: proxy
+  license: public_domain_us_gov
+  status: not_fetched
+  note: '**已下载 463 MB / 225 页至 _raw/JM-84.pdf，纯扫描件、文本层为空，未取得原句。** 该册含捷号作战（含锡布延海）的日方官方叙述，是本轮「武藏沉没」最想要的一手材料， 但未能读取。**主会话若需要，必须走 OCR。**'
+- id: ussbs-monograph-jm-83-okinawa
+  title: USSBS Japanese Monograph No. 83 — Okinawa Area Naval Operations (January–June 1945)
+  url: https://www.ibiblio.org/hyperwar/Japan/Monos/pdfs/JM-83/JM-83.pdf
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  operator: USSBS / 原日本海军（HyperWar Foundation 镜像）
+  lang: en
+  access: proxy
+  license: public_domain_us_gov
+  status: blocked
+  note: HyperWar 索引说明：「Covers ill-fated attack of 1st Diversionary Attack Force」—— 即天一号作战的日方官方叙述。**下载两次均在 120 秒内未完成（177 页扫描件）， 已终止；同 JM-84 一样无文本层，即使下完也不能直引。** 记录于此以免重复尝试。
+- id: nihonkaigun-baddest-battleship
+  title: The World's Best Battleship（Mirror, Mirror, on the Wall）— Nihon Kaigun 战列舰比较
+  url: https://www.combinedfleet.com/baddest.htm
+  type: website
+  tier: D
+  role:
+  - lead
+  operator: combinedfleet.com
+  lang: en
+  access: proxy
+  fetched: 2026-11-25
+  license: all_rights_reserved
+  note: '**纯评分型比较文，作者自陈主观**（「This section is very subjective」）。 本轮只取一个结构性事实：大和在「Heavyweight Champion」评分类目里火控得分 仅 5/10（与 Bismarck 同级），而装甲 10/10、主炮 10/10。**只能作叙事对照， 不作 fact 来源。**'
 todo:
 - ~~抓 5 份一手档案 + 战争日志~~ **2026-11-17 已完成**：artillery-report / inclining-test / raeder-report / rodney-report / debriefing 全部抓到，另加 38cm 弹道表、flak-relocation、bs-ktb.zip（177 页 PDF 已转文本）
 - 重取 AWM / LAC / JACAR / Flickr Commons / 海自 五份条款（全部 blocked，目前对这几家的授权一无所知）

@@ -1,0 +1,2540 @@
+# ============================================================================
+# 大和型戦艦（Yamato class）舰级公共数据
+# ----------------------------------------------------------------------------
+# 只放大和与武藏两舰**共有**的设计参数与武器/炮位实体。
+# 两舰不同的部分（建造日期、改装史、编制、战历、结局）写在 ships/<id>.yaml。
+#
+# 来源口径说明：
+#   · 日方口径（「基準排水量／公試排水量／満載排水量」）与英美口径不同，
+#     各口径分别成字段，绝不合并。
+#   · 装甲厚度的「部位—分段」来自 navypedia 的 Ship protection 段与
+#     kasado 的装甲防御表、pwe 的 Protection 表；三份互相独立。
+#   · 材质（VH / MNC / CNC / Ducol）只在 pwe 的 Protection 表里逐行给出，
+#     故材质 fact 只有 pwe 一个来源，confidence 记 C。
+# ============================================================================
+
+id: yamato
+name:
+  zh: 大和型
+  en: Yamato class
+class_of: [yamato, musashi]
+note: |
+  本文件登记两舰共有的设计值与武备布置。凡大和与武藏不同的项
+  （建造日期、改装节点、编制、雷达加装时间、结局）一律写进单舰文件。
+  舰级层的武备数量取「竣工时」状态；改装后的数量变化由单舰 fact 覆盖。
+
+open_ended_note: |
+  本文件绝大多数 fact 的 valid.to 都留空，这是结构性的，不是漏填：
+  舰级设计参数的生效期从设计定案/服役起，到该级最后一艘损失或拆解为止，
+  期间不因改装而改变；实际战备状态随时间的变化写在 data/ships/<id>.yaml 的
+  状态切片里，由单舰 fact 覆盖。因此这里的 open 时间窗表示「无已知终止事件」。
+
+facts:
+  # ---------------------------------------------------------------- 身份
+  - field: identity.name_original
+    value: 大和型戦艦
+    src: [kasado-yamato]
+    valid: { from: 1937-03-01 }
+    confidence: C
+    note: kasado 舰级页标题「大和型戦艦 Yamato class Battleship」。建造期间两舰分别以「第一号艦」「第二号艦」代称。
+
+  - field: identity.name_zh
+    value: 大和型
+    src: [kasado-yamato]
+    valid: { from: 1937-03-01 }
+    confidence: C
+
+  - field: identity.name_en
+    value: Yamato class
+    src: [kasado-yamato, navypedia-yamato]
+    valid: { from: 1937-03-01 }
+    confidence: C
+    note: navypedia 页题「YAMATO battleships (1941 - 1942)」。
+
+  - field: identity.name_note
+    value: 日方分类为「戦艦」；对外长期宣称主炮为 40 cm，实际 46 cm
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >
+      navweaps 原文："These guns were officially designated by the Japanese as
+      40 cm/45 Type 94 (15.7 inch) in an effort to hide their actual size,
+      which was a closely-guarded secret until after the end of World War II."
+
+  - field: identity.ship_type
+    value: battleship
+    src: [navypedia-yamato, kasado-yamato]
+    valid: { from: 1937-03-01 }
+    confidence: B
+
+  - field: identity.nation
+    value: japan
+    src: [navypedia-yamato]
+    valid: { from: 1937-03-01 }
+    confidence: B
+
+  - field: identity.operator
+    value: 大日本帝国海軍（Imperial Japanese Navy）
+    src: [combinedfleet-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      TROM 原文："Battleship No. 1 is completed and registered in the Kure Naval District as YAMATO."
+
+  - field: identity.era
+    value: ww2
+    src: [navypedia-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: 按服役期定位（1941-12-16 服役，1945-04-07 沉没），不是按设计年份。
+
+  - field: identity.building_program
+    value: ③計画（マル3計画）1937 年两艘、④計画（マル4計画）1939 年两艘
+    src: [navypedia-yamato]
+    valid: { from: 1937 }
+    confidence: C
+    note: >
+      navypedia 原文："First two ships were ordered in 1937 within the limits of
+      3rd Supplementary Programme, two more in 1939 under 4th Supplementary Programme."
+
+  - field: identity.namesake
+    value: 大和＝旧国名（大和国）；武藏＝旧国名（武蔵国）
+    src: [kasado-yamato]
+    valid: { from: 1940 }
+    confidence: C
+    note: 两舰均按日本海军战列舰以旧国名命名的惯例；kasado 页只给舰名，未解释命名来源，本条为命名惯例的归纳。
+
+  # ---------------------------------------------------------------- 排水量
+  # 日方四档口径（軽荷／基準／公試／満載）在来源里各有专名，绝不合并。
+  # 「深载」：本轮所有来源均无此档，见 RESEARCH-NOTES 的「未获取」清单。
+
+  - field: displacement.standard
+    value: 65000
+    unit: t
+    src: [yamato-museum-data, japanese-warship-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >
+      呉市海事歴史科学館（大和ミュージアム）数据页「基準排水量 65,000トン」；
+      japanese-warship「基準排水量65,000t」。两源一致。
+
+  - field: displacement.standard
+    value: 63200
+    unit: t
+    src: [navypedia-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      另一说。navypedia 原文 "Displacement standard, t | 63200"。
+      与博物馆/日文站的 65,000 t 并列，不裁决。
+
+  - field: displacement.standard
+    value: 63980
+    unit: t
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: 第三说。kasado「基準排水量 63,980t」（大和型竣工時）。
+
+  - field: displacement.standard
+    value: 62315
+    unit: t
+    src: [pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      第四说。pwe 原文 "62,315 tons standard displacement"。
+
+  - field: displacement.declared
+    value: 42000
+    unit: t
+    src: [japanese-warship-yamato-building]
+    valid: { from: 1937 }
+    confidence: C
+    note: >
+      对外公布的假数据。原文：「徹底して日本は新型戦艦の概要を『42,000t、40cm砲9門、25ノット』
+      として公に扱ってきた」。这是政治申报值，与真实值并存，不构成分歧。
+
+  - field: displacement.trial
+    value: 69100
+    unit: t
+    src: [japanese-warship-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      japanese-warship「公試排水量69,100t」，脚注 [3] 指向
+      "Design and Construction of the Yamato and Musashi"（松本喜太郎・千々岩正孝，USNI）。
+
+  - field: displacement.trial
+    value: 68010
+    unit: t
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: 另一说。kasado「公試排水量 68,010t」（大和型竣工時）。与 69,100 t 并列，不裁决。
+
+  - field: displacement.full
+    value: 72810
+    unit: t
+    src: [navypedia-yamato, kasado-yamato]
+    valid: { from: 1944 }
+    confidence: C
+    note: >
+      navypedia "Displacement full, t | 72810"；kasado 大和「最終時」満載 72,809t。
+      两值差 1 t，属换算取整，按同一值处理并记下原文差异。
+
+  - field: displacement.full
+    value: 71110
+    unit: t
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: kasado「満載排水量 71,110t」（竣工時）。舰龄增长后满载值上升，故与最终时 72,809 t 分列。
+
+  - field: displacement.full
+    value: 71659
+    unit: t
+    src: [combinedfleet-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      combinedfleet 舰级页 "Displacement | 71,659 tons"，**未注明口径**。
+      与上述满载值并列，不裁决。
+
+  # ---------------------------------------------------------------- 主尺度
+  - field: dimensions.length.oa
+    value: 263.0
+    unit: m
+    src: [navypedia-yamato, kasado-yamato, japanese-warship-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      三源一致：navypedia "Length, m | 244.0 pp 256.0 wl 263.0 oa"；kasado「全長 263.0m」；japanese-warship「全長263.00m」。
+
+  - field: dimensions.length.wl
+    value: 256.0
+    unit: m
+    src: [navypedia-yamato, kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: kasado「水線長 256.0m」。
+
+  - field: dimensions.length.pp
+    value: 244.0
+    unit: m
+    src: [navypedia-yamato, kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: kasado「垂線間長 244.0m」。
+
+  - field: dimensions.beam.wl
+    value: 36.9
+    unit: m
+    src: [navypedia-yamato, kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      kasado「水線幅 36.9m」；pwe 记 121'1" = 36.91 m。
+
+  - field: dimensions.beam.max
+    value: 38.9
+    unit: m
+    src: [kasado-yamato, japanese-warship-yamato, yamato-museum-data]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: kasado「最大幅 38.9m」；博物馆「最大幅 38.9m」。注意与 36.9 m 水线宽不是一个口径。
+
+  - field: dimensions.draught.mean
+    value: 10.4
+    unit: m
+    src: [navypedia-yamato, pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      navypedia "Draught, m | 10.4"；pwe "262.99m by 36.91m by 10.41m"。
+
+  - field: dimensions.draught.mean
+    value: 10.8
+    unit: m
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      另一说。kasado「吃水 10.80m」（大和型竣工時）。与 10.4 m 并列，不裁决——
+      两源未声明各自对应的排水量状态。
+
+  # ---------------------------------------------------------------- 动力
+  - field: propulsion.plant_type
+    value: steam_turbine
+    src: [navypedia-yamato, kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      navypedia "4 sets Kampon geared steam turbines"；设计初期曾考虑柴油／汽轮机混装，1935-10 放弃。
+
+  - field: propulsion.shafts
+    value: 4
+    unit: count
+    src: [navypedia-yamato, kasado-yamato, pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      navypedia "No of shafts | 4"；kasado「軸数 4軸」。
+
+  - field: propulsion.boiler.count
+    value: 12
+    unit: count
+    src: [navypedia-yamato, kasado-yamato, japanese-warship-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      navypedia "12 Kampon boilers"；kasado「主罐 ロ号艦本式重油専焼水管罐:12基」。任务书「12 座ロ号」一说成立。
+
+  - field: propulsion.boiler.type
+    value: ロ号艦本式重油専焼水管缶（Kampon Ro-type oil-fired water-tube boiler）
+    src: [kasado-yamato, japanese-warship-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: kasado「ロ号艦本式重油専焼水管罐」；japanese-warship「ロ号艦本式ボイラー 12基」。
+
+  - field: propulsion.turbine.count
+    value: 8
+    unit: count
+    src: [kasado-yamato, japanese-warship-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      kasado「主機 艦本式オールギヤードタービンエンジン:8基」；japanese-warship「艦本式ギアード・タービン 8基4軸」。
+      navypedia 记 "4 sets"，是「4 组」而非「4 台」——两说口径不同，本条按台数记 8。
+
+  - field: propulsion.turbine.type
+    value: 艦本式オールギヤードタービン（Kampon all-geared steam turbine）
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+
+  - field: propulsion.power.design
+    value: 150000
+    unit: hp
+    src: [navypedia-yamato, kasado-yamato, pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      navypedia "Power, h. p. | 150000"；kasado「出力 150,000shp」；pwe "(150,000 shp)"。任务书「150,000 shp」一说成立。
+
+  - field: propulsion.speed.design
+    value: 27
+    unit: kn
+    src: [navypedia-yamato, pwe-yamato-class, japanese-warship-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      navypedia "Max speed, kts | 27"；japanese-warship「最大速度27.0ノット」。
+
+  - field: propulsion.speed.trial
+    value: 27.46
+    unit: kn
+    src: [yamato-museum-data, kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >
+      博物馆「最大速力は 27.46ノット(約52km/h)」；kasado「速力 27.46kt」。
+      任务书「27.46 节」一说成立。
+
+  - field: propulsion.fuel.capacity
+    value: 6300
+    unit: t
+    src: [navypedia-yamato, kasado-yamato, pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      navypedia "Fuel, t | oil 6300"；kasado「燃料搭載量 重油:6,300t」。注意这是设计搭载量，实战出击时远低于此（见单舰文件）。
+
+  - field: propulsion.fuel.type
+    value: 重油（fuel oil）
+    src: [navypedia-yamato, kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+
+  - field: propulsion.range.max
+    value: 7200
+    unit: nmi
+    src: [navypedia-yamato, kasado-yamato, pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      navypedia "Endurance, nm(kts) | 7200(16)"；kasado「航続距離 16.0kt / 7,200nm」。
+
+  - field: propulsion.range.at_speed
+    value: 16
+    unit: kn
+    src: [navypedia-yamato, kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: 续航力的对应航速，必须与 propulsion.range.max 成对解读。
+
+  - field: propulsion.propeller.count
+    value: 4
+    unit: count
+    src: [navypedia-yamato, yamato-museum-data]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: 4 轴即 4 桨。
+
+  - field: propulsion.propeller.diameter
+    value: 5.0
+    unit: m
+    src: [yamato-museum-data]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >
+      博物馆数据页「プロペラ直径 5m」。原文："戦艦「大和」のプロペラは、直径5mにも及びます。"
+
+  - field: propulsion.electrical.output
+    value: 4800
+    unit: kW
+    src: [pwe-yamato-class, kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      pwe 原文 "their generators had a capacity of 4800 kilowatts"；
+      kasado 逐台列「600kW タービン(発電専用):4基 + 600kW ディーゼル(発電専用):4基」= 8×600 = 4,800 kW。两源吻合。
+
+  - field: propulsion.rudder.count
+    value: 2
+    unit: count
+    src: [japanese-warship-yamato-building]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      主舵 + 副舵。原文：「主舵と副舵を支える船尾材は完成品が計画より14tも重い91tだった」。
+      combinedfleet TROM 亦记 "her main and auxiliary rudder controls are improved"（1943-07 改装）。
+
+  # ---------------------------------------------------------------- 防护
+  - field: protection.scheme
+    value: all_or_nothing
+    src: [japanese-warship-yamato-building, navypedia-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      **属归类判定。** 日文来源用「集中防御方式」（原文「「大和型」は集中防御方式を取っている
+      関係上、非バイタルパートはかなり防御力が低く」），英文枚举里无此词，
+      按集中装甲堡=all-or-nothing 归入。
+
+  - field: protection.armor.thickness
+    value: 410
+    unit: mm
+    qual: { part: belt, region: main }
+    src: [navypedia-yamato, pwe-yamato-class, kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >
+      navypedia "belt: 410"；pwe "16.1" (410mm) VH belt inclined 20 degrees"；
+      kasado「水線部舷側装甲 410mm + 16mm / 傾斜:20.0°」。任务书「410 mm VH」一说成立（410 为主板，另有 16 mm）。
+
+  - field: protection.armor.angle
+    value: 20
+    unit: deg
+    qual: { part: belt, region: main }
+    src: [navypedia-yamato, kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      navypedia "410mm main belt on a waterline with about 5.8m height had 20° declination outside"；kasado「傾斜:20.0°」。
+
+  - field: protection.armor.thickness
+    value: 270
+    unit: mm
+    qual: { part: lower_belt, region: main }
+    src: [navypedia-yamato, kasado-yamato, pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      下部舷側装甲**上缘**。navypedia "At upper edge this armoured bulkhead had a 270mm
+      thickness (abreast magazines) or 200mm (abreast machinery), tapering at lower edge to 75mm"；
+      kasado 分两行：弾薬庫周辺 270mm～75mm / 機関部周辺 200mm～75mm。
+      本条取弹药库段上缘 270；机舱段 200 与下缘 75 记在 note，不另立 fact（同一块板的连续变厚）。
+
+  - field: protection.armor.angle
+    value: 20
+    unit: deg
+    qual: { part: belt, region: lower }
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      kasado「下部舷側装甲 … 傾斜:20.0°」。**part 用 belt／region 用 lower**：
+      注册表 protection.armor.angle 的 part 枚举里没有 lower_belt（只有厚度字段才有），
+      故按「装甲带下段」编码，与 thickness 条的 lower_belt 指向同一块板。
+
+  - field: protection.armor.thickness
+    value: 300
+    unit: mm
+    qual: { part: bulkhead, region: fore }
+    src: [navypedia-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      navypedia "Transverse bulkheads were 300mm (fwd) and 270-300mm (aft) also were
+      inclined outside at 25° angle"。
+
+  - field: protection.armor.thickness
+    value: 270
+    unit: mm
+    qual: { part: bulkhead, region: aft }
+    src: [navypedia-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      同段原文 "270-300mm (aft)"，本条取区间下限 270。
+
+  - field: protection.armor.thickness
+    value: 340
+    unit: mm
+    qual: { part: bulkhead, region: main }
+    src: [pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      与 navypedia 的 300/270-300 并列，**不裁决**。pwe 原文
+      "13.4" (340mm) VH bulkheads inclined 20 degrees"。两源对倾角亦不同（navypedia 25°、pwe 20°）。
+
+  - field: protection.armor.thickness
+    value: 200
+    unit: mm
+    qual: { part: deck, region: main }
+    src: [navypedia-yamato, kasado-yamato, pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >
+      navypedia "main deck in the 230-200mm thickness"；kasado「中甲板装甲 中央部:200mm」；
+      pwe "7.87" to 9.1" (200mm to 230mm) MNC third deck"。任务书「甲板 200-230 mm」一说成立：中部 200、外舷倾斜部 230。
+
+  - field: protection.armor.thickness
+    value: 230
+    unit: mm
+    qual: { part: deck, region: side }
+    src: [navypedia-yamato, kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      主装甲甲板外舷倾斜部。kasado「中甲板装甲 外舷部:230mm」；navypedia "connected with upper edge of main belt by 7°inclined 230mm outer parts (nearly slopes)"。
+
+  - field: protection.armor.angle
+    value: 7
+    unit: deg
+    qual: { part: deck, region: side }
+    src: [kasado-yamato, navypedia-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: kasado「外舷部:230mm / 傾斜:7.0°」。
+
+  - field: protection.armor.thickness
+    value: 12
+    unit: mm
+    qual: { part: deck, region: roof }
+    src: [kasado-yamato, pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      最上甲板中央部。kasado「最上甲板装甲 中央部:12mm 外舷部:20mm + 18mm」；
+      pwe "0.47" to 0.79+0.71" (12mm to 20+18mm) CNC weather deck"。外舷 20+18 记在 note。
+
+  - field: protection.armor.thickness
+    value: 10
+    unit: mm
+    qual: { part: deck, region: upper }
+    src: [kasado-yamato, pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      上甲板中央部。kasado「上甲板装甲 中央部:10mm 外舷部:25mm」；
+      pwe "0.39" to 0.98" (10mm to 25mm) CNC second deck"。外舷 25 mm 记在 note。
+
+  - field: protection.armor.thickness
+    value: 9
+    unit: mm
+    qual: { part: deck, region: splinter }
+    src: [kasado-yamato, navypedia-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      kasado「防護甲板装甲 9mm / 下甲板装甲 9mm」；navypedia "Below it was thin (9mm) splinter deck"
+      （另一处写 10mm）；pwe "0.4" (10mm) Ducol splinter deck"。9/10 两值并列，取 9 并记差异。
+
+  - field: protection.armor.thickness
+    value: 9
+    unit: mm
+    qual: { part: deck, region: lower }
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: kasado「下甲板装甲 9mm」。
+
+  - field: protection.armor.thickness
+    value: 80
+    unit: mm
+    qual: { part: magazine, region: bottom }
+    src: [navypedia-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      navypedia "The 80mm armour deck under magazines, provided for protection against
+      underwater explosions became interesting feature"。
+
+  - field: protection.armor.thickness
+    value: 650
+    unit: mm
+    qual: { part: turret, region: face }
+    src: [navypedia-yamato, kasado-yamato, pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >
+      navypedia "turrets: 650 - 190"；kasado「主砲塔 前面:650mm」；pwe "25.6"…(650mm…)"；
+      navweaps 引 Skulski 亦为 "Face: 25.6 in (65 cm)"。任务书「650 mm 前面」一说成立。
+
+  - field: protection.armor.thickness
+    value: 250
+    unit: mm
+    qual: { part: turret, region: side }
+    src: [kasado-yamato, pwe-yamato-class, navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      kasado「側面:250mm」；pwe "9.8"…(250mm…)"；navweaps 引 Skulski "Sides: 9.8 in (25 cm)"。
+
+  - field: protection.armor.thickness
+    value: 190
+    unit: mm
+    qual: { part: turret, region: rear }
+    src: [kasado-yamato, pwe-yamato-class, navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      kasado「後面:190mm」；navweaps 引 Skulski "Rear: 7.5 in (19 cm)"。
+
+  - field: protection.armor.thickness
+    value: 270
+    unit: mm
+    qual: { part: turret, region: roof }
+    src: [kasado-yamato, pwe-yamato-class, navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      kasado「天蓋:270mm」；navweaps 引 Skulski "Roof: 10.6 in (27 cm)"。
+
+  - field: protection.armor.thickness
+    value: 560
+    unit: mm
+    qual: { part: barbette, region: side }
+    src: [kasado-yamato, navypedia-yamato, pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      kasado「主砲塔バーベット部 側面:560mm」；navypedia "barbettes: 560 - 380"；pwe "22" (560mm) VH barbette"。
+
+  - field: protection.armor.thickness
+    value: 440
+    unit: mm
+    qual: { part: barbette, region: fore }
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: kasado「主砲塔バーベット部 前面:440mm」。
+
+  - field: protection.armor.thickness
+    value: 380
+    unit: mm
+    qual: { part: barbette, region: aft }
+    src: [kasado-yamato, navypedia-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      kasado「後面:380mm」；navypedia "barbettes: 560 - 380"。
+
+  - field: protection.armor.thickness
+    value: 500
+    unit: mm
+    qual: { part: conning_tower, region: side }
+    src: [kasado-yamato, pwe-yamato-class, navypedia-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >
+      kasado「司令塔 前面:500mm 側面:500mm 天蓋:200mm」；pwe "19.7"/7.9" (500mm/200mm) VH conning tower"；
+      navypedia "CT had 500mm sides and 200mm roof"。任务书「司令塔 500 mm」一说成立。
+
+  - field: protection.armor.thickness
+    value: 500
+    unit: mm
+    qual: { part: conning_tower, region: fore }
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: kasado「司令塔 前面:500mm」。
+
+  - field: protection.armor.thickness
+    value: 200
+    unit: mm
+    qual: { part: conning_tower, region: roof }
+    src: [kasado-yamato, navypedia-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      kasado「天蓋:200mm」；navypedia "200mm roof"。
+
+  - field: protection.armor.thickness
+    value: 50
+    unit: mm
+    qual: { part: turret, region: upper }
+    src: [kasado-yamato, navweaps-155cm-60-3ns]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >
+      **副炮塔**（15.5 cm 三联装）四面各 50 mm，与主炮塔不是同一个部位。
+      kasado「副砲塔 前面/側面/後面/天蓋 各:50mm」；navweaps "Battleship turrets had 50 mm (1.97") protection"。
+      qual 用 turret/upper 是为与主炮塔的 turret/side 区分（注册表 part 无 secondary 项），属本站的部位编码约定。
+
+  - field: protection.armor.thickness
+    value: 350
+    unit: mm
+    qual: { part: bulkhead, region: torpedo }
+    src: [pwe-yamato-class, navypedia-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      舵机舱侧壁。pwe "13.8" (350mm) VH steering room sides"；
+      navypedia "Steering gears had 360-350mm (main) or 300-200mm (reserve) sides and 200mm roofs"。
+      注册表无 steering gear 部位，按「尾部横隔壁」编码。
+
+  - field: protection.armor.thickness
+    value: 140
+    unit: mm
+    qual: { part: funnel_uptake, region: main }
+    src: [pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      pwe "3.6" (140mm) MNC uptakes"。烟路侧壁装甲。
+
+  - field: protection.armor.weight
+    value: 22534
+    unit: t
+    src: [navypedia-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      navypedia 原文 "Armour mass reached 22534t"（在 Project history 段）。
+      只此一源给出装甲总重，未取第二源，故记 C。
+
+  - field: protection.underwater.depth
+    value: 8
+    unit: m
+    src: [navypedia-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      navypedia "Underwater protection was 8m deep and content 270-75mm longitudinal bulkhead"。
+
+  - field: protection.torpedo_bulge.type
+    value: 四层纵舱壁 void-void-void-liquid 防雷体系
+    src: [pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      pwe 原文 "4-bulkhead void-void-void-liquid torpedo protection (0.35", 0.63", lower armor belt,
+      0.4", 0.6" or 9mm, 16mm, lower armor belt, 11mm, 15mm bulkheads from inboard to outboard)
+      effective against 880 lbs TNT."
+
+  # 材质：只有 pwe 的 Protection 表逐行给材质，其余来源均未给。
+  - field: protection.armor.material
+    value: VH（Vickers Hardened，维克斯渗碳硬化装甲）
+    qual: { part: belt, region: main }
+    src: [pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      pwe "16.1" (410mm) VH belt inclined 20 degrees"。任务书「VH」一说成立。
+
+  - field: protection.armor.material
+    value: VH
+    qual: { part: lower_belt, region: main }
+    src: [pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      pwe "10.6" to 3" (270 to 75 mm) lower VH magazine belt" / "7.9" to 3" (200 to 75 mm) lower VH machinery belt"。
+
+  - field: protection.armor.material
+    value: MNC（Non-Cemented 均质装甲，日方中甲板用）
+    qual: { part: deck, region: main }
+    src: [pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      pwe "7.87" to 9.1" (200mm to 230mm) MNC third deck, sloped 7 degrees from horizontal at its edges."
+
+  - field: protection.armor.material
+    value: CNC
+    qual: { part: deck, region: upper }
+    src: [pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      pwe "0.39" to 0.98" (10mm to 25mm) CNC second deck"。
+
+  - field: protection.armor.material
+    value: CNC
+    qual: { part: deck, region: roof }
+    src: [pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      pwe "0.47" to 0.79+0.71" (12mm to 20+18mm) CNC weather deck"。
+      **region 用 roof**：注册表 protection.armor.material 的 region 枚举里没有 top，
+      最上甲板（weather deck）是暴露于空中的最上一层，按 roof 编码。
+
+  - field: protection.armor.material
+    value: Ducol（日方高张力钢）
+    qual: { part: deck, region: splinter }
+    src: [pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      pwe "0.4" (10mm) Ducol splinter deck"；同表另记二层甲板之间 "1"+0.3" (25mm+9mm) Ducol hull"。
+
+  - field: protection.armor.material
+    value: VH
+    qual: { part: turret, region: face }
+    src: [pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      pwe "25.6"/9.8"/10.6"/7.5" (650mm/250mm/270mm/190mm) VH main turrets"。
+
+  - field: protection.armor.material
+    value: VH
+    qual: { part: barbette, region: side }
+    src: [pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      pwe "22" (560mm) VH barbette"。
+
+  - field: protection.armor.material
+    value: VH
+    qual: { part: conning_tower, region: side }
+    src: [pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      pwe "19.7"/7.9" (500mm/200mm) VH conning tower"。
+
+  - field: protection.armor.material
+    value: VH
+    qual: { part: bulkhead, region: main }
+    src: [pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      pwe "13.4" (340mm) VH bulkheads inclined 20 degrees"。
+
+  - field: protection.armor.material
+    value: CNC
+    qual: { part: turret, region: upper }
+    src: [pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      pwe "1" (25mm) CNC secondary turrets"（副炮塔）。与 kasado/naweaps 的 50 mm 不一致，两说并列不裁决。
+
+  # ---------------------------------------------------------------- 武备装载层
+  - field: armament.mount.summary
+    value: >
+      竣工时：3 × 3 46 cm/45 九四式（前二后一）+ 4 × 3 15.5 cm/60 三年式
+      （一座在前、两座舷侧、一座在后）+ 6 × 2 12.7 cm/40 八九式高角炮
+      + 8 × 3 25 mm 九六式机铳 + 2 × 2 13.2 mm 九三式机铳；无鱼雷发射管
+    src: [kasado-yamato, japanese-warship-yamato, navypedia-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >
+      kasado「主砲 九四式 45口径46.0cm三連装砲:3基／副砲 三年式 60口径15.5cm三連装砲:4基／
+      対空火器 八九式 40口径12.7cm連装高角砲:6基、九六式 60口径25mm三連装機銃:8基、
+      九三式 76口径13.2mm連装機銃:2基／水雷兵装 -」。
+
+  - field: armament.mount.summary
+    value: >
+      1944 年改装后（大和）：3 × 3 46 cm + 2 × 3 15.5 cm（撤去舷侧两座）
+      + 12 × 2 12.7 cm + 50 × 3 与 2 × 1 25 mm（152 门）+ 2 × 2 13.2 mm
+    src: [combinedfleet-yamato, kasado-yamato]
+    valid: { from: 1944-11-25 }
+    confidence: C
+    note: >
+      combinedfleet TROM 1944-11-25 条："YAMATO's final AA complement is 152 25-mm AA guns
+      (50 triple mounts, 2 single mounts)."
+
+  - field: armament.torpedo.tubes
+    value: 0
+    unit: count
+    src: [kasado-yamato, navypedia-yamato, japanese-warship-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >
+      **这是「设计上就没有」，不是「未获取」。** kasado 水雷兵装栏全部为「-」；
+      navypedia 的 Armament 行无 TT 项（同级金刚型、长门型均明写
+      "4 x 4 - 533 TT" / "8 - 533 TT" 之类）；japanese-warship 装备一览亦无发射管。
+      与长门级的关键差别即在此。
+
+  - field: armament.aa_25mm.count
+    value: 24
+    unit: count
+    src: [kasado-yamato, japanese-warship-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >
+      按管数记：8 座三联 = 24 门。kasado「九六式 60口径25mm三連装機銃:8基」；
+      japanese-warship「25mm三連装機銃 8基24挺」。
+
+  # ================================================================
+  # 武器本体：46 cm/45 九四式（weapon:46cm-45-t94）
+  # 数据全部出自 navweaps 的 46 cm/45 Type 94 数据页（tier C）。
+  # ================================================================
+  - about: weapon:46cm-45-t94
+    field: weapon.designation
+    value: >-
+      45 口径九四式 46 cm 炮（46 cm/45 (18.1") Type 94）
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941 }
+    confidence: B
+    note: >
+      原文："Official Designation: 45 caliber Type 94 40 cm Gun / Actual Size 46 cm (18.1")"。
+      对外伪装口径为 40 cm，「九四式四〇糎」是官方文书的写法。
+
+  - about: weapon:46cm-45-t94
+    field: weapon.nation
+    value: japan
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941 }
+    confidence: B
+
+  - about: weapon:46cm-45-t94
+    field: weapon.category
+    value: naval_gun
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941 }
+    confidence: B
+
+  - about: weapon:46cm-45-t94
+    field: weapon.bore
+    value: 460
+    unit: mm
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941 }
+    confidence: B
+    note: >-
+      原文 "Actual Size: 46 cm/45 (18.1")"；官方名义口径 40 cm 见 designation 条。
+
+  - about: weapon:46cm-45-t94
+    field: weapon.caliber_length
+    value: 45
+    unit: ratio
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941 }
+    confidence: B
+
+  - about: weapon:46cm-45-t94
+    field: weapon.caliber_method
+    value: unknown
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941 }
+    confidence: C
+    note: navweaps 未声明 45 倍是膛线长法还是全长法，故记 unknown，不做换算。
+
+  - about: weapon:46cm-45-t94
+    field: weapon.weight
+    value: 164654
+    unit: kg
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941 }
+    confidence: B
+    note: >-
+      原文 "363,000 lbs. (164,654 kg) with breech"。combinedfleet 记 "Weight | 162.4 tons"（=165,000 kg），系取整，本条以 navweaps 精确值为主。
+
+  - about: weapon:46cm-45-t94
+    field: weapon.length.oa
+    value: 21.130
+    unit: m
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941 }
+    confidence: B
+    note: >-
+      原文 "Gun Length oa | 831.9 in (21.130 m)"。
+
+  - about: weapon:46cm-45-t94
+    field: weapon.length.bore
+    value: 20.700
+    unit: m
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941 }
+    confidence: B
+    note: >-
+      原文 "Bore Length | 815 in (20.700 m)"；另给 "Rifling Length | about 806 in (20.480 m)"。
+
+  - about: weapon:46cm-45-t94
+    field: weapon.projectile_weight
+    value: 1458.3
+    unit: kg
+    qual: { shell_type: apc }
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1938, to: 1940 }
+    confidence: B
+    note: >
+      APC 九一式。原文 "APC Type 91: 3,215 lbs. (1,458.3 kg)"。navweaps 自注该值出自
+      战后 USN 文件的 "Complete"（含弹底药与衬套）口径。
+      **时间窗取 1938-1940**：同页原文 "The modified type superseded the original in 1941,
+      so these battleships may never have carried any but the newer shell."——
+      即本舰 1941-12-16 服役时九一式已被一型取代，本条记录的是被取代前的那一档。
+
+  - about: weapon:46cm-45-t94
+    field: weapon.projectile_weight
+    value: 1460
+    unit: kg
+    qual: { shell_type: apc }
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941 }
+    confidence: B
+    note: >
+      APC 一型。原文 "APC Type 1: 3,219 lbs. (1,460 kg)"。与九一式的 1,458.3 kg 并列，
+      **不是两说**——navweaps 自己说明这是两个不同弹种的重量：一型更长（81 in vs 76.9 in）、
+      带染污弹袋，因而略重，且 1941 年起取代九一式。
+
+  - about: weapon:46cm-45-t94
+    field: weapon.projectile_weight
+    value: 1360
+    unit: kg
+    qual: { shell_type: he }
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941 }
+    confidence: B
+    note: >-
+      原文 "Common Type 0 HE: 2,998 lbs. (1,360 kg)"。博物馆数据页「砲弾重量 1.46t」指九一式彻甲弹。
+
+  - about: weapon:46cm-45-t94
+    field: weapon.projectile_weight
+    value: 1360
+    unit: kg
+    qual: { shell_type: aa }
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941 }
+    confidence: B
+    note: >
+      三式弹（三式通常弾 / sankaidan）。原文 "Common Type 3 IS: 2,998 lbs. (1,360 kg)"，
+      内装 900 根烧夷管，定时空炸，设计用来在来袭机群前方形成弹幕。
+
+  - about: weapon:46cm-45-t94
+    field: weapon.muzzle_velocity
+    value: 780
+    unit: mps
+    qual: { shell_type: apc }
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941 }
+    confidence: B
+    note: >-
+      原文 "APC Type 91: 2,559 fps (780 mps) / APC Type 1: 2,559 fps (780 mps)"。两弹种同初速，合为一条。
+
+  - about: weapon:46cm-45-t94
+    field: weapon.muzzle_velocity
+    value: 805
+    unit: mps
+    qual: { shell_type: he }
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941 }
+    confidence: B
+    note: >-
+      原文 "Common Type 0 HE: 2,641 fps (805 mps)"。
+
+  - about: weapon:46cm-45-t94
+    field: weapon.muzzle_velocity
+    value: 805
+    unit: mps
+    qual: { shell_type: aa }
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941 }
+    confidence: B
+    note: >-
+      原文 "Common Type 3 IS: 2,641 fps (805 mps)"。
+
+  - about: weapon:46cm-45-t94
+    field: weapon.charge.weight
+    value: 360
+    unit: kg
+    qual: { charge_part: single, propellant: other }
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941 }
+    confidence: B
+    note: >
+      原文 "Propellant Charge | 794 lbs. (360 kg) 110 DC1"。装药分装 6 包，
+      1942 年前用毛织药包、之后改绢质。注册表 propellant 枚举里无 110 DC1，记 other。
+
+  - about: weapon:46cm-45-t94
+    field: weapon.charge.chamber_volume
+    value: 680
+    unit: dm3
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941 }
+    confidence: B
+    note: >-
+      原文 "Chamber Volume | about 41,496 in3 (680 dm3)"。
+
+  - about: weapon:46cm-45-t94
+    field: weapon.rate_of_fire
+    value: 2
+    unit: rpm
+    src: [navweaps-46cm-45-t94, combinedfleet-46cm]
+    valid: { from: 1941 }
+    confidence: B
+    note: >
+      navweaps "1.5 - 2 rounds per minute"；combinedfleet "Rate of Fire | 2/min"。
+      本条取上限 2，下限 1.5 记于此。装填角 +3°，30 秒循环对应射程不超过 6,000 m。
+
+  - about: weapon:46cm-45-t94
+    field: weapon.elevation.min
+    value: -5
+    unit: deg
+    src: [navweaps-46cm-45-t94, combinedfleet-46cm]
+    valid: { from: 1941 }
+    confidence: B
+    note: >
+      炮塔仰角。navweaps "Elevation | -5 / +45 degrees"；combinedfleet "Max. Elevation | +45/-5 degrees"。
+      该炮架另有 +3～+41° 的锁定档（滑动十字头切换），选后者可省去装填角锁销。
+
+  - about: weapon:46cm-45-t94
+    field: weapon.elevation.max
+    value: 45
+    unit: deg
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941 }
+    confidence: B
+
+  - about: weapon:46cm-45-t94
+    field: weapon.range.max
+    value: 42110
+    unit: m
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941 }
+    confidence: B
+    note: >
+      原文射程表 "48.0 degrees (max range) | 46,050 yards (42,110 m)"。
+      45°（炮塔最大仰角）对应 42,030 m；两者并列，本条取全炮最大射程。
+
+  - about: weapon:46cm-45-t94
+    field: weapon.range.max_elevation
+    value: 48
+    unit: deg
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941 }
+    confidence: B
+
+  - about: weapon:46cm-45-t94
+    field: weapon.barrel_life
+    value: 150
+    unit: count
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941 }
+    confidence: C
+    note: >
+      原文 "Approximate Barrel Life | about 150 - 250 rounds"。数值型字段不能存区间，
+      本条取区间下限 150 并在此声明取法，不是来源给的单一值。
+
+  - about: weapon:46cm-45-t94
+    field: weapon.ammo_outfit
+    value: 100
+    unit: count
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941 }
+    confidence: B
+    note: >
+      原文 "Ammunition stowage per gun | 100 rounds"（每门）。同页另记
+      "Each mounting held 300 rounds with 180 rounds stored in two handling rooms on the
+      rotating structure and the remaining 120 in shell rooms"（每座炮塔 300 发）。
+
+  - about: weapon:46cm-45-t94
+    field: weapon.in_service_from
+    value: 1941
+    unit: date
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941 }
+    confidence: B
+    note: >-
+      原文 "Date In Service | 1941"；设计年 1939，首炮 1938-03 在龟ケ首试验场试射。
+
+  # ================================================================
+  # 武器本体：15.5 cm/60 三年式（weapon:15_5cm-60-3ns）
+  # 数据出自 navweaps 的 14 cm 同族页之外的单页（61-60_3ns），tier C。
+  # ================================================================
+  - about: weapon:15_5cm-60-3ns
+    field: weapon.designation
+    value: >-
+      60 口径三年式 15.5 cm 炮（15.5 cm/60 (6.1") 3rd Year Type）
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1935 }
+    confidence: B
+    note: >-
+      原文 "Official Designation: 60 Caliber 3rd Year Type 15.5 cm Gun"。
+
+  - about: weapon:15_5cm-60-3ns
+    field: weapon.nation
+    value: japan
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1935 }
+    confidence: B
+
+  - about: weapon:15_5cm-60-3ns
+    field: weapon.category
+    value: naval_gun
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1935 }
+    confidence: B
+
+  - about: weapon:15_5cm-60-3ns
+    field: weapon.bore
+    value: 155
+    unit: mm
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1935 }
+    confidence: B
+
+  - about: weapon:15_5cm-60-3ns
+    field: weapon.caliber_length
+    value: 60
+    unit: ratio
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1935 }
+    confidence: B
+
+  - about: weapon:15_5cm-60-3ns
+    field: weapon.caliber_method
+    value: unknown
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1935 }
+    confidence: C
+    note: 同上，来源未声明倍径算法。
+
+  - about: weapon:15_5cm-60-3ns
+    field: weapon.weight
+    value: 12700
+    unit: kg
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1935 }
+    confidence: B
+    note: >-
+      原文 "Gun Weight | 12.5 tons (12.7 mt)"。
+
+  - about: weapon:15_5cm-60-3ns
+    field: weapon.length.oa
+    value: 9.615
+    unit: m
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1935 }
+    confidence: B
+    note: >-
+      原文 "Gun Length oa | 378.5 in (9.615 m)"。
+
+  - about: weapon:15_5cm-60-3ns
+    field: weapon.length.bore
+    value: 9.300
+    unit: m
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1935 }
+    confidence: B
+    note: >-
+      原文 "Bore Length | 366.1 in (9.300 m)"。
+
+  - about: weapon:15_5cm-60-3ns
+    field: weapon.projectile_weight
+    value: 55.87
+    unit: kg
+    qual: { shell_type: apc }
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1935 }
+    confidence: B
+    note: >
+      AP 九一式。原文 "AP Type 91: 123.2 lbs. (55.87 kg)"。navweaps 特别说明该弹
+      严格说不是 APC（无被帽，只有 cap head 与风帽），但同页归类在 AP Type 91 名下，
+      本条按 apc 记并在 note 保留这一限定。
+
+  - about: weapon:15_5cm-60-3ns
+    field: weapon.projectile_weight
+    value: 55.87
+    unit: kg
+    qual: { shell_type: he }
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1935 }
+    confidence: B
+    note: >-
+      原文 "Common Type 0 HE: 123.2 lbs. (55.87 kg)"。
+
+  - about: weapon:15_5cm-60-3ns
+    field: weapon.muzzle_velocity
+    value: 920
+    unit: mps
+    qual: { shell_type: apc }
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1935 }
+    confidence: B
+    note: >-
+      原文 "AP and HE: 3,018 - 3,035 fps (920 - 925 mps)"。取区间下限 920，上限记此。
+
+  - about: weapon:15_5cm-60-3ns
+    field: weapon.charge.weight
+    value: 19.5
+    unit: kg
+    qual: { charge_part: single, propellant: other }
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1935 }
+    confidence: B
+    note: >-
+      原文 "Standard charge: 43.0 lbs. (19.5 kg) 36 DC2"。单药包装填，注册表无 36 DC2，记 other。
+
+  - about: weapon:15_5cm-60-3ns
+    field: weapon.charge.chamber_volume
+    value: 38.0
+    unit: dm3
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1935 }
+    confidence: B
+    note: >-
+      原文 "Chamber Volume | 2,319 in3 (38.0 dm3)"。
+
+  - about: weapon:15_5cm-60-3ns
+    field: weapon.rate_of_fire
+    value: 5
+    unit: rpm
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1935 }
+    confidence: B
+    note: >
+      原文 "Rate Of Fire | 5 - 6 rounds per minute"，但同页注："The theoretical rate of fire
+      was 7 rounds per minute, but this was not achieved in practice … 'the rate of fire did not
+      exceed five rounds a minute'"。按实战上限取 5。
+
+  - about: weapon:15_5cm-60-3ns
+    field: weapon.elevation.min
+    value: -7
+    unit: deg
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1935 }
+    confidence: B
+    note: >-
+      原文 "Naval Turrets: -7 / +55 degrees"。
+
+  - about: weapon:15_5cm-60-3ns
+    field: weapon.elevation.max
+    value: 55
+    unit: deg
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1935 }
+    confidence: B
+    note: 原设计意图 +75° 用于对空，因俯仰速度与固定角装填太慢而最终限在 +55°。
+
+  - about: weapon:15_5cm-60-3ns
+    field: weapon.range.max
+    value: 27400
+    unit: m
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1935 }
+    confidence: B
+    note: >-
+      原文射程表 "45 degrees | 29,965 yards (27,400 m)"。55° 时为 25,000 m，低于 45°。
+
+  - about: weapon:15_5cm-60-3ns
+    field: weapon.range.max_elevation
+    value: 45
+    unit: deg
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1935 }
+    confidence: B
+
+  - about: weapon:15_5cm-60-3ns
+    field: weapon.barrel_life
+    value: 250
+    unit: count
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1935 }
+    confidence: C
+    note: >-
+      原文 "Approximate Barrel Life | 250 - 300 Rounds"，取区间下限 250。
+
+  - about: weapon:15_5cm-60-3ns
+    field: weapon.ammo_outfit
+    value: 150
+    unit: count
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1935 }
+    confidence: B
+    note: >-
+      原文 "Ammunition stowage per gun | 150 rounds"。
+
+  - about: weapon:15_5cm-60-3ns
+    field: weapon.in_service_from
+    value: 1935
+    unit: date
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1935 }
+    confidence: B
+    note: 设计 1930 年，服役 1935 年；原装最上级重巡，最上级换 20.3 cm 后炮塔转用于大和型与大淀。
+
+  # ================================================================
+  # 武器本体：13.2 mm/76 九三式（weapon:13mm-76-t93）
+  # ================================================================
+  - about: weapon:13mm-76-t93
+    field: weapon.designation
+    value: >-
+      76 口径九三式 13.2 mm 机炮（13 mm/76 (0.52") Type 93）
+    src: [navweaps-13mm-76-t93]
+    valid: { from: 1936 }
+    confidence: B
+    note: >-
+      原文 "13 mm/76 (0.52") Type 93 (Model 1933)"；实际口径 13.2 mm。
+
+  - about: weapon:13mm-76-t93
+    field: weapon.nation
+    value: japan
+    src: [navweaps-13mm-76-t93]
+    valid: { from: 1936 }
+    confidence: B
+
+  - about: weapon:13mm-76-t93
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-13mm-76-t93]
+    valid: { from: 1936 }
+    confidence: B
+
+  - about: weapon:13mm-76-t93
+    field: weapon.bore
+    value: 13.2
+    unit: mm
+    src: [navweaps-13mm-76-t93]
+    valid: { from: 1936 }
+    confidence: B
+    note: >-
+      原文 "Actual bore diameter was 13.2 mm (0.52")"。
+
+  - about: weapon:13mm-76-t93
+    field: weapon.caliber_length
+    value: 76
+    unit: ratio
+    src: [navweaps-13mm-76-t93]
+    valid: { from: 1936 }
+    confidence: B
+
+  - about: weapon:13mm-76-t93
+    field: weapon.weight
+    value: 42
+    unit: kg
+    src: [navweaps-13mm-76-t93]
+    valid: { from: 1936 }
+    confidence: B
+    note: >-
+      原文 "Gun Weight | 92.6 lbs. (42 kg)"，不含弹匣。
+
+  - about: weapon:13mm-76-t93
+    field: weapon.length.oa
+    value: 1.410
+    unit: m
+    src: [navweaps-13mm-76-t93]
+    valid: { from: 1936 }
+    confidence: C
+    note: >-
+      原文 "Gun Length oa | 55.5 in. (1.410 m) [one source says 1.597 m]"——来源自带两说，本条取主值。
+
+  - about: weapon:13mm-76-t93
+    field: weapon.rate_of_fire
+    value: 250
+    unit: rpm
+    src: [navweaps-13mm-76-t93]
+    valid: { from: 1936 }
+    confidence: B
+    note: >-
+      原文 "425 - 475 rounds per minute cyclic / 250 rounds per minute practical"。取实战值。
+
+  - about: weapon:13mm-76-t93
+    field: weapon.projectile_weight
+    value: 0.0518
+    unit: kg
+    qual: { shell_type: ap }
+    src: [navweaps-13mm-76-t93]
+    valid: { from: 1936 }
+    confidence: B
+    note: >
+      AP 弹。原文 "AP: 1.83oz (51.8 gms)"。烧夷普通弹 49.6 g / 44.5 g、曳光弹 46.0 g
+      见同表；注册表 shell_type 枚举里无「incendiary common」，故只收 AP 一条。
+
+  - about: weapon:13mm-76-t93
+    field: weapon.muzzle_velocity
+    value: 805
+    unit: mps
+    qual: { shell_type: ap }
+    src: [navweaps-13mm-76-t93]
+    valid: { from: 1936 }
+    confidence: B
+    note: >-
+      原文 "Muzzle Velocity | 2,641 fps (805 mps)"，全弹种同一初速。
+
+  - about: weapon:13mm-76-t93
+    field: weapon.elevation.min
+    value: -15
+    unit: deg
+    src: [navweaps-13mm-76-t93]
+    valid: { from: 1936 }
+    confidence: B
+    note: >-
+      原文 "Elevation | -15 / +85 degrees"。
+
+  - about: weapon:13mm-76-t93
+    field: weapon.elevation.max
+    value: 85
+    unit: deg
+    src: [navweaps-13mm-76-t93]
+    valid: { from: 1936 }
+    confidence: B
+
+  - about: weapon:13mm-76-t93
+    field: weapon.range.max
+    value: 6000
+    unit: m
+    src: [navweaps-13mm-76-t93]
+    valid: { from: 1936 }
+    confidence: B
+    note: >-
+      原文 "45 degrees | 6,560 yards (6,000 m)"；50° 时 6,500 m。
+
+  - about: weapon:13mm-76-t93
+    field: weapon.range.aa_max
+    value: 2000
+    unit: m
+    src: [navweaps-13mm-76-t93]
+    valid: { from: 1936 }
+    confidence: B
+    note: >-
+      原文 "Range against aircraft: Maximum: 6,550 ft (2,000 m), Effective: 3,300 ft (1,000 m)"。
+
+  - about: weapon:13mm-76-t93
+    field: weapon.barrel_life
+    value: 3070
+    unit: count
+    src: [navweaps-13mm-76-t93]
+    valid: { from: 1936 }
+    confidence: B
+
+  - about: weapon:13mm-76-t93
+    field: weapon.ammo_outfit
+    value: 2500
+    unit: count
+    src: [navweaps-13mm-76-t93]
+    valid: { from: 1936 }
+    confidence: B
+    note: >-
+      原文 "Ammunition stowage per gun | 2,500 rounds"。
+
+  - about: weapon:13mm-76-t93
+    field: weapon.in_service_from
+    value: 1936
+    unit: date
+    src: [navweaps-13mm-76-t93]
+    valid: { from: 1936 }
+    confidence: B
+    note: >-
+      原文 "Date In Service | about 1936"；法国 Hotchkiss 原设计，日本 1933-02-04 制式采用。
+
+  # ================================================================
+  # 既存武器（weapon:25mm-96）的补充本体数据
+  # 该实体已在 classes/kongo.yaml 等处登记，此处只补它缺的项，不改已有值。
+  # ================================================================
+  - about: weapon:25mm-96
+    field: weapon.weight
+    value: 115
+    unit: kg
+    src: [navweaps-25mm-96]
+    valid: { from: 1936 }
+    confidence: B
+    note: >-
+      原文 "Gun Weight | 253.5 lbs. (115 kg) not including magazine"。
+
+  - about: weapon:25mm-96
+    field: weapon.length.oa
+    value: 2.296
+    unit: m
+    src: [navweaps-25mm-96]
+    valid: { from: 1936 }
+    confidence: C
+    note: >-
+      原文 "Gun Length oa | 90.4 in. (2.296 m)"；同页注「One source gives a gun length of 96.5 in (2.420 m)」。
+
+  - about: weapon:25mm-96
+    field: weapon.range.max
+    value: 7500
+    unit: m
+    src: [navweaps-25mm-96]
+    valid: { from: 1936 }
+    confidence: B
+    note: >-
+      原文 "50 degrees | 8,200 yards (7,500 m)"；45° 时 6,800 m。
+
+  - about: weapon:25mm-96
+    field: weapon.range.aa_max
+    value: 3000
+    unit: m
+    src: [navweaps-25mm-96]
+    valid: { from: 1936 }
+    confidence: B
+    note: >-
+      原文 "AA Ceiling @ 85 degrees | Effective: 9,843 feet (3,000 m) / Maximum: 18,040 feet (5,500 m)"。本字段记有效射高。
+
+  # ================================================================
+  # 炮位实体 46 cm：三座三联装（一番・二番・三番）
+  # 来源：navweaps 46 cm 页的 Mount/Turret Data 段、kasado 的装甲/测距仪表。
+  # ================================================================
+  - about: mount:46cm-no1
+    field: mount.label_name
+    value: 一番砲塔（前部一号炮塔）
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: 日方称「前部一番砲塔」。kasado 只记「九四式 45口径46.0cm三連装砲:3基」，未逐座编号，编号为日方通称。
+
+  - about: mount:46cm-no1
+    field: mount.weapon
+    value: weapon:46cm-45-t94
+    src: [kasado-yamato, navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:46cm-no1
+    field: mount.type
+    value: triple_turret
+    src: [navweaps-46cm-45-t94, kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      原文 "Three-gun Turrets: Yamato (3)"；kasado「三連装砲」。
+
+  - about: mount:46cm-no1
+    field: mount.barrels
+    value: 3
+    unit: count
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:46cm-no1
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: 同名炮位仅一座；全舰 3 座见 armament.mount.summary。
+
+  - about: mount:46cm-no1
+    field: mount.position
+    value: fore
+    src: [combinedfleet-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      TROM 1944-10-25 条 "Both of YAMATO's forward turrets open fire at a distance of 20 miles"
+      与 "Her nine 18.1-inch guns" 支持前部两座；第 3 座在舰尾（同 TROM 记
+      "main gun turret No. 3's upper powder magazine" 位于后部指挥所一带）。
+
+  - about: mount:46cm-no1
+    field: mount.weight
+    value: 2774000
+    unit: kg
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >
+      原文 "Weight | 2,730.2 tons (2,774 mt)"。同页引 USNTMJ O-45(N) 的
+      "total revolving weight of one turret being 2,510 metric tons [2,470 tons]"——回转部分
+      与全重是两个口径，本条记全重。
+
+  - about: mount:46cm-no1
+    field: mount.elevation.max
+    value: 45
+    unit: deg
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      原文 "Elevation | -5 / +45 degrees"。另有 +3～+41° 的装填档。
+
+  - about: mount:46cm-no1
+    field: mount.traverse
+    value: 约 +150 / -150 度
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      原文 "Train | about +150 / -150 degrees"；回转速度 2°/s，俯仰速度 8°/s。
+
+  - about: mount:46cm-no1
+    field: mount.rangefinder_count
+    value: 1
+    unit: count
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: kasado「測距儀 砲塔側:15.0m」，即每座主炮塔配 15 m 基线测距仪一副。
+
+  - about: mount:46cm-no2
+    field: mount.label_name
+    value: 二番砲塔（前部二号炮塔，背负式）
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: 编号为日方通称。
+
+  - about: mount:46cm-no2
+    field: mount.weapon
+    value: weapon:46cm-45-t94
+    src: [kasado-yamato, navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:46cm-no2
+    field: mount.type
+    value: triple_turret
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:46cm-no2
+    field: mount.barrels
+    value: 3
+    unit: count
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:46cm-no2
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:46cm-no2
+    field: mount.position
+    value: superfiring_fore
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      kasado 的炮座/装甲表把主炮塔按「前面/側面/後面/天蓋」统一给值，未逐座标位；
+      本条位置取「前部两座、二号背负一号」的通行布置，confidence 记 C。
+
+  - about: mount:46cm-no2
+    field: mount.weight
+    value: 2774000
+    unit: kg
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      navweaps 对三座三联装炮塔只给一个 "Weight | 2,730.2 tons (2,774 mt)"，未逐座分列。
+
+  - about: mount:46cm-no2
+    field: mount.elevation.max
+    value: 45
+    unit: deg
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:46cm-no2
+    field: mount.traverse
+    value: 约 +150 / -150 度
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: 同型三座共用此数据。
+
+  - about: mount:46cm-no2
+    field: mount.rangefinder_count
+    value: 1
+    unit: count
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: 同上，15.0 m 基线。
+
+  - about: mount:46cm-no3
+    field: mount.label_name
+    value: 三番砲塔（後部炮塔）
+    src: [combinedfleet-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      TROM 1945-04-07 条明写 "main gun turret No. 3" 位于后部指挥所与 155 mm 弹药库之间，可证其为后部炮塔。
+
+  - about: mount:46cm-no3
+    field: mount.weapon
+    value: weapon:46cm-45-t94
+    src: [kasado-yamato, navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:46cm-no3
+    field: mount.type
+    value: triple_turret
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:46cm-no3
+    field: mount.barrels
+    value: 3
+    unit: count
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:46cm-no3
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:46cm-no3
+    field: mount.position
+    value: aft
+    src: [combinedfleet-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      由 TROM 对 "main gun turret No. 3" 所在位置的描述（后部指挥所与 155 mm 弹药库之间）判定为后部炮塔。
+
+  - about: mount:46cm-no3
+    field: mount.weight
+    value: 2774000
+    unit: kg
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: 同上，三座共用一值。
+
+  - about: mount:46cm-no3
+    field: mount.elevation.max
+    value: 45
+    unit: deg
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:46cm-no3
+    field: mount.traverse
+    value: 约 +150 / -150 度
+    src: [navweaps-46cm-45-t94]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:46cm-no3
+    field: mount.rangefinder_count
+    value: 1
+    unit: count
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+
+  # ================================================================
+  # 炮位实体 15.5 cm：前部背负炮塔 + 两座舷侧炮塔
+  # 第 4 座的位置来源未明写，见 RESEARCH-NOTES「未获取」。
+  # ================================================================
+  - about: mount:155cm-no1
+    field: mount.label_name
+    value: 前部十五糎五三联装炮塔（一号炮塔）
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      编号为日方通称；navweaps 图注只称 "the 15.5 cm (6.1") mounting was superfiring over the 46 cm mounting"。
+
+  - about: mount:155cm-no1
+    field: mount.weapon
+    value: weapon:15_5cm-60-3ns
+    src: [navweaps-155cm-60-3ns, kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:155cm-no1
+    field: mount.turret_designation
+    value: >-
+      "Yamato Model"（大和型专用炮塔）
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >
+      原文 "Yamato (4): "Yamato Model""，与巡洋舰用的 "Mogami Model" 区分。
+      大和型用的炮塔是从最上级换装 20.3 cm 时拆下的旧炮塔改装（测距仪位置改到炮塔中部）。
+
+  - about: mount:155cm-no1
+    field: mount.type
+    value: triple_turret
+    src: [navweaps-155cm-60-3ns, kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:155cm-no1
+    field: mount.barrels
+    value: 3
+    unit: count
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:155cm-no1
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      全舰 4 座（"Yamato (4)"），本条只对应前部一座。
+
+  - about: mount:155cm-no1
+    field: mount.position
+    value: superfiring_fore
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >
+      原文图注："Note that the 15.5 cm (6.1") mounting was superfiring over the 46 cm (18.1")
+      mounting"。这是本页对位置的唯一直接表述。
+
+  - about: mount:155cm-no1
+    field: mount.weight
+    value: 194000
+    unit: kg
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >
+      原文 "Cruisers: About 177 tons (180 mt) / Battleships: About 190 tons (194 mt)"。
+      该值为不含测距仪的重量；来源估计加装测距仪后约 +5 t。
+
+  - about: mount:155cm-no1
+    field: mount.elevation.max
+    value: 55
+    unit: deg
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:155cm-no1
+    field: mount.traverse
+    value: 约 +150 / -150 度
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      原文 "Train | About +150 / -150 degrees"，回转 5-6°/s，俯仰 10°/s。
+
+  - about: mount:155cm-no1
+    field: mount.rangefinder_count
+    value: 1
+    unit: count
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      "The gunhouses on the Yamato class were modified such that the rangefinders were now
+      located towards the middle of the gunhouse rather than at the rear"——即每座炮塔一副测距仪，
+      基线长度来源未给。
+
+  - about: mount:155cm-beam-port
+    field: mount.label_name
+    value: 左舷十五糎五三联装炮塔（二号炮塔）
+    src: [navypedia-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >-
+      navypedia 记 "thickness of beam 155mm barbettes was increased to 103mm"，以 beam（舷侧）指称这两座。编号为日方通称。
+
+  - about: mount:155cm-beam-port
+    field: mount.weapon
+    value: weapon:15_5cm-60-3ns
+    src: [navweaps-155cm-60-3ns, navypedia-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:155cm-beam-port
+    field: mount.type
+    value: triple_turret
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:155cm-beam-port
+    field: mount.barrels
+    value: 3
+    unit: count
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:155cm-beam-port
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navypedia-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:155cm-beam-port
+    field: mount.position
+    value: port
+    src: [navypedia-yamato, combinedfleet-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      navypedia "2 x 3 - 155/60 (beam)"；combinedfleet TROM 1944-02-25 条
+      "Two beam triple 6.1 inch (155-mm.) turrets are removed"。左/右舷的分配来源未逐座指明，
+      本条按左舷记，属部位编码约定。
+
+  - about: mount:155cm-beam-port
+    field: mount.weight
+    value: 194000
+    unit: kg
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1941-12-16 }
+    confidence: C
+
+  - about: mount:155cm-beam-port
+    field: mount.elevation.max
+    value: 55
+    unit: deg
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:155cm-beam-port
+    field: mount.removed
+    value: 1944-02-25
+    unit: date
+    src: [combinedfleet-yamato]
+    valid: { from: 1944-02-25 }
+    confidence: B
+    note: >
+      TROM 1944-02-25 条："Two beam triple 6.1 inch (155-mm.) turrets are removed and replaced
+      by six (3x2) 5-inch (127-mm.) HA AA mounts"。这是**大和**的拆除时点；
+      武藏为 1944-04（见 ships/musashi.yaml）。
+
+  - about: mount:155cm-beam-stbd
+    field: mount.label_name
+    value: 右舷十五糎五三联装炮塔（三号炮塔）
+    src: [navypedia-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+
+  - about: mount:155cm-beam-stbd
+    field: mount.weapon
+    value: weapon:15_5cm-60-3ns
+    src: [navweaps-155cm-60-3ns, navypedia-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:155cm-beam-stbd
+    field: mount.type
+    value: triple_turret
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:155cm-beam-stbd
+    field: mount.barrels
+    value: 3
+    unit: count
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:155cm-beam-stbd
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navypedia-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:155cm-beam-stbd
+    field: mount.position
+    value: starboard
+    src: [navypedia-yamato, combinedfleet-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: 同左舷条，右/左舷的分配为部位编码约定。
+
+  - about: mount:155cm-beam-stbd
+    field: mount.weight
+    value: 194000
+    unit: kg
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1941-12-16 }
+    confidence: C
+
+  - about: mount:155cm-beam-stbd
+    field: mount.elevation.max
+    value: 55
+    unit: deg
+    src: [navweaps-155cm-60-3ns]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:155cm-beam-stbd
+    field: mount.removed
+    value: 1944-02-25
+    unit: date
+    src: [combinedfleet-yamato]
+    valid: { from: 1944-02-25 }
+    confidence: B
+    note: 同左舷条。
+
+  # ================================================================
+  # 炮位实体 12.7 cm：竣工时 6 座双联（A1 Mod 3）
+  # ================================================================
+  - about: mount:127cm-twin-a1mod3
+    field: mount.label_name
+    value: 八九式 12.7 cm 双联高角炮座（A1 Mod 3，竣工时 6 座）
+    src: [navweaps-127cm-89]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >
+      原文 "Yamato (6): A1 Mod 3"。A1 Mod 3 的 shield 加厚，
+      以承受本舰 46 cm 主炮的炮口爆风。
+
+  - about: mount:127cm-twin-a1mod3
+    field: mount.weapon
+    value: weapon:127cm-89
+    src: [navweaps-127cm-89, kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:127cm-twin-a1mod3
+    field: mount.turret_designation
+    value: A1 Mod 3
+    src: [navweaps-127cm-89]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:127cm-twin-a1mod3
+    field: mount.type
+    value: twin_turret
+    src: [navweaps-127cm-89, kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      原文用 "twin mounts"，注册表无 shielded_mount 的合用值，按双联装炮座记 twin_turret。
+
+  - about: mount:127cm-twin-a1mod3
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [navweaps-127cm-89]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:127cm-twin-a1mod3
+    field: mount.count
+    value: 6
+    unit: count
+    src: [navweaps-127cm-89, kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: kasado「八九式 40口径12.7cm連装高角砲:6基」。1944-02 后大和增至 12 座，见单舰文件。
+
+  - about: mount:127cm-twin-a1mod3
+    field: mount.weight
+    value: 29000
+    unit: kg
+    src: [navweaps-127cm-89]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      原文 "A1 Mod 3: 28.5 tons (29 mt)"（含防盾，比 A1 的 20 t 重得多）。
+
+  - about: mount:127cm-twin-a1mod3
+    field: mount.elevation.max
+    value: 90
+    unit: deg
+    src: [navweaps-127cm-89]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      原文 "Type 89: -7 / +90 degrees (one source says -8 / +85 degrees)"。
+
+  - about: mount:127cm-twin-a1mod3
+    field: mount.traverse
+    value: 舷侧炮位约 ±70 度；首尾炮位约 ±150 度
+    src: [navweaps-127cm-89]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: 原文分两类给值，未逐座指认哪座属哪类。
+
+  - about: mount:127cm-unshielded-a1
+    field: mount.label_name
+    value: 八九式 12.7 cm 双联高角炮座（A1 无防盾，1944 年增装 6 座）
+    src: [navweaps-127cm-89]
+    valid: { from: 1944-02-25 }
+    confidence: B
+    note: >
+      原文 "Yamato was then given six additional 12.7 cm/40 A1 unshielded twin mountings which
+      were installed in place of the original 12.7 cm/40 A1 Mod 3 mountings. These latter
+      mountings were relocated a deck lower."
+
+  - about: mount:127cm-unshielded-a1
+    field: mount.weapon
+    value: weapon:127cm-89
+    src: [navweaps-127cm-89]
+    valid: { from: 1944-02-25 }
+    confidence: B
+
+  - about: mount:127cm-unshielded-a1
+    field: mount.turret_designation
+    value: A1
+    src: [navweaps-127cm-89]
+    valid: { from: 1944-02-25 }
+    confidence: B
+
+  - about: mount:127cm-unshielded-a1
+    field: mount.type
+    value: twin_turret
+    src: [navweaps-127cm-89]
+    valid: { from: 1944-02-25 }
+    confidence: B
+
+  - about: mount:127cm-unshielded-a1
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [navweaps-127cm-89]
+    valid: { from: 1944-02-25 }
+    confidence: B
+
+  - about: mount:127cm-unshielded-a1
+    field: mount.count
+    value: 6
+    unit: count
+    src: [navweaps-127cm-89]
+    valid: { from: 1944-02-25 }
+    confidence: B
+
+  - about: mount:127cm-unshielded-a1
+    field: mount.weight
+    value: 20000
+    unit: kg
+    src: [navweaps-127cm-89]
+    valid: { from: 1944-02-25 }
+    confidence: B
+    note: >-
+      原文 "A1: 20 tons (20.3 mt)"（无防盾）。
+
+  - about: mount:127cm-unshielded-a1
+    field: mount.installed
+    value: 1944-02-25
+    unit: date
+    src: [combinedfleet-yamato, navweaps-127cm-89]
+    valid: { from: 1944-02-25 }
+    confidence: B
+    note: TROM 1944-02-25 条记六座 5 英寸双联高角炮座替换两座舷侧 15.5 cm 炮塔。
+
+  # ================================================================
+  # 炮位实体 25 mm：三联装 / 单装（本体数据见 weapon:25mm-96）
+  # ================================================================
+  - about: mount:25mm-triple
+    field: mount.label_name
+    value: 九六式 25 mm 三联装机铳
+    src: [navweaps-25mm-96]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      原文型号 "Triple Mounts: Type 96 Models 1 and 2"；三联装 1941 年才出现。
+
+  - about: mount:25mm-triple
+    field: mount.weapon
+    value: weapon:25mm-96
+    src: [navweaps-25mm-96, kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:25mm-triple
+    field: mount.type
+    value: triple_turret
+    src: [navweaps-25mm-96]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: 机铳座严格说不是炮塔，注册表枚举里最接近的是 triple_turret，故按此记并在 note 说明。
+
+  - about: mount:25mm-triple
+    field: mount.barrels
+    value: 3
+    unit: count
+    src: [navweaps-25mm-96]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:25mm-triple
+    field: mount.weight
+    value: 1800
+    unit: kg
+    src: [navweaps-25mm-96]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      原文 "Triple: 3,970 lbs. (1,800 kg)"；双联 1,100 kg、单装 785 kg 见同表。
+
+  - about: mount:25mm-triple
+    field: mount.elevation.max
+    value: 85
+    unit: deg
+    src: [navweaps-25mm-96]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      原文 "Elevation | -10 / +85 degrees"。
+
+  - about: mount:25mm-triple
+    field: mount.traverse
+    value: 360 度
+    src: [navweaps-25mm-96]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: 多数手动操作；部分三联装带 Ward-Leonard 随动，俯仰 12°/s、回转 18°/s。
+
+  - about: mount:25mm-single
+    field: mount.label_name
+    value: 九六式 25 mm 单装机铳
+    src: [navweaps-25mm-96]
+    valid: { from: 1943 }
+    confidence: B
+    note: >-
+      原文 "single mounts in 1943"——单装型 1943 年才投入使用，大和型在 1944 年改装中才装。
+
+  - about: mount:25mm-single
+    field: mount.weapon
+    value: weapon:25mm-96
+    src: [navweaps-25mm-96]
+    valid: { from: 1943 }
+    confidence: B
+
+  - about: mount:25mm-single
+    field: mount.type
+    value: single_turret
+    src: [navweaps-25mm-96]
+    valid: { from: 1943 }
+    confidence: C
+    note: 同三联装条，机铳座按最接近的枚举值记。
+
+  - about: mount:25mm-single
+    field: mount.barrels
+    value: 1
+    unit: count
+    src: [navweaps-25mm-96]
+    valid: { from: 1943 }
+    confidence: B
+
+  - about: mount:25mm-single
+    field: mount.weight
+    value: 785
+    unit: kg
+    src: [navweaps-25mm-96]
+    valid: { from: 1943 }
+    confidence: B
+    note: >-
+      原文 "Single: 1,731 lbs. (785 kg)"。
+
+  - about: mount:25mm-single
+    field: mount.elevation.max
+    value: 85
+    unit: deg
+    src: [navweaps-25mm-96]
+    valid: { from: 1943 }
+    confidence: B
+
+  # ================================================================
+  # 炮位实体 13.2 mm 双联
+  # ================================================================
+  - about: mount:13mm-twin
+    field: mount.label_name
+    value: 九三式 13.2 mm 双联装机铳
+    src: [navweaps-13mm-76-t93]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      原文 "Single, Twin and Quad Mounts"；大和型竣工时装 2 座双联。
+
+  - about: mount:13mm-twin
+    field: mount.weapon
+    value: weapon:13mm-76-t93
+    src: [navweaps-13mm-76-t93, kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:13mm-twin
+    field: mount.type
+    value: twin_turret
+    src: [navweaps-13mm-76-t93]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: 同 25 mm 条，机铳座按最接近的枚举值记。
+
+  - about: mount:13mm-twin
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [navweaps-13mm-76-t93, kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: kasado「九三式 76口径13.2mm連装機銃:2基」。
+
+  - about: mount:13mm-twin
+    field: mount.count
+    value: 2
+    unit: count
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - about: mount:13mm-twin
+    field: mount.weight
+    value: 314
+    unit: kg
+    src: [navweaps-13mm-76-t93]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      原文 "Twin: 692 lbs. (314 kg)"；单装 113-213 kg、四联 1,163 kg 见同表。
+
+  - about: mount:13mm-twin
+    field: mount.elevation.max
+    value: 85
+    unit: deg
+    src: [navweaps-13mm-76-t93]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      原文 "Elevation | -15 / +85 degrees"，全手动。
+
+  # ---------------------------------------------------------------- 探测与火控
+  - field: sensors.rangefinder.baseline
+    value: 15.0
+    unit: m
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      kasado「射撃指揮装置 前部艦橋:15.0m、後部艦橋:10.0m、砲塔側:15.0m」。
+      本字段只有单个数值位，记主炮指挥所（前部舰桥）的 15 m 基线，
+      后部 10 m 与炮塔 15 m 记于此。
+
+  - field: sensors.rangefinder.present
+    value: true
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+
+  - field: sensors.director.type
+    value: 九八式射撃指揮装置（主炮用）＋ 九四式高射指揮装置（高角炮用）
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      kasado 只按「前部艦橋／後部艦橋／砲塔側」给出测距仪基线，未给指挥仪型号；
+      本条型号为日方通称，需以一手资料复核，故记 C 并在 NOTES 声明。
+
+  # ---------------------------------------------------------------- 航空设施
+  - field: aviation.catapult.count
+    value: 2
+    unit: count
+    src: [kasado-yamato, navypedia-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >-
+      kasado「射出機 2基」；navypedia "2 catapults"。
+
+  - field: aviation.catapult.type
+    value: 呉式二号五型
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: kasado「カタパルト 呉式二号五型:2基」。此型号名为日方原始记载，非推算。
+
+  - field: dimensions.watertight_compartments
+    value: 1147
+    unit: count
+    src: [pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      pwe 原文："yielding a total of 1147 separate watertight compartments in the hull."
+      同段另记设计师声称的储备浮力 "a full 57,450 tons of reserve buoyancy, but this was optimistic"——
+      该储备浮力无对应注册字段，记于此。
+
+  - field: aviation.aircraft.capacity
+    value: 6
+    unit: count
+    src: [kasado-yamato, japanese-warship-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >
+      kasado「計画搭載数 零式水上偵察機 + 零式水上観測機:6機」；
+      japanese-warship「水上機 6機（射出機 2基）」。
+      navypedia 与 pwe 均记 7 架——与 6 架并列，不裁决。
+
+  - field: aviation.aircraft.capacity
+    value: 7
+    unit: count
+    src: [navypedia-yamato, pwe-yamato-class]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      另一说。navypedia "2 catapults, 7 seaplanes (F1M2)"；pwe "7 seaplanes"。
+      与 kasado/japanese-warship 的 6 架**并列，不裁决**。
+      注意 navypedia 明写机型为 F1M2（零式水上观测机），与 kasado 的「零式水侦 + 零式水观 共 6 机」不同。
+
+  - field: aviation.aircraft.types
+    value: 零式水上偵察機（E13A）＋ 零式水上観測機（F1M）
+    src: [kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: C
+    note: >
+      kasado 原文「零式水上偵察機 + 零式水上観測機:6機」。
+      combinedfleet TROM 记 1944-10-22 从长门接收 "Mitsubishi F1M2 "Pete" aircraft"，
+      1942-08-28 放出 "E13A1 "Jake" floatplane"，可证两型实际都在用。
+
+  # aviation.crane.count：**未获取**。navypedia / pwe / kasado / japanese-warship
+  # 四源均未给起重机数量或起重能力，故整条不写，不填 1、不按同级舰类推。
+  # 详见 RESEARCH-NOTES 的「未获取」清单。
+
+  # ---------------------------------------------------------------- 编制
+  - field: service.complement.standard
+    value: 2500
+    unit: persons
+    src: [navypedia-yamato, yamato-museum-data, kasado-yamato]
+    valid: { from: 1941-12-16 }
+    confidence: B
+    note: >
+      navypedia "Complement | 2500"；博物馆「乗組員 竣工時 2,500人」；
+      kasado「定員 2,500名」。三源一致。最终时 3,332 人见单舰文件。
+
+  # service.complement.wartime：**不在舰级层写**。
+  # 两舰的最终编制不同（大和 3,332 人、武藏 2,399 人），属单舰差异，
+  # 见 ships/yamato.yaml 与 ships/musashi.yaml。舰级层只放竣工时的 2,500 人。
+  #
+  # 另附一条纠错记录：任务书「定员约 2,300-2,800 人」一说不成立。
+  # 来源只给 2,500（竣工）与 3,332（大和最终），中间无此档，
+  # 且 3,332 超出该区间上限。详见 RESEARCH-NOTES §14.1。

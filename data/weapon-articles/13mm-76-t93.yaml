@@ -1,0 +1,325 @@
+# ============================================================================
+# 武器正文 —— 13 mm/76 九三式（13 mm/76 Type 93）
+#
+# 这一篇的难处是「名与实」的三处错位，全部照原样写、不修：
+#  1) 叫「13 mm」，实际口径 13.2 mm；
+#  2) 叫「九三式」（1933 年制式），日本国产化却到 1935 年才开始，
+#     服役栏写的是「about 1936」；
+#  3) navweaps 的页面标题是 "13.2 mm/76 (0.52") AA MG"，正文标题却是
+#     "13 mm/76 (0.52") Type 93" —— 同一页里两个写法并存。
+# 装舰数在大和级上是明确的「2 基 4 挺」，四个来源一致；
+# 但「装在哪」没有来源明说，故只写数量，不写位置。
+# 用户任务书里「舰桥周围装有多座」一句，本轮来源中查不到对应原句，未写入。
+# ============================================================================
+weapon: 13mm-76-t93
+updated: 2026-11-25
+
+intro:
+  lead:
+    zh: >-
+      13 mm/76 九三式是日本海军 1933 年制式采用的轻型高射机枪，
+      原型是法国哈奇开斯的设计，实际口径 13.2 mm。
+      它有单装、双联、四联三种炮座，二战期间几乎装遍了日本海军的各型军舰，
+      大和级战列舰上装的是两座双联共四挺，从竣工一直保留到沉没。
+      1944 年末月产量达到 1,200 挺，但它发射的弹丸只有 50 克上下，
+      对当时的飞机已经明显不足。
+    en: >-
+      The 13 mm/76 Type 93 was a light anti-aircraft machine gun adopted by the Imperial
+      Japanese Navy in 1933, based on a French Hotchkiss design, with an actual bore of
+      13.2 mm. It was built in single, twin and quadruple mountings and fitted to almost
+      every class of Japanese warship in the Second World War; the Yamato class carried
+      two twin mountings, four guns, from completion to loss. Output reached 1,200 guns a
+      month late in 1944, but its projectile weighed only about 50 grams, which was
+      plainly insufficient against the aircraft of the time.
+
+  paragraphs:
+    - heading: 法国炮，三个对不齐的数
+      text:
+        zh: >-
+          navweaps 的第一句就把来源交代了：「This weapon was originally designed by the
+          French firm of Hotchkiss.」日本在 1930 年代初进口了若干双联与四联炮座用于评估，
+          1933 年 2 月 4 日正式制式采用，日本版的生产从 1935 年开始。
+          技术上它与更大的 25 mm/60 高射机枪基本同源，来源原句是
+          「These guns were generally similar to the larger Japanese 25 mm/60 AA MG.」
+          炮身是锻造单筒，自动机为导气式，全长 1.410 m（另有来源记 1.597 m，两说并存），
+          炮管长 1.003 m，8 条阴线。炮身重 42 kg，不含弹匣。
+          名字里还有三处错位要一起看。其一，名称写 13 mm，实际口径是 13.2 mm，
+          来源的原句是「Actual bore diameter was 13.2 mm (0.52")」。
+          其二，「九三式」按 1933 年编号，制式采用也确实是 1933 年 2 月 4 日，
+          但日本国产化生产 1935 年才开始，服役年份栏填的是「about 1936」。
+          其三，navweaps 这一页的浏览器标题写 "13.2 mm/76 (0.52") AA MG"，
+          正文大标题却写 "13 mm/76 (0.52") Type 93" —— 同一页两种写法并存，
+          本站两个都保留，不统一。
+        en: >-
+          NavWeaps opens with the origin: "This weapon was originally designed by the
+          French firm of Hotchkiss." Japan imported a number of twin and quadruple
+          mountings for evaluation purposes in the early 1930s, officially adopted the
+          weapon on 4 February 1933, and began producing the Japanese version in 1935.
+          Technically it is close to the larger 25 mm/60: "These guns were generally
+          similar to the larger Japanese 25 mm/60 AA MG." The barrel was a forged monobloc
+          and the automatics were gas-operated; length overall 1.410 m (one source says
+          1.597 m, both stand), barrel length 1.003 m, eight grooves. Gun weight 42 kg,
+          excluding the magazine. Three mismatches in the name then have to be read
+          together. First, the name says 13 mm while the actual bore was 13.2 mm: "Actual
+          bore diameter was 13.2 mm (0.52")". Second, the Type 93 number follows 1933 and
+          adoption was indeed on 4 February 1933, but Japanese production only started in
+          1935, and the date-in-service line reads "about 1936". Third, the page's browser
+          title reads "13.2 mm/76 (0.52") AA MG" while the main heading reads "13 mm/76
+          (0.52") Type 93" - both forms appear on the same page, and both are kept here
+          rather than normalised.
+      src: [navweaps-13mm-76-t93]
+
+    - heading: 425 到 475 与 250 之间
+      text:
+        zh: >-
+          射速有两个数字，来源自己分得很清楚：循环射速 425–475 发/分，
+          实战射速 250 发/分。落差的原因是那 30 发弹匣 ——
+          「The magazine held 30 rounds and was similar in design to that for the 25 mm AA
+          gun.」弹匣结构继承 25 mm 那一套，更换弹匣就是射击中断。
+          弹是定装弹，全弹重 113–119 g，药筒为黄铜 13.2 × 99 mm，
+          发射药 15 g 的九五式（K2），初速 805 mps，膛压 3,000 kg/cm²。
+          弹种里最轻的烧夷普通弾只有 44.5 g，最重的 AP 与练习弹 51.8 g。
+          身管寿命 3,070 发，每门弹药基数 2,500 发。
+          换炮管是一个现场动作：炮管以螺纹固定在炮尾上，
+          但导气管的接头让更换变得麻烦，两个人用锤子和扳手大约五分钟能换完。
+        en: >-
+          Two rate-of-fire figures, and the source keeps them apart: 425 to 475 rounds per
+          minute cyclic, 250 rounds per minute practical. The cause is the 30-round
+          magazine: "The magazine held 30 rounds and was similar in design to that for the
+          25 mm AA gun." Change-outs were interruptions. Ammunition was fixed, the complete
+          round weighing 113 to 119 g, in a brass 13.2 x 99 mm case with a 15 g charge of
+          Type 95 (K2) propellant, at a muzzle velocity of 805 mps and a working pressure of
+          3,000 kg/cm2. The lightest projectile, one of the incendiary common rounds, was
+          44.5 g; the heaviest, AP and exercise, 51.8 g. Barrel life was 3,070 rounds and
+          stowage 2,500 rounds per gun. Changing a barrel was a hands-on job: the barrel was
+          secured to the breech mechanism by screw threads, but the gas cylinder connections
+          made changeouts difficult, and two men with a hammer and a spanner wrench could
+          complete one in about five minutes.
+      src: [navweaps-13mm-76-t93]
+
+    - heading: 2,000 米与 1,000 米：两个高度要对准
+      text:
+        zh: >-
+          射程与射高必须分开读。对海：45 度 6,000 m，50 度 6,500 m。
+          对空：85 度时最大射高 4,500 m。而对飞机的作用距离是另一组数 ——
+          「Range against aircraft: Maximum: 6,550 ft (2,000 m), Effective: 3,300 ft
+          (1,000 m)」。即理论射高 4,500 m 与能打到飞机的高度之间差了 2,500 m，
+          后者才是这门炮的实际边界。这一组数据来源还专门讨论过取舍：
+          同页注明 Campbell 给的「有效射程」是 3,980 m，
+          来源认为对这样口径的手操武器明显过长；USNTMJ O-47(N)-2 给的 1,500 m 更合理；
+          上表采用的是 Lacroix & Wells《Japanese Cruisers of the Pacific War》的一组。
+          三种口径并存，本站按来源的取舍引用并注明。
+        en: >-
+          Range and ceiling have to be read separately. Surface: 6,000 m at 45 degrees,
+          6,500 m at 50. Anti-aircraft: a maximum ceiling of 4,500 m at 85 degrees. Range
+          against aircraft is a different set of numbers: "Range against aircraft: Maximum:
+          6,550 ft (2,000 m), Effective: 3,300 ft (1,000 m)". The theoretical ceiling of
+          4,500 m and the height at which aircraft could actually be engaged differ by
+          2,500 m, and the latter is the weapon's real boundary. The source discusses the
+          choice: Campbell gives an effective range of 3,980 m, which the source considers
+          much too long for a manually aimed weapon of this calibre; USNTMJ report O-47(N)-2
+          gives 1,500 m, which it considers more reasonable; the values above are taken from
+          Lacroix and Wells, Japanese Cruisers of the Pacific War. Three figures stand side
+          by side, and this site cites the source's own selection while saying so.
+      src: [navweaps-13mm-76-t93]
+
+    - heading: 三种炮座，全靠人力
+      text:
+        zh: >-
+          炮座分单装、双联、四联三种，重量分别是 113–213 kg、314 kg、1,163 kg。
+          单装的重量给的是一个区间而不是单值，来源未说明区间对应什么差异。
+          三种炮座的俯仰都是 -15 / +85 度，回转 360 度，
+          而俯仰与回转两栏都写着「Manual ... only」—— 全人力，无动力驱动。
+          这一点与它的口径是相称的：这是一门近距离、靠人跟着目标转的武器。
+          来源对它在这个层级上的评价，是引 USNTMJ 转述的日方看法：
+          日方认为 13 mm 的可靠性「almost as reliable as the 25 mm,
+          "since it is basically the same, but apparently not perfected to quite the same
+          degree."」—— 即结构相同，但完善程度差一档。
+        en: >-
+          The mountings came in single, twin and quadruple, weighing 113 to 213 kg, 314 kg
+          and 1,163 kg. The single is given as a range rather than one figure and the source
+          does not say what the spread corresponds to. All three types elevated -15 / +85
+          degrees and trained 360 degrees, and both the elevation-rate and train-rate lines
+          read "Manual ... only" - no power drive at all. That is consistent with the
+          calibre: a short-range weapon aimed by hand. On relative quality the source quotes
+          USNTMJ reporting the Japanese view that the 13 mm was almost as reliable as the
+          25 mm, "since it is basically the same, but apparently not perfected to quite the
+          same degree" - the same mechanism, one step less finished.
+      src: [navweaps-13mm-76-t93]
+
+    - heading: 大和级上就是四挺，一直没变
+      text:
+        zh: >-
+          大和级的 13.2 mm 编成小得出奇，但四个来源完全一致。
+          kasado 的六列对比表里，大和型竣工时、大和 1944-10、大和最终时、
+          武藏最终时、一一〇号舰型、七九七号舰型六列全部写
+          「九三式 76口径13.2mm連装機銃:2基」。japanese-warship 的大和装备表
+          三个时点（竣工、1944-07-14、最终时）也都写「13mm連装機銃　2基4挺」。
+          navypedia 的大和级武备行写 "2 x 2 - 13.2/76"，大和与武藏各一条。
+          combinedfleet 的武藏 TROM 在 1942 年的防空编成句里写
+          「four 13.2-mm machine guns (2x2)」。
+          也就是说：两舰从竣工到沉没，这一型一直是 2 座双联 4 挺，从未增减 ——
+          这与 25 mm 从 8 座涨到 50 座的过程正好相反。
+          装舰位置本轮**未获取**：四个来源都只给座数与挺数，没有一处说明装在哪。
+        en: >-
+          The Yamato class 13.2 mm outfit was surprisingly small and all four sources agree
+          exactly. In kasado's six-column comparison table, the completion configuration,
+          Yamato October 1944, Yamato final, Musashi final, No. 110 and No. 797 columns all
+          read two twin 13.2 mm mountings. japanese-warship's three Yamato armament tables
+          (completion, 14 July 1944, final) all read two twin mountings, four guns.
+          Navypedia's armament line gives "2 x 2 - 13.2/76" for Yamato and for Musashi.
+          CombinedFleet's Musashi TROM, in its 1942 anti-aircraft outfit sentence, reads
+          "four 13.2-mm machine guns (2x2)". So from completion to loss both ships carried
+          two twin mountings, four guns, never more or fewer - the exact opposite of the
+          25 mm battery's growth from eight mountings to fifty. Where they were mounted is
+          not obtained: all four sources give only the number of mountings and guns, and
+          none states a location.
+      src: [kasado-yamato, japanese-warship-yamato, navypedia-yamato, combinedfleet-musashi-trom]
+
+    - heading: 「不足」是来源的结论，不是本站的判断
+      text:
+        zh: >-
+          navweaps 对这一型的历史评价只有一句，但它是全篇最重的一句：
+          「Like most nations, Japan found that small caliber MGs were inadequate against
+          modern aircraft, but this gun was still produced in large numbers right up to the
+          surrender.」这句话把两件事并列：结论是「不足」，产量是「一直造到投降」。
+          1944 年末月产 1,200 挺，正是这个并列的证明 ——
+          一种已经被判定不够用的武器，仍在以最高速度生产。
+          同页没有给出这门炮被 25 mm 取代的时间或过程，
+          所以「后期被 25 mm 逐步替代」这一层，本轮**未获取**具体记载，
+          只有产量与产量高峰两个点。
+        en: >-
+          NavWeaps' historical judgement of the type is one sentence, and it is the heaviest
+          on the page: "Like most nations, Japan found that small caliber MGs were
+          inadequate against modern aircraft, but this gun was still produced in large
+          numbers right up to the surrender." Two things are set side by side: the verdict
+          is inadequacy, and production ran to the surrender. Output of 1,200 guns a month
+          late in 1944 is the proof of that pairing - a weapon already judged insufficient,
+          still being built at maximum rate. The page gives no date or process by which the
+          25 mm superseded it, so the claim that it was progressively replaced by the 25 mm
+          late in the war is not documented in the material gathered here; only the output
+          figures and the production peak are.
+      src: [navweaps-13mm-76-t93]
+
+history:
+  - id: adoption
+    title: { zh: 引进、制式化与国产化, en: Import, adoption and domestic production }
+    range: { from: 1930, to: 1936 }
+    lead:
+      zh: >-
+        进口评估、制式采用、国产化开始、进入服役 —— 四件事分在四年里，不是一年。
+      en: >-
+        Evaluation imports, formal adoption, the start of domestic production and entry
+        into service fall across four years, not one.
+    events:
+      - date: 1930
+        text:
+          zh: >-
+            1930 年代初，日本进口若干双联与四联炮座用于评估。
+          en: >-
+            In the early 1930s Japan imported a number of twin and quadruple mountings for
+            evaluation purposes.
+        src: [navweaps-13mm-76-t93]
+      - date: 1933-02-04
+        text:
+          zh: >-
+            正式制式采用。设计年份栏记为 1933，型号别名即 Model 1933。
+          en: >-
+            The weapon was officially adopted. The date of design is given as 1933, and the
+            model is also known as Model 1933.
+        src: [navweaps-13mm-76-t93]
+      - date: 1935
+        text:
+          zh: >-
+            日本版开始生产。构造为锻造单筒炮身、导气式自动机，实际口径 13.2 mm。
+          en: >-
+            Production of the Japanese version started. The barrel was a forged monobloc,
+            the automatics gas-operated, and the actual bore 13.2 mm.
+        src: [navweaps-13mm-76-t93]
+      - date: 1936
+        text:
+          zh: >-
+            进入服役，来源的年份栏写「about 1936」。
+          en: >-
+            The gun entered service; the source's date-in-service line reads "about 1936".
+        src: [navweaps-13mm-76-t93]
+
+  - id: mounts
+    title: { zh: 炮座与产量, en: Mountings and output }
+    range: { from: 1936, to: 1945 }
+    lead:
+      zh: >-
+        三种炮座全人力，产量却在战争最后一年冲到最高 —— 这一节的两条互相矛盾，
+        但都是来源的原话。
+      en: >-
+        All three mountings were hand-worked, yet output peaked in the last year of the
+        war. The two statements contradict each other in spirit and both are the source's.
+    events:
+      - date: 1936
+        text:
+          zh: >-
+            炮座分为单装（113–213 kg）、双联（314 kg）、四联（1,163 kg）三种；
+            俯仰 -15 / +85 度，回转 360 度，俯仰与回转均为人力。
+            弹匣 30 发，结构与 25 mm 的弹匣同类。
+          en: >-
+            Mountings came in single (113 to 213 kg), twin (314 kg) and quadruple
+            (1,163 kg) types; elevation -15 / +85 degrees, training 360 degrees, elevation
+            and training both manual. The magazine held 30 rounds and was similar in design
+            to that for the 25 mm gun.
+        src: [navweaps-13mm-76-t93]
+      - date: 1944
+        text:
+          zh: >-
+            1944 年末月产量达到 1,200 挺。
+          en: >-
+            Late in 1944 production reached 1,200 guns per month.
+        src: [navweaps-13mm-76-t93]
+      - date: 1945-08
+        text:
+          zh: >-
+            到投降为止仍在大量生产。来源的评语是：日本与多数国家一样发现
+            小口径机枪对现代飞机不足，但这门炮一直造到了最后。
+          en: >-
+            The gun was still being produced in large numbers right up to the surrender:
+            Japan, like most nations, found small calibre machine guns inadequate against
+            modern aircraft, but this one was built to the end.
+        src: [navweaps-13mm-76-t93]
+
+  - id: service
+    title: { zh: 在大和级上的位置, en: Aboard the Yamato class }
+    range: { from: 1941, to: 1945 }
+    lead:
+      zh: >-
+        两舰的 13.2 mm 一直是四挺，没跟着 25 mm 一起涨。
+      en: >-
+        Four guns on each ship throughout, while the 25 mm battery multiplied around them.
+    events:
+      - date: 1941-12-16
+        text:
+          zh: >-
+            大和竣工，装 2 座双联共 4 挺 13.2 mm。
+          en: >-
+            Yamato was completed with two twin 13.2 mm mountings, four guns.
+        src: [kasado-yamato, japanese-warship-yamato]
+      - date: 1942-08-05
+        text:
+          zh: >-
+            武藏竣工。combinedfleet 记其初始防空编成为 12 门 127 mm（6 座双联）、
+            36 门 25 mm（12 座三联）与 4 门 13.2 mm（2 座双联）。
+          en: >-
+            Musashi was completed. CombinedFleet records her initial anti-aircraft outfit
+            as twelve 127-mm guns (6x2), thirty-six 25-mm guns (12x3) and four 13.2-mm
+            machine guns (2x2).
+        src: [combinedfleet-musashi-trom]
+      - date: 1944-10
+        text:
+          zh: >-
+            到大和最终时与武藏最终时，两舰这一项仍是 2 座双联 4 挺；
+            而同一时期大和的 25 mm 已增至 50 座三联加 2 座单装（另一说 52 座三联加 6 座单装）。
+            两型机枪的走向在这一项上是相反的。
+          en: >-
+            By Yamato's final configuration and Musashi's, the 13.2 mm outfit was still two
+            twin mountings and four guns, while Yamato's 25 mm battery had grown to fifty
+            triple mountings plus two singles (another account gives fifty-two triples plus
+            six singles). On this item the two machine guns moved in opposite directions.
+        src: [kasado-yamato, japanese-warship-yamato]

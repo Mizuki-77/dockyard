@@ -1,0 +1,1101 @@
+# ============================================================================
+# 舰艇正文 —— 大和（Yamato）
+# ----------------------------------------------------------------------------
+# 体例与 data/articles/bismarck.yaml 一致：intro 分节、history 分节带逐条事件，
+# 每条事件都必须能追到 data/sources.yaml 里已登记、且非 E 层的来源。
+#
+# 本文的两条写作纪律：
+#   1. 有争议的数字一律并列（沉没时刻、命中数、阵亡数、沉没坐标、燃料量），不裁决。
+#   2. 「美军长期不知道大和级」这类说法按调研结果改写：1942-08 识别手册里确无
+#      大和级，但 1944-02 的照片判读已经得出「≥60,000 t、18 英寸炮」。
+# ============================================================================
+ship: yamato
+updated: 2026-11-25
+
+intro:
+  lead:
+    zh: >-
+      大和是日本海军大和型战列舰的首舰，1941 年 12 月 16 日竣工，
+      1945 年 4 月 7 日在冲绳西方海域以天一号作战沉没。它是史上建成的
+      排水量最大、主炮口径最大的战列舰，也是日本海军把「单舰决战」
+      这一整套假设推到极限之后，被航空兵在两个小时里否掉的那艘船。
+    en: >-
+      Yamato was the lead ship of Japan's Yamato class, completed on 16 December
+      1941 and sunk west of Okinawa on 7 April 1945 while executing Operation
+      Ten-ichi-go. She was the largest battleship ever completed and carried the
+      largest guns ever mounted afloat — the extreme expression of the
+      single-ship-decides-the-battle idea, and the ship that carrier aircraft
+      disposed of in about two hours.
+
+  paragraphs:
+    - heading: 舰级定位与主尺度
+      text:
+        zh: >-
+          大和型在③計画（1937 年）与④計画（1939 年）里合计计划四艘，实际建成两艘战列舰。
+          设计定案于 1937 年 3 月：满载 69,988 吨、九门 460 mm/45 炮装在三座三联装炮塔里，
+          单座炮塔比一艘驱逐舰还重。全长 263.0 m、水线长 256.0 m、最大宽 38.9 m、水线宽 36.9 m，
+          吃水 10.4 m 与 10.8 m 两说并存（两源都没有说明对应哪个排水量状态）。
+          标准排水量在公开文献里有 65,000 / 63,980 / 63,200 / 62,315 吨四个值，
+          本站四个都收：口径不同（日方基準 vs 英文文献的 standard）与换算差异都会产生分岔。
+          动力是十二座ロ号舰本式重油专烧水管锅炉、八台舰本式全齿轮传动汽轮机、四轴，
+          设计 150,000 轴马力、27 节；大和本舰在宿毛湾公试测得 27.46 节。
+          舰体分 1,147 个水密隔舱，发电机总容量 4,800 kW。
+      src: [combinedfleet-yamato-trom, navypedia-yamato, yamato-museum-data, kasado-yamato, pwe-yamato-class]
+
+    - heading: 建造与保密
+      text:
+        zh: >-
+          大和的建造在吴海军工厂进行，保密措施落在实体工程上而不只是文件上。1936 年，
+          造船船渠上加装了「大屋顶」：长 101.8 m、斜边 35.1 m、自身高 15 m、面积约 7,000 m²，
+          船渠底到屋脊 49.5 m，渠宽 63.5 m——大和全长 263 m，屋顶覆盖了近一半舰体。
+          船渠四周另设目隐墙与垂网，港侧铁路筑高墙（1937 年 2 月测量新宫隧道至港町小学间
+          855 m 一段），沿线民家与学校被要求封闭朝港一侧的窗户，列车过军港时车窗全闭。
+          对外口径则是彻底的伪报：官方长期按「42,000 吨、40 cm 炮九门、25 节」处理，
+          图纸多被定为最高机密的「軍機」，大图几乎不画，制图员拿到的封面写着
+          「九四式五〇口径二〇センチ砲」。1940 年 8 月 8 日下水时，久邇宮朝融王代天皇临席，
+          在场只有约一千名工厂关系者：没有观览人，没有军乐队，没有万岁也没有鼓掌。
+      src: [hatoh-yamato-061, hatoh-yamato-062, japanese-warship-yamato-building, trafficnews-2020-yamato-launch, usni-proceedings-1953-yamato-design]
+
+    - heading: 46 cm 主炮意味着什么
+      text:
+        zh: >-
+          九四式 46 cm/45 炮的官方名称是「四五口径九四式四十糎砲」——日本把 46 cm 谎称 40 cm，
+          一直瞒到战争结束。炮身连炮闩 164,654 kg，药室 680 dm³，装药 360 kg，
+          九一式穿甲弹 1,458.3 kg、初速 780 m/s，最大射程 42,110 m（48°），
+          射速 1.5–2 发/分，每门备弹 100 发，炮管寿命 150–250 发；
+          单座炮塔全重 2,774 吨（回转部分 2,470 吨）。另有三式通常弹（三式弹），
+          弹重 1,360 kg，内装 900 根烧夷管，定时引信通常在出膛约 1,000 m 处起爆，
+          烧夷管再迟半秒点燃、以 3,000 °C 烧五秒，火舌长约 5 m——美国海军飞行员
+          把它当成「壮观多于有效」的防空弹。两舰的一型穿甲弹另有染色剂以区分
+          舷侧齐射落点：大和黄色、武藏绿色。
+      src: [navweaps-46cm-45-t94, combinedfleet-yamato-class, usntmj-o-45-18in-mounts]
+
+    - heading: 作为旗舰的角色
+      text:
+        zh: >-
+          大和是按旗舰设计的：通信设施与防空指挥能力都按司令部的需要放大。
+          这一点在 1944 年 10 月 23 日得到了最直接的检验——栗田健男在巴拉望水道
+          因旗舰重巡爱宕被击沉而落水，十小时后转乘大和并在舰上恢复指挥。
+          他在战后审讯里说，换旗舰没有妨碍计划，反而改善了指挥，因为「她是按旗舰设计的，
+          通信更好，防空也更好」。第二舰队作战参谋大谷也说过，参谋部事先就在大和上
+          做过旗舰准备。但大和作为旗舰的实战记录并不好看：1942 年 5 月 29 日中途岛出击，
+          主队全程位于南云机动部队后方约 600 英里，一炮未发；1942 年 8 月 29 日至
+          1943 年 5 月 8 日它一直锚泊特鲁克，年表直接用「hotel」称呼这段日子，
+          并列出燃料与炮弹不足、瓜岛近海水域受限、航速不及金刚级、山本不愿投入
+          这几种被提出来的理由。
+      src: [ussbs-ijo-9-kurita-leyte, ussbs-ijo-41-otani-samar, combinedfleet-yamato-trom]
+
+    - heading: 防护设计与它的薄弱处
+      text:
+        zh: >-
+          大和走的是集中防御：舷侧主装甲带 410 mm VH、倾角 20°；主装甲甲板（中甲板）
+          中部 200 mm、外舷 230 mm，MNC 材质、边缘倾斜 7°；主炮塔前面 650 mm、
+          炮座侧面 560 mm、司令塔侧面 500 mm；装甲总重 22,534 吨。
+          水下防护纵深 8 m，为四层纵舱壁的 void-void-void-liquid 体系。
+          问题出在上下两条舷侧装甲带的接缝：1943 年 12 月 25 日 USS Skate 的一枚 Mk 14-3A
+          在 3 号炮塔附近撕开自防雷凸舱顶向下约 15 英尺、纵向 75 英尺（肋位 151–173）的破口，
+          3 号炮塔上部弹药库经纵舱壁上的小孔进水，全舰进水约 3,000 吨，
+          远大于舷侧防护体系设计时的预估。1944 年 1 月在吴第 4 船坞的补救只是
+          在两块纵舱壁之间上部空舱的下角加一块 45° 斜板，且只装在大和、只装在受创那一段；
+          设计方自己承认这项措施不足，而把非防御区舱容压缩、用 5,000 吨钢换取抗浸性的方案，
+          因排水量与吃水超限被否决。
+      src: [navypedia-yamato, pwe-yamato-class, combinedfleet-yamato-trom, japanese-warship-yamato-building]
+
+    - heading: 防空强化与最后结局
+      text:
+        zh: >-
+          大和的 25 mm 机关炮数量是一条单向上升的曲线：竣工时 8 座三联共 24 门；
+          1943 年 7 月 12 日加 12 门到 36 门；1944 年 2 月 25 日撤去两座舷侧 15.5 cm 三联装炮塔，
+          改装六座 12.7 cm 双联高角炮，并加 24 门三联装与 26 门单装 25 mm；
+          1944 年 7 月再加 15 门；1944 年 11 月 25 日定为最终配置 152 门
+          （50 座三联装加 2 门单装）——另有一说 162 门（52 座三联 156 门加 6 门单装），两说并列。
+          口径上它是三位数，但这批炮的实战评价很差：射速跟不上、瞄准具对高速机无效、
+          弹药供给断续，且各炮位独立开火、没有统一协调。
+          1945 年 4 月 7 日天一号作战，大和在丰后水道出击后遭多波舰载机攻击，
+          左舷被集中雷击导致倾覆，一号主炮弹药库爆炸，14:23 沉于 30°22′N 128°04′E。
+          沉没时刻另有 14:17（第二水雷战队战闘详报）、14:30（NHHC）、约 14:20（USNTMJ）
+          与「14:00–14:30 之间」（宫本）几说；阵亡 3,055 人、定员 3,332 人、救起 276 人，
+          另一体系记阵亡 2,740 人、伤 117 人，两组数字无法调和，一并列出。
+      src: [combinedfleet-yamato-trom, navweaps-25mm-96, nhhc-h044-3-ten-ichi-go, gendai-2019-shimizu-yamato, kasado-yamato]
+
+history:
+  - id: build
+    title: { zh: 建造与保密, en: Construction and secrecy }
+    range: { from: 1936, to: 1941-12-16 }
+    lead:
+      zh: >-
+        从加屋顶到交舰五年多。这一段最值得留意的不是工期，而是保密工程本身的规模：
+        一整套城市尺度的遮挡体系，只为让一艘船在建成前不被看见。
+      en: >-
+        More than five years from roof to handover. What matters here is not the
+        schedule but the scale of the secrecy engineering: a city-wide screening
+        system built to keep one hull unseen until it was finished.
+    events:
+      - date: 1936
+        text:
+          zh: >-
+            吴海军工厂造船船渠加装「大屋顶」：长 101.8 m、斜边 35.1 m、自身高 15 m，
+            面积约 7,000 m²；船渠底到屋脊 49.5 m，渠宽 63.5 m。屋顶覆盖大和全长
+            263 m 中近一半。
+          en: >-
+            A great roof was erected over the building dock at Kure Naval Arsenal:
+            101.8 m long, 35.1 m on the slope, 15 m high, about 7,000 m2 in area,
+            with 49.5 m from dock floor to ridge in a 63.5 m wide dock. It covered
+            nearly half of the 263 m hull.
+        src: [hatoh-yamato-061, usni-proceedings-1953-yamato-design]
+
+      - date: 1937-02
+        text:
+          zh: >-
+            海军开始测量新宫隧道入口至港町小学之间 855 m 的港侧路段，计划筑高墙，
+            使列车通过时看不到军港内。
+          en: >-
+            The navy began surveying 855 m of the harbour side between the Shingu
+            tunnel mouth and the Minatomachi elementary school, intending a high wall
+            so that trains could not see into the naval port.
+        src: [hatoh-yamato-062]
+
+      - date: 1937-06
+        text:
+          zh: >-
+            高墙建成后照り返し使车厢如同蒸笼，乘客向吴站长投书投诉；沿线民家与学校
+            被要求封闭朝港一侧的窗户，新建房屋一开始就不设港侧窗。
+          en: >-
+            Once built, the wall reflected heat and turned the carriages into
+            ovens; passengers complained to the stationmaster at Kure. Houses and
+            schools along the line were ordered to seal windows facing the port,
+            and new buildings omitted them from the start.
+        src: [hatoh-yamato-062, japanese-warship-yamato-building]
+
+      - date: 1937-03
+        text:
+          zh: >-
+            福田啓二的设计组完成最终设计：满载 69,988 吨、九门 460 mm/45 炮装在三座
+            三联装炮塔内，同级另有三个舰体在计划中。
+          en: >-
+            Rear Admiral Fukuda Keiji's design team completed the final design:
+            69,988 tons full load, nine 460 mm/45 guns in three triple turrets, with
+            three more units of the class planned.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1937
+        text:
+          zh: >-
+            ③計画订购最初两艘。对外公布的口径是「42,000 吨、40 cm 炮九门、25 节」，
+            连舰上乘员多数也不知道主炮实际是 46 cm。
+          en: >-
+            The first two ships were ordered under the 3rd Supplementary Programme.
+            The public line was 42,000 tons, nine 40 cm guns and 25 knots; most of
+            the crew did not know the guns were actually 46 cm.
+        src: [navypedia-yamato, japanese-warship-yamato-building]
+
+      - date: 1937
+        text:
+          zh: >-
+            大量图纸被定为最高机密「軍機」，大图几乎不绘制，须由多张小图拼合才能看出全貌。
+            制图员拿到的图纸封面写的是「九四式五〇口径二〇センチ砲」，画到中途即可判断
+            这个口径不成立。
+          en: >-
+            Many drawings were classified under the highest secrecy grade; large
+            sheets were rarely made, so the whole could only be assembled from small
+            ones. Draughtsmen received covers marked "Type 94 50-calibre 20 cm gun",
+            and could tell partway through that the calibre was impossible.
+        src: [japanese-warship-yamato-building]
+
+      - date: 1937-11-04
+        text:
+          zh: >-
+            在吴海军工厂开工，档案上只称「一号舰」。船渠为此加深约一米，跨渠龙门吊
+            的起重能力由 60 吨提高到 100 吨，以吊装厚装甲板。
+          en: >-
+            Laid down at Kure Naval Arsenal as "Battleship No. 1". The dock was
+            deepened about a metre and the gantry crane's capacity raised from 60 to
+            100 tons for the armour plates.
+        src: [combinedfleet-yamato-trom, usni-proceedings-1953-yamato-design, japanese-warship-yamato-building]
+
+      - date: 1939-05
+        text:
+          zh: >-
+            锅炉于 5 月中旬至 10 月中旬、主机于 5 月中旬至 11 月中旬装舰，均按计划执行。
+          en: >-
+            Boilers were installed from mid-May to mid-October and main machinery
+            from mid-May to mid-November, both on schedule.
+        src: [japanese-warship-yamato-building]
+
+      - date: 1940-08-08
+        text:
+          zh: >-
+            下水并命名「大和」。仪式极简：久邇宮朝融王代天皇临席，在场约一千名工厂关系者，
+            无观览人、无军乐队、无万岁与鼓掌。
+          en: >-
+            Launched and named Yamato in a deliberately muted ceremony: Prince
+            Kuninomiya Asaakira attended for the Emperor before about a thousand yard
+            workers, with no spectators, no band, no banzai and no applause.
+        src: [combinedfleet-yamato-trom, trafficnews-2020-yamato-launch]
+
+      - date: 1941-03
+        text:
+          zh: >-
+            主炮装舰实际在 3 月下旬至 5 月下旬完成，比原计划的 5 月下旬至 10 月下旬
+            提前约半年；预行运转提前到 10 月 16–18 日，公试运转提前到 10 月 22–30 日。
+          en: >-
+            Main guns were installed between late March and late May, roughly half a
+            year ahead of the planned late-May to late-October window; preliminary
+            runs moved to 16-18 October and trials to 22-30 October.
+        src: [japanese-warship-yamato-building]
+
+      - date: 1941-10-30
+        text:
+          zh: >-
+            在宿毛冲完成公试，公试速力 27.46 节；公试排水量 69,100 吨与 68,010 吨两说并存。
+          en: >-
+            Completed trials at Sukumo with a trial speed of 27.46 knots; trial
+            displacement is given as 69,100 tons in one source and 68,010 in another.
+        src: [combinedfleet-yamato-trom, yamato-museum-data, japanese-warship-yamato, kasado-yamato]
+
+      - date: 1941-11-01
+        text:
+          zh: >-
+            高柳儀八大佐就任舣装员长（Chief Equipping Officer），竣工后即为首任舰长，
+            1942 年 5 月 1 日晋升少将。
+          en: >-
+            Captain Takayanagi Gihachi became Chief Equipping Officer and stayed on as
+            the first commanding officer after completion, promoted rear admiral on
+            1 May 1942.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1941-12-07
+        text:
+          zh: >-
+            自吴出发赴周防滩实施炮术试验，对 32,500 m 距离的目标发射一次全齐射。
+          en: >-
+            Left Kure for gunnery tests in the Suo Sea and fired one full salvo at a
+            target 32,500 m away.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1941-12-10
+        text:
+          zh: >-
+            第二期工事终了，交舰时间由原计划的 1942 年 6 月 15 日提前到 12 月 16 日，
+            提前约半年。
+          en: >-
+            Second-stage work finished, bringing handover forward from the planned
+            15 June 1942 to 16 December 1941 — about half a year early.
+        src: [japanese-warship-yamato-building]
+
+      - date: 1941-12-16
+        text:
+          zh: >-
+            竣工，入吴镇守府籍，编入联合舰队第一战队（与长门、陆奥同队），
+            竣工时定员 2,500 人。
+          en: >-
+            Completed and registered in the Kure Naval District, assigned to the
+            Combined Fleet's BatDiv 1 with Nagato and Mutsu; complement on completion
+            was 2,500.
+        src: [combinedfleet-yamato-trom, yamato-museum-data, navypedia-yamato]
+
+  - id: flagship
+    title: { zh: 旗舰时期, en: The flagship years }
+    range: { from: 1942-02-12, to: 1943-12-25 }
+    lead:
+      zh: >-
+        这两年里大和是联合舰队的司令塔，却几乎没有开过炮。中途岛它在后方 600 英里，
+        瓜岛它锚在特鲁克，真正的转折是 1943 年 12 月 25 日那一枚鱼雷——它第一次让人看到
+        舷侧防护体系的接缝问题。
+      en: >-
+        For two years Yamato was the fleet's command centre and hardly fired a shot:
+        600 miles behind the carriers at Midway, at anchor at Truk through Guadalcanal.
+        The real turn came with a single torpedo on 25 December 1943, which first
+        exposed the joint in her side protection.
+    events:
+      - date: 1942-02-12
+        text:
+          zh: >-
+            山本五十六的联合舰队司令长官旗由长门移驻大和。旗舰起算日是这一天，
+            不是竣工日。
+          en: >-
+            Admiral Yamamoto's Combined Fleet flag shifted from Nagato to Yamato. The
+            flagship period starts on this date, not on completion.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1942-02-20
+        text:
+          zh: >-
+            联合舰队参谋长宇垣缠少将在大和舰上主持一系列图上推演，检讨第二阶段作战方案。
+          en: >-
+            Rear Admiral Ugaki Matome, chief of staff of the Combined Fleet, ran a
+            series of war games aboard Yamato to test second-stage operation plans.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1942-03-30
+        text:
+          zh: >-
+            山本亲临观看 23 英里距离的炮术试验，结果被判失败；舰长与炮术长因主测距仪
+            操作手误读水平装定而遭训斥。
+          en: >-
+            Yamamoto watched a 23-mile gunnery trial that was judged a failure; the
+            captain and gunnery officer were upbraided because the main-rangefinder
+            operators misread the horizontal settings.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1942-05-27
+        text:
+          zh: >-
+            被判定为可作战状态。
+          en: >-
+            Deemed operational.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1942-05-29
+        text:
+          zh: >-
+            06:00 以联合舰队旗舰身份率主队自柱岛出击参加 MI 作战。主队全程位于
+            南云机动部队后方约 600 英里。
+          en: >-
+            Sortied from Hashirajima at 0600 with the Main Body for Operation MI.
+            The Main Body remained about 600 miles behind the Carrier Striking Force
+            throughout.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1942-05-30
+        text:
+          zh: >-
+            截获美军电文但无法破译。山本提议转告赤城，首席参谋黑岛龟人以求保持无线电静默
+            为由劝阻。
+          en: >-
+            A U.S. message was intercepted but could not be decoded. Yamamoto proposed
+            relaying it to Akagi; Captain Kuroshima Kameto cautioned against breaking
+            radio silence.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1942-06-05
+        text:
+          zh: >-
+            00:15 山本下令取消夜战；02:55 下令取消 MI 作战。
+          en: >-
+            At 0015 Yamamoto cancelled the night engagement; at 0255 he cancelled
+            Operation MI.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1942-06-10
+        text:
+          zh: >-
+            在南鸟岛东北约 100 英里处遭一艘不明潜艇两雷攻击，大和与主队各舰左转规避，
+            两雷均未命中。
+          en: >-
+            About 100 miles NNE of Minami-Torishima an unidentified submarine fired
+            two torpedoes; Yamato and the Main Body turned to port and both missed.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1942-08-28
+        text:
+          zh: >-
+            在特鲁克附近遭 USS Flying Fish（SS-229）攻击。该艇使用的 ONI 41-42 识别手册
+            里没有大和级，艇长把目标判为「金刚级」，发射四枚 Mk 14 后认为看到两次命中，
+            实际是早爆。同日大和进驻特鲁克，此后成为联合舰队司令部所在地。
+          en: >-
+            Attacked near Truk by USS Flying Fish (SS-229). Her ONI 41-42 recognition
+            manual did not include the Yamato class, so her captain identified the
+            target as a Kongo-class ship; he fired four Mk 14s and thought he saw two
+            hits, which were premature bursts. Yamato reached Truk the same day and
+            became the Combined Fleet's headquarters afloat.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1942-10-17
+        text:
+          zh: >-
+            在特鲁克向空载抵达的油船建洋丸各输出 4,500 吨燃油（大和与陆奥各一份），
+            供参加瓜岛作战的舰艇加油。
+          en: >-
+            At Truk, Yamato and Mutsu each transferred 4,500 tons of fuel oil to the
+            empty oiler Kenyo Maru for warships engaged in the Guadalcanal operations.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1942-11-15
+        text:
+          zh: >-
+            瓜岛战役全程锚泊特鲁克。年表记其自 1942-08-29 至 1943-05-08 以「hotel」
+            身份驻泊，并列出几种被提出的理由：燃料与炮弹不足、瓜岛近海水域受限且未测深、
+            航速不及金刚级、山本不愿将其投入战斗。
+          en: >-
+            Anchored at Truk through the Guadalcanal campaign. The record has her as a
+            "hotel" from 29 August 1942 to 8 May 1943, listing the reasons advanced:
+            fuel and bombardment ammunition shortages, restricted and unsurveyed
+            waters off Guadalcanal, lower speed than the Kongos, and Yamamoto's
+            reluctance to commit her.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1943-02-11
+        text:
+          zh: >-
+            联合舰队旗舰由大和移至新竣工的武藏。
+          en: >-
+            The Combined Fleet flag passed from Yamato to the newly completed Musashi.
+        src: [combinedfleet-yamato-trom, combinedfleet-musashi-trom]
+
+      - date: 1943-04-23
+        text:
+          zh: >-
+            傍晚一架飞行艇运来山本与六名幕僚的遗骨，在前首席参谋黑岛监视下秘密安置于
+            司令长官的海上住舱。此条在大和与武藏两舰年表里都有收录、措辞几乎相同，
+            旗舰已于 2 月移至武藏，遗骨落在哪一舰上并不明确。
+          en: >-
+            In the evening a flying boat brought the ashes of Yamamoto and six staff
+            officers, secretly placed in the admiral's sea cabin under Captain
+            Kuroshima's supervision. Both the Yamato and Musashi records carry this
+            entry in almost identical wording even though the flag had moved to
+            Musashi in February, so which ship received the ashes is not settled.
+        src: [combinedfleet-yamato-trom, combinedfleet-musashi-trom]
+
+      - date: 1943-05-08
+        text:
+          zh: >-
+            自特鲁克出发赴横须贺，结束了长达八个多月的驻泊。
+          en: >-
+            Departed Truk for Yokosuka, ending more than eight months at anchor.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1943-07-12
+        text:
+          zh: >-
+            入吴船坞：装二一号电探（Type 21 Mod 3，对空对海搜索）；增设 12 门 25 mm
+            机关炮（总数 36 门）；15.5 cm 耳台炮加围壁防盾、炮座补 28 mm 装甲；
+            同时削减燃油舱容、改进主副舵操控。
+          en: >-
+            Drydocked at Kure: a Type 21 Mod 3 air and surface search radar was
+            fitted, twelve 25 mm AA guns added for a total of 36, coaming armour
+            fitted to the 155 mm wing mounts with 28 mm added to their barbettes,
+            fuel stowage reduced and the main and auxiliary rudder controls improved.
+        src: [combinedfleet-yamato-trom, navypedia-yamato]
+
+      - date: 1943-07-16
+        text:
+          zh: >-
+            德国驻日海军武官温内克少将登舰。事前交给德方的资料把主炮口径写成 40 cm；
+            参观路线避开主炮塔，全程不足一小时，未展示下层舱室。此行是希特勒与邓尼茨
+            特别索取，回报 1941 年 3 月德方给野村参观铁必制。
+          en: >-
+            German naval attaché Konteradmiral Paul Wenneker toured the ship. The data
+            sheet given to him described the main battery as 40 cm; the route avoided
+            the main turrets and the visit lasted under an hour with no lower decks
+            shown. The tour had been requested by Hitler and Dönitz in return for the
+            Germans' March 1941 showing of Tirpitz to Nomura.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1943-12-17
+        text:
+          zh: >-
+            抵横须贺，装载物资并搭载陆军第 1 独立混成联队第 2 大队——该联队为
+            1943 年 9 月 22 日动员的 4,131 人编制。
+          en: >-
+            Arrived at Yokosuka and loaded supplies plus the 2nd Battalion of the
+            IJA's 1st Independent Mixed Regiment, a 4,131-man organisation mobilised
+            on 22 September 1943.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1943-12-25
+        text:
+          zh: >-
+            在特鲁克以北被 USS Skate（SS-305）命中一雷（05:18 于 2,200 码发射）。
+            破口自防雷凸舱顶向下约 15 英尺、纵向约 75 英尺（肋位 151–173），
+            原因是上下两条舷侧装甲带的接缝失效；3 号炮塔上部弹药库进水，全舰进水约
+            3,000 吨，远超舷侧防护体系设计预期。
+          en: >-
+            Torpedoed north of Truk by USS Skate (SS-305), which fired at 0518 from
+            2,200 yards. The blast opened a hole about 15 ft deep from the top of the
+            blister and 75 ft long between frames 151 and 173, caused by failure of
+            the joint between the upper and lower side belts; No. 3 turret's upper
+            magazine flooded and she took on about 3,000 tons, far more than the side
+            protection had been designed for.
+        src: [combinedfleet-yamato-trom, pwe-yamato-class]
+
+      - date: 1943-12-25
+        text:
+          zh: >-
+            舰长当日 14:35 的损管电报被美方破译，其中给出的破口范围是肋位 163–170、
+            水线以上直径 11 米、以下 5.5 米，与年表叙述的肋位 151–173 略有出入，两说并存。
+          en: >-
+            The captain's 1435 damage report, decrypted by the Americans, gave the
+            hole as frames 163 to 170, 11 m across above the bilge and 5.5 m below,
+            slightly different from the 151-173 range in the chronology; both are
+            recorded.
+        src: [combinedfleet-yamato-trom]
+
+  - id: leyte
+    title: { zh: 1944 年：改装与莱特湾, en: Refit and Leyte Gulf, 1944 }
+    range: { from: 1944-01-16, to: 1944-11-25 }
+    lead:
+      zh: >-
+        1944 年是大和改装最密集、也是唯一一次以主炮对敌舰射击的一年。
+        它先补了雷伤、重建防空体系，然后在萨马岛外海打中了目标，
+        又在规避鱼雷时把自己和舰队司令一起带出了战场。
+      en: >-
+        1944 brought Yamato's heaviest refits and the only action in which her main
+        battery fired at enemy ships. She repaired torpedo damage, rebuilt her
+        anti-aircraft battery, hit a target off Samar, and then took herself and the
+        fleet commander out of the battle while avoiding torpedoes.
+    events:
+      - date: 1944-01-16
+        text:
+          zh: >-
+            抵吴，入第 4 船坞修理雷伤并修正装甲带缺陷：在两块纵舱壁之间上部空舱的下角
+            加装一块 45° 斜板。这项改装原提议沿防御区全长敷设，实际只装在大和、
+            只装在受创那一段。设计方事后承认措施不足；用 5,000 吨钢压缩非防御区舱容的方案
+            因排水量与吃水超限被否决。
+          en: >-
+            Reached Kure and entered No. 4 drydock to repair the torpedo damage and
+            correct the belt defects: a plate was fitted at 45 degrees across the
+            lower corner of the upper void between the two inboard bulkheads. Proposed
+            for the full length of the citadel, it was installed only in Yamato and
+            only where she had been hit. The designers later admitted the measure was
+            inadequate; a 5,000-ton scheme to reduce void volume beyond the citadel
+            was rejected as overloading displacement and draught.
+        src: [combinedfleet-yamato-trom, japanese-warship-yamato-building]
+
+      - date: 1944-02-25
+        text:
+          zh: >-
+            在吴大改装，同时与武藏一起由第一舰队转隶第二舰队。撤去两座舷侧 15.5 cm
+            三联装炮塔，改装六座 12.7 cm 双联高角炮；增设 24 门三联装与 26 门单装 25 mm
+            （新增 98 门，非总数）；装一三号对空电探与二二号改四对海/炮术电探，主桅改造；
+            撤两具 150 cm 探照灯，后移设于吴岸上。
+          en: >-
+            Major refit at Kure, transferring with Musashi from the First to the Second
+            Fleet. The two beam 15.5 cm triple turrets came out and six twin 12.7 cm
+            HA mounts went in; 24 triple and 26 single 25 mm mounts were added (98 new
+            guns, not a total); Type 13 air-search and Type 22 Mod 4 surface/gunnery
+            radar were fitted and the main mast altered; two 150 cm searchlights were
+            removed and later installed ashore at Kure.
+        src: [combinedfleet-yamato-trom, navypedia-yamato]
+
+      - date: 1944-02
+        text:
+          zh: >-
+            同期在舰桥两侧中部装二式红外识别/信号装置（可能参照德国 Seehund），
+            并装多台仿德国 FuMB 1 Metox R.600 的 E27 雷达告警接收机。
+          en: >-
+            About this time Type 2 infrared IFF/signalling devices were mounted midway
+            up each side of the bridge, possibly based on the German Seehund, along
+            with multiple E27 radar detectors copied from the German FuMB 1 Metox
+            R.600.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1944-06-19
+        text:
+          zh: >-
+            菲律宾海海战。09:20 瞭望发现 13,125 英尺高度接近的机群，实为 601 空第二波
+            己方战斗机；高雄发射四发星弹要求识别未得回应。16,400 码上大和以三式弹开火，
+            击伤四架零战、另有一架迫降——这是大和主炮第一次对人开火，打的是友军。
+            武藏是当日唯一没有开火的舰。
+          en: >-
+            Battle of the Philippine Sea. At 0920 lookouts sighted aircraft
+            approaching at 13,125 ft — in fact Air Group 601's own second strike.
+            Takao fired four starshells demanding identification without reply. At
+            16,400 yards Yamato opened fire with Type 3 shells, damaging four Zekes
+            and causing another to ditch: the first time her main guns fired at
+            people, and they were friendly. Musashi was the only ship that did not
+            fire.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1944-07-02
+        text:
+          zh: >-
+            在吴 7 月 2 日至 8 日改装，增装 15 门（5 座三联装）25 mm，木甲板（檜甲板）
+            整块更换。
+          en: >-
+            Refit at Kure from 2 to 8 July: fifteen new 25 mm guns in five triple
+            mounts, and the entire hinoki deck replaced.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1944-10-18
+        text:
+          zh: >-
+            为圣贝纳迪诺海峡夜战突破，大和与武藏紧急涂布黑甲板迷彩，主要原料是
+            大和烟囱里的煤烟。
+          en: >-
+            Black deck camouflage for the night breakthrough in the San Bernardino
+            Strait was hastily applied to Yamato and Musashi, the main ingredient
+            being soot from Yamato's funnel.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1944-10-22
+        text:
+          zh: >-
+            捷一号作战，随栗田健男的第一游击部队（中央部队）自文莱出击驶向菲律宾；
+            编成含第一战队的大和、武藏、长门，第四、第五战队与第二水雷战队。
+            同日接收长门转来的三菱 F1M2 水上观测机。
+          en: >-
+            Operation Sho-1: sortied from Brunei for the Philippines with Kurita's
+            First Diversion Attack Force (Centre Force) — BatDiv 1's Yamato, Musashi
+            and Nagato, CruDivs 4 and 5, DesRon 2 — receiving Mitsubishi F1M2
+            observation floatplanes from Nagato the same day.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1944-10-23
+        text:
+          zh: >-
+            巴拉望水道，栗田的旗舰重巡爱宕被 USS Darter（SS-227）击沉，栗田离舰后由
+            驱逐舰岸波救起；约十小时后他转乘大和，在舰上恢复指挥。
+          en: >-
+            In the Palawan Passage Kurita's flagship, the heavy cruiser Atago, was
+            sunk by USS Darter (SS-227). Kurita abandoned ship and was picked up by
+            the destroyer Kishinami; about ten hours later he shifted to Yamato and
+            resumed command.
+        src: [combinedfleet-yamato-trom, ussbs-ijo-9-kurita-leyte]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            锡布延海。13:50 一架来自 USS Essex 的 SB2C 投下两枚穿甲弹，炸伤舰首左舷
+            1 号主炮塔侧方；14:30 再遭四架 F6F 与十二架 SB2C 攻击，首批弹中有一枚
+            穿透锚甲板、炸毁左舷锚链舱并在水线下爆炸，另两枚命中 1 号炮塔一带。
+            全舰进水约 3,000 吨、左倾 5 度，注水后压回 1 度，舰首保持 2 英尺 8 英寸埋首。
+          en: >-
+            Sibuyan Sea. At 1350 a Helldiver from USS Essex dropped two AP bombs that
+            damaged the port bow abreast No. 1 turret; at 1430 four Hellcats and
+            twelve Helldivers attacked, one bomb penetrating the anchor deck and
+            demolishing the port chain locker before exploding below the waterline,
+            with two more hitting around No. 1 turret. She shipped about 3,000 tons
+            and took a 5-degree port list, corrected to one degree, keeping a 2 ft
+            8 in bow trim.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            当日的命中数在日方材料里三说并存：两弹（大谷）、三弹（USNTMJ 转引）、
+            四弹（栗田、小柳）。美方飞行员当时声称有鱼雷命中，日方几份口述材料
+            全部否认有雷。另需注意年表当日只记录「投下的弹数」，不等于命中数。
+          en: >-
+            Japanese accounts give three different bomb-hit totals for the day: two
+            (Otani), three (USNTMJ, as cited), four (Kurita, Koyanagi). American
+            aircrew claimed torpedo hits; the Japanese accounts deny any. The
+            chronology for that day records bombs dropped, not bombs that hit.
+        src: [ussbs-ijo-41-otani-samar, ussbs-ijo-9-kurita-leyte, ussbs-ijo-35-koyanagi-samar, wartimechapters-yamato]
+
+      - date: 1944-10-25
+        text:
+          zh: >-
+            萨马岛外海。05:44 左舷 60 度方向、23 英里外发现护航航母群，误判为六艘
+            舰队航母加三艘巡洋舰、两艘驱逐舰；05:58 前部两座炮塔在 20 英里距离开火，
+            六门炮中最初只有两门装九一式穿甲弹，其余装三式弹。观测机确认首齐射命中，
+            目标开始冒烟；对同一目标打了三个六发齐射后转移射向，目标随即被驱逐舰的烟幕遮蔽。
+          en: >-
+            Off Samar. At 0544 carriers were sighted hull-down 23 miles away on
+            bearing 60 to port and misidentified as six fleet carriers with three
+            cruisers and two destroyers; at 0558 both forward turrets opened at
+            20 miles, with only two of the six rifles initially loaded with Type 91
+            AP and the rest with Type 3. The spotting plane confirmed a first-salvo
+            hit and the target began to smoke; after three six-gun salvos on her the
+            fire shifted, and the next target was hidden by destroyer smoke.
+        src: [combinedfleet-yamato-trom, navweaps-46cm-45-t94]
+
+      - date: 1944-10-25
+        text:
+          zh: >-
+            06:51 一艘「巡洋舰」从烟幕中冲出，大和在 10 英里外开火，首齐射命中，
+            目标被看到起火后失去踪迹。这是大和主炮对敌舰的全部战果记录。
+          en: >-
+            At 0651 a "cruiser" charged out of the smoke; Yamato engaged at more than
+            10 miles and hit with her first salvo, the target being seen on fire
+            before it was lost to view. This is the whole record of her main battery
+            against enemy ships.
+        src: [combinedfleet-yamato-trom, navweaps-46cm-45-t94]
+
+      - date: 1944-10-25
+        text:
+          zh: >-
+            06:54 驱逐舰 Heermann 对榛名发射三雷，鱼雷越过榛名后指向大和。大和右舷
+            发现雷迹，左转规避并向北航行十英里，直到鱼雷耗尽燃料——规避成功，
+            但也把大和与舰队司令栗田一起带出了战场。
+          en: >-
+            At 0654 the destroyer Heermann fired three torpedoes at Haruna; they
+            missed and headed for Yamato, whose crew spotted the tracks to starboard.
+            She turned away to port and steamed north for ten miles until the
+            torpedoes ran out of fuel — a successful evasion that carried both Yamato
+            and Kurita out of the action.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1944-10-26
+        text:
+          zh: >-
+            10 月 24 日至 26 日的弹药消耗记录：九一式穿甲弹 127 发、零式通常弹 383 发。
+          en: >-
+            Her ammunition expenditure log for 24-26 October 1944 records 127 rounds
+            of Type 91 AP and 383 rounds of Common Type 0.
+        src: [navweaps-155cm-60-3ns]
+
+      - date: 1944-11-15
+        text:
+          zh: >-
+            第一战队解散，大和改任第二舰队旗舰。
+          en: >-
+            BatDiv 1 was disbanded and Yamato became flagship of the Second Fleet.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1944-11-23
+        text:
+          zh: >-
+            返抵吴港。
+          en: >-
+            Arrived at Kure.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1944-11-25
+        text:
+          zh: >-
+            入吴船坞，开始战斗损伤修理与改装：撤去 24 门旧式单装 25 mm，改装 9 座三联装，
+            25 mm 最终配置为 152 门（50 座三联装加 2 门单装）。另有一说为 162 门
+            （52 座三联 156 门加 6 门单装），两说并列。
+          en: >-
+            Drydocked at Kure for battle-damage repair and refit: twenty-four older
+            single 25 mm mounts came out and nine triple mounts went in, for a final
+            battery of 152 guns (50 triple, 2 single). Another account gives 162
+            (52 triple for 156 guns plus 6 single); both are recorded.
+        src: [combinedfleet-yamato-trom, kasado-yamato]
+
+  - id: ten-go
+    title: { zh: 天一号作战, en: Operation Ten-ichi-go }
+    range: { from: 1945-03-19, to: 1945-04-07 }
+    lead:
+      zh: >-
+        任务不是击沉航母，是突入冲绳锚地尽量击沉运输船，然后搁浅、乘员上岸作战至最后一人。
+        从出击到沉没不到二十小时。
+      en: >-
+        The mission was not to sink carriers but to break into the Okinawa anchorage,
+        sink as many transports as possible, beach the ship and fight on ashore to the
+        last man. From sortie to sinking took under twenty hours.
+    events:
+      - date: 1945-03-19
+        text:
+          zh: >-
+            吴军港首次遭航母空袭。大和在内海航行中被一架来自 USS Intrepid 的无畏式
+            投弹命中舰桥，仅受轻伤。
+          en: >-
+            First carrier strike on Kure. Yamato, underway in the Inland Sea, took a
+            bomb on the bridge from a Helldiver of USS Intrepid and suffered minor
+            damage.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1945-03-29
+        text:
+          zh: >-
+            在吴完成弹药装载：18.1 英寸炮 1,170 发、副炮 1,620 发（NHHC 记 1,629 发）、
+            高射炮弹 13,500 发、机枪弹 1,150 万发。
+          en: >-
+            Loaded full ammunition at Kure: 1,170 rounds for the 18.1-inch guns,
+            1,620 for the secondary battery (NHHC gives 1,629), 13,500 AA rounds and
+            11.5 million machine-gun rounds.
+        src: [combinedfleet-yamato-trom, nhhc-h044-3-ten-ichi-go]
+
+      - date: 1945-04-05
+        text:
+          zh: >-
+            13:59 收到天一号作战命令：经丰后水道出击，Y 日（4 月 8 日）黎明突入冲绳西方
+            海面，攻击并歼灭敌方舰艇与船团。15:00 舰长有贺幸作向全乘员传达；
+            17:30 三天前刚到的江田岛 74 期 67 名少尉候补生被送上岸，当夜举行告别宴。
+          en: >-
+            At 1359 the Ten-ichi-go order arrived: sortie via Bungo Suido and break
+            into the waters west of Okinawa at dawn on Y-day, 8 April, to destroy the
+            enemy fleet and convoy. Captain Aruga told the crew at 1500; at 1730 the
+            67 Etajima class-74 midshipmen who had arrived three days earlier were
+            sent ashore, and a farewell party followed that night.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1945-04-06
+        text:
+          zh: >-
+            清晨，联合舰队参谋长草鹿龙之介乘一架水上飞机自鹿屋飞抵三田尻，与第二舰队
+            司令伊藤整一及幕僚会商任务。
+          en: >-
+            Early in the morning Vice Admiral Kusaka Ryunosuke, chief of staff of the
+            Combined Fleet, flew in by floatplane from Kanoya to Mitajiri to confer on
+            the mission with Vice Admiral Ito and his staff.
+        src: [combinedfleet-yamato-trom, nhhc-h044-3-ten-ichi-go]
+
+      - date: 1945-04-06
+        text:
+          zh: >-
+            在德山油库补油 3,400 吨，驱逐舰同时加油；15:20 率轻巡矢矧与八艘驱逐舰出击。
+            「只给单程燃料」是命令层面的说法，不是实测油量：另有 4,000 吨（清水芳人引
+            战闘详报，约满载三分之二）与「加至 90% 容量」（USNTMJ 转引）两说，
+            实际是「有多少加多少」。
+          en: >-
+            Took on 3,400 tons of fuel oil at Tokuyama, the destroyers refuelling too,
+            and sortied at 1520 with the light cruiser Yahagi and eight destroyers.
+            The "one-way fuel" story belongs to the order level, not to measured
+            bunkers: other accounts give 4,000 tons (about two-thirds of capacity,
+            cited from the action report) and "filled to 90 per cent" (USNTMJ, as
+            cited); in practice she was filled with what was available.
+        src: [combinedfleet-yamato-trom, gendai-2019-shimizu-yamato, nhhc-h044-3-ten-ichi-go]
+
+      - date: 1945-04-06
+        text:
+          zh: >-
+            21:44 USS Threadfin 向关岛发出详细接触报告，该电被大和截获。
+          en: >-
+            At 2144 USS Threadfin radioed a detailed contact report to COMSUBPAC at
+            Guam; Yamato intercepted it.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1945-04-07
+        text:
+          zh: >-
+            06:00 弹射一架爱知 E13A1 零式水上侦察机。
+          en: >-
+            At 0600 she catapulted one Aichi E13A1 Type 0 reconnaissance floatplane.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1945-04-07
+        text:
+          zh: >-
+            06:30 宇垣缠第五航空舰队第 203 空的六架零战到达提供掩护，至 10:00 前后
+            共有 14 架次自九州笠原基地分批掩护。
+          en: >-
+            At 0630 six Zekes of the 203rd Naval Air Group arrived to provide cover;
+            by about 1000 a total of 14 Zeke sorties from the Kasanbara base on Kyushu
+            had covered the force in small groups.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1945-04-07
+        text:
+          zh: >-
+            08:32 被一架来自 USS Essex 的搜索 F6F 发现（NHHC 记美机 08:23 发现、
+            日方 08:32 报告，是两个动作而非矛盾）。
+          en: >-
+            At 0832 a searching F6F from USS Essex sighted the force; NHHC gives the
+            sighting at 0823 and the Japanese report at 0832 — two actions, not a
+            contradiction.
+        src: [combinedfleet-yamato-trom, nhhc-h044-3-ten-ichi-go]
+
+      - date: 1945-04-07
+        text:
+          zh: >-
+            11:07 一三号对空电探在最大量程 63 海里处发现大机群，方位 180、正在分裂为两队；
+            全队提速至 25 节并同时转向。
+          en: >-
+            At 1107 the Type 13 air-search radar detected a large formation at its
+            maximum range of 63 miles, bearing 180 and splitting into two groups; the
+            force went to 25 knots and turned together.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1945-04-07
+        text:
+          zh: >-
+            11:15 收到一份经 25 分钟传递与译电才到达的报告：机宜岛瞭望所目击 150 架
+            舰载机向西北飞行（NHHC 记延迟 30 分钟，两说并列）。随即八架 F6F 出现并
+            盘旋跟踪，直到主力到达。
+          en: >-
+            At 1115 a report delayed 25 minutes in transmission and decoding finally
+            arrived: the Kikaigashima lookout had seen 150 carrier aircraft heading
+            north-west (NHHC says 30 minutes; both are given). Eight F6Fs then
+            appeared and circled to hold contact until the main formation arrived.
+        src: [combinedfleet-yamato-trom, nhhc-h044-3-ten-ichi-go]
+
+      - date: 1945-04-07
+        text:
+          zh: >-
+            12:32 瞭望在左舷 25 度、仰角 8 度、距离 4,375 码发现美机——第一波编制
+            280 架（战斗机 132、轰炸机 50、鱼雷机 98）。NHHC 另指出汉考克号 53 机
+            晚发且未找到目标，首波实到 227 架；编成数与实到数两个口径并列。
+          en: >-
+            At 1232 lookouts sighted aircraft 25 degrees to port, elevation 8, at
+            4,375 yards: a first wave organised as 280 aircraft (132 fighters, 50
+            bombers, 98 torpedo planes). NHHC adds that Hancock launched her 53
+            aircraft late and they never found the target, reducing the wave to 227;
+            the planned and actual figures are both given.
+        src: [combinedfleet-yamato-trom, nhhc-h044-3-ten-ichi-go]
+
+      - date: 1945-04-07
+        text:
+          zh: >-
+            12:34 以前部两座主炮塔与防空炮开火；12:35 停止规避、提速至 24 节，
+            九门 46 cm 发射三式弹，24 门 127 mm 与 152 门 25 mm 同时开火。
+          en: >-
+            At 1234 she opened fire with the two forward turrets and the AA battery;
+            at 1235 she stopped zigzagging and went to 24 knots, her nine 46 cm guns
+            firing Type 3 shells while 24 127 mm and 152 25 mm guns all opened.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1945-04-07
+        text:
+          zh: >-
+            12:40 被两发穿甲炸弹命中：一发在后桅附近爆炸；另一发穿透后部司令塔左舷，
+            在 155 mm 弹药库与 3 号主炮上部发射药库之间爆炸，引发无法扑灭的火灾，
+            并在露天甲板撕开约 60 英尺的破口。后部副炮火控、副炮塔与对空电探失效。
+          en: >-
+            At 1240 two AP bombs hit: one burst near the mainmast, the other
+            penetrated the port side of the aft command station and exploded between
+            the 155 mm magazine and No. 3 turret's upper powder magazine, starting a
+            fire that could not be put out and tearing a 60-foot hole in the weather
+            deck. Aft secondary fire control, the secondary turret and the air-search
+            radar were knocked out.
+        src: [combinedfleet-yamato-trom, nhhc-h044-3-ten-ichi-go]
+
+      - date: 1945-04-07
+        text:
+          zh: >-
+            12:43 大黄蜂号五架低空复仇者自左舷 70 度进入雷击，投下三雷，一雷命中
+            左舷前部锚机室附近，一架复仇者被击落。进水 2,350 吨（NHHC 记 2,235 吨）。
+          en: >-
+            At 1243 five low-flying Hornet Avengers attacked from 70 degrees to port
+            and dropped three torpedoes; one hit the port side near the forward
+            windlass room and one Avenger was shot down. She shipped 2,350 tons
+            (NHHC gives 2,235).
+        src: [combinedfleet-yamato-trom, nhhc-h044-3-ten-ichi-go]
+
+      - date: 1945-04-07
+        text:
+          zh: >-
+            13:33 第三波 110 机（TG 58.4：约克城、无畏、兰利）全部集中攻击大和。
+            20 架复仇者自左舷 60 度实施雷击，三雷命中左舷中部，副舵被卡死在左满舵位置。
+            NHHC 指出左舷集中雷击是有意为之，目的就是让舰倾覆。
+          en: >-
+            At 1333 the third wave of 110 aircraft from TG 58.4 concentrated wholly on
+            Yamato. Twenty Avengers attacked from 60 degrees to port and three
+            torpedoes hit her port side amidships, jamming the auxiliary rudder hard
+            aport. NHHC notes that concentrating torpedo attacks on the port side was
+            deliberate, intended to capsize the ship.
+        src: [combinedfleet-yamato-trom, nhhc-h044-3-ten-ichi-go]
+
+      - date: 1945-04-07
+        text:
+          zh: >-
+            14:02 三弹在左舷中部爆炸；五分钟后一雷命中右舷中部，再过十分钟两雷命中左舷。
+            倾斜增至约 15 度、航速降至 12 节。副长能村次郎向舰长报告损管军官已全部阵亡、
+            注水已无法纠正倾斜，建议弃舰；伊藤整一命令中止任务、残余舰艇尽量救起幸存者，
+            天皇御真影被取下。
+          en: >-
+            At 1402 three bombs burst port amidships; five minutes later a torpedo hit
+            to starboard amidships and ten minutes after that two more to port. The
+            list reached about 15 degrees and speed fell to 12 knots. The executive
+            officer, Commander Nomura Jiro, reported that all damage-control officers
+            were dead and flooding could no longer correct the list, and recommended
+            abandoning ship; Ito cancelled the mission and ordered the remaining ships
+            to save as many survivors as possible, and the Emperor's portrait was
+            removed.
+        src: [combinedfleet-yamato-trom, nhhc-h044-3-ten-ichi-go]
+
+      - date: 1945-04-07
+        text:
+          zh: >-
+            14:05 轻巡矢矧在被 12 枚炸弹与 7 条鱼雷命中后沉没，恰在最后一弹命中后一分钟。
+            约克城 VT-9 的 Stetson 分队六架复仇者把 Mk 13 鱼雷定深改为 20 英尺，
+            自右舷对已严重左倾的舰体作最后雷击。
+          en: >-
+            At 1405 the light cruiser Yahagi sank after 12 bomb and 7 torpedo hits,
+            exactly one minute after the last bomb struck. Six of Lt Stetson's VT-9
+            Avengers from Yorktown reset their Mk 13s to run at 20 feet and made a
+            final attack from starboard against the heavily listing hull.
+        src: [combinedfleet-yamato-trom, nhhc-h044-3-ten-ichi-go]
+
+      - date: 1945-04-07
+        text:
+          zh: >-
+            14:23 一号主炮弹药库爆炸，烟柱在 100 英里外可见；舰体随即没入水中，
+            伴随一次水下爆炸。沉没位置 30°22′N 128°04′E。
+          en: >-
+            At 1423 the No. 1 magazine exploded, sending up smoke visible 100 miles
+            away; she slipped under, followed by an underwater explosion. She sank at
+            30°22'N 128°04'E.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1945-04-07
+        text:
+          zh: >-
+            沉没时刻与位置另有几说并列：14:17（第二水雷战队战闘详报，转引）、
+            14:30 倾覆（NHHC）、约 14:20 倾覆（USNTMJ，转引）、14:00–14:30 之间（宫本）；
+            纬度另有 30°43′N 一说（清水芳人），与 30°22′N 相差约 21 分即约 39 km；
+            水深 345 m 与约 350 m 两说。
+          en: >-
+            Other figures are recorded alongside: 1417 (DesRon 2 action report, as
+            cited), 1430 for the capsize (NHHC), about 1420 (USNTMJ, as cited) and
+            "between 1400 and 1430" (Miyamoto). A second latitude, 30°43'N (Shimizu),
+            differs from 30°22'N by about 21 minutes, roughly 39 km; depth is given
+            as 345 m and about 350 m.
+        src: [nhhc-h044-3-ten-ichi-go, ussbs-ijo-32-miyamoto-yamato, gendai-2019-shimizu-yamato, wartimechapters-yamato]
+
+      - date: 1945-04-07
+        text:
+          zh: >-
+            伊藤整一、舰长有贺幸作以下 3,055 人阵亡（定员 3,332 人），276 人获救，
+            生还者中军衔最高的是第二舰队参谋长森下信衛；有贺应丰田副武之请被追晋。
+            另一体系记阵亡 2,740 人、伤 117 人（池田武邦表、清水引战闘详报），
+            与 3,055 说相差三百余人，无法调和，两组并列。
+          en: >-
+            Vice Admiral Ito, Captain Aruga and 3,055 of 3,332 crewmen were lost; 276
+            were rescued, the senior survivor being Rear Admiral Morishita Nobuei,
+            chief of staff of the Second Fleet. Aruga was promoted posthumously at
+            Toyoda's request. A second set of figures gives 2,740 dead and 117
+            wounded (Ikeda's table, and Shimizu citing the action report), some three
+            hundred apart from 3,055; the two cannot be reconciled and are given side
+            by side.
+        src: [combinedfleet-yamato-trom, nhhc-h044-3-ten-ichi-go, usni-naval-history-2007-ikeda-final-sortie, gendai-2019-shimizu-yamato]
+
+      - date: 1945-04-07
+        text:
+          zh: >-
+            日方战闘详报记录当日对空战果为击落 3 架、击破 20 架；美方损失 10 架飞机、
+            12 名空勤人员。同日沉没的还有矢矧与霞、朝霜等舰，全队合计阵亡 3,731 人。
+          en: >-
+            The Japanese action report credits the force with 3 aircraft shot down and
+            20 damaged; U.S. losses were 10 aircraft and 12 aircrew. Yahagi, Kasumi and
+            Asashimo were lost the same day, and total deaths in the force came to
+            3,731.
+        src: [gendai-2019-shimizu-yamato, combinedfleet-yamato-trom]
+
+  - id: legacy
+    title: { zh: 除名、残骸与评价, en: Struck, found, assessed }
+    range: { from: 1945-08-31, to: 2014-08-10 }
+    lead:
+      zh: >-
+        沉没之后关于这艘舰的叙述换了好几层：先是沉默，然后是战后被建构的「最强神话」，
+        再往后是对那场出击本身的严厉批评。
+      en: >-
+        After the sinking the story acquired several layers: first silence, then a
+        post-war "mightiest battleship" myth, and later a harsh critique of the
+        sortie itself.
+    events:
+      - date: 1945-08-31
+        text:
+          zh: >-
+            从海军舰船籍中除名。
+          en: >-
+            Removed from the Navy List.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 1956-11
+        text:
+          zh: >-
+            旧海军背景的杂志《海と空》「日本戦艦号」对本国造舰宣传提出批评：
+            造船技术再高，服役后指挥官的巧拙、乘员训练的良否、搭载兵器的精度
+            才真正左右军舰的命运；并说与其夸大宣传、日后难堪，不如自始至终秘而不宣。
+          en: >-
+            The ex-navy journal Umi to Sora, in its November 1956 battleship issue,
+            argued that however good the shipbuilding, a ship's fate turns on her
+            officers' skill, her crew's training and her equipment's precision, and
+            that secrecy throughout would have spared the navy later embarrassment.
+        src: [bunshun-2014-ichinose-yamato-myth]
+
+      - date: 1985-08-01
+        text:
+          zh: >-
+            日本考察队以深潜器 PISCES II 在东海 1,410 英尺（约 430 m）深处找到大和，
+            舰体断为两段：前部右倾，后部倒扣。
+          en: >-
+            A Japanese team in the submersible PISCES II located the wreck 1,410 ft
+            (about 430 m) deep in the East China Sea. She lies in two pieces, the
+            forward section on her starboard side and the aft section bottom up.
+        src: [combinedfleet-yamato-trom]
+
+      - date: 2014-08-10
+        text:
+          zh: >-
+            一ノ瀬俊也提出，大和的「最强」形象主要是战后建构的：战时其存在属极秘，
+            大部分国民对它并无了解，而它在战后最初也并非被当作赞美对象。
+          en: >-
+            Ichinose Toshiya argued that Yamato's "mightiest" image was largely a
+            post-war construction: in wartime her existence was secret and most
+            Japanese knew nothing of her, and in the first post-war years she was not
+            an object of praise.
+        src: [bunshun-2014-ichinose-yamato-myth]

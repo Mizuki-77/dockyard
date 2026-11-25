@@ -1,0 +1,357 @@
+# ============================================================================
+# 武器正文 —— 15.5 cm/60 三年式（15.5 cm/60 3rd Year Type）
+#
+# 这一篇的主线是「拆装转用」这条链：
+#   最上级 5 座三联（15 门）→ 1939-40 换 20 cm No.2 → 拆下的炮塔转给
+#   大和型（4 座）与大淀（2 座）以及海岸炮台。
+# navweaps 一句话把这条链说完了，还留了一个战后细节：
+#   从最上拆下来的炮塔，战后在江田岛的一个仓库里被发现。
+#
+# 两个必须并排的差异：
+#  1) 副炮塔防护 50 mm（navweaps / kasado）vs 25 mm CNC（pwe），两说并列；
+#  2) 射速 5-6 发/分 vs 理论 7 发/分但「did not exceed five」—— 后者是来源自己的口径。
+# 「三年式」指的是大正三年（1914，Model 1914），但设计年份栏是 1930、
+# 服役 1935，来源未解释这个落差，正文照写两行数字，不给解释。
+# ============================================================================
+weapon: 15_5cm-60-3ns
+updated: 2026-11-25
+
+intro:
+  lead:
+    zh: >-
+      15.5 cm/60 三年式是日本海军 1930 年代为「B 型巡洋舰」设计的双用途舰炮，
+      1935 年服役，最初装在最上级重巡上（5 座三联共 15 门）。
+      最上级 1939–1940 年换装 20 cm 炮之后，拆下来的炮塔被转装到大和级战列舰上，
+      前后一共两批、共四座 —— 也就是说大和级的副炮是二手的巡洋舰主炮。
+    en: >-
+      The 15.5 cm/60 3rd Year Type was a dual-purpose naval gun designed for the "B" type
+      cruisers of the 1930s, entering service in 1935 and first mounted in the Mogami
+      class heavy cruisers, five triple turrets for fifteen guns. When the Mogami class
+      was re-armed with 20 cm guns in 1939-40 the mountings taken off were transferred to
+      the Yamato class battleships - which means the Yamato class secondary battery was
+      second-hand cruiser main armament.
+
+  paragraphs:
+    - heading: 名字是 1914，设计是 1930
+      text:
+        zh: >-
+          navweaps 给出的制式名是「15.5 cm/60 (6.1") 3rd Year Type (Model 1914)」，
+          而同一页的设计年份栏填 1930、服役年份栏填 1935。
+          「三年式」指大正三年即 1914 年，但设计不在那一年 —— 来源未解释这个落差，
+          本站照两边都写：名称带 Model 1914，设计年 1930，服役 1935。
+          炮身长 9.615 m、膛长 9.300 m、膛线长 8.025 m，40 条阴线，
+          单筒自紧（monobloc + autofretting）构造，Welin 螺式炮闩配三动作开闭机构，
+          可液压也可人力操作。全期在吴海军工厂造了约 80 门。
+        en: >-
+          NavWeaps gives the designation as "15.5 cm/60 (6.1") 3rd Year Type (Model
+          1914)" while the same page puts the date of design at 1930 and the date in
+          service at 1935. The "3rd Year" is the third year of Taisho, 1914, but the design
+          was not done then, and the source does not explain the gap; both sets of figures
+          are recorded here as given. The gun was 9.615 m long overall with a 9.300 m bore
+          and 8.025 m of rifling, 40 grooves, of monobloc construction with autofretting, a
+          Welin screw block with a three-motion breech mechanism operated by hydraulic
+          power or by hand. About 80 guns were manufactured at Kure.
+      src: [navweaps-155cm-60-3ns]
+
+    - heading: 设计时想当高炮，最终只做到 55 度
+      text:
+        zh: >-
+          这型炮本来是按双用途设计的，navweaps 的原句是「The guns were originally intended
+          to have a +75 degree maximum elevation for AA fire, but analysis showed that
+          their slow elevation and depression speeds with a fixed angle loading system
+          coupled with the inefficient hoist supply would have meant that the firing rate
+          would be too low to be effective.」此外，这么高的仰角还会让本来就不结实的
+          俯仰与后座机构过载 —— 与 20 cm 炮架遇到的问题同类。于是最终设计把仰角限在
+          +55 度。来源对它的结论写得很干脆：「The slow rate of fire and limited elevation
+          of these 155 mm/60 (6.1") guns made them unsuitable for the AA role, but they
+          were an excellent anti-ship weapon.」也就是说它作为对空武器是设计失败，
+          作为反舰武器是成功的 —— 而大和级把它装上去，名义上仍是副炮/高角炮。
+        en: >-
+          The weapon was laid out as a dual-purpose gun, and NavWeaps states it plainly:
+          "The guns were originally intended to have a +75 degree maximum elevation for AA
+          fire, but analysis showed that their slow elevation and depression speeds with a
+          fixed angle loading system coupled with the inefficient hoist supply would have
+          meant that the firing rate would be too low to be effective." A high elevation
+          would also have overstressed the somewhat delicate recoil and elevating
+          mechanisms, the same problem encountered with the 20 cm mountings, so the final
+          design limited elevation to +55 degrees. The source's verdict is blunt: "The slow
+          rate of fire and limited elevation of these 155 mm/60 (6.1") guns made them
+          unsuitable for the AA role, but they were an excellent anti-ship weapon." As an
+          anti-aircraft weapon the design failed; as an anti-ship weapon it succeeded - and
+          it went aboard the Yamato class under a secondary/HA label.
+      src: [navweaps-155cm-60-3ns]
+
+    - heading: 一组只在高射速下才成立的数字
+      text:
+        zh: >-
+          炮身重 12.7 t，弹重 55.87 kg（九一式 AP / 零式通常弾 / 照明弹同重），
+          初速 920–925 mps，膛压 3,400 kg/cm²，药室 38.0 dm³，
+          标准装药 19.5 kg 的 36 DC2（单药包，附 75 g 黑药点火药）。
+          射程 45 度时 27,400 m；55 度时反而只有 25,000 m。
+          身管寿命 250–300 发，每门弹药基数 150 发。
+          射速这一项要连着看：原句是 "5 - 6 rounds per minute"，
+          但同页脚注写「The theoretical rate of fire was 7 rounds per minute, but this
+          was not achieved in practice. The shell hoists could supply a maximum of six
+          rounds per minute but the powder hoists could supply no more than five bags per
+          minute.」并引 Campbell 与 USNTMJ O-47(N)-1 的同一结论：
+          「the rate of fire did not exceed five rounds a minute」。
+          即弹扬能供 6 发、药扬只能供 5 包，链条卡在药包上。
+        en: >-
+          The gun weighed 12.7 t and fired a 55.87 kg projectile (AP Type 91, Common Type 0
+          HE and illumination all the same weight) at 920 to 925 mps, with a working
+          pressure of 3,400 kg/cm2, a chamber of 38.0 dm3 and a standard charge of 19.5 kg
+          of 36 DC2 in a single bag with a 75 g black powder igniter. Range was 27,400 m at
+          45 degrees and only 25,000 m at 55. Barrel life was 250 to 300 rounds and stowage
+          150 rounds per gun. The rate of fire has to be read as a chain: the page says "5
+          - 6 rounds per minute", but its own footnote reads "The theoretical rate of fire
+          was 7 rounds per minute, but this was not achieved in practice. The shell hoists
+          could supply a maximum of six rounds per minute but the powder hoists could
+          supply no more than five bags per minute", and it cites Campbell and USNTMJ
+          report O-47(N)-1 for the same conclusion: "the rate of fire did not exceed five
+          rounds a minute". The shell hoists could feed six; the powder hoists could feed
+          five; the chain broke at the powder.
+      src: [navweaps-155cm-60-3ns]
+
+    - heading: 炮塔：180 吨与 194 吨，大和型改了哪里
+      text:
+        zh: >-
+          炮塔分两种口径：巡洋舰用约 180 t，战列舰用约 194 t（均不含测距仪；
+          navweaps 另估测距仪约再加 5 t，这个 5 t 是来源自己标注的估算，不是史料值）。
+          仰角 -7 / +55 度，俯仰 10 °/s，回转约 ±150 度、5–6 °/s，装填角 +7 度，
+          炮轴间距 155 cm。驱动是电液式，以矿物油为压力介质，
+          每座炮塔两台 100 hp 电机各带一台液压泵，泵放在炮塔外以降噪，
+          平时一用一备。每门炮有自己的弹扬与药扬；弹从弹库经回转结构底部的圆轨送到
+          推弹式扬弹机，6 发/分的速度直送炮塔；药包经两道防焰门送给斗式扬药机，
+          5 包/分。弹先液压推入，药包人工装入炮膛后再液压推入。
+          炮塔定员是炮塔内 24 名军官与士兵、弹库 7 人、药库 10 人。
+          炮塔外壳包了约 10 cm 空气层的薄钢隔热层，供热带海域使用。
+        en: >-
+          The mounting came in two weights: about 180 t for cruisers and about 194 t for
+          battleships, both without rangefinders (NavWeaps estimates a further 5 t for
+          rangefinders, flagged by the source itself as an estimate rather than a
+          documentary figure). Elevation -7 / +55 degrees, elevation rate 10 degrees per
+          second, train about +/-150 degrees at 5 to 6 degrees per second, loading angle +7
+          degrees, gun axes 155 cm apart. The mounting was electro-hydraulic with mineral
+          oil as the pressure medium; each had two 100 hp electric motors, each driving a
+          hydraulic pump located outside the turret to reduce noise, normally one in use
+          and one on standby. Each gun had its own shell and powder hoist; projectiles came
+          from the shell rooms to a circular track around the base of the revolving
+          structure and into pusher hoists delivering six a minute to the gunhouse, while
+          powder bags passed through double flashtight doors to bucket hoists at five bags
+          a minute. Projectiles were rammed hydraulically first, then the bags were loaded
+          by hand and rammed. Complement was twenty-four officers and men in the gunhouse,
+          seven in the shell room and ten in the powder room. Thin steel lagging around most
+          of the gunhouse gave about a 10 cm air space for tropical service.
+      src: [navweaps-155cm-60-3ns]
+
+    - heading: 从最上的甲板到大和的甲板
+      text:
+        zh: >-
+          navweaps 用一句话交代了这条转用链：「The Mogami class had these guns replaced with
+          20 cm/50 (8") 3rd Year Type No. 2 guns when they were reconstructed in 1939 -
+          1940. Their 155 mm (6.1") mountings were then reused on the Yamato class
+          battleships and on the light cruiser Ôyodo well as in coastal batteries.」
+          navypedia 的大和级页从另一侧说同一件事：「The main calibre was supplemented by 12
+          155mm guns in triple turrets (earlier they were installed on Mogami class
+          cruisers)」。两处合起来，链条是完整的：最上级 5 座 → 换 20 cm 后拆下 →
+          大和型装 4 座（12 门）、大淀装 2 座、其余进海岸炮台。
+          还有一个战后细节只有 navweaps 给：「The 15.5 cm turrets removed from Mogami were
+          found after the war in a warehouse on Eta Jima.」—— 拆下来的炮塔没有全部用完，
+          有的在江田岛的仓库里放到了战后。
+          同型炮在大和级上也不是原样照装。炮塔表把巡洋舰的写作 "Mogami Model"、
+          大和级的写作 "Yamato Model"；测距仪位置也改了 ——「The gunhouses on the Yamato
+          class were modified such that the rangefinders were now located towards the middle
+          of the gunhouse rather than at the rear as on the cruiser mountings.」
+          防护厚度则有分歧，两说并列：navweaps 写「Battleship turrets had 50 mm (1.97")
+          protection」，巡洋舰炮塔则是 25 mm NVNC 钢板；而 pwe 的大和级页把副炮塔记作
+          "1" (25mm) CNC"。50 与 25 并存，本站不裁决。另一处结构细节是中心炮的炮尾向上
+          开 45 度、由弹簧平衡重量，目的是压缩三门的横向间距。
+        en: >-
+          NavWeaps states the transfer chain in one sentence: "The Mogami class had these
+          guns replaced with 20 cm/50 (8") 3rd Year Type No. 2 guns when they were
+          reconstructed in 1939 - 1940. Their 155 mm (6.1") mountings were then reused on
+          the Yamato class battleships and on the light cruiser Oyodo well as in coastal
+          batteries." Navypedia's Yamato class page says the same thing from the other
+          side: "The main calibre was supplemented by 12 155mm guns in triple turrets
+          (earlier they were installed on Mogami class cruisers)". Together the chain is
+          complete: five mountings in the Mogami class, removed when the 20 cm guns went
+          in, then four mountings and twelve guns to the Yamato class, two to the light
+          cruiser Oyodo, the rest to coastal batteries. One post-war detail comes only from
+          NavWeaps: "The 15.5 cm turrets removed from Mogami were found after the war in a
+          warehouse on Eta Jima." Not every mounting taken off was used. The type did not go
+          aboard the Yamato class unchanged either: the mounting table distinguishes the
+          cruiser "Mogami Model" from the battleship "Yamato Model", and the rangefinders
+          were relocated - "The gunhouses on the Yamato class were modified such that the
+          rangefinders were now located towards the middle of the gunhouse rather than at
+          the rear as on the cruiser mountings." Protection is disputed and both figures
+          stand: NavWeaps writes "Battleship turrets had 50 mm (1.97") protection" against
+          25 mm NVNC plates on the cruisers, while pwe's Yamato class page records the
+          secondary turrets as "1" (25mm) CNC". Fifty and twenty-five stand side by side;
+          this site does not adjudicate. One structural detail should be stated: the centre
+          gun's breech opened upwards at 45 degrees, balanced by springs, to reduce lateral
+          spacing.
+      src: [navweaps-155cm-60-3ns, navypedia-yamato, pwe-yamato-class]
+
+    - heading: 1944 年那份弹药消耗日志
+      text:
+        zh: >-
+          这一型有一份少见的原始消耗记录。navweaps 引 USNTMJ O-19 说九一式 AP 弹自 1935 年
+          前后就已停产（因为最上改装留下大量库存），并提到 O-19 似乎认为主力舰不带
+          AP 弹 —— 但同页紧接着给出反证：「the Yamato's ammunition expenditure log for
+          24 - 26 October 1944 shows that she expended 127 rounds of AP Type 91 during that
+          time along with 383 Common Type 0 rounds.」
+          即 1944 年 10 月 24 至 26 日三天里，大和的 15.5 cm 炮打掉 127 发彻甲弹与
+          383 发通常弾。这组数字的另一层意义是：它同时否掉了「主力舰不带 AP 弹」的推断。
+          还须补一句弹种限定：navweaps 明写这批 15.5 cm 九一式「were not true "APC"
+          projectiles as they lacked a cap, having only a cap head and windshield」，
+          真正的 APC 是九一式改一，只用于穿甲试验、未服役。
+        en: >-
+          This weapon has one rare primary expenditure record. NavWeaps cites USNTMJ
+          report O-19 that AP Type 91 projectiles for these guns had not been in production
+          since about 1935, the Mogami conversion having left large stocks, and notes that
+          O-19 seems to state that AP projectiles were not carried by capital ships - then
+          immediately offers the counter-evidence: "the Yamato's ammunition expenditure log
+          for 24 - 26 October 1944 shows that she expended 127 rounds of AP Type 91 during
+          that time along with 383 Common Type 0 rounds." Over those three days in October
+          1944 Yamato's 15.5 cm battery fired 127 APC and 383 Common rounds, which also
+          disposes of the inference that capital ships carried no AP. One qualification on
+          the projectile: NavWeaps states that these 15.5 cm Type 91 rounds "were not true
+          'APC' projectiles as they lacked a cap, having only a cap head and windshield";
+          the true APC, AP Type 91 Mod 1, was used only for armour penetration experiments
+          and was not in service.
+      src: [navweaps-155cm-60-3ns]
+
+history:
+  - id: design
+    title: { zh: 设计与装舰, en: Design and first installation }
+    range: { from: 1930, to: 1938 }
+    lead:
+      zh: >-
+        从设计到服役五年，从服役到装进大和又过了六年 —— 中间还夹着一次
+        炮塔转不动的公试。
+      en: >-
+        Five years from design to service, six more before the type reached Yamato, with a
+        trial in which the turrets would not train in between.
+    events:
+      - date: 1930
+        text:
+          zh: >-
+            设计年份。navweaps 记该型是为最上级与利根级这两级「B 型巡洋舰」
+            研制的双用途炮。
+          en: >-
+            Date of design. NavWeaps records that the weapon was developed as a dual
+            purpose gun for the "B" type cruisers of the Mogami and Tone classes.
+        src: [navweaps-155cm-60-3ns]
+      - date: 1935
+        text:
+          zh: >-
+            进入服役，首装最上级（5 座三联，15 门）。全期在吴海军工厂造约 80 门。
+          en: >-
+            The gun entered service, first mounted in the Mogami class, five triple
+            turrets for fifteen guns. About eighty guns were manufactured at Kure in all.
+        src: [navweaps-155cm-60-3ns]
+      - date: 1938
+        text:
+          zh: >-
+            最上级的三号、四号炮塔为了减小散布而与上层建筑甲板做成一体，
+            炮座因此承受很大的内部应力，有时会把炮塔卡死 ——
+            最上号公试时这两座炮塔「could not be trained」。
+            后来靠改进炮座与船体的固定方式解决。
+          en: >-
+            Turrets 3 and 4 of the Mogami class were integrated with the superstructure
+            deck in an effort to reduce dispersion; the arrangement subjected the barbettes
+            to powerful internal stresses which at times caused the turrets to jam, and
+            during Mogami's official gun trials turrets 3 and 4 could not be trained. The
+            problem was eventually solved by improving the method of fixing the barbette
+            structure to the hull.
+        src: [navweaps-155cm-60-3ns]
+      - date: 1938-08
+        text:
+          zh: >-
+            三隈在约 20,000 m 距离上打了几轮齐射，平均散布约 278 m，
+            比装 20 cm No.2 的「A 型」巡洋舰更紧。
+          en: >-
+            During manoeuvres Mikuma fired several salvos at about 20,000 m and achieved a
+            mean dispersion of about 278 m, much tighter than the patterns achieved by the
+            "A" cruisers armed with 20 cm Type No. 2 guns.
+        src: [navweaps-155cm-60-3ns]
+
+  - id: transfer
+    title: { zh: 拆下来，转给大和, en: Removed and transferred to Yamato }
+    range: { from: 1939, to: 1941 }
+    lead:
+      zh: >-
+        最上级换 20 cm 的那一次改装，同时产出了大和级的副炮。
+      en: >-
+        The Mogami class re-armament with 20 cm guns also produced the Yamato class
+        secondary battery.
+    events:
+      - date: 1939
+        text:
+          zh: >-
+            最上级开始换装 20 cm/50 三年式 No.2，拆下的 15.5 cm 炮塔转入库存待用。
+            利根级在建造中改了设计，竣工时直接装 20 cm No.2，因此没有可供转用的炮塔。
+          en: >-
+            The Mogami class began re-arming with 20 cm/50 3rd Year Type No. 2 guns, and
+            the 155 mm mountings taken off went into store. The Tone class design was
+            changed while under construction and those ships completed with the 20 cm
+            No. 2, so they produced no mountings for transfer.
+        src: [navweaps-155cm-60-3ns]
+      - date: 1941-12-16
+        text:
+          zh: >-
+            大和竣工，副炮为 4 座三联共 12 门 15.5 cm。
+          en: >-
+            Yamato was completed with four triple 15.5 cm mountings, twelve guns.
+        src: [combinedfleet-yamato-trom]
+
+  - id: removal
+    title: { zh: 舷侧两座被拆掉, en: The beam mountings come out }
+    range: { from: 1944, to: 1944-10 }
+    lead:
+      zh: >-
+        两舰拆的是同一个位置的同一个数量，但拆完装上去的东西不一样 ——
+        这一处差别比拆除本身更重要。
+      en: >-
+        Both ships removed the same two mountings from the same place, but what went back
+        in their place differed - and that difference matters more than the removal.
+    events:
+      - date: 1944-02-25
+        text:
+          zh: >-
+            大和入坞，拆除两座舷侧 15.5 cm 三联装炮塔，原位换装六座双联 12.7 cm 高炮。
+          en: >-
+            Yamato was drydocked; two beam triple 15.5 cm turrets were removed and
+            replaced by six twin 12.7 cm HA mounts.
+        src: [combinedfleet-yamato-trom]
+      - date: 1944-04
+        text:
+          zh: >-
+            武藏拆除舷侧 15.5 cm 炮塔，原位改为每舷三座无防盾 25 mm 三联装。
+            navweaps 补了原因：「It had been planned that Musashi would be similarly
+            rearmed, but the additional 12.7 cm mountings were not available prior to her
+            loss.」即武藏没有换成 12.7 cm 高炮，这是两舰防空构成的实质差别。
+          en: >-
+            Musashi's beam 15.5 cm turrets were removed and replaced by three unshielded
+            triple 25 mm mounts on each side. NavWeaps gives the reason: "It had been
+            planned that Musashi would be similarly rearmed, but the additional 12.7 cm
+            mountings were not available prior to her loss." Musashi was never re-armed
+            with the 12.7 cm gun, which is a substantive difference between the two ships'
+            anti-aircraft outfits.
+        src: [combinedfleet-musashi-trom, navweaps-155cm-60-3ns]
+      - date: 1944-10-24
+        text:
+          zh: >-
+            萨马岛外海 0606，大和以 155 mm 副炮继续射击。
+          en: >-
+            Off Samar at 0606 Yamato continued firing her 155-mm secondary guns.
+        src: [combinedfleet-yamato-trom]
+      - date: 1944-10-26
+        text:
+          zh: >-
+            截至本日，大和在 10 月 24 至 26 日的日志里共打掉 15.5 cm 九一式彻甲弹
+            127 发、零式通常弾 383 发。
+          en: >-
+            By this date Yamato's log for 24 to 26 October recorded 127 rounds of 15.5 cm AP
+            Type 91 and 383 rounds of Common Type 0 expended.
+        src: [navweaps-155cm-60-3ns]

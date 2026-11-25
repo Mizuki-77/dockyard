@@ -1,0 +1,878 @@
+# ============================================================================
+# 舰艇正文 —— 武藏（Musashi）
+# ----------------------------------------------------------------------------
+# 体例与 data/articles/bismarck.yaml 一致。写法上与大和刻意分开的三处：
+#   1. 武藏是「有仪式但极秘」的下水，不能与大和「无常规仪式」混写；
+#   2. 武藏装二一号电探比大和早约十个月，两舰改装节奏不能合并处理；
+#   3. 武藏没有换成 12.7 cm 高炮，只撤副炮加 25 mm —— 这是两舰防空构成的实质差别。
+#
+# 有争议的数字一律并列：命中数（同页 TROM 正文与脚注即互相矛盾）、
+# 参战美机总数、沉没时刻、沉没坐标、下水重量与绳幕材料。
+# ============================================================================
+ship: musashi
+updated: 2026-11-25
+
+intro:
+  lead:
+    zh: >-
+      武藏是大和型战列舰的二号舰，1942 年 8 月 5 日竣工，1944 年 10 月 24 日
+      在锡布延海被舰载机击沉。它一生没有对敌舰开过一炮，却在一天之内承受了
+      六波空袭，成为「战列舰对航空兵已经无效」这件事最完整的一份实测记录。
+    en: >-
+      Musashi was the second unit of the Yamato class, completed on 5 August 1942
+      and sunk in the Sibuyan Sea on 24 October 1944 by carrier aircraft. She never
+      fired her main battery at an enemy ship, yet absorbed six air attacks in a
+      single day and became the most complete empirical record of what carrier
+      aircraft had done to the battleship.
+
+  paragraphs:
+    - heading: 同型二号舰
+      text:
+        zh: >-
+          武藏与舰级共享全部设计值：全长 263.0 m、水线宽 36.9 m、最大宽 38.9 m，
+          十二座ロ号舰本式锅炉、八台舰本式全齿轮汽轮机、四轴、设计 150,000 轴马力。
+          本舰自己的实测记录是 1942 年 6 月 22 日的过载公试：排水量 70,358 吨、
+          167,310 轴马力、28.05 节——这与常被当作「大和型航速」引用的 27.46 节不是
+          同一个口径，27.46 是大和的公试值。三菱长崎造船所承造，船体番号 800，
+          建造期代称「第二号艦」。1944 年 10 月 22 日自文莱出击时在舰人数为
+          2,417 人，其中本舰编制 2,399 人（军官 112、士兵 2,279、海军雇工 8）。
+      src: [combinedfleet-musashi-trom, navypedia-yamato, kasado-yamato]
+
+    - heading: 建造与保密
+      text:
+        zh: >-
+          1938 年 3 月 29 日 09:55 在三菱长崎造船所 2 号船台开工，当日放上船台的第一段
+          龙骨结构长 71 英尺（21.6 m）。为挡住进出长崎港的外国船，船台上方从龙门吊垂下
+          一幅棕榈纤维绳幕；佐世保海军区部为此预先购入约 400 吨棕榈纤维，
+          一度令九州渔业用绳短缺。材料一项两说并存：一处据当时记录认定为
+          中国扇叶棕（Trachycarpus fortunei），美国作者 1953 年的记述则写剑麻绳幕、
+          总长 2,710 公里、重 408 吨。
+          1940 年 11 月 1 日 08:55 举行极秘下水式并命名「武藏」，由海军大臣及川古志郎主持，
+          伏见宫博恭王代表皇室。舰体入水后立即用新造客货船春日丸靠帮遮挡舰影，
+          同时动员警察、陆军宪兵与佐世保水兵共 1,800 人警戒船厂周边。
+          下水重量 35,553 吨（计算值 35,737 吨），美国作者的记述则把 35,737 吨
+          当作实际下水重量——哪一个是实测值，两说并列。
+      src: [combinedfleet-musashi-trom, usni-proceedings-1953-yamato-design]
+
+    - heading: 与姊姊舰不一样的地方
+      text:
+        zh: >-
+          两舰同型，改装节奏却不同，三处最容易写错。第一，二一号电探：武藏在
+          1942 年 9 月 3 日进吴舣装时就把 Type 21 Mod 3 装到前桅楼测距仪臂上，
+          比大和的 1943 年 7 月 12 日早约十个月。第二，15.5 cm 耳台炮座的 28 mm 附加装甲：
+          武藏在 1942 年 5 月 26 日至 6 月 9 日入吴第 4 船坞时就给两座背负式副炮塔
+          （一号、四号）装上了围壁装甲，比大和早约一年。第三，也是实质差别：
+          1944 年 4 月改装时武藏同样撤掉了舷侧两座 15.5 cm 三联装炮塔，但六座
+          12.7 cm 双联高角炮没有到位——炮座产能不足，直到沉没它仍是六座双联
+          12.7 cm，只把 25 mm 机关炮加到 115 门（后为 130 门），而大和换装后是 24 门 12.7 cm。
+      src: [combinedfleet-musashi-trom, navweaps-127cm-89, navweaps-155cm-60-3ns]
+
+    - heading: 联合舰队旗舰
+      text:
+        zh: >-
+          1943 年 2 月 11 日，武藏在特鲁克接替大和成为山本五十六的联合舰队旗舰。
+          同年 4 月 18 日山本战死；5 月 17 日武藏随古贺峰一自特鲁克出击返横须贺，
+          舰上同时运载山本的遗骨回东京，22 日在木更津湾下锚，当晚舰上举行法事，
+          次日遗骨由驱逐舰夕云送岸。6 月 24 日天皇行幸横须贺，11:03 至 14:25 登舰；
+          此事列为极秘，但升起了天皇旗。旗舰身份在 1944 年 3 月 31 日古贺乘机失事后
+          随司令部南撤而终结。
+      src: [combinedfleet-musashi-trom]
+
+    - heading: 防空改装与电探
+      text:
+        zh: >-
+          武藏的防空强化分四步：1942 年 7 月首次加装 4 座三联 25 mm（12 门），
+          装于 15.5 cm 舷侧炮塔前后的天甲板上、每舷两座，此时防空为 12 门 12.7 cm、
+          36 门 25 mm、4 门 13.2 mm；1944 年 4 月 10 至 27 日撤两座舷侧 15.5 cm 炮塔、
+          改为每舷三座三联 25 mm，再加 16 座三联与 25 座单装，总数 115 门（30 座三联、
+          25 门单装），同时装两部二二号对海电探与两部一三号对空电探、撤去 7、8 号
+          150 cm 探照灯、增设第 6 与第 7 防空炮术分队；1944 年 7 月 2 日二二号换成
+          有二二号改四（有限射击管制能力），再加 5 座三联，总数 130 门（35 座三联、
+          25 门单装）。电探并非全无用处：1944 年 10 月 24 日 11:54，二一号在方位 290、
+          距离 81 公里发现来袭机群，11:57 又在方位 210、距离 80 公里发现第二批。
+      src: [combinedfleet-musashi-trom, navweaps-25mm-96]
+
+    - heading: 锡布延海与沉没
+      text:
+        zh: >-
+          1944 年 10 月 24 日，中央部队整天遭到 259 架次（另一说「超过 250 架次」）
+          舰载机攻击，武藏是主要目标。六次攻击分别在 10:29、12:04、13:31、14:20、14:55、
+          15:25 开始；前三次未造成致命损伤，从第四次起舰首埋水、开始脱离队列，
+          15:25 之后一发 1,000 磅半穿甲弹穿透一号舰桥在作战室爆炸，52 人阵亡、20 人受伤，
+          舰长猪口敏平右肩受伤。19:15 倾斜达 12 度时下令「准备弃舰」，19:30 达 30 度时
+          下令弃舰，19:36 向左倾覆、舰首向下沉没。命中数分歧极大，且同一页年表的正文与
+          脚注互相矛盾：正文记 19 雷（左舷 10、右舷 9）、17 弹、20 次近失，
+          脚注引本舰战闘详报则记 11 雷（含左舷中部 2 枚哑弹）、10 弹、6 次近失；
+          另有栗田与大谷口述的 18 雷 40 弹、USNI 1953 引详报的分段累计、
+          以及 USNTMJ 转引的「10 枚确定命中」几说。全部并列，不裁决。
+      src: [combinedfleet-musashi-trom, ussbs-ijo-9-kurita-leyte, ussbs-ijo-41-otani-samar, usni-proceedings-1953-yamato-design]
+
+history:
+  - id: build
+    title: { zh: 建造与竣工, en: Building and completion }
+    range: { from: 1938-03-29, to: 1942-08-05 }
+    lead:
+      zh: >-
+        武藏的建造比大和更依赖遮蔽：长崎是开放港，外国船就在船台边上过。
+        因此这套保密体系是「围起来 + 断通信 + 市区戒严」三条同时上。
+      en: >-
+        Musashi's construction leaned harder on concealment than Yamato's: Nagasaki
+        was an open port and foreign ships passed close by the slipway. The answer
+        was a combination of screening, cutting communications and policing the city.
+    events:
+      - date: 1938-03-29
+        text:
+          zh: >-
+            09:55 在三菱长崎造船所 2 号船台开工，船体番号 800，代称「第二号艦」。
+            当日放上船台的第一段龙骨长 71 英尺（21.6 m）。
+          en: >-
+            Laid down at 0955 on No. 2 slipway at Mitsubishi's Nagasaki yard, hull
+            number 800, provisionally "Warship No. 2". The first keel section placed
+            that day was 71 feet (21.6 m) long.
+        src: [combinedfleet-musashi-trom, navypedia-yamato]
+
+      - date: 1938-03-29
+        text:
+          zh: >-
+            为挡住进出长崎港的外国船，船台上方从龙门吊垂下棕榈纤维绳幕。
+            佐世保海军区部在开工前购入约 400 吨棕榈纤维，一度令九州渔业用绳短缺。
+          en: >-
+            A palm-fibre rope curtain was hung from the gantry crane over the slipway
+            to hide it from foreign ships visiting Nagasaki. The Sasebo naval district
+            bought about 400 metric tons of the fibre beforehand, briefly causing a
+            shortage in the Kyushu fishing industry.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1938-03-29
+        text:
+          zh: >-
+            绳幕材料两说：一处据当时记录认定为中国扇叶棕（Trachycarpus fortunei），
+            美国作者 1953 年的记述写剑麻，并记绳幕总长 2,710 公里、重 408 吨。
+            400 吨与 408 吨不是同一个数，不合并。
+          en: >-
+            The material is given two ways: contemporary records identify Chinese
+            windmill palm (Trachycarpus fortunei), while the 1953 American account
+            says sisal rope, 2,710 km long and 408 tons in weight. The 400 and 408
+            ton figures are not merged.
+        src: [combinedfleet-musashi-trom, usni-proceedings-1953-yamato-design]
+
+      - date: 1940-11-01
+        text:
+          zh: >-
+            08:55 举行极秘下水式并命名「武藏」，海军大臣及川古志郎主持，
+            伏见宫博恭王代表皇室，另有数十名海军高级官员在场。出于保密，
+            多数官方文件直到服役仍沿用「第二号艦」这一代称。
+          en: >-
+            At 0855 a secret launching ceremony named her Musashi, led by Navy
+            Minister Oikawa Koshiro with Prince Fushimi Hiroyasu representing the
+            Imperial family and a few dozen senior naval officials present. For
+            security most official documents kept the "Warship No. 2" designation
+            until commissioning.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1940-11-01
+        text:
+          zh: >-
+            舰体入水后立即用新造客货船春日丸（后改装为护航航母大鹰）靠帮遮挡舰影；
+            警察、陆军宪兵与佐世保水兵共 1,800 人警戒船厂周边。此前一日，
+            通往船台的所有入口在未通知的情况下关闭，对外通信被切断，工人当夜才被告知
+            下水时刻；长崎市区对岸同时设重警戒。
+          en: >-
+            As soon as she was in the water the new passenger-cargo liner Kasuga Maru
+            (later the escort carrier Taiyo) was towed alongside to block her
+            silhouette, while 1,800 police, military police and Sasebo sailors
+            guarded the yard. The previous afternoon every entrance to the slipway had
+            been closed without notice and outside communications cut; the workers
+            learned the launching hour only that night, and heavy guards were posted
+            on the opposite shore of Nagasaki.
+        src: [combinedfleet-musashi-trom, usni-proceedings-1953-yamato-design]
+
+      - date: 1940-11-01
+        text:
+          zh: >-
+            下水重量两说：一处记实际 35,553 吨、计算 35,737 吨；美国作者则把
+            35,737 吨当作实际下水重量，称其仅次于玛丽皇后号的 37,287 吨。
+            哪一个是实测值，两说并列。
+          en: >-
+            Launch weight is given two ways: an actual 35,553 tons against a
+            calculated 35,737, or 35,737 as the actual figure, second only to Queen
+            Mary's 37,287 tons. Which is measured and which calculated is left open.
+        src: [combinedfleet-musashi-trom, usni-proceedings-1953-yamato-design]
+
+      - date: 1941-10-06
+        text:
+          zh: >-
+            专为运送主炮而建造的给兵舰樫野自吴抵达长崎，载来第一批 46 cm 炮与一座炮塔；
+            上舰后炮塔与炮身以帆布遮盖。至 12 月 8 日全部主炮安装完毕。
+          en: >-
+            The special ammunition ship Kashino, built specifically to carry the main
+            armament, arrived from Kure with the first batch of 46 cm guns and one
+            turret; turret and guns were covered with canvas on board. By 8 December
+            all main guns were installed.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1942-02
+        text:
+          zh: >-
+            2 月至 3 月进行参谋设施改建：作战室、电话室与密码室扩大，
+            幕僚住舱、办公室与军官餐厅重新布置，其中数处由左舷移至右舷。
+          en: >-
+            Between February and March the staff facilities were rebuilt: operations
+            room, telephone and code rooms enlarged, and the layout of staff cabins,
+            offices and wardrooms changed, several moving from the port to the
+            starboard side.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1942-05-26
+        text:
+          zh: >-
+            入吴第 4 船坞，至 6 月 9 日为两座背负式副炮塔（一号、四号）加装 28 mm
+            围壁装甲。同项改装大和要到 1943 年 7 月 12 日才做，武藏早约一年。
+          en: >-
+            Entered No. 4 drydock at Kure and, by 9 June, had 28 mm coaming armour
+            fitted to the two superfiring secondary turrets (Nos. 1 and 4). Yamato
+            received the same item only on 12 July 1943, about a year later.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1942-06-22
+        text:
+          zh: >-
+            过载状态下公试：排水量 70,358 吨、167,310 轴马力、28.05 节；
+            随后试运转注水系统后返吴。这是本舰独有的实测记录，不能与舰级通用的
+            27.46 节混为一谈。
+          en: >-
+            Trials in overload condition: 28.05 knots at 70,358 tons displacement and
+            167,310 shp, followed by tests of the counter-flooding system before
+            returning to Kure. This is her own measured record and is not the same
+            figure as the 27.46 knots often quoted for the class.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1942-07-27
+        text:
+          zh: >-
+            首次防空强化：增设 4 座三联无防盾 25 mm（12 门），装于 15.5 cm 舷侧炮塔
+            前后的天甲板上、每舷两座。此时防空为 12 门 12.7 cm（6 座双联）、
+            36 门 25 mm（12 座三联）、4 门 13.2 mm（2 座双联）。
+          en: >-
+            First AA augmentation: four unshielded triple 25 mm mounts (12 guns)
+            added on the weather deck forward and aft of the 15.5 cm wing turrets,
+            two mounts per side. The battery then stood at twelve 12.7 cm guns (six
+            twin mounts), thirty-six 25 mm (twelve triple) and four 13.2 mm (two twin).
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1942-08-05
+        text:
+          zh: >-
+            竣工，09:00 举行服役式，入横须贺镇守府籍，编入联合舰队第一战队
+            （与大和、长门、陆奥同队）。首任舰长有马馨大佐，1942 年 11 月 1 日晋升少将。
+          en: >-
+            Completed with a commissioning ceremony at 0900, attached to Yokosuka
+            Naval District and assigned to the Combined Fleet's BatDiv 1 with Yamato,
+            Nagato and Mutsu. Captain Arima Kaoru was the first commanding officer,
+            promoted rear admiral on 1 November 1942.
+        src: [combinedfleet-musashi-trom]
+
+  - id: flagship
+    title: { zh: 旗舰与情报战, en: Flagship and the intelligence war }
+    range: { from: 1942-09-03, to: 1943-06-24 }
+    lead:
+      zh: >-
+        武藏服役后的头一年，最有史料价值的不是它打了什么，而是三件事：
+        它比大和早十个月装上电探；美军情报机构在 1942 年 9 月只能写
+        「believed to have joined fleet」，属推测级表述，到 1943 年 1 月才改口为确知；
+        1943 年 2 月起它是联合舰队旗舰。
+      en: >-
+        In her first year the valuable record is not what she fought but three
+        things: she got radar ten months before Yamato; in September 1942 U.S.
+        intelligence could still only say "believed to have joined fleet"; and from
+        February 1943 she was fleet flagship.
+    events:
+      - date: 1942-09-03
+        text:
+          zh: >-
+            自柱岛赴吴作最后舣装。抵吴后把改进型二一号电探（Type 21 Mod 3，
+            对空搜索）装到前桅楼测距仪臂上——比大和早约十个月（大和为 1943-07-12）。
+          en: >-
+            Left Hashirajima for Kure for final fitting-out, where a modified Type 21
+            Mod 3 air-search radar was installed on the foretop rangefinder arms —
+            about ten months before Yamato received hers.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1942-09-08
+        text:
+          zh: >-
+            珍珠港第 14 海军区战斗情报单位当日通报，原文为
+            「New battleship MUSASHI believed to have joined fleet」——
+            属推测级表述，不是确报。
+          en: >-
+            The 14th Naval District Combat Intelligence Unit at Pearl Harbor reported:
+            "New battleship MUSASHI believed to have joined fleet."
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1942-10-28
+        text:
+          zh: >-
+            试航中雷达显示器被主炮爆风震坏——这是二一号上舰初期最实际的问题。
+          en: >-
+            During trials the radar display was wrecked by the blast of the main
+            battery, the most practical problem with the early Type 21 installation.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1942-11-28
+        text:
+          zh: >-
+            在周防滩实施第二次电探射击试验。本舰所装设备的方位精度被判为不佳，
+            后续试验改在大和上进行。
+          en: >-
+            Conducted the second series of radar-controlled gunnery exercises in Suo
+            Nada. The bearing accuracy of the set aboard Musashi was found inferior,
+            and further tests were run aboard Yamato instead.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1943-01-24
+        text:
+          zh: >-
+            同一个情报单位的口径升级为「确知」：「新战列舰武藏与第 10 驱逐队
+            已知于 23 日自本土抵达特鲁克。」
+          en: >-
+            The same intelligence unit upgraded its wording: "New battleship MUSASHI
+            & DesDiv 10 known to have arrived Truk 23rd from Empire."
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1943-02-11
+        text:
+          zh: >-
+            在特鲁克接替大和，成为山本五十六的联合舰队旗舰。
+          en: >-
+            At Truk she relieved Yamato as Admiral Yamamoto's Combined Fleet flagship.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1943-04-23
+        text:
+          zh: >-
+            傍晚一架飞行艇运来山本与六名幕僚的遗骨，在前首席参谋黑岛龟人监视下
+            秘密安置于司令长官的海上住舱。此条大和与武藏两舰年表都收、措辞几乎相同，
+            两说并列。
+          en: >-
+            In the evening a flying boat brought the ashes of Yamamoto and six staff
+            officers, secretly placed in the admiral's sea cabin under Captain
+            Kuroshima's supervision. Both the Yamato and Musashi records carry this
+            entry in almost identical wording; both are given.
+        src: [combinedfleet-musashi-trom, combinedfleet-yamato-trom]
+
+      - date: 1943-05-17
+        text:
+          zh: >-
+            古贺峰一为应对阿图岛入侵自特鲁克出击返横须贺，第一战队的武藏随行，
+            舰上同时运载山本遗骨回东京供国葬。
+          en: >-
+            Admiral Koga sortied from Truk for Yokosuka in response to the Attu
+            invasion with BatDiv 1's Musashi, which also carried Yamamoto's ashes to
+            Tokyo for a state funeral.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1943-05-22
+        text:
+          zh: >-
+            在木更津湾下锚，当晚舰上举行法事；次日遗骨由驱逐舰夕云送岸。
+          en: >-
+            Anchored at Kisarazu Bight; a Buddhist ceremony was held aboard that
+            evening and the ashes were taken ashore the next day by the destroyer
+            Yugumo.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1943-06-09
+        text:
+          zh: >-
+            古村啓蔵大佐（前扶桑舰长）接任舰长，1943 年 11 月 1 日晋升少将。
+          en: >-
+            Captain Komura Keizo, formerly of Fuso, took command; he was promoted
+            rear admiral on 1 November 1943.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1943-06-24
+        text:
+          zh: >-
+            天皇行幸横须贺，11:03 至 14:25 登舰。此事列为极秘，但升起了天皇旗。
+          en: >-
+            The Emperor visited the ship at Yokosuka between 1103 and 1425. The event
+            was top secret, yet the Imperial flag was hoisted.
+        src: [combinedfleet-musashi-trom]
+
+  - id: leyte
+    title: { zh: 1944 年：改装、雷伤与锡布延海, en: 1944 — refit, torpedo damage and Sibuyan Sea }
+    range: { from: 1944-02-04, to: 1944-10-24 }
+    lead:
+      zh: >-
+        这一年武藏先被照相机看见，再被潜艇打了一雷，然后在一场六波空袭里沉掉。
+        下面按时间排，10 月 24 日一节按攻击波次逐条列。
+      en: >-
+        In one year Musashi was seen by a camera, hit by a submarine, and sunk in six
+        air attacks. What follows is chronological, with 24 October broken out attack
+        by attack.
+    events:
+      - date: 1944-02-04
+        text:
+          zh: >-
+            两架自布干维尔起飞的第 254 侦察中队 PB4Y-1 飞越特鲁克泊地照相侦察；
+            武藏派出的零式水上观测机在 23,000 英尺高度追不上。胶卷由珍珠港海军情报处
+            判读，判读员与舰船设计师判断该舰「排水量至少 60,000 吨、装 18 英寸炮」。
+          en: >-
+            Two PB4Y-1 photo-reconnaissance aircraft of VMD-254 from Bougainville
+            overflew the Truk anchorage; a Pete floatplane from Musashi tried to
+            intercept at 23,000 ft but could not overtake them. ONI at Pearl Harbor
+            processed the film, and the interpreters and ship designers concluded she
+            must displace at least 60,000 tons and carry 18-inch guns.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-03-29
+        text:
+          zh: >-
+            15:30 为避开预期空袭驶离帕劳；17:44 在通过西水道时被 USS Tunny（SS-282）
+            六雷中的一枚命中左舷舰首水线下约 20 英尺处。破口直径约 19 英尺，
+            前部锚机室与零式水中听音机室进水，18 人伤亡（其中 7 名听音机操作员阵亡），
+            进水 2,630 吨，仍能以 24 节脱离。
+          en: >-
+            Departed Palau at 1530 to avoid an expected air raid; at 1744, clearing
+            the western channel, she was hit about 20 ft below the waterline in the
+            port bow by one of six torpedoes from USS Tunny (SS-282). The hole was
+            about 19 ft across, flooding the forward windlass room and the Type 0
+            hydrophone compartment; eighteen were killed or hurt, including seven
+            hydrophone operators, and she shipped 2,630 tons but cleared the area at
+            24 knots.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-04-10
+        text:
+          zh: >-
+            在吴大改装至 4 月 27 日：舷侧 15.5 cm 三联装二号、三号炮塔撤去，
+            每舷改为三座三联无防盾 25 mm；另加 16 座三联与 25 座单装，
+            25 mm 总数达 115 门（30 座三联、25 门单装）；增设 2 部二二号对海电探与
+            2 部一三号对空电探；撤去 7、8 号 150 cm 探照灯及其实射击指挥装置
+            （后移设佐世保防空炮台）；因防空炮组扩大，增设第 6（前部）与第 7（舰尾）
+            防空炮术分队。
+          en: >-
+            Major refit at Kure to 27 April: the beam 15.5 cm triple turrets Nos. 2
+            and 3 came out, replaced by three triple unshielded 25 mm mounts per side;
+            sixteen triple and 25 single 25 mm mounts were added for a total of 115
+            guns (30 triple, 25 single); two Type 22 surface-search and two Type 13
+            air-search radars were fitted; the 150 cm searchlights Nos. 7 and 8 with
+            their directors were removed and later reinstalled for Sasebo's AA
+            batteries; and two new AA gunner divisions, No. 6 forward and No. 7 aft,
+            were raised.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-04-27
+        text:
+          zh: >-
+            注意这次改装没有换成 12.7 cm 高角炮：六座双联 12.7 cm 的增装计划
+            因炮座未到位而未实施，武藏到沉没仍是六座双联 12.7 cm。这是它与大和
+            在防空构成上的实质差别。
+          en: >-
+            Note that this refit did not add 12.7 cm HA mounts: the planned six twin
+            mountings were not available before her loss, so she still had six twin
+            12.7 cm at the end — a substantive difference from Yamato's battery.
+        src: [navweaps-127cm-89, combinedfleet-musashi-trom]
+
+      - date: 1944-07-02
+        text:
+          zh: >-
+            二二号对海电探换成二二号改四（具备有限射击管制能力）；另装 5 座三联 25 mm，
+            总数达 130 门（35 座三联、25 门单装）。
+          en: >-
+            The Type 22 sets were replaced by Type 22 Mod 4 with limited fire-control
+            capability, and five more triple 25 mm mounts were added for a total of
+            130 guns (35 triple, 25 single).
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-08-12
+        text:
+          zh: >-
+            猪口敏平大佐（前高雄舰长）接任舰长，10 月 15 日晋升少将，死后追晋中将。
+          en: >-
+            Captain Inoguchi Toshihira, formerly of Takao, took command; promoted rear
+            admiral on 15 October and vice admiral posthumously.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-10-18
+        text:
+          zh: >-
+            为圣贝纳迪诺海峡夜战突破，武藏与大和紧急涂布黑甲板迷彩；武藏只涂了
+            部分上甲板。10 月 20 日猪口又下令给舰体与炮塔侧面涂暗灰色调迷彩，
+            作业持续到次日。
+          en: >-
+            Black deck camouflage for the night breakthrough in the San Bernardino
+            Strait was hastily applied to Musashi and Yamato; in Musashi's case only
+            part of the upper deck was painted. On 20 October Inoguchi ordered a dark
+            grey camouflage on hull and turret sides, the work continuing into the
+            next day.
+        src: [combinedfleet-musashi-trom, combinedfleet-yamato-trom]
+
+      - date: 1944-10-22
+        text:
+          zh: >-
+            08:00 随栗田健男的第一游击部队（中央部队）自文莱出击。出击时在舰共
+            2,417 人：本舰编制 2,399 人（军官 112、士兵 2,279、海军雇工 8），
+            另有联合舰队司令部司法官 6 人、第二舰队联络官 1 人、第一机动舰队联络官 2 人、
+            长门派来水兵 9 人。
+          en: >-
+            Sortied from Brunei at 0800 with Kurita's First Diversion Attack Force
+            (Centre Force). Aboard were 2,417 people: her own 2,399-strong crew (112
+            officers, 2,279 men, 8 Navy-hired civilians), six judicial officers from
+            Combined Fleet HQ, one Second Fleet liaison officer, two First Mobile
+            Fleet liaison officers and nine sailors from Nagato.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-10-23
+        text:
+          zh: >-
+            重巡摩耶的幸存者由驱逐舰秋霜救起，当日下午转至武藏，共 769 人，
+            包括摩耶副长永井定三郎大佐与主计长。
+          en: >-
+            Survivors of the heavy cruiser Maya were picked up by the destroyer
+            Akishimo and transferred to Musashi that afternoon — 769 men including
+            Maya's executive officer, Captain Nagai Sadazo, and her chief paymaster.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            07:43 中央部队进入 Y-25 防空环形队形（内外两环）。武藏因舰尾吃水较深，
+            被编在领先的第一队右缘。
+          en: >-
+            At 0743 the Centre Force assumed the Y-25 anti-aircraft cruising
+            formation in two concentric rings; Musashi, trimmed down by the stern, was
+            stationed on the starboard edge of the leading No. 1 Unit.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            08:10 瞭望发现三架 PB4Y 私掠者巡逻机，发出空袭警报；栗田命武藏对
+            5,375 千周频段实施干扰，压制美方影随机的接触报告。10:18 美机改用 5,710 千周，
+            武藏随即对该频段一并干扰。
+          en: >-
+            At 0810 lookouts sighted three PB4Y Privateers and the air alarm sounded;
+            Kurita ordered Musashi to jam the shadowers' reports on 5,375 kilocycles.
+            At 1018 the aircraft switched to 5,710 kc and she began jamming that too.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            10:29 第一次攻击。无畏号 VB-18 的 8 架 SB2C-3 自舰首与舷侧投弹，
+            四发近失炸伤船壳板、两个前尖舱缓慢进水；一枚 1,000 磅炸弹命中 1 号炮塔
+            后被弹开、在空中爆炸，只留下一块直径 12 英寸的装甲亮斑。同日 F6F 扫射
+            压制高炮，25 mm 一号炮位长阵亡，是武藏第一名阵亡军官。
+          en: >-
+            First attack at 1029. Eight SB2C-3s of Intrepid's VB-18 bombed from ahead
+            and abeam; four near misses damaged hull plating and slowly flooded two
+            forward peak tanks, and one 1,000-lb bomb struck No. 1 turret and bounced
+            off, bursting in the air and leaving a 12-inch bare patch of armour.
+            Hellcats strafed to silence the AA guns and the commander of No. 1 25 mm
+            battery was killed — Musashi's first officer casualty.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            10:29–10:30 六架 VT-18 复仇者自右舷进入雷击。两架被击落，但一架在被击中前
+            投下 Mk 13-2A，10:30 命中右舷中部 11 号锅炉舱附近。11 号锅炉舱逐渐进水，
+            进水 3,000 吨、右倾 5.5 度，注水后先压到 3 度、再压到 1 度，航速未受影响；
+            但爆震把主炮指挥仪的旋转结构卡死在滚道上，该指挥仪失效。
+          en: >-
+            Between 1029 and 1030 six VT-18 Avengers attacked from starboard. Two were
+            shot down, but one dropped its Mk 13-2A before being hit and it struck
+            starboard amidships near No. 11 boiler room at 1030. That boiler room
+            flooded gradually, she shipped 3,000 tons and took a 5.5-degree starboard
+            list, corrected first to 3 and then to one degree, with no loss of speed;
+            the concussion jammed the main battery director's rotating structure on
+            its ball race, disabling it.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            11:54 二一号电探在方位 290、距离 81 公里发现来袭机群；11:57 又在方位 210、
+            距离 80 公里发现第二批。
+          en: >-
+            At 1154 her Type 21 radar detected approaching aircraft at bearing 290,
+            range 81 km; at 1157 a second contact appeared at bearing 210, range 80 km.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            12:04 第二次攻击。编队提速至 24 节；武藏在 25,000 m 距离以主炮发射三式弹。
+            无畏号 8 架 SB2C-3 自舰首与舰尾方向同时进入，两弹命中、五发近失：
+            一枚 250 kg 哑弹命中艏楼、穿透两层甲板，炸毁前部乘员厕所后自舰首外飘下方
+            穿出；另一枚命中左舷 4 号 127 mm 高炮前方，导致左舷内侧主轴失效，
+            航速降至 22 节。
+          en: >-
+            Second attack at 1204. Formation speed rose to 24 knots and Musashi fired
+            Type 3 shells from her main battery at 25,000 m. Eight SB2C-3s of Intrepid
+            attacked simultaneously from ahead and astern for two hits and five near
+            misses: a 250-kg dud struck the forecastle, penetrated two decks,
+            demolished the forward crew head and exited beneath the bow flare; a
+            second hit to port ahead of No. 4 127 mm mount cost her the port inboard
+            shaft and speed fell to 22 knots.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            12:06 九架 VT-18 复仇者分两组实施「锤与砧」夹击，左舷中部中三雷、倾斜 5 度；
+            注水后余 1 度，但舰首已埋水约 6 英尺。此期间武藏改用第二主炮指挥仪，
+            发射九发 460 mm 三式弹；第一次主炮齐射后前部炮塔即失效并被放弃，
+            猪口下令向其弹药库注水以防爆炸。
+          en: >-
+            At 1206 nine VT-18 Avengers attacked in two groups "hammer and anvil",
+            putting three torpedoes into the port side amidships for a 5-degree list;
+            counter-flooding left one degree but she was down about 6 ft by the bow.
+            Switching to her second main battery director, she fired nine 460 mm Type
+            3 shells; after that first salvo the forward turret was disabled and
+            abandoned, and Inoguchi ordered its magazines flooded against explosion.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            12:13 前后前部主炮塔失效。年表作者在此处驳正两条通行说法：舰首埋水是
+            第二次攻击之后才出现的（不是第一次的近失所致）；三式弹也不是第五次攻击
+            才被迫使用——本舰战闘详报明确显示主炮在第二次攻击中就已使用。
+          en: >-
+            Around 1213 the forward turret failed. The chronology's author corrects two
+            common claims here: the bow trim appeared after the second attack, not
+            from near misses in the first; and Type 3 shells were not a reluctant
+            last resort in the fifth attack — the action report shows the main battery
+            was already using them in the second.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            13:12 栗田下令全队减速至 22 节，以便武藏跟上。
+          en: >-
+            At 1312 Kurita ordered fleet speed reduced to 22 knots so that Musashi
+            could keep up.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            13:31–13:55 第三次攻击，艾塞克斯与列克星敦 29 机。六架复仇者再次「锤与砧」
+            夹击、命中四雷；首雷命中右舷 1 号主炮塔前方，爆风摧毁第二层甲板的
+            测程仪与测深室。13:50 攻击结束，注水把右倾压回 1 度，但舰首已埋水 13 英尺、
+            几乎全部调整水舱与空舱注满，航速降至 20 节，开始落后于第一队。
+          en: >-
+            Third attack, 1331-1355, by 29 aircraft from Essex and Lexington. Six
+            Avengers again attacked "hammer and anvil" for four hits; the first
+            torpedo struck starboard forward of No. 1 turret and the blast wrecked the
+            log and sounding rooms on the second deck. By 1350 the attack was over:
+            counter-flooding held the list at one degree, but she was 13 ft down by
+            the bow with nearly all trim tanks and voids full, speed fell to 20 knots
+            and she began to drop astern.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            14:20–14:48 第四次攻击，艾塞克斯 12 架无畏式与 8 架地狱猫，打击对象是
+            大和、长门与能代；武藏继续以约 20 节落在本队后方。
+          en: >-
+            Fourth attack, 1420-1448: twelve Helldivers and eight Hellcats from Essex
+            went for Yamato, Nagato and Noshiro, while Musashi continued to trail her
+            section at about 20 knots.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            14:55 第五次攻击，企业号与富兰克林号 69 机。企业号飞行员报告武藏落在队尾、
+            拖油、只跑 8 节。15:15 企业号 VB-20 九架命中四发 1,000 磅半穿甲弹，
+            前三发落在舰首左侧、造成下层破坏，前部损管队全灭；VT-20 八架复仇者
+            再命中三雷，其中两雷分别命中舰首两侧。撤离的美机报告武藏「浓烟、
+            舰首深沉、已停在水上」，实际它仍以三轴跑 16 节。
+          en: >-
+            Fifth attack at 1455 by 69 aircraft from Enterprise and Franklin;
+            Enterprise's pilots reported Musashi lagging, trailing oil and making only
+            8 knots. At 1515 nine VB-20 Helldivers scored four 1,000-lb SAP hits, the
+            first three in the port bow area causing damage below decks and
+            annihilating the forward damage-control party; eight VT-20 Avengers added
+            three torpedo hits. The departing pilots reported her smoking, heavily
+            down by the bow and dead in the water; she was in fact making 16 knots on
+            three shafts.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            15:25–15:30 第六次攻击，无畏、富兰克林与卡伯特 75 机，其中 37 机攻击武藏。
+            15:30 无畏号 VB-18 七架中一发 1,000 磅半穿甲弹命中防空指挥所右舷、穿透
+            一号舰桥在作战室爆炸，52 人阵亡、20 人受伤。猪口右肩受伤；防空长广濑英助、
+            目标跟踪班长山田武夫、航海长苅谷实、摩耶幸存者中军衔最高的永井定三郎中弹阵亡。
+          en: >-
+            Sixth attack, 1525-1530: 75 aircraft from Intrepid, Franklin and Cabot, 37
+            of them against Musashi. At 1530 one of seven VB-18 Helldivers' 1,000-lb
+            SAP bombs hit the starboard side of the air defence station, penetrated
+            the No. 1 bridge and burst in the operations room, killing 52 and wounding
+            20. Inoguchi was wounded in the right shoulder, and the air defence
+            officer, the target-tracking officer, the navigating officer and Maya's
+            senior survivor were all killed.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            15:30 之后 VT-13 与 VT-18 共 12 架复仇者再攻，记录 11 次命中（其中两枚哑弹）；
+            三雷命中左舷、两雷命中右舷几乎同时，机舱进水使另一侧左舷主轴失效，
+            航速降至 6 节。
+          en: >-
+            After 1530, twelve Avengers of VT-13 and VT-18 attacked again for eleven
+            hits, two of them duds; three torpedoes struck to port and two to starboard
+            almost simultaneously, flooding the engine room, taking out her remaining
+            port shaft and dropping speed to 6 knots.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            16:21 栗田的部队再次接近武藏：它以 10 度左倾、舰首埋水超过 26 英尺、
+            艏楼甲板已上浪的状态向北航行。栗田派重巡利根与驱逐舰岛风、清霜护卫。
+          en: >-
+            At 1621 Kurita's force closed on Musashi again: she was heading north with
+            a 10-degree port list, down by the bow more than 26 ft and her forecastle
+            deck awash. Kurita detached the cruiser Tone and the destroyers Shimakaze
+            and Kiyoshimo to escort her.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            19:15 倾斜达 12 度，猪口下令「准备弃舰」；副长加藤宪吉在后甲板集合乘员，
+            降下军舰旗。猪口退回海上住舱，此后未再出现。19:30 倾斜达 30 度，
+            加藤下令弃舰，并下令取下天皇御真影。
+          en: >-
+            At 1915, with the list at 12 degrees, Inoguchi ordered "standby to abandon
+            ship"; the executive officer, Captain Kato Kenkichi, assembled the crew on
+            the afterdeck and the battle flag was lowered. Inoguchi retired to his sea
+            cabin and was not seen again. At 1930, at 30 degrees, Kato gave the order
+            to abandon ship and had the Emperor's portrait removed.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            19:36 向左倾覆、舰首向下沉没于 4,430 英尺深水中。舰尾上翘滑入水中时
+            后部炮塔脱落，听到两次爆炸。坐标三说并列：本舰战闘详报 13°07′N 122°32′E、
+            第 17 驱逐队战闘详报 12°50′N 122°35′E、清霜号日志 12°48′N 122°41.5′E。
+          en: >-
+            At 1936 she capsized to port and sank by the bow in 4,430 ft of water. As
+            the stern upended and slid under, the aft turret fell off and two
+            explosions were heard. Three positions are recorded: 13°07'N 122°32'E from
+            her own action report, 12°50'N 122°35'E from DesDiv 17's, and
+            12°48'N 122°41.5'E from Kiyoshimo's log.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            当天中央部队承受 259 架次美机攻击（大和年表记「超过 250 架次」，
+            栗田口述记「六次大攻击、每次 40 至 50 架」——三个口径并列）。
+            武藏命中数的分歧见下条。
+          en: >-
+            The Centre Force endured 259 U.S. carrier sorties that day (Yamato's
+            record says "over 250"; Kurita recalled "six large attacks with 40 to 50
+            planes in each" — three figures, all given). Musashi's own hit totals
+            differ; see the next entry.
+        src: [combinedfleet-musashi-trom, combinedfleet-yamato-trom, ussbs-ijo-9-kurita-leyte]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            命中数至少有六种说法，且同一页年表的正文与脚注即互相矛盾：
+            正文记 19 雷（左舷 10、右舷 9）、17 弹、20 次近失；脚注引本舰战闘详报记
+            11 雷（含左舷中部 2 枚哑弹）、10 弹、6 次近失；栗田与大谷口述记 18 雷 40 弹
+            （大谷另记 3 枚未爆）；USNI 1953 引详报记「至 12:53 为止 9 雷 7 弹」，
+            第三波再加 11 雷 10 弹；USNTMJ 转引则记 10 枚确定命中、16 弹。
+            六说并列，不裁决。
+          en: >-
+            At least six totals exist, and the same page contradicts itself: the
+            narrative gives 19 torpedoes (10 port, 9 starboard), 17 bombs and 20 near
+            misses, while its own footnote citing her action report gives 11 torpedoes
+            (two of them duds, port amidships), ten bombs and six near misses. Kurita
+            and Otani recalled 18 torpedoes and 40 bombs (Otani adding three that
+            failed to explode); USNI 1953 cites the report as 9 torpedoes and 7 bombs
+            by 1253 with a further 11 and 10 in the third attack; USNTMJ as cited
+            counted ten certain torpedo hits and 16 bombs. All six are given.
+        src: [combinedfleet-musashi-trom, ussbs-ijo-9-kurita-leyte, ussbs-ijo-41-otani-samar, usni-proceedings-1953-yamato-design, wartimechapters-yamato]
+
+  - id: legacy
+    title: { zh: 救援、损失与残骸, en: Rescue, losses and the wreck }
+    range: { from: 1944-10-25, to: 2015-03-02 }
+    lead:
+      zh: >-
+        沉没之后的清点本身也有分歧：救起人数含摩耶乘员，阵亡数与编制的和因此大于编制。
+      en: >-
+        Even the accounting afterwards is inconsistent: the rescue figure includes
+        Maya's men, so dead plus rescued exceeds her own complement.
+    events:
+      - date: 1944-10-25
+        text:
+          zh: >-
+            驱逐舰清霜与滨风救起 1,423 人（含摩耶乘员），武藏 2,399 人的编制中
+            1,023 人阵亡，含舰长猪口敏平（追晋中将）；炮术长越野士岐拒绝被救，
+            列为失踪。摩耶幸存者另有 117 人在这轮空袭或沉没中损失。
+            美方当日损失 18 架飞机。
+          en: >-
+            The destroyers Kiyoshimo and Hamakaze rescued 1,423 men including Maya's
+            survivors, while 1,023 of Musashi's 2,399-man crew were lost, among them
+            Rear Admiral Inoguchi (promoted vice admiral posthumously); her gunnery
+            officer refused rescue and is listed missing. A further 117 of Maya's
+            survivors were lost in the attacks or the sinking. The Americans lost 18
+            aircraft.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-10-25
+        text:
+          zh: >-
+            02:30 美军破译一份电文，内容为「武藏战列舰救援于 25 日 02:15 完成」，
+            并按舰分列救起人数：滨风 副长及 800 人（其中军官 30 人）、
+            磯风 军官 30 人与士兵 410 人。年表脚注指出该电文里的舰名有误：
+            实际是清霜而非磯风；第 17 驱逐队战闘详报记两舰合计救起 1,423 人，
+            其中 58 人重伤。
+          en: >-
+            At 0230 U.S. codebreakers decrypted a message reporting Musashi rescue
+            work complete at 0215 on the 25th, listing Hamakaze with the executive
+            officer and 800 men (30 of them officers) and Isokaze with 30 officers and
+            410 men. The chronology's footnote notes the ship name is wrong — it was
+            Kiyoshimo, not Isokaze — and that DesDiv 17's report gives 1,423 men
+            rescued by the two ships, 58 of them seriously injured.
+        src: [combinedfleet-musashi-trom]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            沉没时刻另有栗田口述的「大约八点」一说，与 19:36 相差一小时以上，
+            两个口径并列。设计主任牧野茂事后表示，武藏是因舰首持续进水、丧失浮力而沉没，
+            防护本应做得更坚固。
+          en: >-
+            Kurita recalled the sinking as "about 8 o'clock", more than an hour from
+            1936; both are recorded. The design chief, Makino Shigeru, later said
+            Musashi was lost because flooding in the bow progressively destroyed her
+            buoyancy, and that the protection should have been stronger.
+        src: [ussbs-ijo-9-kurita-leyte, japanese-warship-yamato-building]
+
+      - date: 2015-03-02
+        text:
+          zh: >-
+            保罗·艾伦的团队在锡布延海约 910 米深处找到武藏。舰体断为数段：
+            中部舰体大部炸散；一号炮座以前的舰首段正立海底，舰尾段倒扣，
+            前部上层建筑（含烟囱）脱落并向左舷侧卧。
+          en: >-
+            Paul Allen's team located Musashi at about 910 m in the Sibuyan Sea. She
+            lies in several pieces: most of the midships hull is blown apart, the bow
+            forward of No. 1 barbette sits upright, the stern lies upside down, and
+            the forward superstructure with its funnel has come away and lies on its
+            port side.
+        src: [combinedfleet-musashi-trom]
