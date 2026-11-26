@@ -4,11 +4,6 @@ name:
   en: Nagara class
 class_of:
 - nagara
-- isuzu
-- natori
-- yura
-- kinu
-- abukuma
 open_ended_note: '本文件绝大多数 fact 的 valid.to 都留空，这是结构性的，不是漏填：
 
   舰级设计参数的生效期从设计定案/服役起，到该级最后一艘损失或拆解为止，
@@ -17,7 +12,9 @@ open_ended_note: '本文件绝大多数 fact 的 valid.to 都留空，这是结�
 
   状态切片里，由单舰 fact 覆盖。因此这里的 open 时间窗表示「无已知终止事件」。
 
-  '
+
+
+  【2026-11-26】class_of 原含未入库舰 [''isuzu'', ''natori'', ''yura'', ''kinu'', ''abukuma'']，已收窄为实际已入库的 [''nagara'']。那几艘仍属本级，待入库时再加回。'
 facts:
 - field: identity.name_original
   value: 長良型軽巡洋艦

@@ -1,1583 +1,1769 @@
-# ============================================================================
-# 舰级：King George V class（英王乔治五世级战列舰）
-# ----------------------------------------------------------------------------
-# 同级建成 5 艘：King George V（41）/ Prince of Wales（53）/
-# Duke of York（17，ex-Anson）/ Anson（79，ex-Jellicoe）/ Howe（32，ex-Beatty）。
-# 本站目前只入库首舰 King George V 本体，本文件写足五舰共有的设计数据；
-# 单舰的建造日期、实测值、编制、改装与损失写 data/ships/king-george-v.yaml。
-#
-# 解析顺序（docs/00-framework.md §3.6）：单舰 fact -> 舰级 fact -> 未记载。
-# 单舰命中即覆盖舰级，不与舰级值构成分歧。
-#
-# 【这一级为什么长成 10 门 14 英寸】
-# 1936-03 第二次伦敦海军条约把主力舰主炮上限定为 14 英寸、标准排水量
-# 35,000 t。英国不愿启动 16 英寸升级条款（会拖 18 个月工期），于是只能在
-# 条约框里凑火力：初版是 3 座四联（12 门），但 35,000 t 装不下 12 门炮 +
-# 想要的防护，最终 B 炮塔降为双联，变成 2 座四联（A/Y）+ 1 座双联（B）。
-# 十门 14 英寸的舷侧投射量仍优于九门 15 英寸，这是四联装方案保留下来的
-# 根本算术；代价是四联炮塔的机械复杂度（3,000+ 活动件）在战时暴露为可靠性
-# 问题——这条争议在单舰文件与叙事里并列保留，本文件不裁决。
-#
-# 【两个口径提醒】
-# 1) 主带厚度：英国按「每平方英尺 40 磅 = 1 英寸」的重量法标板厚。
-#    navypedia 的 381 / 356 mm 是重量口径，名义厚度是 373 / 349 mm
-#    （后者只见于维基级页转引，E 层，未采信为 fact）。两者不是分歧。
-# 2) 排水量：36,727 t 是设计标准排水量；38,031 t 是 RMG 据 1940 年
-#    实际状态给的标准排水量。相差约 1,300 t 是建成后增重，不是两种说法。
-# ============================================================================
-
 id: king-george-v
 name:
   zh: 英王乔治五世级战列舰
   en: King George V-class battleship
-class_of: [king-george-v]
-open_ended_note: >
-  本文件多数 fact 的 valid.to 留空，是结构性的，不是漏填：舰级设计参数的
-  生效期从设计定案/服役起，到该级最后一艘损失或拆解为止，期间不因改装而
-  改变；随时间的实际状态变化写在单舰文件的切片里，由单舰 fact 覆盖。
-  因此这里的开放时间窗表示「无已知终止事件」，逐条写 note 只会是同一句
-  话复制上百遍。
+class_of:
+- king-george-v
+- prince-of-wales
+open_ended_note: '本文件多数 fact 的 valid.to 留空，是结构性的，不是漏填：舰级设计参数的 生效期从设计定案/服役起，到该级最后一艘损失或拆解为止，期间不因改装而 改变；随时间的实际状态变化写在单舰文件的切片里，由单舰 fact 覆盖。 因此这里的开放时间窗表示「无已知终止事件」，逐条写 note 只会是同一句 话复制上百遍。
 
+  '
 facts:
-  # ============================================================ 身份
-  - field: identity.name_original
-    value: King George V class
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1936-07-29 }
-    confidence: A
-    note: >
-      级名取自首舰舰名。五舰：King George V / Prince of Wales /
-      Duke of York（ex-Anson）/ Anson（ex-Jellicoe）/ Howe（ex-Beatty）。
-      注意 navypedia 另有一级 1912 年的 King George V 战列舰，与本级无关。
-
-  - field: identity.ship_type
-    value: battleship
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1936-07-29 }
-    confidence: A
-    note: 英国官方分类为 battleship；建成时是世界上最后一级按条约限制设计的主力舰。
-
-  - field: identity.nation
-    value: united_kingdom
-    src: [rmg-kgv-guide]
-    valid: { from: 1936-07-29 }
-    confidence: A
-
-  - field: identity.operator
-    value: Royal Navy
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - field: identity.era
-    value: ww2
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01, to: 1945-09-02 }
-    confidence: A
-    note: >
-      按服役期定位：五舰 1940-1942 年陆续服役，全部在二战期间作战；
-      战后 1949-1950 年陆续转入预备役，1957-1958 年拆解。
-
-  - field: identity.building_program
-    value: 1936 年造舰计划（华盛顿/伦敦条约 35,000 t 与 14 英寸主炮限制下设计）
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1936-07-29 }
-    confidence: B
-    note: >
-      RMG 原话「designed by the Admiralty in 1936 under the restrictions of
-      the Washington Treaty」。设计在 1936 年定案，五舰分两批订购。
-
-  # ============================================================ 主尺度
-  - field: dimensions.length.oa
-    value: 227.1
-    unit: m
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-    note: >
-      RMG 原值 745 ft 0.13 in，另作 745 ft 1 in；两者差 2 cm 级，公制同为
-      227.1 m，属英制取整口径，不构成分歧。
-
-  - field: dimensions.length.wl
-    value: 225.6
-    unit: m
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: RMG 原值 740 ft 0.25 in（本报告换算 225.55 m）。其余来源未给水线长。
-
-  - field: dimensions.length.pp
-    value: 213.4
-    unit: m
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-    note: RMG 原值 700 ft 0.25 in；navypedia 同给 213.4 m。
-
-  - field: dimensions.beam.max
-    value: 34.2
-    unit: m
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: A
-    note: >
-      RMG 原值 112 ft 4.25 in（本报告换算 34.24 m）。含防雷突出部/外板突出部；
-      navypedia 的 31.4 与 wiki 级页的 31.5 都是水线宽，不是最大宽。
-
-  - field: dimensions.beam.wl
-    value: 31.5
-    unit: m
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: RMG 原值 103 ft 2.56 in；navypedia 记 31.4 m，差 1 dm 级，疑为换算取整。
-
-  - field: dimensions.draught.mean
-    value: 8.84
-    unit: m
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1940-10-01, to: 1944-05-31 }
-    confidence: B
-    note: >
-      1940 年标准状态平均吃水。RMG 原值 29 ft（mean）；
-      navypedia 给 8.84 m（deep load 9.90 m 为平均值）。与排水量状态绑定解读。
-
-  - field: dimensions.draught.max
-    value: 9.9
-    unit: m
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1940-10-01, to: 1944-05-31 }
-    confidence: B
-    note: >
-      1940 年深载平均吃水。RMG 原值 32 ft 6 in。
-      另有 10.2 m（33 ft 7.5 in）之说，指战时超载后的实际吃水，
-      wiki 级页给出但属 E 层，本表未采信为 fact，仅在此并列。
-
-  - field: dimensions.depth.molded
-    value: 15.6
-    unit: m
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: RMG 原值 51 ft 1.31 in（本报告换算）。其余来源未给型深。
-
-  # ============================================================ 排水量
-  # 设计值与建成实测值分列：不是分歧，是不同状态。
-  - field: displacement.standard
-    value: 36727
-    unit: t
-    src: [navypedia-kgv]
-    valid: { from: 1937-01-01, to: 1940-09-30 }
-    confidence: B
-    note: >
-      设计标准排水量，navypedia 与 maritimequest/tynebuiltships 的 36,730 t
-      同源（差 3 t 为换算）。条约口径的 35,000 t 是设计上限，实际设计已超。
-
-  - field: displacement.standard
-    value: 38031
-    unit: t
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01, to: 1944-05-31 }
-    confidence: A
-    note: >
-      RMG 记 1940 年标准排水量 38,031 t，比设计值多约 1,300 t，原因是建成后
-      增设高炮、雷达与装甲补强。wiki 单舰页把同一数值称作 normal load，
-      与 RMG 的 Standard 不同名——同名不同义，引用时须带口径。
-
-  - field: displacement.full
-    value: 42076
-    unit: t
-    src: [navypedia-kgv]
-    valid: { from: 1937-01-01, to: 1940-09-30 }
-    confidence: B
-    note: 设计满载排水量；maritimequest/tyne 记 42,080 t，差 4 t 为换算。
-
-  - field: displacement.deep
-    value: 42237
-    unit: t
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01, to: 1944-05-31 }
-    confidence: A
-    note: RMG 记 1940 年 deep load 42,237 t，与设计满载差 161 t。
-
-  # 注：1945 年状态（39,100 t / 44,460 t）不写在舰级里。
-  # 本级五舰的结局差异极大：Prince of Wales 1941-12 沉没、
-  # King George V 活到 1957、Duke of York 1949 退役。
-  # 把「1945 年状态」当全级通用会污染早已沉没的舰
-  # （2026-11-22 排查发现：PoW 页面曾显示一条它沉没三年后才存在的排水量）。
-  # 该数据已移到 data/ships/king-george-v.yaml。
-    confidence: B
-    note: >
-      1945 年 deep load。kbismarck 的最终战参战表另给 44,400 mt，
-      比此值低 60 t，疑为其自算的战时满载，并列不裁。
-      空载与「最大排水量」两档：所有来源都不设，未获取，故不写 0。
-
-  # ============================================================ 动力
-  - field: propulsion.plant_type
-    value: steam_turbine
-    src: [navypedia-kgv, rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - field: propulsion.boiler.count
-    value: 8
-    unit: count
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - field: propulsion.boiler.type
-    value: Admiralty 三鼓小管锅炉（带过热器）
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-    note: >
-      RMG 原话「8 x Admiralty 3-drum small-tube with superheaters」。
-      八台锅炉在空间与燃油经济性上都优于胡德号的二十四台，是这一级
-      动力舱设计的核心取舍。
-
-  - field: propulsion.boiler.pressure
-    value: 27.6
-    unit: atm
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: >
-      RMG 原值「Working pressure (max): 400 lb/sq in」，本报告换算为 27.6 atm
-      （400 psi ≈ 27.58 atm）。蒸汽温度：未获取，不填。
-
-  - field: propulsion.turbine.count
-    value: 4
-    unit: count
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - field: propulsion.turbine.type
-    value: Parsons 单级减速齿轮汽轮机
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-    note: RMG 原话「4 x Parsons single-reduction geared, 4 shafts」。
-
-  - field: propulsion.turbine.manufacturer
-    value: Vickers-Armstrongs Ltd, Barrow
-    src: [tyne-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: C
-    note: >-
-      仅 tynebuiltships 给出主机承造厂（原话「Engines by Vickers-Armstrongs
-      Ltd, Barrow」），孤证。
-
-  - field: propulsion.power.design
-    value: 110000
-    unit: hp
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-    note: >
-      设计持续功率。另有试航 125,000 shp 一说，只见于 wiki 单舰页 infobox，
-      疑为 overload 功率且未找到原始试航报告，E 层不采信为 fact，仅此并列。
-      同一页正文的设计分档：标准排水量正常输出 28.5 kn、满载 27.5 kn；
-      overload 时分别为 29.25 / 28.25 kn。
-
-  - field: propulsion.speed.design
-    value: 28
-    unit: kn
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - field: propulsion.speed.trial
-    value: 28.25
-    unit: kn
-    src: [tyne-kgv]
-    valid: { from: 1941-01-01 }
-    confidence: C
-    note: >
-      tynebuiltships 记 28.25 kn，与 wiki 单舰页「overload 28.25 kn at full
-      load」数值吻合，疑为试航实测档。wiki 另记 28.0 kn（1941 trials），
-      E 层未采信；两说并列不裁。
-
-  - field: propulsion.shafts
-    value: 4
-    unit: count
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - field: propulsion.propeller.count
-    value: 4
-    unit: count
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - field: propulsion.propeller.diameter
-    value: 4.42
-    unit: m
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: RMG 原值 14.5 ft（= 14 ft 6 in），本报告换算 4.42 m。两种写法是同一个数。
-
-  - field: propulsion.propeller.type
-    value: 三叶锰青铜
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: B
-
-  - field: propulsion.fuel.capacity
-    value: 3700
-    unit: t
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01, to: 1941-12-31 }
-    confidence: B
-    note: >
-      navypedia 记「3700 oil, later 4030」——后期增到 4,030 t，但**改装时点未获取**，
-      故不另立一条带推断时间窗的 fact，只在此注明。
-      另有 3,918 t（wiki 单舰页，E 层未采信）与 max 4,100 / avg 3,886
-      （naval-history.net，未登记来源）两说，并列不裁。
-
-  - field: propulsion.range.max
-    value: 15600
-    unit: nmi
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: C
-    note: >
-      navypedia 的 10 kn 档。明显高于其它来源，疑为理论极值/未扣储备。
-      与 14,000 nmi 并列，见下条。
-
-  - field: propulsion.range.at_speed
-    value: 10
-    unit: kn
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: C
-
-  - field: propulsion.range.max
-    value: 14000
-    unit: nmi
-    src: [maritimequest-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: C
-    note: >
-      10 kn 档 14,000 nmi。另有 14,400 nmi（wiki 单舰页设计值）与
-      5,400 nmi @18 kn（wiki infobox）两说，均属 E 层，未采信为 fact。
-      实战反证：1941-05-27 追击俾斯麦后 KGV 因缺油几乎必须离场，
-      纸面续航不可直接当作战半径用。
-
-  - field: propulsion.range.at_speed
-    value: 10
-    unit: kn
-    src: [maritimequest-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: C
-
-  # ============================================================ 防护
-  - field: protection.scheme
-    value: all_or_nothing
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: >
-      navypedia 原话「Here, as well as on Nelson, the principle "all or nothing"
-      was used.」。主带无倾角，靠「深带」而不是「斜带」对付水中弹。
-
-  - field: protection.armor.thickness
-    value: 381
-    unit: mm
-    qual: { part: belt, region: main }
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: >
-      弹药库段主带，重量口径（每平方英尺 40 磅 = 1 英寸）。名义厚度 373 mm
-      只见于 wiki 级页转引，E 层未采信。带高 7.16 m、长 126.5 m，
-      覆盖两端炮座之间的 citadel；上段高 4.62 m、下段 2.54 m。
-      **同一带在机舱段为 356 mm（名义 349 mm）**——同一条带的不同舱段，
-      不是两种说法，故只写一条、此处注明。下段自 381 mm 递减至 140 mm
-      （弹药库段）/ 114 mm（机舱段）。kbismarck 的 348–374 mm 区间即由此派生。
-
-  - field: protection.armor.angle
-    value: 0
-    unit: deg
-    qual: { part: belt, region: main }
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: >
-      navypedia 原话「The main belt placed without a declination」。
-      0° 是真实的「无倾角」记载，不是未获取。
-
-  - field: protection.armor.thickness
-    value: 152
-    unit: mm
-    qual: { part: deck, region: main }
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: >
-      citadel 内主装甲甲板（弹药库上方）。机舱上方降为 127 mm。
-      wiki 级页的分层口径为 149 mm 非渗碳装甲 + 13 mm Ducol（共 232 mm
-      含天甲板 32 mm），属 E 层转引，未采信为 fact，仅此并列。
-
-  - field: protection.armor.thickness
-    value: 127
-    unit: mm
-    qual: { part: deck, region: lower }
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: >
-      citadel 外的下甲板 127–64 mm；尾部 114 mm（舵机上方 127 mm），
-      由 102 mm 舱壁封闭。
-
-  - field: protection.armor.thickness
-    value: 324
-    unit: mm
-    qual: { part: turret, region: face }
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-    note: >
-      炮塔正面。相对同期战列舰偏薄，是「把重量让给弹药库防护」的取舍；
-      该级炮塔低矮、正面平直，远距离抗弹反而有补偿。
-
-  - field: protection.armor.thickness
-    value: 224
-    unit: mm
-    qual: { part: turret, region: side }
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: >
-      炮塔侧面 224–174 mm。navypedia 汇总行给「turrets: 330 - 152」，
-      与本条的 324 面 / 224–174 侧不是同一分区口径；330 疑含背板或取整。
-      顶部 149 mm 只见于 wiki 级页，E 层未采信。
-
-  - field: protection.armor.thickness
-    value: 330
-    unit: mm
-    qual: { part: barbette, region: main }
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: >
-      navypedia：侧面 330 mm、向舯部 280 mm、向舰端 305 mm。
-      wiki 级页按炮塔前后分区给 324/298/275 mm，分区方式不同，
-      两组并列不裁；单舰 infobox 的 330 与本条一致。
-
-  - field: protection.armor.thickness
-    value: 114
-    unit: mm
-    qual: { part: conning_tower, region: main }
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: >
-      navypedia：司令塔侧 114–76 mm、顶/甲板/通话管 51 mm。
-      wiki 级页给 102/75/38 mm，差 10 mm 级，疑为名义值 vs 含衬板，
-      并列不裁。
-
-  - field: protection.armor.thickness
-    value: 305
-    unit: mm
-    qual: { part: bulkhead, region: fore }
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: 前部横向装甲舱壁，下甲板以上；下甲板以下降至 51 mm。
-
-  - field: protection.armor.thickness
-    value: 254
-    unit: mm
-    qual: { part: bulkhead, region: aft }
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: B
-
-  - field: protection.armor.weight
-    value: 12413
-    unit: t
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: >
-      RMG 重量分组表：Hull 13,830 t / Outfit 1,619 / Machinery 2,768 /
-      Armament 7,401 / Armour 12,413。五项相加 32,031 t，与隐含分母
-      34,133 t 差 2,102 t，RMG 未解释。
-
-  - field: protection.armor.weight_ratio
-    value: 32.5
-    unit: pct
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: RMG 原表直接给 32.5%（分母 34,133 t）。对照俾斯麦约 40%，差距即「防护让位给火力密度」的量化体现。
-
-  - field: protection.underwater.depth
-    value: 4.1
-    unit: m
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: >
-      navypedia：防雷纵深 4.1 m，可抗 454 kg TNT 爆炸，最后一道纵舱壁 44 mm。
-      wiki 级页的设计指标 1,000 lb（=454 kg）与之同值，只是单位不同。
-      实战反证：PoW 沉没显示该防护扛不住轻得多的航空鱼雷。
-
-  - field: protection.torpedo_bulge.type
-    value: 内置式防雷系统（internal anti-torpedo protection）
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: C
-    note: >
-      navypedia 只写「Internal anti-torpedo protection」，未给分舱细节。
-      wiki 级页的 void-liquid-void 分层与 13 ft 宽度属 E 层转引，未采信。
-
-  # ============================================================ 武备（装载层）
-  - field: armament.mount.summary
-    value: >-
-      10 × 14 in/45 BL Mk VII（2 座 Mk III 四联：A 前、Y 后；
-      1 座 Mk II 双联：B 前背负）+ 16 × 5.25 in/50 QF Mk I
-      （8 座双联 HA/LA Mk I）+ 32 × 2-pdr 八联 pom-pom（4 座）
-      + 4 座 UP 二十管火箭 + 1 座 D-III-H 弹射器
-    src: [navypedia-kgv, rmg-kgv-guide]
-    valid: { from: 1940-10-01, to: 1941-11-30 }
-    confidence: A
-    note: >
-      服役时基准配置。各舰建成状态已有差异（如 PoW 多 1 门 Bofors），
-      本级只写首舰口径；逐年改装见 data/ships/king-george-v.yaml。
-      **鱼雷发射管：各来源装备表均无此项，但没有一条明文写「本舰无鱼雷」**，
-      故属「据装备表推定」，本表不写 0。
-
-  - field: armament.torpedo.tubes
-    value: 0
-    unit: count
-    src: [navypedia-kgv, rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: C
-    note: >
-      这不是「未获取」，是「来源一致地没有」：navypedia 装备行、RMG
-      武备表、wiki 两页装备表均无 TT。旁证：1941-05-27 Tovey 信号
-      「Any ship with torpedoes to close the BISMARCK」，若 KGV 有鱼雷
-      不必泛指；最终补雷的是 Dorsetshire。仍标 C，因为无明文否定。
-
-  # 注：2 cm 高炮的逐年数量是单舰状态（同级各舰节奏不同），
-  # 一律写 data/ships/king-george-v.yaml，不在舰级文件里重复。
-
-  # ============================================================ 武器本体
-  - about: weapon:14in-45-mk7
-    field: weapon.designation
-    value: 14 in/45 BL Mk VII
-    src: [navweaps-14in-45-mk7, rmg-kgv-guide]
-    valid: { from: 1937-01-01 }
-    confidence: A
-
-  - about: weapon:14in-45-mk7
-    field: weapon.nation
-    value: united_kingdom
-    src: [navweaps-14in-45-mk7]
-    valid: { from: 1937-01-01 }
-    confidence: A
-
-  - about: weapon:14in-45-mk7
-    field: weapon.category
-    value: naval_gun
-    src: [navweaps-14in-45-mk7]
-    valid: { from: 1937-01-01 }
-    confidence: A
-
-  - about: weapon:14in-45-mk7
-    field: weapon.bore
-    value: 356
-    unit: mm
-    src: [navweaps-14in-45-mk7]
-    valid: { from: 1937-01-01 }
-    confidence: A
-
-  - about: weapon:14in-45-mk7
-    field: weapon.caliber_length
-    value: 45
-    unit: ratio
-    src: [navweaps-14in-45-mk7, rmg-kgv-guide]
-    valid: { from: 1937-01-01 }
-    confidence: A
-    note: RMG 另给膛线长 45 calibres（630 in）。
-
-  - about: weapon:14in-45-mk7
-    field: weapon.weight
-    value: 79588
-    unit: kg
-    src: [navweaps-14in-45-mk7]
-    valid: { from: 1937-01-01 }
-    confidence: B
-    note: 早期炮身裸重 79.588 t，后期 78.988 t。RMG 的「77 tons 14 cwt 84 lb」（裸）/「89 tons 2 cwt 84 lb」（含配重）为英制口径。
-
-  - about: weapon:14in-45-mk7
-    field: weapon.projectile_weight
-    value: 721.2
-    unit: kg
-    qual: { shell_type: apc }
-    src: [navweaps-14in-45-mk7, rmg-kgv-guide]
-    valid: { from: 1937-01-01 }
-    confidence: A
-    note: APC Mk VIIb，1,590 lb。这是本炮最受争议的一点：同为 14 英寸，英国弹比美、日同类轻得多，换来更高初速与更大药室容比。
-
-  - about: weapon:14in-45-mk7
-    field: weapon.muzzle_velocity
-    value: 757
-    unit: mps
-    qual: { shell_type: apc }
-    src: [navweaps-14in-45-mk7]
-    valid: { from: 1937-01-01 }
-    confidence: B
-    note: >
-      新炮 2,483 fps。navweaps 表列值；其注与 RMG 另给名义 2,475 fps
-      （754 m/s）。炮队平均状态为 2,400 fps（732 m/s），非新炮名义值——
-      三说并列不裁，本条取表列新炮值，余数记此。
-
-  - about: weapon:14in-45-mk7
-    field: weapon.charge.weight
-    value: 153.3
-    unit: kg
-    qual: { charge_part: main, propellant: other }
-    src: [rmg-kgv-guide]
-    valid: { from: 1937-01-01 }
-    confidence: B
-    note: RMG 原值 338 lb，四包发射药。propellant 代号未获取，故记 other。
-
-  - about: weapon:14in-45-mk7
-    field: weapon.rate_of_fire
-    value: 2
-    unit: rpm
-    src: [navweaps-14in-45-mk7, rmg-kgv-guide]
-    valid: { from: 1937-01-01 }
-    confidence: A
-    note: 每门 2 发/分；wiki 单舰页称一次齐射约 30 s，属 E 层未采信。
-
-  - about: weapon:14in-45-mk7
-    field: weapon.barrel_life
-    value: 340
-    unit: count
-    src: [navweaps-14in-45-mk7]
-    valid: { from: 1937-01-01 }
-    confidence: C
-    note: 疑为全装药名义寿命。与 RMG 的 375 发并列，差约 10%，两源均未给计算方法。
-
-  - about: weapon:14in-45-mk7
-    field: weapon.barrel_life
-    value: 375
-    unit: count
-    src: [rmg-kgv-guide]
-    valid: { from: 1937-01-01 }
-    confidence: C
-    note: 疑为含减装药训练弹的加权寿命。与 340 发并列不裁。
-
-  - about: weapon:14in-45-mk7
-    field: weapon.ammo_outfit
-    value: 1100
-    unit: count
-    src: [navweaps-14in-45-mk7]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: 全舰 1,100 发，分配 A 432 / B 216 / Y 452；每门定额 80、最大 100（RMG）。
-
-  - about: weapon:14in-45-mk7
-    field: weapon.range.max
-    value: 33380
-    unit: m
-    src: [navweaps-14in-45-mk7]
-    valid: { from: 1937-01-01 }
-    confidence: B
-    note: 36,500 yd @ 40.7°。RMG 给 36,300 yd、maritimequest 给 38,560 yd，三说并列不裁（后两者未换算为 fact）。
-
-  - about: weapon:14in-45-mk7
-    field: weapon.range.max_elevation
-    value: 40.7
-    unit: deg
-    src: [navweaps-14in-45-mk7]
-    valid: { from: 1937-01-01 }
-    confidence: B
-
-  - about: weapon:525in-50-mk1
-    field: weapon.designation
-    value: 5.25 in/50 QF Mk I
-    src: [navweaps-525in-50-mk1, rmg-kgv-guide]
-    valid: { from: 1937-01-01 }
-    confidence: A
-    note: RMG 该行首写「6 x 5.25in」、同段又写「8 x twin」，自相矛盾；以 8 座双联 16 门为准（其余来源一致）。
-
-  - about: weapon:525in-50-mk1
-    field: weapon.nation
-    value: united_kingdom
-    src: [navweaps-525in-50-mk1, rmg-kgv-guide]
-    valid: { from: 1937-01-01 }
-    confidence: A
-
-  - about: weapon:525in-50-mk1
-    field: weapon.category
-    value: anti_aircraft_gun
-    src: [navweaps-525in-50-mk1]
-    valid: { from: 1937-01-01 }
-    confidence: B
-    note: 两用炮（HA/LA），分类按其对空主职能记 anti_aircraft_gun。
-
-  - about: weapon:525in-50-mk1
-    field: weapon.bore
-    value: 133
-    unit: mm
-    src: [navweaps-525in-50-mk1]
-    valid: { from: 1937-01-01 }
-    confidence: A
-
-  - about: weapon:525in-50-mk1
-    field: weapon.caliber_length
-    value: 50
-    unit: ratio
-    src: [navweaps-525in-50-mk1, rmg-kgv-guide]
-    valid: { from: 1937-01-01 }
-    confidence: A
-
-  - about: weapon:525in-50-mk1
-    field: weapon.projectile_weight
-    value: 36.3
-    unit: kg
-    qual: { shell_type: sap }
-    src: [navweaps-525in-50-mk1, rmg-kgv-guide]
-    valid: { from: 1937-01-01 }
-    confidence: A
-    note: 80 lb SAP/HE。这一口径是「人工装填的上限」，也正是它射速与随动不足的根源。
-
-  - about: weapon:525in-50-mk1
-    field: weapon.muzzle_velocity
-    value: 814
-    unit: mps
-    qual: { shell_type: sap }
-    src: [navweaps-525in-50-mk1]
-    valid: { from: 1937-01-01 }
-    confidence: B
-    note: 2,672 fps；RMG 给 2,600 ft/s（792 m/s），差 72 fps，疑为名义 vs 实测，并列不裁。
-
-  - about: weapon:525in-50-mk1
-    field: weapon.rate_of_fire
-    value: 7.5
-    unit: rpm
-    src: [navweaps-525in-50-mk1, rmg-kgv-guide]
-    valid: { from: 1937-01-01 }
-    confidence: A
-    note: 设计 10–12 发/分，实战 7–8 发/分（炮室狭窄、人工装填）；取 7.5 为区间中值，note 保留原区间。1941-05-27 Patterson 战报记副炮 77 发/门无故障。
-
-  - about: weapon:525in-50-mk1
-    field: weapon.barrel_life
-    value: 750
-    unit: count
-    src: [navweaps-525in-50-mk1, rmg-kgv-guide]
-    valid: { from: 1937-01-01 }
-    confidence: B
-
-  - about: weapon:525in-50-mk1
-    field: weapon.ammo_outfit
-    value: 400
-    unit: count
-    src: [navweaps-525in-50-mk1, rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: 每门 400 发。
-
-  - about: weapon:525in-50-mk1
-    field: weapon.range.max
-    value: 21397
-    unit: m
-    src: [navweaps-525in-50-mk1, rmg-kgv-guide]
-    valid: { from: 1937-01-01 }
-    confidence: B
-    note: 23,400 yd @ 45°。
-
-  - about: weapon:525in-50-mk1
-    field: weapon.range.aa_max
-    value: 14170
-    unit: m
-    src: [navweaps-525in-50-mk1]
-    valid: { from: 1937-01-01 }
-    confidence: C
-    note: >
-      46,500 ft @ 70°。RMG 给 29,544 ft @ 80°、maritimequest 给 49,000 ft，
-      三说差到量级，navweaps 自注各源无定论；并列不裁。
-
-  - about: weapon:525in-50-mk1
-    field: weapon.elevation.max
-    value: 70
-    unit: deg
-    src: [navweaps-525in-50-mk1, navypedia-kgv]
-    valid: { from: 1937-01-01 }
-    confidence: B
-    note: navweaps 与 navypedia 均 70°；RMG 写 80°，并列不裁。
-
-  - about: weapon:2pdr-mk8
-    field: weapon.designation
-    value: 2-pdr (40 mm) QF Mk VIII 八联 pom-pom
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: weapon:2pdr-mk8
-    field: weapon.nation
-    value: united_kingdom
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: weapon:2pdr-mk8
-    field: weapon.bore
-    value: 40
-    unit: mm
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: weapon:2pdr-mk8
-    field: weapon.projectile_weight
-    value: 0.82
-    unit: kg
-    qual: { shell_type: he }
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: RMG 原值 1.81 lb。
-
-  - about: weapon:2pdr-mk8
-    field: weapon.muzzle_velocity
-    value: 701
-    unit: mps
-    qual: { shell_type: he }
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: RMG 原值 2,300 ft/s。
-
-  - about: weapon:2pdr-mk8
-    field: weapon.rate_of_fire
-    value: 115
-    unit: rpm
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: B
-
-  - about: weapon:2pdr-mk8
-    field: weapon.range.max
-    value: 4572
-    unit: m
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: 5,000 yd；Mk VI* 座为 6,800 yd（型号不同，非分歧）。
-
-  - about: weapon:up-rocket
-    field: weapon.designation
-    value: UP（Unrotated Projectile）二十管火箭发射器
-    src: [navypedia-kgv, navweaps-up-rockets]
-    valid: { from: 1940-10-01, to: 1941-12-31 }
-    confidence: B
-    note: 1940 年装 4 座二十管（B 炮塔顶 1、Y 炮塔顶 2、舰尾 1），1941 年末拆除。实战无效，是英国战时应急产物。
-
-  - about: weapon:up-rocket
-    field: weapon.nation
-    value: united_kingdom
-    src: [navypedia-kgv, navweaps-up-rockets]
-    valid: { from: 1940-10-01 }
-    confidence: B
-
-  - about: weapon:up-rocket
-    field: weapon.category
-    value: rocket
-    src: [navweaps-up-rockets]
-    valid: { from: 1940-10-01, to: 1941-12-31 }
-    confidence: B
-
-  - about: weapon:up-rocket
-    field: weapon.in_service_from
-    value: "1940"
-    unit: date
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: B
-
-  - about: weapon:up-rocket
-    field: weapon.in_service_to
-    value: "1941"
-    unit: date
-    src: [navypedia-kgv]
-    valid: { from: 1941-12-31 }
-    confidence: B
-    note: >-
-      navypedia 记「late 1941」拆除 4 座 20 管 UP，精确日期未获取。
-
-  - about: weapon:20mm-oerlikon
-    field: weapon.designation
-    value: 20 mm Oerlikon Mk IIIA（单装 / Mk V 双联）
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1941-12-01 }
-    confidence: A
-
-  - about: weapon:20mm-oerlikon
-    field: weapon.nation
-    value: united_kingdom
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1941-12-01 }
-    confidence: B
-    note: 记装舰国的口径。原设计国瑞士，数据层没有 nation 之外的国别字段，故不另设。
-
-  - about: weapon:20mm-oerlikon
-    field: weapon.bore
-    value: 20
-    unit: mm
-    src: [rmg-kgv-guide]
-    valid: { from: 1941-12-01 }
-    confidence: A
-
-  - about: weapon:20mm-oerlikon
-    field: weapon.projectile_weight
-    value: 0.12
-    unit: kg
-    qual: { shell_type: he }
-    src: [rmg-kgv-guide]
-    valid: { from: 1941-12-01 }
-    confidence: B
-    note: RMG 原值 0.27 lb。
-
-  - about: weapon:20mm-oerlikon
-    field: weapon.muzzle_velocity
-    value: 844
-    qual: { shell_type: he }
-    unit: mps
-    qual: { shell_type: he }
-    src: [rmg-kgv-guide]
-    valid: { from: 1941-12-01 }
-    confidence: B
-    note: RMG 原值 2,770 ft/s。
-
-  - about: weapon:20mm-oerlikon
-    field: weapon.rate_of_fire
-    value: 450
-    unit: rpm
-    src: [rmg-kgv-guide]
-    valid: { from: 1941-12-01 }
-    confidence: B
-
-  - about: weapon:20mm-oerlikon
-    field: weapon.range.max
-    value: 4389
-    unit: m
-    src: [rmg-kgv-guide]
-    valid: { from: 1941-12-01 }
-    confidence: B
-    note: RMG 原值 4,800 yd。
-
-  - about: weapon:40mm-bofors
-    field: weapon.designation
-    value: 40 mm Bofors（美制 Mk II 四联 / 英制单装）
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1944-07-01 }
-    confidence: A
-
-  - about: weapon:40mm-bofors
-    field: weapon.nation
-    value: united_kingdom
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1944-07-01 }
-    confidence: B
-    note: 记装舰国口径。这批炮含美制 Mk II 四联与英制单装两种来源，原设计国为瑞典，本字段不表达设计国。
-
-  - about: weapon:40mm-bofors
-    field: weapon.bore
-    value: 40
-    unit: mm
-    src: [rmg-kgv-guide]
-    valid: { from: 1944-07-01 }
-    confidence: A
-
-  - about: weapon:40mm-bofors
-    field: weapon.projectile_weight
-    value: 0.9
-    unit: kg
-    qual: { shell_type: he }
-    src: [rmg-kgv-guide]
-    valid: { from: 1944-07-01 }
-    confidence: B
-    note: RMG 原值 1.98 lb。
-
-  - about: weapon:40mm-bofors
-    field: weapon.muzzle_velocity
-    value: 881
-    unit: mps
-    qual: { shell_type: he }
-    src: [rmg-kgv-guide]
-    valid: { from: 1944-07-01 }
-    confidence: B
-    note: RMG 原值 2,890 ft/s。
-
-  - about: weapon:40mm-bofors
-    field: weapon.rate_of_fire
-    value: 120
-    unit: rpm
-    src: [rmg-kgv-guide]
-    valid: { from: 1944-07-01 }
-    confidence: B
-
-  - about: weapon:40mm-bofors
-    field: weapon.range.aa_max
-    value: 5486
-    unit: m
-    src: [rmg-kgv-guide]
-    valid: { from: 1944-07-01 }
-    confidence: B
-    note: RMG 原值 18,000 ft；有效射程 2,500 yd。
-
-  # ============================================================ 炮位实例
-  - about: mount:kgv-14in-a
-    field: mount.label_name
-    value: A 炮塔
-    src: [navypedia-kgv, rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-14in-a
-    field: mount.weapon
-    value: weapon:14in-45-mk7
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-14in-a
-    field: mount.turret_designation
-    value: Mk III 四联
-    src: [navypedia-kgv, rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-14in-a
-    field: mount.type
-    value: quad_turret
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-14in-a
-    field: mount.barrels
-    value: 4
-    unit: count
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-14in-a
-    field: mount.count
-    value: 1
-    unit: count
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-    note: A 与 Y 各一座 Mk III，合计 2 座 8 门。
-
-  - about: mount:kgv-14in-a
-    field: mount.position
-    value: fore
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-14in-a
-    field: mount.weight
-    value: 1582000
-    unit: kg
-    src: [navweaps-14in-45-mk7]
-    valid: { from: 1940-10-01 }
-    confidence: A
-    note: 1,582 吨（1,557 mt）。双联 Mk II 为 915 吨。
-
-  - about: mount:kgv-14in-a
-    field: mount.elevation.max
-    value: 40
-    unit: deg
-    src: [navweaps-14in-45-mk7, rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: A
-    note: 俯仰 -3° / +40°，俯仰速率 8°/s、旋回 2°/s，装填角 +5°。
-
-  - about: mount:kgv-14in-a
-    field: mount.installed
-    value: 1940-10-01
-    unit: date
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: B
-
-  - about: mount:kgv-14in-b
-    field: mount.label_name
-    value: B 炮塔
-    src: [navypedia-kgv, rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-14in-b
-    field: mount.weapon
-    value: weapon:14in-45-mk7
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-14in-b
-    field: mount.turret_designation
-    value: Mk II 双联
-    src: [navypedia-kgv, rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: A
-    note: 初版设计为三座四联（12 门），因吨位与防护取舍，B 塔降为双联，全舰 10 门。
-
-  - about: mount:kgv-14in-b
-    field: mount.type
-    value: twin_turret
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-14in-b
-    field: mount.barrels
-    value: 2
-    unit: count
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-14in-b
-    field: mount.count
-    value: 1
-    unit: count
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-14in-b
-    field: mount.position
-    value: superfiring_fore
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-14in-b
-    field: mount.weight
-    value: 915000
-    unit: kg
-    src: [navweaps-14in-45-mk7]
-    valid: { from: 1940-10-01 }
-    confidence: A
-    note: 915 吨（900.5 mt）。
-
-  - about: mount:kgv-14in-y
-    field: mount.label_name
-    value: Y 炮塔
-    src: [navypedia-kgv, rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: A
-    note: 英舰后炮塔惯例称 Y；navweaps 的训练角条目原文作 X，属该站指代习惯差异。
-
-  - about: mount:kgv-14in-y
-    field: mount.weapon
-    value: weapon:14in-45-mk7
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-14in-y
-    field: mount.turret_designation
-    value: Mk III 四联
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-14in-y
-    field: mount.type
-    value: quad_turret
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-14in-y
-    field: mount.barrels
-    value: 4
-    unit: count
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-14in-y
-    field: mount.count
-    value: 1
-    unit: count
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-14in-y
-    field: mount.position
-    value: aft
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-14in-y
-    field: mount.weight
-    value: 1582000
-    unit: kg
-    src: [navweaps-14in-45-mk7]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-525-twin
-    field: mount.label_name
-    value: 5.25 in 双联炮座
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-525-twin
-    field: mount.weapon
-    value: weapon:525in-50-mk1
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-525-twin
-    field: mount.turret_designation
-    value: HA/LA Mk I 双联
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-525-twin
-    field: mount.type
-    value: twin_turret
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-525-twin
-    field: mount.barrels
-    value: 2
-    unit: count
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: A
-
-  - about: mount:kgv-525-twin
-    field: mount.count
-    value: 8
-    unit: count
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: A
-    note: 8 座双联 16 门，前后各四座；本级首次把副炮做成两用炮。
-
-  - about: mount:kgv-525-twin
-    field: mount.position
-    value: midships
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: C
-    note: 实际为前后各四座、沿舯部两舷布置；position 枚举无更精确选项，取 midships。
-
-  - about: mount:kgv-525-twin
-    field: mount.weight
-    value: 77500
-    unit: kg
-    src: [navweaps-525in-50-mk1]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: 77.5 吨（78.7 mt）。
-
-  - about: mount:kgv-525-twin
-    field: mount.elevation.max
-    value: 70
-    unit: deg
-    src: [navweaps-525in-50-mk1, navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: RMG 写 80°，与 navweaps/navypedia 的 70° 并列不裁。
-
-  - about: mount:kgv-2pdr-octuple
-    field: mount.label_name
-    value: 八联 2-pdr pom-pom
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1940-10-01, to: 1941-11-30 }
-    confidence: A
-
-  - about: mount:kgv-2pdr-octuple
-    field: mount.weapon
-    value: weapon:2pdr-mk8
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01, to: 1941-11-30 }
-    confidence: A
-
-  - about: mount:kgv-2pdr-octuple
-    field: mount.type
-    value: other
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01, to: 1941-11-30 }
-    confidence: C
-    note: 八联座，mount.type 枚举无 octuple，取 other。
-
-  - about: mount:kgv-2pdr-octuple
-    field: mount.barrels
-    value: 8
-    unit: count
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01, to: 1941-11-30 }
-    confidence: A
-
-  - about: mount:kgv-2pdr-octuple
-    field: mount.count
-    value: 4
-    unit: count
-    src: [rmg-kgv-guide, navypedia-kgv]
-    valid: { from: 1940-10-01, to: 1941-11-30 }
-    confidence: A
-    note: 1940 年 4 座（32 门）；1944-07 增至 8 座（64 门），见单舰文件。
-
-  - about: mount:kgv-2pdr-octuple
-    field: mount.weight
-    value: 16000
-    unit: kg
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01, to: 1941-11-30 }
-    confidence: C
-    note: 16 t 为 wiki 级页所给 Mk VI 八联座重，RMG 未给座重；标 C。
-
-  - about: mount:kgv-2pdr-octuple
-    field: mount.elevation.max
-    value: 80
-    unit: deg
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01, to: 1941-11-30 }
-    confidence: B
-    note: 俯仰 +80 / -10，速率 25°/s。
-
-  - about: mount:kgv-up-launcher
-    field: mount.label_name
-    value: UP 二十管火箭发射器
-    src: [navypedia-kgv, navweaps-up-rockets]
-    valid: { from: 1940-10-01, to: 1941-12-31 }
-    confidence: B
-
-  - about: mount:kgv-up-launcher
-    field: mount.weapon
-    value: weapon:up-rocket
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01, to: 1941-12-31 }
-    confidence: B
-
-  - about: mount:kgv-up-launcher
-    field: mount.type
-    value: other
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01, to: 1941-12-31 }
-    confidence: C
-    note: 火箭发射器，枚举无对应值，取 other。
-
-  - about: mount:kgv-up-launcher
-    field: mount.barrels
-    value: 20
-    unit: count
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01, to: 1941-12-31 }
-    confidence: A
-    note: 每座 20 管。
-
-  - about: mount:kgv-up-launcher
-    field: mount.count
-    value: 4
-    unit: count
-    src: [navypedia-kgv, rmg-kgv-guide]
-    valid: { from: 1940-10-01, to: 1941-12-31 }
-    confidence: A
-    note: B 炮塔顶 1、Y 炮塔顶 2、舰尾 1。
-
-  - about: mount:kgv-up-launcher
-    field: mount.installed
-    value: 1940-10-01
-    unit: date
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: B
-
-  - about: mount:kgv-up-launcher
-    field: mount.removed
-    value: 1941-12-31
-    unit: date
-    src: [navypedia-kgv]
-    valid: { from: 1941-12-31 }
-    confidence: B
-    note: navypedia 记「late 1941」，精确日期未获取。
-
-  # ============================================================ 火控与探测（本级共有部分）
-  - field: sensors.fire_control.rpc
-    value: none
-    src: [navweaps-14in-45-mk7]
-    valid: { from: 1940-10-01, to: 1944-12-31 }
-    confidence: B
-    note: >
-      navweaps 原话「The British battleships lacked RPC almost entirely until
-      late in the war.」。另有 Buxton 称 1945 年 KGV 装过 RP 40，
-      未获取原始出处，标为存疑，不写入 fact。
-
-  - field: sensors.director.count
-    value: 2
-    unit: count
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: C
-    note: 两座主炮指挥仪塔（前桅楼顶、主桅后），各配 15 ft 测距仪；RMG 未直接给数量，标 C。
-
-  - field: sensors.rangefinder.baseline
-    value: 12.5
-    unit: m
-    src: [rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: C
-    note: >
-      A / Y 炮塔内置 41 ft 测距仪（本报告换算 12.5 m）；B 炮塔为 30 ft
-      （9.14 m），同舰不同炮位，不是两种说法，故只写一条并在此注明。
-
-  # ============================================================ 航空
-  - field: aviation.catapult.count
-    value: 1
-    unit: count
-    src: [navypedia-kgv, rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: A
-    note: >
-      本级设计各配 1 座 D-III-H 双向弹射器。**各舰拆除时间不同**：
-      首舰 King George V 于 1944-02~06 利物浦改装中拆除，
-      该节点写单舰文件，不在舰级时间窗里切段。
-
-  - field: aviation.catapult.type
-    value: D-III-H 双向弹射器
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: B
-
-  - field: aviation.aircraft.capacity
-    value: 2
-    unit: count
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    comparable: false
-    note: >
-      navypedia 记 2 架 seaplanes；编制表另有 2–4 架一说，口径不同。
-      【2026-11-18】标 comparable: false —— 这里数是「水上飞机搭载数」，
-      而光辉级那栏是「舰载机编制」（33 / 41 / 57），两者不是同一个度量。
-      同一格里并排显示会让人以为 KGV 只带得动 2 架飞机。
-
-  - field: aviation.aircraft.types
-    value: Walrus / Swordfish / Seafox
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: navypedia 列 Walrus、Swordfish、Seafox；首舰 1941 年初实载 2 架 Walrus（带 ASV 11N 雷达）。
-
-  # ============================================================ 编制
-  - field: service.complement.standard
-    value: 1422
-    unit: persons
-    src: [navypedia-kgv, rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: >
-      navypedia 与 wiki 级页均 1,422（1941）。maritimequest 给平时 1,422 /
-      战时 1,511；wiki 单舰页的 1,314–1,631 为 E 层未采信。
-
-  # ============================================================ 火控 — 武器实体
-  # 型号身份三条；数量与配置说明在 sensors.director.* 与下方的 note 里。
-  # 型号首服役年（weapon.in_service_from）**未获取**，不写。
-
-  - about: weapon:hacs-mk4
-    field: weapon.designation
-    value: HACS Mk IVGB 高角炮指挥仪（High Angle Control System）
-    src: [navypedia-kgv, rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: >
-      **4 部**，为本级首两舰（King George V、Prince of Wales）独有配置；
-      本级后续舰改用 Mk V / Mk VI。四部指挥仪配 5.25 in 两用炮，
-      与主炮的 Admiralty Fire Control Table Mk IX 是两套系统。
-      **本舰以外**：胡德号上装的是 HACS Mk I 与 Mk III*，不是这一型，
-      不要把这型挂到胡德号上。
-      探测/跟踪距离等参数本站无来源，不写。
-
-  - about: weapon:hacs-mk4
-    field: weapon.nation
-    value: united_kingdom
-    src: [navypedia-kgv, rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: B
-
-  - about: weapon:hacs-mk4
-    field: weapon.category
-    value: fire_control
-    src: [navypedia-kgv, rmg-kgv-guide]
-    valid: { from: 1940-10-01 }
-    confidence: B
-
-  # ============================================================ 舰载机 — 武器实体
-  - about: weapon:walrus
-    field: weapon.designation
-    value: Supermarine Walrus 舰载两栖侦察机
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: B
-    note: >
-      本舰 1941 年初实载 2 架，部分装 ASV II 型对海搜索雷达；
-      编制表另给 2–4 架（口径不同，见 aviation.aircraft.capacity 的 note）。
-      1944 年拆除弹射器后不再搭载。
-
-  - about: weapon:walrus
-    field: weapon.nation
-    value: united_kingdom
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: B
-
-  - about: weapon:walrus
-    field: weapon.category
-    value: aircraft
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: B
-
-  - about: weapon:seafox
-    field: weapon.designation
-    value: Fairey Seafox 舰载水上侦察机
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: C
-    note: >
-      仅在 navypedia 的舰载机型号清单（Walrus / Swordfish / Seafox）中出现，
-      **本舰实际搭载该型的影像或日志证据未获取**，故记 C。
-      不写数量、不写搭载时段——除这一句型号清单外没有别的材料。
-
-  - about: weapon:seafox
-    field: weapon.nation
-    value: united_kingdom
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: C
-
-  - about: weapon:seafox
-    field: weapon.category
-    value: aircraft
-    src: [navypedia-kgv]
-    valid: { from: 1940-10-01 }
-    confidence: C
+- field: identity.name_original
+  value: King George V class
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1936-07-29
+  confidence: A
+  note: '级名取自首舰舰名。五舰：King George V / Prince of Wales / Duke of York（ex-Anson）/ Anson（ex-Jellicoe）/ Howe（ex-Beatty）。 注意 navypedia 另有一级 1912 年的 King George V 战列舰，与本级无关。
+
+    '
+- field: identity.ship_type
+  value: battleship
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1936-07-29
+  confidence: A
+  note: 英国官方分类为 battleship；建成时是世界上最后一级按条约限制设计的主力舰。
+- field: identity.nation
+  value: united_kingdom
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1936-07-29
+  confidence: A
+- field: identity.operator
+  value: Royal Navy
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: A
+- field: identity.era
+  value: ww2
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+    to: 1945-09-02
+  confidence: A
+  note: '按服役期定位：五舰 1940-1942 年陆续服役，全部在二战期间作战； 战后 1949-1950 年陆续转入预备役，1957-1958 年拆解。
+
+    '
+- field: identity.building_program
+  value: 1936 年造舰计划（华盛顿/伦敦条约 35,000 t 与 14 英寸主炮限制下设计）
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1936-07-29
+  confidence: B
+  note: 'RMG 原话「designed by the Admiralty in 1936 under the restrictions of the Washington Treaty」。设计在 1936 年定案，五舰分两批订购。
+
+    '
+- field: dimensions.length.oa
+  value: 227.1
+  unit: m
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+  note: 'RMG 原值 745 ft 0.13 in，另作 745 ft 1 in；两者差 2 cm 级，公制同为 227.1 m，属英制取整口径，不构成分歧。
+
+    '
+- field: dimensions.length.wl
+  value: 225.6
+  unit: m
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: RMG 原值 740 ft 0.25 in（本报告换算 225.55 m）。其余来源未给水线长。
+- field: dimensions.length.pp
+  value: 213.4
+  unit: m
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+  note: RMG 原值 700 ft 0.25 in；navypedia 同给 213.4 m。
+- field: dimensions.beam.max
+  value: 34.2
+  unit: m
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: A
+  note: 'RMG 原值 112 ft 4.25 in（本报告换算 34.24 m）。含防雷突出部/外板突出部； navypedia 的 31.4 与 wiki 级页的 31.5 都是水线宽，不是最大宽。
+
+    '
+- field: dimensions.beam.wl
+  value: 31.5
+  unit: m
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: RMG 原值 103 ft 2.56 in；navypedia 记 31.4 m，差 1 dm 级，疑为换算取整。
+- field: dimensions.draught.mean
+  value: 8.84
+  unit: m
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+    to: 1944-05-31
+  confidence: B
+  note: '1940 年标准状态平均吃水。RMG 原值 29 ft（mean）； navypedia 给 8.84 m（deep load 9.90 m 为平均值）。与排水量状态绑定解读。
+
+    '
+- field: dimensions.draught.max
+  value: 9.9
+  unit: m
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+    to: 1944-05-31
+  confidence: B
+  note: '1940 年深载平均吃水。RMG 原值 32 ft 6 in。 另有 10.2 m（33 ft 7.5 in）之说，指战时超载后的实际吃水， wiki 级页给出但属 E 层，本表未采信为 fact，仅在此并列。
+
+    '
+- field: dimensions.depth.molded
+  value: 15.6
+  unit: m
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: RMG 原值 51 ft 1.31 in（本报告换算）。其余来源未给型深。
+- field: displacement.standard
+  value: 36727
+  unit: t
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1937-01-01
+    to: 1940-09-30
+  confidence: B
+  note: '设计标准排水量，navypedia 与 maritimequest/tynebuiltships 的 36,730 t 同源（差 3 t 为换算）。条约口径的 35,000 t 是设计上限，实际设计已超。
+
+    '
+- field: displacement.standard
+  value: 38031
+  unit: t
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+    to: 1944-05-31
+  confidence: A
+  note: 'RMG 记 1940 年标准排水量 38,031 t，比设计值多约 1,300 t，原因是建成后 增设高炮、雷达与装甲补强。wiki 单舰页把同一数值称作 normal load， 与 RMG 的 Standard 不同名——同名不同义，引用时须带口径。
+
+    '
+- field: displacement.full
+  value: 42076
+  unit: t
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1937-01-01
+    to: 1940-09-30
+  confidence: B
+  note: 设计满载排水量；maritimequest/tyne 记 42,080 t，差 4 t 为换算。
+- field: displacement.deep
+  value: 42237
+  unit: t
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+    to: 1944-05-31
+  confidence: B
+  note: '1945 年 deep load。kbismarck 的最终战参战表另给 44,400 mt， 比此值低 60 t，疑为其自算的战时满载，并列不裁。 空载与「最大排水量」两档：所有来源都不设，未获取，故不写 0。
+
+    '
+- field: propulsion.plant_type
+  value: steam_turbine
+  src:
+  - navypedia-kgv
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: A
+- field: propulsion.boiler.count
+  value: 8
+  unit: count
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+- field: propulsion.boiler.type
+  value: Admiralty 三鼓小管锅炉（带过热器）
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+  note: 'RMG 原话「8 x Admiralty 3-drum small-tube with superheaters」。 八台锅炉在空间与燃油经济性上都优于胡德号的二十四台，是这一级 动力舱设计的核心取舍。
+
+    '
+- field: propulsion.boiler.pressure
+  value: 27.6
+  unit: atm
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: 'RMG 原值「Working pressure (max): 400 lb/sq in」，本报告换算为 27.6 atm （400 psi ≈ 27.58 atm）。蒸汽温度：未获取，不填。
+
+    '
+- field: propulsion.turbine.count
+  value: 4
+  unit: count
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+- field: propulsion.turbine.type
+  value: Parsons 单级减速齿轮汽轮机
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+  note: RMG 原话「4 x Parsons single-reduction geared, 4 shafts」。
+- field: propulsion.turbine.manufacturer
+  value: Vickers-Armstrongs Ltd, Barrow
+  src:
+  - tyne-kgv
+  valid:
+    from: 1940-10-01
+  confidence: C
+  note: 仅 tynebuiltships 给出主机承造厂（原话「Engines by Vickers-Armstrongs Ltd, Barrow」），孤证。
+- field: propulsion.power.design
+  value: 110000
+  unit: hp
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+  note: '设计持续功率。另有试航 125,000 shp 一说，只见于 wiki 单舰页 infobox， 疑为 overload 功率且未找到原始试航报告，E 层不采信为 fact，仅此并列。 同一页正文的设计分档：标准排水量正常输出 28.5 kn、满载 27.5 kn； overload 时分别为 29.25 / 28.25 kn。
+
+    '
+- field: propulsion.speed.design
+  value: 28
+  unit: kn
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+- field: propulsion.speed.trial
+  value: 28.25
+  unit: kn
+  src:
+  - tyne-kgv
+  valid:
+    from: 1941-01-01
+  confidence: C
+  note: 'tynebuiltships 记 28.25 kn，与 wiki 单舰页「overload 28.25 kn at full load」数值吻合，疑为试航实测档。wiki 另记 28.0 kn（1941 trials）， E 层未采信；两说并列不裁。
+
+    '
+- field: propulsion.shafts
+  value: 4
+  unit: count
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+- field: propulsion.propeller.count
+  value: 4
+  unit: count
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: A
+- field: propulsion.propeller.diameter
+  value: 4.42
+  unit: m
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: RMG 原值 14.5 ft（= 14 ft 6 in），本报告换算 4.42 m。两种写法是同一个数。
+- field: propulsion.propeller.type
+  value: 三叶锰青铜
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: B
+- field: propulsion.fuel.capacity
+  value: 3700
+  unit: t
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+    to: 1941-12-31
+  confidence: B
+  note: 'navypedia 记「3700 oil, later 4030」——后期增到 4,030 t，但**改装时点未获取**， 故不另立一条带推断时间窗的 fact，只在此注明。 另有 3,918 t（wiki 单舰页，E 层未采信）与 max 4,100 / avg 3,886 （naval-history.net，未登记来源）两说，并列不裁。
+
+    '
+- field: propulsion.range.max
+  value: 15600
+  unit: nmi
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: C
+  note: 'navypedia 的 10 kn 档。明显高于其它来源，疑为理论极值/未扣储备。 与 14,000 nmi 并列，见下条。
+
+    '
+- field: propulsion.range.at_speed
+  value: 10
+  unit: kn
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: C
+- field: propulsion.range.max
+  value: 14000
+  unit: nmi
+  src:
+  - maritimequest-kgv
+  valid:
+    from: 1940-10-01
+  confidence: C
+  note: '10 kn 档 14,000 nmi。另有 14,400 nmi（wiki 单舰页设计值）与 5,400 nmi @18 kn（wiki infobox）两说，均属 E 层，未采信为 fact。 实战反证：1941-05-27 追击俾斯麦后 KGV 因缺油几乎必须离场， 纸面续航不可直接当作战半径用。
+
+    '
+- field: propulsion.range.at_speed
+  value: 10
+  unit: kn
+  src:
+  - maritimequest-kgv
+  valid:
+    from: 1940-10-01
+  confidence: C
+- field: protection.scheme
+  value: all_or_nothing
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: 'navypedia 原话「Here, as well as on Nelson, the principle "all or nothing" was used.」。主带无倾角，靠「深带」而不是「斜带」对付水中弹。
+
+    '
+- field: protection.armor.thickness
+  value: 381
+  unit: mm
+  qual:
+    part: belt
+    region: main
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: '弹药库段主带，重量口径（每平方英尺 40 磅 = 1 英寸）。名义厚度 373 mm 只见于 wiki 级页转引，E 层未采信。带高 7.16 m、长 126.5 m， 覆盖两端炮座之间的 citadel；上段高 4.62 m、下段 2.54 m。 **同一带在机舱段为 356 mm（名义 349 mm）**——同一条带的不同舱段， 不是两种说法，故只写一条、此处注明。下段自 381
+    mm 递减至 140 mm （弹药库段）/ 114 mm（机舱段）。kbismarck 的 348–374 mm 区间即由此派生。
+
+    '
+- field: protection.armor.angle
+  value: 0
+  unit: deg
+  qual:
+    part: belt
+    region: main
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: 'navypedia 原话「The main belt placed without a declination」。 0° 是真实的「无倾角」记载，不是未获取。
+
+    '
+- field: protection.armor.thickness
+  value: 152
+  unit: mm
+  qual:
+    part: deck
+    region: main
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: 'citadel 内主装甲甲板（弹药库上方）。机舱上方降为 127 mm。 wiki 级页的分层口径为 149 mm 非渗碳装甲 + 13 mm Ducol（共 232 mm 含天甲板 32 mm），属 E 层转引，未采信为 fact，仅此并列。
+
+    '
+- field: protection.armor.thickness
+  value: 127
+  unit: mm
+  qual:
+    part: deck
+    region: lower
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: 'citadel 外的下甲板 127–64 mm；尾部 114 mm（舵机上方 127 mm）， 由 102 mm 舱壁封闭。
+
+    '
+- field: protection.armor.thickness
+  value: 324
+  unit: mm
+  qual:
+    part: turret
+    region: face
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+  note: '炮塔正面。相对同期战列舰偏薄，是「把重量让给弹药库防护」的取舍； 该级炮塔低矮、正面平直，远距离抗弹反而有补偿。
+
+    '
+- field: protection.armor.thickness
+  value: 224
+  unit: mm
+  qual:
+    part: turret
+    region: side
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: '炮塔侧面 224–174 mm。navypedia 汇总行给「turrets: 330 - 152」， 与本条的 324 面 / 224–174 侧不是同一分区口径；330 疑含背板或取整。 顶部 149 mm 只见于 wiki 级页，E 层未采信。
+
+    '
+- field: protection.armor.thickness
+  value: 330
+  unit: mm
+  qual:
+    part: barbette
+    region: main
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: 'navypedia：侧面 330 mm、向舯部 280 mm、向舰端 305 mm。 wiki 级页按炮塔前后分区给 324/298/275 mm，分区方式不同， 两组并列不裁；单舰 infobox 的 330 与本条一致。
+
+    '
+- field: protection.armor.thickness
+  value: 114
+  unit: mm
+  qual:
+    part: conning_tower
+    region: main
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: 'navypedia：司令塔侧 114–76 mm、顶/甲板/通话管 51 mm。 wiki 级页给 102/75/38 mm，差 10 mm 级，疑为名义值 vs 含衬板， 并列不裁。
+
+    '
+- field: protection.armor.thickness
+  value: 305
+  unit: mm
+  qual:
+    part: bulkhead
+    region: fore
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: 前部横向装甲舱壁，下甲板以上；下甲板以下降至 51 mm。
+- field: protection.armor.thickness
+  value: 254
+  unit: mm
+  qual:
+    part: bulkhead
+    region: aft
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: B
+- field: protection.armor.weight
+  value: 12413
+  unit: t
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: 'RMG 重量分组表：Hull 13,830 t / Outfit 1,619 / Machinery 2,768 / Armament 7,401 / Armour 12,413。五项相加 32,031 t，与隐含分母 34,133 t 差 2,102 t，RMG 未解释。
+
+    '
+- field: protection.armor.weight_ratio
+  value: 32.5
+  unit: pct
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: RMG 原表直接给 32.5%（分母 34,133 t）。对照俾斯麦约 40%，差距即「防护让位给火力密度」的量化体现。
+- field: protection.underwater.depth
+  value: 4.1
+  unit: m
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: 'navypedia：防雷纵深 4.1 m，可抗 454 kg TNT 爆炸，最后一道纵舱壁 44 mm。 wiki 级页的设计指标 1,000 lb（=454 kg）与之同值，只是单位不同。 实战反证：PoW 沉没显示该防护扛不住轻得多的航空鱼雷。
+
+    '
+- field: protection.torpedo_bulge.type
+  value: 内置式防雷系统（internal anti-torpedo protection）
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: C
+  note: 'navypedia 只写「Internal anti-torpedo protection」，未给分舱细节。 wiki 级页的 void-liquid-void 分层与 13 ft 宽度属 E 层转引，未采信。
+
+    '
+- field: armament.mount.summary
+  value: 10 × 14 in/45 BL Mk VII（2 座 Mk III 四联：A 前、Y 后； 1 座 Mk II 双联：B 前背负）+ 16 × 5.25 in/50 QF Mk I （8 座双联 HA/LA Mk I）+ 32 × 2-pdr 八联 pom-pom（4 座） + 4 座 UP 二十管火箭 + 1 座 D-III-H 弹射器
+  src:
+  - navypedia-kgv
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+    to: 1941-11-30
+  confidence: A
+  note: '服役时基准配置。各舰建成状态已有差异（如 PoW 多 1 门 Bofors）， 本级只写首舰口径；逐年改装见 data/ships/king-george-v.yaml。 **鱼雷发射管：各来源装备表均无此项，但没有一条明文写「本舰无鱼雷」**， 故属「据装备表推定」，本表不写 0。
+
+    '
+- field: armament.torpedo.tubes
+  value: 0
+  unit: count
+  src:
+  - navypedia-kgv
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: C
+  note: '这不是「未获取」，是「来源一致地没有」：navypedia 装备行、RMG 武备表、wiki 两页装备表均无 TT。旁证：1941-05-27 Tovey 信号 「Any ship with torpedoes to close the BISMARCK」，若 KGV 有鱼雷 不必泛指；最终补雷的是 Dorsetshire。仍标 C，因为无明文否定。
+
+    '
+- about: weapon:14in-45-mk7
+  field: weapon.designation
+  value: 14 in/45 BL Mk VII
+  src:
+  - navweaps-14in-45-mk7
+  - rmg-kgv-guide
+  valid:
+    from: 1937-01-01
+  confidence: A
+- about: weapon:14in-45-mk7
+  field: weapon.nation
+  value: united_kingdom
+  src:
+  - navweaps-14in-45-mk7
+  valid:
+    from: 1937-01-01
+  confidence: A
+- about: weapon:14in-45-mk7
+  field: weapon.category
+  value: naval_gun
+  src:
+  - navweaps-14in-45-mk7
+  valid:
+    from: 1937-01-01
+  confidence: A
+- about: weapon:14in-45-mk7
+  field: weapon.bore
+  value: 356
+  unit: mm
+  src:
+  - navweaps-14in-45-mk7
+  valid:
+    from: 1937-01-01
+  confidence: A
+- about: weapon:14in-45-mk7
+  field: weapon.caliber_length
+  value: 45
+  unit: ratio
+  src:
+  - navweaps-14in-45-mk7
+  - rmg-kgv-guide
+  valid:
+    from: 1937-01-01
+  confidence: A
+  note: RMG 另给膛线长 45 calibres（630 in）。
+- about: weapon:14in-45-mk7
+  field: weapon.weight
+  value: 79588
+  unit: kg
+  src:
+  - navweaps-14in-45-mk7
+  valid:
+    from: 1937-01-01
+  confidence: B
+  note: 早期炮身裸重 79.588 t，后期 78.988 t。RMG 的「77 tons 14 cwt 84 lb」（裸）/「89 tons 2 cwt 84 lb」（含配重）为英制口径。
+- about: weapon:14in-45-mk7
+  field: weapon.projectile_weight
+  value: 721.2
+  unit: kg
+  qual:
+    shell_type: apc
+  src:
+  - navweaps-14in-45-mk7
+  - rmg-kgv-guide
+  valid:
+    from: 1937-01-01
+  confidence: A
+  note: APC Mk VIIb，1,590 lb。这是本炮最受争议的一点：同为 14 英寸，英国弹比美、日同类轻得多，换来更高初速与更大药室容比。
+- about: weapon:14in-45-mk7
+  field: weapon.muzzle_velocity
+  value: 757
+  unit: mps
+  qual:
+    shell_type: apc
+  src:
+  - navweaps-14in-45-mk7
+  valid:
+    from: 1937-01-01
+  confidence: B
+  note: '新炮 2,483 fps。navweaps 表列值；其注与 RMG 另给名义 2,475 fps （754 m/s）。炮队平均状态为 2,400 fps（732 m/s），非新炮名义值—— 三说并列不裁，本条取表列新炮值，余数记此。
+
+    '
+- about: weapon:14in-45-mk7
+  field: weapon.charge.weight
+  value: 153.3
+  unit: kg
+  qual:
+    charge_part: main
+    propellant: other
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1937-01-01
+  confidence: B
+  note: RMG 原值 338 lb，四包发射药。propellant 代号未获取，故记 other。
+- about: weapon:14in-45-mk7
+  field: weapon.rate_of_fire
+  value: 2
+  unit: rpm
+  src:
+  - navweaps-14in-45-mk7
+  - rmg-kgv-guide
+  valid:
+    from: 1937-01-01
+  confidence: A
+  note: 每门 2 发/分；wiki 单舰页称一次齐射约 30 s，属 E 层未采信。
+- about: weapon:14in-45-mk7
+  field: weapon.barrel_life
+  value: 340
+  unit: count
+  src:
+  - navweaps-14in-45-mk7
+  valid:
+    from: 1937-01-01
+  confidence: C
+  note: 疑为全装药名义寿命。与 RMG 的 375 发并列，差约 10%，两源均未给计算方法。
+- about: weapon:14in-45-mk7
+  field: weapon.barrel_life
+  value: 375
+  unit: count
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1937-01-01
+  confidence: C
+  note: 疑为含减装药训练弹的加权寿命。与 340 发并列不裁。
+- about: weapon:14in-45-mk7
+  field: weapon.ammo_outfit
+  value: 1100
+  unit: count
+  src:
+  - navweaps-14in-45-mk7
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: 全舰 1,100 发，分配 A 432 / B 216 / Y 452；每门定额 80、最大 100（RMG）。
+- about: weapon:14in-45-mk7
+  field: weapon.range.max
+  value: 33380
+  unit: m
+  src:
+  - navweaps-14in-45-mk7
+  valid:
+    from: 1937-01-01
+  confidence: B
+  note: 36,500 yd @ 40.7°。RMG 给 36,300 yd、maritimequest 给 38,560 yd，三说并列不裁（后两者未换算为 fact）。
+- about: weapon:14in-45-mk7
+  field: weapon.range.max_elevation
+  value: 40.7
+  unit: deg
+  src:
+  - navweaps-14in-45-mk7
+  valid:
+    from: 1937-01-01
+  confidence: B
+- about: weapon:525in-50-mk1
+  field: weapon.designation
+  value: 5.25 in/50 QF Mk I
+  src:
+  - navweaps-525in-50-mk1
+  - rmg-kgv-guide
+  valid:
+    from: 1937-01-01
+  confidence: A
+  note: RMG 该行首写「6 x 5.25in」、同段又写「8 x twin」，自相矛盾；以 8 座双联 16 门为准（其余来源一致）。
+- about: weapon:525in-50-mk1
+  field: weapon.nation
+  value: united_kingdom
+  src:
+  - navweaps-525in-50-mk1
+  - rmg-kgv-guide
+  valid:
+    from: 1937-01-01
+  confidence: A
+- about: weapon:525in-50-mk1
+  field: weapon.category
+  value: anti_aircraft_gun
+  src:
+  - navweaps-525in-50-mk1
+  valid:
+    from: 1937-01-01
+  confidence: B
+  note: 两用炮（HA/LA），分类按其对空主职能记 anti_aircraft_gun。
+- about: weapon:525in-50-mk1
+  field: weapon.bore
+  value: 133
+  unit: mm
+  src:
+  - navweaps-525in-50-mk1
+  valid:
+    from: 1937-01-01
+  confidence: A
+- about: weapon:525in-50-mk1
+  field: weapon.caliber_length
+  value: 50
+  unit: ratio
+  src:
+  - navweaps-525in-50-mk1
+  - rmg-kgv-guide
+  valid:
+    from: 1937-01-01
+  confidence: A
+- about: weapon:525in-50-mk1
+  field: weapon.projectile_weight
+  value: 36.3
+  unit: kg
+  qual:
+    shell_type: sap
+  src:
+  - navweaps-525in-50-mk1
+  - rmg-kgv-guide
+  valid:
+    from: 1937-01-01
+  confidence: A
+  note: 80 lb SAP/HE。这一口径是「人工装填的上限」，也正是它射速与随动不足的根源。
+- about: weapon:525in-50-mk1
+  field: weapon.muzzle_velocity
+  value: 814
+  unit: mps
+  qual:
+    shell_type: sap
+  src:
+  - navweaps-525in-50-mk1
+  valid:
+    from: 1937-01-01
+  confidence: B
+  note: 2,672 fps；RMG 给 2,600 ft/s（792 m/s），差 72 fps，疑为名义 vs 实测，并列不裁。
+- about: weapon:525in-50-mk1
+  field: weapon.rate_of_fire
+  value: 7.5
+  unit: rpm
+  src:
+  - navweaps-525in-50-mk1
+  - rmg-kgv-guide
+  valid:
+    from: 1937-01-01
+  confidence: A
+  note: 设计 10–12 发/分，实战 7–8 发/分（炮室狭窄、人工装填）；取 7.5 为区间中值，note 保留原区间。1941-05-27 Patterson 战报记副炮 77 发/门无故障。
+- about: weapon:525in-50-mk1
+  field: weapon.barrel_life
+  value: 750
+  unit: count
+  src:
+  - navweaps-525in-50-mk1
+  - rmg-kgv-guide
+  valid:
+    from: 1937-01-01
+  confidence: B
+- about: weapon:525in-50-mk1
+  field: weapon.ammo_outfit
+  value: 400
+  unit: count
+  src:
+  - navweaps-525in-50-mk1
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: 每门 400 发。
+- about: weapon:525in-50-mk1
+  field: weapon.range.max
+  value: 21397
+  unit: m
+  src:
+  - navweaps-525in-50-mk1
+  - rmg-kgv-guide
+  valid:
+    from: 1937-01-01
+  confidence: B
+  note: 23,400 yd @ 45°。
+- about: weapon:525in-50-mk1
+  field: weapon.range.aa_max
+  value: 14170
+  unit: m
+  src:
+  - navweaps-525in-50-mk1
+  valid:
+    from: 1937-01-01
+  confidence: C
+  note: '46,500 ft @ 70°。RMG 给 29,544 ft @ 80°、maritimequest 给 49,000 ft， 三说差到量级，navweaps 自注各源无定论；并列不裁。
+
+    '
+- about: weapon:525in-50-mk1
+  field: weapon.elevation.max
+  value: 70
+  unit: deg
+  src:
+  - navweaps-525in-50-mk1
+  - navypedia-kgv
+  valid:
+    from: 1937-01-01
+  confidence: B
+  note: navweaps 与 navypedia 均 70°；RMG 写 80°，并列不裁。
+- about: weapon:2pdr-mk8
+  field: weapon.designation
+  value: 2-pdr (40 mm) QF Mk VIII 八联 pom-pom
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: weapon:2pdr-mk8
+  field: weapon.nation
+  value: united_kingdom
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: weapon:2pdr-mk8
+  field: weapon.bore
+  value: 40
+  unit: mm
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: weapon:2pdr-mk8
+  field: weapon.projectile_weight
+  value: 0.82
+  unit: kg
+  qual:
+    shell_type: he
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: RMG 原值 1.81 lb。
+- about: weapon:2pdr-mk8
+  field: weapon.muzzle_velocity
+  value: 701
+  unit: mps
+  qual:
+    shell_type: he
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: RMG 原值 2,300 ft/s。
+- about: weapon:2pdr-mk8
+  field: weapon.rate_of_fire
+  value: 115
+  unit: rpm
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: B
+- about: weapon:2pdr-mk8
+  field: weapon.range.max
+  value: 4572
+  unit: m
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: 5,000 yd；Mk VI* 座为 6,800 yd（型号不同，非分歧）。
+- about: weapon:up-rocket
+  field: weapon.designation
+  value: UP（Unrotated Projectile）二十管火箭发射器
+  src:
+  - navypedia-kgv
+  - navweaps-up-rockets
+  valid:
+    from: 1940-10-01
+    to: 1941-12-31
+  confidence: B
+  note: 1940 年装 4 座二十管（B 炮塔顶 1、Y 炮塔顶 2、舰尾 1），1941 年末拆除。实战无效，是英国战时应急产物。
+- about: weapon:up-rocket
+  field: weapon.nation
+  value: united_kingdom
+  src:
+  - navypedia-kgv
+  - navweaps-up-rockets
+  valid:
+    from: 1940-10-01
+  confidence: B
+- about: weapon:up-rocket
+  field: weapon.category
+  value: rocket
+  src:
+  - navweaps-up-rockets
+  valid:
+    from: 1940-10-01
+    to: 1941-12-31
+  confidence: B
+- about: weapon:up-rocket
+  field: weapon.in_service_from
+  value: '1940'
+  unit: date
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: B
+- about: weapon:up-rocket
+  field: weapon.in_service_to
+  value: '1941'
+  unit: date
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1941-12-31
+  confidence: B
+  note: navypedia 记「late 1941」拆除 4 座 20 管 UP，精确日期未获取。
+- about: weapon:20mm-oerlikon
+  field: weapon.designation
+  value: 20 mm Oerlikon Mk IIIA（单装 / Mk V 双联）
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1941-12-01
+  confidence: A
+- about: weapon:20mm-oerlikon
+  field: weapon.nation
+  value: united_kingdom
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1941-12-01
+  confidence: B
+  note: 记装舰国的口径。原设计国瑞士，数据层没有 nation 之外的国别字段，故不另设。
+- about: weapon:20mm-oerlikon
+  field: weapon.bore
+  value: 20
+  unit: mm
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1941-12-01
+  confidence: A
+- about: weapon:20mm-oerlikon
+  field: weapon.projectile_weight
+  value: 0.12
+  unit: kg
+  qual:
+    shell_type: he
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1941-12-01
+  confidence: B
+  note: RMG 原值 0.27 lb。
+- about: weapon:20mm-oerlikon
+  field: weapon.muzzle_velocity
+  value: 844
+  qual:
+    shell_type: he
+  unit: mps
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1941-12-01
+  confidence: B
+  note: RMG 原值 2,770 ft/s。
+- about: weapon:20mm-oerlikon
+  field: weapon.rate_of_fire
+  value: 450
+  unit: rpm
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1941-12-01
+  confidence: B
+- about: weapon:20mm-oerlikon
+  field: weapon.range.max
+  value: 4389
+  unit: m
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1941-12-01
+  confidence: B
+  note: RMG 原值 4,800 yd。
+- about: weapon:40mm-bofors
+  field: weapon.designation
+  value: 40 mm Bofors（美制 Mk II 四联 / 英制单装）
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1944-07-01
+  confidence: A
+- about: weapon:40mm-bofors
+  field: weapon.nation
+  value: united_kingdom
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1944-07-01
+  confidence: B
+  note: 记装舰国口径。这批炮含美制 Mk II 四联与英制单装两种来源，原设计国为瑞典，本字段不表达设计国。
+- about: weapon:40mm-bofors
+  field: weapon.bore
+  value: 40
+  unit: mm
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1944-07-01
+  confidence: A
+- about: weapon:40mm-bofors
+  field: weapon.projectile_weight
+  value: 0.9
+  unit: kg
+  qual:
+    shell_type: he
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1944-07-01
+  confidence: B
+  note: RMG 原值 1.98 lb。
+- about: weapon:40mm-bofors
+  field: weapon.muzzle_velocity
+  value: 881
+  unit: mps
+  qual:
+    shell_type: he
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1944-07-01
+  confidence: B
+  note: RMG 原值 2,890 ft/s。
+- about: weapon:40mm-bofors
+  field: weapon.rate_of_fire
+  value: 120
+  unit: rpm
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1944-07-01
+  confidence: B
+- about: weapon:40mm-bofors
+  field: weapon.range.aa_max
+  value: 5486
+  unit: m
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1944-07-01
+  confidence: B
+  note: RMG 原值 18,000 ft；有效射程 2,500 yd。
+- about: mount:kgv-14in-a
+  field: mount.label_name
+  value: A 炮塔
+  src:
+  - navypedia-kgv
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-14in-a
+  field: mount.weapon
+  value: weapon:14in-45-mk7
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-14in-a
+  field: mount.turret_designation
+  value: Mk III 四联
+  src:
+  - navypedia-kgv
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-14in-a
+  field: mount.type
+  value: quad_turret
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-14in-a
+  field: mount.barrels
+  value: 4
+  unit: count
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-14in-a
+  field: mount.count
+  value: 1
+  unit: count
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+  note: A 与 Y 各一座 Mk III，合计 2 座 8 门。
+- about: mount:kgv-14in-a
+  field: mount.position
+  value: fore
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-14in-a
+  field: mount.weight
+  value: 1582000
+  unit: kg
+  src:
+  - navweaps-14in-45-mk7
+  valid:
+    from: 1940-10-01
+  confidence: A
+  note: 1,582 吨（1,557 mt）。双联 Mk II 为 915 吨。
+- about: mount:kgv-14in-a
+  field: mount.elevation.max
+  value: 40
+  unit: deg
+  src:
+  - navweaps-14in-45-mk7
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: A
+  note: 俯仰 -3° / +40°，俯仰速率 8°/s、旋回 2°/s，装填角 +5°。
+- about: mount:kgv-14in-a
+  field: mount.installed
+  value: 1940-10-01
+  unit: date
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: B
+- about: mount:kgv-14in-b
+  field: mount.label_name
+  value: B 炮塔
+  src:
+  - navypedia-kgv
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-14in-b
+  field: mount.weapon
+  value: weapon:14in-45-mk7
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-14in-b
+  field: mount.turret_designation
+  value: Mk II 双联
+  src:
+  - navypedia-kgv
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: A
+  note: 初版设计为三座四联（12 门），因吨位与防护取舍，B 塔降为双联，全舰 10 门。
+- about: mount:kgv-14in-b
+  field: mount.type
+  value: twin_turret
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-14in-b
+  field: mount.barrels
+  value: 2
+  unit: count
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-14in-b
+  field: mount.count
+  value: 1
+  unit: count
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-14in-b
+  field: mount.position
+  value: superfiring_fore
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-14in-b
+  field: mount.weight
+  value: 915000
+  unit: kg
+  src:
+  - navweaps-14in-45-mk7
+  valid:
+    from: 1940-10-01
+  confidence: A
+  note: 915 吨（900.5 mt）。
+- about: mount:kgv-14in-y
+  field: mount.label_name
+  value: Y 炮塔
+  src:
+  - navypedia-kgv
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: A
+  note: 英舰后炮塔惯例称 Y；navweaps 的训练角条目原文作 X，属该站指代习惯差异。
+- about: mount:kgv-14in-y
+  field: mount.weapon
+  value: weapon:14in-45-mk7
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-14in-y
+  field: mount.turret_designation
+  value: Mk III 四联
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-14in-y
+  field: mount.type
+  value: quad_turret
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-14in-y
+  field: mount.barrels
+  value: 4
+  unit: count
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-14in-y
+  field: mount.count
+  value: 1
+  unit: count
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-14in-y
+  field: mount.position
+  value: aft
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-14in-y
+  field: mount.weight
+  value: 1582000
+  unit: kg
+  src:
+  - navweaps-14in-45-mk7
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-525-twin
+  field: mount.label_name
+  value: 5.25 in 双联炮座
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-525-twin
+  field: mount.weapon
+  value: weapon:525in-50-mk1
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-525-twin
+  field: mount.turret_designation
+  value: HA/LA Mk I 双联
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-525-twin
+  field: mount.type
+  value: twin_turret
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-525-twin
+  field: mount.barrels
+  value: 2
+  unit: count
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: A
+- about: mount:kgv-525-twin
+  field: mount.count
+  value: 8
+  unit: count
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: A
+  note: 8 座双联 16 门，前后各四座；本级首次把副炮做成两用炮。
+- about: mount:kgv-525-twin
+  field: mount.position
+  value: midships
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: C
+  note: 实际为前后各四座、沿舯部两舷布置；position 枚举无更精确选项，取 midships。
+- about: mount:kgv-525-twin
+  field: mount.weight
+  value: 77500
+  unit: kg
+  src:
+  - navweaps-525in-50-mk1
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: 77.5 吨（78.7 mt）。
+- about: mount:kgv-525-twin
+  field: mount.elevation.max
+  value: 70
+  unit: deg
+  src:
+  - navweaps-525in-50-mk1
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: RMG 写 80°，与 navweaps/navypedia 的 70° 并列不裁。
+- about: mount:kgv-2pdr-octuple
+  field: mount.label_name
+  value: 八联 2-pdr pom-pom
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+    to: 1941-11-30
+  confidence: A
+- about: mount:kgv-2pdr-octuple
+  field: mount.weapon
+  value: weapon:2pdr-mk8
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+    to: 1941-11-30
+  confidence: A
+- about: mount:kgv-2pdr-octuple
+  field: mount.type
+  value: other
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+    to: 1941-11-30
+  confidence: C
+  note: 八联座，mount.type 枚举无 octuple，取 other。
+- about: mount:kgv-2pdr-octuple
+  field: mount.barrels
+  value: 8
+  unit: count
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+    to: 1941-11-30
+  confidence: A
+- about: mount:kgv-2pdr-octuple
+  field: mount.count
+  value: 4
+  unit: count
+  src:
+  - rmg-kgv-guide
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+    to: 1941-11-30
+  confidence: A
+  note: 1940 年 4 座（32 门）；1944-07 增至 8 座（64 门），见单舰文件。
+- about: mount:kgv-2pdr-octuple
+  field: mount.weight
+  value: 16000
+  unit: kg
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+    to: 1941-11-30
+  confidence: C
+  note: 16 t 为 wiki 级页所给 Mk VI 八联座重，RMG 未给座重；标 C。
+- about: mount:kgv-2pdr-octuple
+  field: mount.elevation.max
+  value: 80
+  unit: deg
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+    to: 1941-11-30
+  confidence: B
+  note: 俯仰 +80 / -10，速率 25°/s。
+- about: mount:kgv-up-launcher
+  field: mount.label_name
+  value: UP 二十管火箭发射器
+  src:
+  - navypedia-kgv
+  - navweaps-up-rockets
+  valid:
+    from: 1940-10-01
+    to: 1941-12-31
+  confidence: B
+- about: mount:kgv-up-launcher
+  field: mount.weapon
+  value: weapon:up-rocket
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+    to: 1941-12-31
+  confidence: B
+- about: mount:kgv-up-launcher
+  field: mount.type
+  value: other
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+    to: 1941-12-31
+  confidence: C
+  note: 火箭发射器，枚举无对应值，取 other。
+- about: mount:kgv-up-launcher
+  field: mount.barrels
+  value: 20
+  unit: count
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+    to: 1941-12-31
+  confidence: A
+  note: 每座 20 管。
+- about: mount:kgv-up-launcher
+  field: mount.count
+  value: 4
+  unit: count
+  src:
+  - navypedia-kgv
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+    to: 1941-12-31
+  confidence: A
+  note: B 炮塔顶 1、Y 炮塔顶 2、舰尾 1。
+- about: mount:kgv-up-launcher
+  field: mount.installed
+  value: 1940-10-01
+  unit: date
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: B
+- about: mount:kgv-up-launcher
+  field: mount.removed
+  value: 1941-12-31
+  unit: date
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1941-12-31
+  confidence: B
+  note: navypedia 记「late 1941」，精确日期未获取。
+- field: sensors.fire_control.rpc
+  value: none
+  src:
+  - navweaps-14in-45-mk7
+  valid:
+    from: 1940-10-01
+    to: 1944-12-31
+  confidence: B
+  note: 'navweaps 原话「The British battleships lacked RPC almost entirely until late in the war.」。另有 Buxton 称 1945 年 KGV 装过 RP 40， 未获取原始出处，标为存疑，不写入 fact。
+
+    '
+- field: sensors.director.count
+  value: 2
+  unit: count
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: C
+  note: 两座主炮指挥仪塔（前桅楼顶、主桅后），各配 15 ft 测距仪；RMG 未直接给数量，标 C。
+- field: sensors.rangefinder.baseline
+  value: 12.5
+  unit: m
+  src:
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: C
+  note: 'A / Y 炮塔内置 41 ft 测距仪（本报告换算 12.5 m）；B 炮塔为 30 ft （9.14 m），同舰不同炮位，不是两种说法，故只写一条并在此注明。
+
+    '
+- field: aviation.catapult.count
+  value: 1
+  unit: count
+  src:
+  - navypedia-kgv
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: A
+  note: '本级设计各配 1 座 D-III-H 双向弹射器。**各舰拆除时间不同**： 首舰 King George V 于 1944-02~06 利物浦改装中拆除， 该节点写单舰文件，不在舰级时间窗里切段。
+
+    '
+- field: aviation.catapult.type
+  value: D-III-H 双向弹射器
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: B
+- field: aviation.aircraft.capacity
+  value: 2
+  unit: count
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: B
+  comparable: false
+  note: 'navypedia 记 2 架 seaplanes；编制表另有 2–4 架一说，口径不同。 【2026-11-18】标 comparable: false —— 这里数是「水上飞机搭载数」， 而光辉级那栏是「舰载机编制」（33 / 41 / 57），两者不是同一个度量。 同一格里并排显示会让人以为 KGV 只带得动 2 架飞机。
+
+    '
+- field: aviation.aircraft.types
+  value: Walrus / Swordfish / Seafox
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: navypedia 列 Walrus、Swordfish、Seafox；首舰 1941 年初实载 2 架 Walrus（带 ASV 11N 雷达）。
+- field: service.complement.standard
+  value: 1422
+  unit: persons
+  src:
+  - navypedia-kgv
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: 'navypedia 与 wiki 级页均 1,422（1941）。maritimequest 给平时 1,422 / 战时 1,511；wiki 单舰页的 1,314–1,631 为 E 层未采信。
+
+    '
+- about: weapon:hacs-mk4
+  field: weapon.designation
+  value: HACS Mk IVGB 高角炮指挥仪（High Angle Control System）
+  src:
+  - navypedia-kgv
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: '**4 部**，为本级首两舰（King George V、Prince of Wales）独有配置； 本级后续舰改用 Mk V / Mk VI。四部指挥仪配 5.25 in 两用炮， 与主炮的 Admiralty Fire Control Table Mk IX 是两套系统。 **本舰以外**：胡德号上装的是 HACS Mk I 与 Mk III*，不是这一型， 不要把这型挂到胡德号上。
+    探测/跟踪距离等参数本站无来源，不写。
+
+    '
+- about: weapon:hacs-mk4
+  field: weapon.nation
+  value: united_kingdom
+  src:
+  - navypedia-kgv
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: B
+- about: weapon:hacs-mk4
+  field: weapon.category
+  value: fire_control
+  src:
+  - navypedia-kgv
+  - rmg-kgv-guide
+  valid:
+    from: 1940-10-01
+  confidence: B
+- about: weapon:walrus
+  field: weapon.designation
+  value: Supermarine Walrus 舰载两栖侦察机
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: B
+  note: '本舰 1941 年初实载 2 架，部分装 ASV II 型对海搜索雷达； 编制表另给 2–4 架（口径不同，见 aviation.aircraft.capacity 的 note）。 1944 年拆除弹射器后不再搭载。
+
+    '
+- about: weapon:walrus
+  field: weapon.nation
+  value: united_kingdom
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: B
+- about: weapon:walrus
+  field: weapon.category
+  value: aircraft
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: B
+- about: weapon:seafox
+  field: weapon.designation
+  value: Fairey Seafox 舰载水上侦察机
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: C
+  note: '仅在 navypedia 的舰载机型号清单（Walrus / Swordfish / Seafox）中出现， **本舰实际搭载该型的影像或日志证据未获取**，故记 C。 不写数量、不写搭载时段——除这一句型号清单外没有别的材料。
+
+    '
+- about: weapon:seafox
+  field: weapon.nation
+  value: united_kingdom
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: C
+- about: weapon:seafox
+  field: weapon.category
+  value: aircraft
+  src:
+  - navypedia-kgv
+  valid:
+    from: 1940-10-01
+  confidence: C
