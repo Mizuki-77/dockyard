@@ -9758,6 +9758,42 @@ images:
     primary: true
     note: 高雄号前部一号、二号主炮塔与舰桥。20 cm/50 三年式 No.1 是条约时代日本重巡的标准主炮。
 
+  # 2026-11-26 新增：20cm-3ns（No.1）长期无图。原挂在本实体下的
+  # 20cm-3ns-primary 已于 11-24 改归 20cm-3ns-no2（那张是高雄号炮塔，装 No.2），
+  # No.1 因此一张不剩。Commons 上没有「赤城/加贺炮廓特写」这一类素材，
+  # 全库只有舰照；本图是从加贺 1928 年舾装期全舰照里裁出的炮廓段，
+  # 原图 3510×2376，裁出 1035×582，未放大、未调色。
+  # 依据是 Commons 官方图注原文（见 note），不是我按外形猜的。
+  - id: 20cm-3ns-kaga-casemate
+    file: /img/weapons/20cm-3ns-kaga-casemate.jpg
+    subject: weapon:20cm-3ns
+    title:
+      zh: 加贺号 1928 年舾装期，左舷炮廓内的 20 cm 三年式 No.1 炮（全图裁出）
+      en: >-
+        Kaga fitting out, 1928 - the 20 cm/50 3rd Year Type No.1 guns in her port
+        casemates (cropped from the full view)
+    part: hull_side
+    view: broadside
+    date: 1928-11-20
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author
+    credit: 広島県呉市海事歴史科学館所蔵品（via Wikimedia Commons）
+    source_url: https://commons.wikimedia.org/wiki/File:Japanese_Navy_Aircraft_Carrier_Kaga_1928.jpg
+    width: 1035
+    height: 582
+    primary: true
+    note: >-
+      这张是从加贺号 1928-11-20 舾装期全舰照里裁出的炮廓段，画面能看到左舷并排的
+      三门炮廓炮。Commons 原图注写明「Note the long funnel below the flight deck and
+      the three 8-inch guns in casemates」，故题材依据是官方图注，不是按外形推断。
+      本站规矩是「一张图能不能挂在某舰名下」看原始文件名或描述里第一个舰名 ——
+      此图两者都指向加贺，通过。**注意**：Commons 全库没有赤城/加贺炮廓的近景特写，
+      这是现有素材里唯一能直接看到 No.1 炮廓炮的画面，因此是裁切件而非整舰照，
+      引用时应写明「裁自全舰照」。No.1 与 No.2 的外形区分点在炮身 chase 段的台阶，
+      本图分辨率不足以看清这一细节，故不能用来做型号辨析，只作「装在哪、长什么样」的图。
+
   - id: 12cm-10ns-primary
     file: /img/weapons/12cm-10ns-primary.jpg
     subject: weapon:12cm-10ns

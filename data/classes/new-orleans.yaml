@@ -732,7 +732,7 @@ facts:
   note: '射表的最大射程对应 45°，**但炮塔机械上限是 41°**（见 elevation.max）—— 即 45° 那一行是弹道表的外推值，实船打不到。这个矛盾必须在页面上写清， 否则读者会以为本炮能打 45°。取 45 仅因射表如此给。
 
     '
-- about: weapon:8in-55-mk12
+- about: weapon:8in-55-mk15
   field: weapon.designation
   value: 8"/55 (20.3 cm) Marks 12 and 15
   src:
@@ -743,7 +743,7 @@ facts:
   note: '装在本级 CA-39（Quincy）与 CA-44（Vincennes）上的是 Mk 12。 navweaps 脚注原文：「The Tuscaloosa sub-class consisted of Tuscaloosa (CA-37), San Francisco (CA-38), Quincy (CA-39) and Vincennes (CA-44)」。
 
     '
-- about: weapon:8in-55-mk12
+- about: weapon:8in-55-mk15
   field: weapon.nation
   value: united_states
   src:
@@ -751,7 +751,7 @@ facts:
   valid:
     from: 1939
   confidence: A
-- about: weapon:8in-55-mk12
+- about: weapon:8in-55-mk15
   field: weapon.category
   value: naval_gun
   src:
@@ -759,7 +759,7 @@ facts:
   valid:
     from: 1939
   confidence: A
-- about: weapon:8in-55-mk12
+- about: weapon:8in-55-mk15
   field: weapon.bore
   value: 203
   unit: mm
@@ -768,7 +768,7 @@ facts:
   valid:
     from: 1939
   confidence: A
-- about: weapon:8in-55-mk12
+- about: weapon:8in-55-mk15
   field: weapon.caliber_length
   value: 55
   unit: ratio
@@ -778,7 +778,7 @@ facts:
     from: 1939
   confidence: A
   note: 炮身全长 449.0 in（11.405 m）、膛线长 373.65 in（9.491 m），与 Mk 9 同长。
-- about: weapon:8in-55-mk12
+- about: weapon:8in-55-mk15
   field: weapon.caliber_method
   value: usa_uk_method
   src:
@@ -787,7 +787,7 @@ facts:
     from: 1939
   confidence: B
   note: 同 Mk 9 条的归类说明。
-- about: weapon:8in-55-mk12
+- about: weapon:8in-55-mk15
   field: weapon.weight
   value: 17380
   unit: kg
@@ -799,7 +799,7 @@ facts:
   note: 'navweaps「Gun Weight 17.11 - 17.17 tons (17.38 - 17.45 mt)」—— 取区间下沿 17.38 mt = 17,380 kg。区间上沿 17,450 kg 记此。 对照 Mk 9 的 30,480 kg，轻了约 13,100 kg/门。
 
     '
-- about: weapon:8in-55-mk12
+- about: weapon:8in-55-mk15
   field: weapon.projectile_weight
   value: 118
   unit: kg
@@ -814,7 +814,7 @@ facts:
     the lighter AP Mark 19」——本级不装超重弹**， 这是极易抄错的一处。
 
     '
-- about: weapon:8in-55-mk12
+- about: weapon:8in-55-mk15
   field: weapon.muzzle_velocity
   value: 823
   unit: mps
@@ -826,7 +826,7 @@ facts:
     from: 1939
   confidence: A
   note: 'navweaps「AP Mark 19: 2,700 fps (823 mps)」；HC 与 SP Common 同为 823 m/s。'
-- about: weapon:8in-55-mk12
+- about: weapon:8in-55-mk15
   field: weapon.rate_of_fire
   value: 3.5
   unit: rpm
@@ -836,7 +836,7 @@ facts:
     from: 1939
   confidence: B
   note: navweaps「Rate Of Fire 3 - 4 rounds per minute」，区间取中。
-- about: weapon:8in-55-mk12
+- about: weapon:8in-55-mk15
   field: weapon.barrel_life
   value: 715
   unit: count

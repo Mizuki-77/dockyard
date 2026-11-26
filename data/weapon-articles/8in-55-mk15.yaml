@@ -1,7 +1,16 @@
 # ============================================================================
-# 武器正文 —— 8"/55 (20.3 cm) Mark 15（美国，1945 年 CA-36 换装的炮身）
+# 武器正文 —— 8"/55 (20.3 cm) Marks 12 and 15（美国重巡主炮最后一个炮身族）
 #
-# 这一篇只写一件东西：Mk 15 炮身本身，以及它为什么能装进一座为 Mk 9 造的炮塔。
+# 【2026-11-26 实体合并】本篇原只写 Mk 15。原先另有一个 weapon:8in-55-mk12
+# 实体（new-orleans 级 fact 带出，页面能开但没有正文），而 navweaps 这两型
+# 本来就写在**同一页**、同一张参数表里（designation 即「Marks 12 and 15」，
+# 炮身重量一栏两型不分）。两个实体各自成页，等于把一份来源拆成两半，
+# 且 Mk 12 那半页永远没有正文。故合并为一篇：8in-55-mk12 的 fact 已改挂
+# weapon:8in-55-mk15，`/weapons/8in-55-mk12` 不再存在。
+# 两型不是同一门炮（药室形状、膛线缠度、装舰对象都不同），本篇按
+# 「同族两根炮管」写，凡涉及差异必分写两型，不合并成一个值。
+#
+# 这一篇的核心仍是 Mk 15：它为什么能装进一座为 Mk 9 造的炮塔。
 # 答案在「适配套筒（adapter sleeves）」：navweaps 原句
 #   "The Mark 12 Mod 2 and Mark 15 Mod 1 had adapter sleeves which allowed them
 #    to replace the older 8"/55 (20.3 cm) guns."
@@ -20,28 +29,59 @@
 #     （换衬管）。两种措辞不同，本站不替它们统一。
 # ============================================================================
 weapon: 8in-55-mk15
-updated: 2026-11-24
+updated: 2026-11-26
 
 intro:
   lead:
     zh: >-
-      8"/55 (20.3 cm) Mark 15 是美国重巡主炮的最后一型炮身，1933 年设计、
-      1939 年服役，炮身 17.11–17.17 吨，比它所替代的 Mk 9 族（30.0 吨）轻了近 13 吨。
-      它装在巴尔的摩级其余各舰与俄勒冈城级上；而在老一代条约重巡里，
-      有记载装过它的只有明尼阿波利斯号（CA-36），1945 年。
-      它能装进为 Mk 9 造的炮塔，靠的是一对适配套筒 ——
-      这是本篇要讲的核心：Mk 15 不是一种新炮座，是一种能顶替老炮管的炮管。
+      8"/55 (20.3 cm) 的 Marks 12 and 15 是美国重巡主炮最后一个炮身族，两型 1933 年设计、
+      1939 年服役，炮身 17.11–17.17 吨，比它们所替代的 Mk 9 族（30.0 吨）轻了近 13 吨。
+      两型的关系不是先后替代，而是同族并列：Mk 12 装 Tuscaloosa 子级（CA-37/38/39/44）、
+      Wichita（CA-45）与巴尔的摩（CA-68）；Mk 15 装巴尔的摩级其余各舰与俄勒冈城级（CA-122）。
+      在老一代条约重巡里，有记载装过这一族的只有明尼阿波利斯号（CA-36），1945 年换装 Mk 15。
+      本篇讲两件事：这两根炮管差在哪，以及 Mk 15 为什么能装进为 Mk 9 造的炮塔 ——
+      靠一对适配套筒。**Mk 15 不是一种新炮座，是一种能顶替老炮管的炮管。**
     en: >-
-      The 8"/55 (20.3 cm) Mark 15 was the last barrel mark of the US heavy cruiser
-      main battery, designed in 1933 and in service from 1939, weighing 17.11 to 17.17
-      tons against the 30.0 tons of the Mark 9 family it replaced - nearly thirteen tons
-      lighter. It armed the later Baltimore class ships and the Oregon City class, and
-      among the older treaty cruisers exactly one is recorded as having been regunned
-      with it: Minneapolis (CA-36), in 1945. That it could go into mountings built for
-      the Mark 9 is down to a pair of adapter sleeves, and that is this article's point:
-      the Mark 15 is not a new mounting but a barrel that can replace an older one.
+      The 8"/55 (20.3 cm) Marks 12 and 15 were the last barrel family of the US heavy
+      cruiser main battery, both designed in 1933 and in service from 1939, weighing 17.11
+      to 17.17 tons against the 30.0 tons of the Mark 9 family they replaced - nearly
+      thirteen tons lighter. The two are not successive marks but siblings: the Mark 12
+      armed the Tuscaloosa sub-class (CA-37/38/39/44), Wichita (CA-45) and Baltimore
+      (CA-68); the Mark 15 armed the remaining Baltimore class ships and the Oregon City
+      class (CA-122). Among the older treaty cruisers exactly one is recorded as having
+      been regunned with the family: Minneapolis (CA-36), with the Mark 15 in 1945. This
+      article covers two things: what separates the two barrels, and why the Mark 15 could
+      go into mountings built for the Mark 9 - down to a pair of adapter sleeves.
+      The Mark 15 is not a new mounting but a barrel that can replace an older one.
 
   paragraphs:
+    - heading: 同族两根炮管：药室、膛线与装舰对象
+      text:
+        zh: >-
+          先把两型的差异写清，因为它们常被当成一门炮。同的是：口径 203 mm（8 英寸）、
+          倍径 55、炮身重量 17.11–17.17 吨（navweaps 这一栏两型不分，没有分别给值）、
+          弹药同为药包装填、炮管寿命同为 715 发。不同的是三处：
+          其一药室形状，Mk 15 的药室 4,860 立方英寸（79.6 立方分米），
+          比 Mk 9 族的 5,300（86.8）小，与 Mk 12 也不同；
+          其二膛线缠度，Mk 12 为等齐右旋 1 比 35，Mk 15 为 1 比 25，
+          而 1 比 25 正是 Mk 14 的数值 —— 这就是「Mk 15 的膛线与 Mk 14 相同」在数据上的落点；
+          其三装舰对象，见下段。两型的结构路线一致：
+          自紧的 A 管、热套套筒、螺旋炮尾衬套、对开式轭环、下摆式 Welin 炮闩，膛线镀铬。
+        en: >-
+          Start with what separates the two, because they are often treated as one gun.
+          Shared: a 203 mm (8 in) bore, 55 calibres, a gun weight of 17.11 to 17.17 tons
+          (NavWeaps does not split this figure between the marks), bag ammunition, and a
+          barrel life of 715 rounds. Three things differ. First the chamber shape: the
+          Mark 15's chamber is 4,860 cubic inches (79.6 dm3), smaller than the Mark 9
+          family's 5,300 (86.8) and not the same as the Mark 12's either. Second the
+          rifling twist: uniform right-hand 1 in 35 for the Mark 12 and 1 in 25 for the
+          Mark 15, which is exactly the Mark 14's figure - that is where "Mark 15 rifling
+          identical to the Mark 14" lands in the data. Third the ships they armed, below.
+          Both marks share the structural route: an autofretted A tube, a shrunk-on
+          jacket, a screw box liner, a yoke ring in halves, a down-swinging Welin breech
+          block, and chromium-plated bores.
+      src: [navweaps-8in-55-mk12, navweaps-8in-55-mk9]
+
     - heading: 一门更轻的炮，装的是同一种弹
       text:
         zh: >-

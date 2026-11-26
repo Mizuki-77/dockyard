@@ -782,6 +782,11 @@ export function getShipEntities(
 
   // 先吃舰级，再吃单舰 —— 后写入的同 id 会覆盖先写入的（Map.set 语义），
   // 于是「单舰覆盖舰级」自动成立，不需要额外的去重逻辑。
+  //
+  // ⚠️ 2026-11-26 补：id 层面覆盖成立，但**字段层面**此前没落实。
+  // 同一个 weapon id 在两层都有 fact 时，两层的同字段 fact 会一起留下，
+  // mergeFactRows() 按字段分组后会并列显示两值并打「存在争议」——
+  // 那不是分歧，是同一实体在两个层次各记了一次。见循环后的字段级覆盖。
   const sources: { facts: Fact[]; origin: 'ship' | 'class' }[] = [];
   if (cls) sources.push({ facts: cls.facts ?? [], origin: 'class' });
   if (ship) sources.push({ facts: ship.facts ?? [], origin: 'ship' });
@@ -801,6 +806,38 @@ export function getShipEntities(
         arr.push(f);
         mounts.set(id, arr);
       }
+    }
+  }
+
+  // 同值去重（2026-11-26 补）：
+  // 上面按 weapon id 累加时，同一个 id 若在舰级与单舰两层都有 fact，两层的
+  // **同字段同值** fact 会一起留下，mergeFactRows() 不做去重，页面就会渲染成
+  // 「203 mm / 203 mm」这种同一件事写两遍的样子。
+  //
+  // ⚠️ 只去重**值完全相同**的：值不同的一律保留。
+  // 反例（实测）：ark-royal 的 2pdr 八联装 mount.count，舰级记 4 座（1938-11-16 起）、
+  // 单舰记 6 座（1941-05-01 起）—— 这是时序演进，不是分歧，更不是重复。
+  // 按框架 §3.2 规则 3「命中多条时间窗 ≠ 分歧」，两条都必须留下。
+  // 早先写成「舰级一律让位给单舰」的版本会删掉「建成时 4 座」，已改回本规则。
+  //
+  // 触发实例：8in-55-mk15 实体合并后，new-orleans 级与本舰对 bore/nation/
+  // category/caliber_length/weight/rate_of_fire 各记了一条相同的值。
+  for (const map of [weapons, mounts]) {
+    for (const [id, facts] of map) {
+      const shipPairs = new Set(
+        facts
+          .filter((f) => f.origin === 'ship')
+          .map((f) => `${f.field}\u0000${JSON.stringify(f.value)}`),
+      );
+      if (shipPairs.size === 0) continue;
+      map.set(
+        id,
+        facts.filter(
+          (f) =>
+            f.origin !== 'class' ||
+            !shipPairs.has(`${f.field}\u0000${JSON.stringify(f.value)}`),
+        ),
+      );
     }
   }
 
