@@ -50,6 +50,14 @@ ROOT_WHITELIST = {
     "requirements.txt", "tsconfig.json", "wrangler.toml",
 }
 
+# 交接报告每轮都会重新生成一份、放在根目录，好让下一轮直接找到。
+# 不写死具体日期（文件名带日期），用前缀匹配。
+_ROSTER_PREFIXES = ("项目交接-",)
+
+
+def _is_roster(name: str) -> bool:
+    return any(name.startswith(p) for p in _ROSTER_PREFIXES)
+
 SECRETS = Path.home() / ".dsh" / "secrets" / "maid.json"
 
 
@@ -109,8 +117,9 @@ def check_root_clutter() -> list[str]:
     for entry in REPO.iterdir():
         if entry.name == ".git" or entry.is_dir():
             continue
-        if entry.name not in ROOT_WHITELIST:
-            clutter.append(entry.name)
+        if entry.name in ROOT_WHITELIST or _is_roster(entry.name):
+            continue
+        clutter.append(entry.name)
     return sorted(clutter)
 
 
