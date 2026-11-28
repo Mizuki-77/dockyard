@@ -1,0 +1,682 @@
+# ============================================================================
+# 单舰：HMS Belfast（贝尔法斯特号轻巡洋舰，舷号 35 → 战后 C35）
+# ----------------------------------------------------------------------------
+# 属 Edinburgh 子级（城级第三组，2 艘中的第 2 艘）。舰级设计值见
+# work/staging/g-belfast/classes/edinburgh.yaml，本文件只写本舰特有的：
+# 建造、改装、战历、编制变化、保存经过。
+# 解析顺序：单舰 fact -> 舰级 fact -> 未记载。
+#
+# 【本舰最常被写错的五处，本文件逐条锁定】
+#   1) 完工日与服役日不是同一天：1939-08-03 完工并开始验收试航，
+#      1939-08-05 才服役（naval-history 与 IWM 两源一致）。
+#      任务书写的「1939-08-03 服役」把完工日当成了服役日。
+#   2) 下水命名人是**首相张伯伦的妻子 Anne Chamberlain**，不是内政大臣之妻。
+#   3) 触雷是 1939-11-21 上午 11 点前，在**驶离罗塞斯、出福斯湾时**引爆磁性水雷；
+#      舰体「back was broken」（龙骨被折断），大修到 1942 年 10 月才重新服役，
+#      不是「到 1942-11」。
+#   4) 诺曼底当天**不是第一艘开火的盟军舰**：IWM 引本舰日志，0527 开火，
+#      而西侧另一艘巡洋舰 0523 已先开火（同舰军官 Peter Brooke Smith 日记）。
+#      正确说法是「最先开火的军舰之一」。
+#   5) 她**没有参加围歼俾斯麦**。追踪俾斯麦的是姊妹级（Southampton 子级）的
+#      Sheffield，别把那段事迹安到本舰头上。本舰 1941 年整年都在船厂里。
+# ============================================================================
+
+id: belfast
+name:
+  zh: 贝尔法斯特号
+  en: HMS Belfast
+class: edinburgh
+open_ended_note: >
+  Edinburgh 子级（城级第三组）第 2 艘，也是该级唯一存世的一艘。
+  1939-08-05 服役，二战中在北极航线、北角海战、诺曼底登陆三处有作战记录，
+  获 3 项战功表彰（ARCTIC 1943 / NORTH CAPE 1943 / NORMANDY 1944）；
+  战后参加朝鲜战争，1959-1962 年再赴远东，1963-08-24 在德文波特退役，
+  1971-10-21 作为帝国战争博物馆分馆在伦敦池开放，至今。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: HMS Belfast
+    src: [naval-history-belfast, navypedia-edinburgh]
+    valid: { from: 1938-03-17 }
+    confidence: A
+    note: >
+      naval-history 原文「as the 1st RN ship to carry this name」——
+      皇家海军第 1 艘以此命名的军舰。舰名取自北爱尔兰首府贝尔法斯特，
+      亦即建造地。
+
+  - field: identity.name_zh
+    value: 贝尔法斯特号
+    src: [naval-history-belfast]
+    valid: { from: 1938-03-17 }
+    confidence: C
+
+  - field: identity.name_en
+    value: HMS Belfast
+    src: [naval-history-belfast]
+    valid: { from: 1938-03-17 }
+    confidence: A
+
+  - field: identity.pennant_number
+    value: '35（1948 年起改 C35）'
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-08-05, to: 1963-08-24 }
+    confidence: C
+    note: >
+      navypedia 的 Ships 表两栏并写「35, 1948- C35」——服役时为 35，
+      1948 年起改为 C 前缀编号。两段并列在同一格里，本值如实转录，
+      与 town.yaml 对 Sheffield「24, 1948- C24」的处理一致。
+
+  - field: identity.namesake
+    value: 北爱尔兰首府贝尔法斯特（Belfast），亦即本舰建造地
+    src: [naval-history-belfast, iwm-hms-belfast-spec]
+    valid: { from: 1938-03-17 }
+    confidence: C
+    note: >
+      IWM 舰 specification 页「BUILT Harland and Wolff Shipyard, Belfast」；
+      naval-history 记同厂承造。舰徽为蓝底波浪上、戴城墙冠的海马
+      （「a sea horse gorged with a mural crown proper」），
+      舰训「Pro tanto quid retribuamus」（我们付出多少就回报多少）。
+
+  - field: identity.ship_type
+    value: light_cruiser
+    src: [naval-history-belfast, navypedia-edinburgh]
+    valid: { from: 1939-08-05, to: 1963-08-24 }
+    confidence: A
+    note: >
+      naval-history 页标题「HMS BELFAST - Edinburgh-class Light Cruiser」。
+      **同一页正文第一句却写「Improved SOUTHAMPTON-Class heavy cruiser」**——
+      同页内自称不一致；英国官方分类是轻巡（按 6 英寸主炮定义），
+      本站取轻巡，重巡是英式旧习惯用词。
+
+  - field: identity.nation
+    value: united_kingdom
+    src: [naval-history-belfast]
+    valid: { from: 1939-08-05 }
+    confidence: A
+
+  - field: identity.operator
+    value: Royal Navy
+    src: [naval-history-belfast]
+    valid: { from: 1939-08-05, to: 1963-08-24 }
+    confidence: A
+
+  - field: identity.era
+    value: ww2
+    src: [naval-history-belfast]
+    valid: { from: 1939-09-03, to: 1945-09-02 }
+    confidence: A
+    note: >
+      本舰 1939 年服役、1963 年退役、1971 年起为博物馆舰，跨 ww2 / cold_war
+      两个时代。按「服役与作战期」定位取 ww2；朝鲜战争与 1959-62 远东段
+      另见切片与正文。
+
+  - field: identity.building_program
+    value: >
+      1936 年估算案（1936 Estimates）下订造，与姊妹舰 Edinburgh 同日订造；
+      设计为 Gloucester 子级的放大版，主炮由原计划的 4 座四联（16 门）
+      改为 4 座三联（12 门）。
+    src: [naval-history-belfast, navypedia-edinburgh]
+    valid: { from: 1936-08-15 }
+    confidence: C
+    note: >
+      naval-history 原文「ordered on 15th August 1936 from Harland and Wolff
+      at Belfast under the 1936 Estimates on with sister ship HMS EDINBURGH
+      from Swan Hunter in Newcastle」。
+
+  # ============================================================ 建造
+  - field: construction.builder
+    value: Harland & Wolff
+    src: [naval-history-belfast, navypedia-edinburgh, iwm-hms-belfast-spec]
+    valid: { from: 1936-08-15 }
+    confidence: A
+    note: 三源一致（IWM「Harland and Wolff Shipyard, Belfast」）。
+
+  - field: construction.builder_location
+    value: Belfast（北爱尔兰）
+    src: [navypedia-edinburgh, iwm-hms-belfast-spec]
+    valid: { from: 1936-08-15 }
+    confidence: A
+    note: >
+      在舰名同名的城市建造。IWM 的 launch 页另记：「The ship is the largest and
+      the most important vessel to be launched at Harland and Wolfe in the City
+      of Belfast」——哈兰德与沃尔夫在贝尔法斯特下水过的最大、最重要的一艘。
+
+  - field: construction.yard_number
+    value: '1000'
+    src: [navypedia-edinburgh, iwm-hms-belfast-launch]
+    valid: { from: 1936-08-15 }
+    confidence: A
+    note: >
+      navypedia Ships 表 Yard No 列记 1000；IWM 的 launch 页原话佐证：
+      「she was always known as yard Project #1000 and that number was reserved
+      for her. It wasn't until she was launched that she then became Belfast」。
+      两源互证，是本文件里少见的 A 级建造细节。
+
+  - field: construction.order_date
+    value: 1936-08-15
+    unit: date
+    src: [naval-history-belfast, naval-history-edinburgh]
+    valid: { from: 1936-08-15 }
+    confidence: A
+    note: 与舰级文件同一条订货日；同级两艘同日订造。
+
+  - field: construction.laid_down
+    value: 1936-12-10
+    unit: date
+    src: [navypedia-edinburgh, iwm-hms-belfast-spec]
+    valid: { from: 1936-12-10 }
+    confidence: A
+    note: >
+      两源一致：navypedia 记 10.12.1936；IWM 记「Keel laid 10 December 1936」。
+      **naval-history 的正文写「laid down on 30th December 1936」，与这两源差 20 天**，
+      且该页另一处（Edinburgh 页）把同级两舰的下水日也写成了同一个 3 月 31 日，
+      属同页串行错误，故不采信。本条取两源一致的 12 月 10 日。
+
+  - field: construction.launched
+    value: 1938-03-17
+    unit: date
+    src: [navypedia-edinburgh, iwm-hms-belfast-history, iwm-hms-belfast-spec]
+    valid: { from: 1938-03-17 }
+    confidence: A
+    note: >
+      三源一致，且都点明是**圣帕特里克节**（St Patrick's Day）。
+      **命名人是首相内维尔·张伯伦的妻子 Anne Chamberlain**，不是内政大臣之妻：
+      IWM 原文「launched on St Patrick's Day in 1938 by Anne Chamberlain, wife of
+      the then Prime Minister Neville Chamberlain」。
+      naval-history 此处的日期（31st March 1938）与其余三源不符，不采信。
+
+  - field: construction.commissioned
+    value: 1939-08-05
+    unit: date
+    src: [naval-history-belfast, iwm-hms-belfast-history]
+    valid: { from: 1939-08-05 }
+    confidence: A
+    note: >
+      **完工日与服役日要分开：**
+      1939-08-03 完工并开始验收试航（naval-history「August 3rd Build completion
+      and commenced Acceptance Trials」，navypedia 的 Comp 列亦记 3.8.1939）；
+      1939-08-05 服役（naval-history「5th Commissioned for service in Home Fleet」，
+      IWM「commissioned into the Royal Navy on 5 August 1939 under the command of
+      Captain G A Scott DSO RN」）。
+      本字段记服役日；「1939-08-03 服役」是把完工日当服役日，不采。
+
+  - field: construction.fate_date
+    value: 1971-10-21
+    unit: date
+    src: [iwm-hms-belfast-history, iwm-hms-belfast-histor10]
+    valid: { from: 1971-10-21 }
+    confidence: A
+    note: >
+      **本舰的「结局」不是一个日期，是三步**：
+      1963-08-24 在德文波特退役（退出现役，不是拆解）；
+      1971-07 政府把舰移交 HMS Belfast Trust；
+      1971-10-14 拖抵伦敦池（Pool of London）系泊；1971-10-21 特拉法加日对公众开放。
+      本条取「作为博物馆舰开放」这一天，因为那是她今天存在的意义所在。
+      1978 年所有权转交帝国战争博物馆（IWM）。
+
+  - field: construction.fate_type
+    value: preserved
+    src: [navypedia-edinburgh, iwm-hms-belfast-history]
+    valid: { from: 1971-10-21 }
+    confidence: A
+    note: >
+      两源一致。navypedia 的 Fate 列记「preserved 10.1971」；
+      IWM 记「opened to the public on Trafalgar Day, 21 October 1971」。
+      她是英国**唯一**保存下来的二战大舰（ wartime big-gun ship），
+      也是 IWM 藏品中体积最大的一件。
+
+  # ============================================================ 排水量与尺度
+  # 本级设计值在 edinburgh.yaml。本舰独有的是 1939-1942 年加装防雷突出部
+  # 之后的那一套数 —— 吃水、宽、排水量、航速四项同时变。
+  - field: displacement.standard
+    value: 11500
+    unit: t
+    src: [navypedia-edinburgh]
+    valid: { from: 1942-10-01 }
+    confidence: C
+    comparable: false
+    note: >
+      **两说并列，不裁决。** navypedia 的 Modernizations 台账：「(11/1939 - 10.1942),
+      Belfast : new bulges fitted, breadth rose to 20.2m, deep load rose to 7.06m,
+      displacement rose to 11500/14900t, maximal speed felt to 30.5kts」——
+      标准 11,500、深载 14,900。同站长吨口径未换算，故 comparable: false。
+      **IWM 的舰 specification 页写「STANDARD DISPLACEMENT 11,553 tons」**，
+      与 11,500 差 53。两说并列，本条取 navypedia，11,553 单列一条见下。
+
+  - field: displacement.standard
+    value: 11553
+    unit: t
+    src: [iwm-hms-belfast-spec]
+    valid: { from: 1942-10-01 }
+    confidence: C
+    comparable: false
+    note: >
+      **与上一条并列，不裁决。** IWM 舰 specification 页原文「STANDARD
+      DISPLACEMENT 11,553 tons」。该页未标明是哪一年的状态、也未说明是长吨
+      还是公吨；从上下文（同页给 1959 年武备）看应是保存期状态。
+      navypedia 给 11,500（长吨口径）。两源相差 53，谁对谁错本站不判。
+
+  - field: displacement.full
+    value: 14900
+    unit: t
+    src: [navypedia-edinburgh]
+    valid: { from: 1942-10-01 }
+    confidence: C
+    comparable: false
+    note: >
+      加装突出部后的深载值（同站注「Belfast later 14900」），长吨口径未换算。
+      本级设计深载为 13,175，本舰因加装突出部与战时增重上浮约 1,725。
+
+  - field: dimensions.length.oa
+    value: 187.0
+    unit: m
+    src: [navypedia-edinburgh, iwm-hms-belfast-spec]
+    valid: { from: 1939-08-05 }
+    confidence: A
+    note: >
+      与舰级同值，此处不重写亦不影响解析；IWM 独立给出了同一个数：
+      「OVERALL LENGTH 613 feet 6 inches (187 metres)」——613 ft 6 in = 187.0 m，
+      与 navypedia 完全吻合，可作本级 187.0 m 的第三方印证。
+
+  - field: dimensions.beam.wl
+    value: 20.2
+    unit: m
+    src: [navypedia-edinburgh]
+    valid: { from: 1942-10-01 }
+    confidence: C
+    note: >
+      加装突出部后「breadth rose to 20.2m」（本级设计宽 19.3 m）。
+      **IWM 舰 specification 页写「BEAM 69 feet (21 metres)」**——69 ft = 21.03 m，
+      与 20.2 m 差约 0.8 m。两说并列，本条取 navypedia（有明确的改装台账支撑），
+      IWM 的 21 m 记在此注不另立 fact：该页数值明显经过取整。
+
+  - field: dimensions.draught.max
+    value: 7.06
+    unit: m
+    src: [navypedia-edinburgh]
+    valid: { from: 1942-10-01 }
+    confidence: C
+    note: >
+      加装突出部后的深载吃水（同站「deep load rose to 7.06m」）。本级设计值为 6.48 m。
+      **IWM 页写「DRAUGHT 19 feet 9 inches (6.1 metres)」**——6.1 m 更接近标准状态
+      的吃水，不是深载；两个数不是同一口径，故不并列，只在此注明差异原因。
+
+  - field: propulsion.speed.max
+    value: 30.5
+    unit: kn
+    src: [navypedia-edinburgh]
+    valid: { from: 1942-10-01 }
+    confidence: C
+    note: >
+      navypedia 台账：「maximal speed felt to 30.5kts」——加装突出部后由设计
+      32.5 kn 降至 30.5 kn。**这是本舰付的代价**：稳性与防雷改善，航速掉 2 节。
+      naval-history 对同一次改装只写「Although stability was improved speed was
+      reduced by 2 knots」，未给具体值，与 30.5 不冲突。
+
+  # ============================================================ 防护（改装带来的新增装甲）
+  - field: protection.armor.thickness
+    value: 102
+    unit: mm
+    qual: { part: belt, region: lower }
+    src: [navypedia-edinburgh]
+    valid: { from: 1942-10-01 }
+    confidence: C
+    note: >
+      navypedia 台账原句：「There was new belt over bulges 102mm thick.」——
+      加装突出部时在突出部外侧另加一层 102 mm 装甲带。它不是主装甲带
+      （主带 114 mm，见舰级文件），位置更低，故按 region: lower 登记，
+      避免与主带的 114 mm 在同一时间窗里被判成分歧。
+
+  # ============================================================ 武备状态（逐期）
+  - field: armament.mount.summary
+    value: >-
+      建成时：12 × 6 in（4 座三联，Mark XXIII 炮座）＋ 12 × 4 in（6 座双联 Mark XIX）
+      ＋ 16 × 2-pdr（2 座八联 pom-pom）＋ 8 × 0.5 in（2 座四联 Vickers 机枪）
+      ＋ 6 具 21 in 鱼雷管（2 座三联）＋ 3 架水上飞机、1 具 D-I-H 弹射器
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-08-05, to: 1939-11-21 }
+    confidence: C
+    note: >
+      这一片只存在三个多月 —— 1939-11-21 触雷后本舰进厂，直到 1942-10 才回来。
+      建成时的 4 门 47 mm 礼炮在 1939 年内即拆除（navypedia「1939, both:
+      - 4 x 1 - 47/40」），故不列入本概览。
+
+  - field: armament.mount.summary
+    value: >-
+      1942-10 大修完成时：12 × 6 in（4 座三联）＋ 12 × 4 in（6 座双联）
+      ＋ 16 × 2-pdr（2 座八联）＋ 14 × 20 mm Oerlikon（5 座双联 ＋ 4 门单装）
+      ＋ 6 具 21 in 鱼雷管 ＋ 3 架水上飞机、1 具弹射器；雷达 273Q / 281 / 283 / 284 / 285
+    src: [navypedia-edinburgh, naval-history-belfast, iwm-history4]
+    valid: { from: 1942-10-01, to: 1943-05-31 }
+    confidence: C
+    note: >
+      这一期是本舰战力的顶点，也是她「全皇家海军最大最强巡洋舰」这句评语的依据。
+      IWM 原文：「when she finally rejoined the Home Fleet in November 1942 ...
+      she was the largest and arguably the most powerful cruiser in the Royal Navy」。
+      拆除项：2 座四联 0.5 英寸机枪。加装项：5 座双联 + 4 门单装 20 mm Oerlikon
+      （= 14 门）、五型雷达。
+
+  - field: armament.mount.summary
+    value: >-
+      1945-05 改装后：12 × 6 in（4 座三联，全级唯一全程保留四座炮塔的一艘）
+      ＋ 8 × 4 in（4 座双联，已拆 2 座）＋ 36 × 2-pdr（2 座八联 + 4 座四联 + 4 门单装）
+      ＋ 14 × 20 mm ＋ 6 具 21 in 鱼雷管；航空设施拆除，雷达 274 / 281B / 293
+    src: [navypedia-edinburgh, navweaps-6in-50-mk23, naval-history-belfast]
+    valid: { from: 1945-05-01, to: 1945-07-31 }
+    confidence: C
+    note: >
+      **这一期有两件事必须写清：**
+      一、**她是城级全家族唯一保留全部四座 6 英寸炮塔的**。navweaps 原文：
+      「Most surviving cruisers had "X" turret removed as weight compensation ...
+      HMS Belfast, of the larger "Modified Town" class, was unique in keeping all
+      four of her 6" (15.2 cm) mountings throughout the war and beyond, although
+      she did lose two of her twin 4"/45 (10.2 cm) Mark XIX mountings in their
+      place.」——拆的是 4 英寸双联，不是 6 英寸炮塔，别写反。
+      二、2-pdr 的 36 门是 5/1945 台账「+4 x 4 - 40/39 2pdr, +4 x 1 - 40/39 2pdr」
+      加在原有 2 座八联（16 门）之上的合计（16 + 16 + 4）。
+
+  - field: armament.mount.summary
+    value: >-
+      1946-01 状态：12 × 6 in（4 座三联）＋ 8 × 4 in（4 座双联）
+      ＋ 5 门 40 mm Bofors Mk III 单装 ＋ 2 座八联 + 4 座四联 + 4 门单装 2-pdr
+      ＋ 2 座双联 + 4 门单装 20 mm ＋ 6 具 21 in 鱼雷管；雷达 274 / 281B / 283 / 285 / 293
+    src: [navypedia-edinburgh]
+    valid: { from: 1946-01-01, to: 1955-12-31 }
+    confidence: C
+    note: >
+      navypedia 的 1/1946 条是整份清单（不是增减项），可直接作该时点的完整配置。
+      1955 年她进德文波特现代化改装，1959 年重新服役时配置又变（见下一条）。
+
+  - field: armament.mount.summary
+    value: >-
+      1959 年现代化后：12 × 6 in（4 座三联）＋ 8 × 4 in（4 座双联）
+      ＋ 12 × 40 mm Bofors（6 座双联 Mk 5）＋ 2 座双联 + 4 门单装 20 mm；
+      全部 2-pdr 与单装 Bofors 拆除；雷达加装 4 部 Type 903
+    src: [navypedia-edinburgh, iwm-hms-belfast-spec]
+    valid: { from: 1959-01-01, to: 1963-08-24 }
+    confidence: C
+    note: >
+      navypedia「1959, Belfast : - 5 x 1 - 40/60, 2 x 8 - 40/39, 4 x 4 - 40/39,
+      2 x 2 - 20/70, 4 x 1 - 20/70; + 6 x 2 - 40/60 Mk 5, 4x type 903 radars」。
+      IWM 的舰 specification 页给的是同期口径：「ARMAMENT (1959) Twelve (4x3)
+      6-inch; eight (4x2) 4-inch HA/LA; twelve (6x2) Bofors AA」——6 座双联
+      Bofors = 12 门，与 navypedia 完全吻合，构成 A 级互证。
+      1963 年又拆了 2 座双联 Bofors（navypedia「1963, Belfast : - 2 x 2 - 40/60」），
+      剩 4 座 8 门，即今天博物馆舰上的状态。
+
+  - field: armament.torpedo.tubes
+    value: 6
+    unit: count
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-08-05, to: 1959-12-31 }
+    confidence: C
+    note: >
+      2 座三联 21 英寸，水上布置。1946 年清单里仍在（「2 x 3 - 533 TT」）。
+      1959 年那份清单未列鱼雷管，故 valid.to 取 1959 年末为界；
+      **具体拆除日期未获取**，不推算。
+
+  # ============================================================ 20 mm 高炮（逐期）
+  - field: armament.aa_20mm.count
+    value: 14
+    unit: count
+    src: [navypedia-edinburgh]
+    valid: { from: 1942-10-01, to: 1943-05-31 }
+    confidence: C
+    note: >
+      建成时本舰没有 20 mm，近程防空只有 8 挺 0.5 英寸机枪。
+      1942-10 大修完成时台账「+ 5 x 2 - 20/70, 4 x 1 - 20/70」= 10 + 4 = 14 门，
+      同时拆除 2 座四联 0.5 英寸（「- 2 x 4 - 12.7/62」）。
+
+  - field: armament.aa_20mm.count
+    value: 18
+    unit: count
+    src: [navypedia-edinburgh]
+    valid: { from: 1943-06-01, to: 1944-04-30 }
+    confidence: C
+    note: '台账「6/1943, Belfast : + 4 x 1 - 20/70」——14 + 4 = 18。'
+
+  - field: armament.aa_20mm.count
+    value: 22
+    unit: count
+    src: [navypedia-edinburgh]
+    valid: { from: 1944-05-01, to: 1945-04-30 }
+    confidence: C
+    note: >
+      台账「5/1944, Belfast : - 1 x 2 - 20/70; + 6 x 1 - 20/70」——
+      18 − 2 + 6 = 22。这一期正好覆盖诺曼底（1944-06-06）。
+
+  - field: armament.aa_20mm.count
+    value: 14
+    unit: count
+    src: [navypedia-edinburgh]
+    valid: { from: 1945-05-01, to: 1945-07-31 }
+    confidence: C
+    note: >
+      台账「5/1945, Belfast : - 2 x 2 - 102/45, 8 x 1 - 20/70 ...」
+      ——22 − 8 = 14。同一次改装拆了 2 座双联 4 英寸（重量补偿）与 8 门单装 20 mm。
+
+  - field: armament.aa_20mm.count
+    value: 8
+    unit: count
+    src: [navypedia-edinburgh]
+    valid: { from: 1945-08-01, to: 1959-12-31 }
+    confidence: C
+    note: >
+      台账「8/1945, Belfast : - 2 x 2 - 20/70, 2 x 1 - 20/70」——14 − 4 − 2 = 8，
+      同时加 5 门单装 40 mm Bofors。1959 年清单里 20 mm 只剩「2 x 2 + 4 x 1」= 8，
+      与这个数吻合，说明此后未再变动。
+
+  # ============================================================ 40 mm Bofors（逐期）
+  - field: armament.aa_40mm.count
+    value: 5
+    unit: count
+    src: [navypedia-edinburgh]
+    valid: { from: 1945-08-01, to: 1958-12-31 }
+    confidence: C
+    note: >
+      台账「8/1945, Belfast : - 2 x 2 - 20/70, 2 x 1 - 20/70; + 5 x 1 - 40/56
+      Bofors Mk III」——5 门单装。**本条只计 Bofors，不含 2-pdr pom-pom**：
+      2-pdr 口径同为 40 mm 但是另一种炮，混在一个数里会失真，
+      2-pdr 的数量记在 armament.mount.summary 里。
+
+  - field: armament.aa_40mm.count
+    value: 12
+    unit: count
+    src: [navypedia-edinburgh, iwm-hms-belfast-spec]
+    valid: { from: 1959-01-01, to: 1963-08-24 }
+    confidence: A
+    note: >
+      1959 年改装：拆 5 门单装，换 6 座双联 40 mm/60 Mk 5 = 12 门。
+      两源互证：navypedia「+ 6 x 2 - 40/60 Mk 5」；
+      IWM「twelve (6x2) Bofors AA」。1963 年再拆 2 座（余 8 门），
+      **拆除后那一期的数不另立 fact**：来源只给「- 2 x 2」，未确认剩余座数。
+
+  # ============================================================ 雷达（逐期）
+  # sensors.radar.installed 是 multi 字段，同舰多条并存是设计如此。
+  - field: sensors.radar.installed
+    value: 无雷达（建成状态）
+    src: [navypedia-edinburgh, naval-history-belfast]
+    valid: { from: 1939-08-05, to: 1942-09-30 }
+    confidence: C
+    note: >
+      **这一条容易被忽略，但它决定了 1939-11-21 触雷时的处境。**
+      navypedia 的改装台账里，本舰第一次出现雷达是 1942 年那一条；
+      对照姊妹舰 Edinburgh 的台账在 9/1940 就有「+ type 279 radar」，
+      本舰因整段时间在厂里，一项都没有。
+      naval-history 亦然：雷达安装全部记在 1940-08 至 1941-12 的修理期内，
+      随修理一并完成，未随舰出海。
+
+  - field: sensors.radar.installed
+    value: Type 273Q 水面警戒 ＋ Type 281 对空警戒 ＋ Type 283 主炮测距 ＋ Type 284 主炮火控 ＋ Type 285 高炮火控
+    src: [navypedia-edinburgh, naval-history-belfast]
+    valid: { from: 1942-10-01, to: 1944-08-31 }
+    confidence: C
+    note: >
+      两源在型号集合上一致，但**叙述口径不同**：
+      navypedia 把五型雷达记在「(11/1939 - 10.1942)」那一条改装台账末尾，即随大修一并装齐；
+      naval-history 把同一批拆成几条按年份叙述 —— 「Radar equipment was installed for
+      the first time to provide warning of approach of aircraft (Type 281) and for
+      detection of surface targets and land (Type 273). Fire control Radar for main
+      (Type 284) and secondary AA armament was also fitted (Types 283 and 285)」，
+      记在 1941-01 至 1941-12 的修理段。
+      两说并列，本条取「大修完成、随舰出海」的 1942-10 为生效起点。
+
+  - field: sensors.radar.installed
+    value: Type 274 主炮火控（换 284）＋ Type 281B 对空警戒（换 281）＋ Type 293 水面警戒（换 273Q）；另加 IFF 与 PPI 显示器
+    src: [naval-history-belfast]
+    valid: { from: 1944-09-01, to: 1945-04-30 }
+    confidence: C
+    note: >
+      naval-history 1944-08 至 12 改装段原文：「Radar Type 281B using single mast replaced
+      Type 281 for air cover. Radar Type 293 replaced Radar Type 273Q for surface warning.
+      Radar Type 274 replaced Radar Type 284 for main armament fire-control. Interrogation
+      equipment (IFF) and modern plan position radar displays (PPI) were fitted together
+      with improved radio telephone equipment for control of aircraft.」
+      这一批是为赴太平洋舰队而做的电子改装。
+      **navypedia 把 274/281B/293 记在 5/1945**，月份不同，两说并列，本条取较早的 1944-09。
+
+  - field: sensors.radar.installed
+    value: Type 274 / 281B / 283 / 285 / 293（1946-01 清单）
+    src: [navypedia-edinburgh]
+    valid: { from: 1945-05-01, to: 1958-12-31 }
+    confidence: C
+    note: >
+      navypedia 的 1/1946 完整清单列出这五型。与上一条的差别是 **283 与 285 仍在列**，
+      说明 1944 年那次换装并未把旧的高炮火控雷达拆掉。
+
+  - field: sensors.radar.installed
+    value: Type 903 火控雷达 ×4
+    src: [navypedia-edinburgh]
+    valid: { from: 1959-01-01, to: 1963-08-24 }
+    confidence: C
+    note: >
+      navypedia「1959, Belfast : ... + 6 x 2 - 40/60 Mk 5, 4x type 903 radars」。
+      Type 903 是战后用于 40 mm 炮座的火控雷达，与 1959 年换装的
+      6 座双联 Bofors 配套。原有型号的拆除清单来源未给，故只记新增。
+
+  # ============================================================ 服役编队
+  - field: service.unit
+    value: 本土舰队第 18 巡洋舰分队（18th Cruiser Squadron, Home Fleet）
+    src: [naval-history-belfast, iwm-history3]
+    valid: { from: 1939-09-01, to: 1939-11-21 }
+    confidence: A
+    note: >
+      两源互证。naval-history「Joined HM Cruisers AURORA, EDINBURGH and SHEFFIELD
+      in 18th Cruiser Squadron」；IWM「formed part of the 18th Cruiser Squadron
+      operating out the Home Fleet's main base at Scapa Flow in Orkney」。
+      任务是对德海上封锁与拦截。
+
+  - field: service.unit
+    value: 本土舰队第 10 巡洋舰分队（10th Cruiser Squadron, Home Fleet）
+    src: [naval-history-belfast, iwm-history4]
+    valid: { from: 1942-11-01, to: 1944-04-30 }
+    confidence: A
+    note: >
+      1942-11 赴斯卡帕湾训练后编入第 10 巡洋舰分队，分队由 BELFAST、SHEFFIELD、
+      CUMBERLAND 编成（后 Sheffield 因风暴受损由 Norfolk 接替）。
+      IWM「as flagship of the Tenth Cruiser Squadron, responsible for providing
+      close range heavy cover for the Arctic convoys」。**她是分队旗舰。**
+
+  - field: service.unit
+    value: 第 1 特遣编队（Force 1，北角海战）
+    src: [naval-history-belfast, iwm-history5]
+    valid: { from: 1943-12-22, to: 1943-12-27 }
+    confidence: A
+    note: >
+      1943-12-22 与 Norfolk、Sheffield 出航掩护 JW55B 与 RA55A，
+      26 日以 Force 1 身份与沙恩霍斯特交战。Burnett 少将坐镇本舰。
+      IWM「Rear-Admiral Burnett in HMS Belfast, with the cruisers Norfolk and
+      Sheffield, screened the convoys and kept Scharnhorst in play」。
+
+  - field: service.unit
+    value: 炮击编队 E（Bombardment Force E，诺曼底，东特遣舰队）
+    src: [naval-history-belfast, iwm-history7, iwm-8-things-dday]
+    valid: { from: 1944-05-15, to: 1944-07-31 }
+    confidence: A
+    note: >
+      **她是 Force E 的旗舰**（Dalrymple-Hamilton 少将）。
+      naval-history「joined HM Cruiser DIADEM in Bombarding Force E as Flagship of
+      Rear Admiral Dalrymple-Hamilton」；IWM「As flagship of bombardment Force E,
+      HMS Belfast was part of the Eastern Naval Task Force, with responsibility for
+      supporting the British and Canadian assaults on 'Gold' and 'Juno' beaches」。
+      注意区分：**Force E 是炮击编队，不是机动编队的 Force H**，两者无关。
+
+  - field: service.unit
+    value: 第 2 巡洋舰分队（2nd Cruiser Squadron，远东）
+    src: [naval-history-belfast]
+    valid: { from: 1945-11-01, to: 1946-12-31 }
+    confidence: C
+    note: >
+      1945-11-29 至 12-18 在上海，任第 2 巡洋舰分队旗舰，挂 Servaes 少将旗，
+      舰长 R M Dick 上校。同分队另有 BERMUDA、EURYALUS、BLACK PRINCE 及
+      新西兰巡洋舰 GAMBIA、ACHILLES。此条出自 naval-history 页尾所附
+      Gresson 海军候补生（RNZN）日记摘录。
+
+  - field: service.unit
+    value: 第 5 巡洋舰分队旗舰（5th Cruiser Squadron，远东）
+    src: [naval-history-belfast, iwm-history8]
+    valid: { from: 1948-12-01, to: 1949-12-31 }
+    confidence: C
+    note: >
+      IWM「Following her first peacetime refit, HMS Belfast returned to the Far East
+      in December 1948 as flagship of the Fifth Cruiser Squadron」。
+      1949 年 4 月「紫石英号事件」（Amethyst Incident）期间，远东站总司令
+      Brind 上将的旗挂在香港的本舰上，给 Amethyst 代理舰长 Kerans 少校的
+      全部命令都是从本舰发出的 —— 但本舰**未直接参战**
+      （IWM「Although HMS Belfast was not actively involved in the crisis」）。
+
+  # ============================================================ 舰长
+  - field: service.commander
+    value: Captain G A Scott DSO RN
+    src: [iwm-hms-belfast-history]
+    valid: { from: 1939-08-05, to: 1940-12-31 }
+    confidence: C
+    note: >
+      IWM 原文「commissioned into the Royal Navy on 5 August 1939 under the command
+      of Captain G A Scott DSO RN」。任期终点未获取，valid.to 取 1940 年末为界。
+
+  - field: service.commander
+    value: Captain（后 Admiral Sir Frederick）Parham
+    src: [iwm-history4]
+    valid: { from: 1942-10-01, to: 1943-12-31 }
+    confidence: C
+    note: >
+      IWM 2000 年版史页原文「When she finally rejoined the Home Fleet in November
+      1942, under the command of Captain (later Admiral Sir Frederick) Parham」。
+      任期终点未获取。北角海战时本舰舰长为 Parham 这一点，两源未直接互证，
+      故置信度取 C。
+
+  # ============================================================ 编制
+  - field: service.complement.standard
+    value: 850
+    unit: persons
+    src: [iwm-hms-belfast-spec, navypedia-edinburgh]
+    valid: { from: 1939-08-05, to: 1945-09-02 }
+    confidence: C
+    note: >
+      IWM 舰 specification 页「COMPLEMENT 750 - 850 (as flagship)」——750 为常规、
+      850 为旗舰编成；navypedia 给全级 850。两源在 850 上一致，取 850。
+      **注意不要与 IWM 现行展陈口径混用**：IWM 的参观页说「real-life stories from
+      the 950 people who lived and served aboard」——950 是**全舰歷年在此服役的
+      人数总和**，不是编制数，两者不可互换。
+
+  # ============================================================ 航空设施
+  - field: aviation.catapult.count
+    value: 1
+    unit: count
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-08-05, to: 1945-04-30 }
+    confidence: C
+    note: >
+      1 具 D-I-H 横向弹射器，位于前烟囱与前部上层建筑之间（本级特征）。
+      1945-05 改装时拆除（navypedia「5/1945, Belfast : - ... catapult with seaplanes」），
+      此后本舰再无航空设施。拆除具体日未给，valid.to 取该月起始前一日。
+
+  - field: aviation.aircraft.capacity
+    value: 3
+    unit: count
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-08-05, to: 1945-04-30 }
+    confidence: C
+    note: 原页「3 aircraft」。拆除弹射器后搭载能力归零，但**「0 架」不写成 fact**：来源没有这么说，推出来的数不进 fact。

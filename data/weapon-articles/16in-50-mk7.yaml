@@ -1,0 +1,152 @@
+# ============================================================================
+# 武器正文 —— 16"/50 (40.6 cm) Mark 7（美国，衣阿华级主炮）
+#
+# 这一篇的核心是「超重弹」：这门炮的穿甲能力之所以接近大和的 46 cm 炮，
+# 靠的不是口径，是 2,700 磅的 AP Mark 8 弹。navweaps 原文：
+#   "Originally intended to fire the relatively light 2,240 pound (1,016.0 kg)
+#    AP Mark 5 projectile, the shell handling system for these guns was
+#    redesigned to use the 'super-heavy' 2,700 pound (1,224.7 kg) AP Mark 8
+#    before any of the USS Iowa class (BB-61) battleships were laid down."
+# 注意：换弹是在**开工之前**就改掉的，不是后来改装。
+#
+# 另一处容易写错的：仰角。navweaps 明写：
+#   "Turrets I and III: -2 / +45 degrees  Turret II: 0 / +45 degrees"
+# 即**二号炮塔不能负角**（因为它背负在一号炮塔之上，位置高、需避开上层建筑）。
+# ============================================================================
+weapon: 16in-50-mk7
+updated: 2026-11-28
+
+intro:
+  lead:
+    zh: >-
+      16"/50 (40.6 cm) Mark 7 是美国战列舰主炮的最后一型，1939 年设计、1943 年服役，
+      装在衣阿华级（BB-61）与未建成的蒙大拿级（BB-67）上。
+      炮身连炮闩 267,904 磅（121,519 公斤），是美军造过的最大舰炮。
+      它真正的本事不在口径 —— 而在弹：这套供弹系统在设计阶段就改成了
+      2,700 磅的「超重弹」AP Mark 8，使它的穿甲力接近日本大和级的 46 cm 炮。
+    en: >-
+      The 16"/50 (40.6 cm) Mark 7 was the last battleship main battery gun of the
+      U.S. Navy, designed in 1939 and in service from 1943, mounted in the Iowa
+      class (BB-61) and the never-completed Montana class (BB-67). Weighing
+      267,904 lbs (121,519 kg) including the breech, it was the largest naval gun
+      the U.S. ever built. Its real strength lay not in its calibre but in its
+      projectile: the shell-handling system was redesigned for the 2,700 lbs
+      "super-heavy" AP Mark 8, which brought its penetrating power close to that of
+      the Japanese 46 cm guns of the Yamato class.
+
+  paragraphs:
+    - heading: 换弹发生在开工之前
+      text:
+        zh: >-
+          这一点最容易写反。navweaps 的原句是：这门炮「原本打算发射相对轻的
+          2,240 磅（1,016.0 公斤）AP Mark 5 弹，但在任何一艘衣阿华级开工之前，
+          这套炮的供弹系统就被重新设计，改用『超重弹』2,700 磅（1,224.7 公斤）
+          AP Mark 8」。也就是说换弹是**设计阶段的决定**，不是后来的改装，
+          更不是战时临时换的。这个改动让这一代 16 英寸炮的穿甲力
+          「在穿甲力上几乎等同于日本大和级的 46 cm（18.1 英寸）炮」。
+        en: >-
+          This is the easiest point to get backwards. NavWeaps states that the gun was
+          "Originally intended to fire the relatively light 2,240 pound (1,016.0 kg) AP
+          Mark 5 projectile", but that "the shell handling system for these guns was
+          redesigned to use the 'super-heavy' 2,700 pound (1,224.7 kg) AP Mark 8 before
+          any of the USS Iowa class (BB-61) battleships were laid down." The change was
+          a design-stage decision, not a later refit and certainly not a wartime
+          improvisation. It made these guns "nearly the equal in terms of penetration
+          power to the 46 cm (18.1") guns of the Japanese Yamato class".
+      src: [navweaps-16in-50-mk7]
+
+    - heading: 结构与参数
+      text:
+        zh: >-
+          炮身全长 816 英寸（20.726 米，炮闩面至炮口），膛长 800 英寸（20.320 米），
+          膛线长 682.86 英寸（17.344 米）。96 条膛线，深 0.150 英寸（3.81 毫米），
+          等齐右旋 1 比 25。药室 27,000 立方英寸（442.5 立方分米）。
+          射速每分钟 2 发；工作膛压 18.5 吨/平方英寸（2,910 公斤/平方厘米）；
+          炮管寿命约 290 发；每炮备弹约 130 发。
+          结构上，部分部件采用自紧工艺；膛内镀铬以延长寿命 ——
+          navweaps 说这是「1940 年代美国海军武器的典型做法」。
+          炮闩是 Smith-Asbury 式 Welin 闩体，向下开启；闩体与螺纹衬套分成
+          十五个 24 度的扇形段。
+        en: >-
+          Gun length overall is 816 in (20.726 m) from breech face to muzzle, bore length
+          800 in (20.320 m), rifling length 682.86 in (17.344 m). There are 96 grooves
+          0.150 in (3.81 mm) deep with a uniform right-hand twist of 1 in 25. Chamber
+          volume is 27,000 in3 (442.5 dm3). Rate of fire is 2 rounds per minute, working
+          pressure 18.5 tons/in2 (2,910 kg/cm2), approximate barrel life 290 rounds and
+          stowage about 130 rounds per gun. Some components were autofretted, and as was
+          typical of USN weapons built in the 1940s the bore was chromium plated for
+          longer barrel life. The breech is a Smith-Asbury Welin block opening
+          downwards, with the screw box liner and breech plug segmented into fifteen
+          sectors of 24 degrees each.
+      src: [navweaps-16in-50-mk7]
+
+    - heading: 三号炮塔能打负角，二号不行
+      text:
+        zh: >-
+          一个具体到炮塔的差别：navweaps 记「一号与三号炮塔：−2 / +45 度；
+          二号炮塔：0 / +45 度」。二号炮塔仰角下限是零度而不是负二度，
+          原因是它背负在一号炮塔之上、位置最高，负角会打到前方甲板与上层建筑。
+          这是本站记录这条数据时特别标注的一处 —— 三个炮塔不是同一套射界。
+          炮座本身重 1,701–1,708 吨（1,728.4–1,735.4 公吨），仰角速度 12 度/秒。
+        en: >-
+          One difference specific to individual turrets: NavWeaps records "Turrets I and
+          III: -2 / +45 degrees; Turret II: 0 / +45 degrees". Turret II's lower limit is
+          zero rather than minus two degrees because it is superimposed above Turret I and
+          sits highest in the ship, where a negative elevation would endanger the forward
+          deck and superstructure. The three turrets do not share one set of limits. Each
+          mounting weighed 1,701 to 1,708 tons (1,728.4 to 1,735.4 mt) with an elevation
+          rate of 12 degrees per second.
+      src: [navweaps-16in-50-mk7]
+
+    - heading: 弹种与初速
+      text:
+        zh: >-
+          弹药为药包装填。二战与朝鲜战争期间使用的两种主要弹：
+          AP Mark 8（Mods 0–8）2,700 磅（1,225 公斤），初速 2,500 fps（762 米/秒）；
+          HC Mark 13（Mods 0–6）与 HC Mark 14 1,900 磅（862 公斤），初速 2,690 fps
+          （820 米/秒）。另有训练弹 Target Mark 9。
+          弹重与初速的对应关系必须按弹种分开读 —— 压成一个数就错了。
+        en: >-
+          Ammunition is bag-loaded. Two main projectiles were used in the Second World War
+          and Korea: the AP Mark 8 (Mods 0-8) at 2,700 lbs (1,225 kg) with a muzzle
+          velocity of 2,500 fps (762 mps), and the HC Mark 13 (Mods 0-6) and HC Mark 14 at
+          1,900 lbs (862 kg) at 2,690 fps (820 mps). A Target Mark 9 practice round
+          existed as well. Projectile weight and muzzle velocity must be read as pairs by
+          shell type; collapsing them into single figures is an error.
+      src: [navweaps-16in-50-mk7]
+
+history:
+  - id: design
+    title: { zh: 设计与定型, en: Design }
+    range: { from: 1939, to: 1943 }
+    lead:
+      zh: >-
+        从 1939 年设计到 1943 年服役，这一型炮的定型过程里最关键的一步是换弹。
+      en: >-
+        Between the 1939 design and 1943 service, the decisive step in the gun's
+        definition was the change of projectile.
+    events:
+      - date: 1939
+        text:
+          zh: >-
+            设计年份。navweaps 记其「比 16"/45 (40.6 cm) Mark 6 更强」。
+            设计阶段即决定改用 2,700 磅超重弹，供弹系统随之重新设计。
+          en: >-
+            Design year. NavWeaps describes it as "More powerful than the 16"/45 (40.6 cm)
+            Mark 6", and records that the shell-handling system was redesigned for the
+            2,700 lbs super-heavy projectile at the design stage.
+        src: [navweaps-16in-50-mk7]
+      - date: 1939-06
+        text:
+          zh: >-
+            AP Mark 8 弹获批。它最初是作为 16"/45 炮所用 AP Mark 5 的
+            「更长更重的兄长」设计的。
+          en: >-
+            The AP Mark 8 projectile was approved, originally designed as the longer,
+            heavier "big brother" to the AP Mark 5 used by the 16"/45 guns.
+        src: [navweaps-16in-50-mk7]
+      - date: 1943
+        text:
+          zh: 进入服役，首先装于衣阿华号（BB-61）。
+          en: Entered service, first aboard Iowa (BB-61).
+        src: [navweaps-16in-50-mk7]

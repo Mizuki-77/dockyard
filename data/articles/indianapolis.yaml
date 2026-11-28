@@ -1,0 +1,534 @@
+# ============================================================================
+# 舰艇正文：印第安纳波利斯号（USS Indianapolis, CA-35）
+# ----------------------------------------------------------------------------
+# 结构：intro 4 段 + history 5 节 27 条事件。
+#
+# 【写作纪律，先写在这里免得后面写跑】
+#   一、**舰沉与舰长生死分开写。** 1945-07-30 舰沉；McVay 生还、受审、
+#       1968 年自杀、2000 年获国会平反 —— 四件事各占各的事件，不合并、
+#       不用「某舰到某日为止（沉没）」那类把舰与人的终点混成一句的写法。
+#   二、**运载物项的措辞按国家档案馆原句写。** 原句是 "shipped the collection
+#       of parts"（部件集合），铀靶件是 C-54 空运的，不在本舰上。
+#       不写「运送了原子弹」「运送了铀-235 核心」这类升级措辞。
+#   三、**争议数字两说并列。** 在舰人数 1,195 / 1,196、死亡 880 / 878、
+#       沉没时长 12 分钟 / 15-20 分钟，全部写明「一说……另一说……」，不裁决。
+#   四、**平反是 2000-10-30**（公法 106-398 签署日），不是 2001。
+#      2001-07-11 是把国会决议插入人事档案的日期。
+# ============================================================================
+
+ship: indianapolis
+updated: 2026-11-28
+
+intro:
+  lead:
+    zh: >-
+      印第安纳波利斯号（CA-35）是波特兰级重巡洋舰的二号舰，1932 年服役。
+      她一生中最重的两件事都压在最后一个月：先把原子弹的部件集合送到天宁岛，
+      返航途中在菲律宾海被日本潜艇 I-58 用鱼雷击沉，全舰一千一百九十余人中
+      只有三百一十六人获救 —— 这是美国海军史上单舰沉没死亡人数最多的一次，
+      而舰长 Charles B. McVay III 生还后成了海军史上唯一因战舰战沉被送上
+      军事法庭的舰长。
+    en: >-
+      Indianapolis (CA-35), second of the Portland class, commissioned in 1932.
+      The two heaviest things in her career fell in her final month: she carried
+      the collection of atomic-bomb components to Tinian, and on the return passage
+      was torpedoed and sunk by the Japanese submarine I-58 in the Philippine Sea.
+      Of some 1,190 men aboard only 316 were rescued - the heaviest loss of life
+      from the sinking of a single ship in the history of the U.S. Navy. Her
+      captain, Charles B. McVay III, survived, and became the only commanding
+      officer in that navy ever court-martialled for the loss of his ship in action.
+
+  paragraphs:
+    - heading: 一艘和平年代的旗舰
+      text:
+        zh: >-
+          建成到开战这九年，本舰干的活跟战斗关系不大。1933-11-01 起她是侦察舰队
+          旗舰，DANFS 记「余下的和平年代生涯一直担任旗舰」。1933-09 海军部长
+          Claude Swanson 曾在本舰升旗巡视太平洋；1934-05-31 纽约外海大阅兵，
+          罗斯福总统就站在她的二号 8 英寸炮塔前检阅舰队；1936-11-18 她又载着
+          总统做「睦邻」南美之行，送总统访里约热内卢、布宜诺斯艾利斯与蒙特维的亚。
+          同级两艘里，波特兰号是普通的巡洋舰分队一员，本舰却是长期挂旗的那一艘 ——
+          这是两舰生涯最早的、也是最根本的差异。
+        en: >-
+          For the nine years between completion and the outbreak of war her work had
+          little to do with fighting. From 1 November 1933 she was flagship of the
+          Scouting Force, and DANFS records that she "acted as flagship for the
+          remainder of her peacetime career". In September 1933 Secretary of the Navy
+          Claude Swanson broke his flag in her for a tour of the Pacific; at the fleet
+          review off New York on 31 May 1934 President Roosevelt stood immediately in
+          front of her second eight-inch turret; and on 18 November 1936 she embarked
+          him for a "Good Neighbor" cruise to Rio de Janeiro, Buenos Aires and
+          Montevideo. Of the two ships of the class, Portland was an ordinary unit of
+          the cruiser divisions while Indianapolis was the long-term flagship - the
+          earliest and most fundamental difference between them.
+      src: [danfs-indianapolis]
+
+    - heading: 「部件」而不是「整颗弹」
+      text:
+        zh: >-
+          本舰运的是原子弹的**部件**，这一点在中文叙述里最常被说走样。
+          美国国家档案馆的表述是：炸弹各部件由火车从新墨西哥州洛斯阿拉莫斯运到
+          旧金山，「在那里，重巡洋舰印第安纳波利斯号把这批部件集合运往天宁岛」；
+          而「为了防止灾难性事故，浓缩铀靶件另行由三架 C-54 空中运输机飞抵天宁岛」。
+          核科学史博物馆的清单更细：靶件外壳、炮管、铀射弹等主件由本舰运送，
+          铀靶件则由第 509 混成大队的 C-54 空运。
+          ——**铀靶件不在舰上。** 舰上还有两名曼哈顿计划人员随行（James Nolan 与
+          Robert Furman），全舰没有几个舰员知道箱子里装的是什么。
+        en: >-
+          What she carried was the collection of *components*, a point that is most
+          often blurred in retelling. The U.S. National Archives puts it this way:
+          various components were moved by train from Los Alamos to San Francisco,
+          "There, the heavy cruiser USS Indianapolis shipped the collection of parts
+          to Tinian Island"; and "In order to prevent a catastrophic accident, the
+          target piece of enriched uranium flew separately aboard three C-54 Skymaster
+          transport planes". The Atomic Heritage Foundation's itemised list is more
+          specific: the target case, barrel, uranium projectile and other main parts
+          went by Indianapolis, while the uranium target component went by C-54 of the
+          509th Composite Group - the uranium target was not on board. Two Manhattan
+          Project men, James Nolan and Robert Furman, travelled with the cargo; few
+          aboard knew what the crates held.
+      src: [archives-littleboy, nm-littleboy, nuclearmuseum-indy]
+
+    - heading: 沉没，与之后的四天
+      text:
+        zh: >-
+          1945-07-28 她从关岛单独出航，走代号「Peddie」的航线去莱特。
+          07-30 凌晨零点后不久，右舷前方连遭两次重爆 —— 日本潜艇 I-58
+          （舰长桥本以行）发射的鱼雷。她在十二分钟内倾覆沉没（调查法庭记为
+          「约十五到二十分钟」，两说并列），位置 12°02′N 134°48′E。
+          真正致命的是之后的事：她没在 07-31 按时抵达莱特，而**没有任何机构
+          去追问她为什么没到**。1945-08-13 的调查法庭把责任指向一套长成的制度：
+          太平洋舰队机密函件 10CL-45 明写「战斗舰艇不作到达报告」，
+          而「没有任何单位负责查询未到达的原因」。直到 08-02 上午，
+          一架例行巡逻的 PV-1 才偶然看见海面上的油膜和幸存者。
+        en: >-
+          She sailed from Guam alone on 28 July on the route coded "Peddie" for Leyte.
+          Shortly after midnight on 30 July two heavy explosions struck her starboard
+          side forward - torpedoes from the Japanese submarine I-58, Commander
+          Hashimoto Mochitsura. She capsized and sank in twelve minutes (the court of
+          inquiry recorded "about fifteen or twenty minutes"; the two accounts are
+          given side by side) at 12-02 N, 134-48 E. What proved fatal was what
+          followed: she did not reach Leyte on the 31st, and no activity inquired why.
+          The court of inquiry of 13 August 1945 laid this at the door of a system that
+          had grown up - Pacific Fleet Confidential Letter 10CL-45 stated that "Arrival
+          reports shall not be made for combatant ships", and there was "no direct
+          responsibility ... for control and accountability of all shipping". Not until
+          the morning of 2 August did a PV-1 on routine patrol chance upon an oil slick
+          and the survivors.
+      src: [danfs-indianapolis, nhhc-court-of-inquiry-findings, nhhc-routing-instructions]
+
+    - heading: 舰长：审判、申斥、平反，三件事都不是结局
+      text:
+        zh: >-
+          调查法庭建议把 McVay 送军事法庭，尼米兹 1945-09-06 明确驳回，
+          认为「未下令走之字航线是判断失误，不构成重大过失」，主张以申斥代替审判 ——
+          但海军部长 Forrestal 仍下令开庭，1945-12 在华盛顿海军船厂定罪。
+          庭审中最反常的一幕是：被告方请来了击沉本舰的日本潜艇舰长桥本以行出庭，
+          他答「即使目标走之字航线，鱼雷发射方式也不需改变，只是机动上要作些调整」。
+          判决是「扣 100 个资历序号」，海军部长核准后**把刑罚全部赦免**。
+          ——**这些事都发生在舰长生还之后**：McVay 在获救名单上排第一位，
+          1949 年退役时依例晋升少将，1968 年自杀。
+          2000-10-30 国会通过公法 106-398 §545，认定他对本舰损失无责；
+          2001-07-11 海军部长 England 把该条原文插入他的人事档案。
+        en: >-
+          The court of inquiry recommended a general court-martial; Nimitz refused it
+          on 6 September 1945, holding that "His failure to order a zig-zag course was
+          an error in judgment, but not such nature as to constitute gross negligence",
+          and directed a letter of reprimand instead - but Secretary of the Navy
+          Forrestal ordered the trial anyway, and McVay was convicted at the Washington
+          Navy Yard in December 1945. The strangest scene in that courtroom was the
+          defence calling the commander of the submarine that sank his ship: Hashimoto
+          testified that had the target been zigzagging, "It would have involved no
+          change in the method of firing the torpedoes, but some changes in
+          manoeuvring." All of this happened after the captain survived - McVay heads
+          the list of rescued officers, was advanced to rear admiral on retirement in
+          1949, and took his own life in 1968. On 30 October 2000 Congress passed
+          Public Law 106-398, section 545, finding him without culpability; on 11 July
+          2001 Secretary of the Navy England inserted that section into his record.
+      src: [nhhc-nimitz-reprimand, nhhc-court-martial-hashimoto, ndaa-2001-sec545, nhhc-england-2001]
+
+history:
+  - id: build
+    title: { zh: 建造、服役与和平年代（1930-1941）, en: Building, commissioning and the peacetime years }
+    range: { from: 1930, to: 1941 }
+    events:
+      - date: 1930-03-31
+        text:
+          zh: >-
+            在新泽西 Camden 的 New York Shipbuilding 公司开工，船台号 399。
+            同级两艘不同厂：姊妹舰波特兰号在 Bethlehem 的 Quincy 厂建造。
+          en: >-
+            Laid down at Camden, N.J., by the New York Shipbuilding Corp., yard
+            number 399. The two ships of the class were built at different yards -
+            Portland at Bethlehem, Quincy.
+        src: [danfs-indianapolis, navypedia-portland, navsource-ca35]
+      - date: 1931-11-07
+        text:
+          zh: 下水，命名人是印第安纳波利斯前市长、已故参议员 Thomas Taggart 之女 Lucy Taggart。
+          en: >-
+            Launched, sponsored by Miss Lucy Taggart, daughter of the late Senator
+            Thomas Taggart, a former mayor of Indianapolis.
+        src: [danfs-indianapolis, navsource-ca35]
+      - date: 1932-11-15
+        text:
+          zh: 在费城海军船厂服役，首任舰长 John M. Smeallie 上校。
+          en: >-
+            Commissioned at the Philadelphia Navy Yard, Capt. John M. Smeallie in
+            command.
+        src: [danfs-indianapolis, navypedia-portland]
+
+      - date: 1933-09-06
+        text:
+          zh: >-
+            海军部长 Claude A. Swanson 在本舰升旗，巡视巴拿马运河区、夏威夷与
+            圣佩德罗-圣迭戈一带的舰队，10-27 在圣迭戈下舰。
+          en: >-
+            Secretary of the Navy Claude A. Swanson broke his flag in Indianapolis for
+            an inspection tour of the Canal Zone, Hawaii and the fleet in the San
+            Pedro-San Diego area, disembarking at San Diego on 27 October.
+        src: [danfs-indianapolis]
+      - date: 1933-11-01
+        text:
+          zh: 成为侦察舰队旗舰，此后整个和平年代都担任旗舰。
+          en: >-
+            Became flagship of the Scouting Force, and acted as flagship for the
+            remainder of her peacetime career.
+        src: [danfs-indianapolis]
+      - date: 1934-05-31
+        text:
+          zh: >-
+            纽约外海大阅兵，罗斯福总统在本舰二号 8 英寸炮塔前检阅舰队，
+            十八架鱼雷机列队从头顶飞过（NHHC 照片 NH 688）。
+          en: >-
+            Fleet review off New York City; the President stood immediately in front of
+            her second eight-inch gun turret as a formation of eighteen torpedo planes
+            passed overhead.
+        src: [danfs-indianapolis]
+      - date: 1936-11-18
+        text:
+          zh: >-
+            在查尔斯顿接罗斯福总统，开始「睦邻」南美之行，先后访里约热内卢、
+            布宜诺斯艾利斯、蒙特维的亚，12-15 返抵查尔斯顿送总统离舰。
+          en: >-
+            Embarked President Roosevelt at Charleston for the "Good Neighbor" cruise,
+            carrying him to Rio de Janeiro, Buenos Aires and Montevideo, and returning
+            to Charleston on 15 December where the presidential party left the ship.
+        src: [danfs-indianapolis]
+
+  - id: war
+    title: { zh: 太平洋战争（1941-1945）, en: The Pacific war }
+    range: { from: 1941, to: 1945 }
+    events:
+      - date: 1941-12-07
+        text:
+          zh: >-
+            珍珠港事变时正在约翰斯顿岛做模拟炮击演习，随即加入第 12 特混舰队
+            搜索据报仍在附近海域的日军航母；12-13 抵珍珠港后转入第 11 特混舰队。
+          en: >-
+            Making a simulated bombardment of Johnston Island when the Japanese attacked
+            Pearl Harbor; joined Task Force 12 to search for Japanese carriers reportedly
+            still in the vicinity, and entered Task Force 11 on reaching Pearl Harbor on
+            13 December.
+        src: [danfs-indianapolis]
+      - date: 1942-02-20
+        text:
+          zh: >-
+            在拉包尔以南约三百五十海里的敌控海域首战：十八架双发轰炸机分两波来袭，
+            十六架被舰上防空火力与列克星敦号的战斗机击落，美方舰船无一受损，
+            另击落两架尾随的日军水上飞机。
+          en: >-
+            First action about 350 miles south of Rabaul: 18 twin-engined bombers in two
+            waves, 16 shot down by the ships' anti-aircraft fire and Lexington's
+            fighters; no American ship was damaged, and two trailing Japanese seaplanes
+            were splashed.
+        src: [danfs-indianapolis]
+      - date: 1942-03-10
+        text:
+          zh: >-
+            与约克城号协同突袭新几内亚的莱城与萨拉马瓦：舰载机从南面飞越欧文·斯坦利
+            山脉进入，日军完全未料，港口舰船损失惨重，美方损失极轻。
+          en: >-
+            Attacked the enemy ports at Lae and Salamaua with Yorktown; carrier aircraft
+            flew in from the south over the Owen Stanley range and achieved complete
+            surprise, damaging Japanese shipping heavily at very light American cost.
+        src: [danfs-indianapolis]
+      - date: 1942-08-07
+        text:
+          zh: >-
+            在阿留申的浓雾中找到缺口，与编队其他舰一起炮击基斯卡岛；日军岸炮
+            十五分钟后才开始还击，其中一些还朝空中开火，以为遭到轰炸。
+          en: >-
+            Found an opening in the thick fog at Kiska and opened fire with the rest of
+            the force; shore batteries took fifteen minutes to reply, some firing into
+            the air in the belief they were being bombed.
+        src: [danfs-indianapolis]
+      - date: 1943-02-19
+        text:
+          zh: >-
+            夜巡阿图岛西南时拦截日本货船赤金丸，警告后对方试图伪装应答，被 8 英寸
+            炮击沉；该船爆炸极为猛烈、无人生还，推测满载弹药。
+          en: >-
+            Intercepted the Japanese cargo ship Akagane Maru southwest of Attu; when
+            challenged she tried to feign a reply and was shelled. She exploded with
+            great force and left no survivors, presumably laden with ammunition.
+        src: [danfs-indianapolis]
+      - date: 1943-11-19
+        text:
+          zh: >-
+            以第五舰队旗舰身份参加 Galvanic 作战：炮击塔拉瓦，次日轰击马金，
+            随后回到塔拉瓦担任登陆火力支援舰，当日击落一架敌机。
+          en: >-
+            As Fifth Fleet flagship in Operation Galvanic, bombarded Tarawa on 19
+            November and Makin the next day, then returned to Tarawa as fire-support
+            ship, splashing an enemy plane that day.
+        src: [danfs-indianapolis]
+      - date: 1944-06-19
+        text:
+          zh: >-
+            菲律宾海海战：当日海军击落四百零二架敌机而自损十七架，史称
+            「马里亚纳猎火鸡」；本舰击落一架鱼雷机。此前她随另一编队空袭了
+            硫磺岛与父岛。
+          en: >-
+            Battle of the Philippine Sea: the Navy destroyed 402 enemy aircraft while
+            losing 17 of its own on the day the fleet called the "Marianas Turkey
+            Shoot"; Indianapolis, which had operated with the force that struck Iwo Jima
+            and Chichi Jima, shot down one torpedo plane.
+        src: [danfs-indianapolis]
+      - date: 1945-03-31
+        text:
+          zh: >-
+            冲绳外海：一架单发战斗机从晨昏线中冲出，垂直俯冲撞向舰桥。
+            20 mm 炮火在飞机距舰不到十五秒时开火、曳光弹命中使其偏转，但飞行员在
+            二十五英尺高度投下炸弹并撞上后部主甲板左舷。炸弹穿透甲板装甲、士兵餐厅、
+            下层住舱与燃油舱，从舰底穿出后在水下爆炸，炸出两个大洞，九人死。
+            本舰舰艉下沉、左倾，但无渐进进水，自力驶往修理船，随后自行横渡太平洋
+            回 Mare Island —— 检查发现螺旋桨轴受损、燃油舱破裂、制水设备报废。
+          en: >-
+            Off Okinawa a single-engined fighter came out of the dawn twilight in a
+            vertical dive on the bridge. The 20 mm guns opened fire and tracer hit the
+            aircraft, making it swerve, but the pilot released his bomb from 25 feet and
+            crashed on the port side of the after main deck. The bomb passed through the
+            deck armour, the crew's mess hall, the berthing compartment and the fuel
+            tanks, went out through the bottom and exploded underwater, blowing two
+            holes and killing nine men. She settled slightly by the stern and listed to
+            port but had no progressive flooding, and made the long passage to Mare
+            Island under her own power with damaged propeller shafts, ruptured fuel
+            tanks and ruined distilling equipment.
+        src: [danfs-indianapolis, navypedia-portland]
+
+  - id: final
+    title: { zh: 最后航程与沉没（1945-07 至 1945-08）, en: The final passage and the sinking }
+    range: { from: 1945-07, to: 1945-08 }
+    events:
+      - date: 1945-07-16
+        text:
+          zh: >-
+            从旧金山出发前往天宁岛，运载原子弹的部件集合；因任务紧急，
+            连大修后的试航都跳过了。（HyperWar 转录本作 07-15 出发，与 NHHC
+            现行版的 07-16 相差一天，两说并列。）
+          en: >-
+            Sailed from San Francisco for Tinian carrying the collection of atomic-bomb
+            components, foregoing her post-repair shakedown because of the urgency. The
+            HyperWar transcription gives 15 July against the current NHHC edition's 16
+            July; both readings are recorded.
+        src: [danfs-indianapolis, archives-littleboy, danfs-indianapolis-ibiblio]
+      - date: 1945-07-26
+        text:
+          zh: >-
+            抵达天宁岛卸下货物，十天跑完约五千海里，创下纪录；07-19 曾在珍珠港
+            短暂加燃料。货物由随舰的曼哈顿计划人员交给岸上，舰员未登岛。
+          en: >-
+            Reached Tinian and discharged the cargo, covering some 5,000 miles in ten
+            days - a record passage - after a brief refuelling stop at Pearl Harbor on
+            19 July. The crates were handed over ashore by the Manhattan Project men
+            who had travelled with them.
+        src: [danfs-indianapolis, nuclearmuseum-indy]
+      - date: 1945-07-28
+        text:
+          zh: >-
+            09:00 从关岛阿普拉港出航，按港务主任指令 PDG 1849 走「Peddie」航线
+            单独直航莱特，预定 07-31 11:00 抵达。同一份指令写明
+            「之字航线由舰长自行决定」，并要求舰长「随时对本舰安全航行负责」。
+          en: >-
+            Departed Apra Harbor, Guam, at about 0900 under Port Director's routing
+            instruction PDG 1849, proceeding unescorted by the "Peddie" route to Leyte
+            with an ETA of 1100 on 31 July. The same instruction states "Zigzag at
+            discretion of the Commanding Officer" and that commanding officers are at
+            all times responsible for the safe navigation of their ships.
+        src: [nhhc-routing-instructions, nhhc-court-of-inquiry-findings]
+      - date: 1945-07-30
+        text:
+          zh: >-
+            凌晨零点后不久（9½ 时区约 0005），右舷前方连遭两次重爆，I-58 发射的
+            鱼雷命中；全舰通讯与动力随即失效，弃舰命令靠传话逐层下达。
+            她在十二分钟内倾覆沉没（调查法庭记为约十五到二十分钟，两说并列），
+            位置 12°02′N 134°48′E。**舰沉；舰长 McVay 被浪冲出舰外，
+            抓住一只空救生筏，生还。**
+          en: >-
+            Shortly after midnight (about 0005, zone time 9 1/2) two heavy explosions
+            struck her starboard side forward - torpedoes from I-58. All internal
+            communication and power were lost and the order to abandon ship was passed
+            by word of mouth. She capsized and sank in twelve minutes (the court of
+            inquiry recorded about fifteen or twenty; both are given), at 12-02 N,
+            134-48 E. The ship was lost; her captain, washed overboard, reached an empty
+            raft and survived.
+        src: [nhhc-court-of-inquiry-findings, danfs-indianapolis, nhhc-i58-sketch]
+      - date: 1945-08-02
+        text:
+          zh: >-
+            上午，一架从 Peleliu 起飞的 PV-1（飞行员 Wilbur C. Gwinn 少尉）在
+            3000 英尺高度巡逻时，为修理拖曳天线爬到后舱，发现正下方有一条油膜，
+            降低到 900 英尺跟踪，约 1125 看见约三十名幸存者，即发报
+            「Sighted thirty survivors 11°30' North, 133°30' East. Dropped transmitter
+            and life boat.」（DANFS 记这一时刻为 1025，两说并列。）
+            此后救援迅速展开：四艘驱逐舰、四艘护航驱逐舰、三艘快速运输舰奉命前往；
+            海军 PBY 于 1605 冒险在公海降落，捞出五十三人，飞机受损后由
+            Cecil J. Doyle 号击沉。
+          en: >-
+            In the morning a PV-1 flown by Lt. (jg) Wilbur C. Gwinn, out of Peleliu,
+            went aft to the tunnel at 3,000 feet to repair the trailing antenna, noticed
+            an oil slick directly below, followed it down to 900 feet and at about 1125
+            sighted some thirty survivors, signalling "Sighted thirty survivors 11°30'
+            North, 133°30' East. Dropped transmitter and life boat." (DANFS gives the
+            time as 1025; both are recorded.) Rescue followed at once: four destroyers,
+            four destroyer escorts and three fast transports were ordered to the area,
+            and a Navy PBY landed on the open sea at about 1605, taking 53 survivors
+            aboard before being damaged and sunk by Cecil J. Doyle.
+        src: [nhhc-court-of-inquiry-findings, nhhc-summation-rescue, danfs-indianapolis]
+      - date: 1945-08-08
+        text:
+          zh: >-
+            救援结束：一百海里半径内昼夜梳搜。获救 316 人 —— 这一项三个来源完全一致
+            （海军伤亡汇总「Survived: 316」、DANFS「saving 316」、国会 §545「only 316」），
+            其中 15 名军官、301 名士兵，全部是伤员。另有四名士兵获救后死亡。
+            在舰人数与死亡人数两处各源不一：DANFS 记 1,195 人在舰，海军伤亡汇总
+            记 1,196；死亡一说 880（伤亡汇总「Died at sea: 880」）、
+            一说 878（调查法庭「Missing ... 878 Total」），**两说并列，不裁决**。
+          en: >-
+            Rescue operations ended after a radius of 100 miles had been combed by day
+            and by night. 316 were saved - the one figure on which three sources agree
+            (the Navy casualty summary's "Survived: 316", DANFS' "saving 316", and
+            section 545's "only 316"), 15 officers and 301 enlisted, all of them
+            wounded. Four further sailors were rescued and died shortly afterwards. The
+            numbers aboard and dead differ between sources: DANFS gives 1,195 aboard
+            against the casualty summary's 1,196, and the dead are given as 880 ("Died
+            at sea: 880") against 878 ("Missing ... 878 Total"); both readings stand.
+        src: [nhhc-casualty-summary, danfs-indianapolis, va-indy, ndaa-2001-sec545]
+
+  - id: aftermath
+    title: { zh: 沉没之后：法庭、平反、残骸（1945-2017）, en: Aftermath - courts, exoneration, wreck }
+    range: { from: 1945, to: 2017 }
+    events:
+      - date: 1945-08-13
+        text:
+          zh: >-
+            关岛海军调查法庭提交结论。事实部分认定：本舰当时未走之字航线、
+            处于三级战备与 YOKE modified 水密状态、未发出任何求救电报；
+            意见部分认定延误的主因是「本舰未能发出求救电报」，
+            而「莱特湾没有任何海军机构查询本舰为何未到」是「助成原因」，
+            根源是太平洋舰队机密函件 10CL-45 与第七舰队 2CL-45 的
+            「战斗舰艇不作到达报告」条款 —— 法庭原话是「一套长成的制度」。
+            法庭同时建议把舰长送军事法庭。
+          en: >-
+            The court of inquiry at Guam reported. It found that she had not been
+            zigzagging, was at condition of readiness three, material condition YOKE
+            modified, and that no distress message left the ship; it held the failure to
+            transmit a distress message the primary cause of the delay, and the failure
+            of any naval activity in Leyte Gulf to inquire into her non-arrival a
+            contributory cause, rooted in the "faulty system which had grown up" around
+            Pacific Fleet Confidential Letter 10CL-45 and Seventh Fleet 2CL-45, whose
+            "Arrival reports shall not be made for combatant ships" the court quoted. It
+            also recommended that the captain be tried by general court-martial.
+        src: [nhhc-court-of-inquiry-findings]
+      - date: 1945-09-06
+        text:
+          zh: >-
+            尼米兹以太平洋舰队总司令身份驳回了审判建议：他认为未发求救电报确有责任，
+            「未下令走之字航线是判断失误，但不构成重大过失」，因此以申斥信代替军法审判；
+            同时申斥了塔克洛班港务主任处作战官 Gibson 中尉、训诫了代理港务主任
+            Sancho 少校，并责令第 95.7 特混大队处分其译电参谋。
+          en: >-
+            Nimitz, as Commander in Chief Pacific Fleet, declined the recommendation for
+            trial: he held that McVay had incurred blame for failing to send a distress
+            message, but that "His failure to order a zig-zag course was an error in
+            judgment, but not such nature as to constitute gross negligence", and
+            directed a letter of reprimand in lieu of court-martial. He also reprimanded
+            Lieutenant Gibson, operations officer to the Port Director at Tacloban,
+            admonished Lieutenant Commander Sancho, the acting Port Director, and
+            directed CTG 95.7 to discipline his communications staff.
+        src: [nhhc-nimitz-reprimand]
+      - date: 1945-12-13
+        text:
+          zh: >-
+            军事法庭在华盛顿海军船厂开庭（记录封面署 1945-12-03），
+            被控「因过失使舰艇陷于危险」。当日最反常的一幕是被告方请来 I-58 舰长
+            桥本以行出庭作证：他描述在 1500 米距离以三度间隔发射六枚九五式氧气鱼雷，
+            看见三枚命中舰桥与舰艏之间；被问到若目标走之字航线是否有区别，他答
+            「鱼雷发射方式不需改变，只是机动上要作些调整」。
+            他是美国海军史上唯一一位因战舰战沉而被军法审判的舰长。
+          en: >-
+            The general court-martial opened at the Navy Yard, Washington (the record
+            cover is dated 3 December 1945), on a charge of negligently hazarding his
+            vessel. The most unusual moment came when the defence called Commander
+            Mochitsura Hashimoto of I-58: he described firing six Type 95 oxygen
+            torpedoes at 1,500 metres on a three-degree spread and seeing three hit
+            between the bridge and the bow, and answered that had the target been
+            zigzagging "It would have involved no change in the method of firing the
+            torpedoes, but some changes in manoeuvring." McVay was the only commander of
+            a U.S. Navy vessel lost to enemy action in the war to be so tried.
+        src: [nhhc-court-martial-hashimoto, ndaa-2001-sec545]
+      - date: 1968
+        text:
+          zh: >-
+            McVay 自杀身亡。国会 2000 年的决议在事实部分记这一句：
+            「虽依当时适用的法律于 1949 年退役时晋升少将，McVay 上校始终未能
+            摆脱战后军事法庭的污名，1968 年不幸自尽。」
+            ——他活到了战后二十三年，这与本舰的沉没是两件事。
+          en: >-
+            McVay took his own life. The congressional findings of 2000 record it:
+            "Although promoted to the grade of rear admiral in accordance with
+            then-applicable law upon retirement from the Navy in 1949, Captain McVay
+            never recovered from the stigma of his post-war court-martial and in 1968,
+            tragically, took his own life." He lived twenty-three years beyond the
+            sinking; the two facts are separate.
+        src: [ndaa-2001-sec545, nuclearmuseum-indy]
+      - date: 2000-10-30
+        text:
+          zh: >-
+            公法 106-398（2001 财年国防授权法案）由总统签署，其 §545 是
+            「国会关于 McVay 上校军法判决的意见」：认定「之字航线的选择在命令中
+            交由 McVay 上校自行决定」，且桥本与美军潜艇指挥官 Glynn R. Donaho
+            均出庭证明「无论是否走之字航线，日方潜艇都能击沉本舰」；
+            并列举海军未给他三项支援：驳回其护航申请（批语「不必要」）、
+            未告知信号情报已知 I-58 在该海域、未告知四天前 Underhill 号被击沉。
+            结论是「美国人民现在应当承认 McVay 上校对……本舰及舰员的惨重损失无责」，
+            「其军籍档案应当反映他已获平反」。同条并要求给本舰与最后一批舰员
+            颁发 Navy Unit Commendation。
+          en: >-
+            Public Law 106-398, the FY2001 National Defense Authorization Act, was
+            signed; its section 545 is the "Sense of Congress on the court-martial
+            conviction of Captain Charles Butler McVay". It finds that "the choice to
+            zigzag was left to Captain McVay's discretion in his orders"; that both
+            Hashimoto and the highly decorated U.S. submarine commander Glynn R. Donaho
+            testified the submarine "could have sunk the U.S.S. Indianapolis whether or
+            not it had been zigzagging"; and that the Navy withheld three things - his
+            request for a destroyer escort was disapproved as "not necessary", he was not
+            told that signal intelligence knew I-58 was in his area, and he was not told
+            of the sinking of Underhill four days earlier. It concludes that "the
+            American people should now recognize Captain McVay's lack of culpability"
+            and that his record "should now reflect that he is exonerated", and calls on
+            the Secretary of the Navy to award a Navy Unit Commendation to the ship and
+            her final crew.
+        src: [ndaa-2001-sec545, nhhc-england-2001]
+      - date: 2017-08-18
+        text:
+          zh: >-
+            Paul G. Allen 的调查船 Petrel 在约 5,500 米（18,000 英尺）深处发现本舰残骸。
+            ——残骸所在海域两说并列：DANFS 作「北太平洋海底」，NavSource 作
+            「菲律宾海」，深度两源一致明确。
+          en: >-
+            Paul G. Allen's research vessel Petrel located the wreckage some 5,500
+            metres (18,000 feet) below the surface. The sea in which it lies is given
+            two ways: DANFS says "the floor of the North Pacific", NavSource says "the
+            Philippine Sea"; both agree on the depth.
+        src: [danfs-indianapolis, navsource-ca35]

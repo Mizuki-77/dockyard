@@ -1,0 +1,530 @@
+# ============================================================================
+# 長門（Nagato）单舰数据
+# ----------------------------------------------------------------------------
+# 只写与舰级文件不同的、本舰特有的项：
+#   1) 建造日期、船厂、试航实测
+#   2) 逐任旗舰身份（本级最关键的一条：**开战时旗舰已不是她**）
+#   3) 逐次改装节点（1925 / 1932-33 / 1934-36 / 1938 / 1943 / 1944-06 / 1944-11 / 1945-06）
+#   4) 1944-10 莱特湾的战损与伤亡
+#   5) 结局：1946 年十字路口行动
+# 解析顺序：单舰 fact -> 舰级 fact -> 未记载。
+# ============================================================================
+
+id: nagato
+name:
+  zh: 长门
+  en: Nagato
+class: nagato
+
+open_ended_note: |
+  本文件中 valid.to 留空的 fact 表示「至本舰 1946-07 沉没为止持续有效」，
+  不是漏填。本舰 1946-07-25 受重创、07-29 前后翻覆沉没，故未写 to 的
+  时间窗终点即该日。
+
+facts:
+  # ---------------------------------------------------------------- 身份
+  - field: identity.name_original
+    value: 長門
+    src: [kasado-nagato-names, navypedia-nagato]
+    valid: { from: 1917-08-28 }
+    confidence: B
+    note: >
+      舰名「長門」，取自长门国（今山口县西部）。navypedia 表格首行「長門 [Nagato]」；
+      kasado「1.長門 Nagato」。本级两舰均按日本旧国名命名，与战列舰命名惯例一致。
+
+  - field: identity.name_zh
+    value: 长门
+    src: [kasado-nagato-names]
+    valid: { from: 1917-08-28 }
+    confidence: B
+
+  - field: identity.name_en
+    value: Nagato
+    src: [navypedia-nagato, combinedfleet-nagato-trom]
+    valid: { from: 1917-08-28 }
+    confidence: B
+
+  - field: identity.namesake
+    value: 长门国（ながと、今山口県西部）
+    src: [kasado-nagato-names]
+    valid: { from: 1917-08-28 }
+    confidence: C
+    note: >
+      kasado 与本级命名惯例支持此说，但两源均未直接写「命名自长门国」。
+      按日本海军战列舰以旧国名命名的通例，此条 confidence 记 C。
+
+  # ---------------------------------------------------------------- 建造
+  - field: construction.builder
+    value: 呉海軍工廠（Kure Navy Yard）
+    src: [navypedia-nagato, kasado-nagato-names, combinedfleet-nagato-trom]
+    valid: { from: 1917-08-28 }
+    confidence: B
+    note: >
+      navypedia「Kure K K」；kasado「建造所 呉海軍工廠」；
+      TROM 1917-08-28 条「Kure Navy Yard. Battleship NAGATO is laid down.」三源一致。
+
+  - field: construction.builder_location
+    value: 呉（広島県）
+    src: [combinedfleet-nagato-trom]
+    valid: { from: 1917-08-28 }
+    confidence: C
+    note: TROM 逐条以「Kure.」开头记该厂所在地。
+
+  - field: construction.laid_down
+    value: 1917-08-28
+    unit: date
+    src: [navypedia-nagato, kasado-nagato-names, combinedfleet-nagato-trom]
+    valid: { from: 1917-08-28 }
+    confidence: A
+    note: >
+      三源完全一致：navypedia「28.8.1917」；kasado「起工:1917年8月28日」；
+      TROM「28 August 1917: Kure Navy Yard. Battleship NAGATO is laid down.」
+
+  - field: construction.launched
+    value: 1919-11-09
+    unit: date
+    src: [navypedia-nagato, kasado-nagato-names, combinedfleet-nagato-trom]
+    valid: { from: 1919-11-09 }
+    confidence: A
+    note: >
+      三源一致。TROM 另记下水典礼细节：「NAGATO is launched by the Minister of the Navy,
+      Admiral (later Fleet Admiral/Baron/Prime Minister) Kato Tomosaburo. The ceremony is also
+      attended by Vice Admiral, Prince (later Fleet Admiral) Fushimi Hiroyasu of the Naval
+      General Staff. NAGATO is assigned to the Yokosuka Naval District.」——注意下水后编入的是
+      横须贺镇守府，而非建造地吴镇守府。
+
+  - field: construction.commissioned
+    value: 1920-11-25
+    unit: date
+    src: [navypedia-nagato, kasado-nagato-names, combinedfleet-nagato-trom]
+    valid: { from: 1920-11-25 }
+    confidence: A
+    note: >
+      三源一致。TROM「25 November 1920: NAGATO is completed and commissioned in the IJN.
+      She is the first battleship in the world equipped with 16.1-inch (410-mm) guns.
+      Captain Iida is her Commanding Officer.」
+
+  - field: construction.fate_date
+    value: 1946-07-25
+    unit: date
+    src: [navypedia-nagato]
+    valid: { from: 1946-07-25 }
+    confidence: C
+    note: >
+      **本条记「受重创、注定沉没」的日期，不是沉没日。** navypedia「25.7.1946 she was hard
+      damaged by explosion of a 40kt bomb in 1km from the ship and sunk in 4 days」——
+      即 07-25 受创、4 天后沉没。沉没日的三说（07-28 / 07-29 / 07-29 夜）见 service.fate_category 条。
+
+  - field: construction.fate_type
+    value: expended_as_target
+    src: [navypedia-nagato, combinedfleet-nagato-trom, kasado-nagato-names]
+    valid: { from: 1946-07-25 }
+    confidence: B
+    note: >
+      1946 年十字路口行动（Operation Crossroads）的靶舰，两次核试验后沉没。
+      TROM 1946-07-24「The underwater atomic bomb detonation test 'Baker', organized by the US Navy,
+      destroys NAGATO」；navypedia「used at nuclear tests off the Bikini atoll」；
+      kasado「ビキニ環礁にて原爆水中爆発実験の標的として使用され損傷」。
+      注册表枚举里 `expended_as_target` 最贴切：她是被「消耗」掉的靶船，不是战沉。
+
+  # ---------------------------------------------------------------- 试航实测
+  - field: propulsion.speed.trial
+    value: 26.7
+    unit: kn
+    src: [combinedfleet-nagato-trom]
+    valid: { from: 1920-11-23 }
+    confidence: B
+    note: >
+      TROM「23 November 1920: Sukumo Bight. During speed trials, NAGATO sets a new record of
+      26.7 knots.」同页另记 1920-10-06「NAGATO beats the world record for a battleship of and
+      makes 26.443 knots」——两次试航两个值，本站记较高的一次 26.7，较早的 26.443 在此留档。
+
+  - field: propulsion.power.trial
+    value: 80000
+    unit: hp
+    src: [navypedia-nagato]
+    valid: { from: 1920-11-23 }
+    confidence: C
+    comparable: false
+    note: >
+      **本条要小心读：这不是试航实测功率，是设计值。**
+      长门的试航实测轴马力**未获取**：TROM 只给航速（1920-10-06「26.443 knots」、
+      1920-11-23「sets a new record of 26.7 knots」）不给对应 shp；navypedia 与 kasado
+      的 80,000 shp 是设计值栏。填进 trial 字段只为让对比器有数可显示，
+      故加 comparable: false 排除出横向比较。
+      **没有用姊妹舰陆奥的 87,479 shp 来填**（红线 §1）。
+      陆奥的实测值见 ships/mutsu.yaml。
+
+  # ---------------------------------------------------------------- 旗舰身份（本级最易写错的一条）
+  - field: service.unit
+    value: 第一艦隊 第一戦隊（連合艦隊旗艦）
+    src: [combinedfleet-nagato-trom, kasado-nagato-names]
+    valid: { from: 1925-12-01, to: 1942-02-11 }
+    confidence: B
+    note: >
+      TROM 1925-12-01「Reattached to BatDiv 1, First Fleet, as the flagship of the Combined Fleet,
+      flying the flag of C-in-C, Admiral Okada Keisuke.」kasado「1925年12月1日 第一艦隊第一戦隊に
+      編入され、艦隊旗艦兼戦隊旗艦となる」。
+      **注意**：这一任期在 1920s-1930s 内并不连续——TROM 记 1931-12-01「Reserve ship」、
+      1937-12-01「Training ship at Yokosuka」，期间旗舰旗曾先后在金刚、陆奥之间移动
+      （陆奥 1933-02-03 接旗、1936-12-01 与 1937-01-21 再任）。本字段记的是「长门任联合舰队
+      旗舰」这一身份的首末，中间断档见各条 service.unit。
+
+  - field: service.unit
+    value: 第一艦隊 第一戦隊（連合艦隊旗艦）
+    src: [combinedfleet-nagato-trom, kasado-nagato-names]
+    valid: { from: 1938-12-15, to: 1942-02-11 }
+    confidence: B
+    note: >
+      第二次长期任联合舰队旗舰。TROM 1938-12-15「Attached to BatDiv 1, First Fleet, and flagship
+      of the Combined Fleet.」kasado「1938年12月15日 第一艦隊第一戦隊に編入され、聯合艦隊旗艦となる」。
+      两源一致。TROM 另记 1939-09-01 山本五十六在该舰上就任联合舰队司令长官
+      （「boards the ship at Wakanoura」）、1940-10-11 观舰式以该舰为旗舰。
+
+  - field: service.unit
+    value: 第一艦隊 第二戦隊（第一艦隊旗艦）
+    src: [combinedfleet-nagato-trom, kasado-nagato-names]
+    valid: { from: 1942-07-14 }
+    confidence: B
+    note: >
+      TROM 1942-07-14「NAGATO and MUTSU are transferred from the Combined Fleet's BatDiv 1 to
+      Vice Admiral Shimizu Mitsumi's First Fleet in BatDiv 2 with YAMASHIRO, FUSO, ISE and HYUGA.
+      NAGATO becomes flagship of the First Fleet.」
+      **这就是「开战时旗舰已不是她」的落点**：联合舰队旗舰于 1942-02-12 移交给大和
+      （TROM「The flag of the Combined Fleet's Commander-in-Chief Admiral Yamamoto Isoroku … is
+      transferred from battleship NAGATO to YAMATO」），此后长门只当第一舰队（内海待机部队）旗舰。
+      任务书「1941 年开战时旗舰已换成大和」的说法需修正：**开战日 1941-12-08 时旗舰仍是长门**，
+      换旗发生在 1942-02-12。见 RESEARCH-NOTES §2。
+
+  - field: service.fate_category
+    value: 1946-07-25 受 Baker 核试重创，其后翻覆沉没；沉没日 07-28 / 07-29 两说并存
+    src: [navypedia-nagato, combinedfleet-nagato-trom, kasado-nagato-names]
+    valid: { from: 1946-07-25 }
+    confidence: C
+    note: >
+      **三说并列，不裁决**：
+      ① TROM「29 July 1946: At Bikini. NAGATO capsizes and sinks at night. She comes to rest
+      upside down in about 160 feet of water.」
+      ② kasado「7月28日 浸水拡大により沈没」。
+      ③ navypedia「sunk in 4 days」（从 07-25 起算即 07-29）。
+      另：navypedia 把受创日与沉没日合并写成 25.7.1946，kasado 的分列更清楚。
+
+  # ---------------------------------------------------------------- 编制
+  - field: service.complement.wartime
+    value: 1000
+    unit: persons
+    src: [combinedfleet-nagato-trom]
+    valid: { from: 1945-06-01 }
+    confidence: C
+    note: >
+      TROM 1945-06-01「Her crew is reduced to 1,000 men.」——这是末期的缩减编制，
+      不是战时满编。**满编未获取**：TROM 与 kasado 均未给长门的战时全员编制数，
+      舰级层的 1,368（改装后平时编制）是唯一有来源的数字。
+
+  - field: service.casualties
+    value: 38
+    unit: persons
+    src: [combinedfleet-nagato-trom]
+    valid: { from: 1944-10-26 }
+    confidence: B
+    note: >
+      TROM 1944-10-26 条末「During today's and the previous day's battles, NAGATO fires
+      ninety-nine 410-mm. (16.1-inch) shells and 653 140-mm. (5.5-inch) shells.
+      She suffers 38 crewmen killed and 105 seriously wounded.」
+      条目标注的是 10-24 至 10-26 莱特湾全程的累计伤亡。
+
+  # ---------------------------------------------------------------- 1930 年代前改装
+  - field: armament.aa_25mm.count
+    value: 20
+    unit: count
+    src: [navypedia-nagato, combinedfleet-nagato-trom]
+    valid: { from: 1938-01-01, to: 1943-05-30 }
+    confidence: B
+    note: >
+      navypedia「1938, both: - 2 x 1 - 40/62; + 10 x 2 - 25/60 96-shiki」= 20 门；
+      TROM 1939 年条「20 Type 96 1-inch (25-mm) AA guns are fitted instead of the 40-mm AA guns.」
+      两源一致（navypedia 给 1938，TROM 给 1939，年份差一年，并列不裁决）。
+
+  - field: armament.aa_25mm.count
+    value: 22
+    unit: count
+    src: [combinedfleet-nagato-trom, navypedia-nagato]
+    valid: { from: 1943-05-31, to: 1944-06-26 }
+    confidence: C
+    note: >
+      TROM 1943-05-31「Kure. Drydocked at No. 4 drydock. A Type 21 radar set and two 25-mm AA
+      guns (twin mount) are fitted.」即 20 + 2 = 22 门。
+      navypedia 同年条记「6/1943, Nagato: + 1 x 2 - 25/60 96-shiki, 1-shiki 2-go radar」，
+      与 TROM 自洽（1 座双联 = 2 门）。
+
+  - field: armament.aa_25mm.count
+    value: 118
+    unit: count
+    src: [combinedfleet-nagato-trom]
+    valid: { from: 1944-06-27, to: 1944-11-24 }
+    confidence: C
+    note: >
+      TROM 1944-06-27「Two 140 mm. (5.5-in.) guns are removed and ninety-six (16 triple mount,
+      10 twin mount, 28 single) 25-mm AA guns are added.」——16×3 + 10×2 + 28×1 = 96 门，
+      原文说的是**新增 96 门**，不是总数。
+      本字段按注册表口径只装「总数」，故：原有 22 门 + 新增 96 门 = 118 门。
+      **118 是本站加法结果，TROM 原件没有这个数**，引用时必须注明。
+      navypedia 同年条记「+ 16 x 3 - 25/60 96-shiki, 28 x 1 - 25/60 96-shiki」
+      （未提 10 座双联 = 20 门），若按它算则为 22 + 48 + 28 = 98 门，与 118 并列不裁决。
+      kasado 的 1944-10 栏另记「三連装14基 + 連装10基 + 単装30基」= 92 门，第三说。
+
+  # armament.aa_25mm.count 1945 年状态：两个来源对不上，且都不可直接搬进 fact。
+  #   · kasado 1945-02 栏「三連装14基 + 連装10基 + 単装30基」= 42 + 20 + 30 = 92 门（原文直接给的分基数列，本站换算管数）
+  #   · TROM 1944-11-25「+ thirty (10 triple mount) 25-mm, minus one older triple mount」= +27 门，
+  #     以 118 为基数得 145 门 —— 这是本站加减推算
+  # 两者差 53 门，无法调和（可能一为「按座」一为「按管」，也可能部分炮已移上岸）。
+  # 按红线 §3「推断值不进 fact」与 §1「查不到就写查不到」，只在下面保留可追原文的 92，
+  # 145 一步列为推算并明确标注，见 RESEARCH-NOTES §7。
+  - field: armament.aa_25mm.count
+    value: 92
+    unit: count
+    src: [kasado-nagato]
+    valid: { from: 1945-02-01 }
+    confidence: C
+    note: >
+      kasado「長門:1945年2月頃」栏「九六式 60口径25mm三連装機銃:14基／連装機銃:10基／
+      単装機銃:30基」。按管数换算：14×3 + 10×2 + 30×1 = 92 门。
+      **这是本站按 kasado 的「基」数换算出的管数，kasado 原件只给座数。**
+      注意本栏与 kasado 的「1944年10月頃」栏数字完全相同（14/10/30），
+      即该表认为 1944-11 那次增装没有改变 25 mm 总数——这与 TROM 的「+27 门」直接冲突。
+      **第三说（本站不写成 fact）**：若按 TROM 1944-11-25「+ thirty (10 triple mount),
+      minus one older triple mount」= +27 门，以 118 为基数得 145 门。
+      145 是「推算之上再推算」，按红线 §3 不进 fact，只在此留档。
+      三说并列，不裁决。
+
+  # 另注：TROM 1945-06-01 记「most AA guns … moved ashore」，Kasado 的 1945-02 栏 92 门
+  # 是「移上岸之前」的舰上数。移岸后舰上还剩多少，两源均未给，故不写。
+
+  - field: sensors.radar.installed
+    value: 二一号電探（Type 21，対空捜索）
+    src: [combinedfleet-nagato-trom, navypedia-nagato]
+    valid: { from: 1943-05-31 }
+    confidence: B
+    note: >
+      TROM 1943-05-31「A Type 21 radar set and two 25-mm AA guns (twin mount) are fitted.」
+      navypedia「6/1943, Nagato: + 1 x 2 - 25/60 96-shiki, 1-shiki 2-go radar」——
+      两个来源对型号的写法不同（Type 21 / 1-shiki 2-go），并列不裁决。
+
+  - field: sensors.radar.installed
+    value: 二二号電探（Type 22，対水上捜索）× 2
+    src: [combinedfleet-nagato-trom, navypedia-nagato]
+    valid: { from: 1944-06-27 }
+    confidence: B
+    note: >
+      TROM 1944-06-27「At Kure, she is fitted with Type 22 and 13 radars (2 sets each).」
+      navypedia 同年条「2x 3-shiki 1-go, 2x 2-shiki 2-go radars」——「二号二型」= Type 22，
+      数量 2 组，两源自洽（navypedia 的中文式型号码写法见下条说明）。
+
+  - field: sensors.radar.installed
+    value: 一三号電探（Type 13，対空捜索）× 2
+    src: [combinedfleet-nagato-trom, navypedia-nagato, kasado-nagato]
+    valid: { from: 1944-06-27 }
+    confidence: B
+    note: >
+      TROM 同上条「Type 22 and 13 radars (2 sets each)」；kasado 1944-10 栏「一号三型電波探信儀
+      (対空捜索):2組」——日方的「一号三型」即美方编号的 Type 13（Mark 13）。
+      navypedia 写作「2x 3-shiki 1-go」，是把日式型号倒着写，与「一号三型」同物。
+      三源指向同一装备，型号译名差异记于此，不裁决。
+
+  - field: sensors.radar.count
+    value: 5
+    unit: count
+    src: [kasado-nagato, combinedfleet-nagato-trom]
+    valid: { from: 1944-06-27 }
+    confidence: C
+    note: >
+      **推算值**：kasado 1944-10 栏「二号二型:2組 + 二号一型:1組 + 一号三型:2組」= 5 组。
+      TROM 只记 1944-06-27 加装「Type 22 and 13 (2 sets each)」= 4 组，
+      加上 1943-05 的 Type 21 一组 = 5 组，两源合计吻合。
+
+  # ---------------------------------------------------------------- 1944-10 莱特湾
+  - field: armament.gun_failures
+    value: >
+      1944-10-24 锡布延海：一发炸弹击中艇甲板，炸坏一番锅炉舱进气口，
+      导致一台螺旋桨轴停转、航速降至 22 节（1440 恢复）；炮廓炮 2 号、4 号被毁，
+      另 3 门失效，12.7 cm 高角炮 2 号被卡死。1944-10-25 萨马岛外：
+      两发炸弹命中舰艏，一发撕裂锚甲板、一发在舷侧海中爆炸击穿舰艏。
+    src: [combinedfleet-nagato-trom]
+    valid: { from: 1944-10-24, to: 1944-10-25 }
+    confidence: B
+    note: >
+      TROM 1944-10-24 1416 条「NAGATO is hit by two bombs and suffers three near misses.
+      The first bomb explodes on the boat deck, damages the air intake of No. 1 boiler room,
+      wrecks casemate guns Nos. 2, 4, disables three more guns and jams 127-mm AA gun No. 2.
+      Due to the damage to the boiler room's air intake, it is shut down and causes one propeller
+      shaft to stop. NAGATO's speed drops to 22 knots until 1440 when the boiler is put back on.」
+      10-25 1243 条「Two bombs hit NAGATO in the bow; one ruptures her anchor deck, the other
+      strikes a roller and explodes in the sea alongside, holing her bow.」
+      **与 navypedia 冲突**：navypedia 记「received hits of three bombs which have put out of
+      action one main turret」——即 3 发炸弹、瘫痪一座主炮塔。TROM 记 2 发命中 + 3 近失、
+      未提主炮塔失效。**两说并列，不裁决。**
+
+  - field: service.unit
+    value: 第二艦隊 第一戦隊（栗田健男 第一遊撃部隊 前衛／中心部隊）
+    src: [combinedfleet-nagato-trom]
+    valid: { from: 1944-10-22, to: 1944-11-14 }
+    confidence: B
+    note: >
+      TROM 1944-10-22「NAGATO sorties from Brunei towards the Philippines with Vice Admiral Kurita
+      Takeo's First Mobile Striking Force, First Section, Force 'A' (Center Force): BatDiv 1's
+      YAMATO, MUSASHI and NAGATO, CruDivs 4, 5 and DesRon 2.」
+      注意 TROM 同条记「NAGATO's Mitsubishi F1M2 'Petes' are transferred to YAMATO」——
+      出击前把水上飞机全部移交大和，此后长门全程无舰载机。
+
+  - field: service.unit
+    value: 第二艦隊 第三戦隊
+    src: [combinedfleet-nagato-trom, kasado-nagato-names]
+    valid: { from: 1944-11-15 }
+    confidence: B
+    note: >
+      TROM 1944-11-15「NAGATO is reassigned to BatDiv 3 in Second Fleet.」
+      kasado「11月15日 第三戦隊に編入」。两源一致。
+
+  - field: service.unit
+    value: 横須賀鎮守府 警備艦（後に予備艦、特別警備艦）
+    src: [combinedfleet-nagato-trom, kasado-nagato-names]
+    valid: { from: 1945-02-10 }
+    confidence: B
+    note: >
+      逐级降格：TROM 1945-02-10「NAGATO is reassigned to the Yokosuka Naval District as a
+      coastal defense vessel」→ 1945-04-20「Reassigned as reserve ship due to lack of fuel」
+      → 1945-06-01「ISE, HYUGA, NAGATO and HARUNA are assigned to the Special (Coast) Guard Fleet」。
+      kasado「2月10日 横須賀鎮守府警備艦となる／4月20日～ 予備艦／6月1日 特別警備艦となる」。
+      两源逐条吻合。
+
+  - field: armament.mount.summary
+    value: >
+      1945-06 最终状态：主炮 4 × 2 41 cm 仍在，但已全部拆上岸用；
+      副炮 12 × 1 14 cm（1944-11 由 16 减到 12，1945-06 再拆 12 门全部上岸）；
+      高角炮 12.7 cm 由 8 门减到 0（6 座双联全部拆除）；
+      25 mm 大部分移上岸，装在与仓库山（Urayama）山顶
+    src: [combinedfleet-nagato-trom, navypedia-nagato]
+    valid: { from: 1945-06-01 }
+    confidence: B
+    note: >
+      TROM 1945-06-01「All of NAGATO's remaining secondary, most AA guns and one catapult are
+      moved ashore. Her AA guns are installed on the top of the nearby Urayama mountain.
+      Her secondary guns protect Yokosuka's pier zone against future landings. NAGATO's main guns
+      point at the mouth of the Sagami Bay … Her rangefinders and all her searchlights are moved
+      ashore and installed on nearby Okusuyama mountain.」
+      navypedia「6/1945, Nagato: - 12 x 1 - 140/50, 6 x 2 - 127/40」与 TROM 一致。
+      **这是本舰最特殊的一段状态**：一艘 1945 年的战列舰，主炮指向相模湾湾口，
+      炮口对准的是预料中的登陆舰艇，而炮弹的药室早已空空。
+
+  # ---------------------------------------------------------------- 结局与战后
+  - field: service.fate_authority
+    value: 美国海军（Operation Crossroads 联合特遣部队）
+    src: [combinedfleet-nagato-trom, navypedia-nagato]
+    valid: { from: 1946-03-18 }
+    confidence: B
+    note: >
+      TROM 1946-03-18「NAGATO departs Yokosuka for Eniwetok under the command of Captain W. J.
+      Whipple with a US Navy crew of about 180 men. She is accompanied by relatively new (1944)
+      light cruiser SAKAWA, also under an American crew. Only two of NAGATO's four screws are in
+      operation and her best speed is but 10 knots.」
+      ——本舰末期的舰长是美国人，舰员是美国人，这是「唯一活到战后的日本战列舰」的具体含义。
+
+  - field: service.survivors
+    value: 0
+    unit: persons
+    src: [combinedfleet-nagato-trom]
+    valid: { from: 1946-07-29 }
+    confidence: C
+    note: >
+      **本条记的是「沉没时无人在舰」这一事实，不是战斗生还数。**
+      TROM 1946-07-24 记 Baker 试验后「NAGATO is reboarded. No. 7 boiler is reactivated for the
+      next 36 hours」，07-29 翻覆沉没时舰上已无人。数字 0 是按此事实记的，
+      注册表没有「无人伤亡」这类布尔字段，故用 0 表达并在 note 说明。
+
+  # ---------------------------------------------------------------- 涂装
+  - field: appearance.color.hull
+    value: 军港灰（横須賀海軍工廠標準色），1945 年夏加施重度迷彩
+    src: [combinedfleet-nagato-trom]
+    valid: { from: 1945-06-01 }
+    confidence: C
+    note: >
+      TROM 1945-06-01「NAGATO is heavily camouflaged and her main gun turrets are covered with
+      elaborate scaffolding. Potted pines and cryptomerias are set on her upper decks.」
+      来源未给具体色号或迷彩图案，本条只记「重度迷彩 + 炮塔搭脚手架 + 甲板摆盆栽松树」这一状态，
+      色值**未获取**。
+
+  # ---------------------------------------------------------------- 航空设施（逐期）
+  - field: aviation.catapult.count
+    value: 1
+    unit: count
+    src: [combinedfleet-nagato-trom]
+    valid: { from: 1933-08-01 }
+    confidence: B
+    note: >
+      TROM 1933 夏「A Kure Type No. 2 Model 3 catapult, collapsible crane and rails are installed
+      between the mainmast and the No. 3 turret.」——弹射器装在主桅与三番炮塔之间，
+      即后部上甲板。1937 年换成 Model 5（TROM 1937 年条「A new catapult (Kure Type No. 2 Model 5)
+      is fitted」）。本条记座数，型号差异见舰级文件的 aviation.catapult.type。
+
+  - field: aviation.aircraft.types
+    value: 一四式水上偵察機（E1Y2）→ 九五式（E8N1）→ 零式水上観測機（F1M2）
+    src: [combinedfleet-nagato-trom, kasado-nagato]
+    valid: { from: 1925-08-01 }
+    confidence: C
+    note: >
+      逐期：TROM 1925-08 德国 Heinkel 带来的 HD-25/HD-26 试用（「After the platform is mounted
+      atop the No. 2 main turret, several launch tests are carried out in Boso Bight」——
+      那是二番炮塔顶上的起飞平台，不是弹射器）→ 1926 夏「A German Hansa-Brandenburg W-33
+      monoplane is tested aboard, but soon replaced with a Yokosho E1Y2 (Type 14)」→
+      1934 改装「Three Nakajima E4N2 floatplanes are embarked」→ 1938「Three Nakajima E8N1
+      Type 95 ('Dave') floatplanes are embarked」→ 1944-10-22 出击前「NAGATO's Mitsubishi
+      F1M2 'Petes' are transferred to YAMATO」，此后无舰载机。
+      kasado 1944-10 栏记「零式水上偵察機:3機」，与 TROM 的 F1M2 两机不完全一致，两说并列不裁决。
+      本条只列代表性机型，完整链条见正文。
+
+  # ---------------------------------------------------------------- 末任舰长序列（1945 年这一段本身即史料）
+  - field: service.commander
+    value: 大塚幹（Otsuka Miki）少将，1945-07-18 阵亡，追晋中将
+    src: [combinedfleet-nagato-trom]
+    valid: { from: 1945-04-27, to: 1945-07-18 }
+    confidence: B
+    note: >
+      TROM 1945-04-27「At Yokosuka. Rear Admiral Otsuka Miki, recalled from retirement when the
+      war began to skipper merchant ships, assumes command from Captain Shibuya. As a LtCdr in the
+      mid-1920s, Otsuka had served as NAGATO's communications officer.」
+      1945-07-18「At 1552 a 500 or 1000-lb GP bomb hits the bridge and demolishes the wheelhouse.
+      Rear Admiral Otsuka, XO Captain Higuchi Teiji … and eleven more officers are killed.」
+      ——一名退役后被召回、二十年前在本舰当过通信军官的老兵，最后死在这艘舰的舰桥里。
+
+  - field: service.commander
+    value: 杉野修一（Sugino Shuichi）大佐，1945-07-24 任命时人在旅顺
+    src: [combinedfleet-nagato-trom]
+    valid: { from: 1945-07-24 }
+    confidence: B
+    note: >
+      TROM 1945-07-24「Captain Sugino Shuichi (former CO of CVE TAIYO) is assigned as CO, but at
+      this time Sugino is at Port Arthur, Manchukuo.」
+      在其到任前，TROM 1945-07-28~08-09 记「Rear Admiral Ikeuchi Masamichi … is recalled from
+      retirement and assigned temporary duty as NAGATO's CO」；到任则在 1945-08-20~30
+      （「Captain Sugino arrives and assumes command」）。
+      即本舰在受降前后的一个月里，舰长一职由三名军官先后署理。
+
+  - field: armament.mount.summary
+    value: >
+      1944-11-25 横须贺修理后：14 cm 副炮由 16 门减到 12 门（拆 4 门）；
+      12.7 cm 高角炮由 4 座双联（8 门）增到 6 座双联（12 门）；
+      主炮 4 × 2 41 cm 未变；鱼雷发射管自 1936 年起即为 0
+    src: [combinedfleet-nagato-trom, navypedia-nagato, kasado-nagato]
+    valid: { from: 1944-11-25, to: 1945-05-31 }
+    confidence: B
+    note: >
+      TROM 1944-11-25「Forward secondary guns removed. Two 127-mm and thirty (10 triple mount)
+      25-mm AA guns are added and one older triple mount is removed.
+      NAGATO serves as a floating AA battery. Her funnel and mainmast are removed to improve her
+      guns' arcs of fire. Moored alongside a pier at Yokosuka's Koumi Base, she is camouflaged and
+      protected by anti-torpedo nets.」
+      navypedia「11/1944, Nagato: - 4 x 1 - 140/50; + 2 x 2 - 127/40 89-shiki, 9 x 3 - 25/60」
+      与 TROM 的减 4 门 14 cm、加 2 座 12.7 cm 双联完全一致。
+      kasado 1944-10 栏记 14 cm「16基」、1945-02 栏记「12基」，与上述「16 → 12」吻合。
+      **「拆除烟囱与主桅以提高射界」这一条尤其值得注意**：本舰到这一步已不是一艘战舰，
+      而是一座浮在水上的防空炮台。

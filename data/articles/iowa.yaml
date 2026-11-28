@@ -1,0 +1,384 @@
+# ============================================================================
+# 舰艇正文 —— 衣阿华（Iowa, BB-61）
+# ----------------------------------------------------------------------------
+# 体例与 data/articles/yamato.yaml 一致：intro 分节、history 分节带逐条事件，
+# 每条事件都追到 sources-fragment.yaml 或 data/sources.yaml 里已登记、
+# 且非 E 层的来源。
+#
+# 本文的三条写作纪律：
+#   1. 不写「史上最大战列舰」。NHHC 原文明确大和、武藏更重、主炮更大
+#      （"the Japanese super-battleships Yamato and Musashi were heavier and
+#      had larger guns"）。本舰级的定位是「最精密」，不是「最大」。
+#   2. 排水量的长吨/公吨分歧不裁决，正文并列两种数值并说明口径。
+#   3. 1989 年二号炮塔爆炸按「结论未定」写：海军 1989 年结论（人为破坏）
+#      与 1991 年 CNO 记者会（无法确认任何原因）都要出现，
+#      不替任何一方下判语。
+# ============================================================================
+ship: iowa
+updated: 2026-11-28
+
+intro:
+  lead:
+    zh: >-
+      衣阿华号是衣阿华级战列舰的首舰，1943 年 2 月 22 日服役，1990 年 10 月 26 日
+      最终退役。它是本级四舰中第一艘建成、也是防空炮最少的一艘；一生横跨
+      二战、朝鲜战争与 1980 年代复役三个时期，1989 年在二号炮塔里失去 47 名
+      舰员，那是它最沉重的一页。
+    en: >-
+      Iowa was the lead ship of the Iowa class, commissioned on 22 February 1943
+      and decommissioned for the last time on 26 October 1990. First of the four
+      to be completed and the one with the lightest anti-aircraft battery, she
+      served across World War II, the Korean War and the 1980s reactivation —
+      and in 1989 lost 47 men in her Number Two turret, the heaviest page in her
+      record.
+
+  paragraphs:
+    - heading: 舰级定位与主尺度
+      text:
+        zh: >-
+          衣阿华级的设计工作始于 1938 年，1938 年 6 月定案。它与前一级南达科他级
+          的火力与防护基本相当，多出来的约一万吨排水量全部投在动力上：
+          舰体在同一船宽（33.0 m，受巴拿马运河船闸限制）下拉长到 270.4 m，
+          长宽比加大，配八座锅炉、四组通用电气齿轮传动汽轮机、四轴，
+          设计功率 212,000 轴马力，设计航速 32.5 节。DANFS 给的航速是 33 节，
+          与 Navypedia 的 32.5 节差半节，本站两说并列。
+          标准排水量 DANFS 记 45,000 吨，Navypedia 的竣工栏记 48,110 吨，
+          满载 57,540 吨；MARAD 的政府登记值则是夏季满载 57,271 吨、
+          轻载 45,231 吨。三套数字口径不同，不做换算合并。
+        en: >-
+          Design work on the Iowa class began in 1938 and was approved that June.
+          Firepower and protection were essentially those of the preceding South
+          Dakota class; the extra ten thousand tons went into machinery. The hull
+          was stretched to 270.4 m at an unchanged beam of 33.0 m — the Panama
+          Canal lock limit — giving a higher length-to-beam ratio, and eight
+          boilers fed four sets of General Electric geared turbines on four shafts
+          for 212,000 shp and a design speed of 32.5 knots; DANFS gives 33 knots.
+          Standard displacement is 45,000 tons in DANFS and 48,110 tonnes in
+          Navypedia's as-commissioned table, with 57,540 tonnes full load, while
+          MARAD's register lists 57,271 tons summer displacement and 45,231 tons
+          light. The figures use different bases and are not converted here.
+      src: [navypedia-iowa, danfs-iowa-iii, marad-vessel-iowa]
+
+    - heading: 主炮：16 英寸/50 倍径 Mark 7
+      text:
+        zh: >-
+          本舰级的主炮是 16"/50（40.6 cm）Mark 7，不是北卡罗来纳级与南达科他级
+          用的 16"/45 Mark 6。三座三联装炮塔前二后一，全舰九门。这门炮的原型
+          本要用 2,240 磅（1,016 kg）的 AP Mark 5 炮弹，装弹系统在首舰开工前
+          就改成 2,700 磅（1,225 kg）的「超重弹」AP Mark 8；NavWeaps 的判断是，
+          这使它穿甲力接近日本大和级的 46 cm 炮，而炮身重量不到后者的四分之三。
+          新炮初速 762 m/s，45 度仰角最大射程 38,720 m，射速约 2 发/分，
+          炮管寿命约 290 发，每门备弹约 130 发。炮塔全重 1,728–1,735 公吨，
+          一号与三号塔俯仰范围为 −2/+45 度，二号塔因背负布置下限为 0 度。
+        en: >-
+          The main battery was the 16"/50 (40.6 cm) Mark 7, not the 16"/45 Mark 6
+          of the North Carolina and South Dakota classes: three triple turrets,
+          two forward and one aft, nine guns. The weapon was originally intended
+          for the 2,240 lb AP Mark 5, but the shell handling system was redesigned
+          for the 2,700 lb "super-heavy" AP Mark 8 before the first ship was laid
+          down; NavWeaps judges that this made its penetration close to that of
+          Yamato's 46 cm guns at less than three-quarters the weight. Muzzle
+          velocity was 762 m/s, maximum range 38,720 m at 45 degrees, rate of fire
+          about 2 rounds per minute, barrel life about 290 rounds and stowage
+          about 130 rounds per gun. Turrets weighed 1,728–1,735 tonnes; Turrets I
+          and III elevated from −2 to +45 degrees, Turret II from 0 to +45.
+      src: [navweaps-16in-50-mk7, navypedia-iowa]
+
+    - heading: 防护与副炮
+      text:
+        zh: >-
+          装甲是内置式：141.4 m 长的主装甲带内倾 19 度、厚 307 mm，外侧加一层
+          38 mm 垂直外板；下装甲带同样内倾 19 度，从上缘 307 mm 收薄到下缘 41 mm。
+          主装甲甲板 178 mm（舷侧）至 152 mm（中线），其上 38 mm 上甲板、
+          其下 16 mm 防破片甲板（弹药库上方 25 mm）。炮塔正面 432 mm 装甲板
+          加 STS 背板，侧面 241 mm，顶部 184 mm。水下防护纵深 5.45 m，
+          分四层隔舱，设计抗 317 kg TNT。副炮是十座双联装 5"/38 Mark 12
+          （Mark 28 Mod 2 炮座），每舷五座，每门备弹 450 发。本级设计上没有
+          鱼雷发射管。
+        en: >-
+          Protection was internal: a 141.4 m main belt inclined 19 degrees and
+          307 mm thick over a 38 mm outer plate, with a lower belt tapering from
+          307 mm to 41 mm at the same inclination. The main armour deck ran from
+          178 mm at the sides to 152 mm on the centreline, with a 38 mm upper deck
+          above and a 16 mm splinter deck below (25 mm over the magazines). Turret
+          faces carried 432 mm plate over STS backing, sides 241 mm and crowns
+          184 mm. Underwater protection was 5.45 m deep in four compartments,
+          designed against 317 kg of TNT. Secondary armament was ten twin 5"/38
+          Mark 12 mounts (Mark 28 Mod 2), five per side, with 450 rounds per gun.
+          The class carried no torpedo tubes by design.
+      src: [navypedia-iowa, navweaps-5in38-mk12, navweaps-16in-50-mk7]
+
+    - heading: 结局与今天的身份
+      text:
+        zh: >-
+          本舰 1949 年 3 月 24 日首次退役，因朝鲜战争于 1951 年 8 月 25 日复役，
+          1958 年 2 月 24 日再次退役入费城后备舰队，1984 年 4 月 28 日随
+          600 舰海军计划复役，1990 年 10 月 26 日最终退役，2006 年 3 月除籍。
+          1989 年爆炸后的二号炮塔封存未再使用，直到退役都保持封闭。
+          2001 年 4 月 21 日移入 Suisun Bay 后备舰队，2011 年 10 月 27 日
+          移交洛杉矶太平洋战列舰中心，自 2012 年起在 San Pedro 作为博物馆舰开放。
+        en: >-
+          She decommissioned on 24 March 1949, recommissioned on 25 August 1951
+          for the Korean War, decommissioned again on 24 February 1958 into the
+          Philadelphia reserve fleet, returned to service on 28 April 1984 under
+          the 600-ship Navy programme, decommissioned for the last time on
+          26 October 1990, and was stricken in March 2006. Her Number Two turret,
+          sealed after the 1989 explosion, was never used again. She entered the
+          Suisun Bay Reserve Fleet on 21 April 2001, was transferred to the
+          Pacific Battleship Center in Los Angeles on 27 October 2011, and has been
+          open as a museum ship at San Pedro since 2012.
+      src: [danfs-iowa-iii, nhhc-h029-4, marad-vessel-iowa, navypedia-iowa]
+
+history:
+  - id: build
+    title: { zh: 建造与服役, en: Building and commissioning }
+    range: { from: 1940, to: 1943 }
+    events:
+      - date: 1940-06-27
+        text:
+          zh: 在纽约海军造船厂（布鲁克林）开工，是本级第一艘。
+          en: Laid down at the New York Navy Yard, Brooklyn — first of the class.
+        src: [danfs-iowa-iii, navypedia-iowa]
+
+      - date: 1942-08-27
+        text:
+          zh: 下水，掷瓶人为副总统华莱士的夫人。
+          en: Launched, sponsored by Mrs. Henry A. Wallace, wife of the Vice President.
+        src: [danfs-iowa-iii]
+
+      - date: 1943-02-22
+        text:
+          zh: >-
+            服役，首任舰长 John L. McCrea 上校。竣工防空为 15 座四联装 40 mm
+            （60 门）与 60 门单装 20 mm，是本级四舰里最少的一档。
+          en: >-
+            Commissioned under Capt. John L. McCrea with 15 quadruple 40 mm mounts
+            (60 guns) and 60 single 20 mm — the lightest anti-aircraft battery of
+            the four ships.
+        src: [danfs-iowa-iii, navypedia-iowa]
+
+      - date: 1943-11-14
+        text:
+          zh: >-
+            载罗斯福总统、国务卿赫尔与参谋长联席会议全体赴德黑兰会议途中，
+            护航的威廉·D·波特号驱逐舰误射一枚实弹鱼雷；本舰规避并开炮将其
+            在舰尾后方约 3,000 码处引爆。
+          en: >-
+            While carrying President Roosevelt, Secretary of State Hull and the
+            entire Joint Chiefs to the Tehran Conference, the escorting destroyer
+            William D. Porter accidentally fired a live torpedo; Iowa manoeuvred
+            and opened fire, exploding it about 3,000 yards astern.
+        src: [nhhc-h029-4]
+
+  - id: ww2
+    title: { zh: 太平洋战场（1944–1945）, en: The Pacific war, 1944–1945 }
+    range: { from: 1944, to: 1945 }
+    events:
+      - date: 1944-01-02
+        text:
+          zh: 作为第 7 战列舰分队旗舰离美赴太平洋战场。
+          en: Departed the United States as flagship of Battleship Division 7.
+        src: [danfs-iowa-iii]
+
+      - date: 1944-02-16
+        text:
+          zh: >-
+            脱离支援编队参加特鲁克外围的反舰扫荡；当日行动中本舰与同级的
+            New Jersey 协助击沉日本轻巡洋舰香取。
+          en: >-
+            Detached from the support group for an anti-shipping sweep around Truk;
+            in that day's action Iowa and her sister New Jersey assisted in sinking
+            the Japanese light cruiser Katori.
+        src: [danfs-iowa-iii, nhhc-h029-4]
+
+      - date: 1944-03-18
+        text:
+          zh: >-
+            参加对马绍尔群岛米利环礁的炮击，被日军岸炮两发 4.7 英寸炮弹命中，
+            损伤可忽略。
+          en: >-
+            Bombarded Mili Atoll in the Marshalls and was hit by two Japanese
+            4.7-inch shells from a shore battery, with negligible damage.
+        src: [danfs-iowa-iii, nhhc-h029-4]
+
+      - date: 1944-06-19
+        text:
+          zh: >-
+            菲律宾海海战中编入第 58 特混舰队战列线，参与击退日军中型舰队发起的
+            四波大规模空袭；随后追击逃敌，击落一架鱼雷机并协同击落另一架。
+          en: >-
+            In the Battle of the Philippine Sea she formed part of TF 58's battle
+            line, helped repel four large air raids, then joined the pursuit,
+            shooting down one torpedo plane and assisting with another.
+        src: [danfs-iowa-iii]
+
+      - date: 1944-10-25
+        text:
+          zh: >-
+            莱特湾海战中随第 38 特混舰队北上追击小泽的诱敌部队；北方舰队已接近
+            本舰火炮射程时，接到日军中央舰队正在萨马岛外攻击护航航母的消息，
+            被迫转向南下，未取得水面交战机会。
+          en: >-
+            Off Cape Engano during Leyte Gulf, the Northern Force came almost
+            within range of her guns before word arrived that the Japanese Centre
+            Force was attacking escort carriers off Samar; she reversed course and
+            was denied a surface action.
+        src: [danfs-iowa-iii]
+
+      - date: 1944-12
+        text:
+          zh: >-
+            1944 年 12 月台风「眼镜蛇」中受轻微损伤；Navypedia 记 12 月 17 日
+            风暴受损并修理至 1945 年 3 月，DANFS 只写「损伤极小」。
+          en: >-
+            Damaged in Typhoon Cobra in December 1944; Navypedia records storm
+            damage on 17 December with repairs to March 1945, while DANFS calls
+            the damage minimal.
+        src: [danfs-iowa-iii, navypedia-iowa, nhhc-h029-4]
+
+      - date: 1945-07-15
+        text:
+          zh: >-
+            参加对日本本土的首次舰炮炮击，与编队一同轰击北海道室兰的日本制钢所
+            与轮西制铁所。
+          en: >-
+            Joined the first naval bombardment of the Japanese home islands,
+            damaging the Nihon Steel Co. and Wanishi Ironworks at Muroran,
+            Hokkaido.
+        src: [danfs-iowa-iii]
+
+      - date: 1945-09-02
+        text:
+          zh: >-
+            作为哈尔西海军上将的旗舰停泊东京湾，参加日本投降签字仪式；
+            1945-08-29 随占领部队入湾。
+          en: >-
+            Lay in Tokyo Bay as Admiral Halsey's flagship for the surrender
+            ceremony, having entered the bay with the occupation forces on
+            29 August.
+        src: [danfs-iowa-iii, nhhc-h029-4]
+
+  - id: coldwar
+    title: { zh: 战后、朝鲜战争与封存, en: Post-war, Korea and mothballs }
+    range: { from: 1945, to: 1984 }
+    events:
+      - date: 1946-01
+        text:
+          zh: 重返日本水域，任第 5 舰队旗舰，至 1946 年 3 月 25 日返美。
+          en: Returned to Japanese waters as flagship of the 5th Fleet until 25 March 1946.
+        src: [danfs-iowa-iii]
+
+      - date: 1949-03-24
+        text:
+          zh: 首次退役。
+          en: Decommissioned for the first time.
+        src: [danfs-iowa-iii]
+
+      - date: 1951-08-25
+        text:
+          zh: 因朝鲜战争复役，舰长 William R. Smedberg III 上校。
+          en: Recommissioned for the Korean War under Capt. William R. Smedberg III.
+        src: [danfs-iowa-iii]
+
+      - date: 1952-04-01
+        text:
+          zh: >-
+            任第 7 舰队旗舰，至 10 月 17 日；此期在朝鲜东岸的城津、兴南、
+            库底一带炮击支援地面部队。
+          en: >-
+            Became 7th Fleet flagship until 17 October, bombarding Songjin,
+            Hungnam and Kojo on Korea's east coast in support of ground troops.
+        src: [danfs-iowa-iii]
+
+      - date: 1953-07
+        text:
+          zh: 参加北约「Mariner」大演习，任第 2 舰队旗舰；此前刚完成赴北欧的学员训练巡航。
+          en: Took part in NATO Exercise Mariner as 2nd Fleet flagship, after a midshipman cruise to northern Europe.
+        src: [danfs-iowa-iii]
+
+      - date: 1958-02-24
+        text:
+          zh: >-
+            退役，入费城大西洋后备舰队。NHHC 的事故综述另作「1959 年再次退役」，
+            与 DANFS 的 1958-02-24 相差一年，两说并列。
+          en: >-
+            Decommissioned into the Atlantic Reserve Fleet at Philadelphia; NHHC's
+            account of the turret explosion says "decommissioned again in 1959",
+            a year later than DANFS, and both dates are recorded.
+        src: [danfs-iowa-iii, nhhc-h029-4]
+
+  - id: reactivation
+    title: { zh: 1980 年代复役与炮塔爆炸, en: The 1980s reactivation and the turret explosion }
+    range: { from: 1984, to: 1990 }
+    events:
+      - date: 1984-04-28
+        text:
+          zh: >-
+            复役，是同级四舰中第二艘复役的。改装加装「鱼叉」反舰导弹、
+            「战斧」巡航导弹与 20 mm「密集阵」近防炮，保留三座主炮塔与大部分
+            5 英寸炮座。
+          en: >-
+            Recommissioned, second of the class, with Harpoon and Tomahawk
+            missiles and 20 mm Phalanx CIWS added while the three 16-inch turrets
+            and most 5-inch mounts were retained.
+        src: [nhhc-h029-4]
+
+      - date: 1986-03
+        text:
+          zh: >-
+            验收检查（INSURV）中，主检官 Bulkeley 少将列出大量器材缺陷，
+            建议立即退役；海军部长莱曼否决该建议，但下令修正本级各舰的缺陷。
+          en: >-
+            At the March 1986 INSURV inspection Rear Admiral John D. Bulkeley
+            listed so many material deficiencies that he recommended immediate
+            decommissioning; Secretary Lehman overruled him but ordered the
+            discrepancies fixed across the class.
+        src: [nhhc-h029-4]
+
+      - date: 1989-04-19
+        text:
+          zh: >-
+            09:30，在波多黎各东北约 260 海里的海上进行主炮射击演习时，
+            二号炮塔发生连续三次爆炸，47 名舰员当场死亡。
+          en: >-
+            At 0930, while firing a main battery exercise about 260 nautical miles
+            north-east of Puerto Rico, Turret II suffered a rapid series of three
+            explosions that killed 47 sailors instantly.
+        src: [nhhc-h029-4]
+
+      - date: 1989-08-31
+        text:
+          zh: >-
+            海军作战部长特罗斯特上将在调查报告第三次背书中认定：初始爆炸由
+            中炮膛内五包发射药在炮闩敞开状态下提前点火引起，最可能的原因是
+            有人故意在两包药之间放入起爆装置，并点名中炮炮长 Hartwig。
+          en: >-
+            In the third endorsement to the investigation, CNO Admiral Carlisle
+            Trost concluded that five powder bags in the centre gun ignited
+            prematurely with the breech open, most probably from a detonation
+            device deliberately placed between the bags, naming the centre gun
+            captain, GMG2 Clayton Hartwig.
+        src: [nhhc-h029-4]
+
+      - date: 1990-10-26
+        text:
+          zh: >-
+            最终退役。二号炮塔自爆炸后即封存，此后未再使用。
+          en: >-
+            Decommissioned for the last time, her Number Two turret sealed after
+            the explosion and never used again.
+        src: [nhhc-h029-4]
+
+      - date: 1991-10-17
+        text:
+          zh: >-
+            新任海军作战部长凯尔索上将在五角大楼记者会上说明：两轮调查耗资
+            2,500 万美元、历时近两年，既无法确立任何可成立的意外原因，
+            也没有「清楚而令人信服的证据」证明 Hartwig 有责，并向死者家属致歉。
+          en: >-
+            At a Pentagon press conference CNO Admiral Frank Kelso stated that two
+            investigations had cost $25 million over almost two years, that no
+            plausible accidental cause could be established, that there was no
+            clear and convincing proof of Hartwig's responsibility, and offered
+            apologies to the families.
+        src: [nhhc-h029-4]

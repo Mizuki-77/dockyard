@@ -1,0 +1,489 @@
+# ============================================================================
+# 单舰：Iowa（衣阿华号战列舰，BB-61）
+# ----------------------------------------------------------------------------
+# 与 classes/iowa.yaml 同一套约定：
+#   1) 建造/服役/退役/结局等单舰事件
+#   2) 本舰特有的值（覆盖舰级）
+#   3) 状态切片：随时间变化的字段，用 valid 窗口表达"当时是什么样"
+#
+# 解析顺序（docs/00-framework.md §3.6）：单舰 fact -> 舰级 fact -> 未记载。
+# 本文件命中即覆盖舰级，**不算分歧**。
+#
+# 本舰与舰级的三处真实差异（不是分歧，是逐舰不同）：
+#   a) 装甲横舱壁：BB-61/62 首部横隔壁 287 mm（下部 216 mm），
+#      BB-63/64 为 368 mm（下部 297 mm）——navypedia 原文按两批分列。
+#      舰级文件记的是四舰不共有的那一半，故不作舰级 fact，只写这里。
+#   b) 竣工防空：15 × 四联 40 mm / 60 × 单装 20 mm（navypedia BB61 行）；
+#      BB-62/63 为 20 × 四联 40 mm / 49 × 单装 20 mm。**逐舰不同**。
+#   c) 1984 年复役：本级四舰各自复役时间不同（Iowa 1984-04-28）。
+# ============================================================================
+
+id: iowa
+name:
+  zh: 衣阿华号
+  en: Iowa
+class: iowa
+
+open_ended_note: |
+  本文件中 valid.to 留空的 fact，均为「至今为止仍成立的单舰事实」
+  （如结局、博物馆舰身份、编号），不存在后续变化事件。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: Iowa
+    src: [danfs-iowa-iii, navypedia-iowa]
+    valid: { from: 1940-06-27 }
+    confidence: A
+    note: 舰名取美国第 29 州艾奥瓦州；DANFS 记 "Iowa, the 29th state, was admitted to the Union, 28 December 1846, and was named for a Sioux Indian tribe"。
+
+  - field: identity.name_zh
+    value: 衣阿华号
+    src: [danfs-iowa-iii]
+    valid: { from: 1940-06-27 }
+    confidence: C
+    note: >-
+      中文通行译名，另有「艾奥瓦号」「爱荷华号」两种写法，同指本舰。
+      本站取「衣阿华」，与舰级名一致。
+
+  - field: identity.name_en
+    value: Iowa
+    src: [danfs-iowa-iii]
+    valid: { from: 1940-06-27 }
+    confidence: A
+    note: 本舰是第三艘用此名的美国军舰（DANFS 标题 "Iowa III (BB-61)"）。
+
+  - field: identity.pennant_number
+    value: BB-61
+    src: [danfs-iowa-iii, navypedia-iowa]
+    valid: { from: 1940-06-27 }
+    confidence: A
+    note: 两源一致。
+
+  - field: identity.namesake
+    value: 美国艾奥瓦州（第 29 州，1846-12-28 加入联邦）
+    src: [danfs-iowa-iii]
+    valid: { from: 1940-06-27 }
+    confidence: B
+    note: >-
+      DANFS 原文 "Iowa, the 29th state, was admitted to the Union, 28 December
+      1846, and was named for a Sioux Indian tribe that originally inhabited the
+      Missouri Territory"。舰名本身取自州名。
+
+  - field: identity.ship_type
+    value: battleship
+    src: [danfs-iowa-iii]
+    valid: { from: 1943-02-22 }
+    confidence: A
+
+  - field: identity.nation
+    value: united_states
+    src: [danfs-iowa-iii]
+    valid: { from: 1943-02-22 }
+    confidence: A
+
+  - field: identity.operator
+    value: United States Navy（美国海军）
+    src: [danfs-iowa-iii]
+    valid: { from: 1943-02-22 }
+    confidence: A
+
+  - field: identity.era
+    value: ww2
+    src: [danfs-iowa-iii]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: 按服役期定位。本舰 1943-02 服役，二战全程在役；1984-04-28 复役至 1990-10-26 的冷战段由下面的切片与 fact 时间窗表达。
+
+  # ============================================================ 建造
+  - field: construction.builder
+    value: New York Navy Yard（纽约海军造船厂）
+    src: [danfs-iowa-iii, navypedia-iowa]
+    valid: { from: 1940-06-27 }
+    confidence: A
+    note: >-
+      DANFS "laid down at New York Navy Yard, 27 June 1940"；
+      navypedia "New York N Yd, Brooklyn"。两源一致。
+
+  - field: construction.builder_location
+    value: 美国纽约州布鲁克林（Brooklyn, New York）
+    src: [navypedia-iowa]
+    valid: { from: 1940-06-27 }
+    confidence: C
+    note: navypedia 明写 "New York N Yd, Brooklyn"；DANFS 只写 "New York Navy Yard"。
+
+  - field: construction.laid_down
+    value: 1940-06-27
+    unit: date
+    src: [danfs-iowa-iii, navypedia-iowa]
+    valid: { from: 1940-06-27 }
+    confidence: A
+    note: 两源一致（navypedia 的 "27.6.1940" 为日月年格式）。
+
+  - field: construction.launched
+    value: 1942-08-27
+    unit: date
+    src: [danfs-iowa-iii, navypedia-iowa]
+    valid: { from: 1942-08-27 }
+    confidence: A
+    note: >-
+      两源一致。DANFS 补了下水掷瓶人："sponsored by Mrs. Henry A. Wallace,
+      wife of Vice President Wallace"。
+
+  - field: construction.commissioned
+    value: 1943-02-22
+    unit: date
+    src: [danfs-iowa-iii, navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: A
+    note: >-
+      两源一致。DANFS 记首任舰长："Capt. John L. McCrea in command"。
+      1927 年《华盛顿条约》以来美国海军吨位空档最久的一级主力舰之一，
+      该级首舰的服役日期是本级时间轴起点。
+
+  - field: service.commander
+    value: John L. McCrea（上校）
+    src: [danfs-iowa-iii]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: DANFS 原文 "commissioned 22 February 1943, Capt. John L. McCrea in command"。
+
+  # ============================================== 装甲（逐舰差异）
+  - field: protection.armor.thickness
+    value: 287
+    unit: mm
+    qual: { part: bulkhead, region: fore }
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: >-
+      navypedia "(BB61, 62): ... Thickness of fore bulkhead was 287mm, but at
+      lower part of bulkhead it was decreased to 216mm"。
+      **BB-63/64 同一处为 368 mm**（原文 "(BB63, 64): Thickness of fore bulkhead
+      was 368mm ... decreased to 297mm"）。这是舰级内真实差异，不是两说，
+      故写在本舰与 missouri.yaml，而不写进 classes/iowa.yaml。
+
+  - field: protection.armor.thickness
+    value: 216
+    unit: mm
+    qual: { part: bulkhead, region: lower }
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: 同上句 "at lower part of bulkhead it was decreased to 216mm"。
+
+  # ======================================== 武备（竣工状态，逐舰差异）
+  - field: armament.aa_40mm.count
+    value: 60
+    unit: count
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22, to: 1943-12-31 }
+    confidence: C
+    note: >-
+      navypedia 武器栏 (BB61) "15 x 4 - 40/56 Mk 1.2"，即 15 座四联装 = 60 门。
+      **BB-62/63 为 20 座四联 = 80 门**，本舰是四舰里 40 mm 最少的一艘。
+      时间窗截止取 1943 年底，因为同页改装表记 "1943, Iowa: - 8 x 1 - 20/70;
+      + 4 x 4 - 40/56 Mk 1.2"，即同年内即有增装，竣工值只在这一段成立。
+
+  - field: armament.aa_20mm.count
+    value: 60
+    unit: count
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22, to: 1943-12-31 }
+    confidence: C
+    note: >-
+      navypedia (BB61) "60 x 1 - 20/70 Mk 4"，按管数记 60 门单装。
+      BB-62/63 为 49 门，BB-64 另有 2 座双联 + 49 门单装。
+      同页改装表 "1943, Iowa: - 8 x 1 - 20/70"，故竣工值只到 1943 年底。
+
+  - field: armament.mount.summary
+    value: >
+      1943-02 竣工：3 × 3 16"/50 Mark 7 + 10 × 2 5"/38 Mark 12
+      + 15 × 4 40 mm Bofors（60 门）+ 60 × 1 20 mm Oerlikon
+      + 2 部弹射器、3 架水上飞机（OS2U/SOC/SO3C）
+    src: [navypedia-iowa, danfs-iowa-iii]
+    valid: { from: 1943-02-22, to: 1943-12-31 }
+    confidence: C
+    note: >-
+      navypedia (BB61) 武器行原文 "3 x 3 - 406/50 Mk 7, 10 x 2 - 127/38 Mk 12,
+      15 x 4 - 40/56 Mk 1.2, 60 x 1 - 20/70 Mk 4, 2 catapults, 3 seaplanes
+      (OS2U, SOC, SO3C)"。DANFS Iowa 词条只给 "a. 9 16\", 20 5\""（不含高炮），
+      与本条不冲突。
+
+  - field: armament.mount.summary
+    value: >
+      1945-01 状态：3 × 3 16"/50 Mark 7 + 10 × 2 5"/38 Mark 28
+      + 19 × 4 40 mm Bofors（76 门）+ 8 × 2 与 32 × 1 20 mm Oerlikon
+      + 2 部弹射器、3 架水上飞机、SC-2/SK-2/SP/SU/SG 雷达
+    src: [navypedia-iowa]
+    valid: { from: 1945-01, to: 1945-12 }
+    confidence: C
+    note: >-
+      navypedia 改装表 "1/1946, BB61 Iowa: 3 x 3 - 406/50 Mk 7, 10 x 2 - 127/38
+      Mk 28, 19 x 4 - 40/60 Mk 2, 8 x 2 - 20/70 Mk 24, 32 x 1 - 20/70 Mk 10,
+      2 catapults, 3 seaplanes, SC-2, SK-2, SP, SU, SG, Mk 27, 2x Mk 13,
+      4x Mk 12.22 radars, TDY ECM suite"。
+      时间窗取 1945-01 起是因为同页 "3/1945, Iowa" 一条已记 +8 × 2 20 mm 与
+      换雷达，1/1946 条是其后的完整快照。
+
+  # ------------------------------------------------------ 探测设备（逐期）
+  - field: sensors.radar.installed
+    value: SK 对空搜索雷达
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22, to: 1945-02-28 }
+    confidence: C
+    note: >-
+      navypedia 电子设备栏 "BB61: SK, 2x SG, Mk 3, 2x Mk 8, 4x Mk 4 radars"。
+      同页改装表 "3/1945, Iowa: - SG, SK, Mk 3, 2x Mk 8, 4x Mk 4 radars"，
+      故 SK 的窗口止于 1945 年 3 月换装。
+
+  - field: sensors.radar.installed
+    value: SG 对海搜索雷达（2 部）
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22, to: 1945-02-28 }
+    confidence: C
+    note: navypedia 同栏 "2x SG"；1945-03 撤除。
+
+  - field: sensors.radar.installed
+    value: Mk 3 火控雷达
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22, to: 1945-02-28 }
+    confidence: C
+    note: navypedia 同栏 "Mk 3"；1945-03 撤除。
+
+  - field: sensors.radar.installed
+    value: Mk 8 主炮火控雷达（2 部）
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22, to: 1945-02-28 }
+    confidence: C
+    note: navypedia 同栏 "2x Mk 8"；1945-03 撤除。
+
+  - field: sensors.radar.installed
+    value: Mk 4 副炮火控雷达（4 部）
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22, to: 1945-02-28 }
+    confidence: C
+    note: navypedia 同栏 "4x Mk 4"；1945-03 撤除，换 4 部 Mk 12.22。
+
+  - field: sensors.radar.installed
+    value: SK-2 对空搜索雷达
+    src: [navypedia-iowa]
+    valid: { from: 1945-03 }
+    confidence: C
+    note: >-
+      navypedia 改装表 "3/1945, Iowa: + ... SC-2, SK-2, SP, SU, 2x Mk 13,
+      4x Mk 12.22, Mk 27 radars, TDY ECM suite"。
+
+  - field: sensors.radar.installed
+    value: SP 对空搜索雷达
+    src: [navypedia-iowa]
+    valid: { from: 1945-03 }
+    confidence: C
+    note: >-
+      同上条改装记录；同页 "1954-1955, Iowa, New Jersey, Missouri: - SP radar;
+      + SPS-8 radar"，故 SP 的使用期约在 1945-1955。
+
+  - field: sensors.radar.installed
+    value: SU 对空搜索雷达
+    src: [navypedia-iowa]
+    valid: { from: 1945-03 }
+    confidence: C
+    note: 同上条改装记录 "SU"。
+
+  - field: sensors.radar.installed
+    value: SC-2 对空搜索雷达
+    src: [navypedia-iowa]
+    valid: { from: 1945-03 }
+    confidence: C
+    note: 同上条改装记录 "SC-2"。
+
+  - field: sensors.radar.installed
+    value: Mk 13 火控雷达（2 部）
+    src: [navypedia-iowa]
+    valid: { from: 1945-03 }
+    confidence: C
+    note: 同上条改装记录 "2x Mk 13"。
+
+  - field: sensors.radar.installed
+    value: Mk 12.22 副炮火控雷达（4 部）
+    src: [navypedia-iowa]
+    valid: { from: 1945-03 }
+    confidence: C
+    note: >-
+      同上条改装记录 "4x Mk 12.22"；同页 "1952-1954, all: - 4x Mk 12.22 radars;
+      + SPS-10, 4x Mk 25 radars"，故该型使用期约 1945-1954。
+
+  - field: sensors.radar.installed
+    value: Mk 27 火控雷达
+    src: [navypedia-iowa]
+    valid: { from: 1945-03 }
+    confidence: C
+    note: 同上条改装记录 "Mk 27"。
+
+  - field: sensors.ecm.suite
+    value: TDY 电子战套件
+    src: [navypedia-iowa]
+    valid: { from: 1945-03 }
+    confidence: C
+    note: 同上条改装记录 "TDY ECM suite"。
+
+  - field: sensors.radar.installed
+    value: SPS-49 对空搜索雷达
+    src: [navypedia-iowa]
+    valid: { from: 1984 }
+    confidence: C
+    note: >-
+      navypedia 电子设备栏 "BB61, 63, 64: SPS-49, SPS-67, SPS-64, 2x Mk 13,
+      4x Mk 25 radars, SLQ-32(v)3 ECM suite, 8x SRBOC Mk36 decoy RL,
+      SLQ-25 Nixie torpedo decoy"，对应 1980 年代复役改装。
+
+  - field: sensors.radar.installed
+    value: SPS-67 对海搜索雷达
+    src: [navypedia-iowa]
+    valid: { from: 1984 }
+    confidence: C
+    note: navypedia 同栏。
+
+  - field: sensors.radar.installed
+    value: SPS-64 导航雷达
+    src: [navypedia-iowa]
+    valid: { from: 1984 }
+    confidence: C
+    note: navypedia 同栏。
+
+  - field: sensors.radar.installed
+    value: Mk 25 火控雷达（4 部）
+    src: [navypedia-iowa]
+    valid: { from: 1984 }
+    confidence: C
+    note: >-
+      navypedia 同栏 "4x Mk 25"；同页 "1952-1954, all: - 4x Mk 12.22 radars;
+      + SPS-10, 4x Mk 25 radars"，即 Mk 25 自 1950 年代即已装舰，
+      1980 年代复役后继续留用。
+
+  - field: sensors.ecm.suite
+    value: SLQ-32(v)3 电子战套件、8 座 SRBOC Mk 36 干扰弹发射器、SLQ-25 Nixie 鱼雷诱饵
+    src: [navypedia-iowa]
+    valid: { from: 1984 }
+    confidence: C
+    note: navypedia 同栏原文，逐项照录。
+
+  # ---------------------------------------- 1980 年代复役的武器与航空设施
+  - field: armament.mount.summary
+    value: >
+      1984 年复役改装后：3 × 3 16"/50 Mark 7 保留 + 6 × 2 5"/38 Mark 28
+      + 8 × 4「战斧」巡航导弹发射箱（32 枚 BGM-109B）
+      + 4 × 4「鱼叉」反舰导弹发射箱（16 枚 RGM-84A）
+      + 4 × 6 20 mm「密集阵」近防炮 + 直升机甲板
+    src: [navypedia-iowa, nhhc-h029-4]
+    valid: { from: 1984-04-28, to: 1990-10-26 }
+    confidence: C
+    note: >-
+      navypedia 现代化栏原文 "8 x 4 Tomahawk CruM (32 BGM-109B), 4 x 4 Harpoon SSM
+      (16 RGM-84A), 3 x 3 - 406/50 Mk 7 (BB61), 6 x 2 - 127/38 Mk 28,
+      4 x 6 - 20/76 Mk 15 Phalanx, helicopter deck"。
+      **5 英寸炮座由 10 座减到 6 座**（拆 4 座），这是本舰与二战状态最大的一处
+      差异；NHHC 记 "The battleships still retained their three triple 16-inch main
+      battery turrets and most of the secondary 5-inch/38-caliber dual purpose
+      mounts"，未给具体数。
+
+  - field: aviation.aircraft.types
+    value: 直升机（1980 年代复役后以直升机甲板取代水上飞机）
+    src: [navypedia-iowa]
+    valid: { from: 1984-04-28, to: 1990-10-26 }
+    confidence: C
+    note: navypedia 现代化栏 "helicopter deck"；同页 1948-1951 改装表另记
+      "- 8 x 2 - 20/70; + 3 helicopters"，即直升机自 1950 年代已登舰。
+
+  # 注：appearance.marking / appearance.scheme **不写**。
+  # navypedia 的线图虽标出舷号「61」与深色舰体，但这是图面判读、
+  # 没有涂装指令原件支撑，按红线 §1.3「推断值不进 fact」不立条目；
+  # 见 RESEARCH-NOTES「未获取」清单。
+
+  # ============================================== 服役与战历（骨架）
+  - field: service.unit
+    value: Battleship Division 7（第 7 战列舰分队），旗舰
+    src: [danfs-iowa-iii]
+    valid: { from: 1944-01-02 }
+    confidence: B
+    note: >-
+      DANFS "As Flagship of Battleship Division 7, Iowa departed the United
+      States 2 January 1944 for the Pacific Theatre"。
+
+  - field: service.unit
+    value: 第 5 舰队旗舰（Fifth Fleet）
+    src: [danfs-iowa-iii]
+    valid: { from: 1946-01 }
+    confidence: B
+    note: DANFS "returned to Japanese waters in January 1946 and became flagship of the 5th Fleet"。
+
+  - field: service.unit
+    value: 第 7 舰队旗舰（Seventh Fleet）
+    src: [danfs-iowa-iii]
+    valid: { from: 1952-04-01, to: 1952-10-17 }
+    confidence: B
+    note: >-
+      DANFS "On 1 April 1952, Iowa became the flagship of Vice Admiral Robert T.
+      Briscoe, Commander, 7th Fleet"。继任的 J. J. Clark 中将继续以本舰为旗舰
+      直到 1952-10-17。
+
+  - field: service.unit
+    value: 第 2 舰队旗舰（Second Fleet，北约 "Mariner" 演习期间）
+    src: [danfs-iowa-iii]
+    valid: { from: 1953-07 }
+    confidence: B
+    note: >-
+      DANFS "took part in Operation 'Mariner,' a major NATO exercise, serving as
+      flagship of Vice Admiral E. T. Woolfidge, commanding the 2d Fleet"。
+
+  - field: service.casualties
+    value: 47
+    unit: persons
+    src: [nhhc-h029-4]
+    valid: { from: 1989-04-19 }
+    confidence: B
+    note: >-
+      NHHC 引 CNO 背书原文："On 19 April 1989 a rapid series of three explosions
+      within turret II aboard USS IOWA (BB 61) resulted in the instantaneous
+      deaths of 47 American Sailors"。47 人全部是二号炮塔及其相邻弹药
+      转运舱内的人员，事故原因至 1991 年仍未定论（详见正文与
+      RESEARCH-NOTES 的「有争议的记载」）。
+
+  # ============================================== 结局与博物馆舰
+  - field: construction.fate_type
+    value: preserved
+    src: [marad-vessel-iowa, pacificbattleship-iowa]
+    valid: { from: 2012 }
+    confidence: B
+    note: >-
+      作为博物馆舰保存。MARAD 记录 2011-10-27 离开 Suisun Bay 后备舰队、
+      移交洛杉矶 Pacific Battleship Center；馆方官网记 "Since 2012, more than
+      three million people have visited"。故保存状态自 2012 年起成立。
+
+  - field: construction.fate_date
+    value: 2011-10-27
+    unit: date
+    src: [marad-vessel-iowa]
+    valid: { from: 2011-10-27 }
+    confidence: B
+    note: >-
+      MARAD "Withdrawal | 10/27/2011 | Departed the Suisun Bay Reserve Fleet to be
+      transferred to the Pacific Battleship Center in Los Angeles, California"。
+      这是移交（不是退役）日期；退役日期见下面 fact。
+
+  - field: service.fate_category
+    value: >-
+      1949-03-24 首次退役 → 1951-08-25 因朝鲜战争复役 → 1958-02-24 二次退役
+      入费城大西洋后备舰队 → 1984-04-28 复役（1980 年代 600 舰海军计划）
+      → 1990-10-26 最终退役 → 2006-03 除籍 → 2012 起为洛杉矶博物馆舰
+    src: [danfs-iowa-iii, nhhc-h029-4, marad-vessel-iowa, navypedia-iowa]
+    valid: { from: 1949-03-24 }
+    confidence: B
+    note: >-
+      逐段来源：DANFS "decommissioned 24 March 1949" / "recommissioned 25 August
+      1951" / "She decommissioned 24 February 1958 and entered the Atlantic
+      Reserve Fleet at Philadelphia"；NHHC H-029-4 "Iowa was re-commissioned on
+      28 April 1984" / "She was decommissioned on 26 October 1990"；
+      navypedia 建造表 "stricken 3.2006"；MARAD 记 2011-10-27 移交。
+      **1958 与 1959 两说**：DANFS 作 1958-02-24，NHHC H-029-4 作
+      "decommissioned again in 1959"——两说并列，不裁决。

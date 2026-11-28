@@ -1,0 +1,504 @@
+# ============================================================================
+# 陸奥（Mutsu）单舰数据
+# ----------------------------------------------------------------------------
+# 只写与舰级文件不同的、本舰特有的项：
+#   1) 建造日期、船厂、试航实测
+#   2) 华盛顿条约存留经过（本级唯一一条「本来要被拆掉」的记录）
+#   3) 逐次改装节点（1922 / 1927 / 1932-33 / 1934-36 / 1937-38 / 1942-43）
+#   4) 1943-06-08 爆沉：伤亡、爆因（**四说并列，不裁决**）、隐蔽与调查、打捞
+# 解析顺序：单舰 fact -> 舰级 fact -> 未记载。
+# ============================================================================
+
+id: mutsu
+name:
+  zh: 陆奥
+  en: Mutsu
+class: nagato
+
+open_ended_note: |
+  本文件中 valid.to 留空的 fact 表示「至本舰 1943-06-08 爆沉为止持续有效」，
+  不是漏填。本舰 1943-06-08 在柱岛泊地爆沉，1943-09-01 除籍，
+  故未写 to 的时间窗终点即该日（除籍相关条目以 09-01 为终点）。
+
+facts:
+  # ---------------------------------------------------------------- 身份
+  - field: identity.name_original
+    value: 陸奥
+    src: [kasado-nagato-names, navypedia-nagato]
+    valid: { from: 1918-06-01 }
+    confidence: B
+    note: >
+      舰名「陸奥」，取自陆奥国（今青森县一带）。navypedia 表格「陸奥 [Mutsu]」；
+      kasado「2.陸奥 Mutsu」。**这是日本海军唯一一艘以「陸奥」命名的战舰**。
+
+  - field: identity.name_zh
+    value: 陆奥
+    src: [kasado-nagato-names]
+    valid: { from: 1918-06-01 }
+    confidence: B
+
+  - field: identity.name_en
+    value: Mutsu
+    src: [navypedia-nagato, combinedfleet-mutsu-trom]
+    valid: { from: 1918-06-01 }
+    confidence: B
+
+  - field: identity.namesake
+    value: 陸奥国（むつ、今青森県）
+    src: [kasado-nagato-names]
+    valid: { from: 1918-06-01 }
+    confidence: C
+    note: 同长门条：按日本海军战列舰以旧国名命名的通例，两源均未直接写「命名自陸奥国」，故记 C。
+
+  # ---------------------------------------------------------------- 建造
+  - field: construction.builder
+    value: 横須賀海軍工廠（Yokosuka Navy Yard）
+    src: [navypedia-nagato, kasado-nagato-names, combinedfleet-mutsu-trom]
+    valid: { from: 1918-06-01 }
+    confidence: B
+    note: >
+      navypedia「Yokosuka K K」；kasado「建造所 横須賀海軍工廠」；
+      TROM「1 June 1918: Yokosuka Navy Yard. Battleship MUTSU, designed by naval architect
+      Constructor Captain (later Constructor Vice Admiral) Yamamoto Kaizo, is laid down.」
+      **注意：两舰建造厂不同**（长门吴、陆奥横须贺），这是本级最容易被一笔带过的差异。
+
+  - field: construction.builder_location
+    value: 横須賀（神奈川県）
+    src: [combinedfleet-mutsu-trom]
+    valid: { from: 1918-06-01 }
+    confidence: C
+
+  - field: construction.laid_down
+    value: 1918-06-01
+    unit: date
+    src: [navypedia-nagato, kasado-nagato-names, combinedfleet-mutsu-trom]
+    valid: { from: 1918-06-01 }
+    confidence: A
+    note: 三源一致：navypedia「1.6.1918」；kasado「起工:1918年6月1日」；TROM 同日条。
+
+  - field: construction.launched
+    value: 1920-05-31
+    unit: date
+    src: [navypedia-nagato, kasado-nagato-names, combinedfleet-mutsu-trom]
+    valid: { from: 1920-05-31 }
+    confidence: A
+    note: >
+      三源一致。TROM 另记下水典礼：「MUTSU is launched at 1500. The ceremony is attended by
+      Empress Sadako (later Empress Dowager Teimei) and her eldest son, LtCdr/Crown Prince
+      Hirohito (the future Emperor).」——皇太子（后来的昭和天皇）以海军中佐身份到场，
+      这是两舰下水礼里规格最高的一次。
+
+  - field: construction.commissioned
+    value: 1921-10-24
+    unit: date
+    src: [kasado-nagato-names, combinedfleet-mutsu-trom]
+    valid: { from: 1921-10-24 }
+    confidence: A
+    note: >
+      两源一致：kasado「竣工:1921年10月24日」；
+      TROM「24 October 1921: MUTSU is completed and commissioned in the IJN.」
+      **navypedia 记 22.11.1921，与上述两源差 29 天，两说并列不裁决**（见本字段另一条）。
+      任务书给的 1921-10-24 与两源一致，采信。
+
+  - field: construction.commissioned
+    value: 1921-11-22
+    unit: date
+    src: [navypedia-nagato]
+    valid: { from: 1921-11-22 }
+    confidence: C
+    note: >
+      **第二说，不裁决。** navypedia 表格「陸奥 [Mutsu] … 22.11.1921」（Comp 栏）。
+      与 TROM / kasado 的 1921-10-24 差 29 天。
+      两说可能分别指「竣工」与「就役/编入」两个不同节点，但两源均未说明，故并列。
+      注意 navypedia 同表给长门的是「25.11.1920」，与长门两源的 1920-11-25 完全一致，
+      说明该表并非系统性偏移，这 29 天的差是陆奥独有的。
+
+  - field: construction.fate_date
+    value: 1943-06-08
+    unit: date
+    src: [kasado-nagato-names, combinedfleet-mutsu-trom, navypedia-nagato]
+    valid: { from: 1943-06-08 }
+    confidence: A
+    note: >
+      三源一致：kasado「戦没:1943年6月8日 (爆発事故)」；
+      TROM「1213: Suddenly, MUTSU's No. 3 turret's magazine explodes.」；
+      navypedia「internal explosion 8.6.1943」。
+      **注意**：combinedfleet 的舰级速览页把它写成「the afternoon of June 6, 1943」，
+      与该站自己的 TROM（06-08 1213）冲突，本站不采该说。
+
+  - field: construction.fate_type
+    value: other
+    src: [kasado-nagato-names, combinedfleet-mutsu-trom]
+    valid: { from: 1943-06-08 }
+    confidence: B
+    note: >
+      **注册表枚举里没有一个值能准确表达「停泊中弹药库自爆」。**
+      sunk_by_enemy（被敌击沉）、sunk_by_scuttling（自沉）、sunk_by_own_forces、scuttled、
+      sunk_cause_disputed 都不对：本条不是战损，也不是自沉，而是事故。
+      枚举中最接近的是 other，故取 other 并在正文与 service.fate_category 里写清。
+      **爆因本身有争议**（自爆/潜艇两说），但「结局型式是弹药库爆炸导致沉没」这一点无争议，
+      故 fate_type 不取 sunk_cause_disputed——那是给「被谁击沉说不清」的情况用的。
+
+  # ---------------------------------------------------------------- 试航实测
+  - field: propulsion.speed.trial
+    value: 26.728
+    unit: kn
+    src: [combinedfleet-mutsu-trom]
+    valid: { from: 1921-10-19 }
+    confidence: B
+    note: >
+      TROM「19 October 1921: During the speed trials off Tateyama, MUTSU attains 26.728 knots
+      on 87,479 shp.」——这是本级唯一有「航速 + 对应轴马力」成对记载的实测数据。
+
+  - field: propulsion.power.trial
+    value: 87479
+    unit: hp
+    src: [combinedfleet-mutsu-trom]
+    valid: { from: 1921-10-19 }
+    confidence: B
+    note: >
+      TROM 同上条「26.728 knots on 87,479 shp」。
+      比舰级设计值 80,000 shp 高 9.3%，这是本级真实的试航超发能力。
+      **不可用来填长门**（长门的实测功率未获取，见 ships/nagato.yaml）。
+
+  # ---------------------------------------------------------------- 华盛顿条约与存留
+  - field: service.fate_authority
+    value: ワシントン海軍軍縮会議（1921-1922）
+    src: [combinedfleet-mutsu-trom]
+    valid: { from: 1922-02-06 }
+    confidence: B
+    note: >
+      TROM 1922-02-06 条「During the conference, the US representative suggests MUTSU should be
+      scrapped. However, Japanese delegates maintain that MUTSU had been commissioned on
+      10 September 1921 and had already steamed 2,500 nautical miles. The Japanese delegation
+      finally manages to save MUTSU.」
+      **注意这条记载内部有一处矛盾**：TROM 在别处记陆奥竣工日为 1921-10-24，
+      但这里引用日方代表在会上的说法「had been commissioned on 10 September 1921」。
+      本站按 TROM 的两处原话并列记录，不裁决——前者是舰史年表，后者是会议上的外交陈述，
+      两者可能是「实际竣工日」与「对外主张的竣工日」之别。
+      navypedia 亦记此事：「it was offered to hand over already ready ship on demolition,
+      but Japanese managed to defend her (in particular, one of arguments was that the part of
+      means for her building was collected by schoolchildren).」
+
+  - field: service.fate_category
+    value: 因华盛顿条约面临报废，经日方交涉保留
+    src: [combinedfleet-mutsu-trom, navypedia-nagato]
+    valid: { from: 1922-02-06 }
+    confidence: C
+    note: >
+      这是「结局判定」字段的非典型用法：本条记的是本舰生涯中一次**未发生**的结局。
+      两源叙述一致（TROM 详记交涉过程，navypedia 记「schoolchildren 捐款」这一理由），
+      但均未给出最终决定的确切日期，故 valid.from 取会议开始陈述该议题的 1922-02-06。
+      注册表无「条约豁免」类字段，故落在 fate_category 并在此说明。
+
+  # ---------------------------------------------------------------- 改装
+  - field: aviation.aircraft.types
+    value: 一四式水上偵察機（E1Y2）→ 九五式水上偵察機（E8N）→ 零式水上観測機（F1M2）
+    src: [combinedfleet-mutsu-trom, kasado-nagato]
+    valid: { from: 1927-01-01 }
+    confidence: C
+    note: >
+      逐期换装：TROM 1927-01~05「One Yokosho E1Y2 Type 14 floatplane is embarked」→
+      1932-01 改装「Three Nakajima E4N2 No. 2 Model 2 floatplanes are embarked」→
+      1937-08「Probably at that time three Nakajima E8N Type 95 'Dave' floatplanes are embarked」→
+      1938-12-15「one Kawanishi E7K2 Type 94 'Alf' and three Nakajima E8N2 Type 95 'Dave'」→
+      1943-01~02「two Mitsubishi F1M2 'Pete' floatplanes」。
+      kasado 最终时（1943-06）栏记「零式水上偵察機:3機」——与本条链条末端的 F1M2 两机不符，
+      两说并列不裁决。本条只列三个代表性机型，完整链条见正文。
+
+  - field: sensors.director.count
+    value: 2
+    unit: count
+    src: [combinedfleet-mutsu-trom]
+    valid: { from: 1933-12-01 }
+    confidence: C
+    note: >
+      TROM 1933-11~12「During a refit at Sasebo two Type 91 HA directors with 4.5 m Barr & Stroud
+      stereoscopic rangefinders are installed to the funnel platforms」。
+      舰级文件里已有一条同值同源，此处重复登记是因为它是**陆奥先改**（1933-11~12），
+      长门同期没有对应记载——即这一项是单舰差异。
+
+  - field: armament.aa_25mm.count
+    value: 20
+    unit: count
+    src: [combinedfleet-mutsu-trom, navypedia-nagato]
+    valid: { from: 1938-12-15, to: 1943-06-08 }
+    confidence: B
+    note: >
+      TROM 1938-12-15「Placed in reserve for the AA suite upgrade. The 40-mm Vickers AA guns are
+      replaced by twenty Type 96 25-mm AA guns (10x2).」
+      navypedia「1938, both: … + 10 x 2 - 25/60 96-shiki」= 20 门。两源一致。
+      注意 TROM 此处明写 10 座双联（10x2），而 1932-33 年装的是「four 40-mm Vickers AA guns
+      (2x2)」——即 40 mm 是 2 座双联，1938 年被 10 座双联 25 mm 取代，管数从 4 增到 20。
+
+  - field: armament.aa_25mm.count
+    value: 20
+    unit: count
+    src: [combinedfleet-mutsu-trom]
+    valid: { from: 1943-06-08 }
+    confidence: C
+    note: >
+      **本条记的是爆沉当日的舰上实有数**：TROM 1943-06-08 前后未记任何 25 mm 增装，
+      即从 1938-12 起一直保持 20 门到沉没。
+      与长门相比这是关键差异：长门在 1943-05 已加到 22 门、1944 年加到 118 门以上，
+      而陆奥一挺都没再加——她的防空火力停在 1938 年的水平上，这与她全程未出内海有关。
+
+  - field: sensors.radar.installed
+    value: 未装备（爆沉时无雷达）
+    src: [combinedfleet-mutsu-trom, kasado-nagato]
+    valid: { from: 1943-06-08 }
+    confidence: C
+    note: >
+      **这是「设计/计划上就没有」，不是「未获取」。**
+      TROM 陆奥全生涯年表无任何雷达加装记录（对照长门 1943-05-31 有 Type 21、
+      1944-06-27 有 Type 22/13）；kasado 的「陸奥:最終時(1943年6月頃)」栏
+      「射撃指揮レーダー -／捜索レーダー -」，即两栏都是「-」。
+      两源一致。这是本级两舰在 1943 年最实质的装备差距。
+
+  # ---------------------------------------------------------------- 1943-06-08 爆沉
+  - field: service.casualties
+    value: 1121
+    unit: persons
+    src: [combinedfleet-mutsu-trom]
+    valid: { from: 1943-06-09 }
+    confidence: B
+    note: >
+      TROM 1943-06-09「The final list of those lost aboard MUTSU totals 1,121 men including her
+      skipper, Captain Miyoshi and his Executive Officer, Captain Ono Koro …, both of whom are
+      promoted to Rear Admiral, posthumously.」
+      任务书给的「约 1121 人死」与来源一致。
+
+  - field: service.survivors
+    value: 353
+    unit: persons
+    src: [combinedfleet-mutsu-trom]
+    valid: { from: 1943-06-08 }
+    confidence: B
+    note: >
+      TROM 1943-06-08 1430 条「Her crew rescues 353 survivors of the 1,474 crewmembers aboard
+      MUTSU. Only 13 of the visiting observers/instructors are among the survivors.」
+      1,474 − 1,121 = 353，与 06-09 条的 1,121 人自洽。
+
+  - field: service.complement.wartime
+    value: 1474
+    unit: persons
+    src: [combinedfleet-mutsu-trom]
+    valid: { from: 1943-06-08 }
+    confidence: C
+    note: >
+      TROM 1943-06-08「353 survivors of the 1,474 crewmembers aboard MUTSU」——
+      这是爆沉当日的在舰人数，含 113 名正在参观的予科練生徒与 40 名土浦海軍航空隊教官，
+      故严格说是「在舰总人数」而非「编制定员」。注册表无更贴切的字段，用 wartime 并在 note 说明。
+
+  - field: service.fate_category
+    value: 爆因第一说：内部自爆（人祸／发射药燃烧引发弹药库爆炸）
+    src: [combinedfleet-mutsu-trom, navypedia-nagato]
+    valid: { from: 1943-08 }
+    confidence: B
+    note: >-
+      **两说并列之一，不裁决。**
+      M 委员会两个月的调查结论：「The investigation concludes that the explosion was 'most likely
+      caused by human interference'.」并指向一名被控轻微盗窃、定于 1943-06-08 在吴受军法审判的
+      三番炮塔枪水兵（TROM 1943-06-09 条）。
+      TROM 作者注另引战后最权威的专著：吉村昭《陸奥爆沈》（1970）采访了大部分生还者，
+      他们的看法是该枪水兵「intended to escape from the ship while creating a magazine fire as a
+      diversion. He must have disabled the temperature sensors prior to setting fire to several
+      propellant charges, extracted from their fireproof cases, but evidently failed to exit the
+      magazine before an explosion occurred.」
+      navypedia 的表述更含糊但同向：「The principal cause of the explosion which has caused loss
+      of the ship, often a crew negligence is specified.」
+      调查同时排除了三式弹自燃（102 DC1 发射药 80 °C 以下不自燃、烟色不符），
+      并因此恢复了三式弹的装舰。
+      **这一说的问题**：所谓「人祸」始终没有法庭结论，1993 年后仍有日本研究者提出其他解释。
+
+  - field: service.fate_category
+    value: 爆因第二说：被潜艇（或鱼雷机／袖珍潜艇）击沉
+    src: [combinedfleet-mutsu-trom]
+    valid: { from: 1944-03-02 }
+    confidence: C
+    note: >-
+      **两说并列之二，不裁决。**
+      时间窗起点的取法：这一说作为**有日期的书面线索**最早见于 1944-03-02 的 FRUMEL 情报记录；
+      它在 1943-08 M 委员会报告时即已被列入调查范围，但当时没有形成书面主张，故 valid.from
+      取 1944-03-02 而非 1943-08。同字段两条因此不重叠，不会被校验器判成「同源自相矛盾」。
+      TROM 明确记载这一说始终未被排除：「Doubts as to the cause of the disaster remain,
+      especially by those who favor the explanation that a submarine attacked MUTSU.」
+      三个支撑点：
+      ① M 委员会本身就把「an improbable attack by a lone American torpedo plane or an attack by
+         either a midget or a fleet submarine」列入调查范围（未作为不可能项排除）；
+      ② 1944-03-02，美军墨尔本无线电情报单位 FRUMEL 的记录：「In regard to the continued absence
+         of the battleship MUTSU from traffic, Honolulu now state they have some Jap prisoners of
+         war who are definite that MUTSU was torpedoed in Home waters when on passage south and
+         returned to Japan but her magazines blew up on arrival.」——这是战俘口供，不是作战记录，
+         但证明美方当时也在追这条线索；
+      ③ 数个月后日本海军官员曾就英国 X-craft 袭击提尔皮茨的「Operation Source」细节，
+         询问德国驻东京海军武官 Paul Wenneker 少将（TROM 1943-09-01 后条）。
+      另有 Fukui Shizuo 的说法：「MUTSU was destroyed by an explosive device delivered aboard by
+      a Japanese sailor hired by the British naval intelligence」——同属外部破坏一路。
+      **这一说的弱点**：爆沉当时柱岛泊地立即实施反潜警戒，未发现任何潜艇；
+      前部 535 英尺段迅速沉没的形态也与鱼雷命中后的进水模式不完全吻合。
+      本站两说并列，不裁决。
+
+  - field: service.fate_category
+    value: 停泊中第三号主炮塔弹药库爆炸，舰体断为两截沉没
+    src: [combinedfleet-mutsu-trom, navypedia-nagato, kasado-nagato-names]
+    valid: { from: 1943-06-08 }
+    confidence: B
+    note: >
+      TROM 1213 条「Suddenly, MUTSU's No. 3 turret's magazine explodes. … MUTSU breaks in two.
+      The 535-ft forward section collapses to starboard, sinks quickly and lies on the pagoda mast
+      on the floor of the bay. The 147-ft stern section upends, but remains floating.」
+      kasado「柱島泊地在泊中、爆発事故により沈没」。
+      **炸的是三番炮塔，不是四番**——这一点极易记错（navweaps 41 cm 页提到
+      「Turret #4 from Mutsu was erected as a static display at Etajima」，那是 1930 年代
+      大改装拆下的旧炮塔，与爆沉无关；1970 年代打捞上来的才是四番残骸，
+      见 TROM 1970-07-23 条「Turret No. 4 is salvaged」）。
+
+  - field: service.fate_authority
+    value: M委員会（委員長 海軍大将 塩沢幸一）
+    src: [combinedfleet-mutsu-trom]
+    valid: { from: 1943-06-09 }
+    confidence: B
+    note: >
+      TROM 1943-06-09「The 'M-Commission', led by 60-year-old Admiral Shiozawa Koichi (32)
+      (former CO of FURUTAKA) is convened to conduct a formal accident investigation.
+      Shiozawa considers all possibilities from the possible detonation of Type 3 shells to
+      improbable attacks by a lone American torpedo plane or an attack by either a midget or a
+      fleet submarine. He is assisted by Rear Admiral Hoshina Zenshiro, the 22nd CO of MUTSU.」
+      调查历时两个月（TROM「The 'M-Commission' labors for two months before presenting their
+      report」）。
+
+  - field: armament.gun_failures
+    value: >
+      1943-06-08 1213：三番主炮塔弹药库爆炸。调查结论「most likely caused by human interference」
+      （最可能系人为），并指向一名因轻微盗窃案被起诉、定于 06-08 在吴接受军法审判的三番炮塔
+      枪水兵；潜水员捞起第四号居住区（三番炮塔炮员住舱）的遗体，该嫌疑人的遗体不在其中。
+      调查同时排除了三式弹自燃：102 DC1 发射药在常温储存下 80 °C 以下不能自燃，
+      且幸存者一致看到棕红色烟（发射药燃烧的特征），而三式弹装药燃烧发白烟。
+    src: [combinedfleet-mutsu-trom]
+    valid: { from: 1943-06-08, to: 1943-08-31 }
+    confidence: B
+    note: >
+      **本条记的是调查结论，不是史实定论。** TROM 原文详列了 M 委员会的排除过程：
+      「A test is conducted at Kamegakubi proving ground using a specially built mock-up of
+      No. 3 turret. All survivors agree that they saw a brown or reddish-brown smoke prior to
+      the explosion, consistent with a propellant fire.」「Additional experiments show that under
+      normal storage conditions the 102 DC1 propellant cannot ignite below 80 degrees Centigrade
+      (176°F).」「The investigation concludes that the explosion was 'most likely caused by
+      human interference'.」
+      **爆因本身至今有四说以上，正文按两说并列处理，详见本条下一则与 RESEARCH-NOTES §3。**
+      本条填在 armament.gun_failures 是因为注册表只有这个字段能容纳「逐条记录某场事故中的
+      火炮/弹药失效情况」，而非因为这是炮术故障。已在 note 声明。
+
+  - field: service.unit
+    value: 第一艦隊 第一戦隊（連合艦隊旗艦）
+    src: [combinedfleet-mutsu-trom]
+    valid: { from: 1933-02-03, to: 1933-10-03 }
+    confidence: B
+    note: >
+      TROM 1933-02-03「The flag of CinC, Combined Fleet is transferred from KONGO to MUTSU.」
+      至 1933-10-03 止（TROM 记该任期「13 June-3 October 1933」的任命与 1933-06-13 条
+      「MUTSU is appointed the flagship of Combined Fleet」）。
+      即**陆奥也当过联合舰队旗舰**，但不只一次：
+      另见 1936-12-01「designated the flagship of the Combined Fleet」与
+      1937-01-21「MUTSU is appointed the flagship of Combined Fleet」、
+      1941-04-03「MUTSU is appointed the flagship of the Combined Fleet」。
+      这条对「长门长期是联合舰队旗舰」这一通行说法是个必要的补充：旗舰旗在两舰之间来回移过。
+
+  - field: service.unit
+    value: 第一艦隊 第一戦隊（連合艦隊旗艦）
+    src: [combinedfleet-mutsu-trom]
+    valid: { from: 1936-12-01, to: 1937-12-01 }
+    confidence: B
+    note: >
+      TROM 1936-12-01「Attached to BatDiv 1, First Fleet; designated the flagship of the
+      Combined Fleet.」1937-01-21 条再次确认。这是陆奥第二次长期担任联合舰队旗舰。
+
+  - field: service.unit
+    value: 第一艦隊 第二戦隊
+    src: [combinedfleet-mutsu-trom, kasado-nagato-names]
+    valid: { from: 1942-07-14 }
+    confidence: B
+    note: >
+      TROM 1942-07-14「MUTSU and NAGATO are transferred from the Combined Fleet's BatDiv 1 to
+      Vice Admiral Shimizu Mitsumi's First Fleet in BatDiv 2 with YAMASHIRO, FUSO, ISE and HYUGA.」
+      kasado 略历未单列此条，故以 TROM 为主源。此后陆奥未再编入其他战队，直到爆沉。
+
+  - field: service.unit
+    value: 第二艦隊 前衛部隊（ガダルカナル作戦）
+    src: [combinedfleet-mutsu-trom]
+    valid: { from: 1942-08-09, to: 1942-09-05 }
+    confidence: B
+    note: >
+      TROM 1942-08-09「MUTSU is attached to Vice Admiral Kondo Nobutake's Second Fleet,
+      Advance Force for Guadalcanal operations.」→ 1942-08-11 从横须贺出击 →
+      1942-08-17 抵特鲁克 → 1942-09-05 返回特鲁克。
+      这是陆奥**唯一一次驶出日本内海参加的前线行动**，全程未与敌接触。
+      TROM 1942-08-20 条记「Kondo leaves the MUTSU - unable to keep pace with his heavy
+      cruisers - behind at Truk」——25 节的航速在 1942 年已经跟不上巡洋舰。
+
+  - field: service.fate_authority
+    value: 日本海軍（除籍）
+    src: [combinedfleet-mutsu-trom, kasado-nagato-names]
+    valid: { from: 1943-09-01 }
+    confidence: B
+    note: >
+      TROM 1943-09-01「MUTSU is removed from the Navy List.」kasado「除籍:1943年9月1日」。
+      两源一致。注意与沉没日（06-08）相隔近三个月，期间对外严密封锁消息。
+
+  # ---------------------------------------------------------------- 隐蔽与打捞
+  - field: service.commander
+    value: 三好輝彦（Miyoshi Teruhiko）大佐，追晋少将
+    src: [combinedfleet-mutsu-trom]
+    valid: { from: 1943-03-10, to: 1943-06-08 }
+    confidence: B
+    note: >
+      TROM 1943-03-10「Captain (Rear Admiral, posthumously) Miyoshi Teruhiko (43)(former CO of
+      MYOKO) is appointed the CO.」与 1943-06-09「both of whom are promoted to Rear Admiral,
+      posthumously」。
+      **末任舰长的完整任期在此**：1943-03-10 到 06-08，仅三个月。
+      前任为 1942-06-20 到任的 Yamazumi Teijiro（TROM 同年条）。
+
+  - field: armament.mount.summary
+    value: >
+      1932-33 年改装后：4 × 2 41 cm/45 三年式（主炮未换）+ 4 × 2 12.7 cm/40 八九式高角炮
+      + 2 × 2 40 mm 维克斯机炮；8 cm/40 高角炮全部拆除；
+      新增呉式二号三型改二中线弹射器 1 基、110 cm 探照灯 4 具
+    src: [combinedfleet-mutsu-trom, navypedia-nagato]
+    valid: { from: 1933-01-30, to: 1936-09-29 }
+    confidence: B
+    note: >
+      TROM 1932-02-27~1933-01-30「During a rebuild at Sasebo all existing 3-inch (76-mm) AA guns
+      are replaced by four twin (4x2) 127-mm and four 40-mm Vickers AA guns (2x2).
+      Both superfiring main battery turrets are fitted with 10-m duplex rangefinders.
+      A lattice searchlight tower with four 110-cm searchlights, relocated from the foremast, is
+      erected abaft the fore funnel. A Kure Type No. 2 Model 3 Mk. 2 centerline catapult is
+      installed between the mainmast and No. 3 main battery turret. Three Nakajima E4N2 No. 2
+      Model 2 floatplanes are embarked.」
+      navypedia「1932 - 1933, Mutsu: - 4 x 1 - 76/40; + 4 x 2 - 127/40 89-shiki,
+      2 x 1 - 40/62 "HI" 91-shiki」——navypedia 记 40 mm 为 2 座**单装**，
+      TROM 记「four 40-mm Vickers AA guns (2x2)」即 2 座双联，两说在「座/管」上不一致，并列不裁决。
+      注意：长门同期的 25 mm 换装比陆奥早（长门 1938 年、陆奥 1938-12-15），
+      而 40 mm 的拆除也是陆奥这条 TROM 独有的记载。
+
+  # construction.building_time_days：**不手填**。注册表该字段注明「派生字段，由日期算出」，
+  # 由构建脚本按 construction.laid_down 与 construction.commissioned 自动算。
+  # 按本文件的 1918-06-01 → 1921-10-24 应为 1,240 天（长门 1,185 天，多 55 天）。
+  # 延期的原因见 construction.commissioned 的 note（Westinghouse 减速齿轮供货延误）。
+
+  - field: service.fate_category
+    value: 战后打捞：1950s 起多次作业，1970-1972 年大规模打捞，遗物存陸奥記念館
+    src: [combinedfleet-mutsu-trom, kasado-nagato-names]
+    valid: { from: 1949-06-20 }
+    confidence: C
+    note: >
+      逐条：TROM 1948-06-24「The Nishi-Nippon Kaiji Salvage Company acquires the right to salvage
+      ammunition and fuel from the wreck. Before the works can start, the Far Eastern Commission
+      (FEC) issues an order preventing the salvage of items from the wreck.」→
+      1949-06-20 地方法院批准打捞遗骸与遗物，1949-07-21 开工至 1951-03 →
+      1953-06-28 舰首徽章出水 → 1970-03-20 深田サルベージ接手，作业持续八年 →
+      1970-07-23 四番炮塔出水（并在其中找到失踪枪水兵的遗体，凭制服口袋里两枚私章确认身份）→
+      1971-03-15/16 舰尾段出水 → 1972-02 舰首段吊起 → 1972-11 陸奥記念館开馆（渡島屋代島）→
+      1978 打捞结束 → 1994-04-27 纪念馆迁新馆。
+      kasado 略历只记「1949年7月21日 浮揚作業に着手／1971年3月16日 艦尾部分の浮揚に成功」，
+      两条与 TROM 吻合。

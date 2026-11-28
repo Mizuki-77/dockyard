@@ -8519,6 +8519,794 @@ sources:
   fetched: 2026-11-25
   license: all_rights_reserved
   note: '**纯评分型比较文，作者自陈主观**（「This section is very subjective」）。 本轮只取一个结构性事实：大和在「Heavyweight Champion」评分类目里火控得分 仅 5/10（与 Bismarck 同级），而装甲 10/10、主炮 10/10。**只能作叙事对照， 不作 fact 来源。**'
+
+# ---- 2026-11-28 新增（g-iowa）----
+- id: navypedia-iowa
+  title: IOWA battleships (1943 - 1944) — Navypedia
+  url: https://www.navypedia.org/ships/usa/us_bb_iowa.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: navypedia.org
+  lang: en
+  access: direct
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: '主尺度/排水量/装甲/动力/武备的骨架来源，同一页给四舰的建造表。 **口径提示（重要）**：该站排水量与燃油栏列名为 "t"，但数值 （48,110 / 57,540 / 7,621）与英文文献的长吨数据同量级，原文未声明 长吨或公吨，本站按原文数值录入不改写，逐条在 note 里标注「口径未定」。 装甲栏给了两套数（炮塔 495/184/260/305 与保护段 432/241/300/184）， 差额即背板厚度，已在 facts 里注明。 原文有把 "BB" 写成西里尔 "ВВ" 的编码错误，按 BB 读。
+
+    '
+
+# ---- 2026-11-28 新增（g-iowa）----
+- id: navweaps-16in-50-mk7
+  title: United States 16"/50 (40.6 cm) Mark 7 — NavWeaps
+  url: https://www.navweaps.com/Weapons/WNUS_16-50_mk7.php
+  type: website
+  tier: C
+  role:
+  - data
+  operator: NavWeaps（Tony DiGiulian 维护）
+  lang: en
+  access: direct
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: '主炮全部本体数据的唯一来源：炮身、弹重、初速、射程表（BuOrd OP 770 / OP 1100 / OP 1091）、射速、身管寿命、炮座重量与俯仰射界、炮塔测距仪。 关键原句："Designation | 16\"/50 (40.6 cm) Mark 7"、"Ship Class Used On | Iowa (BB-61) and Montana (BB-67) Classes"、"Date In Service | 1943"。 同页另给了三个历史判语，正文可用：曾计划 2,240 lb AP Mark 5、开工前已改 2,700 lb 超重弹；"The Mark 7 ... was possibly the best battleship gun ever put into service"；以及关于「衣阿华级主炮校炮问题」的传闻， 作者 William Jurens 查档后**未找到支持**（这一点正文必须照实写， 不要复述传闻）。
+
+    '
+
+# ---- 2026-11-28 新增（g-iowa）----
+- id: danfs-iowa-iii
+  title: Iowa III (BB-61) — DANFS（Dictionary of American Naval Fighting Ships）
+  url: https://www.history.navy.mil/research/histories/ship-histories/danfs/i/iowa-iii.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: Naval History and Heritage Command（美国海军历史与遗产司令部）
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: public_domain
+  note: '美海军官方舰史词条。**直连 history.navy.mil 在本机 TLS 握手失败**， 经 Wayback 快照取得（web.archive.org/web/20231104191058/…）。 文末自注 "Detailed history under construction."，故战役细节少于旧版； 旧版全文另有镜像 ibiblio.org/hyperwar（danfs-iowa-ii 页）可用互校。 词条首部给 "(BB-61: dp. 45,000 t.; l. 887''3"; b. 108''2"; dr. 37''9"; s. 33 k.; cpl. 2,800; a. 9 16", 20 5"; cl. Iowa)"——编制 2,800 与 navypedia 的 1,921 差得很大，两说并列不裁决。 战历末段停在 1958-02-24 退役入大西洋后备舰队（该版未写 1984 复役）。
+
+    '
+
+# ---- 2026-11-28 新增（g-iowa）----
+- id: danfs-missouri-iii
+  title: Missouri III (BB-63) — DANFS（Dictionary of American Naval Fighting Ships）
+  url: https://www.history.navy.mil/research/histories/ship-histories/danfs/m/missouri-iii.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: Naval History and Heritage Command
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: public_domain
+  note: '美海军官方舰史词条，覆盖 1944-1995 全程，是本轮密苏里号战历与 1945-09-02 受降仪式时刻表的主力来源。经 Wayback 快照取得 （web.archive.org/web/20231204000127/…）。 词条首部 "(BB-63: displacement 45,000; length 887''3"; beam 108''2"; draft 28''11"; speed 33 knots; complement 1,921; armament 9 16-inch, 20 5-inch, 80 40 millimeter, 49 20 millimeter; class Iowa)"。 **注意吃水 "28''11"" = 8.81 m 与该级满载吃水 11 m 不符**，本站在 dimensions.draught 里未采用这一值（见 RESEARCH-NOTES「未采用的数据」）。 该词条亦给出受降仪式的分钟级时序（0800 Nimitz 登舰、0843 MacArthur、 0856 日方代表、0902 开始、23 分钟），以及两艘战列舰的作战星数。
+
+    '
+
+# ---- 2026-11-28 新增（g-iowa）----
+- id: marad-vessel-iowa
+  title: IOWA (BB-61) — MARAD Vessel History Database
+  url: https://vesselhistory.marad.dot.gov/ShipHistory/Detail/2305
+  type: database
+  tier: B
+  role:
+  - data
+  operator: U.S. Department of Transportation, Maritime Administration
+  lang: en
+  access: direct
+  fetched: 2026-11-28
+  license: public_domain
+  note: '美国运输部海事管理局的船舶史数据库。给的是**政府口径**的吨位与尺度： "Displacement, Summer | 57271.00 tons"、"Displacement, Lightweight | 45231.00 tons"、"Ship Length | 888.00 feet"、"Beam | 109.00 feet"。 这些是后备舰队保管期间的登记值，与设计值不同口径，本站分开记为 displacement.full 与 displacement.empty，不与 45,000 t 标准排水量混用。 同页另给保管与移交节点：2001-04-21 入 Suisun Bay 后备舰队、 2011-10-27 离开该舰队移交洛杉矶 Pacific Battleship Center。
+
+    '
+
+# ---- 2026-11-28 新增（g-iowa）----
+- id: nhhc-h029-4
+  title: H-029-4 The USS Iowa Tragedy — NHHC H-Gram 029 Attachment 4
+  url: https://www.history.navy.mil/about-us/leadership/director/directors-corner/h-grams/h-gram-029/h-029-4.html
+  type: document
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: Naval History and Heritage Command（作者 Samuel J. Cox，NHHC 主任，2019-04）
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: public_domain
+  note: '1989-04-19 二号炮塔爆炸事故的最权威公开叙述，直接引用调查报告与 CNO 三次背书原文。首段即写明 **"Although the Japanese super-battleships Yamato and Musashi were heavier and had larger guns (nine 18.1-inch) the Iowa-class ... were without doubt the most sophisticated battleships ever built"**——这是本站「不写''史上最大战列舰''」的直接依据。 给出：47 人instant死亡、事故位置（波多黎各东北 260 海里）、 装填为非标准装药（2,700 lb 弹配 1943-44 年产的 D-846 发射药， 药包上印有 "Warning: Do not use with 2,700 LB projectiles"）、 1991-10-17 Kelso 记者会推翻「人为破坏」结论、 二号炮塔此后封存未再使用、1990-10-26 退役。 经 Wayback 快照取得（web.archive.org/web/20251208122232/…）。
+
+    '
+
+# ---- 2026-11-28 新增（g-iowa）----
+- id: pacificbattleship-iowa
+  title: Battleship IOWA Museum（Pacific Battleship Center）官网
+  url: https://www.pacificbattleship.com/
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  - rights
+  operator: Pacific Battleship Center（501(c)(3)，洛杉矶 San Pedro）
+  lang: en
+  access: direct
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: '现役博物馆方。用于两件事：①确认衣阿华号自 2012 年起在洛杉矶 San Pedro 作为博物馆舰开放（官网原文 "now welcoming visitors on the Los Angeles Waterfront in San Pedro"、"Since 2012, more than three million people have visited"）；②配图授权联络对象。该页无技术数据， 不作 fact 来源。
+
+    '
+
+# ---- 2026-11-28 新增（g-iowa）----
+- id: ussmissouri-memorial
+  title: Battleship Missouri Memorial（USS Missouri Memorial Association）官网
+  url: https://www.ussmissouri.org/
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  - rights
+  operator: USS Missouri Memorial Association（珍珠港 Ford Island）
+  lang: en
+  access: direct
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: '现役博物馆方。用于确认密苏里号现泊珍珠港 Ford Island、与亚利桑那纪念馆 并称 "bookends of World War II"；原文 "On September 2, 1945, Japan''s Instrument of Surrender was signed aboard USS Missouri in Tokyo Bay, formally ending World War II"。该页无技术数据，不作 fact 来源。
+
+    '
+
+# ---- 2026-11-28 新增（g-nagato）----
+- id: navypedia-nagato
+  title: NAGATO battleships (1920 - 1921) — Navypedia
+  url: https://www.navypedia.org/ships/japan/jap_bb_nagato.htm
+  type: database
+  tier: D
+  role:
+  - data
+  operator: navypedia.org
+  lang: en
+  access: direct
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: 主尺度/排水量/动力/燃料/续航/装甲逐部位厚度/两期武备/编制的骨架来源。**本组骨架主力**。口径提示： ① 排水量只有「normal / full」两档（33,800 / 38,500 t 竣工时），**没有 standard**（原文写 '---'），改装后给 standard 39,120 + full 42,850； ② 装甲段按「竣工时 / 改装后」两段整段重写，逐部位厚度齐全； ③ 逐次改装表（1925 至 1945-06）是本组切片的主要依据，但**1944-07 与 1944-11 两条与本组其他来源的月份有出入**，已并列； ④ 陆奥爆沉原因原文只写 'The principal cause ... often a crew negligence is specified'，属倾向性表述，未裁决。 抓取：Python urllib 直连，HTTP 200，39,547 bytes。
+
+# ---- 2026-11-28 新增（g-nagato）----
+- id: kasado-nagato
+  title: 長門型戦艦 Nagato class Battleship — 日本海軍艦艇データ（kasado.net）
+  url: https://www.kasado.net/Battleships/Japan/Nagato_1920.html
+  type: database
+  tier: D
+  role:
+  - data
+  operator: kasado.net
+  lang: ja
+  access: direct
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: 六列并排对比表：長門竣工時 / 陸奥竣工時 / 大改装後 / 陸奥最終時(1943-06) / 長門 1944-10 / 長門 1945-02，涵盖寸法・排水量、機関関係、装甲防御（逐甲板逐炮塔分面）、搭載火器、測距儀/レーダー、航空艤装、乗員定数。**逐期武备数量与逐炮塔分面装甲的主骨架**。口径提示： ① 基準排水量改装后 39,050 t、公試 43,439 t，与 navypedia 的 39,120 / 无公试值冲突，并列； ② 最大幅改装后 34.6 m，与 navypedia 的 33.0 m 冲突，并列； ③ 主砲塔前面装甲 508 mm，与 navypedia 的 457 mm 冲突，并列； ④ 25 mm 最终配置按「三連装14基+連装10基+単装30基」= 92 挺记，与 combinedfleet TROM 的 96/123 挺不一致。 抓取：Python urllib 直连，HTTP 200，30,683 bytes。
+
+# ---- 2026-11-28 新增（g-nagato）----
+- id: kasado-nagato-names
+  title: 長門型戦艦 各艦の略歴（Nagato / Mutsu 略历）— kasado.net
+  url: https://www.kasado.net/Battleships/Japan/Nagato_1920_names.html
+  type: database
+  tier: D
+  role:
+  - data
+  operator: kasado.net
+  lang: ja
+  access: direct
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: 两舰逐条略历（起工/進水/竣工/除籍/戦没，以及编入战队、改装、参战、被害、结局）。**单舰时间线校核用的第二来源**，与 combinedfleet TROM 交叉。注意：本页把长门沉没日记为 1946-07-28（浸水拡大により沈没），与 TROM 的 07-29 夜、navypedia 的 29.7 各差一天，三说并列。 抓取：HTTP 200，10,688 bytes。
+
+# ---- 2026-11-28 新增（g-nagato）----
+- id: combinedfleet-nagato-class
+  title: Nagato-class Battleship — Nihon Kaigun（combinedfleet.com 舰级页）
+  url: https://www.combinedfleet.com/nagato_c.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - lead
+  operator: combinedfleet.com
+  lang: en
+  access: direct
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: 舰级速览页（排水量 42,850 t、725'2" x 113'6" x 31'2"、27 kn、8 x 16"/45、20(后 18) x 5.5"/50、8 x 5"/40、最多 98 x 25 mm、装甲 11.8" belt / 7" deck / 14" turret face / 14.5" CT、乘员 1368）。**仅作交叉核对与线索**：该页 27 kn 与两艘实船的 26.5 kn 设计值/26.4-26.7 kn 实测不符，且该页正文把陆奥爆沉日写成 1943-06-06，与 TROM 自身的 06-08 冲突——本组一律以 TROM 与日文源为准。抓取：HTTP 200，5,751 bytes。
+
+# ---- 2026-11-28 新增（g-nagato）----
+- id: combinedfleet-nagato-trom
+  title: IJN Battleship NAGATO — Tabular Record of Movement（Revision 11）
+  url: https://www.combinedfleet.com/nagatrom.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: combinedfleet.com（Bob Hackett / Sander Kingsepp / Lars Ahlberg）
+  lang: en
+  access: direct
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: 长门全生涯逐日年表（1917-08-28 开工 至 1946-07 沉没），含试航实测、逐任舰长、逐次改装、莱特湾逐分钟战斗记录、战后移交与十字路口行动全程。**单舰时间线与正文事件的第一来源**。口径提示： ① 1946 年沉没记为 07-29 夜翻覆沉没； ② 莱特湾 1944-10-24/25 的损伤叙述与 navypedia 的「三发炸弹瘫痪一座主炮塔」不完全对应（TROM 记 2 发命中+3 近失，另一说 3 发），并列； ③ 引用的『MUTSU 爆炸归因于不满的水兵』是 1943-06-25 调查结论，TROM 另在陆奥页列出潜艇说等四说并存。 抓取：HTTP 200，59,406 bytes。
+
+# ---- 2026-11-28 新增（g-nagato）----
+- id: combinedfleet-mutsu-trom
+  title: IJN Battleship MUTSU — Tabular Record of Movement（Revision 9）
+  url: https://www.combinedfleet.com/Mutsu.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: combinedfleet.com（Bob Hackett / Sander Kingsepp / Lars Ahlberg）
+  lang: en
+  access: direct
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: 陆奥全生涯逐日年表（1918-06-01 开工 至 1970 年代打捞），含华盛顿条约存留经过、逐任舰长、1934-1936 大改装、1943-06-08 爆沉逐分钟记录与其后 M 委员会调查全文、战后打捞与遗物。**陆奥正文的第一来源**。口径提示： ① 爆沉原因本页明确列出四说以上（人祸/潜艇/三式弹自燃/海底深弹），本站按任务书要求把「自爆（人祸）」与「潜艇击沉」两说并列，并保留另两说； ② 沉没人数 1,121（本页 06-09 条）与乘员 1,474、生还 353 自洽（1474-1121=353）。 抓取：HTTP 200，45,077 bytes。
+
+# ---- 2026-11-28 新增（g-nagato）----
+- id: navweaps-41cm-45-3ns
+  title: Japan 41 cm/45 (16.1") 3rd Year Type — NavWeaps
+  url: https://www.navweaps.com/Weapons/WNJAP_161-45_3ns.php
+  type: website
+  tier: C
+  role:
+  - data
+  operator: navweaps.com（Tony DiGiulian）
+  lang: en
+  access: direct
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: '长门级主炮的完整数据页（tier C）。**本组主炮全部 fact 的唯一来源**。关键原文： ① 页内标题两行并存「41 cm/45 (16.1") 3rd Year Type」与「40 cm/45 (16.1") 3rd Year Type」； ② 「These guns were originally designated as 41 cm/45 3rd Year Type. Redesignated as 40 cm/45 3rd Year Type on 29 March 1922. ... Actual bore diameter was 41.0 cm (16.14 inch).」； ③ 「These were the first large-caliber guns designed entirely in Japan. They were mounted afloat only on the Nagato class」； ④ 炮座：原设计 -5/+30 度，改装后 -3/+43 度；炮座重 1,004 tons (1,020 mt)； ⑤ 拆下的旧炮座「Turret #4 from Mutsu was erected as a static display at the Naval Academy on Etajima」，并特别说明「It is not a turret taken from the Mutsu wreck as is often claimed」； ⑥ 弹着染料（1941 起）Nagato: Pink / Mutsu: Black。 抓取：HTTP 200，55,627 bytes。'
+
+# ---- 2026-11-28 新增（g-belfast）----
+- id: hansard-1971-03-08
+  title: H.M.S. "BELFAST" — House of Commons debate, 8 March 1971 (HC Deb vol 813 cc207-16)
+  url: https://api.parliament.uk/historic-hansard/commons/1971/mar/08/hms-belfast
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: UK Parliament（Hansard 官方存档，api.parliament.uk）
+  lang: en
+  access: direct
+  fetched: 2026-11-28
+  license: open_parliamentary_licence
+  note: "**本组保存经过那一节的一手依据，也是全组唯一 tier A 的叙事来源。** 1971-03-08 深夜休会辩论全文，提案人为 Rear-Admiral Morgan-Giles （本舰前舰长、HMS Belfast Trust 主席）。可直接引用的关键句：\n- 「She took part in the sinking of the \"Scharnhorst\" and was the covering\n  force for the attack on the \"Tirpitz\". She spearheaded the invasion of\n  Normandy and saw much action in the Korean War」\n- 「She was the largest cruiser ever built for the Royal Navy, and is now\n  the last remaining wartime big-gun ship.」\n- 「in 1967 the Belfast Committee was set up」——1967 年成立的委员会由\n  IWM 馆长 Noble Frankland 主持，成员含国家海事博物馆与 IWM 代表。\n- 委员会报告原话：「There is a very strong case for her preservation…\n  There is really no question of selecting Belfast; it is rather a case of\n  grasping the last opportunity.」\n- 「a H.M.S. \"Belfast\" Trust is being formed at the moment, with the object\n  of trying to obtain a loan of the ship to put her on exhibition afloat in\n  the London River」——1971 年 3 月时 Trust 正在组建。\n- 国防部次官 Peter Kirk 的答复：「As late as ... she has performed\
+    \ the\n  slightly less glamorous, but essential, role of H.Q. ship of the Reserve\n  Ships Organisation at Portsmouth. As a result of the transfer of the\n  Reserve Ships Organisation to shore accommodation at Chatham last month,\n  this requirement has ceased and she would in the ordinary way he put on\n  the disposal list next month」——即 1971 年 4 月本应进处置清单。\n- 「I will certainly hold up until the end of June any question of the\n  disposal of the hull.」\n\n口径提示：辩论中的 1971 年时间线（3 月 Trust 在组建、6 月底前不动舰体） 与 IWM 现行页面的「1971-07 政府移交所有权、10-21 开放」是**同一条线的 两个点**，不构成矛盾。本组按「1967 委员会 → 1971-03 议会辩论 → 1971-07 Trust 接手 → 1971-10-14 抵伦敦池 → 1971-10-21 开放 → 1978 转 IWM」排列。\n"
+
+# ---- 2026-11-28 新增（g-belfast）----
+- id: naval-history-belfast
+  title: HMS Belfast — Service History (Royal Navy Warships in World War 2)
+  url: https://www.naval-history.net/xGM-Chrono-06CL-Belfast.htm
+  type: website
+  tier: D
+  role:
+  - data
+  - narrative
+  operator: Naval-History.net（正文 Lt Cdr Geoffrey B Mason RN (Rtd)，c. 2004； Gordon Smith 编辑）
+  lang: en
+  access: direct
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: "**本组的主力来源**：贝尔法斯特逐月战历年表，覆盖 1939-07 到 1971 年开放， 88 KB。全部战历日期、编队隶属、护航编号、改装月份、雷达型号、 战后远东与朝鲜段都出自此页。页尾另附 Don Kindell 整理的 CONVOY ESCORT MOVEMENTS 护航表，以及一份 Gresson 海军候补生 （RNZN）1945-46 远东日记摘录（提供第 2 巡洋舰分队旗舰那段细节）。\n口径提示（三条会影响直接引用）： 1) **正文首句把本级叫「Improved SOUTHAMPTON-Class heavy cruiser」**，\n   与页标题「Edinburgh-class Light Cruiser」自相矛盾。轻巡是官方分类，\n   本组取轻巡并把这一处矛盾写进 RESEARCH-NOTES。\n2) **两处日期与其余来源冲突**：开工日记「30th December 1936」（navypedia\n   与 IWM 都记 12-10）、下水日记「31st March 1938」（navypedia 与 IWM 都记\n   03-17 圣帕特里克节）。该页 Edinburgh 分页把两舰下水日写成同一天，\n   属同源串行错误。本组对这两项采信两源一致的日期，并把冲突留在笔记里。\n3) 改装类条目通常只写到月份（如「August Under repair」），\n   故凡改装类 fact 的 valid.from 取该月 1 日，note 里写明来源只给月份。\n"
+
+# ---- 2026-11-28 新增（g-belfast）----
+- id: naval-history-edinburgh
+  title: HMS Edinburgh — Service History (Royal Navy Warships in World War 2)
+  url: https://www.naval-history.net/xGM-Chrono-06CL-Edinburgh.htm
+  type: website
+  tier: D
+  role:
+  - data
+  operator: Naval-History.net（正文 Lt Cdr Geoffrey B Mason RN (Rtd)，c. 2003； Gordon Smith 编辑）
+  lang: en
+  access: direct
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: '姊妹舰 Edinburgh 的逐月年表，105 KB。本组只用它做**一件事**： 确认两舰同日订造（「ordered on 15th August 1936」， 原文与本舰页几乎逐字相同）。本库尚未收 Edinburgh 单舰文件， 本组不代它写单舰数据。
+
+    '
+
+# ---- 2026-11-28 新增（g-belfast）----
+- id: iwm-hms-belfast-history
+  title: History of HMS Belfast — Imperial War Museums
+  url: https://www.iwm.org.uk/history/iwm/hms-belfast
+  type: website
+  tier: C
+  role:
+  - data
+  - narrative
+  - lead
+  operator: Imperial War Museums（舰艇现藏机构，即保存方本身）
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: "**直连 iwm.org.uk 返回 403**（实测三次），改走 Wayback 快照： https://web.archive.org/web/2024/https://www.iwm.org.uk/history/iwm/hms-belfast （实际落到 20260617064457 的快照）。正文是 IWM 原文，只是取道存档。\n这是**保存方自己的叙述**，对本组最关键的几处无可替代： - 「launched on St Patrick's Day in 1938 by Anne Chamberlain, wife of the\n  then Prime Minister Neville Chamberlain」——**命名人**（任务书此处写错）\n- 「commissioned into the Royal Navy on 5 August 1939 under the command of\n  Captain G A Scott DSO RN」——**服役日与首任舰长**\n- 「As early as 1967 the Imperial War Museum had been investigating the\n  possibility of preserving a Second World War cruiser. This led to the\n  formation of a trust, headed up by one of HMS Belfast's former captains\n  Rear-Admiral Sir Morgan Morgan-Giles.」\n- 「opening to the public on Trafalgar Day, 21 October 1971」 - 「Today, it is the last remaining vessel of its type – one of the largest\n  and most powerful light cruisers ever built.」\n"
+
+# ---- 2026-11-28 新增（g-belfast）----
+- id: iwm-hms-belfast-launch
+  title: HMS Belfast's St Patrick's Day Launch — Imperial War Museums
+  url: https://www.iwm.org.uk/history/iwm/hms-belfast/launch
+  type: website
+  tier: C
+  role:
+  - data
+  - narrative
+  operator: Imperial War Museums
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: "Wayback 快照 20260620151822。IWM 讲解员 Ian Proctor 的口述稿（视频转录）， **是「船台号 1000」与「1978 年所有权转 IWM」两件事的唯一来源**： - 「she was always known as yard Project #1000 and that number was reserved\n  for her. It wasn't until she was launched that she then became Belfast and\n  at her Commission HMS Belfast.」\n- 「As late as May 1971, the government and the Navy were intent on scrapping\n  HMS Belfast, but a committee and a trust was formed, The HMS Belfast Trust\n  by Morrison, Morgan, Morgan Giles, a former commanding officer of HMS\n  Belfast with the intent of preserving the vessel for the nation.」\n- 「In July 1971, they succeeded, and the government passed over ownership of\n  the vessel to the trust who brought it to London and moored it to the Pool\n  of London ... the trust entered into an agreement with the Imperial War\n  Museum and ownership was passed to the museum in 1978.」\n- 「In 1963 ... paid off, placed into reserve and used as an accommodation\n  ship in Portsmouth Harbour.」\n\n口径提示：转录稿把\
+    \ Morgan-Giles 的名字写成「Morrison, Morgan, Morgan Giles」， 是语音识别的重复；其余来源一律记 Rear-Admiral Sir Morgan Morgan-Giles。 本组按后者，并在笔记里留档。\n"
+
+# ---- 2026-11-28 新增（g-belfast）----
+- id: iwm-hms-belfast-spec
+  title: HMS Belfast — Ship Specifications — Imperial War Museums
+  url: https://www.iwm.org.uk/belfast/history_spec.htm
+  type: website
+  tier: C
+  role:
+  - data
+  operator: Imperial War Museums（2000 年代旧版舰史站点，现经 Wayback）
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: "Wayback 快照 20020203142655。IWM 1999-2004 年版 HMS Belfast 站点里的 「Ship Specifications」页，**是本组唯一给出 1959 年武备与编制区间的 IWM 文件**： - 「CLASS Edinburgh, Modified Southampton class」 - 「Keel laid 10 December 1936」／「LAUNCHED 17 March 1938 - St. Patrick's Day」 - 「COMMISSIONED Commissioned into the Royal Navy 5 August 1939」 - 「STANDARD DISPLACEMENT 11,553 tons」 - 「OVERALL LENGTH 613 feet 6 inches (187metres)」／「BEAM 69 feet (21metres)」\n  ／「DRAUGHT 19 feet 9 inches (6.1metres)」\n- 「ARMAMENT (1959) Twelve (4x3) 6-inch; eight (4x2) 4-inch HA/LA;\n  twelve (6x2) Bofors AA」\n- 「MAXIMUM SPEED 32 knots」／「COMPLEMENT 750 - 850 (as flagship)」\n口径提示：本页数值**明显经过取整**（69 ft 写成 21 m、32 kn 与别处的 32.5 差 0.5 节），且未说明排水量的吨制。故本组只把它当作**交叉印证**用： 凡与 navypedia 冲突的（排水量 11,553 vs 11,500、宽 21 vs 20.2、 航速 32 vs 32.5），一概两说并列写进 note，不裁决。凡两源一致的 （全长 187.0 m、80,000 hp、4 座锅炉、6 座双联 4 英寸、6 座双联 Bofors 1959）， 都升级为置信度 A。\n"
+
+# ---- 2026-11-28 新增（g-belfast）----
+- id: iwm-hms-belfast-histor10
+  title: HMS Belfast — The Final Commission（East of Suez again and the final commission）— Imperial War Museums
+  url: https://www.iwm.org.uk/belfast/histor10.htm
+  type: website
+  tier: C
+  role:
+  - data
+  - narrative
+  operator: Imperial War Museums（2000 年代旧版舰史站点，现经 Wayback）
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: "Wayback 快照 20000619101340。本组**退役与保存经过**的主叙事来源： - 「HMS Belfast sailed for the Far East and spent the years 1959-62」 - 「in December 1961 when HMS Belfast entered Dar-es-Salaam to take part in\n  the granting of independence to Tanganyika. She had the honour of providing\n  the guard for the final hauling-down of the Union Flag and the first\n  hoisting of the Tanganyikan flag.」\n- 「she finally paid off in Devonport on 24 August 1963 and her Admiral's flag\n  was hauled down for the last time.」\n- 「having steamed nearly half a million miles during her operational life」 - 「a determined group of men led by her former captain, now Rear Admiral,\n  Sir Morgan Morgan-Giles DSO OBE GM, decided to save her. She was brought to\n  London and opened to the public on 21 October 1971 - Trafalgar Day.」\n- 「arriving at the Pool of London on 14 October 1971」\n**1963-08-24 这个退役日只有此页给出**，其余来源都只写「1963 年」。\n"
+
+# ---- 2026-11-28 新增（g-belfast）----
+- id: iwm-history3
+  title: HMS Belfast — Outbreak of War（IWM 旧版舰史 第 3 章）
+  url: https://www.iwm.org.uk/belfast/history3.htm
+  type: website
+  tier: C
+  role:
+  - data
+  - narrative
+  operator: Imperial War Museums（2000 年代旧版舰史站点，现经 Wayback）
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: "Wayback 快照 20000619163828。1939 年那一段（封锁巡逻、Cap Norte、触雷）的 IWM 叙述。**「触雷时刻」与「舰体被折断」的表述出自此页**： - 「shortly before 11.00 am on 21 November 1939, whilst leaving the Firth of\n  Forth, she was rocked by the violent detonation of a magnetic mine」\n- 「Although casualties were mercifully light, the ship's back was broken and\n  the damage to her hull and machinery caused by the whiplash effect of the\n  explosion was so severe that almost three years were to elapse before she\n  could be made fit for action.」\n- Cap Norte：「On 9 October, HMS Belfast successfully intercepted the German\n  liner SS Cap Norte which was trying to return to Germany disguised as a\n  neutral vessel ... the largest enemy merchant ship intercepted to date」\n"
+
+# ---- 2026-11-28 新增（g-belfast）----
+- id: iwm-history4
+  title: HMS Belfast — The War at Sea / Arctic Convoys（IWM 旧版舰史 第 4 章）
+  url: https://www.iwm.org.uk/belfast/history4.htm
+  type: website
+  tier: C
+  role:
+  - data
+  - narrative
+  operator: Imperial War Museums（2000 年代旧版舰史站点，现经 Wayback）
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: "Wayback 快照 20000823073405。1942-11 归建至 1943 年底的北极护航段。关键句： - 「When she finally rejoined the Home Fleet in November 1942, under the\n  command of Captain (later Admiral Sir Frederick) Parham, HMS Belfast was\n  the largest and arguably the most powerful cruiser in the Royal Navy.」\n- 「Not only had she been 'bulged' amidships, increasing her standard\n  displacement to 11,500 tons and significantly improving her stability」\n  ——**注意：这里 IWM 自己给的是 11,500，与同一机构 spec 页的 11,553 又不一致，\n  是该机构内部的两说，本组并列处理。**\n- 「On 21 February 1943, wearing the flag of Rear-Admiral (later\n  Vice-Admiral Sir Robert) Burnett, HMS Belfast left Iceland for the Russian\n  port of Murmansk in support of Convoy JW53.」\n- 「hurricane force gales caused severe damage to warships and merchant\n  vessels alike」\n"
+
+# ---- 2026-11-28 新增（g-belfast）----
+- id: iwm-history5
+  title: HMS Belfast — The Battle of the North Cape（IWM 旧版舰史 第 5 章）
+  url: https://www.iwm.org.uk/belfast/history5.htm
+  type: website
+  tier: C
+  role:
+  - data
+  - narrative
+  operator: Imperial War Museums（2000 年代旧版舰史站点，现经 Wayback）
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: "Wayback 快照 20000408032254。北角海战（1943-12-26）的 IWM 叙述， **是本组写清「贝尔法斯特做了什么、没做什么」的关键**： - 「While Rear-Admiral Burnett in HMS Belfast, with the cruisers Norfolk and\n  Sheffield, screened the convoys and kept Scharnhorst in play, Admiral\n  Fraser, in the battleship HMS Duke of York ... would cut her off from the\n  south.」\n- 「the Scharnhorst ... encountered Burnett and his cruisers only to be driven\n  off after being hit by one of HMS Norfolk's 8-inch shells」\n- 「the Scharnhorst retreated at high speed with Belfast and Sheffield in hot\n  pursuit, driving the enemy towards Admiral Fraser」\n- 「Finally, the Belfast and Jamaica were ordered to sink her with torpedoes.\n  Even as HMS Belfast fired, Scharnhorst's radar blip vanished」\n- 「Only thiry-six of her complement of 1,963 men survived.」（原文拼写\n  thiry，本组引用时保留原样）\n\n口径提示：**击沉沙恩霍斯特的鱼雷归属各源不同**。IWM 说「Belfast 与 Jamaica 奉命用鱼雷击沉」，naval-history 只说 Belfast「Fired torpedoes at the stricken German warship」并注明「SCHARNHORST was almost certainly sunk\
+    \ after torpedo hits ... In all 35 torpedoes were fired and 11 hits were claimed」。 本组不裁决具体是谁的鱼雷致命，正文按「多舰多雷命中后沉没」写。\n"
+
+# ---- 2026-11-28 新增（g-belfast）----
+- id: iwm-history6
+  title: HMS Belfast — Operations 1944 / Operation 'Tungsten'（IWM 旧版舰史 第 6 章）
+  url: https://www.iwm.org.uk/belfast/history6.htm
+  type: website
+  tier: C
+  role:
+  - data
+  - narrative
+  operator: Imperial War Museums（2000 年代旧版舰史站点，现经 Wayback）
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: "Wayback 快照 20000408035252。1944-04-03 空袭提尔皮茨那一段： - 「On 30 March 1944, HMS Belfast sailed from Scapa Flow in company with a\n  powerful force of battleships and aircraft carriers. Their objective was\n  the battleship Tirpitz ... moored in the supposedly impregnable anchorage\n  of Altenfjord in northern Norway.」\n- 「In the early hours of 3 April, having approached to within 120 miles of\n  the Norwegian coast, the carriers launched 42 bombers and 80 fighters in\n  the largest air strike yet undertaken by the Fleet Air Arm. Tirpitz was\n  hit by 15 bombs and although not sunk, was incapable of putting to sea for\n  several months.」\n\n口径提示：本页只说「a powerful force of battleships and aircraft carriers」， 未列舰名；具体随行舰（约克公爵、安森、Royalist、Sheffield、Jamaica） 出自同站的 naval-history-belfast 1944-04-03 条。两源互补，不冲突。\n"
+
+# ---- 2026-11-28 新增（g-belfast）----
+- id: iwm-history9
+  title: HMS Belfast — The Korean War（IWM 旧版舰史 第 9 章）
+  url: https://www.iwm.org.uk/belfast/history9.htm
+  type: website
+  tier: C
+  role:
+  - data
+  - narrative
+  operator: Imperial War Museums（2000 年代旧版舰史站点，现经 Wayback）
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: "Wayback 快照 20000621105836。朝鲜战争段的 IWM 叙述，**「404 天」与 「炮身磨损失效」两处只有此页给出**： - 「HMS Belfast was amongst the very first British ships to go into action\n  off Korea, bombarding in support of retreating South Korean and American\n  troops only eleven days after the North Korean invasion.」\n- 「Her service in the Korean War, during which she spent no less than 404\n  days on active patrol, was as long and arduous as that with the Home Fleet\n  during the Second World War.」\n- 图注：「HMS Belfast firing a salvo at shore targets off Korea in 1951.\n  She subsequently fired so many salvoes that she wore out her 6-inch guns」\n- 「On 27 September 1952, she sailed for home, having fired her guns in\n  anger for the last time.」\n\n口径提示：本页写「the Korean War came to an end on 17 July 1953」—— 停战协定实际签署日是 1953-07-27，17 July 疑为 IWM 的笔误。 本组不引用这个日期，只引用与本舰相关的段落。\n"
+
+# ---- 2026-11-28 新增（g-belfast）----
+- id: iwm-history7
+  title: HMS Belfast — D-Day Bombardment（IWM 旧版舰史 第 7 章）
+  url: https://www.iwm.org.uk/belfast/history7.htm
+  type: website
+  tier: C
+  role:
+  - data
+  - narrative
+  operator: Imperial War Museums（2000 年代旧版舰史站点，现经 Wayback）
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: "Wayback 快照 20000620015832。诺曼底段的 IWM 叙述，**「5.30 am 开火」一说 出自此页**： - 「As flagship of bombardment Force E, HMS Belfast was part of the Eastern\n  Naval Task Force, with responsibility for supporting the British and\n  Canadian assaults on 'Gold' and 'Juno' beaches and, at 5.30 am on 6 June\n  1944, was one of the very first ships to open fire on German positions in\n  Normandy.」——注意原文是「one of the very first ships」，不是「the first」。\n- 「Over the course of the next five weeks she was almost continuously in\n  action, firing thousands of rounds」\n- 「Her last shoot took place in company with the battleship HMS Rodney and\n  the monitor HMS Roberts on 8 July, during the course of heavy fighting for\n  the city of Caen.」\n- 参战规模：「the bombardment force comprised 5 battleships, 2 monitors,\n  20 cruisers and 65 destroyers ... 2,700 seagoing vessels and 1,900 smaller\n  craft」\n\n口径提示：**开火时刻有两说**——本页写 5.30 am，IWM 的 D-Day 专题页 （iwm-8-things-dday，引本舰日志）写 0527。两说并列，本组在正文里 按「0527，日志记载」写，并在 note 里留下\
+    \ 5.30 这一说。\n"
+
+# ---- 2026-11-28 新增（g-belfast）----
+- id: iwm-history8
+  title: HMS Belfast — In the Far East（IWM 旧版舰史 第 8 章）
+  url: https://www.iwm.org.uk/belfast/history8.htm
+  type: website
+  tier: C
+  role:
+  - data
+  - narrative
+  operator: Imperial War Museums（2000 年代旧版舰史站点，现经 Wayback）
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: "Wayback 快照 20000620050513。1945-1949 远东段。关键句： - 「she was still able to perform much useful work in helping to evacuate the\n  emaciated survivors of Japanese prisoner of war and civilian internment\n  camps from China, and until the autumn of 1947 she was fully occupied with\n  peace-keeping duties in the Far East.」\n- 「Following her first peacetime refit, HMS Belfast returned to the Far East\n  in December 1948 as flagship of the Fifth Cruiser Squadron.」\n- 紫石英号事件：「Although HMS Belfast was not actively involved in the\n  crisis, the Commander-in-Chief Far Eastern Station, Admiral Sir Patrick\n  Brind, was wearing his flag on board in Hong Kong and all orders given to\n  Amethyst's temporary commander, Lieutenant Commander J S Kerans, emanated\n  from Belfast.」——**「未直接参战」这一点必须写，不能升格成「参加」。\n"
+
+# ---- 2026-11-28 新增（g-belfast）----
+- id: iwm-8-things-dday
+  title: 8 Things you Didn't Know about HMS Belfast and D-Day — Imperial War Museums
+  url: https://www.iwm.org.uk/history/8-things-you-didnt-know-about-hms-belfast-and-d-day
+  type: website
+  tier: C
+  role:
+  - data
+  - narrative
+  operator: Imperial War Museums（作者 Elizabeth Scott，2018-01-05）
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: "Wayback 快照（经 web.archive.org 取到）。**本组纠正「第一艘开火」这一说的 直接依据**，因为它引了本舰日志与舰上军官日记： - 「She wasn't quite the first ship to open fire on 6 June — Though many of\n  HMS Belfast's veterans believe their ship was the first to open fire on\n  6 June, this wasn't the case. Lieutenant Peter Brooke Smith, who was\n  serving on board HMS Belfast, recorded in his diary that another cruiser to\n  the west fired first at 0523. The entry in HMS Belfast's log records that\n  she opened fire three minutes later at 0527, 'with full broadside to port.'」\n- 「Her first target was the German gun battery at La Marefontaine.」 - 「In total, HMS Belfast spent 33 days in support of the landings and fired\n  over 4,000 6-inch and 1,000 4-inch shells.」\n- 「HMS Belfast is one of only three remaining vessels from the bombardment\n  fleet which supported the Normandy landings on 6 June 1944. The other\n  vessels are the destroyer USS Laffey ... and the dreadnought battleship\n  USS Texas」\n- 「The vibration of HMS Belfast's\
+    \ guns firing during D-Day ended up cracking\n  the crew's toilets.」\n- 「At 1300 on 6 June, casualties began to arrive on board.」\n口径提示：本页两处数字与姊妹页不一致——炮击天数 33 天 vs iwm-history7 的 「five weeks」，炮弹数「4,000 发 6 英寸 + 1,000 发 4 英寸」vs iwm-history7 的笼统「thousands of rounds」。33 天与 5 周大致相容 （5 周 = 35 天），本组按 33 天写并注明另一说。\n"
+
+# ---- 2026-11-28 新增（g-indy-lead）----
+- id: danfs-indianapolis
+  title: Indianapolis II (CA-35) — Dictionary of American Naval Fighting Ships
+  url: https://www.history.navy.mil/research/histories/ship-histories/danfs/i/indianapolis-ii.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: Naval History and Heritage Command（美国海军历史与遗产司令部）
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: public_domain
+  note: DANFS 官方舰史条目，逐段记 1930 建造至 1945 沉没的完整战历，末尾附舰长名单。 **本机 history.navy.mil 直连 TLS 握手失败**，本条经 Wayback 快照读取： https://web.archive.org/web/20240302142646/https://www.history.navy.mil/research/histories/ship-histories/danfs/i/indianapolis-ii.html （快照时间 2024-03-02）。原文关键句： 建造「laid down on 31 March 1930 at Camden, N.J., by the New York Shipbuilding Corp.」； 服役「commissioned at the Philadelphia Navy Yard on 15 November 1932」； 沉没「two torpedoes from Japanese submarine I-58, Cmdr. Hashimoto Mochitsura in command」， 「she capsized and sank in 12 minutes, at 12-02°N, 134-48°E」； 未按时报告「no report was made that she was overdue. This omission was due to a misunderstanding of the Movement Report System」； 救援「saving 316 of the crew of 1,195 men」； 残骸「On 18 August 2017, Paul G. Allen's research vessel Petrel located wreckage from Indianapolis some 5,500 meters below the surface」。
+
+# ---- 2026-11-28 新增（g-indy-lead）----
+- id: nhhc-casualty-summary
+  title: Survivors and Casualty Numbers — USS Indianapolis（USN 与海军调查法庭伤亡汇总档案）
+  url: https://www.history.navy.mil/research/library/online-reading-room/title-list-alphabetically/s/survivors-and-casualty-numbers.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  operator: Naval History and Heritage Command
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: public_domain
+  note: '**A 级一手档案**。该页转录两份原始文件：一是美国海军伤亡汇总 （档案出处标注 NARA II, College Park, RG 38/370/13/05/06, Box 45）， 二是海军调查法庭（Court of Inquiry）的伤亡汇总。 美国海军伤亡汇总原文逐行： 「SURVIVORS OF THE U.S.S. INDIANAPOLIS / Aboard: 1,196 / Died at sea: 880 / Survived: 316」。 这是本站印第安纳波利斯伤亡数字的首选来源，与 DANFS 的 1,195 相差 1 人，两说并列。 另可注意：该页列出全部获救军官姓名（12 名委任军官 + 3 名准尉）， 舰长 Charles B. McVay III 名列第一。'
+
+# ---- 2026-11-28 新增（g-indy-lead）----
+# 2026-11-28 修正：role 原为 [narrative]，但 service.casualties=883 一条 fact
+# 引用了它，validate.py 因此报「role 不含 data」。该页确实直接给出阵亡数字，
+# 补上 data。
+- id: nhhc-saga-indianapolis
+  title: The Saga of a Ship and Its Crew — USS Indianapolis（NHHC Disasters and Phenomena 专题）
+  url: https://www.history.navy.mil/browse-by-topic/disasters-and-phenomena/uss-indianapolis.html
+  type: official_publication
+  tier: B
+  role:
+  - narrative
+  - data
+  operator: Naval History and Heritage Command
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: public_domain
+  note: NHHC 就本舰沉没做的专题叙述页，DANFS 条目末尾专门指向它。给的是 「约 883 人阵亡」这一说，与伤亡汇总档案的 880 差 3 人，两说并列不裁决。 本条目只作叙事与第三说数字的来源，不当主数据源。
+
+# ---- 2026-11-28 新增（g-indy-lead）----
+- id: navsource-ca35
+  title: Cruiser Photo Index CA-35 USS INDIANAPOLIS — NavSource Online
+  url: https://www.navsource.org/archives/04/035/04035.htm
+  type: database
+  tier: D
+  role:
+  - image
+  - data
+  operator: NavSource Naval History（志愿者档案站）
+  lang: en
+  access: direct
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: 照片索引站，按年份排列本舰照片并附图注。本站主要用它取：涂装 「She wears Camouflage Measure 32/7D」（1944 年两舷照片各一条）； 1944 年状态的 40 mm 四联装炮座与桅杆雷达布置（用于 armament 与 sensors 条目， 因属看图识别而非来源明写，相应 fact 一律给 C）。 **不用于舰体主尺度与装甲**——那两项对 navypedia 与 DANFS。
+
+
+# ---- 2026-11-28 新增（g-indy2）----
+- id: danfs-indianapolis-ibiblio
+  title: DANFS — USS Indianapolis (CA-35)（HyperWar 转录本）
+  url: https://www.ibiblio.org/hyperwar/USN/ships/danfs/CA/ca35.html
+  type: official_publication
+  tier: B
+  role:
+  - data
+  - narrative
+  operator: Naval History Division, Office of the Chief of Naval Operations（HyperWar 转录，Patrick Clancey 编）
+  lang: en
+  access: direct
+  fetched: 2026-11-28
+  license: public_domain_us_gov
+  note: '**同一份 DANFS 条目的另一版转录，与本组 danfs-indianapolis 有两处出入， 两说并列不裁决**： ① 离港日：本页「departed San Francisco on 15 July」，NHHC 现行版作 16 July； ② 在舰人数：本页「saving 316 of the crew of 1,199 men」，NHHC 现行版与 伤亡汇总档案均作 1,195 / 1,196。 两处都是转录本之间的差异，不指向不同史实，故都留在 note 里，正文取现行版。 本页另有一处编者自注：「[Error? -- Other sources indicate Capt. McVay was convicted of hazarding his ship by failing to zig-zag.]」——即 HyperWar 的 转录者自己就发现 DANFS「vindicated」一句与军事法庭记录冲突。'
+
+# ---- 2026-11-28 新增（g-indy2）----
+- id: nhhc-court-of-inquiry-findings
+  title: Court of Inquiry Findings, Guam, 13 August 1945 — Documents Relating to Loss of USS Indianapolis
+  url: https://www.history.navy.mil/research/histories/ship-histories/loss-of-uss-indianapolis-ca-35/investigation-and-court-martial/court-of-inquiry-findings.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: Naval History and Heritage Command（转录 NARA II, RG 38/370/13/05/06, Box 45 原件）
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: public_domain_us_gov
+  note: "**本舰最关键的一份一手档案**：1945-08-13 在关岛召开的海军调查法庭 （Court of Inquiry）全部「Findings of Facts / Opinions / Recommendations」。 **直连 TLS 失败，经 Wayback 快照取得。** 提供的事实（原文照录见 RESEARCH-NOTES §2）： · 离关岛「departed Apra Harbor, Guam at about 0900 KING, 28 July」，经「Peddie」\n  航线，「making engine revolutions for seventeen knots」；\n· 沉没时刻「about 0005 July 30, 9 ½ zone time」，位置 12°02'N 134°48'E，\n  「sank in about fifteen or twenty minutes」；\n· 未规避「Indianapolis was not zigzagging at the time the explosions occurred」； · 战备状态「condition of readiness three, material condition YOKE modified」； · 无线电「no distress message did leave the ship」； · 发现幸存者「At about 1125 ITEM, 2 August ... Lieutenant (junior grade)\n  Wilbur C. Gwinn ... sighted what he estimated to be thirty survivors at\n  11° 30' North, 133° 30' East」；\n· 在舰人数「there were 82 officers and 1,114 enlisted men aboard」，\n  失踪「67 officers and 809 enlisted men」，另「Four enlisted men died while\n  enroute to the hospitals」；\n· 官僚失误的定性「failure to inquire into the reason for\
+    \ non-arrival of\n  Indianapolis at Leyte on schedule was primarily due to a faulty system which\n  had grown up」，直接点名 Pacific Fleet Confidential Letter 10CL-45\n  「Arrival reports shall not be made for combatant ships」；\n· 结论「failure ... to transmit a distress message was the primary cause of\n  delay」；对舰长的意见是「failure to order zigzag courses ... was a\n  contributory cause」，并建议送军事法庭。\n⚠️ 时刻口径：发现幸存者本页作 1125 KING，DANFS 作 1025，两说并列。"
+
+# ---- 2026-11-28 新增（g-indy2）----
+- id: nhhc-routing-instructions
+  title: Routing Instructions, Port Director Guam, PDG 1849, 28 July 1945 — Documents Relating to Loss of USS Indianapolis
+  url: https://www.history.navy.mil/research/histories/ship-histories/loss-of-uss-indianapolis-ca-35/routing-and-sinking/routing-instructions.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: Naval History and Heritage Command
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: public_domain_us_gov
+  note: '**官僚失误链条的第一环，也是「舰长有没有被命令走之字」这个问题的直接答案。** 关岛港务主任 1945-07-28 签发的 SECRET 航线指令 PDG 1849 原件， 给出六个转向点（NNG / BMV / CFL / DCM / EHO / PG / HN 的经纬度表）、 「Speed of advance shall be at 15.7 knots」、「ETA 1100 I, 31 July」， 以及最关键的一句：「Zigzag at discretion of the Commanding Officer.」 ——**之字航线由舰长自行决定，不是强制命令**。同一份文件另写 「Commanding Officers are at all times responsible for the safe navigation of their ships. They may depart from prescribed routing when in their judgment, weather, currents, or other navigations hazards jeopardize the safety of the ship.」 附件（Intelligence Brief, 1945-07-27）列出航线 300 海里内的敌军基地与 「ENEMY SUBMARINE CONTACTS」三条（7-22、7-25 两条）， 证明本舰**确实收到过一般的潜艇活动通报**；但通报里没有 I-58， 也没有四天前 Underhill 号被击沉的消息（见 ndaa-2001-sec545）。'
+
+# ---- 2026-11-28 新增（g-indy2）----
+- id: nhhc-nimitz-reprimand
+  title: Fleet Admiral Nimitz's Endorsement and Letter of Reprimand, 6 September 1945
+  url: https://www.history.navy.mil/research/histories/ship-histories/loss-of-uss-indianapolis-ca-35/investigation-and-court-martial/nimitz-letter-of-reprimand.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: Naval History and Heritage Command
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: public_domain_us_gov
+  note: 尼米兹以 CINCPAC 身份对调查法庭结论的批注（Serial 006598，1945-09-06）。 **直接推翻了法庭「送军事法庭」的建议**： 「The Commander in Chief, U.S. Pacific Fleet, does not agree with the court in its recommendation that Captain Charles B. McVay III ... be brought to trial by general court martial. He did incur blame for failure to send a distress message immediately after the explosions. His failure to order a zig-zag course was an error in judgment, but not such nature as to constitute gross negligence. Therefore, a letter of reprimand will be addressed to Captain McVay in lieu of a general court martial.」 同件另处分了港务主任处的 Gibson 中尉（申斥）与代理港务主任 Sancho（训诫）， 并要求 CTG 95.7 处分其通信参谋。**注意：尼米兹的建议没有被采纳**—— 海军部长 Forrestal 仍下令开庭（见 ndaa-2001-sec545 finding (7)）。
+
+# ---- 2026-11-28 新增（g-indy2）----
+- id: nhhc-summation-rescue
+  title: Summation of Rescue Operations — USS Indianapolis（救援行动汇总，1945-08）
+  url: https://www.history.navy.mil/research/histories/ship-histories/loss-of-uss-indianapolis-ca-35/rescue-operations/summations-of-rescue-operations.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: Naval History and Heritage Command（NARA II, RG38/370/44/20/5, Box 80 等）
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: public_domain_us_gov
+  note: "救援阶段的官方汇总，逐船附报告。关键事实： · 发现后调度「U.S.S. CECIL J DOYLE was dispatched to rescue area at 1245 King\n  on 2 August and planes from VPB-23 (Dumbo Squadron) and VPB-152 were\n  dispatched at 1242 King and 1245 King respectively」；\n· 水面飞机降落「at about 1605 King Lieutenant R. A. MARKS, USNR, pilot of\n  Dumbo B-72 (Buno 46472) made an open sea landing ... the plane taxiing around\n  such as to rescue and take on board 53 survivors」；陆军 OA-10 另救 1 人；\n· 到场舰艇名单「U.S.S. BASSETT (APD 73) and U.S.S. DUFILHO (DE 423) arrived in\n  the area soon after ... U.S.S. RINGNESS (APD 100), U.S.S. REGISTER (APD 92),\n  U.S.S. MADISON (DD 425), and U.S.S. RALPH TALBOT (DD 390) arrived later on the\n  morning of 3 August」，后续加 Heim / Aylwin / French / Alvin C. Cockrell；\n· 91 具遗体被检查以求辨认；搜索持续到 8 月 7 日夜。 口径提示：本页记「a total of 189 survivors」由三舰送上 Peleliu 第 20 基地医院， 与总数 316 不冲突（其余经 Leyte / Samar 上岸）。"
+
+# ---- 2026-11-28 新增（g-indy2）----
+- id: nhhc-court-martial-hashimoto
+  title: Testimony of Commander Mochitsura Hashimoto at Court Martial of Captain Charles B. McVay, III（1945-12-13）
+  url: https://www.history.navy.mil/research/histories/ship-histories/loss-of-uss-indianapolis-ca-35/investigation-and-court-martial/court-martial.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: Naval History and Heritage Command（NARA II 海军档案，General Court Martial 卷 1-3）
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: public_domain_us_gov
+  note: "1945-12-13 华盛顿海军船厂军事法庭上 I-58 舰长桥本以行的证词（pp. 266-276）， 经译员转述。**美军请敌方潜艇舰长出庭作证，在海军史上没有先例**，这是本案最 著名的一幕。关键问答： · 发射「at a distance of 1500 meters」，「Type 95 torpedoes, propelled by\n  oxygen」，「Five war-heads were magnetic, one, inertia type」，\n  「fired with a spread of three degrees and at intervals of three seconds」；\n· 命中「saw his torpedoes make three hits in the forward part of the ship\n  between the bridge and bow」，另听到疑似第四雷；\n· 是否规避「Was the target zigzagging at the time you sighted it?」\n  「there was an indistinct blur, and he is unable to determine whether or not\n  it was zigzagging」；\n· 最关键的一问一答「Would it have made any difference to you if the target had\n  been zigzagging on this attack?」「It would have involved no change in the\n  method of firing the torpedoes, but some changes in maneuvering.」\n法庭于 1945-12-14 继续开庭；判决日期未见于此摘录页，正文按「1945-12」记。 口径提示：桥本记命中三雷，DANFS 与调查法庭均记「两次重爆 / 两枚鱼雷」， 两说并列——鱼雷定深与磁引信在船底下方爆炸，观感与命中数不必一一对应。"
+
+# ---- 2026-11-28 新增（g-indy2）----
+- id: nhhc-i58-sketch
+  title: I-58 Attack Sketch by Mochitsura Hashimoto（1945-07-29 战斗图）
+  url: https://www.history.navy.mil/research/histories/ship-histories/loss-of-uss-indianapolis-ca-35/routing-and-sinking/i-58-attack-sketch-hashimoto.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  operator: Naval History and Heritage Command（原件：防衛研究所戦史研究センター，04 Sensuikan 58）
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: public_domain_us_gov
+  note: 桥本以行手绘的战斗图（原件藏日本防衛研究所戦史研究センター，1958 年入档， 由美方翻译）。NHHC 的说明原文： 「The submarine appears to be heading 190 at time 2305 on the 29th when it views the ship at approx 10,000 meters off its starboard side. Apparent course and speed of the target is 260 at 11 knots. The submarine maneuvers into position 1500m off the starboard beam where it takes 6 shots at time 2332.」 ——**日方记 7-29 2332（zones -9）发射 6 雷**，换算成美方 9½ 时区即 7-30 0002 前后，与调查法庭的「about 0005」吻合。图注另记潜艇此后 「settling out on course 045 at approximately 0030 on the 30th」。 这条是「navypedia 把沉没日记成 29.7.1945」的来源解释：日方日期比美方早一天。
+
+# ---- 2026-11-28 新增（g-indy2）----
+- id: nhhc-england-2001
+  title: Addition to the Military Personnel Record of Rear Admiral Charles B. McVay, III (SECNAV Gordon R. England, 11 July 2001)
+  url: https://www.history.navy.mil/research/histories/ship-histories/loss-of-uss-indianapolis-ca-35/investigation-and-court-martial/england-2001-addition-to-mcvay-file.html
+  type: primary_archive
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: Naval History and Heritage Command
+  lang: en
+  access: proxy
+  fetched: 2026-11-28
+  license: public_domain_us_gov
+  note: 海军部长 Gordon R. England 2001-07-11 的备忘录，把国会 §545 的原文 **正式插入 McVay 的人事档案**——这是「平反」在法律上落地的最后一步。 原文同时纠正了两处常见传言： 「He was sentenced to the loss of 100 lineal numbers. The Secretary of the Navy approved the findings and sentence, but remitted the sentence in its entirety. Captain McVay was advanced to the grace of Rear Admiral upon retirement in 1949.」 ——即判决是「扣 100 个资历序号」，且**刑罚被全部赦免**， 1949 年退役时依例晋升少将。另记「Captain McVay and just over 300 of his men were rescued after five days in the water」——注意它写「五天」， 与 DANFS 的「四天后被发现」是同一件事的不同算法（7-30 至 8-3/8-4 获救）。
+
+# ---- 2026-11-28 新增（g-indy2）----
+- id: ndaa-2001-sec545
+  title: National Defense Authorization Act for Fiscal Year 2001, Section 545 — Sense of Congress on the Court-Martial Conviction of Captain Charles Butler McVay
+  url: https://www.govinfo.gov/content/pkg/PLAW-106publ398/html/PLAW-106publ398.htm
+  type: document
+  tier: A
+  role:
+  - data
+  - narrative
+  operator: 106th United States Congress（Public Law 106-398，2000-10-30 签署）
+  lang: en
+  access: direct
+  fetched: 2026-11-28
+  license: public_domain_us_gov
+  note: "**平反的法律依据，一级公文。** 法案全本 1.5 MB（PRIVATE 已抓，见 _raw/govinfo-ndaa2001.txt），**只用 grep 定位到 SEC. 545，未整份读**。 页首记「Public Law 106-398」「Approved October 30, 2000」—— **所以平反的年份是 2000 年 10 月，不是 2001 年**（2001-07-11 是海军部长 把该条插入档案的日期，常见混淆点）。 §545(a) 的 findings 里有几条是本舰最硬的官方定性： · (1)「the United States Navy heavy cruiser U.S.S. Indianapolis (CA-35) was\n  torpedoed and sunk by the Japanese submarine I-58 in what became the worst\n  sea disaster in the history of the United States Navy」；\n· (2)「Although approximately 900 of the ship's crew of 1,196 survived the\n  actual sinking, only 316 of those courageous sailors survived when rescued\n  after four and a half days adrift」；\n· (4)(A)「the choice to zigzag was left to Captain McVay's discretion in his\n  orders」；(B) 桥本与美军潜艇指挥官 Glynn R. Donaho 均出庭作证「the Japanese\n  submarine could have sunk the U.S.S. Indianapolis whether or not it had been\n  zigzagging」；\n· (6)(A) 舰长申请护航被驳回，批语「not necessary」；\n  (B) 未告知舰长信号情报已知 I-58 在该海域活动；\n  (C) 未告知四天前 Underhill\
+    \ 号被潜艇击沉；\n· (7) 尼米兹与斯普鲁恩斯均反对开庭，海军部长 Forrestal 仍下令开庭； · (9)「Captain McVay was the only commander of a United States Navy vessel lost\n  in combat to enemy action during World War II who was subjected to a\n  court-martial trial for such a loss」；\n· (11) 1968 年自杀。 §545(c) 另要求海军部长给本舰与最后一批舰员颁发 Navy Unit Commendation。"
+
+# ---- 2026-11-28 新增（g-indy2）----
+- id: nuclearmuseum-indy
+  title: USS Indianapolis — Atomic Heritage Foundation / National Museum of Nuclear Science & History
+  url: https://ahf.nuclearmuseum.org/ahf/history/uss-indianapolis/
+  type: website
+  tier: C
+  role:
+  - narrative
+  - data
+  operator: Atomic Heritage Foundation（National Museum of Nuclear Science & History）
+  lang: en
+  access: direct
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: 核工业史一侧的叙述，价值在于把「舰上装的是什么」写清楚： 「The crate contained the "gun-type" mechanism for Little Boy. The uranium contained in the canisters was about half the US supply (the other half was flown to Tinian).」 「None of the crew knew what was contained in the crate and canister that were brought on board.」 以及两名曼哈顿计划人员随舰：「The two men who definitely did know were James Nolan and Robert Furman」。 口径提示：① 它说「McVay was not made aware of these indications」（指 ULTRA 截获与 Underhill 被击沉），与 NDAA §545(a)(6)(B)(C) 一致；但**不等于舰长没收到 任何潜艇通报**——关岛航线指令的附件里就有三条潜艇接触（见 nhhc-routing-instructions），两件事必须分开写； ② 它记「879 crew members perished ... left only 317 survivors」， 与 A 级档案的 880 / 316 冲突，**不采用**，只在争议清单里留痕。
+
+# ---- 2026-11-28 新增（g-indy2）----
+- id: archives-littleboy
+  title: 'Little Boy: The First Atomic Bomb — Pieces of History（美国国家档案馆博客）'
+  url: https://prologue.blogs.archives.gov/2020/08/06/little-boy-the-first-atomic-bomb/
+  type: website
+  tier: C
+  role:
+  - narrative
+  - data
+  operator: U.S. National Archives（Michael J. Hancock 撰）
+  lang: en
+  access: direct
+  fetched: 2026-11-28
+  license: public_domain_us_gov
+  note: 国家档案馆博客，**是「运输物项」这一节措辞最谨慎的来源**，正文按它写： 「Various components of the bomb were transported by train from Los Alamos, New Mexico, to San Francisco, California. There, the heavy cruiser USS Indianapolis shipped the collection of parts to Tinian Island ... where it arrived on July 26. In order to prevent a catastrophic accident, the target piece of enriched uranium flew separately aboard three C-54 Skymaster transport planes to Tinian Island, where it also arrived on July 26.」 ——**关键区分：本舰运的是「部件集合」（collection of parts）， 浓缩铀靶件是空运的，不在舰上。** 这条纠正了「本舰运了整颗原子弹」的常见简化。
+
+# ---- 2026-11-28 新增（g-indy2）----
+- id: nm-littleboy
+  title: Little Boy and Fat Man — Atomic Heritage Foundation
+  url: https://ahf.nuclearmuseum.org/ahf/history/little-boy-and-fat-man/
+  type: website
+  tier: C
+  role:
+  - data
+  operator: Atomic Heritage Foundation
+  lang: en
+  access: direct
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: 逐项列出 Little Boy 各部分的运输方式，是本舰运载物项的第二条旁证： 「Target case, barrel, uranium projectile, and other main parts ferried to Tinian Island via USS Indianapolis」 「Uranium target component ferried to Tinian via C-54 aircraft of the 509th Composite Group」。 与 archives-littleboy 一致：**舰上是靶件外壳/炮管/铀射弹等主件， 铀靶件走空运。**
+
+# ---- 2026-11-28 新增（g-indy2）----
+- id: va-indy
+  title: Remembering The USS Indianapolis — U.S. Department of Veterans Affairs
+  url: https://department.va.gov/history/uss-indianapolis/
+  type: official_publication
+  tier: C
+  role:
+  - narrative
+  - data
+  operator: VA History Office（Richard Hulver, Ph.D. 撰，2021-11-15）
+  lang: en
+  access: direct
+  fetched: 2026-11-28
+  license: public_domain_us_gov
+  note: 退伍军人事务部的纪念性叙述，**在「获救后死亡」这一项上最清楚**： 「Out of 1,195 men, only 316 survived the ordeal, four additional Sailors were rescued but died shortly after.」 另记「The survivors ... were scattered miles apart in seven distinct groups」 （调查法庭记「four groups」，两说并列），以及 「the largest group of around 400, had nothing but their life vests and floater nets」。 还有一句把本舰发现幸存者的飞机型号写实：「The pilot of a U.S. Navy Lockheed PV-1 twin-engine patrol bomber located the survivors ... after spotting an oil slick while adjusting an antenna the afternoon of August 2.」 ——「下午」与调查法庭的「1125」、DANFS 的「1025」构成第三种时刻说法。
+
+# ---- 2026-11-28 新增（g-indy2）----
+- id: ussindianapolis-com
+  title: USS Indianapolis Official — USS Indianapolis Survivors Organization & LAS Families
+  url: https://www.ussindianapolis.com/
+  type: website
+  tier: D
+  role:
+  - narrative
+  operator: USS Indianapolis Survivors Organization（幸存者与失踪者家属团体官方站）
+  lang: en
+  access: direct
+  fetched: 2026-11-28
+  license: all_rights_reserved
+  note: "幸存者团体官方网站。只用两处： ① 全站反复出现的口径「1,195 men sailed, 316 survived.」； ② 「Project 888」——该组织为 888 名阵亡者建立逐人档案，\n  这个 888 与档案的 880 / 876 都不同，属纪念性口径，**不采用为 fact**，\n  只在争议清单里留痕。\n另有「Harold Bray is the last living survivor」一句，说明幸存者已凋零至此。"
+
 todo:
 - ~~抓 5 份一手档案 + 战争日志~~ **2026-11-17 已完成**：artillery-report / inclining-test / raeder-report / rodney-report / debriefing 全部抓到，另加 38cm 弹道表、flak-relocation、bs-ktb.zip（177 页 PDF 已转文本）
 - 重取 AWM / LAC / JACAR / Flickr Commons / 海自 五份条款（全部 blocked，目前对这几家的授权一无所知）

@@ -1,0 +1,409 @@
+# ============================================================================
+# 舰艇正文 —— 密苏里（Missouri, BB-63）
+# ----------------------------------------------------------------------------
+# 体例与 data/articles/yamato.yaml 一致：intro 分节、history 分节带逐条事件，
+# 每条事件都追到 sources-fragment.yaml 或 data/sources.yaml 里已登记、
+# 且非 E 层的来源。
+#
+# 本文的三条写作纪律：
+#   1. 受降仪式是密苏里号最大的历史意义，按 DANFS 的分钟级时序写足，
+#      不写成一句「日本在密苏里号上签字投降」了事。
+#   2. 不写「史上最大战列舰」——NHHC 原文明确大和、武藏更重、主炮更大。
+#   3. 朝鲜战争与海湾战争的炮击数字按 DANFS 原值给，不合并、不取整。
+# ============================================================================
+ship: missouri
+updated: 2026-11-28
+
+intro:
+  lead:
+    zh: >-
+      密苏里号是衣阿华级战列舰的三号舰，1944 年 6 月 11 日服役。1945 年 9 月 2 日，
+      日本投降书在它的甲板上签署，第二次世界大战由此正式结束——这是它
+      无可替代的历史位置。此后它还打过朝鲜战争、1991 年参加海湾战争，
+      1998 年起成为珍珠港的博物馆舰。
+    en: >-
+      Missouri was the third ship of the Iowa class, commissioned on 11 June 1944.
+      On 2 September 1945 the Japanese Instrument of Surrender was signed on her
+      deck, formally ending the Second World War — the place in history nothing
+      else can claim for her. She went on to fight in Korea, to fire Tomahawks
+      and 16-inch rounds in the Gulf War of 1991, and since 1998 has been a museum
+      ship at Pearl Harbor.
+
+  paragraphs:
+    - heading: 舰级定位与主炮
+      text:
+        zh: >-
+          密苏里号与首舰衣阿华号同为纽约海军造船厂建造，但开工早了一年半
+          （1941 年 1 月 6 日），服役却晚了近一年半——太平洋战争期间船厂产能
+          被航母与登陆舰艇挤占。本级的主炮是 16"/50（40.6 cm）Mark 7，
+          三座三联装、前二后一，共九门。炮塔全重 1,728–1,735 公吨，
+          一号与三号塔俯仰 −2/+45 度、二号塔因背负布置下限为 0 度；
+          新炮初速 762 m/s，45 度仰角最大射程 38,720 m，每门备弹约 130 发。
+          NavWeaps 对这门炮的评价是「可能是投入服役的最好的战列舰主炮」，
+          但它不构成「最大」——日本大和级的 46 cm 炮在口径与弹重上都更大。
+        en: >-
+          Missouri was built at the same New York Navy Yard as the lead ship but
+          laid down eighteen months earlier (6 January 1941) and completed nearly
+          eighteen months later, as wartime yard capacity went to carriers and
+          landing craft. The main battery was the 16"/50 (40.6 cm) Mark 7 in three
+          triple turrets, two forward and one aft. Turrets weighed 1,728–1,735
+          tonnes; Turrets I and III elevated from −2 to +45 degrees and Turret II
+          from 0 to +45. Muzzle velocity was 762 m/s, maximum range 38,720 m at
+          45 degrees, and stowage about 130 rounds per gun. NavWeaps calls it
+          "possibly the best battleship gun ever put into service" — but not the
+          largest: Yamato's 46 cm guns were bigger in both bore and shell weight.
+      src: [navweaps-16in-50-mk7, danfs-missouri-iii, navypedia-iowa]
+
+    - heading: 与首舰的三处不同
+      text:
+        zh: >-
+          同级之内本舰与衣阿华号有三处可查的差异。其一，装甲：本级自三号舰起
+          把首部横舱壁加厚到 368 mm（下部 297 mm），前两艘是 287 mm（下部 216 mm），
+          这是 Navypedia 按 BB-61/62 与 BB-63/64 两批分列的直接记载。
+          其二，竣工防空：本舰是 20 座四联装 40 mm（80 门）加 49 门单装 20 mm，
+          首舰只有 15 座四联（60 门）与 60 门单装。其三，雷达：本舰竣工时装
+          SK-2、2 部 SG、Mk 27、2 部 Mk 8、4 部 Mk 12.22，首舰同位置是 SK、
+          Mk 3 与 4 部 Mk 4。
+        en: >-
+          Three differences from the lead ship are documented. First, armour: from
+          the third ship onward the forward transverse bulkhead was thickened to
+          368 mm (297 mm at its lower part), against 287 mm (216 mm lower) in the
+          first two — Navypedia tabulates BB-61/62 and BB-63/64 separately for
+          exactly this. Second, anti-aircraft fit: 20 quadruple 40 mm mounts
+          (80 guns) and 49 single 20 mm, against the lead ship's 15 quadruple
+          mounts (60 guns) and 60 single 20 mm. Third, radar: SK-2, two SG,
+          Mk 27, two Mk 8 and four Mk 12.22 on completion, where the lead ship had
+          SK, Mk 3 and four Mk 4.
+      src: [navypedia-iowa, danfs-missouri-iii]
+
+    - heading: 战时经历
+      text:
+        zh: >-
+          本舰 1944 年 11 月离诺福克，经巴拿马运河到旧金山完成舰队旗舰的最后
+          舾装，1945 年 1 月 13 日抵乌利西。此后逐段参战：2 月 16 日随第 58
+          特混舰队首次空袭日本本土（1942 年杜立特空袭以来第一次）；2 月 19 日
+          起以 16 英寸炮直接支援硫磺岛登陆；3 月 24 日参加对冲绳东南岸的炮击；
+          4 月 11 日击落一架低空来袭的自杀机，日机右翼碎片前抛引燃 3 号 5 英寸
+          炮座的火，仅表面损伤。5 月 18 日哈尔西上将把将旗移到本舰，它从此是
+          第 3 舰队旗舰，直到受降仪式后的 9 月 5 日。
+        en: >-
+          She left Norfolk in November 1944, transited the Panama Canal, finished
+          fitting out as fleet flagship at San Francisco, and reached Ulithi on
+          13 January 1945. From there she fought in stages: the first carrier
+          strikes on Japan itself since the Doolittle raid on 16 February; direct
+          16-inch support to the Iwo Jima landings from 19 February; the bombardment
+          of Okinawa's south-east coast on 24 March; and on 11 April the shooting
+          down of a low-flying kamikaze whose starboard wing threw forward and
+          started a gasoline fire at 5-inch mount No. 3, causing only superficial
+          damage. On 18 May Admiral Halsey broke his flag in her, making her Third
+          Fleet flagship until 5 September.
+      src: [danfs-missouri-iii]
+
+    - heading: 今天的位置
+      text:
+        zh: >-
+          本舰 1955 年 2 月 26 日退役入布雷默顿后备舰队，封存三十年；
+          1986 年 5 月 10 日在旧金山复役，加装「战斧」「鱼叉」与「密集阵」，
+          1991 年 1 月 17 日起向伊拉克目标发射战斧、2 月起炮击科威特海岸；
+          1992 年 3 月 31 日退役，1995 年 1 月 12 日除籍，1998 年 5 月 4 日
+          捐赠转为博物馆舰，现泊珍珠港 Ford Island，与亚利桑那纪念馆并称
+          「二战的书立」。馆方保留的参观核心是签署投降书的那块甲板。
+        en: >-
+          She decommissioned into the Bremerton reserve fleet on 26 February 1955
+          and lay there for thirty years, recommissioned at San Francisco on
+          10 May 1986 with Tomahawk, Harpoon and Phalanx, fired her first Tomahawk
+          at Iraqi targets on 17 January 1991 and bombarded the Kuwaiti coast from
+          February, decommissioned on 31 March 1992, was stricken on 12 January
+          1995, and was donated as a museum ship on 4 May 1998. She now lies at
+          Ford Island, Pearl Harbor, paired with the Arizona Memorial as the
+          "bookends of World War II", with the surrender deck at the centre of the
+          visitor route.
+      src: [danfs-missouri-iii, ussmissouri-memorial]
+
+history:
+  - id: build
+    title: { zh: 建造与服役, en: Building and commissioning }
+    range: { from: 1941, to: 1944 }
+    events:
+      - date: 1941-01-06
+        text:
+          zh: 在纽约海军造船厂（布鲁克林）开工，是同级中开工最早的一艘。
+          en: Laid down at the New York Navy Yard, Brooklyn — the earliest of the class to start.
+        src: [danfs-missouri-iii, navypedia-iowa]
+
+      - date: 1944-01-29
+        text:
+          zh: >-
+            下水，掷瓶人为密苏里州参议员哈里·杜鲁门之女 Margaret Truman；
+            杜鲁门翌年接任总统。
+          en: >-
+            Launched, sponsored by Miss Margaret Truman, daughter of Missouri
+            Senator Harry S. Truman, who became President the following year.
+        src: [danfs-missouri-iii]
+
+      - date: 1944-06-11
+        text:
+          zh: >-
+            服役，首任舰长 William M. Callaghan 上校。竣工防空为 20 座四联装
+            40 mm 与 49 门单装 20 mm，比首舰多 5 座四联 40 mm。
+          en: >-
+            Commissioned under Capt. William M. Callaghan with 20 quadruple 40 mm
+            mounts and 49 single 20 mm — five more quadruple mounts than the lead
+            ship.
+        src: [danfs-missouri-iii, navypedia-iowa]
+
+      - date: 1944-11-11
+        text:
+          zh: >-
+            离诺福克，11 月 18 日过巴拿马运河，在旧金山完成舰队旗舰的最后舾装，
+            12 月 14 日出旧金山湾。
+          en: >-
+            Departed Norfolk, transited the Panama Canal on 18 November, finished
+            fitting out as fleet flagship at San Francisco and sailed on
+            14 December.
+        src: [danfs-missouri-iii]
+
+  - id: ww2
+    title: { zh: 太平洋战场（1945）, en: The Pacific war, 1945 }
+    range: { from: 1945-01, to: 1945-08 }
+    events:
+      - date: 1945-01-13
+        text:
+          zh: 抵乌利西，暂任米切尔中将的司令部舰；1 月 27 日出海编入第 58 特混舰队屏护部队。
+          en: >-
+            Arrived at Ulithi as temporary headquarters ship for Vice Adm. Marc
+            Mitscher, sailing on 27 January to screen TF 58.
+        src: [danfs-missouri-iii]
+
+      - date: 1945-02-16
+        text:
+          zh: >-
+            随第 58 特混舰队的航母首次空袭日本本土——1942 年 4 月杜立特空袭
+            以来的第一次。
+          en: >-
+            Her carriers launched the first air strikes on Japan since the
+            Halsey-Doolittle raid of April 1942.
+        src: [danfs-missouri-iii]
+
+      - date: 1945-02-19
+        text:
+          zh: 以 16 英寸炮直接、持续支援硫磺岛登陆。
+          en: Her 16-inch guns provided direct and continuous support to the Iwo Jima landings.
+        src: [danfs-missouri-iii]
+
+      - date: 1945-03-24
+        text:
+          zh: >-
+            与第 58 特混舰队的快速战列舰一同炮击冲绳东南岸，目的是把日军兵力
+            从真正的登陆滩头（西岸）引开。
+          en: >-
+            Joined TF 58's fast battleships in bombarding Okinawa's south-east
+            coast, an action meant to draw Japanese strength away from the west
+            coast beaches where the landings would come.
+        src: [danfs-missouri-iii]
+
+      - date: 1945-04-11
+        text:
+          zh: >-
+            对一架穿透弹幕的低空自杀机开火；日机撞在主甲板下方，
+            右翼碎片前抛引燃 3 号 5 英寸炮座的汽油火，损伤轻微、火势很快控制。
+          en: >-
+            Opened fire on a low-flying kamikaze that broke through and crashed
+            just below the main deck; the starboard wing threw forward and started
+            a gasoline fire at 5-inch mount No. 3, but damage was superficial and
+            the fire was quickly controlled.
+        src: [danfs-missouri-iii]
+
+      - date: 1945-05-18
+        text:
+          zh: 哈尔西上将把第 3 舰队将旗移到本舰，此后本舰担任第 3 舰队旗舰。
+          en: Admiral Halsey broke his flag in Missouri, which became Third Fleet flagship.
+        src: [danfs-missouri-iii]
+
+      - date: 1945-06-05
+        text:
+          zh: >-
+            6 月 5 至 6 日遭遇台风，重巡匹兹堡号的舰艏被扯断，本舰仅上层建筑
+            部分被毁、无重大损伤。
+          en: >-
+            Rode out a typhoon on 5–6 June that tore the bow off the heavy cruiser
+            Pittsburgh; some topside fittings were smashed but Missouri was not
+            seriously damaged.
+        src: [danfs-missouri-iii]
+
+      - date: 1945-07-15
+        text:
+          zh: >-
+            参加对北海道室兰的炮击，击损日本制钢所与轮西制铁所——这是战争中
+            第一次有舰炮火力摧毁日本本土的大型工业设施。7 月 17 至 18 日夜
+            又炮击了本州日立地区的工业目标。
+          en: >-
+            Joined the bombardment of Muroran, Hokkaido, damaging the Nihon Steel
+            Co. and Wanishi Ironworks — the first time naval gunfire wrecked a
+            major installation inside the home islands; on the night of 17–18 July
+            she bombarded industrial targets in the Hitachi area of Honshu.
+        src: [danfs-missouri-iii]
+
+  - id: surrender
+    title: { zh: 东京湾受降（1945-09-02）, en: The surrender in Tokyo Bay }
+    range: { from: 1945-08, to: 1945-09 }
+    events:
+      - date: 1945-08-16
+        text:
+          zh: >-
+            英国太平洋舰队司令弗雷泽海军上将登舰，向哈尔西授予大英帝国爵级
+            司令勋章；8 月 21 日本舰向衣阿华号转去 200 名官兵参加首批占领部队。
+          en: >-
+            Admiral Sir Bruce Fraser, commanding the British Pacific Fleet, came
+            aboard and conferred the KBE on Admiral Halsey; on 21 August Missouri
+            transferred 200 officers and men to Iowa for the initial occupation
+            force.
+        src: [danfs-missouri-iii]
+
+      - date: 1945-08-29
+        text:
+          zh: 本舰驶入东京湾，为受降仪式做准备。
+          en: Entered Tokyo Bay to prepare for the surrender ceremony.
+        src: [danfs-missouri-iii]
+
+      - date: 1945-09-02
+        text:
+          zh: >-
+            08:00 后尼米兹海军五星上将登舰，08:43 盟军最高统帅麦克阿瑟陆军
+            五星上将登舰，08:56 以外相重光葵为首的日本代表登舰，
+            09:02 麦克阿瑟走到话筒前，历时 23 分钟的受降仪式向全世界广播，
+            09:30 前日本使节离舰。
+          en: >-
+            Fleet Admiral Nimitz came aboard shortly after 0800, General of the
+            Army MacArthur at 0843, and the Japanese representatives headed by
+            Foreign Minister Shigemitsu at 0856; at 0902 MacArthur stepped before
+            the microphones and the 23-minute ceremony was broadcast to the world,
+            the Japanese emissaries departing by 0930.
+        src: [danfs-missouri-iii]
+
+      - date: 1945-09-05
+        text:
+          zh: 当日下午哈尔西把将旗移往南达科他号；次日晨本舰离东京湾。
+          en: >-
+            That afternoon Halsey transferred his flag to South Dakota; Missouri
+            left Tokyo Bay early the next day.
+        src: [danfs-missouri-iii]
+
+  - id: postwar
+    title: { zh: 战后、朝鲜战争、复役与结局, en: Post-war, Korea, reactivation and fate }
+    range: { from: 1946, to: 1998 }
+    events:
+      - date: 1946-03-21
+        text:
+          zh: >-
+            在纽约接收土耳其驻美大使 Ertegun 的灵柩，3 月 22 日启航，
+            4 月 5 日抵伊斯坦布尔，移灵与葬礼均鸣 19 响礼炮；4 月 10 日驶入
+            比雷埃夫斯湾，受希腊政府与民众大规模欢迎——此行被媒体解读为美国
+            在东地中海对抗苏联压力的象征。
+          en: >-
+            Received the remains of Turkish Ambassador Mehmet Munir Ertegun at New
+            York on 21 March, sailed on 22 March and anchored off Istanbul on
+            5 April, firing 19-gun salutes at the transfer and the funeral; she
+            entered Phaleron Bay, Piraeus, on 10 April to an overwhelming Greek
+            welcome, the press reading the voyage as a symbol of American interest
+            in the eastern Mediterranean against Soviet pressure.
+        src: [danfs-missouri-iii]
+
+      - date: 1947-09-02
+        text:
+          zh: >-
+            泊里约热内卢参加美洲国家会议，杜鲁门总统登舰出席《里约条约》签署；
+            9 月 7 日总统一家乘本舰返美。
+          en: >-
+            At Rio de Janeiro for the Inter-American Conference, President Truman
+            came aboard on 2 September for the signing of the Rio Treaty and
+            returned home in her with his family from 7 September.
+        src: [danfs-missouri-iii]
+
+      - date: 1950-01-17
+        text:
+          zh: >-
+            从汉普顿锚地出海训练时在 Thimble Shoals 灯船附近搁浅，被抬离
+            水线约 7 英尺；靠拖船、浮筒与涨潮于 2 月 1 日脱困。
+          en: >-
+            Ran aground near Thimble Shoals Light on a training sortie, lifted some
+            7 feet above the waterline, and was refloated on 1 February with tugs,
+            pontoons and the incoming tide.
+        src: [danfs-missouri-iii]
+
+      - date: 1950-09-15
+        text:
+          zh: >-
+            炮击三陟（Samchok），配合仁川登陆的牵制行动——是朝鲜战争中
+            第一艘抵达朝鲜水域的美国战列舰。同年 12 月 23 日又驶抵兴南外海，
+            为兴南防御圈提供火力支援，直到第 3 步兵师在圣诞前夜由海上撤出。
+          en: >-
+            Bombarded Samchok in a diversionary move coordinated with the Inchon
+            landings — the first American battleship to reach Korean waters; on
+            23 December she moved off Hungnam to support the defence perimeter until
+            the 3rd Infantry Division was evacuated by sea on Christmas Eve.
+        src: [danfs-missouri-iii]
+
+      - date: 1953-03-26
+        text:
+          zh: >-
+            舰长 Warner R. Edsall 上校在佐世保港内引舰通过防潜网时心脏病
+            突发殉职；4 月 6 日由同级舰新泽西号接任第 7 舰队旗舰。
+          en: >-
+            Capt. Warner R. Edsall died of a heart attack while conning her through
+            the submarine net at Sasebo; she was relieved as 7th Fleet flagship by
+            New Jersey on 6 April.
+        src: [danfs-missouri-iii]
+
+      - date: 1955-02-26
+        text:
+          zh: >-
+            在普吉特湾海军船厂退役，入布雷默顿太平洋后备舰队；
+            此后三十年保持封存，年均约十万人参观。
+          en: >-
+            Decommissioned at Puget Sound Naval Shipyard into the Bremerton Group,
+            Pacific Reserve Fleet, remaining in reserve for thirty years and
+            visited by about 100,000 people a year.
+        src: [danfs-missouri-iii]
+
+      - date: 1986-05-10
+        text:
+          zh: >-
+            在旧金山复役，舰长 Albert L. Kaiss 上校，作为「海洋战略」下
+            航母与战列舰突击群的一员。同年 9 月 10 日启航作环球航行——
+            1907–09 年「大白舰队」以来美国战列舰的第一次。
+          en: >-
+            Recommissioned at San Francisco under Capt. Albert L. Kaiss as part of
+            the Maritime Strategy's carrier and battleship groups; she sailed on a
+            circumnavigation on 10 September, the first by an American battleship
+            since the Great White Fleet of 1907–09.
+        src: [danfs-missouri-iii]
+
+      - date: 1991-01-17
+        text:
+          zh: >-
+            01:40 向伊拉克目标发射第一枚「战斧」，此后五天内又发射 28 枚；
+            2 月 3 日起夜间炮击科威特境内被占区的伊军滩头防御，三天内打出
+            112 发 16 英寸炮弹，随后由威斯康星号接替。2 月 23 日又在四轮岸轰
+            任务中打出 133 发，配合对科威特海岸的两栖登陆佯动——伊军以一枚
+            HY-2「蚕」式导弹反击，被英国护卫舰格洛斯特号用 Sea Dart 击落。
+          en: >-
+            Fired her first Tomahawk at Iraqi targets at 0140 followed by 28 more
+            in five days; from 3 February she bombarded Iraqi beach defences in
+            occupied Kuwait by night, firing 112 16-inch rounds in three days
+            before Wisconsin relieved her, and on 23 February fired 133 rounds in
+            four shore bombardment missions supporting the amphibious feint — an
+            Iraqi HY-2 Silkworm missile fired at her was shot down by HMS
+            Gloucester's Sea Dart.
+        src: [danfs-missouri-iii]
+
+      - date: 1992-03-31
+        text:
+          zh: >-
+            退役，封存于布雷默顿；1995 年 1 月 12 日除籍，1998 年 5 月 4 日
+            捐赠转为博物馆舰，后移至珍珠港 Ford Island 与亚利桑那纪念馆并泊。
+          en: >-
+            Decommissioned and laid up at Bremerton; stricken on 12 January 1995
+            and donated as a museum ship on 4 May 1998, later moved to Ford Island,
+            Pearl Harbor, alongside the Arizona Memorial.
+        src: [danfs-missouri-iii]

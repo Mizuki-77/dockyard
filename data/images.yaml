@@ -1927,9 +1927,7 @@ images:
     height: 1133
 
 
-  # PRELOAD：衣阿华号（未入库）的素材，该舰尚未入库。
-  # 现在没有任何页面会渲染它；等该舰入库后 ship:iowa 即可自动生效。
-  # 不要因为「没有页面引用」就把它当成孤儿数据删掉。
+  # 2026-11-28：衣阿华号已入库，本条由 PRELOAD 转为正式记录。
 
   - id: iowa-broadside-1944
     file: /img/ships/iowa-1944-broadside.jpg
@@ -1948,31 +1946,12 @@ images:
     source_url: https://commons.wikimedia.org/wiki/File:USS_Iowa_(BB-61),_1944.jpg
     width: 1280
     height: 717
-    primary: true
+    primary: false
 
 
   # PRELOAD：密苏里号（未入库）的素材，该舰尚未入库。
   # 现在没有任何页面会渲染它；等该舰入库后 ship:missouri 即可自动生效。
   # 不要因为「没有页面引用」就把它当成孤儿数据删掉。
-
-  - id: missouri-pacific-1945
-    file: /img/ships/missouri-1945-pacific.jpg
-    subject: ship:missouri
-    title:
-      zh: 密苏里号在太平洋（1945 年初）
-      en: USS Missouri at sea in the Pacific
-    part: hull_side
-    view: broadside
-    date: 1945
-    license: pd
-    license_tier: A
-    license_raw: Public domain
-    author: 美国海军
-    credit: 美国海军历史与遗产司令部（NHHC） · 80-G-316036
-    source_url: https://commons.wikimedia.org/wiki/File:USS_Missouri_(BB-63)_at_sea_in_the_Pacific,_circa_early_1945.jpg
-    width: 1280
-    height: 795
-    primary: true
 
   - id: bismarck-1941-reconnaissance
     file: /img/ships/bismarck-1941-reconnaissance.jpg
@@ -15477,3 +15456,519 @@ images:
     height: 754
     primary: true
     note: 从舰桥俯拍的一号主炮塔，炮口塞着防尘罩。九四式 46 cm 炮是史上口径最大的舰炮，但日本对外谎称 41 cm。
+
+  # ==== 2026-11-28 新增：iowa（本轮六舰扩编）====
+  - id: iowa-01
+    file: /img/ships/iowa-1944-underway.jpg
+    subject: ship:iowa
+    title:
+      zh: 衣阿华号 1944 年海上航行，涂装为 Measure 32/1B 迷彩
+      en: USS Iowa (BB-61), 1944.jpg
+    part: hull_side
+    view: broadside
+    date: '1944'
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: US Navy
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Iowa_(BB-61),_1944.jpg
+    width: 1280
+    height: 717
+    primary: true
+    note: 整舰舷侧，1944 年太平洋战场状态。可见三座三联装 16 英寸主炮塔与双烟囱。
+  - id: iowa-02
+    file: /img/ships/iowa-1944-anchorage.jpg
+    subject: ship:iowa
+    title:
+      zh: 衣阿华号 1944 年停泊于太平洋某锚地
+      en: USS Iowa (BB-61) at a Pacific anchorage c1944.jpg
+    part: hull_side
+    view: side
+    date: '1944'
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Iowa_(BB-61)_at_a_Pacific_anchorage_c1944.jpg
+    width: 1280
+    height: 961
+    primary: false
+    note: 远景整舰，可对照迷彩图案在锚泊状态下的观感。
+  - id: iowa-03
+    file: /img/ships/iowa-tinian-salvo.jpg
+    subject: ship:iowa
+    title:
+      zh: 衣阿华号炮击天宁岛时齐射，1944
+      en: 80-G-253605 USS Iowa fires a salvo during the bombardment of Tinian.jpg
+    part: turret
+    view: detail
+    date: '1944'
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: United States Navy
+    source_url: https://commons.wikimedia.org/wiki/File:80-G-253605_USS_Iowa_fires_a_salvo_during_the_bombardment_of_Tinian.jpg
+    width: 1183
+    height: 939
+    primary: false
+    note: 二号主炮塔三门 16 英寸炮齐射瞬间。炮口焰与后坐行程可见，是主炮威力的直观记录。
+  - id: iowa-04
+    file: /img/ships/iowa-absd2-manus-1944.jpg
+    subject: ship:iowa
+    title:
+      zh: 衣阿华号在马努斯岛浮动船坞 ABSD-2 中，1944-12-28
+      en: USS Iowa (BB-61) in floating dry dock ABSD-2 at Manus, Admirality Islands, on 28 December 1944 (80-G-421124).jpg
+    part: hull_side
+    view: overhead
+    date: '1944-12-28'
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Iowa_(BB-61)_in_floating_dry_dock_ABSD-2_at_Manus,_Admirality_Islands,_on_28_December_1944_(80-G-421124).jpg
+    width: 1280
+    height: 1033
+    primary: false
+    note: 俯视角度，舰体在浮动船坞中抬离水面，能看清舷侧线型与甲板布置。
+  - id: iowa-05
+    file: /img/ships/iowa-oerlikon-20mm.jpg
+    subject: ship:iowa
+    title:
+      zh: 衣阿华号舷侧的 20 mm 厄利孔高炮炮位与炮手
+      en: USS Iowa (BB-61) Oerlikon 20mm AA gun mount.jpg
+    part: mount
+    view: detail
+    date: '1943'
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author Unknown author
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Iowa_(BB-61)_Oerlikon_20mm_AA_gun_mount.jpg
+    width: 1280
+    height: 838
+    primary: false
+    note: 彩色原片。前景 20 mm 单装炮座与炮手，背景是三号主炮塔的三门 16 英寸炮口。
+
+  # ==== 2026-11-28 新增：missouri（本轮六舰扩编）====
+  - id: missouri-01
+    file: /img/ships/missouri-1944-anchorage.jpg
+    subject: ship:missouri
+    title:
+      zh: 密苏里号 1944 年 8 月试航期停泊，涂装为 Measure 32
+      en: USS Missouri (BB-63) at anchor, circa in August 1944.jpg
+    part: hull_side
+    view: broadside
+    date: 1944-08
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Missouri_(BB-63)_at_anchor,_circa_in_August_1944.jpg
+    width: 1280
+    height: 956
+    primary: true
+    note: 彩色原片，整舰舷侧。试航期状态，尚在切萨皮克湾一带。
+  - id: missouri-02
+    file: /img/ships/missouri-1945-pacific.jpg
+    subject: ship:missouri
+    title:
+      zh: 密苏里号 1945 年初在太平洋航行
+      en: USS Missouri (BB-63) at sea in the Pacific, circa early 1945.jpg
+    part: hull_side
+    view: broadside
+    date: '1945'
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy. This photograph was received by the U.S. Naval Photographic Science Laboratory on 28 April 1945.
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Missouri_(BB-63)_at_sea_in_the_Pacific,_circa_early_1945.jpg
+    width: 1280
+    height: 795
+    primary: false
+    note: 从无畏号航母上拍摄，是它参战后的整舰照。
+  - id: missouri-03
+    file: /img/ships/missouri-navyday-1945.jpg
+    subject: ship:missouri
+    title:
+      zh: 密苏里号 1945 年纽约海军节阅舰式，与伦肖号驱逐舰
+      en: USS Missouri (BB-63) and USS Renshaw (DD-499) off New York City (USA) during the Navy Day fleet review, circa 27 October 1945 (NH 81126).jpg
+    part: hull_side
+    view: side
+    date: '1945-10-27'
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Missouri_(BB-63)_and_USS_Renshaw_(DD-499)_off_New_York_City_(USA)_during_the_Navy_Day_fleet_review,_circa_27_October_1945_(NH_81126).jpg
+    width: 1280
+    height: 1031
+    primary: false
+    note: 1945-10 纽约海军节阅舰式。战后载誉返国的状态，舰员站坡。
+  - id: missouri-04
+    file: /img/ships/missouri-kamikaze-1945.jpg
+    subject: ship:missouri
+    title:
+      zh: 1945-04-11 冲绳外海，一架零式特攻机即将撞上密苏里号
+      en: USS Missouri Zero Kamikaze.jpg
+    part: other
+    view: detail
+    date: '1945-04-11'
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Harold "Buster" Campbell according to USS Missouri Memorial Association or Len Schmidt according to Naval and Heritage C
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Missouri_Zero_Kamikaze.jpg
+    width: 1280
+    height: 1472
+    primary: false
+    note: 特攻机撞舰瞬间，是密苏里号战时最著名的一张照片。机体已贴近舰体右舷。
+  - id: missouri-05
+    file: /img/ships/missouri-panama-1945.jpg
+    subject: ship:missouri
+    title:
+      zh: 密苏里号 1945-10-13 通过巴拿马运河米拉弗洛雷斯船闸
+      en: Missouri panama canal.jpg
+    part: hull_side
+    view: side
+    date: '1945-10-13'
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author
+    source_url: https://commons.wikimedia.org/wiki/File:Missouri_panama_canal.jpg
+    width: 1280
+    height: 1590
+    primary: false
+    note: 通过运河时舰体几乎贴着闸壁，是它 33 米舰宽的直接尺度参照。
+
+  # ==== 2026-11-28 新增：nagato（本轮六舰扩编）====
+  - id: nagato-01
+    file: /img/ships/nagato-hashirajima.jpg
+    subject: ship:nagato
+    title:
+      zh: 长门号停泊于柱岛泊地
+      en: Battleship Nagato at anchor in Hashirajima.jpg
+    part: hull_side
+    view: side
+    date: unknown
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author Unknown author
+    source_url: https://commons.wikimedia.org/wiki/File:Battleship_Nagato_at_anchor_in_Hashirajima.jpg
+    width: 1280
+    height: 699
+    primary: true
+    note: 本舰最经典的一张舷侧照，宝塔式舰桥与四座双联装 41 cm 主炮塔全部可见。
+  - id: nagato-02
+    file: /img/ships/nagato-1944.jpg
+    subject: ship:nagato
+    title:
+      zh: 长门号 1944 年状态，已加装雷达与防空炮
+      en: Japanese Battleship Nagato 1944.jpg
+    part: hull_side
+    view: broadside
+    date: '1944'
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: 不明 (Unknown)
+    source_url: https://commons.wikimedia.org/wiki/File:Japanese_Battleship_Nagato_1944.jpg
+    width: 1280
+    height: 795
+    primary: false
+    note: 莱特湾战役前后的状态。与竣工照对比可看出宝塔桅上加装的电探天线。
+  - id: nagato-03
+    file: /img/ships/nagato-1945-yokosuka.jpg
+    subject: ship:nagato
+    title:
+      zh: 长门号 1945 年在横须贺泊地，舷侧靠着一艘给水船
+      en: Battleship Nagato at anchor 1945.jpeg
+    part: hull_side
+    view: side
+    date: '1945'
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Navy
+    source_url: https://commons.wikimedia.org/wiki/File:Battleship_Nagato_at_anchor_1945.jpeg
+    width: 1280
+    height: 848
+    primary: false
+    note: 战争末期，舰体已做防空伪装涂装，桅顶加装 13 号电探。
+  - id: nagato-04
+    file: /img/ships/nagato-bikini-1946.jpg
+    subject: ship:nagato
+    title:
+      zh: 长门号 1946 年 3 月驶向比基尼环礁，准备参加十字路口核试验
+      en: Battleship Nagato steams towards Bikini Atoll in the Pacific, in March 1946 (175739069).jpg
+    part: hull_side
+    view: broadside
+    date: 1946-03
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: U.S. Army Signal Corps photo 111-SC-421091 (WPA-46-65008)
+    source_url: https://commons.wikimedia.org/wiki/File:Battleship_Nagato_steams_towards_Bikini_Atoll_in_the_Pacific,_in_March_1946_(175739069).jpg
+    width: 1280
+    height: 957
+    primary: false
+    note: 作为唯一活到战后的日本战列舰，被美军拖往比基尼。1946-07 在核试验中沉没。
+  - id: nagato-05
+    file: /img/ships/nagato-1920s.jpg
+    subject: ship:nagato
+    title:
+      zh: 长门号 1920 年代服役初期的状态
+      en: IJN BS Nagato 1920s.jpg
+    part: hull_side
+    view: side
+    date: 1920s
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author Unknown author
+    source_url: https://commons.wikimedia.org/wiki/File:IJN_BS_Nagato_1920s.jpg
+    width: 1280
+    height: 903
+    primary: false
+    note: 竣工原貌，可对照后来大改装加高的舰首与重建的舰桥。
+
+  # ==== 2026-11-28 新增：mutsu（本轮六舰扩编）====
+  - id: mutsu-01
+    file: /img/ships/mutsu-main.jpg
+    subject: ship:mutsu
+    title:
+      zh: 陆奥号战列舰
+      en: MUTSU (Japan) LCCN2014714055.jpg
+    part: hull_side
+    view: three_quarter
+    date: unknown
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Bain News Service, publisher
+    source_url: https://commons.wikimedia.org/wiki/File:MUTSU_(Japan)_LCCN2014714055.jpg
+    width: 1280
+    height: 876
+    primary: true
+    note: 本舰最清晰的一张，宝塔式舰桥与四号炮塔一侧的舷窗带清楚可见。
+  - id: mutsu-02
+    file: /img/ships/mutsu-ise-fuso.jpg
+    subject: ship:mutsu
+    title:
+      zh: 陆奥号（近）与伊势号、扶桑号编队航行
+      en: Japanese Battleships Mutsu, Ise, and Fuso.jpg
+    part: hull_side
+    view: three_quarter
+    date: unknown
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author Unknown author
+    source_url: https://commons.wikimedia.org/wiki/File:Japanese_Battleships_Mutsu,_Ise,_and_Fuso.jpg
+    width: 1280
+    height: 905
+    primary: false
+    note: 合影。这组照片同为战前演习期拍摄，前景为陆奥。
+  - id: mutsu-03
+    file: /img/ships/mutsu-turret-memorial.jpg
+    subject: ship:mutsu
+    title:
+      zh: 陆奥号三号主炮塔残骸，现存海上自卫队第一术科学校
+      en: Mutsu syuhou 01.jpg
+    part: turret
+    view: side
+    date: post-war
+    license: cc_by_sa_4
+    license_tier: B
+    license_raw: CC BY-SA 4.0
+    author: Kamakura
+    source_url: https://commons.wikimedia.org/wiki/File:Mutsu_syuhou_01.jpg
+    width: 1280
+    height: 851
+    primary: false
+    note: '**战后打捞的实物**：三号炮塔 — 正是 1943-06-08 爆炸的那一座。现陈列于江田岛海上自卫队第一术科学校。这张是本站唯一能看到陆奥实体结构的图。'
+  - id: mutsu-04
+    file: /img/ships/mutsu-41cm-gun-yamato-museum.jpg
+    subject: ship:mutsu
+    title:
+      zh: 陆奥号 41 cm 主炮炮身，现存吴市海事历史科学馆
+      en: Main Gun of the Battleship Mutsu (20081093220).jpg
+    part: turret
+    view: detail
+    date: post-war
+    license: cc0
+    license_tier: A
+    license_raw: CC0
+    author: 先従隗始
+    source_url: https://commons.wikimedia.org/wiki/File:Main_Gun_of_the_Battleship_Mutsu_(20081093220).jpg
+    width: 1280
+    height: 960
+    primary: false
+    note: 战争结束后从广岛湾打捞出水的 41 cm/45 三年式炮身。炮尾段与炮口段的锥度变化是识别该型的特征。
+
+  # ==== 2026-11-28 新增：belfast（本轮六舰扩编）====
+  - id: belfast-01
+    file: /img/ships/belfast-sydney-1945.jpg
+    subject: ship:belfast
+    title:
+      zh: 贝尔法斯特号 1945 年 8 月停泊于悉尼港，背景为悉尼海港大桥
+      en: HMS BELFAST at anchor in Sydney harbour, August 1945. ABS694.jpg
+    part: hull_side
+    view: side
+    date: 1945-08
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Royal Navy official photographer
+    source_url: https://commons.wikimedia.org/wiki/File:HMS_BELFAST_at_anchor_in_Sydney_harbour,_August_1945._ABS694.jpg
+    width: 1280
+    height: 832
+    primary: true
+    note: 战时最终状态的整舰照。原件藏帝国战争博物馆（ABS 694）。
+  - id: belfast-02
+    file: /img/ships/belfast-arctic-1942.jpg
+    subject: ship:belfast
+    title:
+      zh: 贝尔法斯特号 1942-43 年冬在北冰洋护航，前甲板与 A、B 炮塔结冰
+      en: HMS Belfast on Winter Duty in Northern Waters during the Winter 1942-1943 A20687.jpg
+    part: deck
+    view: detail
+    date: 1942-12
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Royal Navy official photographer
+    source_url: https://commons.wikimedia.org/wiki/File:HMS_Belfast_on_Winter_Duty_in_Northern_Waters_during_the_Winter_1942-1943_A20687.jpg
+    width: 1280
+    height: 893
+    primary: false
+    note: 北极护航的真实环境：主炮塔与甲板覆满冰层。原件藏 IWM（A 20687）。
+  - id: belfast-03
+    file: /img/ships/belfast-arctic-deck-1942.jpg
+    subject: ship:belfast
+    title:
+      zh: 贝尔法斯特号舰员在结冰的前甲板上作业，1942-43 年冬
+      en: HMS Belfast during the Second World War A20686.jpg
+    part: deck
+    view: detail
+    date: 1942-12
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Royal Navy official photographer
+    source_url: https://commons.wikimedia.org/wiki/File:HMS_Belfast_during_the_Second_World_War_A20686.jpg
+    width: 1280
+    height: 1668
+    primary: false
+    note: 同上批，能看到舰员在冰面上的作业方式。原件藏 IWM（A 20686）。
+  - id: belfast-04
+    file: /img/ships/belfast-king-george-visit.jpg
+    subject: ship:belfast
+    title:
+      zh: 英王乔治六世视察斯卡帕湾时的贝尔法斯特号，1943
+      en: HMS Belfast during the Second World War A18659.jpg
+    part: superstructure
+    view: detail
+    date: '1943'
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Herbert Mason
+    source_url: https://commons.wikimedia.org/wiki/File:HMS_Belfast_during_the_Second_World_War_A18659.jpg
+    width: 1280
+    height: 961
+    primary: false
+    note: 伯内特少将迎接国王的场面。原件藏 IWM（A 18659）。
+
+  # ==== 2026-11-28 新增：indianapolis（本轮六舰扩编）====
+  - id: indianapolis-01
+    file: /img/ships/indianapolis-1945-final.jpg
+    subject: ship:indianapolis
+    title:
+      zh: 印第安纳波利斯号 1945-07-10 大修出厂，Mare Island 海军船厂外海
+      en: USS Indianapolis (CA-35) off the Mare Island Naval Shipyard on 10 July 1945 (19-N-86911).jpg
+    part: hull_side
+    view: broadside
+    date: '1945-07-10'
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author Unknown author
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Indianapolis_(CA-35)_off_the_Mare_Island_Naval_Shipyard_on_10_July_1945_(19-N-86911).jpg
+    width: 1280
+    height: 872
+    primary: true
+    note: '**本舰最后的完整影像之一**：这是它执行运送任务前、7 月中旬的出厂照。拍摄后 20 天它即被击沉。档案号 19-N-86911。'
+  - id: indianapolis-02
+    file: /img/ships/indianapolis-1943-44.jpg
+    subject: ship:indianapolis
+    title:
+      zh: 印第安纳波利斯号 1943-1944 年间海上航行，涂装 Measure 22
+      en: USS Indianapolis (CA-35) underway at sea, in 1943-1944 (NH 124466).jpg
+    part: hull_side
+    view: broadside
+    date: 1943-1944
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author Unknown author
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Indianapolis_(CA-35)_underway_at_sea,_in_1943-1944_(NH_124466).jpg
+    width: 1280
+    height: 870
+    primary: false
+    note: 战时状态整舰照，涂装为 Measure 22（分级迷彩）。
+  - id: indianapolis-03
+    file: /img/ships/indianapolis-saipan-1944.jpg
+    subject: ship:indianapolis
+    title:
+      zh: 印第安纳波利斯号 1944-06-15 塞班登陆日炮击岸上目标
+      en: USS Indianapolis (CA-35) shelling Saipan in June 1944.jpg
+    part: turret
+    view: detail
+    date: '1944-06-15'
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Photographed from USS Birmingham (CL-62)
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Indianapolis_(CA-35)_shelling_Saipan_in_June_1944.jpg
+    width: 1280
+    height: 960
+    primary: false
+    note: 前景是驶向滩头的 LVTs，背景是本舰主炮开火。作为第五舰队旗舰参加塞班作战。
+  - id: indianapolis-04
+    file: /img/ships/indianapolis-1942-mareisland.jpg
+    subject: ship:indianapolis
+    title:
+      zh: 印第安纳波利斯号 1942-04-19 于 Mare Island 海军船厂，井甲板区
+      en: USS Indianapolis (CA-35) at the Mare Island Naval Shipyard on 19 April 1942 (19-N-29299).jpg
+    part: deck
+    view: detail
+    date: '1942-04-19'
+    license: pd
+    license_tier: A
+    license_raw: Public domain
+    author: Unknown author Unknown author
+    source_url: https://commons.wikimedia.org/wiki/File:USS_Indianapolis_(CA-35)_at_the_Mare_Island_Naval_Shipyard_on_19_April_1942_(19-N-29299).jpg
+    width: 1280
+    height: 1035
+    primary: false
+    note: 第一次战时大修后的近景，重点记录了艉部井甲板与水上飞机作业区。
+  - id: indianapolis-05
+    file: /img/ships/indianapolis-survivors-1945.jpg
+    subject: ship:indianapolis
+    title:
+      zh: 印第安纳波利斯号幸存者被救起后送往医院，1945-08
+      en: Survivors of the USS Indianapolis (BUMED 09-7927-4), U.S. Navy BUMED Library and Archives (5833635532).jpg
+    part: other
+    view: detail
+    date: 1945-08
+    license: cc_by_2
+    license_tier: B
+    license_raw: CC BY 2.0
+    author: National Museum of Health and Medicine
+    source_url: https://commons.wikimedia.org/wiki/File:Survivors_of_the_USS_Indianapolis_(BUMED_09-7927-4),_U.S._Navy_BUMED_Library_and_Archives_(5833635532).jpg
+    width: 1280
+    height: 1010
+    primary: false
+    note: 获救者转运途中。全舰 1,195–1,196 人在舰，316 人生还。

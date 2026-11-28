@@ -32,7 +32,7 @@ id: portland
 name:
   zh: 波特兰级重巡洋舰
   en: Portland-class heavy cruiser
-class_of: [portland]
+class_of: [portland, indianapolis]
 note: |
   本级两艘的设计值基本一致，但有几处逐舰差异需要注意：
     · 编制：navypedia 原文「CA33: 807  CA35: 917 inc flag」
@@ -641,3 +641,113 @@ facts:
       这是设计时的机型谱，不是某一年的实载；1941-12 的实物是
       SOC-1 Seagull（见 ships/portland.yaml，依据 navsource-portland 图注）。
 
+
+  # ---- 2026-11-28 补武器实体（仅供生成武器配置区，参数取自已登记的同一 id，未新增来源）----
+  - about: weapon:8in-55-mk9
+    field: weapon.designation
+    value: 8"/55 (20.3 cm) Marks 9, 10, 11, 13 and 14
+    unit: null
+    src:
+    - navweaps-8in-55-mk9
+    valid:
+      from: 1932
+    confidence: A
+  - about: weapon:8in-55-mk9
+    field: weapon.nation
+    value: united_states
+    unit: null
+    src:
+    - navweaps-8in-55-mk9
+    valid:
+      from: 1932
+    confidence: A
+  - about: weapon:8in-55-mk9
+    field: weapon.category
+    value: naval_gun
+    unit: null
+    src:
+    - navweaps-8in-55-mk9
+    valid:
+      from: 1932
+    confidence: A
+  - about: weapon:8in-55-mk9
+    field: weapon.bore
+    value: 203
+    unit: mm
+    src:
+    - navweaps-8in-55-mk9
+    valid:
+      from: 1932
+    confidence: A
+  - about: weapon:8in-55-mk9
+    field: weapon.caliber_length
+    value: 55
+    unit: ratio
+    src:
+    - navweaps-8in-55-mk9
+    valid:
+      from: 1932
+    confidence: A
+  - about: weapon:8in-55-mk9
+    field: weapon.caliber_method
+    value: usa_uk_method
+    unit: null
+    src:
+    - navweaps-8in-55-mk9
+    valid:
+      from: 1932
+    confidence: B
+  - about: weapon:5in25-mk10
+    field: weapon.designation
+    value: 5"/25 (12.7 cm) Marks 10, 11, 13 and 17
+    unit: null
+    src:
+    - navweaps-5in25-mk10
+    valid:
+      from: 1932
+    confidence: A
+  - about: weapon:5in25-mk10
+    field: weapon.nation
+    value: united_states
+    unit: null
+    src:
+    - navweaps-5in25-mk10
+    valid:
+      from: 1932
+    confidence: A
+  - about: weapon:5in25-mk10
+    field: weapon.category
+    value: anti_aircraft_gun
+    unit: null
+    src:
+    - navweaps-5in25-mk10
+    valid:
+      from: 1932
+    confidence: A
+  - about: weapon:5in25-mk10
+    field: weapon.bore
+    value: 127
+    unit: mm
+    src:
+    - navweaps-5in25-mk10
+    valid:
+      from: 1932
+    confidence: A
+  - about: weapon:5in25-mk10
+    field: weapon.caliber_length
+    value: 25
+    unit: ratio
+    src:
+    - navweaps-5in25-mk10
+    valid:
+      from: 1932
+    confidence: A
+  - about: weapon:5in25-mk10
+    field: weapon.caliber_method
+    value: usa_uk_method
+    unit: null
+    src:
+    - navweaps-5in25-mk10
+    valid:
+      from: 1932
+    confidence: C

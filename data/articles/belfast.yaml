@@ -1,0 +1,477 @@
+# ============================================================================
+# 舰艇正文 —— 贝尔法斯特号（HMS Belfast, C35）
+#
+# 本舰正文的抓手是「一艘两次差点不存在、最后留下来的船」：
+# 1939 年触雷把龙骨炸断，1942 年才回来；1963 年退役后本该进拆船厂，
+# 1971 年被一群人抢在处置令之前拦下。前者决定了她错过二战前半段，
+# 后者决定了她是今天英国唯一保存下来的二战大舰。
+#
+# 篇幅按「有特殊意义的舰」定：intro 4 段 + history 4 节 22 条事件。
+#
+# 【本舰正文必须避开的三个坑】
+#   1) 她没参加围歼俾斯麦 —— 那是 Sheffield 的事迹。1941 年她整年在船厂。
+#   2) 诺曼底当天她不是第一艘开火的盟军舰 —— 日志记 0527，西侧另一艘 0523。
+#   3) 她没拆 6 英寸炮塔 —— 拆的是 2 座双联 4 英寸。全城级只有她保留四座
+#      6 英寸炮塔到最后，这是她与其他幸存巡洋舰最大的外形差别。
+# ============================================================================
+ship: belfast
+updated: 2026-11-28
+
+intro:
+  lead:
+    zh: >-
+      贝尔法斯特号是城级轻巡洋舰第三组（Edinburgh 子级）的第 2 艘，
+      1939 年 8 月 5 日服役。她在二战中打了三场硬仗 —— 北极护航、北角海战、
+      诺曼底炮击，战后参加朝鲜战争，1963 年退役。而真正让她与众不同的
+      是退役之后那八年：她本该被拆掉，却在 1971 年 10 月 21 日作为
+      帝国战争博物馆的分馆在泰晤士河上开放，成为英国唯一保存下来的二战大舰。
+    en: >-
+      HMS Belfast was the second of the two Edinburgh-class cruisers, the third
+      group of the Town class, commissioned on 5 August 1939. She fought three
+      hard campaigns in the Second World War — the Arctic convoys, the Battle of
+      North Cape and the Normandy bombardment — then served in Korea and was
+      paid off in 1963. What sets her apart is what happened afterwards: she was
+      due to be scrapped, but opened to the public on the Thames on 21 October
+      1971 as a branch of the Imperial War Museum, and is now the only surviving
+      big-gun warship of the Second World War in Britain.
+
+  paragraphs:
+    - heading: 一条被炸断过龙骨的船
+      text:
+        zh: >-
+          1939 年 11 月 21 日上午 11 点前，她从罗塞斯出港，随 Aurora、Edinburgh、
+          Sheffield 一起去拦截一支据报开往大西洋袭击船团的德国舰队。刚驶出
+          福斯湾，一枚磁性水雷在她舰底引爆。伤亡意外地轻，但爆炸的鞭状效应
+          沿全舰传导，帝国战争博物馆的记录是一句很短的话：她的背被折断了
+          （the ship's back was broken）。罗塞斯只能做临时抢修让她能开走；
+          1940 年 6 月她自己开到德文波特，退役归船厂管辖，进干船坞。
+          再出海是 1942 年 10 月 —— 从触雷到归队，差一个月满三年。
+        en: >-
+          Shortly before 11 a.m. on 21 November 1939 she left Rosyth with
+          Aurora, Edinburgh and Sheffield to intercept a German force reported
+          heading for the Atlantic. Just outside the Firth of Forth a magnetic
+          mine detonated under her. Casualties were mercifully light, but the
+          whiplash of the explosion ran the length of the ship; the Imperial War
+          Museums' own account puts it in six words — the ship's back was broken.
+          Rosyth could only patch her enough to move; in June 1940 she made
+          Devonport under her own steam, paid off into dockyard control and went
+          into dry dock. She did not rejoin the fleet until October 1942, one
+          month short of three years.
+      src: [naval-history-belfast, iwm-history3, navypedia-edinburgh]
+
+    - heading: 一年半的北极，一天晚上把沙恩霍斯特赶向南
+      text:
+        zh: >-
+          归队时她是皇家海军最大、也是战力最强的巡洋舰，而且带着当时最完整的
+          一套雷达。她编入本土舰队第 10 巡洋舰分队并任分队旗舰，主要任务是为
+          开往苏联的护航编队提供近距离重掩护。1943 年 12 月 26 日北角海战，
+          Burnett 少将在她舰上指挥 Force 1，与 Norfolk、Sheffield 一起用雷达
+          保持接触，把沙恩霍斯特一路往南赶，直到约克公爵的 14 英寸炮接战。
+          围歼的最后阶段，她与 Jamaica 奉命用鱼雷实施击沉。
+          IWM 的记录是：就在她开火的同时，沙恩霍斯特的雷达回波消失了。
+        en: >-
+          She rejoined as the largest and arguably the most powerful cruiser in
+          the Royal Navy, carrying the most advanced radar outfit then available.
+          She became flagship of the 10th Cruiser Squadron, Home Fleet, whose work
+          was to give close heavy cover to the convoys running to the Soviet Union.
+          At the Battle of North Cape on 26 December 1943 Rear-Admiral Burnett
+          flew his flag in her and, with Norfolk and Sheffield as Force 1, kept
+          radar contact and drove Scharnhorst south until Duke of York's 14-inch
+          guns could engage. In the final stage she and Jamaica were ordered to
+          finish the German ship with torpedoes. As IWM records it, even as
+          Belfast fired, Scharnhorst's radar blip vanished.
+      src: [iwm-history4, iwm-history5, naval-history-belfast]
+
+    - heading: 诺曼底那天早上 0527
+      text:
+        zh: >-
+          1944 年 6 月 6 日，她是炮击编队 E 的旗舰，配属东特遣舰队，
+          负责支援 Gold 与 Juno 滩头的英加部队。多年来的说法是她那天最先开火；
+          IWM 后来把本舰日志与舰上军官 Peter Brooke Smith 中尉的日记并排摆出来，
+          更正了这一点：西侧另一艘巡洋舰在 0523 先开火，本舰晚三分钟，
+          0527「以全舷侧向左」开火。所以准确的说法是「最先开火的军舰之一」。
+          她在诺曼底海面待了 33 天，打出 4,000 余发 6 英寸与 1,000 发 4 英寸炮弹，
+          最后一次射击是 7 月 8 日与 Rodney、Roberts 一起轰击卡昂外围。
+        en: >-
+          On 6 June 1944 she was flagship of Bombardment Force E in the Eastern
+          Naval Task Force, supporting the British and Canadian assaults on Gold
+          and Juno. The long-standing claim is that she opened fire first that
+          morning; IWM later set her log beside the diary of Lieutenant Peter
+          Brooke Smith and corrected it — another cruiser to the west fired at
+          0523, and Belfast followed three minutes later at 0527, "with full
+          broadside to port". "One of the very first ships to open fire" is the
+          accurate form. She spent 33 days off Normandy, fired over 4,000 6-inch
+          and 1,000 4-inch shells, and her last shoot was on 8 July against the
+          defences of Caen, in company with Rodney and Roberts.
+      src: [iwm-8-things-dday, iwm-history7, naval-history-belfast]
+
+    - heading: 1963 年差点被拆掉的那艘船
+      text:
+        zh: >-
+          战后她去了远东，1950 至 1952 年在朝鲜打了两年，实际在巡逻线上待了
+          404 天，炮打得 6 英寸炮身都磨损失效。1955 年进德文波特做现代化改装，
+          1959 年重新服役，1963 年 8 月 24 日退役。按常规，下一站就是拆船厂。
+          转折叠在三件事上：1967 年帝国战争博物馆开始研究保存一艘二战巡洋舰的
+          可行性并成立委员会；1971 年 3 月 8 日下院休会辩论，本舰前舰长
+          Morgan-Giles 少将力陈保存，国防部次官同意在 6 月底前不动舰体；
+          HMS Belfast Trust 成立并接手。1971 年 10 月 14 日她拖抵伦敦池，
+          10 月 21 日特拉法加日对公众开放，1978 年所有权转交帝国战争博物馆。
+        en: >-
+          After the war she went to the Far East and spent 1950 to 1952 in Korea,
+          404 days on active patrol and enough shooting to wear out her 6-inch
+          guns. A modernization at Devonport followed in 1955, re-commissioning in
+          1959, and she paid off on 24 August 1963. The normal next stop was the
+          breaker's yard. Three things converged instead: in 1967 the Imperial War
+          Museum began investigating whether a Second World War cruiser could be
+          preserved and set up a committee; on 8 March 1971 a Commons adjournment
+          debate saw her former captain, Rear-Admiral Morgan-Giles, press the case
+          and the Under-Secretary of State agree to hold up disposal of the hull
+          until the end of June; and the HMS Belfast Trust was formed to take her
+          on. She was towed into the Pool of London on 14 October 1971, opened to
+          the public on Trafalgar Day, 21 October, and passed to IWM ownership
+          in 1978.
+      src: [iwm-hms-belfast-history, iwm-hms-belfast-histor10, hansard-1971-03-08, iwm-history9]
+
+history:
+  - id: build
+    title: { zh: 建造、触雷与大修（1936-1942）, en: Building, mining and dockyard hands }
+    range: { from: 1936, to: 1942 }
+    events:
+      - date: 1936-08-15
+        text:
+          zh: >-
+            与姊妹舰 Edinburgh 同日订造，属 1936 年估算案。本舰交
+            Harland & Wolff（贝尔法斯特）建造，Edinburgh 交 Swan Hunter（Wallsend）。
+          en: >-
+            Ordered on the same day as her sister Edinburgh under the 1936
+            Estimates — Belfast from Harland & Wolff at Belfast, Edinburgh from
+            Swan Hunter at Wallsend.
+        src: [naval-history-belfast, naval-history-edinburgh]
+
+      - date: 1936-12-10
+        text:
+          zh: >-
+            铺龙骨，船台号 1000。IWM 的讲解记录说这个号是专为她留的，
+            下水之前她一直就叫「Project #1000」，下水才成为 Belfast。
+          en: >-
+            Laid down as yard number 1000. IWM's account notes the number was
+            reserved for her: until she was launched she was known simply as
+            Project #1000, and only then became Belfast.
+        src: [navypedia-edinburgh, iwm-hms-belfast-launch]
+
+      - date: 1938-03-17
+        text:
+          zh: >-
+            圣帕特里克节下水，命名人是首相内维尔·张伯伦的妻子 Anne Chamberlain。
+            她是哈兰德与沃尔夫在贝尔法斯特下水过的最大、最重要的一艘。
+          en: >-
+            Launched on St Patrick's Day by Anne Chamberlain, wife of the then
+            Prime Minister Neville Chamberlain. She was the largest and most
+            important vessel ever launched by Harland & Wolff in the city of
+            Belfast.
+        src: [iwm-hms-belfast-history, navypedia-edinburgh, iwm-hms-belfast-launch]
+
+      - date: 1939-08-05
+        text:
+          zh: >-
+            服役，编入本土舰队，首任舰长 Captain G A Scott DSO RN。
+            两天前的 8 月 3 日是完工并开始验收试航，不是服役日。
+          en: >-
+            Commissioned for service in the Home Fleet under Captain G A Scott
+            DSO RN. Completion and the start of acceptance trials had come two
+            days earlier, on 3 August — that was not the commissioning date.
+        src: [iwm-hms-belfast-history, naval-history-belfast]
+
+      - date: 1939-10-09
+        text:
+          zh: >-
+            拦截并押回德国邮船 Cap Norte（13,000 GRT）。该船伪装成中立国船只
+            试图返回德国，是二战中被俘的最大敌国商船；全舰官兵因此获得奖金。
+          en: >-
+            Intercepted and sent in the German liner Cap Norte (13,000 GRT),
+            which was trying to reach Germany disguised as a neutral vessel. She
+            was the largest enemy merchant ship taken in the war, and the crew
+            received prize money for her capture.
+        src: [naval-history-belfast, iwm-history3]
+
+      - date: 1939-11-21
+        text:
+          zh: >-
+            上午 11 点前驶离罗塞斯、出福斯湾时引爆一枚磁性水雷。伤亡很轻，
+            但爆炸的鞭状效应沿全舰传导，龙骨被折断，全舰设备普遍损坏。
+            她自行返回罗塞斯；1940 年 6 月自行驶往德文波特，退役归船厂管辖。
+          en: >-
+            Shortly before 11 a.m., leaving Rosyth and the Firth of Forth, she
+            detonated a magnetic mine. Casualties were light, but the whiplash of
+            the explosion ran the length of the ship, broke her back and damaged
+            equipment throughout. She returned to Rosyth, and in June 1940 made
+            her own passage to Devonport, paying off into dockyard control.
+        src: [naval-history-belfast, iwm-history3]
+
+      - date: 1940-08
+        text:
+          zh: >-
+            开始加装中部外部防雷突出部，工程持续到 12 月：舰宽 19.3 → 20.2 m、
+            深载吃水 6.48 → 7.06 m、标准排水量 → 11,500 t、航速降 2 节，
+            突出部外侧另加 102 mm 装甲带。同期的 1941 年修理期内逐步装齐
+            雷达：Type 281 对空警戒、273 水面探测、284 主炮火控、283 与 285
+            副炮/高炮火控 —— 这是本舰第一次拥有雷达。
+          en: >-
+            Work began on external bulges around the centre armour, running to
+            December: beam 19.3 to 20.2 m, deep draught 6.48 to 7.06 m, standard
+            displacement to 11,500 tons and two knots lost, with a new 102 mm
+            belt over the bulges. Through the 1941 repair period radar was
+            progressively fitted — Type 281 for air warning, 273 for surface
+            detection, 284 for main-armament fire control and 283 and 285 for the
+            secondary and AA armament — the first radar the ship ever carried.
+        src: [naval-history-belfast, navypedia-edinburgh]
+
+      - date: 1942-10
+        text:
+          zh: >-
+            重新服役并完成改装后试航，11 月赴斯卡帕湾训练，随后编入本土舰队
+            第 10 巡洋舰分队并任分队旗舰。同一次改装还拆除了 2 座四联
+            0.5 英寸机枪，换装 14 门 20 mm Oerlikon。
+          en: >-
+            Re-commissioned and carried out post-refit trials, worked up at Scapa
+            Flow in November and joined the 10th Cruiser Squadron, Home Fleet, as
+            its flagship. The same refit landed two quadruple 0.5-inch machine
+            guns and shipped fourteen 20 mm Oerlikons.
+        src: [naval-history-belfast, navypedia-edinburgh]
+
+  - id: arctic
+    title: { zh: 北极护航与北角海战（1943-1944）, en: The Arctic convoys and North Cape }
+    range: { from: 1943, to: 1944 }
+    events:
+      - date: 1943-02-14
+        text:
+          zh: >-
+            以 Force R 旗舰身份（Burnett 少将坐镇）从 Loch Ewe 出航掩护
+            JW53 编队，出航因一台绞盘故障推迟两天。途中遭遇飓风级风暴，
+            Sheffield 结构严重受损退出，由 Norfolk 接替。
+          en: >-
+            Sailed from Loch Ewe as flagship of Force R under Rear-Admiral
+            Burnett to cover convoy JW53, departure delayed two days by a
+            defective capstan. Hurricane-force gales in the passage damaged
+            Sheffield so badly that she was withdrawn and replaced by Norfolk.
+        src: [naval-history-belfast, iwm-history4]
+
+      - date: 1943-06
+        text:
+          zh: >-
+            再加装 4 门单装 20 mm Oerlikon，近程高炮由 14 门增至 18 门。
+          en: >-
+            A further four single 20 mm Oerlikons were added, taking the
+            close-range armament from fourteen to eighteen barrels.
+        src: [navypedia-edinburgh]
+
+      - date: 1943-12-26
+        text:
+          zh: >-
+            北角海战。与 Norfolk、Sheffield 编为 Force 1，用雷达保持接触并把
+            沙恩霍斯特向南驱赶，直至约克公爵的 14 英寸炮接战；围歼末段与
+            Jamaica 一起奉命用鱼雷实施击沉。全舰获 NORTH CAPE 1943 战功表彰。
+          en: >-
+            Battle of North Cape. With Norfolk and Sheffield as Force 1 she held
+            radar contact and drove Scharnhorst south until Duke of York's 14-inch
+            guns could engage, then in the final stage joined Jamaica in the
+            torpedo attack ordered to finish her. The ship was awarded the battle
+            honour NORTH CAPE 1943.
+        src: [naval-history-belfast, iwm-history5]
+
+      - date: 1944-04-03
+        text:
+          zh: >-
+            随约克公爵、安森及巡洋舰 Royalist、Sheffield、Jamaica 组成掩护兵力，
+            支援胜利号等航母空袭阿尔滕峡湾的提尔皮茨（Operation TUNGSTEN）。
+            提尔皮茨被命中 15 枚炸弹，虽未沉没但数月不能出海。
+          en: >-
+            Formed part of the covering force with Duke of York, Anson and the
+            cruisers Royalist, Sheffield and Jamaica for carrier air attacks on
+            Tirpitz in Altenfjord (Operation TUNGSTEN). Tirpitz was hit by fifteen
+            bombs and, though not sunk, could not put to sea for several months.
+        src: [naval-history-belfast, iwm-history6]
+
+  - id: normandy
+    title: { zh: 诺曼底与远东（1944-1947）, en: Normandy, then the Far East }
+    range: { from: 1944, to: 1947 }
+    events:
+      - date: 1944-05
+        text:
+          zh: >-
+            受命支援诺曼底登陆（Operation NEPTUNE），在克莱德河口与 Diadem 会合，
+            任炮击编队 E 旗舰（Dalrymple-Hamilton 少将），配属东特遣舰队。
+            预定目标是 Ver-sur-Mer 炮台，并为 Juno 滩头提供舰炮支援。
+          en: >-
+            Nominated to support the Normandy landings (Operation NEPTUNE), joined
+            Diadem in the Clyde estuary and became flagship of Bombardment Force E
+            under Rear-Admiral Dalrymple-Hamilton in the Eastern Naval Task Force.
+            Her allocated target was the gun battery at Ver-sur-Mer, with naval
+            gunfire support for Juno.
+        src: [naval-history-belfast, iwm-history7]
+
+      - date: 1944-06-06
+        text:
+          zh: >-
+            0527 以全舷侧向左开火，支援 LOVE 滩头突击。西侧另一艘巡洋舰已在
+            0523 先开火，故她是当天最先开火的军舰之一，不是第一艘。
+            1300 起开始接收滩头送来的伤员。
+          en: >-
+            Opened fire at 0527 "with full broadside to port" in support of the
+            assault on LOVE beach. Another cruiser to the west had fired at 0523,
+            so she was one of the very first ships to open fire rather than the
+            first. From 1300 casualties began arriving on board.
+        src: [iwm-8-things-dday, naval-history-belfast]
+
+      - date: 1944-07-08
+        text:
+          zh: >-
+            与战列舰 Rodney、浅水重炮舰 Roberts 及巡洋舰 Argonaut、Diadem 一起
+            轰击卡昂外围，这是她在欧洲水域最后一次射击。此后在诺曼底海面
+            共待了 33 天，打出 4,000 余发 6 英寸与 1,000 发 4 英寸炮弹。
+          en: >-
+            Bombarded the approaches to Caen with the battleship Rodney, the
+            monitor Roberts and the cruisers Argonaut and Diadem — her last shoot
+            in European waters. In all she spent 33 days off Normandy, firing over
+            4,000 6-inch and 1,000 4-inch shells.
+        src: [iwm-history7, iwm-8-things-dday]
+
+      - date: 1944-09
+        text:
+          zh: >-
+            赴德文波特改装并换装电子设备：Type 281B 换 281 作对空警戒、
+            Type 293 换 273Q 作水面警戒、Type 274 换 284 作主炮火控，
+            另加 IFF 与 PPI 显示器。同时拆掉弹射器与水上飞机、2 座双联 4 英寸
+            炮座、8 门单装 20 mm，加装 4 座四联与 4 门单装 2-pdr。
+            **拆的是 4 英寸炮座，四座 6 英寸炮塔全部保留** —— 全城级只有她做到。
+          en: >-
+            Went to Devonport for refit and new electronics: Type 281B replaced
+            281 for air warning, 293 replaced 273Q for surface warning and 274
+            replaced 284 for main-armament fire control, with IFF and PPI displays
+            added. The catapult and seaplanes, two twin 4-inch mountings and eight
+            single 20 mm guns came off; four quadruple and four single 2-pdr went
+            on. What was landed were 4-inch mountings — all four 6-inch turrets
+            stayed, a distinction she alone held among the Towns.
+        src: [naval-history-belfast, navypedia-edinburgh, navweaps-6in-50-mk23]
+
+      - date: 1945-08
+        text:
+          zh: >-
+            日本投降后改调南中国海的英国第 111 特遣编队，编为第 111.3 特遣群，
+            抵上海执行收复与英侨遣返，并协助撤离日本战俘营与平民拘留营的幸存者。
+            1949 年 4 月紫石英号事件期间，远东站总司令 Brind 上将的旗挂在香港的
+            本舰上，给 Amethyst 代理舰长 Kerans 少校的命令全部从本舰发出；
+            本舰未直接参战。
+          en: >-
+            After the Japanese surrender she was diverted to the British Task Force
+            111 in the South China Sea as part of Task Group 111.3, reaching
+            Shanghai for re-occupation duty and the repatriation of British
+            subjects, and helping evacuate survivors of Japanese prisoner of war
+            and civilian internment camps. During the Amethyst incident of April
+            1949 the Commander-in-Chief Far East Station, Admiral Sir Patrick
+            Brind, flew his flag in her at Hong Kong and every order sent to
+            Amethyst's temporary commander emanated from Belfast; the ship was not
+            herself engaged.
+        src: [naval-history-belfast, iwm-history8]
+
+  - id: korea
+    title: { zh: 朝鲜战争、现代化与保存（1950-1971）, en: Korea, modernization and preservation }
+    range: { from: 1950, to: 1971 }
+    events:
+      - date: 1950-07
+        text:
+          zh: >-
+            朝鲜战争爆发后仅 11 天即投入炮击，是英国最早参战的军舰之一，
+            支援撤退中的韩军与美军。整场战争中她在巡逻线上待了 404 天，
+            炮击次数多到把 6 英寸炮身打废。
+          en: >-
+            In action off Korea only eleven days after the North Korean invasion,
+            among the very first British ships engaged, bombarding in support of
+            retreating South Korean and American troops. She spent 404 days on
+            active patrol during the war and fired so many salvos that her 6-inch
+            guns were worn out.
+        src: [iwm-history9, iwm-hms-belfast-history]
+
+      - date: 1952-09-27
+        text:
+          zh: >-
+            启航回国，这是她最后一次实战射击。此后由 Ceylon 接替，
+            她回英国重新服役再赴远东，继续任第 5 巡洋舰分队旗舰。
+          en: >-
+            Sailed for home, having fired her guns in action for the last time.
+            She was relieved by Ceylon, re-commissioned in the UK and returned to
+            the Far East as flagship of the 5th Cruiser Squadron.
+        src: [iwm-history9, naval-history-belfast]
+
+      - date: 1959
+        text:
+          zh: >-
+            完成德文波特现代化改装后重新服役：拆掉全部 2-pdr 与单装 Bofors，
+            换装 6 座双联 40 mm/60（12 门），加装 4 部 Type 903 火控雷达。
+            主炮 12 门 6 英寸与 8 门 4 英寸不变。1961 年 12 月进入达累斯萨拉姆
+            参加坦噶尼喀独立庆典，承担降下英国国旗、升起坦噶尼喀国旗的仪仗。
+          en: >-
+            Re-commissioned after modernization at Devonport: all 2-pdrs and
+            single Bofors landed, six twin 40 mm/60 mountings and four Type 903
+            fire-control radars shipped, the twelve 6-inch and eight 4-inch guns
+            unchanged. In December 1961 she entered Dar-es-Salaam for the granting
+            of independence to Tanganyika, providing the guard for the final
+            hauling-down of the Union Flag and the first hoisting of the
+            Tanganyikan flag.
+        src: [navypedia-edinburgh, iwm-hms-belfast-spec, iwm-hms-belfast-histor10]
+
+      - date: 1963-08-24
+        text:
+          zh: >-
+            在德文波特退役，将官旗最后一次降下。全生涯航程近 50 万海里。
+            随后系泊于 Fareham Creek 待处置，一度被用作朴次茅斯的住宿船。
+            按常规，下一站就是拆船厂。
+          en: >-
+            Paid off at Devonport and her Admiral's flag hauled down for the last
+            time, after nearly half a million miles steamed in her operational
+            life. She lay at Fareham Creek awaiting disposal and was for a time
+            used as an accommodation ship at Portsmouth. The normal next stop was
+            the breaker's yard.
+        src: [iwm-hms-belfast-histor10, naval-history-belfast]
+
+      - date: 1967
+        text:
+          zh: >-
+            帝国战争博物馆开始研究保存一艘二战巡洋舰的可行性，成立 Belfast 委员会
+            （主席为 IWM 馆长 Noble Frankland），成员含国家海事博物馆与 IWM 代表。
+            委员会报告的结论是：保存的理由非常充分，这不是在挑选贝尔法斯特，
+            而是在抓住最后一次机会。
+          en: >-
+            The Imperial War Museum began investigating whether a Second World War
+            cruiser could be preserved, and the Belfast Committee was set up under
+            its director, Dr Noble Frankland, with representatives of the National
+            Maritime Museum and IWM. Its report concluded that there was a very
+            strong case for preservation — that this was not a matter of selecting
+            Belfast but of grasping the last opportunity.
+        src: [hansard-1971-03-08, iwm-hms-belfast-history]
+
+      - date: 1971-03-08
+        text:
+          zh: >-
+            下院休会辩论。本舰前舰长 Morgan-Giles 少将力陈保存，并说明
+            HMS Belfast Trust 正在组建、已获伦敦池泊位；国防部次官 Peter Kirk
+            答称拆除设备已无法中止，但同意在 6 月底前搁置舰体的处置。
+          en: >-
+            Commons adjournment debate. Her former captain, Rear-Admiral
+            Morgan-Giles, pressed the case and reported that the HMS Belfast Trust
+            was being formed and had a berth in the Pool of London; the
+            Under-Secretary of State, Peter Kirk, replied that de-equipping could
+            not now be halted but that disposal of the hull would be held up until
+            the end of June.
+        src: [hansard-1971-03-08]
+
+      - date: 1971-10-21
+        text:
+          zh: >-
+            政府于 7 月将舰移交 HMS Belfast Trust，10 月 14 日拖抵伦敦池系泊，
+            10 月 21 日特拉法加日对公众开放。1978 年所有权转交帝国战争博物馆。
+          en: >-
+            Ownership passed to the HMS Belfast Trust in July; she was towed into
+            the Pool of London on 14 October and opened to the public on Trafalgar
+            Day, 21 October. Ownership passed to the Imperial War Museum in 1978.
+        src: [iwm-hms-belfast-histor10, iwm-hms-belfast-launch, iwm-hms-belfast-history]

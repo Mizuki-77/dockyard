@@ -1,0 +1,322 @@
+# ============================================================================
+# 舰艇正文 —— 陸奥（Mutsu）
+# ----------------------------------------------------------------------------
+# 体例：intro 分节、history 分节带逐条事件，每条事件都能追到 data/sources.yaml
+# 里已登记、且非 E 层的来源。
+#
+# 本文的写作纪律（与 nagato.yaml 同一套）：
+#   1. 有争议的数字一律并列，不裁决。本级最要紧的一处争议是爆沉原因，
+#      本站按「内部自爆」与「潜艇击沉」两说并列，另附第三、第四说，一条不删。
+#   2. 不做「日本海军隐瞒真相」这类未经来源支撑的判断；只写来源写了的动作
+#      （回收漂浮物、冒用呼号、分散幸存者），并注明这是 TROM 的记载。
+#   3. 不用「据说」类词语。查不到的不写。
+# ============================================================================
+ship: mutsu
+updated: 2026-11-28
+
+intro:
+  lead:
+    zh: >-
+      陆奥是长门型战列舰二号舰，1921 年 10 月 24 日竣工，与长门同为世界上最早装上
+      16 英寸级主炮的战列舰之一。她一生几乎没打过一场真正的海战，却以另一种方式进了
+      海军史：1943 年 6 月 8 日在柱岛泊地停泊时，三号炮塔弹药库爆炸，舰体断成两截沉没，
+      1,121 人死亡——日本海军最惨重的非战斗损失。
+    en: >-
+      Mutsu, second of the Nagato class, was completed on 24 October 1921 and carried the
+      same 16-inch-class main battery as her sister. She fought almost no fleet action, yet
+      entered naval history another way: on 8 June 1943, while moored at Hashirajima, her
+      No. 3 turret magazine exploded, the ship broke in two and sank, and 1,121 men died —
+      the heaviest non-combat loss in the history of the Imperial Japanese Navy.
+
+  paragraphs:
+    - heading: 一艘差点被条约拆掉的船
+      text:
+        zh: >-
+          陆奥的名字在 1922 年华盛顿会议上被单独点过一次。美国代表提议把刚建成的陆奥拆毁
+          ——按条约的主力舰吨位比例，新建成的主力舰正是最该被砍的那一类。日本代表团的主张是：
+          陆奥已于 1921 年 9 月 10 日服役、且已航行 2,500 海里，属现役舰而非在建舰。
+          这个说法最后被接受，陆奥保住了。navypedia 另记一条日方的论据：她的一部分建造经费
+          由小学生捐款募集。值得注意的是 TROM 自身有一处内部矛盾——它的舰史年表记陆奥竣工于
+          1921 年 10 月 24 日，却在引述会议主张时写「已于 1921 年 9 月 10 日服役」。
+          本站把两处原话并列保留，不裁决：前者是舰史年表，后者是会议上的外交陈述。
+        en: >-
+          Mutsu was singled out at the Washington Conference in 1922, when the American
+          delegation proposed scrapping the brand-new ship. Japan argued that she had been
+          commissioned on 10 September 1921 and had already steamed 2,500 nautical miles,
+          making her an existing active ship. The argument was accepted. The TROM itself is
+          internally inconsistent here — its chronology has her completed on 24 October 1921 —
+          and both statements are reproduced side by side.
+      src: [combinedfleet-mutsu-trom, navypedia-nagato]
+
+    - heading: 二十年的「旅馆」
+      text:
+        zh: >-
+          从 1921 年服役到 1943 年爆沉，陆奥的履历表大部分是训练、演习、检阅与港内待命。
+          她做过御召舰（1927 年 10 月横滨湾观舰式上天皇以本舰为座舰）、接待过英国威尔士亲王
+          与蒙巴顿勋爵（1922 年 4 月 12 日）、参加过关东大地震后的救援输送、
+          并在 1932-33 与 1934-36 两次大改。
+          **她唯一一次驶出日本内海参加的前线行动是 1942 年 8 月的瓜岛方向**：8 月 11 日随
+          近藤信竹的前进部队从横须贺出击，8 月 17 日抵特鲁克；8 月 20 日近藤把她留在特鲁克，
+          TROM 给出的理由是「unable to keep pace with his heavy cruisers」——25 节的航速
+          在 1942 年已经跟不上重巡。8 月 24 日东所罗门海战中，美军 SBD 把千歳号水上机母舰
+          误认成「一艘陆奥型战列舰」并声称将其击伤。
+          此后她回到内海，直到爆沉。
+        en: >-
+          Between 1921 and 1943 Mutsu's record is largely exercises, manoeuvres, reviews and
+          time at anchor. Her only front-line deployment outside the Inland Sea was the
+          Guadalcanal operation of August 1942: she sailed with Kondo's Advance Force on
+          11 August, reached Truk on 17 August, and was left behind on 20 August because she
+          could not keep pace with his heavy cruisers. At the Eastern Solomons on 24 August
+          US dive-bombers misidentified the seaplane carrier Chitose as "a Mutsu-class
+          battleship" and claimed to have set her on fire.
+      src: [combinedfleet-mutsu-trom]
+
+    - heading: 1943 年 6 月 8 日，1213
+      text:
+        zh: >-
+          那天陆奥停在柱岛与周防大岛之间的旗舰浮标上。10 时 30 分，舰上接入 113 名
+          予科練（第 11 期甲种飞行预备学生 13 期）与 40 名土浦海军航空队教官参观。
+          11 时 45 分，因长门预计 13 时返港，甲板人员准备把舰移到二号浮标；当时浓雾，
+          能见度只有 500 码。舰上弹药满载，其中包括 16.1 英寸三式「撒霰弹」燃烧防空弹
+          ——每枚重 1,853 磅、内含 735 枚子弹药；每座炮塔弹药库有 240 发（每门 120 发），
+          其中 50 发是三式弹。12 时 13 分，三号炮塔弹药库爆炸。
+          几海里外的长门上，第一舰队司令长官清水光美看到一团刺眼的白光，随后收到扶桑号
+          舰长鹤冈信道大佐的明码电报：「陆奥爆炸了！」
+        en: >-
+          That day Mutsu lay at the flagship buoy between Hashirajima and Suo-Oshima. At 1030
+          she embarked 113 flight-reserve cadets and 40 instructors of the Tsuchiura Naval Air
+          Group. At 1145, with Nagato expected back about 1300, her deck crew prepared to shift
+          to No. 2 buoy in fog with 500 yards visibility. Her magazines were full, including
+          16.1-inch Type 3 incendiary anti-aircraft shells weighing 1,853 lbs each with 735
+          submunitions; each turret magazine held 240 rounds, 50 of them Type 3. At 1213 the
+          No. 3 turret magazine exploded.
+      src: [combinedfleet-mutsu-trom]
+
+    - heading: 断成两截，以及为什么至今还在争
+      text:
+        zh: >-
+          舰体断成两截：535 英尺的前段向右舷倾覆、迅速下沉，最终以塔式舰桅着底；
+          147 英尺的尾段倒立着浮在水面，直到 6 月 9 日凌晨约 2 时才沉（33-58N, 132-24E）。
+          在舰 1,474 人，救起 353 人，死亡 1,121 人（含舰长三好辉彦与副长小野亨，
+          两人均追晋少将）；来访的 40 名教官与 113 名学生中只有 13 人生还。
+          **爆因两说并列，不裁决：**
+          一是内部自爆——M 委员会（委员长盐泽幸一海军大将）调查两个月，确认三式弹不会
+          自行引爆（幸存者看到的棕红色烟与三式弹的白烟不符，102 DC1 发射药常温下低于 80 °C
+          不能自燃），结论是爆炸「most likely caused by human interference」，
+          并指向一名因轻微盗窃被控、原定 6 月 8 日在吴出庭的三号炮塔枪水兵。
+          二是被潜艇（或鱼雷机／袖珍潜艇）击沉——这一说始终未被排除，日本海军官员数个月后
+          还就英国 X-craft 袭击提尔皮茨的细节询问过德国驻日海军武官 Wenneker 少将，
+          1944-03-02 美军墨尔本无线电情报单位 FRUMEL 也记有「战俘确称陆奥在近海被鱼雷击中」。
+          此外尚有「海底未爆深弹引爆」与「三式弹静电引燃」两说。四说并存，本站不裁决。
+          这场沉没还带出两个后续：一是海军随即回收任何可能暴露舰名的漂浮物、偶尔冒用陆奥呼号
+          维持她仍在远海的假象、并把幸存者大批分散调往塔拉瓦、马金、夸贾林与塞班
+          （约 150 人去了塞班，1944 年美军进攻马里亚纳时几乎全部阵亡）；
+          二是 1943-07-22 潜水员报告舰体「bent like a broken nail」后，海军仍一度打算
+          三个月内把她修回战列线，直到一次六人小型潜艇查看失败（挂住栏杆、艇内军官几乎窒息）
+          才判定无法打捞。
+        en: >-
+          The ship broke in two: the 535-ft forward section capsized to starboard and came to
+          rest on its pagoda mast, while the 147-ft stern section floated upright until about
+          0200 on 9 June. Of 1,474 men aboard, 353 were rescued and 1,121 died, including her
+          captain and executive officer; only 13 of the visiting instructors and cadets survived.
+          Two explanations stand side by side: internal explosion — the M-Commission under
+          Admiral Shiozawa Koichi ruled out spontaneous detonation of the Type 3 shells and
+          concluded the blast was "most likely caused by human interference" — and torpedoing by
+          a submarine, torpedo plane or midget submarine, never excluded and still being pursued
+          with the German naval attaché months later. Two further theories, unexploded depth
+          charges on the seabed and electrostatic ignition of Type 3 filling, also exist. The
+          site does not adjudicate.
+      src: [combinedfleet-mutsu-trom]
+
+history:
+  - id: build
+    title: { zh: 建造与服役, en: Building and commissioning }
+    range: { from: 1918, to: 1921 }
+    events:
+      - date: 1918-06-01
+        text:
+          zh: >-
+            在横须贺海军工厂开工，设计师是造船中佐（后为造船中将）山本开造。 建造期遇到的具体障碍是西屋电气公司未能按期交付本舰订购的汽轮机减速齿轮， 只好在吴海军工厂另造一套。
+          en: >-
+            Laid down at Yokosuka Navy Yard, designed by Constructor Captain Yamamoto Kaizo. Completion was delayed partly because Westinghouse failed to deliver her turbine reduction gear; a replacement was made at Kure Naval Arsenal.
+        src: [combinedfleet-mutsu-trom, navypedia-nagato, kasado-nagato-names]
+      - date: 1920-05-31
+        text:
+          zh: >-
+            15 时下水。典礼由贞明皇后携其长子、海军中佐皇太子裕仁（后来的昭和天皇）出席 ——本级两舰下水礼中规格最高的一次。
+          en: >-
+            Launched at 1500; the ceremony was attended by Empress Sadako and her eldest son, Crown Prince Hirohito, then a lieutenant-commander in the Navy.
+        src: [combinedfleet-mutsu-trom, kasado-nagato-names]
+      - date: 1921-10-19
+        text:
+          zh: >-
+            在馆山外海试航，以 87,479 轴马力达到 26.728 节。这是本级唯一有「航速 + 对应轴马力」 成对记载的实测数据，比设计值 80,000 轴马力高 9.3%。
+          en: >-
+            On trials off Tateyama she attained 26.728 knots on 87,479 shp — the only paired speed-and-power trial figure recorded for the class.
+        src: [combinedfleet-mutsu-trom]
+      - date: 1921-10-24
+        text:
+          zh: >-
+            竣工服役，编入佐世保镇守府，首任舰长小牧自然大佐。navypedia 把本舰竣工日记为 1921-11-22，与 TROM、kasado 的 10-24 相差 29 天，两说并列不裁决。
+          en: >-
+            Completed and commissioned, attached to Sasebo Naval District, Captain Komaki Shizen commanding. Navypedia gives 22 November 1921, 29 days later, and both dates are recorded.
+        src: [combinedfleet-mutsu-trom, kasado-nagato-names, navypedia-nagato]
+  - id: treaty
+    title: { zh: 华盛顿条约与战前二十年, en: The Washington Treaty and the interwar years }
+    range: { from: 1922, to: 1939 }
+    events:
+      - date: 1922-02-06
+        text:
+          zh: >-
+            华盛顿会议。美方提议拆解陆奥，日方以「已于 1921-09-10 服役、已航行 2,500 海里」 为由主张其为现役舰，最终保住本舰。条约同时取消了八八舰队计划， 本级因两舰均已建成而成为日本此后十八年里最新锐的主力舰。
+          en: >-
+            At the Washington Conference the US proposed scrapping Mutsu; Japan argued she had been commissioned on 10 September 1921 and had already steamed 2,500 nautical miles, and she was saved. The treaty also cancelled the 8-8 programme.
+        src: [combinedfleet-mutsu-trom, navypedia-nagato]
+      - date: 1922-04-12
+        text:
+          zh: >-
+            英国威尔士亲王爱德华（后为爱德华八世）乘战列巡洋舰声望号抵横滨国事访问。 清晨第一舰队各舰升白舰旗，以 76 mm 高角炮鸣 21 响；威尔士亲王与副官蒙巴顿勋爵 登上陆奥与长门参观，两舰均挂皇家旗。 同月本舰在佐世保海军工厂改装，前烟囱加装弧形挡烟罩（比长门的那块略厚），舰尾搭载一具 Caquot 式系留气球；1924 年 12 月气球撤掉。
+          en: >-
+            The Prince of Wales arrived at Yokohama in HMS Renown; the First Fleet hoisted White Ensigns and fired a 21-gun salute. The Prince and his ADC Lord Louis Mountbatten visited Mutsu and Nagato, both flying royal pennants. That same month a Sasebo refit gave her a slightly thicker curved smoke deflector on the fore funnel and a Caquot captive balloon on the fantail, the balloon being landed in December 1924.
+        src: [combinedfleet-mutsu-trom]
+      - date: 1923-09-01
+        text:
+          zh: >-
+            关东大地震。第一舰队正在朝鲜湾长山群岛，收到消息后于 9 月 2 日驶往九州； 9 月 4 日陆奥与长门抵九州内浦湾装载粮食、物资与医疗用品，当日即驶往横须贺。 途中 9 月 3 日下午舰队以 20 节进入台风区，长门右舷炮廓被浪淹没、出现危险横倾。
+          en: >-
+            The Great Kanto Earthquake. The First Fleet was in the Korea Bay; Mutsu and Nagato loaded food, provisions and medical supplies at Uchinoura Bay on 4 September and sailed for Yokosuka, having passed through a typhoon area the previous afternoon.
+        src: [combinedfleet-mutsu-trom, combinedfleet-nagato-trom]
+      - date: 1924-03-30
+        text:
+          zh: >-
+            奄美大岛西北 8 海里的拖曳演习中，长门舰长误判本舰漂移，与陆奥发生擦碰。 两舰紧急避让均无伤亡，长门丢失一具锚、船壳板轻微受损。
+          en: >-
+            Nagato grazed Mutsu during towing exercises off Amami Oshima; no casualties, but Nagato lost an anchor and suffered minor hull-plate damage.
+        src: [combinedfleet-mutsu-trom, combinedfleet-nagato-trom]
+      - date: 1927-01-20
+        text:
+          zh: >-
+            佐世保改装（至 5 月 28 日）：为减少大浪中的上浪，舰首加装一段 2 米长的舷弧； 主桅右舷桁端加强以支撑外伸式吊机臂；搭载 1 架横厂 E1Y2 一四式水上侦察机。 ——这是本舰外形上一个容易漏掉的细节：舰首比长门同期略高。
+          en: >-
+            A Sasebo refit added a two-metre sheer section to the bow to reduce spray, strengthened the mainmast starboard yardarm for an outrigger derrick, and embarked one Yokosho E1Y2 floatplane.
+        src: [combinedfleet-mutsu-trom]
+      - date: 1927-10-20
+        text:
+          zh: >-
+            横滨湾。本舰先于 9 月 12-30 日在横须贺被改装为「御召舰」，随后在当年观舰式上 作为天皇座舰。1927 年内她两度承担这一角色。
+          en: >-
+            Converted to an Imperial inspection vessel at Yokosuka in September, Mutsu served as the Emperor's flagship at that year's Naval Review in Yokohama Bay.
+        src: [combinedfleet-mutsu-trom]
+      - date: 1933-01-30
+        text:
+          zh: >-
+            佐世保改装完成（1932-02-27 起）：全部 8 cm/40 高角炮拆除，换 4 座双联 12.7 cm/40 八九式与 2 座双联 40 mm 维克斯机炮；两座背负式主炮塔各装 10 米双联测距仪； 前烟囱后方新建格构式探照灯塔、装 4 具 110 cm 探照灯；主桅与三番炮塔之间装 吴式二号三型改二中线弹射器；搭载 3 架中岛 E4N2 二型水上侦察机。 1933-11~12 又装 2 具九一式高射装置（配 4.5 米 Barr & Stroud 体视式测距仪） ——这一项是陆奥先改，长门同期无对应记载。
+          en: >-
+            Completed at Sasebo: all 8 cm AA guns replaced by four twin 12.7 cm Type 89 and two twin 40 mm Vickers mounts, 10-m rangefinders fitted to both superfiring turrets, a lattice searchlight tower with four 110 cm lights erected, a Kure Type 2 Model 3 catapult installed and three E4N2 floatplanes embarked. Two Type 91 HA directors followed in late 1933.
+        src: [combinedfleet-mutsu-trom, navypedia-nagato]
+      - date: 1933-02-03
+        text:
+          zh: >-
+            联合舰队司令长官的将旗由金刚移到陆奥。她在 1933-06-13 至 10-03 间正式任联合舰队旗舰， 并在 7 月特鲁克外海的大演习中率蓝队对抗以长门为旗舰的红队。 ——本级两舰都当过联合舰队旗舰，这一点常被「长门长期是旗舰」的说法盖掉。
+          en: >-
+            The Combined Fleet flag moved from Kongo to Mutsu; she was formally flagship from 13 June to 3 October 1933 and led the Blue Fleet against Nagato's Red Fleet in the July manoeuvres off Truk.
+        src: [combinedfleet-mutsu-trom]
+      - date: 1934-09-05
+        text:
+          zh: >-
+            在横须贺海军工厂开始第一次大改装（1936-09-30 完成，比长门晚 8 个月）： 舰体尾部加长（全长 215.8→224.9 m）、加防雷突出部、拆除全部鱼雷发射管、 加厚弹药库与机舱上方水平装甲、拆除前烟囱、20 座原锅炉全换为 10 座重油专烧、 汽轮机现代化、上层建筑重建；四座主炮塔换成为加贺／土佐准备的新炮座， 主炮仰角提到 +43°，副炮由 20 门减到 18 门、仰角提到 35°； 装吴式二号五型弹射器与折叠吊车（1936-07-11 换成二号五型改一，左舷加 4 吨吊车）。 改装后 1936-07-27 试航实测 25.283 节（设计 25 节）。
+          en: >-
+            Began her first major reconstruction at Yokosuka, completed 30 September 1936: hull lengthened, bulges fitted, torpedo tubes landed, deck armour thickened, fore funnel removed, boilers cut from 20 to 10 oil-fired, all four turrets replaced, elevation raised to 43 degrees, secondary battery cut to 18 guns, and a Kure Type 2 Model 5 catapult with a collapsible crane installed. On post-refit trials on 27 July 1936 she reached 25.283 knots.
+        src: [combinedfleet-mutsu-trom, navypedia-nagato, kasado-nagato]
+      - date: 1937-08-20
+        text:
+          zh: >-
+            从爱媛县御殿滨港出发，载运第 22 步兵联队两个大队（1,948 人）前往上海， 途中与长门会合。8 月 22 日抵上海外海，两舰水上机起飞轰炸浦东、义宁桥 与达昌一带的中国军事设施；8 月 24 日陆奥的九五式水上机继续为上海方面的 海军陆战队提供支援。
+          en: >-
+            Sailed from Mitohama with two battalions (1,948 men) of the 22nd Infantry Regiment for Shanghai, rendezvousing with Nagato. On 22 August their floatplanes bombed Chinese positions in the Pudong area, Yining bridge and Dachang.
+        src: [combinedfleet-mutsu-trom]
+      - date: 1938-12-15
+        text:
+          zh: >-
+            转入预备舰做防空强化：40 mm 维克斯机炮全部拆除，换 10 座双联 25 mm 九六式（20 门）； 机载改为 1 架川崎 E7K2 九四式与 3 架中岛 E8N2 九五式水上侦察机。 **这就是她的最终防空配置，到沉没为止一挺没加过。**
+          en: >-
+            Placed in reserve for an AA upgrade: the 40 mm Vickers guns were replaced by twenty Type 96 25 mm guns in ten twin mounts, and the aircraft complement changed to one E7K2 and three E8N2 floatplanes. That remained her final AA fit.
+        src: [combinedfleet-mutsu-trom, navypedia-nagato]
+  - id: war
+    title: { zh: 太平洋战争, en: The Pacific War }
+    range: { from: 1941, to: 1943 }
+    events:
+      - date: 1941-12-08
+        text:
+          zh: >-
+            珍珠港事件当日，第一战队从柱岛出击至小笠原群岛方向。12 月 11 日 09:00 转向西北返航时， 陆奥因液压遥控传动系统压力骤降导致舵机故障，掉队 15 分钟。
+          en: >-
+            BatDiv 1 sortied from Hashirajima towards the Bonin Islands. On 11 December a sudden loss of pressure in the hydraulic telemotor system caused a steering failure and she fell 15 minutes behind the force.
+        src: [combinedfleet-mutsu-trom]
+      - date: 1942-06-05
+        text:
+          zh: >-
+            中途岛海战。陆奥与长门、大和同在第一舰队主力，在机动部队后方 300 海里， 全程未与美军接触。6 月 5 日主力与撤退的机动部队会合后，陆奥收容了 赤城号约一半的幸存者（另一半由长门收容），并为第三、第十水雷战队的驱逐舰加油。
+          en: >-
+            At Midway she was with the Main Body 300 miles behind Nagumo's carriers and never engaged. On 5 June she took aboard about half of Akagi's survivors and refuelled destroyers of DesRons 3 and 10.
+        src: [combinedfleet-mutsu-trom]
+      - date: 1942-08-11
+        text:
+          zh: >-
+            随近藤信竹第二舰队前进部队从横须贺出击前往特鲁克，参与瓜岛方向作战 ——这是陆奥唯一一次驶出日本内海参加的前线行动。8 月 17 日抵特鲁克后编入支援部队 的舰队辎重；8 月 20 日近藤把她留在特鲁克，理由是「unable to keep pace with his heavy cruisers」。8 月 24 日东所罗门海战中，美军 SBD 把千歳号水上机母舰 误认成「一艘陆奥型战列舰」并声称将其击伤起火。 9 月 5 日她与护航舰返回特鲁克，此后未再出内海。
+          en: >-
+            Sailed with Kondo's Advance Force for Truk — her only front-line deployment outside the Inland Sea. Left behind at Truk on 20 August because she could not keep pace with the heavy cruisers; at the Eastern Solomons on 24 August US dive-bombers mistook the seaplane carrier Chitose for "a Mutsu-class battleship".
+        src: [combinedfleet-mutsu-trom]
+      - date: 1943-01-29
+        text:
+          zh: >-
+            在横须贺第 5 船渠清洗舰底并维护（至 2 月 6 日），机载改为 2 架三菱 F1M2 零式水上观测机。2 月 15 日离横须贺返柱岛，此后恢复训练勤务。
+          en: >-
+            Dry-docked in No. 5 dock at Yokosuka for hull cleaning; her aircraft complement changed to two Mitsubishi F1M2 floatplanes. She returned to Hashirajima on 15 February.
+        src: [combinedfleet-mutsu-trom]
+  - id: loss
+    title: { zh: 1943-06-08 爆沉与身后, en: The loss of 8 June 1943 and after }
+    range: { from: 1943, to: 1972 }
+    events:
+      - date: 1943-06-08
+        text:
+          zh: >-
+            10 时 30 分接入 113 名予科練与 40 名土浦海军航空队教官参观；11 时 45 分因长门 预计 13 时返港而准备移泊二号浮标，当时浓雾、能见度 500 码。12 时 13 分 三号炮塔弹药库爆炸，舰体断为两截：535 英尺前段向右舷倾覆、迅速沉没并以塔式 舰桅着底；147 英尺尾段倒立上浮。柱岛泊地随即实施反潜警戒，未发现潜艇。
+          en: >-
+            Embarked 113 cadets and 40 instructors at 1030; at 1145 prepared to shift to No. 2 buoy in fog with 500 yards visibility. At 1213 the No. 3 turret magazine exploded and the ship broke in two. An anti-submarine alert was raised immediately; no submarine was sighted.
+        src: [combinedfleet-mutsu-trom, navypedia-nagato]
+      - date: 1943-06-09
+        text:
+          zh: >-
+            约 02:00，尾段沉没，几乎直立地停在广岛湾约 130 英尺水深处（33-58N, 132-24E）。 最终死亡 1,121 人，含舰长三好辉彦与副长小野亨，两人均追晋少将； 在舰 1,474 人，生还 353 人（长门收容了辰田号救起的那一批）。 M 委员会同日成立，由盐泽幸一海军大将主持，调查历时两个月。
+          en: >-
+            At about 0200 the stern section sank and came to rest nearly upright in about 130 feet of water. Final losses totalled 1,121 of 1,474 aboard, including her captain and executive officer, both promoted posthumously. The M-Commission was convened the same day under Admiral Shiozawa Koichi.
+        src: [combinedfleet-mutsu-trom]
+      - date: 1943-07-22
+        text:
+          zh: >-
+            潜水员报告舰体「bent like a broken nail」，但海军仍提出把她打捞、拖回吴港入坞、 三个月内重返战列线。为说服上级，派一艘改装的六人西村式小型潜艇下去查看， 结果挂住栏杆，艇上军官几乎全部窒息才脱困。最终判定无法打捞。
+          en: >-
+            Divers reported the wreck "bent like a broken nail", yet the Navy still proposed raising her and returning her to the line within three months; a modified six-man midget submarine sent to inspect her snagged on a railing and its officers nearly suffocated before it broke free. She was finally judged beyond salvage.
+        src: [combinedfleet-mutsu-trom]
+      - date: 1943-09-01
+        text:
+          zh: >-
+            从海军舰船名册除名。此前海军已开始掩盖：吴警备队回收任何可能暴露舰名的漂浮物， 无线电里偶尔冒用陆奥的呼号制造她仍在远海的假象，幸存者则被大批分散调往 塔拉瓦、马金、夸贾林与塞班（约 150 人去塞班，1944 年美军进攻马里亚纳时 几乎全部阵亡）。1943-08-15 停留在扶桑号上的幸存者转乘长门，经八岛、横须贺 前往特鲁克，上岸后编入当地第 41 警备队预备队。
+          en: >-
+            Removed from the Navy List. The Navy had already begun a cover-up: Kure Guard Force collected flotsam that might reveal her identity, her call sign was occasionally used on the radio, and survivors were widely dispersed — some 150 to Saipan, where almost all were killed in 1944.
+        src: [combinedfleet-mutsu-trom]
+      - date: 1944-07
+        text:
+          zh: >-
+            燃油极度紧张的日本海军在陆奥残骸底部开孔，抽出 580 吨燃料油供舰艇使用 ——这艘沉在自家泊地的战列舰，最后又当了一次油库。
+          en: >-
+            With fuel critically short, the Navy cut a hole in the wreck's bottom and pumped out 580 tons of fuel oil for its ships.
+        src: [combinedfleet-mutsu-trom]
+      - date: 1970-07-23
+        text:
+          zh: >-
+            深田サルベージ（Fukada Salvage）自 1970-03-20 取得打捞权后开始大规模作业。 四号炮塔出水，并在塔内找到当年失踪的那名枪水兵的遗体，凭制服口袋里的两枚私章 确认身份。1971-03-15/16 舰尾段出水，1972-02 舰首段吊起； 1972-11 陸奥記念館在屋代岛开幕，1978 年打捞结束，1994-04-27 纪念馆迁入新馆。
+          en: >-
+            Turret No. 4 was raised, and the body of the missing gunner's mate was found inside, identified by two personal seals in his uniform pocket. The stern was raised in March 1971 and the bow in February 1972; the Mutsu Memorial Museum opened in November 1972.
+        src: [combinedfleet-mutsu-trom, kasado-nagato-names]

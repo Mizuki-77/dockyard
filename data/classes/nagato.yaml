@@ -1,0 +1,1775 @@
+# ============================================================================
+# 長門型戦艦（Nagato class）舰级公共数据
+# ----------------------------------------------------------------------------
+# 只放长门与陆奥两舰**共有**的设计值、装甲布置与武器/炮位实体。
+# 两舰不同的部分（建造日期、逐次改装节点、编制、雷达、战历、结局）
+# 写在 ships/nagato.yaml 与 ships/mutsu.yaml。
+#
+# 来源口径说明（写在这里，免得每条 fact 重复一遍）：
+#   · navypedia 的排水量只有 normal / full 两档，**竣工时不给 standard**（原文写 "---"）；
+#     改装后给 standard 39,120 + full 42,850。kasado 给「基準／公試」两档。
+#     两种口径体系不合并，各自成 fact。
+#   · 装甲厚度有三套独立来源：navypedia 的 Ship protection 两段（竣工时 / 改装后）、
+#     kasado 的六列装甲表（逐甲板逐炮塔分面）、navweaps 41 cm 页里引的
+#     Kindsepp「Nagato Details」与 Campbell「Naval Weapons of World War Two」。
+#     三家在炮塔正面与司令塔上直接打架，一律并列不裁决。
+#   · 主炮 41 cm/45 三年式的全部参数出自 navweaps 单页（tier C）。
+#     该页正文自己写「原本称 41 cm，1922-03-29 改称 40 cm，实际口径 41.0 cm」，
+#     本站按实际口径记 410 mm，伪装口径写进 note。
+#   · 副炮 14 cm/50、高炮 8 cm/40、25 mm 九六式、12.7 cm 八九式的 weapon 实体
+#     已在 data/classes/hosho.yaml、kongo.yaml、yamato.yaml 登记过，
+#     **本文件不重复登记**，只在炮位实体里用 mount.weapon 指过去。
+# ============================================================================
+
+id: nagato
+name:
+  zh: 长门型
+  en: Nagato class
+class_of: [nagato, mutsu]
+note: |
+  本文件登记两舰共有的设计值与武备布置，武备数量取「竣工时」与
+  「两舰均完成大改装后（1936-10 起）」两个状态；中间的逐舰改装节点
+  由单舰 fact 覆盖。
+  两舰最容易被写成「同级同型」的地方有三处，均已按来源分开：
+    1) 大改装工期不同（长门 1934-04 ~ 1936-01-31；陆奥 1934-09-05 ~ 1936-09-30），
+       故本文件的「改装后」状态一律从 1936-10-01 起算。
+    2) 陆奥竣工日 navypedia 记 1921-11-22，TROM 与 kasado 记 1921-10-24，
+       两说并列（见 ships/mutsu.yaml）。
+    3) 陆奥 1943-06-08 爆沉，此后本文件的舰级参数只对长门有效，
+       由 ships/nagato.yaml 的单舰 fact 接续。
+
+open_ended_note: |
+  本文件绝大多数 fact 的 valid.to 都留空，这是结构性的，不是漏填：
+  舰级设计参数的生效期从设计定案/服役起，到该级最后一艘损失或拆解为止，
+  期间不因改装而改变；实际战备状态随时间的变化写在 data/ships/<id>.yaml 的
+  状态切片里，由单舰 fact 覆盖。因此这里的 open 时间窗表示「无已知终止事件」。
+  注意：本级的「最后一艘」是长门（1946-07 沉没），而陆奥早在 1943-06 已损失，
+  故 1943-06 之后仍标注为有效的舰级参数，实际只对长门成立。
+
+facts:
+  # ---------------------------------------------------------------- 身份
+  - field: identity.name_original
+    value: 長門型戦艦
+    src: [kasado-nagato]
+    valid: { from: 1917-08-28 }
+    confidence: C
+    note: kasado 页题「長門型戦艦 Nagato class Battleship」。建造期两舰分别以「長門」「陸奥」为舰名，未用代号称谓。
+
+  - field: identity.name_zh
+    value: 长门型
+    src: [kasado-nagato]
+    valid: { from: 1917-08-28 }
+    confidence: C
+
+  - field: identity.name_en
+    value: Nagato class
+    src: [navypedia-nagato, combinedfleet-nagato-class]
+    valid: { from: 1917-08-28 }
+    confidence: C
+    note: navypedia 页题「NAGATO battleships (1920 - 1921)」；combinedfleet 页题「Nagato-class Battleship」。
+
+  - field: identity.name_note
+    value: 官方文书长期称主炮为「四〇糎」（40 cm），实际口径 41.0 cm
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1922-03-29 }
+    confidence: B
+    note: >
+      navweaps 原文："These guns were originally designated as 41 cm/45 3rd Year Type.
+      Redesignated as 40 cm/45 3rd Year Type on 29 March 1922. One Japanese historian
+      speculates that this was done so as to hide that the bore diameter exceeded the size
+      mandated by the Washington Naval Limitation Treaty of 1922. Actual bore diameter was
+      41.0 cm (16.14 inch)."
+      这是本站把任务书「注意是 41cm 不是 40cm」落到实处的依据：41 cm 是 1922 年前的旧称，
+      40 cm 才是 1922 年后的官方称法，两个都是真名，取决于时点。
+
+  - field: identity.ship_type
+    value: battleship
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: B
+
+  - field: identity.nation
+    value: japan
+    src: [navypedia-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: B
+
+  - field: identity.operator
+    value: 大日本帝国海軍
+    src: [kasado-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: B
+
+  - field: identity.era
+    value: ww2
+    src: [combinedfleet-nagato-trom]
+    valid: { from: 1941-12-08 }
+    confidence: C
+    note: >-
+      按本站收录口径（二战资料站）归 ww2。本级实际横跨 ww1 末与 interwar：
+      1920-11 / 1921-10 服役，长门活到 1946 年，舰龄 25 年以上。
+
+  - field: identity.building_program
+    value: 八四艦隊計画（"8-4" program），开工后并入八八艦隊計画
+    src: [navypedia-nagato]
+    valid: { from: 1917-08-28 }
+    confidence: C
+    note: >
+      navypedia 原文："In reply to accepted in the USA in 1916 ambitious shipbuilding program
+      Japanese parliament has approved the so-called '8-4' program ... it was provided to build
+      four more battleships. Nagato and Mutsu should become the first Japanese battleships not
+      only built, but also completely designed in Japan."
+      同段另记两舰开工后「moved to the program '8-8', becoming the first of eight battleships
+      and eight battlecruisers with guns in not less than 410mm calibre」，该计划被 1922 年
+      华盛顿会议取消。
+
+  # ---------------------------------------------------------------- 排水量
+  # 竣工时两舰的「标准排水量」：navypedia 写 "---"，kasado 写「N/A」，
+  # 两个来源都没有这个值，故整条不写。见 RESEARCH-NOTES「未获取」清单。
+  - field: displacement.full
+    value: 38500
+    unit: t
+    src: [navypedia-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: C
+    note: >
+      navypedia 「Displacement full, t | 38500」（as completed 栏）。
+      与 kasado 的満載 38,802 t 并列，不裁决。
+
+  - field: displacement.full
+    value: 38802
+    unit: t
+    src: [kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: C
+    note: >
+      另一说。kasado「満載排水量 38,802t」（長門竣工時）。与 navypedia 的 38,500 t 并列，
+      差 302 t，两源均未说明测量状态，不裁决。
+
+  - field: displacement.full
+    value: 42850
+    unit: t
+    src: [navypedia-nagato, combinedfleet-nagato-class]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: >
+      navypedia 「Displacement full, t | 42850」（1938, after modernization 栏）；
+      combinedfleet 舰级页「Displacement | 42,850 tons」。两源一致。
+
+  - field: displacement.standard
+    value: 39120
+    unit: t
+    src: [navypedia-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: >
+      navypedia 「Displacement standard, t | 39120」（1938, after modernization 栏）。
+      **竣工时无此档**（同表该栏写 "---"），故本条只从改装完成起算。
+
+  - field: displacement.standard
+    value: 39050
+    unit: t
+    src: [kasado-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: >
+      另一说。kasado「基準排水量 39,050t」（大改装後 栏）。
+      与 navypedia 的 39,120 t 并列，差 70 t，不裁决。
+      TROM 1943-01-31 条另记 "Her standard displacement is now 39,130-tons"——第三说，
+      与上述两值同列而不合并（见 RESEARCH-NOTES §5）。
+
+  - field: displacement.trial
+    value: 43439
+    unit: t
+    src: [kasado-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: >
+      kasado「公試排水量 43,439t」（大改装後 栏）。navypedia 不给公试值，
+      故本条只有单一来源。日方「公試排水量」与英美 trial displacement 并非同一测量状态，
+      按 kasado 的日文原词记入本字段并在正文说明。
+
+  # 「常備排水量 33,860 t」（kasado 竣工時栏）注册表无常備字段，无处安放，
+  # 只在 RESEARCH-NOTES 留档，不写 fact（避免把它塞进 standard 或 full 造成口径混用）。
+
+  # ---------------------------------------------------------------- 尺度
+  - field: dimensions.length.oa
+    value: 215.8
+    unit: m
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: B
+    note: navypedia「Length, m | 213.3 wl 215.8 oa」；kasado「全長 215.8m」（長門・陸奥竣工時）。两源一致。
+
+  - field: dimensions.length.oa
+    value: 224.9
+    unit: m
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: B
+    note: navypedia「221.1 wl 224.9 oa」（改装后）；kasado「全長 224.9m」（大改装後／長門 1944-10／1945-02 各栏同值）。TROM 记改装为「hull is lengthened aft」，与加长 9.1 m 相符。
+
+  - field: dimensions.length.wl
+    value: 213.3
+    unit: m
+    src: [navypedia-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: C
+    note: navypedia「Length, m | 213.3 wl 215.8 oa」。与 kasado 的 213.6 m 并列，不裁决。
+
+  - field: dimensions.length.wl
+    value: 213.6
+    unit: m
+    src: [kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: C
+    note: 另一说。kasado「水線長 213.6m」（竣工時）。与 navypedia 的 213.3 m 差 0.3 m，不裁决。
+
+  - field: dimensions.length.wl
+    value: 221.1
+    unit: m
+    src: [navypedia-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: navypedia「221.1 wl 224.9 oa」（改装后）。与 kasado 的 222.1 m 并列，不裁决。
+
+  - field: dimensions.length.wl
+    value: 222.1
+    unit: m
+    src: [kasado-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: 另一说。kasado「水線長 222.1m」（大改装後）。与 navypedia 的 221.1 m 差 1.0 m，不裁决。
+
+  - field: dimensions.beam.wl
+    value: 29.0
+    unit: m
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: B
+    note: navypedia「Breadth, m | 29.0」；kasado「最大幅 29.0m / 水線幅 29.0m」（竣工時）。两源一致。
+
+  - field: dimensions.beam.wl
+    value: 34.6
+    unit: m
+    src: [kasado-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: >
+      kasado「水線幅 34.6m」（大改装後）。navypedia 给 33.0 m，两说并列不裁决。
+      差 1.6 m，与「加装防雷突出部」这一改动量级相符，但两源均未说明是否把突出部计入。
+
+  - field: dimensions.beam.wl
+    value: 33.0
+    unit: m
+    src: [navypedia-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: 另一说。navypedia「Breadth, m | 33.0」（改装后）。与 kasado 的 34.6 m 并列，不裁决。
+
+  - field: dimensions.beam.max
+    value: 29.0
+    unit: m
+    src: [kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: C
+    note: kasado「最大幅 29.0m」（竣工時）。同期水線幅同为 29.0 m，可证此阶段无外张突出部。
+
+  - field: dimensions.beam.max
+    value: 34.6
+    unit: m
+    src: [kasado-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: kasado「最大幅 34.6m」（大改装後）。navypedia 的 33.0 m 见 dimensions.beam.wl 条，两说并列。
+
+  - field: dimensions.draught.mean
+    value: 9.10
+    unit: m
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: B
+    note: navypedia「Draught, m | 9.10」；kasado「吃水 9.10m」（長門竣工時）。两源一致，口径为常備状態的平均吃水。
+
+  - field: dimensions.draught.mean
+    value: 9.49
+    unit: m
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: B
+    note: navypedia「Draught, m | 9.49」（改装后）；kasado「吃水 9.49m」（大改装後）。两源一致。
+
+  # ---------------------------------------------------------------- 动力
+  - field: propulsion.plant_type
+    value: steam_turbine
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: B
+    note: navypedia「4 sets Gihon geared steam turbines」；kasado「技本式オールギヤードタービンエンジン:4基」。
+
+  - field: propulsion.shafts
+    value: 4
+    unit: count
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: B
+    note: navypedia「No of shafts | 4」；kasado「4軸」。改装后仍为 4 轴。
+
+  - field: propulsion.boiler.count
+    value: 21
+    unit: count
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: B
+    note: >
+      navypedia「21 Kampon boilers」；kasado 分列「ロ号艦本式重油専焼水管缶:15基 +
+      ロ号艦本式炭油混焼水管缶:6基」= 21 基。两源合计一致。
+
+  - field: propulsion.boiler.type
+    value: ロ号艦本式水管缶（重油専焼 15 基＋炭油混焼 6 基）
+    src: [kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: C
+    note: >
+      kasado 原文如上。navypedia 只笼统写「21 Kampon boilers」，未分型。
+      「炭油混焼」是本级竣工时仍带煤舱的直接证据（见 fuel 条）。
+
+  - field: propulsion.boiler.count
+    value: 10
+    unit: count
+    src: [navypedia-nagato, kasado-nagato, combinedfleet-nagato-trom]
+    valid: { from: 1936-10-01 }
+    confidence: B
+    note: >
+      navypedia「10 Kampon boilers」；kasado「ロ号艦本式重油専焼水管缶:10基」（大改装後）。
+      TROM 1943 年前的改装条写作「four large Kampon oil-fired boilers in addition to six
+      rebuilt small boilers」= 10，与上述两源自洽。
+
+  - field: propulsion.boiler.type
+    value: ロ号艦本式重油専焼水管缶
+    src: [kasado-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: kasado「ロ号艦本式重油専焼水管缶:10基」。改装后全部改为重油専焼，煤舱取消。
+
+  - field: propulsion.turbine.count
+    value: 4
+    unit: count
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: B
+    note: navypedia「4 sets Gihon geared steam turbines」；kasado「技本式オールギヤードタービンエンジン:4基」。
+
+  - field: propulsion.turbine.type
+    value: 技本式（艦本式）全齿轮传动汽轮机
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: C
+    note: >
+      navypedia「Gihon geared steam turbines」；kasado「技本式オールギヤードタービン」。
+      注意陆奥的减速齿轮另有来源记载：TROM 作者注 [1]「The delay in MUTSU's completion was at
+      least partly caused by Westinghouse Electric Co.'s failure to deliver the turbine
+      reduction gear ordered for her. A new gear was manufactured at Kure Naval Arsenal」——
+      说明两舰的齿轮供货来源不同，但轮机本体型号两源均未逐舰区分，故仍在舰级层记同一型号。
+
+  - field: propulsion.turbine.type
+    value: 艦本式パーソンズ式全齿轮传动汽轮机
+    src: [navypedia-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: >
+      navypedia 改装后栏「4 sets Kampon-Parsons geared steam turbines」。
+      kasado 改装后栏仍记「技本式オールギヤードタービンエンジン:4基」，未提 Parsons，
+      两说并列不裁决：可能是「在原有轮机上加装 Parsons 式巡航轮机」与「整机换型」两种理解。
+
+  - field: propulsion.power.design
+    value: 80000
+    unit: hp
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: B
+    note: navypedia「Power, h. p. | 80000」；kasado「出力 80,000shp」（竣工時）。两源一致。
+
+  - field: propulsion.power.design
+    value: 82000
+    unit: hp
+    src: [navypedia-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: >
+      navypedia「Power, h. p. | 82000」（改装后）。kasado 改装后栏仍记 80,000shp，
+      两说并列不裁决。实船的试航功率远高于设计值（陆奥 87,479 shp），见 ships/mutsu.yaml。
+
+  - field: propulsion.speed.design
+    value: 26.5
+    unit: kn
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: B
+    note: >
+      navypedia「Max speed, kts | 26.5」；kasado「速力 26.5kt」（竣工時）。两源一致。
+      **注意**：combinedfleet 舰级速览页写「Speed | 27 knots」，与该页自身所引 TROM 的
+      实测值（长门 26.443 / 26.7 kn、陆奥 26.728 kn）及两艘设计值都不符，本站不采。
+
+  - field: propulsion.speed.design
+    value: 25.0
+    unit: kn
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: B
+    note: >
+      navypedia「Max speed, kts | 25」；kasado「速力 25.0kt」（大改装後）。两源一致。
+      TROM 明写降速原因是排水量增加：「As a result of increase in displacement, the NAGATO's
+      maximum speed drops to 25 knots.」
+
+  - field: propulsion.fuel.type
+    value: 石炭＋重油（混焼）
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: B
+    note: navypedia「Fuel, t | coal 1600 + oil 3400」；kasado「重油:3,400t 石炭:1,600t」。两源一致。
+
+  - field: propulsion.fuel.capacity
+    value: 3400
+    unit: t
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: B
+    note: >
+      本字段只装重油。同期的石炭 1,600 t 无对应字段，记于 propulsion.fuel.type 条与本 note：
+      navypedia「coal 1600 + oil 3400」；kasado「重油:3,400t 石炭:1,600t」。两源一致。
+
+  - field: propulsion.fuel.capacity
+    value: 5600
+    unit: t
+    src: [navypedia-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: >
+      navypedia「Fuel, t | oil 5600」（改装后）。kasado 记 5,670 t，两说并列不裁决，差 70 t。
+
+  - field: propulsion.fuel.capacity
+    value: 5670
+    unit: t
+    src: [kasado-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: 另一说。kasado「重油:5,670t」（大改装後）。与 navypedia 的 5,600 t 并列，不裁决。
+
+  - field: propulsion.range.max
+    value: 5500
+    unit: nmi
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: B
+    note: navypedia「Endurance, nm(kts) | 5500(16)」；kasado「16.0kt / 5,500nm」（竣工時）。两源一致，16 节下 5,500 海里。
+
+  - field: propulsion.range.at_speed
+    value: 16
+    unit: kn
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: B
+    note: 续航力对应的航速，两源均记 16 节。与 propulsion.range.max 成对解读。
+
+  - field: propulsion.range.max
+    value: 8560
+    unit: nmi
+    src: [navypedia-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: navypedia「Endurance, nm(kts) | 8560(16)」（改装后）。与 kasado 的 8,650 nm 并列，不裁决。
+
+  - field: propulsion.range.max
+    value: 8650
+    unit: nmi
+    src: [kasado-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: 另一说。kasado「16.0kt / 8,650nm」（大改装後）。与 navypedia 的 8,560 nm 差 90 nm，不裁决。
+
+  - field: propulsion.range.at_speed
+    value: 16
+    unit: kn
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: B
+    note: 改装后两源仍均以 16 节为续航条件。
+
+  # ---------------------------------------------------------------- 装甲：竣工时
+  - field: protection.scheme
+    value: incremental
+    src: [navypedia-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: >
+      **这是分类判断，来源本身没有用过「incremental」这个词，故 confidence 记 C。**
+      依据是 navypedia 的装甲描述为「主装甲带从 305 mm 向下缘渐减到 76 mm、舷外另有一道
+      203 mm 上带、下甲板 51 mm 平甲以 76 mm 斜板接主带下缘、炮廓 152 mm」——
+      一整套按部位与高度分层、不封闭成单盒的布置。
+      与「all_or_nothing」（单层装甲盒、无中等厚度舷侧）不吻合，故不取该值。
+
+  - field: protection.armor.thickness
+    value: 305
+    unit: mm
+    qual: { part: belt, region: main }
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: B
+    note: >
+      navypedia「Main belt extended from No1 to No4 barbettes and had 305mm thickness between
+      barbettes, tapering to 76mm at lower edge」；kasado「水線部舷側装甲 305mm」（六列全同值，
+      即改装后也未变）。两源一致：主装甲带厚度从服役到沉没没动过。
+
+  - field: protection.armor.thickness
+    value: 76
+    unit: mm
+    qual: { part: lower_belt, region: lower }
+    src: [navypedia-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: 主装甲带下缘渐减厚度，原文「tapering to 76mm at lower edge」。这是「渐减式」而非「等厚式」的直接依据。
+
+  - field: protection.armor.thickness
+    value: 203
+    unit: mm
+    qual: { part: upper_belt, region: upper }
+    src: [navypedia-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: >
+      navypedia「Upper 203mm belt extended from main belt to upper deck and from No2 to No3
+      barbette (110m). It was closed by 203mm angled bulkheads.」
+      与 kasado「上部舷側装甲 229mm」冲突，两说并列不裁决（差 26 mm）。
+
+  - field: protection.armor.thickness
+    value: 229
+    unit: mm
+    qual: { part: upper_belt, region: upper }
+    src: [kasado-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: 另一说。kasado「上部舷側装甲 229mm」。与 navypedia 的 203 mm 并列，不裁决。
+
+  - field: protection.armor.thickness
+    value: 102
+    unit: mm
+    qual: { part: main_belt_aft, region: aft }
+    src: [navypedia-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: >
+      navypedia「Hull outside end barbettes was protected by 203mm belt tapered to 76mm at lower
+      edge, thickness of this belt decreased to 102mm near ship ends.」
+      本条记舰端处的最小值 102 mm。
+
+  - field: protection.armor.thickness
+    value: 330
+    unit: mm
+    qual: { part: bulkhead, region: fore }
+    src: [navypedia-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: >
+      navypedia「It closed by 330-254mm fore and 254mm aft bulkheads abreast end barbettes.」
+      本条取前部上缘 330 mm，254 mm 的下缘值见同字段另一条（region: aft 记 254）。
+
+  - field: protection.armor.thickness
+    value: 254
+    unit: mm
+    qual: { part: bulkhead, region: aft }
+    src: [navypedia-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: navypedia「254mm aft bulkheads」。后部隔壁均匀 254 mm。
+
+  - field: protection.armor.thickness
+    value: 70
+    unit: mm
+    qual: { part: deck, region: upper }
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: B
+    note: navypedia「Flat main 70mm deck connected with upper edge of main belt」；kasado「上甲板装甲 70mm」（六列全同值）。两源一致。
+
+  - field: protection.armor.thickness
+    value: 51
+    unit: mm
+    qual: { part: deck, region: lower }
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: B
+    note: navypedia「Lower deck had 51mm thickness in flat part」；kasado「下甲板装甲 中央部:51mm」（竣工時）。
+
+  - field: protection.armor.thickness
+    value: 76
+    unit: mm
+    qual: { part: slope, region: lower }
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: B
+    note: >
+      navypedia「connected with lower edge of main belt by 76mm slopes」；
+      kasado「下甲板装甲 外舷部:76mm」（竣工時）。两源一致。
+
+  - field: protection.armor.thickness
+    value: 152
+    unit: mm
+    qual: { part: belt, region: side }
+    src: [navypedia-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: >
+      navypedia「Lower casemate had 152mm armor. Upper casemate had only 25mm protection.」
+      本条记下炮廓 152 mm。上炮廓 25 mm 见同字段另一条（region: upper）。
+
+  - field: protection.armor.thickness
+    value: 25
+    unit: mm
+    qual: { part: belt, region: upper }
+    src: [navypedia-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: navypedia「Upper casemate had only 25mm protection」。这是本设计最薄的一处舷侧防护，1944 年莱特湾的副炮损失与此相关（见正文）。
+
+  - field: protection.armor.thickness
+    value: 305
+    unit: mm
+    qual: { part: turret, region: face }
+    src: [kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: C
+    note: >
+      kasado「主砲塔 前面:305mm」（竣工時）。**三方打架**：
+      navypedia 竣工时栏「turrets: 356 - 127」（炮塔 356 至 127，未分面）；
+      navweaps 41 cm 页引 Kindsepp「Nagato Details」「Face: 11.7 in (29.9 cm)」= 299 mm；
+      kasado 记 305 mm。三值并列，不裁决。
+
+  - field: protection.armor.thickness
+    value: 356
+    unit: mm
+    qual: { part: turret, region: face }
+    src: [navypedia-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: C
+    note: >
+      第二说。navypedia 竣工时栏「turrets: 356 - 127」，356 为上限、127 为下限，
+      原文未说明 356 属哪一面，按常理归炮塔正面。与 kasado 的 305、navweaps 的 299 并列，不裁决。
+
+  - field: protection.armor.thickness
+    value: 299
+    unit: mm
+    qual: { part: turret, region: face }
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: C
+    note: >
+      第三说。navweaps 原文「Armor thickness of original turrets as given in "Nagato Details"
+      by Sander Kindsepp: Face: 11.7 in (29.9 cm) / Sides: 8.8 in (22.4 cm) / Rear: 7.4 in
+      (18.7 cm) / Roof: 4.9 - 5.9 in (12.5 - 14.9 cm) / Floor: 3.9 in (10.0 cm)」。
+      11.7 in 换算为 297 mm，原文给 29.9 cm，本站按原文取 299 mm。
+
+  - field: protection.armor.thickness
+    value: 178
+    unit: mm
+    qual: { part: turret, region: side }
+    src: [kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: C
+    note: >-
+      kasado「主砲塔 側面:178mm」。navweaps 引 Kindsepp「Sides: 8.8 in (22.4 cm)」= 224 mm，两说并列不裁决。
+
+  - field: protection.armor.thickness
+    value: 190
+    unit: mm
+    qual: { part: turret, region: rear }
+    src: [kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: C
+    note: >-
+      kasado「主砲塔 後面:190mm」。navweaps 引 Kindsepp「Rear: 7.4 in (18.7 cm)」= 187 mm，两说差 3 mm，属换算取整，按两值并列记但不裁决。
+
+  - field: protection.armor.thickness
+    value: 152
+    unit: mm
+    qual: { part: turret, region: roof }
+    src: [kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: C
+    note: >
+      kasado「主砲塔 天蓋前部:152mm / 天蓋後部:127mm」。本条记前部 152 mm。
+      后部 127 mm 见同字段另一条。navweaps 引 Kindsepp 的「Roof: 4.9 - 5.9 in
+      (12.5 - 14.9 cm)」= 125-149 mm，与该 127/152 组合大致吻合。
+
+  - field: protection.armor.thickness
+    value: 127
+    unit: mm
+    qual: { part: turret, region: top }
+    src: [kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: C
+    note: >-
+      kasado「主砲塔 天蓋後部:127mm」。记于 region: top 以与前部 152 mm（region: roof）区分，两值同属炮塔顶盖。
+
+  - field: protection.armor.thickness
+    value: 305
+    unit: mm
+    qual: { part: barbette, region: side }
+    src: [kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: C
+    note: >
+      kasado「一番/四番主砲塔バーベット部 側面:305mm / 二番/三番 側面:305mm」（竣工時）。
+      四座炮塔的炮座侧面同为 305 mm。炮座正面/后面逐座不同，见另两条。
+
+  - field: protection.armor.thickness
+    value: 254
+    unit: mm
+    qual: { part: barbette, region: fore }
+    src: [kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: C
+    note: >
+      kasado「一番/四番主砲塔バーベット部 前面:254mm」。二番/三番的炮座正面为 229 mm，
+      见同字段另一条。navypedia 只给区间「barbettes: 305 - 229」（305 至 229），与这两值吻合。
+
+  - field: protection.armor.thickness
+    value: 229
+    unit: mm
+    qual: { part: barbette, region: rear }
+    src: [kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: C
+    note: >-
+      kasado「二番/三番主砲塔バーベット部 前面:229mm」。记于 region: rear 表示后部两座炮座的朝前一面，与一番/四番的 254 mm 区分。
+
+  - field: protection.armor.thickness
+    value: 356
+    unit: mm
+    qual: { part: conning_tower, region: side }
+    src: [navypedia-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: >
+      navypedia「CT had 356mm sides and 102mm roof」。与 kasado「司令塔 前面:330mm 側面:330mm
+      天蓋:178mm」冲突，两说并列不裁决（侧壁 356 vs 330，顶盖 102 vs 178，两处都打架）。
+
+  - field: protection.armor.thickness
+    value: 330
+    unit: mm
+    qual: { part: conning_tower, region: side }
+    src: [kasado-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: 另一说。kasado「司令塔 前面:330mm 側面:330mm」（六列全同值，改装后未变）。与 navypedia 的 356 mm 并列，不裁决。
+
+  - field: protection.armor.thickness
+    value: 178
+    unit: mm
+    qual: { part: conning_tower, region: roof }
+    src: [kasado-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: kasado「司令塔 天蓋:178mm」。navypedia 记 102 mm，两说并列不裁决。
+
+  - field: protection.underwater.depth
+    value: 6.5
+    unit: m
+    src: [navypedia-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: >
+      navypedia「Underwater protection was 6.5m deep and content 76-51mm longitudinal bulkhead」。
+      改装后同段文字仍记 6.5 m，即水下防护纵深未变（变的是加装突出部后的舷宽）。
+
+  # ---------------------------------------------------------------- 装甲：大改装后
+  - field: protection.armor.thickness
+    value: 127
+    unit: mm
+    qual: { part: deck, region: lower }
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: B
+    note: >
+      navypedia「Lower deck had 127mm thickness in flat part」（改装后）；
+      kasado「下甲板装甲 中央部:127mm」（大改装後）。两源一致——主装甲甲板由 51 加强到 127 mm。
+
+  - field: protection.armor.thickness
+    value: 192
+    unit: mm
+    qual: { part: slope, region: lower }
+    src: [kasado-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: >
+      kasado「下甲板装甲 外舷部:192mm」（大改装後）。navypedia 改装后段落仍写
+      「connected with lower edge of main belt by 76mm slopes」，即斜板 76 mm 未变，
+      与 kasado 的 192 mm 直接冲突，两说并列不裁决。
+
+  - field: protection.armor.thickness
+    value: 457
+    unit: mm
+    qual: { part: turret, region: face }
+    src: [navypedia-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: >
+      navypedia 改装后栏「turrets: 457 - 127」。**三方打架**：kasado 记「前面:508mm」；
+      navweaps 引 Campbell「Face: 18.1 in (46.0 cm)」= 460 mm。
+      457 / 508 / 460 三值并列，不裁决。
+
+  - field: protection.armor.thickness
+    value: 508
+    unit: mm
+    qual: { part: turret, region: face }
+    src: [kasado-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: 第二说。kasado「主砲塔 前面:508mm」（大改装後 / 1944-10 / 1945-02 三栏同值）。与 navypedia 的 457、navweaps 的 460 并列，不裁决。
+
+  - field: protection.armor.thickness
+    value: 460
+    unit: mm
+    qual: { part: turret, region: face }
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: >
+      第三说。navweaps「Armor thickness of new turrets used to rearm the Nagato class as given
+      in "Naval Weapons of World War Two" by John Campbell: Face: 18.1 in (46.0 cm) /
+      Sides: 11.0 in (28.0 cm) / Rear: 7.5 in (19.0 cm) / Roof: 9.8 - 9.0 in (25.0 - 23.0 cm)」。
+      18.1 in 精确换算为 459.7 mm，原文给 46.0 cm，本站取 460 mm。
+
+  - field: protection.armor.thickness
+    value: 280
+    unit: mm
+    qual: { part: turret, region: side }
+    src: [kasado-nagato, navweaps-41cm-45-3ns]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: >
+      kasado「主砲塔 側面:280mm」；navweaps 引 Campbell「Sides: 11.0 in (28.0 cm)」= 280 mm。
+      两源一致（这是本组装甲数据里少见的完全吻合项）。
+
+  - field: protection.armor.thickness
+    value: 190
+    unit: mm
+    qual: { part: turret, region: rear }
+    src: [kasado-nagato, navweaps-41cm-45-3ns]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: >-
+      kasado「主砲塔 後面:190mm」；navweaps 引 Campbell「Rear: 7.5 in (19.0 cm)」= 190 mm。两源一致。
+
+  - field: protection.armor.thickness
+    value: 250
+    unit: mm
+    qual: { part: turret, region: roof }
+    src: [kasado-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: >-
+      kasado「主砲塔 天蓋:250mm」。navweaps 引 Campbell「Roof: 9.8 - 9.0 in (25.0 - 23.0 cm)」= 250-230 mm，与该 250 mm 吻合（Campbell 给的是前厚后薄）。
+
+  - field: protection.armor.thickness
+    value: 429
+    unit: mm
+    qual: { part: barbette, region: side }
+    src: [kasado-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: >
+      kasado「一番/四番・二番/三番主砲塔バーベット部 側面:429mm」（大改装後，四座同值）。
+      navypedia 改装后栏「barbettes: 457 - 356」，与 429 mm 不符，两说并列不裁决。
+
+  - field: protection.armor.thickness
+    value: 457
+    unit: mm
+    qual: { part: barbette, region: fore }
+    src: [navypedia-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: >-
+      另一说。navypedia 改装后栏「barbettes: 457 - 356」，457 为上限。与 kasado 的 429 mm 并列，不裁决；kasado 的 429 是「側面」单值，navypedia 的 457-356 是未分面的区间。
+
+  # ---------------------------------------------------------------- 武备装载层
+  - field: armament.mount.summary
+    value: >
+      竣工时：4 × 2 41 cm/45 三年式（前二后二）+ 20 × 1 14 cm/50 三年式（炮廓）
+      + 4 × 1 8 cm/40 三年式高角炮 + 8 具 53.3 cm 鱼雷发射管（舷侧，水上 4 + 水下 4）
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: B
+    note: >
+      navypedia「4 x 2 - 410/45 3-shiki, 20 x 1 - 140/50 3-shiki, 4 x 1 - 76/40 3-shiki,
+      8 - 533 TT (beam)」；kasado「主砲 三年式 45口径41.0cm連装砲:4基／副砲 三年式 50口径14.0cm
+      単装砲:20基／対空火器 三年式 40口径7.6cm単装高角砲:4基／水雷兵装 53.3cm単装魚雷発射管
+      (水上固定式):4基、(水中固定式):4基」。两源完全一致。
+      注意 kasado 另记「三年式 115口径6.5mm単装機銃:22基」——6.5 mm 机枪，属轻武器，
+      本站不写（注册表无对应字段）。
+
+  - field: armament.mount.summary
+    value: >
+      两舰均完成大改装后：4 × 2 41 cm/45 三年式（换装自加贺/土佐未成舰的新炮座）
+      + 18 × 1 14 cm/50 三年式 + 4 × 2 12.7 cm/40 八九式高角炮
+      + 10 × 2 25 mm 九六式机铳；鱼雷发射管全部拆除
+    src: [navypedia-nagato, kasado-nagato, combinedfleet-nagato-trom]
+    valid: { from: 1936-10-01 }
+    confidence: B
+    note: >
+      navypedia「4 x 2 - 410/45 3-shiki, 18 x 1 - 140/50 3-shiki, 4 x 2 - 127/40 89-shiki,
+      10 x 2 - 25/60 96-shiki, 1 catapult, 3 seaplanes (E7K2)」；kasado 大改装後栏
+      「副砲 18基／八九式 40口径12.7cm連装高角砲:4基／九六式 60口径25mm連装機銃:10基」。
+      TROM 记改装内容含「Two upper deck secondary caliber guns are landed」与
+      「all torpedo tubes removed」，与 20→18、8→0 的变化吻合。
+
+  - field: armament.torpedo.tubes
+    value: 8
+    unit: count
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: B
+    note: >
+      navypedia「8 - 533 TT (beam)」；kasado「53.3cm単装魚雷発射管 (水上固定式):4基、
+      (水中固定式):4基」= 8 具。两源一致。
+      这是与后辈大和型的关键差别之一（大和型设计上就没有鱼雷发射管）。
+
+  - field: armament.torpedo.tubes
+    value: 0
+    unit: count
+    src: [navypedia-nagato, combinedfleet-nagato-trom, combinedfleet-mutsu-trom]
+    valid: { from: 1936-10-01 }
+    confidence: B
+    note: >
+      **这是「改装时全部拆除」，不是「未获取」。** navypedia 改装后栏 Armament 行已无 TT 项；
+      TROM 两舰改装条均明写「all torpedo tubes removed」（长门 1934-04-01 条、
+      陆奥 1934-09-05 条）。kasado 大改装後栏水雷兵装为「-」。
+
+  - field: armament.torpedo.diameter
+    value: 533
+    unit: mm
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: B
+    note: navypedia「533 TT」；kasado「53.3cm」。两源一致。
+
+  - field: armament.aa_25mm.count
+    value: 20
+    unit: count
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1938-01-01, to: 1943-06-07 }
+    confidence: C
+    note: >
+      navypedia「1938, both: - 2 x 1 - 40/62; + 10 x 2 - 25/60 96-shiki」——两舰同批换装，
+      10 座双联 = 20 门（按管数记）。kasado 改装后栏同为「九六式 60口径25mm連装機銃:10基」。
+      本条只覆盖到陆奥沉没前一天；此后的增长是长门单舰的事，见 ships/nagato.yaml。
+      另：navypedia 该行同时记「- 2 x 1 - 40/62」，即拆掉两门 40 mm/62 维克斯机炮，
+      40 mm 字段（armament.aa_40mm.count）注册表要求按管数记，1938 年前的具体数量两源均未给全，
+      故不写。
+
+  # ---------------------------------------------------------------- 主炮本体 41 cm/45
+  - about: weapon:41cm-45-3ns
+    field: weapon.designation
+    value: 41 cm/45 (16.1") 3rd Year Type（三年式 45 口径 41 cm 炮）
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1921 }
+    confidence: B
+    note: >
+      原文两行并记「41 cm/45 (16.1") 3rd Year Type」与「40 cm/45 (16.1") 3rd Year Type」，
+      Gun Characteristics 段 Designation 栏写「41 cm/45 (16.1") 3rd Year Type (Model 1914)」，
+      Official Designation「45 caliber 3rd Year Type 40 cm Gun」。本站取实际口径的 41 cm 名。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.nation
+    value: japan
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1921 }
+    confidence: B
+    note: 原文「These were the first large-caliber guns designed entirely in Japan.」
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.category
+    value: naval_gun
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1921 }
+    confidence: B
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.bore
+    value: 410
+    unit: mm
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1921 }
+    confidence: B
+    note: >
+      原文「Actual bore diameter was 41.0 cm (16.14 inch)」。名义 40 cm、实际 410 mm，
+      与任务书「注意是 41cm 不是 40cm」一致。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.caliber_length
+    value: 45
+    unit: ratio
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1921 }
+    confidence: B
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.caliber_method
+    value: unknown
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1921 }
+    confidence: C
+    note: >
+      navweaps 未声明 45 倍是膛线长法还是全长法，故记 unknown、不做换算。
+      可交叉的量：全长 18.840 m ÷ 0.410 m = 45.95；膛线长 15.629 m ÷ 0.410 = 38.1。
+      两者都不等于 45，说明 45 倍的基准既非全长也非膛线长。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.weight
+    value: 101600
+    unit: kg
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1921 }
+    confidence: B
+    note: 原文「Gun Weight | 100 tons (101.6 mt)」。100 长吨 = 101.6 公吨，本条记公吨换算后的 101,600 kg。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.length.oa
+    value: 18.840
+    unit: m
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1921 }
+    confidence: B
+    note: 原文「Gun Length oa | 741.7 in (18.840 m)」。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.length.bore
+    value: 18.394
+    unit: m
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1921 }
+    confidence: B
+    note: 原文「Bore Length | 720.24 in (18.394 m)」；另给「Rifling Length | 615.3 in (15.629 m)」。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.projectile_weight
+    value: 1020
+    unit: kg
+    qual: { shell_type: apc }
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1931-04-06 }
+    confidence: B
+    note: >
+      九一式彻甲弹（APC Type 91）。原文「APC Type 91: 2,249 lbs. (1,020 kg)」。
+      **前代弹重不另立 fact**：同一段另记「APC Type 5: 2,205 lbs. (1,000 kg)」
+      「APC No. 6 / Type 88: 2,205 lbs. (1,000 kg)」，九一式于 1931-04-06 采用并取代它们，
+      二战时 Type 5 只留岸防部队使用、Type 88 亦已退役，故不占同一字段的时间窗，只在此留档。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.projectile_weight
+    value: 938.5
+    unit: kg
+    qual: { shell_type: he }
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1931 }
+    confidence: B
+    note: >-
+      原文「Common Type 0 HE: 2,069 lbs. (938.5 kg)」。装药 44.3 kg。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.projectile_weight
+    value: 940
+    unit: kg
+    qual: { shell_type: aa }
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1938 }
+    confidence: B
+    note: >
+      三式通常弹（Common Type 3 IS，sankaidan 烧霰弹）。原文「Common Type 3 IS: 2,072 lbs.
+      (940 kg)」。这是本舰在莱特湾对空射击时实际打出去的弹种——
+      TROM 1944-10-24「1027: NAGATO opens fire with her main guns firing 'sanshikidans'」。
+      时间窗取 1938：该弹在 1930 年代后期才配发（navweaps 未给确切采用日，故 confidence 记 C 的边界，
+      本条按 1938 为保守起点）。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.muzzle_velocity
+    value: 780
+    unit: mps
+    qual: { shell_type: apc }
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1931-04-06 }
+    confidence: B
+    note: >-
+      原文「APC Type 91: 2,559 fps (780 mps)」，并注「New gun muzzle velocity was about 16 fps (5 mps) higher than this figure」——即新炮实测约 785 m/s，本条记服役值 780。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.muzzle_velocity
+    value: 805
+    unit: mps
+    qual: { shell_type: he }
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1931 }
+    confidence: B
+    note: >-
+      原文「Common Type 0 HE: 2,641 fps (805 mps)」。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.muzzle_velocity
+    value: 805
+    unit: mps
+    qual: { shell_type: aa }
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1938 }
+    confidence: B
+    note: >-
+      原文「Common Type 3 IS: 2,641 fps (805 mps)」。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.charge.weight
+    value: 224
+    unit: kg
+    qual: { charge_part: single, propellant: other }
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1921, to: 1931-04-05 }
+    confidence: B
+    note: >
+      原文「Propellant Charge | 1920s - 1930s: 494 lbs. (224 kg)」。
+      药包为四个分装（原文「The propellant charge was in four bags」），
+      注册表的 charge_part 枚举里没有「四包」这一档，故记 single 表示「一次装填的总药量」，
+      分装细节写在这里。propellant 记 other：110 C2 / 102 DC1 不在注册表的 rp_c32 等枚举内。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.charge.weight
+    value: 219
+    unit: kg
+    qual: { charge_part: single, propellant: other }
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1931-04-06 }
+    confidence: B
+    note: >
+      原文「World War II / For APC Type 88 - 494 lbs. (224 kg) 110 C2 or 102 DC1 /
+      For APC Type 91 - 483 lbs. (219 kg) 110 C2 or 102 DC1」。
+      即两种发射药重量不同但初速相同（原文注「Different propellant weights were used in order
+      to insure the same muzzle velocity」）。本条取九一式配用的 219 kg。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.charge.chamber_volume
+    value: 467.11
+    unit: dm3
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1921 }
+    confidence: B
+    note: 原文「Chamber Volume | 28,505 in3 (467.11 dm3)」。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.rate_of_fire
+    value: 2
+    unit: rpm
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1921 }
+    confidence: B
+    note: >
+      原文「Rate Of Fire | 1.5 - 2.5 rounds per minute」，附注「Firing cycle was 21.5 seconds
+      at low elevations, which probably means at the loading angle of +3 degrees」。
+      数值字段不能存区间，本条取上限 2，下限 1.5 记于此（取法与 yamato 的 46 cm 条一致）。
+      同页另引战后美军对日本岸防炮的调查：「the coastal artillery turrets could fire 1 round
+      per gun per minute」——那是岸防炮座的数据，不是舰上炮座。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.barrel_life
+    value: 250
+    unit: count
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1921 }
+    confidence: C
+    note: 原文「Approximate Barrel Life | 250 - 300 rounds」，取区间下限 250（与 kongo 的 36 cm 条同一取法）。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.ammo_outfit
+    value: 90
+    unit: count
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1921 }
+    confidence: B
+    note: 原文「Ammunition stowage per gun | About 90 rounds」（每门）。原文带 "About"，故为约数。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.range.max
+    value: 38725
+    unit: m
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1936-10-01 }
+    confidence: B
+    note: >
+      九一式彻甲弹在 43° 仰角下的射程，原文「43.0 degrees (max elevation of turret) |
+      42,350 yards (38,725 m)」。**这个射程是改装后才有的**：改装前炮座上限 30°，
+      同表 30° 对应 32,810 yards (30,000 m)。三式弹（HE）同仰角下只有 31,025 m，
+      原文单列，本条不合并。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.range.max_elevation
+    value: 43
+    unit: deg
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1936-10-01 }
+    confidence: B
+    note: >-
+      原文「Nagato class as modernized: -3 / +43 degrees」。改装前的上限为 +30°。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.elevation.min
+    value: -3
+    unit: deg
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1936-10-01 }
+    confidence: B
+    note: >-
+      原文「Nagato class as modernized: -3 / +43 degrees」。改装前为 -5°。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.elevation.max
+    value: 43
+    unit: deg
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1936-10-01 }
+    confidence: B
+    note: 与 weapon.range.max_elevation 同源同值，两者互为印证：43° 既是炮座上限也是最大射程对应仰角。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.elevation.min
+    value: -5
+    unit: deg
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1921, to: 1936-09-30 }
+    confidence: B
+    note: >-
+      原文「Original Design: -5 / +30 degrees」。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.elevation.max
+    value: 30
+    unit: deg
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1921, to: 1936-09-30 }
+    confidence: B
+    note: >-
+      原文「Original Design: -5 / +30 degrees」。TROM 记 1924 年美军情报已知「the maximum elevation of NAGATO and MUTSU's main guns is 25 degrees」，与 navweaps 的 +30° 冲突，两说并列不裁决（见正文）。
+
+  - about: weapon:41cm-45-3ns
+    field: weapon.in_service_from
+    value: 1921
+    unit: date
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1921 }
+    confidence: B
+    note: 原文「Date In Service | 1921」；「Date Of Design | 1914」。长门 1920-11 服役时主炮已装舰，故 1921 是炮的通用服役年而非本舰装舰年。
+
+  # ---------------------------------------------------------------- 炮位实体：主炮 4 座
+  - about: mount:41cm-no1
+    field: mount.label_name
+    value: 一番砲塔（前部一号炮塔）
+    src: [kasado-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: >
+      日方通称「一番砲塔 / 前部一番砲塔」。kasado 只按「連装砲:4基」给总数，
+      未逐座编号；编号依日方通称。navweaps 的炮塔装甲表亦按「Turret #1-#4」编号，
+      且记「Turret #4 from Mutsu was erected as a static display at the Naval Academy on Etajima」。
+
+  - about: mount:41cm-no1
+    field: mount.weapon
+    value: weapon:41cm-45-3ns
+    src: [navweaps-41cm-45-3ns, kasado-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: B
+
+  - about: mount:41cm-no1
+    field: mount.type
+    value: twin_turret
+    src: [navweaps-41cm-45-3ns, kasado-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: B
+    note: >-
+      navweaps「Two-gun Turrets / Original Design: Nagato (4)」；kasado「41.0cm連装砲:4基」。
+
+  - about: mount:41cm-no1
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1920-11-25 }
+    confidence: B
+    note: 原文「Two-gun Turrets」。全舰 4 座 × 2 门 = 8 门，与任务书「四座双联，共 8 门」一致。
+
+  - about: mount:41cm-no1
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1920-11-25 }
+    confidence: B
+    note: 同名炮位仅一座；全舰 4 座见 armament.mount.summary。
+
+  - about: mount:41cm-no1
+    field: mount.position
+    value: fore
+    src: [combinedfleet-mutsu-trom]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: >
+      TROM 陆奥 1932-33 改装条「Both superfiring main battery turrets are fitted with 10-m
+      duplex rangefinders」——「superfiring」两座即二番与三番，故一番在前部最低位、四番在后部最低位。
+      navweaps 附图注「Bow Turrets of Battleship Nagato」可证前部两座。
+
+  - about: mount:41cm-no1
+    field: mount.elevation.max
+    value: 30
+    unit: deg
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: C
+    note: >-
+      原文「Original Design: -5 / +30 degrees」。改装后升到 +43°，见另一条。
+
+  - about: mount:41cm-no1
+    field: mount.elevation.max
+    value: 43
+    unit: deg
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1936-10-01 }
+    confidence: B
+    note: >
+      原文「Nagato class as modernized: -3 / +43 degrees ... The maximum elevation of these
+      later mountings was also increased to +43 degrees during the rebuilds by deepening the
+      gun wells and lowering the revolving structure further down into the ships.」
+
+  - about: mount:41cm-no1
+    field: mount.weight
+    value: 1020000
+    unit: kg
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: C
+    note: >
+      原文「Weight | 1,004 tons (1,020 mt)」——这是原设计两联装炮座的全重。
+      **不是炮身重**（炮身 100 长吨，见 weapon.weight）。改装后换装的新炮座
+      「were somewhat larger and roomier」（原文），但新炮座重量来源未给，故不写改装后的值。
+
+  - about: mount:41cm-no1
+    field: mount.traverse
+    value: 约 ±130°（受炮座间距限制）
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: >
+      原文「Train | about +/- 130 degrees」，附注「These turret pairs were grouped close together,
+      which limited their maximum train angle. Adm. Hiraga was trying to limit the overall length
+      of the Nagato class and some compromises were made ... the turret spacings were less than
+      ideal.」这是本级为了压全长付出的代价，写在 traverse 而不是 note 里更方便建模读者查。
+
+  - about: mount:41cm-no2
+    field: mount.label_name
+    value: 二番砲塔（前部二号炮塔，背负式）
+    src: [kasado-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: 日方通称「二番砲塔」。TROM 记其为 superfiring 炮塔之一。
+
+  - about: mount:41cm-no2
+    field: mount.weapon
+    value: weapon:41cm-45-3ns
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1920-11-25 }
+    confidence: B
+
+  - about: mount:41cm-no2
+    field: mount.type
+    value: twin_turret
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1920-11-25 }
+    confidence: B
+
+  - about: mount:41cm-no2
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1920-11-25 }
+    confidence: B
+
+  - about: mount:41cm-no2
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1920-11-25 }
+    confidence: B
+
+  - about: mount:41cm-no2
+    field: mount.position
+    value: superfiring_fore
+    src: [combinedfleet-mutsu-trom]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: TROM「Both superfiring main battery turrets are fitted with 10-m duplex rangefinders」（1932-33 条），前部背负炮塔即二番。
+
+  - about: mount:41cm-no2
+    field: mount.elevation.max
+    value: 43
+    unit: deg
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1936-10-01 }
+    confidence: B
+    note: 与 mount:41cm-no1 同源同值。改装前一并为 +30°，不在每座重复记，见 no1 条。
+
+  - about: mount:41cm-no3
+    field: mount.label_name
+    value: 三番砲塔（后部三号炮塔，背负式）
+    src: [kasado-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: 日方通称「三番砲塔」。**注意**：陆奥爆沉时炸的就是「No. 3 turret's magazine」（TROM 1213 条），不是四番。
+
+  - about: mount:41cm-no3
+    field: mount.weapon
+    value: weapon:41cm-45-3ns
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1920-11-25 }
+    confidence: B
+
+  - about: mount:41cm-no3
+    field: mount.type
+    value: twin_turret
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1920-11-25 }
+    confidence: B
+
+  - about: mount:41cm-no3
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1920-11-25 }
+    confidence: B
+
+  - about: mount:41cm-no3
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1920-11-25 }
+    confidence: B
+
+  - about: mount:41cm-no3
+    field: mount.position
+    value: superfiring_aft
+    src: [combinedfleet-mutsu-trom]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: TROM 陆奥 1943-06-08 条记「MUTSU's No. 3 turret's magazine explodes」，同条描述舰体断为「535-ft forward section」与「147-ft stern section」，可证三番在后部。superfiring 一职由 TROM 1932-33 条的「Both superfiring main battery turrets」推得。
+
+  - about: mount:41cm-no4
+    field: mount.label_name
+    value: 四番砲塔（后部四号炮塔）
+    src: [kasado-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: >
+      日方通称「四番砲塔」。navweaps 记「When these turrets were removed during the 1930s rebuilds,
+      Turret #4 from Mutsu was erected as a static display at the Naval Academy on Etajima」，
+      并特别纠正一个流传说法：「It is not a turret taken from the Mutsu wreck as is often claimed,
+      as those turrets were not salvaged until 1970 and the Etajima display was constructed during
+      the late 1930s.」——江田岛那座是 1930 年代拆下的旧炮塔，不是 1970 年打捞上来的残骸件。
+
+  - about: mount:41cm-no4
+    field: mount.weapon
+    value: weapon:41cm-45-3ns
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1920-11-25 }
+    confidence: B
+
+  - about: mount:41cm-no4
+    field: mount.type
+    value: twin_turret
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1920-11-25 }
+    confidence: B
+
+  - about: mount:41cm-no4
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1920-11-25 }
+    confidence: B
+
+  - about: mount:41cm-no4
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1920-11-25 }
+    confidence: B
+
+  - about: mount:41cm-no4
+    field: mount.position
+    value: aft
+    src: [navweaps-41cm-45-3ns]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: navweaps 附图注「Stern Turrets of Nagato ca. 1925 as originally completed」与「New Stern Turrets of Nagato after 1930s rebuild」，可证后部两座。四番在后部最低位。
+
+  - about: mount:41cm-no4
+    field: mount.removed
+    value: 1936-01-31
+    unit: date
+    src: [navweaps-41cm-45-3ns, combinedfleet-nagato-trom]
+    valid: { from: 1936-01-31 }
+    confidence: C
+    note: >
+      原文「During the modernization of the Nagato and Mutsu during the mid-1930s, the original
+      eight turrets were removed and these ships were then rearmed with eight of the turrets
+      originally intended for Kaga and Tosa.」本条记长门的改装完成日（1936-01-31）。
+      陆奥的旧炮塔拆除在 1934-09~1936-09 间完成，四番被移作江田岛展示。
+
+  # ---------------------------------------------------------------- 炮位实体：副炮与高炮
+  - about: mount:14cm-casemate
+    field: mount.label_name
+    value: 14 cm/50 三年式单装炮廓炮
+    src: [kasado-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: kasado「三年式 50口径14.0cm単装砲:20基」（竣工時）。日方通称「副砲」，装在舷侧炮廓内。
+
+  - about: mount:14cm-casemate
+    field: mount.weapon
+    value: weapon:14cm-50-3ns
+    src: [navweaps-14cm-50-3ns, kasado-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: B
+    note: >
+      navweaps 该页 Ship Class Used On 栏明列「Capital Ships: Ise, Nagato, Amagi, Kaga, Kii and
+      '13' classes」，并注「only the Ise and Nagato classes actually saw service with this
+      weapon」。该炮的 weapon.* 本体字段已在 data/classes/hosho.yaml 登记，本文件不重复。
+
+  - about: mount:14cm-casemate
+    field: mount.type
+    value: casemate
+    src: [navweaps-14cm-50-3ns, navypedia-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: B
+    note: navweaps「Single Casemate Mounts ... Nagato (20)」；navypedia 装甲段「Upper casemate / Lower casemate」可证为炮廓式。
+
+  - about: mount:14cm-casemate
+    field: mount.barrels
+    value: 1
+    unit: count
+    src: [navweaps-14cm-50-3ns, kasado-nagato]
+    valid: { from: 1920-11-25 }
+    confidence: B
+    note: navweaps「Single Casemate Mounts」；kasado「単装砲」。
+
+  - about: mount:14cm-casemate
+    field: mount.count
+    value: 20
+    unit: count
+    src: [navweaps-14cm-50-3ns, kasado-nagato, navypedia-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: B
+    note: 三源一致：navweaps「Nagato (20)」；kasado「20基」；navypedia「20 x 1 - 140/50」。
+
+  - about: mount:14cm-casemate
+    field: mount.count
+    value: 18
+    unit: count
+    src: [navypedia-nagato, kasado-nagato, combinedfleet-nagato-trom]
+    valid: { from: 1936-10-01, to: 1944-06-30 }
+    confidence: B
+    note: >
+      大改装后拆掉两个上甲板炮位：navypedia「18 x 1 - 140/50」；kasado「18基」；
+      TROM「Two upper deck secondary caliber guns are landed」。三源一致。
+      1944 年以后的进一步减少（16 → 12 → 0）是长门单舰的事，见 ships/nagato.yaml。
+
+  - about: mount:14cm-casemate
+    field: mount.elevation.max
+    value: 25
+    unit: deg
+    src: [navweaps-14cm-50-3ns]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: B
+    note: >
+      原文「Single Casemate Mounts / Nagato: -7 / +25 degrees」。改装后升到 +35°——
+      navypedia「secondary guns from 15° to 35°」、TROM「The secondary battery 5.5-inch (140-mm)
+      guns' elevation is increased to 35 degrees」。注意 navypedia 说改装前是 15°，
+      与 navweaps 的 25° 冲突，两说并列不裁决。
+
+  - about: mount:14cm-casemate
+    field: mount.elevation.max
+    value: 35
+    unit: deg
+    src: [navypedia-nagato, combinedfleet-nagato-trom]
+    valid: { from: 1936-10-01 }
+    confidence: B
+    note: navypedia「secondary guns from 15° to 35°」；TROM「increased to 35 degrees」。两源一致。
+
+  - about: mount:14cm-casemate
+    field: mount.weight
+    value: 21000
+    unit: kg
+    src: [navweaps-14cm-50-3ns]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: >-
+      原文「Single Mounts: About 20 tons (21 mt)」。这是炮座（含炮架与防盾）重量，不是炮身重。
+
+  - about: mount:127mm-89-twin
+    field: mount.label_name
+    value: 12.7 cm/40 八九式双联高角炮
+    src: [kasado-nagato, navypedia-nagato]
+    valid: { from: 1932-01-01 }
+    confidence: C
+    note: navypedia「4 x 2 - 127/40 89-shiki」；kasado「八九式 40口径12.7cm連装高角砲:4基」。
+
+  - about: mount:127mm-89-twin
+    field: mount.weapon
+    value: weapon:127cm-89
+    src: [navweaps-127cm-89, kasado-nagato]
+    valid: { from: 1932-01-01 }
+    confidence: B
+    note: >
+      navweaps 该页 Mount/Turret Data 栏明列「Type 89 Twin Mounts for Battleships, Cruisers and
+      Carriers / Battleships: Kongô (4), Fuso (4), Ise (4) and Nagato (4): A1」，即长门级装 A1 型。
+      该炮的 weapon.* 本体字段已在 data/classes/kongo.yaml 登记，本文件不重复。
+
+  - about: mount:127mm-89-twin
+    field: mount.type
+    value: twin_turret
+    src: [navweaps-127cm-89, kasado-nagato]
+    valid: { from: 1932-01-01 }
+    confidence: B
+    note: navweaps「Type 89 Twin Mounts」；kasado「連装高角砲」。原文对该炮座用 "Mount" 而非 "Turret"（敞开式），但注册表枚举无 shielded_mount 之外的对应值，取 twin_turret 并在 note 说明其为敞开式防盾炮座。
+
+  - about: mount:127mm-89-twin
+    field: mount.count
+    value: 4
+    unit: count
+    src: [navweaps-127cm-89, kasado-nagato]
+    valid: { from: 1932-01-01 }
+    confidence: B
+    note: >-
+      navweaps「Nagato (4): A1」；kasado「4基」。两源一致。
+
+  - about: mount:127mm-89-twin
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [navweaps-127cm-89]
+    valid: { from: 1932-01-01 }
+    confidence: B
+
+  - about: mount:127mm-89-twin
+    field: mount.weight
+    value: 20300
+    unit: kg
+    src: [navweaps-127cm-89]
+    valid: { from: 1932-01-01 }
+    confidence: C
+    note: >-
+      原文「Type 89 / A1: 20 tons (20.3 mt)」。
+
+  - about: mount:127mm-89-twin
+    field: mount.elevation.max
+    value: 90
+    unit: deg
+    src: [navweaps-127cm-89]
+    valid: { from: 1932-01-01 }
+    confidence: B
+    note: >-
+      原文「Type 89: -7 / +90 degrees (one source says -8 / +85 degrees)」，两说并列，本条取 90。
+
+  # ---------------------------------------------------------------- 探测
+  - field: sensors.rangefinder.baseline
+    value: 10.0
+    unit: m
+    src: [kasado-nagato, combinedfleet-nagato-trom]
+    valid: { from: 1920-11-25 }
+    confidence: C
+    note: >
+      kasado「射撃指揮装置 艦橋側:10.0m ／ 砲塔側:6.0m」（竣工時），改装后砲塔側升为 8.0m。
+      本字段只能存一个值，记舰桥侧的主炮指挥所基线 10.0 m，炮塔侧的 6.0/8.0 m 记于此。
+      TROM 1924 条另记美方情报「She has one 10-meter range finder on her foretop」，与 10.0 m 吻合。
+      另：TROM 陆奥 1932-33 条记「Both superfiring main battery turrets are fitted with 10-m
+      duplex rangefinders」，即二番/三番炮塔在 1930 年代初换过 10 m 基线测距仪。
+
+  - field: sensors.director.count
+    value: 2
+    unit: count
+    src: [combinedfleet-mutsu-trom]
+    valid: { from: 1933-12-01 }
+    confidence: C
+    note: >
+      TROM 陆奥 1933-11~12 条「During a refit at Sasebo two Type 91 HA directors with 4.5 m
+      Barr & Stroud stereoscopic rangefinders are installed to the funnel platforms」。
+      这是**高射指挥仪**，不是主炮指挥仪；记 director.count 是因为注册表没有区分两者的字段，
+      在此声明口径：本值只数八九式高角炮用的九一式高射装置。长门同期是否同改，
+      来源未逐条给出（navypedia 的改装表只记武备不记指挥仪），故本条 confidence 记 C。
+
+  - field: sensors.director.type
+    value: 九一式高射装置（配 4.5 m Barr & Stroud 体视式测距仪）
+    src: [combinedfleet-mutsu-trom]
+    valid: { from: 1933-12-01 }
+    confidence: C
+    note: 同上条原文。Barr & Stroud 是英国厂牌，说明本级的高射火控仍依赖进口光学器材。
+
+  # ---------------------------------------------------------------- 航空
+  - field: aviation.catapult.count
+    value: 1
+    unit: count
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: B
+    note: navypedia 改装后栏「1 catapult」；kasado「カタパルト 呉式二号五型:1基」（大改装後）。两源一致。改装前无弹射器（两源该栏均为空/「-」）。
+
+  - field: aviation.catapult.type
+    value: 呉式二号五型（Kure Type No. 2 Model 5）
+    src: [kasado-nagato, combinedfleet-mutsu-trom]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: >
+      kasado「呉式二号五型」。TROM 陆奥 1934-09~1936-09 条记「A Kure Type No. 2 Model 5 catapult
+      and a collapsible crane are fitted」，1936-07-11 又记「a new Kure Type No. 2 Model 5 Mk. 1
+      catapult is installed」——即改装期先装 Model 5，随后换成 Mk. 1。kasado 的六列只写「二号五型」，
+      未区分 Mk. 1，两说并列不裁决。
+      长门侧另记 1933 年夏装的是「Kure Type No. 2 Model 3」（TROM 1933 夏条），1937 年换「Model 5」
+      （TROM 1937 年条），见 ships/nagato.yaml。
+
+  - field: aviation.aircraft.capacity
+    value: 3
+    unit: count
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1936-10-01 }
+    confidence: B
+    note: navypedia「3 seaplanes」；kasado 大改装後栏「九五式水上偵察機:3機」。两源一致。
+
+  # ---------------------------------------------------------------- 编制
+  - field: service.complement.standard
+    value: 1333
+    unit: persons
+    src: [navypedia-nagato, kasado-nagato]
+    valid: { from: 1920-11-25, to: 1936-09-30 }
+    confidence: B
+    note: navypedia「Complement | 1333」；kasado「定員 1,333名」（竣工時）。两源一致。
+
+  - field: service.complement.standard
+    value: 1368
+    unit: persons
+    src: [navypedia-nagato, combinedfleet-nagato-class]
+    valid: { from: 1936-10-01 }
+    confidence: C
+    note: >
+      navypedia「Complement | 1368」（改装后）；combinedfleet 舰级页「Crew | 1368」。
+      两源一致。kasado 改装后栏为「N/A」，故本条只有两个来源、且都是 D 级，confidence 记 C。
+
+  # service.complement.wartime：**不在舰级层写**。
+  # 长门 1945-06 编制减到 1,000 人（TROM），陆奥 1943 年编制 1,474 人（TROM），
+  # 两舰数额与原因都不同，属单舰差异，见 ships/nagato.yaml 与 ships/mutsu.yaml。

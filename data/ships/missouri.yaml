@@ -1,0 +1,453 @@
+# ============================================================================
+# 单舰：Missouri（密苏里号战列舰，BB-63）
+# ----------------------------------------------------------------------------
+# 与 classes/iowa.yaml 同一套约定。本文件只写差异与单舰事件。
+#
+# 本舰在三件事上与其他同级舰不同，也是本文件存在的理由：
+#   a) 装甲：BB-63/64 的首部横舱壁为 368 mm（下部 297 mm），
+#      BB-61/62 为 287 mm（下部 216 mm）。navypedia 原文按两批分列。
+#   b) 竣工防空：20 × 四联 40 mm（80 门）/ 49 × 单装 20 mm（navypedia BB62/63 行）。
+#   c) 1945-09-02 在东京湾签署日本投降书——本舰最大的历史意义，
+#      仪式时序见 danfs-missouri-iii。
+#
+# 本舰 1992 年退役后成为珍珠港博物馆舰，结局为 preserved。
+# ============================================================================
+
+id: missouri
+name:
+  zh: 密苏里号
+  en: Missouri
+class: iowa
+
+open_ended_note: |
+  本文件中 valid.to 留空的 fact，均为「至今为止仍成立的单舰事实」
+  （如博物馆舰身份、除籍日期），不存在后续变化事件。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: Missouri
+    src: [danfs-missouri-iii, navypedia-iowa]
+    valid: { from: 1941-01-06 }
+    confidence: A
+    note: >-
+      舰名取密苏里州。DANFS 记 "The 24th State, admitted to the Union 10 August
+      1821, Missouri was named for the Missouri River, an Indian name meaning
+      'muddy waters.'"——即舰名源自州名，而州名源自密苏里河。
+
+  - field: identity.name_zh
+    value: 密苏里号
+    src: [danfs-missouri-iii]
+    valid: { from: 1941-01-06 }
+    confidence: B
+    note: 中文通行译名。本舰是第三艘用此名的美国军舰（DANFS 标题 "Missouri III (BB-63)"）。
+
+  - field: identity.name_en
+    value: Missouri
+    src: [danfs-missouri-iii]
+    valid: { from: 1941-01-06 }
+    confidence: A
+
+  - field: identity.pennant_number
+    value: BB-63
+    src: [danfs-missouri-iii, navypedia-iowa]
+    valid: { from: 1941-01-06 }
+    confidence: A
+    note: 两源一致。
+
+  - field: identity.namesake
+    value: 美国密苏里州（第 24 州，1821-08-10 加入联邦）；州名源自密苏里河
+    src: [danfs-missouri-iii]
+    valid: { from: 1941-01-06 }
+    confidence: B
+    note: >-
+      DANFS 原文 "The 24th State, admitted to the Union 10 August 1821, Missouri
+      was named for the Missouri River, an Indian name meaning 'muddy waters.'"
+
+  - field: identity.ship_type
+    value: battleship
+    src: [danfs-missouri-iii]
+    valid: { from: 1944-06-11 }
+    confidence: A
+
+  - field: identity.nation
+    value: united_states
+    src: [danfs-missouri-iii]
+    valid: { from: 1944-06-11 }
+    confidence: A
+
+  - field: identity.operator
+    value: United States Navy（美国海军）
+    src: [danfs-missouri-iii]
+    valid: { from: 1944-06-11 }
+    confidence: A
+
+  - field: identity.era
+    value: ww2
+    src: [danfs-missouri-iii]
+    valid: { from: 1944-06-11 }
+    confidence: B
+    note: >-
+      按服役期定位。本舰 1944-06 服役，二战、朝鲜战争、1991 海湾战争三段
+      均在役；1986-05-10 复役至 1992-03-31 的冷战段由切片与 fact 时间窗表达。
+
+  # ============================================================ 建造
+  - field: construction.builder
+    value: New York Navy Yard（纽约海军造船厂）
+    src: [danfs-missouri-iii, navypedia-iowa]
+    valid: { from: 1941-01-06 }
+    confidence: A
+    note: 'DANFS "laid down on 6 January 1941 at Brooklyn, N.Y., by the New York Navy Yard"。'
+
+  - field: construction.builder_location
+    value: 美国纽约州布鲁克林（Brooklyn, New York）
+    src: [danfs-missouri-iii]
+    valid: { from: 1941-01-06 }
+    confidence: A
+    note: DANFS 明确写 "Brooklyn, N.Y."。
+
+  - field: construction.laid_down
+    value: 1941-01-06
+    unit: date
+    src: [danfs-missouri-iii, navypedia-iowa]
+    valid: { from: 1941-01-06 }
+    confidence: A
+    note: 两源一致（navypedia "6.1.1941"）。
+
+  - field: construction.launched
+    value: 1944-01-29
+    unit: date
+    src: [danfs-missouri-iii, navypedia-iowa]
+    valid: { from: 1944-01-29 }
+    confidence: A
+    note: >-
+      两源一致（navypedia "29.1.1944"）。DANFS 补下水掷瓶人：
+      "sponsored by Miss Margaret Truman, daughter of then-Senator from Missouri
+      Harry S Truman"——即后来接任总统的那位参议员之女。
+
+  - field: construction.commissioned
+    value: 1944-06-11
+    unit: date
+    src: [danfs-missouri-iii, navypedia-iowa]
+    valid: { from: 1944-06-11 }
+    confidence: A
+    note: >-
+      两源一致。DANFS 记首任舰长："commissioned on 11 June 1944, Capt. William M.
+      Callaghan in command"。本舰是四舰中第三艘服役、最后一艘建成服役的
+      同级舰（Wisconsin 早两个月）。
+
+  - field: service.commander
+    value: William M. Callaghan（上校）
+    src: [danfs-missouri-iii]
+    valid: { from: 1944-06-11 }
+    confidence: B
+    note: DANFS 原文 "commissioned on 11 June 1944, Capt. William M. Callaghan in command"。
+
+  - field: service.commander
+    value: Warner R. Edsall（上校），1953-03-26 在佐世保港内因心脏病突发殉职
+    src: [danfs-missouri-iii]
+    valid: { from: 1952-09, to: 1953-03-26 }
+    confidence: B
+    note: >-
+      DANFS "She sustained a grievous casualty on 26 March, when Capt. Warner R.
+      Edsall, her commanding officer, suffered a fatal heart attack while conning
+      her through the submarine net at Sasebo"。任期起点按该次朝鲜战区部署
+      履任月份 1952-09（同段 "stood out of Hampton Roads on 11 September 1952"
+      为该任内出航）。
+
+  # ============================================== 装甲（逐舰差异）
+  - field: protection.armor.thickness
+    value: 368
+    unit: mm
+    qual: { part: bulkhead, region: fore }
+    src: [navypedia-iowa]
+    valid: { from: 1944-06-11 }
+    confidence: C
+    note: >-
+      navypedia "(BB63, 64): ... Thickness of fore bulkhead was 368mm, but at
+      lower part of bulkhead it was decreased to 297mm"。
+      同页另注明该加厚**自本级三号舰起**实施："Unique difference became increased
+      to 368mm transverse bulkheads thickness, since the third ship of a class"。
+      故 BB-61/62 为 287 mm（见 ships/iowa.yaml），BB-63/64 为 368 mm。
+
+  - field: protection.armor.thickness
+    value: 297
+    unit: mm
+    qual: { part: bulkhead, region: lower }
+    src: [navypedia-iowa]
+    valid: { from: 1944-06-11 }
+    confidence: C
+    note: 同上句 "at lower part of bulkhead it was decreased to 297mm"。
+
+  # ======================================== 武备（竣工状态，逐舰差异）
+  - field: armament.aa_40mm.count
+    value: 80
+    unit: count
+    src: [navypedia-iowa]
+    valid: { from: 1944-06-11, to: 1945-04-30 }
+    confidence: C
+    note: >-
+      navypedia 武器栏 (BB62, 63) "20 x 4 - 40/56 Mk 1.2"，即 20 座四联 = 80 门。
+      **BB-61 为 15 座四联 = 60 门**，本舰比首舰多 5 座。
+      时间窗截止取 1945-04 底，因同页改装表 "5/1945, Missouri: + 8 x 2 - 20/70
+      Mk 4, SP radar, TDY ECM suite" 记该月有加改装。
+
+  - field: armament.aa_20mm.count
+    value: 49
+    unit: count
+    src: [navypedia-iowa]
+    valid: { from: 1944-06-11, to: 1945-04-30 }
+    confidence: C
+    note: >-
+      navypedia (BB62, 63) "49 x 1 - 20/70 Mk 4"，按管数记 49 门单装。
+      DANFS 词条首部亦作 "49 20 millimeter"，两源一致。
+
+  - field: armament.mount.summary
+    value: >
+      1944-06 竣工：3 × 3 16"/50 Mark 7 + 10 × 2 5"/38 Mark 12
+      + 20 × 4 40 mm Bofors（80 门）+ 49 × 1 20 mm Oerlikon
+      + 2 部弹射器、3 架水上飞机
+    src: [navypedia-iowa, danfs-missouri-iii]
+    valid: { from: 1944-06-11, to: 1945-04-30 }
+    confidence: C
+    note: >-
+      navypedia (BB62, 63) 行原文与 DANFS 首部 "armament 9 16-inch, 20 5-inch,
+      80 40 millimeter, 49 20 millimeter" 完全一致，是本轮少见的
+      「专题站与官方出版物逐项互证」。
+
+  - field: armament.mount.summary
+    value: >
+      1945-01 状态（受降仪式时）：3 × 3 16"/50 Mark 7 + 10 × 2 5"/38 Mark 28
+      + 20 × 4 40 mm（80 门）+ 8 × 2 与 32 × 1 20 mm + 2 部弹射器、3 架水上飞机
+      + SK-2、2 × SG、SP、Mk 27、2 × Mk 8、4 × Mk 12.22 雷达、TDY 电子战套件
+    src: [navypedia-iowa]
+    valid: { from: 1945-05, to: 1945-12 }
+    confidence: C
+    note: >-
+      navypedia 改装表 "1/1946, BB63 Missouri: 3 x 3 - 406/50 Mk 7, 10 x 2 -
+      127/38 Mk 28, 20 x 4 - 40/60 Mk 2, 8 x 2 - 20/70 Mk 24, 32 x 1 - 20/70
+      Mk 10, 2 catapults, 3 seaplanes, SK-2, 2x SG, SP, Mk 27, 2x Mk 8,
+      4x Mk 12.22 radars, TDY ECM suite"。时间窗起点取 5/1945（同页记该月
+      +8 × 2 20 mm 与 SP 雷达），代表受降仪式前后状态。
+
+  # ------------------------------------------------------ 探测设备
+  - field: sensors.radar.installed
+    value: SK-2 对空搜索雷达
+    src: [navypedia-iowa]
+    valid: { from: 1944-06-11 }
+    confidence: C
+    note: >-
+      navypedia 电子设备栏 "BB63: SK-2, 2x SG, Mk 27, 2x Mk 8, 4x Mk 12.22
+      radars"。**该栏未标日期**，按竣工配置读；同页 BB61 行为 "SK, 2x SG,
+      Mk 3, 2x Mk 8, 4x Mk 4"，即首舰与本舰的雷达型号不同。
+
+  - field: sensors.radar.installed
+    value: SG 对海搜索雷达（2 部）
+    src: [navypedia-iowa]
+    valid: { from: 1944-06-11 }
+    confidence: C
+    note: navypedia 同栏 "2x SG"。
+
+  - field: sensors.radar.installed
+    value: Mk 8 主炮火控雷达（2 部）
+    src: [navypedia-iowa]
+    valid: { from: 1944-06-11 }
+    confidence: C
+    note: navypedia 同栏 "2x Mk 8"。
+
+  - field: sensors.radar.installed
+    value: Mk 12.22 副炮火控雷达（4 部）
+    src: [navypedia-iowa]
+    valid: { from: 1944-06-11 }
+    confidence: C
+    note: navypedia 同栏 "4x Mk 12.22"；BB61 同位置记为 "4x Mk 4"。
+
+  - field: sensors.radar.installed
+    value: Mk 27 火控雷达
+    src: [navypedia-iowa]
+    valid: { from: 1944-06-11 }
+    confidence: C
+    note: navypedia 同栏 "Mk 27"；BB61 竣工时为 "Mk 3"。
+
+  - field: sensors.radar.installed
+    value: SP 对空搜索雷达
+    src: [navypedia-iowa]
+    valid: { from: 1945-05 }
+    confidence: C
+    note: >-
+      navypedia 改装表 "5/1945, Missouri: + 8 x 2 - 20/70 Mk 4, SP radar,
+      TDY ECM suite"。
+
+  - field: sensors.ecm.suite
+    value: TDY 电子战套件
+    src: [navypedia-iowa]
+    valid: { from: 1945-05 }
+    confidence: C
+    note: 同上条改装记录 "TDY ECM suite"。
+
+  # ---------------------------------------- 1980 年代复役的武器与航空设施
+  - field: armament.mount.summary
+    value: >
+      1986 年复役改装后：3 × 3 16"/50 Mark 7 保留 + 6 × 2 5"/38 Mark 28
+      + 8 × 4「战斧」巡航导弹发射箱（32 枚 BGM-109B）
+      + 4 × 4「鱼叉」反舰导弹发射箱（16 枚 RGM-84A）
+      + 4 × 6 20 mm「密集阵」近防炮 + 直升机甲板
+    src: [navypedia-iowa, nhhc-h029-4]
+    valid: { from: 1986-05-10, to: 1992-03-31 }
+    confidence: C
+    note: >-
+      navypedia 现代化栏原文 "8 x 4 Tomahawk CruM (32 BGM-109B), 4 x 4 Harpoon SSM
+      (16 RGM-84A), 3 x 3 - 406/50 Mk 7 (BB61), 6 x 2 - 127/38 Mk 28,
+      4 x 6 - 20/76 Mk 15 Phalanx, helicopter deck"（该栏以 BB61 标注仍保留
+      三座主炮塔，同级四舰相同）。**5 英寸炮座由 10 座减到 6 座**，
+      是复役改装对二战形态最大的一处改动。DANFS 记 1990-08 后
+      "installed more point defense weapons" 并搭载无人机（RPV）。
+
+  - field: aviation.aircraft.types
+    value: 直升机与 RPV 无人机（复役后以直升机甲板取代水上飞机）
+    src: [navypedia-iowa, danfs-missouri-iii]
+    valid: { from: 1986-05-10, to: 1992-03-31 }
+    confidence: C
+    note: >-
+      navypedia 现代化栏 "helicopter deck"；DANFS 记 1990 年备战海湾战争时
+      "including familiarizing the crew with a newly embarked remotely piloted
+      vehicle (RPV) drone"。
+
+  - field: sensors.radar.installed
+    value: SPS-49 对空搜索雷达
+    src: [navypedia-iowa]
+    valid: { from: 1986 }
+    confidence: C
+    note: >-
+      navypedia 电子设备栏 "BB61, 63, 64: SPS-49, SPS-67, SPS-64, 2x Mk 13,
+      4x Mk 25 radars, SLQ-32(v)3 ECM suite, 8x SRBOC Mk36 decoy RL,
+      SLQ-25 Nixie torpedo decoy"，对应 1980 年代复役改装。
+
+  - field: sensors.radar.installed
+    value: SPS-67 对海搜索雷达
+    src: [navypedia-iowa]
+    valid: { from: 1986 }
+    confidence: C
+    note: navypedia 同栏。
+
+  - field: sensors.radar.installed
+    value: SPS-64 导航雷达
+    src: [navypedia-iowa]
+    valid: { from: 1986 }
+    confidence: C
+    note: navypedia 同栏。
+
+  - field: sensors.radar.installed
+    value: Mk 25 火控雷达（4 部）
+    src: [navypedia-iowa]
+    valid: { from: 1986 }
+    confidence: C
+    note: >-
+      navypedia 同栏 "4x Mk 25"；同页 "1952-1954, all: - 4x Mk 12.22 radars;
+      + SPS-10, 4x Mk 25 radars"，即 Mk 25 自 1950 年代已装舰，
+      1980 年代复役后继续留用。
+
+  - field: sensors.radar.installed
+    value: Mk 13 火控雷达（2 部）
+    src: [navypedia-iowa]
+    valid: { from: 1986 }
+    confidence: C
+    note: navypedia 同栏 "2x Mk 13"；同页 1945-03 与 1945-05 的改装记录中
+      该型亦已出现于本级其他舰，故非复役时新装。
+
+  - field: sensors.ecm.suite
+    value: SLQ-32(v)3 电子战套件、8 座 SRBOC Mk 36 干扰弹发射器、SLQ-25 Nixie 鱼雷诱饵
+    src: [navypedia-iowa]
+    valid: { from: 1986 }
+    confidence: C
+    note: navypedia 同栏原文，逐项照录。
+
+  # ============================================== 服役与战历（骨架）
+  - field: service.unit
+    value: 第 3 舰队旗舰（Third Fleet，Admiral William F. Halsey Jr. 座舰）
+    src: [danfs-missouri-iii]
+    valid: { from: 1945-05-18, to: 1945-09-05 }
+    confidence: B
+    note: >-
+      DANFS "That afternoon Adm. William F. Halsey, Jr., Commander 3d Fleet,
+      broke his flag in Missouri"（1945-05-18 于关岛阿普拉港）。
+      同词条 "The afternoon of 5 September 1945, Adm. Halsey transferred his flag
+      to battleship South Dakota (BB-57)"，故任期止于 1945-09-05。
+
+  - field: service.unit
+    value: 第 7 舰队旗舰（Seventh Fleet）
+    src: [danfs-missouri-iii]
+    valid: { from: 1950-10-14, to: 1951-03-28 }
+    confidence: B
+    note: >-
+      DANFS "She arrived at Sasebo on 14 October, where she became flagship of
+      Vice Adm. A. D. Struble, Commander, 7th Fleet"；
+      "She arrived at Yokosuka on 24 March [1951], and 4 days later was relieved
+      of duty in the Far East"。
+
+  - field: service.unit
+    value: 第 7 舰队旗舰（Seventh Fleet，Vice Adm. J. J. Clark）
+    src: [danfs-missouri-iii]
+    valid: { from: 1952-10-19, to: 1953-04-06 }
+    confidence: B
+    note: >-
+      DANFS "arrived at Yokosuka on 17 October, where she broke the flag of Vice
+      Adm. J. J. Clark, commander of the 7th Fleet, on 19 October"；
+      "She was relieved as 7th Fleet flagship on 6 April by sister ship New Jersey
+      (BB-62)"。
+
+  - field: service.unit
+    value: 第 3 舰队参加对日本本土的航母打击与炮击（1945-07 起）
+    src: [danfs-missouri-iii]
+    valid: { from: 1945-07-08, to: 1945-08-15 }
+    confidence: B
+    note: >-
+      DANFS "The task force set a northerly course on 8 July 1945 to approach the
+      Japanese mainland ... For the first time, a naval gunfire force wrought
+      destruction on a major installation within the home islands when Missouri
+      closed the shore to join in a bombardment 15 July that damaged the Nihon
+      Steel Co. and the Wanishi Ironworks at Muroran, Hokkaido"。
+
+  # ============================================== 结局与博物馆舰
+  - field: construction.fate_type
+    value: preserved
+    src: [danfs-missouri-iii, ussmissouri-memorial, navypedia-iowa]
+    valid: { from: 1998-05-04 }
+    confidence: B
+    note: >-
+      DANFS "Donated as a museum and memorial ship on 4 May 1998, she was later
+      transferred to Pearl Harbor where the old battleship rests near the Arizona
+      (BB-39) Memorial and is open for tours by the public"。
+      馆方官网 "The Battleship Missouri Memorial is a Pearl Harbor museum ...
+      located on Ford Island in Honolulu, Hawaii"，两源一致。
+
+  - field: construction.fate_date
+    value: 1998-05-04
+    unit: date
+    src: [danfs-missouri-iii]
+    valid: { from: 1998-05-04 }
+    confidence: B
+    note: >-
+      捐赠（转为博物馆舰）日期。此后的移交珍珠港日期 DANFS 未给具体日，
+      navypedia 建造表亦只记 "stricken 1.1995"，故移交日不填。
+
+  - field: service.fate_category
+    value: >-
+      1944-06-11 服役 → 1947 年两度赴地中海/里约热内卢外交航行 → 1950-02 起
+      入朝鲜战区 → 1955-02-26 退役入布雷默顿太平洋后备舰队 → 1986-05-10 复役
+      → 1991 参加"沙漠风暴" → 1992-03-31 退役 → 1995-01-12 除籍
+      → 1998-05-04 转为博物馆舰（珍珠港）
+    src: [danfs-missouri-iii, navypedia-iowa]
+    valid: { from: 1944-06-11 }
+    confidence: B
+    note: >-
+      逐段来源：DANFS "decommissioned 26 February 1955, entering the Bremerton
+      Group, Pacific Reserve Fleet" / "modernized and recommissioned at San
+      Francisco on 10 May 1986" / "was decommissioned on 31 March 1992" /
+      "she was stricken from the Naval Vessel Register"（1995-01-12）/
+      "Donated as a museum and memorial ship on 4 May 1998"；
+      navypedia 建造表 "stricken 1.1995"。
+
+  # 注：本轮未获取本舰的阵亡/伤亡数字（DANFS 未记），
+  # 也未获取涂装指令原件，故 service.casualties 与 appearance.scheme 两条
+  # **一律不写**，不拿姊妹舰或推断值填充。见 RESEARCH-NOTES「未获取」清单。

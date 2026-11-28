@@ -1,0 +1,434 @@
+# ============================================================================
+# 舰艇正文 —— 長門（Nagato）
+# ----------------------------------------------------------------------------
+# 体例：intro 分节、history 分节带逐条事件，每条事件都能追到 data/sources.yaml
+# 里已登记、且非 E 层的来源。
+#
+# 本文的三条写作纪律：
+#   1. 有争议的数字一律并列（排水量、装甲厚度、25 mm 数量、旗舰任期），不裁决。
+#   2. 本级最容易被写错的一条写在正文里并给出出处：**开战日 1941-12-08 的联合舰队
+#      旗舰仍是长门，旗舰旗是 1942-02-12 才移交给大和的。**
+#   3. 不用模糊表述。查不到的不写，写了的都带来源。
+# ============================================================================
+ship: nagato
+updated: 2026-11-28
+
+intro:
+  lead:
+    zh: >-
+      长门是日本海军长门型战列舰的首舰，1920 年 11 月 25 日竣工，是**世界上第一艘
+      装上 16 英寸级主炮的战列舰**，1946 年 7 月在比基尼环礁作为核试验靶舰翻覆沉没。
+      她是日本唯一一艘活到战后的战列舰，也是从 1920 年代到 1942 年初这段时间里
+      日本海军联合舰队的旗舰。
+    en: >-
+      Nagato was the lead ship of Japan's Nagato class, completed on 25 November 1920 as
+      the first battleship in the world armed with 16-inch-class guns. She was the only
+      Japanese battleship to survive the war, and ended her career as a target in the
+      Bikini Atoll nuclear tests, capsizing there in July 1946. From the 1920s until early
+      1942 she served as flagship of the Combined Fleet.
+
+  paragraphs:
+    - heading: 舰级定位：日本第一级自己设计的 41 cm 炮战列舰
+      text:
+        zh: >-
+          长门型是日本海军第一级**从设计到建造全部在日本完成**的主力舰。在此之前，
+          金刚型是英国维克斯公司设计的、扶桑型与伊势型都带着大量英国技术痕迹；
+          长门型则是日本自己拿主意的结果，主炮也是日本第一个完全自主设计的大口径炮。
+          navweaps 对这门炮的表述很直接：「These were the first large-caliber guns designed
+          entirely in Japan. They were mounted afloat only on the Nagato class」，同页并记
+          该炮原本还计划用于加贺、天城、纪伊三级，全部因华盛顿条约取消。
+          设计母型是英国的伊丽莎白女王级（快速战列舰概念），但结构上是伊势型的放大：
+          navypedia 记「structurally new Japanese battleships 'have grown' from Ise class」，
+          舰体比前级加长 7.6 m、加宽 0.3 m，「Abandoning from amidships turrets allowed to
+          place almost twice more powerful machinery, that increased a speed, in comparison
+          with Ise, by 3kts, to 26.5kts.」——取消舯部炮塔换来的动力舱空间，
+          就是本级 26.5 节这个数字的来源。
+        en: >-
+          The Nagato class was the first Japanese capital ship designed and built entirely in
+          Japan, and its 41 cm gun was the first large-calibre weapon designed wholly in Japan.
+          Structurally the ships grew out of the Ise class, but abandoning the amidships turret
+          freed almost twice the machinery space, raising speed by 3 knots over the Ise class
+          to 26.5 knots.
+      src: [navweaps-41cm-45-3ns, navypedia-nagato, kasado-nagato]
+
+    - heading: 主尺度与那个被改过名的 41 cm
+      text:
+        zh: >-
+          全长 215.8 m、水线长 213.3 m、水线宽 29.0 m、平均吃水 9.10 m（竣工时，navypedia 与
+          kasado 一致）。1934-36 年大改装后加长到 224.9 m、加宽到 34.6 m（navypedia 给 33.0 m，
+          两说并列）、吃水 9.49 m。排水量方面，navypedia 的竣工表**不给标准排水量**
+          （该栏直接写「---」），只给 normal 33,800 t 与 full 38,500 t；kasado 给満載 38,802 t。
+          改装后 navypedia 给 standard 39,120 t / full 42,850 t，kasado 给基準 39,050 t /
+          公試 43,439 t，TROM 另记 39,130 t——同一艘船的标准排水量有三个数值，
+          差在 70 吨以内，属不同资料的口径取舍，本站三个都收。
+          主炮口径这件事值得单说：这门炮原名 **41 cm/45 三年式**，1922 年 3 月 29 日
+          被改称 **40 cm/45 三年式**，实际口径 41.0 cm。navweaps 引一位日本史家的推测，
+          说改名是为了掩盖口径超过华盛顿条约上限这一事实。
+          所以「41 cm」与「40 cm」两个名字都是真名，区别只在 1922 年这条线。
+        en: >-
+          Length overall 215.8 m, beam 29.0 m, draught 9.10 m as completed; the 1934-36 rebuild
+          stretched her to 224.9 m and 34.6 m beam. Navypedia gives no standard displacement for
+          the as-completed state, only 33,800 t normal and 38,500 t full. The main battery was
+          designated 41 cm/45 until 29 March 1922, when it was redesignated 40 cm/45; actual bore
+          diameter was 41.0 cm.
+      src: [navypedia-nagato, kasado-nagato, navweaps-41cm-45-3ns, combinedfleet-nagato-trom]
+
+    - heading: 装甲：一套分层渐减的布置，不是「不沉舰」
+      text:
+        zh: >-
+          本级采用的是分部位、分高度、不封闭成单盒的防护布置（本站记为 incremental）。
+          主装甲带从一番到四番炮座之间厚 305 mm，向下缘渐减至 76 mm，由前部 330-254 mm、
+          后部 254 mm 的横隔壁封闭；舷外另有一道 203 mm 上装甲带（navypedia）——
+          kasado 记 229 mm，两说并列。主装甲甲板 70 mm，下甲板平甲 51 mm 以 76 mm 斜板接主带下缘。
+          大改装时下甲板平甲由 51 mm 加强到 127 mm，炮座与炮塔正面装甲同时加厚
+          （炮塔正面 457 / 508 / 460 三说并列，分别出自 navypedia、kasado 与 Campbell）。
+          水下防护纵深 6.5 m，内含 76-51 mm 纵隔壁。
+          这套数据里最要紧的一条是：**上炮廓的防护只有 25 mm**。1944 年 10 月 24 日
+          锡布延海那一发落在艇甲板上的炸弹，一次就废掉了 2 门 14 cm 炮廓炮、另使 3 门失效，
+          炮廓薄装甲是直接原因。
+        en: >-
+          Protection was incremental: a 305 mm main belt tapering to 76 mm at its lower edge,
+          closed by 330-254 mm fore and 254 mm aft bulkheads, backed by a 203 mm upper belt and
+          a 70 mm main deck over a 51 mm lower deck with 76 mm slopes. The rebuild thickened the
+          lower deck to 127 mm and the turret and barbette armour. The upper casemate had only
+          25 mm, which is why a single bomb on the boat deck in October 1944 wrecked two 14 cm
+          casemate guns outright.
+      src: [navypedia-nagato, kasado-nagato, navweaps-41cm-45-3ns, combinedfleet-nagato-trom]
+
+    - heading: 一份必须说清的时间表：她什么时候是旗舰
+      text:
+        zh: >-
+          通行的说法是「长门长期是联合舰队旗舰，开战时旗舰已换成大和」。
+          前半句成立，后半句要改：**1941 年 12 月 8 日开战当天，联合舰队旗舰仍是长门。**
+          TROM 记 1942-02-12「The flag of the Combined Fleet's Commander-in-Chief Admiral
+          Yamamoto Isoroku … is transferred from battleship NAGATO to YAMATO」，
+          新战列舰大和则是 1941-12-21 才从吴抵达柱岛编入第一战队。
+          长门的旗舰任期本身也不连续：1925-12-01 起任，1938-12-15 起再任并一直到 1942-02-12；
+          中间 1931-12-01 她转预备舰、1937-12-01 转练习舰，旗舰旗在这段时间里
+          曾移到金刚（1933-02-03 之前）与陆奥（1933-02-03 起，1936-12-01 与 1937-01-21 又两次）。
+          即**本级两舰都当过联合舰队旗舰**，只是长门当得久、陆奥当得散。
+        en: >-
+          The common claim that the Combined Fleet flag had already passed to Yamato by the
+          outbreak of war needs correcting: on 8 December 1941 Nagato was still flagship. The
+          flag was transferred to Yamato on 12 February 1942. Nagato's own tenure was not
+          continuous either — she was a reserve ship in 1931 and a training ship in 1937, and
+          the flag moved to Kongo and later to Mutsu during those gaps.
+      src: [combinedfleet-nagato-trom, combinedfleet-mutsu-trom, kasado-nagato-names]
+
+history:
+  - id: build
+    title: { zh: 建造与竣工, en: Building and completion }
+    range: { from: 1917, to: 1920 }
+    events:
+      - date: 1917-08-28
+        text:
+          zh: 在吴海军工厂开工。本级源于「八四舰队计划」，开工后随两舰一并并入「八八舰队计划」。
+          en: Laid down at Kure Navy Yard, under the "8-4" programme that was folded into the "8-8" programme after construction began.
+        src: [navypedia-nagato, combinedfleet-nagato-trom, kasado-nagato-names]
+
+      - date: 1919-11-09
+        text:
+          zh: >-
+            下水，由海相加藤友三郎主持，伏见宫博恭王代表海军军令部出席。下水后即编入横须贺镇守府
+            ——不是建造地吴镇守府。
+          en: >-
+            Launched by Navy Minister Kato Tomosaburo, with Prince Fushimi Hiroyasu attending for
+            the Naval General Staff; assigned to the Yokosuka Naval District.
+        src: [combinedfleet-nagato-trom, kasado-nagato-names]
+
+      - date: 1920-11-25
+        text:
+          zh: >-
+            竣工服役。此前的试航中她在宿毛湾先后跑出 26.443 节（10 月 6 日）与 26.7 节
+            （11 月 23 日），两次都刷新战列舰世界纪录。TROM 在这一条里直接写明她是
+            「the first battleship in the world equipped with 16.1-inch (410-mm) guns」——
+            世界上第一艘 16 英寸级主炮战列舰。首任舰长饭田延太郎大佐。
+          en: >-
+            Completed and commissioned — the first battleship in the world with 16.1-inch guns.
+            On trials she had reached 26.443 knots on 6 October and 26.7 knots on 23 November,
+            both battleship records. Captain Iida Nobutaro in command.
+        src: [combinedfleet-nagato-trom, navypedia-nagato, kasado-nagato-names]
+
+  - id: interwar
+    title: { zh: 两次大战之间, en: The interwar years }
+    range: { from: 1921, to: 1936 }
+    events:
+      - date: 1922-02-06
+        text:
+          zh: >-
+            华盛顿海军条约签订，日本主力舰对英美比例被定为 5:5:3。条约直接取消了八八舰队计划，
+            本级两舰因已建成而保留；陆奥一度被美方提议拆毁，日方以「已服役、已航行 2,500 海里」
+            为由交涉保住，navypedia 另记一条理由是她的一部分建造经费由小学生捐款募集。
+          en: >-
+            The Washington Treaty set the 5:5:3 ratio and cancelled the 8-8 programme. Both
+            Nagato class ships were retained as already completed; Mutsu was nearly scrapped and
+            was saved by Japanese argument, one of which was that schoolchildren had helped pay
+            for her.
+        src: [combinedfleet-nagato-trom, combinedfleet-mutsu-trom, navypedia-nagato]
+
+      - date: 1925-08
+        text:
+          zh: >-
+            德国飞机设计师恩斯特·亨克尔带工程师到横滨，为长门送来一套定制起飞平台与
+            HD-25／HD-26 水上机原型。平台装在**二番炮塔顶上**，在馆山外的房总湾做起飞试验，
+            试飞员之一是后来创办飞机厂的 Carl Clemens Bücker。试验后平台拆除，
+            改型后用于古鹰级重巡。
+          en: >-
+            Ernst Heinkel's team delivered a custom take-off platform and HD-25/HD-26 floatplane
+            prototypes; mounted atop No. 2 turret, the platform was tested in Boso Bight and later
+            removed, a modified version going to the Furutaka class.
+        src: [combinedfleet-nagato-trom]
+
+      - date: 1925-12-01
+        text:
+          zh: 任联合舰队旗舰，悬挂司令长官冈田启介大将的将旗。这是她第一次长期担任该职。
+          en: Became flagship of the Combined Fleet under Admiral Okada Keisuke.
+        src: [combinedfleet-nagato-trom, kasado-nagato-names]
+
+      - date: 1934-04-01
+        text:
+          zh: >-
+            在吴海军工厂开始第一次大改装（1936-01-31 完成）：舰体尾部加长、加装防雷突出部、
+            加装飞剪式舰首、拆除前烟囱、20 座原锅炉全部换成 10 座重油专烧锅炉、
+            8 具鱼雷发射管全部拆除、四座主炮塔整体换成为加贺／土佐准备的新炮座、
+            主炮仰角由 +30° 提到 +43°（最大射程由 30,000 m 增到 38,725 m）、
+            副炮由 20 门减到 18 门且仰角提到 35°、炮塔与炮座装甲加强。
+            代价是航速由 26.5 节降到 25 节。
+          en: >-
+            Began her first major reconstruction at Kure, completed 31 January 1936: hull
+            lengthened aft, torpedo bulges and a clipper bow fitted, fore funnel removed, boilers
+            reduced from 20 to 10 oil-fired, all torpedo tubes landed, all four turrets replaced
+            with mountings built for the cancelled Kaga and Tosa, elevation raised to 43 degrees
+            (range 38,725 m), secondary battery cut to 18 guns. Speed fell from 26.5 to 25 knots.
+        src: [combinedfleet-nagato-trom, navypedia-nagato, navweaps-41cm-45-3ns]
+
+      - date: 1936-02-26
+        text:
+          zh: >-
+            二二六事件爆发。为镇压叛乱，长门奉命驶入东京湾，泊于品川大井码头，
+            主炮炮口指向国会议事堂；舰上还临时编成一支由下级水兵组成的陆战队。
+          en: >-
+            During the 26 February Incident Nagato was ordered into Tokyo Bay, berthing at the
+            Odaiba pier in Shinagawa with her main battery trained on the Diet building.
+        src: [combinedfleet-nagato-trom]
+
+  - id: war
+    title: { zh: 太平洋战争, en: The Pacific War }
+    range: { from: 1938, to: 1944 }
+    events:
+      - date: 1938-12-15
+        text:
+          zh: >-
+            再次编入第一舰队第一战队并任联合舰队旗舰。1939-09-01 山本五十六在和歌浦登舰
+            就任联合舰队司令长官。
+          en: >-
+            Again assigned to BatDiv 1 and designated Combined Fleet flagship; Admiral Yamamoto
+            Isoroku came aboard at Wakanoura on 1 September 1939.
+        src: [combinedfleet-nagato-trom, kasado-nagato-names]
+
+      - date: 1940-10-11
+        text:
+          zh: >-
+            横滨湾举行神武天皇即位 2600 年观舰式。联合舰队 98 艘舰以长门为旗舰列阵，
+            天皇与山本司令长官乘比叡检阅。
+          en: >-
+            The Imperial Naval Review for the 2,600th anniversary: 98 ships of the Combined Fleet
+            formed up with Nagato as flagship, the Emperor reviewing from Hiei.
+        src: [combinedfleet-nagato-trom]
+
+      - date: 1941-12-02
+        text:
+          zh: >-
+            17:30，长门向正在中途岛以北 940 海里的机动部队发出暗号「Niitakayama nobore
+            （攀登新高山）1208」，通知「8 日开战」。这条电报是从这艘舰上发出的。
+          en: >-
+            At 1730 Nagato transmitted the coded signal "Niitakayama nobore 1208" to the Carrier
+            Strike Force, confirming hostilities would open on 8 December.
+        src: [combinedfleet-nagato-trom]
+
+      - date: 1941-12-08
+        text:
+          zh: >-
+            珍珠港事件当日，第一战队从柱岛出击至小笠原群岛方向，掩护机动部队。
+            **此时联合舰队旗舰仍是长门。**
+          en: >-
+            BatDiv 1 sortied from Hashirajima towards the Bonin Islands to cover the carrier force.
+            Nagato was still the Combined Fleet flagship on that day.
+        src: [combinedfleet-nagato-trom]
+
+      - date: 1942-02-12
+        text:
+          zh: >-
+            联合舰队司令长官山本五十六的将旗由长门移到大和（大和 1941-12-21 才从吴抵达柱岛编入
+            第一战队）。长门此后任第一舰队（内海待机部队）旗舰。这就是「旗舰换成大和」的准确日期
+            ——不是开战时，是开战两个多月后。
+          en: >-
+            Admiral Yamamoto's flag was transferred from Nagato to Yamato; Nagato then became
+            flagship of the First Fleet only. This, not the outbreak of war, is the date the
+            Combined Fleet flag changed ships.
+        src: [combinedfleet-nagato-trom, combinedfleet-mutsu-trom]
+
+      - date: 1942-06-04
+        text:
+          zh: >-
+            中途岛海战。长门属第一舰队主力（山本直接指挥），在机动部队后方 300 海里，
+            全程未与美军接触。6 月 5-6 日收容了加贺号的幸存者，并为第三、第十水雷战队的
+            驱逐舰在海上加油。
+          en: >-
+            At Midway Nagato remained with the Main Body 300 miles behind Nagumo's carriers and
+            never engaged; on 5-6 June she took aboard survivors from Kaga and refuelled destroyers
+            at sea.
+        src: [combinedfleet-nagato-trom]
+
+      - date: 1943-06-08
+        text:
+          zh: >-
+            陆奥在柱岛泊地爆沉。长门当时正从吴出发驶向柱岛，午后抵达，在藤号的左舷约 3,000 码处
+            抛锚，收容了辰田号救起的幸存者，舰员共救起 353 人。这是本级唯一一次「一舰看着
+            另一舰消失」。
+          en: >-
+            Mutsu blew up at Hashirajima. Nagato arrived that afternoon, anchored some 3,000 yards
+            off Fuso's port beam and took aboard survivors rescued by Tatsuta; 353 men were saved.
+        src: [combinedfleet-nagato-trom, combinedfleet-mutsu-trom]
+
+      - date: 1944-06-19
+        text:
+          zh: >-
+            马里亚纳海战。长门属乙部队（随瑞凤、千代田、千歳行动），为轻型航母提供近距离掩护。
+            6 月 20 日美军机来袭时，她用主炮发射三式弹射击鱼雷机，声称击落 2 架贝劳伍德号的 TBF，
+            并在被扫射中无人员伤亡。
+          en: >-
+            At the Philippine Sea Nagato screened the light carriers of Force B, firing Type 3
+            incendiary shells from her main battery at attacking TBFs on 20 June and claiming two
+            shot down, with no casualties from strafing.
+        src: [combinedfleet-nagato-trom]
+
+      - date: 1944-10-24
+        text:
+          zh: >-
+            锡布延海海战。长门全天承受美军舰载机多波攻击，10:27 起以三式弹对空射击；
+            14:16 被富兰克林号与卡伯特号的 7 架 SB2C 与 8 架 F6F 攻击，命中 2 发炸弹、近失 3 发。
+            第一发在艇甲板爆炸，炸坏一番锅炉舱进气口，一台螺旋桨轴停转、航速降至 22 节
+            （14:40 恢复）；炮廓炮 2、4 号被毁、另 3 门失效、12.7 cm 高角炮 2 号被卡死。
+            navypedia 另记「三发炸弹瘫痪一座主炮塔」，与 TROM 的「2 发命中、未提主炮塔失效」
+            冲突，两说并列不裁决。
+          en: >-
+            In the Sibuyan Sea Nagato endured repeated carrier attacks, firing Type 3 shells from
+            her main battery and taking two bomb hits and three near misses at 1416. One bomb on
+            the boat deck wrecked the air intake of No. 1 boiler room, stopping a shaft and cutting
+            speed to 22 knots until 1440. Navypedia records three bomb hits disabling one main
+            turret; the two accounts are given side by side.
+        src: [combinedfleet-nagato-trom, navypedia-nagato]
+
+      - date: 1944-10-25
+        text:
+          zh: >-
+            萨马岛外海战。06:01，长门向 20 海里外三艘几乎看不见的护航航母打出四个齐射——
+            **这是她整个生涯中第一次向敌舰开火**。前两个齐射是三式弹，其后用彻甲弹；
+            可能在圣洛号（CVE-63）右舷前方取得近失，炮术部门报告「命中一舰、冒烟」。
+            上午战斗中她打出主炮 45 发、14 cm 弹 92 发，声称重创一艘巡洋舰。
+            12:43 舰艏中 2 发炸弹，一发撕裂锚甲板、一发在舷侧海中爆炸击穿舰艏；
+            16:56 规避时 4 名后甲板高炮手被浪卷走。
+          en: >-
+            Off Samar at 0601 Nagato fired four salvos at three barely visible escort carriers —
+            the first time in her career she fired on enemy ships; the first two salvos were Type 3
+            incendiary, the rest APC. She fired 45 main-battery rounds and 92 14 cm rounds that
+            morning, and took two bomb hits on the bow at 1243.
+        src: [combinedfleet-nagato-trom]
+
+      - date: 1944-10-26
+        text:
+          zh: >-
+            撤退途中在帕奈岛外塔布拉斯海峡再遭约 30 架 TBF 与 B-24 攻击，以主炮三式弹对空射击。
+            两天战斗累计：长门打出 410 mm 炮弹 99 发、140 mm 炮弹 653 发，阵亡 38 人、重伤 105 人。
+          en: >-
+            Attacked again in the Tablas Strait while retiring; over the two days' actions she fired
+            99 410-mm and 653 140-mm shells, suffering 38 killed and 105 seriously wounded.
+        src: [combinedfleet-nagato-trom]
+
+      - date: 1944-11-25
+        text:
+          zh: >-
+            在横须贺入渠，此后不再作为战舰使用：拆前部副炮 4 门（16→12）、12.7 cm 高角炮由 4 座双联
+            增到 6 座双联、加 10 座三联 25 mm 并拆 1 座旧三联；**烟囱与主桅被拆除**以改善射界。
+            靠泊横须贺香取基地栈桥，加迷彩与外挂防雷网，充当浮动的防空炮台。
+          en: >-
+            Dry-docked at Yokosuka and converted into a floating AA battery: forward secondary
+            guns removed, 12.7 cm mounts increased from four to six, ten triple 25 mm added, and
+            her funnel and mainmast removed to clear the arcs of fire.
+        src: [combinedfleet-nagato-trom, navypedia-nagato, kasado-nagato]
+
+  - id: end
+    title: { zh: 终战与十字路口行动, en: Surrender and Operation Crossroads }
+    range: { from: 1945, to: 1946 }
+    events:
+      - date: 1945-06-01
+        text:
+          zh: >-
+            编入特别警备舰队。剩余的副炮、大部分高炮、一座弹射器全部搬上岸：高炮装到附近仓库山
+            （Urayama）山顶，副炮守着横须贺码头区；主炮仍留在舰上，炮口指向相模湾湾口，
+            准备对预料中的登陆舰艇平射；测距仪与全部探照灯搬到奥须山。炮塔披上脚手架伪装，
+            上甲板摆盆栽松树与柳杉。舰员减到 1,000 人。
+          en: >-
+            Assigned to the Special Guard Fleet; remaining secondary and most AA guns, plus one
+            catapult, were moved ashore, the AA guns going atop nearby Urayama. The main battery
+            remained aboard, pointed at the mouth of Sagami Bay. Her crew was cut to 1,000 men.
+        src: [combinedfleet-nagato-trom, kasado-nagato-names]
+
+      - date: 1945-07-18
+        text:
+          zh: >-
+            15:40 后，TF 58 的埃塞克斯、兰道夫、香格里拉三舰约 100 架 SB2C-4 与贝劳伍德号的
+            F6F-5 来袭。15:52 一发 500 或 1000 磅通用炸弹命中舰桥、摧毁操舵室，大塚干少将与
+            副长樋口悌二大佐以下 13 名军官阵亡；另一发 500 磅炸弹在主桅后掩蔽甲板左舷爆炸，
+            炸死军官室附近约 25 人、毁 4 座 25 mm 炮座；1 枚 11.75 英寸「Tiny Tom」火箭弹（未爆）
+            从舰尾穿过。此后剩余防空武器全部搬上岸。
+          en: >-
+            In the 18 July raid a 500 or 1,000 lb bomb demolished the wheelhouse, killing Rear
+            Admiral Otsuka, the executive officer and eleven other officers; a second bomb aft
+            killed some 25 men and destroyed four 25 mm mounts. All remaining AA armament was
+            then moved ashore.
+        src: [combinedfleet-nagato-trom]
+
+      - date: 1945-08-30
+        text:
+          zh: >-
+            美军第三舰队人员登舰并将其「捕获」。TROM 明确写这一动作「symbolizes the unconditional
+            surrender of the IJN」——日本海军投降的实物象征就是这艘船。1945-09-15 从海军名册除籍。
+          en: >-
+            Men from Task Force 31 boarded and secured Nagato; the TROM calls her capture the
+            symbol of the IJN's unconditional surrender. She was removed from the Navy List on
+            15 September 1945.
+        src: [combinedfleet-nagato-trom, kasado-nagato-names]
+
+      - date: 1946-03-18
+        text:
+          zh: >-
+            在美军上校 W. J. Whipple 指挥、约 180 名美国舰员操纵下离开横须贺前往埃尼威托克，
+            同行的还有同样由美方舰员操纵的酒匂号。四轴只有两轴可用，最高航速 10 节。3 月 26 日
+            因 1945-07-18 空袭近失弹造成的破口从未修补，前部舱室已进水约 150 吨，为保持平衡向
+            尾部反向注水 260 吨；3 月 28 日酒匂号抛锚、本舰又爆一台锅炉并烧光燃油，两舰在恶劣
+            海况中停住，直到 3 月 30 日美军拖船赶到。
+          en: >-
+            Sailed for Eniwetok under Captain W. J. Whipple with about 180 US Navy crew, only two
+            of four shafts working and 10 knots best speed. Unrepaired near-miss damage from July
+            1945 let her ship about 150 tons of seawater forward, counter-flooded with 260 tons aft;
+            on 28 March Sakawa broke down and Nagato blew a boiler and ran out of fuel.
+        src: [combinedfleet-nagato-trom]
+
+      - date: 1946-07-25
+        text:
+          zh: >-
+            十字路口行动 Able 空爆试验（7 月 1 日）时，长门泊于内华达号右舷 400 码处、距爆心
+            1,640 码，只受中度损伤：上层建筑蒙皮起皱、非水密门被吹脱、全舰油漆烤焦。
+            7 月 24 日 Baker 水下爆试验造成致命损伤——navypedia 记该弹为 40 kt、距舰 1 km 爆炸，
+            「sunk in 4 days」。7 月 29 日夜间翻覆沉没，倒扣在约 160 英尺深的水中，宝塔式舰桥折断
+            但断桩仍撑着舰体。沉没日三说并存：TROM 记 07-29 夜、kasado 记 07-28「浸水拡大により
+            沈没」、navypedia 记「受创后 4 天」（从 07-25 起算即 07-29），两说并列不裁决。
+          en: >-
+            In the Able air burst on 1 July she lay 1,640 yards from ground zero and suffered only
+            moderate damage. The Baker underwater burst on 24 July was fatal; Navypedia records a
+            40 kt bomb detonating 1 km away and the ship sinking four days later, while the TROM
+            has her capsizing on the night of 29 July and coming to rest upside down in about
+            160 feet of water. Kasado gives 28 July. The accounts are given side by side.
+        src: [combinedfleet-nagato-trom, navypedia-nagato, kasado-nagato-names]

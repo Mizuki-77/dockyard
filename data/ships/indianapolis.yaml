@@ -1,0 +1,652 @@
+# ============================================================================
+# 印第安纳波利斯号（USS Indianapolis, CA-35）—— 波特兰级二号舰 · 单舰差异文件
+# ----------------------------------------------------------------------------
+# 【本文件只写差异】
+#   主尺度、排水量、动力、装甲方案与厚度、8"/55 主炮三座三联装炮位、
+#   5"/25 八座单装炮位、鱼雷管 0 —— 全部已在 data/classes/portland.yaml
+#   的 56 条 fact 里，此处**一条都不重复**。
+#   本文件写的是「换一艘同级舰就会变」的东西：建造节点、舰长、旗舰任期、
+#   逐次改装后的防空/雷达/涂装、以及 1945-07-30 这一天的结局与伤亡。
+#
+# 【本舰最容易写错的三件事，先在这里说清】
+#   一、**舰沉 ≠ 舰长死。** 1945-07-30 本舰沉没；舰长 Charles B. McVay III
+#       生还（获救名单里排第一位），1945-12 受军事法庭审判，1968 年自杀。
+#       沉没、审判、平反、自杀 是四件独立的事，绝不合并成一句。
+#   二、**运的是「部件」，不是「整颗原子弹」。** 国家档案馆原句是
+#       "shipped the collection of parts"；浓缩铀靶件（target component）
+#       是 C-54 空运到天宁岛的，不在这条船上。正文按原句写，不自行升级措辞。
+#   三、**平反是 2000-10-30，不是 2001。** 2001-07-11 是海军部长 England
+#       把国会 §545 原文插入 McVay 人事档案的日期。两个日期都在本文件里，
+#       但「平反」这件事挂在 2000-10-30 上。
+#
+# 【合并时必须做的一件事】把 indianapolis 加进 data/classes/portland.yaml 的
+#   class_of（现为 [portland]）。依据交接报告 §3.6 与 audit_data.py 第 1 项：
+#   「有舰 class 指向本级却没写进 class_of」报硬问题。
+#
+# 调研底稿：work/staging/g-indy2/RESEARCH-NOTES.md
+# ============================================================================
+
+id: indianapolis
+name:
+  zh: 印第安纳波利斯号
+  en: Indianapolis
+class: portland
+
+note: >-
+  波特兰级二号舰，舷号 CA-35。以印第安纳州首府命名（姊妹舰波特兰号取缅因州
+  波特兰市，两舰同级但命名来源不同）。本舰是美国海军史上单舰沉没死亡人数最多的
+  一艘，也是曼哈顿计划链条上唯一被击沉的运载舰。1945-07-30 在菲律宾海被日本
+  潜艇 I-58 击沉，全舰 1,196 人（DANFS 作 1,195）中 316 人获救。
+  本文件只写与波特兰级的差异；主尺度、装甲、动力、炮位布置见
+  classes/portland.yaml。
+
+open_ended_note: >-
+  本文件多数 fact 的 valid.to 留空是结构性的：本舰 1945-07-30 沉没后不再有
+  任何状态变化，故沉没之后的取值即为终值，「无已知终止事件」等同于「到舰体
+  沉没为止」。状态变化集中在 1932-1945 的历次改装与旗舰任期，已按小段分别给出
+  valid 窗口。凡 valid.to 落在 1945-07-30 的条目，指的是舰体状态的终点，
+  与舰长、舰员的生死无关。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: Indianapolis
+    src: [danfs-indianapolis]
+    valid: { from: 1930-03-31 }
+    confidence: B
+    note: >-
+      DANFS 原句「The second Indianapolis (CA-35)」——**本舰是第二代**，
+      第一代 Indianapolis 是 1918 年的货船（ID-3865），与本舰无关。
+
+  - field: identity.name_zh
+    value: 印第安纳波利斯号
+    src: [danfs-indianapolis]
+    valid: { from: 1930-03-31 }
+    confidence: B
+
+  - field: identity.name_en
+    value: USS Indianapolis
+    src: [danfs-indianapolis]
+    valid: { from: 1930-03-31 }
+    confidence: B
+
+  - field: identity.name_note
+    value: >-
+      中文常简称「印迪」或「印第安纳波利斯」；日方文献作「インディアナポリス」。
+      注意与同级姊妹舰波特兰号（CA-33）区分。
+    src: [danfs-indianapolis]
+    valid: { from: 1930-03-31 }
+    confidence: B
+
+  - field: identity.pennant_number
+    value: CA-35
+    src: [danfs-indianapolis, navsource-ca35]
+    valid: { from: 1930-03-31 }
+    confidence: B
+    note: >-
+      DANFS 舰首行「(CA-35: ...)」；navsource「USS INDIANAPOLIS (CA 35)」。
+      本级最初计划编号为 CL32-36（轻巡），后在设计阶段改为 CA
+      （navypedia 原句「It was planed to build five ships (CL32-36, subsequently
+      the index was replaced to СА)」），故 1930 年开工时舷号已是 CA-35。
+
+  - field: identity.namesake
+    value: 印第安纳州首府印第安纳波利斯
+    src: [danfs-indianapolis]
+    valid: { from: 1930-03-31 }
+    confidence: B
+    note: >-
+      DANFS 原句「The capital of Indiana.」下水命名人是参议员 Thomas Taggart
+      （印第安纳波利斯前市长）之女 Lucy Taggart。
+
+  - field: identity.ship_type
+    value: heavy_cruiser
+    src: [danfs-indianapolis]
+    valid: { from: 1930-03-31 }
+    confidence: B
+
+  - field: identity.nation
+    value: united_states
+    src: [danfs-indianapolis]
+    valid: { from: 1930-03-31 }
+    confidence: B
+
+  - field: identity.operator
+    value: United States Navy
+    src: [danfs-indianapolis]
+    valid: { from: 1930-03-31 }
+    confidence: B
+
+  - field: identity.era
+    value: ww2
+    src: [danfs-indianapolis]
+    valid: { from: 1930-03-31 }
+    confidence: B
+
+  # ============================================================ 建造
+  - field: construction.order_date
+    value: 1929-02-13
+    unit: date
+    src: [navsource-ca35]
+    valid: { from: 1929-02-13 }
+    confidence: C
+    note: >-
+      navsource 原句「Authorized 13 FEB 1929」。同一授权覆盖本级两艘
+      （navypedia：「approved in 1929 ... It was planed to build five ships
+      (CL32-36 ...)」，后削减为两艘）。给 C 是因为 navsource 是照片索引站，
+      技术行二手且不标出处。
+
+  - field: construction.builder
+    value: New York Shipbuilding Corp.
+    src: [danfs-indianapolis, navypedia-portland]
+    valid: { from: 1930-03-31 }
+    confidence: B
+    note: >-
+      DANFS 原句「at Camden, N.J., by the New York Shipbuilding Corp.」；
+      navypedia 舰表「New York SB, Camden」。
+      **注意与姊妹舰不同厂**：波特兰号在 Bethlehem, Quincy 建造（navypedia 舰表）。
+
+  - field: construction.builder_location
+    value: Camden, New Jersey
+    src: [danfs-indianapolis]
+    valid: { from: 1930-03-31 }
+    confidence: B
+
+  - field: construction.yard_number
+    value: '399'
+    src: [navypedia-portland]
+    valid: { from: 1930-03-31 }
+    confidence: C
+    note: >-
+      navypedia 舰表「CA35 / Indianapolis / 399 / New York SB, Camden」。
+      波特兰号的船台号是 1430，两舰不同厂不同号。
+
+  - field: construction.laid_down
+    value: 1930-03-31
+    unit: date
+    src: [danfs-indianapolis, navypedia-portland, navsource-ca35]
+    valid: { from: 1930-03-31 }
+    confidence: A
+    note: >-
+      三源完全一致：DANFS「laid down on 31 March 1930」；
+      navypedia 舰表「31.3.1930」；navsource「Keel laid on 31 MAR 1930」。
+      **任务书的 1930-03-31 已核实无误。**
+
+  - field: construction.launched
+    value: 1931-11-07
+    unit: date
+    src: [danfs-indianapolis, navypedia-portland, navsource-ca35]
+    valid: { from: 1931-11-07 }
+    confidence: A
+    note: >-
+      三源一致（DANFS「launched on 7 November 1931」；navypedia「7.11.1931」；
+      navsource「Launched 07 NOV 1931」）。命名人 Lucy Taggart。
+
+  - field: construction.commissioned
+    value: 1932-11-15
+    unit: date
+    src: [danfs-indianapolis, navypedia-portland, navsource-ca35]
+    valid: { from: 1932-11-15 }
+    confidence: A
+    note: >-
+      三源一致：DANFS「commissioned at the Philadelphia Navy Yard on 15 November
+      1932」；navypedia「15.11.1932」；navsource「Commissioned 15 NOV 1932」。
+      **在费城海军船厂服役**（不是建造地 Camden）。
+      首任舰长 John M. Smeallie。任务书的 1932-11-15 已核实无误。
+
+  # ============================================================ 结局
+  - field: construction.fate_date
+    value: 1945-07-30
+    unit: date
+    src: [danfs-indianapolis, nhhc-court-of-inquiry-findings]
+    valid: { from: 1945-07-30 }
+    confidence: A
+    note: >-
+      **日期以美方 9½ 时区为准。** 调查法庭原句「an explosion occurred aboard
+      Indianapolis shortly after midnight about 0005, zone time 9 ½, July 30」；
+      DANFS 作「Early in the morning, 15 minutes into the mid watch on 30 July 1945」。
+      ⚠️ **navypedia 把沉没日记成「sunk 29.7.1945」**，那是日方 I-58 的日期
+      （-9 时区，7-29 2332 发射），不是错记，但本站日期字段统一用美方口径 1945-07-30，
+      两说并列记在此 note。
+
+  - field: construction.fate_type
+    value: sunk_by_enemy
+    src: [nhhc-court-of-inquiry-findings, ndaa-2001-sec545]
+    valid: { from: 1945-07-30 }
+    confidence: A
+    note: >-
+      国会 §545(a)(1) 原句「was torpedoed and sunk by the Japanese submarine I-58
+      in what became the worst sea disaster in the history of the United States Navy」。
+      调查法庭的措辞更谨慎：「the most probable cause of the explosions was that the
+      ship been struck almost simultaneously by two torpedoes from and enemy
+      submarine」，并列出次可能（水雷）与最不可能（内部爆炸）两种备选——
+      1945 年 8 月时法庭还无法确证，1945-12 桥本出庭后才闭环。
+
+  - field: service.fate_category
+    value: >-
+      战斗损失：1945-07-30 在菲律宾海被日本潜艇 I-58 以鱼雷击沉，两次重爆后
+      12-20 分钟内倾覆（DANFS 记 12 分钟，调查法庭记「about fifteen or twenty
+      minutes」，两说并列），位置 12°02′N 134°48′E。1945-09-01 除籍。
+      舰体未打捞；2017-08-18 Paul G. Allen 的调查船 Petrel 在约 5,500 米深处
+      发现残骸。**舰沉，舰长生还。**
+    src: [danfs-indianapolis, nhhc-court-of-inquiry-findings, navsource-ca35]
+    valid: { from: 1945-09-01 }
+    confidence: A
+    note: >-
+      除籍日 navsource 原句「Stricken 01 SEP 1945」。
+      沉没时长：DANFS「sank in 12 minutes」vs 调查法庭「sank in about fifteen or
+      twenty minutes」，**两说并列，不裁决**。
+      残骸海域：DANFS 作「resting on the floor of the North Pacific」，navsource 作
+      「in the Philippine Sea」，**两说并列，不裁决**；深度两源一致（约 5,500 m）。
+
+  # ============================================================ 编制与伤亡
+  - field: service.complement.standard
+    value: 917
+    unit: persons
+    src: [navypedia-portland]
+    valid: { from: 1932-11-15, to: 1945-07-30 }
+    confidence: C
+    note: >-
+      navypedia 原句「Complement | CA33: 807  CA35: 917 inc flag」——
+      **本条是两舰的差异点**：本舰作为舰队旗舰多编 110 人。
+      ⚠️ 这个 917 与下面 1945 年最后航程的 1,195/1,196 不是同一口径：
+      前者是设计/编制定员（含旗舰人员），后者是沉没当晚的实际在舰人数。
+      本库另有 DANFS 舰首行「complement 1,269」、navsource「Crew 621」两个数字，
+      四个值从 621 到 1,269，无一口径说明，故只把 navypedia 的旗舰口径与
+      实际在舰数分列，其余留在 classes/portland.yaml 的 note 里。
+
+  # ---- 1945-07-30 当晚在舰人数：两说并列，不裁决 ----
+  - field: service.complement.wartime
+    value: 1196
+    unit: persons
+    src: [nhhc-casualty-summary, ndaa-2001-sec545]
+    valid: { from: 1945-07-30 }
+    confidence: A
+    comparable: false
+    note: >-
+      **两说并列之一（A 级档案口径）。** 美国海军伤亡汇总原句逐行
+      「Aboard: 1,196 / Died at sea: 880 / Survived: 316」；
+      国会 §545(a)(2) 亦作「the ship's crew of 1,196」；
+      调查法庭伤亡汇总（1945-08-08）细分「84 Officers [82 MV]; 1114 Enlisted;
+      1198 Total [1196 MV]」——方括号 [MV] 是页内标注的修正值，取修正值 1,196。
+      另一说 1,195 见下条。**两说并列，不裁决，不做减法。**
+
+  - field: service.complement.wartime
+    value: 1195
+    unit: persons
+    src: [danfs-indianapolis, va-indy]
+    valid: { from: 1945-07-30 }
+    confidence: B
+    comparable: false
+    note: >-
+      **两说并列之二（DANFS 口径）。** DANFS 原句「saving 316 of the crew of
+      1,195 men」；VA 叙述原句「Out of 1,195 men, only 316 survived the ordeal」。
+      与上一条的 1,196 相差 1 人，两处都是官方出版口径。
+      另有 HyperWar 转录本作 1,199（见 danfs-indianapolis-ibiblio），
+      第三说只记在底稿，不写成第三条 fact —— 同一事实三个数字已足够说明分歧。
+
+  - field: service.survivors
+    value: 316
+    unit: persons
+    src: [nhhc-casualty-summary, danfs-indianapolis, ndaa-2001-sec545]
+    valid: { from: 1945-08-08 }
+    confidence: A
+    note: >-
+      **本组伤亡数据里唯一没有分歧的一项，三源完全一致。**
+      NHHC 档案「Survived: 316」；DANFS「saving 316」；§545(a)(2)「only 316 ...
+      survived when rescued after four and a half days adrift」。
+      调查法庭伤亡汇总另把它拆开：「Total Wounded Survivors: 15 Officers;
+      301 Enlisted; 316 Total」——即 316 人全部是伤员。
+      救援于 1945-08-08 结束，搜索半径 100 海里。
+
+  - field: service.casualties
+    value: 880
+    unit: persons
+    src: [nhhc-casualty-summary]
+    valid: { from: 1945-08-08 }
+    confidence: A
+    note: >-
+      **来源直给，不是算出来的。** NHHC 伤亡汇总原句「Died at sea: 880」，
+      故给 A。同一页的调查法庭汇总另给「Missing: 69 Officers [67 MV]; 809
+      Enlisted; 878 Total [876 MV]」——两个数不是一回事：
+      878/876 是「失踪」，880 是「海上死亡」，差额即获救后死亡的 4 名士兵
+      （VA 原句「four additional Sailors were rescued but died shortly after」）。
+      另有 883（NHHC 专题）与 888（幸存者团体 Project 888）两个纪念性口径，
+      均不采用为 fact，只在争议清单留痕。**不做减法：879 这个推算值不入库。**
+
+  - field: service.fate_authority
+    value: >-
+      1945-08-13 关岛海军调查法庭（Court of Inquiry）认定沉没由敌方潜艇鱼雷所致；
+      1945-12 军事法庭审判舰长；2000-10-30 国会 §545 认定舰长无责
+    src: [nhhc-court-of-inquiry-findings, nhhc-court-martial-hashimoto, ndaa-2001-sec545]
+    valid: { from: 1945-08-13 }
+    confidence: A
+    note: >-
+      三份文书串起完整链条：调查法庭给出事实与建议（含建议送军法审判）→
+      尼米兹 1945-09-06 驳回审判建议、主张申斥（nhhc-nimitz-reprimand）→
+      海军部长 Forrestal 仍下令开庭、1945-12 定罪 → 2000 年国会立法认定无责。
+      **这条只写「判定」，不写舰长生死。**
+
+  # ============================================================ 舰长
+  # 口径说明：本库有两个来源给舰长任期，且**互相矛盾**（见 RESEARCH-NOTES §4）。
+  #   只写两源一致的几条；矛盾的只写接任日、不写卸任日，其余留痕不写 fact。
+  - field: service.commander
+    value: Capt. John M. Smeallie
+    src: [danfs-indianapolis, navsource-ca35]
+    valid: { from: 1932-11-15, to: 1934-12-10 }
+    confidence: B
+    note: >-
+      首任舰长。DANFS 舰长表「Capt. John Morris Smeallie / 15 November 1933」
+      （年份 1933 与正文的服役日 1932 矛盾，判为 DANFS 表内错字）；
+      navsource「11/15/1932 - 12/10/1934」。起任日取 1932-11-15（与服役日一致），
+      卸任日取 navsource。
+
+  - field: service.commander
+    value: Capt. Morton L. Deyo
+    src: [danfs-indianapolis, navsource-ca35]
+    valid: { from: 1942-07-11, to: 1942-12-02 }
+    confidence: C
+    note: >-
+      DANFS 表「Capt. Morton Lyndholm Deyo / 11 July 1942」；
+      navsource「07/11/1942 - 01/12/1943」。两者在起任日一致（1942-07-11），
+      卸任日一作 1942-12-02（DANFS 下一任 Vytlacil 的接任日）、
+      一作 1943-01-12（navsource），**两说并列**，本条取 DANFS。
+
+  - field: service.commander
+    value: Capt. Einar R. Johnson
+    src: [danfs-indianapolis, navsource-ca35]
+    valid: { from: 1943-07-30, to: 1944-11-18 }
+    confidence: B
+    note: >-
+      DANFS 表两次列他：1943-07-30 与 1944-11-06（中间夹一个
+      「Cmdr. Charles Arthur Ferriter / 19 October 1944」）。
+      navsource 只列一次「07/30/1943 - 11/18/1944」。**Ferriter 那一段
+      为 DANFS 独有，navsource 无，两说并列**，本条按 navsource 的连续任期写。
+
+  - field: service.commander
+    value: Capt. Charles B. McVay III
+    src: [danfs-indianapolis, navsource-ca35, ndaa-2001-sec545]
+    valid: { from: 1944-11-18, to: 1945-07-30 }
+    confidence: A
+    note: >-
+      末任舰长。DANFS「Capt. Charles Butler McVay III / 18 November 1944」；
+      navsource「11/18/1944 - 07/30/1945」。
+      ⚠️ **本条的 valid.to 是「职务终止日」，不是死亡日 —— McVay 生还。**
+      他在获救名单里排第一位（nhhc-casualty-summary 原文
+      「Captain Charles B. McVay III」列于获救 12 名委任军官之首），
+      1945-12 受审，1949 年退役时依例晋升少将（nhhc-england-2001），
+      1968 年自杀（§545(a)(11)）。
+
+  # ============================================================ 旗舰与编队
+  - field: service.flag
+    value: 侦察舰队旗舰（Scouting Force）
+    src: [danfs-indianapolis]
+    valid: { from: 1933-11-01, to: 1941-12-07 }
+    confidence: B
+    note: >-
+      DANFS 原句「Indianapolis became flagship of the Scouting Force on
+      1 November 1933」及「Indianapolis acted as flagship for the remainder of
+      her peacetime career」——**整个和平年代她都是旗舰**，这是本舰与
+      姊妹舰波特兰号最大的生涯差异。
+
+  - field: service.flag
+    value: 第五舰队旗舰（Vice Adm. Raymond A. Spruance）
+    src: [danfs-indianapolis, nhhc-nimitz-reprimand]
+    valid: { from: 1943-11-10, to: 1945-02-28 }
+    confidence: B
+    note: >-
+      DANFS 原句「she became flagship of Vice Admiral Raymond A. Spruance
+      commanding the Fifth Fleet」「Indianapolis was again Fifth Fleet Flagship」。
+      起日取 1943-11-10（她以该身份从珍珠港出航参加 Galvanic 的日期）。
+      终止日只是本文件按「1945-02 斯普鲁恩斯仍以本舰为旗舰」推出的窗口边界
+      （nhhc-nimitz-reprimand 图注「Vice Admiral Spruance used Indianapolis as his
+      flag ship as commander of the 5th Fleet on multiple occasions」，照片摄于
+      1945-02 关岛），**不表示此后她不再是旗舰**，标 C 偏保守故整条给 B。
+
+  - field: service.unit
+    value: Task Force 12（珍珠港事变后搜索日军航母）
+    src: [danfs-indianapolis]
+    valid: { from: 1941-12-07, to: 1941-12-13 }
+    confidence: B
+    note: >-
+      DANFS 原句「Indianapolis, then making a simulated bombardment of Johnston
+      Island, immediately joined Task Force 12 and searched for Japanese carriers
+      reportedly still in the vicinity」。
+
+  - field: service.unit
+    value: Task Force 11
+    src: [danfs-indianapolis]
+    valid: { from: 1941-12-13, to: 1942-05-01 }
+    confidence: B
+    note: >-
+      DANFS 原句「She arrived Pearl Harbor on 13 December 1941 and entered Task
+      Force 11 for operations against the enemy」。
+
+  - field: service.unit
+    value: 北太平洋部队（阿留申群岛）
+    src: [danfs-indianapolis]
+    valid: { from: 1942-05-01, to: 1943-05-31 }
+    confidence: B
+    note: >-
+      DANFS 记其 1942-08-07 炮击基斯卡、1943-01 支援阿姆奇特卡登陆、
+      1943-05 参加阿图岛作战。起止为本文件按事件推的窗口边界，中间无空白。
+
+  # ============================================================ 武备（逐次改装）
+  # 建成状态（9×8"/55 + 8×5"/25 + 8×12.7mm + 2 弹射器 + 4 机）见 classes/portland.yaml。
+  - field: armament.mount.summary
+    value: >-
+      建成时：9 × 8"/55（20.3 cm）Mk 9（3 座三联装 triple mount）+ 8 × 5"/25
+      （12.7 cm）单装 + 8 × 12.7 mm/90 机枪 + 2 座弹射器、4 架水上飞机。鱼雷管 0。
+    src: [navypedia-portland, danfs-indianapolis]
+    valid: { from: 1932-11-15, to: 1942-02-01 }
+    confidence: B
+    note: >-
+      navypedia 舰级武备行「3 x 3 - 203/55 Mk 9.10.11/13/14, 8 x 1 - 127/25
+      Mk 10.11.13, 8 х 1 - 12.7/90, 2 catapults, 4 seaplanes (OL, O2U, O3U)」；
+      DANFS 舰首行「armament 9 8-inch, 8 5-inch」。本条是**本舰的建成状态**，
+      与舰级文件同名 fact 的区别只在时间窗起点（用本舰服役日）。
+      **鱼雷管 0 有明确的否定句支撑**（navypedia「Portland class differed from
+      predecessors by absence of TTs」），不是「未获取」。
+
+  - field: armament.mount.summary
+    value: >-
+      1942 年改装后：拆除 8 × 12.7 mm/90 机枪，加装 4 座四联装 1.1"/75（28 mm）
+      与 12 座单装 20 mm 厄利孔。
+    src: [navypedia-portland]
+    valid: { from: 1942-02-01, to: 1943-05-01 }
+    confidence: C
+    note: >-
+      navypedia 改装表原句「early 1942, both: - 8 x 1 -12.7/90; + 4 x 4 - 28/75
+      Mk 1, 12 x 1 - 20/70 Mk 4, SC, Mk 3, Mk 4 radars」——原文写「both」，
+      即本级两艘同改，故可直接用于本舰。月份只有「early 1942」，精确日未获取。
+
+  - field: armament.mount.summary
+    value: >-
+      1943-05 改装后：拆除 4 座四联装 1.1"/75 与 1 座弹射器，加装 4 座四联装
+      40 mm 博福斯（16 管）。
+    src: [navypedia-portland]
+    valid: { from: 1943-05-01, to: 1944-12-10 }
+    confidence: C
+    note: >-
+      navypedia 原句「5/1943, both: - 4 x 4 - 28/75, 1 catapult, SC radar;
+      + 4 x 4 - 40/56 Mk 1.2, SG, SK radars. Portland can carry 2 seaplanes and
+      Indianapolis 3.」同一句里给出了两舰的载机差异（本舰 3 架，姊妹舰 2 架）。
+      navsource 的 1943-05-01 改装照可互证：「Note newly fitted 40mm and 20mm guns」。
+
+  - field: armament.mount.summary
+    value: >-
+      1944 年末改装后（最终状态）：9 × 8"/55 + 8 × 5"/25 + 6 座四联装 40 mm
+      （24 管）+ 8 座双联装 20 mm（16 管）。满载排水量超过 15,000 t。
+    src: [navypedia-portland, navsource-ca35]
+    valid: { from: 1944-12-10, to: 1945-07-30 }
+    confidence: C
+    note: >-
+      navypedia 原句「1944 - 1945, Indianapolis: - 12 x 1 - 20/70; + 2 x 4 -
+      40/56 Mk 1.2, 8 x 2 - 20/70 Mk 4, full displacement was more than 15000t」。
+      **这是本级两舰第一次出现武备差异**：波特兰号走的是另一条线
+      （「1944 - 1945, Portland: + 4 x 2 - 40/56 Mk 1.2, 5 x 1 - 20/70 Mk 4」）。
+      装上时间取 1944-12-10（Mare Island 改装结束日，
+      navsource 图注「in overhaul at the yard from 19 October until 10 Dec 1944」）。
+      navsource 1944-12-07 图注可互证：「Note 40mm quad gun mounts on her fantail,
+      after 8"/55 gun turret」。
+
+  - field: armament.aa_40mm.count
+    value: 16
+    unit: count
+    src: [navypedia-portland]
+    valid: { from: 1943-05-01, to: 1944-12-10 }
+    confidence: C
+    note: >-
+      按管数记（字段定义如此）：4 座四联装 = 16 管。
+      navypedia「+ 4 x 4 - 40/56 Mk 1.2」。
+
+  - field: armament.aa_40mm.count
+    value: 24
+    unit: count
+    src: [navypedia-portland, navsource-ca35]
+    valid: { from: 1944-12-10, to: 1945-07-30 }
+    confidence: C
+    note: >-
+      4 座（1943-05 装）+ 2 座（1944 年末装）= 6 座四联装 = 24 管。
+      navypedia「+ 2 x 4 - 40/56 Mk 1.2」；navsource 1944-12-07 与 1945-07-12
+      的图注均可见艉部四联装 40 mm 炮座。
+
+  - field: armament.aa_20mm.count
+    value: 12
+    unit: count
+    src: [navypedia-portland]
+    valid: { from: 1942-02-01, to: 1944-12-10 }
+    confidence: C
+    note: >-
+      navypedia「early 1942, both: ... + 12 x 1 - 20/70 Mk 4」——12 座单装 = 12 管。
+
+  - field: armament.aa_20mm.count
+    value: 16
+    unit: count
+    src: [navypedia-portland]
+    valid: { from: 1944-12-10, to: 1945-07-30 }
+    confidence: C
+    note: >-
+      navypedia「- 12 x 1 - 20/70; + ... 8 x 2 - 20/70 Mk 4」——12 座单装全拆，
+      换 8 座双联装 = 16 管。**注意管数从 12 升到 16，但座数从 12 降到 8**，
+      按管数记是本字段的定义。
+
+  - field: armament.torpedo.tubes
+    value: 0
+    unit: count
+    src: [navypedia-portland]
+    valid: { from: 1932-11-15, to: 1945-07-30 }
+    confidence: C
+    note: >-
+      **是 0，不是「未获取」。** 见 classes/portland.yaml 同名 fact 的否定句依据。
+      本舰全生涯未装过鱼雷发射管 —— 这也是她在 1945-07-30 夜里对潜艇毫无
+      还手手段的原因之一（NDAA §545 未直接这样写，但 I-58 全程未被发现）。
+
+  # ============================================================ 探测与火控（本舰独有）
+  - field: sensors.director.type
+    value: Mk 34 主炮指挥仪
+    src: [navsource-ca35]
+    valid: { from: 1944-12-07, to: 1945-07-30 }
+    confidence: C
+    note: >-
+      navsource 1944-12-07 图注原句「Note "whip" radio antenna mounted on her
+      forward smokestack, aircraft crane, tripod mainmast with an SK radar antenna
+      on top and newly-fitted MK 34 gun director」；同站 1945-07-12 图注
+      「Note MK 13 radar on MK 34 director, atop Indianapolis' tripod foremast」。
+      **属看图识别，不是来源明写的技术表，故给 C。**
+
+  - field: sensors.radar.installed
+    value: Mk 13（装于 Mk 34 指挥仪顶）
+    src: [navsource-ca35]
+    valid: { from: 1945-07-12, to: 1945-07-30 }
+    confidence: C
+    note: >-
+      navsource 1945-07-12 图注原句「Note MK 13 radar on MK 34 director, atop
+      Indianapolis' tripod foremast, and many other antennas on masts and
+      superstructure」。这是本舰出厂时（最后航程前）的实物状态。
+      给 C 的理由同上一條：照片判读，非文本记载。
+
+  - field: sensors.radar.installed
+    value: SK（对空搜索，装于三脚主桅顶）
+    src: [navsource-ca35]
+    valid: { from: 1943-05-01, to: 1945-07-30 }
+    confidence: C
+    note: >-
+      navypedia 1943-05 改装表给「+ ... SG, SK radars」（本级两艘）；
+      navsource 1944-12-07 图注实物互证「tripod mainmast with an SK radar antenna
+      on top」。两条独立来源指向同一件事，但因 navsource 一侧是看图，整条给 C。
+
+  # ============================================================ 航空（本舰与姊妹舰的差异点）
+  - field: aviation.aircraft.capacity
+    value: 3
+    unit: count
+    src: [navypedia-portland]
+    valid: { from: 1943-05-01, to: 1945-07-30 }
+    confidence: C
+    note: >-
+      navypedia 原句「Portland can carry 2 seaplanes and Indianapolis 3.」
+      ——**同一句里点明两舰差异**：1943-05 那次改装波特兰号拆弹射器后降到 2 架，
+      本舰保留 3 架。建成时为 4 架（舰级文件）。
+
+  - field: aviation.catapult.count
+    value: 1
+    unit: count
+    src: [navypedia-portland, navsource-ca35]
+    valid: { from: 1945-07-12, to: 1945-07-30 }
+    confidence: B
+    note: >-
+      **两源独立互证。** navypedia「5/1943, both: - ... 1 catapult」；
+      navsource 1945-07-12 图注更具体：「port side catapult (and removal of
+      starboard catapult)」——**拆的是右舷那台，剩下的是左舷**。
+      两者都指向「最终只剩 1 座」。
+
+  - field: aviation.aircraft.types
+    value: SC-1 水上飞机
+    src: [navsource-ca35]
+    valid: { from: 1945-07-12, to: 1945-07-30 }
+    confidence: C
+    note: >-
+      navsource 1945-07-12 两条图注：「Note float for a SC-1 floatplane stowed
+      behind the stack」「Note SC-1 seaplanes being placed in hangars」。
+      这是本舰出厂时的实载机型。舰级文件记的 OL/O2U/O3U 是 1930 年代机型谱，
+      两者时间窗不同，不矛盾。
+
+  # ============================================================ 涂装
+  - field: appearance.scheme
+    value: Measure 32, Design 7D
+    src: [navsource-portland, navsource-ca35]
+    valid: { from: 1944-03-21, to: 1944-12-09 }
+    confidence: B
+    note: >-
+      **两舰同穿一套迷彩，故引两舰的照片索引。** navsource（波特兰号页）图注原句：
+      「Drawing prepared by the Bureau of Ships for a camouflage scheme intended
+      for heavy cruisers of the CA-33 (Portland) class. USS Portland (CA-33) and
+      USS Indianapolis (CA-35) both wore this pattern. This plan ... is dated
+      21 March 1944 and was approved by Captain Torvald A. Solberg, USN.」
+      ——**方案 1944-03-21 定稿，两舰同穿**，故起日取这一天。
+      navsource 本舰页 1944-05-01 图注「after overhaul and repainting with pattern
+      camouflage」可互证。
+
+  - field: appearance.scheme
+    value: Measure 22
+    src: [navsource-ca35]
+    valid: { from: 1944-12-09 }
+    confidence: B
+    note: >-
+      navsource 原句「USS Indianapolis (CA 35) Off the Mare Island Navy Yard,
+      California, 9 December 1944, following overhaul and repainting into
+      Measure 22 camouflage.」同站 1944-12-09 另有四张不同角度的照片
+      （舰艉/舷侧/舰艏）佐证。
+      1945-07-12 出厂后的涂装**无来源明写**，故本条 valid.to 留空，
+      但内容只保证到 1944-12-09 的实物状态 —— 这是「无已知终止事件」的写法，
+      不是「一直穿到沉没」的断言。
+
+  # ============================================================ 荣誉
+  # 十枚战斗之星不写成 fact：本库没有「荣誉/勋表」字段，service.unit 是
+  # 编制隶属（每条一个编队），把勋表塞进去是语义误用。
+  # 故只写进 note 与正文（本库对波特兰号、明尼阿波利斯号等的处理相同）。
+  #
+  # DANFS 原句「Indianapolis received 10 battle stars for her World War II
+  # service in the Pacific」，并逐役列出十枚对应行动；
+  # navsource 奖章栏「Asiatic-Pacific Campaign Medal (10)」互证。
+  # 另：国会 §545(c) 要求海军部长给本舰与最后一批舰员颁发 Navy Unit
+  # Commendation —— 这是立法要求，实际颁发日期未获取，故不写日期。

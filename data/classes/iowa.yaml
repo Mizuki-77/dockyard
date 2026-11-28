@@ -1,0 +1,1791 @@
+# ============================================================================
+# Iowa 级（Iowa class）舰级公共数据
+# ----------------------------------------------------------------------------
+# 这里只放 Iowa / Missouri（以及同级 New Jersey、Wisconsin）**共有**的
+# 设计参数与武器/炮位实体。单舰的建造日期、编制、战历、改装与装甲差异
+# 一律写在 work/staging/g-iowa/ships/<id>.yaml。
+#
+# 约定（照 data/classes/bismarck.yaml）：
+#   about 缺省       -> 本文件主体（舰级本身）
+#   about: weapon:x  -> 武器实体 x（weapon.* 字段）
+#   about: mount:x   -> 炮位实体 x（mount.* 字段）
+#
+# 本轮三处必须记住的口径问题，逐条写进 note，不在正文里裁决：
+#   1) 排水量：navypedia 的 "Displacement standard/full, t" 与英文文献
+#      （DANFS 45,000 / MARAD 57,271）互不换算，本站按各自原文数值录入并
+#      标明「口径未定」，不做长吨→公吨的推算。
+#   2) 主炮是 16"/50 (40.6 cm) Mark 7，**不是** 16"/45 Mark 6（后者是
+#      North Carolina / South Dakota 级的炮）。navweaps 原文明确
+#      "16\"/50 (40.6 cm) Mark 7 ... Iowa (BB-61) and Montana (BB-67) Classes"。
+#   3) 本舰级**不是**史上最大战列舰：NHHC 原文 "Although the Japanese
+#      super-battleships Yamato and Musashi were heavier and had larger guns
+#      (nine 18.1-inch)"。正文与 fact 里都不写「最大」。
+# ============================================================================
+
+id: iowa
+name:
+  zh: 衣阿华级
+  en: Iowa class
+class_of: [iowa, missouri]
+note: |
+  舰级层只登记四舰共有的设计值。凡 Iowa 与 Missouri 不同的项（建造厂、
+  日期、编制、装甲横舱壁厚度、雷达配置、40 mm/20 mm 数量）一律不写在这里，
+  由单舰文件覆盖或补写。
+
+open_ended_note: |
+  本文件绝大多数 fact 的 valid.to 都留空，这是结构性的，不是漏填：
+  舰级设计参数的生效期从设计定案/服役起，到该级最后一艘退役或拆解为止，
+  期间不因改装而改变（1980 年代现代化另有独立时间窗，见对应 fact）；
+  实际战备状态随时间的变化写在 data/ships/<id>.yaml 的状态切片里，
+  由单舰 fact 覆盖。因此这里的 open 时间窗表示「无已知终止事件」。
+
+facts:
+  # ---------------------------------------------------------------- 身份
+  - field: identity.name_original
+    value: Iowa
+    src: [navypedia-iowa, danfs-iowa-iii]
+    valid: { from: 1938-06 }
+    confidence: B
+    note: 舰级名取首舰名。设计 1938 年 6 月定案。
+
+  - field: identity.name_zh
+    value: 衣阿华级
+    src: [navypedia-iowa]
+    valid: { from: 1938-06 }
+    confidence: C
+    note: 中文通行译名。另有「爱荷华级」写法，同指一级。
+
+  - field: identity.name_en
+    value: Iowa class
+    src: [navypedia-iowa, danfs-iowa-iii]
+    valid: { from: 1938-06 }
+    confidence: B
+
+  - field: identity.ship_type
+    value: battleship
+    src: [navypedia-iowa, danfs-iowa-iii]
+    valid: { from: 1938-06 }
+    confidence: A
+    note: 两源一致（DANFS 归类为 battleship，navypedia 归入 "CAPITAL SHIPS AND MONITORS — IOWA battleships"）。
+
+  - field: identity.nation
+    value: united_states
+    src: [navypedia-iowa]
+    valid: { from: 1938-06 }
+    confidence: A
+
+  - field: identity.operator
+    value: United States Navy（美国海军）
+    src: [navypedia-iowa, danfs-iowa-iii]
+    valid: { from: 1943-02-22 }
+    confidence: A
+
+  - field: identity.era
+    value: ww2
+    src: [danfs-iowa-iii]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      按该级作为一级舰的定位取 ww2（首舰 1943-02 服役，四舰全部赶在二战内
+      建成）。四舰均续用到 1990 年代初，1984-1992 的复役期属 cold_war 语境，
+      该段状态另由单舰 fact 的时间窗表达，不改本条。
+
+  - field: identity.building_program
+    value: >-
+      FY1940 造舰计划（BB-61/62 于 1939 年订货；1939-07 决定建造 BB-63/64，
+      同为 FY1940；BB-65/66 于 1939-09 批准）
+    src: [navypedia-iowa]
+    valid: { from: 1939 }
+    confidence: C
+    note: >-
+      navypedia 原文："next year the order for ВВ61 and ВВ62 under the FY1940
+      programme was given out. In July, 1939 the decision about building of
+      ВВ63 and ВВ64 (FY1940) followed, and in September, 1939 building of
+      ВВ65 and ВВ66 was approved."（原文用西里尔字母 В 代 B，系该站俄文底稿
+      替换错误，按 BB 读。）
+
+  # ------------------------------------------------------------ 排水量
+  # 口径警告：本节两个来源各自没有把「长吨/公吨」说清，本站不换算、只并列。
+  - field: displacement.standard
+    value: 48110
+    unit: t
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: >-
+      navypedia "Data variant: as commissioned | Displacement standard, t | 48110"。
+      **口径未定**：该站列名写 t，但英文文献同一组数字（48,110 / 57,540）
+      惯以长吨计；本站按原文数值录入，不换算、不改写为公吨。
+
+  - field: displacement.standard
+    value: 45000
+    unit: t
+    src: [danfs-iowa-iii, danfs-missouri-iii]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      DANFS 两舰词条均作 "(BB-61: dp. 45,000 t. ...)" / "(BB-63: displacement
+      45,000 ...)"。这是设计标准排水量的通行记法（45,000 长吨量级），
+      与 navypedia 的 48,110 不是同一口径，**两说并列，不裁决**。
+
+  - field: displacement.full
+    value: 57540
+    unit: t
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: >-
+      navypedia "Displacement full, t | 57540"。口径同样未定（见 standard 条）。
+
+  - field: displacement.full
+    value: 57271
+    unit: t
+    src: [marad-vessel-iowa]
+    valid: { from: 1945 }
+    confidence: C
+    note: >-
+      MARAD 船舶史数据库 "Displacement, Summer | 57271.00 tons"。这是美方
+      政府数据库的夏季满载口径，与 navypedia 的 57,540 相差 269，属口径/状态
+      差异，两条并列。原文单位为 "tons"，未注明长吨或公吨。
+
+  - field: displacement.empty
+    value: 45231
+    unit: t
+    src: [marad-vessel-iowa]
+    valid: { from: 1945 }
+    confidence: C
+    note: >-
+      MARAD "Displacement, Lightweight | 45231.00 tons"，即轻载/空船排水量。
+      与「标准排水量」不是同一口径，故不并入 displacement.standard。
+
+  - field: displacement.standard
+    value: 50453
+    unit: t
+    src: [navypedia-iowa]
+    valid: { from: 1984 }
+    confidence: C
+    note: >-
+      navypedia "Data variant: 1982-1988 modernization | Displacement standard, t |
+      50453"。1980 年代复役改装（战斧/鱼叉/密集阵）后的标准排水量。
+
+  - field: displacement.full
+    value: 59065
+    unit: t
+    src: [navypedia-iowa]
+    valid: { from: 1984 }
+    confidence: C
+    note: navypedia 同一 variant 列的满载值 59,065 t。
+
+  # ---------------------------------------------------------------- 主尺度
+  - field: dimensions.length.oa
+    value: 270.4
+    unit: m
+    src: [navypedia-iowa, danfs-iowa-iii]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      navypedia "Length, m | 262,1 wl 270.4 oa"；DANFS "l. 887'3\"" = 270.44 m。
+      两源在 0.04 m 内一致，取 270.4。
+
+  - field: dimensions.length.wl
+    value: 262.1
+    unit: m
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: navypedia "262,1 wl"。
+
+  - field: dimensions.beam.wl
+    value: 33.0
+    unit: m
+    src: [navypedia-iowa, danfs-missouri-iii]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      navypedia "Breadth, m | 33.0"（未区分水线宽/最大宽，故只记这一条，
+      不另造 beam.max）；DANFS "b. 108'2\"" = 32.97 m。
+      33.0 m 是巴拿马运河船闸宽度限制下的设计上限。
+
+  - field: dimensions.draught.mean
+    value: 11.0
+    unit: m
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: 'navypedia "Draught, m | 11.0 full load"，明确标注为满载吃水。'
+
+  - field: dimensions.draught.mean
+    value: 11.51
+    unit: m
+    src: [danfs-iowa-iii]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      DANFS Iowa 词条 "dr. 37'9\"" = 11.51 m。与 navypedia 的 11.0 m 相差
+      0.5 m，DANFS 未注明对应哪个排水量状态，**两说并列，不裁决**。
+
+  # ---------------------------------------------------------------- 动力
+  - field: propulsion.plant_type
+    value: steam_turbine
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: 'navypedia "Machinery | 4 sets General Electric geared steam turbines, 8 Babcock & Wilcox boilers"。'
+
+  - field: propulsion.shafts
+    value: 4
+    unit: count
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: navypedia "No of shafts | 4"。
+
+  - field: propulsion.boiler.count
+    value: 8
+    unit: count
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: navypedia "8 Babcock & Wilcox boilers"。四轴四组汽轮机对应八座锅炉。
+
+  - field: propulsion.boiler.type
+    value: Babcock & Wilcox 水管锅炉（重油专烧）
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: >-
+      navypedia 只写厂名 "Babcock & Wilcox boilers"，未给型号代号；
+      「水管锅炉 / 重油专烧」为 M 型（M-type）美海军标准锅炉的通行描述，
+      本条按来源仅记厂名与型式，不补型号编号。
+
+  - field: propulsion.turbine.count
+    value: 4
+    unit: count
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: 'navypedia "4 sets General Electric geared steam turbines"。'
+
+  - field: propulsion.turbine.type
+    value: General Electric 齿轮传动汽轮机（4 组）
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: navypedia 原文同上。齿轮传动（geared）即减速齿轮箱与螺旋桨轴之间非直联。
+
+  - field: propulsion.power.design
+    value: 212000
+    unit: hp
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: >-
+      navypedia "Power, h. p. | 212000"。该站未注明是设计值还是试航值，
+      按上下文（Data variant: as commissioned 的设计栏）记作设计功率。
+
+  - field: propulsion.speed.design
+    value: 32.5
+    unit: kn
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: 'navypedia "Max speed, kts | 32.5"，标注为 Max speed。'
+
+  - field: propulsion.speed.design
+    value: 33
+    unit: kn
+    src: [danfs-iowa-iii, danfs-missouri-iii]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      DANFS 两舰词条均作 "s. 33 k." / "speed 33 knots"。与 navypedia 的 32.5 kn
+      相差 0.5 kn，**两说并列，不裁决**（很可能是取整与试航实测之别）。
+
+  - field: propulsion.fuel.capacity
+    value: 7621
+    unit: t
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: >-
+      navypedia "Fuel, t | oil 7621"。原文单位写 t，未注明长吨或公吨；
+      同页排水量亦存在同一口径问题（见 displacement 各条）。
+
+  - field: propulsion.fuel.type
+    value: 重油（fuel oil）
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: navypedia 燃料栏写作 "oil"。
+
+  - field: propulsion.range.max
+    value: 15000
+    unit: nmi
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: 'navypedia "Endurance, nm(kts) | 15000 (15)"，即 15 节下 15,000 海里。'
+
+  - field: propulsion.range.at_speed
+    value: 15
+    unit: kn
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: 与上一条续航力成对，原文 "(15)" 即该续航对应的航速。
+
+  # ---------------------------------------------------------------- 装甲
+  - field: protection.scheme
+    value: all_or_nothing
+    src: [navypedia-iowa, navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: >-
+      两源均未直接使用 "all-or-nothing" 一词，但所述构造符合该体系：
+      navypedia 给出 141.4 m 长的内装甲带（19° 倾斜、307 mm）、
+      与装甲带上缘相接的平甲板 178–152 mm、以及装甲堡之外的薄结构甲板；
+      navweaps 记炮塔为 Class A / Class B 表面硬化与非渗碳钢 + STS 背板。
+      本条为体系归类，置信度按 C 记。
+
+  - field: protection.armor.thickness
+    value: 307
+    unit: mm
+    qual: { part: belt, region: main }
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: >-
+      navypedia "(BB61, 62) ... 141.4m inner belt, inclined at 19° to vertical,
+      had 3.2m height and was 307mm thick (on 51mm cement layer and 22mm plating)"。
+      307 mm 为装甲板本身，不含 51 mm 水泥衬层与 22 mm 船体板。
+
+  - field: protection.armor.angle
+    value: 19
+    unit: deg
+    qual: { part: belt, region: main }
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: 'navypedia "inclined at 19° to vertical"，即相对垂直面内倾 19°。'
+
+  - field: protection.armor.thickness
+    value: 38
+    unit: mm
+    qual: { part: upper_belt, region: main }
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: >-
+      navypedia "This belt was covered by vertical 38mm outer belt"，
+      即主装甲带外侧的垂直 38 mm 外板（剥被帽层）。
+
+  - field: protection.armor.thickness
+    value: 307
+    unit: mm
+    qual: { part: lower_belt, region: upper }
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: >-
+      navypedia "19°inclined 8.5m in height lower belt ... tapered from 307mm at
+      upper edge to 41mm at lower edge"，本条记上缘值，下缘 41 mm 见下一条。
+
+  - field: protection.armor.thickness
+    value: 41
+    unit: mm
+    qual: { part: lower_belt, region: lower }
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: 同句下半段 "to 41mm at lower edge"。
+
+  - field: protection.armor.angle
+    value: 19
+    unit: deg
+    qual: { part: belt, region: lower }
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: >-
+      navypedia "19°inclined 8.5m in height lower belt"，即下装甲带同样内倾 19°。
+      本字段的 part 枚举不含 lower_belt，故用 part: belt + region: lower 表达。
+
+  - field: protection.armor.thickness
+    value: 178
+    unit: mm
+    qual: { part: deck, region: main }
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: >-
+      navypedia "Flat main armour deck was connected with upper edge of belt and
+      was 178 (near sides)-152mm (near center line) over citadel"。
+      本条记舷侧一侧的 178 mm；向中线减薄至 152 mm，同句原文并存，
+      因同一时间窗同一限定词只能有一条 fact，故写入本 note 而不另立条目。
+
+  - field: protection.armor.thickness
+    value: 38
+    unit: mm
+    qual: { part: deck, region: upper }
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: 'navypedia "One level higher there was 38mm upper deck"。'
+
+  - field: protection.armor.thickness
+    value: 16
+    unit: mm
+    qual: { part: deck, region: splinter }
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: >-
+      navypedia "One level lower there was flat 16mm (25mm over magazines)
+      splinter deck. This deck extended aft from No3 barbette and was 157-142mm
+      over steering gear belt"。本条记一般部位的 16 mm；弹药库上方 25 mm
+      见下一条。
+
+  - field: protection.armor.thickness
+    value: 25
+    unit: mm
+    qual: { part: magazine, region: roof }
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: >-
+      navypedia 同句 "(25mm over magazines)"。qual 的 part 取 allowed 值
+      magazine、region 取 roof（弹库顶部的防破片甲板）。
+
+  - field: protection.armor.thickness
+    value: 343
+    unit: mm
+    qual: { part: belt, region: aft }
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: >-
+      navypedia "Steering gear compartment had 343mm 19°inclined belt and 287mm
+      bulkhead expanded up to lower (splinter) deck"，即舵机舱两侧的 343 mm
+      19° 倾斜装甲带。
+
+  - field: protection.armor.thickness
+    value: 287
+    unit: mm
+    qual: { part: bulkhead, region: aft }
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: 同句 287 mm 舵机舱横隔壁。注意与首部横隔壁的 287/368 mm 不是同一处。
+
+  - field: protection.armor.thickness
+    value: 432
+    unit: mm
+    qual: { part: turret, region: face }
+    src: [navypedia-iowa, navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: >-
+      navweaps "The turret face ... was made up of 2.5 in (6.4 cm) STS steel over
+      which was 17.0 in (43.2 cm) of Class B armor plate, equivalent to a single
+      plate 18.75 in (47.6 cm) thick"；navypedia 保护段作 "432mm (on 63mm plating)"。
+      两源一致，本条记装甲板本身 432 mm。**同一处另有两种记法**：navypedia
+      炮塔总表作 495 mm（= 432 + 63 mm 背板，含背板总厚），navweaps 作等效单板
+      476 mm——三者是三种记法，不是三种史料，故不并列成多条 fact。
+
+  - field: protection.armor.material
+    value: Class B（非渗碳均质镍钢）＋ STS 背板
+    qual: { part: turret, region: face }
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: navweaps "17.0 in (43.2 cm) of Class B armor plate" / "2.5 in (6.4 cm) STS"。
+
+  - field: protection.armor.thickness
+    value: 241
+    unit: mm
+    qual: { part: turret, region: side }
+    src: [navypedia-iowa, navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: >-
+      navypedia 保护段 "241mm (on 19mm plating) sides"；navweaps "9.5 in (24.1 cm)
+      Class A armor plates" 于 0.75 in (1.9 cm) STS 枪室侧板之上。
+      navypedia 炮塔总表另作 260 mm（= 241 + 19 mm 背板），是同一处的含背板记法，
+      故不并列成第二条。
+
+  - field: protection.armor.material
+    value: Class A（渗碳表面硬化钢）＋ STS 背板
+    qual: { part: turret, region: side }
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: navweaps "9.5 in (24.1 cm) Class A armor plates" 覆于 0.75 in STS 侧板之上。
+
+  - field: protection.armor.thickness
+    value: 300
+    unit: mm
+    qual: { part: turret, region: rear }
+    src: [navypedia-iowa, navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: >-
+      navypedia 保护段 "300mm rears"；navweaps "The turret back was 0.75 in (1.9 cm)
+      STS over which was 12.0 in (30.5 cm) of Class A armor plate"。
+      **navypedia 炮塔总表另作 305 mm**（"305 rear"），与该站自己保护段的
+      300 mm 及 navweaps 的 305 mm 各差 5 mm；305 是按英制 12 in 换算的取整，
+      故本条记 300 mm，并在 note 里保留 305 mm 一说，不另立 fact。
+
+  - field: protection.armor.thickness
+    value: 184
+    unit: mm
+    qual: { part: turret, region: roof }
+    src: [navypedia-iowa, navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: >-
+      navypedia "184 crown"；navweaps "The turret roof was 0.75 in (1.9 cm) STS
+      over which was 7.25 in (18.4 cm) of Class B armor plate"。两源一致。
+
+  - field: protection.armor.material
+    value: Class B（非渗碳均质镍钢）＋ STS 背板
+    qual: { part: turret, region: roof }
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: navweaps "7.25 in (18.4 cm) of Class B armor plate"。
+
+  - field: protection.armor.thickness
+    value: 294
+    unit: mm
+    qual: { part: barbette, region: main }
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: >-
+      navypedia "Barbettes over main deck were 294mm at center line and 440mm at
+      sides, but thickness decreased to 76-38mm under main deck"。
+      本条记中线处；两舷侧 440 mm 见下一条。
+
+  - field: protection.armor.thickness
+    value: 440
+    unit: mm
+    qual: { part: barbette, region: side }
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: navypedia 同句 "440mm at sides"（炮座露于舷侧的部分）。
+
+  - field: protection.armor.thickness
+    value: 440
+    unit: mm
+    qual: { part: conning_tower, region: side }
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: 'navypedia "CT had 440mm sides and 184mm roof"。'
+
+  - field: protection.armor.thickness
+    value: 184
+    unit: mm
+    qual: { part: conning_tower, region: roof }
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: navypedia 同句。
+
+  - field: protection.underwater.depth
+    value: 5.45
+    unit: m
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: >-
+      navypedia "5.45m deep underwater protection consisted from 4 compartments
+      and could resist exploding of 317kg TNT"。
+
+  - field: protection.torpedo_bulge.type
+    value: >-
+      四层隔舱式水下防雷系统（内主装甲带与下装甲带兼作第三道纵隔壁），
+      设计抗爆 317 kg TNT
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: >-
+      navypedia "5.45m deep underwater protection consisted from 4 compartments
+      and could resist exploding of 317kg TNT. Inner main and lower belts were
+      used as 3rd longitudinal bulkhead"。该级为内置装甲带，无外置防雷突出部。
+
+  # ------------------------------------------------------------ 武备装载层
+  # 注意（SCHEMA §4）：about: weapon:* 的 fact 不参与舰的时间轴计算，
+  # 所以「这舰什么时候装了什么炮」另用不带 about 的 armament.* 字段记。
+  - field: armament.mount.summary
+    value: >
+      设计固定武备：3 × 3 16"/50 (40.6 cm) Mark 7（前二后一，三联装炮塔）
+      + 10 × 2 5"/38 (12.7 cm) Mark 12（Mark 28 Mod 2 双联装炮座）
+      + 40 mm Bofors 四联装与 20 mm Oerlikon 单装高炮（数量逐舰、逐期不同，
+      见各单舰文件）+ 2 部弹射器、3 架水上飞机；无鱼雷发射管
+    src: [navypedia-iowa, navweaps-16in-50-mk7, navweaps-5in38-mk12]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      navypedia 武器栏（BB61）"3 x 3 - 406/50 Mk 7, 10 x 2 - 127/38 Mk 12,
+      15 x 4 - 40/56 Mk 1.2, 60 x 1 - 20/70 Mk 4, 2 catapults, 3 seaplanes
+      (OS2U, SOC, SO3C)"；（BB62, 63）同一行但为 "20 x 4 - 40/56 Mk 1.2,
+      49 x 1 - 20/70 Mk 4"。两批的高炮数量不同，故本概览只写主炮/副炮，
+      高炮数量交单舰。navweaps 记 5"/38 在 Iowa 级为 "Iowa (10): Mark 28 Mod 2"。
+
+  - field: armament.torpedo.tubes
+    value: 0
+    unit: count
+    src: [navypedia-iowa, navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      **设计上就没有，不是「未获取」。** navypedia 的 Armament 行无 TT 项
+      （同站巡洋舰/驱逐舰条目均明写 "x - 533 TT" 之类）；navweaps 该炮页的
+      Ship Class Used On 与炮位段亦无鱼雷兵装。美国战列舰自 North Carolina 级起
+      不再装鱼雷发射管。
+
+  # ================================================================
+  # 武器本体：16"/50 (40.6 cm) Mark 7
+  # 数据全部出自 navweaps 该炮页（tier C，全站最全）。
+  # ⚠ 不要与 16"/45 (40.6 cm) Mark 6 混淆——后者是 North Carolina /
+  #   South Dakota 级的炮；也不要用 navweaps-16in-45-mk1（英国 16"/45
+  #   Mark I，纳尔逊级）。
+  # ================================================================
+  - about: weapon:16in-50-mk7
+    field: weapon.designation
+    value: 16"/50 (40.6 cm) Mark 7
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943 }
+    confidence: B
+    note: >-
+      原文 "Designation | 16\"/50 (40.6 cm) Mark 7"，"Ship Class Used On |
+      Iowa (BB-61) and Montana (BB-67) Classes"。46 cm 是 40.6 cm 的取整写法。
+
+  - about: weapon:16in-50-mk7
+    field: weapon.nation
+    value: united_states
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943 }
+    confidence: B
+
+  - about: weapon:16in-50-mk7
+    field: weapon.category
+    value: naval_gun
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943 }
+    confidence: B
+
+  - about: weapon:16in-50-mk7
+    field: weapon.bore
+    value: 406
+    unit: mm
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943 }
+    confidence: B
+    note: 原文 40.6 cm，折 406 mm。
+
+  - about: weapon:16in-50-mk7
+    field: weapon.caliber_length
+    value: 50
+    unit: ratio
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943 }
+    confidence: B
+
+  - about: weapon:16in-50-mk7
+    field: weapon.caliber_method
+    value: usa_uk_method
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943 }
+    confidence: B
+    note: >-
+      navweaps 给出 "Gun Length oa | 816 in (20.726 m) (breech face to muzzle)" 与
+      "Bore Length | 800 in (20.320 m)"，800 in / 16 in = 50，即倍径按膛长计，
+      与美英通行的 usa_uk_method 一致（德制按全长计）。
+
+  - about: weapon:16in-50-mk7
+    field: weapon.weight
+    value: 121519
+    unit: kg
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943 }
+    confidence: B
+    note: 原文 "267,904 lbs. (121,519 kg) (including breech)"；不含炮闩为 108,479 kg。
+
+  - about: weapon:16in-50-mk7
+    field: weapon.length.oa
+    value: 20.726
+    unit: m
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943 }
+    confidence: B
+    note: 原文 "816 in (20.726 m) (breech face to muzzle)"。
+
+  - about: weapon:16in-50-mk7
+    field: weapon.length.bore
+    value: 20.320
+    unit: m
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943 }
+    confidence: B
+    note: 原文 "800 in (20.320 m)"；膛线长 682.86 in (17.344 m)。
+
+  - about: weapon:16in-50-mk7
+    field: weapon.projectile_weight
+    value: 1225
+    unit: kg
+    qual: { shell_type: apc }
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943 }
+    confidence: B
+    note: >-
+      原文 "AP Mark 8 Mods 0 to 8: 2,700 lbs. (1,225 kg)"（超重弹）。
+      navweaps 说明装弹系统在首舰开工前已改为这款 2,700 lb 炮弹，
+      而非原计划的 2,240 lb AP Mark 5。
+
+  - about: weapon:16in-50-mk7
+    field: weapon.projectile_weight
+    value: 862
+    unit: kg
+    qual: { shell_type: he }
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943 }
+    confidence: B
+    note: >-
+      原文 "HC Mark 13 Mods 0 to 6: 1,900 lbs. (862 kg)"。
+
+  - about: weapon:16in-50-mk7
+    field: weapon.muzzle_velocity
+    value: 762
+    unit: mps
+    qual: { shell_type: apc }
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943 }
+    confidence: B
+    note: >-
+      原文 "AP Mark 8: 2,500 fps (762 mps) (new gun)"；平均身管 739 mps，
+      减装药 549 mps。本条记新炮全装药值。
+
+  - about: weapon:16in-50-mk7
+    field: weapon.muzzle_velocity
+    value: 820
+    unit: mps
+    qual: { shell_type: he }
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943 }
+    confidence: B
+    note: >-
+      原文 "HC Mark 13: 2,690 fps (820 mps) (new gun)"；平均身管 797 mps。
+
+  - about: weapon:16in-50-mk7
+    field: weapon.charge.chamber_volume
+    value: 442.5
+    unit: dm3
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943 }
+    confidence: B
+    note: 原文 "Chamber Volume | 27,000 in³ (442.5 dm³)"。
+
+  - about: weapon:16in-50-mk7
+    field: weapon.range.max
+    value: 38720
+    unit: m
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943 }
+    confidence: B
+    note: >-
+      原文射表（BuOrd OP 770，AP Mark 8，新炮 2,500 fps）：45.00 度时
+      "42,345 yards (38,720 m)"。平均身管（2,425 fps）40 度时为 36,745 m。
+
+  - about: weapon:16in-50-mk7
+    field: weapon.range.max_elevation
+    value: 45
+    unit: deg
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943 }
+    confidence: B
+    note: 原文射表该档仰角 45.00 度；炮座机械上限亦为 +45 度。
+
+  - about: weapon:16in-50-mk7
+    field: weapon.rate_of_fire
+    value: 2
+    unit: rpm
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943 }
+    confidence: B
+    note: >-
+      原文 "Rate Of Fire | 2 rounds per minute"。这是持续射速；装填角 +5 度，
+      实际爆发射速受扬弹与瞄准循环限制。
+
+  - about: weapon:16in-50-mk7
+    field: weapon.elevation.min
+    value: -2
+    unit: deg
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943 }
+    confidence: B
+    note: >-
+      原文 "Turrets I and III: -2 / +45 degrees"；"Turret II: 0 / +45 degrees"
+      （二号炮塔背负布置，仰角下限受限于上方炮塔，为 0 度）。
+
+  - about: weapon:16in-50-mk7
+    field: weapon.elevation.max
+    value: 45
+    unit: deg
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943 }
+    confidence: B
+    note: >-
+      原文炮座数据 "Turrets I and III: -2 / +45 degrees"，II 座同为 +45。
+
+  - about: weapon:16in-50-mk7
+    field: weapon.barrel_life
+    value: 290
+    unit: count
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943 }
+    confidence: B
+    note: 原文 "Approximate Barrel Life | 290 rounds"。
+
+  - about: weapon:16in-50-mk7
+    field: weapon.ammo_outfit
+    value: 130
+    unit: count
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943 }
+    confidence: B
+    note: 原文 "Ammunition stowage per gun | About 130 rounds"，为**每门**的基数。
+
+  - about: weapon:16in-50-mk7
+    field: weapon.in_service_from
+    value: 1943
+    unit: date
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943 }
+    confidence: B
+    note: 原文 "Date In Service | 1943"；设计年份 "Date Of Design | 1939"。
+
+  # ================================================================
+  # 炮位实体：三座三联装主炮塔
+  # 来源：navweaps 该炮页 Mount/Turret Data 段。
+  # ================================================================
+  - about: mount:16in-no1
+    field: mount.label_name
+    value: 一号炮塔（前部，背负式上方为二号炮塔）
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      navweaps 以 "Turrets I and III" / "Turret II" 指称，未给舰内俗名；
+      本站沿用美方罗马数字编号（I/II/III），一号在前、三号在后。
+
+  - about: mount:16in-no1
+    field: mount.weapon
+    value: weapon:16in-50-mk7
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+
+  - about: mount:16in-no1
+    field: mount.type
+    value: triple_turret
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: 原文 "Three-gun Turrets | Iowa (3)"，即三座三联装。
+
+  - about: mount:16in-no1
+    field: mount.barrels
+    value: 3
+    unit: count
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+
+  - about: mount:16in-no1
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: 同名炮位仅一座；全舰 3 座见 armament.mount.summary。
+
+  - about: mount:16in-no1
+    field: mount.position
+    value: fore
+    src: [navypedia-iowa, danfs-missouri-iii]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      前二后一的布局见 navypedia 武器栏与 DANFS 各处对前部/后部主炮的叙述；
+      navweaps 以 "Turrets I and III" 与 "Turret II" 区分，I 在前、III 在后。
+
+  - about: mount:16in-no1
+    field: mount.weight
+    value: 1728400
+    unit: kg
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      原文 "Iowa class: 1,701 - 1,708 tons (1,728.4 - 1,735.4 mt)"。
+      本条取区间下限 1,728.4 mt = 1,728,400 kg；上限 1,735,400 kg，
+      区间系各座实际重量差异，非两说。
+
+  - about: mount:16in-no1
+    field: mount.elevation.max
+    value: 45
+    unit: deg
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      原文 "Turrets I and III: -2 / +45 degrees"。
+
+  - about: mount:16in-no1
+    field: mount.traverse
+    value: >-
+      1940s–1950s 全炮塔 −150 / +150 度；1980s 复役后 I 座 −139 / +139 度
+      （为避开新装电子设备与导弹发射箱的炮口超压）
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      原文 "Train | 1940s to 1950s All Turrets: -150 / +150 degrees"；
+      "1980s to 1990s Turret I: -139 / +139 degrees"。
+      射界收窄原因原文作 "Training arcs were restricted during the 1980s
+      activations in order to avoid overpressure problems to the new electronic
+      and missile installations"。
+
+  - about: mount:16in-no1
+    field: mount.rangefinder_count
+    value: 1
+    unit: count
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      原文 "As built, all three turrets on the Iowa class had 25 power, 46 foot
+      (14 m) rangefinders, with Stereoscopic Mark 52 used in Turrets II and III
+      and Coincidence Mark 53 in Turret I"。I 座装 Mark 53 合像式测距仪。
+
+  - about: mount:16in-no2
+    field: mount.label_name
+    value: 二号炮塔（前部，背负于一号炮塔之上）
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+
+  - about: mount:16in-no2
+    field: mount.weapon
+    value: weapon:16in-50-mk7
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+
+  - about: mount:16in-no2
+    field: mount.type
+    value: triple_turret
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+
+  - about: mount:16in-no2
+    field: mount.barrels
+    value: 3
+    unit: count
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+
+  - about: mount:16in-no2
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+
+  - about: mount:16in-no2
+    field: mount.position
+    value: superfiring_fore
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      原文 "Turret II: 0 / +45 degrees"——其仰角下限为 0 度而非 −2 度，
+      正是背负式布置（炮口正对一号炮塔顶）的直接证据。
+
+  - about: mount:16in-no2
+    field: mount.weight
+    value: 1728400
+    unit: kg
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      原文 "Iowa class: 1,701 - 1,708 tons (1,728.4 - 1,735.4 mt)"，取区间下限。
+
+  - about: mount:16in-no2
+    field: mount.elevation.max
+    value: 45
+    unit: deg
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+
+  - about: mount:16in-no2
+    field: mount.traverse
+    value: >-
+      1940s–1950s −150 / +150 度；1980s 复役后 −126 / +126 度
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      原文 "1980s to 1990s Turret II: -126 / +126 degrees"。
+
+  - about: mount:16in-no2
+    field: mount.rangefinder_count
+    value: 1
+    unit: count
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: 原文 II 座装体视式 Mark 52（46 ft / 14 m 基线，25 倍）。
+
+  - about: mount:16in-no3
+    field: mount.label_name
+    value: 三号炮塔（后部）
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+
+  - about: mount:16in-no3
+    field: mount.weapon
+    value: weapon:16in-50-mk7
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+
+  - about: mount:16in-no3
+    field: mount.type
+    value: triple_turret
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+
+  - about: mount:16in-no3
+    field: mount.barrels
+    value: 3
+    unit: count
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+
+  - about: mount:16in-no3
+    field: mount.count
+    value: 1
+    unit: count
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+
+  - about: mount:16in-no3
+    field: mount.position
+    value: aft
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: 前二后一布局的后部一座。
+
+  - about: mount:16in-no3
+    field: mount.weight
+    value: 1728400
+    unit: kg
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      原文 "Iowa class: 1,701 - 1,708 tons (1,728.4 - 1,735.4 mt)"，取区间下限。
+
+  - about: mount:16in-no3
+    field: mount.elevation.max
+    value: 45
+    unit: deg
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      原文 "Turrets I and III: -2 / +45 degrees"。
+
+  - about: mount:16in-no3
+    field: mount.traverse
+    value: >-
+      1940s–1950s −150 / +150 度；1980s 复役后 −128 / +128 度
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      原文 "1980s to 1990s Turret III: -128 / +128 degrees"。
+
+  - about: mount:16in-no3
+    field: mount.rangefinder_count
+    value: 1
+    unit: count
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: 原文 III 座装体视式 Mark 52。
+
+  # ================================================================
+  # 武器本体：5"/38 (12.7 cm) Mark 12 与 Mark 28 Mod 2 双联装炮座
+  # 来源：navweaps-5in38-mk12（tier C）。
+  # ================================================================
+  - about: weapon:5in38-mk12
+    field: weapon.designation
+    value: 5"/38 (12.7 cm) Mark 12
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: B
+    note: >-
+      原文 "Designation | 5\"/38 (12.7 cm) Mark 12"，"Date In Service | 1934"。
+      本炮是二战美海军装备量最大的双用途炮（8,000 门以上）。
+
+  - about: weapon:5in38-mk12
+    field: weapon.nation
+    value: united_states
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: B
+
+  - about: weapon:5in38-mk12
+    field: weapon.category
+    value: naval_gun
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: B
+    note: >-
+      双用途炮（对海/对空）。category 枚举里没有 dual_purpose，取 naval_gun，
+      对空能力由 range.aa_max 与 elevation.max 两条表达。
+
+  - about: weapon:5in38-mk12
+    field: weapon.bore
+    value: 127
+    unit: mm
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: B
+
+  - about: weapon:5in38-mk12
+    field: weapon.caliber_length
+    value: 38
+    unit: ratio
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: B
+
+  - about: weapon:5in38-mk12
+    field: weapon.caliber_method
+    value: usa_uk_method
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: B
+    note: 膛长 190 in / 5 in = 38，按膛长计，符合美英通行算法。
+
+  - about: weapon:5in38-mk12
+    field: weapon.weight
+    value: 1810
+    unit: kg
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: B
+    note: 原文 "3,990 lbs. (1,810 kg) without breech"。
+
+  - about: weapon:5in38-mk12
+    field: weapon.length.oa
+    value: 5.683
+    unit: m
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: B
+    note: 原文 "223.8 in (5.683 m)"；膛长 "190 in (4.826 m)"。
+
+  - about: weapon:5in38-mk12
+    field: weapon.length.bore
+    value: 4.826
+    unit: m
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: B
+
+  - about: weapon:5in38-mk12
+    field: weapon.projectile_weight
+    value: 25.0
+    unit: kg
+    qual: { shell_type: aa }
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: B
+    note: >-
+      原文 "AAC Mark 35 Mods 1 to 12: 55.18 lbs. (25.0 kg)"。AAC 配 MT/VT 引信时
+      按防空弹用，故 shell_type 取 aa；配 PD 引信则当 HC 用（同页脚注 3）。
+
+  - about: weapon:5in38-mk12
+    field: weapon.muzzle_velocity
+    value: 792
+    unit: mps
+    qual: { shell_type: aa }
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: B
+    note: >-
+      原文 "Full Charge: New gun: 2,600 fps (792 mps)"；平均身管 762 mps。
+
+  - about: weapon:5in38-mk12
+    field: weapon.rate_of_fire
+    value: 22
+    unit: rpm
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: B
+    note: >-
+      原文 "Base ring mounts with integral hoists: 15 - 22 rounds per minute"；
+      无整装扬弹机的基座式为 12–15 发/分。本条记上限（即带扬弹机的 Mark 28 座）。
+
+  - about: weapon:5in38-mk12
+    field: weapon.range.max
+    value: 16642
+    unit: m
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: B
+    note: >-
+      原文射表（BuOrd OP 551，55.18 lb 弹、初速 2,600 fps）：仰角 43.30 度时
+      "18,200 yards (16,642 m)"。
+
+  - about: weapon:5in38-mk12
+    field: weapon.range.max_elevation
+    value: 43.3
+    unit: deg
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: B
+    note: 同上表该档仰角 43.30 度。
+
+  - about: weapon:5in38-mk12
+    field: weapon.range.aa_max
+    value: 11339
+    unit: m
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: B
+    note: >-
+      原文射表最大弹道高（Maximum Ordinate）：仰角 85 度时 37,220 ft (11,339 m)。
+      这是弹道顶点高度，即对空射高上限，非斜距。
+
+  - about: weapon:5in38-mk12
+    field: weapon.elevation.min
+    value: -15
+    unit: deg
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: B
+    note: >-
+      原文 "Twin Mounts | All except Mark 22: -15 / +85 degrees"。
+
+  - about: weapon:5in38-mk12
+    field: weapon.elevation.max
+    value: 85
+    unit: deg
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: B
+
+  - about: weapon:5in38-mk12
+    field: weapon.barrel_life
+    value: 4600
+    unit: count
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: B
+    note: 原文 "Approximate Barrel Life | 4,600 rounds"。
+
+  - about: weapon:5in38-mk12
+    field: weapon.ammo_outfit
+    value: 450
+    unit: count
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1934 }
+    confidence: B
+    note: >-
+      原文 "North Carolina (BB-55), South Dakota (BB-57) and Iowa (BB-61):
+      450 rounds"，为**每门**基数。
+
+  - about: mount:5in38-mk28
+    field: mount.label_name
+    value: 5 英寸双联装炮座（Mark 28 Mod 2，共 10 座）
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      原文 "Twin Enclosed Base Ring Mounts ... Iowa (10): Mark 28 Mod 2"。
+      10 座双联 = 20 门，舷侧布置（每舷 5 座）。
+
+  - about: mount:5in38-mk28
+    field: mount.weapon
+    value: weapon:5in38-mk12
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1943-02-22 }
+    confidence: B
+
+  - about: mount:5in38-mk28
+    field: mount.turret_designation
+    value: Mark 28 Mod 2
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1943-02-22 }
+    confidence: B
+
+  - about: mount:5in38-mk28
+    field: mount.type
+    value: twin_turret
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1943-02-22 }
+    confidence: B
+
+  - about: mount:5in38-mk28
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1943-02-22 }
+    confidence: B
+
+  - about: mount:5in38-mk28
+    field: mount.count
+    value: 10
+    unit: count
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      这是本级 10 座炮座合并成一条；与主炮塔「一座一条」的记法不同，
+      因为 10 座 Mark 28 是同型同批装舰、没有逐座差异的史料。
+
+  - about: mount:5in38-mk28
+    field: mount.weight
+    value: 77399
+    unit: kg
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      原文 "Mark 28 Mod 2: 170,635 lbs. (77,399 kg)"。
+
+  - about: mount:5in38-mk28
+    field: mount.elevation.max
+    value: 85
+    unit: deg
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1943-02-22 }
+    confidence: B
+
+  - about: mount:5in38-mk28
+    field: mount.traverse
+    value: 舷侧炮座约 −80 / +80 度；首尾炮座约 −150 / +150 度
+    src: [navweaps-5in38-mk12]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      原文 "Cruisers and Capital ships | Bow and stern mounts: about -150 / +150
+      degrees / Broadside mounts: about -80 / +80 degrees"。
+
+  # ================================================================
+  # 武器本体：40 mm Bofors（美制 Mark 1/2）与 20 mm Oerlikon（Marks 2/3/4）
+  # 来源：navweaps-40mm-bofors / navweaps-20mm-oerlikon（已登记，复用 id）。
+  # ================================================================
+  - about: weapon:40mm-bofors
+    field: weapon.designation
+    value: 40 mm/56.3 (1.57") Mark 1, Mark 2 and M1（美制）
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1942 }
+    confidence: B
+    note: >-
+      原文 "USA: 40 mm/56.3 (1.57") Mark 1, Mark 2 and M1"，"Date Of Design
+      USA: 1941"，"Date In Service USA: 1942"。
+
+  - about: weapon:40mm-bofors
+    field: weapon.nation
+    value: united_states
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1942 }
+    confidence: B
+    note: 原型为瑞典 Bofors 40 mm/60 Model 1936，美方按许可证生产并改为 56.3 倍径。
+
+  - about: weapon:40mm-bofors
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1942 }
+    confidence: B
+
+  - about: weapon:40mm-bofors
+    field: weapon.bore
+    value: 40
+    unit: mm
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1942 }
+    confidence: B
+
+  - about: weapon:40mm-bofors
+    field: weapon.caliber_length
+    value: 56.3
+    unit: ratio
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1942 }
+    confidence: B
+    note: 美制为 56.3 倍径（瑞典原型为 60）。原文标题即 "USA Bofors 40 mm L/60"。
+
+  - about: weapon:40mm-bofors
+    field: weapon.weight
+    value: 522
+    unit: kg
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1942 }
+    confidence: B
+    note: >-
+      原文 "USA Mark 1 and Mark 2: about 1,150 lbs. (522 kg) [water-cooled]"。
+
+  - about: weapon:40mm-bofors
+    field: weapon.length.oa
+    value: 3.780
+    unit: m
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1942 }
+    confidence: B
+    note: >-
+      原文 "USA: 148.8 in (3.780 m)"；膛长 88.6 in (2.250 m)。
+
+  - about: weapon:40mm-bofors
+    field: weapon.length.bore
+    value: 2.250
+    unit: m
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1942 }
+    confidence: B
+
+  - about: weapon:40mm-bofors
+    field: weapon.projectile_weight
+    value: 2.15
+    unit: kg
+    qual: { shell_type: he }
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1942 }
+    confidence: B
+    note: 原文 "USA - 4.75 lbs. (2.15 kg)"。
+
+  - about: weapon:40mm-bofors
+    field: weapon.muzzle_velocity
+    value: 881
+    unit: mps
+    qual: { shell_type: he }
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1942 }
+    confidence: B
+    note: 原文 "USA HE - 2,890 fps (881 mps) with NC 025"。
+
+  - about: weapon:40mm-bofors
+    field: weapon.rate_of_fire
+    value: 120
+    unit: rpm
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1942 }
+    confidence: B
+    note: >-
+      原文 "Cyclic: 120 rounds per minute per barrel nominal；140 to 160 rounds
+      per minute when firing horizontal (gravity assist)"；实用射速 80–90 发/分。
+      本条记标称循环射速。
+
+  - about: weapon:40mm-bofors
+    field: weapon.barrel_life
+    value: 9500
+    unit: count
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1942 }
+    confidence: B
+    note: 原文 "USA - 9,500 Rounds"。
+
+  - about: weapon:40mm-bofors
+    field: weapon.elevation.min
+    value: -15
+    unit: deg
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1942 }
+    confidence: B
+    note: 原文美制四联装 Mark 2 座 "Elevation | -15 / +90 degrees"。
+
+  - about: weapon:40mm-bofors
+    field: weapon.elevation.max
+    value: 90
+    unit: deg
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1942 }
+    confidence: B
+
+  - about: weapon:40mm-bofors
+    field: weapon.ammo_outfit
+    value: 2000
+    unit: count
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1942 }
+    confidence: C
+    note: >-
+      原文 "USA | Most ships: 2,000 rounds"，为**每门**基数且系「多数舰」的通例，
+      未逐舰列值，故置信度按 C 记。
+
+  - about: weapon:40mm-bofors
+    field: weapon.range.max
+    value: 10076
+    unit: m
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1942 }
+    confidence: B
+    note: >-
+      原文 "Range - United States ... 42.00 degrees | 11,019 yards (10,076 m)"
+      （BuOrd OP 1188 页 2）。45 度时反而不是最大射程，42 度是表内峰值。
+
+  - about: weapon:40mm-bofors
+    field: weapon.range.max_elevation
+    value: 42
+    unit: deg
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1942 }
+    confidence: B
+    note: 同上表该档仰角 42.00 度。
+
+  - about: weapon:40mm-bofors
+    field: weapon.range.aa_max
+    value: 6949
+    unit: m
+    src: [navweaps-40mm-bofors]
+    valid: { from: 1942 }
+    confidence: B
+    note: >-
+      原文 "90.00 degrees | ... | 22,800 feet (6,949 m)"（Maximum Ordinate），
+      即弹道顶点高度。同页另记 **有效** 射程受火控限制：
+      Mark 51 指挥仪约 1,500 码（1,370 m），战后雷达型 Mark 56/63 约
+      2,500 码（2,290 m）——有效射程与弹道射高是两个概念，不能混用。
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.designation
+    value: 20 mm/70 (0.79") Marks 2, 3 and 4（美制）
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: B
+    note: >-
+      原文 "USA: 20 mm/70 (0.79") Marks 2, 3 and 4"；"Date In Service USA: 1941 (Mark 2)"。
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.nation
+    value: united_states
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: B
+    note: 原型为瑞士 Oerlikon 20 mm/70 Mark 1。
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.category
+    value: anti_aircraft_gun
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: B
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.bore
+    value: 20
+    unit: mm
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: B
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.caliber_length
+    value: 70
+    unit: ratio
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: B
+    note: >-
+      原文 "Some references describe the British weapons as 65 calibers long,
+      but gun data sheets show them to be the same length as USN weapons,
+      70 calibers"。
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.weight
+    value: 68.04
+    unit: kg
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: B
+    note: 原文 "150 lbs. (68.04 kg) (including breech mechanism)"。
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.length.oa
+    value: 2.210
+    unit: m
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: B
+    note: 原文 "87 in (2.210 m)"；膛长 55.1 in (1.400 m)。
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.length.bore
+    value: 1.400
+    unit: m
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: B
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.projectile_weight
+    value: 0.123
+    unit: kg
+    qual: { shell_type: he }
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: B
+    note: >-
+      原文 "HE Mark 3 Mods 1 to 64: 0.271 lbs. (0.123 kg)"。
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.muzzle_velocity
+    value: 844
+    unit: mps
+    qual: { shell_type: he }
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: B
+    note: >-
+      原文 "New Gun: 2,770 fps (844 mps)"；平均身管 835 mps。
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.rate_of_fire
+    value: 450
+    unit: rpm
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: B
+    note: >-
+      原文 "Cyclic: 450 rounds per minute"；实用 250–320 发/分。
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.barrel_life
+    value: 9000
+    unit: count
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: B
+    note: 原文 "Approximate Barrel Life | 9,000 rounds"。
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.elevation.min
+    value: -5
+    unit: deg
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: B
+    note: >-
+      原文 "USA | Mark 2 and 4: -5 / +87 degrees"。
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.elevation.max
+    value: 87
+    unit: deg
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: B
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.range.max
+    value: 4389
+    unit: m
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: B
+    note: 原文 "45.00 degrees | 4,800 yards (4,389 m)"（BuOrd OP 1188 页 1）。最大射程出现在 45 度，非 87 度。
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.range.max_elevation
+    value: 45
+    unit: deg
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: B
+    note: 同上表该档仰角 45.00 度。
+
+  - about: weapon:20mm-oerlikon
+    field: weapon.range.aa_max
+    value: 3048
+    unit: m
+    src: [navweaps-20mm-oerlikon]
+    valid: { from: 1941 }
+    confidence: B
+    note: >-
+      原文 "90.00 degrees | ... | 10,000 feet (3,048 m)"（Maximum Ordinate）。
+      同页脚注 2 强调："Effective range during World War II against aircraft for
+      manually aimed weapons rarely exceeded 1,000 yards (910 m)"——弹道射高
+      10,000 ft 不等于实战有效射高，正文引用时不可混用。
+
+  # ------------------------------------------------------ 探测与航空设施
+  - field: sensors.rangefinder.baseline
+    value: 14
+    unit: m
+    src: [navweaps-16in-50-mk7]
+    valid: { from: 1943-02-22 }
+    confidence: B
+    note: >-
+      原文 "all three turrets on the Iowa class had 25 power, 46 foot (14 m)
+      rangefinders"。这是主炮塔测距仪的基线长，舰桥主测距仪另有更大基线，
+      本轮未获取，故只记这一条。
+
+  - field: aviation.catapult.count
+    value: 2
+    unit: count
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: navypedia 武器栏 "2 catapults, 3 seaplanes"。
+
+  - field: aviation.aircraft.capacity
+    value: 3
+    unit: count
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: navypedia "3 seaplanes"；尾部弹射器与吊车，机库无（水上飞机置于甲板）。
+
+  - field: aviation.aircraft.types
+    value: OS2U Kingfisher / SOC Seagull / SO3C Seamew
+    src: [navypedia-iowa]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: navypedia 原文 "(OS2U, SOC, SO3C)"。
+
+  # 注：aviation.crane.count（水上飞机吊车数）**不写**。
+  # navypedia 未逐项列出吊车数，只能从线图上数出来，属线图判读而非史料记载，
+  # 按红线 §1.3「推断值不进 fact」不立条目。见 RESEARCH-NOTES「未获取」清单。
+
+  # ---------------------------------------------------------------- 服役
+  - field: service.complement.standard
+    value: 1921
+    unit: persons
+    src: [navypedia-iowa, danfs-missouri-iii]
+    valid: { from: 1943-02-22 }
+    confidence: C
+    note: >-
+      navypedia "Complement | 1921"（as commissioned 栏）；
+      DANFS Missouri 词条 "complement 1,921"。两源一致。
+      但 DANFS Iowa 词条作 "cpl. 2,800"，与 1,921 相差极大，**两说并列，
+      不裁决**（2,800 更像战时满编，1,921 更像平时编制）。

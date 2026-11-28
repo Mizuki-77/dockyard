@@ -1,0 +1,163 @@
+# ============================================================================
+# 武器正文 —— 41 cm/45 (16.1") 3rd Year Type（日本，长门级主炮）
+#
+# 这篇的核心是「日本第一型完全自主设计的大口径舰炮」：
+#   navweaps 原文 "These were the first large-caliber guns designed entirely in Japan."
+# 官方名称与实测口径要分清：官方叫「45 口径三年式 40 cm 炮」，
+# 实际口径 41 cm —— 日本海军对大正年间这批炮一直用「40 cm」的名义口径。
+#
+# 装舰对象有个很有意思的落差：设计时还要装加贺、天城、纪伊三级，
+# 但华盛顿条约让后三级全部取消或改建，**实际装上舰的只有长门级**。
+#
+# 仰角必须分型写：navweaps 明写原设计 −5/+30、新设计 −3/+35、改装后另有一套。
+# 混成一个数就错了。
+# ============================================================================
+weapon: 41cm-45-3ns
+updated: 2026-11-28
+
+intro:
+  lead:
+    zh: >-
+      41 cm/45（16.1 英寸）三年式是日本第一型完全自主设计的大口径舰炮，
+      1914 年设计、1921 年服役。它的官方名称是「45 口径三年式 40 cm 炮」——
+      日本海军用「40 cm」作名义口径，实际口径是 41 cm。
+      这门炮设计时装舰对象包括长门、加贺、天城、纪伊四级，
+      但华盛顿条约让后三级全部取消或改建，**真正装上舰的只有长门级两艘**。
+    en: >-
+      The 41 cm/45 (16.1") 3rd Year Type was the first large-calibre naval gun
+      designed entirely in Japan, laid down in design in 1914 and in service from
+      1921. Its official designation was "45 caliber 3rd Year Type 40 cm Gun" -
+      the Navy used 40 cm as the nominal calibre while the actual bore was 41 cm.
+      It was planned for the Nagato, Kaga, Amagi and Kii classes, but the
+      Washington Treaty cancelled or converted the last three, so it was mounted
+      afloat only in the two Nagato class ships.
+
+  paragraphs:
+    - heading: 第一门完全日本设计的大口径炮
+      text:
+        zh: >-
+          navweaps 对这一点的表述很直接：「这些是完全在日本设计的第一批大口径炮。」。
+          它们「只装于长门级，但曾计划用于 1920 年代初的加贺、天城与纪伊级，
+          这三者都因条约而被取消或改建」。这解释了为什么这门炮的产量远小于设计规模 ——
+          日本海军为四级战列舰准备的炮，最后只有两级（长门、陆奥）真正用上。
+        en: >-
+          NavWeaps puts it plainly: "These were the first large-caliber guns designed
+          entirely in Japan." They "were mounted afloat only on the Nagato class, but had
+          been planned for use on the Kaga, Amagi and Kii classes of the early 1920s, all
+          of which were canceled as a result" of the treaty. That is why production fell
+          far short of the design programme: the guns were prepared for four classes of
+          battleship and only two ships ever carried them.
+      src: [navweaps-41cm-45-3ns]
+
+    - heading: 参数
+      text:
+        zh: >-
+          炮身重 100 吨（101.6 公吨），全长 741.7 英寸（18.840 米），
+          膛长 720.24 英寸（18.394 米），膛线长 615.3 英寸（15.629 米）。
+          84 条膛线，深 0.161 英寸 × 宽 0.345 英寸（4.1 × 8.754 毫米），
+          阴线宽 0.259 英寸（6.58 毫米），等齐右旋 1 比 28。
+          药室 28,505 立方英寸（467.11 立方分米）。
+          射速每分钟 1.5–2.5 发；工作膛压 19–19.5 吨/平方英寸
+          （3,000–3,070 公斤/平方厘米）；炮管寿命 250–300 发；每炮备弹约 90 发。
+          炮闩是 Welin 式螺闩，配 Elswick 式三动短臂机构 ——
+          navweaps 说它「与 1917 年英国 18 英寸/40 炮所用的相似」，
+          闩体必须先直直退入托架才能转开。
+        en: >-
+          Gun weight 100 tons (101.6 mt), length overall 741.7 in (18.840 m), bore length
+          720.24 in (18.394 m), rifling length 615.3 in (15.629 m). There are 84 grooves
+          0.161 in deep by 0.345 in wide (4.1 by 8.754 mm) with lands 0.259 in (6.58 mm)
+          and a uniform right-hand twist of 1 in 28. Chamber volume is 28,505 in3
+          (467.11 dm3). Rate of fire 1.5 to 2.5 rounds per minute, working pressure 19 to
+          19.5 tons/in2 (3,000 to 3,070 kg/cm2), barrel life 250 to 300 rounds and stowage
+          about 90 rounds per gun. The breech is a Welin screw block with an Elswick
+          3-motion short-arm mechanism, which NavWeaps says resembled that used on the
+          British 18"/40 guns of 1917; the block had to be withdrawn straight back into
+          the carrier before it could be swung.
+      src: [navweaps-41cm-45-3ns]
+
+    - heading: 仰角有三套，别混成一个数
+      text:
+        zh: >-
+          navweaps 的炮座表把仰角按设计批次拆开了：
+          **原设计**（长门，4 座）−5 / +30 度；
+          **新设计**（加贺 5 座、天城 5 座、纪伊 5 座）−3 / +35 度；
+          长门级**改装后**又是另一套数值。
+          本站 facts 里这三套都保留，各自带自己的时间窗，不合并。
+          炮座重 1,004 吨（1,020 公吨）。
+          另有一个细节值得记：navweaps 提到这批炮「在整根长度上并非全长缠丝」
+          （原文对照 38 cm Mark I 的写法），这与其炮身结构有关。
+        en: >-
+          NavWeaps' mounting table splits the elevation figures by design batch: the
+          original design (Nagato, four mountings) ran -5 / +30 degrees; the new design
+          (Kaga five, Amagi five, Kii five) ran -3 / +35 degrees; and the Nagato class as
+          modernised had yet another set. All three sets are kept here with their own time
+          windows rather than merged. Each mounting weighed 1,004 tons (1,020 mt). One
+          further detail: NavWeaps notes that these guns were not wire-wound over their
+          full length (in contrast with the 38 cm Mark I), which bears on their
+          construction.
+      src: [navweaps-41cm-45-3ns]
+
+    - heading: 弹种：三个时代的穿甲弹
+      text:
+        zh: >-
+          弹药为药包装填，穿甲弹换过三代：战前的 APC 三年式（Type 3，数值未记，
+          估计约 2,205 磅即 1,000 公斤）、APC 五式（Type 5，2,205 磅 / 1,000 公斤，
+          1925-06-15 采用）、APC 六号（No. 6 / 八八式，2,205 磅 / 1,000 公斤，
+          1938-11-17 采用）。二战期间用的是 APC 九一式（Type 91）
+          2,249 磅（1,020 公斤），另有通常弹与三式弹。
+          初速按弹种与装药分列：APC 九一式 2,559 fps（780 米/秒），
+          通常弹 2,641 fps（805 米/秒）。
+          三式弹（燃烧霰弹）2,297 fps（700 米/秒）——这一型后来成了陆奥爆沉调查的焦点。
+        en: >-
+          Ammunition is bag-loaded and the armour-piercing round went through three
+          generations: the pre-war APC Type 3 (figure not recorded, probably 2,205 lbs /
+          1,000 kg), the APC Type 5 (2,205 lbs / 1,000 kg, adopted 15 June 1925) and the
+          APC No. 6 / Type 88 (2,205 lbs / 1,000 kg, adopted 17 November 1938). The
+          wartime round was the APC Type 91 at 2,249 lbs (1,020 kg), with common and
+          Type 3 rounds as well. Muzzle velocity is listed by projectile and charge: APC
+          Type 91 at 2,559 fps (780 mps), common at 2,641 fps (805 mps), and the Type 3
+          incendiary shrapnel at 2,297 fps (700 mps) - the type that later became the
+          focus of the investigation into the loss of Mutsu.
+      src: [navweaps-41cm-45-3ns]
+
+history:
+  - id: design
+    title: { zh: 设计与定型, en: Design }
+    range: { from: 1914, to: 1921 }
+    lead:
+      zh: >-
+        1914 年设计，1921 年服役。这是日本第一次不依赖外国设计完成大口径舰炮。
+      en: >-
+        Designed in 1914 and in service from 1921, the first Japanese large-calibre
+        naval gun designed without foreign assistance.
+    events:
+      - date: 1914
+        text:
+          zh: 设计年份。navweaps 记其「完全在日本设计」。
+          en: >-
+            Design year; NavWeaps records that these were "the first large-caliber guns
+            designed entirely in Japan".
+        src: [navweaps-41cm-45-3ns]
+      - date: 1917
+        text:
+          zh: >-
+            APC 三年式穿甲弹采用（本站未取到具体日期，仅知在五式之前）。
+          en: >-
+            The APC Type 3 projectile was adopted, before the Type 5 (exact date not
+            obtained for this entry).
+        src: [navweaps-41cm-45-3ns]
+      - date: 1921
+        text:
+          zh: 随长门号进入服役。
+          en: Entered service with Nagato.
+        src: [navweaps-41cm-45-3ns]
+      - date: 1925-06-15
+        text:
+          zh: APC 五式穿甲弹采用。
+          en: The APC Type 5 projectile was adopted.
+        src: [navweaps-41cm-45-3ns]
+      - date: 1938-11-17
+        text:
+          zh: APC 六号（八八式）穿甲弹采用。
+          en: The APC No. 6 (Type 88) projectile was adopted.
+        src: [navweaps-41cm-45-3ns]

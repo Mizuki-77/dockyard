@@ -1,0 +1,1120 @@
+# ============================================================================
+# 舰级：Edinburgh class（爱丁堡级轻巡洋舰）—— 城级第三组
+# ----------------------------------------------------------------------------
+# 【它和 town.yaml 是什么关系，别搞混】
+# 「城级（Town class）」是通称，不是一份设计。皇家海军内部与战后文献把三批
+# 以城市命名的 6 英寸条约巡洋舰统称 Town class，但三者是三次独立的设计演进：
+#
+#   Southampton 子级 5 艘：Southampton / Newcastle / Sheffield / Glasgow / Birmingham
+#   Gloucester  子级 3 艘：Gloucester / Liverpool / Manchester
+#   Edinburgh   子级 2 艘：Edinburgh / Belfast      ← 本文件
+#
+# data/classes/town.yaml 登记的是 **Southampton 子级**（class_of 只有 sheffield）。
+# 本级的尺度、排水量、武备、装甲与它逐项不同，不能共用一份 fact：
+#   全长 187.0 m（Southampton 180.3 m）／标准 10,550 t（9,100 t）
+#   主炮 4 座三联 12 门（3 座 9 门）／4 英寸炮 6 座双联 12 门（4 座 8 门）
+#   装甲带 114 mm 延伸至 A–Y 炮座（Southampton 只护机舱与弹药库）
+# 因此单独建 edinburgh.yaml。城级的通称与三子级的差异说明仍留在 town.yaml。
+#
+# 【这一级为什么长成这样】（navypedia 与 navweaps 的原话在 note 里）
+# 设计起点是「Gloucester 的放大版」，最初打算上 4 座四联装 6 英寸炮（16 门）。
+# 1936 年初 Shoeburyness 用等间距四联模型试验，弹道互相干扰严重、散布过大；
+# 改成两两成对的方案也不合格，四联炮座与配套的 Mark XXIV 炮身一并取消，
+# 退回改进型三联装（Mark XXIII 炮座）。这就是本级最终 12 门而不是 16 门的原因。
+#
+# 【本级相对 Southampton 的实质改动】
+#   1) 装甲带加长到 A–Y 炮座，前后都封住；装甲甲板加厚（弹药库上方 76 mm）。
+#   2) 4 英寸双联炮座 4 座 → 6 座。
+#   3) 四联 2-pdr 换成八联 pom-pom。
+#   4) 弹射器从两烟囱之间前移到前烟囱与前部上层建筑之间，外形因此很有辨识度。
+#   5) 代价：4 英寸炮的弹药库布置得离炮位太远，本级因此装了 33.5 m 的
+#      轨道小车输弹系统，被 "British Cruisers of World War Two" 评为
+#      「a complicated arrangement which in action could easily be disrupted」。
+#
+# 【哪些数据没查到 —— 如实留着】
+#   装甲总重与占比、重量分配表、型深、方形系数、干舷、锅炉蒸汽压力/温度、
+#   发电机功率、螺旋桨直径、舵面积、造价、标准排水量状态的平均吃水
+#   （navypedia 只给深载吃水 6.48 m）、防空炮座的具体位置。
+#
+# 调研底稿：work/staging/g-belfast/RESEARCH-NOTES.md
+# ============================================================================
+
+id: edinburgh
+name:
+  zh: 爱丁堡级轻巡洋舰（城级第三组）
+  en: Edinburgh class light cruiser
+class_of: [belfast]
+
+note: |
+  城级（Town class）的第三个子级，英国文献亦称 "Modified Town"。
+  同级 2 艘：Edinburgh（Swan Hunter, Wallsend，1939-07-06 服役，1942-05-02 战沉）、
+  Belfast（Harland & Wolff, Belfast，1939-08-05 服役，1971 年起为博物馆舰）。
+
+  与 data/classes/town.yaml（Southampton 子级）的关系：
+    - 同属城级通称下的 6 英寸条约型巡洋舰，主炮同为 6"/50 Mk XXIII 炮身；
+    - 但本级炮座是 **Mark XXIII**（三联，炮塔装甲正面 102 mm、其余 51 mm，
+      单座 185 t），Southampton 子级是 **Mark XXII**（三联，全周 25 mm，单座 148 t）；
+    - 本级舰体放大、装甲带加长、4 英寸炮增至 6 座双联、弹射器前移，
+      因此主尺度 / 排水量 / 武备 / 装甲四组数值都不能与 town.yaml 共用。
+
+  **本库尚未收 Edinburgh 本舰的单舰文件**，class_of 只列 belfast。
+  Edinburgh 的结局（1942-04-30 被 U456 两条鱼雷击中、05-02 与德军驱逐舰
+  Z24 交战时中第三条鱼雷、失去动力后由英方驱逐舰 Foresight 用鱼雷击沉）
+  出自 navypedia 与 naval-history，本文件不写成 fact —— 那是单舰级的历史，
+  不是舰级设计参数。
+
+open_ended_note: |
+  本文件绝大多数 fact 的 valid.to 都留空，这是结构性的，不是漏填：
+  舰级设计参数的生效期从设计定案/服役起，到该级最后一艘损失或拆解为止，
+  期间不因改装而改变；实际战备状态随时间的变化写在 data/ships/<id>.yaml 的
+  状态切片里，由单舰 fact 覆盖。因此这里的 open 时间窗表示「无已知终止事件」。
+
+facts:
+  # ============================================================ 身份
+  - field: identity.name_original
+    value: Edinburgh class（Modified Town）
+    src: [navypedia-edinburgh, navweaps-6in-50-mk23]
+    valid: { from: 1936-08-15 }
+    confidence: C
+    note: >
+      navypedia 页标题「EDINBURGH light cruisers (2, 1939)」；
+      navweaps 的装舰表把本级记作「Edinburgh ("Modified Town")」与
+      「Edinburgh ["Modified Town"] (4)」。两处都用「改进型城级」这个说法。
+
+  - field: identity.name_zh
+    value: 爱丁堡级轻巡洋舰（城级第三组）
+    src: [navypedia-edinburgh]
+    valid: { from: 1936-08-15 }
+    confidence: C
+
+  - field: identity.name_en
+    value: Edinburgh class light cruiser
+    src: [navypedia-edinburgh]
+    valid: { from: 1936-08-15 }
+    confidence: C
+
+  - field: identity.name_note
+    value: >
+      「城级」是通称，来自该级各舰均以英国城市命名。三个子级分属三份不同的设计：
+      Southampton（5 艘）、Gloucester（3 艘）、Edinburgh（2 艘）。
+      本级两艘舰名分别取自苏格兰首府爱丁堡与北爱尔兰首府贝尔法斯特，
+      后者同时是 Harland & Wolff 船厂所在地。
+    src: [navypedia-edinburgh, navypedia-town, navypedia-gloucester]
+    valid: { from: 1936-08-15 }
+    confidence: C
+    note: 三个子级的舰名归属按 navypedia 各分页的 Ships 表逐舰核对。
+
+  - field: identity.ship_type
+    value: light_cruiser
+    src: [naval-history-belfast, navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: A
+    note: >
+      英国官方分类 light cruiser，按 1930 年伦敦条约的 6 英寸主炮定义归类。
+      naval-history 页标题即「HMS BELFAST - Edinburgh-class Light Cruiser」，
+      但正文第一句又写「Improved SOUTHAMPTON-Class heavy cruiser」——
+      同一页内自称不一致，重巡是英式旧习惯用词，本站按官方分类取轻巡。
+
+  - field: identity.nation
+    value: united_kingdom
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: A
+
+  - field: identity.operator
+    value: Royal Navy
+    src: [naval-history-belfast, navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: A
+
+  - field: identity.era
+    value: ww2
+    src: [naval-history-belfast]
+    valid: { from: 1939-09-03, to: 1945-09-02 }
+    confidence: A
+    note: >
+      按服役与作战期定位。本级两艘都在 1939 年 7–8 月服役，都在二战中作战；
+      Belfast 战后一直用到 1963 年并保存至今，冷战段见单舰文件与切片。
+
+  - field: identity.building_program
+    value: >
+      1930 年伦敦海军条约（巡洋舰主炮上限 6 英寸）之后的条约型巡洋舰，
+      1936 年估算案（1936 Estimates）下订造；设计起点是 Gloucester 子级的放大版，
+      最初计划装 4 座四联 6 英寸炮（16 门），因弹道干扰试验失败改为 4 座三联（12 门）。
+    src: [navypedia-edinburgh, navweaps-6in-50-mk23, naval-history-belfast]
+    valid: { from: 1936-08-15 }
+    confidence: C
+    note: >
+      订造日期两源一致：naval-history 写「ordered on 15th August 1936 from Harland
+      and Wolff at Belfast under the 1936 Estimates on with sister ship HMS EDINBURGH
+      from Swan Hunter in Newcastle」。
+      四联改三联的原因见 navweaps 注 7：「Tests at Shoeburyness in early 1936 with a
+      mockup where all four guns were equally spaced at 42 inches (106.7 cm) apart
+      showed considerable shell interference and collision problems」。
+
+  - field: construction.order_date
+    value: 1936-08-15
+    unit: date
+    src: [naval-history-belfast, naval-history-edinburgh]
+    valid: { from: 1936-08-15 }
+    confidence: A
+    note: >
+      同级两艘同日订造。两页原文措辞几乎相同：「ordered on 15th August 1936」。
+      舰级文件只登记订货日；开工/下水/服役逐舰不同，写在单舰文件里。
+
+  # ============================================================ 排水量
+  # ⚠️ navypedia 表头写 t，数值却是皇家海军的长吨口径（10,550 lt = 10,719 t）。
+  #    与 town.yaml 同一处理：不擅自换算，整条标 comparable: false。
+  - field: displacement.standard
+    value: 10550
+    unit: t
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    comparable: false
+    note: >
+      **口径陷阱，不要直接与公吨口径的舰对比。** navypedia 表头写
+      「Displacement standard, t 10550」，但这是皇家海军设计值的长吨数
+      （10,550 lt ≈ 10,719 t），站点只改了表头没换算。
+      按规矩不擅自换算（换算后就成了我算的数，不是来源的数）。
+
+  - field: displacement.full
+    value: 13175
+    unit: t
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    comparable: false
+    note: >
+      同上，长吨口径的满载值。navypedia 同格注「(Belfast later 14900)」——
+      指 Belfast 加装防雷突出部后的增长值，属单舰数据，写在 ships/belfast.yaml。
+
+  # ============================================================ 主尺度
+  - field: dimensions.length.oa
+    value: 187.0
+    unit: m
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: >
+      613 ft 6 in。比 Southampton 子级的 180.3 m 长 6.7 m —— 这是本级与
+      town.yaml 最直观的一处差别，也是「不能共用舰级文件」的直接理由之一。
+
+  - field: dimensions.length.pp
+    value: 176.5
+    unit: m
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: 垂线间长。Southampton 子级为 170.1 m。
+
+  - field: dimensions.beam.wl
+    value: 19.3
+    unit: m
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: >
+      navypedia 只写「Breadth, m 19.3」，未区分水线宽与最大宽，按水线宽登记。
+      同级 Belfast 加装突出部后增至 20.2 m（见单舰文件）。
+
+  - field: dimensions.draught.max
+    value: 6.48
+    unit: m
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: >
+      navypedia 原文「Draught, m 6.48 deep load (Belfast later 7.06)」——
+      是**深载**吃水，不是标准排水量状态的平均吃水，故落在 draught.max。
+      **标准状态的平均吃水未获取**，不推算。
+
+  # ============================================================ 动力
+  - field: propulsion.plant_type
+    value: steam_turbine
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: A
+
+  - field: propulsion.shafts
+    value: 4
+    unit: count
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: A
+
+  - field: propulsion.boiler.count
+    value: 4
+    unit: count
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: A
+    note: 4 座 Admiralty 三鼓水管锅炉。
+
+  - field: propulsion.boiler.type
+    value: Admiralty 3-drum（三鼓水管锅炉）
+    src: [navypedia-edinburgh, iwm-hms-belfast-spec]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: >
+      两源一致：navypedia「4 Admiralty 3-drum boilers」；
+      IWM 舰 specification 页「Four Admiralty 3-drum boilers」。
+      锅炉蒸汽压力与温度未获取。
+
+  - field: propulsion.turbine.count
+    value: 4
+    unit: count
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: A
+    note: 原文「4 sets Parsons geared steam turbines」，每套驱动一根轴。
+
+  - field: propulsion.turbine.type
+    value: Parsons 单级减速齿轮传动蒸汽轮机
+    src: [navypedia-edinburgh, iwm-hms-belfast-spec]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: >
+      navypedia「4 sets Parsons geared steam turbines」；IWM 页写得更细：
+      「four steam powered Parsons single reduction geared turbines driving four
+      shafts」。两源在「Parsons + 减速齿轮」上一致，IWM 多了「单级减速」。
+
+  - field: propulsion.power.design
+    value: 80000
+    unit: hp
+    src: [navypedia-edinburgh, iwm-hms-belfast-spec]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: >
+      轴马力。两源一致（IWM 原文「at 80,000 shaft horsepower」）。
+      Southampton 子级为 75,000 hp、Gloucester 82,500 hp。
+
+  - field: propulsion.speed.design
+    value: 32.5
+    unit: kn
+    src: [navypedia-edinburgh, iwm-hms-belfast-history]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: >
+      navypedia 表头「Max speed, kts, kn 32.5」；IWM 的引擎页原文
+      「capable of driving the ship up to about 32.5 knots full power」。
+      **IWM 的舰 specification 页另写「MAXIMUM SPEED 32 knots」**，两说并列，
+      本条取 32.5；32 那一条记在 note 里不另立 fact（同一页内部先自相出入）。
+      Belfast 加装突出部后降至 30.5 kn，见单舰文件。
+
+  - field: propulsion.range.max
+    value: 12200
+    unit: nmi
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: 原文「Endurance, nm(kts) 12200(12)」——12 节时 12,200 海里。
+
+  - field: propulsion.range.at_speed
+    value: 12
+    unit: kn
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: 与上一条配套，同一格给出。
+
+  - field: propulsion.fuel.capacity
+    value: 2250
+    unit: t
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: >
+      navypedia 原文「Fuel, t oil 2250 later 1990)」——括号残缺，本站如实转录：
+      设计值 2,250（长吨口径，未换算），后期 1,990。后期值不另立 fact，
+      因为来源没给变更日期与变更舰。
+
+  - field: propulsion.fuel.type
+    value: 重油（fuel oil）
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+
+  # ============================================================ 防护
+  - field: protection.scheme
+    value: other
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: >
+      **不是 all_or_nothing。** 英式巡洋舰的「箱形」防护：装甲带 + 装甲甲板 +
+      两端横舱壁围成一个装甲箱，本级把箱子的长度从机舱与弹药库扩到 A–Y 炮座。
+      注册表没有 box 这一档，故填 other 并在 note 里写清原词，不做强行归类。
+      navypedia 原文：「114mm armoured belt extended from "A" to "Y" barbettes
+      ... Belt was closed by 64mm bulkheads.」
+
+  - field: protection.armor.thickness
+    value: 114
+    unit: mm
+    qual: { part: belt, region: main }
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: >
+      主装甲带。navypedia 防护段原文：「114mm armoured belt extended from "A" to
+      "Y" barbettes and to upper deck abreast boiler rooms and fore engine room
+      and to main deck abreast aft engine room, CCC and magazines.」
+      与 Southampton 子级同为 114 mm，但**长度不同**：本级一直延伸到 A、Y 炮座，
+      前级只护机舱与弹药库，不到内部炮座。
+
+  - field: protection.armor.thickness
+    value: 64
+    unit: mm
+    qual: { part: bulkhead, region: main }
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: 装甲箱两端的横舱壁，封闭 114 mm 装甲带。原文「Belt was closed by 64mm bulkheads.」
+
+  - field: protection.armor.thickness
+    value: 51
+    unit: mm
+    qual: { part: deck, region: main }
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: >
+      装甲甲板平部。原文「Armoured deck 51mm thick (51mm with 38mm slopes over
+      steering gear and 76mm over magazines)」。Southampton 子级同级甲板为 32 mm，
+      本级加厚是本级相对前级的三处实质改动之一。
+
+  - field: protection.armor.thickness
+    value: 76
+    unit: mm
+    qual: { part: magazine, region: roof }
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: >
+      弹药库上方甲板加厚段。原文只写「76mm over magazines」，未说明是哪一层甲板，
+      故按「弹药库顶部」登记，并保留原词。这是本级相对 Southampton 的加厚处之一。
+
+  - field: protection.armor.thickness
+    value: 38
+    unit: mm
+    qual: { part: slope, region: main }
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: 舵机舱上方的甲板斜部。原文「51mm with 38mm slopes over steering gear」。
+
+  - field: protection.armor.thickness
+    value: 102
+    unit: mm
+    qual: { part: turret, region: face }
+    src: [navypedia-edinburgh, navweaps-6in-50-mk23]
+    valid: { from: 1939-07-06 }
+    confidence: A
+    note: >
+      主炮塔正面。两源互证：navypedia「Turrets had 102mm face armour and 51mm roofs」；
+      navweaps 注 9b「For the Mark XXIII, HMS Edinburgh had 3.9 inch (10 cm)
+      (160 lbs.) glacis plate and the rest 2 in (5.1 cm) (80 lbs.)」。
+      对照：Southampton 子级炮塔**全周只有 25 mm**，本级正面 102 mm 是同级
+      最被诟病的短板被补上的直接证据。
+
+  - field: protection.armor.thickness
+    value: 51
+    unit: mm
+    qual: { part: turret, region: side }
+    src: [navypedia-edinburgh, navweaps-6in-50-mk23]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: >
+      navypedia 只给「102 - 51」的区间；navweaps 补足为「正面 3.9 in，其余 2 in」，
+      即侧面/后部/顶部均为 51 mm。本条取区间下限并注明推断来源。
+
+  - field: protection.armor.thickness
+    value: 51
+    unit: mm
+    qual: { part: turret, region: roof }
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: 原文「Turrets had 102mm face armour and 51mm roofs」，顶盖明确给到 51 mm。
+
+  - field: protection.armor.thickness
+    value: 51
+    unit: mm
+    qual: { part: barbette, region: side }
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: >
+      原文「Barbettes had 51mm armour by sides and 25mm armour fore and aft.
+      They were doubled over forecastle deck.」——侧面 51、前后 25。
+
+  - field: protection.armor.thickness
+    value: 25
+    unit: mm
+    qual: { part: barbette, region: fore }
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: 炮座前后向的 25 mm。来源只写「fore and aft」，本站按 fore 登记一条，aft 同值不重复。
+
+  # ============================================================ 武备概览
+  - field: armament.mount.summary
+    value: >-
+      12 × 6 in/50 BL Mk XXIII（4 座三联，Mark XXIII 炮座，A/B/X/Y）
+      + 12 × 4 in/45 QF Mk XVI（6 座双联 Mark XIX 两用炮座）
+      + 16 × 40 mm 2-pdr Mk VIII（2 座八联 pom-pom）
+      + 8 × 12.7 mm（2 座四联 Vickers 高射机枪）
+      + 4 × 47 mm Hotchkiss 礼炮（单装，1939 年拆除）
+      + 6 具 21 in 鱼雷发射管（2 座三联，水上）
+      + 3 架水上飞机 / 1 具 D-I-H 弹射器
+    src: [navypedia-edinburgh, navweaps-6in-50-mk23, navweaps-4in-45-mk16, navweaps-2pdr-mk8]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: >
+      建成时（设计状态）的基准配置，逐舰逐年改装见单舰文件与切片。三处必须留意：
+
+      一、**炮身与炮座型号不同**。炮身是 6"/50 Mk XXIII，本级炮座也是
+      **Mark XXIII**（这不是笔误：navweaps 的装舰表把 Edinburgh / Fiji / Ceylon /
+      Swiftsure 都记在 Mark XXIII 炮座之下，而 Southampton 与 Gloucester 是
+      Mark XXII）。写成「Mk XXIII 炮塔」口语没问题，但数据层必须分清。
+
+      二、**4 英寸炮 12 门，是整个城级家族里最多的**。navweaps 装舰表
+      「Town Cruisers: Southampton class (4), Edinburgh class (6)」。
+      本级因此比前级多了两座双联与两套弹药供给链，也是重量上浮的主因之一。
+
+      三、**4 英寸炮的弹药库离炮位太远**，本级为此装了 33.5 m 的轨道小车输弹系统。
+      navweaps 注：「these ships were equipped with a 110 foot (33.5 m) conveyor
+      system which consisted of trolleys on a sort of railway」，
+      并被 "British Cruisers of World War Two" 评为「a complicated arrangement
+      which in action could easily be disrupted」。
+
+  - field: armament.torpedo.tubes
+    value: 6
+    unit: count
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: >
+      navypedia 记「2 x 3 - 533 TT」——2 座三联、共 6 具，水上布置。
+      本站按管数计，与 town.yaml 记 6 的口径一致。
+
+  - field: armament.torpedo.diameter
+    value: 533
+    unit: mm
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: 21 英寸。
+
+  # ============================================================ 探测与火控
+  - field: sensors.rangefinder.baseline
+    value: 4.57
+    unit: m
+    src: [navweaps-6in-50-mk23]
+    valid: { from: 1939-07-06 }
+    confidence: B
+    note: >
+      navweaps 原文：「As completed the Town class had 15 foot (4.57 m) rangefinders
+      on their director control towers (DCT). The six surviving ships had these
+      replaced with 22 foot (6.70 m) rangefinders starting in late 1942.」
+      本条记建成时的 15 ft；22 ft 换装属逐舰改装，来源未点名本级两舰，不写成 fact。
+
+  - field: sensors.rangefinder.present
+    value: true
+    src: [navweaps-6in-50-mk23]
+    valid: { from: 1939-07-06 }
+    confidence: B
+    note: 只记「有/没有」，数量不记——来源只说装在指挥仪塔上，未给台数。
+
+  - field: sensors.director.type
+    value: DCT（Director Control Tower）配 15 ft 测距仪
+    src: [navweaps-6in-50-mk23]
+    valid: { from: 1939-07-06 }
+    confidence: B
+    note: 原文「rangefinders on their director control towers (DCT)」。型号编号未获取。
+
+  - field: sensors.fire_control.rpc
+    value: none
+    src: [navweaps-6in-50-mk23]
+    valid: { from: 1939-07-06 }
+    confidence: A
+    note: >
+      navweaps 原文：「None of the war-time 6-inch (15.2 cm) mountings were ever
+      fitted with RPC.」——6 英寸炮座全程无遥控动力控制，只有 4 英寸炮座后期
+      改装过 RP 50/51/52。
+
+  # ============================================================ 航空设施
+  - field: aviation.aircraft.capacity
+    value: 3
+    unit: count
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: 原页「3 aircraft」。
+
+  - field: aviation.aircraft.types
+    value: Walrus / Swordfish / Seafox
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: >
+      原页列举「3 aircraft (Walrus, Swordfish, Seafox)」。这是来源给的可用机种范围，
+      不是同时在舰数量。
+
+  - field: aviation.catapult.count
+    value: 1
+    unit: count
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+
+  - field: aviation.catapult.type
+    value: D-I-H（横向弹射器，位于前烟囱与前部上层建筑之间）
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: >
+      本级与 Southampton 子级的**外形差异就在这一处**。navypedia 原文：
+      「because of transfer of catapult from space between funnels forward
+      (between the first funnel and fwd superstructure) they have gained
+      original enough outline profile」——弹射器从两烟囱之间前移到前烟囱与
+      前部上层建筑之间，本级因此有了很不一样的上层建筑轮廓。
+
+  # ============================================================ 编制
+  - field: service.complement.standard
+    value: 850
+    unit: persons
+    src: [navypedia-edinburgh, iwm-hms-belfast-spec]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: >
+      navypedia 给全级单一值 850；IWM 的舰 specification 页写「COMPLEMENT
+      750 - 850 (as flagship)」——750 为常规、850 为旗舰编成。两源在 850 这个
+      上限上一致，故取 850 并把 750 记在此注。**逐舰、逐年的战时编制未获取。**
+
+  # ================================================================ 武器实体
+  # 6"/50 Mk XXIII 炮身本体已在 data/classes/town.yaml 的 weapon:6in-50-mk23
+  # 实体里登记（22 条），本文件不重复登记同一武器的同一批参数 —— 若两处都写，
+  # 合并后同一实体同一字段会出现两份互不引用的记录。本级的新信息全部落在
+  # **炮位实体**（Mark XXIII 炮座：185 t、正面 102 mm、三联）上。
+
+  # ================================================================ 炮位实体
+  # ------------------------------------------------ A、B 主炮塔（前置）
+  - about: mount:edinburgh-6in-ab
+    field: mount.label_name
+    value: A、B 炮塔（前置）
+    src: [navypedia-edinburgh, navweaps-6in-50-mk23]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: 英制主炮塔自前向后记 A（最前）、B（超射）、X、Y（最尾）。
+
+  - about: mount:edinburgh-6in-ab
+    field: mount.weapon
+    value: weapon:6in-50-mk23
+    src: [navweaps-6in-50-mk23]
+    valid: { from: 1939-07-06 }
+    confidence: A
+
+  - about: mount:edinburgh-6in-ab
+    field: mount.turret_designation
+    value: Mark XXIII
+    src: [navweaps-6in-50-mk23]
+    valid: { from: 1939-07-06 }
+    confidence: A
+    note: >
+      炮座型号 Mark XXIII（三联）。navweaps 原文：「Edinburgh ["Modified Town"] (4),
+      Fiji ["Colony"] (4), Ceylon ["Improved Colony"] (3) and Swiftsure (3):
+      Mark XXIII」。**这个 Mark XXIII 同时也是炮身型号**，两者同名不同物，
+      是本节最容易写错的一处。
+      navweaps 另注：该编号当初同时给了爱丁堡级原计划用的四联炮座，
+      四联方案取消后编号沿用在三联炮座上。
+
+  - about: mount:edinburgh-6in-ab
+    field: mount.type
+    value: triple_turret
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: A
+
+  - about: mount:edinburgh-6in-ab
+    field: mount.barrels
+    value: 3
+    unit: count
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: A
+    note: 中炮管后移 30 in（76.2 cm），用以减小三弹在飞行中的互相干扰。
+
+  - about: mount:edinburgh-6in-ab
+    field: mount.count
+    value: 2
+    unit: count
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: A
+    note: 本实体只含 A、B 两座；X、Y 见 mount:edinburgh-6in-xy。
+
+  - about: mount:edinburgh-6in-ab
+    field: mount.position
+    value: superfiring_fore
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: B
+    note: A 为最前一座、B 超射于其上（英式两座前置阶梯布置）；navypedia 未逐座标位，按本级标准布置登记。
+
+  - about: mount:edinburgh-6in-ab
+    field: mount.weight
+    value: 185000
+    unit: kg
+    src: [navweaps-6in-50-mk23]
+    valid: { from: 1939-07-06 }
+    confidence: A
+    note: >
+      原文「Edinburgh Mark XXIII: 182 tons (185 mt)」——185 公吨。
+      Southampton 的 Mark XXII 为 148 t，Gloucester 的 Mark XXII 约 185 t；
+      本级之所以到了 185 t，是因为炮塔装甲从全周 25 mm 提到正面 102 mm。
+
+  - about: mount:edinburgh-6in-ab
+    field: mount.elevation.max
+    value: 45
+    unit: deg
+    src: [navweaps-6in-50-mk23]
+    valid: { from: 1939-07-06 }
+    confidence: A
+    note: Mark XXIII 炮座 −5 / +45 度（Mark XXI 为 +60 度）。
+
+  - about: mount:edinburgh-6in-ab
+    field: mount.traverse
+    value: +120° / −120°（机械极限，实际射界受上层建筑限制）
+    src: [navweaps-6in-50-mk23]
+    valid: { from: 1939-07-06 }
+    confidence: B
+    note: 原页给「Train +120 / -120 degrees」，是炮座机械极限；逐座实际射界来源未给，故降 B。
+
+  # ------------------------------------------------ X、Y 主炮塔（后置）
+  - about: mount:edinburgh-6in-xy
+    field: mount.label_name
+    value: X、Y 炮塔（后置）
+    src: [navypedia-edinburgh, navweaps-6in-50-mk23]
+    valid: { from: 1939-07-06 }
+    confidence: C
+
+  - about: mount:edinburgh-6in-xy
+    field: mount.weapon
+    value: weapon:6in-50-mk23
+    src: [navweaps-6in-50-mk23]
+    valid: { from: 1939-07-06 }
+    confidence: A
+
+  - about: mount:edinburgh-6in-xy
+    field: mount.turret_designation
+    value: Mark XXIII
+    src: [navweaps-6in-50-mk23]
+    valid: { from: 1939-07-06 }
+    confidence: A
+
+  - about: mount:edinburgh-6in-xy
+    field: mount.type
+    value: triple_turret
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: A
+
+  - about: mount:edinburgh-6in-xy
+    field: mount.barrels
+    value: 3
+    unit: count
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: A
+
+  - about: mount:edinburgh-6in-xy
+    field: mount.count
+    value: 2
+    unit: count
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: A
+
+  - about: mount:edinburgh-6in-xy
+    field: mount.position
+    value: superfiring_aft
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: B
+    note: X 为后部超射的一座、Y 为最尾一座；navypedia 未逐座标位，按本级标准布置登记。
+
+  - about: mount:edinburgh-6in-xy
+    field: mount.weight
+    value: 185000
+    unit: kg
+    src: [navweaps-6in-50-mk23]
+    valid: { from: 1939-07-06 }
+    confidence: A
+    note: 同型炮座，重量与 A、B 一致。
+
+  - about: mount:edinburgh-6in-xy
+    field: mount.elevation.max
+    value: 45
+    unit: deg
+    src: [navweaps-6in-50-mk23]
+    valid: { from: 1939-07-06 }
+    confidence: A
+
+  - about: mount:edinburgh-6in-xy
+    field: mount.traverse
+    value: +120° / −120°（机械极限，实际射界受上层建筑限制）
+    src: [navweaps-6in-50-mk23]
+    valid: { from: 1939-07-06 }
+    confidence: B
+
+  # ------------------------------------------------ 4 英寸双联两用炮座
+  - about: mount:edinburgh-4in-twin
+    field: mount.label_name
+    value: 4 in/45 双联两用炮座（Mark XIX）
+    src: [navweaps-4in-45-mk16]
+    valid: { from: 1939-07-06 }
+    confidence: A
+
+  - about: mount:edinburgh-4in-twin
+    field: mount.weapon
+    value: weapon:4in-45-mk16
+    src: [navweaps-4in-45-mk16]
+    valid: { from: 1939-07-06 }
+    confidence: A
+
+  - about: mount:edinburgh-4in-twin
+    field: mount.turret_designation
+    value: Mark XIX
+    src: [navweaps-4in-45-mk16]
+    valid: { from: 1939-07-06 }
+    confidence: A
+    note: >
+      装舰表原文：「Town Cruisers: Southampton class (4), Edinburgh class (6)」——
+      本级 6 座是本级与前级最直接的数量差异。
+
+  - about: mount:edinburgh-4in-twin
+    field: mount.type
+    value: twin_turret
+    src: [navweaps-4in-45-mk16]
+    valid: { from: 1939-07-06 }
+    confidence: A
+    note: 封闭式双联两用炮座，非敞开炮架。
+
+  - about: mount:edinburgh-4in-twin
+    field: mount.barrels
+    value: 2
+    unit: count
+    src: [navweaps-4in-45-mk16]
+    valid: { from: 1939-07-06 }
+    confidence: A
+
+  - about: mount:edinburgh-4in-twin
+    field: mount.count
+    value: 6
+    unit: count
+    src: [navweaps-4in-45-mk16]
+    valid: { from: 1939-07-06 }
+    confidence: A
+    note: >
+      6 座 × 2 门 = 12 门。**Belfast 在 1944–45 年的改装中拆了其中 2 座**
+      （navweaps：「HMS Belfast had two Mark XIX twin mountings removed in
+      1944 - 45 as weight compensation for growth in other areas」），
+      剩下 4 座 8 门；母级设计值仍是 6 座，故本条不改。
+
+  - about: mount:edinburgh-4in-twin
+    field: mount.position
+    value: midships
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: B
+    note: >
+      沿上层建筑两舷成对布置；navypedia 未逐座标位。本级的一个设计缺陷即由此而来：
+      弹药库在飞行甲板下方，离炮位太远，只能靠 33.5 m 轨道小车输送。
+
+  - about: mount:edinburgh-4in-twin
+    field: mount.weight
+    value: 16816
+    unit: kg
+    src: [navweaps-4in-45-mk16]
+    valid: { from: 1939-07-06 }
+    confidence: A
+    note: Mark XIX 37,072 lbs；Mark XIX* 约 17,826 kg。
+
+  - about: mount:edinburgh-4in-twin
+    field: mount.elevation.max
+    value: 80
+    unit: deg
+    src: [navweaps-4in-45-mk16]
+    valid: { from: 1939-07-06 }
+    confidence: A
+    note: 原文「All -10 / +80 degrees」（原页在该行写作 "All:" 后接数值）。
+
+  - about: mount:edinburgh-4in-twin
+    field: mount.traverse
+    value: 340°
+    src: [navweaps-4in-45-mk16]
+    valid: { from: 1939-07-06 }
+    confidence: A
+
+  # ------------------------------------------------ 2-pdr 八联 pom-pom
+  - about: mount:edinburgh-2pdr-octuple
+    field: mount.label_name
+    value: 40 mm 2-pdr 八联 pom-pom（Mark VI / VIA）
+    src: [navweaps-2pdr-mk8, navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: C
+    note: >
+      炮身型号已由 weapon:2pdr-mk8 实体统一登记，本实体只补本级的装载型式与数量，
+      不重复登记武器参数。navypedia 原文：「octuple pompoms have mounted instead
+      of the quadruple」——本级相对 Southampton 把四联换成八联。
+
+  - about: mount:edinburgh-2pdr-octuple
+    field: mount.weapon
+    value: weapon:2pdr-mk8
+    src: [navweaps-2pdr-mk8]
+    valid: { from: 1939-07-06 }
+    confidence: A
+
+  - about: mount:edinburgh-2pdr-octuple
+    field: mount.type
+    value: other
+    src: [navweaps-2pdr-mk8]
+    valid: { from: 1939-07-06 }
+    confidence: B
+    note: >
+      注册表 mount.type 没有「八联」这一档，按 town.yaml 的既有处理填 other。
+      炮座型号 Mark VI / VIA（原称 Mark M）。
+
+  - about: mount:edinburgh-2pdr-octuple
+    field: mount.barrels
+    value: 8
+    unit: count
+    src: [navweaps-2pdr-mk8]
+    valid: { from: 1939-07-06 }
+    confidence: A
+
+  - about: mount:edinburgh-2pdr-octuple
+    field: mount.count
+    value: 2
+    unit: count
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: A
+    note: 2 座八联 = 16 门。与 Southampton 子级同数（前级也是 2 座八联）。
+
+  - about: mount:edinburgh-2pdr-octuple
+    field: mount.position
+    value: midships
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06 }
+    confidence: B
+    note: 分置两舷上层建筑两侧；navypedia 未逐座标位。
+
+  - about: mount:edinburgh-2pdr-octuple
+    field: mount.weight
+    value: 15900
+    unit: kg
+    src: [navweaps-2pdr-mk8]
+    valid: { from: 1939-07-06 }
+    confidence: A
+    note: '原文「Mark VIA: 15.68 tons (15.9 mt)」——15.9 公吨。Mark V 为 15 公吨。'
+
+  - about: mount:edinburgh-2pdr-octuple
+    field: mount.elevation.max
+    value: 80
+    unit: deg
+    src: [navweaps-2pdr-mk8]
+    valid: { from: 1939-07-06 }
+    confidence: A
+    note: '原文「Quad and Octuple Mounts: -10 / +80 degrees」。'
+
+  # ------------------------------------------------ 47 mm 礼炮
+  - about: mount:edinburgh-3pdr-saluting
+    field: mount.label_name
+    value: 47 mm（3-pdr）Hotchkiss 单装礼炮
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06, to: 1939-12-31 }
+    confidence: C
+    note: >
+      navypedia 建成配置里的一行「4 x 1 - 47/40 Hotchkiss Mk I」，
+      并在 Modernizations 台账第一条写「1939, both: - 4 x 1 - 47/40」——
+      本级两艘都在 1939 年内把这四门拆掉。炮身实体见 weapon:3pdr-hotchkiss。
+
+  - about: mount:edinburgh-3pdr-saluting
+    field: mount.weapon
+    value: weapon:3pdr-hotchkiss
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06, to: 1939-12-31 }
+    confidence: C
+
+  - about: mount:edinburgh-3pdr-saluting
+    field: mount.type
+    value: open_mount
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06, to: 1939-12-31 }
+    confidence: C
+    note: 礼炮为敞开炮架（原文只写「4 x 1」单装，未写炮座型号）。
+
+  - about: mount:edinburgh-3pdr-saluting
+    field: mount.barrels
+    value: 1
+    unit: count
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06, to: 1939-12-31 }
+    confidence: C
+
+  - about: mount:edinburgh-3pdr-saluting
+    field: mount.count
+    value: 4
+    unit: count
+    src: [navypedia-edinburgh]
+    valid: { from: 1939-07-06, to: 1939-12-31 }
+    confidence: C
+    note: 4 门单装。本级拆除时间两源只给到「1939」这一年，故 valid.to 取 1939-12-31 为年末边界。
+
+  # ---- 2026-11-28 补武器实体（仅供生成武器配置区，参数取自已登记的同一 id，未新增来源）----
+  - about: weapon:6in-50-mk23
+    field: weapon.designation
+    value: 6"/50 (15.2 cm) BL Mark XXIII
+    unit: null
+    src:
+    - navweaps-6in-50-mk23
+    valid:
+      from: 1936
+    confidence: A
+  - about: weapon:6in-50-mk23
+    field: weapon.nation
+    value: united_kingdom
+    unit: null
+    src:
+    - navweaps-6in-50-mk23
+    valid:
+      from: 1936
+    confidence: A
+  - about: weapon:6in-50-mk23
+    field: weapon.category
+    value: naval_gun
+    unit: null
+    src:
+    - navweaps-6in-50-mk23
+    valid:
+      from: 1936
+    confidence: A
+  - about: weapon:6in-50-mk23
+    field: weapon.bore
+    value: 152
+    unit: mm
+    src:
+    - navweaps-6in-50-mk23
+    valid:
+      from: 1936
+    confidence: A
+  - about: weapon:6in-50-mk23
+    field: weapon.caliber_length
+    value: 50
+    unit: ratio
+    src:
+    - navweaps-6in-50-mk23
+    valid:
+      from: 1936
+    confidence: A
+  - about: weapon:6in-50-mk23
+    field: weapon.caliber_method
+    value: usa_uk_method
+    unit: null
+    src:
+    - navweaps-6in-50-mk23
+    valid:
+      from: 1936
+    confidence: B
+  - about: weapon:4in-45-mk16
+    field: weapon.designation
+    value: 4"/45 (10.2 cm) QF Mark XVI
+    unit: null
+    src:
+    - navweaps-4in-45-mk16
+    valid:
+      from: 1936
+    confidence: A
+  - about: weapon:4in-45-mk16
+    field: weapon.nation
+    value: united_kingdom
+    unit: null
+    src:
+    - navweaps-4in-45-mk16
+    valid:
+      from: 1936
+    confidence: A
+  - about: weapon:4in-45-mk16
+    field: weapon.category
+    value: anti_aircraft_gun
+    unit: null
+    src:
+    - navweaps-4in-45-mk16
+    valid:
+      from: 1936
+    confidence: A
+  - about: weapon:4in-45-mk16
+    field: weapon.bore
+    value: 102
+    unit: mm
+    src:
+    - navweaps-4in-45-mk16
+    valid:
+      from: 1936
+    confidence: A
+  - about: weapon:4in-45-mk16
+    field: weapon.caliber_length
+    value: 45
+    unit: ratio
+    src:
+    - navweaps-4in-45-mk16
+    valid:
+      from: 1936
+    confidence: A
+  - about: weapon:2pdr-mk8
+    field: weapon.designation
+    value: QF 2-pdr Mk VIII（40 mm/39）
+    unit: null
+    src:
+    - navypedia-arkroyal
+    valid:
+      from: 1936
+    confidence: B
+  - about: weapon:2pdr-mk8
+    field: weapon.nation
+    value: united_kingdom
+    unit: null
+    src:
+    - navypedia-arkroyal
+    valid:
+      from: 1936
+    confidence: B
+  - about: weapon:2pdr-mk8
+    field: weapon.category
+    value: anti_aircraft_gun
+    unit: null
+    src:
+    - navypedia-arkroyal
+    valid:
+      from: 1936
+    confidence: B
+  - about: weapon:2pdr-mk8
+    field: weapon.bore
+    value: 40
+    unit: mm
+    src:
+    - navweaps-2pdr-mk8-octuple
+    valid:
+      from: 1936
+    confidence: A
+  - about: weapon:2pdr-mk8
+    field: weapon.caliber_length
+    value: 39
+    unit: ratio
+    src:
+    - navweaps-2pdr-mk8-octuple
+    valid:
+      from: 1936
+    confidence: A
